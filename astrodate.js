@@ -503,6 +503,7 @@
         function arrayToObject(arr) {
             var length = arr.length,
                 struct = {},
+                temp = {},
                 day,
                 fraction,
                 index,
@@ -513,7 +514,7 @@
 
             if (length < 1 || length > lengthFullKeys) {
                 //invalid
-                return struct;
+                return temp;
             }
 
             /*
@@ -530,65 +531,64 @@
 
             for (index = 0; index < lengthFullKeys; index += 1) {
                 element = arr[index];
-                if (!isValidValue(element)) {
-                    //invalid
-                    return struct;
-                }
-
-                asString = element.toString();
-                number = bignumber(asString);
-                fraction = number.fractionalPart();
-                if (!fraction.isZero() && index !== lengthFullKeys - 1) {
-                    //invalid
-                    return struct;
+                if (isValidValue(element)) {
+                    asString = element.toString();
+                    number = bignumber(asString);
+                    fraction = number.fractionalPart();
+                    if (!fraction.isZero() && index !== lengthFullKeys - 1) {
+                        //invalid
+                        return temp;
+                    }
+                } else {
+                    number = bignumber(NaN);
                 }
 
                 switch (index) {
                 case 0:
-                    if (number.lte(-100000) || number.gte(100000)) {
+                    if (number.isNaN() || number.lte(-100000) || number.gte(100000)) {
                         //invalid
-                        return struct;
+                        return temp;
                     }
 
                     number = number.toNumber();
                     break;
                 case 1:
-                    if (number.lt(1) || number.gt(12)) {
+                    if (!number.isNaN() && (number.lt(1) || number.gt(12))) {
                         //invalid
-                        return struct;
+                        return temp;
                     }
 
                     number = number.toNumber() || 1;
                     break;
                 case 2:
-                    if (number.lt(1) || number.gt(daysInMonth(arr[0], arr[1]))) {
+                    if (!number.isNaN() && (number.lt(1) || number.gt(daysInMonth(arr[0], arr[1])))) {
                         //invalid
-                        return struct;
+                        return temp;
                     }
 
                     number = number.toNumber() || 1;
                     break;
                 case 3:
-                    if (number.lt(0) || number.gt(24)) {
+                    if (!number.isNaN() && (number.lt(0) || number.gt(24))) {
                         //invalid
-                        return struct;
+                        return temp;
                     }
 
                     number = number.toNumber() || 0;
                     break;
                 case 4:
                 case 5:
-                    if (number.lt(0) || number.gt(59) || (bignumber(arr[3]).equals(2) && !number.isZero())) {
+                    if (!number.isNaN() && (number.lt(0) || number.gt(59) || (bignumber(arr[3]).equals(24) && !number.isZero()))) {
                         //invalid
-                        return struct;
+                        return temp;
                     }
 
                     number = number.toNumber() || 0;
                     break;
                 case 6:
-                    if (number.lt(0) || number.gte(1000)) {
+                    if (!number.isNaN() && (number.lt(0) || number.gte(1000))) {
                         //invalid
-                        return struct;
+                        return temp;
                     }
 
                     number = number.toNumber() || 0;
@@ -596,15 +596,18 @@
                 case 7:
                     if (number.lt(-24) || number.gt(24)) {
                         //invalid
-                        return struct;
+                        return temp;
                     }
 
                     number = number.toNumber() || 0;
                     break;
                 default:
+                    number = undef;
                 }
 
-                struct[fullKeys[index]] = number;
+                if (number !== undef) {
+                    struct[fullKeys[index]] = number;
+                }
             }
 
             return struct;
@@ -618,7 +621,7 @@
             for (index = 0; index < lengthFullKeys; index += 1) {
                 value = struct[fullKeys[index]];
                 if (value !== undef) {
-                    arr.push(struct[fullKeys[index]]);
+                    arr.push(value);
                 }
             }
 

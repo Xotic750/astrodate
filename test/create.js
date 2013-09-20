@@ -27,7 +27,8 @@
 
     exports.create = {
         "array": function (test) {
-            var repeat = 5,
+            var repeat = 500,
+                zeroArray = [NaN, 1, 1, 0, 0, 0, 0, 0],
                 fullArray = [],
                 fullArrayString = [],
                 year,
@@ -36,9 +37,11 @@
                 fullArrayLength,
                 astrodate,
                 index,
-                count;
+                count,
+                end,
+                slice;
 
-            test.expect(2 * 9 * repeat);
+            test.expect(6 * (zeroArray.length - 1) * repeat);
             for (count = 0; count < repeat; count += 1) {
                 fullArray.length = 0;
                 fullArrayString.length = 0;
@@ -61,18 +64,21 @@
 
                 fullArray.push(getRandomInt(-24, 24));
                 fullArrayLength = fullArray.length;
-                for (index = 1; index < fullArrayLength; index += 1) {
-                    astrodate = new AstroDate(fullArray.slice(0, index));
-                    test.deepEqual(astrodate.toArray(), fullArray.slice(0, index), "Number: Arrays are the same");
-                }
-
                 for (index = 0; index < fullArrayLength; index += 1) {
-                    fullArrayString.push(fullArray[index].toString());
+                    fullArrayString[index] = fullArray[index].toString();
                 }
 
                 for (index = 1; index < fullArrayLength; index += 1) {
-                    astrodate = new AstroDate(fullArrayString.slice(0, index));
-                    test.deepEqual(astrodate.toArray(), fullArray.slice(0, index), "String: Arrays are the same");
+                    end = -index;
+                    slice = fullArray.slice(0, end).concat(zeroArray.slice(end));
+                    astrodate = new AstroDate(fullArray.slice(0, end));
+                    test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")Number: isAstrodate");
+                    test.ok(astrodate.isValid(), "(" + count + "/" + index + ")Number: isValid");
+                    test.deepEqual(astrodate.toArray(), slice, "(" + count + "/" + index + ")Number: Arrays are the same");
+                    astrodate = new AstroDate(fullArrayString.slice(0, end));
+                    test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")String: isAstrodate");
+                    test.ok(astrodate.isValid(), "(" + count + "/" + index + ")String: isValid");
+                    test.deepEqual(astrodate.toArray(), slice, "(" + count + "/" + index + ")String: Arrays are the same");
                 }
             }
 
