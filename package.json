@@ -1,0 +1,45 @@
+{
+    "name": "astrodate",
+    "version": "0.0.1",
+    "description": "Javascript Date object for Astrology.",
+    "homepage": "https://github.com/Xotic750/astrodate",
+    "author": "Xotic750 <xotic750@gmail.com> (https://github.com/Xotic750)",
+    "contributors": [],
+    "keywords": [
+        "astrodate",
+        "date",
+        "time",
+        "parse",
+        "atrology"
+    ],
+    "main": "./astrodate.js",
+    "engines": {
+        "node": "*"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Xotic750/astrodate.git"
+    },
+    "bugs": {
+        "url": "https://github.com/Xotic750/astrodate/issues"
+    },
+    "licenses" : [
+        {
+            "type" : "GPL3"
+        }
+    ],
+    "devDependencies" : {
+        "uglify-js" : "latest",
+        "grunt"     : "latest",
+        "nodeunit"  : "latest",
+        "grunt-contrib-jshint"    : "latest",
+        "grunt-contrib-nodeunit"  : "latest",
+        "grunt-contrib-concat"    : "latest",
+        "grunt-contrib-uglify"    : "latest",
+        "grunt-contrib-watch"     : "latest",
+        "grunt-lib-legacyhelpers" : "latest"
+    },
+    "scripts": {
+        "test": "grunt"
+    }
+}
