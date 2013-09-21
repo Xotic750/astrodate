@@ -504,12 +504,12 @@
             var length = arr.length,
                 struct = {},
                 temp = {},
-                day,
+                //day,
                 fraction,
                 index,
                 element,
                 number,
-                time,
+                //time,
                 asString;
 
             if (length < 1 || length > lengthFullKeys) {
@@ -749,6 +749,7 @@
         extend(ISO.prototype, {
             "parse": function parse(isoString) {
                 var dateObject = {},
+                    getTimezoneOffset = new Date().getTimezoneOffset(),
                     signYear,
                     temp,
                     last,
@@ -767,7 +768,7 @@
                     name,
                     value;
 
-                temp = trim(isoString).split("T");
+                temp = trim(isoString).split(/[T ]/);
                 length = temp.length;
                 if (length < 1 || length > 2) {
                     //invalid
@@ -781,13 +782,33 @@
                         temp.unshift("");
                         isTime = true;
                     } else {
-                        temp.push("00:00:00,000Z");
+                        if (getTimezoneOffset === 0) {
+                            value = "Z";
+                        } else {
+                            value = fractionToTime(Math.abs(getTimezoneOffset), "minute");
+                            value = padLeadingZero(value[0], 2) + ":" + padLeadingZero(value[1], 2);
+                            if (getTimezoneOffset < 0) {
+                                value = "-" + value;
+                            } else {
+                                value = "+" + value;
+                            }
+                        }
+
+                        temp.push("00:00:00.000" + value);
                         isTime = false;
                     }
                 } else {
                     if (!element.length) {
                         isTime = true;
                     }
+                }
+
+                element = trim(temp[0]);
+                character = element.charAt(0);
+                if (!isDigit(character)) {
+                    //invalid
+                    this.set(dateObject);
+                    return this;
                 }
 
                 time = temp[1];
@@ -813,7 +834,7 @@
                         switch (date.length) {
                         case 8:
                             temp[0] = date.slice(0, 4);
-                            temp[1] = date.slice(4, 2);
+                            temp[1] = date.slice(4, 6);
                             temp[2] = date.slice(6);
                             break;
                         case 4:
@@ -892,11 +913,10 @@
                 }
 
                 if (length === 1) {
-                    value = new Date().getTimezoneOffset();
-                    if (value === 0) {
+                    if (getTimezoneOffset === 0) {
                         value = "00";
                     } else {
-                        value = fractionToTime(Math.abs(value), "minute");
+                        value = fractionToTime(Math.abs(getTimezoneOffset), "minute");
                         value = padLeadingZero(value[0], 2) + ":" + padLeadingZero(value[1], 2);
                     }
 
@@ -952,8 +972,8 @@
                     switch (time.length) {
                     case 6:
                         temp[0] = time.slice(0, 2);
-                        temp[1] = time.slice(2, 2);
-                        temp[2] = time.slice(4);
+                        temp[1] = time.slice(2, 4);
+                        temp[2] = time.slice(5);
                         break;
                     case 4:
                         temp[0] = time.slice(0, 2);
