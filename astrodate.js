@@ -778,7 +778,7 @@
 
                 element = temp[0];
                 if (length === 1) {
-                    if (element.charAt(element.length - 1) === "Z" || element.search(/[\.,:]|\d[\-+]/) !== -1) {
+                    if (element.charAt(element.length - 1) === "Z" || element.indexOf(":") !== -1 || element.indexOf("+") !== -1) {
                         temp.unshift("");
                         isTime = true;
                     } else {
@@ -803,7 +803,7 @@
                     }
                 }
 
-                element = trim(temp[0]);
+                element = temp[1];
                 character = element.charAt(0);
                 if (!isDigit(character)) {
                     //invalid
