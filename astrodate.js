@@ -594,7 +594,7 @@
                     number = number.toNumber() || 0;
                     break;
                 case 7:
-                    if (number.lt(-24) || number.gt(24)) {
+                    if (number.lt(-1440) || number.gt(1440)) {
                         //invalid
                         return temp;
                     }
