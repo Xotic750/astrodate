@@ -1134,7 +1134,7 @@
             case 1:
                 arg = args[0];
                 if (AstroDate.isAstroDate(arg)) {
-                    struct = arrayToObject(arg.valueOf());
+                    struct = extend({}, arg.valueOf());
                 } else if (isArray(arg)) {
                     struct = arrayToObject(arg);
                 } else if (isDate(arg)) {
