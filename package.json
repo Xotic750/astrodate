@@ -40,6 +40,6 @@
         "grunt-lib-legacyhelpers" : "latest"
     },
     "scripts": {
-        "test": "grunt --verbose"
+        "test": "grunt"
     }
 }
