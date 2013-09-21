@@ -23,6 +23,17 @@
         return days;
     }
 
+    function padLeadingZero(number, size) {
+        var numString = number.toString(),
+            length = size - numString.length,
+            i;
+
+        for (i = 0; i < length; i += 1) {
+            numString = "0" + numString;
+        }
+
+    }
+
     var AstroDate = require("../astrodate");
 
     exports.create = {
@@ -91,6 +102,46 @@
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")String astrodate: isValid");
                     test.deepEqual(astrodate.toArray(), slice, "(" + count + "/" + index + ")String astrodate: Arrays are the same");
                 }
+            }
+
+            test.done();
+        },
+
+        "parsing iso" : function (test) {
+            var offset = new Date().getTimezoneOffset(),
+                hourOffset = (offset > 0) ? Math.floor(offset / 60) : Math.ceil(offset / 60),
+                minOffset = offset - (hourOffset * 60),
+                tz = (offset > 0 ? "-" : "+") + padLeadingZero(Math.abs(hourOffset), 2) + ":" + padLeadingZero(Math.abs(minOffset), 2),
+                tz2 = tz.replace(":", ""),
+                formats = [
+                    ["2011-10-08",                    "2011-10-08T00:00:00.000" + tz],
+                    ["2011-10-08T18",                 "2011-10-08T18:00:00.000" + tz],
+                    ["2011-10-08T18:04",              "2011-10-08T18:04:00.000" + tz],
+                    ["2011-10-08T18:04:20",           "2011-10-08T18:04:20.000" + tz],
+                    ["2011-10-08T18:04" + tz,         "2011-10-08T18:04:00.000" + tz],
+                    ["2011-10-08T18:04:20" + tz,      "2011-10-08T18:04:20.000" + tz],
+                    ["2011-10-08T18:04" + tz2,        "2011-10-08T18:04:00.000" + tz],
+                    ["2011-10-08T18:04:20" + tz2,     "2011-10-08T18:04:20.000" + tz],
+                    ["2011-10-08T18:04:20.1" + tz2,   "2011-10-08T18:04:20.100" + tz],
+                    ["2011-10-08T18:04:20.11" + tz2,  "2011-10-08T18:04:20.110" + tz],
+                    ["2011-10-08T18:04:20.111" + tz2, "2011-10-08T18:04:20.111" + tz],
+                    ["20111008",                      "2011-10-08T00:00:00.000" + tz],
+                    ["20111008T18",                   "2011-10-08T18:00:00.000" + tz],
+                    ["20111008T1804",                 "2011-10-08T18:04:00.000" + tz],
+                    ["20111008T180420",               "2011-10-08T18:04:20.000" + tz],
+                    ["20111008T1804" + tz,            "2011-10-08T18:04:00.000" + tz],
+                    ["20111008T180420" + tz,          "2011-10-08T18:04:20.000" + tz],
+                    ["20111008T1804" + tz2,           "2011-10-08T18:04:00.000" + tz],
+                    ["20111008T180420" + tz2,         "2011-10-08T18:04:20.000" + tz],
+                    ["20111008T180420.1" + tz2,       "2011-10-08T18:04:20.100" + tz],
+                    ["20111008T180420.11" + tz2,      "2011-10-08T18:04:20.110" + tz],
+                    ["20111008T180420.111" + tz2,     "2011-10-08T18:04:20.111" + tz]
+                ],
+                index;
+
+            test.expect(formats.length);
+            for (index = 0; index < formats.length; index += 1) {
+                test.equal(new AstroDate(formats[index][0]), formats[index][1], "AstroDate should be able to parse ISO " + formats[index][0]);
             }
 
             test.done();
