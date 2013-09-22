@@ -1467,35 +1467,36 @@
             }
         });
 
-        if (JSON) {
-            if (typeof JSON.stringify === "function") {
-                extend(AstroDate.prototype, {
-                    "toJSON": function () {
-                        return JSON.stringify(this.get("struct"));
-                    }
-                });
-            }
+        if (JSON && typeof JSON.stringify === "function" && typeof JSON.parse === "function") {
+            extend(AstroDate.prototype, {
+                "json": function (jsonString) {
+                    var struct = {},
+                        parsedObject,
+                        astrodate;
 
-            if (typeof JSON.parse === "function") {
-                extend(AstroDate.prototype, {
-                    "fromJSON": function (jsonString) {
-                        var parsedObject = JSON.parse(jsonString),
-                            struct = {},
-                            astrodate;
-
+                    if (typeof jsonString === "string") {
+                        parsedObject = JSON.parse(jsonString);
                         if (parsedObject !== null && typeof parsedObject === "object") {
                             astrodate = new AstroDate(parsedObject);
                             if (astrodate.isValid()) {
                                 struct = astrodate.valueOf();
                             }
+
+                            throw new SyntaxError();
                         }
 
                         this.set("struct", struct);
 
                         return this;
                     }
-                });
-            }
+
+                    if (jsonString === undef) {
+                        return JSON.stringify(this.get("struct"));
+                    }
+
+                    throw new TypeError();
+                }
+            });
         }
 
         extend(AstroDate, {
