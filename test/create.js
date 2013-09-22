@@ -39,7 +39,7 @@
 
     exports.create = {
         "array/isAstroDate/isValid/from AstroDate": function (test) {
-            var repeat = 500,
+            var repeat = 5000,
                 zeroArray = [NaN, 1, 1, 0, 0, 0, 0, 0],
                 fullArray = [],
                 fullArrayString = [],
@@ -109,7 +109,7 @@
         },
 
         "parsing iso" : function (test) {
-            var repeat = 500,
+            var repeat = 5000,
                 count,
                 offset =  new Date().getTimezoneOffset(),
                 hourOffset,
