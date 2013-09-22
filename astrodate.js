@@ -1200,34 +1200,6 @@
                 arg,
                 type;
 
-            switch (argsLength) {
-            case 0:
-                struct = dateToObject(new Date());
-                break;
-            case 1:
-                arg = args[0];
-                if (AstroDate.isAstroDate(arg)) {
-                    struct = extend({}, arg.valueOf());
-                } else if (isArray(arg)) {
-                    struct = arrayToObject(arg);
-                } else if (isDate(arg)) {
-                    struct = dateToObject(arg);
-                } else {
-                    type = typeof arg;
-                    if (type === "number") {
-                        struct = dateToObject(new Date(arg));
-                    } else if (type === "string") {
-                        struct = new ISO(arg).valueOf();
-                    } else {
-                        throw new TypeError();
-                    }
-                }
-
-                break;
-            default:
-                throw new SyntaxError();
-            }
-
             extend(this, {
                 "get": function (key) {
                     var unit = AstroDate.normaliseUnits(key),
@@ -1278,6 +1250,39 @@
                     return this;
                 }
             });
+
+            switch (argsLength) {
+            case 0:
+                struct = dateToObject(new Date());
+                break;
+            case 1:
+                arg = args[0];
+                if (AstroDate.isAstroDate(arg)) {
+                    struct = extend({}, arg.valueOf());
+                } else if (isArray(arg)) {
+                    struct = arrayToObject(arg);
+                } else if (isDate(arg)) {
+                    struct = dateToObject(arg);
+                } else {
+                    type = typeof arg;
+                    if (type === "number") {
+                        struct = dateToObject(new Date(arg));
+                    } else if (type === "string") {
+                        struct = new ISO(arg).valueOf();
+                    } else if (arg !== null && type === "object") {
+                        struct = arg;
+                        if (!this.isValid()) {
+                            struct = {};
+                        }
+                    } else {
+                        throw new TypeError();
+                    }
+                }
+
+                break;
+            default:
+                throw new SyntaxError();
+            }
         }
 
         extend(AstroDate.prototype, {
