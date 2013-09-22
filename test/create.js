@@ -125,9 +125,10 @@
                 minute,
                 second,
                 millisecond,
-                sign;
+                sign,
+                withComma;
 
-            test.expect(66 * repeat);
+            test.expect(2 * 66 * repeat);
             for (count = 0; count < repeat; count += 1) {
                 year = padLeadingZero(getRandomInt(0, 99999), 4);
                 if (year >= 10000) {
@@ -237,6 +238,8 @@
 
                 for (index = 0; index < formats.length; index += 1) {
                     test.equal(new AstroDate(formats[index][0]).toString(), formats[index][1], "(" + index + ")AstroDate should be able to parse ISO " + formats[index][0]);
+                    withComma = formats[index][0];
+                    test.equal(new AstroDate(withComma).toString(), formats[index][1], "(" + index + ")AstroDate should be able to parse ISO " + withComma);
                 }
             }
 
