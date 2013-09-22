@@ -143,9 +143,16 @@
                 month = padLeadingZero(getRandomInt(1, 12), 2);
                 day = padLeadingZero(getRandomInt(1, daysInMonth(year, month)), 2);
                 hour = padLeadingZero(getRandomInt(0, 24), 2);
-                minute = padLeadingZero(getRandomInt(0, 59), 2);
-                second = padLeadingZero(getRandomInt(0, 59), 2);
-                millisecond = getRandomInt(0, 999);
+                if (hour === "24") {
+                    minute = "00";
+                    second = "00";
+                    millisecond = 0;
+                } else {
+                    minute = padLeadingZero(getRandomInt(0, 59), 2);
+                    second = padLeadingZero(getRandomInt(0, 59), 2);
+                    millisecond = getRandomInt(0, 999);
+                }
+
                 if (offset !== 0) {
                     hourOffset = (offset > 0) ? Math.floor(offset / 60) : Math.ceil(offset / 60);
                     minOffset = offset - (hourOffset * 60);
