@@ -790,8 +790,7 @@
 
                 element = temp[0];
                 if (length === 1) {
-                    character = element.charAt();
-                    if (element.charAt(element.length - 1) === "Z" || element.indexOf(":") !== -1 || (character !== "+" && character !== "-")) {
+                    if (element.charAt(element.length - 1) === "Z" || element.indexOf(":") !== -1 || element.indexOf("+") > 1 || (element.charAt(0) !== "-" && element.split("-").length === 2 && !/^\d{4}-\d{2}$/.test(element))) {
                         temp.unshift("");
                         isTime = true;
                     } else {
