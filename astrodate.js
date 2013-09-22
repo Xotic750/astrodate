@@ -1046,11 +1046,16 @@
 
                     temp = temp.concat(fractionToTime(timeFraction, name).slice(length));
                 } else {
-                    if (length <= 3) {
+                    if (length < 2) {
                         temp.push("00");
-                        if (length < 4) {
-                            temp.push("000");
-                        }
+                    }
+
+                    if (length < 3) {
+                        temp.push("00");
+                    }
+
+                    if (length < 4) {
+                        temp.push("000");
                     }
                 }
 
