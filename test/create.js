@@ -111,7 +111,7 @@
         "parsing iso" : function (test) {
             var repeat = 500,
                 count,
-                offset,
+                offset =  new Date().getTimezoneOffset(),
                 hourOffset,
                 minOffset,
                 tz,
@@ -120,7 +120,7 @@
                 index;
 
             for (count = 0; count < repeat; count += 1) {
-                offset = getRandomInt(-1440, 1440);
+                //offset = getRandomInt(-1440, 1440);
                 if (offset !== 0) {
                     hourOffset = (offset > 0) ? Math.floor(offset / 60) : Math.ceil(offset / 60);
                     minOffset = offset - (hourOffset * 60);
