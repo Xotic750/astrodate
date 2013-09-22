@@ -988,7 +988,7 @@
                     case 6:
                         temp[0] = time.slice(0, 2);
                         temp[1] = time.slice(2, 4);
-                        temp[2] = time.slice(5);
+                        temp[2] = time.slice(4);
                         break;
                     case 4:
                         temp[0] = time.slice(0, 2);
