@@ -681,7 +681,8 @@
                 count,
                 padding,
                 last,
-                value;
+                value,
+                signYear;
 
             for (count = 0; count < 3; count += 1) {
                 if (date.get(fullKeys[count]) === undef) {
@@ -691,8 +692,16 @@
             }
 
             for (last = lengthFullKeys - 1; index < last; index += 1) {
+                value = date.get(fullKeys[index]);
                 padding = 2;
                 if (index === 0) {
+                    if (value >= 0) {
+                        signYear = "+";
+                    } else {
+                        signYear = "-";
+                    }
+
+                    value = Math.abs(value);
                     padding = 4;
                 } else if (index === 3) {
                     string += "T";
@@ -700,7 +709,10 @@
                     padding = 3;
                 }
 
-                value = date.get(fullKeys[index]);
+                if (index === 0 && (value >= 10000 || signYear === "-")) {
+                    string += signYear;
+                }
+
                 string += padLeadingZero(value, padding);
                 if (index < 2) {
                     string += "-";
@@ -778,7 +790,8 @@
 
                 element = temp[0];
                 if (length === 1) {
-                    if (element.charAt(element.length - 1) === "Z" || element.indexOf(":") !== -1 || element.indexOf("+") !== -1) {
+                    character = element.charAt();
+                    if (element.charAt(element.length - 1) === "Z" || element.indexOf(":") !== -1 || (character !== "+" && character !== "-")) {
                         temp.unshift("");
                         isTime = true;
                     } else {
@@ -803,23 +816,20 @@
                     }
                 }
 
-                element = temp[1];
-                character = element.charAt(0);
+                time = temp[1];
+                character = time.charAt(0);
                 if (!isDigit(character)) {
                     //invalid
                     this.set(dateObject);
                     return this;
                 }
 
-                time = temp[1];
                 if (!isTime) {
                     date = temp[0];
                     character = date.charAt(0);
                     if (!isDigit(character)) {
-                        if (character === "+") {
-                            signYear = 1;
-                        } else if (character === "-") {
-                            signYear = -1;
+                        if (character === "+" || character === "-") {
+                            signYear = character;
                         } else {
                             //invalid
                             this.set(dateObject);
@@ -832,6 +842,18 @@
                     if (date.indexOf("-") === -1) {
                         temp = [];
                         switch (date.length) {
+                        case 9:
+                            if (signYear) {
+                                temp[0] = date.slice(0, 5);
+                                temp[1] = date.slice(5, 7);
+                                temp[2] = date.slice(7);
+                            } else {
+                                //invalid
+                                this.set(dateObject);
+                                return this;
+                            }
+
+                            break;
                         case 8:
                             temp[0] = date.slice(0, 4);
                             temp[1] = date.slice(4, 6);
@@ -871,7 +893,7 @@
                     for (index = 0; index < 3; index += 1) {
                         element = temp[index];
                         length = element.length;
-                        if ((index && length !== 2) || (!index && ((!signYear && length !== 4) || (signYear && length !== 5)))) {
+                        if ((index && length !== 2) || (!index && (length < 4 || (signYear === "+" && length === 4)))) {
                             //invalid
                             this.set(dateObject);
                             return this;
@@ -885,7 +907,9 @@
                         }
 
                         if (!index && signYear) {
-                            number *= signYear;
+                            if (signYear === "-") {
+                                number = -1 * number;
+                            }
                         }
 
                         date[fullKeys[index]] = number;
