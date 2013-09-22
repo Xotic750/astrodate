@@ -982,7 +982,24 @@
                 }
 
                 time = temp[0];
-                if (time.search(/[\.,:]/) === -1) {
+                if (time.indexOf(".") !== -1 || time.indexOf(",") !== -1) {
+                    temp = time.split(/[\.,]/);
+                    element = temp[1];
+                    if (temp.length !== 2 || element.split(":").length !== 1) {
+                        //invalid
+                        this.set(dateObject);
+                        return this;
+                    }
+
+                    time = temp[0];
+                    timeFraction = "0." + temp[1];
+                    found = true;
+                } else {
+                    timeFraction = "";
+                    found = false;
+                }
+
+                if (time.indexOf(":") === -1) {
                     temp = [];
                     switch (time.length) {
                     case 6:
@@ -993,72 +1010,41 @@
                     case 4:
                         temp[0] = time.slice(0, 2);
                         temp[1] = time.slice(2);
-                        temp[2] = "00";
                         break;
                     case 2:
                         temp[0] = time;
-                        temp[1] = "00";
-                        temp[2] = "00";
                         break;
                     default:
                         //invalid
                         this.set(dateObject);
                         return this;
                     }
-                } else if (time.search(/[\.,]/) !== -1) {
-                    temp = time.split(":");
-                    length = temp.length;
-                    if (length > 3) {
-                        //invalid
-                        this.set(dateObject);
-                        return this;
-                    }
-
-                    for (index = 0; index < length; index += 1) {
-                        element = temp[index];
-                        timeFraction = element.split(/[\.,]/);
-                        if (found || timeFraction.length > 2 || (timeFraction.length === 2 && (isNaN(intToNumber(timeFraction[0])) || isNaN(intToNumber(timeFraction[1]))))) {
-                            //invalid
-                            this.set(dateObject);
-                            return this;
-                        }
-
-                        if (timeFraction.length === 2) {
-
-                            found = true;
-                        }
-                    }
-
-                    temp = time.split(/[\.,:]/);
                 } else {
                     temp = time.split(":");
                 }
 
                 length = temp.length;
-                if (length < 2 || length > 5) {
+                if (length < 1 || length > 3) {
                     //invalid
                     this.set(dateObject);
                     return this;
                 }
 
                 if (found) {
-                    last = length - 1;
-                    element = temp[last];
-                    temp.pop();
                     switch (length) {
-                    case 2:
+                    case 1:
                         name = "hour";
                         break;
-                    case 3:
+                    case 2:
                         name = "minute";
                         break;
-                    case 4:
+                    case 3:
                         name = "second";
                         break;
                     default:
                     }
 
-                    temp = temp.concat(fractionToTime("0." + element, name).slice(last));
+                    temp = temp.concat(fractionToTime(timeFraction, name).slice(length));
                 } else {
                     if (length <= 3) {
                         temp.push("00");
