@@ -630,20 +630,19 @@
 
         function dateToObject(date) {
             var struct = {},
-                valid = isDateValid(date),
                 index,
                 key,
                 value;
 
+            if (!isDateValid(date)) {
+                return struct;
+            }
+
             for (index = 0; index < lengthFullKeys; index += 1) {
                 key = fullKeys[index];
-                if (valid) {
-                    value = date[dateMethods[index]]();
-                    if (key === "month") {
-                        value += 1;
-                    }
-                } else {
-                    value = NaN;
+                value = date[dateMethods[index].replace("UTC", "")]();
+                if (key === "month") {
+                    value += 1;
                 }
 
                 struct[key] = value;
@@ -656,16 +655,41 @@
             var date = new Date(),
                 index,
                 key,
-                value;
+                value,
+                last = lengthFullKeys - 1,
+                offset = struct[fullKeys[last]],
+                time = fractionToTime(Math.abs(offset), "minute"),
+                signOffset = 1;
+
+            if (offset < 0) {
+                signOffset = -1;
+            }
 
             for (index = 0; index < lengthFullKeys; index += 1) {
                 key = fullKeys[index];
-                value = struct[fullKeys[index]];
-                if (key === "month") {
+                value = struct[key];
+                switch (key) {
+                case "month":
                     value -= 1;
+                    break;
+                case "hour":
+                    value += signOffset * time[0];
+                    break;
+                case "minute":
+                    value += signOffset * time[1];
+                    break;
+                case "second":
+                    value += signOffset * time[2];
+                    break;
+                case "millisecond":
+                    value += signOffset * time[3];
+                    break;
+                default:
                 }
 
-                date[dateMethods[index]](value.toNumber());
+                if (index < last) {
+                    date[dateMethods[index].replace("get", "set")](value);
+                }
             }
 
             return date;
@@ -1209,9 +1233,7 @@
                     var unit = AstroDate.normaliseUnits(key),
                         value;
 
-                    if (unit === "date") {
-                        value = objectToDate(struct);
-                    } else if (unit === "struct") {
+                    if (unit === "struct") {
                         value = extend({}, struct);
                     } else if (unit) {
                         value = struct[unit];
@@ -1303,6 +1325,10 @@
 
             "toArray": function () {
                 return objectToArray(this.get("struct"));
+            },
+
+            "toDate": function () {
+                return objectToDate(this.get("struct"));
             },
 
             "timeTo": function (unit) {
