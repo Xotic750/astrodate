@@ -117,11 +117,35 @@
                 tz,
                 tz2,
                 formats,
-                index;
+                index,
+                year,
+                month,
+                day,
+                hour,
+                minute,
+                second,
+                millisecond,
+                sign;
 
-            test.expect(83 * repeat);
+            test.expect(82 * repeat);
             for (count = 0; count < repeat; count += 1) {
-                //offset = getRandomInt(-1440, 1440);
+                year = padLeadingZero(getRandomInt(0, 99999), 4);
+                if (year >= 10000) {
+                    sign = getRandomInt(0, 1);
+                    year = padLeadingZero(year, 5);
+                    if (sign) {
+                        year = "+" + year;
+                    } else {
+                        year = "-" + year;
+                    }
+                }
+
+                month = padLeadingZero(getRandomInt(1, 12), 2);
+                day = padLeadingZero(getRandomInt(1, daysInMonth(year, month)), 2);
+                hour = padLeadingZero(getRandomInt(0, 24), 2);
+                minute = padLeadingZero(getRandomInt(0, 59), 2);
+                second = padLeadingZero(getRandomInt(0, 59), 2);
+                millisecond = getRandomInt(0, 999).toString();
                 if (offset !== 0) {
                     hourOffset = (offset > 0) ? Math.floor(offset / 60) : Math.ceil(offset / 60);
                     minOffset = offset - (hourOffset * 60);
@@ -133,92 +157,75 @@
                 }
 
                 formats = [
-                    ["2011-10-08",                    "2011-10-08T00:00:00.000" + tz],
-                    ["2011-10-08T18",                 "2011-10-08T18:00:00.000" + tz],
-                    ["2011-10-08T18:04",              "2011-10-08T18:04:00.000" + tz],
-                    ["2011-10-08T18:04:20",           "2011-10-08T18:04:20.000" + tz],
-                    ["2011-10-08T18:04" + tz,         "2011-10-08T18:04:00.000" + tz],
-                    ["2011-10-08T18:04:20" + tz,      "2011-10-08T18:04:20.000" + tz],
-                    ["2011-10-08T18:04" + tz2,        "2011-10-08T18:04:00.000" + tz],
-                    ["2011-10-08T18:04:20" + tz2,     "2011-10-08T18:04:20.000" + tz],
-                    ["2011-10-08T18:04:20.1" + tz2,   "2011-10-08T18:04:20.100" + tz],
-                    ["2011-10-08T18:04:20.11" + tz2,  "2011-10-08T18:04:20.110" + tz],
-                    ["2011-10-08T18:04:20.111" + tz2, "2011-10-08T18:04:20.111" + tz],
-                    ["20111008",                      "2011-10-08T00:00:00.000" + tz],
-                    ["20111008T18",                   "2011-10-08T18:00:00.000" + tz],
-                    ["20111008T1804",                 "2011-10-08T18:04:00.000" + tz],
-                    ["20111008T180420",               "2011-10-08T18:04:20.000" + tz],
-                    ["20111008T1804" + tz,            "2011-10-08T18:04:00.000" + tz],
-                    ["20111008T180420" + tz,          "2011-10-08T18:04:20.000" + tz],
-                    ["20111008T1804" + tz2,           "2011-10-08T18:04:00.000" + tz],
-                    ["20111008T180420" + tz2,         "2011-10-08T18:04:20.000" + tz],
-                    ["20111008T180420.1" + tz2,       "2011-10-08T18:04:20.100" + tz],
-                    ["20111008T180420.11" + tz2,      "2011-10-08T18:04:20.110" + tz],
-                    ["20111008T180420.111" + tz2,     "2011-10-08T18:04:20.111" + tz],
+                    [year + "-" + month + "-" + day,                                                                        year + "-" + month + "-" + day + "T00:00:00.000" + tz],
+                    [year + "-" + month + "-" + day + "T" + hour,                                                           year + "-" + month + "-" + day + "T" + hour + ":00:00.000" + tz],
+                    [year + "-" + month + "-" + day + "T" + hour + ":" + minute,                                            year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":00.000" + tz],
+                    [year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second,                             year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + ".000" + tz],
+                    [year + "-" + month + "-" + day + "T" + hour + ":" + minute + tz,                                       year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":00.000" + tz],
+                    [year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + tz,                        year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + ".000" + tz],
+                    [year + "-" + month + "-" + day + "T" + hour + ":" + minute + tz2,                                      year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":00.000" + tz],
+                    [year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + tz2,                       year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + ".000" + tz],
+                    [year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + "." + millisecond + tz2,   year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + "." + millisecond.toFixed(3) + tz],
+                    [year + month + day,                                                                                    year + "-" + month + "-" + day + "T00:00:00.000" + tz],
+                    [year + month + day + "T" + hour,                                                                       year + "-" + month + "-" + day + "T" + hour + ":00:00.000" + tz],
+                    [year + month + day + "T" + hour + minute,                                                              year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":00.000" + tz],
+                    [year + month + day + "T" + hour + minute + second,                                                     year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + ".000" + tz],
+                    [year + month + day + "T" + hour + minute + tz,                                                         year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":00.000" + tz],
+                    [year + month + day + "T" + hour + minute + second + tz,                                                year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + ".000" + tz],
+                    [year + month + day + "T" + hour + minute + tz2,                                                        year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":00.000" + tz],
+                    [year + month + day + "T" + hour + minute + second + tz2,                                               year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + ".000" + tz],
+                    [year + month + day + "T" + hour + minute + second + "." + millisecond + tz2,                           year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + "." + millisecond.toFixed(3) + tz],
 
-                    ["2011-10-08T18Z",                 "2011-10-08T18:00:00.000Z"],
-                    ["2011-10-08T18:04Z",              "2011-10-08T18:04:00.000Z"],
-                    ["2011-10-08T18:04:20Z",           "2011-10-08T18:04:20.000Z"],
-                    ["2011-10-08T18:04Z",              "2011-10-08T18:04:00.000Z"],
-                    ["2011-10-08T18:04:20Z",           "2011-10-08T18:04:20.000Z"],
-                    ["2011-10-08T18:04Z",              "2011-10-08T18:04:00.000Z"],
-                    ["2011-10-08T18:04:20Z",           "2011-10-08T18:04:20.000Z"],
-                    ["2011-10-08T18:04:20.1Z",         "2011-10-08T18:04:20.100Z"],
-                    ["2011-10-08T18:04:20.11Z",        "2011-10-08T18:04:20.110Z"],
-                    ["2011-10-08T18:04:20.111Z",       "2011-10-08T18:04:20.111Z"],
-                    ["20111008T18Z",                   "2011-10-08T18:00:00.000Z"],
-                    ["20111008T1804Z",                 "2011-10-08T18:04:00.000Z"],
-                    ["20111008T180420Z",               "2011-10-08T18:04:20.000Z"],
-                    ["20111008T1804Z",                 "2011-10-08T18:04:00.000Z"],
-                    ["20111008T180420Z",               "2011-10-08T18:04:20.000Z"],
-                    ["20111008T1804Z",                 "2011-10-08T18:04:00.000Z"],
-                    ["20111008T180420Z",               "2011-10-08T18:04:20.000Z"],
-                    ["20111008T180420.1Z",             "2011-10-08T18:04:20.100Z"],
-                    ["20111008T180420.11Z",            "2011-10-08T18:04:20.110Z"],
-                    ["20111008T180420.111Z",           "2011-10-08T18:04:20.111Z"],
+                    [year + "-" + month + "-" + day + "T" + hour + "Z",                                                     year + "-" + month + "-" + day + "T" + hour + ":00:00.000Z"],
+                    [year + "-" + month + "-" + day + "T" + hour + ":" + minute + "Z",                                      year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":00.000Z"],
+                    [year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + "Z",                       year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + ".000Z"],
+                    [year + "-" + month + "-" + day + "T" + hour + ":" + minute + "Z",                                      year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":00.000Z"],
+                    [year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + "Z",                       year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + ".000Z"],
+                    [year + "-" + month + "-" + day + "T" + hour + ":" + minute + "Z",                                      year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":00.000Z"],
+                    [year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + "Z",                       year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + ".000Z"],
+                    [year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + "." + millisecond + "Z",   year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + "." + millisecond.toFixed(3) + "Z"],
+                    [year + month + day + "T" + hour + "Z",                                                                 year + "-" + month + "-" + day + "T" + hour + ":00:00.000Z"],
+                    [year + month + day + "T" + hour + minute + "Z",                                                        year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":00.000Z"],
+                    [year + month + day + "T" + hour + minute + second + "Z",                                               year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + ".000Z"],
+                    [year + month + day + "T" + hour + minute + "Z",                                                        year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":00.000Z"],
+                    [year + month + day + "T" + hour + minute + second + "Z",                                               year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + ".000Z"],
+                    [year + month + day + "T" + hour + minute + "Z",                                                        year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":00.000Z"],
+                    [year + month + day + "T" + hour + minute + second + "Z",                                               year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + ".000Z"],
+                    [year + month + day + "T" + hour + minute + second + "." + millisecond + "Z",                           year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + "." + millisecond.toFixed(3) + "Z"],
 
-                    ["2011-10-08 18",                 "2011-10-08T18:00:00.000" + tz],
-                    ["2011-10-08 18:04",              "2011-10-08T18:04:00.000" + tz],
-                    ["2011-10-08 18:04:20",           "2011-10-08T18:04:20.000" + tz],
-                    ["2011-10-08 18:04" + tz,         "2011-10-08T18:04:00.000" + tz],
-                    ["2011-10-08 18:04:20" + tz,      "2011-10-08T18:04:20.000" + tz],
-                    ["2011-10-08 18:04" + tz2,        "2011-10-08T18:04:00.000" + tz],
-                    ["2011-10-08 18:04:20" + tz2,     "2011-10-08T18:04:20.000" + tz],
-                    ["2011-10-08 18:04:20.1" + tz2,   "2011-10-08T18:04:20.100" + tz],
-                    ["2011-10-08 18:04:20.11" + tz2,  "2011-10-08T18:04:20.110" + tz],
-                    ["2011-10-08 18:04:20.111" + tz2, "2011-10-08T18:04:20.111" + tz],
-                    ["20111008",                      "2011-10-08T00:00:00.000" + tz],
-                    ["20111008 18",                   "2011-10-08T18:00:00.000" + tz],
-                    ["20111008 1804",                 "2011-10-08T18:04:00.000" + tz],
-                    ["20111008 180420",               "2011-10-08T18:04:20.000" + tz],
-                    ["20111008 1804" + tz,            "2011-10-08T18:04:00.000" + tz],
-                    ["20111008 180420" + tz,          "2011-10-08T18:04:20.000" + tz],
-                    ["20111008 1804" + tz2,           "2011-10-08T18:04:00.000" + tz],
-                    ["20111008 180420" + tz2,         "2011-10-08T18:04:20.000" + tz],
-                    ["20111008 180420.1" + tz2,       "2011-10-08T18:04:20.100" + tz],
-                    ["20111008 180420.11" + tz2,      "2011-10-08T18:04:20.110" + tz],
-                    ["20111008 180420.111" + tz2,     "2011-10-08T18:04:20.111" + tz],
+                    [year + "-" + month + "-" + day + " " + hour,                                                           year + "-" + month + "-" + day + "T" + hour + ":00:00.000" + tz],
+                    [year + "-" + month + "-" + day + " " + hour + ":" + minute,                                            year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":00.000" + tz],
+                    [year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second,                             year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + ".000" + tz],
+                    [year + "-" + month + "-" + day + " " + hour + ":" + minute + tz,                                       year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":00.000" + tz],
+                    [year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second + tz,                        year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + ".000" + tz],
+                    [year + "-" + month + "-" + day + " " + hour + ":" + minute + tz2,                                      year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":00.000" + tz],
+                    [year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second + tz2,                       year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + ".000" + tz],
+                    [year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second + "." + millisecond + tz2,   year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + "." + millisecond.toFixed(3) + tz],
+                    [year + month + day + " " + hour,                                                                       year + "-" + month + "-" + day + "T" + hour + ":00:00.000" + tz],
+                    [year + month + day + " " + hour + minute,                                                              year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":00.000" + tz],
+                    [year + month + day + " " + hour + minute + second,                                                     year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + ".000" + tz],
+                    [year + month + day + " " + hour + minute + tz,                                                         year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":00.000" + tz],
+                    [year + month + day + " " + hour + minute + second + tz,                                                year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + ".000" + tz],
+                    [year + month + day + " " + hour + minute + tz2,                                                        year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":00.000" + tz],
+                    [year + month + day + " " + hour + minute + second + tz2,                                               year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + ".000" + tz],
+                    [year + month + day + " " + hour + minute + second + "." + millisecond + tz2,                           year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + "." + millisecond.toFixed(3) + tz],
 
-                    ["2011-10-08 18Z",                 "2011-10-08T18:00:00.000Z"],
-                    ["2011-10-08 18:04Z",              "2011-10-08T18:04:00.000Z"],
-                    ["2011-10-08 18:04:20Z",           "2011-10-08T18:04:20.000Z"],
-                    ["2011-10-08 18:04Z",              "2011-10-08T18:04:00.000Z"],
-                    ["2011-10-08 18:04:20Z",           "2011-10-08T18:04:20.000Z"],
-                    ["2011-10-08 18:04Z",              "2011-10-08T18:04:00.000Z"],
-                    ["2011-10-08 18:04:20Z",           "2011-10-08T18:04:20.000Z"],
-                    ["2011-10-08 18:04:20.1Z",         "2011-10-08T18:04:20.100Z"],
-                    ["2011-10-08 18:04:20.11Z",        "2011-10-08T18:04:20.110Z"],
-                    ["2011-10-08 18:04:20.111Z",       "2011-10-08T18:04:20.111Z"],
-                    ["20111008 18Z",                   "2011-10-08T18:00:00.000Z"],
-                    ["20111008 1804Z",                 "2011-10-08T18:04:00.000Z"],
-                    ["20111008 180420Z",               "2011-10-08T18:04:20.000Z"],
-                    ["20111008 1804Z",                 "2011-10-08T18:04:00.000Z"],
-                    ["20111008 180420Z",               "2011-10-08T18:04:20.000Z"],
-                    ["20111008 1804Z",                 "2011-10-08T18:04:00.000Z"],
-                    ["20111008 180420Z",               "2011-10-08T18:04:20.000Z"],
-                    ["20111008 180420.1Z",             "2011-10-08T18:04:20.100Z"],
-                    ["20111008 180420.11Z",            "2011-10-08T18:04:20.110Z"],
-                    ["20111008 180420.111Z",           "2011-10-08T18:04:20.111Z"]
+                    [year + "-" + month + "-" + day + " " + hour + "Z",                                                     year + "-" + month + "-" + day + "T" + hour + ":00:00.000Z"],
+                    [year + "-" + month + "-" + day + " " + hour + ":" + minute + "Z",                                      year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":00.000Z"],
+                    [year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second + "Z",                       year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + ".000Z"],
+                    [year + "-" + month + "-" + day + " " + hour + ":" + minute + "Z",                                      year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":00.000Z"],
+                    [year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second + "Z",                       year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + ".000Z"],
+                    [year + "-" + month + "-" + day + " " + hour + ":" + minute + "Z",                                      year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":00.000Z"],
+                    [year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second + "Z",                       year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + ".000Z"],
+                    [year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second + "." + millisecond + "Z",   year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + "." + millisecond.toFixed(3) + "Z"],
+                    [year + month + day + " " + hour + "Z",                                                                 year + "-" + month + "-" + day + "T" + hour + ":00:00.000Z"],
+                    [year + month + day + " " + hour + minute + "Z",                                                        year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":00.000Z"],
+                    [year + month + day + " " + hour + minute + second + "Z",                                               year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + ".000Z"],
+                    [year + month + day + " " + hour + minute + "Z",                                                        year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":00.000Z"],
+                    [year + month + day + " " + hour + minute + second + "Z",                                               year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + ".000Z"],
+                    [year + month + day + " " + hour + minute + "Z",                                                        year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":00.000Z"],
+                    [year + month + day + " " + hour + minute + second + "Z",                                               year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + ".000Z"],
+                    [year + month + day + " " + hour + minute + second + "." + millisecond + "Z",                           year + "-" + month + "-" + day + "T" + hour + ":" + minute + ":" + second + "." + millisecond.toFixed(3) + "Z"]
                 ];
 
                 for (index = 0; index < formats.length; index += 1) {
