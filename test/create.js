@@ -119,6 +119,7 @@
                 formats,
                 index;
 
+            test.expect(83 * repeat);
             for (count = 0; count < repeat; count += 1) {
                 //offset = getRandomInt(-1440, 1440);
                 if (offset !== 0) {
@@ -220,13 +221,12 @@
                     ["20111008 180420.111Z",           "2011-10-08T18:04:20.111Z"]
                 ];
 
-                test.expect(formats.length);
                 for (index = 0; index < formats.length; index += 1) {
                     test.equal(new AstroDate(formats[index][0]).toString(), formats[index][1], "AstroDate should be able to parse ISO " + formats[index][0]);
                 }
-
-                test.done();
             }
+
+            test.done();
         }
     };
 }());
