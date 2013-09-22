@@ -938,7 +938,22 @@
                 }
 
                 if (length === 1) {
-                    offset.push("00");
+                    element = offset[0];
+                    length = offset[0].length;
+                    switch (length) {
+                    case 4:
+                        offset[0] = element.slice(0, 2);
+                        offset[1] = element.slice(2);
+                        break;
+                    case 2:
+                        offset[0] = element;
+                        offset[1] = "00";
+                        break;
+                    default:
+                        //invalid
+                        this.set(dateObject);
+                        return this;
+                    }
                 }
 
                 for (index = 0; index < 2; index += 1) {
@@ -951,7 +966,7 @@
                     }
 
                     number = intToNumber(element);
-                    if (isNaN(number)) {
+                    if (isNaN(number) || number < -1440 || number > 1440) {
                         //invalid
                         this.set(dateObject);
                         return this;
@@ -1069,7 +1084,7 @@
                         found = true;
                     }
 
-                    if (isNaN(number) || number < 0 || (found && index && number > 0) || (!index && number > 24) || (index > 0 && index < 4 && number > 59) || (index === 4 && number >= 1000)) {
+                    if (isNaN(number) || number < 0 || (found && index && number > 0) || (!index && number > 24) || (index > 0 && index < 3 && number > 59) || (index === 4 && number >= 1000)) {
                         //invalid
                         this.set(dateObject);
                         return this;
