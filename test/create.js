@@ -127,7 +127,7 @@
                 millisecond,
                 sign;
 
-            test.expect(82 * repeat);
+            test.expect(66 * repeat);
             for (count = 0; count < repeat; count += 1) {
                 year = padLeadingZero(getRandomInt(0, 99999), 4);
                 if (year >= 10000) {
@@ -145,7 +145,7 @@
                 hour = padLeadingZero(getRandomInt(0, 24), 2);
                 minute = padLeadingZero(getRandomInt(0, 59), 2);
                 second = padLeadingZero(getRandomInt(0, 59), 2);
-                millisecond = getRandomInt(0, 999).toString();
+                millisecond = getRandomInt(0, 999);
                 if (offset !== 0) {
                     hourOffset = (offset > 0) ? Math.floor(offset / 60) : Math.ceil(offset / 60);
                     minOffset = offset - (hourOffset * 60);
