@@ -29,7 +29,7 @@
         bigNumberString = bigNumberFunc.toLocaleLowerCase();
 
     (function (name, definition) {
-        if (module !== local_undefined && module.exports) {
+        if (typeof module === "object" && module && typeof module.exports === "object") {
             module.exports = definition(require("./node_modules/" + bigNumberString + ".js"));
         } else if (typeof global.define === "function" && global.define.amd) {
             var projectPaths = {},
