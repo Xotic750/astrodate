@@ -1448,44 +1448,46 @@
                     }
                 },
 
-                "setter": function (key, value) {
-                    var unit = AstroDate.normaliseUnits(key),
-                        number;
+                "setter": {
+                    "value": function (key, value) {
+                        var unit = AstroDate.normaliseUnits(key),
+                            number;
 
-                    if (unitsLookup[unit]) {
-                        number = +value;
-                        if (!isValidValue(value)) {
-                            if (number === 0 || isNaN(number)) {
-                                number = NaN;
+                        if (unitsLookup[unit]) {
+                            number = +value;
+                            if (!isValidValue(value)) {
+                                if (number === 0 || isNaN(number)) {
+                                    number = NaN;
+                                }
+
+                                if (unit !== "year" && unit !== "month" && unit !== "day") {
+                                    number = number || 0;
+                                }
                             }
 
-                            if (unit !== "year" && unit !== "month" && unit !== "day") {
-                                number = number || 0;
-                            }
-                        }
-
-                        struct[unit] = number;
-                    } else if (isArray(key)) {
-                        struct = arrayToObject(key);
-                    } else if (AstroDate.isAstroDate(key)) {
-                        struct = arrayToObject(key.valueOf());
-                    } else if (isDate(key)) {
-                        struct = dateToObject(key);
-                    } else if (typeof key === "string") {
-                        if (key === "struct") {
-                            if (isValid(value)) {
-                                struct = extend({}, value);
+                            struct[unit] = number;
+                        } else if (isArray(key)) {
+                            struct = arrayToObject(key);
+                        } else if (AstroDate.isAstroDate(key)) {
+                            struct = arrayToObject(key.valueOf());
+                        } else if (isDate(key)) {
+                            struct = dateToObject(key);
+                        } else if (typeof key === "string") {
+                            if (key === "struct") {
+                                if (isValid(value)) {
+                                    struct = extend({}, value);
+                                } else {
+                                    throw new SyntaxError();
+                                }
                             } else {
-                                throw new SyntaxError();
+                                struct = new ISO(key).valueOf();
                             }
                         } else {
-                            struct = new ISO(key).valueOf();
+                            throw new SyntaxError();
                         }
-                    } else {
-                        throw new SyntaxError();
-                    }
 
-                    return this;
+                        return this;
+                    }
                 }
             });
 
