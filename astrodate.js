@@ -1818,4 +1818,4 @@
 
         return AstroDate;
     }));
-}(this, void(0)));
+}(window, void(0)));
