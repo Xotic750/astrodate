@@ -79,18 +79,6 @@
 
                 fullArray.push(getRandomInt(-1440, 1440));
                 fullArrayLength = fullArray.length;
-                tObject = {
-                    "year": fullArray[0],
-                    "month": fullArray[1],
-                    "day": fullArray[2],
-                    "hour": fullArray[3],
-                    "minute": fullArray[4],
-                    "second": fullArray[5],
-                    "millisecond": fullArray[6],
-                    "offset": fullArray[7]
-                };
-
-                json = JSON.stringify(tObject);
                 for (index = 0; index < fullArrayLength; index += 1) {
                     fullArrayString[index] = fullArray[index].toString();
                 }
@@ -98,6 +86,18 @@
                 for (index = 1; index < fullArrayLength; index += 1) {
                     end = -index;
                     slice = fullArray.slice(0, end).concat(zeroArray.slice(end));
+                    tObject = {
+                        "year": slice[0],
+                        "month": slice[1],
+                        "day": slice[2],
+                        "hour": slice[3],
+                        "minute": slice[4],
+                        "second": slice[5],
+                        "millisecond": slice[6],
+                        "offset": slice[7]
+                    };
+
+                    json = JSON.stringify(tObject);
                     astrodate = new AstroDate(fullArray.slice(0, end));
                     test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")Number: isAstrodate");
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")Number: isValid");
