@@ -705,6 +705,29 @@
             return [padLeadingZero(hour.toNumber(), 2), padLeadingZero(minute.toNumber(), 2), padLeadingZero(second.toNumber(), 2), padLeadingZero(millisecond.toNumber(), 3)];
         }
 
+        function isValid(struct) {
+            if (!isObject(struct)) {
+                return false;
+            }
+
+            var count = 0,
+                element,
+                prop;
+
+            for (prop in struct) {
+                if (hasOwnProperty(struct, prop)) {
+                    element = struct[prop];
+                    if (!isNumber(element) || !isFinite(element)) {
+                        return false;
+                    }
+
+                    count += 1;
+                }
+            }
+
+            return count !== 0;
+        }
+
         function arrayToObject(arr) {
             var length = arr.length,
                 struct = {},
@@ -823,6 +846,10 @@
                 index,
                 value;
 
+            if (!isValid(struct)) {
+                return arr;
+            }
+
             for (index = 0; index < lengthFullKeys; index += 1) {
                 value = struct[fullKeys[index]];
                 if (!isUndefined(value)) {
@@ -857,6 +884,10 @@
         }
 
         function objectToDate(struct) {
+            if (!isValid(struct)) {
+                return new Date(NaN);
+            }
+
             var date = new Date(),
                 index,
                 key,
@@ -900,12 +931,12 @@
             return date;
         }
 
-        function toISOString(date) {
-            if (!date.isValid()) {
+        function toISOString(astrodate) {
+            if (!astrodate.isValid()) {
                 return "Invalid Date";
             }
 
-            var struct = date.getter(),
+            var struct = astrodate.getter(),
                 string = "",
                 index = 0,
                 count,
@@ -984,7 +1015,11 @@
 
                 "setter": {
                     "value": function (newIsoObject) {
-                        isoObject = extend({}, newIsoObject);
+                        if (isValid(newIsoObject)) {
+                            isoObject = extend({}, newIsoObject);
+                        } else {
+                            isoObject = {};
+                        }
 
                         return this;
                     }
@@ -998,7 +1033,7 @@
             "parse": {
                 "value": function parse(isoString) {
                     var dateObject = {},
-                        getTimezoneOffset = new Date().getTimezoneOffset(),
+                        getTimezoneOffset,
                         signYear,
                         temp,
                         last,
@@ -1017,6 +1052,11 @@
                         name,
                         value;
 
+                    if (!isString(isoString)) {
+                        return dateObject;
+                    }
+
+                    getTimezoneOffset = new Date().getTimezoneOffset();
                     temp = trim(isoString).split(/[T ]/);
                     length = temp.length;
                     if (length < 1 || length > 2) {
@@ -1357,28 +1397,8 @@
             },
 
             "isValid": {
-                "value": function isValid() {
-                    var isoObject = this.getter(),
-                        count = 0,
-                        element,
-                        prop;
-
-                    if (!isObject(isoObject)) {
-                        return false;
-                    }
-
-                    for (prop in isoObject) {
-                        if (hasOwnProperty(isoObject, prop)) {
-                            element = isoObject[prop];
-                            if (!isNumber(element) || !isFinite(element)) {
-                                return false;
-                            }
-
-                            count += 1;
-                        }
-                    }
-
-                    return count !== 0;
+                "value": function () {
+                    return isValid(this.getter());
                 }
             },
 
@@ -1453,7 +1473,11 @@
                         struct = dateToObject(key);
                     } else if (typeof key === "string") {
                         if (key === "struct") {
-                            struct = extend({}, value);
+                            if (isValid(value)) {
+                                struct = extend({}, value);
+                            } else {
+                                throw new SyntaxError();
+                            }
                         } else {
                             struct = new ISO(key).valueOf();
                         }
@@ -1500,28 +1524,8 @@
 
         defineProperties(AstroDate.prototype, {
             "isValid": {
-                "value": function isValid() {
-                    var structObject = this.getter(),
-                        count = 0,
-                        element,
-                        prop;
-
-                    if (!isObject(structObject)) {
-                        return false;
-                    }
-
-                    for (prop in structObject) {
-                        if (hasOwnProperty(structObject, prop)) {
-                            element = structObject[prop];
-                            if (!isNumber(element) || !isFinite(element)) {
-                                return false;
-                            }
-
-                            count += 1;
-                        }
-                    }
-
-                    return count !== 0;
+                "value": function () {
+                    return isValid(this.getter());
                 }
             },
 
@@ -1549,15 +1553,25 @@
                 }
             },
 
-            "toArray": {
-                "value": function () {
-                    return objectToArray(this.getter());
+            "array": {
+                "value": function (astroArray) {
+                    if (isUndefined(astroArray)) {
+                        return objectToArray(this.getter());
+                    }
+
+                    this.setter("struct", arrayToObject(astroArray));
+
+                    return this;
                 }
             },
 
-            "toDate": {
-                "value": function () {
-                    return objectToDate(this.getter());
+            "date": {
+                "value": function (date) {
+                    if (isUndefined(date)) {
+                        return objectToDate(this.getter());
+                    }
+
+                    return this.setter(date);
                 }
             },
 
