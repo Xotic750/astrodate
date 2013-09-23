@@ -56,7 +56,7 @@
                 json;
                 //date;
 
-            test.expect(24 * (zeroArray.length - 1) * repeat);
+            test.expect(25 * (zeroArray.length - 1) * repeat);
             for (count = 0; count < repeat; count += 1) {
                 fullArray.length = 0;
                 fullArrayString.length = 0;
@@ -140,6 +140,9 @@
                     test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")String astrodate: Arrays are the same");
                     //test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")String astrodate: dates are the same");
                     test.equal(astrodate.json(), json, "(" + count + "/" + index + ")String astrodate: JSON are the same: ");
+
+                    astrodate = new AstroDate().json(json);
+                    test.equal(astrodate.json(), json, "(" + count + "/" + index + ")JSON parse: JSON are the same: ");
                 }
             }
 
