@@ -88,7 +88,7 @@
                     test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")Number: isAstrodate");
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")Number: isValid");
                     test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")Number: Arrays are the same");
-                    date = new Date(slice[0], slice[1] - 1, slice[2], slice[3], slice[4], slice[5], slice[6], slice[7]).getTime() + (slice[slice.length - 1] * 60 * 1000);
+                    date = new Date(Date.UTC(slice[0], slice[1] - 1, slice[2], slice[3], slice[4], slice[5], slice[6], slice[7])).getTime() + (slice[slice.length - 1] * 60 * 1000);
                     test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")Number date: Dates are the same");
 
                     astrodate = new AstroDate().array(fullArray.slice(0, end));
