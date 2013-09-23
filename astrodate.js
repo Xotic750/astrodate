@@ -1731,42 +1731,55 @@
                 "value": function (dayFraction) {
                     return dayFractionToTime(dayFraction);
                 }
-            }
-        });
+            },
 
-        if (JSON && isFunction(JSON.stringify) && isFunction(JSON.parse)) {
-            defineProperties(AstroDate.prototype, {
-                "json": {
-                    "value": function (jsonString) {
-                        var struct = {},
-                            parsedObject,
-                            astrodate;
+            "json": {
+                "value": function (jsonString) {
+                    var struct,
+                        prop,
+                        propArray,
+                        str;
 
-                        if (typeof jsonString === "string") {
-                            parsedObject = JSON.parse(jsonString);
-                            if (isObject(parsedObject)) {
-                                astrodate = new AstroDate(parsedObject);
-                                if (astrodate.isValid()) {
-                                    struct = astrodate.valueOf();
+                    if (isUndefined(jsonString)) {
+                        struct = this.getter();
+                        if (isFunction(JSON.stringify)) {
+                            str = JSON.stringify(struct);
+                        } else {
+                            propArray = [];
+                            for (prop in struct) {
+                                if (hasOwnProperty(struct, prop)) {
+                                    propArray.push('"' + prop + '":' + struct[prop]);
                                 }
-
-                                throw new SyntaxError();
                             }
 
-                            this.setter("struct", struct);
-
-                            return this;
+                            str = "{" + propArray.join(",") + "}";
                         }
 
-                        if (isUndefined(jsonString)) {
-                            return JSON.stringify(this.getter());
-                        }
-
-                        throw new TypeError();
+                        return str;
                     }
+
+                    if (isString(jsonString)) {
+                        if (isFunction(JSON.parse)) {
+                            struct = JSON.parse(jsonString);
+                        } else {
+                            /*jslint evil: true */
+                            struct = (new Function("return" + jsonString)());
+                            /*jslint evil:   false */
+                        }
+
+                        if (!isValid(struct)) {
+                            throw new SyntaxError();
+                        }
+
+                        this.setter("struct", struct);
+
+                        return this;
+                    }
+
+                    throw new TypeError();
                 }
-            });
-        }
+            }
+        });
 
         defineProperties(AstroDate, {
             "version": {
