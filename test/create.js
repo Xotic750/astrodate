@@ -106,7 +106,7 @@
                     if (slice[0] >= 0 && slice[0] < 10000) {
                         test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")Number date: Dates are the same: " + slice);
                     } else {
-                        test.deepEqual(NaN, date, "year outside of Date capability");
+                        test.ok(isNaN(date), "year should be outside of Date capability");
                     }
 
                     test.equal(astrodate.json(), json, "(" + count + "/" + index + ")Number: JSON are the same: ");
@@ -118,7 +118,7 @@
                     if (slice[0] >= 0 && slice[0] < 10000) {
                         test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")Number array date: Dates are the same");
                     } else {
-                        test.deepEqual(NaN, date, "year outside of Date capability");
+                        test.ok(isNaN(date), "year should be outside of Date capability");
                     }
 
                     test.equal(astrodate.json(), json, "(" + count + "/" + index + ")Number array: JSON are the same: ");
@@ -130,7 +130,7 @@
                     if (slice[0] >= 0 && slice[0] < 10000) {
                         test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")Number astrodate date: dates are the same");
                     } else {
-                        test.deepEqual(NaN, date, "year outside of Date capability");
+                        test.ok(isNaN(date), "year should be outside of Date capability");
                     }
 
                     test.equal(astrodate.json(), json, "(" + count + "/" + index + ")Number astrodate: JSON are the same: ");
@@ -142,7 +142,7 @@
                     if (slice[0] >= 0 && slice[0] < 10000) {
                         test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")String date: dates are the same");
                     } else {
-                        test.deepEqual(NaN, date, "year outside of Date capability");
+                        test.ok(isNaN(date), "year should be outside of Date capability");
                     }
 
                     test.equal(astrodate.json(), json, "(" + count + "/" + index + ")String: JSON are the same: ");
@@ -154,7 +154,7 @@
                     if (slice[0] >= 0 && slice[0] < 10000) {
                         test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")String array date: dates are the same");
                     } else {
-                        test.deepEqual(NaN, date, "year outside of Date capability");
+                        test.ok(isNaN(date), "year should be outside of Date capability");
                     }
 
                     test.equal(astrodate.json(), json, "(" + count + "/" + index + ")String array: JSON are the same: ");
@@ -166,7 +166,7 @@
                     if (slice[0] >= 0 && slice[0] < 10000) {
                         test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")String astrodate: dates are the same");
                     } else {
-                        test.deepEqual(NaN, date, "year outside of Date capability");
+                        test.ok(isNaN(date), "year should be outside of Date capability");
                     }
 
                     test.equal(astrodate.json(), json, "(" + count + "/" + index + ")String astrodate: JSON are the same: ");
