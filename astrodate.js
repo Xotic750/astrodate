@@ -39,6 +39,8 @@
             toStringFN = {}.toString,
             dateObjectString = "[object Date]",
             arrayObjectString = "[object Array]",
+            objectObjectString = "[object Object]",
+            functionObjectString = "[object Function]",
             fullKeys = ["year", "month", "day", "hour", "minute", "second", "millisecond", "offset"],
             aliases = ["y", "M", "d", "h", "m", "s", "ms", "o"],
             dateMethods = ["getUTCFullYear", "getUTCMonth", "getUTCDate", "getUTCHours", "getUTCMinutes", "getUTCSeconds", "getUTCMilliseconds", "getTimezoneOffset"],
@@ -54,6 +56,10 @@
         for (indexFullKeys = 0; indexFullKeys < lengthFullKeys; indexFullKeys += 1) {
             unitAliases[aliases[indexFullKeys]] = fullKeys[indexFullKeys];
             unitsLookup[fullKeys[indexFullKeys]] = true;
+        }
+
+        function isUndefined(inputArg) {
+            return inputArg === undef;
         }
 
         extend = (function () {
@@ -176,7 +182,7 @@
                         return new BigNumber(NaN);
                     }
 
-                    if (exponentialAt === undef) {
+                    if (isUndefined(exponentialAt)) {
                         exponentialAt = BigNumber.config().EXPONENTIAL_AT[1];
                     }
 
@@ -259,7 +265,7 @@
                 var piLookup = {};
 
                 return function (decimalPlaces) {
-                    if (decimalPlaces === undef) {
+                    if (isUndefined(decimalPlaces)) {
                         decimalPlaces = BigNumber.config().DECIMAL_PLACES;
                     }
 
@@ -385,15 +391,23 @@
         }
 
         function isArray(inputArg) {
-            return inputArg && typeof inputArg === "object" && toStringFN.call(inputArg) === arrayObjectString;
+            return inputArg !== null && typeof inputArg === "object" && toStringFN.call(inputArg) === arrayObjectString;
+        }
+
+        function isObject(inputArg) {
+            return inputArg !== null && typeof inputArg === "object" && toStringFN.call(inputArg) === objectObjectString;
         }
 
         function isDate(inputArg) {
-            return inputArg && typeof inputArg === "object" && toStringFN.call(inputArg) === dateObjectString;
+            return inputArg !== null && typeof inputArg === "object" && toStringFN.call(inputArg) === dateObjectString;
+        }
+
+        function isFunction(inputArg) {
+            return inputArg !== null && (typeof inputArg === "function" || (typeof inputArg === "object" && toStringFN.call(inputArg) === functionObjectString));
         }
 
         function isDateValid(inputArg) {
-            return inputArg && isDate(inputArg) && !isNaN(inputArg.getTime());
+            return isDate(inputArg) && !isNaN(inputArg.getTime());
         }
 
         function isDigit(character) {
@@ -605,7 +619,7 @@
                     number = undef;
                 }
 
-                if (number !== undef) {
+                if (!isUndefined(number)) {
                     struct[fullKeys[index]] = number;
                 }
             }
@@ -620,7 +634,7 @@
 
             for (index = 0; index < lengthFullKeys; index += 1) {
                 value = struct[fullKeys[index]];
-                if (value !== undef) {
+                if (!isUndefined(value)) {
                     arr.push(value);
                 }
             }
@@ -709,7 +723,7 @@
                 signYear;
 
             for (count = 0; count < 3; count += 1) {
-                if (date.get(fullKeys[count]) === undef) {
+                if (isUndefined(date.get(fullKeys[count]))) {
                     index = 3;
                     break;
                 }
@@ -1269,7 +1283,7 @@
                         struct = dateToObject(new Date(arg));
                     } else if (type === "string") {
                         struct = new ISO(arg).valueOf();
-                    } else if (arg !== null && type === "object") {
+                    } else if (isObject(arg)) {
                         struct = arg;
                         if (!this.isValid()) {
                             struct = {};
@@ -1381,7 +1395,7 @@
                     time,
                     julian;
 
-                if (julianDay === undef) {
+                if (isUndefined(julianDay)) {
                     year = bignumber(this.get("year"));
                     month = bignumber(this.get("month"));
                     if (month.lte(2)) {
@@ -1467,7 +1481,7 @@
             }
         });
 
-        if (JSON && typeof JSON.stringify === "function" && typeof JSON.parse === "function") {
+        if (JSON && isFunction(JSON.stringify) && isFunction(JSON.parse)) {
             extend(AstroDate.prototype, {
                 "json": function (jsonString) {
                     var struct = {},
@@ -1476,7 +1490,7 @@
 
                     if (typeof jsonString === "string") {
                         parsedObject = JSON.parse(jsonString);
-                        if (parsedObject !== null && typeof parsedObject === "object") {
+                        if (isObject(parsedObject)) {
                             astrodate = new AstroDate(parsedObject);
                             if (astrodate.isValid()) {
                                 struct = astrodate.valueOf();
@@ -1490,7 +1504,7 @@
                         return this;
                     }
 
-                    if (jsonString === undef) {
+                    if (isUndefined(jsonString)) {
                         return JSON.stringify(this.get("struct"));
                     }
 
@@ -1518,7 +1532,7 @@
             },
 
             "isAstroDate": function (inputArg) {
-                return inputArg && typeof inputArg === "object" && inputArg instanceof AstroDate;
+                return isObject(inputArg) && inputArg instanceof AstroDate;
             },
 
             "monthOfYear": function (month) {
