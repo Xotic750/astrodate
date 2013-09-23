@@ -36,7 +36,9 @@
         });
 
         var VERSION = "0.1.1",
-            toStringFN = {}.toString,
+            baseObject = {},
+            baseArray = [],
+            toStringFN = baseObject.toString,
             dateObjectString = "[object Date]",
             arrayObjectString = "[object Array]",
             objectObjectString = "[object Object]",
@@ -51,7 +53,13 @@
             unitsLookup = {},
             lengthFullKeys = fullKeys.length,
             indexFullKeys,
-            extend;
+            extend,
+            hasOwnPropertyFn = baseObject.hasOwnProperty, // to combat old IE8- issues, min support IE6,
+            indexOfFn = baseArray.indexOf,
+            defineProperty = baseObject.constructor.defineProperty,
+            hasDefineProperty,
+            hasOwnProperty,
+            indexOf;
 
         for (indexFullKeys = 0; indexFullKeys < lengthFullKeys; indexFullKeys += 1) {
             unitAliases[aliases[indexFullKeys]] = fullKeys[indexFullKeys];
@@ -60,6 +68,81 @@
 
         function isUndefined(inputArg) {
             return inputArg === undef;
+        }
+
+        function trim(str) {
+            return str.replace(/^\s+|\s+$/g, "");
+        }
+
+        function isArray(inputArg) {
+            return inputArg !== null && typeof inputArg === "object" && toStringFN.call(inputArg) === arrayObjectString;
+        }
+
+        function isObject(inputArg) {
+            return inputArg !== null && typeof inputArg === "object" && toStringFN.call(inputArg) === objectObjectString;
+        }
+
+        function isDate(inputArg) {
+            return inputArg !== null && typeof inputArg === "object" && toStringFN.call(inputArg) === dateObjectString;
+        }
+
+        function isFunction(inputArg) {
+            return inputArg !== null && (typeof inputArg === "function" || (typeof inputArg === "object" && toStringFN.call(inputArg) === functionObjectString));
+        }
+
+        // http://ecma-international.org/ecma-262/5.1/#sec-15.2.4.5
+        // Create our own local "hasOwnProperty" function: native -> fallback
+        if (isFunction(hasOwnPropertyFn)) {
+            hasOwnProperty = function (object, property) {
+                return hasOwnPropertyFn.call(object, property);
+            };
+        } else {
+            hasOwnProperty = function (object, property) {
+                return (property in object) && (isUndefined(object.constructor.prototype[property]));
+            };
+        }
+
+        // http://ecma-international.org/ecma-262/5.1/#sec-15.4.4.14
+        // Create our own local "indexOf" function: native -> polyfill
+        if (isFunction(indexOfFn)) {
+            indexOf = function (array, searchElement) {
+                return indexOfFn.call(array, searchElement);
+            };
+        } else {
+            indexOf = function (array, searchElement) {
+                var length,
+                    key;
+
+                for (key = 0, length = array.length; key < length; key += 1) {
+                    if (hasOwnProperty(array, key) && searchElement === array[key]) {
+                        return key;
+                    }
+                }
+
+                return -1;
+            };
+        }
+
+        // http://ecma-international.org/ecma-262/5.1/#sec-15.4.4.14
+        // Create our own local "defineProperty" function: native -> none
+        if (isFunction(defineProperty)) {
+            try {
+                defineProperty({}, "sentinel", {});
+                hasDefineProperty = true;
+            } catch (exception) {
+                defineProperty = null;
+            }
+        }
+
+        if (typeof defineProperty !== "function") {
+            hasDefineProperty = false;
+            defineProperty = function (object, property, descriptor) {
+                if (hasOwnProperty(descriptor, "value")) {
+                    object[property] = descriptor.value;
+                } else {
+                    object[property] = descriptor.get();
+                }
+            };
         }
 
         extend = (function () {
@@ -384,26 +467,6 @@
             }
 
             return bn;
-        }
-
-        function trim(str) {
-            return str.replace(/^\s+|\s+$/g, "");
-        }
-
-        function isArray(inputArg) {
-            return inputArg !== null && typeof inputArg === "object" && toStringFN.call(inputArg) === arrayObjectString;
-        }
-
-        function isObject(inputArg) {
-            return inputArg !== null && typeof inputArg === "object" && toStringFN.call(inputArg) === objectObjectString;
-        }
-
-        function isDate(inputArg) {
-            return inputArg !== null && typeof inputArg === "object" && toStringFN.call(inputArg) === dateObjectString;
-        }
-
-        function isFunction(inputArg) {
-            return inputArg !== null && (typeof inputArg === "function" || (typeof inputArg === "object" && toStringFN.call(inputArg) === functionObjectString));
         }
 
         function isDateValid(inputArg) {
