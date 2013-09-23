@@ -172,7 +172,7 @@
                     dontEnum;
 
                 for (name in withObject) {
-                    if (withObject.hasOwnProperty(name)) {
+                    if (hasOwnProperty(withObject, name)) {
                         thisObject[name] = withObject[name];
                     }
                 }
@@ -289,7 +289,7 @@
                         config = BigNumber.config();
                         previousConfig = {};
                         for (prop in config) {
-                            if (config.hasOwnProperty(prop)) {
+                            if (hasOwnProperty(config, prop)) {
                                 previousConfig[prop] = config[prop];
                             }
                         }
@@ -308,7 +308,7 @@
                         }
 
                         for (prop in previousConfig) {
-                            if (previousConfig.hasOwnProperty(prop)) {
+                            if (hasOwnProperty(previousConfig, prop)) {
                                 config[prop] = previousConfig[prop];
                             }
                         }
@@ -375,7 +375,7 @@
                         config = BigNumber.config();
                         previousConfig = {};
                         for (prop in config) {
-                            if (config.hasOwnProperty(prop)) {
+                            if (hasOwnProperty(config, prop)) {
                                 previousConfig[prop] = config[prop];
                             }
                         }
@@ -402,7 +402,7 @@
                         }
 
                         for (prop in previousConfig) {
-                            if (previousConfig.hasOwnProperty(prop)) {
+                            if (hasOwnProperty(previousConfig, prop)) {
                                 config[prop] = previousConfig[prop];
                             }
                         }
@@ -1230,7 +1230,7 @@
                 }
 
                 for (prop in isoObject) {
-                    if (isoObject.hasOwnProperty(prop)) {
+                    if (hasOwnProperty(isoObject, prop)) {
                         element = isoObject[prop];
                         if (typeof element !== "number" || !isFinite(element)) {
                             return false;
@@ -1374,7 +1374,7 @@
                 }
 
                 for (prop in structObject) {
-                    if (structObject.hasOwnProperty(prop)) {
+                    if (hasOwnProperty(structObject, prop)) {
                         element = structObject[prop];
                         if (typeof element !== "number" || !isFinite(element)) {
                             return false;
