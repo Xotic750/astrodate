@@ -115,7 +115,7 @@
                     test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")Number array: isAstrodate");
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")Number array: isValid");
                     test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")Number array: Arrays are the same");
-                    if (slice[0] >= 0 && slice[0] < 10000) {
+                    if (year >= 0 && year < 10000 && hour !== 24) {
                         test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")Number array date: Dates are the same");
                     } else {
                         test.ok(isNaN(date), "outside of Date capability");
@@ -127,7 +127,7 @@
                     test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")Number astrodate: isAstrodate");
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")Number astrodate: isValid");
                     test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")Number astrodate: Arrays are the same");
-                    if (slice[0] >= 0 && slice[0] < 10000) {
+                    if (year >= 0 && year < 10000 && hour !== 24) {
                         test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")Number astrodate date: dates are the same");
                     } else {
                         test.ok(isNaN(date), "outside of Date capability");
@@ -139,7 +139,7 @@
                     test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")String: isAstrodate");
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")String: isValid");
                     test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")String: Arrays are the same");
-                    if (slice[0] >= 0 && slice[0] < 10000) {
+                    if (year >= 0 && year < 10000 && hour !== 24) {
                         test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")String date: dates are the same");
                     } else {
                         test.ok(isNaN(date), "outside of Date capability");
@@ -151,7 +151,7 @@
                     test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")String array: isAstrodate");
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")String array: isValid");
                     test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")String array: Arrays are the same");
-                    if (slice[0] >= 0 && slice[0] < 10000) {
+                    if (year >= 0 && year < 10000 && hour !== 24) {
                         test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")String array date: dates are the same");
                     } else {
                         test.ok(isNaN(date), "outside of Date capability");
@@ -163,7 +163,7 @@
                     test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")String astrodate: isAstrodate");
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")String astrodate: isValid");
                     test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")String astrodate: Arrays are the same");
-                    if (slice[0] >= 0 && slice[0] < 10000) {
+                    if (year >= 0 && year < 10000 && hour !== 24) {
                         test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")String astrodate: dates are the same");
                     } else {
                         test.ok(isNaN(date), "outside of Date capability");
