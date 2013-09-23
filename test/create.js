@@ -88,38 +88,38 @@
                     test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")Number: isAstrodate");
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")Number: isValid");
                     test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")Number: Arrays are the same");
-                    date = new Date(slice[0], slice[1] - 1, slice[2], slice[3], slice[4], slice[5], slice[6], slice[7]);
-                    test.equal(astrodate.date().getTime(), date.getTime(), "(" + count + "/" + index + ")Number date: Dates are the same");
+                    date = new Date(slice[0], slice[1] - 1, slice[2], slice[3], slice[4], slice[5], slice[6], slice[7]).getTime() - (slice[slice.length - 1] * 60 * 1000);
+                    test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")Number date: Dates are the same");
 
                     astrodate = new AstroDate().array(fullArray.slice(0, end));
                     test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")Number array: isAstrodate");
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")Number array: isValid");
                     test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")Number array: Arrays are the same");
-                    test.equal(astrodate.date().getTime(), date.getTime(), "(" + count + "/" + index + ")Number array date: Dates are the same");
+                    test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")Number array date: Dates are the same");
 
                     astrodate = new AstroDate(astrodate);
                     test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")Number astrodate: isAstrodate");
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")Number astrodate: isValid");
                     test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")Number astrodate: Arrays are the same");
-                    test.equal(astrodate.date().getTime(), date.getTime(), "(" + count + "/" + index + ")Number astrodate date: dates are the same");
+                    test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")Number astrodate date: dates are the same");
 
                     astrodate = new AstroDate(fullArrayString.slice(0, end));
                     test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")String: isAstrodate");
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")String: isValid");
                     test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")String: Arrays are the same");
-                    test.equal(astrodate.date().getTime(), date.getTime(), "(" + count + "/" + index + ")String date: dates are the same");
+                    test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")String date: dates are the same");
 
                     astrodate = new AstroDate().array(fullArrayString.slice(0, end));
                     test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")String array: isAstrodate");
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")String array: isValid");
                     test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")String array: Arrays are the same");
-                    test.equal(astrodate.date().getTime(), date.getTime(), "(" + count + "/" + index + ")String array date: dates are the same");
+                    test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")String array date: dates are the same");
 
                     astrodate = new AstroDate(astrodate);
                     test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")String astrodate: isAstrodate");
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")String astrodate: isValid");
                     test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")String astrodate: Arrays are the same");
-                    test.equal(astrodate.date().getTime(), date.getTime(), "(" + count + "/" + index + ")String astrodate: dates are the same");
+                    test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")String astrodate: dates are the same");
                 }
             }
 
