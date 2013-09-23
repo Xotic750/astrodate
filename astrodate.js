@@ -1,6 +1,26 @@
 /*global requirejs, require, module */
 
-(function (global, undef) {
+/* DOMTokenList v0.1.1
+ *
+ * home: https://github.com/Xotic750/astrodate
+ *
+ * Copyright (C) 2013  Graham Fairweather (a.k.a: Xotic750)
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+(function (global, local_undefined) {
     "use strict";
 
     var projectString = "astrodate",
@@ -9,8 +29,9 @@
         bigNumberString = bigNumberFunc.toLocaleLowerCase();
 
     (function (name, definition) {
-        if (typeof module !== 'undefined' && module.exports) {
-            module.exports = definition(require("./node_modules/" + bigNumberString + ".js"));
+        console.log(global);
+        if (global.module !== local_undefined && global.module.exports) {
+            global.module.exports = definition(require("./node_modules/" + bigNumberString + ".js"));
         } else if (typeof global.define === "function" && global.define.amd) {
             var projectPaths = {},
                 projectConfig = {};
@@ -48,18 +69,26 @@
             dateMethods = ["getUTCFullYear", "getUTCMonth", "getUTCDate", "getUTCHours", "getUTCMinutes", "getUTCSeconds", "getUTCMilliseconds", "getTimezoneOffset"],
             dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
             monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-            j2000 = [2000, 1, 1, 11, 58, 55, 816],
+            //j2000 = [2000, 1, 1, 11, 58, 55, 816],
             unitAliases = {},
             unitsLookup = {},
             lengthFullKeys = fullKeys.length,
             indexFullKeys,
             extend,
             hasOwnPropertyFn = baseObject.hasOwnProperty, // to combat old IE8- issues, min support IE6,
-            indexOfFn = baseArray.indexOf,
+            //indexOfFn = baseArray.indexOf,
+            //indexOf,
             defineProperty = baseObject.constructor.defineProperty,
-            hasDefineProperty,
+            defineProperties = baseObject.constructor.defineProperties,
             hasOwnProperty,
-            indexOf;
+            isArray = baseArray.isArray,
+            isPrototypeOf = baseObject.constructor.prototype.isPrototypeOf,
+            instanceOf,
+            getPrototypeOfFN = baseObject.constructor.getPrototypeOf,
+            getPrototypeOf,
+            proto = "__proto__",
+            supportsProto = baseObject.constructor.prototype[proto] === null,
+            oPrototype;
 
         for (indexFullKeys = 0; indexFullKeys < lengthFullKeys; indexFullKeys += 1) {
             unitAliases[aliases[indexFullKeys]] = fullKeys[indexFullKeys];
@@ -67,15 +96,11 @@
         }
 
         function isUndefined(inputArg) {
-            return inputArg === undef;
+            return inputArg === local_undefined;
         }
 
         function trim(str) {
             return str.replace(/^\s+|\s+$/g, "");
-        }
-
-        function isArray(inputArg) {
-            return inputArg !== null && typeof inputArg === "object" && toStringFN.call(inputArg) === arrayObjectString;
         }
 
         function isObject(inputArg) {
@@ -88,6 +113,20 @@
 
         function isFunction(inputArg) {
             return inputArg !== null && (typeof inputArg === "function" || (typeof inputArg === "object" && toStringFN.call(inputArg) === functionObjectString));
+        }
+
+        if (!isFunction(isArray)) {
+            isArray = function isArray(inputArg) {
+                return inputArg !== null && typeof inputArg === "object" && toStringFN.call(inputArg) === arrayObjectString;
+            };
+        }
+
+        function isNumber(inputArg) {
+            return typeof inputArg === "number";
+        }
+
+        function isString(inputArg) {
+            return typeof inputArg === "string";
         }
 
         // http://ecma-international.org/ecma-262/5.1/#sec-15.2.4.5
@@ -104,6 +143,7 @@
 
         // http://ecma-international.org/ecma-262/5.1/#sec-15.4.4.14
         // Create our own local "indexOf" function: native -> polyfill
+        /*
         if (isFunction(indexOfFn)) {
             indexOf = function (array, searchElement) {
                 return indexOfFn.call(array, searchElement);
@@ -122,26 +162,76 @@
                 return -1;
             };
         }
+        */
 
         // http://ecma-international.org/ecma-262/5.1/#sec-15.4.4.14
         // Create our own local "defineProperty" function: native -> none
         if (isFunction(defineProperty)) {
             try {
                 defineProperty({}, "sentinel", {});
-                hasDefineProperty = true;
             } catch (exception) {
                 defineProperty = null;
             }
         }
 
-        if (typeof defineProperty !== "function") {
-            hasDefineProperty = false;
+        if (!isFunction(defineProperty)) {
             defineProperty = function (object, property, descriptor) {
                 if (hasOwnProperty(descriptor, "value")) {
                     object[property] = descriptor.value;
-                } else {
-                    object[property] = descriptor.get();
                 }
+            };
+        }
+
+        if (!isFunction(defineProperties)) {
+            defineProperty = function (object, props) {
+                var prop;
+
+                for (prop in props) {
+                    if (hasOwnProperty(props, prop)) {
+                        defineProperty(object, prop, props[prop]);
+                    }
+                }
+            };
+        }
+
+        if (isFunction(getPrototypeOfFN)) {
+            getPrototypeOf = getPrototypeOfFN;
+        } else if (supportsProto) {
+            getPrototypeOf = function getPrototypeOf(object) {
+                return object[proto];
+            };
+        } else {
+            oPrototype = baseObject.constructor.prototype;
+            getPrototypeOf = function getPrototypeOf(object) {
+                if (object === oPrototype) {
+                    return null;
+                }
+
+                var prototype = object.constructor.prototype;
+
+                if (object === prototype) {
+                    return oPrototype;
+                }
+
+                return prototype;
+            };
+        }
+
+        if (isFunction(isPrototypeOf)) {
+            instanceOf = function instanceOf(object, constructor) {
+                return isPrototypeOf.call(constructor.prototype, object);
+            };
+        } else if (isFunction(getPrototypeOf)) {
+            instanceOf = function instanceOf(object, constructor) {
+                while (object) {
+                    if (object === constructor.prototype) {
+                        return true;
+                    }
+
+                    object = getPrototypeOf(object);
+                }
+
+                return false;
             };
         }
 
@@ -190,6 +280,7 @@
             };
         }());
 
+
         function normaliseAngle(angle) {
             var newAngle = new BigNumber(angle);
 
@@ -204,6 +295,7 @@
             return newAngle;
         }
 
+        /*
         function toPositiveAngle(angle) {
             var newAngle = normaliseAngle(angle);
 
@@ -213,248 +305,277 @@
 
             return newAngle;
         }
+        */
 
-        extend(BigNumber.prototype, {
-            "toNumber": function () {
-                return +this;
+        defineProperties(BigNumber.prototype, {
+            "toNumber": {
+                "value": function () {
+                    return +this;
+                }
             },
 
-            "integerPart": function () {
-                var bn = this;
+            "integerPart": {
+                "value": function () {
+                    var bn = this;
 
-                if (bn.isFinite()) {
-                    if (bn.gte(0)) {
-                        bn = bn.floor();
+                    if (bn.isFinite()) {
+                        if (bn.gte(0)) {
+                            bn = bn.floor();
+                        } else {
+                            bn = bn.ceil();
+                        }
+                    }
+
+                    return bn;
+                }
+            },
+
+            "fractionalPart": {
+                "value": function () {
+                    var bn = this;
+
+                    if (bn.isFinite()) {
+                        bn = bn.minus(this.integerPart());
                     } else {
-                        bn = bn.ceil();
-                    }
-                }
-
-                return bn;
-            },
-
-            "fractionalPart": function () {
-                var bn = this;
-
-                if (bn.isFinite()) {
-                    bn = bn.minus(this.integerPart());
-                } else {
-                    bn = new BigNumber(NaN);
-                }
-
-                return bn;
-            },
-
-            "difference": function (value) {
-                var diff;
-
-                if (this.gt(value)) {
-                    diff = this.minus(value);
-                } else {
-                    diff = this.neg().plus(value);
-                }
-
-                return diff;
-            },
-
-            "factorial": (function () {
-                var factorialLookup = {};
-
-                return function (exponentialAt) {
-                    if (!this.isFinite() || this.lt(0) || !this.fractionalPart().equals(0)) {
-                        return new BigNumber(NaN);
+                        bn = new BigNumber(NaN);
                     }
 
-                    if (isUndefined(exponentialAt)) {
-                        exponentialAt = BigNumber.config().EXPONENTIAL_AT[1];
-                    }
+                    return bn;
+                }
+            },
 
-                    if (!BigNumber.isBigNumber(exponentialAt)) {
-                        exponentialAt = new BigNumber(exponentialAt).integerPart();
+            "difference": {
+                "value": function (value) {
+                    var diff;
+
+                    if (this.gt(value)) {
+                        diff = this.minus(value);
                     } else {
-                        exponentialAt = exponentialAt.integerPart();
+                        diff = this.neg().plus(value);
                     }
 
-                    if (!exponentialAt.isFinite() || exponentialAt.lt(0)) {
-                        exponentialAt = new BigNumber(BigNumber.config().EXPONENTIAL_AT[1]);
-                    }
+                    return diff;
+                }
+            },
 
-                    var n = this.toNumber(),
-                        config,
-                        previousConfig,
-                        prop,
-                        i;
+            "factorial": {
+                "value": (function () {
+                    var factorialLookup = {};
 
-                    if (!factorialLookup[n]) {
-                        config = BigNumber.config();
-                        previousConfig = {};
-                        for (prop in config) {
-                            if (hasOwnProperty(config, prop)) {
-                                previousConfig[prop] = config[prop];
+                    return function (exponentialAt) {
+                        if (!this.isFinite() || this.lt(0) || !this.fractionalPart().equals(0)) {
+                            return new BigNumber(NaN);
+                        }
+
+                        if (isUndefined(exponentialAt)) {
+                            exponentialAt = BigNumber.config().EXPONENTIAL_AT[1];
+                        }
+
+                        if (!BigNumber.isBigNumber(exponentialAt)) {
+                            exponentialAt = new BigNumber(exponentialAt).integerPart();
+                        } else {
+                            exponentialAt = exponentialAt.integerPart();
+                        }
+
+                        if (!exponentialAt.isFinite() || exponentialAt.lt(0)) {
+                            exponentialAt = new BigNumber(BigNumber.config().EXPONENTIAL_AT[1]);
+                        }
+
+                        var n = this.toNumber(),
+                            config,
+                            previousConfig,
+                            prop,
+                            i;
+
+                        if (!factorialLookup[n]) {
+                            config = BigNumber.config();
+                            previousConfig = {};
+                            for (prop in config) {
+                                if (hasOwnProperty(config, prop)) {
+                                    previousConfig[prop] = config[prop];
+                                }
+                            }
+
+                            BigNumber.config({
+                                DECIMAL_PLACES : 20,
+                                ROUNDING_MODE : 4,
+                                EXPONENTIAL_AT : [-7, exponentialAt.toNumber()],
+                                RANGE : [-1000000000, 1000000000],
+                                ERRORS : true
+                            });
+
+                            factorialLookup[n] = new BigNumber(1);
+                            for (i = 2; i <= n; i += 1) {
+                                factorialLookup[n] = factorialLookup[n].times(i);
+                            }
+
+                            for (prop in previousConfig) {
+                                if (hasOwnProperty(previousConfig, prop)) {
+                                    config[prop] = previousConfig[prop];
+                                }
                             }
                         }
 
-                        BigNumber.config({
-                            DECIMAL_PLACES : 20,
-                            ROUNDING_MODE : 4,
-                            EXPONENTIAL_AT : [-7, exponentialAt.toNumber()],
-                            RANGE : [-1000000000, 1000000000],
-                            ERRORS : true
-                        });
+                        return factorialLookup[n];
+                    };
+                }())
+            },
 
-                        factorialLookup[n] = new BigNumber(1);
-                        for (i = 2; i <= n; i += 1) {
-                            factorialLookup[n] = factorialLookup[n].times(i);
-                        }
-
-                        for (prop in previousConfig) {
-                            if (hasOwnProperty(previousConfig, prop)) {
-                                config[prop] = previousConfig[prop];
-                            }
-                        }
-                    }
-
-                    return factorialLookup[n];
-                };
-            }()),
-
-            "toRadians": function (decimalPlacesOfPI) {
-                return this.times(BigNumber.pi(decimalPlacesOfPI).div(180));
+            "toRadians": {
+                "value": function (decimalPlacesOfPI) {
+                    return this.times(BigNumber.pi(decimalPlacesOfPI).div(180));
+                }
             }
         });
 
-        extend(BigNumber, {
-            "isBigNumber": function (inputArg) {
-                return inputArg && typeof inputArg === "object" && inputArg instanceof BigNumber;
+        defineProperties(BigNumber, {
+            "isBigNumber": {
+                "value": function (inputArg) {
+                    return inputArg && typeof inputArg === "object" && (inputArg instanceof BigNumber || instanceOf(inputArg, BigNumber));
+                }
             },
 
-            "integerPart": function (number) {
-                return new BigNumber(number).integerPart();
+            "integerPart": {
+                "value": function (number) {
+                    return new BigNumber(number).integerPart();
+                }
             },
 
-            "fractionalPart": function (number) {
-                return new BigNumber(number).fractionalPart();
+            "fractionalPart": {
+                "value": function (number) {
+                    return new BigNumber(number).fractionalPart();
+                }
             },
 
-            "difference": function (number1, number2) {
-                return new BigNumber(number1).difference(number2);
+            "difference": {
+                "value": function (number1, number2) {
+                    return new BigNumber(number1).difference(number2);
+                }
             },
 
-            "factorial": function (number, exponentialAt) {
-                return new BigNumber(number).factorial(exponentialAt);
+            "factorial": {
+                "value": function (number, exponentialAt) {
+                    return new BigNumber(number).factorial(exponentialAt);
+                }
             },
 
-            "pi": (function () {
-                var piLookup = {};
+            "pi": {
+                "value": (function () {
+                    var piLookup = {};
 
-                return function (decimalPlaces) {
-                    if (isUndefined(decimalPlaces)) {
-                        decimalPlaces = BigNumber.config().DECIMAL_PLACES;
-                    }
-
-                    if (!BigNumber.isBigNumber(decimalPlaces)) {
-                        decimalPlaces = new BigNumber(decimalPlaces).integerPart();
-                    }
-
-                    if (!decimalPlaces.isFinite() || decimalPlaces.lt(0)) {
-                        decimalPlaces = new BigNumber(BigNumber.config().DECIMAL_PLACES);
-                    }
-
-                    var config,
-                        previousConfig,
-                        k = 0,
-                        prop,
-                        sum,
-                        ta,
-                        tb,
-                        divisor,
-                        a,
-                        b;
-
-                    if (!piLookup[decimalPlaces]) {
-                        config = BigNumber.config();
-                        previousConfig = {};
-                        for (prop in config) {
-                            if (hasOwnProperty(config, prop)) {
-                                previousConfig[prop] = config[prop];
-                            }
+                    return function (decimalPlaces) {
+                        if (isUndefined(decimalPlaces)) {
+                            decimalPlaces = BigNumber.config().DECIMAL_PLACES;
                         }
 
-                        BigNumber.config({
-                            DECIMAL_PLACES : decimalPlaces.toNumber(),
-                            ROUNDING_MODE : 4,
-                            EXPONENTIAL_AT : [-7, 20],
-                            RANGE : [-1000000000, 1000000000],
-                            ERRORS : true
-                        });
-
-                        sum = new BigNumber(0);
-                        a = ta = new BigNumber(16).div(5);
-                        b = tb = new BigNumber(-4).div(239);
-                        while (!a.equals(b)) {
-                            divisor = 2 * k + 1;
-                            a = ta.div(divisor);
-                            b = tb.div(divisor);
-                            sum = sum.plus(a).plus(b);
-                            ta = ta.neg().div(25);
-                            tb = tb.neg().div(57121);
-                            k += 1;
+                        if (!BigNumber.isBigNumber(decimalPlaces)) {
+                            decimalPlaces = new BigNumber(decimalPlaces).integerPart();
                         }
 
-                        for (prop in previousConfig) {
-                            if (hasOwnProperty(previousConfig, prop)) {
-                                config[prop] = previousConfig[prop];
-                            }
+                        if (!decimalPlaces.isFinite() || decimalPlaces.lt(0)) {
+                            decimalPlaces = new BigNumber(BigNumber.config().DECIMAL_PLACES);
                         }
 
-                        piLookup[decimalPlaces] = sum;
-                    }
+                        var config,
+                            previousConfig,
+                            k = 0,
+                            prop,
+                            sum,
+                            ta,
+                            tb,
+                            divisor,
+                            a,
+                            b;
 
-                    return piLookup[decimalPlaces];
-                };
-            }()),
-
-            "toRadians": function (number, decimalPlacesPI) {
-                return new BigNumber(number).toRadians(decimalPlacesPI);
-            },
-
-            "sin": (function () {
-                var sineLookup = {};
-
-                return function (angle) {
-                    angle = normaliseAngle(angle);
-                    var sum,
-                        prev,
-                        k,
-                        mod,
-                        fact,
-                        i;
-
-                    if (!sineLookup[angle.toString()]) {
-                        sum = angle;
-                        prev = new BigNumber(0);
-                        i = 1;
-                        k = 3;
-                        while (!sum.equals(prev)) {
-                            prev = sum;
-                            fact = BigNumber.factorial(k);
-                            mod = i % 2 % 2;
-                            if (mod === 1) {
-                                sum = sum.minus(angle.pow(k).div(fact));
-                            } else {
-                                sum = sum.plus(angle.pow(k).div(fact));
+                        if (!piLookup[decimalPlaces]) {
+                            config = BigNumber.config();
+                            previousConfig = {};
+                            for (prop in config) {
+                                if (hasOwnProperty(config, prop)) {
+                                    previousConfig[prop] = config[prop];
+                                }
                             }
 
-                            i += 1;
-                            k += 2;
+                            BigNumber.config({
+                                DECIMAL_PLACES : decimalPlaces.toNumber(),
+                                ROUNDING_MODE : 4,
+                                EXPONENTIAL_AT : [-7, 20],
+                                RANGE : [-1000000000, 1000000000],
+                                ERRORS : true
+                            });
+
+                            sum = new BigNumber(0);
+                            a = ta = new BigNumber(16).div(5);
+                            b = tb = new BigNumber(-4).div(239);
+                            while (!a.equals(b)) {
+                                divisor = 2 * k + 1;
+                                a = ta.div(divisor);
+                                b = tb.div(divisor);
+                                sum = sum.plus(a).plus(b);
+                                ta = ta.neg().div(25);
+                                tb = tb.neg().div(57121);
+                                k += 1;
+                            }
+
+                            for (prop in previousConfig) {
+                                if (hasOwnProperty(previousConfig, prop)) {
+                                    config[prop] = previousConfig[prop];
+                                }
+                            }
+
+                            piLookup[decimalPlaces] = sum;
                         }
 
-                        sineLookup[angle.toString()] = sum;
-                    }
+                        return piLookup[decimalPlaces];
+                    };
+                }())
+            },
 
-                    return sineLookup[angle.toString()];
-                };
-            }())
+            "toRadians": {
+                "value": function (number, decimalPlacesPI) {
+                    return new BigNumber(number).toRadians(decimalPlacesPI);
+                }
+            },
+
+            "sin": {
+                "value": (function () {
+                    var sineLookup = {};
+
+                    return function (angle) {
+                        angle = normaliseAngle(angle);
+                        var sum,
+                            prev,
+                            k,
+                            mod,
+                            fact,
+                            i;
+
+                        if (!sineLookup[angle.toString()]) {
+                            sum = angle;
+                            prev = new BigNumber(0);
+                            i = 1;
+                            k = 3;
+                            while (!sum.equals(prev)) {
+                                prev = sum;
+                                fact = BigNumber.factorial(k);
+                                mod = i % 2 % 2;
+                                if (mod === 1) {
+                                    sum = sum.minus(angle.pow(k).div(fact));
+                                } else {
+                                    sum = sum.plus(angle.pow(k).div(fact));
+                                }
+
+                                i += 1;
+                                k += 2;
+                            }
+
+                            sineLookup[angle.toString()] = sum;
+                        }
+
+                        return sineLookup[angle.toString()];
+                    };
+                }())
+            }
         });
 
         function bignumber(inputArg) {
@@ -474,20 +595,17 @@
         }
 
         function isDigit(character) {
-            return typeof character === "string" && trim(character).length === 1 && !isNaN(character);
+            return isString(character) && trim(character).length === 1 && !isNaN(character);
         }
 
         function isValidValue(value) {
-            var type = typeof value;
-
-            return (type === "number" || (type === "string" && trim(value).length)) && isFinite(value);
+            return (isNumber(value) || (isString(value) && trim(value).length)) && isFinite(value);
         }
 
         function intToNumber(input) {
-            var number = +input,
-                type = typeof input;
+            var number = +input;
 
-            if ((type !== "number" && type !== "string") || !isFinite(number) || parseInt(input, 10) !== number) {
+            if ((!isNumber(input) && !isString(input)) || !isFinite(number) || parseInt(input, 10) !== number) {
                 number = NaN;
             }
 
@@ -679,7 +797,7 @@
                     number = number.toNumber() || 0;
                     break;
                 default:
-                    number = undef;
+                    number = local_undefined;
                 }
 
                 if (!isUndefined(number)) {
@@ -777,7 +895,8 @@
                 return "Invalid Date";
             }
 
-            var string = "",
+            var struct = date.getter(),
+                string = "",
                 index = 0,
                 count,
                 padding,
@@ -786,14 +905,14 @@
                 signYear;
 
             for (count = 0; count < 3; count += 1) {
-                if (isUndefined(date.get(fullKeys[count]))) {
+                if (isUndefined(struct[fullKeys[count]])) {
                     index = 3;
                     break;
                 }
             }
 
             for (last = lengthFullKeys - 1; index < last; index += 1) {
-                value = date.get(fullKeys[index]);
+                value = struct[fullKeys[index]];
                 padding = 2;
                 if (index === 0) {
                     if (value >= 0) {
@@ -824,7 +943,7 @@
                 }
             }
 
-            value = date.get(fullKeys[lengthFullKeys - 1]);
+            value = struct[fullKeys[lengthFullKeys - 1]];
             if (value === 0) {
                 string += "Z";
             } else {
@@ -846,427 +965,443 @@
         function ISO(isoString) {
             var isoObject;
 
-            this.get = function () {
-                return extend({}, isoObject);
-            };
+            defineProperties(this, {
+                "getter": {
+                    "value": function () {
+                        return extend({}, isoObject);
+                    }
+                },
 
-            this.set = function (newIsoObject) {
-                isoObject = extend({}, newIsoObject);
+                "setter": {
+                    "value": function (newIsoObject) {
+                        isoObject = extend({}, newIsoObject);
 
-                return this;
-            };
+                        return this;
+                    }
+                }
+            });
 
             isoObject = this.parse(isoString).valueOf();
         }
 
-        extend(ISO.prototype, {
-            "parse": function parse(isoString) {
-                var dateObject = {},
-                    getTimezoneOffset = new Date().getTimezoneOffset(),
-                    signYear,
-                    temp,
-                    last,
-                    date,
-                    time,
-                    offset,
-                    signOffset,
-                    character,
-                    number,
-                    index,
-                    element,
-                    length,
-                    timeFraction,
-                    found,
-                    isTime,
-                    name,
-                    value;
+        defineProperties(ISO.prototype, {
+            "parse": {
+                "value": function parse(isoString) {
+                    var dateObject = {},
+                        getTimezoneOffset = new Date().getTimezoneOffset(),
+                        signYear,
+                        temp,
+                        last,
+                        date,
+                        time,
+                        offset,
+                        signOffset,
+                        character,
+                        number,
+                        index,
+                        element,
+                        length,
+                        timeFraction,
+                        found,
+                        isTime,
+                        name,
+                        value;
 
-                temp = trim(isoString).split(/[T ]/);
-                length = temp.length;
-                if (length < 1 || length > 2) {
-                    //invalid
-                    this.set(dateObject);
-                    return this;
-                }
-
-                element = temp[0];
-                if (length === 1) {
-                    if (element.charAt(element.length - 1) === "Z" || element.indexOf(":") !== -1 || element.indexOf("+") > 1 || (element.charAt(0) !== "-" && element.split("-").length === 2 && !/^\d{4}-\d{2}$/.test(element))) {
-                        temp.unshift("");
-                        isTime = true;
-                    } else {
-                        if (getTimezoneOffset === 0) {
-                            value = "Z";
-                        } else {
-                            value = fractionToTime(Math.abs(getTimezoneOffset), "minute");
-                            value = padLeadingZero(value[0], 2) + ":" + padLeadingZero(value[1], 2);
-                            if (getTimezoneOffset < 0) {
-                                value = "-" + value;
-                            } else {
-                                value = "+" + value;
-                            }
-                        }
-
-                        temp.push("00:00:00.000" + value);
-                        isTime = false;
-                    }
-                } else {
-                    if (!element.length) {
-                        isTime = true;
-                    }
-                }
-
-                time = temp[1];
-                character = time.charAt(0);
-                if (!isDigit(character)) {
-                    //invalid
-                    this.set(dateObject);
-                    return this;
-                }
-
-                if (!isTime) {
-                    date = temp[0];
-                    character = date.charAt(0);
-                    if (!isDigit(character)) {
-                        if (character === "+" || character === "-") {
-                            signYear = character;
-                        } else {
-                            //invalid
-                            this.set(dateObject);
-                            return this;
-                        }
-
-                        date = date.slice(1);
-                    }
-
-                    if (date.indexOf("-") === -1) {
-                        temp = [];
-                        switch (date.length) {
-                        case 9:
-                            if (signYear) {
-                                temp[0] = date.slice(0, 5);
-                                temp[1] = date.slice(5, 7);
-                                temp[2] = date.slice(7);
-                            } else {
-                                //invalid
-                                this.set(dateObject);
-                                return this;
-                            }
-
-                            break;
-                        case 8:
-                            temp[0] = date.slice(0, 4);
-                            temp[1] = date.slice(4, 6);
-                            temp[2] = date.slice(6);
-                            break;
-                        case 4:
-                            temp[0] = date;
-                            temp[1] = "01";
-                            temp[2] = "01";
-                            break;
-                        case 2:
-                            temp[0] = date + "00";
-                            temp[1] = "01";
-                            temp[2] = "01";
-                            break;
-                        default:
-                            //invalid
-                            this.set(dateObject);
-                            return this;
-                        }
-                    } else {
-                        temp = date.split("-");
-                    }
-
+                    temp = trim(isoString).split(/[T ]/);
                     length = temp.length;
-                    if (length < 2 || length > 3) {
+                    if (length < 1 || length > 2) {
                         //invalid
-                        this.set(dateObject);
+                        this.setter(dateObject);
                         return this;
                     }
 
-                    if (length === 2) {
-                        temp.push("01");
+                    element = temp[0];
+                    if (length === 1) {
+                        if (element.charAt(element.length - 1) === "Z" || element.indexOf(":") !== -1 || element.indexOf("+") > 1 || (element.charAt(0) !== "-" && element.split("-").length === 2 && !/^\d{4}-\d{2}$/.test(element))) {
+                            temp.unshift("");
+                            isTime = true;
+                        } else {
+                            if (getTimezoneOffset === 0) {
+                                value = "Z";
+                            } else {
+                                value = fractionToTime(Math.abs(getTimezoneOffset), "minute");
+                                value = padLeadingZero(value[0], 2) + ":" + padLeadingZero(value[1], 2);
+                                if (getTimezoneOffset < 0) {
+                                    value = "-" + value;
+                                } else {
+                                    value = "+" + value;
+                                }
+                            }
+
+                            temp.push("00:00:00.000" + value);
+                            isTime = false;
+                        }
+                    } else {
+                        if (!element.length) {
+                            isTime = true;
+                        }
                     }
 
-                    date = {};
-                    for (index = 0; index < 3; index += 1) {
-                        element = temp[index];
-                        length = element.length;
-                        if ((index && length !== 2) || (!index && (length < 4 || (signYear === "+" && length === 4)))) {
+                    time = temp[1];
+                    character = time.charAt(0);
+                    if (!isDigit(character)) {
+                        //invalid
+                        this.setter(dateObject);
+                        return this;
+                    }
+
+                    if (!isTime) {
+                        date = temp[0];
+                        character = date.charAt(0);
+                        if (!isDigit(character)) {
+                            if (character === "+" || character === "-") {
+                                signYear = character;
+                            } else {
+                                //invalid
+                                this.setter(dateObject);
+                                return this;
+                            }
+
+                            date = date.slice(1);
+                        }
+
+                        if (date.indexOf("-") === -1) {
+                            temp = [];
+                            switch (date.length) {
+                            case 9:
+                                if (signYear) {
+                                    temp[0] = date.slice(0, 5);
+                                    temp[1] = date.slice(5, 7);
+                                    temp[2] = date.slice(7);
+                                } else {
+                                    //invalid
+                                    this.setter(dateObject);
+                                    return this;
+                                }
+
+                                break;
+                            case 8:
+                                temp[0] = date.slice(0, 4);
+                                temp[1] = date.slice(4, 6);
+                                temp[2] = date.slice(6);
+                                break;
+                            case 4:
+                                temp[0] = date;
+                                temp[1] = "01";
+                                temp[2] = "01";
+                                break;
+                            case 2:
+                                temp[0] = date + "00";
+                                temp[1] = "01";
+                                temp[2] = "01";
+                                break;
+                            default:
+                                //invalid
+                                this.setter(dateObject);
+                                return this;
+                            }
+                        } else {
+                            temp = date.split("-");
+                        }
+
+                        length = temp.length;
+                        if (length < 2 || length > 3) {
                             //invalid
-                            this.set(dateObject);
+                            this.setter(dateObject);
+                            return this;
+                        }
+
+                        if (length === 2) {
+                            temp.push("01");
+                        }
+
+                        date = {};
+                        for (index = 0; index < 3; index += 1) {
+                            element = temp[index];
+                            length = element.length;
+                            if ((index && length !== 2) || (!index && (length < 4 || (signYear === "+" && length === 4)))) {
+                                //invalid
+                                this.setter(dateObject);
+                                return this;
+                            }
+
+                            number = intToNumber(element);
+                            if (isNaN(number) || (index === 1 && (number < 1 || number > 12)) || (index === 2 && (number < 1 || number > daysInMonth(date.year, date.month)))) {
+                                //invalid
+                                this.setter(dateObject);
+                                return this;
+                            }
+
+                            if (!index && signYear) {
+                                if (signYear === "-") {
+                                    number = -1 * number;
+                                }
+                            }
+
+                            date[fullKeys[index]] = number;
+                        }
+                    }
+
+                    last = time.length - 1;
+                    character = time.charAt(last);
+                    if (!isDigit(character)) {
+                        if (character === "Z") {
+                            time = time.slice(0, last) + "+00";
+                        } else {
+                            //invalid
+                            this.setter(dateObject);
+                            return this;
+                        }
+                    }
+
+                    temp = time.split(/[\-+]/);
+                    length = temp.length;
+                    if (length < 1 || length > 2) {
+                        //invalid
+                        this.setter(dateObject);
+                        return this;
+                    }
+
+                    if (length === 1) {
+                        if (getTimezoneOffset === 0) {
+                            value = "00";
+                        } else {
+                            value = fractionToTime(Math.abs(getTimezoneOffset), "minute");
+                            value = padLeadingZero(value[0], 2) + ":" + padLeadingZero(value[1], 2);
+                        }
+
+                        temp.push(value);
+                    }
+
+                    if (time.indexOf("-") !== -1) {
+                        signOffset = -1;
+                    } else {
+                        signOffset = 1;
+                    }
+
+                    offset = temp[1].split(":");
+                    length = offset.length;
+                    if (length < 1 || length > 2) {
+                        //invalid
+                        this.setter(dateObject);
+                        return this;
+                    }
+
+                    if (length === 1) {
+                        element = offset[0];
+                        length = offset[0].length;
+                        switch (length) {
+                        case 4:
+                            offset[0] = element.slice(0, 2);
+                            offset[1] = element.slice(2);
+                            break;
+                        case 2:
+                            offset[0] = element;
+                            offset[1] = "00";
+                            break;
+                        default:
+                            //invalid
+                            this.setter(dateObject);
+                            return this;
+                        }
+                    }
+
+                    for (index = 0; index < 2; index += 1) {
+                        element = offset[index];
+                        length = element.length;
+                        if (length !== 2) {
+                            //invalid
+                            this.setter(dateObject);
                             return this;
                         }
 
                         number = intToNumber(element);
-                        if (isNaN(number) || (index === 1 && (number < 1 || number > 12)) || (index === 2 && (number < 1 || number > daysInMonth(date.year, date.month)))) {
+                        if (isNaN(number) || number < -1440 || number > 1440) {
                             //invalid
-                            this.set(dateObject);
+                            this.setter(dateObject);
                             return this;
                         }
 
-                        if (!index && signYear) {
-                            if (signYear === "-") {
-                                number = -1 * number;
-                            }
-                        }
-
-                        date[fullKeys[index]] = number;
+                        offset[index] = number;
                     }
-                }
 
-                last = time.length - 1;
-                character = time.charAt(last);
-                if (!isDigit(character)) {
-                    if (character === "Z") {
-                        time = time.slice(0, last) + "+00";
-                    } else {
+                    if (signOffset === -1 && offset[0] === 0 && offset[1] === 0) {
                         //invalid
-                        this.set(dateObject);
-                        return this;
-                    }
-                }
-
-                temp = time.split(/[\-+]/);
-                length = temp.length;
-                if (length < 1 || length > 2) {
-                    //invalid
-                    this.set(dateObject);
-                    return this;
-                }
-
-                if (length === 1) {
-                    if (getTimezoneOffset === 0) {
-                        value = "00";
-                    } else {
-                        value = fractionToTime(Math.abs(getTimezoneOffset), "minute");
-                        value = padLeadingZero(value[0], 2) + ":" + padLeadingZero(value[1], 2);
-                    }
-
-                    temp.push(value);
-                }
-
-                if (time.indexOf("-") !== -1) {
-                    signOffset = -1;
-                } else {
-                    signOffset = 1;
-                }
-
-                offset = temp[1].split(":");
-                length = offset.length;
-                if (length < 1 || length > 2) {
-                    //invalid
-                    this.set(dateObject);
-                    return this;
-                }
-
-                if (length === 1) {
-                    element = offset[0];
-                    length = offset[0].length;
-                    switch (length) {
-                    case 4:
-                        offset[0] = element.slice(0, 2);
-                        offset[1] = element.slice(2);
-                        break;
-                    case 2:
-                        offset[0] = element;
-                        offset[1] = "00";
-                        break;
-                    default:
-                        //invalid
-                        this.set(dateObject);
-                        return this;
-                    }
-                }
-
-                for (index = 0; index < 2; index += 1) {
-                    element = offset[index];
-                    length = element.length;
-                    if (length !== 2) {
-                        //invalid
-                        this.set(dateObject);
-                        return this;
-                    }
-
-                    number = intToNumber(element);
-                    if (isNaN(number) || number < -1440 || number > 1440) {
-                        //invalid
-                        this.set(dateObject);
-                        return this;
-                    }
-
-                    offset[index] = number;
-                }
-
-                if (signOffset === -1 && offset[0] === 0 && offset[1] === 0) {
-                    //invalid
-                    this.set(dateObject);
-                    return this;
-                }
-
-                time = temp[0];
-                if (time.indexOf(".") !== -1 || time.indexOf(",") !== -1) {
-                    temp = time.split(/[\.,]/);
-                    element = temp[1];
-                    if (temp.length !== 2 || element.split(":").length !== 1) {
-                        //invalid
-                        this.set(dateObject);
+                        this.setter(dateObject);
                         return this;
                     }
 
                     time = temp[0];
-                    timeFraction = "0." + temp[1];
-                    found = true;
-                } else {
-                    timeFraction = "";
-                    found = false;
-                }
-
-                if (time.indexOf(":") === -1) {
-                    temp = [];
-                    switch (time.length) {
-                    case 6:
-                        temp[0] = time.slice(0, 2);
-                        temp[1] = time.slice(2, 4);
-                        temp[2] = time.slice(4);
-                        break;
-                    case 4:
-                        temp[0] = time.slice(0, 2);
-                        temp[1] = time.slice(2);
-                        break;
-                    case 2:
-                        temp[0] = time;
-                        break;
-                    default:
-                        //invalid
-                        this.set(dateObject);
-                        return this;
-                    }
-                } else {
-                    temp = time.split(":");
-                }
-
-                length = temp.length;
-                if (length < 1 || length > 3) {
-                    //invalid
-                    this.set(dateObject);
-                    return this;
-                }
-
-                if (found) {
-                    switch (length) {
-                    case 1:
-                        name = "hour";
-                        break;
-                    case 2:
-                        name = "minute";
-                        break;
-                    case 3:
-                        name = "second";
-                        break;
-                    default:
-                    }
-
-                    temp = temp.concat(fractionToTime(timeFraction, name).slice(length));
-                } else {
-                    if (length < 2) {
-                        temp.push("00");
-                    }
-
-                    if (length < 3) {
-                        temp.push("00");
-                    }
-
-                    if (length < 4) {
-                        temp.push("000");
-                    }
-                }
-
-                time = {};
-                found = false;
-                for (index = 0; index < 4; index += 1) {
-                    element = temp[index];
-                    length = element.length;
-                    if (length < 1 || (index < 3 && length > 2) || (index === 3 && length > 3)) {
-                        //invalid
-                        this.set(dateObject);
-                        return this;
-                    }
-
-                    number = intToNumber(element);
-                    if (!index && number === 24) {
-                        found = true;
-                    }
-
-                    if (isNaN(number) || number < 0 || (found && index && number > 0) || (!index && number > 24) || (index > 0 && index < 3 && number > 59) || (index === 4 && number >= 1000)) {
-                        //invalid
-                        this.set(dateObject);
-                        return this;
-                    }
-
-                    time[fullKeys[index + 3]] = number;
-                }
-
-                if (!isTime) {
-                    extend(dateObject, date);
-                }
-
-                time[fullKeys[lengthFullKeys - 1]] = signOffset * (offset[0] * 60  + offset[1]);
-                extend(dateObject, time);
-                this.set(dateObject);
-
-                return this;
-            },
-
-            "isValid": function isValid() {
-                var isoObject = this.get(),
-                    count = 0,
-                    element,
-                    prop;
-
-                if (isoObject === null || typeof isoObject !== "object") {
-                    return false;
-                }
-
-                for (prop in isoObject) {
-                    if (hasOwnProperty(isoObject, prop)) {
-                        element = isoObject[prop];
-                        if (typeof element !== "number" || !isFinite(element)) {
-                            return false;
+                    if (time.indexOf(".") !== -1 || time.indexOf(",") !== -1) {
+                        temp = time.split(/[\.,]/);
+                        element = temp[1];
+                        if (temp.length !== 2 || element.split(":").length !== 1) {
+                            //invalid
+                            this.setter(dateObject);
+                            return this;
                         }
 
-                        count += 1;
-                    }
-                }
-
-                return count !== 0;
-            },
-
-            "toString": function () {
-                var str = "",
-                    isoObject = this.get(),
-                    index,
-                    prop;
-
-                for (index = 0; index < lengthFullKeys; index += 1) {
-                    if (index) {
-                        str += ",";
+                        time = temp[0];
+                        timeFraction = "0." + temp[1];
+                        found = true;
+                    } else {
+                        timeFraction = "";
+                        found = false;
                     }
 
-                    prop = fullKeys[index];
-                    str += prop + ":" + isoObject[prop];
+                    if (time.indexOf(":") === -1) {
+                        temp = [];
+                        switch (time.length) {
+                        case 6:
+                            temp[0] = time.slice(0, 2);
+                            temp[1] = time.slice(2, 4);
+                            temp[2] = time.slice(4);
+                            break;
+                        case 4:
+                            temp[0] = time.slice(0, 2);
+                            temp[1] = time.slice(2);
+                            break;
+                        case 2:
+                            temp[0] = time;
+                            break;
+                        default:
+                            //invalid
+                            this.setter(dateObject);
+                            return this;
+                        }
+                    } else {
+                        temp = time.split(":");
+                    }
+
+                    length = temp.length;
+                    if (length < 1 || length > 3) {
+                        //invalid
+                        this.setter(dateObject);
+                        return this;
+                    }
+
+                    if (found) {
+                        switch (length) {
+                        case 1:
+                            name = "hour";
+                            break;
+                        case 2:
+                            name = "minute";
+                            break;
+                        case 3:
+                            name = "second";
+                            break;
+                        default:
+                        }
+
+                        temp = temp.concat(fractionToTime(timeFraction, name).slice(length));
+                    } else {
+                        if (length < 2) {
+                            temp.push("00");
+                        }
+
+                        if (length < 3) {
+                            temp.push("00");
+                        }
+
+                        if (length < 4) {
+                            temp.push("000");
+                        }
+                    }
+
+                    time = {};
+                    found = false;
+                    for (index = 0; index < 4; index += 1) {
+                        element = temp[index];
+                        length = element.length;
+                        if (length < 1 || (index < 3 && length > 2) || (index === 3 && length > 3)) {
+                            //invalid
+                            this.setter(dateObject);
+                            return this;
+                        }
+
+                        number = intToNumber(element);
+                        if (!index && number === 24) {
+                            found = true;
+                        }
+
+                        if (isNaN(number) || number < 0 || (found && index && number > 0) || (!index && number > 24) || (index > 0 && index < 3 && number > 59) || (index === 4 && number >= 1000)) {
+                            //invalid
+                            this.setter(dateObject);
+                            return this;
+                        }
+
+                        time[fullKeys[index + 3]] = number;
+                    }
+
+                    if (!isTime) {
+                        extend(dateObject, date);
+                    }
+
+                    time[fullKeys[lengthFullKeys - 1]] = signOffset * (offset[0] * 60  + offset[1]);
+                    extend(dateObject, time);
+                    this.setter(dateObject);
+
+                    return this;
                 }
-
-                return str;
             },
 
-            "valueOf": function () {
-                return extend({}, this.get());
+            "isValid": {
+                "value": function isValid() {
+                    var isoObject = this.getter(),
+                        count = 0,
+                        element,
+                        prop;
+
+                    if (!isObject(isoObject)) {
+                        return false;
+                    }
+
+                    for (prop in isoObject) {
+                        if (hasOwnProperty(isoObject, prop)) {
+                            element = isoObject[prop];
+                            if (!isNumber(element) || !isFinite(element)) {
+                                return false;
+                            }
+
+                            count += 1;
+                        }
+                    }
+
+                    return count !== 0;
+                }
             },
 
-            "toArray": function () {
-                return objectToArray(this.get());
+            "toString": {
+                "value": function () {
+                    var str = "",
+                        isoObject = this.getter(),
+                        index,
+                        prop;
+
+                    for (index = 0; index < lengthFullKeys; index += 1) {
+                        if (index) {
+                            str += ",";
+                        }
+
+                        prop = fullKeys[index];
+                        str += prop + ":" + isoObject[prop];
+                    }
+
+                    return str;
+                }
+            },
+
+            "valueOf": {
+                "value": function () {
+                    return this.getter();
+                }
+            },
+
+            "toArray": {
+                "value": function () {
+                    return objectToArray(this.getter());
+                }
             }
         });
 
@@ -1274,24 +1409,16 @@
             var args = arguments,
                 argsLength = args.length,
                 struct,
-                arg,
-                type;
+                arg;
 
-            extend(this, {
-                "get": function (key) {
-                    var unit = AstroDate.normaliseUnits(key),
-                        value;
-
-                    if (unit === "struct") {
-                        value = extend({}, struct);
-                    } else if (unit) {
-                        value = struct[unit];
+            defineProperties(this, {
+                "getter": {
+                    "value": function () {
+                        return extend({}, struct);
                     }
-
-                    return value;
                 },
 
-                "set": function (key, value) {
+                "setter": function (key, value) {
                     var unit = AstroDate.normaliseUnits(key),
                         number;
 
@@ -1341,10 +1468,9 @@
                 } else if (isDate(arg)) {
                     struct = dateToObject(arg);
                 } else {
-                    type = typeof arg;
-                    if (type === "number") {
+                    if (isNumber(arg)) {
                         struct = dateToObject(new Date(arg));
-                    } else if (type === "string") {
+                    } else if (isString(arg)) {
                         struct = new ISO(arg).valueOf();
                     } else if (isObject(arg)) {
                         struct = arg;
@@ -1362,268 +1488,334 @@
             }
         }
 
-        extend(AstroDate.prototype, {
-            "isValid": function isValid() {
-                var structObject = this.get("struct"),
-                    count = 0,
-                    element,
-                    prop;
+        defineProperties(AstroDate.prototype, {
+            "isValid": {
+                "value": function isValid() {
+                    var structObject = this.getter(),
+                        count = 0,
+                        element,
+                        prop;
 
-                if (structObject === null || typeof structObject !== "object") {
-                    return false;
+                    if (!isObject(structObject)) {
+                        return false;
+                    }
+
+                    for (prop in structObject) {
+                        if (hasOwnProperty(structObject, prop)) {
+                            element = structObject[prop];
+                            if (!isNumber(element) || !isFinite(element)) {
+                                return false;
+                            }
+
+                            count += 1;
+                        }
+                    }
+
+                    return count !== 0;
                 }
+            },
 
-                for (prop in structObject) {
-                    if (hasOwnProperty(structObject, prop)) {
-                        element = structObject[prop];
-                        if (typeof element !== "number" || !isFinite(element)) {
-                            return false;
+            "parse": {
+                "value": function (isoString) {
+                    if (typeof isoString === "string") {
+                        this.setter("struct", new ISO(isoString).valueOf());
+                    } else {
+                        throw new SyntaxError();
+                    }
+
+                    return this;
+                }
+            },
+
+            "toString": {
+                "value": function () {
+                    return toISOString(this);
+                }
+            },
+
+            "valueOf": {
+                "value": function () {
+                    return this.getter();
+                }
+            },
+
+            "toArray": {
+                "value": function () {
+                    return objectToArray(this.getter());
+                }
+            },
+
+            "toDate": {
+                "value": function () {
+                    return objectToDate(this.getter());
+                }
+            },
+
+            "timeTo": {
+                "value": function (unit) {
+                    var struct = this.getter(),
+                        hour = bignumber(struct.hour),
+                        minute = bignumber(struct.minute),
+                        second = bignumber(struct.second),
+                        millisecond = bignumber(struct.millisecond),
+                        value;
+
+                    switch (AstroDate.normaliseUnits(unit)) {
+                    case "day":
+                        value = hour.div(24).plus(minute.div(1440)).plus(second.div(86400)).plus(millisecond.div(86400000));
+                        break;
+                    case "hour":
+                        value = hour.plus(minute.div(60)).plus(second.div(3600)).plus(millisecond.div(3600000));
+                        break;
+                    case "minute":
+                        value = hour.times(60).plus(minute).plus(second.div(60)).plus(millisecond.div(60000));
+                        break;
+                    case "second":
+                        value = hour.times(3600).plus(minute.times(60)).plus(second).plus(millisecond.div(1000));
+                        break;
+                    case "millisecond":
+                        value = hour.times(3600000).plus(minute.times(60000)).plus(second.times(1000)).plus(millisecond);
+                        break;
+                    default:
+                        value = bignumber(NaN);
+                    }
+
+                    return value;
+                }
+            },
+
+            "julianDay": {
+                "value": function (julianDay) {
+                    var struct,
+                        year,
+                        month,
+                        day,
+                        a,
+                        b,
+                        c,
+                        d,
+                        e,
+                        f,
+                        z,
+                        alpha,
+                        time,
+                        julian;
+
+                    if (isUndefined(julianDay)) {
+                        struct = this.getter();
+                        year = bignumber(struct.year);
+                        month = bignumber(struct.month);
+                        if (month.lte(2)) {
+                            year = year.minus(1);
+                            month = month.plus(12);
                         }
 
-                        count += 1;
-                    }
-                }
+                        a = year.div(100).integerPart();
+                        julian = false;
+                        if (julian) {
+                            b = bignumber(0);
+                        } else {
+                            b = a.neg().plus(2).plus(a.div(4).integerPart());
+                        }
 
-                return count !== 0;
-            },
-
-            "parse": function (isoString) {
-                if (typeof isoString === "string") {
-                    this.set("struct", new ISO(isoString).valueOf());
-                } else {
-                    throw new SyntaxError();
-                }
-
-                return this;
-            },
-
-            "toString": function () {
-                return toISOString(this);
-            },
-
-            "valueOf": function () {
-                return this.get("struct");
-            },
-
-            "toArray": function () {
-                return objectToArray(this.get("struct"));
-            },
-
-            "toDate": function () {
-                return objectToDate(this.get("struct"));
-            },
-
-            "timeTo": function (unit) {
-                var hour = bignumber(this.get("hour")),
-                    minute = bignumber(this.get("minute")),
-                    second = bignumber(this.get("second")),
-                    millisecond = bignumber(this.get("millisecond")),
-                    value;
-
-                switch (AstroDate.normaliseUnits(unit)) {
-                case "day":
-                    value = hour.div(24).plus(minute.div(1440)).plus(second.div(86400)).plus(millisecond.div(86400000));
-                    break;
-                case "hour":
-                    value = hour.plus(minute.div(60)).plus(second.div(3600)).plus(millisecond.div(3600000));
-                    break;
-                case "minute":
-                    value = hour.times(60).plus(minute).plus(second.div(60)).plus(millisecond.div(60000));
-                    break;
-                case "second":
-                    value = hour.times(3600).plus(minute.times(60)).plus(second).plus(millisecond.div(1000));
-                    break;
-                case "millisecond":
-                    value = hour.times(3600000).plus(minute.times(60000)).plus(second.times(1000)).plus(millisecond);
-                    break;
-                default:
-                    value = bignumber(NaN);
-                }
-
-                return value;
-            },
-
-            "julianDay": function (julianDay) {
-                var year,
-                    month,
-                    day,
-                    a,
-                    b,
-                    c,
-                    d,
-                    e,
-                    f,
-                    z,
-                    alpha,
-                    time,
-                    julian;
-
-                if (isUndefined(julianDay)) {
-                    year = bignumber(this.get("year"));
-                    month = bignumber(this.get("month"));
-                    if (month.lte(2)) {
-                        year = year.minus(1);
-                        month = month.plus(12);
+                        return year.plus(4716).times(365.25).integerPart().plus(month.plus(1).times(30.6001).integerPart()).plus(struct.day).plus(this.timeTo("day")).plus(b).minus(1524.5);
                     }
 
-                    a = year.div(100).integerPart();
-                    julian = false;
-                    if (julian) {
-                        b = bignumber(0);
+                    z = bignumber(julianDay).plus(0.5);
+                    if (z.lt(2299.161)) {
+                        a = z.integerPart();
                     } else {
-                        b = a.neg().plus(2).plus(a.div(4).integerPart());
+                        alpha = z.minus(1867216.25).div(36524.25).integerPart();
+                        a = z.integerPart().plus(1).plus(alpha).minus(alpha.div(4).integerPart());
                     }
 
-                    return year.plus(4716).times(365.25).integerPart().plus(month.plus(1).times(30.6001).integerPart()).plus(this.get("day")).plus(this.timeTo("day")).plus(b).minus(1524.5);
+                    b = a.plus(1524);
+                    c = b.minus(122.1).div(365.25).integerPart();
+                    d = c.times(365.25).integerPart();
+                    e = b.minus(d).div(30.6001).integerPart();
+                    f = z.fractionalPart();
+                    day = b.minus(d).minus(e.times(30.6001).integerPart());
+                    if (e.lt(14)) {
+                        month = e.minus(1);
+                    } else {
+                        month = e.minus(13);
+                    }
+
+                    if (month.gt(2)) {
+                        year = c.minus(4716);
+                    } else {
+                        year = c.minus(4715);
+                    }
+
+                    this.setter("year", year.toNumber());
+                    this.setter("month", month.toNumber());
+                    this.setter("day", day.toNumber());
+                    time = dayFractionToTime(f);
+                    this.setter("hour", time[0]);
+                    this.setter("minute", time[1]);
+                    this.setter("second", time[2]);
+                    this.setter("millisecond", time[3]);
+                    this.setter("offset", 0);
+
+                    return this;
                 }
+            },
 
-                z = bignumber(julianDay).plus(0.5);
-                if (z.lt(2299.161)) {
-                    a = z.integerPart();
-                } else {
-                    alpha = z.minus(1867216.25).div(36524.25).integerPart();
-                    a = z.integerPart().plus(1).plus(alpha).minus(alpha.div(4).integerPart());
+            "monthOfYear": {
+                "value": function () {
+                    return monthNames[this.getter().month];
                 }
+            },
 
-                b = a.plus(1524);
-                c = b.minus(122.1).div(365.25).integerPart();
-                d = c.times(365.25).integerPart();
-                e = b.minus(d).div(30.6001).integerPart();
-                f = z.fractionalPart();
-                day = b.minus(d).minus(e.times(30.6001).integerPart());
-                if (e.lt(14)) {
-                    month = e.minus(1);
-                } else {
-                    month = e.minus(13);
+            "dayOfWeek": {
+                "value": function () {
+                    return dayNames[(this.julianDay() + 1.5) % 7];
                 }
+            },
 
-                if (month.gt(2)) {
-                    year = c.minus(4716);
-                } else {
-                    year = c.minus(4715);
+            "isLeapYear": {
+                "value": function () {
+                    return isLeapYear(this.getter().year);
                 }
-
-                this.set("year", year.toNumber());
-                this.set("month", month.toNumber());
-                this.set("day", day.toNumber());
-                time = dayFractionToTime(f);
-                this.set("hour", time[0]);
-                this.set("minute", time[1]);
-                this.set("second", time[2]);
-                this.set("millisecond", time[3]);
-                this.set("offset", 0);
-                return this;
             },
 
-            "monthOfYear": function () {
-                return monthNames[this.get("month")];
+            "daysInYear": {
+                "value": function () {
+                    return daysInYear(this.getter().year);
+                }
             },
 
-            "dayOfWeek": function () {
-                return dayNames[(this.julianDay() + 1.5) % 7];
+            "daysInMonth": {
+                "value": function () {
+                    var struct = this.getter();
+
+                    return daysInMonth(struct.year, struct.month);
+                }
             },
 
-            "isLeapYear": function () {
-                return isLeapYear(this.get("year"));
+            "dayOfYear": {
+                "value": function () {
+                    var struct = this.getter();
+
+                    return dayOfYear(struct.year, struct.month, struct.day);
+                }
             },
 
-            "daysInYear": function () {
-                return daysInYear(this.get("year"));
-            },
-
-            "daysInMonth": function () {
-                return daysInMonth(this.get("year"), this.get("month"));
-            },
-
-            "dayOfYear": function () {
-                return dayOfYear(this.get("year"), this.get("month"), this.get("day"));
-            },
-
-            "dayFractionToTime": function (dayFraction) {
-                return dayFractionToTime(dayFraction);
+            "dayFractionToTime": {
+                "value": function (dayFraction) {
+                    return dayFractionToTime(dayFraction);
+                }
             }
         });
 
         if (JSON && isFunction(JSON.stringify) && isFunction(JSON.parse)) {
-            extend(AstroDate.prototype, {
-                "json": function (jsonString) {
-                    var struct = {},
-                        parsedObject,
-                        astrodate;
+            defineProperties(AstroDate.prototype, {
+                "json": {
+                    "value": function (jsonString) {
+                        var struct = {},
+                            parsedObject,
+                            astrodate;
 
-                    if (typeof jsonString === "string") {
-                        parsedObject = JSON.parse(jsonString);
-                        if (isObject(parsedObject)) {
-                            astrodate = new AstroDate(parsedObject);
-                            if (astrodate.isValid()) {
-                                struct = astrodate.valueOf();
+                        if (typeof jsonString === "string") {
+                            parsedObject = JSON.parse(jsonString);
+                            if (isObject(parsedObject)) {
+                                astrodate = new AstroDate(parsedObject);
+                                if (astrodate.isValid()) {
+                                    struct = astrodate.valueOf();
+                                }
+
+                                throw new SyntaxError();
                             }
 
-                            throw new SyntaxError();
+                            this.setter("struct", struct);
+
+                            return this;
                         }
 
-                        this.set("struct", struct);
+                        if (isUndefined(jsonString)) {
+                            return JSON.stringify(this.getter());
+                        }
 
-                        return this;
+                        throw new TypeError();
                     }
-
-                    if (isUndefined(jsonString)) {
-                        return JSON.stringify(this.get("struct"));
-                    }
-
-                    throw new TypeError();
                 }
             });
         }
 
-        extend(AstroDate, {
-            "version": VERSION,
+        defineProperties(AstroDate, {
+            "version": {
+                "value": VERSION
+            },
 
-            "bignumber": bignumber,
+            "ISO": {
+                "value": ISO
+            },
 
-            "BigNumber": BigNumber,
+            "bignumber": {
+                "value": bignumber
+            },
 
-            "normaliseUnits": function (unitString) {
-                var units;
+            "BigNumber": {
+                "value": BigNumber
+            },
 
-                if (typeof unitString === "string" && unitString) {
-                    units = trim(unitString);
-                    units = unitAliases[units] || trim(units.toLowerCase().replace(/([\S\s])s$/, "$1"));
+            "normaliseUnits": {
+                "value": function (unitString) {
+                    var units;
+
+                    if (typeof unitString === "string" && unitString) {
+                        units = trim(unitString);
+                        units = unitAliases[units] || trim(units.toLowerCase().replace(/([\S\s])s$/, "$1"));
+                    }
+
+                    return units;
                 }
-
-                return units;
             },
 
-            "isAstroDate": function (inputArg) {
-                return isObject(inputArg) && inputArg instanceof AstroDate;
+            "isAstroDate": {
+                "value": function (inputArg) {
+                    return isObject(inputArg) && (inputArg instanceof AstroDate || instanceOf(inputArg, AstroDate));
+                }
             },
 
-            "monthOfYear": function (month) {
-                return monthNames[month];
+            "monthOfYear": {
+                "value": function (month) {
+                    return monthNames[month];
+                }
             },
 
-            "isLeapYear": function (year) {
-                return isLeapYear(year);
+            "isLeapYear": {
+                "value": function (year) {
+                    return isLeapYear(year);
+                }
             },
 
-            "daysInYear": function (year) {
-                return daysInYear(year);
+            "daysInYear": {
+                "value": function (year) {
+                    return daysInYear(year);
+                }
             },
 
-            "daysInMonth": function (year, month) {
-                return daysInMonth(year, month);
+            "daysInMonth": {
+                "value": function (year, month) {
+                    return daysInMonth(year, month);
+                }
             },
 
-            "dayOfYear": function (year, month, day) {
-                return dayOfYear(year, month, day);
+            "dayOfYear": {
+                "value": function (year, month, day) {
+                    return dayOfYear(year, month, day);
+                }
             },
 
             // really? Could be better
-            "dayFractionToTime": function (dayFraction) {
-                return dayFractionToTime(dayFraction);
+            "dayFractionToTime": {
+                "value": function (dayFraction) {
+                    return dayFractionToTime(dayFraction);
+                }
             }
         });
 
         return AstroDate;
     }));
-}(this));
+}(this, void(0)));
