@@ -30,7 +30,7 @@
 
     (function (name, definition) {
         if (typeof module === "object" && module && typeof module.exports === "object") {
-            module.exports = definition(require("./node_modules/" + bigNumberString + ".js"));
+            module.exports = definition(require(bigNumberString + ".js"));
         } else if (typeof global.define === "function" && global.define.amd) {
             var projectPaths = {},
                 projectConfig = {};
