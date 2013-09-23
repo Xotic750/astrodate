@@ -29,15 +29,16 @@
         }
     ],
     "devDependencies" : {
-        "uglify-js" : "latest",
-        "grunt"     : "latest",
-        "nodeunit"  : "latest",
-        "grunt-contrib-jshint"    : "latest",
-        "grunt-contrib-nodeunit"  : "latest",
-        "grunt-contrib-concat"    : "latest",
-        "grunt-contrib-uglify"    : "latest",
-        "grunt-contrib-watch"     : "latest",
-        "grunt-lib-legacyhelpers" : "latest"
+        "uglify-js"                 : "latest",
+        "grunt"                     : "latest",
+        "nodeunit"                  : "latest",
+        "bignumber.js"              : "latest",
+        "grunt-contrib-jshint"      : "latest",
+        "grunt-contrib-nodeunit"    : "latest",
+        "grunt-contrib-concat"      : "latest",
+        "grunt-contrib-uglify"      : "latest",
+        "grunt-contrib-watch"       : "latest",
+        "grunt-lib-legacyhelpers"   : "latest"
     },
     "scripts": {
         "test": "grunt"
