@@ -58,6 +58,7 @@
         var VERSION = "0.1.1",
             baseObject = {},
             baseArray = [],
+            baseString = "",
             toStringFN = baseObject.toString,
             dateObjectString = "[object Date]",
             arrayObjectString = "[object Array]",
@@ -87,7 +88,11 @@
             getPrototypeOf,
             proto = "__proto__",
             supportsProto = baseObject.constructor.prototype[proto] === null,
-            oPrototype;
+            oPrototype,
+            whiteSpaces = " \\t\\n\\f\\r",
+            wsTrimRX = new RegExp("^[" + whiteSpaces + "]+|[" + whiteSpaces + "]+$", "g"),
+            trimFN = baseString.constructor.trim,
+            trim;
 
         for (indexFullKeys = 0; indexFullKeys < lengthFullKeys; indexFullKeys += 1) {
             unitAliases[aliases[indexFullKeys]] = fullKeys[indexFullKeys];
@@ -96,10 +101,6 @@
 
         function isUndefined(inputArg) {
             return inputArg === local_undefined;
-        }
-
-        function trim(str) {
-            return str.replace(/^\s+|\s+$/g, "");
         }
 
         function isObject(inputArg) {
@@ -126,6 +127,16 @@
 
         function isString(inputArg) {
             return typeof inputArg === "string";
+        }
+
+        if (isFunction(trimFN)) {
+            trim = function (inputArg) {
+                return inputArg.trim();
+            };
+        } else {
+            trim = function (inputArg) {
+                return inputArg.replace(wsTrimRX, "");
+            };
         }
 
         // http://ecma-international.org/ecma-262/5.1/#sec-15.2.4.5
