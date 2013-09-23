@@ -29,9 +29,8 @@
         bigNumberString = bigNumberFunc.toLocaleLowerCase();
 
     (function (name, definition) {
-        console.log(global);
-        if (global.module !== local_undefined && global.module.exports) {
-            global.module.exports = definition(require("./node_modules/" + bigNumberString + ".js"));
+        if (module !== local_undefined && module.exports) {
+            module.exports = definition(require("./node_modules/" + bigNumberString + ".js"));
         } else if (typeof global.define === "function" && global.define.amd) {
             var projectPaths = {},
                 projectConfig = {};
@@ -1818,4 +1817,4 @@
 
         return AstroDate;
     }));
-}(global || this, void(0)));
+}(this, void(0)));
