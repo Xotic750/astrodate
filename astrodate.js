@@ -709,6 +709,17 @@
             return [padLeadingZero(hour.toNumber(), 2), padLeadingZero(minute.toNumber(), 2), padLeadingZero(second.toNumber(), 2), padLeadingZero(millisecond.toNumber(), 3)];
         }
 
+        function getTime(astrodate) {
+            if (!astrodate.isValid()) {
+                return NaN;
+            }
+
+            var jd1970 = bignumber(2440587.5),
+                julianDay = bignumber(astrodate.julianDay());
+
+            return julianDay.minus(jd1970).times(86400000).round().toNumber();
+        }
+
         function isValid(struct) {
             if (!isObject(struct)) {
                 return false;
@@ -1546,6 +1557,12 @@
                     }
 
                     return this.setter(date);
+                }
+            },
+
+            "getTime": {
+                "value": function () {
+                    return getTime(this);
                 }
             },
 
