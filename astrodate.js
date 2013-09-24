@@ -1651,13 +1651,16 @@
                     e = g.div(30.6001).integerPart();
                     day = g.minus(e.times(30.6001).integerPart());
                     month = e.minus(1);
-                    if (e.gte(14)) {
-                        month = e.minus(12);
+                    if (e.lt(14)) {
+                        month = e.minus(1);
+                    } else {
+                        month = e.minus(13);
                     }
 
-                    year = c.minus(4715);
                     if (month.gt(2)) {
-                        year = c.minus(1);
+                        year = c.minus(4716);
+                    } else {
+                        year = c.minus(4715);
                     }
 
                     struct = {};
