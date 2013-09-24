@@ -56,7 +56,7 @@
                 json,
                 date;
 
-            test.expect(31 * (zeroArray.length - 1) * repeat);
+            test.expect(32 * (zeroArray.length - 1) * repeat);
             for (count = 0; count < repeat; count += 1) {
                 fullArray.length = 0;
                 fullArrayString.length = 0;
@@ -160,6 +160,7 @@
                     test.equal(astrodate.json(), json, "(" + count + "/" + index + ")String array: JSON are the same: ");
 
                     astrodate = astrodate.clone();
+                    test.ok(astrodate !== astrodate.clone, "(" + count + "/" + index + ")String clone: is a clone");
                     test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")String clone: isAstrodate");
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")String clone: isValid");
                     test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")String clone: Arrays are the same");
