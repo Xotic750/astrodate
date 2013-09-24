@@ -99,7 +99,7 @@
             for (count = 0; count < repeat; count += 1) {
                 fullArray.length = 0;
                 fullArrayString.length = 0;
-                year = getRandomInt(-99999, 99999);
+                year = getRandomInt(-9007199254740992, 9007199254740991);
                 month = getRandomInt(1, 12);
                 hour = getRandomInt(0, 24);
                 fullArray.push(year);
@@ -143,7 +143,7 @@
                     test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")Number: Arrays are the same");
                     date = new Date(astrodate.toString()).getTime();
                     if (slice[0] >= 0 && slice[0] < 10000 && slice[3] !== 24) {
-                        test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")Number date: Dates are the same: " + slice);
+                        test.equal(astrodate.getTime(), date, "(" + count + "/" + index + ")Number date: Dates are the same: " + slice);
                     } else {
                         test.ok(isNaN(date), "outside of Date capability: " + slice);
                     }
@@ -155,7 +155,7 @@
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")Number array: isValid");
                     test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")Number array: Arrays are the same");
                     if (slice[0] >= 0 && slice[0] < 10000 && slice[3] !== 24) {
-                        test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")Number array date: Dates are the same");
+                        test.equal(astrodate.getTime(), date, "(" + count + "/" + index + ")Number array date: Dates are the same");
                     } else {
                         test.ok(isNaN(date), "outside of Date capability: " + slice);
                     }
@@ -167,7 +167,7 @@
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")Number astrodate: isValid");
                     test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")Number astrodate: Arrays are the same");
                     if (slice[0] >= 0 && slice[0] < 10000 && slice[3] !== 24) {
-                        test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")Number astrodate date: dates are the same");
+                        test.equal(astrodate.getTime(), date, "(" + count + "/" + index + ")Number astrodate date: dates are the same");
                     } else {
                         test.ok(isNaN(date), "outside of Date capability: " + slice);
                     }
@@ -179,7 +179,7 @@
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")String: isValid");
                     test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")String: Arrays are the same");
                     if (slice[0] >= 0 && slice[0] < 10000 && slice[3] !== 24) {
-                        test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")String date: dates are the same");
+                        test.equal(astrodate.getTime(), date, "(" + count + "/" + index + ")String date: dates are the same");
                     } else {
                         test.ok(isNaN(date), "outside of Date capability: " + slice);
                     }
@@ -191,7 +191,7 @@
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")String array: isValid");
                     test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")String array: Arrays are the same");
                     if (slice[0] >= 0 && slice[0] < 10000 && slice[3] !== 24) {
-                        test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")String array date: dates are the same");
+                        test.equal(astrodate.getTime(), date, "(" + count + "/" + index + ")String array date: dates are the same");
                     } else {
                         test.ok(isNaN(date), "outside of Date capability: " + slice);
                     }
@@ -204,7 +204,7 @@
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")String clone: isValid");
                     test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")String clone: Arrays are the same");
                     if (slice[0] >= 0 && slice[0] < 10000 && slice[3] !== 24) {
-                        test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")String clone: dates are the same");
+                        test.equal(astrodate.getTime(), date, "(" + count + "/" + index + ")String clone: dates are the same");
                     } else {
                         test.ok(isNaN(date), "outside of Date capability: " + slice);
                     }

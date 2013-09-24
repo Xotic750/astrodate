@@ -851,7 +851,7 @@
 
                 switch (index) {
                 case 0:
-                    if (number.isNaN() || number.lte(-100000) || number.gte(100000)) {
+                    if (!number.isFinite()) {
                         //invalid
                         return temp;
                     }
@@ -1195,33 +1195,16 @@
 
                         if (date.indexOf("-") === -1) {
                             temp = [];
-                            switch (date.length) {
-                            case 9:
-                                if (signYear) {
-                                    temp[0] = date.slice(0, 5);
-                                    temp[1] = date.slice(5, 7);
-                                    temp[2] = date.slice(7);
-                                } else {
+                            length = date.length;
+                            if (length >= 8) {
+                                if (length >= 9 && !signYear) {
                                     return setInvalid(this);
                                 }
 
-                                break;
-                            case 8:
-                                temp[0] = date.slice(0, 4);
-                                temp[1] = date.slice(4, 6);
-                                temp[2] = date.slice(6);
-                                break;
-                            case 4:
-                                temp[0] = date;
-                                temp[1] = "01";
-                                temp[2] = "01";
-                                break;
-                            case 2:
-                                temp[0] = date + "00";
-                                temp[1] = "01";
-                                temp[2] = "01";
-                                break;
-                            default:
+                                temp[0] = date.slice(0, length - 4);
+                                temp[1] = date.slice(length - 4, length - 2);
+                                temp[2] = date.slice(length - 2);
+                            } else {
                                 return setInvalid(this);
                             }
                         } else {
@@ -1241,7 +1224,7 @@
                         for (index = 0; index < 3; index += 1) {
                             element = temp[index];
                             length = element.length;
-                            if ((index && length !== 2) || (!index && (length < 4 || (signYear === "+" && length === 4)))) {
+                            if ((index && length !== 2) || (!index && ((length < 4 || (signYear === "+" && length === 4)) || (length > 4 && signYear !== "+" && signYear !== "-")))) {
                                 return setInvalid(this);
                             }
 
@@ -1752,8 +1735,8 @@
 
             "easter": {
                 "value": function (julian) {
-                    var struct = this.getter(),
-                        year = bignumber(struct.year),
+                    var struct,
+                        year,
                         a,
                         b,
                         c,
@@ -1768,6 +1751,12 @@
                         m,
                         n;
 
+                    if (!this.isValid()) {
+                        return new AstroDate(NaN);
+                    }
+
+                    struct = this.getter();
+                    year = bignumber(struct.year);
                     if (isUndefined(julian)) {
                         a = year.mod(19);
                         b = year.div(100).integerPart();
