@@ -22,6 +22,45 @@
     var AstroDate = require("../astrodate");
 
     exports.create = {
+        "periphery methods": function (test) {
+            var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+                monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
+                monthDaysLeap = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
+                dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                astrodate,
+                index;
+
+            test.expect((8 * 12) + 4 + (4 * 7));
+            for (index = 0; index < 12; index += 1) {
+                astrodate = new AstroDate([2013, index + 1]);
+                test.equal(astrodate.monthOfYear(), monthNames[index], "Month name match");
+                test.equal(AstroDate.monthOfYear(index + 1), monthNames[index], "Month name match");
+                test.equal(astrodate.daysInmonth(), monthDays[index], "Days in month: normal year");
+                test.equal(AstroDate.daysInmonth(2013, index + 1), monthDays[index], "Days in month: normal year");
+
+                astrodate = new AstroDate([2012, index + 1]);
+                test.equal(astrodate.monthOfYear(), monthNames[index], "Month name match");
+                test.equal(AstroDate.monthOfYear(index + 1), monthNames[index], "Month name match");
+                test.equal(astrodate.daysInmonth(), monthDaysLeap[index], "Days in month: leap year");
+                test.equal(AstroDate.daysInmonth(2012, index + 1), monthDaysLeap[index], "Days in month: leap year");
+            }
+
+            test.ok(!astrodate.isLeapYear(), "Normal year");
+            test.ok(!AstroDate.isLeapYear(2013), "Normal year");
+            test.ok(astrodate.isLeapYear(), "Leap year");
+            test.ok(AstroDate.isLeapYear(2012), "Leap year");
+
+            for (index = 0; index < 7; index += 1) {
+                astrodate = new AstroDate([2013, 9, index + 1]);
+                test.equal(astrodate.dayOfWeek(), dayNames[index], "Day names");
+                test.equal(AstroDate.dayOfWeek(2013, 9, index + 1), dayNames[index], "Day names");
+                test.equal(astrodate.dayOfYear(), 244 + index, "Day of year");
+                test.equal(AstroDate.dayOfYear(2013, 9, index + 1), 244 + index, "Day of year");
+            }
+
+            test.done();
+        },
+
         "array/isAstroDate/isValid/from AstroDate": function (test) {
             var repeat = 5000,
                 zeroArray = [NaN, 1, 1, 0, 0, 0, 0, 0],

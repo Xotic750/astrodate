@@ -441,7 +441,7 @@
         defineProperties(BigNumber, {
             "isBigNumber": {
                 "value": function (inputArg) {
-                    return inputArg && typeof inputArg === "object" && (inputArg instanceof BigNumber || instanceOf(inputArg, BigNumber));
+                    return inputArg && typeof inputArg === "object" && (instanceOf(inputArg, BigNumber || inputArg instanceof BigNumber));
                 }
             },
 
@@ -1770,9 +1770,11 @@
                 "value": function (unitString) {
                     var units;
 
-                    if (typeof unitString === "string" && unitString) {
-                        units = trim(unitString);
-                        units = unitAliases[units] || trim(units.toLowerCase().replace(/([\S\s])s$/, "$1"));
+                    if (isString(unitString)) {
+                        unitString = trim(unitString);
+                        if (unitString.length) {
+                            units = unitAliases[unitString] || unitString.toLowerCase().replace(/([\S\s])s$/, "$1");
+                        }
                     }
 
                     return units;
@@ -1781,7 +1783,7 @@
 
             "isAstroDate": {
                 "value": function (inputArg) {
-                    return isObject(inputArg) && (inputArg instanceof AstroDate || instanceOf(inputArg, AstroDate));
+                    return isObject(inputArg) && (instanceOf(inputArg, AstroDate) || inputArg instanceof AstroDate);
                 }
             },
 
@@ -1812,6 +1814,12 @@
             "dayOfYear": {
                 "value": function (year, month, day) {
                     return dayOfYear(year, month, day);
+                }
+            },
+
+            "dayOfWeek": {
+                "value": function (year, month, day) {
+                    return dayNames[(new AstroDate([year, month, day]).julianDay() + 1.5) % 7];
                 }
             },
 
