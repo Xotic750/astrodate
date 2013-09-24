@@ -27,10 +27,21 @@
                 monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
                 monthDaysLeap = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31],
                 dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                leapYears = [2004, 2008, 2012, 2016, 2020, 2024, 2028, 2032, 2036, 2040, 2044, 2048, 2052, 2056, 2060, 2064, 2068, 2072, 2076, 2080, 2084, 2088, 2092],
+                leapYearLength = leapYears.length,
+                normalYears = [],
+                normalYearsLength,
                 astrodate,
                 index;
 
-            test.expect((8 * 12) + 4 + (4 * 7));
+            for (index = leapYears[0]; index < leapYears[leapYearLength - 1]; index += 1) {
+                if (leapYears.indexOf(index) === -1) {
+                    normalYears.push(index);
+                }
+            }
+
+            normalYearsLength = normalYears.length;
+            test.expect((8 * 12) + (2 * leapYearLength) + (2 * normalYearsLength) + (4 * 7));
             for (index = 0; index < 12; index += 1) {
                 astrodate = new AstroDate([2013, index + 1]);
                 test.equal(astrodate.monthOfYear(), monthNames[index], "Month name match");
@@ -45,10 +56,15 @@
                 test.equal(AstroDate.daysInMonth(2012, index + 1), monthDaysLeap[index], "Days in month: leap year");
             }
 
-            test.ok(!astrodate.isLeapYear(), "Normal year");
-            test.ok(!AstroDate.isLeapYear(2013), "Normal year");
-            test.ok(astrodate.isLeapYear(), "Leap year");
-            test.ok(AstroDate.isLeapYear(2012), "Leap year");
+            for (index = 0; index < leapYearLength; index += 1) {
+                test.ok(new AstroDate([leapYears[index]]).isLeapYear(), "Leap year");
+                test.ok(AstroDate.isLeapYear(leapYears[index]), "Leap year");
+            }
+
+            for (index = 0; index < normalYearsLength; index += 1) {
+                test.ok(!new AstroDate([2013]).isLeapYear(), "Normal year");
+                test.ok(!AstroDate.isLeapYear(2013), "Normal year");
+            }
 
             for (index = 0; index < 7; index += 1) {
                 astrodate = new AstroDate([2013, 9, index + 1]);
