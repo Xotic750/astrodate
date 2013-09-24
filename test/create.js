@@ -7,22 +7,6 @@
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
-    function isLeapYear(year) {
-        return year % 400 === 0 || (year % 100 !== 0 && year % 4 === 0);
-    }
-
-    function daysInMonth(year, month) {
-        var days;
-
-        if (month === 2) {
-            days = 28 + isLeapYear(year);
-        } else {
-            days = 31 - ((month - 1) % 7 % 2);
-        }
-
-        return days;
-    }
-
     function padLeadingZero(number, size) {
         var numString = number.toString(),
             length = size - numString.length,
@@ -65,7 +49,7 @@
                 hour = getRandomInt(0, 24);
                 fullArray.push(year);
                 fullArray.push(month);
-                fullArray.push(getRandomInt(1, daysInMonth(year, month)));
+                fullArray.push(getRandomInt(1, AstroDate.daysInMonth(year, month)));
                 fullArray.push(hour);
                 if (hour === 24) {
                     fullArray.push(0);
@@ -214,7 +198,7 @@
                 }
 
                 month = padLeadingZero(getRandomInt(1, 12), 2);
-                day = padLeadingZero(getRandomInt(1, daysInMonth(parseInt(year, 10), parseInt(month, 10))), 2);
+                day = padLeadingZero(getRandomInt(1, AstroDate.daysInMonth(parseInt(year, 10), parseInt(month, 10))), 2);
                 hour = padLeadingZero(getRandomInt(0, 24), 2);
                 if (hour === "24") {
                     minute = "00";
