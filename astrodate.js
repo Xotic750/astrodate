@@ -1067,7 +1067,7 @@
 
                     element = temp[0];
                     if (length === 1) {
-                        if (element.charAt(element.length - 1) === "Z" || element.indexOf(":") !== -1 || element.indexOf("+") > 1 || (element.charAt(0) !== "-" && element.split("-").length === 2 && !/^\d{4}-\d{2}$/.test(element))) {
+                        if (element.charAt(element.length - 1) === "Z" || element.indexOf(":") !== -1 || element.indexOf("+") > 1 || (element.charAt(0) !== "-" && element.charAt(4) !== "-" && element.split("-").length === 2)) {
                             temp.unshift("");
                             isTime = true;
                         } else {
