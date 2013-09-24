@@ -35,14 +35,14 @@
                 astrodate = new AstroDate([2013, index + 1]);
                 test.equal(astrodate.monthOfYear(), monthNames[index], "Month name match");
                 test.equal(AstroDate.monthOfYear(index + 1), monthNames[index], "Month name match");
-                test.equal(astrodate.daysInmonth(), monthDays[index], "Days in month: normal year");
-                test.equal(AstroDate.daysInmonth(2013, index + 1), monthDays[index], "Days in month: normal year");
+                test.equal(astrodate.daysInMonth(), monthDays[index], "Days in month: normal year");
+                test.equal(AstroDate.daysInMonth(2013, index + 1), monthDays[index], "Days in month: normal year");
 
                 astrodate = new AstroDate([2012, index + 1]);
                 test.equal(astrodate.monthOfYear(), monthNames[index], "Month name match");
                 test.equal(AstroDate.monthOfYear(index + 1), monthNames[index], "Month name match");
-                test.equal(astrodate.daysInmonth(), monthDaysLeap[index], "Days in month: leap year");
-                test.equal(AstroDate.daysInmonth(2012, index + 1), monthDaysLeap[index], "Days in month: leap year");
+                test.equal(astrodate.daysInMonth(), monthDaysLeap[index], "Days in month: leap year");
+                test.equal(AstroDate.daysInMonth(2012, index + 1), monthDaysLeap[index], "Days in month: leap year");
             }
 
             test.ok(!astrodate.isLeapYear(), "Normal year");

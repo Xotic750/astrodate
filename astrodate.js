@@ -648,6 +648,10 @@
             return Math.floor((275 * month) / 9) - k * Math.floor((month + 9) / 12) + day - 30;
         }
 
+        function dayOfWeek(julianDay) {
+            return dayNames[(julianDay + 1.5) % 7];
+        }
+
         function dayFractionToTime(dayFraction) {
             var totalMs = dayFraction.times(86400000),
                 hour = totalMs.div(3600000),
@@ -1612,7 +1616,7 @@
                             b = a.neg().plus(2).plus(a.div(4).integerPart());
                         }
 
-                        return year.plus(4716).times(365.25).integerPart().plus(month.plus(1).times(30.6001).integerPart()).plus(struct.day).plus(this.timeTo("day")).plus(b).minus(1524.5);
+                        return year.plus(4716).times(365.25).integerPart().plus(month.plus(1).times(30.6001).integerPart()).plus(struct.day).plus(this.timeTo("day")).plus(b).minus(1524.5).toNumber();
                     }
 
                     z = bignumber(julianDay).plus(0.5);
@@ -1663,7 +1667,7 @@
 
             "dayOfWeek": {
                 "value": function () {
-                    return dayNames[(this.julianDay() + 1.5) % 7];
+                    return dayOfWeek(this.julianDay());
                 }
             },
 
@@ -1819,7 +1823,7 @@
 
             "dayOfWeek": {
                 "value": function (year, month, day) {
-                    return dayNames[(new AstroDate([year, month, day]).julianDay() + 1.5) % 7];
+                    return dayOfWeek(new AstroDate([year, month, day]).julianDay());
                 }
             },
 
