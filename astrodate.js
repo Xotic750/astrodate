@@ -649,7 +649,7 @@
         }
 
         function dayOfWeek(julianDay) {
-            return dayNames[(julianDay + 1.5) % 7];
+            return dayNames[(+julianDay + 1.5) % 7];
         }
 
         function dayFractionToTime(dayFraction) {
@@ -1616,7 +1616,7 @@
                             b = a.neg().plus(2).plus(a.div(4).integerPart());
                         }
 
-                        return year.plus(4716).times(365.25).integerPart().plus(month.plus(1).times(30.6001).integerPart()).plus(struct.day).plus(this.timeTo("day")).plus(b).minus(1524.5).toNumber();
+                        return year.plus(4716).times(365.25).integerPart().plus(month.plus(1).times(30.6001).integerPart()).plus(struct.day).plus(this.timeTo("day")).plus(b).minus(1524.5).toString();
                     }
 
                     z = bignumber(julianDay).plus(0.5);
@@ -1661,7 +1661,7 @@
 
             "monthOfYear": {
                 "value": function () {
-                    return monthNames[this.getter().month];
+                    return monthNames[this.getter().month - 1];
                 }
             },
 
@@ -1793,7 +1793,7 @@
 
             "monthOfYear": {
                 "value": function (month) {
-                    return monthNames[month];
+                    return monthNames[month - 1];
                 }
             },
 
