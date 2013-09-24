@@ -159,17 +159,17 @@
 
                     test.equal(astrodate.json(), json, "(" + count + "/" + index + ")String array: JSON are the same: ");
 
-                    astrodate = new AstroDate(astrodate);
-                    test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")String astrodate: isAstrodate");
-                    test.ok(astrodate.isValid(), "(" + count + "/" + index + ")String astrodate: isValid");
-                    test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")String astrodate: Arrays are the same");
+                    astrodate = astrodate.clone();
+                    test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")String clone: isAstrodate");
+                    test.ok(astrodate.isValid(), "(" + count + "/" + index + ")String clone: isValid");
+                    test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")String clone: Arrays are the same");
                     if (slice[0] >= 0 && slice[0] < 10000 && slice[3] !== 24) {
-                        test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")String astrodate: dates are the same");
+                        test.equal(astrodate.date().getTime(), date, "(" + count + "/" + index + ")String clone: dates are the same");
                     } else {
                         test.ok(isNaN(date), "outside of Date capability: " + slice);
                     }
 
-                    test.equal(astrodate.json(), json, "(" + count + "/" + index + ")String astrodate: JSON are the same: ");
+                    test.equal(astrodate.json(), json, "(" + count + "/" + index + ")String clone: JSON are the same: ");
 
                     astrodate = new AstroDate().json(json);
                     test.equal(astrodate.json(), json, "(" + count + "/" + index + ")JSON parse: JSON are the same: ");
