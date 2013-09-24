@@ -1003,6 +1003,12 @@
             return string;
         }
 
+        function setInvalid(thisObject) {
+            thisObject.setter({});
+
+            return thisObject;
+        }
+
         function ISO(isoString) {
             var isoObject;
 
@@ -1060,9 +1066,7 @@
                     temp = trim(isoString).split(/[T ]/);
                     length = temp.length;
                     if (length < 1 || length > 2) {
-                        //invalid
-                        this.setter(dateObject);
-                        return this;
+                        return setInvalid(this);
                     }
 
                     element = temp[0];
@@ -1095,9 +1099,7 @@
                     time = temp[1];
                     character = time.charAt(0);
                     if (!isDigit(character)) {
-                        //invalid
-                        this.setter(dateObject);
-                        return this;
+                        return setInvalid(this);
                     }
 
                     if (!isTime) {
@@ -1107,9 +1109,7 @@
                             if (character === "+" || character === "-") {
                                 signYear = character;
                             } else {
-                                //invalid
-                                this.setter(dateObject);
-                                return this;
+                                return setInvalid(this);
                             }
 
                             date = date.slice(1);
@@ -1124,9 +1124,7 @@
                                     temp[1] = date.slice(5, 7);
                                     temp[2] = date.slice(7);
                                 } else {
-                                    //invalid
-                                    this.setter(dateObject);
-                                    return this;
+                                    return setInvalid(this);
                                 }
 
                                 break;
@@ -1146,9 +1144,7 @@
                                 temp[2] = "01";
                                 break;
                             default:
-                                //invalid
-                                this.setter(dateObject);
-                                return this;
+                                return setInvalid(this);
                             }
                         } else {
                             temp = date.split("-");
@@ -1156,9 +1152,7 @@
 
                         length = temp.length;
                         if (length < 2 || length > 3) {
-                            //invalid
-                            this.setter(dateObject);
-                            return this;
+                            return setInvalid(this);
                         }
 
                         if (length === 2) {
@@ -1170,16 +1164,12 @@
                             element = temp[index];
                             length = element.length;
                             if ((index && length !== 2) || (!index && (length < 4 || (signYear === "+" && length === 4)))) {
-                                //invalid
-                                this.setter(dateObject);
-                                return this;
+                                return setInvalid(this);
                             }
 
                             number = intToNumber(element);
                             if (isNaN(number) || (index === 1 && (number < 1 || number > 12)) || (index === 2 && (number < 1 || number > daysInMonth(date.year, date.month)))) {
-                                //invalid
-                                this.setter(dateObject);
-                                return this;
+                                return setInvalid(this);
                             }
 
                             if (!index && signYear) {
@@ -1198,18 +1188,14 @@
                         if (character === "Z") {
                             time = time.slice(0, last) + "+00";
                         } else {
-                            //invalid
-                            this.setter(dateObject);
-                            return this;
+                            return setInvalid(this);
                         }
                     }
 
                     temp = time.split(/[\-+]/);
                     length = temp.length;
                     if (length < 1 || length > 2) {
-                        //invalid
-                        this.setter(dateObject);
-                        return this;
+                        return setInvalid(this);
                     }
 
                     if (length === 1) {
@@ -1232,9 +1218,7 @@
                     offset = temp[1].split(":");
                     length = offset.length;
                     if (length < 1 || length > 2) {
-                        //invalid
-                        this.setter(dateObject);
-                        return this;
+                        return setInvalid(this);
                     }
 
                     if (length === 1) {
@@ -1250,9 +1234,7 @@
                             offset[1] = "00";
                             break;
                         default:
-                            //invalid
-                            this.setter(dateObject);
-                            return this;
+                            return setInvalid(this);
                         }
                     }
 
@@ -1260,25 +1242,19 @@
                         element = offset[index];
                         length = element.length;
                         if (length !== 2) {
-                            //invalid
-                            this.setter(dateObject);
-                            return this;
+                            return setInvalid(this);
                         }
 
                         number = intToNumber(element);
                         if (isNaN(number) || number < -1440 || number > 1440) {
-                            //invalid
-                            this.setter(dateObject);
-                            return this;
+                            return setInvalid(this);
                         }
 
                         offset[index] = number;
                     }
 
                     if (signOffset === -1 && offset[0] === 0 && offset[1] === 0) {
-                        //invalid
-                        this.setter(dateObject);
-                        return this;
+                        return setInvalid(this);
                     }
 
                     time = temp[0];
@@ -1286,9 +1262,7 @@
                         temp = time.split(/[\.,]/);
                         element = temp[1];
                         if (temp.length !== 2 || element.split(":").length !== 1) {
-                            //invalid
-                            this.setter(dateObject);
-                            return this;
+                            return setInvalid(this);
                         }
 
                         time = temp[0];
@@ -1315,9 +1289,7 @@
                             temp[0] = time;
                             break;
                         default:
-                            //invalid
-                            this.setter(dateObject);
-                            return this;
+                            return setInvalid(this);
                         }
                     } else {
                         temp = time.split(":");
@@ -1325,9 +1297,7 @@
 
                     length = temp.length;
                     if (length < 1 || length > 3) {
-                        //invalid
-                        this.setter(dateObject);
-                        return this;
+                        return setInvalid(this);
                     }
 
                     if (found) {
@@ -1365,9 +1335,7 @@
                         element = temp[index];
                         length = element.length;
                         if (length < 1 || (index < 3 && length > 2) || (index === 3 && length > 3)) {
-                            //invalid
-                            this.setter(dateObject);
-                            return this;
+                            return setInvalid(this);
                         }
 
                         number = intToNumber(element);
@@ -1376,9 +1344,7 @@
                         }
 
                         if (isNaN(number) || number < 0 || (found && index && number > 0) || (!index && number > 24) || (index > 0 && index < 3 && number > 59) || (index === 4 && number >= 1000)) {
-                            //invalid
-                            this.setter(dateObject);
-                            return this;
+                            return setInvalid(this);
                         }
 
                         time[fullKeys[index + 3]] = number;
@@ -1404,21 +1370,17 @@
 
             "toString": {
                 "value": function () {
-                    var str = "",
+                    var strArray = [],
                         isoObject = this.getter(),
                         index,
                         prop;
 
                     for (index = 0; index < lengthFullKeys; index += 1) {
-                        if (index) {
-                            str += ",";
-                        }
-
                         prop = fullKeys[index];
-                        str += prop + ":" + isoObject[prop];
+                        strArray.push(prop + ":" + isoObject[prop]);
                     }
 
-                    return str;
+                    return strArray.join(",");
                 }
             },
 
@@ -1555,6 +1517,12 @@
                 }
             },
 
+            "clone": {
+                "value": function () {
+                    return new AstroDate(this);
+                }
+            },
+
             "array": {
                 "value": function (astroArray) {
                     if (isUndefined(astroArray)) {
@@ -1621,7 +1589,7 @@
                         c,
                         d,
                         e,
-                        f,
+                        g,
                         z,
                         alpha,
                         time,
@@ -1658,30 +1626,30 @@
                     b = a.plus(1524);
                     c = b.minus(122.1).div(365.25).integerPart();
                     d = c.times(365.25).integerPart();
-                    e = b.minus(d).div(30.6001).integerPart();
-                    f = z.fractionalPart();
-                    day = b.minus(d).minus(e.times(30.6001).integerPart());
-                    if (e.lt(14)) {
-                        month = e.minus(1);
-                    } else {
-                        month = e.minus(13);
+                    g = b.minus(d);
+                    e = g.div(30.6001).integerPart();
+                    day = g.minus(e.times(30.6001).integerPart());
+                    month = e.minus(1);
+                    if (e.gte(14)) {
+                        month = e.minus(12);
                     }
 
+                    year = c.minus(4715);
                     if (month.gt(2)) {
-                        year = c.minus(4716);
-                    } else {
-                        year = c.minus(4715);
+                        year = c.minus(1);
                     }
 
-                    this.setter("year", year.toNumber());
-                    this.setter("month", month.toNumber());
-                    this.setter("day", day.toNumber());
-                    time = dayFractionToTime(f);
-                    this.setter("hour", time[0]);
-                    this.setter("minute", time[1]);
-                    this.setter("second", time[2]);
-                    this.setter("millisecond", time[3]);
-                    this.setter("offset", 0);
+                    struct = {};
+                    time = dayFractionToTime(z.fractionalPart());
+                    struct[fullKeys[0]] = year.toNumber();
+                    struct[fullKeys[1]] = month.toNumber();
+                    struct[fullKeys[2]] = day.toNumber();
+                    struct[fullKeys[3]] = time[0];
+                    struct[fullKeys[4]] = time[1];
+                    struct[fullKeys[5]] = time[2];
+                    struct[fullKeys[6]] = time[3];
+                    struct[fullKeys[7]] = 0;
+                    this.setter("struct", struct);
 
                     return this;
                 }
