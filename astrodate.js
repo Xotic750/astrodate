@@ -1679,6 +1679,51 @@
                 }
             },
 
+            "easter": {
+                "value": function (julian) {
+                    var struct = this.getter(),
+                        year = bignumber(struct.year),
+                        a,
+                        b,
+                        c,
+                        d,
+                        e,
+                        f,
+                        g,
+                        h,
+                        i,
+                        k,
+                        l,
+                        m,
+                        n;
+
+                    if (isUndefined(julian)) {
+                        a = year.mod(19);
+                        b = year.div(100).integerPart();
+                        c = year.mod(100).integerPart();
+                        d = b.div(4);
+                        e = b.mod(4);
+                        f = b.plus(8).div(25).integerPart();
+                        g = b.minus(f).plus(1).div(3).integerPart();
+                        h = bignumber(19).times(a).plus(b).minus(d).minus(g).plus(15).mod(30);
+                        i = c.div(4).integerPart();
+                        k = c.mod(4);
+                        l = bignumber(32).plus(e.times(2)).plus(i.times(2)).minus(h).minus(k).mod(7);
+                        m = a.plus(h.times(11)).plus(l.times(22)).div(451).integerPart();
+                        n = h.plus(l).minus(m.times(7)).plus(114);
+                    } else {
+                        a = year.mod(4);
+                        b = year.mod(7);
+                        c = year.mod(19);
+                        d = c.times(19).plus(15).mod(30);
+                        e = a.times(2).plus(b.times(4)).minus(d).plus(34).mod(7);
+                        f = d.plus(e).plus(114);
+                    }
+
+                    return new AstroDate([year.toNumber(), n.div(31).integerPart().toNumber(), n.mod(31).plus(1).toNumber()]);
+                }
+            },
+
             "monthOfYear": {
                 "value": function () {
                     return monthNames[this.getter().month - 1];
