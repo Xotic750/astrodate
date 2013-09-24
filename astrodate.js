@@ -720,6 +720,69 @@
             return julianDay.minus(jd1970).times(86400000).round().toNumber();
         }
 
+        // DeltaT
+        //http://eclipse.gsfc.nasa.gov/SEhelp/deltatpoly2004.html
+        function deltaTime(year, month, canonCorrection) {
+            year = bignumber(year);
+            month = bignumber(month);
+
+            var y = year.plus(month.minus(0.5).div(12)),
+                u,
+                t,
+                r;
+
+            if (year.gte(-501) && year.lt(2150)) {
+                if (year.lt(500)) {
+                    u = y.div(100);
+                    r = bignumber(10583.6).minus(u.times(1014.41)).plus(u.pow(2).times(33.78311)).minus(u.pow(3).times(5.952053)).minus(u.pow(4).times(0.1798452)).plus(u.pow(5).times(0.022174192)).plus(u.pow(6).times(0.0090316521));
+                } else if (year.lt(1600)) {
+                    u = y.minus(1000).div(100);
+                    r = bignumber(1574.2).minus(u.times(556.01)).plus(u.pow(2).times(71.23472)).plus(u.pow(3).times(0.319781)).minus(u.pow(4).times(0.8503463)).minus(u.pow(5).times(0.005050998)).plus(u.pow(6).times(0.0083572073));
+                } else if (year.lt(1700)) {
+                    t = y.minus(1600);
+                    r = bignumber(120).minus(t.times(0.9808)).minus(t.pow(2).times(0.01532)).plus(t.pow(3).div(7129));
+                } else if (year.lt(1800)) {
+                    t = y.minus(1700);
+                    r = bignumber(8.83).plus(t.times(0.1603)).minus(t.pow(2).times(0.0059285)).plus(t.pow(3).times(0.00013336)).minus(t.pow(4).div(1174000));
+                } else if (year.lt(1860)) {
+                    t = y.minus(1800);
+                    r = bignumber(13.72).minus(t.times(0.332447)).plus(t.pow(2).times(0.0068612)).plus(t.pow(3).times(0.0041116)).minus(t.pow(4).times(0.00037436)).plus(t.pow(5).times(0.0000121272)).minus(t.pow(6).times(0.0000001699)).plus(t.pow(7).times(0.000000000875));
+                } else if (year.lt(1900)) {
+                    t = y.minus(1860);
+                    r = bignumber(7.62).plus(t.times(0.5737)).minus(t.pow(2).times(0.251754)).plus(t.pow(3).times(0.01680668)).minus(t.pow(4).times(0.0004473624)).plus(t.pow(5).div(233174));
+                } else if (year.lt(1920)) {
+                    t = y.minus(1900);
+                    r = bignumber(-2.79).plus(t.times(1.494119)).minus(t.pow(2).times(0.0598939)).plus(t.pow(3).times(0.0061966)).minus(t.pow(4).times(0.000197));
+                } else if (year.lt(1941)) {
+                    t = y.minus(1920);
+                    r = bignumber(21.20).plus(t.times(0.84493)).minus(t.pow(2).times(0.076100)).plus(t.pow(3).times(0.0020936));
+                } else if (year.lt(1961)) {
+                    t = y.minus(1950);
+                    r = bignumber(29.07).plus(t.times(0.407)).minus(t.pow(2).div(233)).plus(t.pow(3).div(2547));
+                } else if (year.lt(1986)) {
+                    t = y.minus(1975);
+                    r = bignumber(45.45).plus(t.times(1.067)).minus(t.pow(2).div(260)).minus(t.pow(3).div(718));
+                } else if (year.lt(2005)) {
+                    t = y.minus(2000);
+                    r = bignumber(63.86).plus(t.times(0.3345)).minus(t.pow(2).times(0.060374)).plus(t.pow(3).times(0.0017275)).plus(t.pow(4).times(0.000651814)).plus(t.pow(5).times(0.00002373599));
+                } else if (year.lt(2005)) {
+                    t = y.minus(2000);
+                    r = bignumber(62.92).plus(t.times(0.32217)).plus(t.pow(2).times(0.005589));
+                } else {
+                    r = bignumber(-20).plus(y.minus(1820).div(100).pow(2).times(32)).minus(y.neg().plus(2150).times(0.5628));
+                }
+            } else {
+                u = y.minus(1820).div(100);
+                r = u.pow(2).times(32).plus(-20);
+            }
+
+            if (canonCorrection && year.gte(1955) && year.lt(2005)) {
+                r.plus(y.minus(1955).pow(2).times(-0.000012932));
+            }
+
+            return r;
+        }
+
         function isValid(struct) {
             if (!isObject(struct)) {
                 return false;
@@ -1566,6 +1629,14 @@
                 }
             },
 
+            "deltaTime": {
+                "value": function () {
+                    var struct = this.getter();
+
+                    return deltaTime(struct.year, struct.month);
+                }
+            },
+
             "timeTo": {
                 "value": function (unit) {
                     var struct = this.getter(),
@@ -1889,6 +1960,18 @@
             "dayOfWeek": {
                 "value": function (year, month, day) {
                     return dayOfWeek(new AstroDate([year, month, day]).julianDay());
+                }
+            },
+
+            "easter": {
+                "value": function (year, julian) {
+                    return new AstroDate([year]).easter(julian);
+                }
+            },
+
+            "deltaTime": {
+                "value": function (year, month) {
+                    return deltaTime(year, month);
                 }
             },
 
