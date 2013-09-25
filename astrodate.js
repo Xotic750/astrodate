@@ -653,7 +653,7 @@
         }
 
         function dayOfWeek(julianDay) {
-            var day = bignumber(julianDay).plus(1.5).mod(7).integerPart();
+            var day = bignumber(julianDay).plus(1.5).mod(7).integerPart().toNumber();
 
             return dayNames[day];
         }
