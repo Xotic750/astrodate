@@ -57,13 +57,13 @@
             }
 
             for (index = 0; index < leapYearLength; index += 1) {
-                test.ok(new AstroDate([leapYears[index]]).isLeapYear(), "Leap year");
-                test.ok(AstroDate.isLeapYear(leapYears[index]), "Leap year");
+                test.ok(new AstroDate([leapYears[index]]).isGregorianLeapYear(), "Leap year");
+                test.ok(AstroDate.isGregorianLeapYear(leapYears[index]), "Leap year");
             }
 
             for (index = 0; index < normalYearsLength; index += 1) {
-                test.ok(!new AstroDate([2013]).isLeapYear(), "Normal year");
-                test.ok(!AstroDate.isLeapYear(2013), "Normal year");
+                test.ok(!new AstroDate([2013]).isGregorianLeapYear(), "Normal year");
+                test.ok(!AstroDate.isGregorianLeapYear(2013), "Normal year");
             }
 
             for (index = 0; index < 7; index += 1) {
