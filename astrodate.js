@@ -1860,7 +1860,7 @@
                     var struct = this.getter(),
                         str = "",
                         value;
-
+                    console.log(gregorianToJd(struct));
                     str += dayOfWeek(gregorianToJd(struct)).slice(0, 3) + ", ";
                     str += struct.day + " ";
                     str += monthNames[struct.month - 1].slice(0, 3) + " ";
