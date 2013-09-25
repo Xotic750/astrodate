@@ -141,7 +141,7 @@
                     test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")Number: isAstrodate");
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")Number: isValid");
                     test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")Number: Arrays are the same");
-                    date = new Date(astrodate.toString()).getTime();
+                    date = new Date(astrodate.toISOString()).getTime();
                     if (slice[0] >= 0 && slice[0] < 10000 && slice[3] !== 24) {
                         test.equal(astrodate.getTime(), date, "(" + count + "/" + index + ")Number date: Dates are the same: " + slice);
                     } else {

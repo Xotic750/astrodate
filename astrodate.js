@@ -1858,10 +1858,14 @@
             "toString": {
                 "value": function () {
                     var struct = this.getter(),
-                        str = "",
+                        str,
                         value;
-                    console.log(gregorianToJd(struct));
-                    str += dayOfWeek(gregorianToJd(struct)).slice(0, 3) + ", ";
+
+                    if (!isValid(struct)) {
+                        return "Invalid Date";
+                    }
+
+                    str = dayOfWeek(gregorianToJd(struct)).slice(0, 3) + ", ";
                     str += struct.day + " ";
                     str += monthNames[struct.month - 1].slice(0, 3) + " ";
                     str += padLeadingZero(struct.year, 4) + " ";
