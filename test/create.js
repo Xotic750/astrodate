@@ -348,9 +348,9 @@
                 ];
 
                 for (index = 0; index < formats.length; index += 1) {
-                    test.equal(new AstroDate(formats[index][0]).toString(), formats[index][1], "(" + index + ")AstroDate should be able to parse ISO " + formats[index][0]);
+                    test.equal(new AstroDate(formats[index][0]).toISOString(), formats[index][1], "(" + index + ")AstroDate should be able to parse ISO " + formats[index][0]);
                     withComma = formats[index][0];
-                    test.equal(new AstroDate(withComma).toString(), formats[index][1], "(" + index + ")AstroDate should be able to parse ISO " + withComma);
+                    test.equal(new AstroDate(withComma).toISOString(), formats[index][1], "(" + index + ")AstroDate should be able to parse ISO " + withComma);
                 }
             }
 
