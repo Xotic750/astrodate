@@ -99,7 +99,7 @@
             for (count = 0; count < repeat; count += 1) {
                 fullArray.length = 0;
                 fullArrayString.length = 0;
-                year = getRandomInt(-999999999999999, 999999999999999);
+                year = getRandomInt(-9007199254740992, 9007199254740991);
                 month = getRandomInt(1, 12);
                 hour = getRandomInt(0, 24);
                 fullArray.push(year);

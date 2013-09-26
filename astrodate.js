@@ -386,9 +386,9 @@
                         }
 
                         if (!BigNumber.isBigNumber(exponentialAt)) {
-                            exponentialAt = new BigNumber(exponentialAt).integerPart();
+                            exponentialAt = new BigNumber(exponentialAt).floor();
                         } else {
-                            exponentialAt = exponentialAt.integerPart();
+                            exponentialAt = exponentialAt.floor();
                         }
 
                         if (!exponentialAt.isFinite() || exponentialAt.lt(0)) {
@@ -439,6 +439,16 @@
                 "value": function (decimalPlacesOfPI) {
                     return this.times(BigNumber.pi(decimalPlacesOfPI).div(180));
                 }
+            },
+
+            "abs": {
+                "value": function () {
+                    if (this.lt(0)) {
+                        return this.neg();
+                    }
+
+                    return this;
+                }
             }
         });
 
@@ -467,6 +477,12 @@
                 }
             },
 
+            "abs": {
+                "value": function (number) {
+                    return new BigNumber(number).abs();
+                }
+            },
+
             "factorial": {
                 "value": function (number, exponentialAt) {
                     return new BigNumber(number).factorial(exponentialAt);
@@ -483,7 +499,7 @@
                         }
 
                         if (!BigNumber.isBigNumber(decimalPlaces)) {
-                            decimalPlaces = new BigNumber(decimalPlaces).integerPart();
+                            decimalPlaces = new BigNumber(decimalPlaces).floor();
                         }
 
                         if (!decimalPlaces.isFinite() || decimalPlaces.lt(0)) {
@@ -630,6 +646,16 @@
             return year % 400 === 0 || (year % 100 !== 0 && year % 4 === 0);
         }
 
+        function isJulianLeapYear(year) {
+            var modTest = 3;
+
+            if (year > 0) {
+                modTest = 0;
+            }
+
+            return year % 4 === modTest;
+        }
+
         function daysInMonth(year, month) {
             var days;
 
@@ -653,19 +679,23 @@
         }
 
         function dayOfWeek(julianDay) {
-            var day = bignumber(julianDay).plus(1.5).mod(7).integerPart().toNumber();
+            var day = bignumber(julianDay).plus(1.5).mod(7).floor().toNumber();
+
+            if (day < 0) {
+                day = 7 + day;
+            }
 
             return dayNames[day];
         }
 
         function dayFractionToTime(dayFraction) {
-            var totalMs = dayFraction.times(86400000),
+            var totalMs = bignumber(dayFraction).abs().times(86400000),
                 hour = totalMs.div(3600000),
                 minute = hour.fractionalPart().times(60),
                 second = minute.fractionalPart().times(60),
                 millisecond = second.fractionalPart().times(1000);
 
-            return [hour.integerPart().toNumber(),  minute.integerPart().toNumber(), second.integerPart().toNumber(),  millisecond.integerPart().toNumber()];
+            return [hour.floor().toNumber(), minute.floor().toNumber(), second.floor().toNumber(), millisecond.floor().toNumber()];
         }
 
         function padLeadingZero(number, size) {
@@ -707,10 +737,10 @@
             default:
             }
 
-            hour = totalMs.div(3600000).integerPart();
-            minute = totalMs.minus(hour.times(3600000)).div(60000).integerPart();
-            second = totalMs.minus(hour.times(3600000)).minus(minute.times(60000)).div(1000).integerPart();
-            millisecond = totalMs.minus(hour.times(3600000)).minus(minute.times(60000)).minus(second.times(1000)).integerPart();
+            hour = totalMs.div(3600000).floor();
+            minute = totalMs.minus(hour.times(3600000)).div(60000).floor();
+            second = totalMs.minus(hour.times(3600000)).minus(minute.times(60000)).div(1000).floor();
+            millisecond = totalMs.minus(hour.times(3600000)).minus(minute.times(60000)).minus(second.times(1000)).floor();
 
             return [padLeadingZero(hour.toNumber(), 2), padLeadingZero(minute.toNumber(), 2), padLeadingZero(second.toNumber(), 2), padLeadingZero(millisecond.toNumber(), 3)];
         }
@@ -786,7 +816,7 @@
                 r.plus(y.minus(1955).pow(2).times(-0.000012932));
             }
 
-            return r;
+            return r.tostring();
         }
 
         function isValid(struct) {
@@ -834,7 +864,7 @@
             dayFraction = day.fractionalPart();
             if (!dayFraction.equals(0)) {
                 time = dayFractionToTime(dayFraction);
-                arr[2] = day.integerPart().toNumber();
+                arr[2] = day.floor().toNumber();
                 for (index = 3; index < lengthFullKeys; index += 1) {
                     arr[index] = time[index - 3];
                 }
@@ -1498,17 +1528,20 @@
             var a = bignumber(GREGORIAN_EPOCH).minus(1),
                 b = bignumber(struct.year).minus(1),
                 c = b.times(365),
-                d = b.div(4).integerPart(),
-                e = b.div(100).integerPart().neg(),
-                f = b.div(400).integerPart(),
-                g = bignumber(struct.month).times(367).minus(362).div(12),
-                h = 0;
+                d = b.div(4).floor(),
+                e = b.div(100).floor().neg(),
+                f = b.div(400).floor(),
+                g = bignumber(struct.month).times(367).minus(362).div(12).floor(),
+                h = 0,
+                jd;
 
             if (struct.month > 2) {
                 h = -2 + isGregorianLeapYear(struct.year);
             }
 
-            return a.plus(c).plus(d).plus(e).plus(f).plus(g.plus(h).plus(struct.day).integerPart()).plus(timeTo(struct, "day")).toString();
+            jd = a.plus(c).plus(d).plus(e).plus(f).plus(g.plus(h).plus(struct.day).floor()).plus(timeTo(struct, "day"));
+
+            return jd.toString();
         }
 
         function julianToJd(struct) {
@@ -1521,64 +1554,35 @@
                 struct.month += 12;
             }
 
-            var a = bignumber(struct.year).plus(4716).times(365.25).integerPart(),
-                b = bignumber(struct.month).plus(1).times(30.6001).integerPart();
+            var a = bignumber(struct.year).plus(4716).times(365.25).floor(),
+                b = bignumber(struct.month).plus(1).times(30.6001).floor(),
+                jd = a.plus(b).plus(struct.day).minus(1524.5).plus(timeTo(struct, "day"));
 
-            return a.plus(b).plus(struct.day).minus(1524.5).plus(timeTo(struct, "day")).toString();
+            return jd.toString();
         }
 
         function jdToGregorian(julianDay) {
-            //Negative Julian Days can not be converted
-            var jd = +julianDay,
+            var jd = bignumber(julianDay).plus(0.5),
+                time = dayFractionToTime(jd.fractionalPart()),
                 struct = {},
-                alpha,
-                year,
-                month,
-                day,
-                time,
-                a,
-                b,
+                a = jd.plus(68569).floor(),
+                b = a.times(4).div(146097).floor(),
                 c,
                 d,
-                e,
-                g,
-                z;
+                e;
 
-            if (!isValidValue(julianDay) || jd < 0) {
-                return struct;
-            }
+            a = a.minus(b.times(146097).plus(3).div(4).floor());
+            c = a.plus(1).times(4000).div(1461001).floor();
+            a = a.minus(c.times(1461).div(4).floor()).plus(31);
+            d = a.times(80).div(2447).floor();
+            e = a.minus(d.times(2447).div(80).floor());
+            a = d.div(11).floor();
+            d = d.plus(2).minus(a.times(12));
+            c = b.minus(49).times(100).plus(c).plus(a).floor();
 
-            z = bignumber(julianDay).plus(0.5);
-            if (z.lt(2299.161)) {
-                a = z.integerPart();
-            } else {
-                alpha = z.minus(1867216.25).div(36524.25).integerPart();
-                a = z.integerPart().plus(1).plus(alpha).minus(alpha.div(4).integerPart());
-            }
-
-            b = a.plus(1524);
-            c = b.minus(122.1).div(365.25).integerPart();
-            d = c.times(365.25).integerPart();
-            g = b.minus(d);
-            e = g.div(30.6001).integerPart();
-            day = g.minus(e.times(30.6001).integerPart());
-            month = e.minus(1);
-            if (e.lt(14)) {
-                month = e.minus(1);
-            } else {
-                month = e.minus(13);
-            }
-
-            if (month.gt(2)) {
-                year = c.minus(4716);
-            } else {
-                year = c.minus(4715);
-            }
-
-            time = dayFractionToTime(z.fractionalPart());
-            struct[fullKeys[0]] = year.toNumber();
-            struct[fullKeys[1]] = month.toNumber();
-            struct[fullKeys[2]] = day.toNumber();
+            struct[fullKeys[0]] = c.toNumber();
+            struct[fullKeys[1]] = d.toNumber();
+            struct[fullKeys[2]] = e.toNumber();
             struct[fullKeys[3]] = time[0];
             struct[fullKeys[4]] = time[1];
             struct[fullKeys[5]] = time[2];
@@ -1589,8 +1593,7 @@
         }
 
         function jdToJulian(julianDay) {
-            var jd = +julianDay,
-                struct = {},
+            var struct = {},
                 a,
                 b,
                 c,
@@ -1603,19 +1606,19 @@
                 day,
                 time;
 
-            if (!isValidValue(julianDay) || jd < 0) {
+            if (!isValidValue(julianDay)) {
                 return struct;
             }
 
             z = bignumber(julianDay).plus(0.5);
-            a = z.integerPart();
+            a = z.floor();
             b = a.plus(1524);
-            c = b.minus(122.1).div(365.25).integerPart();
-            d = c.times(365.25).integerPart();
+            c = b.minus(122.1).div(365.25).floor();
+            d = c.times(365.25).floor();
             g = b.minus(d);
-            e = g.div(30.6001).integerPart();
+            e = g.div(30.6001).floor();
 
-            day = g.minus(e.times(30.6001).integerPart());
+            day = g.minus(e.times(30.6001).floor());
             if (e.lt(14)) {
                 month = e.minus(1);
             } else {
@@ -1670,20 +1673,20 @@
 
             year = bignumber(struct.year);
             a = year.mod(19);
-            b = year.div(100).integerPart();
-            c = year.mod(100).integerPart();
+            b = year.div(100).floor();
+            c = year.mod(100).floor();
             d = b.div(4);
             e = b.mod(4);
-            f = b.plus(8).div(25).integerPart();
-            g = b.minus(f).plus(1).div(3).integerPart();
+            f = b.plus(8).div(25).floor();
+            g = b.minus(f).plus(1).div(3).floor();
             h = bignumber(19).times(a).plus(b).minus(d).minus(g).plus(15).mod(30);
-            i = c.div(4).integerPart();
+            i = c.div(4).floor();
             k = c.mod(4);
             l = bignumber(32).plus(e.times(2)).plus(i.times(2)).minus(h).minus(k).mod(7);
-            m = a.plus(h.times(11)).plus(l.times(22)).div(451).integerPart();
+            m = a.plus(h.times(11)).plus(l.times(22)).div(451).floor();
             n = h.plus(l).minus(m.times(7)).plus(114);
 
-            return new AstroDate([year.toNumber(), n.div(31).integerPart().toNumber(), n.mod(31).plus(1).toNumber()]);
+            return new AstroDate([year.toNumber(), n.div(31).floor().toNumber(), n.mod(31).plus(1).toNumber()]);
         }
 
         function julianEaster(struct) {
@@ -1707,10 +1710,9 @@
             e = a.times(2).plus(b.times(4)).minus(d).plus(34).mod(7);
             f = d.plus(e).plus(114);
 
-            return new AstroDate([year.toNumber(), f.div(31).integerPart().minus(1).toNumber(), f.mod(31).plus(1).toNumber()]);
+            return new AstroDate([year.toNumber(), f.div(31).floor().minus(1).toNumber(), f.mod(31).plus(1).toNumber()]);
         }
 
-        //The dates 5 through 14 October, 1582, do not exist in the Gregorian Calendar!
         AstroDate = function () {
             var args = arguments,
                 argsLength = args.length,
@@ -1859,19 +1861,28 @@
                 "value": function () {
                     var struct = this.getter(),
                         str,
-                        value;
+                        value,
+                        jd;
 
                     if (!isValid(struct)) {
                         return "Invalid Date";
                     }
 
-                    str = dayOfWeek(gregorianToJd(struct)).slice(0, 3) + ", ";
+                    jd = gregorianToJd(struct);
+                    str = dayOfWeek(jd).slice(0, 3) + ", ";
                     str += struct.day + " ";
                     str += monthNames[struct.month - 1].slice(0, 3) + " ";
-                    str += padLeadingZero(struct.year, 4) + " ";
+                    str += padLeadingZero(Math.abs(struct.year), 4) + " ";
+                    if (struct.year < 0) {
+                        str += "BCE ";
+                    } else {
+                        str += "CE ";
+                    }
+
                     str += padLeadingZero(struct.hour, 2) + ":";
                     str += padLeadingZero(struct.minute, 2) + ":";
-                    str += padLeadingZero(struct.second, 2);
+                    str += padLeadingZero(struct.second, 2) + ".";
+                    str += padLeadingZero(struct.millisecond, 3);
                     value = struct[fullKeys[lengthFullKeys - 1]];
                     if (value === 0) {
                         str += " GMT";
@@ -1887,13 +1898,59 @@
                         str += padLeadingZero(value[1], 2);
                     }
 
-                    return str;
+                    return str + " (NS)";
                 }
             },
 
             "toISOString": {
                 "value": function () {
                     return toISOString(this);
+                }
+            },
+
+            "toJulianString": {
+                "value": function () {
+                    var struct = this.getter(),
+                        str,
+                        value,
+                        jd;
+
+                    if (!isValid(struct)) {
+                        return "Invalid Date";
+                    }
+
+                    jd = gregorianToJd(struct);
+                    str = dayOfWeek(jd).slice(0, 3) + ", ";
+                    struct = jdToJulian(jd);
+                    str += struct.day + " ";
+                    str += monthNames[struct.month - 1].slice(0, 3) + " ";
+                    str += padLeadingZero(Math.abs(struct.year), 4) + " ";
+                    if (struct.year < 0) {
+                        str += "BCE ";
+                    } else {
+                        str += "CE ";
+                    }
+
+                    str += padLeadingZero(struct.hour, 2) + ":";
+                    str += padLeadingZero(struct.minute, 2) + ":";
+                    str += padLeadingZero(struct.second, 2) + ".";
+                    str += padLeadingZero(struct.millisecond, 3);
+                    value = struct[fullKeys[lengthFullKeys - 1]];
+                    if (value === 0) {
+                        str += " GMT";
+                    } else {
+                        if (value > 0) {
+                            str += " +";
+                        } else {
+                            str += " -";
+                        }
+
+                        value = fractionToTime(Math.abs(value), "minute");
+                        str += padLeadingZero(value[0], 2);
+                        str += padLeadingZero(value[1], 2);
+                    }
+
+                    return str + " (OS)";
                 }
             },
 
