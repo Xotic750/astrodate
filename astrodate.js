@@ -2196,9 +2196,9 @@
                         days;
 
                     if (this.isJulian()) {
-                        days = daysInGregorianMonth(struct);
-                    } else {
                         days = daysInJulianMonth(struct);
+                    } else {
+                        days = daysInGregorianMonth(struct);
                     }
 
                     return days;
