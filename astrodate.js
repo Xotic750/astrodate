@@ -1,6 +1,6 @@
 /*global requirejs, require, module */
 
-/* DOMTokenList v0.1.1
+/* AstroDate v0.1.1
  *
  * home: https://github.com/Xotic750/astrodate
  *
