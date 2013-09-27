@@ -41,37 +41,29 @@
             }
 
             normalYearsLength = normalYears.length;
-            test.expect((8 * 12) + (2 * leapYearLength) + (2 * normalYearsLength) + (4 * 7));
+            test.expect((4 * 12) + leapYearLength + normalYearsLength + (2 * 7));
             for (index = 0; index < 12; index += 1) {
                 astrodate = new AstroDate([2013, index + 1]);
                 test.equal(astrodate.monthOfYear(), monthNames[index], "Month name match");
-                test.equal(AstroDate.monthOfYear(index + 1), monthNames[index], "Month name match");
                 test.equal(astrodate.daysInMonth(), monthDays[index], "Days in month: normal year");
-                test.equal(AstroDate.daysInMonth(2013, index + 1), monthDays[index], "Days in month: normal year");
 
                 astrodate = new AstroDate([2012, index + 1]);
                 test.equal(astrodate.monthOfYear(), monthNames[index], "Month name match");
-                test.equal(AstroDate.monthOfYear(index + 1), monthNames[index], "Month name match");
                 test.equal(astrodate.daysInMonth(), monthDaysLeap[index], "Days in month: leap year");
-                test.equal(AstroDate.daysInMonth(2012, index + 1), monthDaysLeap[index], "Days in month: leap year");
             }
 
             for (index = 0; index < leapYearLength; index += 1) {
-                test.ok(new AstroDate([leapYears[index]]).isGregorianLeapYear(), "Leap year");
-                test.ok(AstroDate.isGregorianLeapYear(leapYears[index]), "Leap year");
+                test.ok(new AstroDate([leapYears[index]]).isLeapYear(), "Leap year");
             }
 
             for (index = 0; index < normalYearsLength; index += 1) {
-                test.ok(!new AstroDate([2013]).isGregorianLeapYear(), "Normal year");
-                test.ok(!AstroDate.isGregorianLeapYear(2013), "Normal year");
+                test.ok(!new AstroDate([2013]).isLeapYear(), "Normal year");
             }
 
             for (index = 0; index < 7; index += 1) {
                 astrodate = new AstroDate([2013, 9, index + 1]);
                 test.equal(astrodate.dayOfWeek(), dayNames[index], "Day names");
-                test.equal(AstroDate.dayOfWeek(2013, 9, index + 1), dayNames[index], "Day names");
                 test.equal(astrodate.dayOfYear(), 244 + index, "Day of year");
-                test.equal(AstroDate.dayOfYear(2013, 9, index + 1), 244 + index, "Day of year");
             }
 
             test.done();
