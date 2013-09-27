@@ -950,20 +950,22 @@
                         return temp;
                     }
 
-                    number = number.toNumber();
                     break;
                 case 1:
-                    if (!number.isNaN() && (number.lt(1) || number.gt(12))) {
+                    if (isUndefined(element)) {
+                        number = bignumber(1);
+                    }
+
+                    if (!number.isFinite() && (number.lt(1) || number.gt(12))) {
                         //invalid
                         return temp;
                     }
 
-                    number = number.toNumber() || 1;
                     break;
                 case 2:
                     struct = {
-                        "year": arr[0],
-                        "month": arr[1]
+                        "year": struct.year,
+                        "month": struct.month
                     };
 
                     if (julian === true) {
@@ -972,53 +974,65 @@
                         dim = daysInGregorianMonth(struct);
                     }
 
-                    if (!number.isNaN() && (number.lt(1) || number.gt(dim))) {
+                    if (isUndefined(element)) {
+                        number = bignumber(1);
+                    }
+
+                    if (!number.isFinite() && (number.lt(1) || number.gt(dim))) {
                         //invalid
                         return temp;
                     }
 
-                    number = number.toNumber() || 1;
                     break;
                 case 3:
-                    if (!number.isNaN() && (number.lt(0) || number.gt(24))) {
+                    if (isUndefined(element)) {
+                        number = bignumber(0);
+                    }
+
+                    if (!number.isFinite() && (number.lt(0) || number.gt(24))) {
                         //invalid
                         return temp;
                     }
 
-                    number = number.toNumber() || 0;
                     break;
                 case 4:
                 case 5:
-                    if (!number.isNaN() && (number.lt(0) || number.gt(59) || (bignumber(arr[3]).equals(24) && !number.isZero()))) {
+                    if (isUndefined(element)) {
+                        number = bignumber(0);
+                    }
+
+                    if (!number.isFinite() && (number.lt(0) || number.gt(59) || (bignumber(arr[3]).equals(24) && !number.isZero()))) {
                         //invalid
                         return temp;
                     }
 
-                    number = number.toNumber() || 0;
                     break;
                 case 6:
-                    if (!number.isNaN() && (number.lt(0) || number.gte(1000))) {
+                    if (isUndefined(element)) {
+                        number = bignumber(0);
+                    }
+
+                    if (!number.isFinite() && (number.lt(0) || number.gte(1000))) {
                         //invalid
                         return temp;
                     }
 
-                    number = number.toNumber() || 0;
                     break;
                 case 7:
-                    if (number.lt(-1440) || number.gt(1440)) {
+                    if (isUndefined(element)) {
+                        number = bignumber(0);
+                    }
+
+                    if (!number.isFinite() && (number.lt(-1440) || number.gt(1440))) {
                         //invalid
                         return temp;
                     }
 
-                    number = number.toNumber() || 0;
                     break;
                 default:
-                    number = local_undefined;
                 }
 
-                if (!isUndefined(number)) {
-                    struct[fullKeys[index]] = number;
-                }
+                struct[fullKeys[index]] = number.toNumber();
             }
 
             return struct;
