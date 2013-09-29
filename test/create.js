@@ -233,7 +233,7 @@
 
             test.expect(2 * 66 * repeat);
             for (count = 0; count < repeat; count += 1) {
-                year = padLeadingZero(getRandomInt(0, 99999), 4);
+                year = padLeadingZero(getRandomInt(0, 9007199254740991), 4);
                 if (year >= 10000) {
                     sign = getRandomInt(0, 1);
                     year = padLeadingZero(year, 5);

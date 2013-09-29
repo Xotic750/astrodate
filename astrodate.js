@@ -57,7 +57,7 @@
 
         var VERSION = "0.1.1",
             //MAX_INTEGER = 9007199254740991,
-            //MIN_INTEGER = -9007199254740992,
+            //MIN_INTEGER = -9007199254740991,
             baseObject = {},
             baseArray = [],
             baseString = "",
@@ -642,42 +642,11 @@
             return number;
         }
 
-        function isValid(struct) {
-            if (!isObject(struct)) {
-                return false;
-            }
-
-            var count = 0,
-                element,
-                prop;
-
-            for (prop in struct) {
-                if (hasOwnProperty(struct, prop)) {
-                    element = struct[prop];
-                    if (!isNumber(element) || !isFinite(element)) {
-                        return false;
-                    }
-
-                    count += 1;
-                }
-            }
-
-            return count !== 0;
-        }
-
         function isGregorianLeapYear(struct) {
-            if (!isValid(struct)) {
-                return local_undefined;
-            }
-
             return struct.year % 400 === 0 || (struct.year % 100 !== 0 && struct.year % 4 === 0);
         }
 
         function isJulianLeapYear(struct) {
-            if (!isValid(struct)) {
-                return local_undefined;
-            }
-
             var modTest = 3;
 
             if (struct.year > 0) {
@@ -688,10 +657,6 @@
         }
 
         function daysInGregorianMonth(struct) {
-            if (!isValid(struct)) {
-                return local_undefined;
-            }
-
             var days;
 
             if (struct.month === 2) {
@@ -704,10 +669,6 @@
         }
 
         function daysInJulianMonth(struct) {
-            if (!isValid(struct)) {
-                return local_undefined;
-            }
-
             var days = 28;
 
             if (struct.month === 2) {
@@ -718,34 +679,100 @@
         }
 
         function daysInGregorianYear(struct) {
-            if (!isValid(struct)) {
-                return local_undefined;
-            }
-
             return 365 + isGregorianLeapYear(struct);
         }
 
         function daysInJulianYear(struct) {
-            if (!isValid(struct)) {
-                return local_undefined;
-            }
-
             return 365 + isJulianLeapYear(struct);
         }
 
-        function dayOfGregorianYear(struct) {
-            if (!isValid(struct)) {
-                return local_undefined;
+        function isValid(struct, julian) {
+            var dim,
+                index,
+                number,
+                prop;
+
+            if (!isObject(struct)) {
+                return false;
             }
 
+            for (index = 0; index < lengthFullKeys; index += 1) {
+                prop = fullKeys[index];
+                if (!hasOwnProperty(struct, prop)) {
+                    return false;
+                }
+
+                number = struct[prop];
+                if (!isNumber(number) || isNaN(intToNumber(number))) {
+                    return false;
+                }
+
+                switch (index) {
+                case 0:
+                    if (julian === true && number === 0) {
+                        return false;
+                    }
+
+                    break;
+                case 1:
+                    if (number < 1 || number > 12) {
+                        return false;
+                    }
+
+                    break;
+                case 2:
+                    if (julian === true) {
+                        dim = daysInJulianMonth(struct);
+                    } else {
+                        dim = daysInGregorianMonth(struct);
+                    }
+
+                    if (isUndefined(number)) {
+                        number = bignumber(1);
+                    }
+
+                    if (number < 1 || number > dim) {
+                        return false;
+                    }
+
+                    break;
+                case 3:
+                    if (number < 0 || number > 23) {
+                        return false;
+                    }
+
+                    break;
+                case 4:
+                case 5:
+                    if (number < 0 || number > 59 || (struct.hour === 24 && number !== 0)) {
+                        return false;
+                    }
+
+                    break;
+                case 6:
+                    if (number < 0 || number >= 1000) {
+                        return false;
+                    }
+
+                    break;
+                case 7:
+                    if (number < -1440 || number > 1440) {
+                        return false;
+                    }
+
+                    break;
+                default:
+                }
+            }
+
+            return true;
+        }
+
+        function dayOfGregorianYear(struct) {
             return Math.floor((275 * struct.month) / 9) - (2 - isGregorianLeapYear(struct)) * Math.floor((struct.month + 9) / 12) + struct.day - 30;
         }
 
         function dayOfJulianYear(struct) {
-            if (!isValid(struct)) {
-                return local_undefined;
-            }
-
             var doy = 28 * struct.month + struct.day;
 
             if (struct.month >= 2) {
@@ -823,10 +850,6 @@
         }
 
         function getTime(astrodate) {
-            if (!astrodate.isValid()) {
-                return "NaN";
-            }
-
             var jd1970 = bignumber(2440587.5),
                 julianDay = bignumber(astrodate.julianDay());
 
@@ -836,10 +859,6 @@
         // DeltaT
         //http://eclipse.gsfc.nasa.gov/SEhelp/deltatpoly2004.html
         function deltaTime(struct, canonCorrection) {
-            if (!isValid(struct)) {
-                return "NaN";
-            }
-
             var year = bignumber(struct.year),
                 month = bignumber(struct.month),
                 y = year.plus(month.minus(0.5).div(12)),
@@ -1201,9 +1220,7 @@
         }
 
         function setInvalid(thisObject) {
-            thisObject.setter("struct");
-
-            return thisObject;
+            return thisObject.setter("struct");
         }
 
         function ISO(isoString) {
@@ -1584,10 +1601,6 @@
                 millisecond,
                 value;
 
-            if (!isValid(struct)) {
-                return "NaN";
-            }
-
             hour = bignumber(struct.hour);
             minute = bignumber(struct.minute);
             second = bignumber(struct.second);
@@ -1625,10 +1638,6 @@
                 g,
                 h,
                 jd;
-
-            if (!isValid(struct)) {
-                return "NaN";
-            }
 
             a = bignumber(1721424.5);
             b = bignumber(struct.year).minus(1);
@@ -1766,7 +1775,7 @@
             return struct;
         }
 
-        function gregorianTojulian(struct) {
+        function gregorianToJulian(struct) {
             return jdToJulian(gregorianToJd(struct));
         }
 
@@ -1922,8 +1931,6 @@
                     } else if (isObject(arg)) {
                         if (isValid(arg)) {
                             struct = extend({}, arg);
-                        } else {
-                            struct = {};
                         }
                     } else {
                         throw new TypeError();
@@ -1940,10 +1947,8 @@
                         if (isArray(arg)) {
                             struct = julianToGregorian(arrayToObject(arg, true));
                         } else if (isObject(arg)) {
-                            if (isValid(arg)) {
+                            if (isValid(arg, true)) {
                                 struct = julianToGregorian(arg);
-                            } else {
-                                struct = {};
                             }
                         }
                     } else if (arg === "g") {
@@ -1953,8 +1958,6 @@
                         } else if (isObject(arg)) {
                             if (isValid(arg)) {
                                 struct = extend({}, arg);
-                            } else {
-                                struct = {};
                             }
                         }
                     } else {
@@ -1967,6 +1970,10 @@
                 break;
             default:
                 throw new SyntaxError();
+            }
+
+            if (!isValid(struct)) {
+                struct = {};
             }
         };
 
@@ -1998,12 +2005,10 @@
             "parse": {
                 "value": function (isoString) {
                     if (typeof isoString === "string") {
-                        this.setter("struct", new ISO(isoString).valueOf());
-                    } else {
-                        throw new SyntaxError();
+                        return this.setter("struct", new ISO(isoString).valueOf());
                     }
 
-                    return this;
+                    throw new SyntaxError();
                 }
             },
 
@@ -2070,8 +2075,12 @@
                 "value": function () {
                     var struct = this.getter();
 
+                    if (!isValid(struct)) {
+                        return local_undefined;
+                    }
+
                     if (this.isJulian()) {
-                        struct = gregorianTojulian(struct);
+                        struct = gregorianToJulian(struct);
                     }
 
                     return struct;
@@ -2091,8 +2100,12 @@
 
                     if (isUndefined(astroArray)) {
                         struct = this.getter();
+                        if (!isValid(struct)) {
+                            return local_undefined;
+                        }
+
                         if (isJulian) {
-                            struct = gregorianTojulian(struct);
+                            struct = gregorianToJulian(struct);
                         }
 
                         return objectToArray(struct);
@@ -2114,19 +2127,37 @@
 
             "getTime": {
                 "value": function () {
+                    var struct = this.getter();
+
+                    if (!isValid(struct)) {
+                        return local_undefined;
+                    }
+
                     return getTime(this);
                 }
             },
 
             "deltaTime": {
                 "value": function () {
-                    return deltaTime(this.getter());
+                    var struct = this.getter();
+
+                    if (!isValid(struct)) {
+                        return local_undefined;
+                    }
+
+                    return deltaTime(struct);
                 }
             },
 
             "timeTo": {
                 "value": function (unit) {
-                    return timeTo(this.getter(), unit);
+                    var struct = this.getter();
+
+                    if (!isValid(struct)) {
+                        return local_undefined;
+                    }
+
+                    return timeTo(struct, unit);
                 }
             },
 
@@ -2146,7 +2177,7 @@
                         astrodate;
 
                     if (this.isJulian()) {
-                        astrodate = julianEaster(gregorianTojulian(struct));
+                        astrodate = julianEaster(gregorianToJulian(struct));
                     } else {
                         astrodate = gregorianEaster(struct);
                     }
@@ -2159,8 +2190,12 @@
                 "value": function () {
                     var struct = this.getter();
 
+                    if (!isValid(struct)) {
+                        return local_undefined;
+                    }
+
                     if (this.isJulian()) {
-                        struct = gregorianTojulian(struct);
+                        struct = gregorianToJulian(struct);
                     }
 
                     return monthNames[struct.month - 1];
@@ -2178,8 +2213,12 @@
                     var struct = this.getter(),
                         leapYear;
 
+                    if (!isValid(struct)) {
+                        return local_undefined;
+                    }
+
                     if (this.isJulian()) {
-                        struct = gregorianTojulian(struct);
+                        struct = gregorianToJulian(struct);
                         leapYear = isJulianLeapYear(struct);
                     } else {
                         leapYear = isGregorianLeapYear(struct);
@@ -2194,8 +2233,12 @@
                     var struct = this.getter(),
                         days;
 
+                    if (!isValid(struct)) {
+                        return local_undefined;
+                    }
+
                     if (this.isJulian()) {
-                        days = daysInJulianYear(struct);
+                        days = daysInJulianYear(gregorianToJulian(struct));
                     } else {
                         days = daysInGregorianYear(struct);
                     }
@@ -2209,8 +2252,12 @@
                     var struct = this.getter(),
                         days;
 
+                    if (!isValid(struct)) {
+                        return local_undefined;
+                    }
+
                     if (this.isJulian()) {
-                        days = daysInJulianMonth(struct);
+                        days = daysInJulianMonth(gregorianToJulian(struct));
                     } else {
                         days = daysInGregorianMonth(struct);
                     }
@@ -2224,8 +2271,12 @@
                     var struct = this.getter(),
                         doy;
 
+                    if (!isValid(struct)) {
+                        return local_undefined;
+                    }
+
                     if (this.isJulian()) {
-                        doy = dayOfJulianYear(struct);
+                        doy = dayOfJulianYear(gregorianToJulian(struct));
                     } else {
                         doy = dayOfGregorianYear(struct);
                     }
@@ -2272,9 +2323,7 @@
                             throw new SyntaxError();
                         }
 
-                        this.setter("struct", struct);
-
-                        return this;
+                        return this.setter("struct", struct);
                     }
 
                     throw new TypeError();
