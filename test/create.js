@@ -91,7 +91,7 @@
             for (count = 0; count < repeat; count += 1) {
                 fullArray.length = 0;
                 fullArrayString.length = 0;
-                year = getRandomInt(-9007199254740992, 9007199254740991);
+                year = getRandomInt(-999999999999999, 999999999999999);
                 month = getRandomInt(1, 12);
                 hour = getRandomInt(0, 24);
                 fullArray.push(year);
@@ -233,7 +233,7 @@
 
             test.expect(2 * 66 * repeat);
             for (count = 0; count < repeat; count += 1) {
-                year = padLeadingZero(getRandomInt(0, 9007199254740991), 4);
+                year = padLeadingZero(getRandomInt(0, 999999999999999), 4);
                 if (year >= 10000) {
                     sign = getRandomInt(0, 1);
                     year = padLeadingZero(year, 5);
