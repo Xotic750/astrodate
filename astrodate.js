@@ -737,7 +737,7 @@
 
                     break;
                 case 3:
-                    if (number < 0 || number > 23) {
+                    if (number < 0 || number > 24) {
                         return false;
                     }
 
