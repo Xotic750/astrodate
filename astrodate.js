@@ -1595,16 +1595,12 @@
         });
 
         function timeTo(struct, unit) {
-            var hour,
-                minute,
-                second,
-                millisecond,
+            var hour = bignumber(struct.hour),
+                minute = bignumber(struct.minute),
+                second = bignumber(struct.second),
+                millisecond = bignumber(struct.millisecond),
                 value;
 
-            hour = bignumber(struct.hour);
-            minute = bignumber(struct.minute);
-            second = bignumber(struct.second);
-            millisecond = bignumber(struct.millisecond);
             switch (AstroDate.normaliseUnits(unit)) {
             case "day":
                 value = hour.div(24).plus(minute.div(1440)).plus(second.div(86400)).plus(millisecond.div(86400000));
@@ -1629,24 +1625,16 @@
         }
 
         function gregorianToJd(struct) {
-            var a,
-                b,
-                c,
-                d,
-                e,
-                f,
-                g,
-                h,
+            var a = bignumber(1721424.5),
+                b = bignumber(struct.year).minus(1),
+                c = b.times(365),
+                d = b.div(4).floor(),
+                e = b.div(100).floor().neg(),
+                f = b.div(400).floor(),
+                g = bignumber(struct.month).times(367).minus(362).div(12).floor(),
+                h = 0,
                 jd;
 
-            a = bignumber(1721424.5);
-            b = bignumber(struct.year).minus(1);
-            c = b.times(365);
-            d = b.div(4).floor();
-            e = b.div(100).floor().neg();
-            f = b.div(400).floor();
-            g = bignumber(struct.month).times(367).minus(362).div(12).floor();
-            h = 0;
             if (struct.month > 2) {
                 h = -2 + isGregorianLeapYear(struct);
             }
@@ -1784,63 +1772,32 @@
         }
 
         function gregorianEaster(struct) {
-            var year,
-                a,
-                b,
-                c,
-                d,
-                e,
-                f,
-                g,
-                h,
-                i,
-                k,
-                l,
-                m,
-                n;
-
-            if (!isValid(struct)) {
-                return new AstroDate(NaN);
-            }
-
-            year = bignumber(struct.year);
-            a = year.mod(19);
-            b = year.div(100).floor();
-            c = year.mod(100).floor();
-            d = b.div(4);
-            e = b.mod(4);
-            f = b.plus(8).div(25).floor();
-            g = b.minus(f).plus(1).div(3).floor();
-            h = bignumber(19).times(a).plus(b).minus(d).minus(g).plus(15).mod(30);
-            i = c.div(4).floor();
-            k = c.mod(4);
-            l = bignumber(32).plus(e.times(2)).plus(i.times(2)).minus(h).minus(k).mod(7);
-            m = a.plus(h.times(11)).plus(l.times(22)).div(451).floor();
-            n = h.plus(l).minus(m.times(7)).plus(114);
+            var year = bignumber(struct.year),
+                a = year.mod(19),
+                b = year.div(100).floor(),
+                c = year.mod(100).floor(),
+                d = b.div(4),
+                e = b.mod(4),
+                f = b.plus(8).div(25).floor(),
+                g = b.minus(f).plus(1).div(3).floor(),
+                h = bignumber(19).times(a).plus(b).minus(d).minus(g).plus(15).mod(30),
+                i = c.div(4).floor(),
+                k = c.mod(4),
+                l = bignumber(32).plus(e.times(2)).plus(i.times(2)).minus(h).minus(k).mod(7),
+                m = a.plus(h.times(11)).plus(l.times(22)).div(451).floor(),
+                n = h.plus(l).minus(m.times(7)).plus(114);
 
             return new AstroDate([year.toNumber(), n.div(31).floor().toNumber(), n.mod(31).plus(1).toNumber()]);
         }
 
         function julianEaster(struct) {
-            var year,
-                a,
-                b,
-                c,
-                d,
-                e,
-                f;
-
-            if (!isValid(struct)) {
-                return new AstroDate(NaN);
-            }
-
-            year = bignumber(struct.year);
-            a = year.mod(4);
-            b = year.mod(7);
-            c = year.mod(19);
-            d = c.times(19).plus(15).mod(30);
-            e = a.times(2).plus(b.times(4)).minus(d).plus(34).mod(7);
-            f = d.plus(e).plus(114);
+            var year = bignumber(struct.year),
+                a = year.mod(4),
+                b = year.mod(7),
+                c = year.mod(19),
+                d = c.times(19).plus(15).mod(30),
+                e = a.times(2).plus(b.times(4)).minus(d).plus(34).mod(7),
+                f = d.plus(e).plus(114);
 
             return new AstroDate([year.toNumber(), f.div(31).floor().minus(1).toNumber(), f.mod(31).plus(1).toNumber()]);
         }
@@ -2175,6 +2132,10 @@
                 "value": function () {
                     var struct = this.getter(),
                         astrodate;
+
+                    if (!isValid(struct)) {
+                        return local_undefined;
+                    }
 
                     if (this.isJulian()) {
                         astrodate = julianEaster(gregorianToJulian(struct));
