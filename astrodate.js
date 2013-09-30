@@ -625,7 +625,13 @@
         }
 
         function isDigit(character) {
-            return isString(character) && trim(character).length === 1 && !isNaN(character);
+            if (!isString(character) || character.length !== 1) {
+                return false;
+            }
+
+            var charCode = character.charCodeAt(0);
+
+            return charCode >= 48 && charCode <= 57;
         }
 
         function isValidValue(value) {
@@ -686,6 +692,78 @@
             return 365 + isJulianLeapYear(struct);
         }
 
+        function inMonthRange(month) {
+            if (BigNumber.isBigNumber(month)) {
+                month = month.toNumber();
+            }
+
+            return isNumber(month) && month > 0 && month < 13;
+        }
+
+        function inDayRange(day, dim) {
+            if (BigNumber.isBigNumber(day)) {
+                day = day.toNumber();
+            }
+
+            if (BigNumber.isBigNumber(dim)) {
+                dim = dim.toNumber();
+            }
+
+            return isNumber(day) && isNumber(dim) && day > 0 && day <= dim;
+        }
+
+        function inHourRange(hour) {
+            if (BigNumber.isBigNumber(hour)) {
+                hour = hour.toNumber();
+            }
+
+            return isNumber(hour) && hour >= 0 && hour <= 24;
+        }
+
+        function inMinuteRange(minute, hour) {
+            if (BigNumber.isBigNumber(minute)) {
+                minute = minute.toNumber();
+            }
+
+            if (BigNumber.isBigNumber(hour)) {
+                hour = hour.toNumber();
+            }
+
+            return isNumber(minute) && isNumber(hour) && ((hour === 24 && minute === 0) || (hour !== 24 && minute >= 0 && minute < 60));
+        }
+
+        function inSecondRange(second, hour) {
+            if (BigNumber.isBigNumber(second)) {
+                second = second.toNumber();
+            }
+
+            if (BigNumber.isBigNumber(hour)) {
+                hour = hour.toNumber();
+            }
+
+            return isNumber(second) && isNumber(hour) && ((hour === 24 && second === 0) || (hour !== 24 && second >= 0 && second < 60));
+        }
+
+        function inMillisecondRange(millisecond, hour) {
+            if (BigNumber.isBigNumber(millisecond)) {
+                millisecond = millisecond.toNumber();
+            }
+
+            if (BigNumber.isBigNumber(hour)) {
+                hour = hour.toNumber();
+            }
+
+            return isNumber(millisecond) && isNumber(hour) && ((hour === 24 && millisecond === 0) || (hour !== 24 && millisecond >= 0 && millisecond < 100));
+        }
+
+        function inOffsetRange(offset) {
+            if (BigNumber.isBigNumber(offset)) {
+                offset = offset.toNumber();
+            }
+
+            return isNumber(offset) && offset >= -1440 && offset <= 1440;
+        }
+
         function isValid(struct, julian) {
             var dim,
                 index,
@@ -715,7 +793,7 @@
 
                     break;
                 case 1:
-                    if (number < 1 || number > 12) {
+                    if (!inMonthRange(number)) {
                         return false;
                     }
 
@@ -727,36 +805,43 @@
                         dim = daysInGregorianMonth(struct);
                     }
 
+                    /*
                     if (isUndefined(number)) {
                         number = bignumber(1);
                     }
+                    */
 
-                    if (number < 1 || number > dim) {
+                    if (!inDayRange(number, dim)) {
                         return false;
                     }
 
                     break;
                 case 3:
-                    if (number < 0 || number > 24) {
+                    if (!inHourRange(number)) {
                         return false;
                     }
 
                     break;
                 case 4:
+                    if (!inMinuteRange(number, struct.hour)) {
+                        return false;
+                    }
+
+                    break;
                 case 5:
-                    if (number < 0 || number > 59 || (struct.hour === 24 && number !== 0)) {
+                    if (!inSecondRange(number, struct.hour)) {
                         return false;
                     }
 
                     break;
                 case 6:
-                    if (number < 0 || number >= 1000) {
+                    if (!inMillisecondRange(number, struct.hour)) {
                         return false;
                     }
 
                     break;
                 case 7:
-                    if (number < -1440 || number > 1440) {
+                    if (!inOffsetRange(number)) {
                         return false;
                     }
 
@@ -975,7 +1060,7 @@
                         number = bignumber(1);
                     }
 
-                    if (!number.isFinite() && (number.lt(1) || number.gt(12))) {
+                    if (!inMonthRange(number)) {
                         //invalid
                         return temp;
                     }
@@ -997,7 +1082,7 @@
                         number = bignumber(1);
                     }
 
-                    if (!number.isFinite() && (number.lt(1) || number.gt(dim))) {
+                    if (!inDayRange(number, dim)) {
                         //invalid
                         return temp;
                     }
@@ -1008,19 +1093,29 @@
                         number = bignumber(0);
                     }
 
-                    if (!number.isFinite() && (number.lt(0) || number.gt(24))) {
+                    if (!inHourRange(number)) {
                         //invalid
                         return temp;
                     }
 
                     break;
                 case 4:
+                    if (isUndefined(element)) {
+                        number = bignumber(0);
+                    }
+
+                    if (!inMinuteRange(number, struct.hour)) {
+                        //invalid
+                        return temp;
+                    }
+
+                    break;
                 case 5:
                     if (isUndefined(element)) {
                         number = bignumber(0);
                     }
 
-                    if (!number.isFinite() && (number.lt(0) || number.gt(59) || (bignumber(arr[3]).equals(24) && !number.isZero()))) {
+                    if (!inSecondRange(number, struct.hour)) {
                         //invalid
                         return temp;
                     }
@@ -1031,7 +1126,7 @@
                         number = bignumber(0);
                     }
 
-                    if (!number.isFinite() && (number.lt(0) || number.gte(1000))) {
+                    if (!inMillisecondRange(number, struct.hour)) {
                         //invalid
                         return temp;
                     }
@@ -1042,7 +1137,7 @@
                         number = bignumber(0);
                     }
 
-                    if (!number.isFinite() && (number.lt(-1440) || number.gt(1440))) {
+                    if (!inOffsetRange(number)) {
                         //invalid
                         return temp;
                     }
@@ -1269,7 +1364,6 @@
                         timeFraction,
                         found,
                         isTime,
-                        name,
                         value;
 
                     if (!isString(isoString)) {
@@ -1333,7 +1427,7 @@
                             temp = [];
                             length = date.length;
                             if (length >= 8) {
-                                if (length >= 9 && !signYear) {
+                                if (length >= 9 && isUndefined(signYear)) {
                                     return setInvalid(this);
                                 }
 
@@ -1360,19 +1454,32 @@
                         for (index = 0; index < 3; index += 1) {
                             element = temp[index];
                             length = element.length;
-                            if ((index && length !== 2) || (!index && ((length < 4 || (signYear === "+" && length === 4)) || (length > 4 && signYear !== "+" && signYear !== "-")))) {
-                                return setInvalid(this);
-                            }
-
                             number = intToNumber(element);
-                            if (isNaN(number) || (index === 1 && (number < 1 || number > 12)) || (index === 2 && (number < 1 || number > daysInGregorianMonth(date)))) {
-                                return setInvalid(this);
-                            }
-
-                            if (!index && signYear) {
-                                if (signYear === "-") {
-                                    number = -1 * number;
+                            switch (index) {
+                            case 0:
+                                if (length < 4 || (signYear === "+" && length === 4) || (length > 4 && signYear !== "+" && signYear !== "-") || !isFinite(number)) {
+                                    return setInvalid(this);
                                 }
+
+                                if (signYear === "-") {
+                                    number *= -1;
+                                }
+
+                                break;
+                            case 1:
+                                if (length !== 2 || !inMonthRange(number)) {
+                                    return setInvalid(this);
+                                }
+
+                                break;
+                            case 2:
+                                if (length !== 2 || !inDayRange(number, daysInGregorianMonth(date))) {
+                                    return setInvalid(this);
+                                }
+
+                                break;
+                            default:
+                                return setInvalid(this);
                             }
 
                             date[fullKeys[index]] = number;
@@ -1420,8 +1527,7 @@
 
                     if (length === 1) {
                         element = offset[0];
-                        length = offset[0].length;
-                        switch (length) {
+                        switch (offset[0].length) {
                         case 4:
                             offset[0] = element.slice(0, 2);
                             offset[1] = element.slice(2);
@@ -1435,21 +1541,18 @@
                         }
                     }
 
-                    for (index = 0; index < 2; index += 1) {
-                        element = offset[index];
-                        length = element.length;
-                        if (length !== 2) {
-                            return setInvalid(this);
-                        }
-
-                        number = intToNumber(element);
-                        if (isNaN(number) || number < -1440 || number > 1440) {
-                            return setInvalid(this);
-                        }
-
-                        offset[index] = number;
+                    number = intToNumber(offset[0]);
+                    if (!inHourRange(number)) {
+                        return setInvalid(this);
                     }
 
+                    offset[0] = number;
+                    number = intToNumber(offset[1]);
+                    if (!inMinuteRange(number, offset[0])) {
+                        return setInvalid(this);
+                    }
+
+                    offset[1] = number;
                     if (signOffset === -1 && offset[0] === 0 && offset[1] === 0) {
                         return setInvalid(this);
                     }
@@ -1498,20 +1601,7 @@
                     }
 
                     if (found) {
-                        switch (length) {
-                        case 1:
-                            name = "hour";
-                            break;
-                        case 2:
-                            name = "minute";
-                            break;
-                        case 3:
-                            name = "second";
-                            break;
-                        default:
-                        }
-
-                        temp = temp.concat(fractionToTime(timeFraction, name).slice(length));
+                        temp = temp.concat(fractionToTime(timeFraction, fullKeys[length + 2]).slice(length));
                     } else {
                         if (length < 2) {
                             temp.push("00");
@@ -1529,18 +1619,33 @@
                     time = {};
                     found = false;
                     for (index = 0; index < 4; index += 1) {
-                        element = temp[index];
-                        length = element.length;
-                        if (length < 1 || (index < 3 && length > 2) || (index === 3 && length > 3)) {
-                            return setInvalid(this);
-                        }
+                        number = intToNumber(temp[index]);
+                        switch (index) {
+                        case 0:
+                            if (!inHourRange(number)) {
+                                return setInvalid(this);
+                            }
 
-                        number = intToNumber(element);
-                        if (!index && number === 24) {
-                            found = true;
-                        }
+                            break;
+                        case 1:
+                            if (!inMinuteRange(number, time.hour)) {
+                                return setInvalid(this);
+                            }
 
-                        if (isNaN(number) || number < 0 || (found && index && number > 0) || (!index && number > 24) || (index > 0 && index < 3 && number > 59) || (index === 4 && number >= 1000)) {
+                            break;
+                        case 2:
+                            if (!inSecondRange(number, time.hour)) {
+                                return setInvalid(this);
+                            }
+
+                            break;
+                        case 3:
+                            if (!inMillisecondRange(number, time.hour)) {
+                                return setInvalid(this);
+                            }
+
+                            break;
+                        default:
                             return setInvalid(this);
                         }
 
