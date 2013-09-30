@@ -753,7 +753,7 @@
                 hour = hour.toNumber();
             }
 
-            return isNumber(millisecond) && isNumber(hour) && ((hour === 24 && millisecond === 0) || (hour !== 24 && millisecond >= 0 && millisecond < 100));
+            return isNumber(millisecond) && isNumber(hour) && ((hour === 24 && millisecond === 0) || (hour !== 24 && millisecond >= 0 && millisecond < 1000));
         }
 
         function inOffsetRange(offset) {
@@ -805,12 +805,6 @@
                         dim = daysInGregorianMonth(struct);
                     }
 
-                    /*
-                    if (isUndefined(number)) {
-                        number = bignumber(1);
-                    }
-                    */
-
                     if (!inDayRange(number, dim)) {
                         return false;
                     }
@@ -847,6 +841,7 @@
 
                     break;
                 default:
+                    return false;
                 }
             }
 
@@ -1009,12 +1004,11 @@
                 temp = {},
                 dim,
                 //day,
+                //time,
                 fraction,
                 index,
                 element,
-                number,
-                //time,
-                asString;
+                number;
 
             if (length < 1 || length > lengthFullKeys) {
                 //invalid
@@ -1036,8 +1030,7 @@
             for (index = 0; index < lengthFullKeys; index += 1) {
                 element = arr[index];
                 if (isValidValue(element)) {
-                    asString = element.toString();
-                    number = bignumber(asString);
+                    number = bignumber(element);
                     fraction = number.fractionalPart();
                     if (!fraction.isZero() && index !== lengthFullKeys - 1) {
                         //invalid
