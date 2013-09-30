@@ -1312,21 +1312,21 @@
         }
 
         function ISO(isoString) {
-            var isoObject;
+            var struct;
 
             defineProperties(this, {
                 "getter": {
                     "value": function () {
-                        return extend({}, isoObject);
+                        return extend({}, struct);
                     }
                 },
 
                 "setter": {
-                    "value": function (newIsoObject) {
-                        if (isValid(newIsoObject)) {
-                            isoObject = extend({}, newIsoObject);
+                    "value": function (isoStruct) {
+                        if (isValid(isoStruct)) {
+                            struct = extend({}, isoStruct);
                         } else {
-                            isoObject = {};
+                            struct = {};
                         }
 
                         return this;
@@ -1334,7 +1334,7 @@
                 }
             });
 
-            isoObject = this.parse(isoString).valueOf();
+            struct = this.parse(isoString).valueOf();
         }
 
         defineProperties(ISO.prototype, {
@@ -1360,7 +1360,7 @@
                         value;
 
                     if (!isString(isoString)) {
-                        return dateObject;
+                        return setInvalid(this);
                     }
 
                     getTimezoneOffset = new Date().getTimezoneOffset();
@@ -1651,9 +1651,7 @@
 
                     time[fullKeys[lengthFullKeys - 1]] = signOffset * (offset[0] * 60  + offset[1]);
                     extend(dateObject, time);
-                    this.setter(dateObject);
-
-                    return this;
+                    return this.setter(dateObject);
                 }
             },
 
@@ -1665,14 +1663,19 @@
 
             "toString": {
                 "value": function () {
-                    var strArray = [],
-                        isoObject = this.getter(),
+                    var struct = this.getter(),
+                        strArray,
                         index,
                         prop;
 
+                    if (!isValid(struct)) {
+                        return "Invalid Date";
+                    }
+
+                    strArray = [];
                     for (index = 0; index < lengthFullKeys; index += 1) {
                         prop = fullKeys[index];
-                        strArray.push(prop + ":" + isoObject[prop]);
+                        strArray.push(prop + ":" + struct[prop]);
                     }
 
                     return strArray.join(",");
@@ -1681,13 +1684,25 @@
 
             "valueOf": {
                 "value": function () {
-                    return this.getter();
+                    var struct = this.getter();
+
+                    if (!isValid(struct)) {
+                        return local_undefined;
+                    }
+
+                    return struct;
                 }
             },
 
             "toArray": {
                 "value": function () {
-                    return objectToArray(this.getter());
+                    var struct = this.getter();
+
+                    if (!isValid(struct)) {
+                        return local_undefined;
+                    }
+
+                    return objectToArray(struct);
                 }
             }
         });
