@@ -276,7 +276,7 @@
                 }
 
                 month = padLeadingZero(getRandomInt(1, 12), 2);
-                day = padLeadingZero(getRandomInt(1, new AstroDate([year, month]).daysInMonth().toNumber()), 2);
+                day = padLeadingZero(getRandomInt(1, +new AstroDate([year, month]).daysInMonth()), 2);
                 hour = padLeadingZero(getRandomInt(0, 24), 2);
                 if (hour === "24") {
                     minute = "00";
