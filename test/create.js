@@ -103,7 +103,7 @@
                 hour = getRandomInt(0, 24);
                 fullArray.push(year);
                 fullArray.push(month);
-                fullArray.push(getRandomInt(1, new AstroDate([year, month]).daysInMonth().toNumber()));
+                fullArray.push(getRandomInt(1, +new AstroDate([year, month]).daysInMonth()));
                 fullArray.push(hour);
                 if (hour === 24) {
                     fullArray.push(0);
