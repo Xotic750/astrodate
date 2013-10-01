@@ -125,14 +125,14 @@
                     end = -index;
                     slice = fullArray.slice(0, end).concat(zeroArray.slice(end));
                     tObject = {
-                        "year": slice[0],
-                        "month": slice[1],
-                        "day": slice[2],
-                        "hour": slice[3],
-                        "minute": slice[4],
-                        "second": slice[5],
-                        "millisecond": slice[6],
-                        "offset": slice[7]
+                        "year": slice[0].toString(),
+                        "month": slice[1].toString(),
+                        "day": slice[2].toString(),
+                        "hour": slice[3].toString(),
+                        "minute": slice[4].toString(),
+                        "second": slice[5].toString(),
+                        "millisecond": slice[6].toString(),
+                        "offset": slice[7].toString()
                     };
 
                     json = JSON.stringify(tObject);
