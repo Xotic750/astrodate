@@ -2339,7 +2339,7 @@
                         str;
 
                     if (isUndefined(jsonString)) {
-                        struct = this.getter();
+                        struct = this.valueOf();
                         if (isFunction(JSON.stringify)) {
                             str = JSON.stringify(struct);
                         } else {
