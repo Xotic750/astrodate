@@ -887,7 +887,7 @@
         }
 
         function getTime(astrodate) {
-            return bignumber(astrodate.julianDay()).minus(2440587.5).times(86400000).round().toString();
+            return bignumber(astrodate.julianDay()).minus(2440587.5).times(86400000).round();
         }
 
         // DeltaT
@@ -1178,10 +1178,10 @@
                 value = hour.times(3600000).plus(minute.times(60000)).plus(second.times(1000)).plus(millisecond);
                 break;
             default:
-                value = NaN;
+                value = bignumber(NaN);
             }
 
-            return value.toString();
+            return value;
         }
 
         function gregorianToJd(struct) {
@@ -1925,7 +1925,7 @@
                             } else if (key === "isJulian") {
                                 isJulian = !!value;
                             } else {
-                                struct = new ISO(key).valueOf();
+                                struct = new ISO(key).getter();
                             }
                         } else {
                             throw new SyntaxError();
@@ -1943,7 +1943,7 @@
             case 1:
                 arg = args[0];
                 if (AstroDate.isAstroDate(arg)) {
-                    struct = extend({}, arg.valueOf());
+                    struct = extend({}, arg.getter());
                     isJulian = arg.isJulian();
                 } else if (isArray(arg)) {
                     struct = arrayToObject(arg, false);
@@ -2030,11 +2030,11 @@
 
             "parse": {
                 "value": function (isoString) {
-                    if (typeof isoString === "string") {
-                        return this.setter("struct", new ISO(isoString).valueOf());
+                    if (isString(isoString)) {
+                        return this.setter("struct", new ISO(isoString).getter());
                     }
 
-                    throw new SyntaxError();
+                    throw new TypeError();
                 }
             },
 
@@ -2175,7 +2175,7 @@
                         return local_undefined;
                     }
 
-                    return getTime(this);
+                    return getTime(this).toString();
                 }
             },
 
@@ -2187,7 +2187,7 @@
                         return local_undefined;
                     }
 
-                    return deltaTime(struct);
+                    return deltaTime(struct).toString();
                 }
             },
 
@@ -2199,14 +2199,14 @@
                         return local_undefined;
                     }
 
-                    return timeTo(struct, unit);
+                    return timeTo(struct, unit).toString();
                 }
             },
 
             "julianDay": {
                 "value": function (julianDay) {
                     if (isUndefined(julianDay)) {
-                        return gregorianToJd(this.getter());
+                        return gregorianToJd(this.getter()).toString();
                     }
 
                     return this.setter("struct", jdToGregorian(julianDay));
@@ -2289,7 +2289,7 @@
                         days = daysInGregorianYear(struct);
                     }
 
-                    return days;
+                    return days.toString();
                 }
             },
 
@@ -2308,7 +2308,7 @@
                         days = daysInGregorianMonth(struct);
                     }
 
-                    return days;
+                    return days.toString();
                 }
             },
 
@@ -2327,7 +2327,7 @@
                         doy = dayOfGregorianYear(struct);
                     }
 
-                    return doy;
+                    return doy.toString();
                 }
             },
 
@@ -2339,7 +2339,7 @@
                         str;
 
                     if (isUndefined(jsonString)) {
-                        struct = this.valueOf();
+                        struct = this.getter();
                         if (isFunction(JSON.stringify)) {
                             str = JSON.stringify(struct);
                         } else {
