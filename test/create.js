@@ -80,12 +80,15 @@
                 fullArrayLength,
                 astrodate,
                 index,
+                index2,
+                length,
                 count,
                 end,
                 slice,
                 tObject,
                 json,
-                date;
+                date,
+                temp;
 
             test.expect(32 * (zeroArray.length - 1) * repeat);
             for (count = 0; count < repeat; count += 1) {
@@ -136,7 +139,16 @@
                     astrodate = new AstroDate(fullArray.slice(0, end));
                     test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")Number: isAstrodate");
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")Number: isValid");
-                    test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")Number: Arrays are the same");
+                    temp = astrodate.array();
+                    for (index2 = 0, length = temp.length; index2 < length; index += 1) {
+                        if (index === 0 && temp[index].gt(999999999999999)) {
+                            temp[index] = temp[index].toString();
+                        } else {
+                            temp[index] = temp[index].toNumber();
+                        }
+                    }
+
+                    test.deepEqual(temp, slice, "(" + count + "/" + index + ")Number: Arrays are the same");
                     date = new Date(astrodate.toISOString()).getTime();
                     if (slice[0] >= 0 && slice[0] < 10000 && slice[3] !== 24) {
                         test.equal(astrodate.getTime(), date, "(" + count + "/" + index + ")Number date: Dates are the same: " + slice);
@@ -149,7 +161,16 @@
                     astrodate = new AstroDate().array(fullArray.slice(0, end));
                     test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")Number array: isAstrodate");
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")Number array: isValid");
-                    test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")Number array: Arrays are the same");
+                    temp = astrodate.array();
+                    for (index2 = 0, length = temp.length; index2 < length; index += 1) {
+                        if (index === 0 && temp[index].gt(999999999999999)) {
+                            temp[index] = temp[index].toString();
+                        } else {
+                            temp[index] = temp[index].toNumber();
+                        }
+                    }
+
+                    test.deepEqual(temp, slice, "(" + count + "/" + index + ")Number array: Arrays are the same");
                     if (slice[0] >= 0 && slice[0] < 10000 && slice[3] !== 24) {
                         test.equal(astrodate.getTime(), date, "(" + count + "/" + index + ")Number array date: Dates are the same");
                     } else {
@@ -161,7 +182,16 @@
                     astrodate = new AstroDate(astrodate);
                     test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")Number astrodate: isAstrodate");
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")Number astrodate: isValid");
-                    test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")Number astrodate: Arrays are the same");
+                    temp = astrodate.array();
+                    for (index2 = 0, length = temp.length; index2 < length; index += 1) {
+                        if (index === 0 && temp[index].gt(999999999999999)) {
+                            temp[index] = temp[index].toString();
+                        } else {
+                            temp[index] = temp[index].toNumber();
+                        }
+                    }
+
+                    test.deepEqual(temp, slice, "(" + count + "/" + index + ")Number astrodate: Arrays are the same");
                     if (slice[0] >= 0 && slice[0] < 10000 && slice[3] !== 24) {
                         test.equal(astrodate.getTime(), date, "(" + count + "/" + index + ")Number astrodate date: dates are the same");
                     } else {
@@ -173,7 +203,12 @@
                     astrodate = new AstroDate(fullArrayString.slice(0, end));
                     test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")String: isAstrodate");
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")String: isValid");
-                    test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")String: Arrays are the same");
+                    temp = astrodate.array();
+                    for (index2 = 0, length = temp.length; index2 < length; index += 1) {
+                        temp[index] = temp[index].toString();
+                    }
+
+                    test.deepEqual(temp, slice, "(" + count + "/" + index + ")String: Arrays are the same");
                     if (slice[0] >= 0 && slice[0] < 10000 && slice[3] !== 24) {
                         test.equal(astrodate.getTime(), date, "(" + count + "/" + index + ")String date: dates are the same");
                     } else {
@@ -185,7 +220,12 @@
                     astrodate = new AstroDate().array(fullArrayString.slice(0, end));
                     test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")String array: isAstrodate");
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")String array: isValid");
-                    test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")String array: Arrays are the same");
+                    temp = astrodate.array();
+                    for (index2 = 0, length = temp.length; index2 < length; index += 1) {
+                        temp[index] = temp[index].toString();
+                    }
+
+                    test.deepEqual(temp, slice, "(" + count + "/" + index + ")String array: Arrays are the same");
                     if (slice[0] >= 0 && slice[0] < 10000 && slice[3] !== 24) {
                         test.equal(astrodate.getTime(), date, "(" + count + "/" + index + ")String array date: dates are the same");
                     } else {
@@ -198,7 +238,12 @@
                     test.ok(astrodate !== astrodate.clone, "(" + count + "/" + index + ")String clone: is a clone");
                     test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")String clone: isAstrodate");
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")String clone: isValid");
-                    test.deepEqual(astrodate.array(), slice, "(" + count + "/" + index + ")String clone: Arrays are the same");
+                    temp = astrodate.array();
+                    for (index2 = 0, length = temp.length; index2 < length; index += 1) {
+                        temp[index] = temp[index].toString();
+                    }
+
+                    test.deepEqual(temp, slice, "(" + count + "/" + index + ")String clone: Arrays are the same");
                     if (slice[0] >= 0 && slice[0] < 10000 && slice[3] !== 24) {
                         test.equal(astrodate.getTime(), date, "(" + count + "/" + index + ")String clone: dates are the same");
                     } else {
