@@ -140,11 +140,11 @@
                     test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")Number: isAstrodate");
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")Number: isValid");
                     temp = astrodate.array();
-                    for (index2 = 0, length = temp.length; index2 < length; index += 1) {
-                        if (index === 0 && temp[index].gt(999999999999999)) {
-                            temp[index] = temp[index].toString();
+                    for (index2 = 0, length = temp.length; index2 < length; index2 += 1) {
+                        if (index2 === 0 && temp[index2].gt(999999999999999)) {
+                            temp[index2] = temp[index2].toString();
                         } else {
-                            temp[index] = temp[index].toNumber();
+                            temp[index2] = temp[index2].toNumber();
                         }
                     }
 
@@ -162,11 +162,11 @@
                     test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")Number array: isAstrodate");
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")Number array: isValid");
                     temp = astrodate.array();
-                    for (index2 = 0, length = temp.length; index2 < length; index += 1) {
-                        if (index === 0 && temp[index].gt(999999999999999)) {
-                            temp[index] = temp[index].toString();
+                    for (index2 = 0, length = temp.length; index2 < length; index2 += 1) {
+                        if (index2 === 0 && temp[index2].gt(999999999999999)) {
+                            temp[index2] = temp[index2].toString();
                         } else {
-                            temp[index] = temp[index].toNumber();
+                            temp[index2] = temp[index2].toNumber();
                         }
                     }
 
@@ -183,11 +183,11 @@
                     test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")Number astrodate: isAstrodate");
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")Number astrodate: isValid");
                     temp = astrodate.array();
-                    for (index2 = 0, length = temp.length; index2 < length; index += 1) {
-                        if (index === 0 && temp[index].gt(999999999999999)) {
-                            temp[index] = temp[index].toString();
+                    for (index2 = 0, length = temp.length; index2 < length; index2 += 1) {
+                        if (index2 === 0 && temp[index2].gt(999999999999999)) {
+                            temp[index2] = temp[index2].toString();
                         } else {
-                            temp[index] = temp[index].toNumber();
+                            temp[index2] = temp[index2].toNumber();
                         }
                     }
 
@@ -221,8 +221,8 @@
                     test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")String array: isAstrodate");
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")String array: isValid");
                     temp = astrodate.array();
-                    for (index2 = 0, length = temp.length; index2 < length; index += 1) {
-                        temp[index] = temp[index].toString();
+                    for (index2 = 0, length = temp.length; index2 < length; index2 += 1) {
+                        temp[index2] = temp[index2].toString();
                     }
 
                     test.deepEqual(temp, slice, "(" + count + "/" + index + ")String array: Arrays are the same");
@@ -239,8 +239,8 @@
                     test.ok(AstroDate.isAstroDate(astrodate), "(" + count + "/" + index + ")String clone: isAstrodate");
                     test.ok(astrodate.isValid(), "(" + count + "/" + index + ")String clone: isValid");
                     temp = astrodate.array();
-                    for (index2 = 0, length = temp.length; index2 < length; index += 1) {
-                        temp[index] = temp[index].toString();
+                    for (index2 = 0, length = temp.length; index2 < length; index2 += 1) {
+                        temp[index2] = temp[index2].toString();
                     }
 
                     test.deepEqual(temp, slice, "(" + count + "/" + index + ")String clone: Arrays are the same");
