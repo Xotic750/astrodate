@@ -1,6 +1,6 @@
 /*global requirejs, require, module */
 
-/* AstroDate v0.1.1
+/* AstroDate v0.2.1
  *
  * home: https://github.com/Xotic750/astrodate
  *
