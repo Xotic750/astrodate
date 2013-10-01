@@ -1750,15 +1750,15 @@
                     if (!timeFraction.isZero()) {
                         timeFraction = fractionToTime(timeFraction, fullKeys[length + 2]);
                         if (length < 2) {
-                            temp.push(timeFraction.minute().padLeadingZero(2));
+                            temp.push(timeFraction.minute.padLeadingZero(2));
                         }
 
                         if (length < 3) {
-                            temp.push(timeFraction.second().padLeadingZero(2));
+                            temp.push(timeFraction.second.padLeadingZero(2));
                         }
 
                         if (length < 4) {
-                            temp.push(timeFraction.millisecond().padLeadingZero(3));
+                            temp.push(timeFraction.millisecond.padLeadingZero(3));
                         }
                     } else {
                         if (length < 2) {
