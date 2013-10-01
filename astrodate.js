@@ -1094,6 +1094,36 @@
             return arr;
         }
 
+        function objectToStruct(input) {
+            var struct = {},
+                prop;
+
+            if (!isObject(input)) {
+                return struct;
+            }
+
+            for (prop in input) {
+                if (hasOwnProperty(input, prop)) {
+                    struct[prop] = bignumber(input[prop]);
+                }
+            }
+
+            return struct;
+        }
+
+        function structToObject(struct) {
+            var newObject = {},
+                prop;
+
+            for (prop in struct) {
+                if (hasOwnProperty(struct, prop)) {
+                    newObject[prop] = struct[prop].toString();
+                }
+            }
+
+            return newObject;
+        }
+
         function dateToObject(date) {
             var struct = {},
                 index,
@@ -1803,18 +1833,13 @@
 
             "valueOf": {
                 "value": function () {
-                    var struct = this.getter(),
-                        prop;
+                    var struct = this.getter();
 
                     if (!isValid(struct)) {
                         return local_undefined;
                     }
 
-                    for (prop in struct) {
-                        if (hasOwnProperty(struct, prop)) {
-                            struct[prop] = struct[prop].toString();
-                        }
-                    }
+                    struct = structToObject(struct);
 
                     return struct;
                 }
@@ -2100,8 +2125,7 @@
 
             "valueOf": {
                 "value": function () {
-                    var struct = this.getter(),
-                        prop;
+                    var struct = this.getter();
 
                     if (!isValid(struct)) {
                         return local_undefined;
@@ -2111,11 +2135,7 @@
                         struct = gregorianToJulian(struct);
                     }
 
-                    for (prop in struct) {
-                        if (hasOwnProperty(struct, prop)) {
-                            struct[prop] = struct[prop].toString();
-                        }
-                    }
+                    struct = structToObject(struct);
 
                     return struct;
                 }
@@ -2358,10 +2378,10 @@
 
                     if (isString(jsonString)) {
                         if (isFunction(JSON.parse)) {
-                            struct = JSON.parse(jsonString);
+                            struct = objectToStruct(JSON.parse(jsonString));
                         } else {
                             /*jslint evil: true */
-                            struct = (new Function("return" + jsonString)());
+                            struct = objectToStruct(new Function("return" + jsonString)());
                             /*jslint evil:   false */
                         }
 
