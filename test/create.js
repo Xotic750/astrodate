@@ -91,12 +91,16 @@
             for (count = 0; count < repeat; count += 1) {
                 fullArray.length = 0;
                 fullArrayString.length = 0;
-                year = getRandomInt(-999999999999999, 999999999999999);
+                year = getRandomInt(-9007199254740991, 9007199254740991);
+                if (Math.abs(year) > 999999999999999) {
+                    year = year.toString();
+                }
+
                 month = getRandomInt(1, 12);
                 hour = getRandomInt(0, 24);
                 fullArray.push(year);
                 fullArray.push(month);
-                fullArray.push(getRandomInt(1, new AstroDate([year, month]).daysInMonth()));
+                fullArray.push(getRandomInt(1, new AstroDate([year, month]).daysInMonth().toNumber()));
                 fullArray.push(hour);
                 if (hour === 24) {
                     fullArray.push(0);
@@ -233,7 +237,7 @@
 
             test.expect(2 * 66 * repeat);
             for (count = 0; count < repeat; count += 1) {
-                year = padLeadingZero(getRandomInt(0, 999999999999999), 4);
+                year = padLeadingZero(getRandomInt(0, 9007199254740991), 4);
                 if (year >= 10000) {
                     sign = getRandomInt(0, 1);
                     year = padLeadingZero(year, 5);
@@ -245,7 +249,7 @@
                 }
 
                 month = padLeadingZero(getRandomInt(1, 12), 2);
-                day = padLeadingZero(getRandomInt(1, new AstroDate([parseInt(year, 10), parseInt(month, 10)]).daysInMonth()), 2);
+                day = padLeadingZero(getRandomInt(1, new AstroDate([year, month]).daysInMonth().toNumber()), 2);
                 hour = padLeadingZero(getRandomInt(0, 24), 2);
                 if (hour === "24") {
                     minute = "00";

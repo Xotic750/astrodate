@@ -96,7 +96,7 @@
             trimFN = baseString.constructor.trim,
             trim,
             AstroDate,
-            bignumber;
+            isBigNumber;
 
         for (indexFullKeys = 0; indexFullKeys < lengthFullKeys; indexFullKeys += 1) {
             unitAliases[aliases[indexFullKeys]] = fullKeys[indexFullKeys];
@@ -294,33 +294,6 @@
             };
         }());
 
-
-        function normaliseAngle(angle) {
-            var newAngle = bignumber(angle);
-
-            while (newAngle.lt(-360)) {
-                newAngle = newAngle.plus(360);
-            }
-
-            while (newAngle.gt(360)) {
-                newAngle = newAngle.minus(360);
-            }
-
-            return newAngle;
-        }
-
-        /*
-        function toPositiveAngle(angle) {
-            var newAngle = normaliseAngle(angle);
-
-            if (newAngle < 0) {
-                newAngle = newAngle.plus(360);
-            }
-
-            return newAngle;
-        }
-        */
-
         defineProperties(BigNumber.prototype, {
             "toNumber": {
                 "value": function () {
@@ -351,7 +324,7 @@
                     if (bn.isFinite()) {
                         bn = bn.minus(this.integerPart());
                     } else {
-                        bn = bignumber(NaN);
+                        bn = new BigNumber(NaN);
                     }
 
                     return bn;
@@ -378,7 +351,7 @@
 
                     return function (exponentialAt) {
                         if (!this.isFinite() || this.lt(0) || !this.fractionalPart().equals(0)) {
-                            return bignumber(NaN);
+                            return new BigNumber(NaN);
                         }
 
                         if (isUndefined(exponentialAt)) {
@@ -386,13 +359,13 @@
                         }
 
                         if (!BigNumber.isBigNumber(exponentialAt)) {
-                            exponentialAt = bignumber(exponentialAt).floor();
+                            exponentialAt = new BigNumber(exponentialAt).floor();
                         } else {
                             exponentialAt = exponentialAt.floor();
                         }
 
                         if (!exponentialAt.isFinite() || exponentialAt.lt(0)) {
-                            exponentialAt = bignumber(BigNumber.config().EXPONENTIAL_AT[1]);
+                            exponentialAt = new BigNumber(BigNumber.config().EXPONENTIAL_AT[1]);
                         }
 
                         var n = this.toNumber(),
@@ -418,7 +391,7 @@
                                 ERRORS : true
                             });
 
-                            factorialLookup[n] = bignumber(1);
+                            factorialLookup[n] = new BigNumber(1);
                             for (i = 2; i <= n; i += 1) {
                                 factorialLookup[n] = factorialLookup[n].times(i);
                             }
@@ -441,13 +414,22 @@
                 }
             },
 
-            "abs": {
-                "value": function () {
-                    if (this.lt(0)) {
-                        return this.neg();
+            "padLeadingZero": {
+                "value": function (size) {
+                    var numString = this.toString(),
+                        bnSize = new BigNumber(size).floor(),
+                        length,
+                        i;
+
+                    if (!bnSize.isFinite() || bnSize.lt(0)) {
+                        size = 0;
                     }
 
-                    return this;
+                    for (i = 0, length = size - numString.length; i < length; i += 1) {
+                        numString = "0" + numString;
+                    }
+
+                    return numString;
                 }
             }
         });
@@ -461,31 +443,25 @@
 
             "integerPart": {
                 "value": function (number) {
-                    return bignumber(number).integerPart();
+                    return new BigNumber(number).integerPart();
                 }
             },
 
             "fractionalPart": {
                 "value": function (number) {
-                    return bignumber(number).fractionalPart();
+                    return new BigNumber(number).fractionalPart();
                 }
             },
 
             "difference": {
                 "value": function (number1, number2) {
-                    return bignumber(number1).difference(number2);
-                }
-            },
-
-            "abs": {
-                "value": function (number) {
-                    return bignumber(number).abs();
+                    return new BigNumber(number1).difference(number2);
                 }
             },
 
             "factorial": {
                 "value": function (number, exponentialAt) {
-                    return bignumber(number).factorial(exponentialAt);
+                    return new BigNumber(number).factorial(exponentialAt);
                 }
             },
 
@@ -494,19 +470,14 @@
                     var piLookup = {};
 
                     return function (decimalPlaces) {
-                        if (isUndefined(decimalPlaces)) {
+                        if (!isNumber(decimalPlaces) || !isFinite(decimalPlaces) || decimalPlaces < 0) {
                             decimalPlaces = BigNumber.config().DECIMAL_PLACES;
+                        } else {
+                            decimalPlaces = Math.floor(decimalPlaces);
                         }
 
-                        if (!BigNumber.isBigNumber(decimalPlaces)) {
-                            decimalPlaces = bignumber(decimalPlaces).floor();
-                        }
-
-                        if (!decimalPlaces.isFinite() || decimalPlaces.lt(0)) {
-                            decimalPlaces = bignumber(BigNumber.config().DECIMAL_PLACES);
-                        }
-
-                        var config,
+                        var lookupProp = decimalPlaces.toString(),
+                            config,
                             previousConfig,
                             k = 0,
                             prop,
@@ -517,7 +488,7 @@
                             a,
                             b;
 
-                        if (!piLookup[decimalPlaces]) {
+                        if (!piLookup[lookupProp]) {
                             config = BigNumber.config();
                             previousConfig = {};
                             for (prop in config) {
@@ -527,18 +498,18 @@
                             }
 
                             BigNumber.config({
-                                DECIMAL_PLACES : decimalPlaces.toNumber(),
+                                DECIMAL_PLACES : decimalPlaces,
                                 ROUNDING_MODE : 4,
                                 EXPONENTIAL_AT : [-7, 20],
                                 RANGE : [-1000000000, 1000000000],
                                 ERRORS : true
                             });
 
-                            sum = bignumber(0);
-                            a = ta = bignumber(16).div(5);
-                            b = tb = bignumber(-4).div(239);
+                            sum = new BigNumber(0);
+                            a = ta = new BigNumber(16).div(5);
+                            b = tb = new BigNumber(-4).div(239);
                             while (!a.equals(b)) {
-                                divisor = 2 * k + 1;
+                                divisor = k * 2 + 1;
                                 a = ta.div(divisor);
                                 b = tb.div(divisor);
                                 sum = sum.plus(a).plus(b);
@@ -553,17 +524,45 @@
                                 }
                             }
 
-                            piLookup[decimalPlaces] = sum;
+                            piLookup[lookupProp] = sum;
                         }
 
-                        return piLookup[decimalPlaces];
+                        return piLookup[lookupProp];
                     };
                 }())
             },
 
             "toRadians": {
                 "value": function (number, decimalPlacesPI) {
-                    return bignumber(number).toRadians(decimalPlacesPI);
+                    return new BigNumber(number).toRadians(decimalPlacesPI);
+                }
+            },
+
+            "normaliseAngle": {
+                "value": function (angle) {
+                    var newAngle = new BigNumber(angle);
+
+                    while (newAngle.lt(-360)) {
+                        newAngle = newAngle.plus(360);
+                    }
+
+                    while (newAngle.gt(360)) {
+                        newAngle = newAngle.minus(360);
+                    }
+
+                    return newAngle;
+                }
+            },
+
+            "toPositiveAngle": {
+                "value": function (angle) {
+                    var newAngle = BigNumber.normaliseAngle(angle);
+
+                    if (newAngle < 0) {
+                        newAngle = newAngle.plus(360);
+                    }
+
+                    return newAngle;
                 }
             },
 
@@ -572,17 +571,18 @@
                     var sineLookup = {};
 
                     return function (angle) {
-                        angle = normaliseAngle(angle);
-                        var sum,
+                        var newAngle = BigNumber.normaliseAngle(angle),
+                            lookupProp = newAngle.toString(),
+                            sum,
                             prev,
                             k,
                             mod,
                             fact,
                             i;
 
-                        if (!sineLookup[angle.toString()]) {
-                            sum = angle;
-                            prev = bignumber(0);
+                        if (!sineLookup[lookupProp]) {
+                            sum = newAngle;
+                            prev = new BigNumber(0);
                             i = 1;
                             k = 3;
                             while (!sum.equals(prev)) {
@@ -590,210 +590,171 @@
                                 fact = BigNumber.factorial(k);
                                 mod = i % 2 % 2;
                                 if (mod === 1) {
-                                    sum = sum.minus(angle.pow(k).div(fact));
+                                    sum = sum.minus(newAngle.pow(k).div(fact));
                                 } else {
-                                    sum = sum.plus(angle.pow(k).div(fact));
+                                    sum = sum.plus(newAngle.pow(k).div(fact));
                                 }
 
                                 i += 1;
                                 k += 2;
                             }
 
-                            sineLookup[angle.toString()] = sum;
+                            sineLookup[lookupProp] = sum;
                         }
 
-                        return sineLookup[angle.toString()];
+                        return sineLookup[lookupProp];
                     };
                 }())
             }
         });
 
-        bignumber = function bignumber(inputArg) {
-            var bn;
+        isBigNumber = BigNumber.isBigNumber;
 
-            if (BigNumber.isBigNumber(inputArg)) {
-                bn = inputArg;
-            } else {
-                bn = new BigNumber(inputArg);
+        function bignumber(inputArg) {
+            if (!isNumber(inputArg) && !isString(inputArg) && !isBigNumber(inputArg)) {
+                inputArg = NaN;
             }
 
-            return bn;
-        };
+            return new BigNumber(inputArg);
+        }
 
-        function isDateValid(inputArg) {
-            return isDate(inputArg) && !isNaN(inputArg.getTime());
+        function isDateValid(dateObject) {
+            return isDate(dateObject) && !isNaN(dateObject.getTime());
         }
 
         function isDigit(character) {
-            if (!isString(character) || character.length !== 1) {
-                return false;
+            var digit = false,
+                charCode;
+
+            if (isString(character) && character.length === 1) {
+                charCode = character.charCodeAt(0);
+                digit = charCode >= 48 && charCode <= 57;
             }
 
-            var charCode = character.charCodeAt(0);
-
-            return charCode >= 48 && charCode <= 57;
-        }
-
-        function isValidValue(value) {
-            return (isNumber(value) || (isString(value) && trim(value).length)) && isFinite(value);
+            return digit;
         }
 
         function intToNumber(input) {
-            var number = +input;
+            var number = input;
 
-            if ((!isNumber(input) && !isString(input)) || !isFinite(number) || parseInt(input, 10) !== number) {
-                number = NaN;
+            if (!number.isFinite(number) || !number.fractionalPart().isZero()) {
+                number = bignumber(NaN);
             }
 
             return number;
         }
 
         function isGregorianLeapYear(struct) {
-            return struct.year % 400 === 0 || (struct.year % 100 !== 0 && struct.year % 4 === 0);
+            return struct.year.mod(400).isZero() || (!struct.year.mod(100).isZero() && struct.year.mod(4).isZero());
         }
 
         function isJulianLeapYear(struct) {
             var modTest = 3;
 
-            if (struct.year > 0) {
+            if (struct.year.gt(0)) {
                 modTest = 0;
             }
 
-            return struct.year % 4 === modTest;
+            return struct.year.mod(4).equals(modTest);
         }
 
         function daysInGregorianMonth(struct) {
             var days;
 
-            if (struct.month === 2) {
-                days = 28 + isGregorianLeapYear(struct);
+            if (struct.month.eq(2)) {
+                days = bignumber(28);
+                if (isGregorianLeapYear(struct)) {
+                    days = days.plus(1);
+                }
             } else {
-                days = 31 - ((struct.month - 1) % 7 % 2);
+                days = struct.month.minus(1).mod(7).mod(2).neg().plus(31);
             }
 
             return days;
         }
 
         function daysInJulianMonth(struct) {
-            var days = 28;
+            var days = bignumber(28);
 
-            if (struct.month === 2) {
-                days += isJulianLeapYear(struct);
+            if (struct.month.eq(2) && isJulianLeapYear(struct)) {
+                days = days.plus(1);
             }
 
             return days;
         }
 
         function daysInGregorianYear(struct) {
-            return 365 + isGregorianLeapYear(struct);
+            var days = bignumber(365);
+
+            if (isGregorianLeapYear(struct)) {
+                days = days.plus(1);
+            }
+
+            return days;
         }
 
         function daysInJulianYear(struct) {
-            return 365 + isJulianLeapYear(struct);
+            var days = bignumber(365);
+
+            if (isJulianLeapYear(struct)) {
+                days = days.plus(1);
+            }
+
+            return days;
+        }
+
+        function inYearRange(year, julian) {
+            return (julian !== true && year.isFinite()) || (julian === true && year.isFinite() && !year.isZero());
         }
 
         function inMonthRange(month) {
-            if (BigNumber.isBigNumber(month)) {
-                month = month.toNumber();
-            }
-
-            return isNumber(month) && month > 0 && month < 13;
+            return month.gt(0) && month.lte(13);
         }
 
         function inDayRange(day, dim) {
-            if (BigNumber.isBigNumber(day)) {
-                day = day.toNumber();
-            }
-
-            if (BigNumber.isBigNumber(dim)) {
-                dim = dim.toNumber();
-            }
-
-            return isNumber(day) && isNumber(dim) && day > 0 && day <= dim;
+            return day.gt(0) && day.lte(dim);
         }
 
         function inHourRange(hour) {
-            if (BigNumber.isBigNumber(hour)) {
-                hour = hour.toNumber();
-            }
-
-            return isNumber(hour) && hour >= 0 && hour <= 24;
+            return hour.gte(0) && hour.lte(24);
         }
 
         function inMinuteRange(minute, hour) {
-            if (BigNumber.isBigNumber(minute)) {
-                minute = minute.toNumber();
-            }
-
-            if (BigNumber.isBigNumber(hour)) {
-                hour = hour.toNumber();
-            }
-
-            return isNumber(minute) && isNumber(hour) && ((hour === 24 && minute === 0) || (hour !== 24 && minute >= 0 && minute < 60));
+            return (hour.equals(24) && minute.isZero()) || (!hour.equals(24) && minute.gte(0) && minute.lt(60));
         }
 
         function inSecondRange(second, hour) {
-            if (BigNumber.isBigNumber(second)) {
-                second = second.toNumber();
-            }
-
-            if (BigNumber.isBigNumber(hour)) {
-                hour = hour.toNumber();
-            }
-
-            return isNumber(second) && isNumber(hour) && ((hour === 24 && second === 0) || (hour !== 24 && second >= 0 && second < 60));
+            return (hour.equals(24) && second.isZero()) || (!hour.equals(24) && second.gte(0) && second.lt(60));
         }
 
         function inMillisecondRange(millisecond, hour) {
-            if (BigNumber.isBigNumber(millisecond)) {
-                millisecond = millisecond.toNumber();
-            }
-
-            if (BigNumber.isBigNumber(hour)) {
-                hour = hour.toNumber();
-            }
-
-            return isNumber(millisecond) && isNumber(hour) && ((hour === 24 && millisecond === 0) || (hour !== 24 && millisecond >= 0 && millisecond < 1000));
+            return (hour.equals(24) && millisecond.isZero()) || (!hour.equals(24) && millisecond.gte(0) && millisecond.lt(1000));
         }
 
         function inOffsetRange(offset) {
-            if (BigNumber.isBigNumber(offset)) {
-                offset = offset.toNumber();
-            }
-
-            return isNumber(offset) && offset >= -1440 && offset <= 1440;
+            return offset.gte(-1440) && offset.lte(1440);
         }
 
         function isValid(struct, julian) {
             var dim,
                 index,
-                number,
-                prop;
+                bn;
 
             if (!isObject(struct)) {
                 return false;
             }
 
             for (index = 0; index < lengthFullKeys; index += 1) {
-                prop = fullKeys[index];
-                if (!hasOwnProperty(struct, prop)) {
-                    return false;
-                }
-
-                number = struct[prop];
-                if (!isNumber(number) || isNaN(intToNumber(number))) {
-                    return false;
-                }
-
+                bn = struct[fullKeys[index]];
                 switch (index) {
                 case 0:
-                    if (julian === true && number === 0) {
+                    if (!inYearRange(bn, julian)) {
                         return false;
                     }
 
                     break;
                 case 1:
-                    if (!inMonthRange(number)) {
+                    if (!inMonthRange(bn)) {
                         return false;
                     }
 
@@ -805,37 +766,37 @@
                         dim = daysInGregorianMonth(struct);
                     }
 
-                    if (!inDayRange(number, dim)) {
+                    if (!inDayRange(bn, dim)) {
                         return false;
                     }
 
                     break;
                 case 3:
-                    if (!inHourRange(number)) {
+                    if (!inHourRange(bn)) {
                         return false;
                     }
 
                     break;
                 case 4:
-                    if (!inMinuteRange(number, struct.hour)) {
+                    if (!inMinuteRange(bn, struct.hour)) {
                         return false;
                     }
 
                     break;
                 case 5:
-                    if (!inSecondRange(number, struct.hour)) {
+                    if (!inSecondRange(bn, struct.hour)) {
                         return false;
                     }
 
                     break;
                 case 6:
-                    if (!inMillisecondRange(number, struct.hour)) {
+                    if (!inMillisecondRange(bn, struct.hour)) {
                         return false;
                     }
 
                     break;
                 case 7:
-                    if (!inOffsetRange(number)) {
+                    if (!inOffsetRange(bn)) {
                         return false;
                     }
 
@@ -849,29 +810,36 @@
         }
 
         function dayOfGregorianYear(struct) {
-            return Math.floor((275 * struct.month) / 9) - (2 - isGregorianLeapYear(struct)) * Math.floor((struct.month + 9) / 12) + struct.day - 30;
+            var k = 2;
+
+            if (isGregorianLeapYear(struct)) {
+                k = 1;
+            }
+
+            return struct.month.times(275).div(9).floor().minus(struct.month.plus(9).div(12).floor().times(k)).plus(struct.day).minus(30);
         }
 
         function dayOfJulianYear(struct) {
-            var doy = 28 * struct.month + struct.day;
+            var doy = struct.month.times(28).plus(struct.day);
 
-            if (struct.month >= 2) {
-                doy += isJulianLeapYear(struct);
+            if (struct.month.gte(2) && isJulianLeapYear(struct)) {
+                doy = doy.plus(1);
             }
 
             return doy;
         }
 
         function dayOfWeek(julianDay) {
-            var day = bignumber(julianDay).plus(1.5).mod(7).floor().toNumber();
+            var day = bignumber(julianDay).plus(1.5).mod(7).floor();
 
-            if (day < 0) {
-                day = 7 + day;
+            if (day.lt(0)) {
+                day = day.plus(7);
             }
 
-            return dayNames[day];
+            return dayNames[day.toNumber()];
         }
 
+        /*
         function dayFractionToTime(dayFraction) {
             var totalMs = bignumber(dayFraction).abs().times(86400000),
                 hour = totalMs.div(3600000),
@@ -879,20 +847,9 @@
                 second = minute.fractionalPart().times(60),
                 millisecond = second.fractionalPart().times(1000);
 
-            return [hour.floor().toNumber(), minute.floor().toNumber(), second.floor().toNumber(), millisecond.floor().toNumber()];
+            return {"hour": hour.floor(), "minute": minute.floor(), "second": second.floor(), "millisecond": millisecond.floor()};
         }
-
-        function padLeadingZero(number, size) {
-            var numString = number.toString(),
-                length = size - numString.length,
-                i;
-
-            for (i = 0; i < length; i += 1) {
-                numString = "0" + numString;
-            }
-
-            return numString;
-        }
+        */
 
         function fractionToTime(fraction, fractionIn) {
             var totalMs,
@@ -926,14 +883,11 @@
             second = totalMs.minus(hour.times(3600000)).minus(minute.times(60000)).div(1000).floor();
             millisecond = totalMs.minus(hour.times(3600000)).minus(minute.times(60000)).minus(second.times(1000)).floor();
 
-            return [padLeadingZero(hour.toNumber(), 2), padLeadingZero(minute.toNumber(), 2), padLeadingZero(second.toNumber(), 2), padLeadingZero(millisecond.toNumber(), 3)];
+            return {"hour": hour, "minute": minute, "second": second, "millisecond": millisecond};
         }
 
         function getTime(astrodate) {
-            var jd1970 = bignumber(2440587.5),
-                julianDay = bignumber(astrodate.julianDay());
-
-            return julianDay.minus(jd1970).times(86400000).round().toString();
+            return bignumber(astrodate.julianDay()).minus(2440587.5).times(86400000).round().toString();
         }
 
         // DeltaT
@@ -1003,46 +957,21 @@
                 struct = {},
                 temp = {},
                 dim,
-                //day,
-                //time,
-                fraction,
                 index,
                 element,
-                number;
+                bn;
 
             if (length < 1 || length > lengthFullKeys) {
                 //invalid
                 return temp;
             }
 
-            /*
-            day = bignumber(arr[2]);
-            dayFraction = day.fractionalPart();
-            if (!dayFraction.equals(0)) {
-                time = dayFractionToTime(dayFraction);
-                arr[2] = day.floor().toNumber();
-                for (index = 3; index < lengthFullKeys; index += 1) {
-                    arr[index] = time[index - 3];
-                }
-            }
-            */
-
             for (index = 0; index < lengthFullKeys; index += 1) {
                 element = arr[index];
-                if (isValidValue(element)) {
-                    number = bignumber(element);
-                    fraction = number.fractionalPart();
-                    if (!fraction.isZero() && index !== lengthFullKeys - 1) {
-                        //invalid
-                        return temp;
-                    }
-                } else {
-                    number = bignumber(NaN);
-                }
-
+                bn = bignumber(element);
                 switch (index) {
                 case 0:
-                    if (!number.isFinite()) {
+                    if (!inYearRange(bn, julian)) {
                         //invalid
                         return temp;
                     }
@@ -1050,10 +979,10 @@
                     break;
                 case 1:
                     if (isUndefined(element)) {
-                        number = bignumber(1);
+                        bn = bignumber(1);
                     }
 
-                    if (!inMonthRange(number)) {
+                    if (!inMonthRange(bn)) {
                         //invalid
                         return temp;
                     }
@@ -1072,10 +1001,10 @@
                     }
 
                     if (isUndefined(element)) {
-                        number = bignumber(1);
+                        bn = bignumber(1);
                     }
 
-                    if (!inDayRange(number, dim)) {
+                    if (!inDayRange(bn, dim)) {
                         //invalid
                         return temp;
                     }
@@ -1083,10 +1012,10 @@
                     break;
                 case 3:
                     if (isUndefined(element)) {
-                        number = bignumber(0);
+                        bn = bignumber(0);
                     }
 
-                    if (!inHourRange(number)) {
+                    if (!inHourRange(bn)) {
                         //invalid
                         return temp;
                     }
@@ -1094,10 +1023,10 @@
                     break;
                 case 4:
                     if (isUndefined(element)) {
-                        number = bignumber(0);
+                        bn = bignumber(0);
                     }
 
-                    if (!inMinuteRange(number, struct.hour)) {
+                    if (!inMinuteRange(bn, struct.hour)) {
                         //invalid
                         return temp;
                     }
@@ -1105,10 +1034,10 @@
                     break;
                 case 5:
                     if (isUndefined(element)) {
-                        number = bignumber(0);
+                        bn = bignumber(0);
                     }
 
-                    if (!inSecondRange(number, struct.hour)) {
+                    if (!inSecondRange(bn, struct.hour)) {
                         //invalid
                         return temp;
                     }
@@ -1116,10 +1045,10 @@
                     break;
                 case 6:
                     if (isUndefined(element)) {
-                        number = bignumber(0);
+                        bn = bignumber(0);
                     }
 
-                    if (!inMillisecondRange(number, struct.hour)) {
+                    if (!inMillisecondRange(bn, struct.hour)) {
                         //invalid
                         return temp;
                     }
@@ -1127,19 +1056,20 @@
                     break;
                 case 7:
                     if (isUndefined(element)) {
-                        number = bignumber(0);
+                        bn = bignumber(0);
                     }
 
-                    if (!inOffsetRange(number)) {
+                    if (!inOffsetRange(bn)) {
                         //invalid
                         return temp;
                     }
 
                     break;
                 default:
+                    return temp;
                 }
 
-                struct[fullKeys[index]] = number.toNumber();
+                struct[fullKeys[index]] = bn;
             }
 
             return struct;
@@ -1176,9 +1106,9 @@
 
             for (index = 0; index < lengthFullKeys; index += 1) {
                 key = fullKeys[index];
-                value = date[dateMethods[index].replace("UTC", "")]();
+                value = bignumber(date[dateMethods[index].replace("UTC", "")]());
                 if (key === "month") {
-                    value += 1;
+                    value = value.plus(1);
                 }
 
                 struct[key] = value;
@@ -1198,7 +1128,7 @@
                 value,
                 last = lengthFullKeys - 1,
                 offset = struct[fullKeys[last]],
-                time = fractionToTime(Math.abs(offset), "minute"),
+                time = fractionToTime(offset.abs(), "minute"),
                 signOffset = 1;
 
             if (offset < 0) {
@@ -1212,19 +1142,8 @@
                 case "month":
                     value -= 1;
                     break;
-                case "hour":
-                    value += signOffset * time[0];
-                    break;
-                case "minute":
-                    value += signOffset * time[1];
-                    break;
-                case "second":
-                    value += signOffset * time[2];
-                    break;
-                case "millisecond":
-                    value += signOffset * time[3];
-                    break;
                 default:
+                    value = value + time[key].times(signOffset);
                 }
 
                 if (index < last) {
@@ -1260,13 +1179,13 @@
                 value = struct[fullKeys[index]];
                 padding = 2;
                 if (index === 0) {
-                    if (value >= 0) {
+                    if (value.gte(0)) {
                         signYear = "+";
                     } else {
                         signYear = "-";
                     }
 
-                    value = Math.abs(value);
+                    value = value.abs();
                     padding = 4;
                 } else if (index === 3) {
                     string += "T";
@@ -1274,11 +1193,11 @@
                     padding = 3;
                 }
 
-                if (index === 0 && (value >= 10000 || signYear === "-")) {
+                if (index === 0 && (value.gte(10000) || signYear === "-")) {
                     string += signYear;
                 }
 
-                string += padLeadingZero(value, padding);
+                string += value.padLeadingZero(padding);
                 if (index < 2) {
                     string += "-";
                 } else if (index > 2 && index < 5) {
@@ -1289,19 +1208,19 @@
             }
 
             value = struct[fullKeys[lengthFullKeys - 1]];
-            if (value === 0) {
+            if (value.isZero()) {
                 string += "Z";
             } else {
-                if (value > 0) {
+                if (value.gt(0)) {
                     string += "+";
                 } else {
                     string += "-";
                 }
 
-                value = fractionToTime(Math.abs(value), "minute");
-                string += padLeadingZero(value[0], 2);
+                value = fractionToTime(value.abs(), "minute");
+                string += value.hour.padLeadingZero(2);
                 string += ":";
-                string += padLeadingZero(value[1], 2);
+                string += value.minute.padLeadingZero(2);
             }
 
             return string;
@@ -1355,7 +1274,6 @@
                         element,
                         length,
                         timeFraction,
-                        found,
                         isTime,
                         value;
 
@@ -1363,7 +1281,7 @@
                         return setInvalid(this);
                     }
 
-                    getTimezoneOffset = new Date().getTimezoneOffset();
+                    getTimezoneOffset = bignumber(new Date().getTimezoneOffset());
                     temp = trim(isoString).split(/[T ]/);
                     length = temp.length;
                     if (length < 1 || length > 2) {
@@ -1376,12 +1294,12 @@
                             temp.unshift("");
                             isTime = true;
                         } else {
-                            if (getTimezoneOffset === 0) {
+                            if (getTimezoneOffset.isZero()) {
                                 value = "Z";
                             } else {
-                                value = fractionToTime(Math.abs(getTimezoneOffset), "minute");
-                                value = padLeadingZero(value[0], 2) + ":" + padLeadingZero(value[1], 2);
-                                if (getTimezoneOffset < 0) {
+                                value = fractionToTime(getTimezoneOffset.abs(), "minute");
+                                value = value.hour.padLeadingZero(2) + ":" + value.minute.padLeadingZero(2);
+                                if (getTimezoneOffset.lt(0)) {
                                     value = "-" + value;
                                 } else {
                                     value = "+" + value;
@@ -1447,15 +1365,15 @@
                         for (index = 0; index < 3; index += 1) {
                             element = temp[index];
                             length = element.length;
-                            number = intToNumber(element);
+                            number = intToNumber(bignumber(element));
                             switch (index) {
                             case 0:
-                                if (length < 4 || (signYear === "+" && length === 4) || (length > 4 && signYear !== "+" && signYear !== "-") || !isFinite(number)) {
+                                if (length < 4 || (signYear === "+" && length === 4) || (length > 4 && signYear !== "+" && signYear !== "-") || !number.isFinite()) {
                                     return setInvalid(this);
                                 }
 
                                 if (signYear === "-") {
-                                    number *= -1;
+                                    number = number.neg();
                                 }
 
                                 break;
@@ -1500,7 +1418,7 @@
                             value = "00";
                         } else {
                             value = fractionToTime(Math.abs(getTimezoneOffset), "minute");
-                            value = padLeadingZero(value[0], 2) + ":" + padLeadingZero(value[1], 2);
+                            value = value.hour.padLeadingZero(2) + ":" + value.minute.padLeadingZero(2);
                         }
 
                         temp.push(value);
@@ -1534,19 +1452,19 @@
                         }
                     }
 
-                    number = intToNumber(offset[0]);
+                    number = intToNumber(bignumber(offset[0]));
                     if (!inHourRange(number)) {
                         return setInvalid(this);
                     }
 
                     offset[0] = number;
-                    number = intToNumber(offset[1]);
+                    number = intToNumber(bignumber(offset[1]));
                     if (!inMinuteRange(number, offset[0])) {
                         return setInvalid(this);
                     }
 
                     offset[1] = number;
-                    if (signOffset === -1 && offset[0] === 0 && offset[1] === 0) {
+                    if (signOffset === -1 && offset[0].isZero() && offset[1].isZero()) {
                         return setInvalid(this);
                     }
 
@@ -1559,11 +1477,9 @@
                         }
 
                         time = temp[0];
-                        timeFraction = "0." + temp[1];
-                        found = true;
+                        timeFraction = bignumber("0." + temp[1]);
                     } else {
-                        timeFraction = "";
-                        found = false;
+                        timeFraction = bignumber(0);
                     }
 
                     if (time.indexOf(":") === -1) {
@@ -1593,8 +1509,19 @@
                         return setInvalid(this);
                     }
 
-                    if (found) {
-                        temp = temp.concat(fractionToTime(timeFraction, fullKeys[length + 2]).slice(length));
+                    if (!timeFraction.isZero()) {
+                        timeFraction = fractionToTime(timeFraction, fullKeys[length + 2]);
+                        if (length < 2) {
+                            temp.push(timeFraction.minute().padLeadingZero(2));
+                        }
+
+                        if (length < 3) {
+                            temp.push(timeFraction.second().padLeadingZero(2));
+                        }
+
+                        if (length < 4) {
+                            temp.push(timeFraction.millisecond().padLeadingZero(3));
+                        }
                     } else {
                         if (length < 2) {
                             temp.push("00");
@@ -1610,9 +1537,8 @@
                     }
 
                     time = {};
-                    found = false;
                     for (index = 0; index < 4; index += 1) {
-                        number = intToNumber(temp[index]);
+                        number = intToNumber(bignumber(temp[index]));
                         switch (index) {
                         case 0:
                             if (!inHourRange(number)) {
@@ -1649,7 +1575,7 @@
                         extend(dateObject, date);
                     }
 
-                    time[fullKeys[lengthFullKeys - 1]] = signOffset * (offset[0] * 60  + offset[1]);
+                    time[fullKeys[lengthFullKeys - 1]] = offset[0].times(60).plus(offset[1]).times(signOffset);
                     extend(dateObject, time);
                     return this.setter(dateObject);
                 }
@@ -1780,7 +1706,7 @@
 
         function jdToGregorian(julianDay) {
             var struct = {},
-                jd,
+                jd = bignumber(julianDay),
                 time,
                 a,
                 b,
@@ -1788,12 +1714,12 @@
                 d,
                 e;
 
-            if (!isValidValue(julianDay)) {
+            if (!jd.isFinite()) {
                 return struct;
             }
 
-            jd = bignumber(julianDay).plus(0.5);
-            time = dayFractionToTime(jd.fractionalPart());
+            jd = jd.plus(0.5);
+            time = fractionToTime(jd.fractionalPart(), "day");
             a = jd.plus(68569).floor();
             b = a.times(4).div(146097).floor();
             a = a.minus(b.times(146097).plus(3).div(4).floor());
@@ -1805,38 +1731,38 @@
             d = d.plus(2).minus(a.times(12));
             c = b.minus(49).times(100).plus(c).plus(a).floor();
 
-            struct[fullKeys[0]] = c.toNumber();
-            struct[fullKeys[1]] = d.toNumber();
-            struct[fullKeys[2]] = e.toNumber();
-            struct[fullKeys[3]] = time[0];
-            struct[fullKeys[4]] = time[1];
-            struct[fullKeys[5]] = time[2];
-            struct[fullKeys[6]] = time[3];
-            struct[fullKeys[7]] = 0;
+            struct[fullKeys[0]] = c;
+            struct[fullKeys[1]] = d;
+            struct[fullKeys[2]] = e;
+            struct[fullKeys[3]] = time.hour;
+            struct[fullKeys[4]] = time.minute;
+            struct[fullKeys[5]] = time.second;
+            struct[fullKeys[6]] = time.millisecond;
+            struct[fullKeys[7]] = bignumber(0);
 
             return struct;
         }
 
         function jdToJulian(julianDay) {
             var struct = {},
+                jd = bignumber(julianDay),
                 a,
                 b,
                 c,
                 d,
                 e,
                 g,
-                z,
                 year,
                 month,
                 day,
                 time;
 
-            if (!isValidValue(julianDay)) {
+            if (!jd.isFinite()) {
                 return struct;
             }
 
-            z = bignumber(julianDay).plus(0.5);
-            a = z.floor();
+            jd = jd.plus(0.5);
+            a = jd.floor();
             b = a.plus(1524);
             c = b.minus(122.1).div(365.25).floor();
             d = c.times(365.25).floor();
@@ -1863,15 +1789,15 @@
                 year = year.minus(1);
             }
 
-            time = dayFractionToTime(z.fractionalPart());
-            struct[fullKeys[0]] = year.toNumber();
-            struct[fullKeys[1]] = month.toNumber();
-            struct[fullKeys[2]] = day.toNumber();
-            struct[fullKeys[3]] = time[0];
-            struct[fullKeys[4]] = time[1];
-            struct[fullKeys[5]] = time[2];
-            struct[fullKeys[6]] = time[3];
-            struct[fullKeys[7]] = 0;
+            time = fractionToTime(jd.fractionalPart(), "day");
+            struct[fullKeys[0]] = year;
+            struct[fullKeys[1]] = month;
+            struct[fullKeys[2]] = day;
+            struct[fullKeys[3]] = time.hour;
+            struct[fullKeys[4]] = time.minute;
+            struct[fullKeys[5]] = time.second;
+            struct[fullKeys[6]] = time.millisecond;
+            struct[fullKeys[7]] = bignumber(0);
 
             return struct;
         }
@@ -1900,7 +1826,7 @@
                 m = a.plus(h.times(11)).plus(l.times(22)).div(451).floor(),
                 n = h.plus(l).minus(m.times(7)).plus(114);
 
-            return new AstroDate([year.toNumber(), n.div(31).floor().toNumber(), n.mod(31).plus(1).toNumber()]);
+            return new AstroDate([year, n.div(31).floor(), n.mod(31).plus(1)]);
         }
 
         function julianEaster(struct) {
@@ -1912,7 +1838,7 @@
                 e = a.times(2).plus(b.times(4)).minus(d).plus(34).mod(7),
                 f = d.plus(e).plus(114);
 
-            return new AstroDate([year.toNumber(), f.div(31).floor().minus(1).toNumber(), f.mod(31).plus(1).toNumber()]);
+            return new AstroDate([year, f.div(31).floor().minus(1), f.mod(31).plus(1)]);
         }
 
         AstroDate = function () {
@@ -1936,25 +1862,55 @@
                 "setter": {
                     "value": function (key, value) {
                         var unit = AstroDate.normaliseUnits(key),
-                            number;
+                            valid = false,
+                            bn,
+                            dim;
 
                         if (unitsLookup[unit]) {
-                            number = +value;
-                            if (!isValidValue(value)) {
-                                if (number === 0 || isNaN(number)) {
-                                    number = NaN;
+                            bn = bignumber(value);
+                            switch (unit) {
+                            case "year":
+                                valid = inYearRange(bn, isJulian);
+                                break;
+                            case "month":
+                                valid = inMonthRange(bn);
+                                break;
+                            case "day":
+                                if (isJulian === true) {
+                                    dim = daysInJulianMonth(struct);
+                                } else {
+                                    dim = daysInGregorianMonth(struct);
                                 }
 
-                                if (unit !== "year" && unit !== "month" && unit !== "day") {
-                                    number = number || 0;
-                                }
+                                valid = inDayRange(bn, dim);
+                                break;
+                            case "hour":
+                                valid = inHourRange(bn);
+                                break;
+                            case "minute":
+                                valid = inMinuteRange(bn, struct.hour);
+                                break;
+                            case "second":
+                                valid = inSecondRange(bn, struct.hour);
+                                break;
+                            case "millisecond":
+                                valid = inMillisecondRange(bn, struct.hour);
+                                break;
+                            case "offset":
+                                valid = inOffsetRange(bn);
+                                break;
+                            default:
                             }
 
-                            struct[unit] = number;
+                            if (valid) {
+                                struct[unit] = bn;
+                            } else {
+                                struct = {};
+                            }
                         } else if (isArray(key)) {
                             struct = arrayToObject(key, false);
                         } else if (AstroDate.isAstroDate(key)) {
-                            struct = key.v.getter();
+                            struct = key.getter();
                             isJulian = key.isJulian();
                         } else if (isDate(key)) {
                             struct = dateToObject(key);
@@ -2104,31 +2060,32 @@
                     }
 
                     str += struct.day + " ";
-                    str += monthNames[struct.month - 1].slice(0, 3) + " ";
-                    str += padLeadingZero(Math.abs(struct.year), 4) + " ";
-                    if (struct.year < 0) {
+                    str += monthNames[struct.month.minus(1).toNumber()].slice(0, 3) + " ";
+                    str += struct.year.abs().padLeadingZero(4) + " ";
+                    if (struct.year.lt(0)) {
                         str += "BCE ";
                     } else {
                         str += "CE ";
                     }
 
-                    str += padLeadingZero(struct.hour, 2) + ":";
-                    str += padLeadingZero(struct.minute, 2) + ":";
-                    str += padLeadingZero(struct.second, 2) + ".";
-                    str += padLeadingZero(struct.millisecond, 3);
+                    str += struct.hour.padLeadingZero(2) + ":";
+                    str += struct.minute.padLeadingZero(2) + ":";
+                    str += struct.second.padLeadingZero(2) + ".";
+                    str += struct.millisecond.padLeadingZero(3);
                     value = struct[fullKeys[lengthFullKeys - 1]];
-                    if (value === 0) {
+                    if (value.isZero()) {
                         str += " GMT";
                     } else {
-                        if (value > 0) {
+                        if (value.gt(0)) {
                             str += " +";
                         } else {
                             str += " -";
                         }
 
-                        value = fractionToTime(Math.abs(value), "minute");
-                        str += padLeadingZero(value[0], 2);
-                        str += padLeadingZero(value[1], 2);
+                        value = fractionToTime(value.abs(), "minute");
+                        str += value.hour.padLeadingZero(2);
+                        str += ":";
+                        str += value.minute.padLeadingZero(2);
                     }
 
                     return str + type;
@@ -2440,12 +2397,6 @@
             "isAstroDate": {
                 "value": function (inputArg) {
                     return isObject(inputArg) && (instanceOf(inputArg, AstroDate) || inputArg instanceof AstroDate);
-                }
-            },
-
-            "dayFractionToTime": {
-                "value": function (dayFraction) {
-                    return dayFractionToTime(dayFraction);
                 }
             }
         });
