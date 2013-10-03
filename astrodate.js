@@ -26,7 +26,7 @@
     var projectString = "astrodate",
         bigNumberCDN = "//cdn.jsdelivr.net/bignumber.js/1.1.0/bignumber.min",
         bigNumberFunc = "BigNumber",
-        bigNumberString = bigNumberFunc.toLocaleLowerCase();
+        bigNumberString = bigNumberFunc.toLowerCase();
 
     (function (name, definition) {
         if (typeof module === "object" && module && typeof module.exports === "object") {
@@ -42,6 +42,7 @@
                 config: projectConfig
             });
 
+            // name should be removed when local tests are completed
             global.define(name, [bigNumberString], definition);
         } else {
             global[name] = definition(global[bigNumberFunc]);
@@ -135,7 +136,7 @@
 
         if (isFunction(trimFN)) {
             trim = function (inputArg) {
-                return inputArg.trim();
+                return trimFN.call(inputArg);
             };
         } else {
             trim = function (inputArg) {
@@ -746,6 +747,10 @@
 
             for (index = 0; index < lengthFullKeys; index += 1) {
                 bn = struct[fullKeys[index]];
+                if (!isBigNumber(bn)) {
+                    return false;
+                }
+
                 switch (index) {
                 case 0:
                     if (!inYearRange(bn, julian)) {
@@ -839,27 +844,31 @@
             return dayNames[day.toNumber()];
         }
 
-        /*
-        function dayFractionToTime(dayFraction) {
-            var totalMs = bignumber(dayFraction).abs().times(86400000),
-                hour = totalMs.div(3600000),
-                minute = hour.fractionalPart().times(60),
-                second = minute.fractionalPart().times(60),
-                millisecond = second.fractionalPart().times(1000);
-
-            return {"hour": hour.floor(), "minute": minute.floor(), "second": second.floor(), "millisecond": millisecond.floor()};
-        }
-        */
-
-        function fractionToTime(fraction, fractionIn) {
-            var totalMs,
-                hour,
-                minute,
-                second,
-                millisecond;
+        function fractionToTime(fraction, fractionIn, struct, julian) {
+            var time = {},
+                days,
+                totalMs;
 
             fraction = bignumber(fraction);
             switch (fractionIn) {
+            case "year":
+                if (julian === true) {
+                    days = daysInJulianYear(struct);
+                } else {
+                    days = daysInGregorianYear(struct);
+                }
+
+                totalMs = fraction.times(days.times(86400000));
+                break;
+            case "month":
+                if (julian === true) {
+                    days = daysInJulianMonth(struct);
+                } else {
+                    days = daysInGregorianMonth(struct);
+                }
+
+                totalMs = fraction.times(days.times(86400000));
+                break;
             case "day":
                 totalMs = fraction.times(86400000);
                 break;
@@ -878,12 +887,12 @@
             default:
             }
 
-            hour = totalMs.div(3600000).floor();
-            minute = totalMs.minus(hour.times(3600000)).div(60000).floor();
-            second = totalMs.minus(hour.times(3600000)).minus(minute.times(60000)).div(1000).floor();
-            millisecond = totalMs.minus(hour.times(3600000)).minus(minute.times(60000)).minus(second.times(1000)).floor();
+            time.hour = totalMs.div(3600000).floor();
+            time.minute = totalMs.minus(time.hour.times(3600000)).div(60000).floor();
+            time.second = totalMs.minus(time.hour.times(3600000)).minus(time.minute.times(60000)).div(1000).floor();
+            time.millisecond = totalMs.minus(time.hour.times(3600000)).minus(time.minute.times(60000)).minus(time.second.times(1000)).floor();
 
-            return {"hour": hour, "minute": minute, "second": second, "millisecond": millisecond};
+            return time;
         }
 
         function getTime(astrodate) {
@@ -1159,25 +1168,27 @@
                 last = lengthFullKeys - 1,
                 offset = struct[fullKeys[last]],
                 time = fractionToTime(offset.abs(), "minute"),
-                signOffset = 1;
+                signOffset = 1,
+                tVal;
 
-            if (offset < 0) {
+            if (offset.lt(0)) {
                 signOffset = -1;
             }
 
             for (index = 0; index < lengthFullKeys; index += 1) {
                 key = fullKeys[index];
                 value = struct[key];
-                switch (key) {
-                case "month":
-                    value -= 1;
-                    break;
-                default:
-                    value = value + time[key].times(signOffset);
+                if (key === "month") {
+                    value = value.minus(1);
+                } else {
+                    tVal = time[key];
+                    if (!isUndefined(tVal)) {
+                        value = value.plus(tVal.times(signOffset));
+                    }
                 }
 
                 if (index < last) {
-                    date[dateMethods[index].replace("get", "set")](value);
+                    date[dateMethods[index].replace("get", "set")](value.toString());
                 }
             }
 
@@ -1980,8 +1991,9 @@
                     } else if (isString(arg)) {
                         struct = new ISO(arg).getter();
                     } else if (isObject(arg)) {
-                        if (isValid(arg)) {
-                            struct = extend({}, arg);
+                        struct = objectToStruct(arg);
+                        if (!isValid(struct)) {
+                            struct = {};
                         }
                     } else {
                         throw new TypeError();
@@ -1993,25 +2005,38 @@
                 arg = args[0];
                 if (isString(arg)) {
                     arg = trim(arg).toLowerCase();
-                    if (arg === "j") {
+                    switch (arg) {
+                    case "j":
                         arg = args[1];
                         if (isArray(arg)) {
                             struct = julianToGregorian(arrayToObject(arg, true));
                         } else if (isObject(arg)) {
-                            if (isValid(arg, true)) {
-                                struct = julianToGregorian(arg);
+                            struct = objectToStruct(arg);
+                            if (isValid(struct, true)) {
+                                struct = julianToGregorian(struct);
+                            } else {
+                                struct = {};
                             }
                         }
-                    } else if (arg === "g") {
+
+                        break;
+                    case "g":
                         arg = args[1];
                         if (isArray(arg)) {
                             struct = arrayToObject(arg, false);
                         } else if (isObject(arg)) {
-                            if (isValid(arg)) {
-                                struct = extend({}, arg);
+                            struct = objectToStruct(arg);
+                            if (!isValid(struct)) {
+                                struct = {};
                             }
                         }
-                    } else {
+
+                        break;
+                    case "jd":
+                        arg = args[1];
+                        this.julianDay(arg);
+                        break;
+                    default:
                         throw new SyntaxError();
                     }
                 } else {
@@ -2068,24 +2093,23 @@
                     var struct = this.getter(),
                         str,
                         value,
-                        jd,
-                        type;
+                        jd;
 
                     if (!isValid(struct)) {
                         return "Invalid Date";
                     }
 
                     jd = gregorianToJd(struct);
-                    str = dayOfWeek(jd).slice(0, 3) + ", ";
                     if (this.isJulian()) {
                         struct = jdToJulian(jd);
-                        type = " (OS)";
+                        str = "[OS] ";
                     } else {
-                        type = " (NS)";
+                        str = "[NS] ";
                     }
 
-                    str += struct.day + " ";
+                    str += dayOfWeek(jd).slice(0, 3) + ", ";
                     str += monthNames[struct.month.minus(1).toNumber()].slice(0, 3) + " ";
+                    str += struct.day.toString() + " ";
                     str += struct.year.abs().padLeadingZero(4) + " ";
                     if (struct.year.lt(0)) {
                         str += "BCE ";
@@ -2113,7 +2137,7 @@
                         str += value.minute.padLeadingZero(2);
                     }
 
-                    return str + type;
+                    return str;
                 }
             },
 
