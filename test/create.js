@@ -259,16 +259,14 @@
                 minute,
                 second,
                 millisecond,
-                sign,
                 withComma;
 
             test.expect(2 * 66 * repeat);
             for (count = 0; count < repeat; count += 1) {
                 year = padLeadingZero(getRandomInt(0, 9007199254740991), 4);
                 if (year >= 10000) {
-                    sign = getRandomInt(0, 1);
-                    year = padLeadingZero(year, 5);
-                    if (sign) {
+                    year = padLeadingZero(year, 6);
+                    if (getRandomInt(0, 1)) {
                         year = "+" + year;
                     } else {
                         year = "-" + year;
