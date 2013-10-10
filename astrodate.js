@@ -2330,12 +2330,13 @@
 
             "toString": {
                 "value": function () {
-                    var struct = this.getter(),
+                    var struct,
                         val,
                         value,
                         jd;
 
-                    if (isValid(struct)) {
+                    if (this.isValid()) {
+                        struct = this.getter();
                         jd = gregorianToJd(struct);
                         if (this.isJulian()) {
                             struct = jdToJulian(jd);
@@ -2382,15 +2383,14 @@
 
             "valueOf": {
                 "value": function () {
-                    var struct = this.getter(),
-                        val;
+                    var val;
 
-                    if (isValid(struct)) {
+                    if (this.isValid()) {
                         if (this.isJulian()) {
-                            struct = gregorianToJulian(struct);
+                            val = structToObject(gregorianToJulian(this.getter()));
+                        } else {
+                            val = structToObject(this.getter());
                         }
-
-                        val = structToObject(struct);
                     }
 
                     return val;
@@ -2405,23 +2405,22 @@
 
             "array": {
                 "value": function (dateArray) {
-                    var isJulian = this.isJulian(),
-                        struct,
-                        val;
+                    var val;
 
                     if (isUndefined(dateArray)) {
-                        struct = this.getter();
-                        if (isValid(struct)) {
-                            if (isJulian) {
-                                struct = gregorianToJulian(struct);
+                        if (this.isValid()) {
+                            if (this.isJulian()) {
+                                val = map(structToArray(gregorianToJulian(this.getter())), function (element) {
+                                    return element.toString();
+                                });
+                            } else {
+                                val = map(structToArray(this.getter()), function (element) {
+                                    return element.toString();
+                                });
                             }
-
-                            val = map(structToArray(struct), function (element) {
-                                return element.toString();
-                            });
                         }
                     } else {
-                        val = this.setter("struct", arrayToStruct(dateArray, isJulian));
+                        val = this.setter("struct", arrayToStruct(dateArray, this.isJulian()));
                     }
 
                     return val;
@@ -2460,11 +2459,10 @@
 
             "deltaTime": {
                 "value": function () {
-                    var struct = this.getter(),
-                        val;
+                    var val;
 
-                    if (isValid(struct)) {
-                        val = deltaTime(struct).toString();
+                    if (this.isValid()) {
+                        val = deltaTime(this.getter()).toString();
                     }
 
                     return val;
@@ -2473,11 +2471,10 @@
 
             "timeTo": {
                 "value": function (unit) {
-                    var struct = this.getter(),
-                        val;
+                    var val;
 
-                    if (!isValid(struct)) {
-                        val = timeTo(struct, normaliseUnits(unit)).toString();
+                    if (this.isValid()) {
+                        val = timeTo(this.getter(), normaliseUnits(unit)).toString();
                     }
 
                     return val;
@@ -2486,13 +2483,11 @@
 
             "julianDay": {
                 "value": function (julianDay) {
-                    var struct,
-                        val;
+                    var val;
 
                     if (isUndefined(julianDay)) {
-                        struct = this.getter();
-                        if (isValid(struct)) {
-                            val = gregorianToJd(struct).toString();
+                        if (this.isValid()) {
+                            val = gregorianToJd(this.getter()).toString();
                         }
                     } else {
                         val = this.setter("struct", jdToGregorian(julianDay));
@@ -2504,14 +2499,13 @@
 
             "easter": {
                 "value": function () {
-                    var struct = this.getter(),
-                        val;
+                    var val;
 
-                    if (isValid(struct)) {
+                    if (this.isValid()) {
                         if (this.isJulian()) {
-                            val = julianEaster(gregorianToJulian(struct));
+                            val = julianEaster(gregorianToJulian(this.getter()));
                         } else {
-                            val = gregorianEaster(struct);
+                            val = gregorianEaster(this.getter());
                         }
                     }
 
@@ -2538,11 +2532,10 @@
 
             "dayOfWeek": {
                 "value": function (lang, shortName) {
-                    var struct = this.getter(),
-                        val;
+                    var val;
 
-                    if (isValid(struct)) {
-                        val = dayOfWeek(gregorianToJd(struct), lang, shortName);
+                    if (this.isValid()) {
+                        val = dayOfWeek(gregorianToJd(this.getter()), lang, shortName);
                     }
 
                     return val;
@@ -2551,14 +2544,13 @@
 
             "isLeapYear": {
                 "value": function () {
-                    var struct = this.getter(),
-                        val;
+                    var val;
 
-                    if (isValid(struct)) {
+                    if (this.isValid()) {
                         if (this.isJulian()) {
-                            val = isJulianLeapYear(gregorianToJulian(struct));
+                            val = isJulianLeapYear(gregorianToJulian(this.getter()));
                         } else {
-                            val = isGregorianLeapYear(struct);
+                            val = isGregorianLeapYear(this.getter());
                         }
                     }
 
@@ -2568,14 +2560,13 @@
 
             "daysInYear": {
                 "value": function () {
-                    var struct = this.getter(),
-                        val;
+                    var val;
 
-                    if (isValid(struct)) {
+                    if (this.isValid()) {
                         if (this.isJulian()) {
-                            val = daysInJulianYear(gregorianToJulian(struct)).toString();
+                            val = daysInJulianYear(gregorianToJulian(this.getter())).toString();
                         } else {
-                            val = daysInGregorianYear(struct).toString();
+                            val = daysInGregorianYear(this.getter()).toString();
                         }
                     }
 
@@ -2585,14 +2576,13 @@
 
             "daysInMonth": {
                 "value": function () {
-                    var struct = this.getter(),
-                        val;
+                    var val;
 
-                    if (isValid(struct)) {
+                    if (this.isValid()) {
                         if (this.isJulian()) {
-                            val = daysInJulianMonth(gregorianToJulian(struct)).toString();
+                            val = daysInJulianMonth(gregorianToJulian(this.getter())).toString();
                         } else {
-                            val = daysInGregorianMonth(struct).toString();
+                            val = daysInGregorianMonth(this.getter()).toString();
                         }
                     }
 
@@ -2602,14 +2592,13 @@
 
             "dayOfYear": {
                 "value": function () {
-                    var struct = this.getter(),
-                        val;
+                    var val;
 
-                    if (isValid(struct)) {
+                    if (this.isValid()) {
                         if (this.isJulian()) {
-                            val = dayOfJulianYear(gregorianToJulian(struct)).toString();
+                            val = dayOfJulianYear(gregorianToJulian(this.getter())).toString();
                         } else {
-                            val = dayOfGregorianYear(struct).toString();
+                            val = dayOfGregorianYear(this.getter()).toString();
                         }
                     }
 
