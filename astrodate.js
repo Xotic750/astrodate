@@ -64,6 +64,7 @@
             baseString = "",
             toStringFN = baseObject.toString,
             fullKeys = [],
+            shortNameLength = {},
             dayNames = [],
             monthNames = [],
             //j2000 = [2000, 1, 1, 11, 58, 55, 816],
@@ -86,6 +87,10 @@
 
         function isUndefined(inputArg) {
             return inputArg === local_undefined;
+        }
+
+        function isBoolean(inputArg) {
+            return inputArg === true || inputArg === false;
         }
 
         function isObject(inputArg) {
@@ -985,17 +990,19 @@
 
         function makeNameShort(name, lang) {
             if (!isString(lang)) {
-                lang = "en";
+                lang = "en-GB";
             }
 
-            var length = {
-                "en": 3
-            };
+            var length = shortNameLength[lang];
 
-            return name.slice(0, length[lang]);
+            if (!isNumber(length) || length < 1) {
+                length = 3;
+            }
+
+            return name.slice(0, length);
         }
 
-        function dayOfWeek(jd, lang, shortName) {
+        function dayOfWeek(jd, shortName, lang) {
             var day = jd.plus(1.5).mod(7).floor(),
                 name;
 
@@ -1004,7 +1011,11 @@
             }
 
             if (!isString(lang)) {
-                lang = "en";
+                lang = "en-GB";
+            }
+
+            if (!isBoolean(shortName)) {
+                shortName = false;
             }
 
             name = dayNames[parseInt(day.toString(), 10)][lang];
@@ -1015,9 +1026,13 @@
             return name;
         }
 
-        function monthName(struct, lang, shortName) {
+        function monthName(struct, shortName, lang) {
             if (!isString(lang)) {
-                lang = "en";
+                lang = "en-GB";
+            }
+
+            if (!isBoolean(shortName)) {
+                shortName = false;
             }
 
             var name = monthNames[parseInt(struct.month.minus(1).toString(), 10)][lang];
@@ -1179,115 +1194,117 @@
         function arrayToStruct(arr, julian) {
             var struct = {};
 
-            some(fullKeys, function (element, index) {
-                var value = arr[index],
-                    bn = bignumber(value),
-                    dim;
+            if (isArray(arr)) {
+                some(fullKeys, function (element, index) {
+                    var value = arr[index],
+                        bn = bignumber(value),
+                        dim;
 
-                switch (element.full) {
-                case "year":
-                    if (!inYearRange(bn)) {
-                        struct = {};
-                        return true;
+                    switch (element.full) {
+                    case "year":
+                        if (!inYearRange(bn)) {
+                            struct = {};
+                            return true;
+                        }
+
+                        break;
+                    case "month":
+                        if (isUndefined(value)) {
+                            bn = bignumber(1);
+                        }
+
+                        if (!inMonthRange(bn)) {
+                            struct = {};
+                            return true;
+                        }
+
+                        break;
+                    case "day":
+                        if (julian === true) {
+                            dim = daysInJulianMonth(struct);
+                        } else {
+                            dim = daysInGregorianMonth(struct);
+                        }
+
+                        if (isUndefined(value)) {
+                            bn = bignumber(1);
+                        }
+
+                        if (!inDayRange(bn, dim)) {
+                            struct = {};
+                            return true;
+                        }
+
+                        break;
+                    case "hour":
+                        if (isUndefined(value)) {
+                            bn = bignumber(0);
+                        }
+
+                        if (!inHourRange(bn)) {
+                            struct = {};
+                            return true;
+                        }
+
+                        break;
+                    case "minute":
+                        if (isUndefined(value)) {
+                            bn = bignumber(0);
+                        }
+
+                        if (!inMinuteRange(bn, struct.hour)) {
+                            struct = {};
+                            return true;
+                        }
+
+                        break;
+                    case "second":
+                        if (isUndefined(value)) {
+                            bn = bignumber(0);
+                        }
+
+                        if (!inSecondRange(bn, struct.hour)) {
+                            struct = {};
+                            return true;
+                        }
+
+                        break;
+                    case "millisecond":
+                        if (isUndefined(value)) {
+                            bn = bignumber(0);
+                        }
+
+                        if (!inMillisecondRange(bn, struct.hour)) {
+                            struct = {};
+                            return true;
+                        }
+
+                        break;
+                    case "offset":
+                        if (isUndefined(value)) {
+                            bn = bignumber(0);
+                        }
+
+                        if (!inOffsetRange(bn)) {
+                            struct = {};
+                            return true;
+                        }
+
+                        break;
+                    default:
+                        throw new Error(element);
                     }
 
-                    break;
-                case "month":
-                    if (isUndefined(value)) {
-                        bn = bignumber(1);
-                    }
+                    defineProperty(struct, element.full, {
+                        "value": bn,
+                        "enumerable": true,
+                        "configurable": true,
+                        "writable": true
+                    });
 
-                    if (!inMonthRange(bn)) {
-                        struct = {};
-                        return true;
-                    }
-
-                    break;
-                case "day":
-                    if (julian === true) {
-                        dim = daysInJulianMonth(struct);
-                    } else {
-                        dim = daysInGregorianMonth(struct);
-                    }
-
-                    if (isUndefined(value)) {
-                        bn = bignumber(1);
-                    }
-
-                    if (!inDayRange(bn, dim)) {
-                        struct = {};
-                        return true;
-                    }
-
-                    break;
-                case "hour":
-                    if (isUndefined(value)) {
-                        bn = bignumber(0);
-                    }
-
-                    if (!inHourRange(bn)) {
-                        struct = {};
-                        return true;
-                    }
-
-                    break;
-                case "minute":
-                    if (isUndefined(value)) {
-                        bn = bignumber(0);
-                    }
-
-                    if (!inMinuteRange(bn, struct.hour)) {
-                        struct = {};
-                        return true;
-                    }
-
-                    break;
-                case "second":
-                    if (isUndefined(value)) {
-                        bn = bignumber(0);
-                    }
-
-                    if (!inSecondRange(bn, struct.hour)) {
-                        struct = {};
-                        return true;
-                    }
-
-                    break;
-                case "millisecond":
-                    if (isUndefined(value)) {
-                        bn = bignumber(0);
-                    }
-
-                    if (!inMillisecondRange(bn, struct.hour)) {
-                        struct = {};
-                        return true;
-                    }
-
-                    break;
-                case "offset":
-                    if (isUndefined(value)) {
-                        bn = bignumber(0);
-                    }
-
-                    if (!inOffsetRange(bn)) {
-                        struct = {};
-                        return true;
-                    }
-
-                    break;
-                default:
-                    throw new Error(element);
-                }
-
-                defineProperty(struct, element.full, {
-                    "value": bn,
-                    "enumerable": true,
-                    "configurable": true,
-                    "writable": true
+                    return false;
                 });
-
-                return false;
-            });
+            }
 
             return struct;
         }
@@ -1309,17 +1326,118 @@
             return arr;
         }
 
-        function objectToStruct(input) {
+        function objectToStruct(object, julian) {
             var struct = {};
 
-            if (isPlainObject(input)) {
-                iterateObject(input, function (element, prop) {
-                    defineProperty(struct, prop, {
-                        "value": bignumber(element),
+            if (isPlainObject(object)) {
+                some(fullKeys, function (element) {
+                    var value = object[element.alias] || object[element.full] || object[element.full + "s"],
+                        bn = bignumber(value),
+                        dim;
+
+                    switch (element.full) {
+                    case "year":
+                        if (!inYearRange(bn)) {
+                            struct = {};
+                            return true;
+                        }
+
+                        break;
+                    case "month":
+                        if (isUndefined(value)) {
+                            bn = bignumber(1);
+                        }
+
+                        if (!inMonthRange(bn)) {
+                            struct = {};
+                            return true;
+                        }
+
+                        break;
+                    case "day":
+                        if (julian === true) {
+                            dim = daysInJulianMonth(struct);
+                        } else {
+                            dim = daysInGregorianMonth(struct);
+                        }
+
+                        if (isUndefined(value)) {
+                            bn = bignumber(1);
+                        }
+
+                        if (!inDayRange(bn, dim)) {
+                            struct = {};
+                            return true;
+                        }
+
+                        break;
+                    case "hour":
+                        if (isUndefined(value)) {
+                            bn = bignumber(0);
+                        }
+
+                        if (!inHourRange(bn)) {
+                            struct = {};
+                            return true;
+                        }
+
+                        break;
+                    case "minute":
+                        if (isUndefined(value)) {
+                            bn = bignumber(0);
+                        }
+
+                        if (!inMinuteRange(bn, struct.hour)) {
+                            struct = {};
+                            return true;
+                        }
+
+                        break;
+                    case "second":
+                        if (isUndefined(value)) {
+                            bn = bignumber(0);
+                        }
+
+                        if (!inSecondRange(bn, struct.hour)) {
+                            struct = {};
+                            return true;
+                        }
+
+                        break;
+                    case "millisecond":
+                        if (isUndefined(value)) {
+                            bn = bignumber(0);
+                        }
+
+                        if (!inMillisecondRange(bn, struct.hour)) {
+                            struct = {};
+                            return true;
+                        }
+
+                        break;
+                    case "offset":
+                        if (isUndefined(value)) {
+                            bn = bignumber(0);
+                        }
+
+                        if (!inOffsetRange(bn)) {
+                            struct = {};
+                            return true;
+                        }
+
+                        break;
+                    default:
+                        throw new Error(element);
+                    }
+
+                    defineProperty(struct, element.full, {
+                        "value": bn,
                         "enumerable": true,
                         "configurable": true,
                         "writable": true
                     });
+
+                    return false;
                 });
             }
 
@@ -2247,7 +2365,7 @@
                         if (isArray(arg)) {
                             struct = julianToGregorian(arrayToStruct(arg, true));
                         } else if (isPlainObject(arg)) {
-                            struct = objectToStruct(arg);
+                            struct = objectToStruct(arg, true);
                             if (isValid(struct, true)) {
                                 struct = julianToGregorian(struct);
                             } else {
@@ -2320,58 +2438,72 @@
 
             "parse": {
                 "value": function (isoString) {
+                    var val;
+
                     if (isString(isoString)) {
-                        return this.setter("struct", new ISO(isoString).getter());
+                        val = this.setter("struct", new ISO(isoString).getter());
+                    } else {
+                        throw new TypeError(isoString);
                     }
 
-                    throw new TypeError();
+                    return val;
                 }
             },
 
             "toString": {
                 "value": function () {
-                    var struct,
-                        val,
-                        value,
-                        jd;
+                    var args,
+                        shortName,
+                        lang,
+                        struct,
+                        string,
+                        offset;
 
                     if (this.isValid()) {
-                        struct = this.getter();
-                        jd = gregorianToJd(struct);
+                        args = arguments;
+                        if (isBoolean(args[0])) {
+                            shortName = args[0];
+                            lang = args[1];
+                        } else if (isString(args[0])) {
+                            shortName = true;
+                            lang = args[0];
+                        }
+
                         if (this.isJulian()) {
-                            struct = jdToJulian(jd);
-                            val = "[OS] ";
+                            struct = jdToJulian(this.julianDay());
+                            string = "[OS] ";
                         } else {
-                            val = "[NS] ";
+                            struct = this.getter();
+                            string = "[NS] ";
                         }
 
-                        val += dayOfWeek(jd, "en", true) + ", ";
-                        val += struct.day.toString() + " ";
-                        val += monthName(struct, "en", true) + " ";
+                        string += this.dayOfWeek(shortName, lang) + " ";
+                        string += struct.day.toString() + " ";
+                        string += this.monthOfYear(shortName, lang) + " ";
                         if (struct.year.lt(0)) {
-                            val += "-";
+                            string += "-";
                         }
 
-                        val += struct.year.abs().padLeadingZero(4) + " ";
-                        val += struct.hour.padLeadingZero(2) + ":";
-                        val += struct.minute.padLeadingZero(2) + ":";
-                        val += struct.second.padLeadingZero(2) + ".";
-                        val += struct.millisecond.padLeadingZero(3) + " ";
-                        value = struct.offset;
-                        if (value.lte(0)) {
-                            val += "+";
+                        string += struct.year.abs().padLeadingZero(4) + " ";
+                        string += struct.hour.padLeadingZero(2) + ":";
+                        string += struct.minute.padLeadingZero(2) + ":";
+                        string += struct.second.padLeadingZero(2) + ".";
+                        string += struct.millisecond.padLeadingZero(3) + " ";
+                        offset = struct.offset;
+                        if (offset.lte(0)) {
+                            string += "+";
                         } else {
-                            val += "-";
+                            string += "-";
                         }
 
-                        value = fractionToTime(value.abs(), "minute");
-                        val += value.hour.padLeadingZero(2);
-                        val += value.minute.padLeadingZero(2);
+                        offset = fractionToTime(offset.abs(), "minute");
+                        string += offset.hour.padLeadingZero(2);
+                        string += offset.minute.padLeadingZero(2);
                     } else {
-                        val = "Invalid Date";
+                        string = "Invalid Date";
                     }
 
-                    return val;
+                    return string;
                 }
             },
 
@@ -2383,14 +2515,26 @@
 
             "valueOf": {
                 "value": function () {
+                    return this.julianDay();
+                }
+            },
+
+            "object": {
+                "value": function (dateObject) {
                     var val;
 
-                    if (this.isValid()) {
-                        if (this.isJulian()) {
-                            val = structToObject(gregorianToJulian(this.getter()));
-                        } else {
-                            val = structToObject(this.getter());
+                    if (isUndefined(dateObject)) {
+                        if (this.isValid()) {
+                            if (this.isJulian()) {
+                                val = structToObject(gregorianToJulian(this.getter()));
+                            } else {
+                                val = structToObject(this.getter());
+                            }
                         }
+                    } else if (isPlainObject(dateObject)) {
+                        val = this.setter("struct", objectToStruct(dateObject, this.isJulian()));
+                    } else {
+                        throw new TypeError(dateObject);
                     }
 
                     return val;
@@ -2419,8 +2563,10 @@
                                 });
                             }
                         }
-                    } else {
+                    } else if (isArray(dateArray)) {
                         val = this.setter("struct", arrayToStruct(dateArray, this.isJulian()));
+                    } else {
+                        throw new TypeError(dateArray);
                     }
 
                     return val;
@@ -2433,12 +2579,14 @@
 
                     if (isUndefined(date)) {
                         if (this.isValid()) {
-                            val = new Date(parseFloat(getTime(this).toString()));
+                            val = new Date(parseInt(this.getTime(this), 10));
                         } else {
                             val = new Date(NaN);
                         }
-                    } else {
+                    } else if (isDate(date)) {
                         val = this.setter(date);
+                    } else {
+                        throw new TypeError(date);
                     }
 
                     return val;
@@ -2489,8 +2637,10 @@
                         if (this.isValid()) {
                             val = gregorianToJd(this.getter()).toString();
                         }
-                    } else {
+                    } else if (isNumber(julianDay) || isString(julianDay)) {
                         val = this.setter("struct", jdToGregorian(julianDay));
+                    } else {
+                        throw new TypeError(julianDay);
                     }
 
                     return val;
@@ -2514,16 +2664,27 @@
             },
 
             "monthOfYear": {
-                "value": function (lang, shortName) {
-                    var struct = this.getter(),
+                "value": function () {
+                    var args,
+                        shortName,
+                        lang,
                         val;
 
-                    if (isValid(struct)) {
-                        if (this.isJulian()) {
-                            struct = gregorianToJulian(struct);
+                    if (this.isValid()) {
+                        args = arguments;
+                        if (isBoolean(args[0])) {
+                            shortName = args[0];
+                            lang = args[1];
+                        } else if (isString(args[0])) {
+                            shortName = true;
+                            lang = args[0];
                         }
 
-                        val = monthName(struct, lang, shortName);
+                        if (this.isJulian()) {
+                            val = monthName(gregorianToJulian(this.getter()), shortName, lang);
+                        } else {
+                            val = monthName(this.getter(), shortName, lang);
+                        }
                     }
 
                     return val;
@@ -2531,11 +2692,23 @@
             },
 
             "dayOfWeek": {
-                "value": function (lang, shortName) {
-                    var val;
+                "value": function () {
+                    var args,
+                        shortName,
+                        lang,
+                        val;
 
                     if (this.isValid()) {
-                        val = dayOfWeek(gregorianToJd(this.getter()), lang, shortName);
+                        args = arguments;
+                        if (isBoolean(args[0])) {
+                            shortName = args[0];
+                            lang = args[1];
+                        } else if (isString(args[0])) {
+                            shortName = true;
+                            lang = args[0];
+                        }
+
+                        val = dayOfWeek(gregorianToJd(this.getter()), shortName, lang);
                     }
 
                     return val;
@@ -2610,41 +2783,38 @@
                 "value": function (jsonString) {
                     var struct,
                         propArray,
-                        str;
+                        val;
 
                     if (isUndefined(jsonString)) {
-                        struct = this.valueOf();
                         if (isFunction(JSON.stringify)) {
-                            str = JSON.stringify(struct);
+                            val = JSON.stringify(this.object());
                         } else {
                             propArray = [];
-                            iterateObject(struct, function (element, prop) {
+                            iterateObject(this.object(), function (element, prop) {
                                 propArray.push('"' + prop + '":"' + element + '"');
                             });
 
-                            str = "{" + propArray.join(",") + "}";
+                            val = "{" + propArray.join(",") + "}";
                         }
-
-                        return str;
-                    }
-
-                    if (isString(jsonString)) {
+                    } else if (isString(jsonString)) {
                         if (isFunction(JSON.parse)) {
-                            struct = objectToStruct(JSON.parse(jsonString));
+                            struct = objectToStruct(JSON.parse(jsonString), this.isJulian());
                         } else {
                             /*jslint evil: true */
-                            struct = objectToStruct(new Function("return" + jsonString)());
+                            struct = objectToStruct(new Function("return" + jsonString)(), this.isJulian());
                             /*jslint evil:   false */
                         }
 
                         if (!isValid(struct)) {
-                            throw new SyntaxError();
+                            throw new SyntaxError(struct);
                         }
 
-                        return this.setter("struct", struct);
+                        val = this.setter("struct", struct);
+                    } else {
+                        throw new TypeError(jsonString);
                     }
 
-                    throw new TypeError();
+                    return val;
                 }
             }
         });
@@ -2746,46 +2916,62 @@
             }
         });
 
+        defineProperties(shortNameLength, {
+            "en-GB": {
+                "value": 3
+            },
+            "sv-SE": {
+                "value": 3
+            }
+        });
+
         defineProperties(dayNames, {
             0: {
                 "value": {
-                    "en": "Sunday"
+                    "en-GB": "Sunday",
+                    "sv-SE": "söndag"
                 },
                 "enumerable": true
             },
             1: {
                 "value": {
-                    "en": "Monday"
+                    "en-GB": "Monday",
+                    "sv-SE": "måndag"
                 },
                 "enumerable": true
             },
             2: {
                 "value": {
-                    "en": "Tuesday"
+                    "en-GB": "Tuesday",
+                    "sv-SE": "tisdag"
                 },
                 "enumerable": true
             },
             3: {
                 "value": {
-                    "en": "Wednesday"
+                    "en-GB": "Wednesday",
+                    "sv-SE": "onsdag"
                 },
                 "enumerable": true
             },
             4: {
                 "value": {
-                    "en": "Thursday"
+                    "en-GB": "Thursday",
+                    "sv-SE": "torsdag"
                 },
                 "enumerable": true
             },
             5: {
                 "value": {
-                    "en": "Friday"
+                    "en-GB": "Friday",
+                    "sv-SE": "fredag"
                 },
                 "enumerable": true
             },
             6: {
                 "value": {
-                    "en": "Saturday"
+                    "en-GB": "Saturday",
+                    "sv-SE": "lördag"
                 },
                 "enumerable": true
             }
@@ -2794,73 +2980,85 @@
         defineProperties(monthNames, {
             0: {
                 "value": {
-                    "en": "January"
+                    "en-GB": "January",
+                    "sv-SE": "januari"
                 },
                 "enumerable": true
             },
             1: {
                 "value": {
-                    "en": "February"
+                    "en-GB": "February",
+                    "sv-SE": "februari"
                 },
                 "enumerable": true
             },
             2: {
                 "value": {
-                    "en": "March"
+                    "en-GB": "March",
+                    "sv-SE": "mars"
                 },
                 "enumerable": true
             },
             3: {
                 "value": {
-                    "en": "April"
+                    "en-GB": "April",
+                    "sv-SE": "april"
                 },
                 "enumerable": true
             },
             4: {
                 "value": {
-                    "en": "May"
+                    "en-GB": "May",
+                    "sv-SE": "maj"
                 },
                 "enumerable": true
             },
             5: {
                 "value": {
-                    "en": "June"
+                    "en-GB": "June",
+                    "sv-SE": "juni"
                 },
                 "enumerable": true
             },
             6: {
                 "value": {
-                    "en": "July"
+                    "en-GB": "July",
+                    "sv-SE": "juli"
                 },
                 "enumerable": true
             },
             7: {
                 "value": {
-                    "en": "August"
+                    "en-GB": "August",
+                    "sv-SE": "augusti"
                 },
                 "enumerable": true
             },
             8: {
                 "value": {
-                    "en": "September"
+                    "en-GB": "September",
+                    "sv-SE": "september"
                 },
                 "enumerable": true
             },
             9: {
                 "value": {
-                    "en": "October"
+                    "en-GB": "October",
+                    "sv-SE": "oktober"
                 },
                 "enumerable": true
             },
             10: {
                 "value": {
-                    "en": "November"
+                    "en-GB": "November",
+                    "sv-SE": "november"
                 },
                 "enumerable": true
             },
             11: {
                 "value": {
-                    "en": "December"
+                    "en-GB": "December",
+                    "sv-SE": "december"
                 },
                 "enumerable": true
             }
