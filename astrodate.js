@@ -1,6 +1,6 @@
 /*global requirejs, require, module */
 
-/* AstroDate v0.3.1
+/* AstroDate
  *
  * home: https://github.com/Xotic750/astrodate
  *
@@ -56,7 +56,7 @@
             ERRORS : true
         });
 
-        var VERSION = "0.3.1",
+        var VERSION = "0.3.2",
             //MAX_INTEGER = 9007199254740991,
             //MIN_INTEGER = -9007199254740991,
             baseObject = {},
@@ -64,7 +64,6 @@
             baseString = "",
             toStringFN = baseObject.toString,
             fullKeys = [],
-            dateMethods = ["getUTCFullYear", "getUTCMonth", "getUTCDate", "getUTCHours", "getUTCMinutes", "getUTCSeconds", "getUTCMilliseconds", "getTimezoneOffset"],
             dayNames = [],
             monthNames = [],
             //j2000 = [2000, 1, 1, 11, 58, 55, 816],
@@ -465,22 +464,16 @@
                     var factorialLookup = {};
 
                     return function (exponentialAt) {
-                        if (!this.isFinite() || this.lt(0) || !this.fractionalPart().equals(0)) {
+                        if (this.lt(0) || !this.isFinite() || !this.fractionalPart().isZero()) {
                             return new BigNumber(NaN);
                         }
 
-                        if (isUndefined(exponentialAt)) {
-                            exponentialAt = BigNumber.config().EXPONENTIAL_AT[1];
+                        if (!isNumber(exponentialAt) && !isString(exponentialAt) && (BigNumber.isBigNumber(exponentialAt) && (exponentialAt.lt(0) || !exponentialAt.isFinite()))) {
+                            exponentialAt = new BigNumber(BigNumber.config().EXPONENTIAL_AT[1]);
                         }
 
                         if (!BigNumber.isBigNumber(exponentialAt)) {
-                            exponentialAt = new BigNumber(exponentialAt).floor();
-                        } else {
-                            exponentialAt = exponentialAt.floor();
-                        }
-
-                        if (!exponentialAt.isFinite() || exponentialAt.lt(0)) {
-                            exponentialAt = new BigNumber(BigNumber.config().EXPONENTIAL_AT[1]);
+                            exponentialAt = new BigNumber(exponentialAt);
                         }
 
                         var n = this.toString(),
@@ -496,7 +489,7 @@
                             BigNumber.config({
                                 DECIMAL_PLACES : 20,
                                 ROUNDING_MODE : 4,
-                                EXPONENTIAL_AT : [-7, exponentialAt.valueOf()],
+                                EXPONENTIAL_AT : [-7, parseInt(exponentialAt.toString(), 10)],
                                 RANGE : [-1000000000, 1000000000],
                                 ERRORS : true
                             });
@@ -1014,7 +1007,7 @@
                 lang = "en";
             }
 
-            name = dayNames[day.valueOf()][lang];
+            name = dayNames[parseInt(day.toString(), 10)][lang];
             if (shortName === true) {
                 name = makeNameShort(name, lang);
             }
@@ -1027,7 +1020,7 @@
                 lang = "en";
             }
 
-            var name = monthNames[struct.month.minus(1).valueOf()][lang];
+            var name = monthNames[parseInt(struct.month.minus(1).toString(), 10)][lang];
 
             if (shortName === true) {
                 name = makeNameShort(name, lang);
@@ -1355,8 +1348,8 @@
                 value;
 
             if (isDateValid(date)) {
-                forEach(fullKeys, function (element, index) {
-                    value = bignumber(date[dateMethods[index].replace("UTC", "")]());
+                forEach(fullKeys, function (element) {
+                    value = bignumber(date[element.local]());
                     if (element.full === "month") {
                         value = value.plus(1);
                     }
@@ -1371,39 +1364,6 @@
             }
 
             return struct;
-        }
-
-        function structToDate(struct) {
-            var date = new Date(NaN),
-                offset,
-                time,
-                signOffset;
-
-            if (isValid(struct)) {
-                offset = struct.offset;
-                time = fractionToTime(offset.abs(), "minute");
-                if (offset.lt(0)) {
-                    signOffset = -1;
-                } else {
-                    signOffset = 1;
-                }
-
-                forEach(fullKeys, function (element, index) {
-                    var value = struct[element.full];
-
-                    if (element.full === "month") {
-                        value = value.minus(1);
-                    } else if (element.full === "hour" || element.full === "minute" || element.full === "second" || element.full === "millisecond") {
-                        value = value.plus(time[element.full].times(signOffset));
-                    }
-
-                    if (element.full !== "offset") {
-                        date[dateMethods[index].replace("get", "set")](value.toString());
-                    }
-                });
-            }
-
-            return date;
         }
 
         function normaliseUnits(unitString) {
@@ -1682,7 +1642,7 @@
                 if (value.isZero()) {
                     string += "Z";
                 } else {
-                    if (value.gt(0)) {
+                    if (value.lte(0)) {
                         string += "+";
                     } else {
                         string += "-";
@@ -2397,7 +2357,7 @@
                         val += struct.second.padLeadingZero(2) + ".";
                         val += struct.millisecond.padLeadingZero(3) + " ";
                         value = struct.offset;
-                        if (value.gte(0)) {
+                        if (value.lte(0)) {
                             val += "+";
                         } else {
                             val += "-";
@@ -2473,7 +2433,11 @@
                     var val;
 
                     if (isUndefined(date)) {
-                        val = structToDate(this.getter());
+                        if (this.isValid()) {
+                            val = new Date(parseFloat(getTime(this).toString()));
+                        } else {
+                            val = new Date(NaN);
+                        }
                     } else {
                         val = this.setter(date);
                     }
@@ -2484,10 +2448,9 @@
 
             "getTime": {
                 "value": function () {
-                    var struct = this.getter(),
-                        val;
+                    var val;
 
-                    if (isValid(struct)) {
+                    if (this.isValid()) {
                         val = getTime(this).toString();
                     }
 
@@ -2731,56 +2694,64 @@
             0: {
                 "value": {
                     "full": "year",
-                    "alias": "y"
+                    "alias": "y",
+                    "local": "getFullYear"
                 },
                 "enumerable": true
             },
             1: {
                 "value": {
                     "full": "month",
-                    "alias": "M"
+                    "alias": "M",
+                    "local": "getMonth"
                 },
                 "enumerable": true
             },
             2: {
                 "value": {
                     "full": "day",
-                    "alias": "d"
+                    "alias": "d",
+                    "local": "getDate"
                 },
                 "enumerable": true
             },
             3: {
                 "value": {
                     "full": "hour",
-                    "alias": "h"
+                    "alias": "h",
+                    "local": "getHours"
                 },
                 "enumerable": true
             },
             4: {
                 "value": {
                     "full": "minute",
-                    "alias": "m"
+                    "alias": "m",
+                    "local": "getMinutes"
                 },
                 "enumerable": true
             },
             5: {
                 "value": {
                     "full": "second",
-                    "alias": "s"
+                    "alias": "s",
+                    "local": "getSeconds"
                 },
                 "enumerable": true
             },
             6: {
                 "value": {
                     "full": "millisecond",
-                    "alias": "ms"
+                    "alias": "ms",
+                    "local": "getMilliseconds"
                 },
                 "enumerable": true
             },
             7: {
                 "value": {
                     "full": "offset",
-                    "alias": "z"
+                    "alias": "z",
+                    "local": "getTimezoneOffset"
                 },
                 "enumerable": true
             }
