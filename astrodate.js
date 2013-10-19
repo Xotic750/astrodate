@@ -1,5 +1,3 @@
-/*global requirejs, require, module */
-
 /* AstroDate
  *
  * home: https://github.com/Xotic750/astrodate
@@ -20,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-(function (global, local_undefined) {
+(function (thisGlobal) {
     "use strict";
 
     var projectString = "astrodate",
@@ -29,23 +27,24 @@
         bigNumberString = bigNumberFunc.toLowerCase();
 
     (function (name, definition) {
-        if (typeof module === "object" && module !== null && typeof module.exports === "object") {
-            module.exports = definition(require(bigNumberString + ".js"));
-        } else if (typeof global.define === "function" && global.define.amd) {
+        if ("object" === typeof thisGlobal.module && null !== thisGlobal.module && "object" === typeof thisGlobal.module.exports && null !== thisGlobal.module.exports) {
+            thisGlobal.module.exports = definition(thisGlobal.require(bigNumberString + ".js"));
+        } else if ("function" === typeof thisGlobal.define && "object" === typeof thisGlobal.define.amd) {
             var projectPaths = {},
                 projectConfig = {};
 
             projectPaths[bigNumberString] = bigNumberCDN;
             projectConfig[bigNumberString] = {};
-            global.require.config({
+            thisGlobal.require.config({
                 paths: projectPaths,
                 config: projectConfig
             });
 
             // name should be removed when local tests are completed
-            global.define(name, [bigNumberString], definition);
+            thisGlobal.define(name, [bigNumberString], definition);
         } else {
-            global[name] = definition(global[bigNumberFunc]);
+            // should/maybe change to return when local tests are completed
+            thisGlobal[name] = definition(thisGlobal[bigNumberFunc]);
         }
     }(projectString, function (BigNumber) {
         BigNumber.config({
@@ -56,53 +55,200 @@
             ERRORS : true
         });
 
-        var VERSION = "0.3.2",
+        var VERSION = "0.4.1",
             //MAX_INTEGER = 9007199254740991,
             //MIN_INTEGER = -9007199254740991,
+            UWORD32 = Math.pow(2, 32),
+            MAX_UINT32 = UWORD32 - 1,
             baseObject = {},
+            defaultProperties = [],
             baseArray = [],
             baseString = "",
-            toStringFN = baseObject.toString,
+            toObjectString,
+            baseNumber = 0,
+            baseBoolean = true,
             fullKeys = [],
             shortNameLength = {},
             dayNames = [],
             monthNames = [],
+            toObject,
             //j2000 = [2000, 1, 1, 11, 58, 55, 816],
             extend,
             indexOf,
             defineProperty,
             defineProperties,
+            freeze,
+            isFrozen,
             hasOwnProperty,
             getOwnPropertyDescriptor,
             isArray,
             instanceOf,
             getPrototypeOf,
             isPlainObject,
+            //getReferenceObject,
+            //create,
+            keys,
             trim,
+            repeat,
+            split,
+            //startsWith,
+            //endsWith,
+            contains,
+            toObjectFixIndexedAccess,
+            unshift,
             forEach,
             some,
             map,
+            //filter,
+            //reduce,
+            is,
+            isNaN,
+            isFinite,
+            sign,
             AstroDate,
             isBigNumber;
 
+        function toNumber(inputArg) {
+            return +inputArg;
+        }
+
+        function strictEqual(a, b) {
+            return a === b;
+        }
+
+        function lt(number, limit) {
+            return number < limit;
+        }
+
+        function lte(number, limit) {
+            return number <= limit;
+        }
+
+        function gt(number, limit) {
+            return number > limit;
+        }
+
+        function gte(number, limit) {
+            return number >= limit;
+        }
+
+        function mod(number1, number2) {
+            return number1 % number2;
+        }
+
+        function clamp(number, min, max) {
+            return Math.min(Math.max(number, min), max);
+        }
+
+        function inRange(number, min, max) {
+            return gte(number, min) && lte(number, max);
+        }
+
         function isUndefined(inputArg) {
-            return inputArg === local_undefined;
+            return strictEqual(typeof inputArg, "undefined");
+        }
+
+        function isNull(inputArg) {
+            return strictEqual(inputArg, null);
         }
 
         function isBoolean(inputArg) {
-            return inputArg === true || inputArg === false;
+            return strictEqual(inputArg, true) || strictEqual(inputArg, false);
+        }
+
+        function isNumber(inputArg) {
+            return strictEqual(typeof inputArg, "number");
+        }
+
+        function isString(inputArg) {
+            return strictEqual(typeof inputArg, "string");
+        }
+
+        function checkObjectCoercible(inputArg) {
+            if (isUndefined(inputArg) || isNull(inputArg)) {
+                throw new TypeError("Cannot convert '" + inputArg + "' to object");
+            }
+
+            return inputArg;
+        }
+
+        toObject = (function () {
+            var CtrBoolean = baseBoolean.constructor,
+                CtrNumber = baseNumber.constructor,
+                CtrString = baseString.constructor;
+
+            return function (inputArg) {
+                var object = checkObjectCoercible(inputArg);
+
+                if (isBoolean(object)) {
+                    object = new CtrBoolean(object);
+                } else if (isNumber(object)) {
+                    object = new CtrNumber(object);
+                } else if (isString(object)) {
+                    object = new CtrString(object);
+                }
+
+                return object;
+            };
+        }());
+
+        function toString(inputArg) {
+            var val;
+
+            if (isString(inputArg)) {
+                val = inputArg;
+            } else if (isUndefined(inputArg)) {
+                val = "undefined";
+            } else {
+                val = String(inputArg);
+            }
+
+            return val;
+        }
+
+        toObjectString = (function () {
+            var toStringFN = baseObject.toString,
+                func;
+
+            try {
+                if (strictEqual(toStringFN.call(), "[object Undefined]") && strictEqual(toStringFN.call(null), "[object Null]")) {
+                    func = function (object) {
+                        return toStringFN.call(object);
+                    };
+                }
+            } catch (exception) {
+                func = null;
+            }
+
+            if (isNull(func)) {
+                func = function (object) {
+                    var val;
+
+                    if (isUndefined(object)) {
+                        val = "[object Undefined]";
+                    } else if (isNull(object)) {
+                        val = "[object Null]";
+                    } else {
+                        val = toStringFN.call(object);
+                    }
+
+                    return val;
+                };
+            }
+
+            return func;
+        }());
+
+        function isRegExp(inputArg) {
+            return strictEqual(toObjectString(inputArg), "[object RegExp]");
         }
 
         function isObject(inputArg) {
-            return inputArg !== null && typeof inputArg === "object" && toStringFN.call(inputArg) === "[object Object]";
-        }
-
-        function isDate(inputArg) {
-            return inputArg !== null && typeof inputArg === "object" && toStringFN.call(inputArg) === "[object Date]";
+            return strictEqual(toObjectString(inputArg), "[object Object]");
         }
 
         function isFunction(inputArg) {
-            return inputArg !== null && (typeof inputArg === "function" || (typeof inputArg === "object" && toStringFN.call(inputArg) === "[object Function]"));
+            return strictEqual(toObjectString(inputArg), "[object Function]");
         }
 
         isArray = (function () {
@@ -110,20 +256,350 @@
 
             if (!isFunction(isArrayFN)) {
                 isArrayFN = function (inputArg) {
-                    return inputArg !== null && typeof inputArg === "object" && toStringFN.call(inputArg) === "[object Array]";
+                    return strictEqual(toObjectString(inputArg), "[object Array]");
                 };
             }
 
             return isArrayFN;
         }());
 
-        function isNumber(inputArg) {
-            return typeof inputArg === "number";
+        function isDate(inputArg) {
+            return strictEqual(toObjectString(inputArg), "[object Date]");
         }
 
-        function isString(inputArg) {
-            return typeof inputArg === "string";
+        is = (function () {
+            var isIsFn = baseObject.constructor.is,
+                func;
+
+            if (isFunction(isIsFn)) {
+                func = isIsFn;
+            } else {
+                func = function (x, y) {
+                    var val;
+
+                    if (strictEqual(x, y)) {
+                        if (strictEqual(x, 0)) {
+                            val =  strictEqual(1 / x, 1 / y);
+                        } else {
+                            val = true;
+                        }
+                    } else {
+                        val = !strictEqual(x, x) && !strictEqual(y, y);
+                    }
+
+                    return val;
+                };
+            }
+
+            return func;
+        }());
+
+        isNaN = (function () {
+            var isNaNFN = baseNumber.constructor.isNaN,
+                func;
+
+            if (isFunction(isNaNFN)) {
+                func = isNaNFN;
+            } else {
+                func = function (number) {
+                    return is(number, NaN);
+                };
+            }
+
+            return func;
+        }());
+
+        isFinite = (function () {
+            var isFiniteFN = baseNumber.constructor.isFinite,
+                func;
+
+            if (isFunction(isFiniteFN)) {
+                func = isFiniteFN;
+            } else {
+                func = function (number) {
+                    return isNumber(number) && thisGlobal.isFinite(number);
+                };
+            }
+
+            return func;
+        }());
+
+        sign = (function () {
+            var signFN = Math.sign,
+                func;
+
+            if (isFunction(signFN)) {
+                func = signFN;
+            } else {
+                func = function (value) {
+                    var number = toNumber(value),
+                        val;
+
+                    if (is(number, 0) || isNaN(number)) {
+                        val = number;
+                    } else if (lt(number, 0)) {
+                        val = -1;
+                    } else {
+                        val = 1;
+                    }
+
+                    return val;
+                };
+            }
+
+            return func;
+        }());
+
+        function toInteger(inputArg) {
+            var number = toNumber(inputArg),
+                val;
+
+            if (isNaN(number)) {
+                val = +0;
+            } else if (is(number, 0) || !isFinite(number)) {
+                val = number;
+            } else {
+                val = sign(number) * Math.floor(Math.abs(number));
+            }
+
+            return val;
         }
+
+        /*
+        function toInt32(inputArg) {
+            var number = toNumber(inputArg),
+                int32bit,
+                val;
+
+            if (is(number, 0) || !isFinite(number)) {
+                val = +0;
+            } else {
+                int32bit = mod(sign(number) * Math.floor(Math.abs(number)), UWORD32);
+                if (gt(int32bit, UWORD32)) {
+                    val = int32bit - UWORD32;
+                } else {
+                    val = int32bit;
+                }
+            }
+
+            return val;
+        }
+        */
+
+        function toUint32(inputArg) {
+            var number = toNumber(inputArg),
+                val;
+
+            if (is(number, 0) || !isFinite(number)) {
+                val = +0;
+            } else {
+                val = mod(sign(number) * Math.floor(Math.abs(number)), UWORD32);
+            }
+
+            return val;
+        }
+
+        function isTypeObject(inputArg) {
+            return (!isNull(inputArg) && strictEqual(typeof inputArg, "object")) || isRegExp(inputArg);
+        }
+
+        /*
+        getReferenceObject = (function () {
+            var parent = document.body || document.documentElement,
+                javascript = "javascript";
+
+            return function (name) {
+                var iframe = document.createElement('iframe'),
+                    reference;
+
+                iframe.style.display = "none";
+                iframe.src = javascript + ":";
+                parent.appendChild(iframe);
+                reference = iframe.contentWindow[name];
+                parent.removeChild(iframe);
+                iframe = null;
+
+                return reference;
+            };
+        }());
+
+        create = (function () {
+            var createFN = baseObject.func,
+                proto,
+                Type,
+                func,
+                createEmpty;
+
+            if (isFunction(createFN)) {
+                func = function (prototype) {
+                    return createFN(prototype);
+                };
+            } else {
+                proto = "__proto__";
+                Type = function Object() {
+                    return;
+                };
+
+                if (isNull(getPrototypeOf(baseObject)[proto]) || isUndefined(document)) {
+                    createEmpty = function () {
+                        var val = {};
+
+                        val[proto] = null;
+
+                        return val;
+                    };
+                } else {
+                    createEmpty = function () {
+                        var empty = getPrototypeOf(getReferenceObject("Object")),
+                            Empty = function Object() {
+                                return;
+                            };
+
+                        forEach(defaultProperties, function (element) {
+                            delete empty[element];
+                        });
+
+                        empty[proto] = null;
+                        Empty.prototype = empty;
+
+                        createEmpty = function () {
+                            return new Empty();
+                        };
+
+                        return new Empty();
+                    };
+                }
+
+                func = function (prototype) {
+                    var object;
+
+                    if (isNull(prototype)) {
+                        object = createEmpty();
+                    } else {
+                        if (!isTypeObject(prototype) && !isFunction(prototype)) {
+                            throw new TypeError("Object prototype may only be an Object or null");
+                        }
+
+                        Type.prototype = prototype;
+                        object = new Type();
+                        object[proto] = prototype;
+                    }
+
+                    return object;
+                };
+            }
+
+            return func;
+        }());
+        */
+
+        split = (function (private_undefined) {
+            var splitFN = baseString.split,
+                compliantExecNpcg = isUndefined(/()??/.exec("")[1]);
+
+            function replacer(separator, match, args) {
+                var length = args.length - 2,
+                    index;
+
+                match[0].replace(separator, function () {
+                    for (index = 1; lt(index, length); index += 1) {
+                        if (isUndefined(arguments[index])) {
+                            match[index] = private_undefined;
+                        }
+                    }
+                });
+            }
+
+            return function (str, separator, limit) {
+                var string = toString(checkObjectCoercible(str)),
+                    output,
+                    flags,
+                    lastLastIndex,
+                    separator2,
+                    match,
+                    lastIndex,
+                    lastLength,
+                    val;
+
+                if (isRegExp(separator)) {
+                    flags = "g";
+                    if (separator.ignoreCase) {
+                        flags += "i";
+                    }
+
+                    if (separator.multiline) {
+                        flags += "m";
+                    }
+
+                    if (separator.extended) {
+                        flags += "x";
+                    }
+
+                    if (separator.sticky) {
+                        flags += "y";
+                    }
+
+                    separator = new RegExp(separator.source, flags);
+                    if (!compliantExecNpcg) {
+                        separator2 = new RegExp("^" + separator.source + "$(?!\\s)", flags);
+                    }
+
+                    if (isUndefined(limit)) {
+                        limit = MAX_UINT32;
+                    } else {
+                        limit = toUint32(limit);
+                    }
+
+                    output = [];
+                    flags = "g";
+                    lastLastIndex = 0;
+                    match = separator.exec(string);
+                    while (match) {
+                        lastIndex = match.index + match[0].length;
+                        if (lastIndex > lastLastIndex) {
+                            output.push(string.slice(lastLastIndex, match.index));
+                            if (!compliantExecNpcg && gt(match.length, 1)) {
+                                replacer(separator2, match, arguments);
+                            }
+
+                            if (gt(match.length, 1) && lt(match.index, string.length)) {
+                                output = output.concat(match.slice(1));
+                            }
+
+                            lastLength = match[0].length;
+                            lastLastIndex = lastIndex;
+                            if (gte(output.length, limit)) {
+                                break;
+                            }
+                        }
+
+                        if (is(separator.lastIndex, match.index)) {
+                            separator.lastIndex += 1;
+                        }
+
+                        match = separator.exec(string);
+                    }
+
+                    if (is(lastLastIndex, string.length)) {
+                        if (lastLength || !separator.test("")) {
+                            output.push("");
+                        }
+                    } else {
+                        output.push(string.slice(lastLastIndex));
+                    }
+
+                    if (gt(output.length, limit)) {
+                        return output.slice(0, limit);
+                    }
+
+                    val = output;
+                } else {
+                    val = splitFN.call(str, separator, limit);
+                }
+
+                return val;
+            };
+        }());
 
         trim = (function () {
             var whiteSpaces = "\\x09\\x0A\\x0B\\x0C\\x0D\\x20\\xA0\\u1680\\u180E\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200A\\u202F\\u205F\\u3000\\u2028\\u2029\\uFEFF",
@@ -137,27 +613,271 @@
                 };
             } else {
                 func = function (inputArg) {
-                    return inputArg.replace(wsTrimRX, "");
+                    return toString(checkObjectCoercible(inputArg)).replace(wsTrimRX, "");
                 };
             }
 
             return func;
         }());
 
+        repeat = (function () {
+            var repeatFN = baseString.constructor.repeat,
+                rep,
+                func;
+
+            if (isFunction(repeatFN)) {
+                func = function (string, times) {
+                    return repeatFN.call(string, times);
+                };
+            } else {
+                rep = function (s, times) {
+                    var half,
+                        val;
+
+                    if (lt(times, 1)) {
+                        val = "";
+                    } else if (mod(times, 2)) {
+                        val = rep(s, times - 1) + s;
+                    } else {
+                        half = rep(s, times / 2);
+                        val = half + half;
+                    }
+
+                    return val;
+                };
+
+                func = function (string, count) {
+                    var thisString = toString(checkObjectCoercible(string)),
+                        times = toInteger(count);
+
+                    if (lt(times, 0) || is(times, Infinity)) {
+                        throw new RangeError();
+                    }
+
+                    return rep(thisString, times);
+                };
+            }
+
+            return func;
+        }());
+
+        /*
+        startsWith = (function () {
+            var startsWithFN = baseString.constructor.startsWith,
+                func;
+
+            if (isFunction(startsWithFN)) {
+                func = function (string, searchString, position) {
+                    return startsWithFN.call(string, searchString, position);
+                };
+            } else {
+                func = function (string, searchString, position) {
+                    var thisStr = toString(checkObjectCoercible(string)),
+                        searchStr = toString(searchString),
+                        thisLen = thisStr.length,
+                        start = clamp(toInteger(position), 0, thisLen);
+
+                    return is(thisStr.slice(start, start + thisLen), searchStr);
+                };
+            }
+
+            return func;
+        }());
+        */
+
+        /*
+        endsWith = (function () {
+            var endsWithFN = baseString.constructor.endsWith,
+                func;
+
+            if (isFunction(endsWithFN)) {
+                func = function (string, searchString, position) {
+                    return endsWithFN.call(string, searchString, position);
+                };
+            } else {
+                func = function (string, searchString, position) {
+                    var thisStr = toString(checkObjectCoercible(string)),
+                        searchStr = toString(searchString),
+                        thisLen = thisStr.length,
+                        end,
+                        start;
+
+                    if (isUndefined(position)) {
+                        position = thisLen;
+                    } else {
+                        position = toInteger(position);
+                    }
+
+                    end = clamp(position, 0, thisLen);
+                    start = end - searchStr.length;
+
+                    return gte(start, 0) && is(thisStr.slice(start, end), searchStr);
+                };
+            }
+
+            return func;
+        }());
+        */
+
+        contains = (function () {
+            var containsFN = baseString.constructor.contains,
+                func;
+
+            if (isFunction(containsFN)) {
+                func = function (string, searchString, position) {
+                    return containsFN.call(string, searchString, position);
+                };
+            } else {
+                func = function (string, searchString, position) {
+                    var thisStr = toString(checkObjectCoercible(string)),
+                        searchStr = toString(searchString),
+                        thisLen = thisStr.length;
+
+                    if (isUndefined(position)) {
+                        position = thisLen;
+                    } else {
+                        position = toInteger(position);
+                    }
+
+                    return !is(baseString.indexOf.call(thisStr, searchStr, clamp(position, 0, thisLen)), -1);
+                };
+            }
+
+            return func;
+        }());
+
+        function firstChar(inputArg) {
+            return toString(checkObjectCoercible(inputArg)).charAt(0);
+        }
+
+        function lastChar(inputArg) {
+            var thisStr = toString(checkObjectCoercible(inputArg));
+
+            return thisStr.charAt(thisStr.length - 1);
+        }
+
+        getPrototypeOf = (function () {
+            var proto = "__proto__",
+                getPrototypeOfFN = baseObject.constructor.getPrototypeOf,
+                oPrototype,
+                func;
+
+            if (isFunction(getPrototypeOfFN)) {
+                func = getPrototypeOfFN;
+            } else if (isNull(baseObject.constructor.prototype[proto])) {
+                func = function (object) {
+                    return object[proto];
+                };
+            } else {
+                oPrototype = baseObject.constructor.prototype;
+                func = function (object) {
+                    if (is(object, oPrototype)) {
+                        return null;
+                    }
+
+                    var prototype = object.constructor.prototype;
+
+                    if (is(object, prototype)) {
+                        return oPrototype;
+                    }
+
+                    return prototype;
+                };
+            }
+
+            return func;
+        }());
+
+        function hasProperty(object, property) {
+            return property in object;
+        }
+
         // http://ecma-international.org/ecma-262/5.1/#sec-15.2.4.5
-        // Create our own local "hasOwnProperty" function: native -> fallback
+        // Create our own local "hasOwnProperty" function: native -> shim -> sham
         hasOwnProperty = (function () {
             var hasOwnPropertyFN = baseObject.hasOwnProperty, // to combat old IE8- issues, min support IE6
-                func;
+                propertyIsEnumerableFN = baseObject.propertyIsEnumerable,
+                func,
+                hasDontEnumBug = true,
+                test = {
+                    "toString": null
+                };
+
+            for (func in test) {
+                hasDontEnumBug = false;
+            }
+
+            function checkDontEnums(object, property) {
+                return hasDontEnumBug && !is(indexOf(defaultProperties, property), -1) && hasProperty(object, property) && !is(object[property], getPrototypeOf(object)[property]);
+            }
 
             if (isFunction(hasOwnPropertyFN)) {
                 func = function (object, property) {
-                    return hasOwnPropertyFN.call(object, property);
+                    return hasOwnPropertyFN.call(object, property) || checkDontEnums(object, property);
+                };
+            } else if (isFunction(propertyIsEnumerableFN)) {
+                func = function (object, property) {
+                    return propertyIsEnumerableFN.call(object, property) || checkDontEnums(object, property);
                 };
             } else {
                 func = function (object, property) {
-                    return (property in object) && (isUndefined(object.constructor.prototype[property]));
+                    return hasProperty(object, property) && isUndefined(getPrototypeOf(object)[property]);
                 };
+            }
+
+            return func;
+        }());
+
+        function argumentsToArray() {
+            var array = [],
+                length = arguments.length,
+                index;
+
+            for (index = 0; lt(index, length); index += 1) {
+                array.push(arguments[index]);
+            }
+
+            return array;
+        }
+
+        unshift = (function () {
+            var unshiftFN = baseArray.unshift,
+                func;
+
+            if (is(unshiftFN.call([], 0), 1)) {
+                func = function (array) {
+                    return unshiftFN.apply(array, argumentsToArray(arguments).slice(1));
+                };
+            } else {
+                func = function (array) {
+                    unshiftFN.apply(array, argumentsToArray(arguments).slice(1));
+
+                    return array.length;
+                };
+            }
+
+            return func;
+        }());
+
+        toObjectFixIndexedAccess = (function () {
+            var boxedString = baseObject.constructor("a"),
+                splitString = !is(boxedString[0], "a") || !hasProperty(boxedString, 0),
+                func;
+
+            if (splitString) {
+                func = function (inputArg) {
+                    var object;
+
+                    if (isString(inputArg)) {
+                        object = split(inputArg, "");
+                    } else {
+                        object = toObject(inputArg);
+                    }
+
+                    return object;
+                };
+            } else {
+                func = toObject;
             }
 
             return func;
@@ -168,17 +888,22 @@
                 func;
 
             if (isFunction(forEachFN)) {
-                func = function (array, fn) {
-                    return forEachFN.call(array, fn);
+                func = function (array, fn, thisArg) {
+                    return forEachFN.call(array, fn, thisArg);
                 };
             } else {
-                func = function (array, fn) {
-                    var length,
+                func = function (array, fn, thisArg) {
+                    var object = toObjectFixIndexedAccess(array),
+                        length,
                         index;
 
-                    for (index = 0, length = array.length; index < length; index += 1) {
-                        if (hasOwnProperty(array, index)) {
-                            fn(array[index], index);
+                    if (!isFunction(fn)) {
+                        throw new TypeError(fn + " is not a function");
+                    }
+
+                    for (index = 0, length = toUint32(object.length); lt(index, length); index += 1) {
+                        if (hasProperty(object, index)) {
+                            fn.call(thisArg, object[index], index, object);
                         }
                     }
                 };
@@ -192,21 +917,28 @@
                 func;
 
             if (isFunction(someFN)) {
-                func = function (array, fn) {
-                    return someFN.call(array, fn);
+                func = function (array, fn, thisArg) {
+                    return someFN.call(array, fn, thisArg);
                 };
             } else {
-                func = function (array, fn) {
-                    var length,
-                        index;
+                func = function (array, fn, thisArg) {
+                    var object = toObjectFixIndexedAccess(array),
+                        length,
+                        index,
+                        val;
 
-                    for (index = 0, length = array.length; index < length; index += 1) {
-                        if (hasOwnProperty(array, index) && fn(array[index], index)) {
-                            return true;
+                    if (!isFunction(fn)) {
+                        throw new TypeError(fn + " is not a function");
+                    }
+
+                    for (index = 0, length = toUint32(object.length), val = false; lt(index, length); index += 1) {
+                        if (hasProperty(object, index) && fn.call(thisArg, object[index], index, object)) {
+                            val = true;
+                            break;
                         }
                     }
 
-                    return false;
+                    return val;
                 };
             }
 
@@ -218,46 +950,123 @@
                 func;
 
             if (isFunction(mapFN)) {
-                func = function (array, fn) {
-                    return mapFN.call(array, fn);
+                func = function (array, fn, thisArg) {
+                    return mapFN.call(array, fn, thisArg);
                 };
             } else {
-                func = function (array, fn) {
-                    var arr = [],
+                func = function (array, fn, thisArg) {
+                    var object = toObjectFixIndexedAccess(array),
                         length,
-                        index;
+                        index,
+                        arr;
 
-                    for (index = 0, length = array.length; index < length; index += 1) {
-                        if (hasOwnProperty(array, index)) {
-                            defineProperty(arr, {
-                                "value": fn(array[index], index),
-                                "enumerable": true,
-                                "configurable": true,
-                                "writable": true
-                            });
-                        }
+                    if (!isFunction(fn)) {
+                        throw new TypeError(fn + " is not a function");
                     }
+
+                    for (index = 0, length = toUint32(object.length), arr = []; lt(index, length); index += 1) {
+                        arr[index] = fn.call(thisArg, object[index], index, object);
+                    }
+
+                    return arr;
                 };
             }
 
             return func;
         }());
 
-        function iterateObject(obj, fn) {
-            var prop,
-                val;
+        /*
+        filter = (function () {
+            var filterFN = baseArray.filter,
+                func;
 
-            for (prop in obj) {
-                if (hasOwnProperty(obj, prop)) {
-                    val = fn(obj[prop], prop);
-                    if (val) {
-                        break;
+            if (isFunction(filterFN)) {
+                func = function (array, fn, thisArg) {
+                    return filterFN.call(array, fn, thisArg);
+                };
+            } else {
+                func = function (array, fn, thisArg) {
+                    var object = toObjectFixIndexedAccess(array),
+                        length,
+                        arr,
+                        index,
+                        element;
+
+                    if (!isFunction(fn)) {
+                        throw new TypeError(fn + " is not a function");
                     }
-                }
+
+                    for (index = 0, length = toUint32(object.length), arr = []; lt(index, length); index += 1) {
+                        element = object[index];
+                        if (fn.call(thisArg, element, index, object)) {
+                            arr[index] = element;
+                        }
+                    }
+
+                    return arr;
+                };
             }
 
-            return val;
-        }
+            return func;
+        }());
+        */
+
+        /*
+        reduce = (function (private_undefined) {
+            var reduceFN = baseArray.reduce,
+                errString = "Reduce of empty array with no initial value",
+                func;
+
+            if (isFunction(reduceFN)) {
+                func = function (array, fn, initialValue) {
+                    return reduceFN.call(array, fn, initialValue);
+                };
+            } else {
+                func = function (array, fn, initialValue) {
+                    var object = toObjectFixIndexedAccess(array),
+                        length,
+                        k,
+                        index,
+                        accumulator,
+                        kPresent;
+
+                    if (!isFunction(fn)) {
+                        throw new TypeError(fn + " is not a function");
+                    }
+
+                    if (is(length, 0) && lt(arguments.length, 3)) {
+                        throw new TypeError(errString);
+                    }
+
+                    k = 0;
+                    if (gt(arguments.length, 2)) {
+                        accumulator = initialValue;
+                    } else {
+                        for (k = 0, length = toUint32(object.length), kPresent = false; !kPresent && lt(k, length); k += 1) {
+                            kPresent = hasProperty(object, k);
+                            if (kPresent) {
+                                accumulator = object[k];
+                            }
+                        }
+
+                        if (!kPresent) {
+                            throw new TypeError(errString);
+                        }
+                    }
+
+                    for (index = k; lt(index, length); index += 1) {
+                        if (hasProperty(object, index)) {
+                            accumulator = fn.call(private_undefined, accumulator, object[index], index, object);
+                        }
+                    }
+
+                    return accumulator;
+                };
+            }
+
+            return func;
+        }());
+        */
 
         // http://ecma-international.org/ecma-262/5.1/#sec-15.4.4.14
         // Create our own local "indexOf" function: native -> polyfill
@@ -265,114 +1074,315 @@
             var indexOfFN = baseArray.indexOf,
                 func;
 
-            if (isFunction(indexOfFN)) {
-                func = function (array, searchElement) {
-                    return indexOfFN.call(array, searchElement);
+            if (isFunction(indexOfFN) && is(indexOfFN.call([0, 1], 1, 2), 1)) {
+                func = function (array, searchElement, fromIndex) {
+                    return indexOfFN.call(array, searchElement, fromIndex);
                 };
             } else {
-                func = function (array, searchElement) {
-                    var length,
-                        index;
+                func = function (array, searchElement, fromIndex) {
+                    var object = toObjectFixIndexedAccess(array),
+                        length = toUint32(object.length),
+                        index,
+                        start,
+                        val;
 
-                    for (index = 0, length = array.length; index < length; index += 1) {
-                        if (hasOwnProperty(array, index) && searchElement === array[index]) {
-                            return index;
+                    if (strictEqual(length, 0)) {
+                        val = -1;
+                    } else {
+                        if (gt(arguments.length, 2)) {
+                            fromIndex = toInteger(fromIndex);
+                        } else {
+                            fromIndex = 0;
+                        }
+
+                        if (gte(fromIndex, length)) {
+                            val = -1;
+                        } else {
+                            if (gte(fromIndex, 0)) {
+                                start = fromIndex;
+                            } else {
+                                start = length - Math.abs(fromIndex);
+                            }
+
+                            if (lt(start, 0)) {
+                                start = 0;
+                            }
+
+                            for (index = start, val = -1; lt(index, length); index += 1) {
+                                if (hasProperty(object, index) && is(searchElement, object[index])) {
+                                    val = index;
+                                    break;
+                                }
+                            }
                         }
                     }
 
-                    return -1;
+                    return val;
                 };
             }
 
             return func;
         }());
 
+        keys = (function () {
+            var keysFN = baseObject.keys;
+
+            if (!isFunction(keysFN)) {
+
+                keysFN = function (object) {
+                    if (!isTypeObject(object) && !isFunction(object)) {
+                        throw new TypeError("Object.keys called on a non-object");
+                    }
+
+                    var props = [],
+                        prop;
+
+                    for (prop in object) {
+                        if (hasOwnProperty(object, prop)) {
+                            props.push(prop);
+                        }
+                    }
+
+                    return props;
+                };
+            }
+
+            return keysFN;
+        }());
+
         // http://ecma-international.org/ecma-262/5.1/#sec-15.4.4.14
-        // Create our own local "defineProperty" function: native -> none
+        // Create our own local "defineProperty" function: native -> sham
         defineProperty = (function () {
-            var definePropertyFN = baseObject.constructor.defineProperty;
+            var definePropertyFN = baseObject.constructor.defineProperty,
+                proto = "__proto__",
+                defineGetter = "__defineGetter__",
+                defineSetter = "__defineSetter__",
+                defineGetterFN,
+                defineSetterFN,
+                test;
 
             if (isFunction(definePropertyFN)) {
                 try {
-                    definePropertyFN({}, "sentinel", {});
+                    test = definePropertyFN({}, "sentinel", {
+                        "value": null
+                    });
+
+                    if (!isNull(test.sentinel)) {
+                        definePropertyFN = null;
+                    }
                 } catch (exception) {
                     definePropertyFN = null;
                 }
             }
 
             if (!isFunction(definePropertyFN)) {
+                defineGetterFN = baseObject[defineGetter];
+                defineSetterFN = baseObject[defineSetter];
                 definePropertyFN = function (object, property, descriptor) {
-                    if (hasOwnProperty(descriptor, "value")) {
-                        object[property] = descriptor.value;
+                    var prototype;
+
+                    if (!isTypeObject(object) && !isFunction(object)) {
+                        throw new TypeError("Object.defineProperty called on non-object");
                     }
+
+                    if (!isTypeObject(descriptor) && !isFunction(descriptor)) {
+                        throw new TypeError("Property description must be an object");
+                    }
+
+                    if (hasOwnProperty(descriptor, "value")) {
+                        if (isNull(getPrototypeOf(baseObject)[proto])) {
+                            prototype = object[proto];
+                            object[proto] = getPrototypeOf(baseObject);
+                            delete object[property];
+                            object[property] = descriptor.value;
+                            object[proto] = prototype;
+                        } else {
+                            object[property] = descriptor.value;
+                        }
+                    } else {
+                        if (!isFunction(defineGetterFN) || !isFunction(defineSetterFN)) {
+                            throw new TypeError("getters & setters can not be defined on this javascript engine");
+                        }
+
+                        if (isFunction(descriptor.get)) {
+                            defineGetterFN.call(object, property, descriptor.get);
+                        }
+
+                        if (isFunction(descriptor.set)) {
+                            defineSetterFN.call(object, property, descriptor.set);
+                        }
+                    }
+
+                    return object;
                 };
             }
 
             return definePropertyFN;
         }());
 
+        // Create our own local "defineProperties" function: native -> sham
         defineProperties = (function () {
             var definePropertiesFN = baseObject.constructor.defineProperties;
 
             if (!isFunction(definePropertiesFN)) {
                 definePropertiesFN = function (object, props) {
-                    iterateObject(props, function (element, prop) {
-                        defineProperty(object, prop, element);
+                    if (!isTypeObject(object) && !isFunction(object)) {
+                        throw new TypeError("Object.defineProperties called on non-object");
+                    }
+
+                    if (!isTypeObject(props) && !isFunction(props)) {
+                        throw new TypeError("Property description must be an object");
+                    }
+
+                    forEach(keys(props), function (key) {
+                        defineProperty(object, key, props[key]);
                     });
+
+                    return object;
                 };
             }
 
             return definePropertiesFN;
         }());
 
+        // Create our own local "getOwnPropertyDescriptor" function: native -> sham
         getOwnPropertyDescriptor = (function () {
-            var getOwnPropertyDescriptorFN = baseObject.constructor.getOwnPropertyDescriptor;
+            var getOwnPropertyDescriptorFN = baseObject.constructor.getOwnPropertyDescriptor,
+                proto = "__proto__",
+                lookupGetter = "__lookupGetter__",
+                lookupSetter = "__lookupSetter__",
+                lookupGetterFN,
+                lookupSetterFN,
+                test;
+
+            if (isFunction(getOwnPropertyDescriptorFN)) {
+                try {
+                    test = {
+                        "sentinel": null
+                    };
+
+                    if (!isNull(getOwnPropertyDescriptorFN(test, "sentinel").value)) {
+                        getOwnPropertyDescriptorFN = null;
+                    }
+                } catch (exception) {
+                    getOwnPropertyDescriptorFN = null;
+                }
+            }
 
             if (!isFunction(getOwnPropertyDescriptorFN)) {
-                getOwnPropertyDescriptorFN = function (object, prop) {
-                    return {
-                        "value": object[prop]
-                    };
+                lookupGetterFN = baseObject[lookupGetter];
+                lookupSetterFN = baseObject[lookupSetter];
+                getOwnPropertyDescriptorFN = function (object, property) {
+                    var descriptor,
+                        prototype,
+                        getter,
+                        setter;
+
+                    if (!isTypeObject(object) && !isFunction(object)) {
+                        throw new TypeError("Object.getOwnPropertyDescriptor called on a non-object");
+                    }
+
+                    if (hasOwnProperty(object, property)) {
+                        descriptor =  {
+                            "enumerable": true,
+                            "configurable": true
+                        };
+
+                        if (isFunction(lookupGetterFN) && isFunction(lookupSetterFN)) {
+                            prototype = object[proto];
+                            object[proto] = getPrototypeOf(baseObject);
+                            getter = lookupGetterFN.call(object, property);
+                            setter = lookupSetterFN.call(object, property);
+                            object[proto] = prototype;
+                            if (isFunction(getter) || isFunction(setter)) {
+                                if (isFunction(getter)) {
+                                    descriptor.get = getter;
+                                }
+
+                                if (isFunction(setter)) {
+                                    descriptor.set = setter;
+                                }
+                            }
+                        } else {
+                            descriptor.value = object[property];
+                            descriptor.writable = true;
+                        }
+                    }
+
+                    return descriptor;
                 };
             }
 
             return getOwnPropertyDescriptorFN;
         }());
 
-        getPrototypeOf = (function () {
-            var proto = "__proto__",
-                supportsProto = baseObject.constructor.prototype[proto] === null,
-                getPrototypeOfFN = baseObject.constructor.getPrototypeOf,
-                func;
+        // Create our own local "freeze" function: native -> sham
+        freeze = (function () {
+            var freezeFN = baseObject.constructor.freeze;
 
-            if (isFunction(getPrototypeOfFN)) {
-                func = getPrototypeOfFN;
-            } else if (supportsProto) {
-                func = function (object) {
-                    return object[proto];
+            if (!isFunction(freezeFN)) {
+                freezeFN = function (object) {
+                    if (!isTypeObject(object) && !isFunction(object)) {
+                        throw new TypeError("Object.freeze called on non-object");
+                    }
+
+                    return object;
                 };
-            } else {
-                func = (function () {
-                    var oPrototype = baseObject.constructor.prototype;
-
-                    return function (object) {
-                        if (object === oPrototype) {
-                            return null;
-                        }
-
-                        var prototype = object.constructor.prototype;
-
-                        if (object === prototype) {
-                            return oPrototype;
-                        }
-
-                        return prototype;
-                    };
-                }());
             }
 
-            return func;
+            return freezeFN;
         }());
+
+        // detect a Rhino bug and patch it
+        try {
+            freeze(function () {
+                return;
+            });
+        } catch (exception) {
+            freeze = (function (freezeObject) {
+                return function (object) {
+                    var val;
+
+                    if (isFunction(object)) {
+                        val = object;
+                    } else {
+                        val = freezeObject(object);
+                    }
+
+                    return val;
+                };
+            }(freeze));
+        }
+
+        // Create our own local "isFrozen" function: native -> sham
+        isFrozen = (function () {
+            var isFrozenFN = baseObject.constructor.isFrozen;
+
+            if (!isFunction(isFrozenFN)) {
+                isFrozenFN = function (object) {
+                    if (!isTypeObject(object) && !isFunction(object)) {
+                        throw new TypeError("Object.isFrozen called on non-object");
+                    }
+
+                    return false;
+                };
+            }
+
+            return isFrozenFN;
+        }());
+
+        function deepFreeze(object) {
+            var prop,
+                propKey;
+
+            freeze(object);
+            for (propKey in object) {
+                prop = object[propKey];
+                if (hasOwnProperty(object, propKey) && (isTypeObject(prop) || isFunction(prop)) && !isFrozen(prop)) {
+                    deepFreeze(prop);
+                }
+            }
+        }
 
         instanceOf = (function () {
             var isPrototypeOfFN = baseObject.constructor.prototype.isPrototypeOf,
@@ -380,19 +1390,30 @@
 
             if (isFunction(isPrototypeOfFN)) {
                 func = function (object, constructor) {
+                    if (!isFunction(constructor)) {
+                        throw new TypeError("Expecting a function in instanceOf check");
+                    }
+
                     return isPrototypeOfFN.call(constructor.prototype, object);
                 };
             } else if (isFunction(getPrototypeOf)) {
                 func = function (object, constructor) {
+                    if (!isFunction(constructor)) {
+                        throw new TypeError("Expecting a function in instanceOf check");
+                    }
+
+                    var val = false;
+
                     while (object) {
-                        if (object === constructor.prototype) {
-                            return true;
+                        if (is(object, constructor.prototype)) {
+                            val = true;
+                            break;
                         }
 
                         object = getPrototypeOf(object);
                     }
 
-                    return false;
+                    return val;
                 };
             }
 
@@ -403,19 +1424,21 @@
             var baseObjectPrototype = getPrototypeOf(baseObject);
 
             return function (object) {
-                return isObject(object) &&  getPrototypeOf(object) === baseObjectPrototype;
+                return isObject(object) && is(getPrototypeOf(object), baseObjectPrototype);
             };
         }());
 
         extend = (function () {
-            return function (thisObject, withObject) {
-                /*jslint unparam: true */
-                iterateObject(withObject, function (element, name) {
-                    defineProperty(thisObject, name, getOwnPropertyDescriptor(withObject, name));
-                });
-                /*jslint unparam: false */
+            return function (target, source) {
+                if (!isTypeObject(target) && !isFunction(target)) {
+                    throw new TypeError("extend called on a non-object");
+                }
 
-                return thisObject;
+                forEach(keys(source), function (key) {
+                    defineProperty(target, key, getOwnPropertyDescriptor(source, key));
+                });
+
+                return target;
             };
         }());
 
@@ -469,47 +1492,49 @@
                     var factorialLookup = {};
 
                     return function (exponentialAt) {
-                        if (this.lt(0) || !this.isFinite() || !this.fractionalPart().isZero()) {
-                            return new BigNumber(NaN);
-                        }
-
-                        if (!isNumber(exponentialAt) && !isString(exponentialAt) && (BigNumber.isBigNumber(exponentialAt) && (exponentialAt.lt(0) || !exponentialAt.isFinite()))) {
-                            exponentialAt = new BigNumber(BigNumber.config().EXPONENTIAL_AT[1]);
-                        }
-
-                        if (!BigNumber.isBigNumber(exponentialAt)) {
-                            exponentialAt = new BigNumber(exponentialAt);
-                        }
-
-                        var n = this.toString(),
+                        var n,
                             config,
                             previousConfig,
-                            i;
+                            i,
+                            val;
 
-                        if (!factorialLookup[n]) {
-                            config = BigNumber.config();
-                            previousConfig = {};
-                            extend(previousConfig, config);
-
-                            BigNumber.config({
-                                DECIMAL_PLACES : 20,
-                                ROUNDING_MODE : 4,
-                                EXPONENTIAL_AT : [-7, parseInt(exponentialAt.toString(), 10)],
-                                RANGE : [-1000000000, 1000000000],
-                                ERRORS : true
-                            });
-
-                            factorialLookup[n] = new BigNumber(1);
-                            for (i = 2; i <= n; i += 1) {
-                                factorialLookup[n] = factorialLookup[n].times(i);
+                        if (this.lt(0) || !this.isFinite() || !this.fractionalPart().isZero()) {
+                            val = new BigNumber(NaN);
+                        } else {
+                            if (!isNumber(exponentialAt) && !isString(exponentialAt) && (BigNumber.isBigNumber(exponentialAt) && (exponentialAt.lt(0) || !exponentialAt.isFinite()))) {
+                                exponentialAt = new BigNumber(BigNumber.config().EXPONENTIAL_AT[1]);
                             }
 
-                            iterateObject(previousConfig, function (element, prop) {
-                                config[prop] = element;
-                            });
+                            if (!BigNumber.isBigNumber(exponentialAt)) {
+                                exponentialAt = new BigNumber(exponentialAt);
+                            }
+
+                            n = this.toString();
+                            if (!factorialLookup[n]) {
+                                config = BigNumber.config();
+                                previousConfig = {};
+                                extend(previousConfig, config);
+
+                                BigNumber.config({
+                                    DECIMAL_PLACES : 20,
+                                    ROUNDING_MODE : 4,
+                                    EXPONENTIAL_AT : [-7, parseInt(exponentialAt.toString(), 10)],
+                                    RANGE : [-1000000000, 1000000000],
+                                    ERRORS : true
+                                });
+
+                                factorialLookup[n] = new BigNumber(1);
+                                for (i = 2; lte(i, n); i += 1) {
+                                    factorialLookup[n] = factorialLookup[n].times(i);
+                                }
+
+                                extend(config, previousConfig);
+                            }
+
+                            val = factorialLookup[n];
                         }
 
-                        return factorialLookup[n];
+                        return val;
                     };
                 }())
             },
@@ -522,20 +1547,14 @@
 
             "padLeadingZero": {
                 "value": function (size) {
-                    var numString = this.toString(),
-                        bnSize = new BigNumber(size).floor(),
-                        length,
-                        i;
+                    var numString = this.toString();
 
-                    if (!bnSize.isFinite() || bnSize.lt(0)) {
+                    size = toInteger(size) - numString.length;
+                    if (lt(size, 0) || is(size, Infinity)) {
                         size = 0;
                     }
 
-                    for (i = 0, length = size - numString.length; i < length; i += 1) {
-                        numString = "0" + numString;
-                    }
-
-                    return numString;
+                    return repeat("0", size) + numString;
                 }
             }
         });
@@ -543,7 +1562,7 @@
         defineProperties(BigNumber, {
             "isBigNumber": {
                 "value": function (inputArg) {
-                    return inputArg && typeof inputArg === "object" && (instanceOf(inputArg, BigNumber || inputArg instanceof BigNumber));
+                    return isObject(inputArg) && instanceOf(inputArg, BigNumber);
                 }
             },
 
@@ -576,7 +1595,7 @@
                     var piLookup = {};
 
                     return function (decimalPlaces) {
-                        if (!isNumber(decimalPlaces) || !isFinite(decimalPlaces) || decimalPlaces < 0) {
+                        if (!isFinite(decimalPlaces) || lt(decimalPlaces, 0)) {
                             decimalPlaces = BigNumber.config().DECIMAL_PLACES;
                         } else {
                             decimalPlaces = Math.floor(decimalPlaces);
@@ -619,10 +1638,7 @@
                                 k += 1;
                             }
 
-                            iterateObject(previousConfig, function (element, prop) {
-                                config[prop] = element;
-                            });
-
+                            extend(config, previousConfig);
                             piLookup[lookupProp] = sum;
                         }
 
@@ -657,7 +1673,7 @@
                 "value": function (angle) {
                     var newAngle = BigNumber.normaliseAngle(angle);
 
-                    if (newAngle < 0) {
+                    if (lt(newAngle, 0)) {
                         newAngle = newAngle.plus(360);
                     }
 
@@ -675,7 +1691,6 @@
                             sum,
                             prev,
                             k,
-                            mod,
                             fact,
                             i;
 
@@ -687,8 +1702,7 @@
                             while (!sum.equals(prev)) {
                                 prev = sum;
                                 fact = BigNumber.factorial(k);
-                                mod = i % 2 % 2;
-                                if (mod === 1) {
+                                if (is(mod(mod(i, 2), 2), 1)) {
                                     sum = sum.minus(newAngle.pow(k).div(fact));
                                 } else {
                                     sum = sum.plus(newAngle.pow(k).div(fact));
@@ -738,15 +1752,7 @@
         }
 
         function isDigit(character) {
-            var digit = false,
-                charCode;
-
-            if (isString(character) && character.length === 1) {
-                charCode = character.charCodeAt(0);
-                digit = charCode >= 48 && charCode <= 57;
-            }
-
-            return digit;
+            return isString(character) && is(character.length, 1) && inRange(character.charCodeAt(0), 48, 57);
         }
 
         function intToNumber(input) {
@@ -870,7 +1876,7 @@
 
                         break;
                     case "day":
-                        if (julian === true) {
+                        if (is(julian, true)) {
                             dim = daysInJulianMonth(struct);
                         } else {
                             dim = daysInGregorianMonth(struct);
@@ -923,10 +1929,12 @@
         }
 
         function dayOfGregorianYear(struct) {
-            var k = 2;
+            var k;
 
             if (isGregorianLeapYear(struct)) {
                 k = 1;
+            } else {
+                k = 2;
             }
 
             return struct.month.times(275).div(9).floor().minus(struct.month.plus(9).div(12).floor().times(k)).plus(struct.day).minus(30);
@@ -942,10 +1950,36 @@
             return doy;
         }
 
+        function normaliseUnits(unitString) {
+            var unit;
+
+            if (isString(unitString)) {
+                unitString = trim(unitString).toLowerCase();
+                if (gt(unitString.length, 2) && is(lastChar(unitString), "s")) {
+                    unitString = unitString.slice(0, -1);
+                }
+
+                some(fullKeys, function (element) {
+                    var val;
+
+                    if (is(unitString, element.alias) || is(unitString, element.full)) {
+                        unit = element.full;
+                        val = true;
+                    } else {
+                        val = false;
+                    }
+
+                    return val;
+                });
+            }
+
+            return unit;
+        }
+
         function timeTo(struct, unit) {
             var value;
 
-            switch (unit) {
+            switch (normaliseUnits(unit)) {
             case "day":
                 value = struct.hour.div(24).plus(struct.minute.div(1440)).plus(struct.second.div(86400)).plus(struct.millisecond.div(86400000));
                 break;
@@ -962,7 +1996,7 @@
                 value = struct.hour.times(3600000).plus(struct.minute.times(60000)).plus(struct.second.times(1000)).plus(struct.millisecond);
                 break;
             default:
-                value = bignumber(NaN);
+                throw new Error(unit);
             }
 
             return value;
@@ -975,7 +2009,7 @@
                 e = b.div(100).floor().neg(),
                 f = b.div(400).floor(),
                 g = struct.month.times(367).minus(362).div(12).floor(),
-                h = 0;
+                h;
 
             if (struct.month.gt(2)) {
                 if (isGregorianLeapYear(struct)) {
@@ -983,6 +2017,8 @@
                 } else {
                     h = -2;
                 }
+            } else {
+                h = 0;
             }
 
             return bignumber(1721424.5).plus(c).plus(d).plus(e).plus(f).plus(g.plus(h).plus(struct.day).floor()).plus(timeTo(struct, "day"));
@@ -995,7 +2031,7 @@
 
             var length = shortNameLength[lang];
 
-            if (!isNumber(length) || length < 1) {
+            if (!isNumber(length) || lt(length, 1)) {
                 length = 3;
             }
 
@@ -1019,7 +2055,7 @@
             }
 
             name = dayNames[parseInt(day.toString(), 10)][lang];
-            if (shortName === true) {
+            if (is(shortName, true)) {
                 name = makeNameShort(name, lang);
             }
 
@@ -1037,7 +2073,7 @@
 
             var name = monthNames[parseInt(struct.month.minus(1).toString(), 10)][lang];
 
-            if (shortName === true) {
+            if (is(shortName, true)) {
                 name = makeNameShort(name, lang);
             }
 
@@ -1046,17 +2082,13 @@
 
         function fractionToTime(fraction, fractionIn, struct, julian) {
             var time = {},
-                days,
                 totalMs,
-                hour,
-                minute,
-                second,
-                millisecond;
+                days;
 
             fraction = bignumber(fraction);
             switch (fractionIn) {
             case "year":
-                if (julian === true) {
+                if (is(julian, true)) {
                     days = daysInJulianYear(struct);
                 } else {
                     days = daysInGregorianYear(struct);
@@ -1065,7 +2097,7 @@
                 totalMs = fraction.times(days.times(86400000));
                 break;
             case "month":
-                if (julian === true) {
+                if (is(julian, true)) {
                     days = daysInJulianMonth(struct);
                 } else {
                     days = daysInGregorianMonth(struct);
@@ -1089,44 +2121,19 @@
                 totalMs = fraction;
                 break;
             default:
+                throw new Error(fractionIn);
             }
 
-            hour = totalMs.div(3600000).floor();
-            minute = totalMs.minus(hour.times(3600000)).div(60000).floor();
-            second = totalMs.minus(hour.times(3600000)).minus(minute.times(60000)).div(1000).floor();
-            millisecond = totalMs.minus(hour.times(3600000)).minus(minute.times(60000)).minus(second.times(1000)).floor();
-            defineProperties(time, {
-                "hour": {
-                    "value": hour,
-                    "enumerable": true,
-                    "configurable": true,
-                    "writable": true
-                },
-                "minute": {
-                    "value": minute,
-                    "enumerable": true,
-                    "configurable": true,
-                    "writable": true
-                },
-                "second": {
-                    "value": second,
-                    "enumerable": true,
-                    "configurable": true,
-                    "writable": true
-                },
-                "millisecond": {
-                    "value": millisecond,
-                    "enumerable": true,
-                    "configurable": true,
-                    "writable": true
-                }
-            });
+            time.hour = totalMs.div(3600000).floor();
+            time.minute = totalMs.minus(time.hour.times(3600000)).div(60000).floor();
+            time.second = totalMs.minus(time.hour.times(3600000)).minus(time.minute.times(60000)).div(1000).floor();
+            time.millisecond = totalMs.minus(time.hour.times(3600000)).minus(time.minute.times(60000)).minus(time.second.times(1000)).floor();
 
             return time;
         }
 
-        function getTime(astrodate) {
-            return bignumber(astrodate.julianDay()).minus(2440587.5).times(86400000).round();
+        function getTime(julianDay) {
+            return julianDay.minus(2440587.5).times(86400000).round();
         }
 
         // DeltaT
@@ -1220,7 +2227,7 @@
 
                         break;
                     case "day":
-                        if (julian === true) {
+                        if (is(julian, true)) {
                             dim = daysInJulianMonth(struct);
                         } else {
                             dim = daysInGregorianMonth(struct);
@@ -1295,12 +2302,7 @@
                         throw new Error(element);
                     }
 
-                    defineProperty(struct, element.full, {
-                        "value": bn,
-                        "enumerable": true,
-                        "configurable": true,
-                        "writable": true
-                    });
+                    struct[element.full] = bn;
 
                     return false;
                 });
@@ -1310,17 +2312,14 @@
         }
 
         function structToArray(struct) {
-            var arr = [];
+            var arr;
 
             if (isValid(struct)) {
-                forEach(fullKeys, function (element, index) {
-                    defineProperty(arr, index, {
-                        "value": struct[element.full],
-                        "enumerable": true,
-                        "configurable": true,
-                        "writable": true
-                    });
+                arr = map(fullKeys, function (element) {
+                    return struct[element.full];
                 });
+            } else {
+                arr = [];
             }
 
             return arr;
@@ -1355,7 +2354,7 @@
 
                         break;
                     case "day":
-                        if (julian === true) {
+                        if (is(julian, true)) {
                             dim = daysInJulianMonth(struct);
                         } else {
                             dim = daysInGregorianMonth(struct);
@@ -1430,12 +2429,7 @@
                         throw new Error(element);
                     }
 
-                    defineProperty(struct, element.full, {
-                        "value": bn,
-                        "enumerable": true,
-                        "configurable": true,
-                        "writable": true
-                    });
+                    struct[element.full] = bn;
 
                     return false;
                 });
@@ -1448,13 +2442,8 @@
             var newObject = {};
 
             if (isPlainObject(struct)) {
-                iterateObject(struct, function (element, prop) {
-                    defineProperty(newObject, prop, {
-                        "value": element.toString(),
-                        "enumerable": true,
-                        "configurable": true,
-                        "writable": true
-                    });
+                forEach(keys(struct), function (key) {
+                    newObject[key] = struct[key].toString();
                 });
             }
 
@@ -1468,44 +2457,15 @@
             if (isDateValid(date)) {
                 forEach(fullKeys, function (element) {
                     value = bignumber(date[element.local]());
-                    if (element.full === "month") {
+                    if (is(element.full, "month")) {
                         value = value.plus(1);
                     }
 
-                    defineProperty(struct, element.full, {
-                        "value": value,
-                        "enumerable": true,
-                        "configurable": true,
-                        "writable": true
-                    });
+                    struct[element.full] = value;
                 });
             }
 
             return struct;
-        }
-
-        function normaliseUnits(unitString) {
-            var unit,
-                length;
-
-            if (isString(unitString)) {
-                unitString = trim(unitString).toLowerCase();
-                length = unitString.length;
-                if (length > 2 && unitString.charAt(length - 1) === "s") {
-                    unitString = unitString.slice(0, -1);
-                }
-
-                some(fullKeys, function (element) {
-                    if (unitString === element.alias || unitString === element.full) {
-                        unit = element.full;
-                        return true;
-                    }
-
-                    return false;
-                });
-            }
-
-            return unit;
         }
 
         function julianToJd(struct) {
@@ -1532,51 +2492,21 @@
             var struct = {},
                 jd = bignumber(julianDay),
                 a,
-                b,
-                year,
-                month,
-                day;
+                b;
 
             if (jd.isFinite()) {
                 jd = jd.plus(0.5);
                 a = jd.plus(68569).floor();
                 b = a.times(4).div(146097).floor();
                 a = a.minus(b.times(146097).plus(3).div(4).floor());
-                year = a.plus(1).times(4000).div(1461001).floor();
-                a = a.minus(year.times(1461).div(4).floor()).plus(31);
-                month = a.times(80).div(2447).floor();
-                day = a.minus(month.times(2447).div(80).floor());
-                a = month.div(11).floor();
-                month = month.plus(2).minus(a.times(12));
-                year = b.minus(49).times(100).plus(year).plus(a).floor();
-
-                defineProperties(struct, {
-                    "year": {
-                        "value": year,
-                        "enumerable": true,
-                        "configurable": true,
-                        "writeable": true
-                    },
-                    "month": {
-                        "value": month,
-                        "enumerable": true,
-                        "configurable": true,
-                        "writeable": true
-                    },
-                    "day": {
-                        "value": day,
-                        "enumerable": true,
-                        "configurable": true,
-                        "writeable": true
-                    },
-                    "offset": {
-                        "value": bignumber(0),
-                        "enumerable": true,
-                        "configurable": true,
-                        "writeable": true
-                    }
-                });
-
+                struct.year = a.plus(1).times(4000).div(1461001).floor();
+                a = a.minus(struct.year.times(1461).div(4).floor()).plus(31);
+                struct.month = a.times(80).div(2447).floor();
+                struct.day = a.minus(struct.month.times(2447).div(80).floor());
+                a = struct.month.div(11).floor();
+                struct.month = struct.month.plus(2).minus(a.times(12));
+                struct.year = b.minus(49).times(100).plus(struct.year).plus(a).floor();
+                struct.offset = bignumber(0);
                 extend(struct, fractionToTime(jd.fractionalPart(), "day"));
             }
 
@@ -1591,10 +2521,7 @@
                 c,
                 d,
                 e,
-                g,
-                year,
-                month,
-                day;
+                g;
 
             if (jd.isFinite()) {
                 jd = jd.plus(0.5);
@@ -1605,46 +2532,20 @@
                 g = b.minus(d);
                 e = g.div(30.6001).floor();
 
-                day = g.minus(e.times(30.6001).floor());
+                struct.day = g.minus(e.times(30.6001).floor());
                 if (e.lt(14)) {
-                    month = e.minus(1);
+                    struct.month = e.minus(1);
                 } else {
-                    month = e.minus(13);
+                    struct.month = e.minus(13);
                 }
 
-                if (month.gt(2)) {
-                    year = c.minus(4716);
+                if (struct.month.gt(2)) {
+                    struct.year = c.minus(4716);
                 } else {
-                    year = c.minus(4715);
+                    struct.year = c.minus(4715);
                 }
 
-                defineProperties(struct, {
-                    "year": {
-                        "value": year,
-                        "enumerable": true,
-                        "configurable": true,
-                        "writeable": true
-                    },
-                    "month": {
-                        "value": month,
-                        "enumerable": true,
-                        "configurable": true,
-                        "writeable": true
-                    },
-                    "day": {
-                        "value": day,
-                        "enumerable": true,
-                        "configurable": true,
-                        "writeable": true
-                    },
-                    "offset": {
-                        "value": bignumber(0),
-                        "enumerable": true,
-                        "configurable": true,
-                        "writeable": true
-                    }
-                });
-
+                struct.offset = bignumber(0);
                 extend(struct, fractionToTime(jd.fractionalPart(), "day"));
             }
 
@@ -1717,17 +2618,17 @@
             if (isValid(struct)) {
                 index = 0;
                 string = "";
-                for (count = 0; count < 3; count += 1) {
+                for (count = 0; lt(count, 3); count += 1) {
                     if (isUndefined(struct[fullKeys[count].full])) {
                         index = 3;
                         break;
                     }
                 }
 
-                for (last = fullKeys.length - 1; index < last; index += 1) {
+                for (last = fullKeys.length - 1; lt(index, last); index += 1) {
                     key = fullKeys[index].full;
                     value = struct[key];
-                    if (key === "year") {
+                    if (is(key, "year")) {
                         if (value.lt(0)) {
                             string += "-";
                             padding = 6;
@@ -1737,21 +2638,21 @@
                         } else {
                             padding = 4;
                         }
-                    } else if (key === "hour") {
+                    } else if (is(key, "hour")) {
                         string += "T";
                         padding = 2;
-                    } else if (key === "millisecond") {
+                    } else if (is(key, "millisecond")) {
                         padding = 3;
                     } else {
                         padding = 2;
                     }
 
                     string += value.abs().padLeadingZero(padding);
-                    if (index < 2) {
+                    if (lt(index, 2)) {
                         string += "-";
-                    } else if (index > 2 && index < 5) {
+                    } else if (inRange(index, 3, 4)) {
                         string += ":";
-                    } else if (key === "second") {
+                    } else if (is(key, "second")) {
                         string += ".";
                     }
                 }
@@ -1815,18 +2716,15 @@
                         getTimezoneOffset,
                         signYear,
                         temp,
-                        last,
                         date,
                         time,
                         offset,
                         signOffset,
                         character,
-                        number,
-                        index,
                         element,
                         length,
                         timeFraction,
-                        isTime,
+                        isTimeOnly,
                         value;
 
                     if (!isString(isoString)) {
@@ -1834,24 +2732,24 @@
                     }
 
                     getTimezoneOffset = bignumber(new Date().getTimezoneOffset());
-                    temp = trim(isoString).split(/[T ]/);
+                    temp = split(trim(isoString), /[T ]/);
                     length = temp.length;
-                    if (length < 1 || length > 2) {
+                    if (!inRange(length, 1, 2)) {
                         return setInvalid(this);
                     }
 
                     element = temp[0];
-                    if (length === 1) {
-                        if (element.charAt(element.length - 1) === "Z" || element.indexOf(":") !== -1 || element.indexOf("+") > 1 || (element.charAt(0) !== "-" && element.charAt(4) !== "-" && element.split("-").length === 2)) {
-                            temp.unshift("");
-                            isTime = true;
+                    if (is(length, 1)) {
+                        if (is(lastChar(element), "Z") || !contains(element, ":") || gt(element.indexOf("+"), 1) || (!is(firstChar(element), "-") && !is(element.charAt(4), "-") && is(split(element, "-").length, 2))) {
+                            unshift(temp, "");
+                            isTimeOnly = true;
                         } else {
                             if (getTimezoneOffset.isZero()) {
                                 value = "Z";
                             } else {
                                 value = fractionToTime(getTimezoneOffset.abs(), "minute");
                                 value = value.hour.padLeadingZero(2) + ":" + value.minute.padLeadingZero(2);
-                                if (getTimezoneOffset.lt(0)) {
+                                if (getTimezoneOffset.lte(0)) {
                                     value = "-" + value;
                                 } else {
                                     value = "+" + value;
@@ -1859,25 +2757,23 @@
                             }
 
                             temp.push("00:00:00.000" + value);
-                            isTime = false;
+                            isTimeOnly = false;
                         }
-                    } else {
-                        if (!element.length) {
-                            isTime = true;
-                        }
+                    } else if (is(element.length, 0)) {
+                        isTimeOnly = true;
                     }
 
                     time = temp[1];
-                    character = time.charAt(0);
+                    character = firstChar(time);
                     if (!isDigit(character)) {
                         return setInvalid(this);
                     }
 
-                    if (!isTime) {
+                    if (!isTimeOnly) {
                         date = temp[0];
-                        character = date.charAt(0);
+                        character = firstChar(date);
                         if (!isDigit(character)) {
-                            if (character === "+" || character === "-") {
+                            if (is(character, "+") || is(character, "-")) {
                                 signYear = character;
                             } else {
                                 return setInvalid(this);
@@ -1886,92 +2782,91 @@
                             date = date.slice(1);
                         }
 
-                        if (date.indexOf("-") === -1) {
+                        if (!contains(date, "-")) {
                             temp = [];
                             length = date.length;
-                            if (length >= 8) {
-                                if (length >= 9 && isUndefined(signYear)) {
+                            if (gte(length, 8)) {
+                                if (gte(length, 9) && isUndefined(signYear)) {
                                     return setInvalid(this);
                                 }
 
-                                temp[0] = date.slice(0, length - 4);
-                                temp[1] = date.slice(length - 4, length - 2);
-                                temp[2] = date.slice(length - 2);
+                                temp.push(date.slice(0, length - 4));
+                                temp.push(date.slice(length - 4, length - 2));
+                                temp.push(date.slice(length - 2));
                             } else {
                                 return setInvalid(this);
                             }
                         } else {
-                            temp = date.split("-");
+                            temp = split(date, "-");
                         }
 
                         length = temp.length;
-                        if (length < 2 || length > 3) {
+                        if (!inRange(length, 2, 3)) {
                             return setInvalid(this);
                         }
 
-                        if (length === 2) {
+                        if (is(length, 2)) {
                             temp.push("01");
                         }
 
                         date = {};
-                        for (index = 0; index < 3; index += 1) {
-                            element = temp[index];
-                            length = element.length;
-                            number = intToNumber(bignumber(element));
-                            switch (index) {
-                            case 0:
-                                if (length < 4 || (signYear === "+" && length === 4) || (length > 4 && signYear !== "+" && signYear !== "-") || !number.isFinite()) {
-                                    return setInvalid(this);
+                        if (some(temp, function (val, idx) {
+                                var len = val.length,
+                                    num = intToNumber(bignumber(val));
+
+                                switch (idx) {
+                                case 0:
+                                    if (lt(len, 4) || (is(signYear, "+") && is(len, 4)) || (gt(len, 4) && !is(signYear, "+") && !is(signYear, "-")) || !num.isFinite()) {
+                                        return true;
+                                    }
+
+                                    if (is(signYear, "-")) {
+                                        num = num.neg();
+                                    }
+
+                                    break;
+                                case 1:
+                                    if (!is(len, 2) || !inMonthRange(num)) {
+                                        return true;
+                                    }
+
+                                    break;
+                                case 2:
+                                    if (!is(len, 2) || !inDayRange(num, daysInGregorianMonth(date))) {
+                                        return true;
+                                    }
+
+                                    break;
+                                default:
+                                    throw new Error();
                                 }
 
-                                if (signYear === "-") {
-                                    number = number.neg();
-                                }
+                                date[fullKeys[idx].full] = num;
 
-                                break;
-                            case 1:
-                                if (length !== 2 || !inMonthRange(number)) {
-                                    return setInvalid(this);
-                                }
+                                return false;
+                            })) {
 
-                                break;
-                            case 2:
-                                if (length !== 2 || !inDayRange(number, daysInGregorianMonth(date))) {
-                                    return setInvalid(this);
-                                }
-
-                                break;
-                            default:
-                                return setInvalid(this);
-                            }
-
-                            defineProperty(date, fullKeys[index].full, {
-                                "value": number,
-                                "enumerable": true,
-                                "configurable": true,
-                                "writable": true
-                            });
+                            return setInvalid(this);
                         }
                     }
 
-                    last = time.length - 1;
-                    character = time.charAt(last);
+                    character = lastChar(time);
                     if (!isDigit(character)) {
-                        if (character === "Z") {
-                            time = time.slice(0, last) + "+00";
+                        if (is(character, "Z")) {
+                            time = time.slice(0, -1) + "+00";
                         } else {
                             return setInvalid(this);
                         }
                     }
 
-                    temp = time.split(/[\-+]/);
+                    temp = split(time, /[\-+]/);
                     length = temp.length;
-                    if (length < 1 || length > 2) {
+                    if (!inRange(length, 1, 2)) {
                         return setInvalid(this);
                     }
 
-                    if (length === 1) {
-                        if (getTimezoneOffset === 0) {
+                    if (is(length, 1)) {
+                        if (is(getTimezoneOffset, 0)) {
                             value = "00";
                         } else {
                             value = fractionToTime(Math.abs(getTimezoneOffset), "minute");
@@ -1981,55 +2876,53 @@
                         temp.push(value);
                     }
 
-                    if (time.indexOf("-") !== -1) {
+                    if (contains(time, "-")) {
                         signOffset = -1;
                     } else {
                         signOffset = 1;
                     }
 
-                    offset = temp[1].split(":");
+                    offset = split(temp[1], ":");
                     length = offset.length;
-                    if (length < 1 || length > 2) {
+                    if (!inRange(length, 1, 2)) {
                         return setInvalid(this);
                     }
 
-                    if (length === 1) {
+                    if (is(length, 1)) {
                         element = offset[0];
                         switch (offset[0].length) {
                         case 4:
-                            offset[0] = element.slice(0, 2);
-                            offset[1] = element.slice(2);
+                            offset.push(element.slice(0, 2));
+                            offset.push(element.slice(2));
                             break;
                         case 2:
-                            offset[0] = element;
-                            offset[1] = "00";
+                            offset.push(element);
+                            offset.push("00");
                             break;
                         default:
                             return setInvalid(this);
                         }
                     }
 
-                    number = intToNumber(bignumber(offset[0]));
-                    if (!inHourRange(number)) {
+                    offset[0] = intToNumber(bignumber(offset[0]));
+                    if (!inHourRange(offset[0])) {
                         return setInvalid(this);
                     }
 
-                    offset[0] = number;
-                    number = intToNumber(bignumber(offset[1]));
-                    if (!inMinuteRange(number, offset[0])) {
+                    offset[1] = intToNumber(bignumber(offset[1]));
+                    if (!inMinuteRange(offset[1], offset[0])) {
                         return setInvalid(this);
                     }
 
-                    offset[1] = number;
-                    if (signOffset === -1 && offset[0].isZero() && offset[1].isZero()) {
+                    if (is(signOffset, -1) && offset[0].isZero() && offset[1].isZero()) {
                         return setInvalid(this);
                     }
 
                     time = temp[0];
-                    if (time.indexOf(".") !== -1 || time.indexOf(",") !== -1) {
-                        temp = time.split(/[\.,]/);
+                    if (contains(time, ".") || contains(time, ",")) {
+                        temp = split(time, /[\.,]/);
                         element = temp[1];
-                        if (temp.length !== 2 || element.split(":").length !== 1) {
+                        if (!is(temp.length, 2) || !is(split(element, ":").length, 1)) {
                             return setInvalid(this);
                         }
 
@@ -2039,110 +2932,105 @@
                         timeFraction = bignumber(0);
                     }
 
-                    if (time.indexOf(":") === -1) {
+                    if (!contains(time, ":")) {
                         temp = [];
                         switch (time.length) {
                         case 6:
-                            temp[0] = time.slice(0, 2);
-                            temp[1] = time.slice(2, 4);
-                            temp[2] = time.slice(4);
+                            temp.push(time.slice(0, 2));
+                            temp.push(time.slice(2, 4));
+                            temp.push(time.slice(4));
                             break;
                         case 4:
-                            temp[0] = time.slice(0, 2);
-                            temp[1] = time.slice(2);
+                            temp.push(time.slice(0, 2));
+                            temp.push(time.slice(2));
                             break;
                         case 2:
-                            temp[0] = time;
+                            temp.push(time);
                             break;
                         default:
                             return setInvalid(this);
                         }
                     } else {
-                        temp = time.split(":");
+                        temp = split(time, ":");
                     }
 
                     length = temp.length;
-                    if (length < 1 || length > 3) {
+                    if (!inRange(length, 1, 3)) {
                         return setInvalid(this);
                     }
 
                     if (!timeFraction.isZero()) {
                         timeFraction = fractionToTime(timeFraction, fullKeys[length + 2].full);
-                        if (length < 2) {
+                        if (lt(length, 2)) {
                             temp.push(timeFraction.minute.padLeadingZero(2));
                         }
 
-                        if (length < 3) {
+                        if (lt(length, 3)) {
                             temp.push(timeFraction.second.padLeadingZero(2));
                         }
 
-                        if (length < 4) {
+                        if (lt(length, 4)) {
                             temp.push(timeFraction.millisecond.padLeadingZero(3));
                         }
                     } else {
-                        if (length < 2) {
+                        if (lt(length, 2)) {
                             temp.push("00");
                         }
 
-                        if (length < 3) {
+                        if (lt(length, 3)) {
                             temp.push("00");
                         }
 
-                        if (length < 4) {
+                        if (lt(length, 4)) {
                             temp.push("000");
                         }
                     }
 
                     time = {};
-                    for (index = 0; index < 4; index += 1) {
-                        number = intToNumber(bignumber(temp[index]));
-                        switch (index) {
-                        case 0:
-                            if (!inHourRange(number)) {
-                                return setInvalid(this);
+                    if (some(temp, function (val, idx) {
+                            var num = intToNumber(bignumber(val));
+
+                            switch (idx) {
+                            case 0:
+                                if (!inHourRange(num)) {
+                                    return true;
+                                }
+
+                                break;
+                            case 1:
+                                if (!inMinuteRange(num, time.hour)) {
+                                    return true;
+                                }
+
+                                break;
+                            case 2:
+                                if (!inSecondRange(num, time.hour)) {
+                                    return true;
+                                }
+
+                                break;
+                            case 3:
+                                if (!inMillisecondRange(num, time.hour)) {
+                                    return true;
+                                }
+
+                                break;
+                            default:
+                                throw new Error(idx);
                             }
 
-                            break;
-                        case 1:
-                            if (!inMinuteRange(number, time.hour)) {
-                                return setInvalid(this);
-                            }
+                            time[fullKeys[idx + 3].full] = num;
 
-                            break;
-                        case 2:
-                            if (!inSecondRange(number, time.hour)) {
-                                return setInvalid(this);
-                            }
+                            return false;
+                        })) {
 
-                            break;
-                        case 3:
-                            if (!inMillisecondRange(number, time.hour)) {
-                                return setInvalid(this);
-                            }
-
-                            break;
-                        default:
-                            return setInvalid(this);
-                        }
-
-                        defineProperty(time, fullKeys[index + 3].full, {
-                            "value": number,
-                            "enumerable": true,
-                            "configurable": true,
-                            "writable": true
-                        });
+                        return setInvalid(this);
                     }
 
-                    if (!isTime) {
+                    time.offset = offset[0].times(60).plus(offset[1]).times(signOffset);
+                    if (!isTimeOnly) {
                         extend(dateObject, date);
                     }
-
-                    defineProperty(time, "offset", {
-                        "value": offset[0].times(60).plus(offset[1]).times(signOffset),
-                        "enumerable": true,
-                        "configurable": true,
-                        "writable": true
-                    });
 
                     extend(dateObject, time);
 
@@ -2164,12 +3052,10 @@
 
             "valueOf": {
                 "value": function () {
-                    var struct = this.getter();
+                    var struct;
 
-                    if (isValid(struct)) {
-                        struct = structToObject(struct);
-                    } else {
-                        struct = local_undefined;
+                    if (this.isValid()) {
+                        struct = structToObject(this.getter());
                     }
 
                     return struct;
@@ -2178,11 +3064,10 @@
 
             "toArray": {
                 "value": function () {
-                    var struct = this.getter(),
-                        arr;
+                    var arr;
 
-                    if (isValid(struct)) {
-                        arr = map(structToArray(struct), function (element) {
+                    if (this.isValid()) {
+                        arr = map(structToArray(this.getter()), function (element) {
                             return element.toString();
                         });
                     }
@@ -2253,7 +3138,7 @@
                                 valid = inMonthRange(bn);
                                 break;
                             case "day":
-                                if (isJulian === true) {
+                                if (is(isJulian, true)) {
                                     dim = daysInJulianMonth(struct);
                                 } else {
                                     dim = daysInGregorianMonth(struct);
@@ -2281,12 +3166,7 @@
                             }
 
                             if (valid) {
-                                defineProperty(struct, unit, {
-                                    "value": bn,
-                                    "enumerable": true,
-                                    "configurable": true,
-                                    "writable": true
-                                });
+                                struct[unit] = bn;
                             } else {
                                 struct = {};
                             }
@@ -2579,7 +3459,7 @@
 
                     if (isUndefined(date)) {
                         if (this.isValid()) {
-                            val = new Date(parseInt(this.getTime(this), 10));
+                            val = new Date(parseInt(this.getTime(), 10));
                         } else {
                             val = new Date(NaN);
                         }
@@ -2598,7 +3478,7 @@
                     var val;
 
                     if (this.isValid()) {
-                        val = getTime(this).toString();
+                        val = getTime(gregorianToJd(this.getter())).toString();
                     }
 
                     return val;
@@ -2789,9 +3669,9 @@
                         if (isFunction(JSON.stringify)) {
                             val = JSON.stringify(this.object());
                         } else {
-                            propArray = [];
-                            iterateObject(this.object(), function (element, prop) {
-                                propArray.push('"' + prop + '":"' + element + '"');
+                            struct = this.object();
+                            propArray = map(keys(struct), function (key) {
+                                return '"' + key + '":"' + struct[key] + '"';
                             });
 
                             val = "{" + propArray.join(",") + "}";
@@ -2844,10 +3724,43 @@
 
             "isAstroDate": {
                 "value": function (inputArg) {
-                    return isObject(inputArg) && (instanceOf(inputArg, AstroDate) || inputArg instanceof AstroDate);
+                    return isObject(inputArg) && instanceOf(inputArg, AstroDate);
                 }
             }
         });
+
+        defineProperties(defaultProperties, {
+            0: {
+                "value": "toString",
+                "enumerable": true
+            },
+            1: {
+                "value": "toLocaleString",
+                "enumerable": true
+            },
+            2: {
+                "value": "valueOf",
+                "enumerable": true
+            },
+            3: {
+                "value": "hasOwnProperty",
+                "enumerable": true
+            },
+            4: {
+                "value": "isPrototypeOf",
+                "enumerable": true
+            },
+            5: {
+                "value": "propertyIsEnumerable",
+                "enumerable": true
+            },
+            6: {
+                "value": "constructor",
+                "enumerable": true
+            }
+        });
+
+        deepFreeze(defaultProperties);
 
         defineProperties(fullKeys, {
             0: {
@@ -2916,12 +3829,16 @@
             }
         });
 
+        deepFreeze(fullKeys);
+
         defineProperties(shortNameLength, {
             "en-GB": {
-                "value": 3
+                "value": 3,
+                "enumerable": true
             },
             "sv-SE": {
-                "value": 3
+                "value": 3,
+                "enumerable": true
             }
         });
 
@@ -3064,6 +3981,16 @@
             }
         });
 
+        forEach([BigNumber, BigNumber.prototype], function (element) {
+            forEach(keys(element), function (key) {
+                defineProperty(element, key, {
+                    "enumerable": false,
+                    "configurable": false,
+                    "writeable": false
+                });
+            });
+        });
+
         return AstroDate;
     }));
-}(this, void(0)));
+}(this));
