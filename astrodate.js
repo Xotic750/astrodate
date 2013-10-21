@@ -86,12 +86,12 @@
                 //j2000 = [2000, 1, 1, 11, 58, 55, 816],
                 extend,
                 arrayIndexOf,
-                defineProperty,
-                defineProperties,
+                objectDefineProperty,
+                objectDefineProperties,
                 objectFreeze,
                 objectIsFrozen,
                 objectHasOwnProperty,
-                getOwnPropertyDescriptor,
+                objectGetOwnPropertyDescriptor,
                 arrayIsArray,
                 objectInstanceOf,
                 objectGetPrototypeOf,
@@ -117,8 +117,7 @@
                 numberIsNaN,
                 numberIsFinite,
                 mathSign,
-                AstroDate,
-                isBigNumber;
+                AstroDate;
 
             function toNumber(inputArg) {
                 return +inputArg;
@@ -175,6 +174,22 @@
             function isString(inputArg) {
                 return strictEqual(typeof inputArg, "string");
             }
+
+            /*
+            function isNumeric(inputArg) {
+                var val = false,
+                    string;
+
+                if (isNumber(inputArg) || isString(inputArg)) {
+                    string = inputArg.toString().replace(/^[+\-]?/, "");
+                    if (!isNaN(parseFloat(string)) && isFinite(string)) {
+                        val = true;
+                    }
+                }
+
+                return val;
+            }
+            */
 
             function checkObjectCoercible(inputArg) {
                 if (isUndefined(inputArg) || isNull(inputArg)) {
@@ -838,7 +853,7 @@
                 // http://kangax.github.io/nfe
                 var getPrototypeOfFN = baseObject.constructor.getPrototypeOf,
                     nfeGetPrototypeOf,
-                    oPrototype;
+                    bocProto;
 
                 if (isFunction(getPrototypeOfFN)) {
                     tempSafariNFE = getPrototypeOfFN;
@@ -847,19 +862,19 @@
                         return object[protoName];
                     };
                 } else {
-                    oPrototype = baseObject.constructor.prototype;
+                    bocProto = baseObject.constructor.prototype;
                     tempSafariNFE = function nfeGetPrototypeOf(object) {
-                        if (objectIs(object, oPrototype)) {
+                        if (objectIs(object, bocProto)) {
                             return null;
                         }
 
-                        var prototype = object.constructor.prototype;
+                        var ctrProto = object.constructor.prototype;
 
-                        if (objectIs(object, prototype)) {
-                            return oPrototype;
+                        if (objectIs(object, ctrProto)) {
+                            return bocProto;
                         }
 
-                        return prototype;
+                        return ctrProto;
                     };
                 }
 
@@ -881,13 +896,13 @@
                 var hasOwnPropertyFN = baseObject.hasOwnProperty, // to combat old IE8- issues, min support IE6
                     propertyIsEnumerableFN = baseObject.propertyIsEnumerable,
                     hasDontEnumBug = true,
-                    test = {
+                    testObject = {
                         "toString": null
                     },
                     nfeHasOwnProperty;
 
                 // use nfeHasOwnProperty to save a var
-                for (nfeHasOwnProperty in test) {
+                for (nfeHasOwnProperty in testObject) {
                     hasDontEnumBug = false;
                 }
 
@@ -1218,23 +1233,25 @@
                     testString,
                     whiteSpacesString,
                     wsTrimRX,
-                    nfeTrim;
+                    nfeTrim,
+                    nfeBuildTestString,
+                    nfeBuildWhiteSpaceString;
 
-                function buildTestString(previous, element) {
+                tempSafariNFE = function nfeBuildTestString(previous, element) {
                     return previous + String.fromCharCode(element);
-                }
+                };
 
-                function buildWhiteSpaceString(previous, element) {
-                    return previous + "\\u" + padLeadingChar(element.toString(16), "0", 4);
-                }
-
-                testString = arrayReduce(whiteSpacesList, buildTestString, "");
+                testString = arrayReduce(whiteSpacesList, tempSafariNFE, "");
                 if (isFunction(trimFN) && objectIs(trimFN.call(testString).length, 0)) {
                     tempSafariNFE = function nfeTrim(inputArg) {
                         return trimFN.call(inputArg);
                     };
                 } else {
-                    whiteSpacesString = arrayReduce(whiteSpacesList, buildWhiteSpaceString, "");
+                    tempSafariNFE = function nfeBuildWhiteSpaceString(previous, element) {
+                        return previous + "\\u" + padLeadingChar(element.toString(16), "0", 4);
+                    };
+
+                    whiteSpacesString = arrayReduce(whiteSpacesList, tempSafariNFE, "");
                     wsTrimRX = new RegExp("^[" + whiteSpacesString + "]+|[" + whiteSpacesString + "]+$", "g");
                     tempSafariNFE = function nfeTrim(inputArg) {
                         return anyToString(checkObjectCoercible(inputArg)).replace(wsTrimRX, "");
@@ -1242,6 +1259,8 @@
                 }
 
                 nfeTrim = null;
+                nfeBuildTestString = null;
+                nfeBuildWhiteSpaceString = null;
 
                 return tempSafariNFE;
             }());
@@ -1342,21 +1361,25 @@
 
             // http://ecma-international.org/ecma-262/5.1/#sec-15.4.4.14
             // Create our own local "defineProperty" function: native -> sham
-            defineProperty = (function () {
+            // named objectDefineProperty instead of defineProperty because of SpiderMonkey and Blackberry bug
+            objectDefineProperty = (function () {
+                // Unused variable for JScript NFE bug
+                // http://kangax.github.io/nfe
                 var definePropertyFN = baseObject.constructor.defineProperty,
                     defineGetter = "__defineGetter__",
                     defineSetter = "__defineSetter__",
                     defineGetterFN,
                     defineSetterFN,
-                    test;
+                    testObject,
+                    nfeDefineProperty;
 
                 if (isFunction(definePropertyFN)) {
                     try {
-                        test = definePropertyFN({}, "sentinel", {
+                        testObject = definePropertyFN({}, "sentinel", {
                             "value": null
                         });
 
-                        if (!isNull(test.sentinel)) {
+                        if (!isNull(testObject.sentinel)) {
                             definePropertyFN = null;
                         }
                     } catch (exception) {
@@ -1364,10 +1387,12 @@
                     }
                 }
 
-                if (!isFunction(definePropertyFN)) {
+                if (isFunction(definePropertyFN)) {
+                    tempSafariNFE = definePropertyFN;
+                } else {
                     defineGetterFN = baseObject[defineGetter];
                     defineSetterFN = baseObject[defineSetter];
-                    definePropertyFN = function (object, property, descriptor) {
+                    tempSafariNFE = function nfeDefineProperty(object, property, descriptor) {
                         var prototype;
 
                         if (!isTypeObject(object) && !isFunction(object)) {
@@ -1406,15 +1431,23 @@
                     };
                 }
 
-                return definePropertyFN;
+                nfeDefineProperty = null;
+
+                return tempSafariNFE;
             }());
 
             // Create our own local "defineProperties" function: native -> sham
-            defineProperties = (function () {
-                var definePropertiesFN = baseObject.constructor.defineProperties;
+            // named objectDefineProperties instead of defineProperties because of SpiderMonkey and Blackberry bug
+            objectDefineProperties = (function () {
+                // Unused variable for JScript NFE bug
+                // http://kangax.github.io/nfe
+                var definePropertiesFN = baseObject.constructor.defineProperties,
+                    nfeDefineProperties;
 
-                if (!isFunction(definePropertiesFN)) {
-                    definePropertiesFN = function (object, props) {
+                if (isFunction(definePropertiesFN)) {
+                    tempSafariNFE = definePropertiesFN;
+                } else {
+                    tempSafariNFE = function nfeDefineProperties(object, props) {
                         if (!isTypeObject(object) && !isFunction(object)) {
                             throw new TypeError("Object.defineProperties called on non-object");
                         }
@@ -1424,32 +1457,38 @@
                         }
 
                         arrayForEach(objectKeys(props), function (key) {
-                            defineProperty(object, key, props[key]);
+                            objectDefineProperty(object, key, props[key]);
                         });
 
                         return object;
                     };
                 }
 
-                return definePropertiesFN;
+                nfeDefineProperties = null;
+
+                return tempSafariNFE;
             }());
 
             // Create our own local "getOwnPropertyDescriptor" function: native -> sham
-            getOwnPropertyDescriptor = (function () {
+            // named objectGetOwnPropertyDescriptor instead of getOwnPropertyDescriptor because of SpiderMonkey and Blackberry bug
+            objectGetOwnPropertyDescriptor = (function () {
+                // Unused variable for JScript NFE bug
+                // http://kangax.github.io/nfe
                 var getOwnPropertyDescriptorFN = baseObject.constructor.getOwnPropertyDescriptor,
                     lookupGetter = "__lookupGetter__",
                     lookupSetter = "__lookupSetter__",
                     lookupGetterFN,
                     lookupSetterFN,
-                    test;
+                    testObject,
+                    nfeGetOwnPropertyDescriptor;
 
                 if (isFunction(getOwnPropertyDescriptorFN)) {
                     try {
-                        test = {
+                        testObject = {
                             "sentinel": null
                         };
 
-                        if (!isNull(getOwnPropertyDescriptorFN(test, "sentinel").value)) {
+                        if (!isNull(getOwnPropertyDescriptorFN(testObject, "sentinel").value)) {
                             getOwnPropertyDescriptorFN = null;
                         }
                     } catch (exception) {
@@ -1457,10 +1496,12 @@
                     }
                 }
 
-                if (!isFunction(getOwnPropertyDescriptorFN)) {
+                if (isFunction(getOwnPropertyDescriptorFN)) {
+                    tempSafariNFE = getOwnPropertyDescriptorFN;
+                } else {
                     lookupGetterFN = baseObject[lookupGetter];
                     lookupSetterFN = baseObject[lookupSetter];
-                    getOwnPropertyDescriptorFN = function (object, property) {
+                    tempSafariNFE = function nfeGetOwnPropertyDescriptor(object, property) {
                         var descriptor,
                             prototype,
                             getter,
@@ -1500,6 +1541,8 @@
                         return descriptor;
                     };
                 }
+
+                nfeGetOwnPropertyDescriptor = null;
 
                 return getOwnPropertyDescriptorFN;
             }());
@@ -1582,16 +1625,14 @@
             }());
 
             function deepFreeze(object) {
-                var prop,
-                    propKey;
-
                 objectFreeze(object);
-                for (propKey in object) {
-                    prop = object[propKey];
-                    if (objectHasOwnProperty(object, propKey) && (isTypeObject(prop) || isFunction(prop)) && !objectIsFrozen(prop)) {
+                arrayForEach(objectKeys(object), function (propKey) {
+                    var prop = object[propKey];
+
+                    if ((isTypeObject(prop) || isFunction(prop)) && !objectIsFrozen(prop)) {
                         deepFreeze(prop);
                     }
-                }
+                });
             }
 
             // named objectInstanceOf instead of instanceOf because of SpiderMonkey and Blackberry bug
@@ -1602,23 +1643,23 @@
                     nfeInstanceOf;
 
                 if (isFunction(isPrototypeOfFN)) {
-                    tempSafariNFE = function nfeInstanceOf(object, constructor) {
-                        if (!isFunction(constructor)) {
+                    tempSafariNFE = function nfeInstanceOf(object, ctr) {
+                        if (!isFunction(ctr)) {
                             throw new TypeError("Expecting a function in instanceOf check");
                         }
 
-                        return isPrototypeOfFN.call(constructor.prototype, object);
+                        return isPrototypeOfFN.call(ctr.prototype, object);
                     };
                 } else if (isFunction(objectGetPrototypeOf)) {
-                    tempSafariNFE = function nfeInstanceOf(object, constructor) {
-                        if (!isFunction(constructor)) {
+                    tempSafariNFE = function nfeInstanceOf(object, ctr) {
+                        if (!isFunction(ctr)) {
                             throw new TypeError("Expecting a function in instanceOf check");
                         }
 
                         var val = false;
 
                         while (object) {
-                            if (objectIs(object, constructor.prototype)) {
+                            if (objectIs(object, ctr.prototype)) {
                                 val = true;
                                 break;
                             }
@@ -1661,7 +1702,7 @@
                     }
 
                     arrayForEach(objectKeys(source), function (key) {
-                        defineProperty(target, key, getOwnPropertyDescriptor(source, key));
+                        objectDefineProperty(target, key, objectGetOwnPropertyDescriptor(source, key));
                     });
 
                     return target;
@@ -1672,7 +1713,7 @@
                 return tempSafariNFE;
             }());
 
-            defineProperties(BigNumber.prototype, {
+            objectDefineProperties(BigNumber.prototype, {
                 "integerPart": {
                     "value": function () {
                         var bn = this;
@@ -1741,7 +1782,7 @@
 
                                 n = this.toString();
                                 if (!factorialLookup[n]) {
-                                    config = BigNumber.config();
+                                    config = new BigNumber.config();
                                     previousConfig = {};
                                     extend(previousConfig, config);
 
@@ -1782,7 +1823,7 @@
                 }
             });
 
-            defineProperties(BigNumber, {
+            objectDefineProperties(BigNumber, {
                 "isBigNumber": {
                     "value": function (inputArg) {
                         return isObject(inputArg) && objectInstanceOf(inputArg, BigNumber);
@@ -1819,7 +1860,7 @@
 
                         return function (decimalPlaces) {
                             if (!numberIsFinite(decimalPlaces) || lt(decimalPlaces, 0)) {
-                                decimalPlaces = BigNumber.config().DECIMAL_PLACES;
+                                decimalPlaces = new BigNumber.config().DECIMAL_PLACES;
                             } else {
                                 decimalPlaces = Math.floor(decimalPlaces);
                             }
@@ -1836,7 +1877,7 @@
                                 b;
 
                             if (!piLookup[lookupProp]) {
-                                config = BigNumber.config();
+                                config = new BigNumber.config();
                                 previousConfig = {};
                                 extend(previousConfig, config);
 
@@ -1894,7 +1935,7 @@
 
                 "toPositiveAngle": {
                     "value": function (angle) {
-                        var newAngle = BigNumber.normaliseAngle(angle);
+                        var newAngle = new BigNumber.normaliseAngle(angle);
 
                         if (lt(newAngle, 0)) {
                             newAngle = newAngle.plus(360);
@@ -1909,7 +1950,7 @@
                         var sineLookup = {};
 
                         return function (angle) {
-                            var newAngle = BigNumber.normaliseAngle(angle),
+                            var newAngle = new BigNumber.normaliseAngle(angle),
                                 lookupProp = newAngle.toString(),
                                 sum,
                                 prev,
@@ -1924,7 +1965,7 @@
                                 k = 3;
                                 while (!sum.equals(prev)) {
                                     prev = sum;
-                                    fact = BigNumber.factorial(k);
+                                    fact = new BigNumber.factorial(k);
                                     if (objectIs(mod(mod(i, 2), 2), 1)) {
                                         sum = sum.minus(newAngle.pow(k).div(fact));
                                     } else {
@@ -1960,16 +2001,6 @@
             NotImplimentedError.prototype = new Error();
             */
 
-            isBigNumber = BigNumber.isBigNumber;
-
-            function bignumber(inputArg) {
-                if (!isNumber(inputArg) && !isString(inputArg) && !isBigNumber(inputArg)) {
-                    inputArg = NaN;
-                }
-
-                return new BigNumber(inputArg);
-            }
-
             function isDateValid(dateObject) {
                 return isDate(dateObject) && !numberIsNaN(dateObject.getTime());
             }
@@ -1982,7 +2013,7 @@
                 var number = input;
 
                 if (!number.isFinite(number) || !number.fractionalPart().isZero()) {
-                    number = bignumber(NaN);
+                    number = new BigNumber(NaN);
                 }
 
                 return number;
@@ -2000,7 +2031,7 @@
                 var days;
 
                 if (struct.month.eq(2)) {
-                    days = bignumber(28);
+                    days = new BigNumber(28);
                     if (isGregorianLeapYear(struct)) {
                         days = days.plus(1);
                     }
@@ -2012,7 +2043,7 @@
             }
 
             function daysInJulianMonth(struct) {
-                var days = bignumber(28);
+                var days = new BigNumber(28);
 
                 if (struct.month.eq(2) && isJulianLeapYear(struct)) {
                     days = days.plus(1);
@@ -2022,7 +2053,7 @@
             }
 
             function daysInGregorianYear(struct) {
-                var days = bignumber(365);
+                var days = new BigNumber(365);
 
                 if (isGregorianLeapYear(struct)) {
                     days = days.plus(1);
@@ -2032,7 +2063,7 @@
             }
 
             function daysInJulianYear(struct) {
-                var days = bignumber(365);
+                var days = new BigNumber(365);
 
                 if (isJulianLeapYear(struct)) {
                     days = days.plus(1);
@@ -2081,7 +2112,7 @@
                         var bn = struct[element.full],
                             dim;
 
-                        if (!isBigNumber(bn)) {
+                        if (!BigNumber.isBigNumber(bn)) {
                             return true;
                         }
 
@@ -2244,7 +2275,7 @@
                     h = 0;
                 }
 
-                return bignumber(1721424.5).plus(c).plus(d).plus(e).plus(f).plus(g.plus(h).plus(struct.day).floor()).plus(timeTo(struct, "day"));
+                return new BigNumber(1721424.5).plus(c).plus(d).plus(e).plus(f).plus(g.plus(h).plus(struct.day).floor()).plus(timeTo(struct, "day"));
             }
 
             function makeNameShort(name, lang) {
@@ -2308,7 +2339,7 @@
                     totalMs,
                     days;
 
-                fraction = bignumber(fraction);
+                fraction = new BigNumber(fraction);
                 switch (fractionIn) {
                 case "year":
                     if (objectIs(julian, true)) {
@@ -2362,8 +2393,8 @@
             // DeltaT
             //http://eclipse.gsfc.nasa.gov/SEhelp/deltatpoly2004.html
             function deltaTime(struct, canonCorrection) {
-                var year = bignumber(struct.year),
-                    month = bignumber(struct.month),
+                var year = new BigNumber(struct.year),
+                    month = new BigNumber(struct.month),
                     y = year.plus(month.minus(0.5).div(12)),
                     u,
                     t,
@@ -2372,42 +2403,42 @@
                 if (year.gte(-500) && year.lte(2150)) {
                     if (year.lt(500)) {
                         u = y.div(100);
-                        r = bignumber(10583.6).minus(u.times(1014.41)).plus(u.pow(2).times(33.78311)).minus(u.pow(3).times(5.952053)).minus(u.pow(4).times(0.1798452)).plus(u.pow(5).times(0.022174192)).plus(u.pow(6).times(0.0090316521));
+                        r = new BigNumber(10583.6).minus(u.times(1014.41)).plus(u.pow(2).times(33.78311)).minus(u.pow(3).times(5.952053)).minus(u.pow(4).times(0.1798452)).plus(u.pow(5).times(0.022174192)).plus(u.pow(6).times(0.0090316521));
                     } else if (year.lt(1600)) {
                         u = y.minus(1000).div(100);
-                        r = bignumber(1574.2).minus(u.times(556.01)).plus(u.pow(2).times(71.23472)).plus(u.pow(3).times(0.319781)).minus(u.pow(4).times(0.8503463)).minus(u.pow(5).times(0.005050998)).plus(u.pow(6).times(0.0083572073));
+                        r = new BigNumber(1574.2).minus(u.times(556.01)).plus(u.pow(2).times(71.23472)).plus(u.pow(3).times(0.319781)).minus(u.pow(4).times(0.8503463)).minus(u.pow(5).times(0.005050998)).plus(u.pow(6).times(0.0083572073));
                     } else if (year.lt(1700)) {
                         t = y.minus(1600);
-                        r = bignumber(120).minus(t.times(0.9808)).minus(t.pow(2).times(0.01532)).plus(t.pow(3).div(7129));
+                        r = new BigNumber(120).minus(t.times(0.9808)).minus(t.pow(2).times(0.01532)).plus(t.pow(3).div(7129));
                     } else if (year.lt(1800)) {
                         t = y.minus(1700);
-                        r = bignumber(8.83).plus(t.times(0.1603)).minus(t.pow(2).times(0.0059285)).plus(t.pow(3).times(0.00013336)).minus(t.pow(4).div(1174000));
+                        r = new BigNumber(8.83).plus(t.times(0.1603)).minus(t.pow(2).times(0.0059285)).plus(t.pow(3).times(0.00013336)).minus(t.pow(4).div(1174000));
                     } else if (year.lt(1860)) {
                         t = y.minus(1800);
-                        r = bignumber(13.72).minus(t.times(0.332447)).plus(t.pow(2).times(0.0068612)).plus(t.pow(3).times(0.0041116)).minus(t.pow(4).times(0.00037436)).plus(t.pow(5).times(0.0000121272)).minus(t.pow(6).times(0.0000001699)).plus(t.pow(7).times(0.000000000875));
+                        r = new BigNumber(13.72).minus(t.times(0.332447)).plus(t.pow(2).times(0.0068612)).plus(t.pow(3).times(0.0041116)).minus(t.pow(4).times(0.00037436)).plus(t.pow(5).times(0.0000121272)).minus(t.pow(6).times(0.0000001699)).plus(t.pow(7).times(0.000000000875));
                     } else if (year.lt(1900)) {
                         t = y.minus(1860);
-                        r = bignumber(7.62).plus(t.times(0.5737)).minus(t.pow(2).times(0.251754)).plus(t.pow(3).times(0.01680668)).minus(t.pow(4).times(0.0004473624)).plus(t.pow(5).div(233174));
+                        r = new BigNumber(7.62).plus(t.times(0.5737)).minus(t.pow(2).times(0.251754)).plus(t.pow(3).times(0.01680668)).minus(t.pow(4).times(0.0004473624)).plus(t.pow(5).div(233174));
                     } else if (year.lt(1920)) {
                         t = y.minus(1900);
-                        r = bignumber(-2.79).plus(t.times(1.494119)).minus(t.pow(2).times(0.0598939)).plus(t.pow(3).times(0.0061966)).minus(t.pow(4).times(0.000197));
+                        r = new BigNumber(-2.79).plus(t.times(1.494119)).minus(t.pow(2).times(0.0598939)).plus(t.pow(3).times(0.0061966)).minus(t.pow(4).times(0.000197));
                     } else if (year.lt(1941)) {
                         t = y.minus(1920);
-                        r = bignumber(21.20).plus(t.times(0.84493)).minus(t.pow(2).times(0.076100)).plus(t.pow(3).times(0.0020936));
+                        r = new BigNumber(21.20).plus(t.times(0.84493)).minus(t.pow(2).times(0.076100)).plus(t.pow(3).times(0.0020936));
                     } else if (year.lt(1961)) {
                         t = y.minus(1950);
-                        r = bignumber(29.07).plus(t.times(0.407)).minus(t.pow(2).div(233)).plus(t.pow(3).div(2547));
+                        r = new BigNumber(29.07).plus(t.times(0.407)).minus(t.pow(2).div(233)).plus(t.pow(3).div(2547));
                     } else if (year.lt(1986)) {
                         t = y.minus(1975);
-                        r = bignumber(45.45).plus(t.times(1.067)).minus(t.pow(2).div(260)).minus(t.pow(3).div(718));
+                        r = new BigNumber(45.45).plus(t.times(1.067)).minus(t.pow(2).div(260)).minus(t.pow(3).div(718));
                     } else if (year.lt(2005)) {
                         t = y.minus(2000);
-                        r = bignumber(63.86).plus(t.times(0.3345)).minus(t.pow(2).times(0.060374)).plus(t.pow(3).times(0.0017275)).plus(t.pow(4).times(0.000651814)).plus(t.pow(5).times(0.00002373599));
+                        r = new BigNumber(63.86).plus(t.times(0.3345)).minus(t.pow(2).times(0.060374)).plus(t.pow(3).times(0.0017275)).plus(t.pow(4).times(0.000651814)).plus(t.pow(5).times(0.00002373599));
                     } else if (year.lt(2005)) {
                         t = y.minus(2000);
-                        r = bignumber(62.92).plus(t.times(0.32217)).plus(t.pow(2).times(0.005589));
+                        r = new BigNumber(62.92).plus(t.times(0.32217)).plus(t.pow(2).times(0.005589));
                     } else {
-                        r = bignumber(-20).plus(y.minus(1820).div(100).pow(2).times(32)).minus(y.neg().plus(2150).times(0.5628));
+                        r = new BigNumber(-20).plus(y.minus(1820).div(100).pow(2).times(32)).minus(y.neg().plus(2150).times(0.5628));
                     }
                 } else {
                     u = y.minus(1820).div(100);
@@ -2427,8 +2458,14 @@
                 if (arrayIsArray(arr)) {
                     arraySome(fullKeys, function (element, index) {
                         var value = arr[index],
-                            bn = bignumber(value),
+                            bn,
                             dim;
+
+                        if (isNumber(value) || isString(value) || BigNumber.isBigNumber(value)) {
+                            bn = new BigNumber(value);
+                        } else {
+                            bn = new BigNumber(NaN);
+                        }
 
                         switch (element.full) {
                         case "year":
@@ -2440,7 +2477,7 @@
                             break;
                         case "month":
                             if (isUndefined(value)) {
-                                bn = bignumber(1);
+                                bn = new BigNumber(1);
                             }
 
                             if (!inMonthRange(bn)) {
@@ -2457,7 +2494,7 @@
                             }
 
                             if (isUndefined(value)) {
-                                bn = bignumber(1);
+                                bn = new BigNumber(1);
                             }
 
                             if (!inDayRange(bn, dim)) {
@@ -2468,7 +2505,7 @@
                             break;
                         case "hour":
                             if (isUndefined(value)) {
-                                bn = bignumber(0);
+                                bn = new BigNumber(0);
                             }
 
                             if (!inHourRange(bn)) {
@@ -2479,7 +2516,7 @@
                             break;
                         case "minute":
                             if (isUndefined(value)) {
-                                bn = bignumber(0);
+                                bn = new BigNumber(0);
                             }
 
                             if (!inMinuteRange(bn, struct.hour)) {
@@ -2490,7 +2527,7 @@
                             break;
                         case "second":
                             if (isUndefined(value)) {
-                                bn = bignumber(0);
+                                bn = new BigNumber(0);
                             }
 
                             if (!inSecondRange(bn, struct.hour)) {
@@ -2501,7 +2538,7 @@
                             break;
                         case "millisecond":
                             if (isUndefined(value)) {
-                                bn = bignumber(0);
+                                bn = new BigNumber(0);
                             }
 
                             if (!inMillisecondRange(bn, struct.hour)) {
@@ -2512,7 +2549,7 @@
                             break;
                         case "offset":
                             if (isUndefined(value)) {
-                                bn = bignumber(0);
+                                bn = new BigNumber(0);
                             }
 
                             if (!inOffsetRange(bn)) {
@@ -2548,14 +2585,28 @@
                 return arr;
             }
 
+            function returnElementToString(element) {
+                return element.toString();
+            }
+
+            function structToArrayOfString(struct) {
+                return arrayMap(structToArray(struct), returnElementToString);
+            }
+
             function objectToStruct(object, julian) {
                 var struct = {};
 
                 if (isPlainObject(object)) {
                     arraySome(fullKeys, function (element) {
                         var value = object[element.alias] || object[element.full] || object[element.full + "s"],
-                            bn = bignumber(value),
+                            bn,
                             dim;
+
+                        if (isNumber(value) || isString(value) || BigNumber.isBigNumber(value)) {
+                            bn = new BigNumber(value);
+                        } else {
+                            bn = new BigNumber(NaN);
+                        }
 
                         switch (element.full) {
                         case "year":
@@ -2567,7 +2618,7 @@
                             break;
                         case "month":
                             if (isUndefined(value)) {
-                                bn = bignumber(1);
+                                bn = new BigNumber(1);
                             }
 
                             if (!inMonthRange(bn)) {
@@ -2584,7 +2635,7 @@
                             }
 
                             if (isUndefined(value)) {
-                                bn = bignumber(1);
+                                bn = new BigNumber(1);
                             }
 
                             if (!inDayRange(bn, dim)) {
@@ -2595,7 +2646,7 @@
                             break;
                         case "hour":
                             if (isUndefined(value)) {
-                                bn = bignumber(0);
+                                bn = new BigNumber(0);
                             }
 
                             if (!inHourRange(bn)) {
@@ -2606,7 +2657,7 @@
                             break;
                         case "minute":
                             if (isUndefined(value)) {
-                                bn = bignumber(0);
+                                bn = new BigNumber(0);
                             }
 
                             if (!inMinuteRange(bn, struct.hour)) {
@@ -2617,7 +2668,7 @@
                             break;
                         case "second":
                             if (isUndefined(value)) {
-                                bn = bignumber(0);
+                                bn = new BigNumber(0);
                             }
 
                             if (!inSecondRange(bn, struct.hour)) {
@@ -2628,7 +2679,7 @@
                             break;
                         case "millisecond":
                             if (isUndefined(value)) {
-                                bn = bignumber(0);
+                                bn = new BigNumber(0);
                             }
 
                             if (!inMillisecondRange(bn, struct.hour)) {
@@ -2639,7 +2690,7 @@
                             break;
                         case "offset":
                             if (isUndefined(value)) {
-                                bn = bignumber(0);
+                                bn = new BigNumber(0);
                             }
 
                             if (!inOffsetRange(bn)) {
@@ -2674,12 +2725,12 @@
             }
 
             function dateToStruct(date) {
-                var struct = {},
-                    value;
+                var struct = {};
 
                 if (isDateValid(date)) {
                     arrayForEach(fullKeys, function (element) {
-                        value = bignumber(date[element.local]());
+                        var value = new BigNumber(date[element.local]());
+
                         if (objectIs(element.full, "month")) {
                             value = value.plus(1);
                         }
@@ -2713,7 +2764,7 @@
 
             function jdToGregorian(julianDay) {
                 var struct = {},
-                    jd = bignumber(julianDay),
+                    jd = new BigNumber(julianDay),
                     a,
                     b;
 
@@ -2729,8 +2780,8 @@
                     a = struct.month.div(11).floor();
                     struct.month = struct.month.plus(2).minus(a.times(12));
                     struct.year = b.minus(49).times(100).plus(struct.year).plus(a).floor();
-                    struct.offset = bignumber(0);
-                    extend(struct, fractionToTime(jd.fractionalPart(), "day"));
+                    struct.offset = new BigNumber(0);
+                    extend(struct, fractionToTime(jd.fractionalPart().abs(), "day"));
                 }
 
                 return struct;
@@ -2738,7 +2789,7 @@
 
             function jdToJulian(julianDay) {
                 var struct = {},
-                    jd = bignumber(julianDay),
+                    jd = new BigNumber(julianDay),
                     a,
                     b,
                     c,
@@ -2768,8 +2819,8 @@
                         struct.year = c.minus(4715);
                     }
 
-                    struct.offset = bignumber(0);
-                    extend(struct, fractionToTime(jd.fractionalPart(), "day"));
+                    struct.offset = new BigNumber(0);
+                    extend(struct, fractionToTime(jd.fractionalPart().abs(), "day"));
                 }
 
                 return struct;
@@ -2807,10 +2858,10 @@
                     e = b.mod(4),
                     f = b.plus(8).div(25).floor(),
                     g = b.minus(f).plus(1).div(3).floor(),
-                    h = bignumber(19).times(a).plus(b).minus(d).minus(g).plus(15).mod(30),
+                    h = new BigNumber(19).times(a).plus(b).minus(d).minus(g).plus(15).mod(30),
                     i = c.div(4).floor(),
                     k = c.mod(4),
-                    l = bignumber(32).plus(e.times(2)).plus(i.times(2)).minus(h).minus(k).mod(7),
+                    l = new BigNumber(32).plus(e.times(2)).plus(i.times(2)).minus(h).minus(k).mod(7),
                     m = a.plus(h.times(11)).plus(l.times(22)).div(451).floor(),
                     n = h.plus(l).minus(m.times(7)).plus(114);
 
@@ -2909,7 +2960,7 @@
             function ISO(isoString) {
                 var struct;
 
-                defineProperties(this, {
+                objectDefineProperties(this, {
                     "getter": {
                         "value": function () {
                             return extend({}, struct);
@@ -2932,7 +2983,7 @@
                 struct = this.parse(isoString).getter();
             }
 
-            defineProperties(ISO.prototype, {
+            objectDefineProperties(ISO.prototype, {
                 "parse": {
                     "value": function parse(isoString) {
                         var dateObject = {},
@@ -2954,7 +3005,7 @@
                             return setInvalid(this);
                         }
 
-                        getTimezoneOffset = bignumber(new Date().getTimezoneOffset());
+                        getTimezoneOffset = new BigNumber(new Date().getTimezoneOffset());
                         temp = stringSplit(stringTrim(isoString), /[T ]/);
                         length = temp.length;
                         if (!inRange(length, 1, 2)) {
@@ -3035,7 +3086,7 @@
                             date = {};
                             if (arraySome(temp, function (val, idx) {
                                     var len = val.length,
-                                        num = intToNumber(bignumber(val));
+                                        num = intToNumber(new BigNumber(val));
 
                                     switch (idx) {
                                     case 0:
@@ -3127,12 +3178,12 @@
                             }
                         }
 
-                        offset[0] = intToNumber(bignumber(offset[0]));
+                        offset[0] = intToNumber(new BigNumber(offset[0]));
                         if (!inHourRange(offset[0])) {
                             return setInvalid(this);
                         }
 
-                        offset[1] = intToNumber(bignumber(offset[1]));
+                        offset[1] = intToNumber(new BigNumber(offset[1]));
                         if (!inMinuteRange(offset[1], offset[0])) {
                             return setInvalid(this);
                         }
@@ -3150,9 +3201,9 @@
                             }
 
                             time = temp[0];
-                            timeFraction = bignumber("0." + temp[1]);
+                            timeFraction = new BigNumber("0." + temp[1]);
                         } else {
-                            timeFraction = bignumber(0);
+                            timeFraction = new BigNumber(0);
                         }
 
                         if (!stringContains(time, ":")) {
@@ -3183,7 +3234,7 @@
                         }
 
                         if (!timeFraction.isZero()) {
-                            timeFraction = fractionToTime(timeFraction, fullKeys[length + 2].full);
+                            timeFraction = fractionToTime(timeFraction.abs(), fullKeys[length + 2].full);
                             if (lt(length, 2)) {
                                 temp.push(timeFraction.minute.padLeadingZero(2));
                             }
@@ -3211,7 +3262,7 @@
 
                         time = {};
                         if (arraySome(temp, function (val, idx) {
-                                var num = intToNumber(bignumber(val));
+                                var num = intToNumber(new BigNumber(val));
 
                                 switch (idx) {
                                 case 0:
@@ -3290,9 +3341,7 @@
                         var arr;
 
                         if (this.isValid()) {
-                            arr = arrayMap(structToArray(this.getter()), function (element) {
-                                return element.toString();
-                            });
+                            arr = structToArrayOfString(this.getter());
                         }
 
                         return arr;
@@ -3309,7 +3358,7 @@
                     struct,
                     arg;
 
-                defineProperties(this, {
+                objectDefineProperties(this, {
                     "getter": {
                         "value": function (key) {
                             var got;
@@ -3352,7 +3401,7 @@
                                 dim;
 
                             if (unit) {
-                                bn = bignumber(value);
+                                bn = new BigNumber(value);
                                 switch (unit) {
                                 case "year":
                                     valid = inYearRange(bn);
@@ -3514,7 +3563,7 @@
                 }
             };
 
-            defineProperties(AstroDate.prototype, {
+            objectDefineProperties(AstroDate.prototype, {
                 "julian": {
                     "value": function () {
                         return this.setter("isJulian", true);
@@ -3657,13 +3706,9 @@
                         if (isUndefined(dateArray)) {
                             if (this.isValid()) {
                                 if (this.isJulian()) {
-                                    val = arrayMap(structToArray(gregorianToJulian(this.getter())), function (element) {
-                                        return element.toString();
-                                    });
+                                    val = structToArrayOfString(gregorianToJulian(this.getter()));
                                 } else {
-                                    val = arrayMap(structToArray(this.getter()), function (element) {
-                                        return element.toString();
-                                    });
+                                    val = structToArrayOfString(this.getter());
                                 }
                             }
                         } else if (arrayIsArray(dateArray)) {
@@ -3740,7 +3785,7 @@
                             if (this.isValid()) {
                                 val = gregorianToJd(this.getter()).toString();
                             }
-                        } else if (isNumber(julianDay) || isString(julianDay)) {
+                        } else if (isNumber(julianDay) || isString(julianDay) || BigNumber.isBigNumber(julianDay)) {
                             val = this.setter("struct", jdToGregorian(julianDay));
                         } else {
                             throw new TypeError(julianDay);
@@ -3922,17 +3967,13 @@
                 }
             });
 
-            defineProperties(AstroDate, {
+            objectDefineProperties(AstroDate, {
                 "version": {
                     "value": VERSION
                 },
 
                 "ISO": {
                     "value": ISO
-                },
-
-                "bignumber": {
-                    "value": bignumber
                 },
 
                 "BigNumber": {
@@ -3952,7 +3993,7 @@
                 }
             });
 
-            defineProperties(defaultProperties, {
+            objectDefineProperties(defaultProperties, {
                 0: {
                     "value": "toString",
                     "enumerable": true
@@ -3985,7 +4026,7 @@
 
             deepFreeze(defaultProperties);
 
-            defineProperties(fullKeys, {
+            objectDefineProperties(fullKeys, {
                 0: {
                     "value": {
                         "full": "year",
@@ -4054,7 +4095,7 @@
 
             deepFreeze(fullKeys);
 
-            defineProperties(shortNameLength, {
+            objectDefineProperties(shortNameLength, {
                 "en-GB": {
                     "value": 3,
                     "enumerable": true
@@ -4065,7 +4106,7 @@
                 }
             });
 
-            defineProperties(dayNames, {
+            objectDefineProperties(dayNames, {
                 0: {
                     "value": {
                         "en-GB": "Sunday",
@@ -4117,7 +4158,7 @@
                 }
             });
 
-            defineProperties(monthNames, {
+            objectDefineProperties(monthNames, {
                 0: {
                     "value": {
                         "en-GB": "January",
@@ -4206,7 +4247,7 @@
 
             arrayForEach([BigNumber, BigNumber.prototype], function (element) {
                 arrayForEach(objectKeys(element), function (key) {
-                    defineProperty(element, key, {
+                    objectDefineProperty(element, key, {
                         "enumerable": false,
                         "configurable": false,
                         "writeable": false
@@ -4221,6 +4262,8 @@
 
         return tempSafariNFE;
     }())));
+
+    tempSafariNFE = null;
 }((function (thisContext) {
     "use strict";
     /*global window, global, self */
