@@ -320,7 +320,7 @@
             }());
 
             function isEmptyArray(inputArg) {
-                return strictEqual(inputArg.length, 0);
+                return isZero(inputArg.length);
             }
 
             function isDate(inputArg) {
@@ -341,7 +341,7 @@
                         var val;
 
                         if (strictEqual(x, y)) {
-                            if (strictEqual(x, 0)) {
+                            if (isZero(x)) {
                                 val = strictEqual(1 / x, 1 / y);
                             } else {
                                 val = true;
@@ -671,14 +671,14 @@
                                 }
                             }
 
-                            if (objectIs(separator.lastIndex, match.index)) {
+                            if (strictEqual(separator.lastIndex, match.index)) {
                                 separator.lastIndex += 1;
                             }
 
                             match = separator.exec(string);
                         }
 
-                        if (objectIs(lastLastIndex, string.length)) {
+                        if (strictEqual(lastLastIndex, string.length)) {
                             if (lastLength || !separator.test('')) {
                                 output.push('');
                             }
@@ -730,7 +730,7 @@
                     singleChar = firstChar(character),
                     count = numberToInteger(size) - string.length;
 
-                if (lt(count, 0) || objectIs(count, Infinity)) {
+                if (lt(count, 0) || strictEqual(count, Infinity)) {
                     count = 0;
                 }
 
@@ -769,7 +769,7 @@
                         var thisString = anyToString(checkObjectCoercible(string)),
                             times = numberToInteger(count);
 
-                        if (lt(times, 0) || objectIs(times, Infinity)) {
+                        if (lt(times, 0) || strictEqual(times, Infinity)) {
                             throw new RangeError();
                         }
 
@@ -798,7 +798,7 @@
                             thisLen = thisStr.length,
                             start = clamp(toInteger(position), 0, thisLen);
 
-                        return objectIs(thisStr.slice(start, start + thisLen), searchStr);
+                        return strictEqual(thisStr.slice(start, start + thisLen), searchStr);
                     };
                 }
 
@@ -832,7 +832,7 @@
                         end = clamp(position, 0, thisLen);
                         start = end - searchStr.length;
 
-                        return gte(start, 0) && objectIs(thisStr.slice(start, end), searchStr);
+                        return gte(start, 0) && strictEqual(thisStr.slice(start, end), searchStr);
                     };
                 }
 
@@ -863,7 +863,7 @@
                             position = numberToInteger(position);
                         }
 
-                        return !objectIs(baseString.indexOf.call(thisStr, searchStr, clamp(position, 0, thisLen)), -1);
+                        return !strictEqual(baseString.indexOf.call(thisStr, searchStr, clamp(position, 0, thisLen)), -1);
                     };
                 }
 
@@ -889,13 +889,13 @@
                 } else {
                     bocProto = baseObject.constructor.prototype;
                     tempSafariNFE = function nfeGetPrototypeOf(object) {
-                        if (objectIs(object, bocProto)) {
+                        if (strictEqual(object, bocProto)) {
                             return null;
                         }
 
                         var ctrProto = object.constructor.prototype;
 
-                        if (objectIs(object, ctrProto)) {
+                        if (strictEqual(object, ctrProto)) {
                             return bocProto;
                         }
 
@@ -932,7 +932,7 @@
                 }
 
                 function checkDontEnums(object, property) {
-                    return hasDontEnumBug && !objectIs(arrayIndexOf(defaultProperties, property), -1) && hasProperty(object, property) && !objectIs(object[property], objectGetPrototypeOf(object)[property]);
+                    return hasDontEnumBug && !strictEqual(arrayIndexOf(defaultProperties, property), -1) && hasProperty(object, property) && !strictEqual(object[property], objectGetPrototypeOf(object)[property]);
                 }
 
                 if (isFunction(hasOwnPropertyFN)) {
@@ -958,7 +958,7 @@
                 // Unused variable for JScript NFE bug
                 // http://kangax.github.io/nfe
                 var boxedString = baseObject.constructor('a'),
-                    splitString = !objectIs(boxedString[0], 'a') || !hasProperty(boxedString, 0),
+                    splitString = !strictEqual(boxedString[0], 'a') || !hasProperty(boxedString, 0),
                     nfeToObjectFixIndexedAccess;
 
                 if (splitString) {
@@ -1104,7 +1104,7 @@
                 var unshiftFN = baseArray.unshift,
                     nfeUnshift;
 
-                if (objectIs(unshiftFN.call([], 0), 1)) {
+                if (strictEqual(unshiftFN.call([], 0), 1)) {
                     tempSafariNFE = function nfeUnshift(array) {
                         return unshiftFN.apply(array, argumentsToArray(arguments).slice(1));
                     };
@@ -1299,7 +1299,7 @@
                 var indexOfFN = baseArray.indexOf,
                     nfeIndexOf;
 
-                if (isFunction(indexOfFN) && objectIs(indexOfFN.call([0, 1], 1, 2), 1)) {
+                if (isFunction(indexOfFN) && strictEqual(indexOfFN.call([0, 1], 1, 2), 1)) {
                     tempSafariNFE = function nfeIndexOf(array, searchElement, fromIndex) {
                         return indexOfFN.call(array, searchElement, fromIndex);
                     };
@@ -1311,7 +1311,7 @@
                             start,
                             val;
 
-                        if (strictEqual(length, 0)) {
+                        if (isZero(length)) {
                             val = -1;
                         } else {
                             if (gt(arguments.length, 2)) {
@@ -1684,7 +1684,7 @@
                         var val = false;
 
                         while (object) {
-                            if (objectIs(object, ctr.prototype)) {
+                            if (strictEqual(object, ctr.prototype)) {
                                 val = true;
                                 break;
                             }
@@ -1708,7 +1708,7 @@
                     nfeIsPlainObject;
 
                 tempSafariNFE = function nfeIsPlainObject(object) {
-                    return isObject(object) && objectIs(objectGetPrototypeOf(object), baseObjectPrototype);
+                    return isObject(object) && strictEqual(objectGetPrototypeOf(object), baseObjectPrototype);
                 };
 
                 nfeIsPlainObject = null;
@@ -1997,7 +1997,7 @@
                                 while (!sum.equals(prev)) {
                                     prev = sum;
                                     fact = new BigNumber.factorial(k);
-                                    if (objectIs(mod(mod(i, 2), 2), 1)) {
+                                    if (strictEqual(mod(mod(i, 2), 2), 1)) {
                                         sum = sum.minus(newAngle.pow(k).div(fact));
                                     } else {
                                         sum = sum.plus(newAngle.pow(k).div(fact));
@@ -2159,7 +2159,7 @@
 
                             break;
                         case 'day':
-                            if (objectIs(julian, true)) {
+                            if (strictEqual(julian, true)) {
                                 dim = daysInJulianMonth(struct);
                             } else {
                                 dim = daysInGregorianMonth(struct);
@@ -2245,7 +2245,7 @@
                     arraySome(fullKeys, function (element) {
                         var val;
 
-                        if (objectIs(unitString, element.alias) || objectIs(unitString, element.full)) {
+                        if (strictEqual(unitString, element.alias) || strictEqual(unitString, element.full)) {
                             unit = element.full;
                             val = true;
                         } else {
@@ -2338,7 +2338,7 @@
                 }
 
                 name = dayNames[parseInt(day.toString(), 10)][lang];
-                if (objectIs(shortName, true)) {
+                if (strictEqual(shortName, true)) {
                     name = makeNameShort(name, lang);
                 }
 
@@ -2356,7 +2356,7 @@
 
                 var name = monthNames[parseInt(struct.month.minus(1).toString(), 10)][lang];
 
-                if (objectIs(shortName, true)) {
+                if (strictEqual(shortName, true)) {
                     name = makeNameShort(name, lang);
                 }
 
@@ -2371,7 +2371,7 @@
                 fraction = new BigNumber(fraction);
                 switch (fractionIn) {
                 case 'year':
-                    if (objectIs(julian, true)) {
+                    if (strictEqual(julian, true)) {
                         days = daysInJulianYear(struct);
                     } else {
                         days = daysInGregorianYear(struct);
@@ -2380,7 +2380,7 @@
                     totalMs = fraction.times(days.times(86400000));
                     break;
                 case 'month':
-                    if (objectIs(julian, true)) {
+                    if (strictEqual(julian, true)) {
                         days = daysInJulianMonth(struct);
                     } else {
                         days = daysInGregorianMonth(struct);
@@ -2516,7 +2516,7 @@
 
                             break;
                         case 'day':
-                            if (objectIs(julian, true)) {
+                            if (strictEqual(julian, true)) {
                                 dim = daysInJulianMonth(struct);
                             } else {
                                 dim = daysInGregorianMonth(struct);
@@ -2657,7 +2657,7 @@
 
                             break;
                         case 'day':
-                            if (objectIs(julian, true)) {
+                            if (strictEqual(julian, true)) {
                                 dim = daysInJulianMonth(struct);
                             } else {
                                 dim = daysInGregorianMonth(struct);
@@ -2760,7 +2760,7 @@
                     arrayForEach(fullKeys, function (element) {
                         var value = new BigNumber(date[element.local]());
 
-                        if (objectIs(element.full, 'month')) {
+                        if (strictEqual(element.full, 'month')) {
                             value = value.plus(1);
                         }
 
@@ -2931,7 +2931,7 @@
                     for (last = fullKeys.length - 1; lt(index, last); index += 1) {
                         key = fullKeys[index].full;
                         value = struct[key];
-                        if (objectIs(key, 'year')) {
+                        if (strictEqual(key, 'year')) {
                             if (value.lt(0)) {
                                 string += '-';
                                 padding = 6;
@@ -2941,10 +2941,10 @@
                             } else {
                                 padding = 4;
                             }
-                        } else if (objectIs(key, 'hour')) {
+                        } else if (strictEqual(key, 'hour')) {
                             string += 'T';
                             padding = 2;
-                        } else if (objectIs(key, 'millisecond')) {
+                        } else if (strictEqual(key, 'millisecond')) {
                             padding = 3;
                         } else {
                             padding = 2;
@@ -2955,7 +2955,7 @@
                             string += '-';
                         } else if (inRange(index, 3, 4)) {
                             string += ':';
-                        } else if (objectIs(key, 'second')) {
+                        } else if (strictEqual(key, 'second')) {
                             string += '.';
                         }
                     }
@@ -3240,7 +3240,7 @@
                             offset = new BigNumber(rxResult[3]).times(60),
                             val;
 
-                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(0),
@@ -3259,7 +3259,7 @@
                             offset = new BigNumber(rxResult[4]).times(60),
                             val;
 
-                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
@@ -3278,7 +3278,7 @@
                             offset = new BigNumber(rxResult[5]).times(60),
                             val;
 
-                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
@@ -3297,7 +3297,7 @@
                             offset = new BigNumber(rxResult[3]).times(60).plus(rxResult[4]),
                             val;
 
-                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(0),
@@ -3316,7 +3316,7 @@
                             offset = new BigNumber(rxResult[4]).times(60).plus(rxResult[5]),
                             val;
 
-                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
@@ -3335,7 +3335,7 @@
                             offset = new BigNumber(rxResult[5]).times(60).plus(rxResult[6]),
                             val;
 
-                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
@@ -3418,7 +3418,7 @@
                             offset = new BigNumber(rxResult[4]).times(60),
                             val;
 
-                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
                             val = fractionToTime('0.' + rxResult[2], 'hour');
                             val.hour = new BigNumber(rxResult[1]);
                             val.offset = offset.times(sign + '1').neg();
@@ -3433,7 +3433,7 @@
                             offset = new BigNumber(rxResult[5]).times(60),
                             val;
 
-                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
                             val = fractionToTime('0.' + rxResult[3], 'minute');
                             val.hour = new BigNumber(rxResult[1]);
                             val.minute = new BigNumber(rxResult[2]);
@@ -3449,7 +3449,7 @@
                             offset = new BigNumber(rxResult[6]).times(60),
                             val;
 
-                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
@@ -3468,7 +3468,7 @@
                             offset = new BigNumber(rxResult[4]).times(60).plus(rxResult[5]),
                             val;
 
-                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
                             val = fractionToTime('0.' + rxResult[2], 'hour');
                             val.hour = new BigNumber(rxResult[1]);
                             val.offset = offset.times(sign + '1').neg();
@@ -3483,7 +3483,7 @@
                             offset = new BigNumber(rxResult[5]).times(60).plus(rxResult[6]),
                             val;
 
-                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
                             val = fractionToTime('0.' + rxResult[3], 'minute');
                             val.hour = new BigNumber(rxResult[1]);
                             val.minute = new BigNumber(rxResult[2]);
@@ -3499,7 +3499,7 @@
                             offset = new BigNumber(rxResult[6]).times(60).plus(rxResult[7]),
                             val;
 
-                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
@@ -3585,7 +3585,7 @@
                             offset = new BigNumber(rxResult[3]).times(60),
                             val;
 
-                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(0),
@@ -3604,7 +3604,7 @@
                             offset = new BigNumber(rxResult[4]).times(60),
                             val;
 
-                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
@@ -3623,7 +3623,7 @@
                             offset = new BigNumber(rxResult[5]).times(60),
                             val;
 
-                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
@@ -3642,7 +3642,7 @@
                             offset = new BigNumber(rxResult[3]).times(60).plus(rxResult[4]),
                             val;
 
-                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(0),
@@ -3661,7 +3661,7 @@
                             offset = new BigNumber(rxResult[4]).times(60).plus(rxResult[5]),
                             val;
 
-                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
@@ -3680,7 +3680,7 @@
                             offset = new BigNumber(rxResult[5]).times(60).plus(rxResult[6]),
                             val;
 
-                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
@@ -3763,7 +3763,7 @@
                             offset = new BigNumber(rxResult[4]).times(60),
                             val;
 
-                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
                             val = fractionToTime('0.' + rxResult[2], 'hour');
                             val.hour = new BigNumber(rxResult[1]);
                             val.offset = offset.times(sign + '1').neg();
@@ -3778,7 +3778,7 @@
                             offset = new BigNumber(rxResult[5]).times(60),
                             val;
 
-                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
                             val = fractionToTime('0.' + rxResult[3], 'minute');
                             val.hour = new BigNumber(rxResult[1]);
                             val.minute = new BigNumber(rxResult[2]);
@@ -3794,7 +3794,7 @@
                             offset = new BigNumber(rxResult[6]).times(60),
                             val;
 
-                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
@@ -3813,7 +3813,7 @@
                             offset = new BigNumber(rxResult[4]).times(60).plus(rxResult[5]),
                             val;
 
-                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
                             val = fractionToTime('0.' + rxResult[2], 'hour');
                             val.hour = new BigNumber(rxResult[1]);
                             val.offset = offset.times(sign + '1').neg();
@@ -3828,7 +3828,7 @@
                             offset = new BigNumber(rxResult[5]).times(60).plus(rxResult[6]),
                             val;
 
-                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
                             val = fractionToTime('0.' + rxResult[3], 'minute');
                             val.hour = new BigNumber(rxResult[1]);
                             val.minute = new BigNumber(rxResult[2]);
@@ -3844,7 +3844,7 @@
                             offset = new BigNumber(rxResult[6]).times(60).plus(rxResult[7]),
                             val;
 
-                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
@@ -3869,10 +3869,10 @@
                     element;
 
                 if (inRange(splitLength, 1, 2)) {
-                    if (objectIs(splitLength, 1)) {
+                    if (strictEqual(splitLength, 1)) {
                         element = firstSplit[0];
                         // we make a best guess
-                        if (objectIs(element.slice(-4), '-') || firstCharIs(element, '+') || firstCharIs(element, '-') || objectIs(element.length, 2) || gte(countCharacter(element, '-'), 2) || stringContains(element, 'W')) {
+                        if (strictEqual(element.slice(-4), '-') || firstCharIs(element, '+') || firstCharIs(element, '-') || strictEqual(element.length, 2) || gte(countCharacter(element, '-'), 2) || stringContains(element, 'W')) {
                             // only ordinal dates have a "-" at -4
                             // only dates begin with "+" or "-"
                             // dates and times can be only 2 digits but will default to date unless preceeded with " " or "T"
@@ -3880,7 +3880,7 @@
                             // only dates have a week number "W"
                             dtObject.date = element;
                             dtObject.time = '00';
-                        } else if (lastCharIs(element, 'Z') || stringContains(element, ':') || stringContains(element, '.') || stringContains(element, ',') || stringContains(element, '+') || objectIs(element.slice(-3), '-')) {
+                        } else if (lastCharIs(element, 'Z') || stringContains(element, ':') || stringContains(element, '.') || stringContains(element, ',') || stringContains(element, '+') || strictEqual(element.slice(-3), '-')) {
                             // only times end with a "Z"
                             // only times contain a ":" or a "." or a ","
                             // only times contain a "+" that is not at the beginning
@@ -4045,7 +4045,7 @@
                                     valid = inMonthRange(bn);
                                     break;
                                 case 'day':
-                                    if (objectIs(isJulian, true)) {
+                                    if (strictEqual(isJulian, true)) {
                                         dim = daysInJulianMonth(struct);
                                     } else {
                                         dim = daysInGregorianMonth(struct);
@@ -4302,7 +4302,15 @@
 
                 'valueOf': {
                     'value': function () {
-                        return this.julianDay();
+                        var val;
+
+                        if (this.isJulian()) {
+                            val = this.julianDay();
+                        } else {
+                            val = this.getTime();
+                        }
+
+                        return val;
                     }
                 },
 
