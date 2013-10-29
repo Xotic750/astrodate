@@ -3076,6 +3076,10 @@
                 return ordinalToCalendar(struct.year, dayOfYear);
             }
 
+            function isNotNegativeZero(bn, sign) {
+                return strictEqual(sign, '+') || !bn.isZero() || (bn.isZero() && !strictEqual(sign, '-'));
+            }
+
             datePatterns = {
                 basic: [{
                     regex: /^(\d{2})$/,
@@ -3250,7 +3254,7 @@
                             offset = new BigNumber(rxResult[3]).times(60),
                             val;
 
-                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
+                        if (isNotNegativeZero(offset, sign)) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(0),
@@ -3269,7 +3273,7 @@
                             offset = new BigNumber(rxResult[4]).times(60),
                             val;
 
-                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
+                        if (isNotNegativeZero(offset, sign)) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
@@ -3288,7 +3292,7 @@
                             offset = new BigNumber(rxResult[5]).times(60),
                             val;
 
-                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
+                        if (isNotNegativeZero(offset, sign)) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
@@ -3307,7 +3311,7 @@
                             offset = new BigNumber(rxResult[3]).times(60).plus(rxResult[4]),
                             val;
 
-                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
+                        if (isNotNegativeZero(offset, sign)) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(0),
@@ -3326,7 +3330,7 @@
                             offset = new BigNumber(rxResult[4]).times(60).plus(rxResult[5]),
                             val;
 
-                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
+                        if (isNotNegativeZero(offset, sign)) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
@@ -3345,7 +3349,7 @@
                             offset = new BigNumber(rxResult[5]).times(60).plus(rxResult[6]),
                             val;
 
-                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
+                        if (isNotNegativeZero(offset, sign)) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
@@ -3430,7 +3434,7 @@
                             offset = new BigNumber(rxResult[4]).times(60),
                             val;
 
-                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
+                        if (isNotNegativeZero(offset, sign)) {
                             val = fractionToTime('0.' + rxResult[2], 'hour');
                             val.hour = new BigNumber(rxResult[1]);
                             val.offset = offset.times(sign + '1').neg();
@@ -3445,7 +3449,7 @@
                             offset = new BigNumber(rxResult[5]).times(60),
                             val;
 
-                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
+                        if (isNotNegativeZero(offset, sign)) {
                             val = fractionToTime('0.' + rxResult[3], 'minute');
                             val.hour = new BigNumber(rxResult[1]);
                             val.minute = new BigNumber(rxResult[2]);
@@ -3461,7 +3465,7 @@
                             offset = new BigNumber(rxResult[6]).times(60),
                             val;
 
-                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
+                        if (isNotNegativeZero(offset, sign)) {
                             val = fractionToTime('0.' + rxResult[4], 'second');
                             val.hour = new BigNumber(rxResult[1]);
                             val.minute = new BigNumber(rxResult[2]);
@@ -3478,7 +3482,7 @@
                             offset = new BigNumber(rxResult[4]).times(60).plus(rxResult[5]),
                             val;
 
-                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
+                        if (isNotNegativeZero(offset, sign)) {
                             val = fractionToTime('0.' + rxResult[2], 'hour');
                             val.hour = new BigNumber(rxResult[1]);
                             val.offset = offset.times(sign + '1').neg();
@@ -3493,7 +3497,7 @@
                             offset = new BigNumber(rxResult[5]).times(60).plus(rxResult[6]),
                             val;
 
-                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
+                        if (isNotNegativeZero(offset, sign)) {
                             val = fractionToTime('0.' + rxResult[3], 'minute');
                             val.hour = new BigNumber(rxResult[1]);
                             val.minute = new BigNumber(rxResult[2]);
@@ -3509,7 +3513,7 @@
                             offset = new BigNumber(rxResult[6]).times(60).plus(rxResult[7]),
                             val;
 
-                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
+                        if (isNotNegativeZero(offset, sign)) {
                             val = fractionToTime('0.' + rxResult[4], 'second');
                             val.hour = new BigNumber(rxResult[1]);
                             val.minute = new BigNumber(rxResult[2]);
@@ -3593,7 +3597,7 @@
                             offset = new BigNumber(rxResult[3]).times(60),
                             val;
 
-                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
+                        if (isNotNegativeZero(offset, sign)) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(0),
@@ -3612,7 +3616,7 @@
                             offset = new BigNumber(rxResult[4]).times(60),
                             val;
 
-                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
+                        if (isNotNegativeZero(offset, sign)) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
@@ -3631,7 +3635,7 @@
                             offset = new BigNumber(rxResult[5]).times(60),
                             val;
 
-                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
+                        if (isNotNegativeZero(offset, sign)) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
@@ -3650,7 +3654,7 @@
                             offset = new BigNumber(rxResult[3]).times(60).plus(rxResult[4]),
                             val;
 
-                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
+                        if (isNotNegativeZero(offset, sign)) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(0),
@@ -3669,7 +3673,7 @@
                             offset = new BigNumber(rxResult[4]).times(60).plus(rxResult[5]),
                             val;
 
-                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
+                        if (isNotNegativeZero(offset, sign)) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
@@ -3688,7 +3692,7 @@
                             offset = new BigNumber(rxResult[5]).times(60).plus(rxResult[6]),
                             val;
 
-                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
+                        if (isNotNegativeZero(offset, sign)) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
@@ -3773,7 +3777,7 @@
                             offset = new BigNumber(rxResult[4]).times(60),
                             val;
 
-                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
+                        if (isNotNegativeZero(offset, sign)) {
                             val = fractionToTime('0.' + rxResult[2], 'hour');
                             val.hour = new BigNumber(rxResult[1]);
                             val.offset = offset.times(sign + '1').neg();
@@ -3788,7 +3792,7 @@
                             offset = new BigNumber(rxResult[5]).times(60),
                             val;
 
-                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
+                        if (isNotNegativeZero(offset, sign)) {
                             val = fractionToTime('0.' + rxResult[3], 'minute');
                             val.hour = new BigNumber(rxResult[1]);
                             val.minute = new BigNumber(rxResult[2]);
@@ -3804,7 +3808,7 @@
                             offset = new BigNumber(rxResult[6]).times(60),
                             val;
 
-                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
+                        if (isNotNegativeZero(offset, sign)) {
                             val = fractionToTime('0.' + rxResult[4], 'second');
                             val.hour = new BigNumber(rxResult[1]);
                             val.minute = new BigNumber(rxResult[2]);
@@ -3821,7 +3825,7 @@
                             offset = new BigNumber(rxResult[4]).times(60).plus(rxResult[5]),
                             val;
 
-                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
+                        if (isNotNegativeZero(offset, sign)) {
                             val = fractionToTime('0.' + rxResult[2], 'hour');
                             val.hour = new BigNumber(rxResult[1]);
                             val.offset = offset.times(sign + '1').neg();
@@ -3836,7 +3840,7 @@
                             offset = new BigNumber(rxResult[5]).times(60).plus(rxResult[6]),
                             val;
 
-                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
+                        if (isNotNegativeZero(offset, sign)) {
                             val = fractionToTime('0.' + rxResult[3], 'minute');
                             val.hour = new BigNumber(rxResult[1]);
                             val.minute = new BigNumber(rxResult[2]);
@@ -3852,7 +3856,7 @@
                             offset = new BigNumber(rxResult[6]).times(60).plus(rxResult[7]),
                             val;
 
-                        if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
+                        if (isNotNegativeZero(offset, sign)) {
                             val = fractionToTime('0.' + rxResult[4], 'second');
                             val.hour = new BigNumber(rxResult[1]);
                             val.minute = new BigNumber(rxResult[2]);
