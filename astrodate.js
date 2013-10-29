@@ -19,7 +19,7 @@
  */
 
 (function (thisContext, private_undefined) {
-    "use strict";
+    'use strict';
 
     // Safari 2.x NFE bug fix
     // http://kangax.github.io/nfe/
@@ -27,17 +27,17 @@
 
     (function (name, definition) {
         /*global module, require, define */
-        var bigNumberFunc = "BigNumber",
+        var bigNumberFunc = 'BigNumber',
             bigNumberString = bigNumberFunc.toLowerCase(),
             projectPaths,
             projectConfig;
 
-        if ("object" === typeof module && null !== module && "object" === typeof module.exports && null !== module.exports) {
-            module.exports = definition(require(bigNumberString + ".js"));
-        } else if ("function" === typeof define && "object" === typeof define.amd && null !== define.amd) {
+        if ('object' === typeof module && null !== module && 'object' === typeof module.exports && null !== module.exports) {
+            module.exports = definition(require(bigNumberString + '.js'));
+        } else if ('function' === typeof define && 'object' === typeof define.amd && null !== define.amd) {
             projectPaths = {};
             projectConfig = {};
-            projectPaths[bigNumberString] = "//cdn.jsdelivr.net/bignumber.js/1.1.0/bignumber.min";
+            projectPaths[bigNumberString] = '//cdn.jsdelivr.net/bignumber.js/1.1.0/bignumber.min';
             projectConfig[bigNumberString] = {};
             require.config({
                 paths: projectPaths,
@@ -51,21 +51,21 @@
         }
 
         /*global */
-    }("astrodate", (function () {
+    }('astrodate', (function () {
         // Unused variable for JScript NFE bug
         // http://kangax.github.io/nfe/
         var nfeDefinition;
 
         tempSafariNFE = function nfeDefinition(BigNumber) {
             BigNumber.config({
-                DECIMAL_PLACES : 50,
-                ROUNDING_MODE : 4,
-                EXPONENTIAL_AT : [-7, 20],
-                RANGE : [-1000000000, 1000000000],
-                ERRORS : true
+                DECIMAL_PLACES: 50,
+                ROUNDING_MODE: 4,
+                EXPONENTIAL_AT: [-7, 20],
+                RANGE: [-1000000000, 1000000000],
+                ERRORS: true
             });
 
-            var VERSION = "0.4.1",
+            var VERSION = '0.4.1',
                 //MAX_INTEGER = 9007199254740991,
                 //MIN_INTEGER = -9007199254740991,
                 UWORD32 = Math.pow(2, 32),
@@ -73,7 +73,7 @@
                 baseObject = {},
                 defaultProperties = [],
                 baseArray = [],
-                baseString = "",
+                baseString = '',
                 toObjectString,
                 baseNumber = 0,
                 baseBoolean = true,
@@ -81,7 +81,8 @@
                 shortNameLength = {},
                 dayNames = [],
                 monthNames = [],
-                protoName = "__proto__",
+                protoName = '__proto__',
+                invalidISOCharsRx = new RegExp('[^\\d\\-+WT Z:,\\.]'),
                 toObject,
                 //j2000 = [2000, 1, 1, 11, 58, 55, 816],
                 extend,
@@ -156,7 +157,7 @@
             }
 
             function isUndefined(inputArg) {
-                return strictEqual(typeof inputArg, "undefined");
+                return strictEqual(typeof inputArg, 'undefined');
             }
 
             function isNull(inputArg) {
@@ -168,11 +169,19 @@
             }
 
             function isNumber(inputArg) {
-                return strictEqual(typeof inputArg, "number");
+                return strictEqual(typeof inputArg, 'number');
+            }
+
+            function isZero(inputArg) {
+                return strictEqual(inputArg, 0);
             }
 
             function isString(inputArg) {
-                return strictEqual(typeof inputArg, "string");
+                return strictEqual(typeof inputArg, 'string');
+            }
+
+            function isEmptyString(inputArg) {
+                return strictEqual(inputArg, '');
             }
 
             /*
@@ -233,7 +242,7 @@
                 if (isString(inputArg)) {
                     val = inputArg;
                 } else if (isUndefined(inputArg)) {
-                    val = "undefined";
+                    val = 'undefined';
                 } else {
                     val = String(inputArg);
                 }
@@ -248,7 +257,7 @@
                     nfeToObjectString;
 
                 try {
-                    if (strictEqual(toStringFN.call(), "[object Undefined]") && strictEqual(toStringFN.call(null), "[object Null]")) {
+                    if (strictEqual(toStringFN.call(), '[object Undefined]') && strictEqual(toStringFN.call(null), '[object Null]')) {
                         tempSafariNFE = function nfeToObjectString(object) {
                             return toStringFN.call(object);
                         };
@@ -262,9 +271,9 @@
                         var val;
 
                         if (isUndefined(object)) {
-                            val = "[object Undefined]";
+                            val = '[object Undefined]';
                         } else if (isNull(object)) {
-                            val = "[object Null]";
+                            val = '[object Null]';
                         } else {
                             val = toStringFN.call(object);
                         }
@@ -279,15 +288,15 @@
             }());
 
             function isRegExp(inputArg) {
-                return strictEqual(toObjectString(inputArg), "[object RegExp]");
+                return strictEqual(toObjectString(inputArg), '[object RegExp]');
             }
 
             function isObject(inputArg) {
-                return strictEqual(toObjectString(inputArg), "[object Object]");
+                return strictEqual(toObjectString(inputArg), '[object Object]');
             }
 
             function isFunction(inputArg) {
-                return strictEqual(toObjectString(inputArg), "[object Function]");
+                return strictEqual(toObjectString(inputArg), '[object Function]');
             }
 
             // named arrayIsArray instead of isArray because of SpiderMonkey and Blackberry bug
@@ -301,7 +310,7 @@
                     tempSafariNFE = isArrayFN;
                 } else {
                     tempSafariNFE = function nfeIsArray(inputArg) {
-                        return strictEqual(toObjectString(inputArg), "[object Array]");
+                        return strictEqual(toObjectString(inputArg), '[object Array]');
                     };
                 }
 
@@ -310,8 +319,12 @@
                 return tempSafariNFE;
             }());
 
+            function isEmptyArray(inputArg) {
+                return strictEqual(inputArg.length, 0);
+            }
+
             function isDate(inputArg) {
-                return strictEqual(toObjectString(inputArg), "[object Date]");
+                return strictEqual(toObjectString(inputArg), '[object Date]');
             }
 
             // named objectIs instead of objectIs because of SpiderMonkey and Blackberry bug
@@ -329,7 +342,7 @@
 
                         if (strictEqual(x, y)) {
                             if (strictEqual(x, 0)) {
-                                val =  strictEqual(1 / x, 1 / y);
+                                val = strictEqual(1 / x, 1 / y);
                             } else {
                                 val = true;
                             }
@@ -400,7 +413,7 @@
                         var number = toNumber(value),
                             val;
 
-                        if (objectIs(number, 0) || numberIsNaN(number)) {
+                        if (isZero(number) || numberIsNaN(number)) {
                             val = number;
                         } else if (lt(number, 0)) {
                             val = -1;
@@ -433,7 +446,7 @@
 
                         if (numberIsNaN(number)) {
                             val = +0;
-                        } else if (objectIs(number, 0) || !numberIsFinite(number)) {
+                        } else if (isZero(number) || !numberIsFinite(number)) {
                             val = number;
                         } else {
                             val = mathSign(number) * Math.floor(Math.abs(number));
@@ -454,7 +467,7 @@
                     int32bit,
                     val;
 
-                if (objectIs(number, 0) || !numberIsFinite(number)) {
+                if (isZero(number) || !numberIsFinite(number)) {
                     val = +0;
                 } else {
                     int32bit = mod(mathSign(number) * Math.floor(Math.abs(number)), UWORD32);
@@ -473,7 +486,7 @@
                 var number = toNumber(inputArg),
                     val;
 
-                if (objectIs(number, 0) || !numberIsFinite(number)) {
+                if (isZero(number) || !numberIsFinite(number)) {
                     val = +0;
                 } else {
                     val = mod(mathSign(number) * Math.floor(Math.abs(number)), UWORD32);
@@ -483,7 +496,7 @@
             }
 
             function isTypeObject(inputArg) {
-                return (!isNull(inputArg) && strictEqual(typeof inputArg, "object")) || isRegExp(inputArg);
+                return (!isNull(inputArg) && strictEqual(typeof inputArg, 'object')) || isRegExp(inputArg);
             }
 
             /*
@@ -579,7 +592,7 @@
                 // Unused variable for JScript NFE bug
                 // http://kangax.github.io/nfe/
                 var splitFN = baseString.split,
-                    compliantExecNpcg = isUndefined(/()??/.exec("")[1]),
+                    compliantExecNpcg = isUndefined(/()??/.exec('')[1]),
                     nfeSplit;
 
                 function replacer(separator, match, args) {
@@ -607,26 +620,26 @@
                         val;
 
                     if (isRegExp(separator)) {
-                        flags = "g";
+                        flags = 'g';
                         if (separator.ignoreCase) {
-                            flags += "i";
+                            flags += 'i';
                         }
 
                         if (separator.multiline) {
-                            flags += "m";
+                            flags += 'm';
                         }
 
                         if (separator.extended) {
-                            flags += "x";
+                            flags += 'x';
                         }
 
                         if (separator.sticky) {
-                            flags += "y";
+                            flags += 'y';
                         }
 
                         separator = new RegExp(separator.source, flags);
                         if (!compliantExecNpcg) {
-                            separator2 = new RegExp("^" + separator.source + "$(?!\\s)", flags);
+                            separator2 = new RegExp('^' + separator.source + '$(?!\\s)', flags);
                         }
 
                         if (isUndefined(limit)) {
@@ -636,7 +649,7 @@
                         }
 
                         output = [];
-                        flags = "g";
+                        flags = 'g';
                         lastLastIndex = 0;
                         match = separator.exec(string);
                         while (match) {
@@ -666,8 +679,8 @@
                         }
 
                         if (objectIs(lastLastIndex, string.length)) {
-                            if (lastLength || !separator.test("")) {
-                                output.push("");
+                            if (lastLength || !separator.test('')) {
+                                output.push('');
                             }
                         } else {
                             output.push(string.slice(lastLastIndex));
@@ -694,15 +707,27 @@
                 return anyToString(checkObjectCoercible(inputArg)).charAt(0);
             }
 
+            function firstCharIs(inputArg, character) {
+                return strictEqual(firstChar(inputArg), firstChar(character));
+            }
+
             function lastChar(inputArg) {
                 var thisStr = anyToString(checkObjectCoercible(inputArg));
 
                 return thisStr.charAt(thisStr.length - 1);
             }
 
+            function lastCharIs(inputArg, character) {
+                return strictEqual(lastChar(inputArg), firstChar(character));
+            }
+
+            function countCharacter(inputArg, character) {
+                return clamp(stringSplit(anyToString(checkObjectCoercible(inputArg)), firstChar(character)).length - 1, 0, Number.POSITIVE_INFINITY);
+            }
+
             function padLeadingChar(inputArg, character, size) {
                 var string = anyToString(checkObjectCoercible(inputArg)),
-                    singleChar = firstChar(anyToString(checkObjectCoercible(character))),
+                    singleChar = firstChar(character),
                     count = numberToInteger(size) - string.length;
 
                 if (lt(count, 0) || objectIs(count, Infinity)) {
@@ -724,7 +749,7 @@
                         val;
 
                     if (lt(times, 1)) {
-                        val = "";
+                        val = '';
                     } else if (mod(times, 2)) {
                         val = rep(s, times - 1) + s;
                     } else {
@@ -833,7 +858,7 @@
                             thisLen = thisStr.length;
 
                         if (isUndefined(position)) {
-                            position = thisLen;
+                            position = 0;
                         } else {
                             position = numberToInteger(position);
                         }
@@ -897,7 +922,7 @@
                     propertyIsEnumerableFN = baseObject.propertyIsEnumerable,
                     hasDontEnumBug = true,
                     testObject = {
-                        "toString": null
+                        'toString': null
                     },
                     nfeHasOwnProperty;
 
@@ -932,8 +957,8 @@
             toObjectFixIndexedAccess = (function () {
                 // Unused variable for JScript NFE bug
                 // http://kangax.github.io/nfe
-                var boxedString = baseObject.constructor("a"),
-                    splitString = !objectIs(boxedString[0], "a") || !hasProperty(boxedString, 0),
+                var boxedString = baseObject.constructor('a'),
+                    splitString = !objectIs(boxedString[0], 'a') || !hasProperty(boxedString, 0),
                     nfeToObjectFixIndexedAccess;
 
                 if (splitString) {
@@ -941,7 +966,7 @@
                         var object;
 
                         if (isString(inputArg)) {
-                            object = stringSplit(inputArg, "");
+                            object = stringSplit(inputArg, '');
                         } else {
                             object = toObject(inputArg);
                         }
@@ -975,7 +1000,7 @@
                             index;
 
                         if (!isFunction(fn)) {
-                            throw new TypeError(fn + " is not a function");
+                            throw new TypeError(fn + ' is not a function');
                         }
 
                         for (index = 0, length = toUint32(object.length); lt(index, length); index += 1) {
@@ -1010,7 +1035,7 @@
                             val;
 
                         if (!isFunction(fn)) {
-                            throw new TypeError(fn + " is not a function");
+                            throw new TypeError(fn + ' is not a function');
                         }
 
                         for (index = 0, length = toUint32(object.length), val = false; lt(index, length); index += 1) {
@@ -1048,7 +1073,7 @@
                             arr;
 
                         if (!isFunction(fn)) {
-                            throw new TypeError(fn + " is not a function");
+                            throw new TypeError(fn + ' is not a function');
                         }
 
                         for (index = 0, length = toUint32(object.length), arr = []; lt(index, length); index += 1) {
@@ -1068,8 +1093,8 @@
                 return element;
             }
 
-            function argumentsToArray() {
-                return arrayMap(arguments, returnElement);
+            function argumentsToArray(args) {
+                return arrayMap(args, returnElement);
             }
 
             // named arrayUnshift instead of unshift because of SpiderMonkey and Blackberry bug
@@ -1142,7 +1167,7 @@
                 // Unused variable for JScript NFE bug
                 // http://kangax.github.io/nfe
                 var reduceFN = baseArray.reduce,
-                    errString = "Reduce of empty array with no initial value",
+                    errString = 'Reduce of empty array with no initial value',
                     nfeReduce;
 
                 if (isFunction(reduceFN)) {
@@ -1159,10 +1184,10 @@
                             kPresent;
 
                         if (!isFunction(fn)) {
-                            throw new TypeError(fn + " is not a function");
+                            throw new TypeError(fn + ' is not a function');
                         }
 
-                        if (objectIs(length, 0) && lt(arguments.length, 3)) {
+                        if (isZero(length) && lt(arguments.length, 3)) {
                             throw new TypeError(errString);
                         }
 
@@ -1241,20 +1266,20 @@
                     return previous + String.fromCharCode(element);
                 };
 
-                testString = arrayReduce(whiteSpacesList, tempSafariNFE, "");
-                if (isFunction(trimFN) && objectIs(trimFN.call(testString).length, 0)) {
+                testString = arrayReduce(whiteSpacesList, tempSafariNFE, '');
+                if (isFunction(trimFN) && isZero(trimFN.call(testString).length)) {
                     tempSafariNFE = function nfeTrim(inputArg) {
                         return trimFN.call(inputArg);
                     };
                 } else {
                     tempSafariNFE = function nfeBuildWhiteSpaceString(previous, element) {
-                        return previous + "\\u" + padLeadingChar(element.toString(16), "0", 4);
+                        return previous + '\\u' + padLeadingChar(element.toString(16), '0', 4);
                     };
 
-                    whiteSpacesString = arrayReduce(whiteSpacesList, tempSafariNFE, "");
-                    wsTrimRX = new RegExp("^[" + whiteSpacesString + "]+|[" + whiteSpacesString + "]+$", "g");
+                    whiteSpacesString = arrayReduce(whiteSpacesList, tempSafariNFE, '');
+                    wsTrimRX = new RegExp('^[' + whiteSpacesString + ']+|[' + whiteSpacesString + ']+$', 'g');
                     tempSafariNFE = function nfeTrim(inputArg) {
-                        return anyToString(checkObjectCoercible(inputArg)).replace(wsTrimRX, "");
+                        return anyToString(checkObjectCoercible(inputArg)).replace(wsTrimRX, '');
                     };
                 }
 
@@ -1338,7 +1363,7 @@
                 } else {
                     tempSafariNFE = function nfeKeys(object) {
                         if (!isTypeObject(object) && !isFunction(object)) {
-                            throw new TypeError("Object.keys called on a non-object");
+                            throw new TypeError('Object.keys called on a non-object');
                         }
 
                         var props = [],
@@ -1366,8 +1391,8 @@
                 // Unused variable for JScript NFE bug
                 // http://kangax.github.io/nfe
                 var definePropertyFN = baseObject.constructor.defineProperty,
-                    defineGetter = "__defineGetter__",
-                    defineSetter = "__defineSetter__",
+                    defineGetter = '__defineGetter__',
+                    defineSetter = '__defineSetter__',
                     defineGetterFN,
                     defineSetterFN,
                     testObject,
@@ -1375,8 +1400,8 @@
 
                 if (isFunction(definePropertyFN)) {
                     try {
-                        testObject = definePropertyFN({}, "sentinel", {
-                            "value": null
+                        testObject = definePropertyFN({}, 'sentinel', {
+                            'value': null
                         });
 
                         if (!isNull(testObject.sentinel)) {
@@ -1396,14 +1421,14 @@
                         var prototype;
 
                         if (!isTypeObject(object) && !isFunction(object)) {
-                            throw new TypeError("Object.defineProperty called on non-object");
+                            throw new TypeError('Object.defineProperty called on non-object');
                         }
 
                         if (!isTypeObject(descriptor) && !isFunction(descriptor)) {
-                            throw new TypeError("Property description must be an object");
+                            throw new TypeError('Property description must be an object');
                         }
 
-                        if (objectHasOwnProperty(descriptor, "value")) {
+                        if (objectHasOwnProperty(descriptor, 'value')) {
                             if (isNull(objectGetPrototypeOf(baseObject)[protoName])) {
                                 prototype = object[protoName];
                                 object[protoName] = objectGetPrototypeOf(baseObject);
@@ -1415,7 +1440,7 @@
                             }
                         } else {
                             if (!isFunction(defineGetterFN) || !isFunction(defineSetterFN)) {
-                                throw new TypeError("getters & setters can not be defined on this javascript engine");
+                                throw new TypeError('getters & setters can not be defined on this javascript engine');
                             }
 
                             if (isFunction(descriptor.get)) {
@@ -1449,11 +1474,11 @@
                 } else {
                     tempSafariNFE = function nfeDefineProperties(object, props) {
                         if (!isTypeObject(object) && !isFunction(object)) {
-                            throw new TypeError("Object.defineProperties called on non-object");
+                            throw new TypeError('Object.defineProperties called on non-object');
                         }
 
                         if (!isTypeObject(props) && !isFunction(props)) {
-                            throw new TypeError("Property description must be an object");
+                            throw new TypeError('Property description must be an object');
                         }
 
                         arrayForEach(objectKeys(props), function (key) {
@@ -1475,8 +1500,8 @@
                 // Unused variable for JScript NFE bug
                 // http://kangax.github.io/nfe
                 var getOwnPropertyDescriptorFN = baseObject.constructor.getOwnPropertyDescriptor,
-                    lookupGetter = "__lookupGetter__",
-                    lookupSetter = "__lookupSetter__",
+                    lookupGetter = '__lookupGetter__',
+                    lookupSetter = '__lookupSetter__',
                     lookupGetterFN,
                     lookupSetterFN,
                     testObject,
@@ -1485,10 +1510,10 @@
                 if (isFunction(getOwnPropertyDescriptorFN)) {
                     try {
                         testObject = {
-                            "sentinel": null
+                            'sentinel': null
                         };
 
-                        if (!isNull(getOwnPropertyDescriptorFN(testObject, "sentinel").value)) {
+                        if (!isNull(getOwnPropertyDescriptorFN(testObject, 'sentinel').value)) {
                             getOwnPropertyDescriptorFN = null;
                         }
                     } catch (exception) {
@@ -1508,13 +1533,13 @@
                             setter;
 
                         if (!isTypeObject(object) && !isFunction(object)) {
-                            throw new TypeError("Object.getOwnPropertyDescriptor called on a non-object");
+                            throw new TypeError('Object.getOwnPropertyDescriptor called on a non-object');
                         }
 
                         if (objectHasOwnProperty(object, property)) {
-                            descriptor =  {
-                                "enumerable": true,
-                                "configurable": true
+                            descriptor = {
+                                'enumerable': true,
+                                'configurable': true
                             };
 
                             if (isFunction(lookupGetterFN) && isFunction(lookupSetterFN)) {
@@ -1560,7 +1585,7 @@
                 } else {
                     tempSafariNFE = function nfeFreeze(object) {
                         if (!isTypeObject(object) && !isFunction(object)) {
-                            throw new TypeError("Object.freeze called on non-object");
+                            throw new TypeError('Object.freeze called on non-object');
                         }
 
                         return object;
@@ -1612,7 +1637,7 @@
                 } else {
                     tempSafariNFE = function nfeIsFrozen(object) {
                         if (!isTypeObject(object) && !isFunction(object)) {
-                            throw new TypeError("Object.isFrozen called on non-object");
+                            throw new TypeError('Object.isFrozen called on non-object');
                         }
 
                         return false;
@@ -1645,7 +1670,7 @@
                 if (isFunction(isPrototypeOfFN)) {
                     tempSafariNFE = function nfeInstanceOf(object, ctr) {
                         if (!isFunction(ctr)) {
-                            throw new TypeError("Expecting a function in instanceOf check");
+                            throw new TypeError('Expecting a function in instanceOf check');
                         }
 
                         return isPrototypeOfFN.call(ctr.prototype, object);
@@ -1653,7 +1678,7 @@
                 } else if (isFunction(objectGetPrototypeOf)) {
                     tempSafariNFE = function nfeInstanceOf(object, ctr) {
                         if (!isFunction(ctr)) {
-                            throw new TypeError("Expecting a function in instanceOf check");
+                            throw new TypeError('Expecting a function in instanceOf check');
                         }
 
                         var val = false;
@@ -1698,7 +1723,7 @@
 
                 tempSafariNFE = function nfeExtend(target, source) {
                     if (!isTypeObject(target) && !isFunction(target)) {
-                        throw new TypeError("extend called on a non-object");
+                        throw new TypeError('extend called on a non-object');
                     }
 
                     arrayForEach(objectKeys(source), function (key) {
@@ -1714,8 +1739,8 @@
             }());
 
             objectDefineProperties(BigNumber.prototype, {
-                "integerPart": {
-                    "value": function () {
+                'integerPart': {
+                    'value': function () {
                         var bn = this;
 
                         if (bn.isFinite()) {
@@ -1730,8 +1755,14 @@
                     }
                 },
 
-                "fractionalPart": {
-                    "value": function () {
+                'inRange': {
+                    'value': function (min, max) {
+                        return this.gte(min) && this.lte(max);
+                    }
+                },
+
+                'fractionalPart': {
+                    'value': function () {
                         var bn = this;
 
                         if (bn.isFinite()) {
@@ -1744,8 +1775,8 @@
                     }
                 },
 
-                "difference": {
-                    "value": function (value) {
+                'difference': {
+                    'value': function (value) {
                         var diff;
 
                         if (this.gt(value)) {
@@ -1758,8 +1789,8 @@
                     }
                 },
 
-                "factorial": {
-                    "value": (function () {
+                'factorial': {
+                    'value': (function () {
                         var factorialLookup = {};
 
                         return function (exponentialAt) {
@@ -1787,11 +1818,11 @@
                                     extend(previousConfig, config);
 
                                     BigNumber.config({
-                                        DECIMAL_PLACES : 20,
-                                        ROUNDING_MODE : 4,
-                                        EXPONENTIAL_AT : [-7, parseInt(exponentialAt.toString(), 10)],
-                                        RANGE : [-1000000000, 1000000000],
-                                        ERRORS : true
+                                        DECIMAL_PLACES: 20,
+                                        ROUNDING_MODE: 4,
+                                        EXPONENTIAL_AT: [-7, parseInt(exponentialAt.toString(), 10)],
+                                        RANGE: [-1000000000, 1000000000],
+                                        ERRORS: true
                                     });
 
                                     factorialLookup[n] = new BigNumber(1);
@@ -1810,52 +1841,52 @@
                     }())
                 },
 
-                "toRadians": {
-                    "value": function (decimalPlacesOfPI) {
+                'toRadians': {
+                    'value': function (decimalPlacesOfPI) {
                         return this.times(BigNumber.pi(decimalPlacesOfPI).div(180));
                     }
                 },
 
-                "padLeadingZero": {
-                    "value": function (size) {
-                        return padLeadingChar(this.toString(), "0", size);
+                'padLeadingZero': {
+                    'value': function (size) {
+                        return padLeadingChar(this.toString(), '0', size);
                     }
                 }
             });
 
             objectDefineProperties(BigNumber, {
-                "isBigNumber": {
-                    "value": function (inputArg) {
+                'isBigNumber': {
+                    'value': function (inputArg) {
                         return isObject(inputArg) && objectInstanceOf(inputArg, BigNumber);
                     }
                 },
 
-                "integerPart": {
-                    "value": function (number) {
+                'integerPart': {
+                    'value': function (number) {
                         return new BigNumber(number).integerPart();
                     }
                 },
 
-                "fractionalPart": {
-                    "value": function (number) {
+                'fractionalPart': {
+                    'value': function (number) {
                         return new BigNumber(number).fractionalPart();
                     }
                 },
 
-                "difference": {
-                    "value": function (number1, number2) {
+                'difference': {
+                    'value': function (number1, number2) {
                         return new BigNumber(number1).difference(number2);
                     }
                 },
 
-                "factorial": {
-                    "value": function (number, exponentialAt) {
+                'factorial': {
+                    'value': function (number, exponentialAt) {
                         return new BigNumber(number).factorial(exponentialAt);
                     }
                 },
 
-                "pi": {
-                    "value": (function () {
+                'pi': {
+                    'value': (function () {
                         var piLookup = {};
 
                         return function (decimalPlaces) {
@@ -1882,11 +1913,11 @@
                                 extend(previousConfig, config);
 
                                 BigNumber.config({
-                                    DECIMAL_PLACES : decimalPlaces,
-                                    ROUNDING_MODE : 4,
-                                    EXPONENTIAL_AT : [-7, 20],
-                                    RANGE : [-1000000000, 1000000000],
-                                    ERRORS : true
+                                    DECIMAL_PLACES: decimalPlaces,
+                                    ROUNDING_MODE: 4,
+                                    EXPONENTIAL_AT: [-7, 20],
+                                    RANGE: [-1000000000, 1000000000],
+                                    ERRORS: true
                                 });
 
                                 sum = new BigNumber(0);
@@ -1911,14 +1942,14 @@
                     }())
                 },
 
-                "toRadians": {
-                    "value": function (number, decimalPlacesPI) {
+                'toRadians': {
+                    'value': function (number, decimalPlacesPI) {
                         return new BigNumber(number).toRadians(decimalPlacesPI);
                     }
                 },
 
-                "normaliseAngle": {
-                    "value": function (angle) {
+                'normaliseAngle': {
+                    'value': function (angle) {
                         var newAngle = new BigNumber(angle);
 
                         while (newAngle.lt(-360)) {
@@ -1933,8 +1964,8 @@
                     }
                 },
 
-                "toPositiveAngle": {
-                    "value": function (angle) {
+                'toPositiveAngle': {
+                    'value': function (angle) {
                         var newAngle = new BigNumber.normaliseAngle(angle);
 
                         if (lt(newAngle, 0)) {
@@ -1945,8 +1976,8 @@
                     }
                 },
 
-                "sin": {
-                    "value": (function () {
+                'sin': {
+                    'value': (function () {
                         var sineLookup = {};
 
                         return function (angle) {
@@ -2005,10 +2036,7 @@
                 return isDate(dateObject) && !numberIsNaN(dateObject.getTime());
             }
 
-            function isDigit(character) {
-                return isString(character) && objectIs(character.length, 1) && inRange(character.charCodeAt(0), 48, 57);
-            }
-
+            /*
             function intToNumber(input) {
                 var number = input;
 
@@ -2018,6 +2046,7 @@
 
                 return number;
             }
+            */
 
             function isGregorianLeapYear(struct) {
                 return struct.year.mod(400).isZero() || (!struct.year.mod(100).isZero() && struct.year.mod(4).isZero());
@@ -2077,15 +2106,15 @@
             }
 
             function inMonthRange(month) {
-                return month.gt(0) && month.lte(13);
+                return month.inRange(1, 12);
             }
 
             function inDayRange(day, dim) {
-                return day.gt(0) && day.lte(dim);
+                return day.inRange(1, dim);
             }
 
             function inHourRange(hour) {
-                return hour.gte(0) && hour.lte(24);
+                return hour.inRange(0, 24);
             }
 
             function inMinuteRange(minute, hour) {
@@ -2101,7 +2130,7 @@
             }
 
             function inOffsetRange(offset) {
-                return offset.gte(-1440) && offset.lte(1440);
+                return offset.inRange(-1440, 1440);
             }
 
             function isValid(struct, julian) {
@@ -2117,19 +2146,19 @@
                         }
 
                         switch (element.full) {
-                        case "year":
+                        case 'year':
                             if (!inYearRange(bn)) {
                                 return true;
                             }
 
                             break;
-                        case "month":
+                        case 'month':
                             if (!inMonthRange(bn)) {
                                 return true;
                             }
 
                             break;
-                        case "day":
+                        case 'day':
                             if (objectIs(julian, true)) {
                                 dim = daysInJulianMonth(struct);
                             } else {
@@ -2141,31 +2170,31 @@
                             }
 
                             break;
-                        case "hour":
+                        case 'hour':
                             if (!inHourRange(bn)) {
                                 return true;
                             }
 
                             break;
-                        case "minute":
+                        case 'minute':
                             if (!inMinuteRange(bn, struct.hour)) {
                                 return true;
                             }
 
                             break;
-                        case "second":
+                        case 'second':
                             if (!inSecondRange(bn, struct.hour)) {
                                 return true;
                             }
 
                             break;
-                        case "millisecond":
+                        case 'millisecond':
                             if (!inMillisecondRange(bn, struct.hour)) {
                                 return true;
                             }
 
                             break;
-                        case "offset":
+                        case 'offset':
                             if (!inOffsetRange(bn)) {
                                 return true;
                             }
@@ -2209,7 +2238,7 @@
 
                 if (isString(unitString)) {
                     unitString = stringTrim(unitString).toLowerCase();
-                    if (gt(unitString.length, 2) && objectIs(lastChar(unitString), "s")) {
+                    if (gt(unitString.length, 2) && lastCharIs(unitString, 's')) {
                         unitString = unitString.slice(0, -1);
                     }
 
@@ -2234,19 +2263,19 @@
                 var value;
 
                 switch (normaliseUnits(unit)) {
-                case "day":
+                case 'day':
                     value = struct.hour.div(24).plus(struct.minute.div(1440)).plus(struct.second.div(86400)).plus(struct.millisecond.div(86400000));
                     break;
-                case "hour":
+                case 'hour':
                     value = struct.hour.plus(struct.minute.div(60)).plus(struct.second.div(3600)).plus(struct.millisecond.div(3600000));
                     break;
-                case "minute":
+                case 'minute':
                     value = struct.hour.times(60).plus(struct.minute).plus(struct.second.div(60)).plus(struct.millisecond.div(60000));
                     break;
-                case "second":
+                case 'second':
                     value = struct.hour.times(3600).plus(struct.minute.times(60)).plus(struct.second).plus(struct.millisecond.div(1000));
                     break;
-                case "millisecond":
+                case 'millisecond':
                     value = struct.hour.times(3600000).plus(struct.minute.times(60000)).plus(struct.second.times(1000)).plus(struct.millisecond);
                     break;
                 default:
@@ -2275,12 +2304,12 @@
                     h = 0;
                 }
 
-                return new BigNumber(1721424.5).plus(c).plus(d).plus(e).plus(f).plus(g.plus(h).plus(struct.day).floor()).plus(timeTo(struct, "day"));
+                return new BigNumber(1721424.5).plus(c).plus(d).plus(e).plus(f).plus(g.plus(h).plus(struct.day).floor()).plus(timeTo(struct, 'day'));
             }
 
             function makeNameShort(name, lang) {
                 if (!isString(lang)) {
-                    lang = "en-GB";
+                    lang = 'en-GB';
                 }
 
                 var length = shortNameLength[lang];
@@ -2301,7 +2330,7 @@
                 }
 
                 if (!isString(lang)) {
-                    lang = "en-GB";
+                    lang = 'en-GB';
                 }
 
                 if (!isBoolean(shortName)) {
@@ -2318,7 +2347,7 @@
 
             function monthName(struct, shortName, lang) {
                 if (!isString(lang)) {
-                    lang = "en-GB";
+                    lang = 'en-GB';
                 }
 
                 if (!isBoolean(shortName)) {
@@ -2341,7 +2370,7 @@
 
                 fraction = new BigNumber(fraction);
                 switch (fractionIn) {
-                case "year":
+                case 'year':
                     if (objectIs(julian, true)) {
                         days = daysInJulianYear(struct);
                     } else {
@@ -2350,7 +2379,7 @@
 
                     totalMs = fraction.times(days.times(86400000));
                     break;
-                case "month":
+                case 'month':
                     if (objectIs(julian, true)) {
                         days = daysInJulianMonth(struct);
                     } else {
@@ -2359,19 +2388,19 @@
 
                     totalMs = fraction.times(days.times(86400000));
                     break;
-                case "day":
+                case 'day':
                     totalMs = fraction.times(86400000);
                     break;
-                case "hour":
+                case 'hour':
                     totalMs = fraction.times(3600000);
                     break;
-                case "minute":
+                case 'minute':
                     totalMs = fraction.times(60000);
                     break;
-                case "second":
+                case 'second':
                     totalMs = fraction.times(1000);
                     break;
-                case "millisecond":
+                case 'millisecond':
                     totalMs = fraction;
                     break;
                 default:
@@ -2400,7 +2429,7 @@
                     t,
                     r;
 
-                if (year.gte(-500) && year.lte(2150)) {
+                if (year.inRange(-500, 2150)) {
                     if (year.lt(500)) {
                         u = y.div(100);
                         r = new BigNumber(10583.6).minus(u.times(1014.41)).plus(u.pow(2).times(33.78311)).minus(u.pow(3).times(5.952053)).minus(u.pow(4).times(0.1798452)).plus(u.pow(5).times(0.022174192)).plus(u.pow(6).times(0.0090316521));
@@ -2434,7 +2463,7 @@
                     } else if (year.lt(2005)) {
                         t = y.minus(2000);
                         r = new BigNumber(63.86).plus(t.times(0.3345)).minus(t.pow(2).times(0.060374)).plus(t.pow(3).times(0.0017275)).plus(t.pow(4).times(0.000651814)).plus(t.pow(5).times(0.00002373599));
-                    } else if (year.lt(2005)) {
+                    } else if (year.lt(2050)) {
                         t = y.minus(2000);
                         r = new BigNumber(62.92).plus(t.times(0.32217)).plus(t.pow(2).times(0.005589));
                     } else {
@@ -2445,7 +2474,7 @@
                     r = u.pow(2).times(32).plus(-20);
                 }
 
-                if (canonCorrection && year.gte(1955) && year.lt(2005)) {
+                if (canonCorrection && !year.inRange(1955, 2004)) {
                     r.plus(y.minus(1955).pow(2).times(-0.000012932));
                 }
 
@@ -2468,14 +2497,14 @@
                         }
 
                         switch (element.full) {
-                        case "year":
+                        case 'year':
                             if (!inYearRange(bn)) {
                                 struct = {};
                                 return true;
                             }
 
                             break;
-                        case "month":
+                        case 'month':
                             if (isUndefined(value)) {
                                 bn = new BigNumber(1);
                             }
@@ -2486,7 +2515,7 @@
                             }
 
                             break;
-                        case "day":
+                        case 'day':
                             if (objectIs(julian, true)) {
                                 dim = daysInJulianMonth(struct);
                             } else {
@@ -2503,7 +2532,7 @@
                             }
 
                             break;
-                        case "hour":
+                        case 'hour':
                             if (isUndefined(value)) {
                                 bn = new BigNumber(0);
                             }
@@ -2514,7 +2543,7 @@
                             }
 
                             break;
-                        case "minute":
+                        case 'minute':
                             if (isUndefined(value)) {
                                 bn = new BigNumber(0);
                             }
@@ -2525,7 +2554,7 @@
                             }
 
                             break;
-                        case "second":
+                        case 'second':
                             if (isUndefined(value)) {
                                 bn = new BigNumber(0);
                             }
@@ -2536,7 +2565,7 @@
                             }
 
                             break;
-                        case "millisecond":
+                        case 'millisecond':
                             if (isUndefined(value)) {
                                 bn = new BigNumber(0);
                             }
@@ -2547,7 +2576,7 @@
                             }
 
                             break;
-                        case "offset":
+                        case 'offset':
                             if (isUndefined(value)) {
                                 bn = new BigNumber(0);
                             }
@@ -2598,7 +2627,7 @@
 
                 if (isPlainObject(object)) {
                     arraySome(fullKeys, function (element) {
-                        var value = object[element.alias] || object[element.full] || object[element.full + "s"],
+                        var value = object[element.alias] || object[element.full] || object[element.full + 's'],
                             bn,
                             dim;
 
@@ -2609,14 +2638,14 @@
                         }
 
                         switch (element.full) {
-                        case "year":
+                        case 'year':
                             if (!inYearRange(bn)) {
                                 struct = {};
                                 return true;
                             }
 
                             break;
-                        case "month":
+                        case 'month':
                             if (isUndefined(value)) {
                                 bn = new BigNumber(1);
                             }
@@ -2627,7 +2656,7 @@
                             }
 
                             break;
-                        case "day":
+                        case 'day':
                             if (objectIs(julian, true)) {
                                 dim = daysInJulianMonth(struct);
                             } else {
@@ -2644,7 +2673,7 @@
                             }
 
                             break;
-                        case "hour":
+                        case 'hour':
                             if (isUndefined(value)) {
                                 bn = new BigNumber(0);
                             }
@@ -2655,7 +2684,7 @@
                             }
 
                             break;
-                        case "minute":
+                        case 'minute':
                             if (isUndefined(value)) {
                                 bn = new BigNumber(0);
                             }
@@ -2666,7 +2695,7 @@
                             }
 
                             break;
-                        case "second":
+                        case 'second':
                             if (isUndefined(value)) {
                                 bn = new BigNumber(0);
                             }
@@ -2677,7 +2706,7 @@
                             }
 
                             break;
-                        case "millisecond":
+                        case 'millisecond':
                             if (isUndefined(value)) {
                                 bn = new BigNumber(0);
                             }
@@ -2688,7 +2717,7 @@
                             }
 
                             break;
-                        case "offset":
+                        case 'offset':
                             if (isUndefined(value)) {
                                 bn = new BigNumber(0);
                             }
@@ -2731,7 +2760,7 @@
                     arrayForEach(fullKeys, function (element) {
                         var value = new BigNumber(date[element.local]());
 
-                        if (objectIs(element.full, "month")) {
+                        if (objectIs(element.full, 'month')) {
                             value = value.plus(1);
                         }
 
@@ -2757,7 +2786,7 @@
 
                 a = year.plus(4716).times(365.25).floor();
                 b = month.plus(1).times(30.6001).floor();
-                jd = a.plus(b).plus(struct.day).minus(1524.5).plus(timeTo(struct, "day"));
+                jd = a.plus(b).plus(struct.day).minus(1524.5).plus(timeTo(struct, 'day'));
 
                 return jd;
             }
@@ -2781,7 +2810,7 @@
                     struct.month = struct.month.plus(2).minus(a.times(12));
                     struct.year = b.minus(49).times(100).plus(struct.year).plus(a).floor();
                     struct.offset = new BigNumber(0);
-                    extend(struct, fractionToTime(jd.fractionalPart().abs(), "day"));
+                    extend(struct, fractionToTime(jd.fractionalPart().abs(), 'day'));
                 }
 
                 return struct;
@@ -2820,7 +2849,7 @@
                     }
 
                     struct.offset = new BigNumber(0);
-                    extend(struct, fractionToTime(jd.fractionalPart().abs(), "day"));
+                    extend(struct, fractionToTime(jd.fractionalPart().abs(), 'day'));
                 }
 
                 return struct;
@@ -2891,7 +2920,7 @@
 
                 if (isValid(struct)) {
                     index = 0;
-                    string = "";
+                    string = '';
                     for (count = 0; lt(count, 3); count += 1) {
                         if (isUndefined(struct[fullKeys[count].full])) {
                             index = 3;
@@ -2902,20 +2931,20 @@
                     for (last = fullKeys.length - 1; lt(index, last); index += 1) {
                         key = fullKeys[index].full;
                         value = struct[key];
-                        if (objectIs(key, "year")) {
+                        if (objectIs(key, 'year')) {
                             if (value.lt(0)) {
-                                string += "-";
+                                string += '-';
                                 padding = 6;
                             } else if (value.gte(10000)) {
-                                string += "+";
+                                string += '+';
                                 padding = 6;
                             } else {
                                 padding = 4;
                             }
-                        } else if (objectIs(key, "hour")) {
-                            string += "T";
+                        } else if (objectIs(key, 'hour')) {
+                            string += 'T';
                             padding = 2;
-                        } else if (objectIs(key, "millisecond")) {
+                        } else if (objectIs(key, 'millisecond')) {
                             padding = 3;
                         } else {
                             padding = 2;
@@ -2923,431 +2952,1037 @@
 
                         string += value.abs().padLeadingZero(padding);
                         if (lt(index, 2)) {
-                            string += "-";
+                            string += '-';
                         } else if (inRange(index, 3, 4)) {
-                            string += ":";
-                        } else if (objectIs(key, "second")) {
-                            string += ".";
+                            string += ':';
+                        } else if (objectIs(key, 'second')) {
+                            string += '.';
                         }
                     }
 
                     value = struct.offset;
                     if (value.isZero()) {
-                        string += "Z";
+                        string += 'Z';
                     } else {
                         if (value.lte(0)) {
-                            string += "+";
+                            string += '+';
                         } else {
-                            string += "-";
+                            string += '-';
                         }
 
-                        value = fractionToTime(value.abs(), "minute");
+                        value = fractionToTime(value.abs(), 'minute');
                         string += value.hour.padLeadingZero(2);
-                        string += ":";
+                        string += ':';
                         string += value.minute.padLeadingZero(2);
                     }
                 } else {
-                    string = "Invalid Date";
+                    string = 'Invalid Date';
                 }
 
                 return string;
             }
 
-            function setInvalid(thisContext) {
-                return thisContext.setter("struct");
+            function isoHasValidCharacterCounts(string) {
+                var val;
+
+                if (!inRange(countCharacter(string, ' ') + countCharacter(string, 'T'), 0, 1)) {
+                    val = false;
+                } else if (!inRange(countCharacter(string, 'W'), 0, 1)) {
+                    val = false;
+                } else if (!inRange(countCharacter(string, 'Z'), 0, 1)) {
+                    val = false;
+                } else if (!inRange(countCharacter(string, '.') + countCharacter(string, ','), 0, 1)) {
+                    val = false;
+                } else if (!inRange(countCharacter(string, '+'), 0, 2)) {
+                    val = false;
+                } else if (!inRange(countCharacter(string, '-'), 0, 4)) {
+                    val = false;
+                } else if (!inRange(countCharacter(string, ':'), 0, 4)) {
+                    val = false;
+                } else if (lt(string.replace(/\D/g, '').length, 2)) {
+                    val = false;
+                } else {
+                    val = true;
+                }
+
+                return val;
             }
 
-            function ISO(isoString) {
-                var struct;
-
-                objectDefineProperties(this, {
-                    "getter": {
-                        "value": function () {
-                            return extend({}, struct);
-                        }
+            function ordinalToCalendar(year, dayOfYear) {
+                var struct = {
+                        year: new BigNumber(year),
+                        month: new BigNumber(1),
+                        day: new BigNumber(1),
+                        hour: new BigNumber(0),
+                        minute: new BigNumber(0),
+                        second: new BigNumber(0),
+                        millisecond: new BigNumber(0)
                     },
+                    daysInYear = daysInGregorianYear(struct),
+                    result;
 
-                    "setter": {
-                        "value": function (isoStruct) {
-                            if (isValid(isoStruct)) {
-                                struct = extend({}, isoStruct);
-                            } else {
-                                struct = {};
-                            }
+                dayOfYear = new BigNumber(dayOfYear);
+                if (dayOfYear.inRange(1, daysInYear)) {
+                    struct = jdToGregorian(gregorianToJd(struct).plus(dayOfYear).minus(1));
+                    result = {
+                        sign: 1,
+                        year: struct.year,
+                        month: struct.month,
+                        day: struct.day
+                    };
+                }
 
-                            return this;
-                        }
-                    }
-                });
-
-                struct = this.parse(isoString).getter();
+                return result;
             }
 
-            objectDefineProperties(ISO.prototype, {
-                "parse": {
-                    "value": function parse(isoString) {
-                        var dateObject = {},
-                            getTimezoneOffset,
-                            signYear,
-                            temp,
-                            date,
-                            time,
-                            offset,
-                            signOffset,
-                            character,
-                            element,
-                            length,
-                            timeFraction,
-                            isTimeOnly,
-                            value;
+            function weekDateToCalendar(year, week, weekDay) {
+                var struct = {
+                        year: new BigNumber(year),
+                        month: new BigNumber(1),
+                        day: new BigNumber(4),
+                        hour: new BigNumber(0),
+                        minute: new BigNumber(0),
+                        second: new BigNumber(0),
+                        millisecond: new BigNumber(0)
+                    },
+                    weekDayJan4 = gregorianToJd(struct).plus(1.5).mod(7).floor(),
+                    dayOfYear;
 
-                        if (!isString(isoString)) {
-                            return setInvalid(this);
-                        }
+                if (weekDayJan4.lt(0)) {
+                    weekDayJan4 = weekDayJan4.plus(7);
+                }
 
-                        getTimezoneOffset = new BigNumber(new Date().getTimezoneOffset());
-                        temp = stringSplit(stringTrim(isoString), /[T ]/);
-                        length = temp.length;
-                        if (!inRange(length, 1, 2)) {
-                            return setInvalid(this);
-                        }
+                if (weekDayJan4.isZero()) {
+                    weekDayJan4 = new BigNumber(7);
+                }
 
-                        element = temp[0];
-                        if (objectIs(length, 1)) {
-                            if (objectIs(lastChar(element), "Z") || !stringContains(element, ":") || gt(element.indexOf("+"), 1) || (!objectIs(firstChar(element), "-") && !objectIs(element.charAt(4), "-") && objectIs(stringSplit(element, "-").length, 2))) {
-                                arrayUnshift(temp, "");
-                                isTimeOnly = true;
-                            } else {
-                                if (getTimezoneOffset.isZero()) {
-                                    value = "Z";
-                                } else {
-                                    value = fractionToTime(getTimezoneOffset.abs(), "minute");
-                                    value = value.hour.padLeadingZero(2) + ":" + value.minute.padLeadingZero(2);
-                                    if (getTimezoneOffset.lte(0)) {
-                                        value = "-" + value;
-                                    } else {
-                                        value = "+" + value;
-                                    }
-                                }
+                dayOfYear = new BigNumber(7).times(week).plus(weekDay).minus(weekDayJan4.plus(3));
+                if (dayOfYear.lt(1)) {
+                    struct.year = struct.year.minus(1);
+                    dayOfYear = daysInGregorianYear(struct).plus(dayOfYear);
+                } else if (dayOfYear.gt(daysInGregorianYear(struct))) {
+                    struct.year = struct.year.plus(1);
+                    dayOfYear = dayOfYear.minus(daysInGregorianYear(struct));
+                }
 
-                                temp.push("00:00:00.000" + value);
-                                isTimeOnly = false;
-                            }
-                        } else if (objectIs(element.length, 0)) {
-                            isTimeOnly = true;
-                        }
+                return ordinalToCalendar(struct.year, dayOfYear);
+            }
 
-                        time = temp[1];
-                        character = firstChar(time);
-                        if (!isDigit(character)) {
-                            return setInvalid(this);
-                        }
-
-                        if (!isTimeOnly) {
-                            date = temp[0];
-                            character = firstChar(date);
-                            if (!isDigit(character)) {
-                                if (objectIs(character, "+") || objectIs(character, "-")) {
-                                    signYear = character;
-                                } else {
-                                    return setInvalid(this);
-                                }
-
-                                date = date.slice(1);
-                            }
-
-                            if (!stringContains(date, "-")) {
-                                temp = [];
-                                length = date.length;
-                                if (gte(length, 8)) {
-                                    if (gte(length, 9) && isUndefined(signYear)) {
-                                        return setInvalid(this);
-                                    }
-
-                                    temp.push(date.slice(0, length - 4));
-                                    temp.push(date.slice(length - 4, length - 2));
-                                    temp.push(date.slice(length - 2));
-                                } else {
-                                    return setInvalid(this);
-                                }
-                            } else {
-                                temp = stringSplit(date, "-");
-                            }
-
-                            length = temp.length;
-                            if (!inRange(length, 2, 3)) {
-                                return setInvalid(this);
-                            }
-
-                            if (objectIs(length, 2)) {
-                                temp.push("01");
-                            }
-
-                            date = {};
-                            if (arraySome(temp, function (val, idx) {
-                                    var len = val.length,
-                                        num = intToNumber(new BigNumber(val));
-
-                                    switch (idx) {
-                                    case 0:
-                                        if (lt(len, 4) || (objectIs(signYear, "+") && objectIs(len, 4)) || (gt(len, 4) && !objectIs(signYear, "+") && !objectIs(signYear, "-")) || !num.isFinite()) {
-                                            return true;
-                                        }
-
-                                        if (objectIs(signYear, "-")) {
-                                            num = num.neg();
-                                        }
-
-                                        break;
-                                    case 1:
-                                        if (!objectIs(len, 2) || !inMonthRange(num)) {
-                                            return true;
-                                        }
-
-                                        break;
-                                    case 2:
-                                        if (!objectIs(len, 2) || !inDayRange(num, daysInGregorianMonth(date))) {
-                                            return true;
-                                        }
-
-                                        break;
-                                    default:
-                                        throw new Error();
-                                    }
-
-                                    date[fullKeys[idx].full] = num;
-
-                                    return false;
-                                })) {
-
-                                return setInvalid(this);
-                            }
-                        }
-
-                        character = lastChar(time);
-                        if (!isDigit(character)) {
-                            if (objectIs(character, "Z")) {
-                                time = time.slice(0, -1) + "+00";
-                            } else {
-                                return setInvalid(this);
-                            }
-                        }
-
-                        temp = stringSplit(time, /[\-+]/);
-                        length = temp.length;
-                        if (!inRange(length, 1, 2)) {
-                            return setInvalid(this);
-                        }
-
-                        if (objectIs(length, 1)) {
-                            if (objectIs(getTimezoneOffset, 0)) {
-                                value = "00";
-                            } else {
-                                value = fractionToTime(Math.abs(getTimezoneOffset), "minute");
-                                value = value.hour.padLeadingZero(2) + ":" + value.minute.padLeadingZero(2);
-                            }
-
-                            temp.push(value);
-                        }
-
-                        if (stringContains(time, "-")) {
-                            signOffset = -1;
-                        } else {
-                            signOffset = 1;
-                        }
-
-                        offset = stringSplit(temp[1], ":");
-                        length = offset.length;
-                        if (!inRange(length, 1, 2)) {
-                            return setInvalid(this);
-                        }
-
-                        if (objectIs(length, 1)) {
-                            element = offset[0];
-                            switch (offset[0].length) {
-                            case 4:
-                                offset.push(element.slice(0, 2));
-                                offset.push(element.slice(2));
-                                break;
-                            case 2:
-                                offset.push(element);
-                                offset.push("00");
-                                break;
-                            default:
-                                return setInvalid(this);
-                            }
-                        }
-
-                        offset[0] = intToNumber(new BigNumber(offset[0]));
-                        if (!inHourRange(offset[0])) {
-                            return setInvalid(this);
-                        }
-
-                        offset[1] = intToNumber(new BigNumber(offset[1]));
-                        if (!inMinuteRange(offset[1], offset[0])) {
-                            return setInvalid(this);
-                        }
-
-                        if (objectIs(signOffset, -1) && offset[0].isZero() && offset[1].isZero()) {
-                            return setInvalid(this);
-                        }
-
-                        time = temp[0];
-                        if (stringContains(time, ".") || stringContains(time, ",")) {
-                            temp = stringSplit(time, /[\.,]/);
-                            element = temp[1];
-                            if (!objectIs(temp.length, 2) || !objectIs(stringSplit(element, ":").length, 1)) {
-                                return setInvalid(this);
-                            }
-
-                            time = temp[0];
-                            timeFraction = new BigNumber("0." + temp[1]);
-                        } else {
-                            timeFraction = new BigNumber(0);
-                        }
-
-                        if (!stringContains(time, ":")) {
-                            temp = [];
-                            switch (time.length) {
-                            case 6:
-                                temp.push(time.slice(0, 2));
-                                temp.push(time.slice(2, 4));
-                                temp.push(time.slice(4));
-                                break;
-                            case 4:
-                                temp.push(time.slice(0, 2));
-                                temp.push(time.slice(2));
-                                break;
-                            case 2:
-                                temp.push(time);
-                                break;
-                            default:
-                                return setInvalid(this);
-                            }
-                        } else {
-                            temp = stringSplit(time, ":");
-                        }
-
-                        length = temp.length;
-                        if (!inRange(length, 1, 3)) {
-                            return setInvalid(this);
-                        }
-
-                        if (!timeFraction.isZero()) {
-                            timeFraction = fractionToTime(timeFraction.abs(), fullKeys[length + 2].full);
-                            if (lt(length, 2)) {
-                                temp.push(timeFraction.minute.padLeadingZero(2));
-                            }
-
-                            if (lt(length, 3)) {
-                                temp.push(timeFraction.second.padLeadingZero(2));
-                            }
-
-                            if (lt(length, 4)) {
-                                temp.push(timeFraction.millisecond.padLeadingZero(3));
-                            }
-                        } else {
-                            if (lt(length, 2)) {
-                                temp.push("00");
-                            }
-
-                            if (lt(length, 3)) {
-                                temp.push("00");
-                            }
-
-                            if (lt(length, 4)) {
-                                temp.push("000");
-                            }
-                        }
-
-                        time = {};
-                        if (arraySome(temp, function (val, idx) {
-                                var num = intToNumber(new BigNumber(val));
-
-                                switch (idx) {
-                                case 0:
-                                    if (!inHourRange(num)) {
-                                        return true;
-                                    }
-
-                                    break;
-                                case 1:
-                                    if (!inMinuteRange(num, time.hour)) {
-                                        return true;
-                                    }
-
-                                    break;
-                                case 2:
-                                    if (!inSecondRange(num, time.hour)) {
-                                        return true;
-                                    }
-
-                                    break;
-                                case 3:
-                                    if (!inMillisecondRange(num, time.hour)) {
-                                        return true;
-                                    }
-
-                                    break;
-                                default:
-                                    throw new Error(idx);
-                                }
-
-                                time[fullKeys[idx + 3].full] = num;
-
-                                return false;
-                            })) {
-
-                            return setInvalid(this);
-                        }
-
-                        time.offset = offset[0].times(60).plus(offset[1]).times(signOffset);
-                        if (!isTimeOnly) {
-                            extend(dateObject, date);
-                        }
-
-                        extend(dateObject, time);
-
-                        return this.setter(dateObject);
+            var datePatterns = {
+                basic: [{
+                    regex: /^(\d{2})$/,
+                    func: function (rxResult) {
+                        return {
+                            year: new BigNumber(rxResult[1] + '00'),
+                            month: new BigNumber(1),
+                            day: new BigNumber(1)
+                        };
                     }
-                },
-
-                "isValid": {
-                    "value": function () {
-                        return isValid(this.getter());
+                }, {
+                    regex: /^(\d{4})$/,
+                    func: function (rxResult) {
+                        return {
+                            year: new BigNumber(rxResult[1]),
+                            month: new BigNumber(1),
+                            day: new BigNumber(1)
+                        };
                     }
-                },
-
-                "toString": {
-                    "value": function () {
-                        return toISOString(this);
+                }, {
+                    regex: /^(\d{4})(\d{2})(\d{2})$/,
+                    func: function (rxResult) {
+                        return {
+                            year: new BigNumber(rxResult[1]),
+                            month: new BigNumber(rxResult[2]),
+                            day: new BigNumber(rxResult[3])
+                        };
                     }
-                },
+                }, {
+                    regex: /^(\d{4})-(\d{2})$/,
+                    func: function (rxResult) {
+                        return {
+                            year: new BigNumber(rxResult[1]),
+                            month: new BigNumber(rxResult[2]),
+                            day: new BigNumber(1)
+                        };
+                    }
+                }, {
+                    regex: /^(\d{4})-(\d{2})-(\d{2})$/,
+                    func: function (rxResult) {
+                        return {
+                            year: new BigNumber(rxResult[1]),
+                            month: new BigNumber(rxResult[2]),
+                            day: new BigNumber(rxResult[3])
+                        };
+                    }
+                }, {
+                    regex: /^(\d{4})(\d{3})$/,
+                    func: function (rxResult) {
+                        return ordinalToCalendar(rxResult[1], rxResult[2]);
+                    }
+                }, {
+                    regex: /^(\d{4})W(\d{2})$/,
+                    func: function (rxResult) {
+                        return weekDateToCalendar(rxResult[1], rxResult[2], 1);
+                    }
+                }, {
+                    regex: /^(\d{4})W(\d{2})([1-7]{1})$/,
+                    func: function (rxResult) {
+                        return weekDateToCalendar(rxResult[1], rxResult[2], rxResult[3]);
+                    }
+                }],
+                extended: [{
+                    regex: /^([\-+]{1})(\d{6,})-(\d{2})$/,
+                    func: function (rxResult) {
+                        return {
+                            year: new BigNumber(rxResult[2]).times(rxResult[1] + '1'),
+                            month: new BigNumber(rxResult[3]),
+                            day: new BigNumber(1)
+                        };
+                    }
+                }, {
+                    regex: /^([\-+]{1})(\d{6,})-(\d{2})-(\d{2})$/,
+                    func: function (rxResult) {
+                        return {
+                            year: new BigNumber(rxResult[2]).times(rxResult[1] + '1'),
+                            month: new BigNumber(rxResult[3]),
+                            day: new BigNumber(rxResult[4])
+                        };
+                    }
+                }, {
+                    regex: /^(\d{4})-(\d{3})$/,
+                    func: function (rxResult) {
+                        return ordinalToCalendar(rxResult[1], rxResult[2]);
+                    }
+                }, {
+                    regex: /^(\d{4})-W(\d{2})$/,
+                    func: function (rxResult) {
+                        return weekDateToCalendar(rxResult[1], rxResult[2], 1);
+                    }
+                }, {
+                    regex: /^(\d{4})-W(\d{2})-([1-7]{1})$/,
+                    func: function (rxResult) {
+                        return weekDateToCalendar(rxResult[1], rxResult[2], rxResult[3]);
+                    }
+                }]
+            };
 
-                "valueOf": {
-                    "value": function () {
-                        var struct;
+            var timePatterns = {
+                basic: [{
+                    regex: /^(\d{2})$/,
+                    func: function (rxResult) {
+                        return {
+                            hour: new BigNumber(rxResult[1]),
+                            minute: new BigNumber(0),
+                            second: new BigNumber(0),
+                            millisecond: new BigNumber(0),
+                            offset: new BigNumber(new Date().getTimezoneOffset())
+                        };
+                    }
+                }, {
+                    regex: /^(\d{2})(\d{2})$/,
+                    func: function (rxResult) {
+                        return {
+                            hour: new BigNumber(rxResult[1]),
+                            minute: new BigNumber(rxResult[2]),
+                            second: new BigNumber(0),
+                            millisecond: new BigNumber(0),
+                            offset: new BigNumber(new Date().getTimezoneOffset())
+                        };
+                    }
+                }, {
+                    regex: /^(\d{2})(\d{2})(\d{2})$/,
+                    func: function (rxResult) {
+                        return {
+                            hour: new BigNumber(rxResult[1]),
+                            minute: new BigNumber(rxResult[2]),
+                            second: new BigNumber(rxResult[3]),
+                            millisecond: new BigNumber(0),
+                            offset: new BigNumber(new Date().getTimezoneOffset())
+                        };
+                    }
+                }, {
+                    regex: /^(\d{2})Z$/,
+                    func: function (rxResult) {
+                        return {
+                            hour: new BigNumber(rxResult[1]),
+                            minute: new BigNumber(0),
+                            second: new BigNumber(0),
+                            millisecond: new BigNumber(0),
+                            offset: new BigNumber(0)
+                        };
+                    }
+                }, {
+                    regex: /^(\d{2})(\d{2})Z$/,
+                    func: function (rxResult) {
+                        return {
+                            hour: new BigNumber(rxResult[1]),
+                            minute: new BigNumber(rxResult[2]),
+                            second: new BigNumber(0),
+                            millisecond: new BigNumber(0),
+                            offset: new BigNumber(0)
+                        };
+                    }
+                }, {
+                    regex: /^(\d{2})(\d{2})(\d{2})Z$/,
+                    func: function (rxResult) {
+                        return {
+                            hour: new BigNumber(rxResult[1]),
+                            minute: new BigNumber(rxResult[2]),
+                            second: new BigNumber(rxResult[3]),
+                            millisecond: new BigNumber(0),
+                            offset: new BigNumber(0)
+                        };
+                    }
+                }, {
+                    regex: /^(\d{2})([\-+]{1})(\d{2})$/,
+                    func: function (rxResult) {
+                        var sign = rxResult[2],
+                            offset = new BigNumber(rxResult[3]).times(60),
+                            val;
 
-                        if (this.isValid()) {
-                            struct = structToObject(this.getter());
+                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                            val = {
+                                hour: new BigNumber(rxResult[1]),
+                                minute: new BigNumber(0),
+                                second: new BigNumber(0),
+                                millisecond: new BigNumber(0),
+                                offset: offset.times(sign + '1').neg()
+                            };
                         }
 
-                        return struct;
+                        return val;
                     }
-                },
+                }, {
+                    regex: /^(\d{2})(\d{2})([\-+]{1})(\d{2})$/,
+                    func: function (rxResult) {
+                        var sign = rxResult[3],
+                            offset = new BigNumber(rxResult[4]).times(60),
+                            val;
 
-                "toArray": {
-                    "value": function () {
-                        var arr;
-
-                        if (this.isValid()) {
-                            arr = structToArrayOfString(this.getter());
+                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                            val = {
+                                hour: new BigNumber(rxResult[1]),
+                                minute: new BigNumber(rxResult[2]),
+                                second: new BigNumber(0),
+                                millisecond: new BigNumber(0),
+                                offset: offset.times(sign + '1').neg()
+                            };
                         }
 
-                        return arr;
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2})(\d{2})(\d{2})([\-+]{1})(\d{2})$/,
+                    func: function (rxResult) {
+                        var sign = rxResult[4],
+                            offset = new BigNumber(rxResult[5]).times(60),
+                            val;
+
+                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                            val = {
+                                hour: new BigNumber(rxResult[1]),
+                                minute: new BigNumber(rxResult[2]),
+                                second: new BigNumber(rxResult[3]),
+                                millisecond: new BigNumber(0),
+                                offset: offset.times(sign + '1').neg()
+                            };
+                        }
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2})([\-+]{1})(\d{2})(\d{2})$/,
+                    func: function (rxResult) {
+                        var sign = rxResult[2],
+                            offset = new BigNumber(rxResult[3]).times(60).plus(rxResult[4]),
+                            val;
+
+                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                            val = {
+                                hour: new BigNumber(rxResult[1]),
+                                minute: new BigNumber(0),
+                                second: new BigNumber(0),
+                                millisecond: new BigNumber(0),
+                                offset: offset.times(sign + '1').neg()
+                            };
+                        }
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2})(\d{2})([\-+]{1})(\d{2})(\d{2})$/,
+                    func: function (rxResult) {
+                        var sign = rxResult[3],
+                            offset = new BigNumber(rxResult[4]).times(60).plus(rxResult[5]),
+                            val;
+
+                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                            val = {
+                                hour: new BigNumber(rxResult[1]),
+                                minute: new BigNumber(rxResult[2]),
+                                second: new BigNumber(0),
+                                millisecond: new BigNumber(0),
+                                offset: offset.times(sign + '1').neg()
+                            };
+                        }
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2})(\d{2})(\d{2})([\-+]{1})(\d{2})(\d{2})$/,
+                    func: function (rxResult) {
+                        var sign = rxResult[4],
+                            offset = new BigNumber(rxResult[5]).times(60).plus(rxResult[6]),
+                            val;
+
+                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                            val = {
+                                hour: new BigNumber(rxResult[1]),
+                                minute: new BigNumber(rxResult[2]),
+                                second: new BigNumber(rxResult[3]),
+                                millisecond: new BigNumber(0),
+                                offset: offset.times(sign + '1').neg()
+                            };
+                        }
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2})[\.,]{1}(\d{1,})$/,
+                    func: function (rxResult) {
+                        var val = fractionToTime('0.' + rxResult[2], 'hour');
+
+                        val.hour = new BigNumber(rxResult[1]);
+                        val.offset = new BigNumber(new Date().getTimezoneOffset());
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2})(\d{2})[\.,]{1}(\d{1,})$/,
+                    func: function (rxResult) {
+                        var val = fractionToTime('0.' + rxResult[3], 'minute');
+
+                        val.hour = new BigNumber(rxResult[1]);
+                        val.minute = new BigNumber(rxResult[2]);
+                        val.offset = new BigNumber(new Date().getTimezoneOffset());
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2})(\d{2})(\d{2})[\.,]{1}(\d{1,})$/,
+                    func: function (rxResult) {
+                        return {
+                            hour: new BigNumber(rxResult[1]),
+                            minute: new BigNumber(rxResult[2]),
+                            second: new BigNumber(rxResult[3]),
+                            millisecond: new BigNumber(rxResult[4]),
+                            offset: new BigNumber(new Date().getTimezoneOffset())
+                        };
+                    }
+                }, {
+                    regex: /^(\d{2})[\.,]{1}(\d{1,})Z$/,
+                    func: function (rxResult) {
+                        var val = fractionToTime('0.' + rxResult[2], 'hour');
+
+                        val.hour = new BigNumber(rxResult[1]);
+                        val.offset = new BigNumber(0);
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2})(\d{2})[\.,]{1}(\d{1,})Z$/,
+                    func: function (rxResult) {
+                        var val = fractionToTime('0.' + rxResult[3], 'minute');
+
+                        val.hour = new BigNumber(rxResult[1]);
+                        val.minute = new BigNumber(rxResult[1]);
+                        val.offset = new BigNumber(0);
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2})(\d{2})(\d{2})[\.,]{1}(\d{1,})Z$/,
+                    func: function (rxResult) {
+                        return {
+                            hour: new BigNumber(rxResult[1]),
+                            minute: new BigNumber(rxResult[2]),
+                            second: new BigNumber(rxResult[3]),
+                            millisecond: new BigNumber(rxResult[4]),
+                            offset: new BigNumber(0)
+                        };
+                    }
+                }, {
+                    regex: /^(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})$/,
+                    func: function (rxResult) {
+                        var sign = rxResult[3],
+                            offset = new BigNumber(rxResult[4]).times(60),
+                            val;
+
+                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                            val = fractionToTime('0.' + rxResult[2], 'hour');
+                            val.hour = new BigNumber(rxResult[1]);
+                            val.offset = offset.times(sign + '1').neg();
+                        }
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2})(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})$/,
+                    func: function (rxResult) {
+                        var sign = rxResult[4],
+                            offset = new BigNumber(rxResult[5]).times(60),
+                            val;
+
+                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                            val = fractionToTime('0.' + rxResult[3], 'minute');
+                            val.hour = new BigNumber(rxResult[1]);
+                            val.minute = new BigNumber(rxResult[2]);
+                            val.offset = offset.times(sign + '1').neg();
+                        }
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2})(\d{2})(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})$/,
+                    func: function (rxResult) {
+                        var sign = rxResult[5],
+                            offset = new BigNumber(rxResult[6]).times(60),
+                            val;
+
+                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                            val = {
+                                hour: new BigNumber(rxResult[1]),
+                                minute: new BigNumber(rxResult[2]),
+                                second: new BigNumber(rxResult[3]),
+                                millisecond: new BigNumber(rxResult[4]),
+                                offset: offset.times(sign + '1').neg()
+                            };
+                        }
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})(\d{2})$/,
+                    func: function (rxResult) {
+                        var sign = rxResult[3],
+                            offset = new BigNumber(rxResult[4]).times(60).plus(rxResult[5]),
+                            val;
+
+                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                            val = fractionToTime('0.' + rxResult[2], 'hour');
+                            val.hour = new BigNumber(rxResult[1]);
+                            val.offset = offset.times(sign + '1').neg();
+                        }
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2})(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})(\d{2})$/,
+                    func: function (rxResult) {
+                        var sign = rxResult[4],
+                            offset = new BigNumber(rxResult[5]).times(60).plus(rxResult[6]),
+                            val;
+
+                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                            val = fractionToTime('0.' + rxResult[3], 'minute');
+                            val.hour = new BigNumber(rxResult[1]);
+                            val.minute = new BigNumber(rxResult[2]);
+                            val.offset = offset.times(sign + '1').neg();
+                        }
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2})(\d{2})(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})(\d{2})$/,
+                    func: function (rxResult) {
+                        var sign = rxResult[5],
+                            offset = new BigNumber(rxResult[6]).times(60).plus(rxResult[7]),
+                            val;
+
+                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                            val = {
+                                hour: new BigNumber(rxResult[1]),
+                                minute: new BigNumber(rxResult[2]),
+                                second: new BigNumber(rxResult[3]),
+                                millisecond: new BigNumber(rxResult[4]),
+                                offset: offset.times(sign + '1').neg()
+                            };
+                        }
+
+                        return val;
+                    }
+                }],
+                extended: [{
+                    regex: /^(\d{2})$/,
+                    func: function (rxResult) {
+                        return {
+                            hour: new BigNumber(rxResult[1]),
+                            minute: new BigNumber(0),
+                            second: new BigNumber(0),
+                            millisecond: new BigNumber(0),
+                            offset: new BigNumber(new Date().getTimezoneOffset())
+                        };
+                    }
+                }, {
+                    regex: /^(\d{2}):(\d{2})$/,
+                    func: function (rxResult) {
+                        return {
+                            hour: new BigNumber(rxResult[1]),
+                            minute: new BigNumber(rxResult[2]),
+                            second: new BigNumber(0),
+                            millisecond: new BigNumber(0),
+                            offset: new BigNumber(new Date().getTimezoneOffset())
+                        };
+                    }
+                }, {
+                    regex: /^(\d{2}):(\d{2}):(\d{2})$/,
+                    func: function (rxResult) {
+                        return {
+                            hour: new BigNumber(rxResult[1]),
+                            minute: new BigNumber(rxResult[2]),
+                            second: new BigNumber(rxResult[3]),
+                            millisecond: new BigNumber(0),
+                            offset: new BigNumber(new Date().getTimezoneOffset())
+                        };
+                    }
+                }, {
+                    regex: /^(\d{2})Z$/,
+                    func: function (rxResult) {
+                        return {
+                            hour: new BigNumber(rxResult[1]),
+                            minute: new BigNumber(0),
+                            second: new BigNumber(0),
+                            millisecond: new BigNumber(0),
+                            offset: new BigNumber(0)
+                        };
+                    }
+                }, {
+                    regex: /^(\d{2}):(\d{2})Z$/,
+                    func: function (rxResult) {
+                        return {
+                            hour: new BigNumber(rxResult[1]),
+                            minute: new BigNumber(rxResult[2]),
+                            second: new BigNumber(0),
+                            millisecond: new BigNumber(0),
+                            offset: new BigNumber(0)
+                        };
+                    }
+                }, {
+                    regex: /^(\d{2}):(\d{2}):(\d{2})Z$/,
+                    func: function (rxResult) {
+                        return {
+                            hour: new BigNumber(rxResult[1]),
+                            minute: new BigNumber(rxResult[2]),
+                            second: new BigNumber(rxResult[3]),
+                            millisecond: new BigNumber(0),
+                            offset: new BigNumber(0)
+                        };
+                    }
+                }, {
+                    regex: /^(\d{2}):([\-+]{1})(\d{2})$/,
+                    func: function (rxResult) {
+                        var sign = rxResult[2],
+                            offset = new BigNumber(rxResult[3]).times(60),
+                            val;
+
+                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                            val = {
+                                hour: new BigNumber(rxResult[1]),
+                                minute: new BigNumber(0),
+                                second: new BigNumber(0),
+                                millisecond: new BigNumber(0),
+                                offset: offset.times(sign + '1').neg()
+                            };
+                        }
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2}):(\d{2})([\-+]{1})(\d{2})$/,
+                    func: function (rxResult) {
+                        var sign = rxResult[3],
+                            offset = new BigNumber(rxResult[4]).times(60),
+                            val;
+
+                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                            val = {
+                                hour: new BigNumber(rxResult[1]),
+                                minute: new BigNumber(rxResult[2]),
+                                second: new BigNumber(0),
+                                millisecond: new BigNumber(0),
+                                offset: offset.times(sign + '1').neg()
+                            };
+                        }
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2}):(\d{2}):(\d{2})([\-+]{1})(\d{2})$/,
+                    func: function (rxResult) {
+                        var sign = rxResult[4],
+                            offset = new BigNumber(rxResult[5]).times(60),
+                            val;
+
+                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                            val = {
+                                hour: new BigNumber(rxResult[1]),
+                                minute: new BigNumber(rxResult[2]),
+                                second: new BigNumber(rxResult[3]),
+                                millisecond: new BigNumber(0),
+                                offset: offset.times(sign + '1').neg()
+                            };
+                        }
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2})([\-+]{1})(\d{2}):(\d{2})$/,
+                    func: function (rxResult) {
+                        var sign = rxResult[2],
+                            offset = new BigNumber(rxResult[3]).times(60).plus(rxResult[4]),
+                            val;
+
+                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                            val = {
+                                hour: new BigNumber(rxResult[1]),
+                                minute: new BigNumber(0),
+                                second: new BigNumber(0),
+                                millisecond: new BigNumber(0),
+                                offset: offset.times(sign + '1').neg()
+                            };
+                        }
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2}):(\d{2})([\-+]{1})(\d{2}):(\d{2})$/,
+                    func: function (rxResult) {
+                        var sign = rxResult[3],
+                            offset = new BigNumber(rxResult[4]).times(60).plus(rxResult[5]),
+                            val;
+
+                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                            val = {
+                                hour: new BigNumber(rxResult[1]),
+                                minute: new BigNumber(rxResult[2]),
+                                second: new BigNumber(0),
+                                millisecond: new BigNumber(0),
+                                offset: offset.times(sign + '1').neg()
+                            };
+                        }
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2}):(\d{2}):(\d{2})([\-+]{1})(\d{2}):(\d{2})$/,
+                    func: function (rxResult) {
+                        var sign = rxResult[4],
+                            offset = new BigNumber(rxResult[5]).times(60).plus(rxResult[6]),
+                            val;
+
+                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                            val = {
+                                hour: new BigNumber(rxResult[1]),
+                                minute: new BigNumber(rxResult[2]),
+                                second: new BigNumber(rxResult[3]),
+                                millisecond: new BigNumber(0),
+                                offset: offset.times(sign + '1').neg()
+                            };
+                        }
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2})[\.,]{1}(\d{1,})$/,
+                    func: function (rxResult) {
+                        var val = fractionToTime('0.' + rxResult[2], 'hour');
+
+                        val.hour = new BigNumber(rxResult[1]);
+                        val.offset = new BigNumber(new Date().getTimezoneOffset());
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2}):(\d{2})[\.,]{1}(\d{1,})$/,
+                    func: function (rxResult) {
+                        var val = fractionToTime('0.' + rxResult[3], 'minute');
+
+                        val.hour = new BigNumber(rxResult[1]);
+                        val.minute = new BigNumber(rxResult[2]);
+                        val.offset = new BigNumber(new Date().getTimezoneOffset());
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2}):(\d{2}):(\d{2})[\.,]{1}(\d{1,})$/,
+                    func: function (rxResult) {
+                        return {
+                            hour: new BigNumber(rxResult[1]),
+                            minute: new BigNumber(rxResult[2]),
+                            second: new BigNumber(rxResult[3]),
+                            millisecond: new BigNumber(rxResult[4]),
+                            offset: new BigNumber(new Date().getTimezoneOffset())
+                        };
+                    }
+                }, {
+                    regex: /^(\d{2})[\.,]{1}(\d{1,})Z$/,
+                    func: function (rxResult) {
+                        var val = fractionToTime('0.' + rxResult[2], 'hour');
+
+                        val.hour = new BigNumber(rxResult[1]);
+                        val.offset = new BigNumber(0);
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2}):(\d{2})[\.,]{1}(\d{1,})Z$/,
+                    func: function (rxResult) {
+                        var val = fractionToTime('0.' + rxResult[3], 'minute');
+
+                        val.hour = new BigNumber(rxResult[1]);
+                        val.minute = new BigNumber(rxResult[1]);
+                        val.offset = new BigNumber(0);
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2}):(\d{2}):(\d{2})[\.,]{1}(\d{1,})Z$/,
+                    func: function (rxResult) {
+                        return {
+                            hour: new BigNumber(rxResult[1]),
+                            minute: new BigNumber(rxResult[2]),
+                            second: new BigNumber(rxResult[3]),
+                            millisecond: new BigNumber(rxResult[4]),
+                            offset: new BigNumber(0)
+                        };
+                    }
+                }, {
+                    regex: /^(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})$/,
+                    func: function (rxResult) {
+                        var sign = rxResult[3],
+                            offset = new BigNumber(rxResult[4]).times(60),
+                            val;
+
+                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                            val = fractionToTime('0.' + rxResult[2], 'hour');
+                            val.hour = new BigNumber(rxResult[1]);
+                            val.offset = offset.times(sign + '1').neg();
+                        }
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2}):(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})$/,
+                    func: function (rxResult) {
+                        var sign = rxResult[4],
+                            offset = new BigNumber(rxResult[5]).times(60),
+                            val;
+
+                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                            val = fractionToTime('0.' + rxResult[3], 'minute');
+                            val.hour = new BigNumber(rxResult[1]);
+                            val.minute = new BigNumber(rxResult[2]);
+                            val.offset = offset.times(sign + '1').neg();
+                        }
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2}):(\d{2}):(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})$/,
+                    func: function (rxResult) {
+                        var sign = rxResult[5],
+                            offset = new BigNumber(rxResult[6]).times(60),
+                            val;
+
+                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                            val = {
+                                hour: new BigNumber(rxResult[1]),
+                                minute: new BigNumber(rxResult[2]),
+                                second: new BigNumber(rxResult[3]),
+                                millisecond: new BigNumber(rxResult[4]),
+                                offset: offset.times(sign + '1').neg()
+                            };
+                        }
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2}):(\d{2})$/,
+                    func: function (rxResult) {
+                        var sign = rxResult[3],
+                            offset = new BigNumber(rxResult[4]).times(60).plus(rxResult[5]),
+                            val;
+
+                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                            val = fractionToTime('0.' + rxResult[2], 'hour');
+                            val.hour = new BigNumber(rxResult[1]);
+                            val.offset = offset.times(sign + '1').neg();
+                        }
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2}):(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2}):(\d{2})$/,
+                    func: function (rxResult) {
+                        var sign = rxResult[4],
+                            offset = new BigNumber(rxResult[5]).times(60).plus(rxResult[6]),
+                            val;
+
+                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                            val = fractionToTime('0.' + rxResult[3], 'minute');
+                            val.hour = new BigNumber(rxResult[1]);
+                            val.minute = new BigNumber(rxResult[2]);
+                            val.offset = offset.times(sign + '1').neg();
+                        }
+
+                        return val;
+                    }
+                }, {
+                    regex: /^(\d{2}):(\d{2}):(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2}):(\d{2})$/,
+                    func: function (rxResult) {
+                        var sign = rxResult[5],
+                            offset = new BigNumber(rxResult[6]).times(60).plus(rxResult[7]),
+                            val;
+
+                        if (objectIs(sign, '+') || !offset.isZero() || (offset.isZero() && !objectIs(sign, '-'))) {
+                            val = {
+                                hour: new BigNumber(rxResult[1]),
+                                minute: new BigNumber(rxResult[2]),
+                                second: new BigNumber(rxResult[3]),
+                                millisecond: new BigNumber(rxResult[4]),
+                                offset: offset.times(sign + '1').neg()
+                            };
+                        }
+
+                        return val;
+                    }
+                }]
+            };
+
+            function isoSplitDateTime(string) {
+                var dtObject = {
+                    date: '',
+                    time: ''
+                },
+                    firstSplit = stringSplit(stringTrim(string), /[T ]/),
+                    splitLength = firstSplit.length,
+                    element;
+
+                if (inRange(splitLength, 1, 2)) {
+                    if (objectIs(splitLength, 1)) {
+                        element = firstSplit[0];
+                        // we make a best guess
+                        if (objectIs(element.slice(-4), '-') || firstCharIs(element, '+') || firstCharIs(element, '-') || objectIs(element.length, 2) || gte(countCharacter(element, '-'), 2) || stringContains(element, 'W')) {
+                            // only ordinal dates have a "-" at -4
+                            // only dates begin with "+" or "-"
+                            // dates and times can be only 2 digits but will default to date unless preceeded with " " or "T"
+                            // only dates have 2 or more "-"
+                            // only dates have a week number "W"
+                            dtObject.date = element;
+                            dtObject.time = '00';
+                        } else if (lastCharIs(element, 'Z') || stringContains(element, ':') || stringContains(element, '.') || stringContains(element, ',') || stringContains(element, '+') || objectIs(element.slice(-3), '-')) {
+                            // only times end with a "Z"
+                            // only times contain a ":" or a "." or a ","
+                            // only times contain a "+" that is not at the beginning
+                            // only times have a "-" at -3
+                            dtObject.date = '00';
+                            dtObject.time = element;
+                        } else {
+                            // otherwise we guess it is a date
+                            dtObject.date = element;
+                            dtObject.time = '00';
+                        }
+                    } else {
+                        dtObject.date = firstSplit[0] || '00';
+                        dtObject.time = firstSplit[1];
                     }
                 }
-            });
+
+                //console.log('isoSplitDateTime', string, dtObject);
+                return dtObject;
+            }
+
+            function isoParse(isoString) {
+                var dtObject = {
+                        input: isoString
+                    },
+                    dateBasic,
+                    dateExtended;
+
+                if (isString(isoString) && !isEmptyString(isoString) && !invalidISOCharsRx.test(isoString) && isoHasValidCharacterCounts(isoString)) {
+                    extend(dtObject, isoSplitDateTime(isoString));
+                    dateBasic = arraySome(datePatterns.basic, function (pattern) {
+                        var rxResult = pattern.regex.exec(dtObject.date),
+                            date;
+
+                        if (!isNull(rxResult)) {
+                            date = pattern.func(rxResult);
+                            if (!isUndefined(date)) {
+                                extend(dtObject, date);
+                            }
+
+                            return true;
+                        }
+
+                        return false;
+                    });
+
+                    if (!dateBasic) {
+                        dateExtended = arraySome(datePatterns.extended, function (pattern) {
+                            var rxResult = pattern.regex.exec(dtObject.date),
+                                date;
+
+                            if (!isNull(rxResult)) {
+                                date = pattern.func(rxResult);
+                                if (!isUndefined(date)) {
+                                    extend(dtObject, date);
+                                }
+
+                                return true;
+                            }
+
+                            return false;
+                        });
+
+                        if (dateExtended) {
+                            arraySome(timePatterns.extended, function (pattern) {
+                                var rxResult = pattern.regex.exec(dtObject.time),
+                                    time;
+
+                                if (!isNull(rxResult)) {
+                                    time = pattern.func(rxResult);
+                                    if (!isUndefined(time)) {
+                                        extend(dtObject, time);
+                                    }
+
+                                    return true;
+                                }
+
+                                return false;
+                            });
+                        }
+                    } else {
+                        arraySome(timePatterns.basic, function (pattern) {
+                            var rxResult = pattern.regex.exec(dtObject.time),
+                                time;
+
+                            if (!isNull(rxResult)) {
+                                time = pattern.func(rxResult);
+                                if (!isUndefined(time)) {
+                                    extend(dtObject, time);
+                                }
+
+                                return true;
+                            }
+
+                            return false;
+                        });
+                    }
+                }
+
+                //console.warn('dtObject', dtObject);
+                return dtObject;
+            }
 
             AstroDate = function () {
                 var args = arguments,
@@ -3359,27 +3994,27 @@
                     arg;
 
                 objectDefineProperties(this, {
-                    "getter": {
-                        "value": function (key) {
+                    'getter': {
+                        'value': function (key) {
                             var got;
 
                             if (isUndefined(key)) {
                                 got = extend({}, struct);
                             } else if (isString(key)) {
                                 switch (key) {
-                                case "struct":
+                                case 'struct':
                                     got = extend({}, struct);
                                     break;
-                                case "isJulian":
+                                case 'isJulian':
                                     got = isJulian;
                                     break;
-                                case "args":
+                                case 'args':
                                     got = args;
                                     break;
-                                case "input":
+                                case 'input':
                                     got = input;
                                     break;
-                                case "error":
+                                case 'error':
                                     got = error;
                                     break;
                                 default:
@@ -3393,8 +4028,8 @@
                         }
                     },
 
-                    "setter": {
-                        "value": function (key, value) {
+                    'setter': {
+                        'value': function (key, value) {
                             var unit = normaliseUnits(key),
                                 valid = false,
                                 bn,
@@ -3403,13 +4038,13 @@
                             if (unit) {
                                 bn = new BigNumber(value);
                                 switch (unit) {
-                                case "year":
+                                case 'year':
                                     valid = inYearRange(bn);
                                     break;
-                                case "month":
+                                case 'month':
                                     valid = inMonthRange(bn);
                                     break;
-                                case "day":
+                                case 'day':
                                     if (objectIs(isJulian, true)) {
                                         dim = daysInJulianMonth(struct);
                                     } else {
@@ -3418,19 +4053,19 @@
 
                                     valid = inDayRange(bn, dim);
                                     break;
-                                case "hour":
+                                case 'hour':
                                     valid = inHourRange(bn);
                                     break;
-                                case "minute":
+                                case 'minute':
                                     valid = inMinuteRange(bn, struct.hour);
                                     break;
-                                case "second":
+                                case 'second':
                                     valid = inSecondRange(bn, struct.hour);
                                     break;
-                                case "millisecond":
+                                case 'millisecond':
                                     valid = inMillisecondRange(bn, struct.hour);
                                     break;
-                                case "offset":
+                                case 'offset':
                                     valid = inOffsetRange(bn);
                                     break;
                                 default:
@@ -3451,13 +4086,13 @@
                                 struct = dateToStruct(key);
                             } else if (isString(key)) {
                                 switch (key) {
-                                case "input":
+                                case 'input':
                                     input = value;
                                     break;
-                                case "error":
+                                case 'error':
                                     error = value;
                                     break;
-                                case "struct":
+                                case 'struct':
                                     if (isValid(value)) {
                                         struct = extend({}, value);
                                     } else {
@@ -3465,11 +4100,11 @@
                                     }
 
                                     break;
-                                case "isJulian":
-                                    isJulian = !!value;
+                                case 'isJulian':
+                                    isJulian = Boolean(value);
                                     break;
                                 default:
-                                    struct = new ISO(key).getter();
+                                    struct = isoParse(key);
                                 }
                             } else {
                                 throw new SyntaxError(key);
@@ -3487,7 +4122,7 @@
                 case 1:
                     arg = args[0];
                     if (AstroDate.isAstroDate(arg)) {
-                        isJulian = arg.getter("isJulian");
+                        isJulian = arg.getter('isJulian');
                         struct = extend({}, arg.getter());
                     } else if (arrayIsArray(arg)) {
                         struct = arrayToStruct(arg, false);
@@ -3496,7 +4131,7 @@
                     } else if (isNumber(arg)) {
                         struct = dateToStruct(new Date(arg));
                     } else if (isString(arg)) {
-                        struct = new ISO(arg).getter();
+                        struct = isoParse(arg);
                     } else if (isPlainObject(arg)) {
                         struct = objectToStruct(arg);
                         if (!isValid(struct)) {
@@ -3512,7 +4147,7 @@
                     if (isString(arg)) {
                         arg = stringTrim(arg).toLowerCase();
                         switch (arg) {
-                        case "j":
+                        case 'j':
                             arg = args[1];
                             if (arrayIsArray(arg)) {
                                 struct = julianToGregorian(arrayToStruct(arg, true));
@@ -3528,7 +4163,7 @@
                             }
 
                             break;
-                        case "g":
+                        case 'g':
                             arg = args[1];
                             if (arrayIsArray(arg)) {
                                 struct = arrayToStruct(arg, false);
@@ -3542,7 +4177,7 @@
                             }
 
                             break;
-                        case "jd":
+                        case 'jd':
                             arg = args[1];
                             this.julianDay(arg);
                             break;
@@ -3564,36 +4199,36 @@
             };
 
             objectDefineProperties(AstroDate.prototype, {
-                "julian": {
-                    "value": function () {
-                        return this.setter("isJulian", true);
+                'julian': {
+                    'value': function () {
+                        return this.setter('isJulian', true);
                     }
                 },
 
-                "gregorian": {
-                    "value": function () {
-                        return this.setter("isJulian", false);
+                'gregorian': {
+                    'value': function () {
+                        return this.setter('isJulian', false);
                     }
                 },
 
-                "isJulian": {
-                    "value": function () {
-                        return this.getter("isJulian");
+                'isJulian': {
+                    'value': function () {
+                        return this.getter('isJulian');
                     }
                 },
 
-                "isValid": {
-                    "value": function () {
+                'isValid': {
+                    'value': function () {
                         return isValid(this.getter());
                     }
                 },
 
-                "parse": {
-                    "value": function (isoString) {
+                'parse': {
+                    'value': function (isoString) {
                         var val;
 
                         if (isString(isoString)) {
-                            val = this.setter("struct", new ISO(isoString).getter());
+                            val = this.setter('struct', isoParse(isoString));
                         } else {
                             throw new TypeError(isoString);
                         }
@@ -3602,8 +4237,8 @@
                     }
                 },
 
-                "toString": {
-                    "value": function () {
+                'toString': {
+                    'value': function () {
                         var args,
                             shortName,
                             lang,
@@ -3623,56 +4258,56 @@
 
                             if (this.isJulian()) {
                                 struct = jdToJulian(this.julianDay());
-                                string = "[OS] ";
+                                string = '[OS] ';
                             } else {
                                 struct = this.getter();
-                                string = "[NS] ";
+                                string = '[NS] ';
                             }
 
-                            string += this.dayOfWeek(shortName, lang) + " ";
-                            string += struct.day.toString() + " ";
-                            string += this.monthOfYear(shortName, lang) + " ";
+                            string += this.dayOfWeek(shortName, lang) + ' ';
+                            string += struct.day.toString() + ' ';
+                            string += this.monthOfYear(shortName, lang) + ' ';
                             if (struct.year.lt(0)) {
-                                string += "-";
+                                string += '-';
                             }
 
-                            string += struct.year.abs().padLeadingZero(4) + " ";
-                            string += struct.hour.padLeadingZero(2) + ":";
-                            string += struct.minute.padLeadingZero(2) + ":";
-                            string += struct.second.padLeadingZero(2) + ".";
-                            string += struct.millisecond.padLeadingZero(3) + " ";
+                            string += struct.year.abs().padLeadingZero(4) + ' ';
+                            string += struct.hour.padLeadingZero(2) + ':';
+                            string += struct.minute.padLeadingZero(2) + ':';
+                            string += struct.second.padLeadingZero(2) + '.';
+                            string += struct.millisecond.padLeadingZero(3) + ' ';
                             offset = struct.offset;
                             if (offset.lte(0)) {
-                                string += "+";
+                                string += '+';
                             } else {
-                                string += "-";
+                                string += '-';
                             }
 
-                            offset = fractionToTime(offset.abs(), "minute");
+                            offset = fractionToTime(offset.abs(), 'minute');
                             string += offset.hour.padLeadingZero(2);
                             string += offset.minute.padLeadingZero(2);
                         } else {
-                            string = "Invalid Date";
+                            string = 'Invalid Date';
                         }
 
                         return string;
                     }
                 },
 
-                "toISOString": {
-                    "value": function () {
+                'toISOString': {
+                    'value': function () {
                         return toISOString(this);
                     }
                 },
 
-                "valueOf": {
-                    "value": function () {
+                'valueOf': {
+                    'value': function () {
                         return this.julianDay();
                     }
                 },
 
-                "object": {
-                    "value": function (dateObject) {
+                'object': {
+                    'value': function (dateObject) {
                         var val;
 
                         if (isUndefined(dateObject)) {
@@ -3684,7 +4319,7 @@
                                 }
                             }
                         } else if (isPlainObject(dateObject)) {
-                            val = this.setter("struct", objectToStruct(dateObject, this.isJulian()));
+                            val = this.setter('struct', objectToStruct(dateObject, this.isJulian()));
                         } else {
                             throw new TypeError(dateObject);
                         }
@@ -3693,14 +4328,14 @@
                     }
                 },
 
-                "clone": {
-                    "value": function () {
+                'clone': {
+                    'value': function () {
                         return new AstroDate(this);
                     }
                 },
 
-                "array": {
-                    "value": function (dateArray) {
+                'array': {
+                    'value': function (dateArray) {
                         var val;
 
                         if (isUndefined(dateArray)) {
@@ -3712,7 +4347,7 @@
                                 }
                             }
                         } else if (arrayIsArray(dateArray)) {
-                            val = this.setter("struct", arrayToStruct(dateArray, this.isJulian()));
+                            val = this.setter('struct', arrayToStruct(dateArray, this.isJulian()));
                         } else {
                             throw new TypeError(dateArray);
                         }
@@ -3721,8 +4356,8 @@
                     }
                 },
 
-                "date": {
-                    "value": function (date) {
+                'date': {
+                    'value': function (date) {
                         var val;
 
                         if (isUndefined(date)) {
@@ -3741,8 +4376,8 @@
                     }
                 },
 
-                "getTime": {
-                    "value": function () {
+                'getTime': {
+                    'value': function () {
                         var val;
 
                         if (this.isValid()) {
@@ -3753,8 +4388,8 @@
                     }
                 },
 
-                "deltaTime": {
-                    "value": function () {
+                'deltaTime': {
+                    'value': function () {
                         var val;
 
                         if (this.isValid()) {
@@ -3765,8 +4400,8 @@
                     }
                 },
 
-                "timeTo": {
-                    "value": function (unit) {
+                'timeTo': {
+                    'value': function (unit) {
                         var val;
 
                         if (this.isValid()) {
@@ -3777,8 +4412,8 @@
                     }
                 },
 
-                "julianDay": {
-                    "value": function (julianDay) {
+                'julianDay': {
+                    'value': function (julianDay) {
                         var val;
 
                         if (isUndefined(julianDay)) {
@@ -3786,7 +4421,7 @@
                                 val = gregorianToJd(this.getter()).toString();
                             }
                         } else if (isNumber(julianDay) || isString(julianDay) || BigNumber.isBigNumber(julianDay)) {
-                            val = this.setter("struct", jdToGregorian(julianDay));
+                            val = this.setter('struct', jdToGregorian(julianDay));
                         } else {
                             throw new TypeError(julianDay);
                         }
@@ -3795,8 +4430,8 @@
                     }
                 },
 
-                "easter": {
-                    "value": function () {
+                'easter': {
+                    'value': function () {
                         var val;
 
                         if (this.isValid()) {
@@ -3811,8 +4446,8 @@
                     }
                 },
 
-                "monthOfYear": {
-                    "value": function () {
+                'monthOfYear': {
+                    'value': function () {
                         var args,
                             shortName,
                             lang,
@@ -3839,8 +4474,8 @@
                     }
                 },
 
-                "dayOfWeek": {
-                    "value": function () {
+                'dayOfWeek': {
+                    'value': function () {
                         var args,
                             shortName,
                             lang,
@@ -3863,8 +4498,8 @@
                     }
                 },
 
-                "isLeapYear": {
-                    "value": function () {
+                'isLeapYear': {
+                    'value': function () {
                         var val;
 
                         if (this.isValid()) {
@@ -3879,8 +4514,8 @@
                     }
                 },
 
-                "daysInYear": {
-                    "value": function () {
+                'daysInYear': {
+                    'value': function () {
                         var val;
 
                         if (this.isValid()) {
@@ -3895,8 +4530,8 @@
                     }
                 },
 
-                "daysInMonth": {
-                    "value": function () {
+                'daysInMonth': {
+                    'value': function () {
                         var val;
 
                         if (this.isValid()) {
@@ -3911,8 +4546,8 @@
                     }
                 },
 
-                "dayOfYear": {
-                    "value": function () {
+                'dayOfYear': {
+                    'value': function () {
                         var val;
 
                         if (this.isValid()) {
@@ -3927,8 +4562,8 @@
                     }
                 },
 
-                "json": {
-                    "value": function (jsonString) {
+                'json': {
+                    'value': function (jsonString) {
                         var struct,
                             propArray,
                             val;
@@ -3942,14 +4577,14 @@
                                     return '"' + key + '":"' + struct[key] + '"';
                                 });
 
-                                val = "{" + propArray.join(",") + "}";
+                                val = '{' + propArray.join(',') + '}';
                             }
                         } else if (isString(jsonString)) {
                             if (isFunction(JSON.parse)) {
                                 struct = objectToStruct(JSON.parse(jsonString), this.isJulian());
                             } else {
                                 /*jslint evil: true */
-                                struct = objectToStruct(new Function("return" + jsonString)(), this.isJulian());
+                                struct = objectToStruct(new Function('return' + jsonString)(), this.isJulian());
                                 /*jslint evil:   false */
                             }
 
@@ -3957,7 +4592,7 @@
                                 throw new SyntaxError(struct);
                             }
 
-                            val = this.setter("struct", struct);
+                            val = this.setter('struct', struct);
                         } else {
                             throw new TypeError(jsonString);
                         }
@@ -3968,26 +4603,22 @@
             });
 
             objectDefineProperties(AstroDate, {
-                "version": {
-                    "value": VERSION
+                'version': {
+                    'value': VERSION
                 },
 
-                "ISO": {
-                    "value": ISO
+                'BigNumber': {
+                    'value': BigNumber
                 },
 
-                "BigNumber": {
-                    "value": BigNumber
-                },
-
-                "normaliseUnits": {
-                    "value": function (unitString) {
+                'normaliseUnits': {
+                    'value': function (unitString) {
                         return normaliseUnits(unitString);
                     }
                 },
 
-                "isAstroDate": {
-                    "value": function (inputArg) {
+                'isAstroDate': {
+                    'value': function (inputArg) {
                         return isObject(inputArg) && objectInstanceOf(inputArg, AstroDate);
                     }
                 }
@@ -3995,32 +4626,32 @@
 
             objectDefineProperties(defaultProperties, {
                 0: {
-                    "value": "toString",
-                    "enumerable": true
+                    'value': 'toString',
+                    'enumerable': true
                 },
                 1: {
-                    "value": "toLocaleString",
-                    "enumerable": true
+                    'value': 'toLocaleString',
+                    'enumerable': true
                 },
                 2: {
-                    "value": "valueOf",
-                    "enumerable": true
+                    'value': 'valueOf',
+                    'enumerable': true
                 },
                 3: {
-                    "value": "hasOwnProperty",
-                    "enumerable": true
+                    'value': 'hasOwnProperty',
+                    'enumerable': true
                 },
                 4: {
-                    "value": "isPrototypeOf",
-                    "enumerable": true
+                    'value': 'isPrototypeOf',
+                    'enumerable': true
                 },
                 5: {
-                    "value": "propertyIsEnumerable",
-                    "enumerable": true
+                    'value': 'propertyIsEnumerable',
+                    'enumerable': true
                 },
                 6: {
-                    "value": "constructor",
-                    "enumerable": true
+                    'value': 'constructor',
+                    'enumerable': true
                 }
             });
 
@@ -4028,229 +4659,229 @@
 
             objectDefineProperties(fullKeys, {
                 0: {
-                    "value": {
-                        "full": "year",
-                        "alias": "y",
-                        "local": "getFullYear"
+                    'value': {
+                        'full': 'year',
+                        'alias': 'y',
+                        'local': 'getFullYear'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 },
                 1: {
-                    "value": {
-                        "full": "month",
-                        "alias": "M",
-                        "local": "getMonth"
+                    'value': {
+                        'full': 'month',
+                        'alias': 'M',
+                        'local': 'getMonth'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 },
                 2: {
-                    "value": {
-                        "full": "day",
-                        "alias": "d",
-                        "local": "getDate"
+                    'value': {
+                        'full': 'day',
+                        'alias': 'd',
+                        'local': 'getDate'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 },
                 3: {
-                    "value": {
-                        "full": "hour",
-                        "alias": "h",
-                        "local": "getHours"
+                    'value': {
+                        'full': 'hour',
+                        'alias': 'h',
+                        'local': 'getHours'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 },
                 4: {
-                    "value": {
-                        "full": "minute",
-                        "alias": "m",
-                        "local": "getMinutes"
+                    'value': {
+                        'full': 'minute',
+                        'alias': 'm',
+                        'local': 'getMinutes'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 },
                 5: {
-                    "value": {
-                        "full": "second",
-                        "alias": "s",
-                        "local": "getSeconds"
+                    'value': {
+                        'full': 'second',
+                        'alias': 's',
+                        'local': 'getSeconds'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 },
                 6: {
-                    "value": {
-                        "full": "millisecond",
-                        "alias": "ms",
-                        "local": "getMilliseconds"
+                    'value': {
+                        'full': 'millisecond',
+                        'alias': 'ms',
+                        'local': 'getMilliseconds'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 },
                 7: {
-                    "value": {
-                        "full": "offset",
-                        "alias": "z",
-                        "local": "getTimezoneOffset"
+                    'value': {
+                        'full': 'offset',
+                        'alias': 'z',
+                        'local': 'getTimezoneOffset'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 }
             });
 
             deepFreeze(fullKeys);
 
             objectDefineProperties(shortNameLength, {
-                "en-GB": {
-                    "value": 3,
-                    "enumerable": true
+                'en-GB': {
+                    'value': 3,
+                    'enumerable': true
                 },
-                "sv-SE": {
-                    "value": 3,
-                    "enumerable": true
+                'sv-SE': {
+                    'value': 3,
+                    'enumerable': true
                 }
             });
 
             objectDefineProperties(dayNames, {
                 0: {
-                    "value": {
-                        "en-GB": "Sunday",
-                        "sv-SE": "söndag"
+                    'value': {
+                        'en-GB': 'Sunday',
+                        'sv-SE': 'söndag'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 },
                 1: {
-                    "value": {
-                        "en-GB": "Monday",
-                        "sv-SE": "måndag"
+                    'value': {
+                        'en-GB': 'Monday',
+                        'sv-SE': 'måndag'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 },
                 2: {
-                    "value": {
-                        "en-GB": "Tuesday",
-                        "sv-SE": "tisdag"
+                    'value': {
+                        'en-GB': 'Tuesday',
+                        'sv-SE': 'tisdag'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 },
                 3: {
-                    "value": {
-                        "en-GB": "Wednesday",
-                        "sv-SE": "onsdag"
+                    'value': {
+                        'en-GB': 'Wednesday',
+                        'sv-SE': 'onsdag'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 },
                 4: {
-                    "value": {
-                        "en-GB": "Thursday",
-                        "sv-SE": "torsdag"
+                    'value': {
+                        'en-GB': 'Thursday',
+                        'sv-SE': 'torsdag'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 },
                 5: {
-                    "value": {
-                        "en-GB": "Friday",
-                        "sv-SE": "fredag"
+                    'value': {
+                        'en-GB': 'Friday',
+                        'sv-SE': 'fredag'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 },
                 6: {
-                    "value": {
-                        "en-GB": "Saturday",
-                        "sv-SE": "lördag"
+                    'value': {
+                        'en-GB': 'Saturday',
+                        'sv-SE': 'lördag'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 }
             });
 
             objectDefineProperties(monthNames, {
                 0: {
-                    "value": {
-                        "en-GB": "January",
-                        "sv-SE": "januari"
+                    'value': {
+                        'en-GB': 'January',
+                        'sv-SE': 'januari'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 },
                 1: {
-                    "value": {
-                        "en-GB": "February",
-                        "sv-SE": "februari"
+                    'value': {
+                        'en-GB': 'February',
+                        'sv-SE': 'februari'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 },
                 2: {
-                    "value": {
-                        "en-GB": "March",
-                        "sv-SE": "mars"
+                    'value': {
+                        'en-GB': 'March',
+                        'sv-SE': 'mars'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 },
                 3: {
-                    "value": {
-                        "en-GB": "April",
-                        "sv-SE": "april"
+                    'value': {
+                        'en-GB': 'April',
+                        'sv-SE': 'april'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 },
                 4: {
-                    "value": {
-                        "en-GB": "May",
-                        "sv-SE": "maj"
+                    'value': {
+                        'en-GB': 'May',
+                        'sv-SE': 'maj'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 },
                 5: {
-                    "value": {
-                        "en-GB": "June",
-                        "sv-SE": "juni"
+                    'value': {
+                        'en-GB': 'June',
+                        'sv-SE': 'juni'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 },
                 6: {
-                    "value": {
-                        "en-GB": "July",
-                        "sv-SE": "juli"
+                    'value': {
+                        'en-GB': 'July',
+                        'sv-SE': 'juli'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 },
                 7: {
-                    "value": {
-                        "en-GB": "August",
-                        "sv-SE": "augusti"
+                    'value': {
+                        'en-GB': 'August',
+                        'sv-SE': 'augusti'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 },
                 8: {
-                    "value": {
-                        "en-GB": "September",
-                        "sv-SE": "september"
+                    'value': {
+                        'en-GB': 'September',
+                        'sv-SE': 'september'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 },
                 9: {
-                    "value": {
-                        "en-GB": "October",
-                        "sv-SE": "oktober"
+                    'value': {
+                        'en-GB': 'October',
+                        'sv-SE': 'oktober'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 },
                 10: {
-                    "value": {
-                        "en-GB": "November",
-                        "sv-SE": "november"
+                    'value': {
+                        'en-GB': 'November',
+                        'sv-SE': 'november'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 },
                 11: {
-                    "value": {
-                        "en-GB": "December",
-                        "sv-SE": "december"
+                    'value': {
+                        'en-GB': 'December',
+                        'sv-SE': 'december'
                     },
-                    "enumerable": true
+                    'enumerable': true
                 }
             });
 
             arrayForEach([BigNumber, BigNumber.prototype], function (element) {
                 arrayForEach(objectKeys(element), function (key) {
                     objectDefineProperty(element, key, {
-                        "enumerable": false,
-                        "configurable": false,
-                        "writeable": false
+                        'enumerable': false,
+                        'configurable': false,
+                        'writeable': false
                     });
                 });
             });
@@ -4265,22 +4896,22 @@
 
     tempSafariNFE = null;
 }((function (thisContext) {
-    "use strict";
+    'use strict';
     /*global window, global, self */
 
     // detect the global context of the environment
-    if ("object" === typeof window && "null" !== window && window.window === window) {
+    if ('object' === typeof window && 'null' !== window && window.window === window) {
         thisContext = window;
-    } else if ("object" === typeof global && "null" !== global && global.global === global) {
+    } else if ('object' === typeof global && 'null' !== global && global.global === global) {
         thisContext = global;
-    } else if ("object" === typeof self && "null" !== self && self.self === self) {
+    } else if ('object' === typeof self && 'null' !== self && self.self === self) {
         thisContext = self;
     }
 
     /*global */
     return thisContext;
 }(this)), (function () {
-    "use strict";
+    'use strict';
 
     // return undefined for private_undefined
     return;

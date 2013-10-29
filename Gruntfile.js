@@ -1,15 +1,15 @@
 /*global module */
 
 (function () {
-    "use strict";
+    'use strict';
 
     module.exports = function (grunt) {
         grunt.initConfig({
             pkg: grunt.file.readJSON('package.json'),
-            uglify : {
+            uglify: {
                 target: {
                     files: {
-                        'min/<%= pkg.name %>.min.js' : '<%= pkg.name %>.js'
+                        'min/<%= pkg.name %>.min.js': '<%= pkg.name %>.js'
                     }
                 },
                 options: {
@@ -24,56 +24,56 @@
                     preserveComments: 'some'
                 }
             },
-            nodeunit : {
-                all : ["test/**/*.js"]
+            nodeunit: {
+                all: ['test/**/*.js']
             },
             jshint: {
-                all: ["Gruntfile.js", "<%= pkg.name %>.js", "test/**/*.js"],
+                all: ['Gruntfile.js', '<%= pkg.name %>.js', 'test/**/*.js'],
                 options: {
-                    "node"     : true,
-                    "browser"  : false,
-                    "boss"     : false,
-                    "curly"    : false,
-                    "debug"    : false,
-                    "devel"    : false,
-                    "eqeqeq"   : false,
-                    "eqnull"   : false,
-                    "evil"     : false,
-                    "forin"    : false,
-                    "immed"    : false,
-                    "laxbreak" : false,
-                    "newcap"   : false,
-                    "noarg"    : false,
-                    "noempty"  : false,
-                    "nonew"    : false,
-                    "onevar"   : false,
-                    "plusplus" : false,
-                    "regexp"   : false,
-                    "undef"    : false,
-                    "sub"      : false,
-                    "strict"   : false,
-                    "white"    : false,
-                    "globals": {
-                        "define": false
+                    'node': true,
+                    'browser': false,
+                    'boss': false,
+                    'curly': false,
+                    'debug': false,
+                    'devel': false,
+                    'eqeqeq': false,
+                    'eqnull': false,
+                    'evil': false,
+                    'forin': false,
+                    'immed': false,
+                    'laxbreak': false,
+                    'newcap': false,
+                    'noarg': false,
+                    'noempty': false,
+                    'nonew': false,
+                    'onevar': false,
+                    'plusplus': false,
+                    'regexp': false,
+                    'undef': false,
+                    'sub': false,
+                    'strict': false,
+                    'white': false,
+                    'globals': {
+                        'define': false
                     }
                 }
             },
-            watch : {
-                test : {
-                    files : [
+            watch: {
+                test: {
+                    files: [
                         '<%= pkg.name %>.js',
                         'test/**/*.js'
                     ],
                     tasks: ['nodeunit']
                 },
-                jshint : {
-                    files : '<%= jshint.all %>',
+                jshint: {
+                    files: '<%= jshint.all %>',
                     tasks: ['jshint']
                 }
             }
         });
 
-        grunt.loadTasks("tasks");
+        grunt.loadTasks('tasks');
 
         // These plugins provide necessary tasks.
         grunt.loadNpmTasks('grunt-contrib-nodeunit');
