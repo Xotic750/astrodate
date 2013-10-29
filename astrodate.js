@@ -331,7 +331,7 @@
             objectIs = (function () {
                 // Unused variable for JScript NFE bug
                 // http://kangax.github.io/nfe/
-                var isIsFn = baseObject.constructor.objectIs,
+                var isIsFn = baseObject.constructor.is,
                     nfeIs;
 
                 if (isFunction(isIsFn)) {

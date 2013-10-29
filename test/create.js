@@ -35,7 +35,7 @@
                 index;
 
             for (index = leapYears[0]; index < leapYears[leapYearLength - 1]; index += 1) {
-                if (leapYears.indexOf(index) === -1) {
+                if (-1 === leapYears.indexOf(index)) {
                     normalYears.push(index);
                 }
             }
@@ -105,7 +105,7 @@
                 fullArray.push(month);
                 fullArray.push(getRandomInt(1, +new AstroDate([year, month]).daysInMonth()));
                 fullArray.push(hour);
-                if (hour === 24) {
+                if (24 === hour) {
                     fullArray.push(0);
                     fullArray.push(0);
                     fullArray.push(0);
@@ -148,7 +148,7 @@
 
                     test.deepEqual(temp, slice, '(' + count + '/' + index + ')Number: Arrays are the same');
                     date = new Date(astrodate.toISOString()).getTime();
-                    if (slice[0] >= 0 && slice[0] < 10000 && slice[3] !== 24) {
+                    if (slice[0] >= 0 && slice[0] < 10000 && 24 !== slice[3]) {
                         test.equal(astrodate.getTime(), date, '(' + count + '/' + index + ')Number date: Dates are the same: ' + slice);
                     } else {
                         test.ok(isNaN(date), 'outside of Date capability: ' + slice);
@@ -167,7 +167,7 @@
                     }
 
                     test.deepEqual(temp, slice, '(' + count + '/' + index + ')Number array: Arrays are the same');
-                    if (slice[0] >= 0 && slice[0] < 10000 && slice[3] !== 24) {
+                    if (slice[0] >= 0 && slice[0] < 10000 && 24 !== slice[3]) {
                         test.equal(astrodate.getTime(), date, '(' + count + '/' + index + ')Number array date: Dates are the same');
                     } else {
                         test.ok(isNaN(date), 'outside of Date capability: ' + slice);
@@ -186,7 +186,7 @@
                     }
 
                     test.deepEqual(temp, slice, '(' + count + '/' + index + ')Number astrodate: Arrays are the same');
-                    if (slice[0] >= 0 && slice[0] < 10000 && slice[3] !== 24) {
+                    if (slice[0] >= 0 && slice[0] < 10000 && 24 !== slice[3]) {
                         test.equal(astrodate.getTime(), date, '(' + count + '/' + index + ')Number astrodate date: dates are the same');
                     } else {
                         test.ok(isNaN(date), 'outside of Date capability: ' + slice);
@@ -199,7 +199,7 @@
                     test.ok(astrodate.isValid(), '(' + count + '/' + index + ')String: isValid');
                     temp = astrodate.array();
                     test.deepEqual(temp, slice, '(' + count + '/' + index + ')String: Arrays are the same');
-                    if (slice[0] >= 0 && slice[0] < 10000 && slice[3] !== 24) {
+                    if (slice[0] >= 0 && slice[0] < 10000 && 24 !== slice[3]) {
                         test.equal(astrodate.getTime(), date, '(' + count + '/' + index + ')String date: dates are the same');
                     } else {
                         test.ok(isNaN(date), 'outside of Date capability: ' + slice);
@@ -212,7 +212,7 @@
                     test.ok(astrodate.isValid(), '(' + count + '/' + index + ')String array: isValid');
                     temp = astrodate.array();
                     test.deepEqual(temp, slice, '(' + count + '/' + index + ')String array: Arrays are the same');
-                    if (slice[0] >= 0 && slice[0] < 10000 && slice[3] !== 24) {
+                    if (slice[0] >= 0 && slice[0] < 10000 && 24 !== slice[3]) {
                         test.equal(astrodate.getTime(), date, '(' + count + '/' + index + ')String array date: dates are the same');
                     } else {
                         test.ok(isNaN(date), 'outside of Date capability: ' + slice);
@@ -226,7 +226,7 @@
                     test.ok(astrodate.isValid(), '(' + count + '/' + index + ')String clone: isValid');
                     temp = astrodate.array();
                     test.deepEqual(temp, slice, '(' + count + '/' + index + ')String clone: Arrays are the same');
-                    if (slice[0] >= 0 && slice[0] < 10000 && slice[3] !== 24) {
+                    if (slice[0] >= 0 && slice[0] < 10000 && 24 === slice[3]) {
                         test.equal(astrodate.getTime(), date, '(' + count + '/' + index + ')String clone: dates are the same');
                     } else {
                         test.ok(isNaN(date), 'outside of Date capability: ' + slice);
@@ -242,14 +242,13 @@
             test.done();
         },
 
-        'parsing iso': function (test) {
+        'parsing iso basic': function (test) {
             var repeat = 5000,
                 count,
                 offset = new Date().getTimezoneOffset(),
                 hourOffset,
                 minOffset,
                 tz,
-                tz2,
                 formats,
                 index,
                 year,
@@ -261,22 +260,13 @@
                 millisecond,
                 withComma;
 
-            test.expect(2 * 66 * repeat);
+            test.expect(27 * repeat);
             for (count = 0; count < repeat; count += 1) {
-                year = padLeadingZero(getRandomInt(0, 9007199254740991), 4);
-                if (year >= 10000) {
-                    year = padLeadingZero(year, 6);
-                    if (getRandomInt(0, 1)) {
-                        year = '+' + year;
-                    } else {
-                        year = '-' + year;
-                    }
-                }
-
+                year = padLeadingZero(getRandomInt(0, 9999), 4);
                 month = padLeadingZero(getRandomInt(1, 12), 2);
                 day = padLeadingZero(getRandomInt(1, +new AstroDate([year, month]).daysInMonth()), 2);
                 hour = padLeadingZero(getRandomInt(0, 24), 2);
-                if (hour === '24') {
+                if ('24' === hour) {
                     minute = '00';
                     second = '00';
                     millisecond = 0;
@@ -286,44 +276,22 @@
                     millisecond = getRandomInt(0, 999);
                 }
 
-                if (offset !== 0) {
+                if (0 !== offset) {
                     hourOffset = (offset > 0) ? Math.floor(offset / 60) : Math.ceil(offset / 60);
                     minOffset = offset - (hourOffset * 60);
-                    tz = (offset > 0 ? '-' : '+') + padLeadingZero(Math.abs(hourOffset), 2) + ':' + padLeadingZero(Math.abs(minOffset), 2);
-                    tz2 = tz.replace(':', '');
+                    tz = (offset > 0 ? '-' : '+') + padLeadingZero(Math.abs(hourOffset), 2) + padLeadingZero(Math.abs(minOffset), 2);
                 } else {
                     tz = 'Z';
-                    tz2 = 'Z';
                 }
 
                 formats = [
-                    [year + '-' + month + '-' + day, year + '-' + month + '-' + day + 'T00:00:00.000' + tz],
-                    [year + '-' + month + '-' + day + 'T' + hour, year + '-' + month + '-' + day + 'T' + hour + ':00:00.000' + tz],
-                    [year + '-' + month + '-' + day + 'T' + hour + ':' + minute, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000' + tz],
-                    [year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000' + tz],
-                    [year + '-' + month + '-' + day + 'T' + hour + ':' + minute + tz, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000' + tz],
-                    [year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + tz, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000' + tz],
-                    [year + '-' + month + '-' + day + 'T' + hour + ':' + minute + tz2, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000' + tz],
-                    [year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + tz2, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000' + tz],
-                    [year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.' + millisecond + tz2, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.' + parseFloat('0.' + millisecond).toFixed(3).slice(2) + tz],
                     [year + month + day, year + '-' + month + '-' + day + 'T00:00:00.000' + tz],
                     [year + month + day + 'T' + hour, year + '-' + month + '-' + day + 'T' + hour + ':00:00.000' + tz],
                     [year + month + day + 'T' + hour + minute, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000' + tz],
                     [year + month + day + 'T' + hour + minute + second, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000' + tz],
                     [year + month + day + 'T' + hour + minute + tz, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000' + tz],
                     [year + month + day + 'T' + hour + minute + second + tz, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000' + tz],
-                    [year + month + day + 'T' + hour + minute + tz2, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000' + tz],
-                    [year + month + day + 'T' + hour + minute + second + tz2, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000' + tz],
-                    [year + month + day + 'T' + hour + minute + second + '.' + millisecond + tz2, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.' + parseFloat('0.' + millisecond).toFixed(3).slice(2) + tz],
 
-                    [year + '-' + month + '-' + day + 'T' + hour + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':00:00.000Z'],
-                    [year + '-' + month + '-' + day + 'T' + hour + ':' + minute + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000Z'],
-                    [year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000Z'],
-                    [year + '-' + month + '-' + day + 'T' + hour + ':' + minute + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000Z'],
-                    [year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000Z'],
-                    [year + '-' + month + '-' + day + 'T' + hour + ':' + minute + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000Z'],
-                    [year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000Z'],
-                    [year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.' + millisecond + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.' + parseFloat('0.' + millisecond).toFixed(3).slice(2) + 'Z'],
                     [year + month + day + 'T' + hour + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':00:00.000Z'],
                     [year + month + day + 'T' + hour + minute + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000Z'],
                     [year + month + day + 'T' + hour + minute + second + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000Z'],
@@ -333,31 +301,12 @@
                     [year + month + day + 'T' + hour + minute + second + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000Z'],
                     [year + month + day + 'T' + hour + minute + second + '.' + millisecond + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.' + parseFloat('0.' + millisecond).toFixed(3).slice(2) + 'Z'],
 
-                    [year + '-' + month + '-' + day + ' ' + hour, year + '-' + month + '-' + day + 'T' + hour + ':00:00.000' + tz],
-                    [year + '-' + month + '-' + day + ' ' + hour + ':' + minute, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000' + tz],
-                    [year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000' + tz],
-                    [year + '-' + month + '-' + day + ' ' + hour + ':' + minute + tz, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000' + tz],
-                    [year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second + tz, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000' + tz],
-                    [year + '-' + month + '-' + day + ' ' + hour + ':' + minute + tz2, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000' + tz],
-                    [year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second + tz2, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000' + tz],
-                    [year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second + '.' + millisecond + tz2, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.' + parseFloat('0.' + millisecond).toFixed(3).slice(2) + tz],
                     [year + month + day + ' ' + hour, year + '-' + month + '-' + day + 'T' + hour + ':00:00.000' + tz],
                     [year + month + day + ' ' + hour + minute, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000' + tz],
                     [year + month + day + ' ' + hour + minute + second, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000' + tz],
                     [year + month + day + ' ' + hour + minute + tz, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000' + tz],
                     [year + month + day + ' ' + hour + minute + second + tz, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000' + tz],
-                    [year + month + day + ' ' + hour + minute + tz2, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000' + tz],
-                    [year + month + day + ' ' + hour + minute + second + tz2, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000' + tz],
-                    [year + month + day + ' ' + hour + minute + second + '.' + millisecond + tz2, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.' + parseFloat('0.' + millisecond).toFixed(3).slice(2) + tz],
 
-                    [year + '-' + month + '-' + day + ' ' + hour + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':00:00.000Z'],
-                    [year + '-' + month + '-' + day + ' ' + hour + ':' + minute + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000Z'],
-                    [year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000Z'],
-                    [year + '-' + month + '-' + day + ' ' + hour + ':' + minute + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000Z'],
-                    [year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000Z'],
-                    [year + '-' + month + '-' + day + ' ' + hour + ':' + minute + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000Z'],
-                    [year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000Z'],
-                    [year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second + '.' + millisecond + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.' + parseFloat('0.' + millisecond).toFixed(3).slice(2) + 'Z'],
                     [year + month + day + ' ' + hour + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':00:00.000Z'],
                     [year + month + day + ' ' + hour + minute + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000Z'],
                     [year + month + day + ' ' + hour + minute + second + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000Z'],
@@ -369,9 +318,100 @@
                 ];
 
                 for (index = 0; index < formats.length; index += 1) {
-                    test.equal(new AstroDate(formats[index][0]).toISOString(), formats[index][1], '(' + index + ')AstroDate should be able to parse ISO ' + formats[index][0]);
+                    test.equal(new AstroDate(formats[index][0]).toISOString(), formats[index][1], '(' + index + ')AstroDate should be able to parse ISO basic ' + formats[index][0]);
                     withComma = formats[index][0];
-                    test.equal(new AstroDate(withComma).toISOString(), formats[index][1], '(' + index + ')AstroDate should be able to parse ISO ' + withComma);
+                    test.equal(new AstroDate(withComma).toISOString(), formats[index][1], '(' + index + ')AstroDate should be able to parse ISO basic ' + withComma);
+                }
+            }
+
+            test.done();
+        },
+
+        'parsing iso extended': function (test) {
+            var repeat = 5000,
+                count,
+                offset = new Date().getTimezoneOffset(),
+                hourOffset,
+                minOffset,
+                tz,
+                formats,
+                index,
+                year,
+                month,
+                day,
+                hour,
+                minute,
+                second,
+                millisecond,
+                withComma;
+
+            test.expect(27 * repeat);
+            for (count = 0; count < repeat; count += 1) {
+                year = padLeadingZero(getRandomInt(0, 9007199254740991), 6);
+                if (getRandomInt(0, 1)) {
+                    year = '+' + year;
+                } else {
+                    year = '-' + year;
+                }
+
+                month = padLeadingZero(getRandomInt(1, 12), 2);
+                day = padLeadingZero(getRandomInt(1, +new AstroDate([year, month]).daysInMonth()), 2);
+                hour = padLeadingZero(getRandomInt(0, 24), 2);
+                if ('24' === hour) {
+                    minute = '00';
+                    second = '00';
+                    millisecond = 0;
+                } else {
+                    minute = padLeadingZero(getRandomInt(0, 59), 2);
+                    second = padLeadingZero(getRandomInt(0, 59), 2);
+                    millisecond = getRandomInt(0, 999);
+                }
+
+                if (0 !== offset) {
+                    hourOffset = (offset > 0) ? Math.floor(offset / 60) : Math.ceil(offset / 60);
+                    minOffset = offset - (hourOffset * 60);
+                    tz = (offset > 0 ? '-' : '+') + padLeadingZero(Math.abs(hourOffset), 2) + ':' + padLeadingZero(Math.abs(minOffset), 2);
+                } else {
+                    tz = 'Z';
+                }
+
+                formats = [
+                    [year + '-' + month + '-' + day, year + '-' + month + '-' + day + 'T00:00:00.000' + tz],
+                    [year + '-' + month + '-' + day + 'T' + hour, year + '-' + month + '-' + day + 'T' + hour + ':00:00.000' + tz],
+                    [year + '-' + month + '-' + day + 'T' + hour + ':' + minute, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000' + tz],
+                    [year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000' + tz],
+                    [year + '-' + month + '-' + day + 'T' + hour + ':' + minute + tz, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000' + tz],
+                    [year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + tz, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000' + tz],
+
+                    [year + '-' + month + '-' + day + 'T' + hour + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':00:00.000Z'],
+                    [year + '-' + month + '-' + day + 'T' + hour + ':' + minute + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000Z'],
+                    [year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000Z'],
+                    [year + '-' + month + '-' + day + 'T' + hour + ':' + minute + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000Z'],
+                    [year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000Z'],
+                    [year + '-' + month + '-' + day + 'T' + hour + ':' + minute + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000Z'],
+                    [year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000Z'],
+                    [year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.' + millisecond + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.' + parseFloat('0.' + millisecond).toFixed(3).slice(2) + 'Z'],
+
+                    [year + '-' + month + '-' + day + ' ' + hour, year + '-' + month + '-' + day + 'T' + hour + ':00:00.000' + tz],
+                    [year + '-' + month + '-' + day + ' ' + hour + ':' + minute, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000' + tz],
+                    [year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000' + tz],
+                    [year + '-' + month + '-' + day + ' ' + hour + ':' + minute + tz, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000' + tz],
+                    [year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second + tz, year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000' + tz],
+
+                    [year + '-' + month + '-' + day + ' ' + hour + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':00:00.000Z'],
+                    [year + '-' + month + '-' + day + ' ' + hour + ':' + minute + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000Z'],
+                    [year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000Z'],
+                    [year + '-' + month + '-' + day + ' ' + hour + ':' + minute + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000Z'],
+                    [year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000Z'],
+                    [year + '-' + month + '-' + day + ' ' + hour + ':' + minute + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':00.000Z'],
+                    [year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.000Z'],
+                    [year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second + '.' + millisecond + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.' + parseFloat('0.' + millisecond).toFixed(3).slice(2) + 'Z']
+                ];
+
+                for (index = 0; index < formats.length; index += 1) {
+                    test.equal(new AstroDate(formats[index][0]).toISOString(), formats[index][1], '(' + index + ')AstroDate should be able to parse ISO extended ' + formats[index][0]);
+                    withComma = formats[index][0];
+                    test.equal(new AstroDate(withComma).toISOString(), formats[index][1], '(' + index + ')AstroDate should be able to parse ISO extended' + withComma);
                 }
             }
 
