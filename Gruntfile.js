@@ -15,10 +15,10 @@
                 options: {
                     mangle: true,
                     compress: {
-                        dead_code: false
+                        'dead_code': false
                     },
                     output: {
-                        ascii_only: true
+                        'ascii_only': true
                     },
                     report: 'min',
                     preserveComments: 'some'
@@ -30,38 +30,27 @@
             jshint: {
                 all: ['Gruntfile.js', '<%= pkg.name %>.js', 'test/**/*.js'],
                 options: {
-                    'node': false,
-                    'browser': false,
-                    'boss': false,
+                    'bitwise': true,
+                    'camelcase': true,
                     'curly': true,
-                    'debug': false,
-                    'devel': false,
                     'eqeqeq': true,
-                    'eqnull': false,
-                    'evil': false,
                     'forin': true,
+                    'funcscope': true,
+                    'globalstrict': true,
                     'immed': true,
-                    'laxbreak': false,
+                    'maxlen': 300,
                     'newcap': true,
                     'noarg': true,
-                    'noempty': true,
+                    'nomen': true,
                     'nonew': true,
+                    'nonstandard': true,
+                    'notypeof': true,
                     'plusplus': true,
                     'regexp': true,
-                    'undef': true,
-                    'sub': true,
                     'strict': true,
-                    'bitwise': true,
-                    'indent': true,
-                    'latedef': true,
                     'trailing': true,
-                    'funcscope': false,
-                    'globalstrict': false,
-                    'laxcomma': false,
-                    'loopfunc': false,
-                    'globals': {
-                        'define': false
-                    }
+                    'undef': true,
+                    'white': true
                 }
             },
             watch: {

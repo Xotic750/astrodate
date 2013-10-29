@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-(function (thisContext, private_undefined) {
+(function (thisContext, privateUndefined) {
     'use strict';
 
     // Safari 2.x NFE bug fix
@@ -118,7 +118,9 @@
                 numberIsNaN,
                 numberIsFinite,
                 mathSign,
-                AstroDate;
+                AstroDate,
+                datePatterns,
+                timePatterns;
 
             function toNumber(inputArg) {
                 return +inputArg;
@@ -319,9 +321,11 @@
                 return tempSafariNFE;
             }());
 
+            /*
             function isEmptyArray(inputArg) {
                 return isZero(inputArg.length);
             }
+            */
 
             function isDate(inputArg) {
                 return strictEqual(toObjectString(inputArg), '[object Date]');
@@ -602,7 +606,7 @@
                     match[0].replace(separator, function () {
                         for (index = 1; lt(index, length); index += 1) {
                             if (isUndefined(arguments[index])) {
-                                match[index] = private_undefined;
+                                match[index] = privateUndefined;
                             }
                         }
                     });
@@ -928,7 +932,9 @@
 
                 // use nfeHasOwnProperty to save a var
                 for (nfeHasOwnProperty in testObject) {
-                    hasDontEnumBug = false;
+                    if (strictEqual(nfeHasOwnProperty, 'toString') && isNull(testObject[nfeHasOwnProperty])) {
+                        hasDontEnumBug = false;
+                    }
                 }
 
                 function checkDontEnums(object, property) {
@@ -1209,13 +1215,15 @@
 
                         for (index = k; lt(index, length); index += 1) {
                             if (hasProperty(object, index)) {
-                                accumulator = fn.call(private_undefined, accumulator, object[index], index, object);
+                                accumulator = fn.call(privateUndefined, accumulator, object[index], index, object);
                             }
                         }
 
                         return accumulator;
                     };
                 }
+
+                nfeReduce = null;
 
                 return tempSafariNFE;
             }());
@@ -3068,7 +3076,7 @@
                 return ordinalToCalendar(struct.year, dayOfYear);
             }
 
-            var datePatterns = {
+            datePatterns = {
                 basic: [{
                     regex: /^(\d{2})$/,
                     func: function (rxResult) {
@@ -3168,7 +3176,7 @@
 
             deepFreeze(datePatterns);
 
-            var timePatterns = {
+            timePatterns = {
                 basic: [{
                     regex: /^(\d{2})$/,
                     func: function (rxResult) {
@@ -4916,11 +4924,15 @@
         thisContext = self;
     }
 
+    if ('object' !== typeof thisContext || null === thisContext) {
+        throw new TypeError('Invalid global context');
+    }
+
     /*global */
     return thisContext;
 }(this)), (function () {
     'use strict';
 
-    // return undefined for private_undefined
+    // return undefined for privateUndefined
     return;
 }())));
