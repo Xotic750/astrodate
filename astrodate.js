@@ -922,7 +922,7 @@
                     propertyIsEnumerableFN = baseObject.propertyIsEnumerable,
                     hasDontEnumBug = true,
                     testObject = {
-                        'toString': null
+                        toString: null
                     },
                     nfeHasOwnProperty;
 
@@ -1401,7 +1401,7 @@
                 if (isFunction(definePropertyFN)) {
                     try {
                         testObject = definePropertyFN({}, 'sentinel', {
-                            'value': null
+                            value: null
                         });
 
                         if (!isNull(testObject.sentinel)) {
@@ -1510,7 +1510,7 @@
                 if (isFunction(getOwnPropertyDescriptorFN)) {
                     try {
                         testObject = {
-                            'sentinel': null
+                            sentinel: null
                         };
 
                         if (!isNull(getOwnPropertyDescriptorFN(testObject, 'sentinel').value)) {
@@ -1538,8 +1538,8 @@
 
                         if (objectHasOwnProperty(object, property)) {
                             descriptor = {
-                                'enumerable': true,
-                                'configurable': true
+                                enumerable: true,
+                                configurable: true
                             };
 
                             if (isFunction(lookupGetterFN) && isFunction(lookupSetterFN)) {
@@ -1739,8 +1739,8 @@
             }());
 
             objectDefineProperties(BigNumber.prototype, {
-                'integerPart': {
-                    'value': function () {
+                integerPart: {
+                    value: function () {
                         var bn = this;
 
                         if (bn.isFinite()) {
@@ -1755,14 +1755,14 @@
                     }
                 },
 
-                'inRange': {
-                    'value': function (min, max) {
+                inRange: {
+                    value: function (min, max) {
                         return this.gte(min) && this.lte(max);
                     }
                 },
 
-                'fractionalPart': {
-                    'value': function () {
+                fractionalPart: {
+                    value: function () {
                         var bn = this;
 
                         if (bn.isFinite()) {
@@ -1775,8 +1775,8 @@
                     }
                 },
 
-                'difference': {
-                    'value': function (value) {
+                difference: {
+                    value: function (value) {
                         var diff;
 
                         if (this.gt(value)) {
@@ -1789,8 +1789,8 @@
                     }
                 },
 
-                'factorial': {
-                    'value': (function () {
+                factorial: {
+                    value: (function () {
                         var factorialLookup = {};
 
                         return function (exponentialAt) {
@@ -1841,52 +1841,52 @@
                     }())
                 },
 
-                'toRadians': {
-                    'value': function (decimalPlacesOfPI) {
+                toRadians: {
+                    value: function (decimalPlacesOfPI) {
                         return this.times(BigNumber.pi(decimalPlacesOfPI).div(180));
                     }
                 },
 
-                'padLeadingZero': {
-                    'value': function (size) {
+                padLeadingZero: {
+                    value: function (size) {
                         return padLeadingChar(this.toString(), '0', size);
                     }
                 }
             });
 
             objectDefineProperties(BigNumber, {
-                'isBigNumber': {
-                    'value': function (inputArg) {
+                isBigNumber: {
+                    value: function (inputArg) {
                         return isObject(inputArg) && objectInstanceOf(inputArg, BigNumber);
                     }
                 },
 
-                'integerPart': {
-                    'value': function (number) {
+                integerPart: {
+                    value: function (number) {
                         return new BigNumber(number).integerPart();
                     }
                 },
 
-                'fractionalPart': {
-                    'value': function (number) {
+                fractionalPart: {
+                    value: function (number) {
                         return new BigNumber(number).fractionalPart();
                     }
                 },
 
-                'difference': {
-                    'value': function (number1, number2) {
+                difference: {
+                    value: function (number1, number2) {
                         return new BigNumber(number1).difference(number2);
                     }
                 },
 
-                'factorial': {
-                    'value': function (number, exponentialAt) {
+                factorial: {
+                    value: function (number, exponentialAt) {
                         return new BigNumber(number).factorial(exponentialAt);
                     }
                 },
 
-                'pi': {
-                    'value': (function () {
+                pi: {
+                    value: (function () {
                         var piLookup = {};
 
                         return function (decimalPlaces) {
@@ -1942,14 +1942,14 @@
                     }())
                 },
 
-                'toRadians': {
-                    'value': function (number, decimalPlacesPI) {
+                toRadians: {
+                    value: function (number, decimalPlacesPI) {
                         return new BigNumber(number).toRadians(decimalPlacesPI);
                     }
                 },
 
-                'normaliseAngle': {
-                    'value': function (angle) {
+                normaliseAngle: {
+                    value: function (angle) {
                         var newAngle = new BigNumber(angle);
 
                         while (newAngle.lt(-360)) {
@@ -1964,8 +1964,8 @@
                     }
                 },
 
-                'toPositiveAngle': {
-                    'value': function (angle) {
+                toPositiveAngle: {
+                    value: function (angle) {
                         var newAngle = new BigNumber.normaliseAngle(angle);
 
                         if (lt(newAngle, 0)) {
@@ -1976,8 +1976,8 @@
                     }
                 },
 
-                'sin': {
-                    'value': (function () {
+                sin: {
+                    value: (function () {
                         var sineLookup = {};
 
                         return function (angle) {
@@ -3166,6 +3166,8 @@
                 }]
             };
 
+            deepFreeze(datePatterns);
+
             var timePatterns = {
                 basic: [{
                     regex: /^(\d{2})$/,
@@ -3371,13 +3373,14 @@
                 }, {
                     regex: /^(\d{2})(\d{2})(\d{2})[\.,]{1}(\d{1,})$/,
                     func: function (rxResult) {
-                        return {
-                            hour: new BigNumber(rxResult[1]),
-                            minute: new BigNumber(rxResult[2]),
-                            second: new BigNumber(rxResult[3]),
-                            millisecond: new BigNumber(rxResult[4]),
-                            offset: new BigNumber(new Date().getTimezoneOffset())
-                        };
+                        var val = fractionToTime('0.' + rxResult[4], 'second');
+
+                        val.hour = new BigNumber(rxResult[1]);
+                        val.minute = new BigNumber(rxResult[2]);
+                        val.second = new BigNumber(rxResult[3]);
+                        val.offset = new BigNumber(new Date().getTimezoneOffset());
+
+                        return val;
                     }
                 }, {
                     regex: /^(\d{2})[\.,]{1}(\d{1,})Z$/,
@@ -3403,13 +3406,14 @@
                 }, {
                     regex: /^(\d{2})(\d{2})(\d{2})[\.,]{1}(\d{1,})Z$/,
                     func: function (rxResult) {
-                        return {
-                            hour: new BigNumber(rxResult[1]),
-                            minute: new BigNumber(rxResult[2]),
-                            second: new BigNumber(rxResult[3]),
-                            millisecond: new BigNumber(rxResult[4]),
-                            offset: new BigNumber(0)
-                        };
+                        var val = fractionToTime('0.' + rxResult[4], 'second');
+
+                        val.hour = new BigNumber(rxResult[1]);
+                        val.minute = new BigNumber(rxResult[2]);
+                        val.second = new BigNumber(rxResult[3]);
+                        val.offset = new BigNumber(0);
+
+                        return val;
                     }
                 }, {
                     regex: /^(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})$/,
@@ -3450,13 +3454,11 @@
                             val;
 
                         if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
-                            val = {
-                                hour: new BigNumber(rxResult[1]),
-                                minute: new BigNumber(rxResult[2]),
-                                second: new BigNumber(rxResult[3]),
-                                millisecond: new BigNumber(rxResult[4]),
-                                offset: offset.times(sign + '1').neg()
-                            };
+                            val = fractionToTime('0.' + rxResult[4], 'second');
+                            val.hour = new BigNumber(rxResult[1]);
+                            val.minute = new BigNumber(rxResult[2]);
+                            val.minute = new BigNumber(rxResult[3]);
+                            val.offset = offset.times(sign + '1').neg();
                         }
 
                         return val;
@@ -3500,13 +3502,11 @@
                             val;
 
                         if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
-                            val = {
-                                hour: new BigNumber(rxResult[1]),
-                                minute: new BigNumber(rxResult[2]),
-                                second: new BigNumber(rxResult[3]),
-                                millisecond: new BigNumber(rxResult[4]),
-                                offset: offset.times(sign + '1').neg()
-                            };
+                            val = fractionToTime('0.' + rxResult[4], 'second');
+                            val.hour = new BigNumber(rxResult[1]);
+                            val.minute = new BigNumber(rxResult[2]);
+                            val.minute = new BigNumber(rxResult[3]);
+                            val.offset = offset.times(sign + '1').neg();
                         }
 
                         return val;
@@ -3716,13 +3716,14 @@
                 }, {
                     regex: /^(\d{2}):(\d{2}):(\d{2})[\.,]{1}(\d{1,})$/,
                     func: function (rxResult) {
-                        return {
-                            hour: new BigNumber(rxResult[1]),
-                            minute: new BigNumber(rxResult[2]),
-                            second: new BigNumber(rxResult[3]),
-                            millisecond: new BigNumber(rxResult[4]),
-                            offset: new BigNumber(new Date().getTimezoneOffset())
-                        };
+                        var val = fractionToTime('0.' + rxResult[4], 'second');
+
+                        val.hour = new BigNumber(rxResult[1]);
+                        val.minute = new BigNumber(rxResult[2]);
+                        val.second = new BigNumber(rxResult[3]);
+                        val.offset = new BigNumber(new Date().getTimezoneOffset());
+
+                        return val;
                     }
                 }, {
                     regex: /^(\d{2})[\.,]{1}(\d{1,})Z$/,
@@ -3748,13 +3749,14 @@
                 }, {
                     regex: /^(\d{2}):(\d{2}):(\d{2})[\.,]{1}(\d{1,})Z$/,
                     func: function (rxResult) {
-                        return {
-                            hour: new BigNumber(rxResult[1]),
-                            minute: new BigNumber(rxResult[2]),
-                            second: new BigNumber(rxResult[3]),
-                            millisecond: new BigNumber(rxResult[4]),
-                            offset: new BigNumber(0)
-                        };
+                        var val = fractionToTime('0.' + rxResult[4], 'second');
+
+                        val.hour = new BigNumber(rxResult[1]);
+                        val.minute = new BigNumber(rxResult[2]);
+                        val.second = new BigNumber(rxResult[3]);
+                        val.offset = new BigNumber(0);
+
+                        return val;
                     }
                 }, {
                     regex: /^(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})$/,
@@ -3795,13 +3797,11 @@
                             val;
 
                         if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
-                            val = {
-                                hour: new BigNumber(rxResult[1]),
-                                minute: new BigNumber(rxResult[2]),
-                                second: new BigNumber(rxResult[3]),
-                                millisecond: new BigNumber(rxResult[4]),
-                                offset: offset.times(sign + '1').neg()
-                            };
+                            val = fractionToTime('0.' + rxResult[4], 'second');
+                            val.hour = new BigNumber(rxResult[1]);
+                            val.minute = new BigNumber(rxResult[2]);
+                            val.second = new BigNumber(rxResult[3]);
+                            val.offset = offset.times(sign + '1').neg();
                         }
 
                         return val;
@@ -3845,19 +3845,19 @@
                             val;
 
                         if (strictEqual(sign, '+') || !offset.isZero() || (offset.isZero() && !strictEqual(sign, '-'))) {
-                            val = {
-                                hour: new BigNumber(rxResult[1]),
-                                minute: new BigNumber(rxResult[2]),
-                                second: new BigNumber(rxResult[3]),
-                                millisecond: new BigNumber(rxResult[4]),
-                                offset: offset.times(sign + '1').neg()
-                            };
+                            val = fractionToTime('0.' + rxResult[4], 'second');
+                            val.hour = new BigNumber(rxResult[1]);
+                            val.minute = new BigNumber(rxResult[2]);
+                            val.second = new BigNumber(rxResult[3]);
+                            val.offset = offset.times(sign + '1').neg();
                         }
 
                         return val;
                     }
                 }]
             };
+
+            deepFreeze(timePatterns);
 
             function isoSplitDateTime(string) {
                 var dtObject = {
@@ -3994,8 +3994,8 @@
                     arg;
 
                 objectDefineProperties(this, {
-                    'getter': {
-                        'value': function (key) {
+                    getter: {
+                        value: function (key) {
                             var got;
 
                             if (isUndefined(key)) {
@@ -4028,8 +4028,8 @@
                         }
                     },
 
-                    'setter': {
-                        'value': function (key, value) {
+                    setter: {
+                        value: function (key, value) {
                             var unit = normaliseUnits(key),
                                 valid = false,
                                 bn,
@@ -4115,11 +4115,11 @@
                     }
                 });
 
-                switch (argsLength) {
-                case 0:
+                switch (argsLength.toString()) {
+                case '0':
                     struct = dateToStruct(new Date());
                     break;
-                case 1:
+                case '1':
                     arg = args[0];
                     if (AstroDate.isAstroDate(arg)) {
                         isJulian = arg.getter('isJulian');
@@ -4142,7 +4142,7 @@
                     }
 
                     break;
-                case 2:
+                case '2':
                     arg = args[0];
                     if (isString(arg)) {
                         arg = stringTrim(arg).toLowerCase();
@@ -4199,32 +4199,32 @@
             };
 
             objectDefineProperties(AstroDate.prototype, {
-                'julian': {
-                    'value': function () {
+                julian: {
+                    value: function () {
                         return this.setter('isJulian', true);
                     }
                 },
 
-                'gregorian': {
-                    'value': function () {
+                gregorian: {
+                    value: function () {
                         return this.setter('isJulian', false);
                     }
                 },
 
-                'isJulian': {
-                    'value': function () {
+                isJulian: {
+                    value: function () {
                         return this.getter('isJulian');
                     }
                 },
 
-                'isValid': {
-                    'value': function () {
+                isValid: {
+                    value: function () {
                         return isValid(this.getter());
                     }
                 },
 
-                'parse': {
-                    'value': function (isoString) {
+                parse: {
+                    value: function (isoString) {
                         var val;
 
                         if (isString(isoString)) {
@@ -4237,8 +4237,8 @@
                     }
                 },
 
-                'toString': {
-                    'value': function () {
+                toString: {
+                    value: function () {
                         var args,
                             shortName,
                             lang,
@@ -4294,14 +4294,14 @@
                     }
                 },
 
-                'toISOString': {
-                    'value': function () {
+                toISOString: {
+                    value: function () {
                         return toISOString(this);
                     }
                 },
 
-                'valueOf': {
-                    'value': function () {
+                valueOf: {
+                    value: function () {
                         var val;
 
                         if (this.isJulian()) {
@@ -4314,8 +4314,8 @@
                     }
                 },
 
-                'object': {
-                    'value': function (dateObject) {
+                object: {
+                    value: function (dateObject) {
                         var val;
 
                         if (isUndefined(dateObject)) {
@@ -4336,14 +4336,14 @@
                     }
                 },
 
-                'clone': {
-                    'value': function () {
+                clone: {
+                    value: function () {
                         return new AstroDate(this);
                     }
                 },
 
-                'array': {
-                    'value': function (dateArray) {
+                array: {
+                    value: function (dateArray) {
                         var val;
 
                         if (isUndefined(dateArray)) {
@@ -4364,8 +4364,8 @@
                     }
                 },
 
-                'date': {
-                    'value': function (date) {
+                date: {
+                    value: function (date) {
                         var val;
 
                         if (isUndefined(date)) {
@@ -4384,8 +4384,8 @@
                     }
                 },
 
-                'getTime': {
-                    'value': function () {
+                getTime: {
+                    value: function () {
                         var val;
 
                         if (this.isValid()) {
@@ -4396,8 +4396,8 @@
                     }
                 },
 
-                'deltaTime': {
-                    'value': function () {
+                deltaTime: {
+                    value: function () {
                         var val;
 
                         if (this.isValid()) {
@@ -4408,8 +4408,8 @@
                     }
                 },
 
-                'timeTo': {
-                    'value': function (unit) {
+                timeTo: {
+                    value: function (unit) {
                         var val;
 
                         if (this.isValid()) {
@@ -4420,8 +4420,8 @@
                     }
                 },
 
-                'julianDay': {
-                    'value': function (julianDay) {
+                julianDay: {
+                    value: function (julianDay) {
                         var val;
 
                         if (isUndefined(julianDay)) {
@@ -4438,8 +4438,8 @@
                     }
                 },
 
-                'easter': {
-                    'value': function () {
+                easter: {
+                    value: function () {
                         var val;
 
                         if (this.isValid()) {
@@ -4454,8 +4454,8 @@
                     }
                 },
 
-                'monthOfYear': {
-                    'value': function () {
+                monthOfYear: {
+                    value: function () {
                         var args,
                             shortName,
                             lang,
@@ -4482,8 +4482,8 @@
                     }
                 },
 
-                'dayOfWeek': {
-                    'value': function () {
+                dayOfWeek: {
+                    value: function () {
                         var args,
                             shortName,
                             lang,
@@ -4506,8 +4506,8 @@
                     }
                 },
 
-                'isLeapYear': {
-                    'value': function () {
+                isLeapYear: {
+                    value: function () {
                         var val;
 
                         if (this.isValid()) {
@@ -4522,8 +4522,8 @@
                     }
                 },
 
-                'daysInYear': {
-                    'value': function () {
+                daysInYear: {
+                    value: function () {
                         var val;
 
                         if (this.isValid()) {
@@ -4538,8 +4538,8 @@
                     }
                 },
 
-                'daysInMonth': {
-                    'value': function () {
+                daysInMonth: {
+                    value: function () {
                         var val;
 
                         if (this.isValid()) {
@@ -4554,8 +4554,8 @@
                     }
                 },
 
-                'dayOfYear': {
-                    'value': function () {
+                dayOfYear: {
+                    value: function () {
                         var val;
 
                         if (this.isValid()) {
@@ -4570,8 +4570,8 @@
                     }
                 },
 
-                'json': {
-                    'value': function (jsonString) {
+                json: {
+                    value: function (jsonString) {
                         var struct,
                             propArray,
                             val;
@@ -4611,22 +4611,22 @@
             });
 
             objectDefineProperties(AstroDate, {
-                'version': {
-                    'value': VERSION
+                version: {
+                    value: VERSION
                 },
 
-                'BigNumber': {
-                    'value': BigNumber
+                BigNumber: {
+                    value: BigNumber
                 },
 
-                'normaliseUnits': {
-                    'value': function (unitString) {
+                normaliseUnits: {
+                    value: function (unitString) {
                         return normaliseUnits(unitString);
                     }
                 },
 
-                'isAstroDate': {
-                    'value': function (inputArg) {
+                isAstroDate: {
+                    value: function (inputArg) {
                         return isObject(inputArg) && objectInstanceOf(inputArg, AstroDate);
                     }
                 }
@@ -4634,32 +4634,32 @@
 
             objectDefineProperties(defaultProperties, {
                 0: {
-                    'value': 'toString',
-                    'enumerable': true
+                    value: 'toString',
+                    enumerable: true
                 },
                 1: {
-                    'value': 'toLocaleString',
-                    'enumerable': true
+                    value: 'toLocaleString',
+                    enumerable: true
                 },
                 2: {
-                    'value': 'valueOf',
-                    'enumerable': true
+                    value: 'valueOf',
+                    enumerable: true
                 },
                 3: {
-                    'value': 'hasOwnProperty',
-                    'enumerable': true
+                    value: 'hasOwnProperty',
+                    enumerable: true
                 },
                 4: {
-                    'value': 'isPrototypeOf',
-                    'enumerable': true
+                    value: 'isPrototypeOf',
+                    enumerable: true
                 },
                 5: {
-                    'value': 'propertyIsEnumerable',
-                    'enumerable': true
+                    value: 'propertyIsEnumerable',
+                    enumerable: true
                 },
                 6: {
-                    'value': 'constructor',
-                    'enumerable': true
+                    value: 'constructor',
+                    enumerable: true
                 }
             });
 
@@ -4667,68 +4667,68 @@
 
             objectDefineProperties(fullKeys, {
                 0: {
-                    'value': {
-                        'full': 'year',
-                        'alias': 'y',
-                        'local': 'getFullYear'
+                    value: {
+                        full: 'year',
+                        alias: 'y',
+                        local: 'getFullYear'
                     },
-                    'enumerable': true
+                    enumerable: true
                 },
                 1: {
-                    'value': {
-                        'full': 'month',
-                        'alias': 'M',
-                        'local': 'getMonth'
+                    value: {
+                        full: 'month',
+                        alias: 'M',
+                        local: 'getMonth'
                     },
-                    'enumerable': true
+                    enumerable: true
                 },
                 2: {
-                    'value': {
-                        'full': 'day',
-                        'alias': 'd',
-                        'local': 'getDate'
+                    value: {
+                        full: 'day',
+                        alias: 'd',
+                        local: 'getDate'
                     },
-                    'enumerable': true
+                    enumerable: true
                 },
                 3: {
-                    'value': {
-                        'full': 'hour',
-                        'alias': 'h',
-                        'local': 'getHours'
+                    value: {
+                        full: 'hour',
+                        alias: 'h',
+                        local: 'getHours'
                     },
-                    'enumerable': true
+                    enumerable: true
                 },
                 4: {
-                    'value': {
-                        'full': 'minute',
-                        'alias': 'm',
-                        'local': 'getMinutes'
+                    value: {
+                        full: 'minute',
+                        alias: 'm',
+                        local: 'getMinutes'
                     },
-                    'enumerable': true
+                    enumerable: true
                 },
                 5: {
-                    'value': {
-                        'full': 'second',
-                        'alias': 's',
-                        'local': 'getSeconds'
+                    value: {
+                        full: 'second',
+                        alias: 's',
+                        local: 'getSeconds'
                     },
-                    'enumerable': true
+                    enumerable: true
                 },
                 6: {
-                    'value': {
-                        'full': 'millisecond',
-                        'alias': 'ms',
-                        'local': 'getMilliseconds'
+                    value: {
+                        full: 'millisecond',
+                        alias: 'ms',
+                        local: 'getMilliseconds'
                     },
-                    'enumerable': true
+                    enumerable: true
                 },
                 7: {
-                    'value': {
-                        'full': 'offset',
-                        'alias': 'z',
-                        'local': 'getTimezoneOffset'
+                    value: {
+                        full: 'offset',
+                        alias: 'z',
+                        local: 'getTimezoneOffset'
                     },
-                    'enumerable': true
+                    enumerable: true
                 }
             });
 
@@ -4736,160 +4736,160 @@
 
             objectDefineProperties(shortNameLength, {
                 'en-GB': {
-                    'value': 3,
-                    'enumerable': true
+                    value: 3,
+                    enumerable: true
                 },
                 'sv-SE': {
-                    'value': 3,
-                    'enumerable': true
+                    value: 3,
+                    enumerable: true
                 }
             });
 
             objectDefineProperties(dayNames, {
                 0: {
-                    'value': {
+                    value: {
                         'en-GB': 'Sunday',
                         'sv-SE': 'söndag'
                     },
-                    'enumerable': true
+                    enumerable: true
                 },
                 1: {
-                    'value': {
+                    value: {
                         'en-GB': 'Monday',
                         'sv-SE': 'måndag'
                     },
-                    'enumerable': true
+                    enumerable: true
                 },
                 2: {
-                    'value': {
+                    value: {
                         'en-GB': 'Tuesday',
                         'sv-SE': 'tisdag'
                     },
-                    'enumerable': true
+                    enumerable: true
                 },
                 3: {
-                    'value': {
+                    value: {
                         'en-GB': 'Wednesday',
                         'sv-SE': 'onsdag'
                     },
-                    'enumerable': true
+                    enumerable: true
                 },
                 4: {
-                    'value': {
+                    value: {
                         'en-GB': 'Thursday',
                         'sv-SE': 'torsdag'
                     },
-                    'enumerable': true
+                    enumerable: true
                 },
                 5: {
-                    'value': {
+                    value: {
                         'en-GB': 'Friday',
                         'sv-SE': 'fredag'
                     },
-                    'enumerable': true
+                    enumerable: true
                 },
                 6: {
-                    'value': {
+                    value: {
                         'en-GB': 'Saturday',
                         'sv-SE': 'lördag'
                     },
-                    'enumerable': true
+                    enumerable: true
                 }
             });
 
             objectDefineProperties(monthNames, {
                 0: {
-                    'value': {
+                    value: {
                         'en-GB': 'January',
                         'sv-SE': 'januari'
                     },
-                    'enumerable': true
+                    enumerable: true
                 },
                 1: {
-                    'value': {
+                    value: {
                         'en-GB': 'February',
                         'sv-SE': 'februari'
                     },
-                    'enumerable': true
+                    enumerable: true
                 },
                 2: {
-                    'value': {
+                    value: {
                         'en-GB': 'March',
                         'sv-SE': 'mars'
                     },
-                    'enumerable': true
+                    enumerable: true
                 },
                 3: {
-                    'value': {
+                    value: {
                         'en-GB': 'April',
                         'sv-SE': 'april'
                     },
-                    'enumerable': true
+                    enumerable: true
                 },
                 4: {
-                    'value': {
+                    value: {
                         'en-GB': 'May',
                         'sv-SE': 'maj'
                     },
-                    'enumerable': true
+                    enumerable: true
                 },
                 5: {
-                    'value': {
+                    value: {
                         'en-GB': 'June',
                         'sv-SE': 'juni'
                     },
-                    'enumerable': true
+                    enumerable: true
                 },
                 6: {
-                    'value': {
+                    value: {
                         'en-GB': 'July',
                         'sv-SE': 'juli'
                     },
-                    'enumerable': true
+                    enumerable: true
                 },
                 7: {
-                    'value': {
+                    value: {
                         'en-GB': 'August',
                         'sv-SE': 'augusti'
                     },
-                    'enumerable': true
+                    enumerable: true
                 },
                 8: {
-                    'value': {
+                    value: {
                         'en-GB': 'September',
                         'sv-SE': 'september'
                     },
-                    'enumerable': true
+                    enumerable: true
                 },
                 9: {
-                    'value': {
+                    value: {
                         'en-GB': 'October',
                         'sv-SE': 'oktober'
                     },
-                    'enumerable': true
+                    enumerable: true
                 },
                 10: {
-                    'value': {
+                    value: {
                         'en-GB': 'November',
                         'sv-SE': 'november'
                     },
-                    'enumerable': true
+                    enumerable: true
                 },
                 11: {
-                    'value': {
+                    value: {
                         'en-GB': 'December',
                         'sv-SE': 'december'
                     },
-                    'enumerable': true
+                    enumerable: true
                 }
             });
 
             arrayForEach([BigNumber, BigNumber.prototype], function (element) {
                 arrayForEach(objectKeys(element), function (key) {
                     objectDefineProperty(element, key, {
-                        'enumerable': false,
-                        'configurable': false,
-                        'writeable': false
+                        enumerable: false,
+                        configurable: false,
+                        writeable: false
                     });
                 });
             });
