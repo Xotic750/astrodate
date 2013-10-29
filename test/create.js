@@ -260,7 +260,7 @@
                 millisecond,
                 withComma;
 
-            test.expect(27 * repeat);
+            test.expect(2 * 27 * repeat);
             for (count = 0; count < repeat; count += 1) {
                 year = padLeadingZero(getRandomInt(0, 9999), 4);
                 month = padLeadingZero(getRandomInt(1, 12), 2);
@@ -345,7 +345,7 @@
                 millisecond,
                 withComma;
 
-            test.expect(27 * repeat);
+            test.expect(2 * 27 * repeat);
             for (count = 0; count < repeat; count += 1) {
                 year = padLeadingZero(getRandomInt(0, 9007199254740991), 6);
                 if (getRandomInt(0, 1)) {

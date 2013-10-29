@@ -4908,11 +4908,11 @@
     /*global window, global, self */
 
     // detect the global context of the environment
-    if ('object' === typeof window && 'null' !== window && window.window === window) {
+    if ('object' === typeof window && null !== window && window.window === window) {
         thisContext = window;
-    } else if ('object' === typeof global && 'null' !== global && global.global === global) {
+    } else if ('object' === typeof global && null !== global && global.global === global) {
         thisContext = global;
-    } else if ('object' === typeof self && 'null' !== self && self.self === self) {
+    } else if ('object' === typeof self && null !== self && self.self === self) {
         thisContext = self;
     }
 
