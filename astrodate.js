@@ -1746,6 +1746,14 @@
                 return tempSafariNFE;
             }());
 
+            function bnZero() {
+                return new BigNumber(0);
+            }
+
+            function bnOne() {
+                return new BigNumber(1);
+            }
+
             objectDefineProperties(BigNumber.prototype, {
                 integerPart: {
                     value: function () {
@@ -1833,7 +1841,7 @@
                                         ERRORS: true
                                     });
 
-                                    factorialLookup[n] = new BigNumber(1);
+                                    factorialLookup[n] = bnOne();
                                     for (i = 2; lte(i, n); i += 1) {
                                         factorialLookup[n] = factorialLookup[n].times(i);
                                     }
@@ -1928,7 +1936,7 @@
                                     ERRORS: true
                                 });
 
-                                sum = new BigNumber(0);
+                                sum = bnZero();
                                 a = ta = new BigNumber(16).div(5);
                                 b = tb = new BigNumber(-4).div(239);
                                 while (!a.equals(b)) {
@@ -1999,7 +2007,7 @@
 
                             if (!sineLookup[lookupProp]) {
                                 sum = newAngle;
-                                prev = new BigNumber(0);
+                                prev = bnZero();
                                 i = 1;
                                 k = 3;
                                 while (!sum.equals(prev)) {
@@ -2514,7 +2522,7 @@
                             break;
                         case 'month':
                             if (isUndefined(value)) {
-                                bn = new BigNumber(1);
+                                bn = bnOne();
                             }
 
                             if (!inMonthRange(bn)) {
@@ -2531,7 +2539,7 @@
                             }
 
                             if (isUndefined(value)) {
-                                bn = new BigNumber(1);
+                                bn = bnOne();
                             }
 
                             if (!inDayRange(bn, dim)) {
@@ -2542,7 +2550,7 @@
                             break;
                         case 'hour':
                             if (isUndefined(value)) {
-                                bn = new BigNumber(0);
+                                bn = bnZero();
                             }
 
                             if (!inHourRange(bn)) {
@@ -2553,7 +2561,7 @@
                             break;
                         case 'minute':
                             if (isUndefined(value)) {
-                                bn = new BigNumber(0);
+                                bn = bnZero();
                             }
 
                             if (!inMinuteRange(bn, struct.hour)) {
@@ -2564,7 +2572,7 @@
                             break;
                         case 'second':
                             if (isUndefined(value)) {
-                                bn = new BigNumber(0);
+                                bn = bnZero();
                             }
 
                             if (!inSecondRange(bn, struct.hour)) {
@@ -2575,7 +2583,7 @@
                             break;
                         case 'millisecond':
                             if (isUndefined(value)) {
-                                bn = new BigNumber(0);
+                                bn = bnZero();
                             }
 
                             if (!inMillisecondRange(bn, struct.hour)) {
@@ -2586,7 +2594,7 @@
                             break;
                         case 'offset':
                             if (isUndefined(value)) {
-                                bn = new BigNumber(0);
+                                bn = bnZero();
                             }
 
                             if (!inOffsetRange(bn)) {
@@ -2655,7 +2663,7 @@
                             break;
                         case 'month':
                             if (isUndefined(value)) {
-                                bn = new BigNumber(1);
+                                bn = bnOne();
                             }
 
                             if (!inMonthRange(bn)) {
@@ -2672,7 +2680,7 @@
                             }
 
                             if (isUndefined(value)) {
-                                bn = new BigNumber(1);
+                                bn = bnOne();
                             }
 
                             if (!inDayRange(bn, dim)) {
@@ -2683,7 +2691,7 @@
                             break;
                         case 'hour':
                             if (isUndefined(value)) {
-                                bn = new BigNumber(0);
+                                bn = bnZero();
                             }
 
                             if (!inHourRange(bn)) {
@@ -2694,7 +2702,7 @@
                             break;
                         case 'minute':
                             if (isUndefined(value)) {
-                                bn = new BigNumber(0);
+                                bn = bnZero();
                             }
 
                             if (!inMinuteRange(bn, struct.hour)) {
@@ -2705,7 +2713,7 @@
                             break;
                         case 'second':
                             if (isUndefined(value)) {
-                                bn = new BigNumber(0);
+                                bn = bnZero();
                             }
 
                             if (!inSecondRange(bn, struct.hour)) {
@@ -2716,7 +2724,7 @@
                             break;
                         case 'millisecond':
                             if (isUndefined(value)) {
-                                bn = new BigNumber(0);
+                                bn = bnZero();
                             }
 
                             if (!inMillisecondRange(bn, struct.hour)) {
@@ -2727,7 +2735,7 @@
                             break;
                         case 'offset':
                             if (isUndefined(value)) {
-                                bn = new BigNumber(0);
+                                bn = bnZero();
                             }
 
                             if (!inOffsetRange(bn)) {
@@ -2817,7 +2825,7 @@
                     a = struct.month.div(11).floor();
                     struct.month = struct.month.plus(2).minus(a.times(12));
                     struct.year = b.minus(49).times(100).plus(struct.year).plus(a).floor();
-                    struct.offset = new BigNumber(0);
+                    struct.offset = bnZero();
                     extend(struct, fractionToTime(jd.fractionalPart().abs(), 'day'));
                 }
 
@@ -2856,7 +2864,7 @@
                         struct.year = c.minus(4715);
                     }
 
-                    struct.offset = new BigNumber(0);
+                    struct.offset = bnZero();
                     extend(struct, fractionToTime(jd.fractionalPart().abs(), 'day'));
                 }
 
@@ -3019,12 +3027,12 @@
             function ordinalToCalendar(year, dayOfYear) {
                 var struct = {
                         year: new BigNumber(year),
-                        month: new BigNumber(1),
-                        day: new BigNumber(1),
-                        hour: new BigNumber(0),
-                        minute: new BigNumber(0),
-                        second: new BigNumber(0),
-                        millisecond: new BigNumber(0)
+                        month: bnOne(),
+                        day: bnOne(),
+                        hour: bnZero(),
+                        minute: bnZero(),
+                        second: bnZero(),
+                        millisecond: bnZero()
                     },
                     daysInYear = daysInGregorianYear(struct),
                     result;
@@ -3046,12 +3054,12 @@
             function weekDateToCalendar(year, week, weekDay) {
                 var struct = {
                         year: new BigNumber(year),
-                        month: new BigNumber(1),
+                        month: bnOne(),
                         day: new BigNumber(4),
-                        hour: new BigNumber(0),
-                        minute: new BigNumber(0),
-                        second: new BigNumber(0),
-                        millisecond: new BigNumber(0)
+                        hour: bnZero(),
+                        minute: bnZero(),
+                        second: bnZero(),
+                        millisecond: bnZero()
                     },
                     weekDayJan4 = gregorianToJd(struct).plus(1.5).mod(7).floor(),
                     dayOfYear;
@@ -3080,14 +3088,38 @@
                 return strictEqual(sign, '+') || !bn.isZero() || (bn.isZero() && !strictEqual(sign, '-'));
             }
 
+            function hourMinuteToMinutes(minute, second) {
+                return new BigNumber(minute).times(60).plus(second);
+            }
+
+            function hourFractionToTime(number) {
+                return fractionToTime('0.' + number, 'hour');
+            }
+
+            function minuteFractionToTime(number) {
+                return fractionToTime('0.' + number, 'minute');
+            }
+
+            function secondFractionToTime(number) {
+                return fractionToTime('0.' + number, 'second');
+            }
+
+            function bnGetTimezoneOffset() {
+                return new BigNumber(new Date().getTimezoneOffset());
+            }
+
+            function toSignMultipler(sign) {
+                return sign + '1';
+            }
+
             datePatterns = {
                 basic: [{
                     regex: /^(\d{2})$/,
                     func: function (rxResult) {
                         return {
                             year: new BigNumber(rxResult[1] + '00'),
-                            month: new BigNumber(1),
-                            day: new BigNumber(1)
+                            month: bnOne(),
+                            day: bnOne()
                         };
                     }
                 }, {
@@ -3095,8 +3127,8 @@
                     func: function (rxResult) {
                         return {
                             year: new BigNumber(rxResult[1]),
-                            month: new BigNumber(1),
-                            day: new BigNumber(1)
+                            month: bnOne(),
+                            day: bnOne()
                         };
                     }
                 }, {
@@ -3114,7 +3146,7 @@
                         return {
                             year: new BigNumber(rxResult[1]),
                             month: new BigNumber(rxResult[2]),
-                            day: new BigNumber(1)
+                            day: bnOne()
                         };
                     }
                 }, {
@@ -3146,16 +3178,16 @@
                     regex: /^([\-+]{1})(\d{6,})-(\d{2})$/,
                     func: function (rxResult) {
                         return {
-                            year: new BigNumber(rxResult[2]).times(rxResult[1] + '1'),
+                            year: new BigNumber(rxResult[2]).times(toSignMultipler(rxResult[1])),
                             month: new BigNumber(rxResult[3]),
-                            day: new BigNumber(1)
+                            day: bnOne()
                         };
                     }
                 }, {
                     regex: /^([\-+]{1})(\d{6,})-(\d{2})-(\d{2})$/,
                     func: function (rxResult) {
                         return {
-                            year: new BigNumber(rxResult[2]).times(rxResult[1] + '1'),
+                            year: new BigNumber(rxResult[2]).times(toSignMultipler(rxResult[1])),
                             month: new BigNumber(rxResult[3]),
                             day: new BigNumber(rxResult[4])
                         };
@@ -3186,10 +3218,10 @@
                     func: function (rxResult) {
                         return {
                             hour: new BigNumber(rxResult[1]),
-                            minute: new BigNumber(0),
-                            second: new BigNumber(0),
-                            millisecond: new BigNumber(0),
-                            offset: new BigNumber(new Date().getTimezoneOffset())
+                            minute: bnZero(),
+                            second: bnZero(),
+                            millisecond: bnZero(),
+                            offset: bnGetTimezoneOffset()
                         };
                     }
                 }, {
@@ -3198,9 +3230,9 @@
                         return {
                             hour: new BigNumber(rxResult[1]),
                             minute: new BigNumber(rxResult[2]),
-                            second: new BigNumber(0),
-                            millisecond: new BigNumber(0),
-                            offset: new BigNumber(new Date().getTimezoneOffset())
+                            second: bnZero(),
+                            millisecond: bnZero(),
+                            offset: bnGetTimezoneOffset()
                         };
                     }
                 }, {
@@ -3210,8 +3242,8 @@
                             hour: new BigNumber(rxResult[1]),
                             minute: new BigNumber(rxResult[2]),
                             second: new BigNumber(rxResult[3]),
-                            millisecond: new BigNumber(0),
-                            offset: new BigNumber(new Date().getTimezoneOffset())
+                            millisecond: bnZero(),
+                            offset: bnGetTimezoneOffset()
                         };
                     }
                 }, {
@@ -3219,10 +3251,10 @@
                     func: function (rxResult) {
                         return {
                             hour: new BigNumber(rxResult[1]),
-                            minute: new BigNumber(0),
-                            second: new BigNumber(0),
-                            millisecond: new BigNumber(0),
-                            offset: new BigNumber(0)
+                            minute: bnZero(),
+                            second: bnZero(),
+                            millisecond: bnZero(),
+                            offset: bnZero()
                         };
                     }
                 }, {
@@ -3231,9 +3263,9 @@
                         return {
                             hour: new BigNumber(rxResult[1]),
                             minute: new BigNumber(rxResult[2]),
-                            second: new BigNumber(0),
-                            millisecond: new BigNumber(0),
-                            offset: new BigNumber(0)
+                            second: bnZero(),
+                            millisecond: bnZero(),
+                            offset: bnZero()
                         };
                     }
                 }, {
@@ -3243,24 +3275,24 @@
                             hour: new BigNumber(rxResult[1]),
                             minute: new BigNumber(rxResult[2]),
                             second: new BigNumber(rxResult[3]),
-                            millisecond: new BigNumber(0),
-                            offset: new BigNumber(0)
+                            millisecond: bnZero(),
+                            offset: bnZero()
                         };
                     }
                 }, {
                     regex: /^(\d{2})([\-+]{1})(\d{2})$/,
                     func: function (rxResult) {
                         var sign = rxResult[2],
-                            offset = new BigNumber(rxResult[3]).times(60),
+                            offset = hourMinuteToMinutes(rxResult[3], 0),
                             val;
 
                         if (isNotNegativeZero(offset, sign)) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
-                                minute: new BigNumber(0),
-                                second: new BigNumber(0),
-                                millisecond: new BigNumber(0),
-                                offset: offset.times(sign + '1').neg()
+                                minute: bnZero(),
+                                second: bnZero(),
+                                millisecond: bnZero(),
+                                offset: offset.times(toSignMultipler(sign)).neg()
                             };
                         }
 
@@ -3270,16 +3302,16 @@
                     regex: /^(\d{2})(\d{2})([\-+]{1})(\d{2})$/,
                     func: function (rxResult) {
                         var sign = rxResult[3],
-                            offset = new BigNumber(rxResult[4]).times(60),
+                            offset = hourMinuteToMinutes(rxResult[4], 0),
                             val;
 
                         if (isNotNegativeZero(offset, sign)) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
-                                second: new BigNumber(0),
-                                millisecond: new BigNumber(0),
-                                offset: offset.times(sign + '1').neg()
+                                second: bnZero(),
+                                millisecond: bnZero(),
+                                offset: offset.times(toSignMultipler(sign)).neg()
                             };
                         }
 
@@ -3289,7 +3321,7 @@
                     regex: /^(\d{2})(\d{2})(\d{2})([\-+]{1})(\d{2})$/,
                     func: function (rxResult) {
                         var sign = rxResult[4],
-                            offset = new BigNumber(rxResult[5]).times(60),
+                            offset = hourMinuteToMinutes(rxResult[5], 0),
                             val;
 
                         if (isNotNegativeZero(offset, sign)) {
@@ -3297,8 +3329,8 @@
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
                                 second: new BigNumber(rxResult[3]),
-                                millisecond: new BigNumber(0),
-                                offset: offset.times(sign + '1').neg()
+                                millisecond: bnZero(),
+                                offset: offset.times(toSignMultipler(sign)).neg()
                             };
                         }
 
@@ -3308,16 +3340,16 @@
                     regex: /^(\d{2})([\-+]{1})(\d{2})(\d{2})$/,
                     func: function (rxResult) {
                         var sign = rxResult[2],
-                            offset = new BigNumber(rxResult[3]).times(60).plus(rxResult[4]),
+                            offset = hourMinuteToMinutes(rxResult[3], rxResult[4]),
                             val;
 
                         if (isNotNegativeZero(offset, sign)) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
-                                minute: new BigNumber(0),
-                                second: new BigNumber(0),
-                                millisecond: new BigNumber(0),
-                                offset: offset.times(sign + '1').neg()
+                                minute: bnZero(),
+                                second: bnZero(),
+                                millisecond: bnZero(),
+                                offset: offset.times(toSignMultipler(sign)).neg()
                             };
                         }
 
@@ -3327,16 +3359,16 @@
                     regex: /^(\d{2})(\d{2})([\-+]{1})(\d{2})(\d{2})$/,
                     func: function (rxResult) {
                         var sign = rxResult[3],
-                            offset = new BigNumber(rxResult[4]).times(60).plus(rxResult[5]),
+                            offset = hourMinuteToMinutes(rxResult[4], rxResult[5]),
                             val;
 
                         if (isNotNegativeZero(offset, sign)) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
-                                second: new BigNumber(0),
-                                millisecond: new BigNumber(0),
-                                offset: offset.times(sign + '1').neg()
+                                second: bnZero(),
+                                millisecond: bnZero(),
+                                offset: offset.times(toSignMultipler(sign)).neg()
                             };
                         }
 
@@ -3346,7 +3378,7 @@
                     regex: /^(\d{2})(\d{2})(\d{2})([\-+]{1})(\d{2})(\d{2})$/,
                     func: function (rxResult) {
                         var sign = rxResult[4],
-                            offset = new BigNumber(rxResult[5]).times(60).plus(rxResult[6]),
+                            offset = hourMinuteToMinutes(rxResult[5], rxResult[6]),
                             val;
 
                         if (isNotNegativeZero(offset, sign)) {
@@ -3354,8 +3386,8 @@
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
                                 second: new BigNumber(rxResult[3]),
-                                millisecond: new BigNumber(0),
-                                offset: offset.times(sign + '1').neg()
+                                millisecond: bnZero(),
+                                offset: offset.times(toSignMultipler(sign)).neg()
                             };
                         }
 
@@ -3364,66 +3396,66 @@
                 }, {
                     regex: /^(\d{2})[\.,]{1}(\d{1,})$/,
                     func: function (rxResult) {
-                        var val = fractionToTime('0.' + rxResult[2], 'hour');
+                        var val = hourFractionToTime(rxResult[2]);
 
                         val.hour = new BigNumber(rxResult[1]);
-                        val.offset = new BigNumber(new Date().getTimezoneOffset());
+                        val.offset = bnGetTimezoneOffset();
 
                         return val;
                     }
                 }, {
                     regex: /^(\d{2})(\d{2})[\.,]{1}(\d{1,})$/,
                     func: function (rxResult) {
-                        var val = fractionToTime('0.' + rxResult[3], 'minute');
+                        var val = minuteFractionToTime(rxResult[3]);
 
                         val.hour = new BigNumber(rxResult[1]);
                         val.minute = new BigNumber(rxResult[2]);
-                        val.offset = new BigNumber(new Date().getTimezoneOffset());
+                        val.offset = bnGetTimezoneOffset();
 
                         return val;
                     }
                 }, {
                     regex: /^(\d{2})(\d{2})(\d{2})[\.,]{1}(\d{1,})$/,
                     func: function (rxResult) {
-                        var val = fractionToTime('0.' + rxResult[4], 'second');
+                        var val = secondFractionToTime(rxResult[4]);
 
                         val.hour = new BigNumber(rxResult[1]);
                         val.minute = new BigNumber(rxResult[2]);
                         val.second = new BigNumber(rxResult[3]);
-                        val.offset = new BigNumber(new Date().getTimezoneOffset());
+                        val.offset = bnGetTimezoneOffset();
 
                         return val;
                     }
                 }, {
                     regex: /^(\d{2})[\.,]{1}(\d{1,})Z$/,
                     func: function (rxResult) {
-                        var val = fractionToTime('0.' + rxResult[2], 'hour');
+                        var val = hourFractionToTime(rxResult[2]);
 
                         val.hour = new BigNumber(rxResult[1]);
-                        val.offset = new BigNumber(0);
+                        val.offset = bnZero();
 
                         return val;
                     }
                 }, {
                     regex: /^(\d{2})(\d{2})[\.,]{1}(\d{1,})Z$/,
                     func: function (rxResult) {
-                        var val = fractionToTime('0.' + rxResult[3], 'minute');
+                        var val = minuteFractionToTime(rxResult[3]);
 
                         val.hour = new BigNumber(rxResult[1]);
                         val.minute = new BigNumber(rxResult[1]);
-                        val.offset = new BigNumber(0);
+                        val.offset = bnZero();
 
                         return val;
                     }
                 }, {
                     regex: /^(\d{2})(\d{2})(\d{2})[\.,]{1}(\d{1,})Z$/,
                     func: function (rxResult) {
-                        var val = fractionToTime('0.' + rxResult[4], 'second');
+                        var val = secondFractionToTime(rxResult[4]);
 
                         val.hour = new BigNumber(rxResult[1]);
                         val.minute = new BigNumber(rxResult[2]);
                         val.second = new BigNumber(rxResult[3]);
-                        val.offset = new BigNumber(0);
+                        val.offset = bnZero();
 
                         return val;
                     }
@@ -3431,13 +3463,13 @@
                     regex: /^(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})$/,
                     func: function (rxResult) {
                         var sign = rxResult[3],
-                            offset = new BigNumber(rxResult[4]).times(60),
+                            offset = hourMinuteToMinutes(rxResult[4], 0),
                             val;
 
                         if (isNotNegativeZero(offset, sign)) {
-                            val = fractionToTime('0.' + rxResult[2], 'hour');
+                            val = hourFractionToTime(rxResult[2]);
                             val.hour = new BigNumber(rxResult[1]);
-                            val.offset = offset.times(sign + '1').neg();
+                            val.offset = offset.times(toSignMultipler(sign)).neg();
                         }
 
                         return val;
@@ -3446,14 +3478,14 @@
                     regex: /^(\d{2})(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})$/,
                     func: function (rxResult) {
                         var sign = rxResult[4],
-                            offset = new BigNumber(rxResult[5]).times(60),
+                            offset = hourMinuteToMinutes(rxResult[5], 0),
                             val;
 
                         if (isNotNegativeZero(offset, sign)) {
-                            val = fractionToTime('0.' + rxResult[3], 'minute');
+                            val = minuteFractionToTime(rxResult[3]);
                             val.hour = new BigNumber(rxResult[1]);
                             val.minute = new BigNumber(rxResult[2]);
-                            val.offset = offset.times(sign + '1').neg();
+                            val.offset = offset.times(toSignMultipler(sign)).neg();
                         }
 
                         return val;
@@ -3462,15 +3494,15 @@
                     regex: /^(\d{2})(\d{2})(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})$/,
                     func: function (rxResult) {
                         var sign = rxResult[5],
-                            offset = new BigNumber(rxResult[6]).times(60),
+                            offset = hourMinuteToMinutes(rxResult[6], 0),
                             val;
 
                         if (isNotNegativeZero(offset, sign)) {
-                            val = fractionToTime('0.' + rxResult[4], 'second');
+                            val = secondFractionToTime(rxResult[4]);
                             val.hour = new BigNumber(rxResult[1]);
                             val.minute = new BigNumber(rxResult[2]);
                             val.minute = new BigNumber(rxResult[3]);
-                            val.offset = offset.times(sign + '1').neg();
+                            val.offset = offset.times(toSignMultipler(sign)).neg();
                         }
 
                         return val;
@@ -3479,13 +3511,13 @@
                     regex: /^(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})(\d{2})$/,
                     func: function (rxResult) {
                         var sign = rxResult[3],
-                            offset = new BigNumber(rxResult[4]).times(60).plus(rxResult[5]),
+                            offset = hourMinuteToMinutes(rxResult[4], rxResult[5]),
                             val;
 
                         if (isNotNegativeZero(offset, sign)) {
-                            val = fractionToTime('0.' + rxResult[2], 'hour');
+                            val = hourFractionToTime(rxResult[2]);
                             val.hour = new BigNumber(rxResult[1]);
-                            val.offset = offset.times(sign + '1').neg();
+                            val.offset = offset.times(toSignMultipler(sign)).neg();
                         }
 
                         return val;
@@ -3494,14 +3526,14 @@
                     regex: /^(\d{2})(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})(\d{2})$/,
                     func: function (rxResult) {
                         var sign = rxResult[4],
-                            offset = new BigNumber(rxResult[5]).times(60).plus(rxResult[6]),
+                            offset = hourMinuteToMinutes(rxResult[5], rxResult[6]),
                             val;
 
                         if (isNotNegativeZero(offset, sign)) {
-                            val = fractionToTime('0.' + rxResult[3], 'minute');
+                            val = minuteFractionToTime(rxResult[3]);
                             val.hour = new BigNumber(rxResult[1]);
                             val.minute = new BigNumber(rxResult[2]);
-                            val.offset = offset.times(sign + '1').neg();
+                            val.offset = offset.times(toSignMultipler(sign)).neg();
                         }
 
                         return val;
@@ -3510,15 +3542,15 @@
                     regex: /^(\d{2})(\d{2})(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})(\d{2})$/,
                     func: function (rxResult) {
                         var sign = rxResult[5],
-                            offset = new BigNumber(rxResult[6]).times(60).plus(rxResult[7]),
+                            offset = hourMinuteToMinutes(rxResult[6], rxResult[7]),
                             val;
 
                         if (isNotNegativeZero(offset, sign)) {
-                            val = fractionToTime('0.' + rxResult[4], 'second');
+                            val = secondFractionToTime(rxResult[4]);
                             val.hour = new BigNumber(rxResult[1]);
                             val.minute = new BigNumber(rxResult[2]);
                             val.minute = new BigNumber(rxResult[3]);
-                            val.offset = offset.times(sign + '1').neg();
+                            val.offset = offset.times(toSignMultipler(sign)).neg();
                         }
 
                         return val;
@@ -3529,10 +3561,10 @@
                     func: function (rxResult) {
                         return {
                             hour: new BigNumber(rxResult[1]),
-                            minute: new BigNumber(0),
-                            second: new BigNumber(0),
-                            millisecond: new BigNumber(0),
-                            offset: new BigNumber(new Date().getTimezoneOffset())
+                            minute: bnZero(),
+                            second: bnZero(),
+                            millisecond: bnZero(),
+                            offset: bnGetTimezoneOffset()
                         };
                     }
                 }, {
@@ -3541,9 +3573,9 @@
                         return {
                             hour: new BigNumber(rxResult[1]),
                             minute: new BigNumber(rxResult[2]),
-                            second: new BigNumber(0),
-                            millisecond: new BigNumber(0),
-                            offset: new BigNumber(new Date().getTimezoneOffset())
+                            second: bnZero(),
+                            millisecond: bnZero(),
+                            offset: bnGetTimezoneOffset()
                         };
                     }
                 }, {
@@ -3553,8 +3585,8 @@
                             hour: new BigNumber(rxResult[1]),
                             minute: new BigNumber(rxResult[2]),
                             second: new BigNumber(rxResult[3]),
-                            millisecond: new BigNumber(0),
-                            offset: new BigNumber(new Date().getTimezoneOffset())
+                            millisecond: bnZero(),
+                            offset: bnGetTimezoneOffset()
                         };
                     }
                 }, {
@@ -3562,10 +3594,10 @@
                     func: function (rxResult) {
                         return {
                             hour: new BigNumber(rxResult[1]),
-                            minute: new BigNumber(0),
-                            second: new BigNumber(0),
-                            millisecond: new BigNumber(0),
-                            offset: new BigNumber(0)
+                            minute: bnZero(),
+                            second: bnZero(),
+                            millisecond: bnZero(),
+                            offset: bnZero()
                         };
                     }
                 }, {
@@ -3574,9 +3606,9 @@
                         return {
                             hour: new BigNumber(rxResult[1]),
                             minute: new BigNumber(rxResult[2]),
-                            second: new BigNumber(0),
-                            millisecond: new BigNumber(0),
-                            offset: new BigNumber(0)
+                            second: bnZero(),
+                            millisecond: bnZero(),
+                            offset: bnZero()
                         };
                     }
                 }, {
@@ -3586,24 +3618,24 @@
                             hour: new BigNumber(rxResult[1]),
                             minute: new BigNumber(rxResult[2]),
                             second: new BigNumber(rxResult[3]),
-                            millisecond: new BigNumber(0),
-                            offset: new BigNumber(0)
+                            millisecond: bnZero(),
+                            offset: bnZero()
                         };
                     }
                 }, {
                     regex: /^(\d{2}):([\-+]{1})(\d{2})$/,
                     func: function (rxResult) {
                         var sign = rxResult[2],
-                            offset = new BigNumber(rxResult[3]).times(60),
+                            offset = hourMinuteToMinutes(rxResult[3], 0),
                             val;
 
                         if (isNotNegativeZero(offset, sign)) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
-                                minute: new BigNumber(0),
-                                second: new BigNumber(0),
-                                millisecond: new BigNumber(0),
-                                offset: offset.times(sign + '1').neg()
+                                minute: bnZero(),
+                                second: bnZero(),
+                                millisecond: bnZero(),
+                                offset: offset.times(toSignMultipler(sign)).neg()
                             };
                         }
 
@@ -3613,16 +3645,16 @@
                     regex: /^(\d{2}):(\d{2})([\-+]{1})(\d{2})$/,
                     func: function (rxResult) {
                         var sign = rxResult[3],
-                            offset = new BigNumber(rxResult[4]).times(60),
+                            offset = hourMinuteToMinutes(rxResult[4], 0),
                             val;
 
                         if (isNotNegativeZero(offset, sign)) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
-                                second: new BigNumber(0),
-                                millisecond: new BigNumber(0),
-                                offset: offset.times(sign + '1').neg()
+                                second: bnZero(),
+                                millisecond: bnZero(),
+                                offset: offset.times(toSignMultipler(sign)).neg()
                             };
                         }
 
@@ -3632,7 +3664,7 @@
                     regex: /^(\d{2}):(\d{2}):(\d{2})([\-+]{1})(\d{2})$/,
                     func: function (rxResult) {
                         var sign = rxResult[4],
-                            offset = new BigNumber(rxResult[5]).times(60),
+                            offset = hourMinuteToMinutes(rxResult[5], 0),
                             val;
 
                         if (isNotNegativeZero(offset, sign)) {
@@ -3640,8 +3672,8 @@
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
                                 second: new BigNumber(rxResult[3]),
-                                millisecond: new BigNumber(0),
-                                offset: offset.times(sign + '1').neg()
+                                millisecond: bnZero(),
+                                offset: offset.times(toSignMultipler(sign)).neg()
                             };
                         }
 
@@ -3651,16 +3683,16 @@
                     regex: /^(\d{2})([\-+]{1})(\d{2}):(\d{2})$/,
                     func: function (rxResult) {
                         var sign = rxResult[2],
-                            offset = new BigNumber(rxResult[3]).times(60).plus(rxResult[4]),
+                            offset = hourMinuteToMinutes(rxResult[3], rxResult[4]),
                             val;
 
                         if (isNotNegativeZero(offset, sign)) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
-                                minute: new BigNumber(0),
-                                second: new BigNumber(0),
-                                millisecond: new BigNumber(0),
-                                offset: offset.times(sign + '1').neg()
+                                minute: bnZero(),
+                                second: bnZero(),
+                                millisecond: bnZero(),
+                                offset: offset.times(toSignMultipler(sign)).neg()
                             };
                         }
 
@@ -3670,16 +3702,16 @@
                     regex: /^(\d{2}):(\d{2})([\-+]{1})(\d{2}):(\d{2})$/,
                     func: function (rxResult) {
                         var sign = rxResult[3],
-                            offset = new BigNumber(rxResult[4]).times(60).plus(rxResult[5]),
+                            offset = hourMinuteToMinutes(rxResult[4], rxResult[5]),
                             val;
 
                         if (isNotNegativeZero(offset, sign)) {
                             val = {
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
-                                second: new BigNumber(0),
-                                millisecond: new BigNumber(0),
-                                offset: offset.times(sign + '1').neg()
+                                second: bnZero(),
+                                millisecond: bnZero(),
+                                offset: offset.times(toSignMultipler(sign)).neg()
                             };
                         }
 
@@ -3689,7 +3721,7 @@
                     regex: /^(\d{2}):(\d{2}):(\d{2})([\-+]{1})(\d{2}):(\d{2})$/,
                     func: function (rxResult) {
                         var sign = rxResult[4],
-                            offset = new BigNumber(rxResult[5]).times(60).plus(rxResult[6]),
+                            offset = hourMinuteToMinutes(rxResult[5], rxResult[6]),
                             val;
 
                         if (isNotNegativeZero(offset, sign)) {
@@ -3697,8 +3729,8 @@
                                 hour: new BigNumber(rxResult[1]),
                                 minute: new BigNumber(rxResult[2]),
                                 second: new BigNumber(rxResult[3]),
-                                millisecond: new BigNumber(0),
-                                offset: offset.times(sign + '1').neg()
+                                millisecond: bnZero(),
+                                offset: offset.times(toSignMultipler(sign)).neg()
                             };
                         }
 
@@ -3707,66 +3739,66 @@
                 }, {
                     regex: /^(\d{2})[\.,]{1}(\d{1,})$/,
                     func: function (rxResult) {
-                        var val = fractionToTime('0.' + rxResult[2], 'hour');
+                        var val = hourFractionToTime(rxResult[2]);
 
                         val.hour = new BigNumber(rxResult[1]);
-                        val.offset = new BigNumber(new Date().getTimezoneOffset());
+                        val.offset = bnGetTimezoneOffset();
 
                         return val;
                     }
                 }, {
                     regex: /^(\d{2}):(\d{2})[\.,]{1}(\d{1,})$/,
                     func: function (rxResult) {
-                        var val = fractionToTime('0.' + rxResult[3], 'minute');
+                        var val = minuteFractionToTime(rxResult[3]);
 
                         val.hour = new BigNumber(rxResult[1]);
                         val.minute = new BigNumber(rxResult[2]);
-                        val.offset = new BigNumber(new Date().getTimezoneOffset());
+                        val.offset = bnGetTimezoneOffset();
 
                         return val;
                     }
                 }, {
                     regex: /^(\d{2}):(\d{2}):(\d{2})[\.,]{1}(\d{1,})$/,
                     func: function (rxResult) {
-                        var val = fractionToTime('0.' + rxResult[4], 'second');
+                        var val = secondFractionToTime(rxResult[4]);
 
                         val.hour = new BigNumber(rxResult[1]);
                         val.minute = new BigNumber(rxResult[2]);
                         val.second = new BigNumber(rxResult[3]);
-                        val.offset = new BigNumber(new Date().getTimezoneOffset());
+                        val.offset = bnGetTimezoneOffset();
 
                         return val;
                     }
                 }, {
                     regex: /^(\d{2})[\.,]{1}(\d{1,})Z$/,
                     func: function (rxResult) {
-                        var val = fractionToTime('0.' + rxResult[2], 'hour');
+                        var val = hourFractionToTime(rxResult[2]);
 
                         val.hour = new BigNumber(rxResult[1]);
-                        val.offset = new BigNumber(0);
+                        val.offset = bnZero();
 
                         return val;
                     }
                 }, {
                     regex: /^(\d{2}):(\d{2})[\.,]{1}(\d{1,})Z$/,
                     func: function (rxResult) {
-                        var val = fractionToTime('0.' + rxResult[3], 'minute');
+                        var val = minuteFractionToTime(rxResult[3]);
 
                         val.hour = new BigNumber(rxResult[1]);
                         val.minute = new BigNumber(rxResult[1]);
-                        val.offset = new BigNumber(0);
+                        val.offset = bnZero();
 
                         return val;
                     }
                 }, {
                     regex: /^(\d{2}):(\d{2}):(\d{2})[\.,]{1}(\d{1,})Z$/,
                     func: function (rxResult) {
-                        var val = fractionToTime('0.' + rxResult[4], 'second');
+                        var val = secondFractionToTime(rxResult[4]);
 
                         val.hour = new BigNumber(rxResult[1]);
                         val.minute = new BigNumber(rxResult[2]);
                         val.second = new BigNumber(rxResult[3]);
-                        val.offset = new BigNumber(0);
+                        val.offset = bnZero();
 
                         return val;
                     }
@@ -3774,13 +3806,13 @@
                     regex: /^(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})$/,
                     func: function (rxResult) {
                         var sign = rxResult[3],
-                            offset = new BigNumber(rxResult[4]).times(60),
+                            offset = hourMinuteToMinutes(rxResult[4], 0),
                             val;
 
                         if (isNotNegativeZero(offset, sign)) {
-                            val = fractionToTime('0.' + rxResult[2], 'hour');
+                            val = hourFractionToTime(rxResult[2]);
                             val.hour = new BigNumber(rxResult[1]);
-                            val.offset = offset.times(sign + '1').neg();
+                            val.offset = offset.times(toSignMultipler(sign)).neg();
                         }
 
                         return val;
@@ -3789,14 +3821,14 @@
                     regex: /^(\d{2}):(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})$/,
                     func: function (rxResult) {
                         var sign = rxResult[4],
-                            offset = new BigNumber(rxResult[5]).times(60),
+                            offset = hourMinuteToMinutes(rxResult[5], 0),
                             val;
 
                         if (isNotNegativeZero(offset, sign)) {
-                            val = fractionToTime('0.' + rxResult[3], 'minute');
+                            val = minuteFractionToTime(rxResult[3]);
                             val.hour = new BigNumber(rxResult[1]);
                             val.minute = new BigNumber(rxResult[2]);
-                            val.offset = offset.times(sign + '1').neg();
+                            val.offset = offset.times(toSignMultipler(sign)).neg();
                         }
 
                         return val;
@@ -3805,15 +3837,15 @@
                     regex: /^(\d{2}):(\d{2}):(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})$/,
                     func: function (rxResult) {
                         var sign = rxResult[5],
-                            offset = new BigNumber(rxResult[6]).times(60),
+                            offset = hourMinuteToMinutes(rxResult[6], 0),
                             val;
 
                         if (isNotNegativeZero(offset, sign)) {
-                            val = fractionToTime('0.' + rxResult[4], 'second');
+                            val = secondFractionToTime(rxResult[4]);
                             val.hour = new BigNumber(rxResult[1]);
                             val.minute = new BigNumber(rxResult[2]);
                             val.second = new BigNumber(rxResult[3]);
-                            val.offset = offset.times(sign + '1').neg();
+                            val.offset = offset.times(toSignMultipler(sign)).neg();
                         }
 
                         return val;
@@ -3822,13 +3854,13 @@
                     regex: /^(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2}):(\d{2})$/,
                     func: function (rxResult) {
                         var sign = rxResult[3],
-                            offset = new BigNumber(rxResult[4]).times(60).plus(rxResult[5]),
+                            offset = hourMinuteToMinutes(rxResult[4], rxResult[5]),
                             val;
 
                         if (isNotNegativeZero(offset, sign)) {
-                            val = fractionToTime('0.' + rxResult[2], 'hour');
+                            val = hourFractionToTime(rxResult[2]);
                             val.hour = new BigNumber(rxResult[1]);
-                            val.offset = offset.times(sign + '1').neg();
+                            val.offset = offset.times(toSignMultipler(sign)).neg();
                         }
 
                         return val;
@@ -3837,14 +3869,14 @@
                     regex: /^(\d{2}):(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2}):(\d{2})$/,
                     func: function (rxResult) {
                         var sign = rxResult[4],
-                            offset = new BigNumber(rxResult[5]).times(60).plus(rxResult[6]),
+                            offset = hourMinuteToMinutes(rxResult[5], rxResult[6]),
                             val;
 
                         if (isNotNegativeZero(offset, sign)) {
-                            val = fractionToTime('0.' + rxResult[3], 'minute');
+                            val = minuteFractionToTime(rxResult[3]);
                             val.hour = new BigNumber(rxResult[1]);
                             val.minute = new BigNumber(rxResult[2]);
-                            val.offset = offset.times(sign + '1').neg();
+                            val.offset = offset.times(toSignMultipler(sign)).neg();
                         }
 
                         return val;
@@ -3853,15 +3885,15 @@
                     regex: /^(\d{2}):(\d{2}):(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2}):(\d{2})$/,
                     func: function (rxResult) {
                         var sign = rxResult[5],
-                            offset = new BigNumber(rxResult[6]).times(60).plus(rxResult[7]),
+                            offset = hourMinuteToMinutes(rxResult[6], rxResult[7]),
                             val;
 
                         if (isNotNegativeZero(offset, sign)) {
-                            val = fractionToTime('0.' + rxResult[4], 'second');
+                            val = secondFractionToTime(rxResult[4]);
                             val.hour = new BigNumber(rxResult[1]);
                             val.minute = new BigNumber(rxResult[2]);
                             val.second = new BigNumber(rxResult[3]);
-                            val.offset = offset.times(sign + '1').neg();
+                            val.offset = offset.times(toSignMultipler(sign)).neg();
                         }
 
                         return val;
