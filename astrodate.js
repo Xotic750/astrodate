@@ -204,7 +204,7 @@
 
             function checkObjectCoercible(inputArg) {
                 if (isUndefined(inputArg) || isNull(inputArg)) {
-                    throw new TypeError("Cannot convert '" + inputArg + "' to object");
+                    throw new TypeError('Cannot convert "' + inputArg + '" to object');
                 }
 
                 return inputArg;
@@ -3906,7 +3906,6 @@
                     }
                 }
 
-                //console.log('isoSplitDateTime', string, dtObject);
                 return dtObject;
             }
 
@@ -3915,80 +3914,47 @@
                         input: isoString
                     },
                     dateBasic,
-                    dateExtended;
+                    dateExtended,
+                    nfeSearchPatterns,
+                    searchPatternFN,
+                    searchString;
 
                 if (isString(isoString) && !isEmptyString(isoString) && !invalidISOCharsRx.test(isoString) && isoHasValidCharacterCounts(isoString)) {
-                    extend(dtObject, isoSplitDateTime(isoString));
-                    dateBasic = arraySome(datePatterns.basic, function (pattern) {
-                        var rxResult = pattern.regex.exec(dtObject.date),
-                            date;
+                    searchPatternFN = function nfeSearchPatterns(pattern) {
+                        var rxResult = pattern.regex.exec(searchString),
+                            val = false,
+                            result;
 
                         if (!isNull(rxResult)) {
-                            date = pattern.func(rxResult);
-                            if (!isUndefined(date)) {
-                                extend(dtObject, date);
+                            result = pattern.func(rxResult);
+                            if (!isUndefined(result)) {
+                                extend(dtObject, result);
                             }
 
-                            return true;
+                            val = true;
                         }
 
-                        return false;
-                    });
+                        return val;
+                    };
 
+                    extend(dtObject, isoSplitDateTime(isoString));
+                    searchString = dtObject.date;
+                    dateBasic = arraySome(datePatterns.basic, searchPatternFN);
                     if (!dateBasic) {
-                        dateExtended = arraySome(datePatterns.extended, function (pattern) {
-                            var rxResult = pattern.regex.exec(dtObject.date),
-                                date;
-
-                            if (!isNull(rxResult)) {
-                                date = pattern.func(rxResult);
-                                if (!isUndefined(date)) {
-                                    extend(dtObject, date);
-                                }
-
-                                return true;
-                            }
-
-                            return false;
-                        });
-
+                        dateExtended = arraySome(datePatterns.extended, searchPatternFN);
                         if (dateExtended) {
-                            arraySome(timePatterns.extended, function (pattern) {
-                                var rxResult = pattern.regex.exec(dtObject.time),
-                                    time;
-
-                                if (!isNull(rxResult)) {
-                                    time = pattern.func(rxResult);
-                                    if (!isUndefined(time)) {
-                                        extend(dtObject, time);
-                                    }
-
-                                    return true;
-                                }
-
-                                return false;
-                            });
+                            searchString = dtObject.time;
+                            arraySome(timePatterns.extended, searchPatternFN);
                         }
                     } else {
-                        arraySome(timePatterns.basic, function (pattern) {
-                            var rxResult = pattern.regex.exec(dtObject.time),
-                                time;
-
-                            if (!isNull(rxResult)) {
-                                time = pattern.func(rxResult);
-                                if (!isUndefined(time)) {
-                                    extend(dtObject, time);
-                                }
-
-                                return true;
-                            }
-
-                            return false;
-                        });
+                        searchString = dtObject.time;
+                        arraySome(timePatterns.basic, searchPatternFN);
                     }
                 }
 
-                //console.warn('dtObject', dtObject);
+
+                nfeSearchPatterns = null;
+
                 return dtObject;
             }
 

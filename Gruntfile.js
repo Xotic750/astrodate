@@ -50,7 +50,9 @@
                     'strict': true,
                     'trailing': true,
                     'undef': true,
-                    'white': true
+                    'white': true,
+                    'noempty': true,
+                    'quotmark': 'single'
                 }
             },
             watch: {
