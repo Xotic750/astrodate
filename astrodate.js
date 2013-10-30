@@ -3982,7 +3982,9 @@
                         }
                     } else {
                         searchString = dtObject.time;
-                        arraySome(timePatterns.extended, searchPatternFN);
+                        if (!arraySome(timePatterns.basic, searchPatternFN)) {
+                            arraySome(timePatterns.extended, searchPatternFN);
+                        }
                     }
                 }
 
