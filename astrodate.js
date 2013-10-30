@@ -3951,8 +3951,6 @@
                 var dtObject = {
                         input: isoString
                     },
-                    dateBasic,
-                    dateExtended,
                     nfeSearchPatterns,
                     searchPatternFN,
                     searchString;
@@ -3977,16 +3975,14 @@
 
                     extend(dtObject, isoSplitDateTime(isoString));
                     searchString = dtObject.date;
-                    dateBasic = arraySome(datePatterns.basic, searchPatternFN);
-                    if (!dateBasic) {
-                        dateExtended = arraySome(datePatterns.extended, searchPatternFN);
-                        if (dateExtended) {
+                    if (!arraySome(datePatterns.basic, searchPatternFN)) {
+                        if (arraySome(datePatterns.extended, searchPatternFN)) {
                             searchString = dtObject.time;
                             arraySome(timePatterns.extended, searchPatternFN);
                         }
                     } else {
                         searchString = dtObject.time;
-                        arraySome(timePatterns.basic, searchPatternFN);
+                        arraySome(timePatterns.extended, searchPatternFN);
                     }
                 }
 
@@ -4284,6 +4280,84 @@
                             }
 
                             string += struct.year.abs().padLeadingZero(4) + ' ';
+                            string += struct.hour.padLeadingZero(2) + ':';
+                            string += struct.minute.padLeadingZero(2) + ':';
+                            string += struct.second.padLeadingZero(2) + '.';
+                            string += struct.millisecond.padLeadingZero(3) + ' ';
+                            offset = struct.offset;
+                            if (offset.lte(0)) {
+                                string += '+';
+                            } else {
+                                string += '-';
+                            }
+
+                            offset = fractionToTime(offset.abs(), 'minute');
+                            string += offset.hour.padLeadingZero(2);
+                            string += offset.minute.padLeadingZero(2);
+                        } else {
+                            string = 'Invalid Date';
+                        }
+
+                        return string;
+                    }
+                },
+
+                toDateString: {
+                    value: function () {
+                        var args,
+                            shortName,
+                            lang,
+                            struct,
+                            string;
+
+                        if (this.isValid()) {
+                            args = arguments;
+                            if (isBoolean(args[0])) {
+                                shortName = args[0];
+                                lang = args[1];
+                            } else if (isString(args[0])) {
+                                shortName = true;
+                                lang = args[0];
+                            }
+
+                            if (this.isJulian()) {
+                                struct = jdToJulian(this.julianDay());
+                                string = '[OS] ';
+                            } else {
+                                struct = this.getter();
+                                string = '[NS] ';
+                            }
+
+                            string += this.dayOfWeek(shortName, lang) + ' ';
+                            string += struct.day.toString() + ' ';
+                            string += this.monthOfYear(shortName, lang) + ' ';
+                            if (struct.year.lt(0)) {
+                                string += '-';
+                            }
+
+                            string += struct.year.abs().padLeadingZero(4) + ' ';
+                        } else {
+                            string = 'Invalid Date';
+                        }
+
+                        return string;
+                    }
+                },
+
+                toTimeString: {
+                    value: function () {
+                        var struct,
+                            string,
+                            offset;
+
+                        if (this.isValid()) {
+                            string = '';
+                            if (this.isJulian()) {
+                                struct = jdToJulian(this.julianDay());
+                            } else {
+                                struct = this.getter();
+                            }
+
                             string += struct.hour.padLeadingZero(2) + ':';
                             string += struct.minute.padLeadingZero(2) + ':';
                             string += struct.second.padLeadingZero(2) + '.';
@@ -4618,6 +4692,12 @@
                         }
 
                         return val;
+                    }
+                },
+
+                toJSON: {
+                    value: function () {
+                        return this.toISOString();
                     }
                 }
             });
