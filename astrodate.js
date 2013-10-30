@@ -2937,7 +2937,7 @@
 
                 if (isValid(struct)) {
                     number = toNumber(userPadding);
-                    if (lt(number, 6) || !numberIsFinite(number)) {
+                    if (lt(number, 5) || !numberIsFinite(number)) {
                         number = 6;
                     }
 
