@@ -71,16 +71,16 @@
                 UWORD32 = Math.pow(2, 32),
                 MAX_UINT32 = UWORD32 - 1,
                 baseObject = {},
-                defaultProperties = [],
+                defaultProperties,
                 baseArray = [],
                 baseString = '',
                 toObjectString,
                 baseNumber = 0,
                 baseBoolean = true,
-                fullKeys = [],
-                shortNameLength = {},
-                dayNames = [],
-                monthNames = [],
+                fullKeys,
+                shortNameLength,
+                dayNames,
+                monthNames,
                 protoName = '__proto__',
                 invalidISOCharsRx = new RegExp('[^\\d\\-+WT Z:,\\.]'),
                 toObject,
@@ -3905,9 +3905,9 @@
 
             function isoSplitDateTime(string) {
                 var dtObject = {
-                    date: '',
-                    time: ''
-                },
+                        date: '',
+                        time: ''
+                    },
                     firstSplit = stringSplit(stringTrim(string), /[T ]/),
                     splitLength = firstSplit.length,
                     element;
@@ -3946,6 +3946,8 @@
             }
 
             function isoParse(isoString) {
+                // Unused variable for JScript NFE bug
+                // http://kangax.github.io/nfe
                 var dtObject = {
                         input: isoString
                     },
@@ -4642,257 +4644,120 @@
                 }
             });
 
-            objectDefineProperties(defaultProperties, {
-                0: {
-                    value: 'toString',
-                    enumerable: true
-                },
-                1: {
-                    value: 'toLocaleString',
-                    enumerable: true
-                },
-                2: {
-                    value: 'valueOf',
-                    enumerable: true
-                },
-                3: {
-                    value: 'hasOwnProperty',
-                    enumerable: true
-                },
-                4: {
-                    value: 'isPrototypeOf',
-                    enumerable: true
-                },
-                5: {
-                    value: 'propertyIsEnumerable',
-                    enumerable: true
-                },
-                6: {
-                    value: 'constructor',
-                    enumerable: true
-                }
-            });
+            defaultProperties = [
+                'toString',
+                'toLocaleString',
+                'valueOf',
+                'hasOwnProperty',
+                'isPrototypeOf',
+                'propertyIsEnumerable',
+                'constructor'
+            ];
 
             deepFreeze(defaultProperties);
 
-            objectDefineProperties(fullKeys, {
-                0: {
-                    value: {
-                        full: 'year',
-                        alias: 'y',
-                        local: 'getFullYear'
-                    },
-                    enumerable: true
-                },
-                1: {
-                    value: {
-                        full: 'month',
-                        alias: 'M',
-                        local: 'getMonth'
-                    },
-                    enumerable: true
-                },
-                2: {
-                    value: {
-                        full: 'day',
-                        alias: 'd',
-                        local: 'getDate'
-                    },
-                    enumerable: true
-                },
-                3: {
-                    value: {
-                        full: 'hour',
-                        alias: 'h',
-                        local: 'getHours'
-                    },
-                    enumerable: true
-                },
-                4: {
-                    value: {
-                        full: 'minute',
-                        alias: 'm',
-                        local: 'getMinutes'
-                    },
-                    enumerable: true
-                },
-                5: {
-                    value: {
-                        full: 'second',
-                        alias: 's',
-                        local: 'getSeconds'
-                    },
-                    enumerable: true
-                },
-                6: {
-                    value: {
-                        full: 'millisecond',
-                        alias: 'ms',
-                        local: 'getMilliseconds'
-                    },
-                    enumerable: true
-                },
-                7: {
-                    value: {
-                        full: 'offset',
-                        alias: 'z',
-                        local: 'getTimezoneOffset'
-                    },
-                    enumerable: true
-                }
-            });
+            fullKeys = [{
+                full: 'year',
+                alias: 'y',
+                local: 'getFullYear'
+            }, {
+                full: 'month',
+                alias: 'M',
+                local: 'getMonth'
+            }, {
+                full: 'day',
+                alias: 'd',
+                local: 'getDate'
+            }, {
+                full: 'hour',
+                alias: 'h',
+                local: 'getHours'
+            }, {
+                full: 'minute',
+                alias: 'm',
+                local: 'getMinutes'
+            }, {
+                full: 'second',
+                alias: 's',
+                local: 'getSeconds'
+            }, {
+                full: 'millisecond',
+                alias: 'ms',
+                local: 'getMilliseconds'
+
+            }, {
+                full: 'offset',
+                alias: 'z',
+                local: 'getTimezoneOffset'
+            }];
 
             deepFreeze(fullKeys);
 
-            objectDefineProperties(shortNameLength, {
-                'en-GB': {
-                    value: 3,
-                    enumerable: true
-                },
-                'sv-SE': {
-                    value: 3,
-                    enumerable: true
-                }
-            });
+            shortNameLength = {
+                'en-GB': 3,
+                'sv-SE': 3
+            };
 
-            objectDefineProperties(dayNames, {
-                0: {
-                    value: {
-                        'en-GB': 'Sunday',
-                        'sv-SE': 'söndag'
-                    },
-                    enumerable: true
-                },
-                1: {
-                    value: {
-                        'en-GB': 'Monday',
-                        'sv-SE': 'måndag'
-                    },
-                    enumerable: true
-                },
-                2: {
-                    value: {
-                        'en-GB': 'Tuesday',
-                        'sv-SE': 'tisdag'
-                    },
-                    enumerable: true
-                },
-                3: {
-                    value: {
-                        'en-GB': 'Wednesday',
-                        'sv-SE': 'onsdag'
-                    },
-                    enumerable: true
-                },
-                4: {
-                    value: {
-                        'en-GB': 'Thursday',
-                        'sv-SE': 'torsdag'
-                    },
-                    enumerable: true
-                },
-                5: {
-                    value: {
-                        'en-GB': 'Friday',
-                        'sv-SE': 'fredag'
-                    },
-                    enumerable: true
-                },
-                6: {
-                    value: {
-                        'en-GB': 'Saturday',
-                        'sv-SE': 'lördag'
-                    },
-                    enumerable: true
-                }
-            });
+            dayNames = [{
+                'en-GB': 'Sunday',
+                'sv-SE': 'söndag'
+            }, {
+                'en-GB': 'Monday',
+                'sv-SE': 'måndag'
+            }, {
+                'en-GB': 'Tuesday',
+                'sv-SE': 'tisdag'
+            }, {
+                'en-GB': 'Wednesday',
+                'sv-SE': 'onsdag'
+            }, {
+                'en-GB': 'Thursday',
+                'sv-SE': 'torsdag'
+            }, {
+                'en-GB': 'Friday',
+                'sv-SE': 'fredag'
+            }, {
+                'en-GB': 'Saturday',
+                'sv-SE': 'lördag'
+            }];
 
-            objectDefineProperties(monthNames, {
-                0: {
-                    value: {
-                        'en-GB': 'January',
-                        'sv-SE': 'januari'
-                    },
-                    enumerable: true
-                },
-                1: {
-                    value: {
-                        'en-GB': 'February',
-                        'sv-SE': 'februari'
-                    },
-                    enumerable: true
-                },
-                2: {
-                    value: {
-                        'en-GB': 'March',
-                        'sv-SE': 'mars'
-                    },
-                    enumerable: true
-                },
-                3: {
-                    value: {
-                        'en-GB': 'April',
-                        'sv-SE': 'april'
-                    },
-                    enumerable: true
-                },
-                4: {
-                    value: {
-                        'en-GB': 'May',
-                        'sv-SE': 'maj'
-                    },
-                    enumerable: true
-                },
-                5: {
-                    value: {
-                        'en-GB': 'June',
-                        'sv-SE': 'juni'
-                    },
-                    enumerable: true
-                },
-                6: {
-                    value: {
-                        'en-GB': 'July',
-                        'sv-SE': 'juli'
-                    },
-                    enumerable: true
-                },
-                7: {
-                    value: {
-                        'en-GB': 'August',
-                        'sv-SE': 'augusti'
-                    },
-                    enumerable: true
-                },
-                8: {
-                    value: {
-                        'en-GB': 'September',
-                        'sv-SE': 'september'
-                    },
-                    enumerable: true
-                },
-                9: {
-                    value: {
-                        'en-GB': 'October',
-                        'sv-SE': 'oktober'
-                    },
-                    enumerable: true
-                },
-                10: {
-                    value: {
-                        'en-GB': 'November',
-                        'sv-SE': 'november'
-                    },
-                    enumerable: true
-                },
-                11: {
-                    value: {
-                        'en-GB': 'December',
-                        'sv-SE': 'december'
-                    },
-                    enumerable: true
-                }
-            });
+            monthNames = [{
+                'en-GB': 'January',
+                'sv-SE': 'januari'
+            }, {
+                'en-GB': 'February',
+                'sv-SE': 'februari'
+            }, {
+                'en-GB': 'March',
+                'sv-SE': 'mars'
+            }, {
+                'en-GB': 'April',
+                'sv-SE': 'april'
+            }, {
+                'en-GB': 'May',
+                'sv-SE': 'maj'
+            }, {
+                'en-GB': 'June',
+                'sv-SE': 'juni'
+            }, {
+                'en-GB': 'July',
+                'sv-SE': 'juli'
+            }, {
+                'en-GB': 'August',
+                'sv-SE': 'augusti'
+            }, {
+                'en-GB': 'September',
+                'sv-SE': 'september'
+            }, {
+                'en-GB': 'October',
+                'sv-SE': 'oktober'
+            }, {
+                'en-GB': 'November',
+                'sv-SE': 'november'
+            }, {
+                'en-GB': 'December',
+                'sv-SE': 'december'
+            }];
 
             arrayForEach([BigNumber, BigNumber.prototype], function (element) {
                 arrayForEach(objectKeys(element), function (key) {
