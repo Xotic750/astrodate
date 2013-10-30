@@ -2924,7 +2924,7 @@
                 return new AstroDate([struct.year, f.div(31).floor().minus(1), f.mod(31).plus(1)]);
             }
 
-            function toISOString(date) {
+            function toISOString(date, userPadding) {
                 var struct = date.getter(),
                     string,
                     index,
@@ -2932,9 +2932,15 @@
                     padding,
                     last,
                     value,
-                    key;
+                    key,
+                    number;
 
                 if (isValid(struct)) {
+                    number = toNumber(userPadding);
+                    if (lt(number, 6) || !numberIsFinite(number)) {
+                        number = 6;
+                    }
+
                     index = 0;
                     string = '';
                     for (count = 0; lt(count, 3); count += 1) {
@@ -2950,10 +2956,10 @@
                         if (strictEqual(key, 'year')) {
                             if (value.lt(0)) {
                                 string += '-';
-                                padding = 6;
+                                padding = number;
                             } else if (value.gte(10000)) {
                                 string += '+';
-                                padding = 6;
+                                padding = number;
                             } else {
                                 padding = 4;
                             }
@@ -3156,8 +3162,8 @@
                         return weekDateToCalendar(rxResult[1], rxResult[2], rxResult[3]);
                     }
                 }],
-                extended: [{
-                    regex: /^([\-+]{1})(\d{6,})-(\d{2})$/,
+                extended: [{ // need to add tests for -0
+                    regex: /^([\-+]{1})(\d{5,})-(\d{2})$/,
                     func: function (rxResult) {
                         return {
                             year: new BigNumber(rxResult[2]).times(toSignMultipler(rxResult[1])),
@@ -3184,7 +3190,7 @@
                         };
                     }
                 }, {
-                    regex: /^([\-+]{1})(\d{6,})-(\d{2})-(\d{2})$/,
+                    regex: /^([\-+]{1})(\d{5,})-(\d{2})-(\d{2})$/,
                     func: function (rxResult) {
                         return {
                             year: new BigNumber(rxResult[2]).times(toSignMultipler(rxResult[1])),
@@ -3206,6 +3212,21 @@
                     regex: /^(\d{4})-W(\d{2})-([1-7]{1})$/,
                     func: function (rxResult) {
                         return weekDateToCalendar(rxResult[1], rxResult[2], rxResult[3]);
+                    }
+                }, {
+                    regex: /^([\-+]{1})(\d{5,})-(\d{3})$/,
+                    func: function (rxResult) {
+                        return ordinalToCalendar(new BigNumber(rxResult[2]).times(toSignMultipler(rxResult[1])), rxResult[3]);
+                    }
+                }, {
+                    regex: /^([\-+]{1})(\d{5,})-W(\d{2})$/,
+                    func: function (rxResult) {
+                        return weekDateToCalendar(new BigNumber(rxResult[2]).times(toSignMultipler(rxResult[1])), rxResult[3], 1);
+                    }
+                }, {
+                    regex: /^([\-+]{1})(\d{5,})-W(\d{2})-([1-7]{1})$/,
+                    func: function (rxResult) {
+                        return weekDateToCalendar(new BigNumber(rxResult[2]).times(toSignMultipler(rxResult[1])), rxResult[3], rxResult[4]);
                     }
                 }]
             };
@@ -4381,8 +4402,8 @@
                 },
 
                 toISOString: {
-                    value: function () {
-                        return toISOString(this);
+                    value: function (padding) {
+                        return toISOString(this, padding);
                     }
                 },
 
@@ -4696,8 +4717,8 @@
                 },
 
                 toJSON: {
-                    value: function () {
-                        return this.toISOString();
+                    value: function (padding) {
+                        return this.toISOString(padding);
                     }
                 }
             });
