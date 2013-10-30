@@ -3141,24 +3141,6 @@
                         };
                     }
                 }, {
-                    regex: /^(\d{4})-(\d{2})$/,
-                    func: function (rxResult) {
-                        return {
-                            year: new BigNumber(rxResult[1]),
-                            month: new BigNumber(rxResult[2]),
-                            day: bnOne()
-                        };
-                    }
-                }, {
-                    regex: /^(\d{4})-(\d{2})-(\d{2})$/,
-                    func: function (rxResult) {
-                        return {
-                            year: new BigNumber(rxResult[1]),
-                            month: new BigNumber(rxResult[2]),
-                            day: new BigNumber(rxResult[3])
-                        };
-                    }
-                }, {
                     regex: /^(\d{4})(\d{3})$/,
                     func: function (rxResult) {
                         return ordinalToCalendar(rxResult[1], rxResult[2]);
@@ -3181,6 +3163,24 @@
                             year: new BigNumber(rxResult[2]).times(toSignMultipler(rxResult[1])),
                             month: new BigNumber(rxResult[3]),
                             day: bnOne()
+                        };
+                    }
+                },  {
+                    regex: /^(\d{4})-(\d{2})$/,
+                    func: function (rxResult) {
+                        return {
+                            year: new BigNumber(rxResult[1]),
+                            month: new BigNumber(rxResult[2]),
+                            day: bnOne()
+                        };
+                    }
+                }, {
+                    regex: /^(\d{4})-(\d{2})-(\d{2})$/,
+                    func: function (rxResult) {
+                        return {
+                            year: new BigNumber(rxResult[1]),
+                            month: new BigNumber(rxResult[2]),
+                            day: new BigNumber(rxResult[3])
                         };
                     }
                 }, {
@@ -3982,9 +3982,7 @@
                         }
                     } else {
                         searchString = dtObject.time;
-                        if (!arraySome(timePatterns.basic, searchPatternFN)) {
-                            arraySome(timePatterns.extended, searchPatternFN);
-                        }
+                        arraySome(timePatterns.basic, searchPatternFN);
                     }
                 }
 
