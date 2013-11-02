@@ -2149,6 +2149,16 @@
                 return offset.inRange(-1440, 1440);
             }
 
+            /*
+            function inWeekRange(week, year) {
+                return offset.inRange(1, 53);
+            }
+
+            function inWeekDayRange(weekDay) {
+                return weekDay.inRange(1, 7);
+            }
+            */
+
             function isValid(struct, julian) {
                 var valid = false;
 
@@ -2216,6 +2226,20 @@
                             }
 
                             break;
+                        /*
+                        case 'week':
+                            if (!inWeekRange(bn)) {
+                                return true;
+                            }
+
+                            break;
+                        case 'weekDay':
+                            if (!inWeekDayRange(bn)) {
+                                return true;
+                            }
+
+                            break;
+                        */
                         default:
                             throw new Error(element.full);
                         }
@@ -2431,55 +2455,53 @@
                 return time;
             }
 
-            function getTime(julianDay) {
-                return julianDay.minus(2440587.5).times(86400000).round();
+            function getTime(struct) {
+                return gregorianToJd(struct).minus(2440587.5).times(86400000).round();
             }
 
             // DeltaT
             //http://eclipse.gsfc.nasa.gov/SEhelp/deltatpoly2004.html
             function deltaTime(struct, canonCorrection) {
-                var year = new BigNumber(struct.year),
-                    month = new BigNumber(struct.month),
-                    y = year.plus(month.minus(0.5).div(12)),
+                var y = struct.year.plus(struct.month.minus(0.5).div(12)),
                     u,
                     t,
                     r;
 
-                if (year.inRange(-500, 2150)) {
-                    if (year.lt(500)) {
+                if (struct.year.inRange(-500, 2150)) {
+                    if (struct.year.lt(500)) {
                         u = y.div(100);
                         r = new BigNumber(10583.6).minus(u.times(1014.41)).plus(u.pow(2).times(33.78311)).minus(u.pow(3).times(5.952053)).minus(u.pow(4).times(0.1798452)).plus(u.pow(5).times(0.022174192)).plus(u.pow(6).times(0.0090316521));
-                    } else if (year.lt(1600)) {
+                    } else if (struct.year.lt(1600)) {
                         u = y.minus(1000).div(100);
                         r = new BigNumber(1574.2).minus(u.times(556.01)).plus(u.pow(2).times(71.23472)).plus(u.pow(3).times(0.319781)).minus(u.pow(4).times(0.8503463)).minus(u.pow(5).times(0.005050998)).plus(u.pow(6).times(0.0083572073));
-                    } else if (year.lt(1700)) {
+                    } else if (struct.year.lt(1700)) {
                         t = y.minus(1600);
                         r = new BigNumber(120).minus(t.times(0.9808)).minus(t.pow(2).times(0.01532)).plus(t.pow(3).div(7129));
-                    } else if (year.lt(1800)) {
+                    } else if (struct.year.lt(1800)) {
                         t = y.minus(1700);
                         r = new BigNumber(8.83).plus(t.times(0.1603)).minus(t.pow(2).times(0.0059285)).plus(t.pow(3).times(0.00013336)).minus(t.pow(4).div(1174000));
-                    } else if (year.lt(1860)) {
+                    } else if (struct.year.lt(1860)) {
                         t = y.minus(1800);
                         r = new BigNumber(13.72).minus(t.times(0.332447)).plus(t.pow(2).times(0.0068612)).plus(t.pow(3).times(0.0041116)).minus(t.pow(4).times(0.00037436)).plus(t.pow(5).times(0.0000121272)).minus(t.pow(6).times(0.0000001699)).plus(t.pow(7).times(0.000000000875));
-                    } else if (year.lt(1900)) {
+                    } else if (struct.year.lt(1900)) {
                         t = y.minus(1860);
                         r = new BigNumber(7.62).plus(t.times(0.5737)).minus(t.pow(2).times(0.251754)).plus(t.pow(3).times(0.01680668)).minus(t.pow(4).times(0.0004473624)).plus(t.pow(5).div(233174));
-                    } else if (year.lt(1920)) {
+                    } else if (struct.year.lt(1920)) {
                         t = y.minus(1900);
                         r = new BigNumber(-2.79).plus(t.times(1.494119)).minus(t.pow(2).times(0.0598939)).plus(t.pow(3).times(0.0061966)).minus(t.pow(4).times(0.000197));
-                    } else if (year.lt(1941)) {
+                    } else if (struct.year.lt(1941)) {
                         t = y.minus(1920);
                         r = new BigNumber(21.20).plus(t.times(0.84493)).minus(t.pow(2).times(0.076100)).plus(t.pow(3).times(0.0020936));
-                    } else if (year.lt(1961)) {
+                    } else if (struct.year.lt(1961)) {
                         t = y.minus(1950);
                         r = new BigNumber(29.07).plus(t.times(0.407)).minus(t.pow(2).div(233)).plus(t.pow(3).div(2547));
-                    } else if (year.lt(1986)) {
+                    } else if (struct.year.lt(1986)) {
                         t = y.minus(1975);
                         r = new BigNumber(45.45).plus(t.times(1.067)).minus(t.pow(2).div(260)).minus(t.pow(3).div(718));
-                    } else if (year.lt(2005)) {
+                    } else if (struct.year.lt(2005)) {
                         t = y.minus(2000);
                         r = new BigNumber(63.86).plus(t.times(0.3345)).minus(t.pow(2).times(0.060374)).plus(t.pow(3).times(0.0017275)).plus(t.pow(4).times(0.000651814)).plus(t.pow(5).times(0.00002373599));
-                    } else if (year.lt(2050)) {
+                    } else if (struct.year.lt(2050)) {
                         t = y.minus(2000);
                         r = new BigNumber(62.92).plus(t.times(0.32217)).plus(t.pow(2).times(0.005589));
                     } else {
@@ -2490,7 +2512,7 @@
                     r = u.pow(2).times(32).plus(-20);
                 }
 
-                if (canonCorrection && !year.inRange(1955, 2004)) {
+                if (canonCorrection && !struct.year.inRange(1955, 2004)) {
                     r.plus(y.minus(1955).pow(2).times(-0.000012932));
                 }
 
@@ -2924,9 +2946,54 @@
                 return new AstroDate([struct.year, f.div(31).floor().minus(1), f.mod(31).plus(1)]);
             }
 
-            function toISOString(date, userPadding) {
-                var struct = date.getter(),
-                    string,
+            function toUT(struct) {
+                return jdToGregorian(gregorianToJd(struct).times(86400000).plus(struct.offset.times(60000)).div(86400000).round(8, 2));
+            }
+
+            function toTT(struct) {
+                var offset = struct.offset,
+                    structTT = jdToGregorian(gregorianToJd(struct).times(86400000).minus(timeTo(fractionToTime(deltaTime(struct), 'minute'), 'millisecond')).div(86400000).round(8, 2));
+
+                structTT.offset = offset;
+
+                return structTT;
+            }
+
+            function bnGetTimezoneOffset() {
+                return new BigNumber(new Date().getTimezoneOffset());
+            }
+
+            function toLocal(struct) {
+                var timezoneOffset = bnGetTimezoneOffset(),
+                    structLocal = jdToGregorian(gregorianToJd(struct).times(86400000).plus(struct.offset.times(60000)).minus(bnGetTimezoneOffset().times(60000)).div(86400000).round(8, 2));
+
+                structLocal.offset = timezoneOffset;
+
+                return structLocal;
+            }
+
+            /*
+            function toTAI(struct) {
+                var offset = struct.offset,
+                    structTT = jdToGregorian(gregorianToJd(struct).times(86400000).minus(timeTo(fractionToTime(deltaTime(struct), 'minute'), 'millisecond')).minus(32184).div(86400000).round(8, 2));
+
+                structTT.offset = offset;
+
+                return structTT;
+            }
+
+            function toGPS(struct) {
+                  var offset = struct.offset,
+                    structTT = jdToGregorian(gregorianToJd(struct).times(86400000).minus(timeTo(fractionToTime(deltaTime(struct), 'minute'), 'millisecond')).minus(51184).div(86400000).round(8, 2));
+
+                structTT.offset = offset;
+
+                return structTT;
+            }
+            */
+
+            function toISOString(struct, userPadding) {
+                var string,
                     index,
                     count,
                     padding,
@@ -2935,70 +3002,66 @@
                     key,
                     number;
 
-                if (isValid(struct)) {
-                    number = toNumber(userPadding);
-                    if (lt(number, 5) || !numberIsFinite(number)) {
-                        number = 6;
+                number = toNumber(userPadding);
+                if (lt(number, 5) || !numberIsFinite(number)) {
+                    number = 6;
+                }
+
+                index = 0;
+                string = '';
+                for (count = 0; lt(count, 3); count += 1) {
+                    if (isUndefined(struct[fullKeys[count].full])) {
+                        index = 3;
+                        break;
                     }
+                }
 
-                    index = 0;
-                    string = '';
-                    for (count = 0; lt(count, 3); count += 1) {
-                        if (isUndefined(struct[fullKeys[count].full])) {
-                            index = 3;
-                            break;
-                        }
-                    }
-
-                    for (last = fullKeys.length - 1; lt(index, last); index += 1) {
-                        key = fullKeys[index].full;
-                        value = struct[key];
-                        if (strictEqual(key, 'year')) {
-                            if (value.lt(0)) {
-                                string += '-';
-                                padding = number;
-                            } else if (value.gte(10000)) {
-                                string += '+';
-                                padding = number;
-                            } else {
-                                padding = 4;
-                            }
-                        } else if (strictEqual(key, 'hour')) {
-                            string += 'T';
-                            padding = 2;
-                        } else if (strictEqual(key, 'millisecond')) {
-                            padding = 3;
-                        } else {
-                            padding = 2;
-                        }
-
-                        string += value.abs().padLeadingZero(padding);
-                        if (lt(index, 2)) {
+                for (last = fullKeys.length - 1; lt(index, last); index += 1) {
+                    key = fullKeys[index].full;
+                    value = struct[key];
+                    if (strictEqual(key, 'year')) {
+                        if (value.lt(0)) {
                             string += '-';
-                        } else if (inRange(index, 3, 4)) {
-                            string += ':';
-                        } else if (strictEqual(key, 'second')) {
-                            string += '.';
-                        }
-                    }
-
-                    value = struct.offset;
-                    if (value.isZero()) {
-                        string += 'Z';
-                    } else {
-                        if (value.lte(0)) {
+                            padding = number;
+                        } else if (value.gte(10000)) {
                             string += '+';
+                            padding = number;
                         } else {
-                            string += '-';
+                            padding = 4;
                         }
-
-                        value = fractionToTime(value.abs(), 'minute');
-                        string += value.hour.padLeadingZero(2);
-                        string += ':';
-                        string += value.minute.padLeadingZero(2);
+                    } else if (strictEqual(key, 'hour')) {
+                        string += 'T';
+                        padding = 2;
+                    } else if (strictEqual(key, 'millisecond')) {
+                        padding = 3;
+                    } else {
+                        padding = 2;
                     }
+
+                    string += value.abs().padLeadingZero(padding);
+                    if (lt(index, 2)) {
+                        string += '-';
+                    } else if (inRange(index, 3, 4)) {
+                        string += ':';
+                    } else if (strictEqual(key, 'second')) {
+                        string += '.';
+                    }
+                }
+
+                value = struct.offset;
+                if (value.isZero()) {
+                    string += 'Z';
                 } else {
-                    string = 'Invalid Date';
+                    if (value.lte(0)) {
+                        string += '+';
+                    } else {
+                        string += '-';
+                    }
+
+                    value = fractionToTime(value.abs(), 'minute');
+                    string += value.hour.padLeadingZero(2);
+                    string += ':';
+                    string += value.minute.padLeadingZero(2);
                 }
 
                 return string;
@@ -3090,6 +3153,45 @@
                 return ordinalToCalendar(struct.year, dayOfYear);
             }
 
+            function calendarToWeekDate(struct) {
+                var weekDay = gregorianToJd(struct).plus(1.5).mod(7).floor(),
+                    year = struct.year,
+                    month = struct.month,
+                    nearestThursday,
+                    val;
+
+                if (weekDay.lt(0)) {
+                    weekDay = weekDay.plus(7);
+                }
+
+                if (weekDay.isZero()) {
+                    weekDay = new BigNumber(7);
+                }
+
+                nearestThursday = struct.day.plus(4).minus(weekDay);
+                if (struct.month.equals(12) && nearestThursday.gt(31)) {
+                    val = {
+                        year: year.plus(1),
+                        week: bnOne(),
+                        weekDay: weekDay
+                    };
+                } else {
+                    if (struct.month.equals(1) && nearestThursday.lt(1)) {
+                        year = struct.year.minus(1);
+                        month = 12;
+                        nearestThursday = nearestThursday.plus(31);
+                    }
+
+                    val = {
+                        year: year,
+                        week: dayOfGregorianYear({year: year, month: month, day: nearestThursday}).div(7).floor().plus(1),
+                        weekDay: weekDay
+                    };
+                }
+
+                return val;
+            }
+
             function isNotNegativeZero(bn, sign) {
                 return strictEqual(sign, '+') || !bn.isZero() || (bn.isZero() && !strictEqual(sign, '-'));
             }
@@ -3108,10 +3210,6 @@
 
             function secondFractionToTime(number) {
                 return fractionToTime('0.' + number, 'second');
-            }
-
-            function bnGetTimezoneOffset() {
-                return new BigNumber(new Date().getTimezoneOffset());
             }
 
             function toSignMultipler(sign) {
@@ -4013,11 +4111,28 @@
                 return dtObject;
             }
 
+            function getCorrectStruct(thisAstroDate, struct) {
+                if (thisAstroDate.isTT()) {
+                    struct = toTT(struct);
+                }
+
+                if (thisAstroDate.isUT()) {
+                    struct = toUT(struct);
+                } else if (thisAstroDate.isLocal()) {
+                    struct = toLocal(struct);
+                }
+
+                return struct;
+            }
+
             AstroDate = function () {
                 var args = arguments,
                     input = arguments,
                     argsLength = args.length,
                     isJulian = false,
+                    isUT = false,
+                    isTT = false,
+                    isLocal = false,
                     error = null,
                     struct,
                     arg;
@@ -4036,6 +4151,15 @@
                                     break;
                                 case 'isJulian':
                                     got = isJulian;
+                                    break;
+                                case 'isUT':
+                                    got = isUT;
+                                    break;
+                                case 'isTT':
+                                    got = isTT;
+                                    break;
+                                case 'isLocal':
+                                    got = isLocal;
                                     break;
                                 case 'args':
                                     got = args;
@@ -4131,6 +4255,15 @@
                                     break;
                                 case 'isJulian':
                                     isJulian = Boolean(value);
+                                    break;
+                                case 'isUT':
+                                    isUT = Boolean(value);
+                                    break;
+                                case 'isTT':
+                                    isTT = Boolean(value);
+                                    break;
+                                case 'isLocal':
+                                    isLocal = Boolean(value);
                                     break;
                                 default:
                                     struct = isoParse(key);
@@ -4240,9 +4373,85 @@
                     }
                 },
 
+                local: {
+                    value: function () {
+                        this.setter('isLocal', true);
+                        this.setter('isUT', false);
+
+                        return this;
+                    }
+                },
+
+                UT: {
+                    value: function () {
+                        this.setter('isLocal', false);
+                        this.setter('isUT', true);
+
+                        return this;
+                    }
+                },
+
+                TT: {
+                    value: function () {
+                        return this.setter('isTT', true);
+                    }
+                },
+
+                civil: {
+                    value: function () {
+                        return this.setter('isTT', false);
+                    }
+                },
+
+                raw: {
+                    value: function () {
+                        this.setter('isLocal', false);
+                        this.setter('isUT', false);
+                        this.setter('isTT', false);
+
+                        return this;
+                    }
+                },
+
                 isJulian: {
                     value: function () {
                         return this.getter('isJulian');
+                    }
+                },
+
+                isGregorian: {
+                    value: function () {
+                        return !this.getter('isJulian');
+                    }
+                },
+
+                isUT: {
+                    value: function () {
+                        return this.getter('isUT');
+                    }
+                },
+
+                isTT: {
+                    value: function () {
+                        return this.getter('isTT');
+                    }
+                },
+
+                isCivil: {
+                    value: function () {
+                        return !this.getter('isTT');
+                    }
+                },
+
+                isLocal: {
+                    value: function () {
+                        return this.getter('isLocal');
+                    }
+                },
+
+                isRaw: {
+                    value: function () {
+                        return !this.getter('isUT') && !this.getter('isTT') && this.getter('isLocal');
                     }
                 },
 
@@ -4293,6 +4502,7 @@
                                 string = '[NS] ';
                             }
 
+                            struct = getCorrectStruct(this, struct);
                             string += this.dayOfWeek(shortName, lang) + ' ';
                             string += struct.day.toString() + ' ';
                             string += this.monthOfYear(shortName, lang) + ' ';
@@ -4349,6 +4559,7 @@
                                 string = '[NS] ';
                             }
 
+                            struct = getCorrectStruct(this, struct);
                             string += this.dayOfWeek(shortName, lang) + ' ';
                             string += struct.day.toString() + ' ';
                             string += this.monthOfYear(shortName, lang) + ' ';
@@ -4379,6 +4590,7 @@
                                 struct = this.getter();
                             }
 
+                            struct = getCorrectStruct(this, struct);
                             string += struct.hour.padLeadingZero(2) + ':';
                             string += struct.minute.padLeadingZero(2) + ':';
                             string += struct.second.padLeadingZero(2) + '.';
@@ -4403,7 +4615,15 @@
 
                 toISOString: {
                     value: function (padding) {
-                        return toISOString(this, padding);
+                        var val;
+
+                        if (this.isValid()) {
+                            val = toISOString(getCorrectStruct(this, this.getter()), padding);
+                        } else {
+                            val = 'Invalid Date';
+                        }
+
+                        return val;
                     }
                 },
 
@@ -4423,14 +4643,16 @@
 
                 object: {
                     value: function (dateObject) {
-                        var val;
+                        var struct,
+                            val;
 
                         if (isUndefined(dateObject)) {
                             if (this.isValid()) {
+                                struct = getCorrectStruct(this, this.getter());
                                 if (this.isJulian()) {
-                                    val = structToObject(gregorianToJulian(this.getter()));
+                                    val = structToObject(gregorianToJulian(struct));
                                 } else {
-                                    val = structToObject(this.getter());
+                                    val = structToObject(struct);
                                 }
                             }
                         } else if (isPlainObject(dateObject)) {
@@ -4451,14 +4673,16 @@
 
                 array: {
                     value: function (dateArray) {
-                        var val;
+                        var struct,
+                            val;
 
                         if (isUndefined(dateArray)) {
                             if (this.isValid()) {
+                                struct = getCorrectStruct(this, this.getter());
                                 if (this.isJulian()) {
-                                    val = structToArrayOfString(gregorianToJulian(this.getter()));
+                                    val = structToArrayOfString(gregorianToJulian(struct));
                                 } else {
-                                    val = structToArrayOfString(this.getter());
+                                    val = structToArrayOfString(struct);
                                 }
                             }
                         } else if (arrayIsArray(dateArray)) {
@@ -4493,10 +4717,17 @@
 
                 getTime: {
                     value: function () {
-                        var val;
+                        var struct,
+                            val;
 
                         if (this.isValid()) {
-                            val = getTime(gregorianToJd(this.getter())).toString();
+                            if (this.isTT()) {
+                                struct = toTT(this.getter());
+                            } else {
+                                struct = this.getter();
+                            }
+
+                            val = getTime(toUT(struct)).toString();
                         }
 
                         return val;
@@ -4508,7 +4739,7 @@
                         var val;
 
                         if (this.isValid()) {
-                            val = deltaTime(this.getter()).toString();
+                            val = deltaTime(getCorrectStruct(this, this.getter())).toString();
                         }
 
                         return val;
@@ -4520,7 +4751,7 @@
                         var val;
 
                         if (this.isValid()) {
-                            val = timeTo(this.getter(), normaliseUnits(unit)).toString();
+                            val = timeTo(getCorrectStruct(this, this.getter()), normaliseUnits(unit)).toString();
                         }
 
                         return val;
@@ -4533,7 +4764,7 @@
 
                         if (isUndefined(julianDay)) {
                             if (this.isValid()) {
-                                val = gregorianToJd(this.getter()).toString();
+                                val = gregorianToJd(getCorrectStruct(this, this.getter())).toString();
                             }
                         } else if (isNumber(julianDay) || isString(julianDay) || BigNumber.isBigNumber(julianDay)) {
                             val = this.setter('struct', jdToGregorian(julianDay));
@@ -4547,13 +4778,15 @@
 
                 easter: {
                     value: function () {
-                        var val;
+                        var struct,
+                            val;
 
                         if (this.isValid()) {
+                            struct = getCorrectStruct(this, this.getter());
                             if (this.isJulian()) {
-                                val = julianEaster(gregorianToJulian(this.getter()));
+                                val = julianEaster(gregorianToJulian(struct));
                             } else {
-                                val = gregorianEaster(this.getter());
+                                val = gregorianEaster(struct);
                             }
                         }
 
@@ -4566,7 +4799,8 @@
                         var args,
                             shortName,
                             lang,
-                            val;
+                            val,
+                            struct;
 
                         if (this.isValid()) {
                             args = arguments;
@@ -4578,10 +4812,11 @@
                                 lang = args[0];
                             }
 
+                            struct = getCorrectStruct(this, this.getter());
                             if (this.isJulian()) {
-                                val = monthName(gregorianToJulian(this.getter()), shortName, lang);
+                                val = monthName(gregorianToJulian(struct), shortName, lang);
                             } else {
-                                val = monthName(this.getter(), shortName, lang);
+                                val = monthName(struct, shortName, lang);
                             }
                         }
 
@@ -4606,7 +4841,7 @@
                                 lang = args[0];
                             }
 
-                            val = dayOfWeek(gregorianToJd(this.getter()), shortName, lang);
+                            val = dayOfWeek(gregorianToJd(getCorrectStruct(this, this.getter())), shortName, lang);
                         }
 
                         return val;
@@ -4615,13 +4850,15 @@
 
                 isLeapYear: {
                     value: function () {
-                        var val;
+                        var struct,
+                            val;
 
                         if (this.isValid()) {
+                            struct = getCorrectStruct(this, this.getter());
                             if (this.isJulian()) {
-                                val = isJulianLeapYear(gregorianToJulian(this.getter()));
+                                val = isJulianLeapYear(gregorianToJulian(struct));
                             } else {
-                                val = isGregorianLeapYear(this.getter());
+                                val = isGregorianLeapYear(struct);
                             }
                         }
 
@@ -4631,13 +4868,15 @@
 
                 daysInYear: {
                     value: function () {
-                        var val;
+                        var struct,
+                            val;
 
                         if (this.isValid()) {
+                            struct = getCorrectStruct(this, this.getter());
                             if (this.isJulian()) {
-                                val = daysInJulianYear(gregorianToJulian(this.getter())).toString();
+                                val = daysInJulianYear(gregorianToJulian(struct)).toString();
                             } else {
-                                val = daysInGregorianYear(this.getter()).toString();
+                                val = daysInGregorianYear(struct).toString();
                             }
                         }
 
@@ -4647,13 +4886,15 @@
 
                 daysInMonth: {
                     value: function () {
-                        var val;
+                        var struct,
+                            val;
 
                         if (this.isValid()) {
+                            struct = getCorrectStruct(this, this.getter());
                             if (this.isJulian()) {
-                                val = daysInJulianMonth(gregorianToJulian(this.getter())).toString();
+                                val = daysInJulianMonth(gregorianToJulian(struct)).toString();
                             } else {
-                                val = daysInGregorianMonth(this.getter()).toString();
+                                val = daysInGregorianMonth(struct).toString();
                             }
                         }
 
@@ -4663,13 +4904,15 @@
 
                 dayOfYear: {
                     value: function () {
-                        var val;
+                        var struct,
+                            val;
 
                         if (this.isValid()) {
+                            struct = getCorrectStruct(this, this.getter());
                             if (this.isJulian()) {
-                                val = dayOfJulianYear(gregorianToJulian(this.getter())).toString();
+                                val = dayOfJulianYear(gregorianToJulian(struct)).toString();
                             } else {
-                                val = dayOfGregorianYear(this.getter()).toString();
+                                val = dayOfGregorianYear(struct).toString();
                             }
                         }
 
@@ -4719,6 +4962,18 @@
                 toJSON: {
                     value: function (padding) {
                         return this.toISOString(padding);
+                    }
+                },
+
+                calendarToWeekDate: {
+                    value: function () {
+                        var val;
+
+                        if (this.isValid()) {
+                            val = structToObject(calendarToWeekDate(getCorrectStruct(this, this.getter())));
+                        }
+
+                        return val;
                     }
                 }
             });
@@ -4791,6 +5046,18 @@
                 alias: 'z',
                 local: 'getTimezoneOffset'
             }];
+
+            /*
+            , {
+                full: 'week',
+                alias: 'W',
+                local: null
+            }, {
+                full: 'weekDay',
+                alias: 'E',
+                local: null
+            }
+            */
 
             deepFreeze(fullKeys);
 
