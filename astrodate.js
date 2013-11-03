@@ -2407,6 +2407,35 @@
                 return arrayMinNames;
             }
 
+            function makeNamesArray(arrayNames, args) {
+                var shortName,
+                    lang;
+
+                if (isBoolean(args[1])) {
+                    shortName = args[1];
+                    lang = args[2];
+                } else if (isString(args[1])) {
+                    shortName = false;
+                    lang = args[1];
+                }
+
+                if (!isString(lang)) {
+                    lang = 'en-GB';
+                }
+
+                return arrayMap(arrayNames, function (element) {
+                    var name;
+
+                    if (shortName) {
+                        name = makeNameShort(element[lang], lang);
+                    } else {
+                        name = element[lang];
+                    }
+
+                    return name;
+                });
+            }
+
             function dayOfWeek(jd, shortName, lang) {
                 var day = jd.plus(1.5).mod(7).floor(),
                     name;
@@ -4885,7 +4914,7 @@
                                 shortName = args[0];
                                 lang = args[1];
                             } else if (isString(args[0])) {
-                                shortName = true;
+                                shortName = false;
                                 lang = args[0];
                             }
 
@@ -4914,7 +4943,7 @@
                                 shortName = args[0];
                                 lang = args[1];
                             } else if (isString(args[0])) {
-                                shortName = true;
+                                shortName = false;
                                 lang = args[0];
                             }
 
@@ -5095,60 +5124,24 @@
                 },
 
                 months: {
-                    value: function (lang) {
-                        if (!isString(lang)) {
-                            lang = 'en-GB';
-                        }
-
-                        return arrayMap(monthNames, function (element) {
-                            return element[lang];
-                        });
+                    value: function () {
+                        return makeNamesArray(monthNames, arguments);
                     }
                 },
 
-                monthsShort: {
-                    value: function (lang) {
-                        if (!isString(lang)) {
-                            lang = 'en-GB';
-                        }
-
-                        return arrayMap(monthNames, function (element) {
-                            return makeNameShort(element[lang], lang);
-                        });
-                    }
-                },
-
-                monthsShortMin: {
+                monthsMin: {
                     value: function (lang) {
                         return makeNamesMin(monthNames, lang);
                     }
                 },
 
-                weekdays: {
-                    value: function (lang) {
-                        if (!isString(lang)) {
-                            lang = 'en-GB';
-                        }
-
-                        return arrayMap(dayNames, function (element) {
-                            return element[lang];
-                        });
+                weekDays: {
+                    value: function () {
+                        return makeNamesArray(dayNames, arguments);
                     }
                 },
 
-                weekdaysShort: {
-                    value: function (lang) {
-                        if (!isString(lang)) {
-                            lang = 'en-GB';
-                        }
-
-                        return arrayMap(dayNames, function (element) {
-                            return makeNameShort(element[lang], lang);
-                        });
-                    }
-                },
-
-                weekdaysShortMin: {
+                weekDaysMin: {
                     value: function (lang) {
                         return makeNamesMin(dayNames, lang);
                     }
