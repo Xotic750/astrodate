@@ -4530,9 +4530,27 @@
                     }
                 },
 
+                isWeekDay: {
+                    value: function () {
+                        var val;
+
+                        if (this.isValid()) {
+                            val = weekDayNumber(gregorianToJd(getCorrectStruct(this, this.getter()))).inRange(1, 5);
+                        }
+
+                        return val;
+                    }
+                },
+
                 isWeekend: {
                     value: function () {
-                        return weekDayNumber(gregorianToJd(getCorrectStruct(this, this.getter()))).inRange(6, 7);
+                        var val;
+
+                        if (this.isValid()) {
+                            val = weekDayNumber(gregorianToJd(getCorrectStruct(this, this.getter()))).inRange(6, 7);
+                        }
+
+                        return val;
                     }
                 },
 
