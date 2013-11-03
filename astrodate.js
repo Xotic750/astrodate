@@ -916,6 +916,10 @@
                 return property in object;
             }
 
+            function arrayContains(array, searchElement) {
+                return !strictEqual(arrayIndexOf(array, searchElement), -1);
+            }
+
             // http://ecma-international.org/ecma-262/5.1/#sec-15.2.4.5
             // Create our own local "hasOwnProperty" function: native -> shim -> sham
             // named objectHasOwnProperty instead of hasOwnProperty because of SpiderMonkey and Blackberry bug
@@ -938,7 +942,7 @@
                 }
 
                 function checkDontEnums(object, property) {
-                    return hasDontEnumBug && !strictEqual(arrayIndexOf(defaultProperties, property), -1) && hasProperty(object, property) && !strictEqual(object[property], objectGetPrototypeOf(object)[property]);
+                    return hasDontEnumBug && arrayContains(defaultProperties, property) && hasProperty(object, property) && !strictEqual(object[property], objectGetPrototypeOf(object)[property]);
                 }
 
                 if (isFunction(hasOwnPropertyFN)) {
@@ -1342,7 +1346,7 @@
                                 }
 
                                 for (index = start, val = -1; lt(index, length); index += 1) {
-                                    if (hasProperty(object, index) && objectIs(searchElement, object[index])) {
+                                    if (hasProperty(object, index) && strictEqual(searchElement, object[index])) {
                                         val = index;
                                         break;
                                     }
@@ -1755,7 +1759,7 @@
             }
 
             objectDefineProperties(BigNumber.prototype, {
-                integerPart: {
+                truncate: {
                     value: function () {
                         var bn = this;
 
@@ -1782,7 +1786,7 @@
                         var bn = this;
 
                         if (bn.isFinite()) {
-                            bn = bn.minus(this.integerPart());
+                            bn = bn.minus(this.truncate());
                         } else {
                             bn = new BigNumber(NaN);
                         }
@@ -1877,9 +1881,9 @@
                     }
                 },
 
-                integerPart: {
+                truncate: {
                     value: function (number) {
-                        return new BigNumber(number).integerPart();
+                        return new BigNumber(number).truncate();
                     }
                 },
 
@@ -2359,6 +2363,48 @@
                 }
 
                 return name.slice(0, length);
+            }
+
+            function makeNamesMin(arrayNames, lang) {
+                var arrayMinNames = [],
+                    count = 1,
+                    maxLength = 0,
+                    anLength = arrayNames.length;
+
+                if (!isString(lang)) {
+                    lang = 'en-GB';
+                }
+
+                function sliceCountCompare(element) {
+                    var characters = element[lang].slice(0, count),
+                        ret;
+
+                    if (arrayContains(arrayMinNames, characters)) {
+                        ret = true;
+                    } else {
+                        arrayMinNames.push(characters);
+                        ret = false;
+                    }
+
+                    return ret;
+                }
+
+                arrayForEach(arrayNames, function (element) {
+                    var word = element[lang],
+                        length = word.length;
+
+                    if (length > maxLength) {
+                        maxLength = length;
+                    }
+                });
+
+                while (!strictEqual(arrayMinNames.length, anLength) && count <= maxLength) {
+                    arrayMinNames.length = 0;
+                    arraySome(arrayNames, sliceCountCompare);
+                    count += 1;
+                }
+
+                return arrayMinNames;
             }
 
             function dayOfWeek(jd, shortName, lang) {
@@ -4665,7 +4711,7 @@
                                 struct = this.getter();
                             }
 
-                            val = getTime(toUT(struct)).div(1000).integerPart().toString();
+                            val = getTime(toUT(struct)).div(1000).truncate().toString();
                         }
 
                         return val;
@@ -5072,6 +5118,12 @@
                     }
                 },
 
+                monthsShortMin: {
+                    value: function (lang) {
+                        return makeNamesMin(monthNames, lang);
+                    }
+                },
+
                 weekdays: {
                     value: function (lang) {
                         if (!isString(lang)) {
@@ -5093,6 +5145,12 @@
                         return arrayMap(dayNames, function (element) {
                             return makeNameShort(element[lang], lang);
                         });
+                    }
+                },
+
+                weekdaysShortMin: {
+                    value: function (lang) {
+                        return makeNamesMin(dayNames, lang);
                     }
                 }
             });
