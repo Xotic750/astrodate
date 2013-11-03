@@ -2436,13 +2436,29 @@
                 });
             }
 
-            function dayOfWeek(jd, shortName, lang) {
-                var day = jd.plus(1.5).mod(7).floor(),
-                    name;
+            function dayOfWeekNumber(jd) {
+                var day = jd.plus(1.5).mod(7).floor();
 
                 if (day.lt(0)) {
                     day = day.plus(7);
                 }
+
+                return day;
+            }
+
+            function weekDayNumber(jd) {
+                var bnWeekDay = dayOfWeekNumber(jd);
+
+                if (bnWeekDay.isZero()) {
+                    bnWeekDay = new BigNumber(7);
+                }
+
+                return bnWeekDay;
+            }
+
+            function dayOfWeek(jd, shortName, lang) {
+                var dayNum = toNumber(dayOfWeekNumber(jd)),
+                    name;
 
                 if (!isString(lang)) {
                     lang = 'en-GB';
@@ -2452,7 +2468,7 @@
                     shortName = false;
                 }
 
-                name = dayNames[parseInt(day.toString(), 10)][lang];
+                name = dayNames[dayNum][lang];
                 if (strictEqual(shortName, true)) {
                     name = makeNameShort(name, lang);
                 }
@@ -3205,16 +3221,8 @@
                         second: bnZero(),
                         millisecond: bnZero()
                     },
-                    weekDayJan4 = gregorianToJd(struct).plus(1.5).mod(7).floor(),
+                    weekDayJan4 = weekDayNumber(gregorianToJd(struct)),
                     dayOfYear;
-
-                if (weekDayJan4.lt(0)) {
-                    weekDayJan4 = weekDayJan4.plus(7);
-                }
-
-                if (weekDayJan4.isZero()) {
-                    weekDayJan4 = new BigNumber(7);
-                }
 
                 dayOfYear = new BigNumber(7).times(week).plus(weekDay).minus(weekDayJan4.plus(3));
                 if (dayOfYear.lt(1)) {
@@ -3229,19 +3237,11 @@
             }
 
             function calendarToWeekDate(struct) {
-                var weekDay = gregorianToJd(struct).plus(1.5).mod(7).floor(),
+                var weekDay = weekDayNumber(gregorianToJd(struct)),
                     year = struct.year,
                     month = struct.month,
                     nearestThursday,
                     val;
-
-                if (weekDay.lt(0)) {
-                    weekDay = weekDay.plus(7);
-                }
-
-                if (weekDay.isZero()) {
-                    weekDay = new BigNumber(7);
-                }
 
                 nearestThursday = struct.day.plus(4).minus(weekDay);
                 if (struct.month.equals(12) && nearestThursday.gt(31)) {
@@ -4527,6 +4527,12 @@
                 isRaw: {
                     value: function () {
                         return !this.getter('isUT') && !this.getter('isTT') && this.getter('isLocal');
+                    }
+                },
+
+                isWeekend: {
+                    value: function () {
+                        return weekDayNumber(gregorianToJd(getCorrectStruct(this, this.getter()))).inRange(6, 7);
                     }
                 },
 
