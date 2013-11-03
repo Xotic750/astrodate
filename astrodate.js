@@ -4455,6 +4455,18 @@
                     }
                 },
 
+                zone: {
+                    value: function () {
+                        var val;
+
+                        if (this.isValid()) {
+                            val = getCorrectStruct(this, this.getter()).offset.toString();
+                        }
+
+                        return val;
+                    }
+                },
+
                 isValid: {
                     value: function () {
                         return isValid(this.getter());
@@ -4635,6 +4647,25 @@
                             val = this.julianDay();
                         } else {
                             val = this.getTime();
+                        }
+
+                        return val;
+                    }
+                },
+
+                unix: {
+                    value: function () {
+                        var struct,
+                            val;
+
+                        if (this.isValid()) {
+                            if (this.isTT()) {
+                                struct = toTT(this.getter());
+                            } else {
+                                struct = this.getter();
+                            }
+
+                            val = getTime(toUT(struct)).div(1000).integerPart().toString();
                         }
 
                         return val;
@@ -4996,6 +5027,72 @@
                 isAstroDate: {
                     value: function (inputArg) {
                         return isObject(inputArg) && objectInstanceOf(inputArg, AstroDate);
+                    }
+                },
+
+                now: {
+                    value: function () {
+                        return new AstroDate().getTime();
+                    }
+                },
+
+                julianDay: {
+                    value: function () {
+                        return new AstroDate().julianDay();
+                    }
+                },
+
+                unix: {
+                    value: function () {
+                        return new AstroDate().unix();
+                    }
+                },
+
+                months: {
+                    value: function (lang) {
+                        if (!isString(lang)) {
+                            lang = 'en-GB';
+                        }
+
+                        return arrayMap(monthNames, function (element) {
+                            return element[lang];
+                        });
+                    }
+                },
+
+                monthsShort: {
+                    value: function (lang) {
+                        if (!isString(lang)) {
+                            lang = 'en-GB';
+                        }
+
+                        return arrayMap(monthNames, function (element) {
+                            return makeNameShort(element[lang], lang);
+                        });
+                    }
+                },
+
+                weekdays: {
+                    value: function (lang) {
+                        if (!isString(lang)) {
+                            lang = 'en-GB';
+                        }
+
+                        return arrayMap(dayNames, function (element) {
+                            return element[lang];
+                        });
+                    }
+                },
+
+                weekdaysShort: {
+                    value: function (lang) {
+                        if (!isString(lang)) {
+                            lang = 'en-GB';
+                        }
+
+                        return arrayMap(dayNames, function (element) {
+                            return makeNameShort(element[lang], lang);
+                        });
                     }
                 }
             });
