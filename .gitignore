@@ -1,3 +1,4 @@
 node_modules/
+cldr/*
 .DS_Store
 *.komodoproject

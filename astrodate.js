@@ -70,6 +70,7 @@
                 //MIN_INTEGER = -9007199254740991,
                 UWORD32 = Math.pow(2, 32),
                 MAX_UINT32 = UWORD32 - 1,
+                languages = {},
                 baseObject = {},
                 defaultProperties,
                 baseArray = [],
@@ -78,9 +79,7 @@
                 baseNumber = 0,
                 baseBoolean = true,
                 fullKeys,
-                shortNameLength,
                 dayNames,
-                monthNames,
                 protoName = '__proto__',
                 invalidISOCharsRx = new RegExp('[^\\d\\-+WT Z:,\\.]'),
                 toObject,
@@ -2351,20 +2350,7 @@
                 return new BigNumber(1721424.5).plus(c).plus(d).plus(e).plus(f).plus(g.plus(h).plus(struct.day).floor()).plus(timeTo(struct, 'day'));
             }
 
-            function makeNameShort(name, lang) {
-                if (!isString(lang)) {
-                    lang = 'en-GB';
-                }
-
-                var length = shortNameLength[lang];
-
-                if (!isNumber(length) || lt(length, 1)) {
-                    length = 3;
-                }
-
-                return name.slice(0, length);
-            }
-
+            /*
             function makeNamesMin(arrayNames, lang) {
                 var arrayMinNames = [],
                     count = 1,
@@ -2372,7 +2358,7 @@
                     anLength = arrayNames.length;
 
                 if (!isString(lang)) {
-                    lang = 'en-GB';
+                    lang = 'en';
                 }
 
                 function sliceCountCompare(element) {
@@ -2420,7 +2406,7 @@
                 }
 
                 if (!isString(lang)) {
-                    lang = 'en-GB';
+                    lang = 'en';
                 }
 
                 return arrayMap(arrayNames, function (element) {
@@ -2435,6 +2421,7 @@
                     return name;
                 });
             }
+            */
 
             function dayOfWeekNumber(jd) {
                 var day = jd.plus(1.5).mod(7).floor();
@@ -2456,42 +2443,28 @@
                 return bnWeekDay;
             }
 
-            function dayOfWeek(jd, shortName, lang) {
-                var dayNum = toNumber(dayOfWeekNumber(jd)),
-                    name;
-
-                if (!isString(lang)) {
-                    lang = 'en-GB';
+            function dayOfWeek(jd, type, lang) {
+                if (!isString(lang) || isEmptyString(lang)) {
+                    lang = 'en';
                 }
 
-                if (!isBoolean(shortName)) {
-                    shortName = false;
+                if (!isString(type) || isEmptyString(type)) {
+                    type = 'wide';
                 }
 
-                name = dayNames[dayNum][lang];
-                if (strictEqual(shortName, true)) {
-                    name = makeNameShort(name, lang);
-                }
-
-                return name;
+                return languages[lang].calendars.gregorian.days.format[type][dayNames[toNumber(dayOfWeekNumber(jd))]];
             }
 
-            function monthName(struct, shortName, lang) {
-                if (!isString(lang)) {
-                    lang = 'en-GB';
+            function monthName(struct, type, lang) {
+                if (!isString(lang) || isEmptyString(lang)) {
+                    lang = 'en';
                 }
 
-                if (!isBoolean(shortName)) {
-                    shortName = false;
+                if (!isString(type) || isEmptyString(type)) {
+                    type = 'wide';
                 }
 
-                var name = monthNames[parseInt(struct.month.minus(1).toString(), 10)][lang];
-
-                if (strictEqual(shortName, true)) {
-                    name = makeNameShort(name, lang);
-                }
-
-                return name;
+                return languages[lang].calendars.gregorian.months.format[type][struct.month.toString()];
             }
 
             function fractionToTime(fraction, fractionIn, struct, julian) {
@@ -4925,28 +4898,16 @@
                 },
 
                 monthOfYear: {
-                    value: function () {
-                        var args,
-                            shortName,
-                            lang,
-                            val,
+                    value: function (lang, type) {
+                        var val,
                             struct;
 
                         if (this.isValid()) {
-                            args = arguments;
-                            if (isBoolean(args[0])) {
-                                shortName = args[0];
-                                lang = args[1];
-                            } else if (isString(args[0])) {
-                                shortName = false;
-                                lang = args[0];
-                            }
-
                             struct = getCorrectStruct(this, this.getter());
                             if (this.isJulian()) {
-                                val = monthName(gregorianToJulian(struct), shortName, lang);
+                                val = monthName(gregorianToJulian(struct), type, lang);
                             } else {
-                                val = monthName(struct, shortName, lang);
+                                val = monthName(struct, type, lang);
                             }
                         }
 
@@ -4955,23 +4916,11 @@
                 },
 
                 dayOfWeek: {
-                    value: function () {
-                        var args,
-                            shortName,
-                            lang,
-                            val;
+                    value: function (lang, type) {
+                        var val;
 
                         if (this.isValid()) {
-                            args = arguments;
-                            if (isBoolean(args[0])) {
-                                shortName = args[0];
-                                lang = args[1];
-                            } else if (isString(args[0])) {
-                                shortName = false;
-                                lang = args[0];
-                            }
-
-                            val = dayOfWeek(gregorianToJd(getCorrectStruct(this, this.getter())), shortName, lang);
+                            val = dayOfWeek(gregorianToJd(getCorrectStruct(this, this.getter())), type, lang);
                         }
 
                         return val;
@@ -5113,6 +5062,25 @@
                     value: VERSION
                 },
 
+                lang: {
+                    value: function (id, object) {
+                        var val;
+
+                        if (isString(id) && !isEmptyString(id)) {
+                            if (isPlainObject(object)) {
+                                languages[id] = extend({}, object);
+                                deepFreeze(languages[id]);
+                            }
+
+                            if (isPlainObject(languages[id])) {
+                                val = languages[id];
+                            }
+                        }
+
+                        return val;
+                    }
+                },
+
                 BigNumber: {
                     value: BigNumber
                 },
@@ -5145,7 +5113,9 @@
                     value: function () {
                         return new AstroDate().unix();
                     }
-                },
+                }
+                /*
+                ,
 
                 months: {
                     value: function () {
@@ -5170,6 +5140,7 @@
                         return makeNamesMin(dayNames, lang);
                     }
                 }
+                */
             });
 
             defaultProperties = [
@@ -5233,71 +5204,453 @@
 
             deepFreeze(fullKeys);
 
-            shortNameLength = {
-                'en-GB': 3,
-                'sv-SE': 3
-            };
+            dayNames = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+            deepFreeze(dayNames);
 
-            dayNames = [{
-                'en-GB': 'Sunday',
-                'sv-SE': 'söndag'
-            }, {
-                'en-GB': 'Monday',
-                'sv-SE': 'måndag'
-            }, {
-                'en-GB': 'Tuesday',
-                'sv-SE': 'tisdag'
-            }, {
-                'en-GB': 'Wednesday',
-                'sv-SE': 'onsdag'
-            }, {
-                'en-GB': 'Thursday',
-                'sv-SE': 'torsdag'
-            }, {
-                'en-GB': 'Friday',
-                'sv-SE': 'fredag'
-            }, {
-                'en-GB': 'Saturday',
-                'sv-SE': 'lördag'
-            }];
-
-            monthNames = [{
-                'en-GB': 'January',
-                'sv-SE': 'januari'
-            }, {
-                'en-GB': 'February',
-                'sv-SE': 'februari'
-            }, {
-                'en-GB': 'March',
-                'sv-SE': 'mars'
-            }, {
-                'en-GB': 'April',
-                'sv-SE': 'april'
-            }, {
-                'en-GB': 'May',
-                'sv-SE': 'maj'
-            }, {
-                'en-GB': 'June',
-                'sv-SE': 'juni'
-            }, {
-                'en-GB': 'July',
-                'sv-SE': 'juli'
-            }, {
-                'en-GB': 'August',
-                'sv-SE': 'augusti'
-            }, {
-                'en-GB': 'September',
-                'sv-SE': 'september'
-            }, {
-                'en-GB': 'October',
-                'sv-SE': 'oktober'
-            }, {
-                'en-GB': 'November',
-                'sv-SE': 'november'
-            }, {
-                'en-GB': 'December',
-                'sv-SE': 'december'
-            }];
+            AstroDate.lang('en', {
+                'calendars': {
+                    'gregorian': {
+                        'quarters': {
+                            'format': {
+                                'wide': {
+                                    '1': '1st quarter',
+                                    '2': '2nd quarter',
+                                    '3': '3rd quarter',
+                                    '4': '4th quarter'
+                                },
+                                'abbreviated': {
+                                    '1': 'Q1',
+                                    '2': 'Q2',
+                                    '3': 'Q3',
+                                    '4': 'Q4'
+                                },
+                                'narrow': {
+                                    '1': '1',
+                                    '2': '2',
+                                    '3': '3',
+                                    '4': '4'
+                                }
+                            },
+                            'stand-alone': {
+                                'wide': {
+                                    '1': '1st quarter',
+                                    '2': '2nd quarter',
+                                    '3': '3rd quarter',
+                                    '4': '4th quarter'
+                                },
+                                'abbreviated': {
+                                    '1': 'Q1',
+                                    '2': 'Q2',
+                                    '3': 'Q3',
+                                    '4': 'Q4'
+                                },
+                                'narrow': {
+                                    '1': '1',
+                                    '2': '2',
+                                    '3': '3',
+                                    '4': '4'
+                                }
+                            }
+                        },
+                        'months': {
+                            'format': {
+                                'wide': {
+                                    '1': 'January',
+                                    '10': 'October',
+                                    '2': 'February',
+                                    '11': 'November',
+                                    '3': 'March',
+                                    '12': 'December',
+                                    '4': 'April',
+                                    '5': 'May',
+                                    '6': 'June',
+                                    '7': 'July',
+                                    '8': 'August',
+                                    '9': 'September'
+                                },
+                                'abbreviated': {
+                                    '1': 'Jan',
+                                    '10': 'Oct',
+                                    '2': 'Feb',
+                                    '11': 'Nov',
+                                    '3': 'Mar',
+                                    '12': 'Dec',
+                                    '4': 'Apr',
+                                    '5': 'May',
+                                    '6': 'Jun',
+                                    '7': 'Jul',
+                                    '8': 'Aug',
+                                    '9': 'Sep'
+                                },
+                                'narrow': {
+                                    '1': 'J',
+                                    '10': 'O',
+                                    '2': 'F',
+                                    '11': 'N',
+                                    '3': 'M',
+                                    '12': 'D',
+                                    '4': 'A',
+                                    '5': 'M',
+                                    '6': 'J',
+                                    '7': 'J',
+                                    '8': 'A',
+                                    '9': 'S'
+                                }
+                            },
+                            'stand-alone': {
+                                'wide': {
+                                    '1': 'January',
+                                    '10': 'October',
+                                    '2': 'February',
+                                    '11': 'November',
+                                    '3': 'March',
+                                    '12': 'December',
+                                    '4': 'April',
+                                    '5': 'May',
+                                    '6': 'June',
+                                    '7': 'July',
+                                    '8': 'August',
+                                    '9': 'September'
+                                },
+                                'abbreviated': {
+                                    '1': 'Jan',
+                                    '10': 'Oct',
+                                    '2': 'Feb',
+                                    '11': 'Nov',
+                                    '3': 'Mar',
+                                    '12': 'Dec',
+                                    '4': 'Apr',
+                                    '5': 'May',
+                                    '6': 'Jun',
+                                    '7': 'Jul',
+                                    '8': 'Aug',
+                                    '9': 'Sep'
+                                },
+                                'narrow': {
+                                    '1': 'J',
+                                    '10': 'O',
+                                    '2': 'F',
+                                    '11': 'N',
+                                    '3': 'M',
+                                    '12': 'D',
+                                    '4': 'A',
+                                    '5': 'M',
+                                    '6': 'J',
+                                    '7': 'J',
+                                    '8': 'A',
+                                    '9': 'S'
+                                }
+                            }
+                        },
+                        'days': {
+                            'format': {
+                                'wide': {
+                                    'tue': 'Tuesday',
+                                    'fri': 'Friday',
+                                    'sun': 'Sunday',
+                                    'sat': 'Saturday',
+                                    'wed': 'Wednesday',
+                                    'mon': 'Monday',
+                                    'thu': 'Thursday'
+                                },
+                                'abbreviated': {
+                                    'tue': 'Tue',
+                                    'fri': 'Fri',
+                                    'sun': 'Sun',
+                                    'sat': 'Sat',
+                                    'wed': 'Wed',
+                                    'mon': 'Mon',
+                                    'thu': 'Thu'
+                                },
+                                'narrow': {
+                                    'tue': 'T',
+                                    'fri': 'F',
+                                    'sun': 'S',
+                                    'sat': 'S',
+                                    'wed': 'W',
+                                    'mon': 'M',
+                                    'thu': 'T'
+                                },
+                                'short': {
+                                    'tue': 'Tu',
+                                    'fri': 'Fr',
+                                    'sun': 'Su',
+                                    'sat': 'Sa',
+                                    'wed': 'We',
+                                    'mon': 'Mo',
+                                    'thu': 'Th'
+                                }
+                            },
+                            'stand-alone': {
+                                'wide': {
+                                    'tue': 'Tuesday',
+                                    'fri': 'Friday',
+                                    'sun': 'Sunday',
+                                    'sat': 'Saturday',
+                                    'wed': 'Wednesday',
+                                    'mon': 'Monday',
+                                    'thu': 'Thursday'
+                                },
+                                'abbreviated': {
+                                    'tue': 'Tue',
+                                    'fri': 'Fri',
+                                    'sun': 'Sun',
+                                    'sat': 'Sat',
+                                    'wed': 'Wed',
+                                    'mon': 'Mon',
+                                    'thu': 'Thu'
+                                },
+                                'narrow': {
+                                    'tue': 'T',
+                                    'fri': 'F',
+                                    'sun': 'S',
+                                    'sat': 'S',
+                                    'wed': 'W',
+                                    'mon': 'M',
+                                    'thu': 'T'
+                                },
+                                'short': {
+                                    'tue': 'Tu',
+                                    'fri': 'Fr',
+                                    'sun': 'Su',
+                                    'sat': 'Sa',
+                                    'wed': 'We',
+                                    'mon': 'Mo',
+                                    'thu': 'Th'
+                                }
+                            }
+                        },
+                        'dayPeriods': {
+                            'format': {
+                                'wide': {
+                                    'pm': 'PM',
+                                    'am': 'AM',
+                                    'pm-alt-variant': 'p.m.',
+                                    'am-alt-variant': 'a.m.',
+                                    'noon': 'noon'
+                                },
+                                'abbreviated': {
+                                    'pm': 'PM',
+                                    'am': 'AM',
+                                    'pm-alt-variant': 'p.m.',
+                                    'am-alt-variant': 'a.m.',
+                                    'noon': 'noon'
+                                },
+                                'narrow': {
+                                    'pm': 'p',
+                                    'am': 'a',
+                                    'pm-alt-variant': 'p.m.',
+                                    'am-alt-variant': 'a.m.',
+                                    'noon': 'n'
+                                }
+                            },
+                            'stand-alone': {
+                                'wide': {
+                                    'pm': 'PM',
+                                    'am': 'AM',
+                                    'pm-alt-variant': 'p.m.',
+                                    'am-alt-variant': 'a.m.',
+                                    'noon': 'noon'
+                                },
+                                'abbreviated': {
+                                    'pm': 'PM',
+                                    'am': 'AM',
+                                    'pm-alt-variant': 'p.m.',
+                                    'am-alt-variant': 'a.m.',
+                                    'noon': 'noon'
+                                },
+                                'narrow': {
+                                    'pm': 'p',
+                                    'am': 'a',
+                                    'pm-alt-variant': 'p.m.',
+                                    'am-alt-variant': 'a.m.',
+                                    'noon': 'n'
+                                }
+                            }
+                        },
+                        'eras': {
+                            'eraNames': {
+                                '1-alt-variant': 'Common Era',
+                                '0-alt-variant': 'Before Common Era',
+                                '0': 'Before Christ',
+                                '1': 'Anno Domini'
+                            },
+                            'eraAbbr': {
+                                '1-alt-variant': 'CE',
+                                '0-alt-variant': 'BCE',
+                                '0': 'BC',
+                                '1': 'AD'
+                            },
+                            'eraNarrow': {
+                                '1-alt-variant': 'CE',
+                                '0-alt-variant': 'BCE',
+                                '0': 'B',
+                                '1': 'A'
+                            }
+                        },
+                        'dateFormats': {
+                            'full': 'EEEE, MMMM d, y',
+                            'long': 'MMMM d, y',
+                            'medium': 'MMM d, y',
+                            'short': 'M/d/yy'
+                        },
+                        'timeFormats': {
+                            'full': 'h:mm:ss a zzzz',
+                            'long': 'h:mm:ss a z',
+                            'medium': 'h:mm:ss a',
+                            'short': 'h:mm a'
+                        },
+                        'dateTimeFormats': {
+                            'full': '{1} \'at\' {0}',
+                            'appendItems': {
+                                'Minute': '{0} ({2}: {1})',
+                                'Day': '{0} ({2}: {1})',
+                                'Era': '{0} {1}',
+                                'Week': '{0} ({2}: {1})',
+                                'Day-Of-Week': '{0} {1}',
+                                'Hour': '{0} ({2}: {1})',
+                                'Year': '{0} {1}',
+                                'Month': '{0} ({2}: {1})',
+                                'Quarter': '{0} ({2}: {1})',
+                                'Second': '{0} ({2}: {1})',
+                                'Timezone': '{0} {1}'
+                            },
+                            'long': '{1} \'at\' {0}',
+                            'availableFormats': {
+                                'EHm': 'E HH:mm',
+                                'M': 'L',
+                                'd': 'd',
+                                'Ehms': 'E h:mm:ss a',
+                                'Ehm': 'E h:mm a',
+                                'Md': 'M/d',
+                                'Ed': 'd E',
+                                'Gy': 'y G',
+                                'yMd': 'M/d/y',
+                                'MMMd': 'MMM d',
+                                'MEd': 'E, M/d',
+                                'GyMMMd': 'MMM d, y G',
+                                'EHms': 'E HH:mm:ss',
+                                'hms': 'h:mm:ss a',
+                                'GyMMMEd': 'E, MMM d, y G',
+                                'h': 'h a',
+                                'GyMMM': 'MMM y G',
+                                'Hm': 'HH:mm',
+                                'H': 'HH',
+                                'yMEd': 'E, M/d/y',
+                                'MMMEd': 'E, MMM d',
+                                'hm': 'h:mm a',
+                                'Hms': 'HH:mm:ss',
+                                'yM': 'M/y',
+                                'MMM': 'LLL',
+                                'ms': 'mm:ss',
+                                'y': 'y',
+                                'yMMM': 'MMM y',
+                                'yMMMd': 'MMM d, y',
+                                'yMMMEd': 'E, MMM d, y',
+                                'yQQQ': 'QQQ y',
+                                'yQQQQ': 'QQQQ y'
+                            },
+                            'medium': '{1}, {0}',
+                            'short': '{1}, {0}',
+                            'intervalFormats': {
+                                'Hv': {
+                                    'H': 'HH – HH v'
+                                },
+                                'Hmv': {
+                                    'H': 'HH:mm – HH:mm v',
+                                    'm': 'HH:mm – HH:mm v'
+                                },
+                                'h': {
+                                    'a': 'h a – h a',
+                                    'h': 'h – h a'
+                                },
+                                'M': {
+                                    'M': 'M – M'
+                                },
+                                'intervalFormatFallback': '{0} – {1}',
+                                'Md': {
+                                    'd': 'M/d – M/d',
+                                    'M': 'M/d – M/d'
+                                },
+                                'yMMMEd': {
+                                    'd': 'E, MMM d – E, MMM d, y',
+                                    'M': 'E, MMM d – E, MMM d, y',
+                                    'y': 'E, MMM d, y – E, MMM d, y'
+                                },
+                                'd': {
+                                    'd': 'd – d'
+                                },
+                                'MMMEd': {
+                                    'd': 'E, MMM d – E, MMM d',
+                                    'M': 'E, MMM d – E, MMM d'
+                                },
+                                'hm': {
+                                    'a': 'h:mm a – h:mm a',
+                                    'm': 'h:mm – h:mm a',
+                                    'h': 'h:mm – h:mm a'
+                                },
+                                'yMEd': {
+                                    'd': 'E, M/d/y – E, M/d/y',
+                                    'M': 'E, M/d/y – E, M/d/y',
+                                    'y': 'E, M/d/y – E, M/d/y'
+                                },
+                                'hmv': {
+                                    'a': 'h:mm a – h:mm a v',
+                                    'm': 'h:mm – h:mm a v',
+                                    'h': 'h:mm – h:mm a v'
+                                },
+                                'yMMM': {
+                                    'M': 'MMM – MMM y',
+                                    'y': 'MMM y – MMM y'
+                                },
+                                'H': {
+                                    'H': 'HH – HH'
+                                },
+                                'Hm': {
+                                    'H': 'HH:mm – HH:mm',
+                                    'm': 'HH:mm – HH:mm'
+                                },
+                                'MMM': {
+                                    'M': 'MMM – MMM'
+                                },
+                                'yM': {
+                                    'M': 'M/y – M/y',
+                                    'y': 'M/y – M/y'
+                                },
+                                'yMMMd': {
+                                    'd': 'MMM d – d, y',
+                                    'M': 'MMM d – MMM d, y',
+                                    'y': 'MMM d, y – MMM d, y'
+                                },
+                                'hv': {
+                                    'a': 'h a – h a v',
+                                    'h': 'h – h a v'
+                                },
+                                'yMd': {
+                                    'd': 'M/d/y – M/d/y',
+                                    'M': 'M/d/y – M/d/y',
+                                    'y': 'M/d/y – M/d/y'
+                                },
+                                'MMMd': {
+                                    'd': 'MMM d – d',
+                                    'M': 'MMM d – MMM d'
+                                },
+                                'MEd': {
+                                    'd': 'E, M/d – E, M/d',
+                                    'M': 'E, M/d – E, M/d'
+                                },
+                                'y': {
+                                    'y': 'y – y'
+                                },
+                                'yMMMM': {
+                                    'M': 'MMMM – MMMM y',
+                                    'y': 'MMMM y – MMMM y'
+                                }
+                            }
+                        }
+                    }
+                }
+            });
 
             arrayForEach([BigNumber, BigNumber.prototype], function (element) {
                 arrayForEach(objectKeys(element), function (key) {
