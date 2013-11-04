@@ -27,7 +27,7 @@
             astrodateString = astrodateFunc.toLowerCase();
 
         if ('object' === typeof module && null !== module && 'object' === typeof module.exports && null !== module.exports) {
-            definition(require('../astrodate'));
+            module.exports = definition(require('../astrodate'));
         } else if ('function' === typeof define && 'object' === typeof define.amd && null !== define.amd) {
             define([astrodateString], definition);
         } else {
