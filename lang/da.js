@@ -35,7 +35,7 @@
         }
 
         /*global */
-    }((function (AstroDate) {
+    }(function (AstroDate) {
         AstroDate.lang('da', {
             'calendars': {
                 'gregorian': {
@@ -471,7 +471,7 @@
                 }
             }
         });
-    }())));
+    }));
 }((function (thisContext) {
     'use strict';
     /*global window, global, self */

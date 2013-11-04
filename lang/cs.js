@@ -35,7 +35,7 @@
         }
 
         /*global */
-    }((function (AstroDate) {
+    }(function (AstroDate) {
         AstroDate.lang('cs', {
             'calendars': {
                 'gregorian': {
@@ -469,7 +469,7 @@
                 }
             }
         });
-    }())));
+    }));
 }((function (thisContext) {
     'use strict';
     /*global window, global, self */

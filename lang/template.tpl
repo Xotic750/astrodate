@@ -35,9 +35,9 @@
         }
 
         /*global */
-    }((function (AstroDate) {
+    }(function (AstroDate) {
         AstroDate.lang("<%= id %>", <%= data %>);
-    }())));
+    }));
 }((function (thisContext) {
     "use strict";
     /*global window, global, self */

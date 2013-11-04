@@ -44,8 +44,7 @@
                 config: projectConfig
             });
 
-            // name should be removed when local tests are completed
-            define(name, [bigNumberString], definition);
+            define([bigNumberString], definition);
         } else {
             thisContext[name] = definition(thisContext[bigNumberFunc]);
         }
