@@ -4563,7 +4563,10 @@
                         var struct,
                             string,
                             offset,
-                            year;
+                            year,
+                            date,
+                            time,
+                            zone;
 
                         if (this.isValid()) {
                             if (this.isJulian()) {
@@ -4585,31 +4588,19 @@
                             }
 
                             year += struct.year.abs().padLeadingZero(4);
-                            string += languages[lang].calendars.gregorian.dateFormats.full.replace('EEEE', this.dayOfWeek('wide', lang)).replace(/\bd\b/, struct.day.toString()).replace('MMMM', this.monthOfYear('wide', lang)).replace(/\by\b/, year);
-                            /*
-                            string += this.dayOfWeek(type, lang) + ' ';
-                            string += struct.day.toString() + ' ';
-                            string += this.monthOfYear(type, lang) + ' ';
-                            if (struct.year.lt(0)) {
-                                string += '-';
-                            }
-
-                            string += struct.year.abs().padLeadingZero(4) + ' ';
-                            */
-                            string += struct.hour.padLeadingZero(2) + ':';
-                            string += struct.minute.padLeadingZero(2) + ':';
-                            string += struct.second.padLeadingZero(2) + '.';
-                            string += struct.millisecond.padLeadingZero(3) + ' ';
+                            date = languages[lang].calendars.gregorian.dateFormats.full.replace('EEEE', this.dayOfWeek('wide', lang)).replace(/\bd\b/, struct.day.toString()).replace('MMMM', this.monthOfYear('wide', lang)).replace(/\by\b/, year);
                             offset = struct.offset;
+                            zone = 'GMT';
                             if (offset.lte(0)) {
-                                string += '+';
+                                zone += '+';
                             } else {
-                                string += '-';
+                                zone += '-';
                             }
 
                             offset = fractionToTime(offset.abs(), 'minute');
-                            string += offset.hour.padLeadingZero(2);
-                            string += offset.minute.padLeadingZero(2);
+                            zone += offset.hour.padLeadingZero(2) + ':' + offset.minute.padLeadingZero(2);
+                            time = languages[lang].calendars.gregorian.timeFormats.full.replace('HH', struct.hour.padLeadingZero(2)).replace('mm', struct.minute.padLeadingZero(2)).replace('ss', struct.second.padLeadingZero(2)).replace('zzzz', zone);
+                            string = languages[lang].calendars.gregorian.dateTimeFormats.replace('{0}', time).replace('{1}', date);
                         } else {
                             string = 'Invalid Date';
                         }
