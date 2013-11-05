@@ -4566,7 +4566,11 @@
                             year,
                             date,
                             time,
-                            zone;
+                            zone,
+                            hour1,
+                            hour2,
+                            hour3,
+                            dayPeriod;
 
                         if (this.isValid()) {
                             if (this.isJulian()) {
@@ -4598,8 +4602,18 @@
                             }
 
                             offset = fractionToTime(offset.abs(), 'minute');
+                            if (struct.hour.gt(12)) {
+                                hour1 = struct.hour.minus(12).toString();
+                                dayPeriod = languages[lang].calendars.gregorian.dayPeriods.format.wide.pm;
+                            } else {
+                                hour1 = struct.hour.toString();
+                                dayPeriod = languages[lang].calendars.gregorian.dayPeriods.format.wide.am;
+                            }
+
+                            hour2 = struct.hour.toString();
+                            hour3 = struct.hour.padLeadingZero(2);
                             zone += offset.hour.padLeadingZero(2) + ':' + offset.minute.padLeadingZero(2);
-                            time = languages[lang].calendars.gregorian.timeFormats.full.replace('HH', struct.hour.padLeadingZero(2)).replace('mm', struct.minute.padLeadingZero(2)).replace('ss', struct.second.padLeadingZero(2)).replace('zzzz', zone);
+                            time = languages[lang].calendars.gregorian.timeFormats.full.replace('h', hour1).replace('H', hour2).replace('HH', hour3).replace('mm', struct.minute.padLeadingZero(2)).replace('ss', struct.second.padLeadingZero(2)).replace('a', dayPeriod).replace('zzzz', zone);
                             string = languages[lang].calendars.gregorian.dateTimeFormats.full.replace('{0}', time).replace('{1}', date);
                         } else {
                             string = 'Invalid Date';
