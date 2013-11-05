@@ -4559,10 +4559,11 @@
                 },
 
                 toString: {
-                    value: function (type, lang) {
+                    value: function (lang) {
                         var struct,
                             string,
-                            offset;
+                            offset,
+                            year;
 
                         if (this.isValid()) {
                             if (this.isJulian()) {
@@ -4574,6 +4575,18 @@
                             }
 
                             struct = getCorrectStruct(this, struct);
+                            year = '';
+                            if (struct.year.lt(0)) {
+                                year += '-';
+                            }
+
+                            if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
+                                lang = 'en';
+                            }
+
+                            year += struct.year.abs().padLeadingZero(4);
+                            string += languages[lang].calendars.gregorian.dateFormats.full.replace('EEEE', this.dayOfWeek('wide', lang)).replace(/\bd\b/, struct.day.toString()).replace('MMMM', this.monthOfYear('wide', lang)).replace(/\by\b/, year);
+                            /*
                             string += this.dayOfWeek(type, lang) + ' ';
                             string += struct.day.toString() + ' ';
                             string += this.monthOfYear(type, lang) + ' ';
@@ -4582,6 +4595,7 @@
                             }
 
                             string += struct.year.abs().padLeadingZero(4) + ' ';
+                            */
                             string += struct.hour.padLeadingZero(2) + ':';
                             string += struct.minute.padLeadingZero(2) + ':';
                             string += struct.second.padLeadingZero(2) + '.';
