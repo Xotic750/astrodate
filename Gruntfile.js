@@ -28,7 +28,7 @@
                 all: ['test/**/*.js']
             },
             jshint: {
-                all: ['Gruntfile.js', '<%= pkg.name %>.js', 'test/**/*.js'],
+                all: ['Gruntfile.js', '<%= pkg.name %>.js', 'test/**/*.js', 'lang/**/*.js'],
                 options: {
                     'bitwise': true,
                     'camelcase': true,
@@ -59,7 +59,8 @@
                 test: {
                     files: [
                         '<%= pkg.name %>.js',
-                        'test/**/*.js'
+                        'test/**/*.js',
+                        'lang/**/*.js'
                     ],
                     tasks: ['nodeunit']
                 },
