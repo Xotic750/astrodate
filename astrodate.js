@@ -4873,7 +4873,7 @@
                 },
 
                 monthOfYear: {
-                    value: function (lang, type) {
+                    value: function (type, lang) {
                         var val,
                             struct;
 
@@ -4891,7 +4891,7 @@
                 },
 
                 dayOfWeek: {
-                    value: function (lang, type) {
+                    value: function (type, lang) {
                         var val;
 
                         if (this.isValid()) {
