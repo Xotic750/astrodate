@@ -4592,7 +4592,7 @@
                             }
 
                             year += struct.year.abs().padLeadingZero(4);
-                            date = languages[lang].calendars.gregorian.dateFormats.full.replace('EEEE', this.dayOfWeek('wide', lang)).replace(/\bd\b/, struct.day.toString()).replace('MMMM', this.monthOfYear('wide', lang)).replace(/\by\b/, year);
+                            date = languages[lang].calendars.gregorian.dateFormats.full.replace(/\bEEEE\b/, this.dayOfWeek('wide', lang)).replace(/\bd\b/, struct.day.toString()).replace(/\bMMMM\b/, this.monthOfYear('wide', lang)).replace(/\by\b/, year);
                             offset = struct.offset;
                             zone = 'GMT';
                             if (offset.lte(0)) {
@@ -4613,7 +4613,7 @@
                             hour2 = struct.hour.toString();
                             hour3 = struct.hour.padLeadingZero(2);
                             zone += offset.hour.padLeadingZero(2) + ':' + offset.minute.padLeadingZero(2);
-                            time = languages[lang].calendars.gregorian.timeFormats.full.replace('h', hour1).replace('H', hour2).replace('HH', hour3).replace('mm', struct.minute.padLeadingZero(2)).replace('ss', struct.second.padLeadingZero(2)).replace('a', dayPeriod).replace('zzzz', zone);
+                            time = languages[lang].calendars.gregorian.timeFormats.full.replace(/\bh\b/, hour1).replace(/\bH\b/, hour2).replace(/\bHH\b/, hour3).replace(/\bmm\b/, struct.minute.padLeadingZero(2)).replace(/\bss\b/, struct.second.padLeadingZero(2)).replace(/\ba\b/, dayPeriod).replace(/\bzzzz\b/, zone);
                             string = languages[lang].calendars.gregorian.dateTimeFormats.full.replace('{0}', time).replace('{1}', date);
                         } else {
                             string = 'Invalid Date';
