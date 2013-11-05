@@ -2443,11 +2443,11 @@
             }
 
             function dayOfWeek(jd, type, lang) {
-                if (!isString(lang) || isEmptyString(lang)) {
+                if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
                     lang = 'en';
                 }
 
-                if (!isString(type) || isEmptyString(type)) {
+                if (!isString(type) || isEmptyString(type) || !arrayContains(objectKeys(languages[lang].calendars.gregorian.days.format), type)) {
                     type = 'wide';
                 }
 
@@ -2455,11 +2455,11 @@
             }
 
             function monthName(struct, type, lang) {
-                if (!isString(lang) || isEmptyString(lang)) {
+                if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
                     lang = 'en';
                 }
 
-                if (!isString(type) || isEmptyString(type)) {
+                if (!isString(type) || isEmptyString(type) || !arrayContains(objectKeys(languages[lang].calendars.gregorian.months.format), type)) {
                     type = 'wide';
                 }
 
