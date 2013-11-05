@@ -4559,24 +4559,12 @@
                 },
 
                 toString: {
-                    value: function () {
-                        var args,
-                            shortName,
-                            lang,
-                            struct,
+                    value: function (type, lang) {
+                        var struct,
                             string,
                             offset;
 
                         if (this.isValid()) {
-                            args = arguments;
-                            if (isBoolean(args[0])) {
-                                shortName = args[0];
-                                lang = args[1];
-                            } else if (isString(args[0])) {
-                                shortName = true;
-                                lang = args[0];
-                            }
-
                             if (this.isJulian()) {
                                 struct = jdToJulian(this.julianDay());
                                 string = '[OS] ';
@@ -4586,9 +4574,9 @@
                             }
 
                             struct = getCorrectStruct(this, struct);
-                            string += this.dayOfWeek(shortName, lang) + ' ';
+                            string += this.dayOfWeek(type, lang) + ' ';
                             string += struct.day.toString() + ' ';
-                            string += this.monthOfYear(shortName, lang) + ' ';
+                            string += this.monthOfYear(type, lang) + ' ';
                             if (struct.year.lt(0)) {
                                 string += '-';
                             }
@@ -4617,23 +4605,11 @@
                 },
 
                 toDateString: {
-                    value: function () {
-                        var args,
-                            shortName,
-                            lang,
-                            struct,
+                    value: function (type, lang) {
+                        var struct,
                             string;
 
                         if (this.isValid()) {
-                            args = arguments;
-                            if (isBoolean(args[0])) {
-                                shortName = args[0];
-                                lang = args[1];
-                            } else if (isString(args[0])) {
-                                shortName = true;
-                                lang = args[0];
-                            }
-
                             if (this.isJulian()) {
                                 struct = jdToJulian(this.julianDay());
                                 string = '[OS] ';
@@ -4643,9 +4619,9 @@
                             }
 
                             struct = getCorrectStruct(this, struct);
-                            string += this.dayOfWeek(shortName, lang) + ' ';
+                            string += this.dayOfWeek(type, lang) + ' ';
                             string += struct.day.toString() + ' ';
-                            string += this.monthOfYear(shortName, lang) + ' ';
+                            string += this.monthOfYear(type, lang) + ' ';
                             if (struct.year.lt(0)) {
                                 string += '-';
                             }
