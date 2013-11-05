@@ -4600,7 +4600,7 @@
                             offset = fractionToTime(offset.abs(), 'minute');
                             zone += offset.hour.padLeadingZero(2) + ':' + offset.minute.padLeadingZero(2);
                             time = languages[lang].calendars.gregorian.timeFormats.full.replace('HH', struct.hour.padLeadingZero(2)).replace('mm', struct.minute.padLeadingZero(2)).replace('ss', struct.second.padLeadingZero(2)).replace('zzzz', zone);
-                            string = languages[lang].calendars.gregorian.dateTimeFormats.replace('{0}', time).replace('{1}', date);
+                            string = languages[lang].calendars.gregorian.dateTimeFormats.full.replace('{0}', time).replace('{1}', date);
                         } else {
                             string = 'Invalid Date';
                         }
