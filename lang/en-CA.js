@@ -1,4 +1,7 @@
-/* AstroDate Language: en-CA
+/* AstroDate
+ * Language: en-CA
+ * ca-gregorian: 24r9061
+ * timeZoneNames: 24r9061
  *
  * home: https://github.com/Xotic750/astrodate
  *

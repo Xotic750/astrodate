@@ -1,4 +1,7 @@
-/* AstroDate Language: <%= id %>
+/* AstroDate
+ * Language: <%= id %>
+ * ca-gregorian: <%= version1 %>
+ * timeZoneNames: <%= version2 %>
  *
  * home: https://github.com/Xotic750/astrodate
  *

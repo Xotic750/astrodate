@@ -1,4 +1,7 @@
-/* AstroDate Language: sk
+/* AstroDate
+ * Language: sk
+ * ca-gregorian: 24r9287
+ * timeZoneNames: 24r9287
  *
  * home: https://github.com/Xotic750/astrodate
  *

@@ -1,4 +1,7 @@
-/* AstroDate Language: en-HK
+/* AstroDate
+ * Language: en-HK
+ * ca-gregorian: 24r9280
+ * timeZoneNames: 24r9280
  *
  * home: https://github.com/Xotic750/astrodate
  *
