@@ -45,7 +45,7 @@
                 config: projectConfig
             });
 
-            define([bigNumberString, 'lang/en'], definition);
+            define([bigNumberString], definition);
         } else {
             thisContext[name] = definition(thisContext[bigNumberFunc]);
         }
