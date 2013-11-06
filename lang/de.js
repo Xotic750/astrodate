@@ -27,7 +27,7 @@
             astrodateString = astrodateFunc.toLowerCase();
 
         if ('object' === typeof module && null !== module && 'object' === typeof module.exports && null !== module.exports) {
-            module.exports = definition(require('../astrodate'));
+            definition(require('../astrodate'));
         } else if ('function' === typeof define && 'object' === typeof define.amd && null !== define.amd) {
             define([astrodateString], definition);
         } else {
@@ -37,302 +37,2592 @@
         /*global */
     }(function (AstroDate) {
         AstroDate.lang('de', {
-            'calendars': {
-                'gregorian': {
-                    'quarters': {
-                        'format': {
-                            'wide': {
-                                '1': '1. Quartal',
-                                '2': '2. Quartal',
-                                '3': '3. Quartal',
-                                '4': '4. Quartal'
-                            },
-                            'abbreviated': {
-                                '1': 'Q1',
-                                '2': 'Q2',
-                                '3': 'Q3',
-                                '4': 'Q4'
-                            },
-                            'narrow': {
-                                '1': '1',
-                                '2': '2',
-                                '3': '3',
-                                '4': '4'
-                            }
+            'timeZoneNames': {
+                'zone': {
+                    'Pacific': {
+                        'Saipan': {
+                            'exemplarCity': 'Saipan'
                         },
-                        'stand-alone': {
-                            'wide': {
-                                '1': '1. Quartal',
-                                '2': '2. Quartal',
-                                '3': '3. Quartal',
-                                '4': '4. Quartal'
-                            },
-                            'abbreviated': {
-                                '1': 'Q1',
-                                '2': 'Q2',
-                                '3': 'Q3',
-                                '4': 'Q4'
-                            },
-                            'narrow': {
-                                '1': '1',
-                                '2': '2',
-                                '3': '3',
-                                '4': '4'
-                            }
+                        'Rarotonga': {
+                            'exemplarCity': 'Rarotonga'
+                        },
+                        'Port_Moresby': {
+                            'exemplarCity': 'Port Moresby'
+                        },
+                        'Ponape': {
+                            'exemplarCity': 'Pohnpei'
+                        },
+                        'Pitcairn': {
+                            'exemplarCity': 'Pitcairn'
+                        },
+                        'Palau': {
+                            'exemplarCity': 'Palau'
+                        },
+                        'Auckland': {
+                            'exemplarCity': 'Auckland'
+                        },
+                        'Apia': {
+                            'exemplarCity': 'Apia'
+                        },
+                        'Funafuti': {
+                            'exemplarCity': 'Funafuti'
+                        },
+                        'Galapagos': {
+                            'exemplarCity': 'Galapagos'
+                        },
+                        'Gambier': {
+                            'exemplarCity': 'Gambier'
+                        },
+                        'Guadalcanal': {
+                            'exemplarCity': 'Guadalcanal'
+                        },
+                        'Guam': {
+                            'exemplarCity': 'Guam'
+                        },
+                        'Honolulu': {
+                            'exemplarCity': 'Honolulu'
+                        },
+                        'Wallis': {
+                            'exemplarCity': 'Wallis'
+                        },
+                        'Wake': {
+                            'exemplarCity': 'Wake'
+                        },
+                        'Truk': {
+                            'exemplarCity': 'Chuuk'
+                        },
+                        'Tongatapu': {
+                            'exemplarCity': 'Tongatapu'
+                        },
+                        'Tarawa': {
+                            'exemplarCity': 'Tarawa'
+                        },
+                        'Tahiti': {
+                            'exemplarCity': 'Tahiti'
+                        },
+                        'Kiritimati': {
+                            'exemplarCity': 'Kiritimati'
+                        },
+                        'Johnston': {
+                            'exemplarCity': 'Johnston'
+                        },
+                        'Chatham': {
+                            'exemplarCity': 'Chatham'
+                        },
+                        'Easter': {
+                            'exemplarCity': 'Osterinsel'
+                        },
+                        'Efate': {
+                            'exemplarCity': 'Efate'
+                        },
+                        'Enderbury': {
+                            'exemplarCity': 'Enderbury'
+                        },
+                        'Fakaofo': {
+                            'exemplarCity': 'Fakaofo'
+                        },
+                        'Fiji': {
+                            'exemplarCity': 'Fidschi'
+                        },
+                        'Kosrae': {
+                            'exemplarCity': 'Kosrae'
+                        },
+                        'Kwajalein': {
+                            'exemplarCity': 'Kwajalein'
+                        },
+                        'Majuro': {
+                            'exemplarCity': 'Majuro'
+                        },
+                        'Marquesas': {
+                            'exemplarCity': 'Marquesas'
+                        },
+                        'Midway': {
+                            'exemplarCity': 'Midway'
+                        },
+                        'Nauru': {
+                            'exemplarCity': 'Nauru'
+                        },
+                        'Niue': {
+                            'exemplarCity': 'Niue'
+                        },
+                        'Norfolk': {
+                            'exemplarCity': 'Norfolk'
+                        },
+                        'Noumea': {
+                            'exemplarCity': 'Noumea'
+                        },
+                        'Pago_Pago': {
+                            'exemplarCity': 'Pago Pago'
                         }
                     },
+                    'Australia': {
+                        'Lindeman': {
+                            'exemplarCity': 'Lindeman'
+                        },
+                        'Hobart': {
+                            'exemplarCity': 'Hobart'
+                        },
+                        'Eucla': {
+                            'exemplarCity': 'Eucla'
+                        },
+                        'Darwin': {
+                            'exemplarCity': 'Darwin'
+                        },
+                        'Sydney': {
+                            'exemplarCity': 'Sydney'
+                        },
+                        'Perth': {
+                            'exemplarCity': 'Perth'
+                        },
+                        'Melbourne': {
+                            'exemplarCity': 'Melbourne'
+                        },
+                        'Lord_Howe': {
+                            'exemplarCity': 'Lord Howe'
+                        },
+                        'Adelaide': {
+                            'exemplarCity': 'Adelaide'
+                        },
+                        'Brisbane': {
+                            'exemplarCity': 'Brisbane'
+                        },
+                        'Broken_Hill': {
+                            'exemplarCity': 'Broken Hill'
+                        },
+                        'Currie': {
+                            'exemplarCity': 'Currie'
+                        }
+                    },
+                    'Indian': {
+                        'Maldives': {
+                            'exemplarCity': 'Malediven'
+                        },
+                        'Mahe': {
+                            'exemplarCity': 'Mahe'
+                        },
+                        'Kerguelen': {
+                            'exemplarCity': 'Kerguelen'
+                        },
+                        'Reunion': {
+                            'exemplarCity': 'Réunion'
+                        },
+                        'Mayotte': {
+                            'exemplarCity': 'Mayotte'
+                        },
+                        'Mauritius': {
+                            'exemplarCity': 'Mauritius'
+                        },
+                        'Antananarivo': {
+                            'exemplarCity': 'Antananarivo'
+                        },
+                        'Chagos': {
+                            'exemplarCity': 'Chagos'
+                        },
+                        'Christmas': {
+                            'exemplarCity': 'Weihnachts-Inseln'
+                        },
+                        'Cocos': {
+                            'exemplarCity': 'Cocos'
+                        },
+                        'Comoro': {
+                            'exemplarCity': 'Komoren'
+                        }
+                    },
+                    'Etc': {
+                        'GMT-11': {
+                            'exemplarCity': 'GMT-11'
+                        },
+                        'GMT-10': {
+                            'exemplarCity': 'GMT-10'
+                        },
+                        'GMT-1': {
+                            'exemplarCity': 'GMT-1'
+                        },
+                        'GMT9': {
+                            'exemplarCity': 'GMT+9'
+                        },
+                        'GMT8': {
+                            'exemplarCity': 'GMT+8'
+                        },
+                        'GMT7': {
+                            'exemplarCity': 'GMT+7'
+                        },
+                        'GMT6': {
+                            'exemplarCity': 'GMT+6'
+                        },
+                        'GMT5': {
+                            'exemplarCity': 'GMT+5'
+                        },
+                        'GMT': {
+                            'exemplarCity': 'GMT'
+                        },
+                        'GMT1': {
+                            'exemplarCity': 'GMT+1'
+                        },
+                        'GMT10': {
+                            'exemplarCity': 'GMT+10'
+                        },
+                        'GMT11': {
+                            'exemplarCity': 'GMT+11'
+                        },
+                        'GMT-3': {
+                            'exemplarCity': 'GMT-3'
+                        },
+                        'GMT-4': {
+                            'exemplarCity': 'GMT-4'
+                        },
+                        'GMT-5': {
+                            'exemplarCity': 'GMT-5'
+                        },
+                        'GMT-6': {
+                            'exemplarCity': 'GMT-6'
+                        },
+                        'GMT-7': {
+                            'exemplarCity': 'GMT-7'
+                        },
+                        'GMT-8': {
+                            'exemplarCity': 'GMT-8'
+                        },
+                        'GMT-9': {
+                            'exemplarCity': 'GMT-9'
+                        },
+                        'Unknown': {
+                            'exemplarCity': 'Unbekannt'
+                        },
+                        'GMT-2': {
+                            'exemplarCity': 'GMT-2'
+                        },
+                        'GMT-14': {
+                            'exemplarCity': 'GMT-14'
+                        },
+                        'GMT-13': {
+                            'exemplarCity': 'GMT-13'
+                        },
+                        'GMT-12': {
+                            'exemplarCity': 'GMT-12'
+                        },
+                        'GMT4': {
+                            'exemplarCity': 'GMT+4'
+                        },
+                        'GMT3': {
+                            'exemplarCity': 'GMT+3'
+                        },
+                        'GMT2': {
+                            'exemplarCity': 'GMT+2'
+                        },
+                        'GMT12': {
+                            'exemplarCity': 'GMT+12'
+                        }
+                    },
+                    'Antarctica': {
+                        'Rothera': {
+                            'exemplarCity': 'Rothera'
+                        },
+                        'Palmer': {
+                            'exemplarCity': 'Palmer'
+                        },
+                        'McMurdo': {
+                            'exemplarCity': 'McMurdo'
+                        },
+                        'Vostok': {
+                            'exemplarCity': 'Wostok'
+                        },
+                        'Syowa': {
+                            'exemplarCity': 'Syowa'
+                        },
+                        'South_Pole': {
+                            'exemplarCity': 'Südpol'
+                        },
+                        'Casey': {
+                            'exemplarCity': 'Casey'
+                        },
+                        'Davis': {
+                            'exemplarCity': 'Davis'
+                        },
+                        'DumontDUrville': {
+                            'exemplarCity': 'Dumont D\'Urville'
+                        },
+                        'Macquarie': {
+                            'exemplarCity': 'Macquarie'
+                        },
+                        'Mawson': {
+                            'exemplarCity': 'Mawson'
+                        }
+                    },
+                    'Arctic': {
+                        'Longyearbyen': {
+                            'exemplarCity': 'Longyearbyen'
+                        }
+                    },
+                    'America': {
+                        'Toronto': {
+                            'exemplarCity': 'Toronto'
+                        },
+                        'Tijuana': {
+                            'exemplarCity': 'Tijuana'
+                        },
+                        'Thunder_Bay': {
+                            'exemplarCity': 'Thunder Bay'
+                        },
+                        'Thule': {
+                            'exemplarCity': 'Thule'
+                        },
+                        'Tegucigalpa': {
+                            'exemplarCity': 'Tegucigalpa'
+                        },
+                        'Swift_Current': {
+                            'exemplarCity': 'Swift Current'
+                        },
+                        'Chicago': {
+                            'exemplarCity': 'Chicago'
+                        },
+                        'Cayman': {
+                            'exemplarCity': 'Kaimaninseln'
+                        },
+                        'Cayenne': {
+                            'exemplarCity': 'Cayenne'
+                        },
+                        'Catamarca': {
+                            'exemplarCity': 'Catamarca'
+                        },
+                        'Caracas': {
+                            'exemplarCity': 'Caracas'
+                        },
+                        'Cancun': {
+                            'exemplarCity': 'Cancun'
+                        },
+                        'Campo_Grande': {
+                            'exemplarCity': 'Campo Grande'
+                        },
+                        'Cambridge_Bay': {
+                            'exemplarCity': 'Cambridge Bay'
+                        },
+                        'Buenos_Aires': {
+                            'exemplarCity': 'Buenos Aires'
+                        },
+                        'Boise': {
+                            'exemplarCity': 'Boise'
+                        },
+                        'Asuncion': {
+                            'exemplarCity': 'Asunción'
+                        },
+                        'Aruba': {
+                            'exemplarCity': 'Aruba'
+                        },
+                        'Argentina': {
+                            'Rio_Gallegos': {
+                                'exemplarCity': 'Rio Gallegos'
+                            },
+                            'San_Juan': {
+                                'exemplarCity': 'San Juan'
+                            },
+                            'Ushuaia': {
+                                'exemplarCity': 'Ushuaia'
+                            },
+                            'La_Rioja': {
+                                'exemplarCity': 'La Rioja'
+                            },
+                            'San_Luis': {
+                                'exemplarCity': 'San Luis'
+                            },
+                            'Salta': {
+                                'exemplarCity': 'Salta'
+                            },
+                            'Tucuman': {
+                                'exemplarCity': 'Tucuman'
+                            }
+                        },
+                        'Araguaina': {
+                            'exemplarCity': 'Araguaina'
+                        },
+                        'Antigua': {
+                            'exemplarCity': 'Antigua'
+                        },
+                        'Anguilla': {
+                            'exemplarCity': 'Anguilla'
+                        },
+                        'Anchorage': {
+                            'exemplarCity': 'Anchorage'
+                        },
+                        'Adak': {
+                            'exemplarCity': 'Adak'
+                        },
+                        'Bahia': {
+                            'exemplarCity': 'Bahia'
+                        },
+                        'Bahia_Banderas': {
+                            'exemplarCity': 'Bahia Banderas'
+                        },
+                        'Barbados': {
+                            'exemplarCity': 'Barbados'
+                        },
+                        'Belem': {
+                            'exemplarCity': 'Belem'
+                        },
+                        'Belize': {
+                            'exemplarCity': 'Belize'
+                        },
+                        'Blanc-Sablon': {
+                            'exemplarCity': 'Blanc-Sablon'
+                        },
+                        'Boa_Vista': {
+                            'exemplarCity': 'Boa Vista'
+                        },
+                        'Bogota': {
+                            'exemplarCity': 'Bogotá'
+                        },
+                        'Curacao': {
+                            'exemplarCity': 'Curaçao'
+                        },
+                        'Danmarkshavn': {
+                            'exemplarCity': 'Danmarkshavn'
+                        },
+                        'Dawson': {
+                            'exemplarCity': 'Dawson'
+                        },
+                        'Dawson_Creek': {
+                            'exemplarCity': 'Dawson Creek'
+                        },
+                        'Denver': {
+                            'exemplarCity': 'Denver'
+                        },
+                        'Detroit': {
+                            'exemplarCity': 'Detroit'
+                        },
+                        'Hermosillo': {
+                            'exemplarCity': 'Hermosillo'
+                        },
+                        'Indiana': {
+                            'Vincennes': {
+                                'exemplarCity': 'Vincennes, Indiana'
+                            },
+                            'Petersburg': {
+                                'exemplarCity': 'Petersburg, Indiana'
+                            },
+                            'Tell_City': {
+                                'exemplarCity': 'Tell City, Indiana'
+                            },
+                            'Knox': {
+                                'exemplarCity': 'Knox, Indiana'
+                            },
+                            'Winamac': {
+                                'exemplarCity': 'Winamac, Indiana'
+                            },
+                            'Marengo': {
+                                'exemplarCity': 'Marengo, Indiana'
+                            },
+                            'Vevay': {
+                                'exemplarCity': 'Vevay, Indiana'
+                            }
+                        },
+                        'Indianapolis': {
+                            'exemplarCity': 'Indianapolis'
+                        },
+                        'Inuvik': {
+                            'exemplarCity': 'Inuvik'
+                        },
+                        'Iqaluit': {
+                            'exemplarCity': 'Iqaluit'
+                        },
+                        'Jamaica': {
+                            'exemplarCity': 'Jamaika'
+                        },
+                        'Jujuy': {
+                            'exemplarCity': 'Jujuy'
+                        },
+                        'Juneau': {
+                            'exemplarCity': 'Juneau'
+                        },
+                        'Yellowknife': {
+                            'exemplarCity': 'Yellowknife'
+                        },
+                        'Yakutat': {
+                            'exemplarCity': 'Yakutat'
+                        },
+                        'Winnipeg': {
+                            'exemplarCity': 'Winnipeg'
+                        },
+                        'Whitehorse': {
+                            'exemplarCity': 'Whitehorse'
+                        },
+                        'Vancouver': {
+                            'exemplarCity': 'Vancouver'
+                        },
+                        'Tortola': {
+                            'exemplarCity': 'Tortola'
+                        },
+                        'Kralendijk': {
+                            'exemplarCity': 'Kralendijk'
+                        },
+                        'Kentucky': {
+                            'Monticello': {
+                                'exemplarCity': 'Monticello, Kentucky'
+                            }
+                        },
+                        'Havana': {
+                            'exemplarCity': 'Havanna'
+                        },
+                        'Halifax': {
+                            'exemplarCity': 'Halifax'
+                        },
+                        'Guyana': {
+                            'exemplarCity': 'Guyana'
+                        },
+                        'Guayaquil': {
+                            'exemplarCity': 'Guayaquil'
+                        },
+                        'Guatemala': {
+                            'exemplarCity': 'Guatemala'
+                        },
+                        'Guadeloupe': {
+                            'exemplarCity': 'Guadeloupe'
+                        },
+                        'Grenada': {
+                            'exemplarCity': 'Grenada'
+                        },
+                        'Grand_Turk': {
+                            'exemplarCity': 'Grand Turk'
+                        },
+                        'Goose_Bay': {
+                            'exemplarCity': 'Goose Bay'
+                        },
+                        'Godthab': {
+                            'exemplarCity': 'Nuuk'
+                        },
+                        'Glace_Bay': {
+                            'exemplarCity': 'Glace Bay'
+                        },
+                        'Fortaleza': {
+                            'exemplarCity': 'Fortaleza'
+                        },
+                        'El_Salvador': {
+                            'exemplarCity': 'Salvador'
+                        },
+                        'Eirunepe': {
+                            'exemplarCity': 'Eirunepe'
+                        },
+                        'Edmonton': {
+                            'exemplarCity': 'Edmonton'
+                        },
+                        'Dominica': {
+                            'exemplarCity': 'Dominica'
+                        },
+                        'Chihuahua': {
+                            'exemplarCity': 'Chihuahua'
+                        },
+                        'Coral_Harbour': {
+                            'exemplarCity': 'Atikokan'
+                        },
+                        'Cordoba': {
+                            'exemplarCity': 'Cordoba'
+                        },
+                        'Costa_Rica': {
+                            'exemplarCity': 'Costa Rica'
+                        },
+                        'Creston': {
+                            'exemplarCity': 'Creston'
+                        },
+                        'Cuiaba': {
+                            'exemplarCity': 'Cuiaba'
+                        },
+                        'La_Paz': {
+                            'exemplarCity': 'La Paz'
+                        },
+                        'Lima': {
+                            'exemplarCity': 'Lima'
+                        },
+                        'Los_Angeles': {
+                            'exemplarCity': 'Los Angeles'
+                        },
+                        'Louisville': {
+                            'exemplarCity': 'Louisville'
+                        },
+                        'Lower_Princes': {
+                            'exemplarCity': 'Lower Prince\'s Quarter'
+                        },
+                        'Maceio': {
+                            'exemplarCity': 'Maceio'
+                        },
+                        'Managua': {
+                            'exemplarCity': 'Managua'
+                        },
+                        'Manaus': {
+                            'exemplarCity': 'Manaus'
+                        },
+                        'Marigot': {
+                            'exemplarCity': 'Marigot'
+                        },
+                        'Martinique': {
+                            'exemplarCity': 'Martinique'
+                        },
+                        'Matamoros': {
+                            'exemplarCity': 'Matamoros'
+                        },
+                        'Mazatlan': {
+                            'exemplarCity': 'Mazatlan'
+                        },
+                        'Mendoza': {
+                            'exemplarCity': 'Mendoza'
+                        },
+                        'Menominee': {
+                            'exemplarCity': 'Menominee'
+                        },
+                        'Merida': {
+                            'exemplarCity': 'Merida'
+                        },
+                        'Metlakatla': {
+                            'exemplarCity': 'Metlakatla'
+                        },
+                        'Mexico_City': {
+                            'exemplarCity': 'Mexiko-Stadt'
+                        },
+                        'Miquelon': {
+                            'exemplarCity': 'Miquelon'
+                        },
+                        'Moncton': {
+                            'exemplarCity': 'Moncton'
+                        },
+                        'Monterrey': {
+                            'exemplarCity': 'Monterrey'
+                        },
+                        'Montevideo': {
+                            'exemplarCity': 'Montevideo'
+                        },
+                        'Montreal': {
+                            'exemplarCity': 'Montreal'
+                        },
+                        'Montserrat': {
+                            'exemplarCity': 'Montserrat'
+                        },
+                        'Nassau': {
+                            'exemplarCity': 'Nassau'
+                        },
+                        'New_York': {
+                            'exemplarCity': 'New York'
+                        },
+                        'Nipigon': {
+                            'exemplarCity': 'Nipigon'
+                        },
+                        'Nome': {
+                            'exemplarCity': 'Nome'
+                        },
+                        'Noronha': {
+                            'exemplarCity': 'Noronha'
+                        },
+                        'North_Dakota': {
+                            'Beulah': {
+                                'exemplarCity': 'Beulah, North Dakota'
+                            },
+                            'New_Salem': {
+                                'exemplarCity': 'New Salem, North Dakota'
+                            },
+                            'Center': {
+                                'exemplarCity': 'Center, North Dakota'
+                            }
+                        },
+                        'Ojinaga': {
+                            'exemplarCity': 'Ojinaga'
+                        },
+                        'Panama': {
+                            'exemplarCity': 'Panama'
+                        },
+                        'Pangnirtung': {
+                            'exemplarCity': 'Pangnirtung'
+                        },
+                        'Paramaribo': {
+                            'exemplarCity': 'Paramaribo'
+                        },
+                        'Phoenix': {
+                            'exemplarCity': 'Phoenix'
+                        },
+                        'Port-au-Prince': {
+                            'exemplarCity': 'Port-au-Prince'
+                        },
+                        'Port_of_Spain': {
+                            'exemplarCity': 'Port-of-Spain'
+                        },
+                        'Porto_Velho': {
+                            'exemplarCity': 'Porto Velho'
+                        },
+                        'Puerto_Rico': {
+                            'exemplarCity': 'Puerto Rico'
+                        },
+                        'Rainy_River': {
+                            'exemplarCity': 'Rainy River'
+                        },
+                        'Rankin_Inlet': {
+                            'exemplarCity': 'Rankin Inlet'
+                        },
+                        'Recife': {
+                            'exemplarCity': 'Recife'
+                        },
+                        'Regina': {
+                            'exemplarCity': 'Regina'
+                        },
+                        'Resolute': {
+                            'exemplarCity': 'Resolute'
+                        },
+                        'Rio_Branco': {
+                            'exemplarCity': 'Rio Branco'
+                        },
+                        'Santa_Isabel': {
+                            'exemplarCity': 'Santa Isabel'
+                        },
+                        'Santarem': {
+                            'exemplarCity': 'Santarem'
+                        },
+                        'Santiago': {
+                            'exemplarCity': 'Santiago'
+                        },
+                        'Santo_Domingo': {
+                            'exemplarCity': 'Santo Domingo'
+                        },
+                        'Sao_Paulo': {
+                            'exemplarCity': 'São Paulo'
+                        },
+                        'Scoresbysund': {
+                            'exemplarCity': 'Ittoqqortoormiit'
+                        },
+                        'Shiprock': {
+                            'exemplarCity': 'Shiprock'
+                        },
+                        'Sitka': {
+                            'exemplarCity': 'Sitka'
+                        },
+                        'St_Barthelemy': {
+                            'exemplarCity': 'Saint-Barthélemy'
+                        },
+                        'St_Johns': {
+                            'exemplarCity': 'St. John\'s'
+                        },
+                        'St_Kitts': {
+                            'exemplarCity': 'St. Kitts'
+                        },
+                        'St_Lucia': {
+                            'exemplarCity': 'St. Lucia'
+                        },
+                        'St_Thomas': {
+                            'exemplarCity': 'St. Thomas'
+                        },
+                        'St_Vincent': {
+                            'exemplarCity': 'St. Vincent'
+                        }
+                    },
+                    'Atlantic': {
+                        'South_Georgia': {
+                            'exemplarCity': 'Süd-Georgien'
+                        },
+                        'Reykjavik': {
+                            'exemplarCity': 'Reyk­ja­vík'
+                        },
+                        'Stanley': {
+                            'exemplarCity': 'Stanley'
+                        },
+                        'St_Helena': {
+                            'exemplarCity': 'St. Helena'
+                        },
+                        'Azores': {
+                            'exemplarCity': 'Azoren'
+                        },
+                        'Bermuda': {
+                            'exemplarCity': 'Bermudas'
+                        },
+                        'Canary': {
+                            'exemplarCity': 'Kanaren'
+                        },
+                        'Cape_Verde': {
+                            'exemplarCity': 'Kap Verde'
+                        },
+                        'Faeroe': {
+                            'exemplarCity': 'Färöer'
+                        },
+                        'Madeira': {
+                            'exemplarCity': 'Madeira'
+                        }
+                    },
+                    'Europe': {
+                        'Oslo': {
+                            'exemplarCity': 'Oslo'
+                        },
+                        'Moscow': {
+                            'exemplarCity': 'Moskau'
+                        },
+                        'Monaco': {
+                            'exemplarCity': 'Monaco'
+                        },
+                        'Minsk': {
+                            'exemplarCity': 'Minsk'
+                        },
+                        'Mariehamn': {
+                            'exemplarCity': 'Mariehamn'
+                        },
+                        'Malta': {
+                            'exemplarCity': 'Malta'
+                        },
+                        'Madrid': {
+                            'exemplarCity': 'Madrid'
+                        },
+                        'Luxembourg': {
+                            'exemplarCity': 'Luxemburg'
+                        },
+                        'London': {
+                            'long': {
+                                'daylight': 'Britische Sommerzeit'
+                            },
+                            'exemplarCity': 'London'
+                        },
+                        'Ljubljana': {
+                            'exemplarCity': 'Ljubljana'
+                        },
+                        'Lisbon': {
+                            'exemplarCity': 'Lissabon'
+                        },
+                        'Kiev': {
+                            'exemplarCity': 'Kiew'
+                        },
+                        'Kaliningrad': {
+                            'exemplarCity': 'Kaliningrad'
+                        },
+                        'Jersey': {
+                            'exemplarCity': 'Jersey'
+                        },
+                        'Istanbul': {
+                            'exemplarCity': 'Istanbul'
+                        },
+                        'Isle_of_Man': {
+                            'exemplarCity': 'Isle of Man'
+                        },
+                        'Bucharest': {
+                            'exemplarCity': 'Bukarest'
+                        },
+                        'Brussels': {
+                            'exemplarCity': 'Brüssel'
+                        },
+                        'Bratislava': {
+                            'exemplarCity': 'Bratislava'
+                        },
+                        'Berlin': {
+                            'exemplarCity': 'Berlin'
+                        },
+                        'Belgrade': {
+                            'exemplarCity': 'Belgrad'
+                        },
+                        'Athens': {
+                            'exemplarCity': 'Athen'
+                        },
+                        'Andorra': {
+                            'exemplarCity': 'Andorra'
+                        },
+                        'Amsterdam': {
+                            'exemplarCity': 'Amsterdam'
+                        },
+                        'Simferopol': {
+                            'exemplarCity': 'Simferopol'
+                        },
+                        'Skopje': {
+                            'exemplarCity': 'Skopje'
+                        },
+                        'Sofia': {
+                            'exemplarCity': 'Sofia'
+                        },
+                        'Stockholm': {
+                            'exemplarCity': 'Stockholm'
+                        },
+                        'Tallinn': {
+                            'exemplarCity': 'Tallinn'
+                        },
+                        'Tirane': {
+                            'exemplarCity': 'Tirana'
+                        },
+                        'Uzhgorod': {
+                            'exemplarCity': 'Uschgorod'
+                        },
+                        'Vaduz': {
+                            'exemplarCity': 'Vaduz'
+                        },
+                        'Zurich': {
+                            'exemplarCity': 'Zürich'
+                        },
+                        'Zaporozhye': {
+                            'exemplarCity': 'Saporischja'
+                        },
+                        'Zagreb': {
+                            'exemplarCity': 'Zagreb'
+                        },
+                        'Warsaw': {
+                            'exemplarCity': 'Warschau'
+                        },
+                        'Volgograd': {
+                            'exemplarCity': 'Wolgograd'
+                        },
+                        'Vilnius': {
+                            'exemplarCity': 'Wilna'
+                        },
+                        'Vienna': {
+                            'exemplarCity': 'Wien'
+                        },
+                        'Vatican': {
+                            'exemplarCity': 'Vatikan'
+                        },
+                        'Sarajevo': {
+                            'exemplarCity': 'Sarajevo'
+                        },
+                        'San_Marino': {
+                            'exemplarCity': 'San Marino'
+                        },
+                        'Samara': {
+                            'exemplarCity': 'Samara'
+                        },
+                        'Rome': {
+                            'exemplarCity': 'Rom'
+                        },
+                        'Riga': {
+                            'exemplarCity': 'Riga'
+                        },
+                        'Prague': {
+                            'exemplarCity': 'Prag'
+                        },
+                        'Podgorica': {
+                            'exemplarCity': 'Podgorica'
+                        },
+                        'Paris': {
+                            'exemplarCity': 'Paris'
+                        },
+                        'Helsinki': {
+                            'exemplarCity': 'Helsinki'
+                        },
+                        'Guernsey': {
+                            'exemplarCity': 'Guernsey'
+                        },
+                        'Gibraltar': {
+                            'exemplarCity': 'Gibraltar'
+                        },
+                        'Dublin': {
+                            'long': {
+                                'daylight': 'Irische Sommerzeit'
+                            },
+                            'exemplarCity': 'Dublin'
+                        },
+                        'Copenhagen': {
+                            'exemplarCity': 'Kopenhagen'
+                        },
+                        'Chisinau': {
+                            'exemplarCity': 'Kischinau'
+                        },
+                        'Busingen': {
+                            'exemplarCity': 'Büsingen'
+                        },
+                        'Budapest': {
+                            'exemplarCity': 'Budapest'
+                        }
+                    },
+                    'Africa': {
+                        'Libreville': {
+                            'exemplarCity': 'Libreville'
+                        },
+                        'Lagos': {
+                            'exemplarCity': 'Lagos'
+                        },
+                        'Kinshasa': {
+                            'exemplarCity': 'Kinshasa'
+                        },
+                        'Kigali': {
+                            'exemplarCity': 'Kigali'
+                        },
+                        'Khartoum': {
+                            'exemplarCity': 'Khartum'
+                        },
+                        'Kampala': {
+                            'exemplarCity': 'Kampala'
+                        },
+                        'Juba': {
+                            'exemplarCity': 'Juba'
+                        },
+                        'Johannesburg': {
+                            'exemplarCity': 'Johannesburg'
+                        },
+                        'Harare': {
+                            'exemplarCity': 'Harare'
+                        },
+                        'Gaborone': {
+                            'exemplarCity': 'Gaborone'
+                        },
+                        'Freetown': {
+                            'exemplarCity': 'Freetown'
+                        },
+                        'El_Aaiun': {
+                            'exemplarCity': 'El Aaiún'
+                        },
+                        'Douala': {
+                            'exemplarCity': 'Douala'
+                        },
+                        'Djibouti': {
+                            'exemplarCity': 'Dschibuti'
+                        },
+                        'Dar_es_Salaam': {
+                            'exemplarCity': 'Daressalam'
+                        },
+                        'Dakar': {
+                            'exemplarCity': 'Dakar'
+                        },
+                        'Banjul': {
+                            'exemplarCity': 'Banjul'
+                        },
+                        'Bangui': {
+                            'exemplarCity': 'Bangui'
+                        },
+                        'Bamako': {
+                            'exemplarCity': 'Bamako'
+                        },
+                        'Asmera': {
+                            'exemplarCity': 'Asmara'
+                        },
+                        'Malabo': {
+                            'exemplarCity': 'Malabo'
+                        },
+                        'Maputo': {
+                            'exemplarCity': 'Maputo'
+                        },
+                        'Maseru': {
+                            'exemplarCity': 'Maseru'
+                        },
+                        'Mbabane': {
+                            'exemplarCity': 'Mbabane'
+                        },
+                        'Mogadishu': {
+                            'exemplarCity': 'Mogadischu'
+                        },
+                        'Monrovia': {
+                            'exemplarCity': 'Monrovia'
+                        },
+                        'Nairobi': {
+                            'exemplarCity': 'Nairobi'
+                        },
+                        'Ndjamena': {
+                            'exemplarCity': 'Ndjamena'
+                        },
+                        'Windhoek': {
+                            'exemplarCity': 'Windhoek'
+                        },
+                        'Tunis': {
+                            'exemplarCity': 'Tunis'
+                        },
+                        'Tripoli': {
+                            'exemplarCity': 'Tripolis'
+                        },
+                        'Sao_Tome': {
+                            'exemplarCity': 'São Tomé'
+                        },
+                        'Porto-Novo': {
+                            'exemplarCity': 'Porto Novo'
+                        },
+                        'Ouagadougou': {
+                            'exemplarCity': 'Wagadugu'
+                        },
+                        'Nouakchott': {
+                            'exemplarCity': 'Nouakchott'
+                        },
+                        'Niamey': {
+                            'exemplarCity': 'Niamey'
+                        },
+                        'Lusaka': {
+                            'exemplarCity': 'Lusaka'
+                        },
+                        'Lubumbashi': {
+                            'exemplarCity': 'Lubumbashi'
+                        },
+                        'Luanda': {
+                            'exemplarCity': 'Luanda'
+                        },
+                        'Lome': {
+                            'exemplarCity': 'Lomé'
+                        },
+                        'Conakry': {
+                            'exemplarCity': 'Conakry'
+                        },
+                        'Ceuta': {
+                            'exemplarCity': 'Ceuta'
+                        },
+                        'Casablanca': {
+                            'exemplarCity': 'Casablanca'
+                        },
+                        'Cairo': {
+                            'exemplarCity': 'Kairo'
+                        },
+                        'Bujumbura': {
+                            'exemplarCity': 'Bujumbura'
+                        },
+                        'Brazzaville': {
+                            'exemplarCity': 'Brazzaville'
+                        },
+                        'Blantyre': {
+                            'exemplarCity': 'Blantyre'
+                        },
+                        'Bissau': {
+                            'exemplarCity': 'Bissau'
+                        },
+                        'Abidjan': {
+                            'exemplarCity': 'Abidjan'
+                        },
+                        'Accra': {
+                            'exemplarCity': 'Akkra'
+                        },
+                        'Addis_Ababa': {
+                            'exemplarCity': 'Addis Abeba'
+                        },
+                        'Algiers': {
+                            'exemplarCity': 'Algier'
+                        }
+                    },
+                    'Asia': {
+                        'Shanghai': {
+                            'exemplarCity': 'Shanghai'
+                        },
+                        'Seoul': {
+                            'exemplarCity': 'Seoul'
+                        },
+                        'Samarkand': {
+                            'exemplarCity': 'Samarkand'
+                        },
+                        'Sakhalin': {
+                            'exemplarCity': 'Sachalin'
+                        },
+                        'Saigon': {
+                            'exemplarCity': 'Ho-Chi-Minh-Stadt'
+                        },
+                        'Riyadh': {
+                            'exemplarCity': 'Riad'
+                        },
+                        'Rangoon': {
+                            'exemplarCity': 'Rangoon'
+                        },
+                        'Qyzylorda': {
+                            'exemplarCity': 'Qyzylorda'
+                        },
+                        'Qatar': {
+                            'exemplarCity': 'Katar'
+                        },
+                        'Pyongyang': {
+                            'exemplarCity': 'Pjöngjang'
+                        },
+                        'Pontianak': {
+                            'exemplarCity': 'Pontianak'
+                        },
+                        'Phnom_Penh': {
+                            'exemplarCity': 'Phnom Penh'
+                        },
+                        'Oral': {
+                            'exemplarCity': 'Oral'
+                        },
+                        'Omsk': {
+                            'exemplarCity': 'Omsk'
+                        },
+                        'Novosibirsk': {
+                            'exemplarCity': 'Nowosibirsk'
+                        },
+                        'Baghdad': {
+                            'exemplarCity': 'Bagdad'
+                        },
+                        'Chongqing': {
+                            'exemplarCity': 'Chongqing'
+                        },
+                        'Colombo': {
+                            'exemplarCity': 'Colombo'
+                        },
+                        'Damascus': {
+                            'exemplarCity': 'Damaskus'
+                        },
+                        'Dhaka': {
+                            'exemplarCity': 'Dhaka'
+                        },
+                        'Dili': {
+                            'exemplarCity': 'Dili'
+                        },
+                        'Dubai': {
+                            'exemplarCity': 'Dubai'
+                        },
+                        'Dushanbe': {
+                            'exemplarCity': 'Duschanbe'
+                        },
+                        'Gaza': {
+                            'exemplarCity': 'Gaza'
+                        },
+                        'Harbin': {
+                            'exemplarCity': 'Harbin'
+                        },
+                        'Hebron': {
+                            'exemplarCity': 'Hebron'
+                        },
+                        'Hong_Kong': {
+                            'exemplarCity': 'Hongkong'
+                        },
+                        'Hovd': {
+                            'exemplarCity': 'Hovd'
+                        },
+                        'Irkutsk': {
+                            'exemplarCity': 'Irkutsk'
+                        },
+                        'Jakarta': {
+                            'exemplarCity': 'Jakarta'
+                        },
+                        'Jayapura': {
+                            'exemplarCity': 'Port Numbay'
+                        },
+                        'Ulaanbaatar': {
+                            'exemplarCity': 'Ulaanbaatar'
+                        },
+                        'Urumqi': {
+                            'exemplarCity': 'Urumqi'
+                        },
+                        'Ust-Nera': {
+                            'exemplarCity': 'Ust-Nera'
+                        },
+                        'Vientiane': {
+                            'exemplarCity': 'Vientiane'
+                        },
+                        'Vladivostok': {
+                            'exemplarCity': 'Wladiwostok'
+                        },
+                        'Yakutsk': {
+                            'exemplarCity': 'Jakutsk'
+                        },
+                        'Yekaterinburg': {
+                            'exemplarCity': 'Jekaterinburg'
+                        },
+                        'Yerevan': {
+                            'exemplarCity': 'Erivan'
+                        },
+                        'Tokyo': {
+                            'exemplarCity': 'Tokio'
+                        },
+                        'Thimphu': {
+                            'exemplarCity': 'Thimphu'
+                        },
+                        'Tehran': {
+                            'exemplarCity': 'Teheran'
+                        },
+                        'Tbilisi': {
+                            'exemplarCity': 'Tiflis'
+                        },
+                        'Tashkent': {
+                            'exemplarCity': 'Taschkent'
+                        },
+                        'Taipei': {
+                            'exemplarCity': 'Taipeh'
+                        },
+                        'Singapore': {
+                            'exemplarCity': 'Singapur'
+                        },
+                        'Jerusalem': {
+                            'exemplarCity': 'Jerusalem'
+                        },
+                        'Ashgabat': {
+                            'exemplarCity': 'Ashgabat'
+                        },
+                        'Aqtobe': {
+                            'exemplarCity': 'Aktobe'
+                        },
+                        'Aqtau': {
+                            'exemplarCity': 'Aqtau'
+                        },
+                        'Anadyr': {
+                            'exemplarCity': 'Anadyr'
+                        },
+                        'Amman': {
+                            'exemplarCity': 'Amman'
+                        },
+                        'Almaty': {
+                            'exemplarCity': 'Almaty'
+                        },
+                        'Aden': {
+                            'exemplarCity': 'Aden'
+                        },
+                        'Bahrain': {
+                            'exemplarCity': 'Bahrain'
+                        },
+                        'Baku': {
+                            'exemplarCity': 'Baku'
+                        },
+                        'Bangkok': {
+                            'exemplarCity': 'Bangkok'
+                        },
+                        'Beirut': {
+                            'exemplarCity': 'Beirut'
+                        },
+                        'Bishkek': {
+                            'exemplarCity': 'Bischkek'
+                        },
+                        'Brunei': {
+                            'exemplarCity': 'Brunei'
+                        },
+                        'Calcutta': {
+                            'exemplarCity': 'Kolkata'
+                        },
+                        'Choibalsan': {
+                            'exemplarCity': 'Choibalsan'
+                        },
+                        'Kabul': {
+                            'exemplarCity': 'Kabul'
+                        },
+                        'Kamchatka': {
+                            'exemplarCity': 'Kamtschatka'
+                        },
+                        'Karachi': {
+                            'exemplarCity': 'Karachi'
+                        },
+                        'Kashgar': {
+                            'exemplarCity': 'Kaxgar'
+                        },
+                        'Katmandu': {
+                            'exemplarCity': 'Kathmandu'
+                        },
+                        'Khandyga': {
+                            'exemplarCity': 'Khandyga'
+                        },
+                        'Krasnoyarsk': {
+                            'exemplarCity': 'Krasnojarsk'
+                        },
+                        'Kuala_Lumpur': {
+                            'exemplarCity': 'Kuala Lumpur'
+                        },
+                        'Kuching': {
+                            'exemplarCity': 'Kuching'
+                        },
+                        'Kuwait': {
+                            'exemplarCity': 'Kuwait'
+                        },
+                        'Macau': {
+                            'exemplarCity': 'Macao'
+                        },
+                        'Magadan': {
+                            'exemplarCity': 'Magadan'
+                        },
+                        'Makassar': {
+                            'exemplarCity': 'Makassar'
+                        },
+                        'Manila': {
+                            'exemplarCity': 'Manila'
+                        },
+                        'Muscat': {
+                            'exemplarCity': 'Muskat'
+                        },
+                        'Nicosia': {
+                            'exemplarCity': 'Nikosia'
+                        },
+                        'Novokuznetsk': {
+                            'exemplarCity': 'Nowokuznetsk'
+                        }
+                    }
+                },
+                'metazone': {
+                    'Tahiti': {
+                        'long': {
+                            'standard': 'Tahiti-Zeit'
+                        }
+                    },
+                    'Syowa': {
+                        'long': {
+                            'standard': 'Syowa-Zeit'
+                        }
+                    },
+                    'Suriname': {
+                        'long': {
+                            'standard': 'Suriname-Zeit'
+                        }
+                    },
+                    'South_Georgia': {
+                        'long': {
+                            'standard': 'Südgeorgische Zeit'
+                        }
+                    },
+                    'Solomon': {
+                        'long': {
+                            'standard': 'Salomoninseln-Zeit'
+                        }
+                    },
+                    'Singapore': {
+                        'long': {
+                            'standard': 'Singapur-Zeit'
+                        }
+                    },
+                    'Seychelles': {
+                        'long': {
+                            'standard': 'Seychellen-Zeit'
+                        }
+                    },
+                    'Samoa': {
+                        'long': {
+                            'generic': 'Samoa-Zeit',
+                            'standard': 'Samoa-Normalzeit',
+                            'daylight': 'Samoa-Sommerzeit'
+                        }
+                    },
+                    'Samara': {
+                        'long': {
+                            'generic': 'Samara-Zeit',
+                            'standard': 'Samara-Normalzeit',
+                            'daylight': 'Samara-Sommerzeit'
+                        }
+                    },
+                    'Sakhalin': {
+                        'long': {
+                            'generic': 'Sakhalin-Zeit',
+                            'standard': 'Sakhalin-Normalzeit',
+                            'daylight': 'Sakhalin-Sommerzeit'
+                        }
+                    },
+                    'Rothera': {
+                        'long': {
+                            'standard': 'Rothera-Zeit'
+                        }
+                    },
+                    'Reunion': {
+                        'long': {
+                            'standard': 'Réunion-Zeit'
+                        }
+                    },
+                    'Ponape': {
+                        'long': {
+                            'standard': 'Ponape-Zeit'
+                        }
+                    },
+                    'Pitcairn': {
+                        'long': {
+                            'standard': 'Pitcairninseln-Zeit'
+                        }
+                    },
+                    'Pierre_Miquelon': {
+                        'long': {
+                            'generic': 'Saint-Pierre-und-Miquelon-Zeit',
+                            'standard': 'Saint-Pierre-und-Miquelon-Normalzeit',
+                            'daylight': 'Saint-Pierre-und-Miquelon-Sommerzeit'
+                        }
+                    },
+                    'Phoenix_Islands': {
+                        'long': {
+                            'standard': 'Phoenixinseln-Zeit'
+                        }
+                    },
+                    'Philippines': {
+                        'long': {
+                            'generic': 'Philippinische Zeit',
+                            'standard': 'Philippinische Normalzeit',
+                            'daylight': 'Philippinische Sommerzeit'
+                        }
+                    },
+                    'Peru': {
+                        'long': {
+                            'generic': 'Peruanische Zeit',
+                            'standard': 'Peruanische Normalzeit',
+                            'daylight': 'Peruanische Sommerzeit'
+                        }
+                    },
+                    'Africa_Western': {
+                        'long': {
+                            'generic': 'Westafrikanische Zeit',
+                            'standard': 'Westafrikanische Normalzeit',
+                            'daylight': 'Westafrikanische Sommerzeit'
+                        }
+                    },
+                    'Africa_Southern': {
+                        'long': {
+                            'standard': 'Südafrikanische Zeit'
+                        }
+                    },
+                    'Africa_Eastern': {
+                        'long': {
+                            'standard': 'Ostafrikanische Zeit'
+                        }
+                    },
+                    'Africa_Central': {
+                        'long': {
+                            'standard': 'Zentralafrikanische Zeit'
+                        }
+                    },
+                    'Afghanistan': {
+                        'long': {
+                            'standard': 'Afghanistan-Zeit'
+                        }
+                    },
+                    'Acre': {
+                        'long': {
+                            'generic': 'Acre-Zeit',
+                            'standard': 'Acre-Normalzeit',
+                            'daylight': 'Acre-Sommerzeit'
+                        }
+                    },
+                    'Amazon': {
+                        'long': {
+                            'generic': 'Amazonas-Zeit',
+                            'standard': 'Amazonas-Normalzeit',
+                            'daylight': 'Amazonas-Sommerzeit'
+                        }
+                    },
+                    'America_Central': {
+                        'long': {
+                            'generic': 'Nordamerikanische Inlandzeit',
+                            'standard': 'Nordamerikanische Inland-Normalzeit',
+                            'daylight': 'Nordamerikanische Inland-Sommerzeit'
+                        }
+                    },
+                    'America_Eastern': {
+                        'long': {
+                            'generic': 'Nordamerikanische Ostküstenzeit',
+                            'standard': 'Nordamerikanische Ostküsten-Normalzeit',
+                            'daylight': 'Nordamerikanische Ostküsten-Sommerzeit'
+                        }
+                    },
+                    'America_Mountain': {
+                        'long': {
+                            'generic': 'Rocky Mountain Zeit',
+                            'standard': 'Rocky Mountain-Normalzeit',
+                            'daylight': 'Rocky Mountain Sommerzeit'
+                        }
+                    },
+                    'America_Pacific': {
+                        'long': {
+                            'generic': 'Nordamerikanische Westküstenzeit',
+                            'standard': 'Nordamerikanische Westküsten-Normalzeit',
+                            'daylight': 'Nordamerikanische Westküsten-Sommerzeit'
+                        }
+                    },
+                    'Anadyr': {
+                        'long': {
+                            'generic': 'Anadyr Zeit',
+                            'standard': 'Anadyr Normalzeit',
+                            'daylight': 'Anadyr Sommerzeit'
+                        }
+                    },
+                    'Arabian': {
+                        'long': {
+                            'generic': 'Arabische Zeit',
+                            'standard': 'Arabische Normalzeit',
+                            'daylight': 'Arabische Sommerzeit'
+                        }
+                    },
+                    'Argentina': {
+                        'long': {
+                            'generic': 'Argentinische Zeit',
+                            'standard': 'Argentinische Normalzeit',
+                            'daylight': 'Argentinische Sommerzeit'
+                        }
+                    },
+                    'Chatham': {
+                        'long': {
+                            'generic': 'Chatham-Zeit',
+                            'standard': 'Chatham-Normalzeit',
+                            'daylight': 'Chatham-Sommerzeit'
+                        }
+                    },
+                    'Chile': {
+                        'long': {
+                            'generic': 'Chilenische Zeit',
+                            'standard': 'Chilenische Normalzeit',
+                            'daylight': 'Chilenische Sommerzeit'
+                        }
+                    },
+                    'China': {
+                        'long': {
+                            'generic': 'Chinesische Zeit',
+                            'standard': 'Chinesische Normalzeit',
+                            'daylight': 'Chinesische Sommerzeit'
+                        }
+                    },
+                    'Choibalsan': {
+                        'long': {
+                            'generic': 'Choibalsan-Zeit',
+                            'standard': 'Choibalsan-Normalzeit',
+                            'daylight': 'Choibalsan-Sommerzeit'
+                        }
+                    },
+                    'Christmas': {
+                        'long': {
+                            'standard': 'Weihnachtsinsel-Zeit'
+                        }
+                    },
+                    'Cocos': {
+                        'long': {
+                            'standard': 'Kokosinseln-Zeit'
+                        }
+                    },
+                    'Colombia': {
+                        'long': {
+                            'generic': 'Kolumbianische Zeit',
+                            'standard': 'Kolumbianische Normalzeit',
+                            'daylight': 'Kolumbianische Sommerzeit'
+                        }
+                    },
+                    'Cook': {
+                        'long': {
+                            'generic': 'Cookinseln-Zeit',
+                            'standard': 'Cookinseln-Normalzeit',
+                            'daylight': 'Cookinseln-Sommerzeit'
+                        }
+                    },
+                    'Cuba': {
+                        'long': {
+                            'generic': 'Kubanische Zeit',
+                            'standard': 'Kubanische Normalzeit',
+                            'daylight': 'Kubanische Sommerzeit'
+                        }
+                    },
+                    'Davis': {
+                        'long': {
+                            'standard': 'Davis-Zeit'
+                        }
+                    },
+                    'DumontDUrville': {
+                        'long': {
+                            'standard': 'Dumont-d\'Urville-Zeit'
+                        }
+                    },
+                    'East_Timor': {
+                        'long': {
+                            'standard': 'Osttimor-Zeit'
+                        }
+                    },
+                    'Easter': {
+                        'long': {
+                            'generic': 'Osterinsel-Zeit',
+                            'standard': 'Osterinsel-Normalzeit',
+                            'daylight': 'Osterinsel-Sommerzeit'
+                        }
+                    },
+                    'Ecuador': {
+                        'long': {
+                            'standard': 'Ecuadorianische Zeit'
+                        }
+                    },
+                    'Europe_Central': {
+                        'long': {
+                            'generic': 'Mitteleuropäische Zeit',
+                            'standard': 'Mitteleuropäische Normalzeit',
+                            'daylight': 'Mitteleuropäische Sommerzeit'
+                        },
+                        'short': {
+                            'generic': 'MEZ',
+                            'standard': 'MEZ',
+                            'daylight': 'MESZ'
+                        }
+                    },
+                    'Europe_Eastern': {
+                        'long': {
+                            'generic': 'Osteuropäische Zeit',
+                            'standard': 'Osteuropäische Normalzeit',
+                            'daylight': 'Osteuropäische Sommerzeit'
+                        },
+                        'short': {
+                            'generic': 'OEZ',
+                            'standard': 'OEZ',
+                            'daylight': 'OESZ'
+                        }
+                    },
+                    'Europe_Western': {
+                        'long': {
+                            'generic': 'Westeuropäische Zeit',
+                            'standard': 'Westeuropäische Normalzeit',
+                            'daylight': 'Westeuropäische Sommerzeit'
+                        },
+                        'short': {
+                            'generic': 'WEZ',
+                            'standard': 'WEZ',
+                            'daylight': 'WESZ'
+                        }
+                    },
+                    'Falkland': {
+                        'long': {
+                            'generic': 'Falklandinseln-Zeit',
+                            'standard': 'Falklandinseln-Normalzeit',
+                            'daylight': 'Falklandinseln-Sommerzeit'
+                        }
+                    },
+                    'Tokelau': {
+                        'long': {
+                            'standard': 'Tokelau-Zeit'
+                        }
+                    },
+                    'Tonga': {
+                        'long': {
+                            'generic': 'Tonganische Zeit',
+                            'standard': 'Tonganische Normalzeit',
+                            'daylight': 'Tonganische Sommerzeit'
+                        }
+                    },
+                    'Truk': {
+                        'long': {
+                            'standard': 'Chuuk-Zeit'
+                        }
+                    },
+                    'Turkmenistan': {
+                        'long': {
+                            'generic': 'Turkmenistan-Zeit',
+                            'standard': 'Turkmenistan-Normalzeit',
+                            'daylight': 'Turkmenistan-Sommerzeit'
+                        }
+                    },
+                    'Tuvalu': {
+                        'long': {
+                            'standard': 'Tuvalu-Zeit'
+                        }
+                    },
+                    'Uruguay': {
+                        'long': {
+                            'generic': 'Uruguayanische Zeit',
+                            'standard': 'Uruguyanische Normalzeit',
+                            'daylight': 'Uruguayanische Sommerzeit'
+                        }
+                    },
+                    'Uzbekistan': {
+                        'long': {
+                            'generic': 'Usbekistan-Zeit',
+                            'standard': 'Usbekistan-Normalzeit',
+                            'daylight': 'Usbekistan-Sommerzeit'
+                        }
+                    },
+                    'Vanuatu': {
+                        'long': {
+                            'generic': 'Vanuatu-Zeit',
+                            'standard': 'Vanuatu-Normalzeit',
+                            'daylight': 'Vanuatu-Sommerzeit'
+                        }
+                    },
+                    'Yekaterinburg': {
+                        'long': {
+                            'generic': 'Jekaterinburg-Zeit',
+                            'standard': 'Jekaterinburg-Normalzeit',
+                            'daylight': 'Jekaterinburg-Sommerzeit'
+                        }
+                    },
+                    'Yakutsk': {
+                        'long': {
+                            'generic': 'Jakutsk-Zeit',
+                            'standard': 'Jakutsk-Normalzeit',
+                            'daylight': 'Jakutsk-Sommerzeit'
+                        }
+                    },
+                    'Wallis': {
+                        'long': {
+                            'standard': 'Wallis-und-Futuna-Zeit'
+                        }
+                    },
+                    'Wake': {
+                        'long': {
+                            'standard': 'Wake-Insel-Zeit'
+                        }
+                    },
+                    'Vostok': {
+                        'long': {
+                            'standard': 'Wostok-Zeit'
+                        }
+                    },
+                    'Volgograd': {
+                        'long': {
+                            'generic': 'Wolgograd-Zeit',
+                            'standard': 'Wolgograd-Normalzeit',
+                            'daylight': 'Wolgograd-Sommerzeit'
+                        }
+                    },
+                    'Vladivostok': {
+                        'long': {
+                            'generic': 'Wladiwostok-Zeit',
+                            'standard': 'Wladiwostok-Normalzeit',
+                            'daylight': 'Wladiwostok-Sommerzeit'
+                        }
+                    },
+                    'Venezuela': {
+                        'long': {
+                            'standard': 'Venezuela-Zeit'
+                        }
+                    },
+                    'Tajikistan': {
+                        'long': {
+                            'standard': 'Tadschikistan-Zeit'
+                        }
+                    },
+                    'Taipei': {
+                        'long': {
+                            'generic': 'Taipeh-Zeit',
+                            'standard': 'Taipeh-Normalzeit',
+                            'daylight': 'Taipeh-Sommerzeit'
+                        }
+                    },
+                    'Hawaii_Aleutian': {
+                        'long': {
+                            'generic': 'Hawaii-Aleuten-Zeit',
+                            'standard': 'Hawaii-Aleuten-Normalzeit',
+                            'daylight': 'Hawaii-Aleuten-Sommerzeit'
+                        }
+                    },
+                    'Guyana': {
+                        'long': {
+                            'standard': 'Guyana-Zeit'
+                        }
+                    },
+                    'Gulf': {
+                        'long': {
+                            'standard': 'Golf-Zeit'
+                        }
+                    },
+                    'Guam': {
+                        'long': {
+                            'standard': 'Guam-Zeit'
+                        }
+                    },
+                    'Greenland_Western': {
+                        'long': {
+                            'generic': 'Westgrönland-Zeit',
+                            'standard': 'Westgrönland-Normalzeit',
+                            'daylight': 'Westgrönland-Sommerzeit'
+                        }
+                    },
+                    'Greenland_Eastern': {
+                        'long': {
+                            'generic': 'Ostgrönland-Zeit',
+                            'standard': 'Ostgrönland-Normalzeit',
+                            'daylight': 'Ostgrönland-Sommerzeit'
+                        }
+                    },
+                    'GMT': {
+                        'long': {
+                            'standard': 'Mittlere Greenwich-Zeit'
+                        }
+                    },
+                    'Gilbert_Islands': {
+                        'long': {
+                            'standard': 'Gilbert-Inseln-Zeit'
+                        }
+                    },
+                    'Georgia': {
+                        'long': {
+                            'generic': 'Georgische Zeit',
+                            'standard': 'Georgische Normalzeit',
+                            'daylight': 'Georgische Sommerzeit'
+                        }
+                    },
+                    'Gambier': {
+                        'long': {
+                            'standard': 'Gambier-Zeit'
+                        }
+                    },
+                    'Galapagos': {
+                        'long': {
+                            'standard': 'Galapagos-Zeit'
+                        }
+                    },
+                    'French_Southern': {
+                        'long': {
+                            'standard': 'Französische Süd- und Antarktisgebiete-Zeit'
+                        }
+                    },
+                    'French_Guiana': {
+                        'long': {
+                            'standard': 'Französisch-Guayana-Zeit'
+                        }
+                    },
+                    'Fiji': {
+                        'long': {
+                            'generic': 'Fidschi-Zeit',
+                            'standard': 'Fidschi-Normalzeit',
+                            'daylight': 'Fidschi-Sommerzeit'
+                        }
+                    },
+                    'Alaska': {
+                        'long': {
+                            'generic': 'Alaska Zeit',
+                            'standard': 'Alaska-Normalzeit',
+                            'daylight': 'Alaska Sommerzeit'
+                        }
+                    },
+                    'Almaty': {
+                        'long': {
+                            'generic': 'Almaty-Zeit',
+                            'standard': 'Almaty-Normalzeit',
+                            'daylight': 'Almaty-Sommerzeit'
+                        }
+                    },
+                    'Argentina_Western': {
+                        'long': {
+                            'generic': 'Westargentinische Zeit',
+                            'standard': 'Westargentinische Normalzeit',
+                            'daylight': 'Westargentinische Sommerzeit'
+                        }
+                    },
+                    'Armenia': {
+                        'long': {
+                            'generic': 'Armenische Zeit',
+                            'standard': 'Armenische Normalzeit',
+                            'daylight': 'Armenische Sommerzeit'
+                        }
+                    },
+                    'Atlantic': {
+                        'long': {
+                            'generic': 'Atlantik-Zeit',
+                            'standard': 'Atlantik-Normalzeit',
+                            'daylight': 'Atlantik-Sommerzeit'
+                        }
+                    },
+                    'Australia_Central': {
+                        'long': {
+                            'generic': 'Zentralaustralische Zeit',
+                            'standard': 'Zentralaustralische Normalzeit',
+                            'daylight': 'Zentralaustralische Sommerzeit'
+                        }
+                    },
+                    'Australia_CentralWestern': {
+                        'long': {
+                            'generic': 'Zentral-/Westaustralische Zeit',
+                            'standard': 'Zentral-/Westaustralische Normalzeit',
+                            'daylight': 'Zentral-/Westaustralische Sommerzeit'
+                        }
+                    },
+                    'Australia_Eastern': {
+                        'long': {
+                            'generic': 'Ostaustralische Zeit',
+                            'standard': 'Ostaustralische Normalzeit',
+                            'daylight': 'Ostaustralische Sommerzeit'
+                        }
+                    },
+                    'Australia_Western': {
+                        'long': {
+                            'generic': 'Westaustralische Zeit',
+                            'standard': 'Westaustralische Normalzeit',
+                            'daylight': 'Westaustralische Sommerzeit'
+                        }
+                    },
+                    'Azerbaijan': {
+                        'long': {
+                            'generic': 'Aserbaidschanische Zeit',
+                            'standard': 'Aserbeidschanische Normalzeit',
+                            'daylight': 'Aserbaidschanische Sommerzeit'
+                        }
+                    },
+                    'Azores': {
+                        'long': {
+                            'generic': 'Azoren-Zeit',
+                            'standard': 'Azoren-Normalzeit',
+                            'daylight': 'Azoren-Sommerzeit'
+                        }
+                    },
+                    'Bangladesh': {
+                        'long': {
+                            'generic': 'Bangladesch-Zeit',
+                            'standard': 'Bangladesch-Normalzeit',
+                            'daylight': 'Bangladesch-Sommerzeit'
+                        }
+                    },
+                    'Bhutan': {
+                        'long': {
+                            'standard': 'Bhutan-Zeit'
+                        }
+                    },
+                    'Bolivia': {
+                        'long': {
+                            'standard': 'Bolivianische Zeit'
+                        }
+                    },
+                    'Brasilia': {
+                        'long': {
+                            'generic': 'Brasília-Zeit',
+                            'standard': 'Brasília-Normalzeit',
+                            'daylight': 'Brasília-Sommerzeit'
+                        }
+                    },
+                    'Brunei': {
+                        'long': {
+                            'standard': 'Brunei-Zeit'
+                        }
+                    },
+                    'Cape_Verde': {
+                        'long': {
+                            'generic': 'Kap-Verde-Zeit',
+                            'standard': 'Kap-Verde-Normalzeit',
+                            'daylight': 'Kap-Verde-Sommerzeit'
+                        }
+                    },
+                    'Chamorro': {
+                        'long': {
+                            'standard': 'Chamorro-Zeit'
+                        }
+                    },
+                    'Hong_Kong': {
+                        'long': {
+                            'generic': 'Hong-Kong-Zeit',
+                            'standard': 'Hong-Kong-Normalzeit',
+                            'daylight': 'Hong-Kong-Sommerzeit'
+                        }
+                    },
+                    'Hovd': {
+                        'long': {
+                            'generic': 'Chowd-Zeit',
+                            'standard': 'Chowd-Normalzeit',
+                            'daylight': 'Chowd-Sommerzeit'
+                        }
+                    },
+                    'India': {
+                        'long': {
+                            'standard': 'Indische Zeit'
+                        }
+                    },
+                    'Indian_Ocean': {
+                        'long': {
+                            'standard': 'Indischer Ozean-Zeit'
+                        }
+                    },
+                    'Indochina': {
+                        'long': {
+                            'standard': 'Indochina-Zeit'
+                        }
+                    },
+                    'Indonesia_Central': {
+                        'long': {
+                            'standard': 'Zentralindonesische Zeit'
+                        }
+                    },
+                    'Indonesia_Eastern': {
+                        'long': {
+                            'standard': 'Ostindonesische Zeit'
+                        }
+                    },
+                    'Indonesia_Western': {
+                        'long': {
+                            'standard': 'Westindonesische Zeit'
+                        }
+                    },
+                    'Iran': {
+                        'long': {
+                            'generic': 'Iranische Zeit',
+                            'standard': 'Iranische Normalzeit',
+                            'daylight': 'Iranische Sommerzeit'
+                        }
+                    },
+                    'Irkutsk': {
+                        'long': {
+                            'generic': 'Irkutsk-Zeit',
+                            'standard': 'Irkutsk-Normalzeit',
+                            'daylight': 'Irkutsk-Sommerzeit'
+                        }
+                    },
+                    'Israel': {
+                        'long': {
+                            'generic': 'Israelische Zeit',
+                            'standard': 'Israelische Normalzeit',
+                            'daylight': 'Israelische Sommerzeit'
+                        }
+                    },
+                    'Japan': {
+                        'long': {
+                            'generic': 'Japanische Zeit',
+                            'standard': 'Japanische Normalzeit',
+                            'daylight': 'Japanische Sommerzeit'
+                        }
+                    },
+                    'Kamchatka': {
+                        'long': {
+                            'generic': 'Kamtschatka-Zeit',
+                            'standard': 'Kamtschatka-Normalzeit',
+                            'daylight': 'Kamtschatka-Sommerzeit'
+                        }
+                    },
+                    'Kazakhstan_Eastern': {
+                        'long': {
+                            'standard': 'Ostkasachische Zeit'
+                        }
+                    },
+                    'Kazakhstan_Western': {
+                        'long': {
+                            'standard': 'Westkasachische Zeit'
+                        }
+                    },
+                    'Korea': {
+                        'long': {
+                            'generic': 'Koreanische Zeit',
+                            'standard': 'Koreanische Normalzeit',
+                            'daylight': 'Koreanische Sommerzeit'
+                        }
+                    },
+                    'Kosrae': {
+                        'long': {
+                            'standard': 'Kosrae-Zeit'
+                        }
+                    },
+                    'Krasnoyarsk': {
+                        'long': {
+                            'generic': 'Krasnoyarsk-Zeit',
+                            'standard': 'Krasnoyarsk-Normalzeit',
+                            'daylight': 'Krasnoyarsk-Sommerzeit'
+                        }
+                    },
+                    'Kyrgystan': {
+                        'long': {
+                            'standard': 'Kirgisistan-Zeit'
+                        }
+                    },
+                    'Line_Islands': {
+                        'long': {
+                            'standard': 'Linieninseln-Zeit'
+                        }
+                    },
+                    'Lord_Howe': {
+                        'long': {
+                            'generic': 'Lord-Howe-Zeit',
+                            'standard': 'Lord-Howe-Normalzeit',
+                            'daylight': 'Lord-Howe-Sommerzeit'
+                        }
+                    },
+                    'Macquarie': {
+                        'long': {
+                            'standard': 'Macquarieinsel-Zeit'
+                        }
+                    },
+                    'Magadan': {
+                        'long': {
+                            'generic': 'Magadan-Zeit',
+                            'standard': 'Magadan-Normalzeit',
+                            'daylight': 'Magadan-Sommerzeit'
+                        }
+                    },
+                    'Malaysia': {
+                        'long': {
+                            'standard': 'Malaysische Zeit'
+                        }
+                    },
+                    'Maldives': {
+                        'long': {
+                            'standard': 'Malediven-Zeit'
+                        }
+                    },
+                    'Marquesas': {
+                        'long': {
+                            'standard': 'Marquesas-Zeit'
+                        }
+                    },
+                    'Marshall_Islands': {
+                        'long': {
+                            'standard': 'Marshallinseln-Zeit'
+                        }
+                    },
+                    'Mauritius': {
+                        'long': {
+                            'generic': 'Mauritius-Zeit',
+                            'standard': 'Mauritius-Normalzeit',
+                            'daylight': 'Mauritius-Sommerzeit'
+                        }
+                    },
+                    'Mawson': {
+                        'long': {
+                            'standard': 'Mawson-Zeit'
+                        }
+                    },
+                    'Mongolia': {
+                        'long': {
+                            'generic': 'Ulaanbaatar-Zeit',
+                            'standard': 'Ulaanbaatar-Normalzeit',
+                            'daylight': 'Ulaanbaatar-Sommerzeit'
+                        }
+                    },
+                    'Moscow': {
+                        'long': {
+                            'generic': 'Moskauer Zeit',
+                            'standard': 'Moskauer Normalzeit',
+                            'daylight': 'Moskauer Sommerzeit'
+                        }
+                    },
+                    'Myanmar': {
+                        'long': {
+                            'standard': 'Myanmar-Zeit'
+                        }
+                    },
+                    'Nauru': {
+                        'long': {
+                            'standard': 'Nauru-Zeit'
+                        }
+                    },
+                    'Nepal': {
+                        'long': {
+                            'standard': 'Nepalesische Zeit'
+                        }
+                    },
+                    'New_Caledonia': {
+                        'long': {
+                            'generic': 'Neukaledonische Zeit',
+                            'standard': 'Neukaledonische Normalzeit',
+                            'daylight': 'Neukaledonische Sommerzeit'
+                        }
+                    },
+                    'New_Zealand': {
+                        'long': {
+                            'generic': 'Neuseeland-Zeit',
+                            'standard': 'Neuseeland-Normalzeit',
+                            'daylight': 'Neuseeland-Sommerzeit'
+                        }
+                    },
+                    'Newfoundland': {
+                        'long': {
+                            'generic': 'Neufundland-Zeit',
+                            'standard': 'Neufundland-Normalzeit',
+                            'daylight': 'Neufundland-Sommerzeit'
+                        }
+                    },
+                    'Niue': {
+                        'long': {
+                            'standard': 'Niue-Zeit'
+                        }
+                    },
+                    'Norfolk': {
+                        'long': {
+                            'standard': 'Norfolkinsel-Zeit'
+                        }
+                    },
+                    'Noronha': {
+                        'long': {
+                            'generic': 'Fernando de Noronha-Zeit',
+                            'standard': 'Fernando de Noronha-Normalzeit',
+                            'daylight': 'Fernando de Noronha-Sommerzeit'
+                        }
+                    },
+                    'Novosibirsk': {
+                        'long': {
+                            'generic': 'Nowosibirsk-Zeit',
+                            'standard': 'Nowosibirsk-Normalzeit',
+                            'daylight': 'Nowosibirsk-Sommerzeit'
+                        }
+                    },
+                    'Omsk': {
+                        'long': {
+                            'generic': 'Omsk-Zeit',
+                            'standard': 'Omsk-Normalzeit',
+                            'daylight': 'Omsk-Sommerzeit'
+                        }
+                    },
+                    'Pakistan': {
+                        'long': {
+                            'generic': 'Pakistanische Zeit',
+                            'standard': 'Pakistanische Normalzeit',
+                            'daylight': 'Pakistanische Sommerzeit'
+                        }
+                    },
+                    'Palau': {
+                        'long': {
+                            'standard': 'Palau-Zeit'
+                        }
+                    },
+                    'Papua_New_Guinea': {
+                        'long': {
+                            'standard': 'Papua-Neuguinea-Zeit'
+                        }
+                    },
+                    'Paraguay': {
+                        'long': {
+                            'generic': 'Paraguayanische Zeit',
+                            'standard': 'Paraguayanische Normalzeit',
+                            'daylight': 'Paraguayanische Sommerzeit'
+                        }
+                    }
+                },
+                'hourFormat': '+HH:mm;-HH:mm',
+                'gmtFormat': 'GMT{0}',
+                'gmtZeroFormat': 'GMT',
+                'regionFormat': '{0} Zeit',
+                'regionFormat-type-daylight': '{0} Sommerzeit',
+                'regionFormat-type-standard': '{0} Normalzeit',
+                'fallbackFormat': '{1} ({0})'
+            },
+            'calendars': {
+                'gregorian': {
                     'months': {
                         'format': {
-                            'wide': {
-                                '1': 'Januar',
-                                '10': 'Oktober',
-                                '2': 'Februar',
-                                '11': 'November',
-                                '3': 'März',
-                                '12': 'Dezember',
-                                '4': 'April',
-                                '5': 'Mai',
-                                '6': 'Juni',
-                                '7': 'Juli',
-                                '8': 'August',
-                                '9': 'September'
-                            },
                             'abbreviated': {
-                                '1': 'Jan.',
-                                '10': 'Okt.',
-                                '2': 'Feb.',
-                                '11': 'Nov.',
-                                '3': 'März',
-                                '12': 'Dez.',
-                                '4': 'Apr.',
-                                '5': 'Mai',
-                                '6': 'Juni',
-                                '7': 'Juli',
                                 '8': 'Aug.',
-                                '9': 'Sep.'
+                                '7': 'Juli',
+                                '6': 'Juni',
+                                '5': 'Mai',
+                                '12': 'Dez.',
+                                '11': 'Nov.',
+                                '10': 'Okt.',
+                                '9': 'Sep.',
+                                '1': 'Jan.',
+                                '2': 'Feb.',
+                                '3': 'März',
+                                '4': 'Apr.'
                             },
                             'narrow': {
-                                '1': 'J',
-                                '10': 'O',
-                                '2': 'F',
-                                '11': 'N',
-                                '3': 'M',
-                                '12': 'D',
-                                '4': 'A',
-                                '5': 'M',
-                                '6': 'J',
-                                '7': 'J',
                                 '8': 'A',
-                                '9': 'S'
+                                '7': 'J',
+                                '6': 'J',
+                                '5': 'M',
+                                '12': 'D',
+                                '11': 'N',
+                                '10': 'O',
+                                '9': 'S',
+                                '1': 'J',
+                                '2': 'F',
+                                '3': 'M',
+                                '4': 'A'
+                            },
+                            'wide': {
+                                '8': 'August',
+                                '7': 'Juli',
+                                '6': 'Juni',
+                                '5': 'Mai',
+                                '12': 'Dezember',
+                                '11': 'November',
+                                '10': 'Oktober',
+                                '9': 'September',
+                                '1': 'Januar',
+                                '2': 'Februar',
+                                '3': 'März',
+                                '4': 'April'
                             }
                         },
                         'stand-alone': {
-                            'wide': {
-                                '1': 'Januar',
-                                '10': 'Oktober',
-                                '2': 'Februar',
-                                '11': 'November',
-                                '3': 'März',
-                                '12': 'Dezember',
-                                '4': 'April',
-                                '5': 'Mai',
-                                '6': 'Juni',
-                                '7': 'Juli',
-                                '8': 'August',
-                                '9': 'September'
-                            },
                             'abbreviated': {
-                                '1': 'Jan',
-                                '10': 'Okt',
-                                '2': 'Feb',
-                                '11': 'Nov',
-                                '3': 'Mär',
-                                '12': 'Dez',
-                                '4': 'Apr',
-                                '5': 'Mai',
-                                '6': 'Jun',
-                                '7': 'Jul',
                                 '8': 'Aug',
-                                '9': 'Sep'
+                                '7': 'Jul',
+                                '6': 'Jun',
+                                '5': 'Mai',
+                                '12': 'Dez',
+                                '11': 'Nov',
+                                '10': 'Okt',
+                                '9': 'Sep',
+                                '1': 'Jan',
+                                '2': 'Feb',
+                                '3': 'Mär',
+                                '4': 'Apr'
                             },
                             'narrow': {
-                                '1': 'J',
-                                '10': 'O',
-                                '2': 'F',
-                                '11': 'N',
-                                '3': 'M',
-                                '12': 'D',
-                                '4': 'A',
-                                '5': 'M',
-                                '6': 'J',
-                                '7': 'J',
                                 '8': 'A',
-                                '9': 'S'
+                                '7': 'J',
+                                '6': 'J',
+                                '5': 'M',
+                                '12': 'D',
+                                '11': 'N',
+                                '10': 'O',
+                                '9': 'S',
+                                '1': 'J',
+                                '2': 'F',
+                                '3': 'M',
+                                '4': 'A'
+                            },
+                            'wide': {
+                                '8': 'August',
+                                '7': 'Juli',
+                                '6': 'Juni',
+                                '5': 'Mai',
+                                '12': 'Dezember',
+                                '11': 'November',
+                                '10': 'Oktober',
+                                '9': 'September',
+                                '1': 'Januar',
+                                '2': 'Februar',
+                                '3': 'März',
+                                '4': 'April'
                             }
                         }
                     },
                     'days': {
                         'format': {
-                            'wide': {
-                                'tue': 'Dienstag',
-                                'fri': 'Freitag',
-                                'sun': 'Sonntag',
-                                'sat': 'Samstag',
-                                'wed': 'Mittwoch',
-                                'mon': 'Montag',
-                                'thu': 'Donnerstag'
-                            },
                             'abbreviated': {
-                                'tue': 'Di.',
-                                'fri': 'Fr.',
                                 'sun': 'So.',
-                                'sat': 'Sa.',
-                                'wed': 'Mi.',
                                 'mon': 'Mo.',
-                                'thu': 'Do.'
+                                'tue': 'Di.',
+                                'wed': 'Mi.',
+                                'thu': 'Do.',
+                                'fri': 'Fr.',
+                                'sat': 'Sa.'
                             },
                             'narrow': {
-                                'tue': 'D',
-                                'fri': 'F',
                                 'sun': 'S',
-                                'sat': 'S',
-                                'wed': 'M',
                                 'mon': 'M',
-                                'thu': 'D'
+                                'tue': 'D',
+                                'wed': 'M',
+                                'thu': 'D',
+                                'fri': 'F',
+                                'sat': 'S'
                             },
                             'short': {
-                                'tue': 'Di.',
-                                'fri': 'Fr.',
                                 'sun': 'So.',
-                                'sat': 'Sa.',
-                                'wed': 'Mi.',
                                 'mon': 'Mo.',
-                                'thu': 'Do.'
+                                'tue': 'Di.',
+                                'wed': 'Mi.',
+                                'thu': 'Do.',
+                                'fri': 'Fr.',
+                                'sat': 'Sa.'
+                            },
+                            'wide': {
+                                'sun': 'Sonntag',
+                                'mon': 'Montag',
+                                'tue': 'Dienstag',
+                                'wed': 'Mittwoch',
+                                'thu': 'Donnerstag',
+                                'fri': 'Freitag',
+                                'sat': 'Samstag'
                             }
                         },
                         'stand-alone': {
-                            'wide': {
-                                'tue': 'Dienstag',
-                                'fri': 'Freitag',
-                                'sun': 'Sonntag',
-                                'sat': 'Samstag',
-                                'wed': 'Mittwoch',
-                                'mon': 'Montag',
-                                'thu': 'Donnerstag'
-                            },
                             'abbreviated': {
-                                'tue': 'Di',
-                                'fri': 'Fr',
                                 'sun': 'So',
-                                'sat': 'Sa',
-                                'wed': 'Mi',
                                 'mon': 'Mo',
-                                'thu': 'Do'
+                                'tue': 'Di',
+                                'wed': 'Mi',
+                                'thu': 'Do',
+                                'fri': 'Fr',
+                                'sat': 'Sa'
                             },
                             'narrow': {
-                                'tue': 'D',
-                                'fri': 'F',
                                 'sun': 'S',
-                                'sat': 'S',
-                                'wed': 'M',
                                 'mon': 'M',
-                                'thu': 'D'
+                                'tue': 'D',
+                                'wed': 'M',
+                                'thu': 'D',
+                                'fri': 'F',
+                                'sat': 'S'
                             },
                             'short': {
-                                'tue': 'Di.',
-                                'fri': 'Fr.',
                                 'sun': 'So.',
-                                'sat': 'Sa.',
-                                'wed': 'Mi.',
                                 'mon': 'Mo.',
-                                'thu': 'Do.'
+                                'tue': 'Di.',
+                                'wed': 'Mi.',
+                                'thu': 'Do.',
+                                'fri': 'Fr.',
+                                'sat': 'Sa.'
+                            },
+                            'wide': {
+                                'sun': 'Sonntag',
+                                'mon': 'Montag',
+                                'tue': 'Dienstag',
+                                'wed': 'Mittwoch',
+                                'thu': 'Donnerstag',
+                                'fri': 'Freitag',
+                                'sat': 'Samstag'
+                            }
+                        }
+                    },
+                    'quarters': {
+                        'format': {
+                            'abbreviated': {
+                                '1': 'Q1',
+                                '2': 'Q2',
+                                '3': 'Q3',
+                                '4': 'Q4'
+                            },
+                            'narrow': {
+                                '1': '1',
+                                '2': '2',
+                                '3': '3',
+                                '4': '4'
+                            },
+                            'wide': {
+                                '1': '1. Quartal',
+                                '2': '2. Quartal',
+                                '3': '3. Quartal',
+                                '4': '4. Quartal'
+                            }
+                        },
+                        'stand-alone': {
+                            'abbreviated': {
+                                '1': 'Q1',
+                                '2': 'Q2',
+                                '3': 'Q3',
+                                '4': 'Q4'
+                            },
+                            'narrow': {
+                                '1': '1',
+                                '2': '2',
+                                '3': '3',
+                                '4': '4'
+                            },
+                            'wide': {
+                                '1': '1. Quartal',
+                                '2': '2. Quartal',
+                                '3': '3. Quartal',
+                                '4': '4. Quartal'
                             }
                         }
                     },
                     'dayPeriods': {
                         'format': {
-                            'wide': {
-                                'noon': 'Mittag',
-                                'morning': 'vormittags',
-                                'earlyMorning': 'morgens',
-                                'afternoon': 'nachmittags',
-                                'evening': 'abends',
-                                'night': 'nachts',
-                                'am': 'vorm.',
-                                'pm': 'nachm.'
-                            },
                             'abbreviated': {
-                                'noon': 'Mittag',
-                                'morning': 'vormittags',
-                                'earlyMorning': 'morgens',
                                 'afternoon': 'nachmittags',
-                                'evening': 'abends',
-                                'night': 'nachts',
                                 'am': 'vorm.',
+                                'earlyMorning': 'morgens',
+                                'evening': 'abends',
+                                'morning': 'vormittags',
+                                'night': 'nachts',
+                                'noon': 'Mittag',
                                 'pm': 'nachm.'
                             },
                             'narrow': {
-                                'noon': 'Mittag',
-                                'morning': 'vormittags',
-                                'earlyMorning': 'morgens',
                                 'afternoon': 'nachmittags',
-                                'evening': 'abends',
-                                'night': 'nachts',
                                 'am': 'vorm.',
+                                'earlyMorning': 'morgens',
+                                'evening': 'abends',
+                                'morning': 'vormittags',
+                                'night': 'nachts',
+                                'noon': 'Mittag',
+                                'pm': 'nachm.'
+                            },
+                            'wide': {
+                                'afternoon': 'nachmittags',
+                                'am': 'vorm.',
+                                'earlyMorning': 'morgens',
+                                'evening': 'abends',
+                                'morning': 'vormittags',
+                                'night': 'nachts',
+                                'noon': 'Mittag',
                                 'pm': 'nachm.'
                             }
                         },
                         'stand-alone': {
-                            'wide': {
-                                'noon': 'Mittag',
-                                'morning': 'Vormittag',
-                                'earlyMorning': 'Morgen',
-                                'afternoon': 'Nachmittag',
-                                'evening': 'Abend',
-                                'night': 'Nacht',
-                                'am': 'vorm.',
-                                'pm': 'nachm.'
-                            },
                             'abbreviated': {
-                                'noon': 'Mittag',
-                                'morning': 'vormittags',
-                                'earlyMorning': 'morgens',
                                 'afternoon': 'nachmittags',
-                                'evening': 'abends',
-                                'night': 'nachts',
                                 'am': 'vorm.',
+                                'earlyMorning': 'morgens',
+                                'evening': 'abends',
+                                'morning': 'vormittags',
+                                'night': 'nachts',
+                                'noon': 'Mittag',
                                 'pm': 'nachm.'
                             },
                             'narrow': {
-                                'noon': 'Mittag',
-                                'morning': 'vormittags',
-                                'earlyMorning': 'morgens',
                                 'afternoon': 'nachmittags',
-                                'evening': 'abends',
-                                'night': 'nachts',
                                 'am': 'vorm.',
+                                'earlyMorning': 'morgens',
+                                'evening': 'abends',
+                                'morning': 'vormittags',
+                                'night': 'nachts',
+                                'noon': 'Mittag',
+                                'pm': 'nachm.'
+                            },
+                            'wide': {
+                                'afternoon': 'Nachmittag',
+                                'am': 'vorm.',
+                                'earlyMorning': 'Morgen',
+                                'evening': 'Abend',
+                                'morning': 'Vormittag',
+                                'night': 'Nacht',
+                                'noon': 'Mittag',
                                 'pm': 'nachm.'
                             }
                         }
                     },
                     'eras': {
                         'eraNames': {
-                            '1-alt-variant': 'der gewöhnlichen Zeitrechnung',
-                            '0-alt-variant': 'vor der gewöhnlichen Zeitrechnung',
                             '0': 'v. Chr.',
-                            '1': 'n. Chr.'
+                            '0-alt-variant': 'vor der gewöhnlichen Zeitrechnung',
+                            '1': 'n. Chr.',
+                            '1-alt-variant': 'der gewöhnlichen Zeitrechnung'
                         },
                         'eraAbbr': {
-                            '1-alt-variant': 'u. Z.',
-                            '0-alt-variant': 'v. u. Z.',
                             '0': 'v. Chr.',
-                            '1': 'n. Chr.'
+                            '0-alt-variant': 'v. u. Z.',
+                            '1': 'n. Chr.',
+                            '1-alt-variant': 'u. Z.'
                         },
                         'eraNarrow': {
-                            '1-alt-variant': 'dZ',
-                            '0-alt-variant': 'vdZ',
                             '0': 'v. Chr.',
-                            '1': 'n. Chr.'
+                            '0-alt-variant': 'vdZ',
+                            '1': 'n. Chr.',
+                            '1-alt-variant': 'dZ'
                         }
                     },
                     'dateFormats': {
@@ -349,150 +2639,119 @@
                     },
                     'dateTimeFormats': {
                         'full': '{1} {0}',
-                        'appendItems': {
-                            'Minute': '{0} ({2}: {1})',
-                            'Day': '{0} ({2}: {1})',
-                            'Era': '{1} {0}',
-                            'Week': '{0} ({2}: {1})',
-                            'Day-Of-Week': '{0} {1}',
-                            'Hour': '{0} ({2}: {1})',
-                            'Year': '{1} {0}',
-                            'Month': '{0} ({2}: {1})',
-                            'Quarter': '{0} ({2}: {1})',
-                            'Second': '{0} ({2}: {1})',
-                            'Timezone': '{0} {1}'
-                        },
                         'long': '{1} {0}',
-                        'availableFormats': {
-                            'EHm': 'E, HH:mm',
-                            'M': 'L',
-                            'MMMMEd': 'E, d. MMMM',
-                            'd': 'd',
-                            'Ehms': 'E, h:mm:ss a',
-                            'Ehm': 'E h:mm a',
-                            'Md': 'd.M.',
-                            'Ed': 'E, d.',
-                            'Gy': 'y G',
-                            'yMMdd': 'dd.MM.y',
-                            'yMd': 'd.M.y',
-                            'MMMMdd': 'dd. MMMM',
-                            'MMMd': 'd. MMM',
-                            'MMdd': 'dd.MM.',
-                            'MEd': 'E, d.M.',
-                            'GyMMMd': 'd. MMM y G',
-                            'EHms': 'E, HH:mm:ss',
-                            'hms': 'h:mm:ss a',
-                            'GyMMMEd': 'E, d. MMM y G',
-                            'h': 'h a',
-                            'GyMMM': 'MMM y G',
-                            'Hm': 'HH:mm',
-                            'H': 'HH \'Uhr\'',
-                            'yMEd': 'E, d.M.y',
-                            'MMMEd': 'E, d. MMM',
-                            'hm': 'h:mm a',
-                            'Hms': 'HH:mm:ss',
-                            'yM': 'M.y',
-                            'MMM': 'LLL',
-                            'yMMMEd': 'E, d. MMM y',
-                            'MMd': 'd.MM.',
-                            'ms': 'mm:ss',
-                            'y': 'y',
-                            'yMM': 'MM.y',
-                            'yMMM': 'MMM y',
-                            'yMMMd': 'd. MMM y',
-                            'yMMMM': 'MMMM y',
-                            'yQQQ': 'QQQ y',
-                            'yQQQQ': 'QQQQ y'
-                        },
                         'medium': '{1} {0}',
                         'short': '{1} {0}',
+                        'availableFormats': {
+                            'yMM': 'MM.y',
+                            'yMEd': 'E, d.M.y',
+                            'yMd': 'd.M.y',
+                            'yM': 'M.y',
+                            'y': 'y',
+                            'ms': 'mm:ss',
+                            'MMMMEd': 'E, d. MMMM',
+                            'd': 'd',
+                            'GyMMMd': 'd. MMM y G',
+                            'GyMMMEd': 'E, d. MMM y G',
+                            'h': 'h a',
+                            'H': 'HH \'Uhr\'',
+                            'hm': 'h:mm a',
+                            'Hm': 'HH:mm',
+                            'hms': 'h:mm:ss a',
+                            'yQQQQ': 'QQQQ y',
+                            'yQQQ': 'QQQ y',
+                            'yMMMM': 'MMMM y',
+                            'yMMMEd': 'E, d. MMM y',
+                            'yMMMd': 'd. MMM y',
+                            'yMMM': 'MMM y',
+                            'yMMdd': 'dd.MM.y',
+                            'Hms': 'HH:mm:ss',
+                            'Ed': 'E, d.',
+                            'Ehm': 'E h:mm a',
+                            'EHm': 'E, HH:mm',
+                            'Ehms': 'E, h:mm:ss a',
+                            'EHms': 'E, HH:mm:ss',
+                            'Gy': 'y G',
+                            'GyMMM': 'MMM y G',
+                            'M': 'L',
+                            'Md': 'd.M.',
+                            'MEd': 'E, d.M.',
+                            'MMd': 'd.MM.',
+                            'MMdd': 'dd.MM.',
+                            'MMM': 'LLL',
+                            'MMMd': 'd. MMM',
+                            'MMMEd': 'E, d. MMM',
+                            'MMMMdd': 'dd. MMMM'
+                        },
+                        'appendItems': {
+                            'Second': '{0} ({2}: {1})',
+                            'Quarter': '{0} ({2}: {1})',
+                            'Month': '{0} ({2}: {1})',
+                            'Year': '{1} {0}',
+                            'Week': '{0} ({2}: {1})',
+                            'Timezone': '{0} {1}',
+                            'Day': '{0} ({2}: {1})',
+                            'Day-Of-Week': '{0} {1}',
+                            'Era': '{1} {0}',
+                            'Hour': '{0} ({2}: {1})',
+                            'Minute': '{0} ({2}: {1})'
+                        },
                         'intervalFormats': {
-                            'Hv': {
-                                'H': 'HH-HH \'Uhr\' v'
-                            },
-                            'Hmv': {
-                                'H': 'HH:mm-HH:mm v',
-                                'm': 'HH:mm-HH:mm v'
-                            },
-                            'h': {
-                                'a': 'h a - h a',
-                                'h': 'h-h a'
-                            },
-                            'M': {
-                                'M': 'M.-M.'
-                            },
-                            'intervalFormatFallback': '{0} - {1}',
-                            'Md': {
-                                'd': 'dd.MM. - dd.MM.',
-                                'M': 'dd.MM. - dd.MM.'
-                            },
-                            'd': {
-                                'd': 'd.-d.'
-                            },
                             'MMMEd': {
                                 'd': 'E, d. - E, d. MMM',
                                 'M': 'E, d. MMM - E, d. MMM'
                             },
-                            'hm': {
-                                'a': 'h:mm a - h:mm a',
-                                'm': 'h:mm-h:mm a',
-                                'h': 'h:mm-h:mm a'
-                            },
-                            'yMEd': {
-                                'd': 'E, dd.MM.y - E, dd.MM.y',
-                                'M': 'E, dd.MM.y - E, dd.MM.y',
-                                'y': 'E, dd.MM.y - E, dd.MM.y'
-                            },
-                            'hmv': {
-                                'a': 'h:mm a - h:mm a v',
-                                'm': 'h:mm-h:mm a v',
-                                'h': 'h:mm-h:mm a v'
-                            },
-                            'yMMM': {
-                                'M': 'MMM-MMM y',
-                                'y': 'MMM y - MMM y'
-                            },
-                            'H': {
-                                'H': 'HH-HH \'Uhr\''
-                            },
-                            'Hm': {
-                                'H': 'HH:mm-HH:mm',
-                                'm': 'HH:mm-HH:mm'
+                            'MMMd': {
+                                'd': 'd.-d. MMM',
+                                'M': 'd. MMM - d. MMM'
                             },
                             'MMM': {
                                 'M': 'MMM-MMM'
                             },
-                            'yM': {
-                                'M': 'MM.y - MM.y',
-                                'y': 'MM.y - MM.y'
+                            'MEd': {
+                                'd': 'E, dd.MM. - E, dd.MM.',
+                                'M': 'E, dd.MM. - E, dd.MM.'
                             },
-                            'yMMMd': {
-                                'd': 'd.-d. MMM y',
-                                'M': 'd. MMM - d. MMM y',
-                                'y': 'd. MMM y - d. MMM y'
+                            'Md': {
+                                'd': 'dd.MM. - dd.MM.',
+                                'M': 'dd.MM. - dd.MM.'
+                            },
+                            'M': {
+                                'M': 'M.-M.'
+                            },
+                            'Hv': {
+                                'H': 'HH-HH \'Uhr\' v'
                             },
                             'hv': {
                                 'a': 'h a - h a v',
                                 'h': 'h-h a v'
                             },
-                            'MMMM': {
-                                'M': 'LLLL-LLLL'
+                            'intervalFormatFallback': '{0} - {1}',
+                            'y': {
+                                'y': 'y-y'
+                            },
+                            'yM': {
+                                'M': 'MM.y - MM.y',
+                                'y': 'MM.y - MM.y'
                             },
                             'yMd': {
                                 'd': 'dd.MM.y - dd.MM.y',
                                 'M': 'dd.MM.y - dd.MM.y',
                                 'y': 'dd.MM.y - dd.MM.y'
                             },
-                            'MMMd': {
-                                'd': 'd.-d. MMM',
-                                'M': 'd. MMM - d. MMM'
+                            'yMEd': {
+                                'd': 'E, dd.MM.y - E, dd.MM.y',
+                                'M': 'E, dd.MM.y - E, dd.MM.y',
+                                'y': 'E, dd.MM.y - E, dd.MM.y'
                             },
-                            'MEd': {
-                                'd': 'E, dd.MM. - E, dd.MM.',
-                                'M': 'E, dd.MM. - E, dd.MM.'
+                            'yMMM': {
+                                'M': 'MMM-MMM y',
+                                'y': 'MMM y - MMM y'
                             },
-                            'y': {
-                                'y': 'y-y'
+                            'yMMMd': {
+                                'd': 'd.-d. MMM y',
+                                'M': 'd. MMM - d. MMM y',
+                                'y': 'd. MMM y - d. MMM y'
                             },
                             'yMMMEd': {
                                 'd': 'E, d. - E, d. MMM y',
@@ -502,6 +2761,37 @@
                             'yMMMM': {
                                 'M': 'MMMM-MMMM y',
                                 'y': 'MMMM y - MMMM y'
+                            },
+                            'MMMM': {
+                                'M': 'LLLL-LLLL'
+                            },
+                            'Hmv': {
+                                'H': 'HH:mm-HH:mm v',
+                                'm': 'HH:mm-HH:mm v'
+                            },
+                            'hmv': {
+                                'a': 'h:mm a - h:mm a v',
+                                'h': 'h:mm-h:mm a v',
+                                'm': 'h:mm-h:mm a v'
+                            },
+                            'Hm': {
+                                'H': 'HH:mm-HH:mm',
+                                'm': 'HH:mm-HH:mm'
+                            },
+                            'hm': {
+                                'a': 'h:mm a - h:mm a',
+                                'h': 'h:mm-h:mm a',
+                                'm': 'h:mm-h:mm a'
+                            },
+                            'H': {
+                                'H': 'HH-HH \'Uhr\''
+                            },
+                            'h': {
+                                'a': 'h a - h a',
+                                'h': 'h-h a'
+                            },
+                            'd': {
+                                'd': 'd.-d.'
                             }
                         }
                     }

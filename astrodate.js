@@ -34,6 +34,7 @@
 
         if ('object' === typeof module && null !== module && 'object' === typeof module.exports && null !== module.exports) {
             module.exports = definition(require(bigNumberString + '.js'));
+            require('./lang/en.js');
         } else if ('function' === typeof define && 'object' === typeof define.amd && null !== define.amd) {
             projectPaths = {};
             projectConfig = {};
@@ -44,7 +45,7 @@
                 config: projectConfig
             });
 
-            define([bigNumberString], definition);
+            define([bigNumberString, 'lang/en'], definition);
         } else {
             thisContext[name] = definition(thisContext[bigNumberFunc]);
         }
@@ -81,6 +82,7 @@
                 dayNames,
                 protoName = '__proto__',
                 invalidISOCharsRx = new RegExp('[^\\d\\-+WT Z:,\\.]'),
+                replaceTokenRX = new RegExp('([^\\\']+)|(\\\'[^\\\']+\\\')', 'g'),
                 toObject,
                 //j2000 = [2000, 1, 1, 11, 58, 55, 816],
                 extend,
@@ -105,7 +107,7 @@
                 //endsWith,
                 stringContains,
                 toObjectFixIndexedAccess,
-                arrayUnshift,
+                //arrayUnshift,
                 arrayForEach,
                 arraySome,
                 arrayMap,
@@ -1106,6 +1108,7 @@
             }
 
             // named arrayUnshift instead of unshift because of SpiderMonkey and Blackberry bug
+            /*
             arrayUnshift = (function () {
                 // Unused variable for JScript NFE bug
                 // http://kangax.github.io/nfe
@@ -1128,6 +1131,7 @@
 
                 return tempSafariNFE;
             }());
+            */
 
             /*
             // named arrayFilter instead of filter because of SpiderMonkey and Blackberry bug
@@ -2422,8 +2426,8 @@
             }
             */
 
-            function dayOfWeekNumber(jd) {
-                var day = jd.plus(1.5).mod(7).floor();
+            function dayOfWeekNumber(struct) {
+                var day = gregorianToJd(struct).plus(1.5).mod(7).floor();
 
                 if (day.lt(0)) {
                     day = day.plus(7);
@@ -2432,8 +2436,8 @@
                 return day;
             }
 
-            function weekDayNumber(jd) {
-                var bnWeekDay = dayOfWeekNumber(jd);
+            function weekDayNumber(struct) {
+                var bnWeekDay = dayOfWeekNumber(struct);
 
                 if (bnWeekDay.isZero()) {
                     bnWeekDay = new BigNumber(7);
@@ -2442,7 +2446,11 @@
                 return bnWeekDay;
             }
 
-            function dayOfWeek(jd, type, lang) {
+            function cldrDayKey(struct) {
+                return dayNames[toNumber(dayOfWeekNumber(struct))];
+            }
+
+            function dayOfWeek(struct, type, lang) {
                 if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
                     lang = 'en';
                 }
@@ -2451,7 +2459,7 @@
                     type = 'wide';
                 }
 
-                return languages[lang].calendars.gregorian.days.format[type][dayNames[toNumber(dayOfWeekNumber(jd))]];
+                return languages[lang].calendars.gregorian.days.format[type][cldrDayKey(struct)];
             }
 
             function monthName(struct, type, lang) {
@@ -3193,7 +3201,7 @@
                         second: bnZero(),
                         millisecond: bnZero()
                     },
-                    weekDayJan4 = weekDayNumber(gregorianToJd(struct)),
+                    weekDayJan4 = weekDayNumber(struct),
                     dayOfYear;
 
                 dayOfYear = new BigNumber(7).times(week).plus(weekDay).minus(weekDayJan4.plus(3));
@@ -3209,7 +3217,7 @@
             }
 
             function calendarToWeekDate(struct) {
-                var weekDay = weekDayNumber(gregorianToJd(struct)),
+                var weekDay = weekDayNumber(struct),
                     year = struct.year,
                     month = struct.month,
                     nearestThursday,
@@ -4118,11 +4126,10 @@
                         input: isoString
                     },
                     nfeSearchPatterns,
-                    searchPatternFN,
                     searchString;
 
                 if (isString(isoString) && !isEmptyString(isoString) && !invalidISOCharsRx.test(isoString) && isoHasValidCharacterCounts(isoString)) {
-                    searchPatternFN = function nfeSearchPatterns(pattern) {
+                    tempSafariNFE = function nfeSearchPatterns(pattern) {
                         var rxResult = pattern.regex.exec(searchString),
                             val = false,
                             result;
@@ -4141,14 +4148,14 @@
 
                     extend(dtObject, isoSplitDateTime(isoString));
                     searchString = dtObject.date;
-                    if (!arraySome(datePatterns.basic, searchPatternFN)) {
-                        if (arraySome(datePatterns.extended, searchPatternFN)) {
+                    if (!arraySome(datePatterns.basic, tempSafariNFE)) {
+                        if (arraySome(datePatterns.extended, tempSafariNFE)) {
                             searchString = dtObject.time;
-                            arraySome(timePatterns.extended, searchPatternFN);
+                            arraySome(timePatterns.extended, tempSafariNFE);
                         }
                     } else {
                         searchString = dtObject.time;
-                        arraySome(timePatterns.basic, searchPatternFN);
+                        arraySome(timePatterns.basic, tempSafariNFE);
                     }
                 }
 
@@ -4170,6 +4177,280 @@
                 }
 
                 return struct;
+            }
+
+            function usesEra(pattern) {
+                return (/G{1,5}/).test(pattern);
+            }
+
+            function cldrPadLeadingZero(num, size) {
+                var strNum = num.toString(),
+                    firsrCharacter = firstChar(strNum),
+                    val = '';
+
+                if (strictEqual(firsrCharacter, '-')) {
+                    strNum = strNum.slice(1);
+                    size -= 1;
+                    val = firsrCharacter;
+                }
+
+                val += padLeadingChar(strNum, '0', size);
+
+                return val;
+            }
+
+            function replaceToken(pattern, token, value) {
+                if (!isString(token) || isEmptyString(token)) {
+                    throw new Error();
+                }
+
+                var firstCharacter,
+                    count,
+                    copyMatch;
+
+                if (token.test(/^([|]?\S{1}\{\d+\}|[|]?\S{1}\{\d+,{1}\d*\})+$/)) {
+                    copyMatch = token;
+                } else if (token.test(/^\{\d{1}\}$/)) {
+                    copyMatch = token;
+                } else {
+                    firstCharacter = firstChar(token);
+                    count = token.length;
+                    if (!strictEqual(count, countCharacter(token, firstCharacter))) {
+                        throw new Error();
+                    }
+
+                    copyMatch = firstCharacter + '{' + count.toString() + '}';
+                }
+
+                function tokenReplacer($0, $1, $2) {
+                    var val;
+
+                    if ($1) {
+                        val = $1.replace(new RegExp(copyMatch, 'g'), cldrPadLeadingZero(value, $1.length));
+                    } else {
+                        val = $2;
+                    }
+
+                    return val;
+                }
+
+                return pattern.replace(replaceTokenRX, tokenReplacer);
+            }
+
+            function stripSingleQuotes(pattern) {
+                return pattern.replace(/\'/g, '');
+            }
+
+            /*
+            function getPattern(pattern, lang) {
+                //code
+            }
+            */
+
+            function formatDate(struct, pattern, julian, lang) {
+                if (!isString(pattern) || isEmptyString(pattern)) {
+                    pattern = 'full';
+                }
+
+                if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
+                    lang = 'en';
+                }
+
+                var gregorian = languages[lang].calendars.gregorian,
+                    dateFormats = gregorian.dateFormats,
+                    eras = gregorian.eras,
+                    months = gregorian.months,
+                    days = gregorian.days,
+                    eraNum,
+                    year,
+                    sign,
+                    month,
+                    doy,
+                    day;
+
+                if (arrayContains(objectKeys(dateFormats), pattern)) {
+                    pattern = dateFormats[pattern];
+                }
+
+                if (usesEra(pattern)) {
+                    if (struct.year.lt(1)) {
+                        eraNum = 0;
+                    } else {
+                        eraNum = 1;
+                    }
+
+                    pattern = replaceToken(pattern, 'G{1,3}', eras.eraAbbr[eraNum.toString()]);
+                    pattern = replaceToken(pattern, 'GGGG', eras.eraNames[eraNum.toString()]);
+                    pattern = replaceToken(pattern, 'GGGGG', eras.eraNarrow[eraNum.toString()]);
+                    year = struct.year.plus(eraNum - 1);
+                    if (year.lt(0)) {
+                        sign = '-';
+                    } else {
+                        sign = '';
+                    }
+
+                    year = year.toString();
+                    pattern = replaceToken(pattern, 'y{1}|y{3,}|u{1,}', sign + year);
+                    pattern = replaceToken(pattern, 'yy', sign + year.slice(-2));
+                } else {
+                    year = struct.year;
+                    if (year.lt(0)) {
+                        sign = '-';
+                    } else {
+                        sign = '';
+                    }
+
+                    year = year.toString();
+                    pattern = replaceToken(pattern, 'y{1}|y{3,}|u{1,}', sign + year);
+                    pattern = replaceToken(pattern, 'yy', sign + year.slice(-2));
+                }
+
+                /*
+                pattern = replaceToken(pattern, 'Y{1,}', value);
+
+                pattern = replaceToken(pattern, 'Q{1,2}', value);
+                pattern = replaceToken(pattern, 'QQQ', value);
+                pattern = replaceToken(pattern, 'QQQQ', value);
+                pattern = replaceToken(pattern, 'q{1,2}', value);
+                pattern = replaceToken(pattern, 'qqq', value);
+                pattern = replaceToken(pattern, 'qqqq', value);
+                */
+
+                month = struct.month.toString();
+                pattern = replaceToken(pattern, 'M{1,2}|L{1,2}', month);
+                pattern = replaceToken(pattern, 'MMM', months.format.abbreviated[month]);
+                pattern = replaceToken(pattern, 'MMMM', months.format.wide[month]);
+                pattern = replaceToken(pattern, 'MMMMM', months.format.narrow[month]);
+                pattern = replaceToken(pattern, 'LLL', months['stand-alone'].abbreviated[month]);
+                pattern = replaceToken(pattern, 'LLLL', months['stand-alone'].wide[month]);
+                pattern = replaceToken(pattern, 'LLLLL', months['stand-alone'].narrow[month]);
+
+                /*
+                pattern = replaceToken(pattern, 'w{1,2}', value);
+                pattern = replaceToken(pattern, 'W', value);
+                */
+
+                pattern = replaceToken(pattern, 'd{1,2}', struct.day.toString());
+                if (julian) {
+                    doy = dayOfJulianYear(gregorianToJulian(struct)).toString();
+                } else {
+                    doy = dayOfGregorianYear(struct).toString();
+                }
+
+                pattern = replaceToken(pattern, 'D{1,3}', doy);
+
+                /*
+                pattern = replaceToken(pattern, 'F', value);
+                pattern = replaceToken(pattern, 'g{1,}', value);
+                */
+
+                day = cldrDayKey(struct);
+                pattern = replaceToken(pattern, 'E{1,3}|e{3}', days.format.abbreviated[day]);
+                pattern = replaceToken(pattern, 'E{4}|e{4}', days.format.wide[day]);
+                pattern = replaceToken(pattern, 'E{5}|e{5}', days.format.narrow[day]);
+                pattern = replaceToken(pattern, 'c{1,2}', weekDayNumber(struct).toString());
+                pattern = replaceToken(pattern, 'ccc', days['stand-alone'].abbreviated[day]);
+                pattern = replaceToken(pattern, 'cccc', days['stand-alone'].wide[day]);
+                pattern = replaceToken(pattern, 'ccccc', days['stand-alone'].narrow[day]);
+
+                return pattern;
+            }
+
+            function formatTime(struct, pattern, lang) {
+                if (!isString(pattern) || isEmptyString(pattern)) {
+                    pattern = 'full';
+                }
+
+                if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
+                    lang = 'en';
+                }
+
+                var gregorian = languages[lang].calendars.gregorian,
+                    timeFormats = gregorian.timeFormats,
+                    dayPeriods = gregorian.dayPeriods,
+                    timeZoneNames = languages[lang].timeZoneNames,
+                    hourFormat = timeZoneNames.hourFormat,
+                    gmtFormat = timeZoneNames.gmtFormat,
+                    dayPeriod,
+                    hour,
+                    offset,
+                    offsetFormat;
+
+                if (arrayContains(objectKeys(timeFormats), pattern)) {
+                    pattern = timeFormats[pattern];
+                }
+
+                if (struct.hour.gt(12)) {
+                    hour = struct.hour.minus(12).toString();
+                    dayPeriod = 'pm';
+                } else {
+                    hour = struct.hour.toString();
+                    dayPeriod = 'am';
+                }
+
+                pattern = replaceToken(pattern, 'a{1,3}', dayPeriods.format.abbreviated[dayPeriod]);
+                pattern = replaceToken(pattern, 'aaaa', dayPeriods.format.wide[dayPeriod]);
+                pattern = replaceToken(pattern, 'aaaaa', dayPeriods.format.narrow[dayPeriod]);
+                pattern = replaceToken(pattern, 'A{1,3}', dayPeriods['stand-alone'].abbreviated[dayPeriod]);
+                pattern = replaceToken(pattern, 'AAAA', dayPeriods['stand-alone'].wide[dayPeriod]);
+                pattern = replaceToken(pattern, 'AAAAA', dayPeriods['stand-alone'].narrow[dayPeriod]);
+
+                pattern = replaceToken(pattern, 'h{1,2}', hour);
+                pattern = replaceToken(pattern, 'H{1,2}', struct.hour.toString());
+                /*
+                pattern = replaceToken(pattern, 'K{1,2}', struct.hour.toString());
+                pattern = replaceToken(pattern, 'k{1,2}', struct.hour.toString());
+                */
+                //pattern = replaceToken(pattern, 'j{1,2}', struct.hour.toString());
+                pattern = replaceToken(pattern, 'm{1,2}', struct.minute.toString());
+                pattern = replaceToken(pattern, 's{1,2}', struct.second.toString());
+                pattern = replaceToken(pattern, 'S{1,}', struct.millisecond.toString());
+                //pattern = replaceToken(pattern, 'A{1,}', value);
+
+                offsetFormat = hourFormat.split(';');
+                if (struct.offset.lte(0)) {
+                    offsetFormat = offsetFormat[0];
+                } else {
+                    offsetFormat = offsetFormat[1];
+                }
+
+                offset = fractionToTime(struct.offset.abs(), 'minute');
+                offsetFormat = replaceToken(offsetFormat, 'H{1,2}', offset.hour);
+                offsetFormat = replaceToken(offsetFormat, 'm{1,2}', offset.minute);
+                gmtFormat = replaceToken(gmtFormat, '{0}', offsetFormat);
+
+                pattern = replaceToken(pattern, 'z{1,3}', gmtFormat);
+                pattern = replaceToken(pattern, 'zzzz', gmtFormat);
+                pattern = replaceToken(pattern, 'Z{1,3}', gmtFormat);
+                pattern = replaceToken(pattern, 'ZZZZ', gmtFormat);
+                pattern = replaceToken(pattern, 'v{1,3}', gmtFormat);
+                pattern = replaceToken(pattern, 'vvvv', gmtFormat);
+                pattern = replaceToken(pattern, 'V{1,3}', gmtFormat);
+                pattern = replaceToken(pattern, 'VVVV', gmtFormat);
+
+                return pattern;
+            }
+
+            function formatDateTime(struct, pattern, julian, lang) {
+                if (!isString(pattern) || isEmptyString(pattern)) {
+                    pattern = 'full';
+                }
+
+                if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
+                    lang = 'en';
+                }
+
+                var gregorian = languages[lang].calendars.gregorian,
+                    dateTimeFormats = gregorian.dateTimeFormats;
+
+                if (arrayContains(objectKeys(dateTimeFormats), pattern)) {
+                    pattern = dateTimeFormats[pattern];
+                }
+
+                formatDate(struct, pattern, julian, lang);
+                formatTime(struct, pattern, lang);
+
+                return pattern;
             }
 
             AstroDate = function () {
@@ -4507,7 +4788,7 @@
                         var val;
 
                         if (this.isValid()) {
-                            val = weekDayNumber(gregorianToJd(getCorrectStruct(this, this.getter()))).inRange(1, 5);
+                            val = weekDayNumber(getCorrectStruct(this, this.getter())).inRange(1, 5);
                         }
 
                         return val;
@@ -4519,7 +4800,7 @@
                         var val;
 
                         if (this.isValid()) {
-                            val = weekDayNumber(gregorianToJd(getCorrectStruct(this, this.getter()))).inRange(6, 7);
+                            val = weekDayNumber(getCorrectStruct(this, this.getter())).inRange(6, 7);
                         }
 
                         return val;
@@ -4559,21 +4840,14 @@
                 },
 
                 toString: {
-                    value: function (lang) {
+                    value: function (pattern, lang) {
                         var struct,
                             string,
-                            offset,
-                            year,
-                            date,
-                            time,
-                            zone,
-                            hour1,
-                            hour2,
-                            hour3,
-                            dayPeriod;
+                            isJulian;
 
                         if (this.isValid()) {
-                            if (this.isJulian()) {
+                            isJulian = this.isJulian();
+                            if (isJulian) {
                                 struct = jdToJulian(this.julianDay());
                                 string = '[OS] ';
                             } else {
@@ -4582,39 +4856,7 @@
                             }
 
                             struct = getCorrectStruct(this, struct);
-                            year = '';
-                            if (struct.year.lt(0)) {
-                                year += '-';
-                            }
-
-                            if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
-                                lang = 'en';
-                            }
-
-                            year += struct.year.abs().padLeadingZero(4);
-                            date = languages[lang].calendars.gregorian.dateFormats.full.replace(/\bEEEE\b/, this.dayOfWeek('wide', lang)).replace(/\bd\b/, struct.day.toString()).replace(/\bMMMM\b/, this.monthOfYear('wide', lang)).replace(/\by\b/, year);
-                            offset = struct.offset;
-                            zone = 'GMT';
-                            if (offset.lte(0)) {
-                                zone += '+';
-                            } else {
-                                zone += '-';
-                            }
-
-                            offset = fractionToTime(offset.abs(), 'minute');
-                            if (struct.hour.gt(12)) {
-                                hour1 = struct.hour.minus(12).toString();
-                                dayPeriod = languages[lang].calendars.gregorian.dayPeriods.format.wide.pm;
-                            } else {
-                                hour1 = struct.hour.toString();
-                                dayPeriod = languages[lang].calendars.gregorian.dayPeriods.format.wide.am;
-                            }
-
-                            hour2 = struct.hour.toString();
-                            hour3 = struct.hour.padLeadingZero(2);
-                            zone += offset.hour.padLeadingZero(2) + ':' + offset.minute.padLeadingZero(2);
-                            time = languages[lang].calendars.gregorian.timeFormats.full.replace(/\bh\b/, hour1).replace(/\bH\b/, hour2).replace(/\bHH\b/, hour3).replace(/\bmm\b/, struct.minute.padLeadingZero(2)).replace(/\bss\b/, struct.second.padLeadingZero(2)).replace(/\ba\b/, dayPeriod).replace(/\bzzzz\b/, zone);
-                            string = languages[lang].calendars.gregorian.dateTimeFormats.full.replace('{0}', time).replace('{1}', date).replace(/\'/g, '');
+                            string += stripSingleQuotes(formatDateTime(struct, pattern, isJulian, lang));
                         } else {
                             string = 'Invalid Date';
                         }
@@ -4624,12 +4866,14 @@
                 },
 
                 toDateString: {
-                    value: function (type, lang) {
+                    value: function (pattern, lang) {
                         var struct,
-                            string;
+                            string,
+                            isJulian;
 
                         if (this.isValid()) {
-                            if (this.isJulian()) {
+                            isJulian = this.isJulian();
+                            if (isJulian) {
                                 struct = jdToJulian(this.julianDay());
                                 string = '[OS] ';
                             } else {
@@ -4638,14 +4882,7 @@
                             }
 
                             struct = getCorrectStruct(this, struct);
-                            string += this.dayOfWeek(type, lang) + ' ';
-                            string += struct.day.toString() + ' ';
-                            string += this.monthOfYear(type, lang) + ' ';
-                            if (struct.year.lt(0)) {
-                                string += '-';
-                            }
-
-                            string += struct.year.abs().padLeadingZero(4) + ' ';
+                            string += stripSingleQuotes(formatDate(struct, pattern, isJulian, lang));
                         } else {
                             string = 'Invalid Date';
                         }
@@ -4655,34 +4892,23 @@
                 },
 
                 toTimeString: {
-                    value: function () {
+                    value: function (pattern, lang) {
                         var struct,
                             string,
-                            offset;
+                            isJulian;
 
                         if (this.isValid()) {
-                            string = '';
-                            if (this.isJulian()) {
+                            isJulian = this.isJulian();
+                            if (isJulian) {
                                 struct = jdToJulian(this.julianDay());
+                                string = '[OS] ';
                             } else {
                                 struct = this.getter();
+                                string = '[NS] ';
                             }
 
                             struct = getCorrectStruct(this, struct);
-                            string += struct.hour.padLeadingZero(2) + ':';
-                            string += struct.minute.padLeadingZero(2) + ':';
-                            string += struct.second.padLeadingZero(2) + '.';
-                            string += struct.millisecond.padLeadingZero(3) + ' ';
-                            offset = struct.offset;
-                            if (offset.lte(0)) {
-                                string += '+';
-                            } else {
-                                string += '-';
-                            }
-
-                            offset = fractionToTime(offset.abs(), 'minute');
-                            string += offset.hour.padLeadingZero(2);
-                            string += offset.minute.padLeadingZero(2);
+                            string += stripSingleQuotes(formatTime(struct, pattern, lang));
                         } else {
                             string = 'Invalid Date';
                         }
@@ -4914,7 +5140,7 @@
                         var val;
 
                         if (this.isValid()) {
-                            val = dayOfWeek(gregorianToJd(getCorrectStruct(this, this.getter())), type, lang);
+                            val = dayOfWeek(getCorrectStruct(this, this.getter()), type, lang);
                         }
 
                         return val;
@@ -5200,451 +5426,6 @@
 
             dayNames = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
             deepFreeze(dayNames);
-
-            AstroDate.lang('en', {
-                'calendars': {
-                    'gregorian': {
-                        'quarters': {
-                            'format': {
-                                'wide': {
-                                    '1': '1st quarter',
-                                    '2': '2nd quarter',
-                                    '3': '3rd quarter',
-                                    '4': '4th quarter'
-                                },
-                                'abbreviated': {
-                                    '1': 'Q1',
-                                    '2': 'Q2',
-                                    '3': 'Q3',
-                                    '4': 'Q4'
-                                },
-                                'narrow': {
-                                    '1': '1',
-                                    '2': '2',
-                                    '3': '3',
-                                    '4': '4'
-                                }
-                            },
-                            'stand-alone': {
-                                'wide': {
-                                    '1': '1st quarter',
-                                    '2': '2nd quarter',
-                                    '3': '3rd quarter',
-                                    '4': '4th quarter'
-                                },
-                                'abbreviated': {
-                                    '1': 'Q1',
-                                    '2': 'Q2',
-                                    '3': 'Q3',
-                                    '4': 'Q4'
-                                },
-                                'narrow': {
-                                    '1': '1',
-                                    '2': '2',
-                                    '3': '3',
-                                    '4': '4'
-                                }
-                            }
-                        },
-                        'months': {
-                            'format': {
-                                'wide': {
-                                    '1': 'January',
-                                    '10': 'October',
-                                    '2': 'February',
-                                    '11': 'November',
-                                    '3': 'March',
-                                    '12': 'December',
-                                    '4': 'April',
-                                    '5': 'May',
-                                    '6': 'June',
-                                    '7': 'July',
-                                    '8': 'August',
-                                    '9': 'September'
-                                },
-                                'abbreviated': {
-                                    '1': 'Jan',
-                                    '10': 'Oct',
-                                    '2': 'Feb',
-                                    '11': 'Nov',
-                                    '3': 'Mar',
-                                    '12': 'Dec',
-                                    '4': 'Apr',
-                                    '5': 'May',
-                                    '6': 'Jun',
-                                    '7': 'Jul',
-                                    '8': 'Aug',
-                                    '9': 'Sep'
-                                },
-                                'narrow': {
-                                    '1': 'J',
-                                    '10': 'O',
-                                    '2': 'F',
-                                    '11': 'N',
-                                    '3': 'M',
-                                    '12': 'D',
-                                    '4': 'A',
-                                    '5': 'M',
-                                    '6': 'J',
-                                    '7': 'J',
-                                    '8': 'A',
-                                    '9': 'S'
-                                }
-                            },
-                            'stand-alone': {
-                                'wide': {
-                                    '1': 'January',
-                                    '10': 'October',
-                                    '2': 'February',
-                                    '11': 'November',
-                                    '3': 'March',
-                                    '12': 'December',
-                                    '4': 'April',
-                                    '5': 'May',
-                                    '6': 'June',
-                                    '7': 'July',
-                                    '8': 'August',
-                                    '9': 'September'
-                                },
-                                'abbreviated': {
-                                    '1': 'Jan',
-                                    '10': 'Oct',
-                                    '2': 'Feb',
-                                    '11': 'Nov',
-                                    '3': 'Mar',
-                                    '12': 'Dec',
-                                    '4': 'Apr',
-                                    '5': 'May',
-                                    '6': 'Jun',
-                                    '7': 'Jul',
-                                    '8': 'Aug',
-                                    '9': 'Sep'
-                                },
-                                'narrow': {
-                                    '1': 'J',
-                                    '10': 'O',
-                                    '2': 'F',
-                                    '11': 'N',
-                                    '3': 'M',
-                                    '12': 'D',
-                                    '4': 'A',
-                                    '5': 'M',
-                                    '6': 'J',
-                                    '7': 'J',
-                                    '8': 'A',
-                                    '9': 'S'
-                                }
-                            }
-                        },
-                        'days': {
-                            'format': {
-                                'wide': {
-                                    'tue': 'Tuesday',
-                                    'fri': 'Friday',
-                                    'sun': 'Sunday',
-                                    'sat': 'Saturday',
-                                    'wed': 'Wednesday',
-                                    'mon': 'Monday',
-                                    'thu': 'Thursday'
-                                },
-                                'abbreviated': {
-                                    'tue': 'Tue',
-                                    'fri': 'Fri',
-                                    'sun': 'Sun',
-                                    'sat': 'Sat',
-                                    'wed': 'Wed',
-                                    'mon': 'Mon',
-                                    'thu': 'Thu'
-                                },
-                                'narrow': {
-                                    'tue': 'T',
-                                    'fri': 'F',
-                                    'sun': 'S',
-                                    'sat': 'S',
-                                    'wed': 'W',
-                                    'mon': 'M',
-                                    'thu': 'T'
-                                },
-                                'short': {
-                                    'tue': 'Tu',
-                                    'fri': 'Fr',
-                                    'sun': 'Su',
-                                    'sat': 'Sa',
-                                    'wed': 'We',
-                                    'mon': 'Mo',
-                                    'thu': 'Th'
-                                }
-                            },
-                            'stand-alone': {
-                                'wide': {
-                                    'tue': 'Tuesday',
-                                    'fri': 'Friday',
-                                    'sun': 'Sunday',
-                                    'sat': 'Saturday',
-                                    'wed': 'Wednesday',
-                                    'mon': 'Monday',
-                                    'thu': 'Thursday'
-                                },
-                                'abbreviated': {
-                                    'tue': 'Tue',
-                                    'fri': 'Fri',
-                                    'sun': 'Sun',
-                                    'sat': 'Sat',
-                                    'wed': 'Wed',
-                                    'mon': 'Mon',
-                                    'thu': 'Thu'
-                                },
-                                'narrow': {
-                                    'tue': 'T',
-                                    'fri': 'F',
-                                    'sun': 'S',
-                                    'sat': 'S',
-                                    'wed': 'W',
-                                    'mon': 'M',
-                                    'thu': 'T'
-                                },
-                                'short': {
-                                    'tue': 'Tu',
-                                    'fri': 'Fr',
-                                    'sun': 'Su',
-                                    'sat': 'Sa',
-                                    'wed': 'We',
-                                    'mon': 'Mo',
-                                    'thu': 'Th'
-                                }
-                            }
-                        },
-                        'dayPeriods': {
-                            'format': {
-                                'wide': {
-                                    'pm': 'PM',
-                                    'am': 'AM',
-                                    'pm-alt-variant': 'p.m.',
-                                    'am-alt-variant': 'a.m.',
-                                    'noon': 'noon'
-                                },
-                                'abbreviated': {
-                                    'pm': 'PM',
-                                    'am': 'AM',
-                                    'pm-alt-variant': 'p.m.',
-                                    'am-alt-variant': 'a.m.',
-                                    'noon': 'noon'
-                                },
-                                'narrow': {
-                                    'pm': 'p',
-                                    'am': 'a',
-                                    'pm-alt-variant': 'p.m.',
-                                    'am-alt-variant': 'a.m.',
-                                    'noon': 'n'
-                                }
-                            },
-                            'stand-alone': {
-                                'wide': {
-                                    'pm': 'PM',
-                                    'am': 'AM',
-                                    'pm-alt-variant': 'p.m.',
-                                    'am-alt-variant': 'a.m.',
-                                    'noon': 'noon'
-                                },
-                                'abbreviated': {
-                                    'pm': 'PM',
-                                    'am': 'AM',
-                                    'pm-alt-variant': 'p.m.',
-                                    'am-alt-variant': 'a.m.',
-                                    'noon': 'noon'
-                                },
-                                'narrow': {
-                                    'pm': 'p',
-                                    'am': 'a',
-                                    'pm-alt-variant': 'p.m.',
-                                    'am-alt-variant': 'a.m.',
-                                    'noon': 'n'
-                                }
-                            }
-                        },
-                        'eras': {
-                            'eraNames': {
-                                '1-alt-variant': 'Common Era',
-                                '0-alt-variant': 'Before Common Era',
-                                '0': 'Before Christ',
-                                '1': 'Anno Domini'
-                            },
-                            'eraAbbr': {
-                                '1-alt-variant': 'CE',
-                                '0-alt-variant': 'BCE',
-                                '0': 'BC',
-                                '1': 'AD'
-                            },
-                            'eraNarrow': {
-                                '1-alt-variant': 'CE',
-                                '0-alt-variant': 'BCE',
-                                '0': 'B',
-                                '1': 'A'
-                            }
-                        },
-                        'dateFormats': {
-                            'full': 'EEEE, MMMM d, y',
-                            'long': 'MMMM d, y',
-                            'medium': 'MMM d, y',
-                            'short': 'M/d/yy'
-                        },
-                        'timeFormats': {
-                            'full': 'h:mm:ss a zzzz',
-                            'long': 'h:mm:ss a z',
-                            'medium': 'h:mm:ss a',
-                            'short': 'h:mm a'
-                        },
-                        'dateTimeFormats': {
-                            'full': '{1} \'at\' {0}',
-                            'appendItems': {
-                                'Minute': '{0} ({2}: {1})',
-                                'Day': '{0} ({2}: {1})',
-                                'Era': '{0} {1}',
-                                'Week': '{0} ({2}: {1})',
-                                'Day-Of-Week': '{0} {1}',
-                                'Hour': '{0} ({2}: {1})',
-                                'Year': '{0} {1}',
-                                'Month': '{0} ({2}: {1})',
-                                'Quarter': '{0} ({2}: {1})',
-                                'Second': '{0} ({2}: {1})',
-                                'Timezone': '{0} {1}'
-                            },
-                            'long': '{1} \'at\' {0}',
-                            'availableFormats': {
-                                'EHm': 'E HH:mm',
-                                'M': 'L',
-                                'd': 'd',
-                                'Ehms': 'E h:mm:ss a',
-                                'Ehm': 'E h:mm a',
-                                'Md': 'M/d',
-                                'Ed': 'd E',
-                                'Gy': 'y G',
-                                'yMd': 'M/d/y',
-                                'MMMd': 'MMM d',
-                                'MEd': 'E, M/d',
-                                'GyMMMd': 'MMM d, y G',
-                                'EHms': 'E HH:mm:ss',
-                                'hms': 'h:mm:ss a',
-                                'GyMMMEd': 'E, MMM d, y G',
-                                'h': 'h a',
-                                'GyMMM': 'MMM y G',
-                                'Hm': 'HH:mm',
-                                'H': 'HH',
-                                'yMEd': 'E, M/d/y',
-                                'MMMEd': 'E, MMM d',
-                                'hm': 'h:mm a',
-                                'Hms': 'HH:mm:ss',
-                                'yM': 'M/y',
-                                'MMM': 'LLL',
-                                'ms': 'mm:ss',
-                                'y': 'y',
-                                'yMMM': 'MMM y',
-                                'yMMMd': 'MMM d, y',
-                                'yMMMEd': 'E, MMM d, y',
-                                'yQQQ': 'QQQ y',
-                                'yQQQQ': 'QQQQ y'
-                            },
-                            'medium': '{1}, {0}',
-                            'short': '{1}, {0}',
-                            'intervalFormats': {
-                                'Hv': {
-                                    'H': 'HH – HH v'
-                                },
-                                'Hmv': {
-                                    'H': 'HH:mm – HH:mm v',
-                                    'm': 'HH:mm – HH:mm v'
-                                },
-                                'h': {
-                                    'a': 'h a – h a',
-                                    'h': 'h – h a'
-                                },
-                                'M': {
-                                    'M': 'M – M'
-                                },
-                                'intervalFormatFallback': '{0} – {1}',
-                                'Md': {
-                                    'd': 'M/d – M/d',
-                                    'M': 'M/d – M/d'
-                                },
-                                'yMMMEd': {
-                                    'd': 'E, MMM d – E, MMM d, y',
-                                    'M': 'E, MMM d – E, MMM d, y',
-                                    'y': 'E, MMM d, y – E, MMM d, y'
-                                },
-                                'd': {
-                                    'd': 'd – d'
-                                },
-                                'MMMEd': {
-                                    'd': 'E, MMM d – E, MMM d',
-                                    'M': 'E, MMM d – E, MMM d'
-                                },
-                                'hm': {
-                                    'a': 'h:mm a – h:mm a',
-                                    'm': 'h:mm – h:mm a',
-                                    'h': 'h:mm – h:mm a'
-                                },
-                                'yMEd': {
-                                    'd': 'E, M/d/y – E, M/d/y',
-                                    'M': 'E, M/d/y – E, M/d/y',
-                                    'y': 'E, M/d/y – E, M/d/y'
-                                },
-                                'hmv': {
-                                    'a': 'h:mm a – h:mm a v',
-                                    'm': 'h:mm – h:mm a v',
-                                    'h': 'h:mm – h:mm a v'
-                                },
-                                'yMMM': {
-                                    'M': 'MMM – MMM y',
-                                    'y': 'MMM y – MMM y'
-                                },
-                                'H': {
-                                    'H': 'HH – HH'
-                                },
-                                'Hm': {
-                                    'H': 'HH:mm – HH:mm',
-                                    'm': 'HH:mm – HH:mm'
-                                },
-                                'MMM': {
-                                    'M': 'MMM – MMM'
-                                },
-                                'yM': {
-                                    'M': 'M/y – M/y',
-                                    'y': 'M/y – M/y'
-                                },
-                                'yMMMd': {
-                                    'd': 'MMM d – d, y',
-                                    'M': 'MMM d – MMM d, y',
-                                    'y': 'MMM d, y – MMM d, y'
-                                },
-                                'hv': {
-                                    'a': 'h a – h a v',
-                                    'h': 'h – h a v'
-                                },
-                                'yMd': {
-                                    'd': 'M/d/y – M/d/y',
-                                    'M': 'M/d/y – M/d/y',
-                                    'y': 'M/d/y – M/d/y'
-                                },
-                                'MMMd': {
-                                    'd': 'MMM d – d',
-                                    'M': 'MMM d – MMM d'
-                                },
-                                'MEd': {
-                                    'd': 'E, M/d – E, M/d',
-                                    'M': 'E, M/d – E, M/d'
-                                },
-                                'y': {
-                                    'y': 'y – y'
-                                },
-                                'yMMMM': {
-                                    'M': 'MMMM – MMMM y',
-                                    'y': 'MMMM y – MMMM y'
-                                }
-                            }
-                        }
-                    }
-                }
-            });
 
             arrayForEach([BigNumber, BigNumber.prototype], function (element) {
                 arrayForEach(objectKeys(element), function (key) {
