@@ -4208,9 +4208,9 @@
                     count,
                     copyMatch;
 
-                if (token.test(/^([|]?\S{1}\{\d+\}|[|]?\S{1}\{\d+,{1}\d*\})+$/)) {
+                if ((/^([|]?\S{1}\{\d+\}|[|]?\S{1}\{\d+,{1}\d*\})+$/).test(token)) {
                     copyMatch = token;
-                } else if (token.test(/^\{\d{1}\}$/)) {
+                } else if ((/^\{\d{1}\}$/).test(token)) {
                     copyMatch = token;
                 } else {
                     firstCharacter = firstChar(token);
