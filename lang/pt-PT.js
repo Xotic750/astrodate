@@ -2,6 +2,7 @@
  * Language: pt-PT
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * localeDisplayNames: 24r9287
  *
  * home: https://github.com/Xotic750/astrodate
  *
@@ -41,6 +42,173 @@
         /*global */
     }(function (AstroDate) {
         AstroDate.lang('pt-PT', {
+            'codePatterns': {
+                'language': 'Idioma: {0}',
+                'script': 'Escrita: {0}',
+                'territory': 'Região: {0}'
+            },
+            'types': {
+                'colHiraganaQuaternary': {
+                    'no': 'Ordenar Kana Separadamente',
+                    'yes': 'Ordenar Kana Diferentemente'
+                },
+                'colCaseLevel': {
+                    'no': 'Ordenar Insensível a Maiúsculas/Minúsculas',
+                    'yes': 'Ordenar Sensível a Maiúsculas/Minúsculas'
+                },
+                'colCaseFirst': {
+                    'lower': 'Ordenar Minúsculas Primeiro',
+                    'no': 'Ordenar Disposição de Tipo de Letra Normal',
+                    'upper': 'Ordenar Maiúsculas Primeiro'
+                },
+                'colStrength': {
+                    'identical': 'Ordenar Tudo',
+                    'primary': 'Ordenar Apenas Letras Básicas',
+                    'quaternary': 'Ordenar Acentos/Tipo de Letra/Largura/Kana',
+                    'secondary': 'Ordenar Acentos',
+                    'tertiary': 'Ordenar Acentos/Tipo de Letra/Largura'
+                },
+                'colNumeric': {
+                    'no': 'Ordenar Dígitos Individualmente',
+                    'yes': 'Ordenar Dígitos Numericamente'
+                },
+                'colNormalization': {
+                    'no': 'Ordenar Sem Normalização',
+                    'yes': 'Ordenar Unicode Normalizado'
+                },
+                'calendar': {
+                    'japanese': 'Calendário Japonês',
+                    'iso8601': 'iso8601',
+                    'coptic': 'Calendário Copta',
+                    'dangi': 'dangi',
+                    'ethiopic': 'Calendário Etíope',
+                    'ethiopic-amete-alem': 'Calendário Etíope Amete Alem',
+                    'gregorian': 'Calendário Gregoriano',
+                    'hebrew': 'Calendário Hebraico',
+                    'persian': 'Calendário Persa',
+                    'roc': 'Calendário da República da China',
+                    'chinese': 'Calendário Chinês',
+                    'buddhist': 'Calendário Budista',
+                    'indian': 'Calendário Nacional Indiano',
+                    'islamic': 'Calendário Islâmico',
+                    'islamic-civil': 'Calendário Islâmico/Civil',
+                    'islamic-rgsa': 'islamic-rgsa',
+                    'islamic-tbla': 'islamic-tbla',
+                    'islamic-umalqura': 'islamic-umalqura'
+                },
+                'collation': {
+                    'phonebook': 'Ordem da Lista Telefónica',
+                    'gb2312han': 'Ordem do Chinês Simplificado - GB2312',
+                    'eor': 'eor',
+                    'ducet': 'Ordenação Unicode Predefinida',
+                    'dictionary': 'Ordenação do Dicionário',
+                    'big5han': 'Ordem do Chinês Tradicional - Big5',
+                    'traditional': 'Ordem tradicional',
+                    'standard': 'Ordenação Predefinida',
+                    'zhuyin': 'zhuyin',
+                    'unihan': 'Ordem por radical e traços',
+                    'stroke': 'Ordem por traços',
+                    'searchjl': 'Pesquisar Por Consoante Inicial Hangul',
+                    'search': 'Pesquisa de uso geral',
+                    'reformed': 'Reforma da Ordenação',
+                    'pinyin': 'Ordem do Chinês Simplificado Pinyin',
+                    'phonetic': 'Sequência de Ordenação Fonética'
+                },
+                'numbers': {
+                    'knda': 'Algarismos de Canarim',
+                    'khmr': 'Algarismos Khmer',
+                    'kali': 'kali',
+                    'jpanfin': 'Numeração Financeira Japonesa',
+                    'jpan': 'Numeração Japonesa',
+                    'java': 'java',
+                    'hebr': 'Numeração Hebraica',
+                    'hantfin': 'Numeração Financeira Chinês Tradicional',
+                    'hant': 'Numeração Chinês Tradicional',
+                    'hansfin': 'Numeração Financeira Chinês Simplificado',
+                    'hans': 'Numeração Chinês Simplificado',
+                    'hanidec': 'Numeração Decimal Chinesa',
+                    'guru': 'Algarismos Gurmukhi',
+                    'gujr': 'Algarismos de Guzerate',
+                    'greklow': 'Numeração Grega Minúscula',
+                    'grek': 'Numeração Grega',
+                    'bali': 'bali',
+                    'armnlow': 'Numeração Arménia Minúscula',
+                    'armn': 'Algarismos Arménios',
+                    'arabext': 'Algarismos indo-arábicos por extenso',
+                    'arab': 'Algarismos indo-arábicos',
+                    'finance': 'Algarismos Financeiros',
+                    'traditional': 'Algarismos Tradicionais',
+                    'native': 'Dígitos Nativos',
+                    'beng': 'Algarismos Bengalis',
+                    'brah': 'brah',
+                    'cakm': 'cakm',
+                    'cham': 'cham',
+                    'deva': 'Algarismos Devanágaris',
+                    'orya': 'Algarismos Oriá',
+                    'osma': 'osma',
+                    'roman': 'Numeração Romana',
+                    'romanlow': 'Numeração Romana Minúscula',
+                    'saur': 'saur',
+                    'shrd': 'shrd',
+                    'sora': 'sora',
+                    'sund': 'sund',
+                    'vaii': 'Dígitos Vai',
+                    'tibt': 'Algarismos Tibetanos',
+                    'thai': 'Algarismos Tailandeses',
+                    'telu': 'Algarismos de Telugu',
+                    'tamldec': 'Algarismos Tâmil',
+                    'taml': 'Numeração Tâmil',
+                    'talu': 'talu',
+                    'takr': 'takr',
+                    'olck': 'olck',
+                    'nkoo': 'nkoo',
+                    'mymrshan': 'mymrshan',
+                    'mymr': 'Algarismos de Mianmar',
+                    'mtei': 'mtei',
+                    'mong': 'Algarismos Mongóis',
+                    'mlym': 'Algarismos Malaiala',
+                    'limb': 'limb',
+                    'lepc': 'lepc',
+                    'latn': 'Algarismos Ocidentais',
+                    'laoo': 'Algarismos de Laos',
+                    'lanatham': 'lanatham',
+                    'lana': 'lana',
+                    'geor': 'Numeração Georgiana',
+                    'fullwide': 'Algarismos de Largura Completa',
+                    'ethi': 'Numeração Etíope'
+                },
+                'colAlternate': {
+                    'non-ignorable': 'Ordenar Símbolos',
+                    'shifted': 'Ordenar Símbolos Ignorados'
+                },
+                'colBackwards': {
+                    'no': 'Ordenar Acentos Normalmente',
+                    'yes': 'Ordenar Acentos Inversamente'
+                }
+            },
+            'keys': {
+                'colNormalization': 'Ordenação Normalizada',
+                'collation': 'Ordenação',
+                'colHiraganaQuaternary': 'Ordenação Kana',
+                'colCaseLevel': 'Ordenação Sensível a Maiúsculas e Minúsculas',
+                'colCaseFirst': 'Disposição de Maiúsculas/Minúsculas',
+                'colBackwards': 'Ordenação de Acentos Invertida',
+                'colAlternate': 'Ignorar Ordenação de Símbolos',
+                'calendar': 'Calendário',
+                'x': 'Utilização Privada',
+                'variableTop': 'Ordenar Como Símbolos',
+                'va': 'Variante Local',
+                'timezone': 'Fuso Horário',
+                'numbers': 'Números',
+                'currency': 'Moeda',
+                'colStrength': 'Força da Ordenação',
+                'colNumeric': 'Ordenação Numérica'
+            },
+            'localeDisplayPattern': {
+                'localePattern': '{0} ({1})',
+                'localeSeparator': '{0}, {1}',
+                'localeKeyTypePattern': '{0}: {1}'
+            },
             'timeZoneNames': {
                 'zone': {
                     'Pacific': {

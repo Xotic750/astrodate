@@ -2,6 +2,7 @@
  * Language: ja
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * localeDisplayNames: 24r9287
  *
  * home: https://github.com/Xotic750/astrodate
  *
@@ -41,6 +42,173 @@
         /*global */
     }(function (AstroDate) {
         AstroDate.lang('ja', {
+            'codePatterns': {
+                'language': '言語: {0}',
+                'script': '文字: {0}',
+                'territory': '地域: {0}'
+            },
+            'types': {
+                'colHiraganaQuaternary': {
+                    'no': '仮名を区別しないで並べ替え',
+                    'yes': '仮名を区別して並べ替え'
+                },
+                'colCaseLevel': {
+                    'no': '大文字小文字を区別しないで並べ替え',
+                    'yes': '大文字小文字を区別して並べ替え'
+                },
+                'colCaseFirst': {
+                    'lower': '小文字優先で並べ替え',
+                    'no': '大文字小文字を通常の順序で並べ替え',
+                    'upper': '大文字優先で並べ替え'
+                },
+                'colStrength': {
+                    'identical': 'すべてを区別して並べ替え',
+                    'primary': '基本文字のみで並べ替え',
+                    'quaternary': 'アクセント/大文字小文字/全角半角/仮名で並べ替え',
+                    'secondary': 'アクセントで並べ替え',
+                    'tertiary': 'アクセント/大文字小文字/全角半角で並べ替え'
+                },
+                'colNumeric': {
+                    'no': '数値を独立して並べ替え',
+                    'yes': '数値を数値として並べ替え'
+                },
+                'colNormalization': {
+                    'no': '正規化しないで並べ替え',
+                    'yes': 'Unicode 正規化で並べ替え'
+                },
+                'calendar': {
+                    'japanese': '和暦',
+                    'iso8601': 'ISO-8601',
+                    'coptic': 'コプト暦',
+                    'dangi': 'ダンギ暦',
+                    'ethiopic': 'エチオピア暦',
+                    'ethiopic-amete-alem': 'エチオピア創世紀元暦',
+                    'gregorian': '西暦(グレゴリオ暦)',
+                    'hebrew': 'ユダヤ暦',
+                    'persian': 'ペルシア暦',
+                    'roc': '中華民国暦',
+                    'chinese': '中国暦',
+                    'buddhist': 'タイ仏教暦',
+                    'indian': 'インド国定暦',
+                    'islamic': 'イスラム暦',
+                    'islamic-civil': '太陽イスラム暦',
+                    'islamic-rgsa': 'イスラム暦(サウジアラビア、月観測)',
+                    'islamic-tbla': 'イスラム暦(天文紀元)',
+                    'islamic-umalqura': 'イスラム暦(ウンム・アルクラー)'
+                },
+                'collation': {
+                    'phonebook': '電話帳順',
+                    'gb2312han': '簡体字中国語順(GB2312)',
+                    'eor': 'eor',
+                    'ducet': 'ユニコード照合順',
+                    'dictionary': '辞書順',
+                    'big5han': '繁体字中国語順(Big5)',
+                    'traditional': 'トラディッショナル',
+                    'standard': '標準ソート順序',
+                    'zhuyin': '注音順',
+                    'unihan': '部首順',
+                    'stroke': '画数順',
+                    'searchjl': 'ハングル語頭子音による並べ替え',
+                    'search': '汎用検索',
+                    'reformed': 'リフォーム',
+                    'pinyin': 'ピンイン',
+                    'phonetic': '音声順による並べ替え'
+                },
+                'numbers': {
+                    'knda': 'カンナダ数字',
+                    'khmr': 'クメール数字',
+                    'kali': 'カヤー数字',
+                    'jpanfin': '大字',
+                    'jpan': '漢数字',
+                    'java': 'ジャワ数字',
+                    'hebr': 'ヘブライ数字',
+                    'hantfin': '繁体大字',
+                    'hant': '繁体漢数字',
+                    'hansfin': '簡体大字',
+                    'hans': '簡体漢数字',
+                    'hanidec': '漢数字(位取り記数法)',
+                    'guru': 'グルムキー数字',
+                    'gujr': 'グジャラート数字',
+                    'greklow': 'ギリシャ数字(小文字)',
+                    'grek': 'ギリシャ数字',
+                    'bali': 'バリ数字',
+                    'armnlow': 'アルメニア数字(小文字)',
+                    'armn': 'アルメニア数字',
+                    'arabext': 'ペルシア数字',
+                    'arab': 'アラビア・インド数字',
+                    'finance': '財務用漢数字',
+                    'traditional': '従来の記数法',
+                    'native': '独自の記数法',
+                    'beng': 'ベンガル数字',
+                    'brah': 'ブラーフミー数字',
+                    'cakm': 'チャクマ数字',
+                    'cham': 'チャム数字',
+                    'deva': 'デーヴァナーガリー数字',
+                    'orya': 'オリヤー数字',
+                    'osma': 'オスマニア数字',
+                    'roman': 'ローマ数字',
+                    'romanlow': 'ローマ数字(小文字)',
+                    'saur': 'サウラーシュトラ数字',
+                    'shrd': 'シャーラダー数字',
+                    'sora': 'ソラ・ソンペン数字',
+                    'sund': 'スンダ数字',
+                    'vaii': 'ヴァイ文字の記数法',
+                    'tibt': 'チベット数字',
+                    'thai': 'タイ数字',
+                    'telu': 'テルグ数字',
+                    'tamldec': 'タミル数字',
+                    'taml': 'タミール数字',
+                    'talu': '新タイ・ルー数字',
+                    'takr': 'タークリー数字',
+                    'olck': 'オルチキ数字',
+                    'nkoo': 'ンコ数字',
+                    'mymrshan': 'ミャンマー・シャン数字',
+                    'mymr': 'ミャンマー数字',
+                    'mtei': 'マニプリ数字',
+                    'mong': 'モンゴル数字',
+                    'mlym': 'マラヤーラム数字',
+                    'limb': 'リンブ数字',
+                    'lepc': 'レプチャ数字',
+                    'latn': '算用数字',
+                    'laoo': 'ラオ数字',
+                    'lanatham': 'ラーンナー・タム数字',
+                    'lana': 'ラーンナー数字',
+                    'geor': 'グルジア数字',
+                    'fullwide': '全角数字',
+                    'ethi': 'エチオピア数字'
+                },
+                'colAlternate': {
+                    'non-ignorable': '記号で並べ替え',
+                    'shifted': '記号を無視して並べ替え'
+                },
+                'colBackwards': {
+                    'no': 'アクセント（順方向）で並べ替え',
+                    'yes': 'アクセント（逆方向）で並べ替え'
+                }
+            },
+            'keys': {
+                'colNormalization': '正規化による並べ替え',
+                'collation': '並べ替え順序',
+                'colHiraganaQuaternary': '仮名による並べ替え',
+                'colCaseLevel': '大文字小文字を区別した並べ替え',
+                'colCaseFirst': '大文字順/小文字順による並べ替え',
+                'colBackwards': 'アクセント（逆方向）による並べ替え',
+                'colAlternate': '記号を無視した並べ替え',
+                'calendar': '暦法',
+                'x': '私用',
+                'variableTop': '記号として並べ替え',
+                'va': 'ロケールのバリアント',
+                'timezone': 'タイムゾーン',
+                'numbers': '数値書式',
+                'currency': '通貨',
+                'colStrength': '強度による並べ替え',
+                'colNumeric': '数値による並べ替え'
+            },
+            'localeDisplayPattern': {
+                'localePattern': '{0} ({1})',
+                'localeSeparator': '{0}、{1}',
+                'localeKeyTypePattern': '{0}: {1}'
+            },
             'timeZoneNames': {
                 'zone': {
                     'Pacific': {

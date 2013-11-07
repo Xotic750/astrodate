@@ -2,6 +2,7 @@
  * Language: <%= id %>
  * ca-gregorian: <%= version1 %>
  * timeZoneNames: <%= version2 %>
+ * localeDisplayNames: <%= version3 %>
  *
  * home: https://github.com/Xotic750/astrodate
  *

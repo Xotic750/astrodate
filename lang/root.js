@@ -2,6 +2,7 @@
  * Language: root
  * ca-gregorian: 24r9308
  * timeZoneNames: 24r9308
+ * localeDisplayNames: 24r9308
  *
  * home: https://github.com/Xotic750/astrodate
  *
@@ -41,6 +42,121 @@
         /*global */
     }(function (AstroDate) {
         AstroDate.lang('root', {
+            'codePatterns': {
+                'language': '{0}',
+                'script': '{0}',
+                'territory': '{0}'
+            },
+            'types': {
+                'calendar': {
+                    'japanese': 'japanese',
+                    'iso8601': 'iso8601',
+                    'coptic': 'coptic',
+                    'dangi': 'dangi',
+                    'ethiopic': 'ethiopic',
+                    'ethiopic-amete-alem': 'ethiopic-amete-alem',
+                    'gregorian': 'gregorian',
+                    'hebrew': 'hebrew',
+                    'persian': 'persian',
+                    'roc': 'roc',
+                    'chinese': 'chinese',
+                    'buddhist': 'buddhist',
+                    'indian': 'indian',
+                    'islamic': 'islamic',
+                    'islamic-civil': 'islamic-civil',
+                    'islamic-rgsa': 'islamic-rgsa',
+                    'islamic-tbla': 'islamic-tbla',
+                    'islamic-umalqura': 'islamic-umalqura'
+                },
+                'collation': {
+                    'phonebook': 'phonebook',
+                    'gb2312han': 'gb2312han',
+                    'eor': 'eor',
+                    'ducet': 'ducet',
+                    'dictionary': 'dictionary',
+                    'big5han': 'big5han',
+                    'traditional': 'traditional',
+                    'zhuyin': 'zhuyin',
+                    'unihan': 'unihan',
+                    'stroke': 'stroke',
+                    'searchjl': 'searchjl',
+                    'search': 'search',
+                    'reformed': 'reformed',
+                    'pinyin': 'pinyin',
+                    'standard': 'standard'
+                },
+                'numbers': {
+                    'laoo': 'laoo',
+                    'lanatham': 'lanatham',
+                    'lana': 'lana',
+                    'knda': 'knda',
+                    'khmr': 'khmr',
+                    'kali': 'kali',
+                    'jpanfin': 'jpanfin',
+                    'jpan': 'jpan',
+                    'java': 'java',
+                    'hebr': 'hebr',
+                    'hantfin': 'hantfin',
+                    'hant': 'hant',
+                    'hansfin': 'hansfin',
+                    'hans': 'hans',
+                    'hanidec': 'hanidec',
+                    'guru': 'guru',
+                    'cakm': 'cakm',
+                    'brah': 'brah',
+                    'beng': 'beng',
+                    'bali': 'bali',
+                    'armnlow': 'armnlow',
+                    'armn': 'armn',
+                    'arabext': 'arabext',
+                    'arab': 'arab',
+                    'cham': 'cham',
+                    'deva': 'deva',
+                    'orya': 'orya',
+                    'osma': 'osma',
+                    'roman': 'roman',
+                    'romanlow': 'romanlow',
+                    'saur': 'saur',
+                    'shrd': 'shrd',
+                    'sora': 'sora',
+                    'sund': 'sund',
+                    'vaii': 'vaii',
+                    'tibt': 'tibt',
+                    'thai': 'thai',
+                    'telu': 'telu',
+                    'tamldec': 'tamldec',
+                    'taml': 'taml',
+                    'talu': 'talu',
+                    'takr': 'takr',
+                    'olck': 'olck',
+                    'nkoo': 'nkoo',
+                    'mymrshan': 'mymrshan',
+                    'mymr': 'mymr',
+                    'mtei': 'mtei',
+                    'mong': 'mong',
+                    'mlym': 'mlym',
+                    'limb': 'limb',
+                    'lepc': 'lepc',
+                    'latn': 'latn',
+                    'gujr': 'gujr',
+                    'greklow': 'greklow',
+                    'grek': 'grek',
+                    'geor': 'geor',
+                    'fullwide': 'fullwide',
+                    'ethi': 'ethi'
+                }
+            },
+            'keys': {
+                'calendar': 'calendar',
+                'collation': 'collation',
+                'currency': 'currency',
+                'numbers': 'numbers'
+            },
+            'localeDisplayPattern': {
+                'localePattern': '{0} ({1})',
+                'localeSeparator': '{0}, {1}',
+                'localeKeyTypePattern': '{0}: {1}'
+            },
             'timeZoneNames': {
                 'hourFormat': '+HH:mm;-HH:mm',
                 'gmtFormat': 'GMT{0}',

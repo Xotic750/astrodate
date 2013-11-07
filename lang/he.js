@@ -2,6 +2,7 @@
  * Language: he
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * localeDisplayNames: 24r9287
  *
  * home: https://github.com/Xotic750/astrodate
  *
@@ -41,6 +42,173 @@
         /*global */
     }(function (AstroDate) {
         AstroDate.lang('he', {
+            'codePatterns': {
+                'language': 'שפה:‏ {0}',
+                'script': 'כתב: {0}',
+                'territory': 'אזור: {0}'
+            },
+            'types': {
+                'colHiraganaQuaternary': {
+                    'no': 'מיין קאנה בנפרד',
+                    'yes': 'מיין קאנה אחרת'
+                },
+                'colCaseLevel': {
+                    'no': 'מיין באופן שאינו תלוי רישיות',
+                    'yes': 'מיין באופן תלוי רישיות'
+                },
+                'colCaseFirst': {
+                    'lower': 'מיין תחילה לפי אותיות קטנות',
+                    'no': 'מיין לפי סדר רישיות רגיל',
+                    'upper': 'מיין תחילה לפי אותיות רישיות'
+                },
+                'colStrength': {
+                    'identical': 'מיין הכל',
+                    'primary': 'מיין תוך התעלמות מהטעמות',
+                    'quaternary': 'מיין לפי הטעמות/רישיות/רוחב/קאנה',
+                    'secondary': 'מיין לפי הטעמות',
+                    'tertiary': 'מיין הטעמות/רישיות/רוחב'
+                },
+                'colNumeric': {
+                    'no': 'מיין ספרות בנפרד',
+                    'yes': 'מיין ספרות לפי סדר מספרי'
+                },
+                'colNormalization': {
+                    'no': 'מיין ללא נורמליזציה',
+                    'yes': 'מיין לפי Unicode מנורמל'
+                },
+                'calendar': {
+                    'japanese': 'לוח שנה יפני',
+                    'iso8601': 'iso8601',
+                    'coptic': 'לוח שנה קופטי',
+                    'dangi': 'dangi',
+                    'ethiopic': 'לוח השנה האתיופי',
+                    'ethiopic-amete-alem': 'לוח השנה אמטה אלם האתיופי',
+                    'gregorian': 'לוח שנה גרגוריאני',
+                    'hebrew': 'לוח שנה עברי',
+                    'persian': 'לוח השנה הפרסי',
+                    'roc': 'לוח השנה הסיני Minguo',
+                    'chinese': 'לוח שנה סיני',
+                    'buddhist': 'לוח שנה בודהיסטי',
+                    'indian': 'לוח השנה ההודי הלאומי',
+                    'islamic': 'לוח שנה מוסלמי',
+                    'islamic-civil': 'לוח שנה מוסלמי-אזרחי',
+                    'islamic-rgsa': 'islamic-rgsa',
+                    'islamic-tbla': 'לוח שנה מוסלמי-אסטרולוגי',
+                    'islamic-umalqura': 'islamic-umalqura'
+                },
+                'collation': {
+                    'phonebook': 'מיון ספר טלפונים',
+                    'gb2312han': 'מיון סינית מודרנית',
+                    'eor': 'eor',
+                    'ducet': 'סדר מיון Unicode המוגדר כברירת מחדל',
+                    'dictionary': 'סדר מיון במילון',
+                    'big5han': 'מיון סינית מסורתית',
+                    'traditional': 'מיון מסורתי',
+                    'standard': 'סדר מיון רגיל',
+                    'zhuyin': 'zhuyin',
+                    'unihan': 'סדר מיון לפי ספירת תווים Radical-Stroke',
+                    'stroke': 'סדר מיון לפי ספירת תווים',
+                    'searchjl': 'חפש לפי העיצור הראשון באותיות הנגול',
+                    'search': 'חיפוש למטרה כללית',
+                    'reformed': 'סדר מיון מתוקן',
+                    'pinyin': 'מיון פיניין',
+                    'phonetic': 'סדר מיון פונטי'
+                },
+                'numbers': {
+                    'knda': 'מספרים של קאנאדה',
+                    'khmr': 'ספרות חמריות',
+                    'kali': 'kali',
+                    'jpanfin': 'מספרים פיננסיים יפניים',
+                    'jpan': 'מספרים יפניים',
+                    'java': 'java',
+                    'hebr': 'ספרות עבריות',
+                    'hantfin': 'מספרים פיננסיים בסינית מסורתית',
+                    'hant': 'מספרים בסינית מסורתית',
+                    'hansfin': 'מספרים פיננסיים בסינית פשוטה',
+                    'hans': 'מספרים בסינית פשוטה',
+                    'hanidec': 'מערכת המספרים העשרונית הסינית',
+                    'guru': 'מספרים גורמוקיים',
+                    'gujr': 'מספרים בגוג׳רטי',
+                    'greklow': 'מספרים יווניים קטנים',
+                    'grek': 'מספרים יווניים',
+                    'bali': 'bali',
+                    'armnlow': 'מספרים ארמניים קטנים',
+                    'armn': 'מספרים ארמניים',
+                    'arabext': 'ספרות הודיות-ערביות',
+                    'arab': 'ספרות הודו-ערביות',
+                    'finance': 'ספרות פיננסיות',
+                    'traditional': 'ספרות מסורתיות',
+                    'native': 'ספרות מקומיות',
+                    'beng': 'ספרות בנגליות',
+                    'brah': 'brah',
+                    'cakm': 'cakm',
+                    'cham': 'cham',
+                    'deva': 'מספרים של דוונגארי',
+                    'orya': 'ספרות אוריה',
+                    'osma': 'osma',
+                    'roman': 'מספרים רומיים',
+                    'romanlow': 'מספרים רומיים קטנים',
+                    'saur': 'saur',
+                    'shrd': 'shrd',
+                    'sora': 'sora',
+                    'sund': 'sund',
+                    'vaii': 'ספרות ואי',
+                    'tibt': 'מספרים טיבטיים',
+                    'thai': 'ספרות תאילנדיות',
+                    'telu': 'ספרות טלוגו',
+                    'tamldec': 'ספרות טמיליות',
+                    'taml': 'מספרים טמיליים',
+                    'talu': 'talu',
+                    'takr': 'takr',
+                    'olck': 'olck',
+                    'nkoo': 'nkoo',
+                    'mymrshan': 'mymrshan',
+                    'mymr': 'ספרות של מיאנמר',
+                    'mtei': 'mtei',
+                    'mong': 'ספרות מונגוליות',
+                    'mlym': 'מספרים של מליאלאם',
+                    'limb': 'limb',
+                    'lepc': 'lepc',
+                    'latn': 'ספרות מערביות',
+                    'laoo': 'מספרים של לאוס',
+                    'lanatham': 'lanatham',
+                    'lana': 'lana',
+                    'geor': 'מספרים גיאורגיים',
+                    'fullwide': 'ספרות ברוחב מלא',
+                    'ethi': 'מספרים אתיופיים'
+                },
+                'colAlternate': {
+                    'non-ignorable': 'מיין סמלים',
+                    'shifted': 'מיין תוך התעלמות מסמלים'
+                },
+                'colBackwards': {
+                    'no': 'מיין הטעמות בצורה רגילה',
+                    'yes': 'מיין לפי הטעמות בסדר הפוך'
+                }
+            },
+            'keys': {
+                'colNormalization': 'מיון מנורמל',
+                'collation': 'סדר מיון',
+                'colHiraganaQuaternary': 'מיון קאנה',
+                'colCaseLevel': 'מיון תלוי רישיות',
+                'colCaseFirst': 'סידור לפי אותיות רישיות/קטנות',
+                'colBackwards': 'מיון לפי הטעמות בסדר הפוך',
+                'colAlternate': 'התעלם מסמלים במיון',
+                'calendar': 'לוח שנה',
+                'x': 'שימוש פרטי',
+                'variableTop': 'מיין כסמלים',
+                'va': 'משתנה אזור',
+                'timezone': 'אזור זמן',
+                'numbers': 'מספרים',
+                'currency': 'מטבע',
+                'colStrength': 'עוצמת המיון',
+                'colNumeric': 'מיון לפי מספרים'
+            },
+            'localeDisplayPattern': {
+                'localePattern': '{0} ({1})',
+                'localeSeparator': '{0}, {1}',
+                'localeKeyTypePattern': '{0}:‏ {1}'
+            },
             'timeZoneNames': {
                 'zone': {
                     'Pacific': {

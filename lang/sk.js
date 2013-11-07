@@ -2,6 +2,7 @@
  * Language: sk
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * localeDisplayNames: 24r9287
  *
  * home: https://github.com/Xotic750/astrodate
  *
@@ -41,6 +42,173 @@
         /*global */
     }(function (AstroDate) {
         AstroDate.lang('sk', {
+            'codePatterns': {
+                'language': 'Jazyk: {0}',
+                'script': 'Písmo: {0}',
+                'territory': 'Región: {0}'
+            },
+            'types': {
+                'colHiraganaQuaternary': {
+                    'no': 'Radiť slabičné písma (kana) samostatne',
+                    'yes': 'Radiť slabičné písma (kana) inak'
+                },
+                'colCaseLevel': {
+                    'no': 'Pri radení nerozlišovať veľké a malé písmená',
+                    'yes': 'Pri radení rozlišovať veľké a malé písmená'
+                },
+                'colCaseFirst': {
+                    'lower': 'Najprv radiť malé písmená',
+                    'no': 'Normálne radenie veľkých a malých písmen',
+                    'upper': 'Najprv radiť veľké písmená'
+                },
+                'colStrength': {
+                    'identical': 'Radiť všetko',
+                    'primary': 'Radiť iba základné písmená',
+                    'quaternary': 'Radiť akcenty/veľké a malé písmená/šírku/kana',
+                    'secondary': 'Radiť akcenty',
+                    'tertiary': 'Radiť akcenty/veľké a malé písmená/šírku'
+                },
+                'colNumeric': {
+                    'no': 'Radiť číslice jednotlivo',
+                    'yes': 'Numerické radenie číslic'
+                },
+                'colNormalization': {
+                    'no': 'Radiť bez normalizácie',
+                    'yes': 'Radenie podľa normalizovaného kódovania Unicode'
+                },
+                'calendar': {
+                    'japanese': 'Japonský kalendár',
+                    'iso8601': 'iso8601',
+                    'coptic': 'Koptický kalendár',
+                    'dangi': 'dangi',
+                    'ethiopic': 'Etiópsky kalendár',
+                    'ethiopic-amete-alem': 'Etiópsky kalendár Amete Alem',
+                    'gregorian': 'Gregoriánsky kalendár',
+                    'hebrew': 'Židovský kalendár',
+                    'persian': 'Perzský kalendár',
+                    'roc': 'Kalendár Čínskej republiky',
+                    'chinese': 'Čínsky kalendár',
+                    'buddhist': 'Buddhistický kalendár',
+                    'indian': 'Indický národný kalendár',
+                    'islamic': 'Islamský kalendár',
+                    'islamic-civil': 'Islamský občiansky kalendár',
+                    'islamic-rgsa': 'islamic-rgsa',
+                    'islamic-tbla': 'islamic-tbla',
+                    'islamic-umalqura': 'islamic-umalqura'
+                },
+                'collation': {
+                    'phonebook': 'Lexikografické triedenie',
+                    'gb2312han': 'Zjednodušený čínsky GB2312',
+                    'eor': 'eor',
+                    'ducet': 'Predvolené usporiadanie unicode',
+                    'dictionary': 'Usporiadanie slovníka',
+                    'big5han': 'Tradičný čínsky Big5',
+                    'traditional': 'Tradičné',
+                    'standard': 'Štandardné poradie',
+                    'zhuyin': 'zhuyin',
+                    'unihan': 'Usporiadanie podľa znakov radikál',
+                    'stroke': 'Tiedenie podľa ťahov',
+                    'searchjl': 'Hľadať podľa počiatočnej spoluhlásky písma Hangul',
+                    'search': 'Všeobecné vyhľadávanie',
+                    'reformed': 'Reformované usporiadanie',
+                    'pinyin': 'Triedenie pinyin',
+                    'phonetic': 'Fonetické radenie'
+                },
+                'numbers': {
+                    'knda': 'Kannadské číslice',
+                    'khmr': 'Khmérske číslice',
+                    'kali': 'kali',
+                    'jpanfin': 'Japonské finančné číslice',
+                    'jpan': 'Japonské číslice',
+                    'java': 'java',
+                    'hebr': 'Hebrejské číslice',
+                    'hantfin': 'Finančné číslice tradičnej čínštiny',
+                    'hant': 'Číslice tradičnej čínštiny',
+                    'hansfin': 'Finančné číslice zjednodušenej čínštiny',
+                    'hans': 'Číslice zjednodušenej čínštiny',
+                    'hanidec': 'Čínske desatinné číslice',
+                    'guru': 'Číslice Gurmukhi',
+                    'gujr': 'Gudžarátske číslice',
+                    'greklow': 'Grécke číslice (malé písmená)',
+                    'grek': 'Grécke číslice',
+                    'bali': 'bali',
+                    'armnlow': 'Arménske číslice (malé písmená)',
+                    'armn': 'Arménske číslice',
+                    'arabext': 'Rozšírené arabsko-indické číslice',
+                    'arab': 'Arabsko-indické číslice',
+                    'finance': 'Finančnícky zápis čísiel',
+                    'traditional': 'Tradičné číslovky',
+                    'native': 'Natívne číslice',
+                    'beng': 'Bengálske číslice',
+                    'brah': 'brah',
+                    'cakm': 'cakm',
+                    'cham': 'cham',
+                    'deva': 'Číslice písma Dévanágarí',
+                    'orya': 'Oríjske číslice',
+                    'osma': 'osma',
+                    'roman': 'Rímske číslice',
+                    'romanlow': 'Rímske číslice (malé písmená)',
+                    'saur': 'saur',
+                    'shrd': 'shrd',
+                    'sora': 'sora',
+                    'sund': 'sund',
+                    'vaii': 'Vaiské číslice',
+                    'tibt': 'Tibetské číslice',
+                    'thai': 'Thajské číslice',
+                    'telu': 'Telugské číslice',
+                    'tamldec': 'Tamilské číslice',
+                    'taml': 'Tamilské číslice',
+                    'talu': 'talu',
+                    'takr': 'takr',
+                    'olck': 'olck',
+                    'nkoo': 'nkoo',
+                    'mymrshan': 'mymrshan',
+                    'mymr': 'Mjanmarské číslice',
+                    'mtei': 'mtei',
+                    'mong': 'Mongolské číslice',
+                    'mlym': 'Malajámske číslice',
+                    'limb': 'limb',
+                    'lepc': 'lepc',
+                    'latn': 'Arabské číslice',
+                    'laoo': 'Číslice písma lao',
+                    'lanatham': 'lanatham',
+                    'lana': 'lana',
+                    'geor': 'Gruzínske číslice',
+                    'fullwide': 'Číslice s celou šírkou',
+                    'ethi': 'Etiópske číslice'
+                },
+                'colAlternate': {
+                    'non-ignorable': 'Radiť symboly',
+                    'shifted': 'Pri radení ignorovať symboly'
+                },
+                'colBackwards': {
+                    'no': 'Normálne radenie akcentov',
+                    'yes': 'Radiť akcenty opačne'
+                }
+            },
+            'keys': {
+                'colNormalization': 'Normalizované radenie',
+                'collation': 'Triedenie',
+                'colHiraganaQuaternary': 'Radenie podľa slabičných písiem (kana)',
+                'colCaseLevel': 'Rozlišovanie veľkých a malých písmen pri radení',
+                'colCaseFirst': 'Radenie veľkých a malých písmen',
+                'colBackwards': 'Obrátené radenie akcentov',
+                'colAlternate': 'Ignorovať radenie symbolov',
+                'calendar': 'Kalendár',
+                'x': 'Súkromné použitie',
+                'variableTop': 'Radiť ako symboly',
+                'va': 'Variant miestneho nastavenia',
+                'timezone': 'Časové pásmo',
+                'numbers': 'Číslice',
+                'currency': 'Mena',
+                'colStrength': 'Sila radenia',
+                'colNumeric': 'Číselné radenie'
+            },
+            'localeDisplayPattern': {
+                'localePattern': '{0} ({1})',
+                'localeSeparator': '{0}, {1}',
+                'localeKeyTypePattern': '{0}: {1}'
+            },
             'timeZoneNames': {
                 'zone': {
                     'Pacific': {

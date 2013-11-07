@@ -2,6 +2,7 @@
  * Language: fr
  * ca-gregorian: 24r9310
  * timeZoneNames: 24r9310
+ * localeDisplayNames: 24r9310
  *
  * home: https://github.com/Xotic750/astrodate
  *
@@ -41,6 +42,173 @@
         /*global */
     }(function (AstroDate) {
         AstroDate.lang('fr', {
+            'codePatterns': {
+                'language': 'langue : {0}',
+                'script': 'écriture : {0}',
+                'territory': 'région : {0}'
+            },
+            'types': {
+                'colHiraganaQuaternary': {
+                    'no': 'Trier les caractères Kana séparément',
+                    'yes': 'Trier les caractères Kana différemment'
+                },
+                'colCaseLevel': {
+                    'no': 'Trier sans tenir compte de la casse',
+                    'yes': 'Trier en tenant compte de la casse'
+                },
+                'colCaseFirst': {
+                    'lower': 'Trier avec les minuscules d\'abord',
+                    'no': 'Trier sans ordre lié à la casse',
+                    'upper': 'Trier avec les majuscules d\'abord'
+                },
+                'colStrength': {
+                    'identical': 'Tout trier',
+                    'primary': 'Ne trier que les lettres de base',
+                    'quaternary': 'Trier en tenant compte des caractères accentués, de la casse, de la largeur et des caractères Kana',
+                    'secondary': 'Trier en tenant compte des caractères accentués',
+                    'tertiary': 'Trier en tenant compte des caractères accentués, de la casse et de la largeur'
+                },
+                'colNumeric': {
+                    'no': 'Trier les chiffres individuellement',
+                    'yes': 'Trier les chiffres par ordre numérique'
+                },
+                'colNormalization': {
+                    'no': 'Trier sans normalisation',
+                    'yes': 'Trier avec normalisation Unicode'
+                },
+                'calendar': {
+                    'japanese': 'Calendrier japonais',
+                    'iso8601': 'calendrier ISO 8601',
+                    'coptic': 'Calendrier copte',
+                    'dangi': 'calendrier dangi',
+                    'ethiopic': 'Calendrier éthiopien',
+                    'ethiopic-amete-alem': 'Calendrier éthiopien Amete Alem',
+                    'gregorian': 'calendrier grégorien',
+                    'hebrew': 'Calendrier hébraïque',
+                    'persian': 'Calendrier persan',
+                    'roc': 'Calendrier républicain chinois',
+                    'chinese': 'Calendrier chinois',
+                    'buddhist': 'calendrier bouddhiste',
+                    'indian': 'Calendrier indien',
+                    'islamic': 'calendrier musulman',
+                    'islamic-civil': 'calendrier musulman (tabulaire, époque civile)',
+                    'islamic-rgsa': 'calendrier musulman (observé, Arabie Saoudite)',
+                    'islamic-tbla': 'calendrier musulman (tabulaire, époque astronomique)',
+                    'islamic-umalqura': 'calendrier musulman (calculé, Umm al-Qura)'
+                },
+                'collation': {
+                    'phonebook': 'Ordre de l’annuaire',
+                    'gb2312han': 'Ordre chinois simplifié - GB2312',
+                    'eor': 'ordre de tri multilingue européen',
+                    'ducet': 'ordre de tri Unicode par défaut',
+                    'dictionary': 'Ordre du dictionnaire',
+                    'big5han': 'Ordre chinois traditionnel - Big5',
+                    'traditional': 'Ordre traditionnel',
+                    'standard': 'ordre de tri standard',
+                    'zhuyin': 'ordre zhuyin',
+                    'unihan': 'Ordre par radical et nombre de traits',
+                    'stroke': 'Ordre des traits',
+                    'searchjl': 'Rechercher par consonne initiale en hangeul',
+                    'search': 'recherche générique',
+                    'reformed': 'Ordre réformé',
+                    'pinyin': 'Ordre pinyin',
+                    'phonetic': 'Ordre de tri phonétique'
+                },
+                'numbers': {
+                    'knda': 'Chiffres en kannada',
+                    'khmr': 'chiffres khmers',
+                    'kali': 'chiffres kayah li',
+                    'jpanfin': 'chiffres japonais financiers',
+                    'jpan': 'chiffres japonais',
+                    'java': 'chiffres javanais',
+                    'hebr': 'chiffres hébreux',
+                    'hantfin': 'chiffres financiers en chinois traditionnel',
+                    'hant': 'chiffres en chinois traditionnel',
+                    'hansfin': 'chiffres financiers en chinois simplifié',
+                    'hans': 'chiffres en chinois simplifié',
+                    'hanidec': 'nombres décimaux chinois',
+                    'guru': 'chiffres gourmoukhîs',
+                    'gujr': 'chiffres goudjarâtîs',
+                    'greklow': 'chiffres grecs minuscules',
+                    'grek': 'chiffres grecs',
+                    'bali': 'chiffres balinais',
+                    'armnlow': 'chiffres arméniens minuscules',
+                    'armn': 'chiffres arméniens',
+                    'arabext': 'chiffres arabes étendus',
+                    'arab': 'chiffres arabes',
+                    'finance': 'Chiffres financiers',
+                    'traditional': 'Chiffres traditionnels',
+                    'native': 'Chiffres natifs',
+                    'beng': 'chiffres bengalis',
+                    'brah': 'chiffres brahmis',
+                    'cakm': 'chiffres chakmas',
+                    'cham': 'chiffres chams',
+                    'deva': 'chiffres devanagaris',
+                    'orya': 'chiffres oriyas',
+                    'osma': 'chiffres osmanyas',
+                    'roman': 'chiffres romains',
+                    'romanlow': 'chiffres romains minuscules',
+                    'saur': 'chiffres saurashtras',
+                    'shrd': 'chiffres sharadas',
+                    'sora': 'chiffres sora-sompengs',
+                    'sund': 'chiffres soundanais',
+                    'vaii': 'Chiffres en vaï',
+                    'tibt': 'chiffres tibétains',
+                    'thai': 'chiffres thaïs',
+                    'telu': 'chiffres télougous',
+                    'tamldec': 'chiffres tamouls',
+                    'taml': 'chiffres tamouls',
+                    'talu': 'chiffres néo-taï-luës',
+                    'takr': 'chiffres takris',
+                    'olck': 'chiffres ol-tchikis',
+                    'nkoo': 'chiffres n’kos',
+                    'mymrshan': 'chiffres birmans shans',
+                    'mymr': 'chiffres birmans',
+                    'mtei': 'chiffres meitei-mayeks',
+                    'mong': 'chiffres mongols',
+                    'mlym': 'chiffres malayâlams',
+                    'limb': 'chiffres limbous',
+                    'lepc': 'chiffres lepchas',
+                    'latn': 'chiffres occidentaux',
+                    'laoo': 'chiffres laotiens',
+                    'lanatham': 'chiffres lannas thams',
+                    'lana': 'chiffres lannas horas',
+                    'geor': 'chiffres géorgiens',
+                    'fullwide': 'chiffres pleine chasse',
+                    'ethi': 'chiffres éthiopiens'
+                },
+                'colAlternate': {
+                    'non-ignorable': 'Trier les symboles',
+                    'shifted': 'Trier en ignorant les symboles'
+                },
+                'colBackwards': {
+                    'no': 'Trier les caractères accentués normalement',
+                    'yes': 'Trier les caractères accentués dans l\'ordre inverse'
+                }
+            },
+            'keys': {
+                'colNormalization': 'Tri normalisé',
+                'collation': 'ordre de tri',
+                'colHiraganaQuaternary': 'Tri des caractères Kana',
+                'colCaseLevel': 'Tri sensible à la casse',
+                'colCaseFirst': 'Classement basé sur les majuscules et les minuscules',
+                'colBackwards': 'Tri inversé des caractères accentués',
+                'colAlternate': 'Tri ne tenant pas compte des symboles',
+                'calendar': 'calendrier',
+                'x': 'Usage privé',
+                'variableTop': 'Trier en tant que symboles',
+                'va': 'Variante locale',
+                'timezone': 'Fuseau horaire',
+                'numbers': 'nombres',
+                'currency': 'devise',
+                'colStrength': 'Priorité du tri',
+                'colNumeric': 'Tri numérique'
+            },
+            'localeDisplayPattern': {
+                'localePattern': '{0} ({1})',
+                'localeSeparator': '{0}, {1}',
+                'localeKeyTypePattern': '{0} : {1}'
+            },
             'timeZoneNames': {
                 'zone': {
                     'Pacific': {

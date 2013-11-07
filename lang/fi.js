@@ -2,6 +2,7 @@
  * Language: fi
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * localeDisplayNames: 24r9287
  *
  * home: https://github.com/Xotic750/astrodate
  *
@@ -41,6 +42,173 @@
         /*global */
     }(function (AstroDate) {
         AstroDate.lang('fi', {
+            'codePatterns': {
+                'language': 'kieli: {0}',
+                'script': 'kirjoitusjärjestelmä: {0}',
+                'territory': 'alue: {0}'
+            },
+            'types': {
+                'colHiraganaQuaternary': {
+                    'no': 'Lajittele kana-merkit erikseen',
+                    'yes': 'Lajittele kana-merkit erikseen'
+                },
+                'colCaseLevel': {
+                    'no': 'Lajittele ilman isojen ja pienten kirjainten erottelua',
+                    'yes': 'Lajittele isojen ja pienten kirjainten mukaan'
+                },
+                'colCaseFirst': {
+                    'lower': 'Lajittele pienet kirjaimet ensin',
+                    'no': 'Lajittele isot ja pienet kirjaimet normaalisti',
+                    'upper': 'Lajittele isot kirjaimet ensin'
+                },
+                'colStrength': {
+                    'identical': 'Lajittele kaikki',
+                    'primary': 'Lajittele vain peruskirjaimet',
+                    'quaternary': 'Lajittele painomerkit/koko/leveys/kana-merkit',
+                    'secondary': 'Lajittele painomerkit',
+                    'tertiary': 'Lajittele painomerkit/koko/leveys'
+                },
+                'colNumeric': {
+                    'no': 'Lajittele numerot erikseen',
+                    'yes': 'Lajittele numerot numeerisesti'
+                },
+                'colNormalization': {
+                    'no': 'Lajittele ilman normalisointia',
+                    'yes': 'Lajittele Unicode normalisoituna'
+                },
+                'calendar': {
+                    'japanese': 'japanilainen kalenteri',
+                    'iso8601': 'iso8601',
+                    'coptic': 'koptilainen kalenteri',
+                    'dangi': 'dangilainen kalenteri',
+                    'ethiopic': 'etiopialainen kalenteri',
+                    'ethiopic-amete-alem': 'etiopialainen amete alem -kalenteri',
+                    'gregorian': 'gregoriaaninen kalenteri',
+                    'hebrew': 'juutalainen kalenteri',
+                    'persian': 'persialainen kalenteri',
+                    'roc': 'Kiinan tasavallan kalenteri',
+                    'chinese': 'kiinalainen kalenteri',
+                    'buddhist': 'buddhalainen kalenteri',
+                    'indian': 'intialainen kalenteri',
+                    'islamic': 'islamilainen kalenteri',
+                    'islamic-civil': 'islamilainen siviilikalenteri',
+                    'islamic-rgsa': 'islamic-rgsa',
+                    'islamic-tbla': 'islamic-tbla',
+                    'islamic-umalqura': 'islamic-umalqura'
+                },
+                'collation': {
+                    'phonebook': 'puhelinluettelojärjestys',
+                    'gb2312han': 'yksinkertaistettu kiinalainen järjestys GB2312',
+                    'eor': 'yleiseurooppalainen lajittelujärjestys',
+                    'ducet': 'Unicoden oletusjärjestys',
+                    'dictionary': 'sanakirjajärjestys',
+                    'big5han': 'perinteinen kiinalainen järjestys Big5',
+                    'traditional': 'perinteinen järjestys',
+                    'standard': 'normaalijärjestys',
+                    'zhuyin': 'zhuyin-järjestys',
+                    'unihan': 'radikaali- ja piirtojärjestys',
+                    'stroke': 'piirtojärjestys',
+                    'searchjl': 'haku hangul-alkukonsonantin mukaan',
+                    'search': 'yleishakujärjestys',
+                    'reformed': 'uudistettu järjestys',
+                    'pinyin': 'pinyin-järjestys',
+                    'phonetic': 'äänteellinen järjestys'
+                },
+                'numbers': {
+                    'knda': 'kannadalaiset numerot',
+                    'khmr': 'khmeriläiset numerot',
+                    'kali': 'kayah li -numerot',
+                    'jpanfin': 'japanilaiset talousnumerot',
+                    'jpan': 'japanilaiset numerot',
+                    'java': 'jaavalaiset numerot',
+                    'hebr': 'heprealaiset numerot',
+                    'hantfin': 'perinteiset kiinalaiset talousnumerot',
+                    'hant': 'perinteiset kiinalaiset numerot',
+                    'hansfin': 'yksinkertaistetut kiinalaiset talousnumerot',
+                    'hans': 'yksinkertaistetut kiinalaiset numerot',
+                    'hanidec': 'kiinalaiset desimaalinumerot',
+                    'guru': 'gurmukhilaiset numerot',
+                    'gujr': 'gudžaratilaiset numerot',
+                    'greklow': 'kreikkalaiset piennumerot',
+                    'grek': 'kreikkalaiset numerot',
+                    'bali': 'balilaiset numerot',
+                    'armnlow': 'armenialaiset piennumerot',
+                    'armn': 'armenialaiset numerot',
+                    'arabext': 'laajennetut arabialaiset numerot',
+                    'arab': 'arabialaiset numerot',
+                    'finance': 'talousnumerot',
+                    'traditional': 'perinteiset numerot',
+                    'native': 'Kielen omat numerot',
+                    'beng': 'bengalilaiset numerot',
+                    'brah': 'brahmilaiset numerot',
+                    'cakm': 'chakmalaiset numerot',
+                    'cham': 'cham-numerot',
+                    'deva': 'devanagarinumerot',
+                    'orya': 'orijalaiset numerot',
+                    'osma': 'osma',
+                    'roman': 'roomalaiset numerot',
+                    'romanlow': 'roomalaiset piennumerot',
+                    'saur': 'saurashtra-numerot',
+                    'shrd': 'shrd',
+                    'sora': 'sora sompeng -numerot',
+                    'sund': 'sundalaiset numerot',
+                    'vaii': 'vai-numerot',
+                    'tibt': 'tiibetiläiset numerot',
+                    'thai': 'thainumerot',
+                    'telu': 'telugulaiset numerot',
+                    'tamldec': 'tamilinumerot',
+                    'taml': 'perinteiset tamilinumerot',
+                    'talu': 'uudet tai lue -numerot',
+                    'takr': 'takr',
+                    'olck': 'ol chiki -numerot',
+                    'nkoo': 'n\'ko-numerot',
+                    'mymrshan': 'myanmarin shan-numerot',
+                    'mymr': 'burmalaiset numerot',
+                    'mtei': 'meetei mayek -numerot',
+                    'mong': 'mongolialaiset numerot',
+                    'mlym': 'malajalamilaiset numerot',
+                    'limb': 'limbunumerot',
+                    'lepc': 'lepchanumerot',
+                    'latn': 'länsimaiset numerot',
+                    'laoo': 'laolaiset numerot',
+                    'lanatham': 'taithamin tham-numerot',
+                    'lana': 'taithamin hora-numerot',
+                    'geor': 'georgialaiset numerot',
+                    'fullwide': 'ideografin levyiset numerot',
+                    'ethi': 'etiopialaiset numerot'
+                },
+                'colAlternate': {
+                    'non-ignorable': 'Lajittele symbolit',
+                    'shifted': 'Lajittele symbolit ohittaen'
+                },
+                'colBackwards': {
+                    'no': 'Lajittele painomerkit normaalisti',
+                    'yes': 'Lajittele painomerkit käänteisesti'
+                }
+            },
+            'keys': {
+                'colNormalization': 'Normalisoitu lajittelu',
+                'collation': 'lajittelujärjestys',
+                'colHiraganaQuaternary': 'Kana-lajittelu',
+                'colCaseLevel': 'Isot ja pienet kirjaimet erotteleva lajittelu',
+                'colCaseFirst': 'Järjestys isojen/pienten kirjainten mukaan',
+                'colBackwards': 'Käänteinen painomerkki -lajittelu',
+                'colAlternate': 'Ohita symbolit -lajittelu',
+                'calendar': 'kalenteri',
+                'x': 'yksityiskäyttö',
+                'variableTop': 'lajittele symboleina',
+                'va': 'maavalinnan muunnelma',
+                'timezone': 'aikavyöhyke',
+                'numbers': 'numerot',
+                'currency': 'valuutta',
+                'colStrength': 'Lajittelun vahvuus',
+                'colNumeric': 'Numeerinen lajittelu'
+            },
+            'localeDisplayPattern': {
+                'localePattern': '{0} ({1})',
+                'localeSeparator': '{0}, {1}',
+                'localeKeyTypePattern': '{0}: {1}'
+            },
             'timeZoneNames': {
                 'zone': {
                     'Pacific': {

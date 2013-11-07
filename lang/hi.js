@@ -2,6 +2,7 @@
  * Language: hi
  * ca-gregorian: 24r9296
  * timeZoneNames: 24r9296
+ * localeDisplayNames: 24r9296
  *
  * home: https://github.com/Xotic750/astrodate
  *
@@ -41,6 +42,173 @@
         /*global */
     }(function (AstroDate) {
         AstroDate.lang('hi', {
+            'codePatterns': {
+                'language': 'भाषा: {0}',
+                'script': 'लिपि: {0}',
+                'territory': 'क्षेत्र: {0}'
+            },
+            'types': {
+                'colHiraganaQuaternary': {
+                    'no': 'काना को अलग से क्रमित करें',
+                    'yes': 'काना को भिन्‍न रूप में क्रमित करें'
+                },
+                'colCaseLevel': {
+                    'no': 'केस असंवेदी क्रमित करें',
+                    'yes': 'केस संवेदी को क्रमित करें'
+                },
+                'colCaseFirst': {
+                    'lower': 'पहले लोअरकेस क्रमित करें',
+                    'no': 'सामान्‍य केस क्रम में क्रमित करें',
+                    'upper': 'पहले अपरकेस क्रमित करें'
+                },
+                'colStrength': {
+                    'identical': 'सभी क्रमित करें',
+                    'primary': 'केवल आधार अक्षरों को क्रमित करें',
+                    'quaternary': 'उच्‍चारणों/केस/चौड़ाई/काना क्रमित करें',
+                    'secondary': 'उच्‍चारण क्रमित करें',
+                    'tertiary': 'उच्‍चारणों/केस/चौड़ाई क्रमित करें'
+                },
+                'colNumeric': {
+                    'no': 'अंको को अलग-अलग क्रमित करें',
+                    'yes': 'अंकों को अंकीय रूप से क्रमित करें'
+                },
+                'colNormalization': {
+                    'no': 'बिना सामान्‍यीकरण के क्रमित करें',
+                    'yes': 'यूनिकोड सामान्‍यीकृत क्रमित करें'
+                },
+                'calendar': {
+                    'japanese': 'जापानी पंचांग',
+                    'iso8601': 'iso8601',
+                    'coptic': 'कोप्टिक कैलेंडर',
+                    'dangi': 'dangi',
+                    'ethiopic': 'इथियोपिक कैलेंडर',
+                    'ethiopic-amete-alem': 'इथियोपिक अमेते अलेम कैलेंडर',
+                    'gregorian': 'ग्रेगोरियन कैलेंडर',
+                    'hebrew': 'हिब्रू पंचांग',
+                    'persian': 'फ़ारसी कैलेंडर',
+                    'roc': 'चीनी गणतंत्र पंचांग',
+                    'chinese': 'चीनी पंचांग',
+                    'buddhist': 'बौद्ध पंचांग',
+                    'indian': 'भारतीय राष्ट्रीय पंचांग',
+                    'islamic': 'इस्लामी पंचांग',
+                    'islamic-civil': 'इस्लामी नागरिक पंचांग',
+                    'islamic-rgsa': 'islamic-rgsa',
+                    'islamic-tbla': 'islamic-tbla',
+                    'islamic-umalqura': 'islamic-umalqura'
+                },
+                'collation': {
+                    'phonebook': 'दूरभाष निर्देशिका वर्गीकरण',
+                    'gb2312han': 'सरलीकृत चीनी वर्गीकरण',
+                    'eor': 'eor',
+                    'ducet': 'डिफ़ॉल्ट यूनिकोड सॉर्ट क्रम',
+                    'dictionary': 'शब्दकोश क्रम विन्यास',
+                    'big5han': 'पारम्पारिक चीनी वर्गीकरण',
+                    'traditional': 'पारम्पारिक वर्गीकरण',
+                    'standard': 'मानक सॉर्ट क्रम',
+                    'zhuyin': 'zhuyin',
+                    'unihan': 'रेडिकल-स्ट्रोक क्रम विन्यास',
+                    'stroke': 'स्ट्रोक वर्गीकरण',
+                    'searchjl': 'हांगुल आरंभिक व्‍यंजन द्वारा खोजें',
+                    'search': 'सामान्य-उद्देश्य खोज',
+                    'reformed': 'पुनर्निर्मित क्रम विन्यास',
+                    'pinyin': 'पिनयीन वर्गीकरण',
+                    'phonetic': 'ध्‍वन्यात्मक क्रमित करने का क्रम'
+                },
+                'numbers': {
+                    'knda': 'कन्नड़ अंक',
+                    'khmr': 'खमेर अंक',
+                    'kali': 'kali',
+                    'jpanfin': 'जापानी वित्तीय संख्याएँ',
+                    'jpan': 'जापानी संख्याएँ',
+                    'java': 'java',
+                    'hebr': 'हिब्रू संख्याएँ',
+                    'hantfin': 'पारंपरिक चीनी वित्तीय संख्याएँ',
+                    'hant': 'पारंपरिक चीनी संख्याएँ',
+                    'hansfin': 'सरलीकृत चीनी वित्तीय संख्याएँ',
+                    'hans': 'सरलीकृत चीनी संख्याएँ',
+                    'hanidec': 'चीनी दशमलव संख्याएँ',
+                    'guru': 'गुरमुखी अंक',
+                    'gujr': 'गुजराती अंक',
+                    'greklow': 'यूनानी लोअरकेस संख्याएँ',
+                    'grek': 'यूनानी संख्याएँ',
+                    'bali': 'bali',
+                    'armnlow': 'आर्मेनियाई लोअरकेस संख्याएँ',
+                    'armn': 'आर्मेनियाई संख्याएँ',
+                    'arabext': 'विस्तृत अरबी-भारतीय अंक',
+                    'arab': 'अरबी-भारतीय अंक',
+                    'finance': 'वित्तीय अंक',
+                    'traditional': 'परंपरागत अंक',
+                    'native': 'स्थानीय अंक',
+                    'beng': 'बंगाली अंक',
+                    'brah': 'brah',
+                    'cakm': 'cakm',
+                    'cham': 'cham',
+                    'deva': 'देवनागरी अंक',
+                    'orya': 'उड़िया अंक',
+                    'osma': 'osma',
+                    'roman': 'रोमन संख्याएँ',
+                    'romanlow': 'रोमन लोअरकेस संख्याएँ',
+                    'saur': 'saur',
+                    'shrd': 'shrd',
+                    'sora': 'sora',
+                    'sund': 'sund',
+                    'vaii': 'वाई अंक',
+                    'tibt': 'तिब्बती अंक',
+                    'thai': 'थाई अंक',
+                    'telu': 'तेलुगू अंक',
+                    'tamldec': 'तमिल अंक',
+                    'taml': 'पारंपरिक तमिल संख्याएँ',
+                    'talu': 'talu',
+                    'takr': 'takr',
+                    'olck': 'olck',
+                    'nkoo': 'nkoo',
+                    'mymrshan': 'mymrshan',
+                    'mymr': 'म्यांमार अंक',
+                    'mtei': 'mtei',
+                    'mong': 'मंगोलियाई अंक',
+                    'mlym': 'मलयालम अंक',
+                    'limb': 'limb',
+                    'lepc': 'lepc',
+                    'latn': 'पश्चिमी अंक',
+                    'laoo': 'लाओ अंक',
+                    'lanatham': 'lanatham',
+                    'lana': 'lana',
+                    'geor': 'जॉर्जियन संख्याएँ',
+                    'fullwide': 'पूर्ण चौड़ाई अंक',
+                    'ethi': 'इथियोपिक संख्याएँ'
+                },
+                'colAlternate': {
+                    'non-ignorable': 'प्रतीकों को क्रमित करें',
+                    'shifted': 'प्रतीकों पर ध्यान न देकर क्रमित करें'
+                },
+                'colBackwards': {
+                    'no': 'उच्‍चारणों को सामान्‍य रूप से क्रमित करें',
+                    'yes': 'उच्‍चारण के उलट क्रमित करें'
+                }
+            },
+            'keys': {
+                'colNormalization': 'सामान्यीकृत वर्गीकरण',
+                'collation': 'सॉर्ट क्रम',
+                'colHiraganaQuaternary': 'काना वर्गीकरण',
+                'colCaseLevel': 'केस संवेदी वर्गीकरण',
+                'colCaseFirst': 'अपरकेस/लोअरकेस क्रमांकन',
+                'colBackwards': 'विपरीत उच्‍चारण वर्गीकरण',
+                'colAlternate': 'चिह्न वर्गीकरण पर ध्यान न दें',
+                'calendar': 'कैलेंडर',
+                'x': 'निजी-उपयोग',
+                'variableTop': 'चिह्न के रूप में क्रमित करें',
+                'va': 'स्थानीय प्रकार',
+                'timezone': 'समय क्षेत्र',
+                'numbers': 'संख्या',
+                'currency': 'मुद्रा',
+                'colStrength': 'वर्गीकरण सशक्तता',
+                'colNumeric': 'संख्यात्मक वर्गीकरण'
+            },
+            'localeDisplayPattern': {
+                'localePattern': '{0} ({1})',
+                'localeSeparator': '{0}, {1}',
+                'localeKeyTypePattern': '{0}: {1}'
+            },
             'timeZoneNames': {
                 'zone': {
                     'Pacific': {

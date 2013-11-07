@@ -2,6 +2,7 @@
  * Language: da
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * localeDisplayNames: 24r9287
  *
  * home: https://github.com/Xotic750/astrodate
  *
@@ -41,6 +42,173 @@
         /*global */
     }(function (AstroDate) {
         AstroDate.lang('da', {
+            'codePatterns': {
+                'language': 'Sprog: {0}',
+                'script': 'Instruks: {0}',
+                'territory': 'Område: {0}'
+            },
+            'types': {
+                'colHiraganaQuaternary': {
+                    'no': 'Sortér kana separat',
+                    'yes': 'Sortér kana med forskel på varianter'
+                },
+                'colCaseLevel': {
+                    'no': 'Sortér uden forskel på store og små bogstaver',
+                    'yes': 'Sortér med skelnen mellem store og små bogstaver'
+                },
+                'colCaseFirst': {
+                    'lower': 'Sortér med små bogstaver først',
+                    'no': 'Sortér efter store og små bogstaver i almindelig rækkefølge',
+                    'upper': 'Sortér med store bogstaver først'
+                },
+                'colStrength': {
+                    'identical': 'Sortér alt',
+                    'primary': 'Sortér kun efter basisbogstaver',
+                    'quaternary': 'Sortér efter accenter/små og store bogstaver/bredde/kana',
+                    'secondary': 'Sortér efter accenter',
+                    'tertiary': 'Sortér efter accenter/store og små bogstaver/bredde'
+                },
+                'colNumeric': {
+                    'no': 'Sortér efter individuelle cifre',
+                    'yes': 'Sortér tal numerisk'
+                },
+                'colNormalization': {
+                    'no': 'Sortér uden normalisering',
+                    'yes': 'Sortér Unicode efter første normalisering'
+                },
+                'calendar': {
+                    'japanese': 'japansk kalender',
+                    'iso8601': 'ISO-8601-kalender',
+                    'coptic': 'koptisk kalender',
+                    'dangi': 'dangi-kalender',
+                    'ethiopic': 'etiopisk kalender',
+                    'ethiopic-amete-alem': 'etiopisk amete-alem-kalender',
+                    'gregorian': 'gregoriansk kalender',
+                    'hebrew': 'jødisk kalender',
+                    'persian': 'persisk kalender',
+                    'roc': 'kalender for Republikken Kina',
+                    'chinese': 'kinesisk kalender',
+                    'buddhist': 'buddhistisk kalender',
+                    'indian': 'indisk nationalkalender',
+                    'islamic': 'islamisk kalender',
+                    'islamic-civil': 'verdslig islamisk kalender',
+                    'islamic-rgsa': 'islamisk kalender (Saudi-Arabien, observation)',
+                    'islamic-tbla': 'islamisk kalender (tabellarisk, astronomisk epoke)',
+                    'islamic-umalqura': 'islamisk kalender (Umm al-Qura)'
+                },
+                'collation': {
+                    'phonebook': 'sorteringsrækkefølge i telefonbøger',
+                    'gb2312han': 'sorteringsrækkefølge forkortet kinesisk - GB2312',
+                    'eor': 'europæisk sorteringsrækkefølge',
+                    'ducet': 'Unicode-standardsortering',
+                    'dictionary': 'sorteringsrækkefølge for ordbog',
+                    'big5han': 'sorteringsrækkefølge uforkortet kinesisk - Big5',
+                    'traditional': 'traditionel sorteringsrækkefølge',
+                    'standard': 'standardsorteringsrækkefølge',
+                    'zhuyin': 'zhuyin-sorteringsrækkefølge',
+                    'unihan': 'sortering efter streger i rodtegn',
+                    'stroke': 'stregbaseret sorteringsrækkefølge',
+                    'searchjl': 'sortér efter den første konsonant i hangul',
+                    'search': 'generel søgning',
+                    'reformed': 'ny sorteringsrækkefølge',
+                    'pinyin': 'pinyin-baseret sorteringsrækkefølge',
+                    'phonetic': 'fonetisk sorteringsrækkefølge'
+                },
+                'numbers': {
+                    'knda': 'Kannada tal',
+                    'khmr': 'Khmerske tal',
+                    'kali': 'Kayah Li-tal',
+                    'jpanfin': 'Japanske financielle tal',
+                    'jpan': 'Japanske tal',
+                    'java': 'Javanesiske tal',
+                    'hebr': 'Hebræiske tal',
+                    'hantfin': 'Traditionelle kinesiske finansielle tal',
+                    'hant': 'Traditionelle kinesiske tal',
+                    'hansfin': 'Forenklede kinesiske financielle tal',
+                    'hans': 'Forenklede kinesiske tal',
+                    'hanidec': 'Kinesiske decimaltal',
+                    'guru': 'Gurmukhi tal',
+                    'gujr': 'Gujarati tal',
+                    'greklow': 'Græske tal i små bogstaver',
+                    'grek': 'Græske tal',
+                    'bali': 'Balinesiske tal',
+                    'armnlow': 'Armenske tal i små bogstaver',
+                    'armn': 'Armenske tal',
+                    'arabext': 'Udvidede hindu-arabiske tal',
+                    'arab': 'Hindu-arabiske tal',
+                    'finance': 'Finansielle tal',
+                    'traditional': 'Traditionelle tal',
+                    'native': 'Nationale cifre',
+                    'beng': 'Bengalske tal',
+                    'brah': 'Brahmi-tal',
+                    'cakm': 'Chakma-tal',
+                    'cham': 'Cham-tal',
+                    'deva': 'Devanagariske tal',
+                    'orya': 'Oriya tal',
+                    'osma': 'Osmanya-tal',
+                    'roman': 'Romertal',
+                    'romanlow': 'Romertal i små bogstaver',
+                    'saur': 'Saurashtra-tal',
+                    'shrd': 'Sharada-tal',
+                    'sora': 'Sora Sompeng-tal',
+                    'sund': 'Sundanesiske tal',
+                    'vaii': 'Vai-tal',
+                    'tibt': 'Tibetanske tal',
+                    'thai': 'Thailandske tal',
+                    'telu': 'Telugu tal',
+                    'tamldec': 'Tamilske tal',
+                    'taml': 'Traditionelle tamilske tal',
+                    'talu': 'Nye Tai Lue-tal',
+                    'takr': 'Takri-tal',
+                    'olck': 'Ol Chiki-tal',
+                    'nkoo': 'N\'Ko-tal',
+                    'mymrshan': 'Myanmar Shan-tal',
+                    'mymr': 'Myanmar tal',
+                    'mtei': 'Meetei Mayek-tal',
+                    'mong': 'Mongolske tal',
+                    'mlym': 'Malayalamske tal',
+                    'limb': 'Limbu-tal',
+                    'lepc': 'Lepcha-tal',
+                    'latn': 'Arabertal',
+                    'laoo': 'Laotiske tal',
+                    'lanatham': 'Tai Tham Tahm-tal',
+                    'lana': 'Tai Tham Hora-tal',
+                    'geor': 'Georgiske tal',
+                    'fullwide': 'Tal i fuld bredde',
+                    'ethi': 'Etiopiske tal'
+                },
+                'colAlternate': {
+                    'non-ignorable': 'Sortér efter symboler',
+                    'shifted': 'Sortér, og ignorer symboler'
+                },
+                'colBackwards': {
+                    'no': 'Sortér efter accenter i normal rækkefølge',
+                    'yes': 'Sortér efter accenter i omvendt rækkefølge'
+                }
+            },
+            'keys': {
+                'colNormalization': 'Normaliseret sortering',
+                'collation': 'Sortering',
+                'colHiraganaQuaternary': 'Sortering efter kana',
+                'colCaseLevel': 'Sortering med forskel på små og store bogstaver',
+                'colCaseFirst': 'Sortering efter store/små bogstaver',
+                'colBackwards': 'Omvendt sortering efter accenter',
+                'colAlternate': 'Ignorer symboler under sortering',
+                'calendar': 'Kalender',
+                'x': 'Privatbrug',
+                'variableTop': 'Sortér som symboler',
+                'va': 'Sprogvariant',
+                'timezone': 'Tidszone',
+                'numbers': 'Tal',
+                'currency': 'Valuta',
+                'colStrength': 'Sorteringsstyrke',
+                'colNumeric': 'Numerisk sortering'
+            },
+            'localeDisplayPattern': {
+                'localePattern': '{0} ({1})',
+                'localeSeparator': '{0}, {1}',
+                'localeKeyTypePattern': '{0}: {1}'
+            },
             'timeZoneNames': {
                 'zone': {
                     'Pacific': {

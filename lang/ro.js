@@ -2,6 +2,7 @@
  * Language: ro
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * localeDisplayNames: 24r9287
  *
  * home: https://github.com/Xotic750/astrodate
  *
@@ -41,6 +42,173 @@
         /*global */
     }(function (AstroDate) {
         AstroDate.lang('ro', {
+            'codePatterns': {
+                'language': 'Limbă: {0}',
+                'script': 'Scriere: {0}',
+                'territory': 'Regiune: {0}'
+            },
+            'types': {
+                'colHiraganaQuaternary': {
+                    'no': 'Ordonați caracterele kana separat',
+                    'yes': 'Ordonați kana diferențiat'
+                },
+                'colCaseLevel': {
+                    'no': 'Ordonați neținând seama de diferența dintre majuscule/minuscule',
+                    'yes': 'Ordonați ținând seama de diferența dintre majuscule/minuscule'
+                },
+                'colCaseFirst': {
+                    'lower': 'Ordonați întâi minusculele',
+                    'no': 'Ordonați după dimensiunea normală a literei',
+                    'upper': 'Ordonați mai întâi majusculele'
+                },
+                'colStrength': {
+                    'identical': 'Ordonați-le pe toate',
+                    'primary': 'Ordonați numai literele de bază',
+                    'quaternary': 'Ordonați după accente/dimensiunea literei/lățime/kana',
+                    'secondary': 'Ordonați după accent',
+                    'tertiary': 'Ordonați după accente/dimensiunea literei/lățime'
+                },
+                'colNumeric': {
+                    'no': 'Ordonați cifrele individual',
+                    'yes': 'Ordonați cifrele în ordine numerică'
+                },
+                'colNormalization': {
+                    'no': 'Ordonați fără normalizare',
+                    'yes': 'Ordonați caracterele unicode normalizat'
+                },
+                'calendar': {
+                    'japanese': 'calendar japonez',
+                    'iso8601': 'iso8601',
+                    'coptic': 'calendar copt',
+                    'dangi': 'dangi',
+                    'ethiopic': 'calendar etiopian',
+                    'ethiopic-amete-alem': 'Calendarul etiopian amete alem',
+                    'gregorian': 'calendar gregorian',
+                    'hebrew': 'calendar ebraic',
+                    'persian': 'calendar persan',
+                    'roc': 'calendar al Republicii Chineze',
+                    'chinese': 'calendar chinezesc',
+                    'buddhist': 'calendar budist',
+                    'indian': 'calendar național indian',
+                    'islamic': 'calendar islamic',
+                    'islamic-civil': 'calendar islamic civil',
+                    'islamic-rgsa': 'islamic-rgsa',
+                    'islamic-tbla': 'islamic-tbla',
+                    'islamic-umalqura': 'islamic-umalqura'
+                },
+                'collation': {
+                    'phonebook': 'sortare după cartea de telefon',
+                    'gb2312han': 'sortare pentru chineza simplificată - GB2312',
+                    'eor': 'regulile europene de sortare',
+                    'ducet': 'ordine de sortare Unicode implicită',
+                    'dictionary': 'Ordine de sortare a dicționarului',
+                    'big5han': 'sortare pentru chineza tradițională - Big5',
+                    'traditional': 'sortare tradițională',
+                    'standard': 'ordine de sortare standard',
+                    'zhuyin': 'zhuyin',
+                    'unihan': 'Ordine de sortare a liniilor ideogramelor',
+                    'stroke': 'ordine de sortare după trasare',
+                    'searchjl': 'Căutați în funcție de consoana inițială hangul',
+                    'search': 'căutare cu scop general',
+                    'reformed': 'Ordine de sortare reformată',
+                    'pinyin': 'sortare pinyin',
+                    'phonetic': 'Tip de ordonare fonetică'
+                },
+                'numbers': {
+                    'knda': 'cifre kannada',
+                    'khmr': 'cifre khmere',
+                    'kali': 'kali',
+                    'jpanfin': 'numerale financiare japoneze',
+                    'jpan': 'numerale japoneze',
+                    'java': 'java',
+                    'hebr': 'numerale ebraice',
+                    'hantfin': 'numerale financiare chinezești tradiționale',
+                    'hant': 'numerale chinezești tradiționale',
+                    'hansfin': 'numerale financiare chinezești simplificate',
+                    'hans': 'numerale chinezești simplificate',
+                    'hanidec': 'numerale zecimale chinezești',
+                    'guru': 'cifre gurmukhi',
+                    'gujr': 'cifre gujarati',
+                    'greklow': 'numerale grecești cu minuscule',
+                    'grek': 'numerale grecești',
+                    'bali': 'bali',
+                    'armnlow': 'numerale armenești cu minuscule',
+                    'armn': 'numerale armenești',
+                    'arabext': 'cifre indo-arabe extinse',
+                    'arab': 'cifre indo-arabe',
+                    'finance': 'Sistemul numeric financiar',
+                    'traditional': 'Numere tradiționale',
+                    'native': 'Cifre native',
+                    'beng': 'cifre bengaleze',
+                    'brah': 'brah',
+                    'cakm': 'cakm',
+                    'cham': 'cham',
+                    'deva': 'cifre devanagari',
+                    'orya': 'cifre oriya',
+                    'osma': 'osma',
+                    'roman': 'numerale romane',
+                    'romanlow': 'numerale romane cu minuscule',
+                    'saur': 'saur',
+                    'shrd': 'shrd',
+                    'sora': 'sora',
+                    'sund': 'sund',
+                    'vaii': 'Cifre Vai',
+                    'tibt': 'cifre tibetane',
+                    'thai': 'cifre thailandeze',
+                    'telu': 'cifre telugu',
+                    'tamldec': 'cifre tamilă',
+                    'taml': 'numerale tradiționale tamilă',
+                    'talu': 'talu',
+                    'takr': 'takr',
+                    'olck': 'olck',
+                    'nkoo': 'nkoo',
+                    'mymrshan': 'mymrshan',
+                    'mymr': 'cifre birmaneze',
+                    'mtei': 'mtei',
+                    'mong': 'Cifre mongole',
+                    'mlym': 'cifre malayalam',
+                    'limb': 'limb',
+                    'lepc': 'lepc',
+                    'latn': 'cifre occidentale',
+                    'laoo': 'cifre laoțiene',
+                    'lanatham': 'lanatham',
+                    'lana': 'lana',
+                    'geor': 'numerale georgiene',
+                    'fullwide': 'cifre cu lățimea întreagă',
+                    'ethi': 'numerale etiopiene'
+                },
+                'colAlternate': {
+                    'non-ignorable': 'Ordonați simbolurile',
+                    'shifted': 'Ordonați ignorând simbolurile'
+                },
+                'colBackwards': {
+                    'no': 'Ordonați accentele în mod normal',
+                    'yes': 'Ordonați după accente în ordine inversă'
+                }
+            },
+            'keys': {
+                'colNormalization': 'Ordonare normalizată',
+                'collation': 'ordine de sortare',
+                'colHiraganaQuaternary': 'Ordonare după kana',
+                'colCaseLevel': 'Ordonare care ține seama de majuscule/minuscule',
+                'colCaseFirst': 'Ordonare după majuscule/minuscule',
+                'colBackwards': 'Ordonare inversă după accent',
+                'colAlternate': 'Ordonare cu simbolurile ignorate',
+                'calendar': 'calendar',
+                'x': 'Utilizare privată',
+                'variableTop': 'Ordonați ca simboluri',
+                'va': 'Varianta locală',
+                'timezone': 'Fusul orar',
+                'numbers': 'numere',
+                'currency': 'monedă',
+                'colStrength': 'Puterea ordonării',
+                'colNumeric': 'Ordonare numerică'
+            },
+            'localeDisplayPattern': {
+                'localePattern': '{0} ({1})',
+                'localeSeparator': '{0}, {1}',
+                'localeKeyTypePattern': '{0}: {1}'
+            },
             'timeZoneNames': {
                 'zone': {
                     'Pacific': {

@@ -2,6 +2,7 @@
  * Language: hu
  * ca-gregorian: 24r9317
  * timeZoneNames: 24r9317
+ * localeDisplayNames: 24r9317
  *
  * home: https://github.com/Xotic750/astrodate
  *
@@ -41,6 +42,173 @@
         /*global */
     }(function (AstroDate) {
         AstroDate.lang('hu', {
+            'codePatterns': {
+                'language': 'Nyelv: {0}',
+                'script': 'Írásrendszer: {0}',
+                'territory': 'Régió: {0}'
+            },
+            'types': {
+                'colHiraganaQuaternary': {
+                    'no': 'Kanák rendezése külön',
+                    'yes': 'Kanák megkülönböztető rendezése'
+                },
+                'colCaseLevel': {
+                    'no': 'Kis- és nagybetűket meg nem különböztető rendezés',
+                    'yes': 'Rendezés kisbetű-nagybetű szerint'
+                },
+                'colCaseFirst': {
+                    'lower': 'Kisbetűs szavak rendezése előre',
+                    'no': 'Kisbetűs-nagybetűs szavak normál rendezése',
+                    'upper': 'Nagybetűs szavak rendezése előre'
+                },
+                'colStrength': {
+                    'identical': 'Összes rendezése',
+                    'primary': 'Csak az alapbetűk rendezése',
+                    'quaternary': 'Ékezetek/kisbetű-nagybetű/szélesség/kanák rendezése',
+                    'secondary': 'Ékezetek rendezése',
+                    'tertiary': 'Ékezetek/kisbetű-nagybetű/szélesség rendezése'
+                },
+                'colNumeric': {
+                    'no': 'Számjegyek egyedi rendezése',
+                    'yes': 'Számjegyek numerikus rendezése'
+                },
+                'colNormalization': {
+                    'no': 'Rendezés normalizálás nélkül',
+                    'yes': 'Unicode szerinti normalizált rendezés'
+                },
+                'calendar': {
+                    'japanese': 'Japán naptár',
+                    'iso8601': 'iso8601',
+                    'coptic': 'Kopt naptár',
+                    'dangi': 'dangi',
+                    'ethiopic': 'Etióp naptár',
+                    'ethiopic-amete-alem': 'Etióp amete alem naptár',
+                    'gregorian': 'Gergely-naptár',
+                    'hebrew': 'Héber naptár',
+                    'persian': 'Perzsa naptár',
+                    'roc': 'Kínai köztársasági naptár',
+                    'chinese': 'Kínai naptár',
+                    'buddhist': 'Buddhista naptár',
+                    'indian': 'Indiai nemzeti naptár',
+                    'islamic': 'Iszlám naptár',
+                    'islamic-civil': 'Iszlám civil naptár',
+                    'islamic-rgsa': 'islamic-rgsa',
+                    'islamic-tbla': 'islamic-tbla',
+                    'islamic-umalqura': 'islamic-umalqura'
+                },
+                'collation': {
+                    'phonebook': 'Telefonkönyv sorrend',
+                    'gb2312han': 'Egyszerűsített kínai sorrend - GB2312',
+                    'eor': 'eor',
+                    'ducet': 'Alapértelmezett Unicode rendezési sorrend',
+                    'dictionary': 'Szótári rendezési sorrend',
+                    'big5han': 'Hagyományos kínai sorrend - Big5',
+                    'traditional': 'Hagyományos',
+                    'standard': 'Normál rendezési sorrend',
+                    'zhuyin': 'zhuyin',
+                    'unihan': 'Szótővonás rendezési sorrend',
+                    'stroke': 'Vonássorrend',
+                    'searchjl': 'Keresés hangul kezdő mássalhangzó szerint',
+                    'search': 'Általános célú keresés',
+                    'reformed': 'Átalakított rendezési elv',
+                    'pinyin': 'Pinyin sorrend',
+                    'phonetic': 'Fonetikus rendezési sorrend'
+                },
+                'numbers': {
+                    'knda': 'Kannada számjegyek',
+                    'khmr': 'Khmer számjegyek',
+                    'kali': 'kali',
+                    'jpanfin': 'Japán pénzügyi számok',
+                    'jpan': 'Japán számok',
+                    'java': 'java',
+                    'hebr': 'Héber számok',
+                    'hantfin': 'Hagyományos kínai pénzügyi számok',
+                    'hant': 'Hagyományos kínai számok',
+                    'hansfin': 'Egyszerűsített kínai pénzügyi számok',
+                    'hans': 'Egyszerűsített kínai számok',
+                    'hanidec': 'Kínai tizedes számok',
+                    'guru': 'Gurmuki számjegyek',
+                    'gujr': 'Gudzsaráti számjegyek',
+                    'greklow': 'Görög kisbetűs számok',
+                    'grek': 'Görög számok',
+                    'bali': 'bali',
+                    'armnlow': 'Örmény kisbetűs számok',
+                    'armn': 'Örmény számok',
+                    'arabext': 'Kibővített arab-indiai számjegyek',
+                    'arab': 'Arab-indiai számjegyek',
+                    'finance': 'Pénzügyi számok',
+                    'traditional': 'Hagyományos számok',
+                    'native': 'Natív számjegyek',
+                    'beng': 'Bengáli számjegyek',
+                    'brah': 'brah',
+                    'cakm': 'cakm',
+                    'cham': 'cham',
+                    'deva': 'Dévanágari számjegyek',
+                    'orya': 'Orija számjegyek',
+                    'osma': 'osma',
+                    'roman': 'Római számok',
+                    'romanlow': 'Római kisbetűs számok',
+                    'saur': 'saur',
+                    'shrd': 'shrd',
+                    'sora': 'sora',
+                    'sund': 'sund',
+                    'vaii': 'Vai számjegyek',
+                    'tibt': 'Tibeti számjegyek',
+                    'thai': 'Thai számjegyek',
+                    'telu': 'Telugu számjegyek',
+                    'tamldec': 'Tamil számjegyek',
+                    'taml': 'Tamil hagyományos számok',
+                    'talu': 'talu',
+                    'takr': 'takr',
+                    'olck': 'olck',
+                    'nkoo': 'nkoo',
+                    'mymrshan': 'mymrshan',
+                    'mymr': 'Mianmari számjegyek',
+                    'mtei': 'mtei',
+                    'mong': 'Mongol számjegyek',
+                    'mlym': 'Malajálam számjegyek',
+                    'limb': 'limb',
+                    'lepc': 'lepc',
+                    'latn': 'Nyugati számjegyek',
+                    'laoo': 'Lao számjegyek',
+                    'lanatham': 'lanatham',
+                    'lana': 'lana',
+                    'geor': 'Grúz számok',
+                    'fullwide': 'Teljes szélességű számjegyek',
+                    'ethi': 'Etióp számok'
+                },
+                'colAlternate': {
+                    'non-ignorable': 'Szimbólumok rendezése',
+                    'shifted': 'Rendezés szimbólumok figyelmen kívül hagyásával'
+                },
+                'colBackwards': {
+                    'no': 'Ékezetek normál rendezése',
+                    'yes': 'Ékezetek szerinti fordított rendezés'
+                }
+            },
+            'keys': {
+                'colNormalization': 'Normalizált rendezés',
+                'collation': 'Rendezési sorrend',
+                'colHiraganaQuaternary': 'Kanák szerinti rendezés',
+                'colCaseLevel': 'Kisbetű-nagybetű érzékeny rendezés',
+                'colCaseFirst': 'Rendezés nagy- vagy kisbetűk szerint',
+                'colBackwards': 'Ékezetek fordított rendezése',
+                'colAlternate': 'Szimbólumokat figyelmen kívül hagyó rendezés',
+                'calendar': 'Naptár',
+                'x': 'Privát használatra',
+                'variableTop': 'Rendezés szimbólumok szerint',
+                'va': 'Földrajzi helyvariáns',
+                'timezone': 'Időzóna',
+                'numbers': 'Számok',
+                'currency': 'Pénznem',
+                'colStrength': 'Rendezés erőssége',
+                'colNumeric': 'Numerikus rendezés'
+            },
+            'localeDisplayPattern': {
+                'localePattern': '{0} ({1})',
+                'localeSeparator': '{0}, {1}',
+                'localeKeyTypePattern': '{0}: {1}'
+            },
             'timeZoneNames': {
                 'zone': {
                     'Pacific': {

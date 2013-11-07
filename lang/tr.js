@@ -2,6 +2,7 @@
  * Language: tr
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * localeDisplayNames: 24r9287
  *
  * home: https://github.com/Xotic750/astrodate
  *
@@ -41,6 +42,173 @@
         /*global */
     }(function (AstroDate) {
         AstroDate.lang('tr', {
+            'codePatterns': {
+                'language': 'Dil: {0}',
+                'script': 'Alfabe: {0}',
+                'territory': 'Bölge: {0}'
+            },
+            'types': {
+                'colHiraganaQuaternary': {
+                    'no': 'Kana\'yı Ayrı Sıralama',
+                    'yes': 'Kana\'yı Farklı Sıralama'
+                },
+                'colCaseLevel': {
+                    'no': 'Büyük/Küçük Harfe Duyarlı Olmadan Sıralama',
+                    'yes': 'Büyük/Küçük Harfe Duyarla Sıralama'
+                },
+                'colCaseFirst': {
+                    'lower': 'Önce Küçük Harfleri Sıralama',
+                    'no': 'Normal Büyük/Küçük Harf Düzeninde Sıralama',
+                    'upper': 'Önce Büyük Harfleri Sıralama'
+                },
+                'colStrength': {
+                    'identical': 'Tümünü Sıralama',
+                    'primary': 'Yalnızca Taban Harflerini Sıralama',
+                    'quaternary': 'Aksanları/Büyük-Küçük Harfleri/Genişliği/Kana\'yı Sıralama',
+                    'secondary': 'Aksanları Sıralama',
+                    'tertiary': 'Aksanları/Büyük-Küçük Harfleri/Genişliği Sıralama'
+                },
+                'colNumeric': {
+                    'no': 'Rakamları Ayrı Sıralama',
+                    'yes': 'Rakamları Sayısal Olarak Sıralama'
+                },
+                'colNormalization': {
+                    'no': 'Normalleştirme Olmadan Sıralama',
+                    'yes': 'Unicode Normalleştirilmiş Olarak Sıralama'
+                },
+                'calendar': {
+                    'japanese': 'Japon Takvimi',
+                    'iso8601': 'ISO-8601 Takvimi',
+                    'coptic': 'Kıpti Takvim',
+                    'dangi': 'Dangi Takvimi',
+                    'ethiopic': 'Etiyopik Takvim',
+                    'ethiopic-amete-alem': 'Etiyopik Amete Alem Takvimi',
+                    'gregorian': 'Miladi Takvim',
+                    'hebrew': 'Yahudi Takvimi',
+                    'persian': 'Farsça Takvim',
+                    'roc': 'Çin Cumhuriyeti Takvimi',
+                    'chinese': 'Çin Takvimi',
+                    'buddhist': 'Budist Takvimi',
+                    'indian': 'Ulusal Hint Takvimi',
+                    'islamic': 'Hicri Takvim',
+                    'islamic-civil': 'Arap Takvimi',
+                    'islamic-rgsa': 'Hicri Takvim (Suudi)',
+                    'islamic-tbla': 'Hicri Takvim (Astronomik Evreler)',
+                    'islamic-umalqura': 'Hicri Takvim (Ümmü-l Kurra Takvimi)'
+                },
+                'collation': {
+                    'phonebook': 'Telefon Defteri Sıralaması',
+                    'gb2312han': 'Basitleştirilmiş Çince Sıralaması - GB2312',
+                    'eor': 'Avrupa Sıralama Kuralları',
+                    'ducet': 'Saptanmış Unicode Sıralaması',
+                    'dictionary': 'Sözlük Sıralama Düzeni',
+                    'big5han': 'Geleneksel Çince Sıralaması - Big5',
+                    'traditional': 'Geleneksel Sıralama',
+                    'standard': 'Standart Sıralama',
+                    'zhuyin': 'Zhuyin Sıralaması',
+                    'unihan': 'Radical-Stroke Sıralama Düzeni',
+                    'stroke': 'Geleneksel Çince Vuruş Sıralaması',
+                    'searchjl': 'Hangul İlk Sessiz Harfe Göre Arama',
+                    'search': 'Genel Amaçlı Arama',
+                    'reformed': 'Yeni Sıralama Düzeni',
+                    'pinyin': 'Basitleştirilmiş Çince Pinyin Sıralaması',
+                    'phonetic': 'Fonetik Sıralama Düzeni'
+                },
+                'numbers': {
+                    'knda': 'Kannada Rakamları',
+                    'khmr': 'Kmer Rakamları',
+                    'kali': 'Kayah Li Rakamları',
+                    'jpanfin': 'Finansal Japon Rakamları',
+                    'jpan': 'Japon Rakamları',
+                    'java': 'Cava Rakamları',
+                    'hebr': 'İbrani Rakamları',
+                    'hantfin': 'Finansal Geleneksel Çin Rakamları',
+                    'hant': 'Geleneksel Çin Rakamları',
+                    'hansfin': 'Finansal Basitleştirilmiş Çin Rakamları',
+                    'hans': 'Basitleştirilmiş Çin Rakamları',
+                    'hanidec': 'Çin Rakamları',
+                    'guru': 'Gurmukhi Rakamları',
+                    'gujr': 'Gucerat Rakamları',
+                    'greklow': 'Küçük Harf Yunan Rakamları',
+                    'grek': 'Yunan Rakamları',
+                    'bali': 'Bali Rakamları',
+                    'armnlow': 'Küçük Harf Ermeni Rakamları',
+                    'armn': 'Ermeni Rakamları',
+                    'arabext': 'Genişletilmiş Hint-Arap Rakamları',
+                    'arab': 'Hint-Arap Rakamları',
+                    'finance': 'Finansal Sayılar',
+                    'traditional': 'Geleneksel Rakamlar',
+                    'native': 'Yerel Rakamlar',
+                    'beng': 'Bengal Rakamları',
+                    'brah': 'Brahmi Rakamları',
+                    'cakm': 'Chakma Rakamları',
+                    'cham': 'Cham Rakamları',
+                    'deva': 'Devanagari Rakamları',
+                    'orya': 'Oriya Rakamları',
+                    'osma': 'osma',
+                    'roman': 'Roma Rakamları',
+                    'romanlow': 'Küçük Harf Roma Rakamları',
+                    'saur': 'saur',
+                    'shrd': 'shrd',
+                    'sora': 'sora',
+                    'sund': 'sund',
+                    'vaii': 'Vai Rakamları',
+                    'tibt': 'Tibet Rakamları',
+                    'thai': 'Tay Rakamları',
+                    'telu': 'Telugu Rakamları',
+                    'tamldec': 'Tamil Rakamları',
+                    'taml': 'Geleneksel Tamil Rakamları',
+                    'talu': 'talu',
+                    'takr': 'takr',
+                    'olck': 'Ol Chiki Rakamları',
+                    'nkoo': 'N\'Ko Rakamları',
+                    'mymrshan': 'Myanmar Shan Rakamları',
+                    'mymr': 'Myanmar Rakamları',
+                    'mtei': 'Meetei Mayek Rakamları',
+                    'mong': 'Moğolca Rakamlar',
+                    'mlym': 'Malayalam Rakamları',
+                    'limb': 'Limbu Rakamları',
+                    'lepc': 'Lepça Rakamları',
+                    'latn': 'Batı Rakamları',
+                    'laoo': 'Lao Rakamları',
+                    'lanatham': 'Tai Tham Tham Rakamları',
+                    'lana': 'Tai Tham Hora Rakamları',
+                    'geor': 'Gürcü Rakamları',
+                    'fullwide': 'Tam Genişlikte Rakamlar',
+                    'ethi': 'Ge\'ez Rakamları'
+                },
+                'colAlternate': {
+                    'non-ignorable': 'Sembolleri Sıralama',
+                    'shifted': 'Sembolleri Yoksayarak Sıralama'
+                },
+                'colBackwards': {
+                    'no': 'Aksanları Normal Olarak Sıralama',
+                    'yes': 'Aksanları Ters Sıralama'
+                }
+            },
+            'keys': {
+                'colNormalization': 'Normalleştirilmiş Sıralama',
+                'collation': 'Sıralama Düzeni',
+                'colHiraganaQuaternary': 'Kana Sıralaması',
+                'colCaseLevel': 'Büyük/Küçük Harfe Duyarlı Sıralama',
+                'colCaseFirst': 'Büyük/Küçük Harf Sıralama',
+                'colBackwards': 'Ters Aksan Sıralama',
+                'colAlternate': 'Sembolleri Sıralamayı Yoksayma',
+                'calendar': 'Takvim',
+                'x': 'Özel Kullanım',
+                'variableTop': 'Sembollere Göre Sıralama',
+                'va': 'Yerel Varyant',
+                'timezone': 'Saat Dilimi',
+                'numbers': 'Rakamlar',
+                'currency': 'Para Birimi',
+                'colStrength': 'Sıralama Gücü',
+                'colNumeric': 'Sayısal Sıralama'
+            },
+            'localeDisplayPattern': {
+                'localePattern': '{0} ({1})',
+                'localeSeparator': '{0}, {1}',
+                'localeKeyTypePattern': '{0}: {1}'
+            },
             'timeZoneNames': {
                 'zone': {
                     'Pacific': {

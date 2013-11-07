@@ -2,6 +2,7 @@
  * Language: vi
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * localeDisplayNames: 24r9287
  *
  * home: https://github.com/Xotic750/astrodate
  *
@@ -41,6 +42,173 @@
         /*global */
     }(function (AstroDate) {
         AstroDate.lang('vi', {
+            'codePatterns': {
+                'language': 'Ngôn ngữ: {0}',
+                'script': 'Chữ viết: {0}',
+                'territory': 'Vùng: {0}'
+            },
+            'types': {
+                'colHiraganaQuaternary': {
+                    'no': 'Sắp xếp chữ Kana riêng biệt',
+                    'yes': 'Sắp xếp chữ Kana khác nhau'
+                },
+                'colCaseLevel': {
+                    'no': 'Sắp xếp không phân biệt chữ hoa/chữ thường',
+                    'yes': 'Sắp xếp phân biệt chữ hoa/chữ thường'
+                },
+                'colCaseFirst': {
+                    'lower': 'Sắp xếp chữ thường đầu tiên',
+                    'no': 'Sắp xếp thứ tự chữ cái bình thường',
+                    'upper': 'Sắp xếp chữ hoa đầu tiên'
+                },
+                'colStrength': {
+                    'identical': 'Sắp xếp tất cả',
+                    'primary': 'Chỉ sắp xếp chữ cái cơ sở',
+                    'quaternary': 'Sắp xếp dấu trọng âm/chữ cái/độ rộng/chữ Kana',
+                    'secondary': 'Sắp xếp dấu trọng âm',
+                    'tertiary': 'Sắp xếp dấu trọng âm/chữ cái/độ rộng'
+                },
+                'colNumeric': {
+                    'no': 'Sắp xếp từng chữ số',
+                    'yes': 'Sắp xếp chữ số theo số'
+                },
+                'colNormalization': {
+                    'no': 'Sắp xếp không theo chuẩn hóa',
+                    'yes': 'Sắp xếp unicode được chuẩn hóa'
+                },
+                'calendar': {
+                    'japanese': 'Lịch Nhật Bản',
+                    'iso8601': 'Lịch ISO-8601',
+                    'coptic': 'Lịch Copts',
+                    'dangi': 'Lịch Dangi',
+                    'ethiopic': 'Lịch Ethiopia',
+                    'ethiopic-amete-alem': 'Lịch Ethiopic Amete Alem',
+                    'gregorian': 'Lịch Gregory',
+                    'hebrew': 'Lịch Do Thái',
+                    'persian': 'Lịch Ba Tư',
+                    'roc': 'Lịch Trung Hoa Dân Quốc',
+                    'chinese': 'Lịch Trung Quốc',
+                    'buddhist': 'Lịch Phật Giáo',
+                    'indian': 'Lịch Quốc gia Ấn Độ',
+                    'islamic': 'Lịch Islamic',
+                    'islamic-civil': 'Lịch Islamic-Civil',
+                    'islamic-rgsa': 'Lịch Hồi Giáo - Ả Rập Xê-út',
+                    'islamic-tbla': 'Lịch Hồi Giáo - Thiên văn',
+                    'islamic-umalqura': 'Lịch Hồi Giáo - Umm al-Qura'
+                },
+                'collation': {
+                    'phonebook': 'Thứ tự sắp xếp theo danh bạ điện thoại',
+                    'gb2312han': 'Thứ tự sắp xếp theo tiếng Trung giản thể - GB2312',
+                    'eor': 'eor',
+                    'ducet': 'Thứ tự sắp xếp unicode mặc định',
+                    'dictionary': 'Thứ tự sắp xếp theo từ điển',
+                    'big5han': 'Thứ tự sắp xếp theo tiếng Trung phồn thể - Big5',
+                    'traditional': 'Thứ tự sắp xếp truyền thống',
+                    'standard': 'Thứ tự sắp xếp chuẩn',
+                    'zhuyin': 'Thứ tự sắp xếp Zhuyin',
+                    'unihan': 'Trình tự sắp xếp theo bộ-nét',
+                    'stroke': 'Thứ tự sắp xếp theo nét chữ',
+                    'searchjl': 'Tìm kiếm theo phụ âm đầu chữ Hangul',
+                    'search': 'Tìm kiếm mục đích chung',
+                    'reformed': 'Thứ tự sắp xếp đã sửa đổi',
+                    'pinyin': 'Thứ tự sắp xếp theo bính âm',
+                    'phonetic': 'Thứ tự sắp xếp theo ngữ âm'
+                },
+                'numbers': {
+                    'knda': 'Chữ số Kannada',
+                    'khmr': 'Chữ số Khơ-me',
+                    'kali': 'Chữ số Kayah Li',
+                    'jpanfin': 'Chữ số dùng trong tài chính của tiếng Nhật',
+                    'jpan': 'Chữ số Nhật Bản',
+                    'java': 'Chữ số Java',
+                    'hebr': 'Chữ số Do Thái',
+                    'hantfin': 'Chữ số dùng trong tài chính của tiếng Trung phồn thể',
+                    'hant': 'Chữ số tiếng Trung phồn thể',
+                    'hansfin': 'Chữ số dùng trong tài chính của tiếng Trung giản thể',
+                    'hans': 'Chữ số của tiếng Trung giản thể',
+                    'hanidec': 'Chữ số thập phân Trung Quốc',
+                    'guru': 'Chữ số Gurmukhi',
+                    'gujr': 'Chữ số Gujarati',
+                    'greklow': 'Chữ số Hy Lạp viết thường',
+                    'grek': 'Chữ số Hy Lạp',
+                    'bali': 'Chữ số Bali',
+                    'armnlow': 'Chữ số Armenia viết thường',
+                    'armn': 'Chữ số Armeni',
+                    'arabext': 'Chữ số Ả Rập - Ấn Độ mở rộng',
+                    'arab': 'Chữ số Ả Rập - Ấn Độ',
+                    'finance': 'Chữ số dùng trong tài chính',
+                    'traditional': 'Số truyền thống',
+                    'native': 'Chữ số tự nhiên',
+                    'beng': 'Chữ số Bangladesh',
+                    'brah': 'Chữ số Brahmi',
+                    'cakm': 'Chữ số Chakma',
+                    'cham': 'Chữ số Chăm',
+                    'deva': 'Chữ số Devanagari',
+                    'orya': 'Chữ số Oriya',
+                    'osma': 'Chữ số Osmanya',
+                    'roman': 'Chữ số La mã',
+                    'romanlow': 'Chữ số La Mã viết thường',
+                    'saur': 'Chữ số Saurashtra',
+                    'shrd': 'Chữ số Sharada',
+                    'sora': 'Chữ số Sora Sompeng',
+                    'sund': 'Chữ số Sudan',
+                    'vaii': 'Chữ số Vai',
+                    'tibt': 'Chữ số Tây Tạng',
+                    'thai': 'Chữ số Thái',
+                    'telu': 'Chữ số Telugu',
+                    'tamldec': 'Chữ số Tamil',
+                    'taml': 'Chữ số Tamil',
+                    'talu': 'Chữ số Thái Lặc mới',
+                    'takr': 'Chữ số Takri',
+                    'olck': 'Chữ số Ol Chiki',
+                    'nkoo': 'Chữ số N\'Ko',
+                    'mymrshan': 'Chữ số Myanmar Shan',
+                    'mymr': 'Chữ số Myanma',
+                    'mtei': 'Chữ số Meetei Mayek',
+                    'mong': 'Chữ số Mông Cổ',
+                    'mlym': 'Chữ số Malayalam',
+                    'limb': 'Chữ số Limbu',
+                    'lepc': 'Chữ số Lepcha',
+                    'latn': 'Chữ số phương Tây',
+                    'laoo': 'Chữ số Lào',
+                    'lanatham': 'Chữ số Tham Thái Đam',
+                    'lana': 'Chữ số Hora Thái Đam',
+                    'geor': 'Chữ số Gruzia',
+                    'fullwide': 'Chữ số có độ rộng đầy đủ',
+                    'ethi': 'Chữ số Ethiopia'
+                },
+                'colAlternate': {
+                    'non-ignorable': 'Sắp xếp biểu tượng',
+                    'shifted': 'Sắp xếp biểu tượng bỏ qua'
+                },
+                'colBackwards': {
+                    'no': 'Sắp xếp dấu trọng âm bình thường',
+                    'yes': 'Sắp xếp dấu trọng âm đảo ngược'
+                }
+            },
+            'keys': {
+                'colNormalization': 'Sắp xếp theo chuẩn hóa',
+                'collation': 'Thứ tự sắp xếp',
+                'colHiraganaQuaternary': 'Sắp xếp chữ Kana',
+                'colCaseLevel': 'Sắp xếp phân biệt chữ hoa/chữ thường',
+                'colCaseFirst': 'Sắp xếp chữ hoa/chữ thường',
+                'colBackwards': 'Sắp xếp dấu trọng âm đảo ngược',
+                'colAlternate': 'Bỏ qua sắp xếp biểu tượng',
+                'calendar': 'Lịch',
+                'x': 'Sử dụng cá nhân',
+                'variableTop': 'Sắp xếp dưới dạng biểu tượng',
+                'va': 'Biến thể ngôn ngữ',
+                'timezone': 'Múi giờ',
+                'numbers': 'Số',
+                'currency': 'Tiền tệ',
+                'colStrength': 'Cường độ sắp xếp',
+                'colNumeric': 'Sắp xếp theo số'
+            },
+            'localeDisplayPattern': {
+                'localePattern': '{0} ({1})',
+                'localeSeparator': '{0}, {1}',
+                'localeKeyTypePattern': '{0}: {1}'
+            },
             'timeZoneNames': {
                 'zone': {
                     'Pacific': {

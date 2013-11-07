@@ -2,6 +2,7 @@
  * Language: it
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * localeDisplayNames: 24r9287
  *
  * home: https://github.com/Xotic750/astrodate
  *
@@ -41,6 +42,173 @@
         /*global */
     }(function (AstroDate) {
         AstroDate.lang('it', {
+            'codePatterns': {
+                'language': 'Lingua: {0}',
+                'script': 'Scrittura: {0}',
+                'territory': 'Regione: {0}'
+            },
+            'types': {
+                'colHiraganaQuaternary': {
+                    'no': 'Ordina Kana separatamente',
+                    'yes': 'Ordina Kana diversamente'
+                },
+                'colCaseLevel': {
+                    'no': 'Ordina senza distinzione tra maiuscole e minuscole',
+                    'yes': 'Ordina distinzione tra maiuscole e minuscole'
+                },
+                'colCaseFirst': {
+                    'lower': 'Ordina prima lettere minuscole',
+                    'no': 'Ordina lettere maiuscole/minuscole normalmente',
+                    'upper': 'Ordina prima lettere minuscole'
+                },
+                'colStrength': {
+                    'identical': 'Ordina tutto',
+                    'primary': 'Ordina solo lettere di base',
+                    'quaternary': 'Ordina accenti/lettere/larghezza/Kana',
+                    'secondary': 'Ordina accenti',
+                    'tertiary': 'Ordina accenti/lettere/larghezza'
+                },
+                'colNumeric': {
+                    'no': 'Ordina cifre individualmente',
+                    'yes': 'Ordina cifre numericamente'
+                },
+                'colNormalization': {
+                    'no': 'Ordina senza normalizzazione',
+                    'yes': 'Ordina Unicode normalizzato'
+                },
+                'calendar': {
+                    'japanese': 'calendario giapponese',
+                    'iso8601': 'Calendario ISO-8601',
+                    'coptic': 'Calendario copto',
+                    'dangi': 'Calendario Dangi',
+                    'ethiopic': 'Calendario etiope',
+                    'ethiopic-amete-alem': 'Calendario etiope Amete Alem',
+                    'gregorian': 'Calendario gregoriano',
+                    'hebrew': 'calendario ebraico',
+                    'persian': 'Calendario persiano',
+                    'roc': 'Calendario Minguo',
+                    'chinese': 'calendario cinese',
+                    'buddhist': 'calendario buddista',
+                    'indian': 'calendario nazionale indiano',
+                    'islamic': 'calendario islamico',
+                    'islamic-civil': 'calendario civile islamico',
+                    'islamic-rgsa': 'Calendario islamico (Arabia Saudita, osservazione)',
+                    'islamic-tbla': 'Calendario islamico (tabulare, era astronomica)',
+                    'islamic-umalqura': 'Calendario islamico (Umm al-Qura)'
+                },
+                'collation': {
+                    'phonebook': 'ordine elenco telefonico',
+                    'gb2312han': 'cinese semplificato',
+                    'eor': 'eor',
+                    'ducet': 'Ordinamento Unicode predefinito',
+                    'dictionary': 'Ordinamento dizionario',
+                    'big5han': 'cinese tradizionale',
+                    'traditional': 'ordine tradizionale',
+                    'standard': 'Ordinamento standard',
+                    'zhuyin': 'Ordinamento Zhuyin',
+                    'unihan': 'Ordinamento in base ai radicali',
+                    'stroke': 'ordine segni',
+                    'searchjl': 'Cerca per consonante hangul iniziale',
+                    'search': 'Ricerca generica',
+                    'reformed': 'Ordinamento riformato',
+                    'pinyin': 'ordine pinyin',
+                    'phonetic': 'Ordinamento fonetico'
+                },
+                'numbers': {
+                    'knda': 'Cifre kannada',
+                    'khmr': 'Cifre khmer',
+                    'kali': 'Cifre Kayah Li',
+                    'jpanfin': 'Numeri finanziari giapponesi',
+                    'jpan': 'Numeri giapponesi',
+                    'java': 'Cifre giavanesi',
+                    'hebr': 'Numeri ebraici',
+                    'hantfin': 'Numeri finanziari in cinese tradizionale',
+                    'hant': 'Numeri in cinese tradizionale',
+                    'hansfin': 'Numeri finanziari in cinese semplificato',
+                    'hans': 'Numeri in cinese semplificato',
+                    'hanidec': 'Numeri decimali cinesi',
+                    'guru': 'Cifre gurmukhi',
+                    'gujr': 'Cifre gujarati',
+                    'greklow': 'Numeri greci minuscoli',
+                    'grek': 'Numeri greci',
+                    'bali': 'Cifre balinesi',
+                    'armnlow': 'Numeri armeni minuscoli',
+                    'armn': 'Numeri armeni',
+                    'arabext': 'Cifre indo-arabe estese',
+                    'arab': 'Cifre indo-arabe',
+                    'finance': 'Numeri finanziari',
+                    'traditional': 'Numeri tradizionali',
+                    'native': 'Cifre native',
+                    'beng': 'Cifre bengalesi',
+                    'brah': 'Cifre brahmi',
+                    'cakm': 'Cifre chakma',
+                    'cham': 'Cifre cham',
+                    'deva': 'Cifre devanagari',
+                    'orya': 'Cifre oriya',
+                    'osma': 'Cifre osmanya',
+                    'roman': 'Numeri romani',
+                    'romanlow': 'Numeri romani minuscoli',
+                    'saur': 'Cifre saurashtra',
+                    'shrd': 'Cifre sharada',
+                    'sora': 'Cifre Sora Sompeng',
+                    'sund': 'Cifre sundanesi',
+                    'vaii': 'Cifre Vai',
+                    'tibt': 'Cifre tibetane',
+                    'thai': 'Cifre thailandesi',
+                    'telu': 'Cifre telugu',
+                    'tamldec': 'Cifre tamil',
+                    'taml': 'Numeri tamil tradizionali',
+                    'talu': 'Cifre nuovo Tai Lue',
+                    'takr': 'Cifre takri',
+                    'olck': 'Cifre Ol Chiki',
+                    'nkoo': 'Cifre N\'Ko',
+                    'mymrshan': 'Cifre shan birmane',
+                    'mymr': 'Cifre birmane',
+                    'mtei': 'Cifre Meetei Mayek',
+                    'mong': 'Numeri mongoli',
+                    'mlym': 'Cifre malayalam',
+                    'limb': 'Cifre limbu',
+                    'lepc': 'Cifre lepcha',
+                    'latn': 'Cifre occidentali',
+                    'laoo': 'Cifre lao',
+                    'lanatham': 'Cifre tai tham tham',
+                    'lana': 'Cifre tai tham hora',
+                    'geor': 'Numeri georgiani',
+                    'fullwide': 'Cifre a larghezza intera',
+                    'ethi': 'Numeri etiopi'
+                },
+                'colAlternate': {
+                    'non-ignorable': 'Ordina simboli',
+                    'shifted': 'Ordina ignorando i simboli'
+                },
+                'colBackwards': {
+                    'no': 'Ordina accenti normalmente',
+                    'yes': 'Ordina accenti capovolti'
+                }
+            },
+            'keys': {
+                'colNormalization': 'Ordinamento normalizzato',
+                'collation': 'Ordinamento',
+                'colHiraganaQuaternary': 'Ordinamento Kana',
+                'colCaseLevel': 'Ordinamento Distinzione fra maiuscole e minuscole',
+                'colCaseFirst': 'Ordinamento Maiuscole/Minuscole',
+                'colBackwards': 'Ordinamento Accento capovolto',
+                'colAlternate': 'Ordinamento Ignora simboli',
+                'calendar': 'Calendario',
+                'x': 'Uso privato',
+                'variableTop': 'Ordina come simboli',
+                'va': 'Variante lingua',
+                'timezone': 'Fuso orario',
+                'numbers': 'Numeri',
+                'currency': 'Valuta',
+                'colStrength': 'Sicurezza ordinamento',
+                'colNumeric': 'Ordinamento numerico'
+            },
+            'localeDisplayPattern': {
+                'localePattern': '{0} ({1})',
+                'localeSeparator': '{0}, {1}',
+                'localeKeyTypePattern': '{0}: {1}'
+            },
             'timeZoneNames': {
                 'zone': {
                     'Pacific': {

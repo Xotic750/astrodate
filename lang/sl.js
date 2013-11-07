@@ -2,6 +2,7 @@
  * Language: sl
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * localeDisplayNames: 24r9287
  *
  * home: https://github.com/Xotic750/astrodate
  *
@@ -41,6 +42,173 @@
         /*global */
     }(function (AstroDate) {
         AstroDate.lang('sl', {
+            'codePatterns': {
+                'language': 'Jezik: {0}',
+                'script': '{0}',
+                'territory': 'Regija: {0}'
+            },
+            'types': {
+                'colHiraganaQuaternary': {
+                    'no': 'Razvrščanje kana ločeno',
+                    'yes': 'Razvrščanje kana različno'
+                },
+                'colCaseLevel': {
+                    'no': 'Razvrščanje ne glede na velike/male črke',
+                    'yes': 'Razvrščanje ob upoštevanju velikih/malih črk'
+                },
+                'colCaseFirst': {
+                    'lower': 'Razvrščanje malih črk najprej',
+                    'no': 'Razvrščanje v običajnem zaporedju velikih/malih črk',
+                    'upper': 'Razvrščanje velikih črk najprej'
+                },
+                'colStrength': {
+                    'identical': 'Razvrščanje vsega',
+                    'primary': 'Razvrščanje samo osnovnih črk',
+                    'quaternary': 'Razvrščanje po naglasih/velikih črkah/malih črkah/širini/kana',
+                    'secondary': 'Razvrščanje naglasov',
+                    'tertiary': 'Razvrščanje po naglasih/velikih črkah/malih črkah/širini'
+                },
+                'colNumeric': {
+                    'no': 'Ločeno razvrščanje številk',
+                    'yes': 'Številsko razvrščanje števk'
+                },
+                'colNormalization': {
+                    'no': 'Razvrščanje brez normaliziranja',
+                    'yes': 'Normalizirano razvrščanje Unicode'
+                },
+                'calendar': {
+                    'japanese': 'japonski koledar',
+                    'iso8601': 'iso8601',
+                    'coptic': 'Koptski koledar',
+                    'dangi': 'dangi',
+                    'ethiopic': 'Etiopski koledar',
+                    'ethiopic-amete-alem': 'Etiopsko ametsko alemski koledar',
+                    'gregorian': 'gregorijanski koledar',
+                    'hebrew': 'hebrejski koledar',
+                    'persian': 'Perzijski koledar',
+                    'roc': 'kitajski državni koledar',
+                    'chinese': 'kitajski koledar',
+                    'buddhist': 'budistični koledar',
+                    'indian': 'indijanski koledar',
+                    'islamic': 'islamski koledar',
+                    'islamic-civil': 'islamski civilni koledar',
+                    'islamic-rgsa': 'islamic-rgsa',
+                    'islamic-tbla': 'islamic-tbla',
+                    'islamic-umalqura': 'islamic-umalqura'
+                },
+                'collation': {
+                    'phonebook': 'razvrščanje po abecedi',
+                    'gb2312han': 'razvrščanje po sistemu poenostavljene kitajščine - GB2312',
+                    'eor': 'eor',
+                    'ducet': 'Privzeto razvrščanje Unicode',
+                    'dictionary': 'Vrstni red razvrščanja v slovarju',
+                    'big5han': 'razvrščanje po sistemu tradicionalne kitajščine - Big5',
+                    'traditional': 'razvrščanje po tradicionalnem sistemu',
+                    'standard': 'Standardno razvrščanje',
+                    'zhuyin': 'zhuyin',
+                    'unihan': 'Razvrščanje koren-poteza',
+                    'stroke': 'razvrščanje po zaporedju pisanja pismenk',
+                    'searchjl': 'Iskanje po začetnem soglasniku hangul',
+                    'search': 'Splošno iskanje',
+                    'reformed': 'Reformirano razvrščanje',
+                    'pinyin': 'razvrščanje po sistemu pinjin',
+                    'phonetic': 'Fonetično razvrščanje'
+                },
+                'numbers': {
+                    'knda': 'Kanaredske števke',
+                    'khmr': 'Kmerske števke',
+                    'kali': 'kali',
+                    'jpanfin': 'Japonske finančne številke',
+                    'jpan': 'Japonske številke',
+                    'java': 'java',
+                    'hebr': 'Hebrejske številke',
+                    'hantfin': 'Tradicionalne kitajske finančne številke',
+                    'hant': 'Tradicionalne kitajske številke',
+                    'hansfin': 'Poenostavljene kitajske finančne številke',
+                    'hans': 'Poenostavljene kitajske številke',
+                    'hanidec': 'Kitajske decimalne številke',
+                    'guru': 'Gurmuške števke',
+                    'gujr': 'Gudžaratske števke',
+                    'greklow': 'Grške male številke',
+                    'grek': 'Grške številke',
+                    'bali': 'bali',
+                    'armnlow': 'Armenske majhne številke',
+                    'armn': 'Armenske številke',
+                    'arabext': 'Razširjene arabskoindijske števke',
+                    'arab': 'Arabskoindijske števke',
+                    'finance': 'Finančne številke',
+                    'traditional': 'Tradicionalne številke',
+                    'native': 'Domače števke',
+                    'beng': 'Bengalske števke',
+                    'brah': 'brah',
+                    'cakm': 'cakm',
+                    'cham': 'cham',
+                    'deva': 'Devangarske števke',
+                    'orya': 'Orijske števke',
+                    'osma': 'osma',
+                    'roman': 'Rimske številke',
+                    'romanlow': 'Rimske male številke',
+                    'saur': 'saur',
+                    'shrd': 'shrd',
+                    'sora': 'sora',
+                    'sund': 'sund',
+                    'vaii': 'Številke vai',
+                    'tibt': 'Tibetanske števke',
+                    'thai': 'Tajske števke',
+                    'telu': 'Teluške števke',
+                    'tamldec': 'Tamilske števke',
+                    'taml': 'Tamilske številke',
+                    'talu': 'talu',
+                    'takr': 'takr',
+                    'olck': 'olck',
+                    'nkoo': 'nkoo',
+                    'mymrshan': 'mymrshan',
+                    'mymr': 'Mjanmarske števke',
+                    'mtei': 'mtei',
+                    'mong': 'Mongolske števke',
+                    'mlym': 'Malajalamske števke',
+                    'limb': 'limb',
+                    'lepc': 'lepc',
+                    'latn': 'Zahodne števke',
+                    'laoo': 'Laoške števke',
+                    'lanatham': 'lanatham',
+                    'lana': 'lana',
+                    'geor': 'Gruzijske številke',
+                    'fullwide': 'Števke polne širine',
+                    'ethi': 'Etiopijske številke'
+                },
+                'colAlternate': {
+                    'non-ignorable': 'Razvrščanje simbolov',
+                    'shifted': 'Razvrščanje s prezrtjem simbolov'
+                },
+                'colBackwards': {
+                    'no': 'Navadno razvrščanje naglasov',
+                    'yes': 'Obratno razvrščanje naglasov'
+                }
+            },
+            'keys': {
+                'colNormalization': 'Normalizirano razvrščanje',
+                'collation': 'razvrščanje',
+                'colHiraganaQuaternary': 'Razvrščanje kana',
+                'colCaseLevel': 'Razvrščanje, občutljivo na velike/male črke',
+                'colCaseFirst': 'Razvrščanje velike črke/male črke',
+                'colBackwards': 'Razvrščanje z obratnimi naglasi',
+                'colAlternate': 'Razvrščanje s prezrtimi znaki',
+                'calendar': 'koledar',
+                'x': 'Private-Use',
+                'variableTop': 'Razvrščanje kot simboli',
+                'va': 'Različica območnih nastavitev',
+                'timezone': 'Časovni pas',
+                'numbers': 'Številke',
+                'currency': 'valuta',
+                'colStrength': 'Moč razvrščanja',
+                'colNumeric': 'Številsko razvrščanje'
+            },
+            'localeDisplayPattern': {
+                'localePattern': '{0} ({1})',
+                'localeSeparator': '{0}, {1}',
+                'localeKeyTypePattern': '{0}: {1}'
+            },
             'timeZoneNames': {
                 'zone': {
                     'Pacific': {
