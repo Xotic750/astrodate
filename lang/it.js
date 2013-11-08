@@ -160,7 +160,7 @@
                     'talu': 'Cifre nuovo Tai Lue',
                     'takr': 'Cifre takri',
                     'olck': 'Cifre Ol Chiki',
-                    'nkoo': "Cifre N'Ko",
+                    'nkoo': 'Cifre N\'Ko',
                     'mymrshan': 'Cifre shan birmane',
                     'mymr': 'Cifre birmane',
                     'mtei': 'Cifre Meetei Mayek',
@@ -511,7 +511,7 @@
                             'exemplarCity': 'Davis'
                         },
                         'DumontDUrville': {
-                            'exemplarCity': "Dumont D'Urville"
+                            'exemplarCity': 'Dumont D\'Urville'
                         },
                         'Macquarie': {
                             'exemplarCity': 'Macquarie'
@@ -731,7 +731,7 @@
                             }
                         },
                         'Havana': {
-                            'exemplarCity': "L'Avana"
+                            'exemplarCity': 'L\'Avana'
                         },
                         'Halifax': {
                             'exemplarCity': 'Halifax'
@@ -809,7 +809,7 @@
                             'exemplarCity': 'Louisville'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': "Lower Prince's Quarter"
+                            'exemplarCity': 'Lower Prince\'s Quarter'
                         },
                         'Maceio': {
                             'exemplarCity': 'Maceio'
@@ -990,7 +990,7 @@
                             'exemplarCity': 'Stanley'
                         },
                         'St_Helena': {
-                            'exemplarCity': "Sant'Elena"
+                            'exemplarCity': 'Sant\'Elena'
                         },
                         'Azores': {
                             'exemplarCity': 'Azzorre'
@@ -1270,7 +1270,7 @@
                             'exemplarCity': 'Nairobi'
                         },
                         'Ndjamena': {
-                            'exemplarCity': "N'Djamena"
+                            'exemplarCity': 'N\'Djamena'
                         },
                         'Windhoek': {
                             'exemplarCity': 'Windhoek'
@@ -1671,9 +1671,9 @@
                     },
                     'Atlantic': {
                         'long': {
-                            'generic': "Ora dell'Atlantico",
-                            'standard': "Ora standard dell'Atlantico",
-                            'daylight': "Ora legale dell'Atlantico"
+                            'generic': 'Ora dell\'Atlantico',
+                            'standard': 'Ora standard dell\'Atlantico',
+                            'daylight': 'Ora legale dell\'Atlantico'
                         }
                     },
                     'America_Central': {
@@ -1685,43 +1685,43 @@
                     },
                     'Amazon': {
                         'long': {
-                            'generic': "Ora dell'Amazzonia",
-                            'standard': "Ora standard dell'Amazzonia",
-                            'daylight': "Ora legale dell'Amazzonia"
+                            'generic': 'Ora dell\'Amazzonia',
+                            'standard': 'Ora standard dell\'Amazzonia',
+                            'daylight': 'Ora legale dell\'Amazzonia'
                         }
                     },
                     'Alaska': {
                         'long': {
-                            'generic': "Ora dell'Alaska",
+                            'generic': 'Ora dell\'Alaska',
                             'standard': 'Ora standard Alaska',
                             'daylight': 'Ora legale Alaska'
                         }
                     },
                     'Africa_Western': {
                         'long': {
-                            'generic': "Ora dell'Africa occidentale",
-                            'standard': "Ora standard dell'Africa occidentale",
-                            'daylight': "Ora legale dell'Africa occidentale"
+                            'generic': 'Ora dell\'Africa occidentale',
+                            'standard': 'Ora standard dell\'Africa occidentale',
+                            'daylight': 'Ora legale dell\'Africa occidentale'
                         }
                     },
                     'Africa_Southern': {
                         'long': {
-                            'standard': "Ora dell'Africa meridionale"
+                            'standard': 'Ora dell\'Africa meridionale'
                         }
                     },
                     'Africa_Eastern': {
                         'long': {
-                            'standard': "Ora dell'Africa orientale"
+                            'standard': 'Ora dell\'Africa orientale'
                         }
                     },
                     'Africa_Central': {
                         'long': {
-                            'standard': "Ora dell'Africa centrale"
+                            'standard': 'Ora dell\'Africa centrale'
                         }
                     },
                     'Afghanistan': {
                         'long': {
-                            'standard': "Ora dell'Afghanistan"
+                            'standard': 'Ora dell\'Afghanistan'
                         }
                     },
                     'America_Eastern': {
@@ -1761,23 +1761,23 @@
                     },
                     'Argentina': {
                         'long': {
-                            'generic': "Ora dell'Argentina",
-                            'standard': "Ora standard dell'Argentina",
-                            'daylight': "Ora legale dell'Argentina"
+                            'generic': 'Ora dell\'Argentina',
+                            'standard': 'Ora standard dell\'Argentina',
+                            'daylight': 'Ora legale dell\'Argentina'
                         }
                     },
                     'Argentina_Western': {
                         'long': {
-                            'generic': "Ora dell'Argentina occidentale",
-                            'standard': "Ora standard dell'Argentina occidentale",
-                            'daylight': "Ora legale dell'Argentina occidentale"
+                            'generic': 'Ora dell\'Argentina occidentale',
+                            'standard': 'Ora standard dell\'Argentina occidentale',
+                            'daylight': 'Ora legale dell\'Argentina occidentale'
                         }
                     },
                     'Armenia': {
                         'long': {
-                            'generic': "Ora dell'Armenia",
-                            'standard': "Ora standard dell'Armenia",
-                            'daylight': "Ora legale dell'Armenia"
+                            'generic': 'Ora dell\'Armenia',
+                            'standard': 'Ora standard dell\'Armenia',
+                            'daylight': 'Ora legale dell\'Armenia'
                         }
                     },
                     'China': {
@@ -1796,7 +1796,7 @@
                     },
                     'Christmas': {
                         'long': {
-                            'standard': "Ora dell'Isola di Natale"
+                            'standard': 'Ora dell\'Isola di Natale'
                         }
                     },
                     'Cocos': {
@@ -1832,7 +1832,7 @@
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': "Ora di Dumont-d'Urville"
+                            'standard': 'Ora di Dumont-d\'Urville'
                         }
                     },
                     'East_Timor': {
@@ -1842,21 +1842,21 @@
                     },
                     'Easter': {
                         'long': {
-                            'generic': "Ora dell'Isola di Pasqua",
-                            'standard': "Ora standard dell'Isola di Pasqua",
-                            'daylight': "Ora legale dell'Isola di Pasqua"
+                            'generic': 'Ora dell\'Isola di Pasqua',
+                            'standard': 'Ora standard dell\'Isola di Pasqua',
+                            'daylight': 'Ora legale dell\'Isola di Pasqua'
                         }
                     },
                     'Ecuador': {
                         'long': {
-                            'standard': "Ora dell'Ecuador"
+                            'standard': 'Ora dell\'Ecuador'
                         }
                     },
                     'Europe_Central': {
                         'long': {
-                            'generic': "Ora dell'Europa centrale",
-                            'standard': "Ora standard dell'Europa centrale",
-                            'daylight': "Ora legale dell'Europa centrale"
+                            'generic': 'Ora dell\'Europa centrale',
+                            'standard': 'Ora standard dell\'Europa centrale',
+                            'daylight': 'Ora legale dell\'Europa centrale'
                         },
                         'short': {
                             'generic': 'CET',
@@ -1866,9 +1866,9 @@
                     },
                     'Europe_Eastern': {
                         'long': {
-                            'generic': "Ora dell'Europa orientale",
-                            'standard': "Ora standard dell'Europa orientale",
-                            'daylight': "Ora legale dell'Europa orientale"
+                            'generic': 'Ora dell\'Europa orientale',
+                            'standard': 'Ora standard dell\'Europa orientale',
+                            'daylight': 'Ora legale dell\'Europa orientale'
                         },
                         'short': {
                             'generic': 'EET',
@@ -1878,9 +1878,9 @@
                     },
                     'Europe_Western': {
                         'long': {
-                            'generic': "Ora dell'Europa occidentale",
-                            'standard': "Ora standard dell'Europa occidentale",
-                            'daylight': "Ora legale dell'Europa occidentale"
+                            'generic': 'Ora dell\'Europa occidentale',
+                            'standard': 'Ora standard dell\'Europa occidentale',
+                            'daylight': 'Ora legale dell\'Europa occidentale'
                         },
                         'short': {
                             'generic': 'WET',
@@ -1890,7 +1890,7 @@
                     },
                     'India': {
                         'long': {
-                            'standard': "Ora standard dell'India"
+                            'standard': 'Ora standard dell\'India'
                         }
                     },
                     'Tonga': {
@@ -1919,16 +1919,16 @@
                     },
                     'Uruguay': {
                         'long': {
-                            'generic': "Ora dell'Uruguay",
-                            'standard': "Ora standard dell'Uruguay",
-                            'daylight': "Ora legale dell'Uruguay"
+                            'generic': 'Ora dell\'Uruguay',
+                            'standard': 'Ora standard dell\'Uruguay',
+                            'daylight': 'Ora legale dell\'Uruguay'
                         }
                     },
                     'Uzbekistan': {
                         'long': {
-                            'generic': "Ora dell'Uzbekistan",
-                            'standard': "Ora standard dell'Uzbekistan",
-                            'daylight': "Ora legale dell'Uzbekistan"
+                            'generic': 'Ora dell\'Uzbekistan',
+                            'standard': 'Ora standard dell\'Uzbekistan',
+                            'daylight': 'Ora legale dell\'Uzbekistan'
                         }
                     },
                     'Vanuatu': {
@@ -1959,7 +1959,7 @@
                     },
                     'Wake': {
                         'long': {
-                            'standard': "Ora dell'Isola di Wake"
+                            'standard': 'Ora dell\'Isola di Wake'
                         }
                     },
                     'Vostok': {
@@ -2084,37 +2084,37 @@
                     },
                     'Australia_Central': {
                         'long': {
-                            'generic': "Ora dell'Australia centrale",
-                            'standard': "Ora standard dell'Australia centrale",
-                            'daylight': "Ora legale dell'Australia centrale"
+                            'generic': 'Ora dell\'Australia centrale',
+                            'standard': 'Ora standard dell\'Australia centrale',
+                            'daylight': 'Ora legale dell\'Australia centrale'
                         }
                     },
                     'Australia_CentralWestern': {
                         'long': {
-                            'generic': "Ora dell'Australia centroccidentale",
-                            'standard': "Ora standard dell'Australia centroccidentale",
-                            'daylight': "Ora legale dell'Australia centroccidentale"
+                            'generic': 'Ora dell\'Australia centroccidentale',
+                            'standard': 'Ora standard dell\'Australia centroccidentale',
+                            'daylight': 'Ora legale dell\'Australia centroccidentale'
                         }
                     },
                     'Australia_Eastern': {
                         'long': {
-                            'generic': "Ora dell'Australia orientale",
-                            'standard': "Ora standard dell'Australia orientale",
-                            'daylight': "Ora legale dell'Australia orientale"
+                            'generic': 'Ora dell\'Australia orientale',
+                            'standard': 'Ora standard dell\'Australia orientale',
+                            'daylight': 'Ora legale dell\'Australia orientale'
                         }
                     },
                     'Australia_Western': {
                         'long': {
-                            'generic': "Ora dell'Australia occidentale",
-                            'standard': "Ora standard dell'Australia occidentale",
-                            'daylight': "Ora legale dell'Australia occidentale"
+                            'generic': 'Ora dell\'Australia occidentale',
+                            'standard': 'Ora standard dell\'Australia occidentale',
+                            'daylight': 'Ora legale dell\'Australia occidentale'
                         }
                     },
                     'Azerbaijan': {
                         'long': {
-                            'generic': "Ora dell'Azerbaigian",
-                            'standard': "Ora standard dell'Azerbaigian",
-                            'daylight': "Ora legale dell'Azerbaigian"
+                            'generic': 'Ora dell\'Azerbaigian',
+                            'standard': 'Ora standard dell\'Azerbaigian',
+                            'daylight': 'Ora legale dell\'Azerbaigian'
                         }
                     },
                     'Azores': {
@@ -2181,34 +2181,34 @@
                     },
                     'Indian_Ocean': {
                         'long': {
-                            'standard': "Ora dell'Oceano Indiano"
+                            'standard': 'Ora dell\'Oceano Indiano'
                         }
                     },
                     'Indochina': {
                         'long': {
-                            'standard': "Ora dell'Indocina"
+                            'standard': 'Ora dell\'Indocina'
                         }
                     },
                     'Indonesia_Central': {
                         'long': {
-                            'standard': "Ora dell'Indonesia centrale"
+                            'standard': 'Ora dell\'Indonesia centrale'
                         }
                     },
                     'Indonesia_Eastern': {
                         'long': {
-                            'standard': "Ora dell'Indonesia orientale"
+                            'standard': 'Ora dell\'Indonesia orientale'
                         }
                     },
                     'Indonesia_Western': {
                         'long': {
-                            'standard': "Ora dell'Indonesia occidentale"
+                            'standard': 'Ora dell\'Indonesia occidentale'
                         }
                     },
                     'Iran': {
                         'long': {
-                            'generic': "Ora dell'Iran",
-                            'standard': "Ora standard dell'Iran",
-                            'daylight': "Ora legale dell'Iran"
+                            'generic': 'Ora dell\'Iran',
+                            'standard': 'Ora standard dell\'Iran',
+                            'daylight': 'Ora legale dell\'Iran'
                         }
                     },
                     'Irkutsk': {
@@ -2287,7 +2287,7 @@
                     },
                     'Macquarie': {
                         'long': {
-                            'standard': "Ora dell'Isola Macquarie"
+                            'standard': 'Ora dell\'Isola Macquarie'
                         }
                     },
                     'Magadan': {

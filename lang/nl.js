@@ -1866,7 +1866,7 @@
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': "Dumont-d'Urville tijd"
+                            'standard': 'Dumont-d\'Urville tijd'
                         }
                     },
                     'East_Timor': {
@@ -2752,7 +2752,7 @@
                         'format': {
                             'abbreviated': {
                                 'am': 'AM',
-                                'noon': "12 uur 's middags",
+                                'noon': '12 uur \'s middags',
                                 'pm': 'PM'
                             },
                             'narrow': {
@@ -2762,14 +2762,14 @@
                             },
                             'wide': {
                                 'am': 'AM',
-                                'noon': "12 uur 's middags",
+                                'noon': '12 uur \'s middags',
                                 'pm': 'PM'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
                                 'am': 'a.m.',
-                                'noon': "12 uur 's middags",
+                                'noon': '12 uur \'s middags',
                                 'pm': 'p.m.'
                             },
                             'narrow': {
@@ -2779,7 +2779,7 @@
                             },
                             'wide': {
                                 'am': 'voormiddag',
-                                'noon': "12 uur 's middags",
+                                'noon': '12 uur \'s middags',
                                 'pm': 'p.m.'
                             }
                         }

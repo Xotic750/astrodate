@@ -56,9 +56,9 @@
                     'yes': 'Trier en tenant compte de la casse'
                 },
                 'colCaseFirst': {
-                    'lower': "Trier avec les minuscules d'abord",
+                    'lower': 'Trier avec les minuscules d\'abord',
                     'no': 'Trier sans ordre li\u00E9 \u00E0 la casse',
-                    'upper': "Trier avec les majuscules d'abord"
+                    'upper': 'Trier avec les majuscules d\'abord'
                 },
                 'colStrength': {
                     'identical': 'Tout trier',
@@ -182,7 +182,7 @@
                 },
                 'colBackwards': {
                     'no': 'Trier les caract\u00E8res accentu\u00E9s normalement',
-                    'yes': "Trier les caract\u00E8res accentu\u00E9s dans l'ordre inverse"
+                    'yes': 'Trier les caract\u00E8res accentu\u00E9s dans l\'ordre inverse'
                 }
             },
             'keys': {
@@ -809,7 +809,7 @@
                             'exemplarCity': 'Louisville'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': "Lower Prince's Quarter"
+                            'exemplarCity': 'Lower Prince\'s Quarter'
                         },
                         'Maceio': {
                             'exemplarCity': 'Macei\u00F3'
@@ -1950,14 +1950,14 @@
                         'long': {
                             'generic': 'heure de l\u2019Uruguay',
                             'standard': 'heure normale de l\u2019Uruguay',
-                            'daylight': "heure avanc\u00E9e de l'Uruguay"
+                            'daylight': 'heure avanc\u00E9e de l\'Uruguay'
                         }
                     },
                     'Uzbekistan': {
                         'long': {
                             'generic': 'heure de l\u2019Ouzb\u00E9kistan',
                             'standard': 'heure normale de l\u2019Ouzb\u00E9kistan',
-                            'daylight': "heure avanc\u00E9e de l'Ouzb\u00E9kistan"
+                            'daylight': 'heure avanc\u00E9e de l\'Ouzb\u00E9kistan'
                         }
                     },
                     'Vanuatu': {
@@ -2820,7 +2820,7 @@
                             'hms': 'h:mm:ss a',
                             'Hm': 'HH:mm',
                             'hm': 'h:mm a',
-                            'H': "HH 'h'",
+                            'H': 'HH \'h\'',
                             'h': 'h a',
                             'GyMMMEd': 'E d MMM y G',
                             'GyMMM': 'MMM y G',

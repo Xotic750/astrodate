@@ -1270,7 +1270,7 @@
                             'exemplarCity': 'Nairobi'
                         },
                         'Ndjamena': {
-                            'exemplarCity': "N'Djamena"
+                            'exemplarCity': 'N\'Djamena'
                         },
                         'Windhoek': {
                             'exemplarCity': 'Windhoek'
@@ -2807,13 +2807,13 @@
                         }
                     },
                     'dateFormats': {
-                        'full': "EEEE'en' 'den' d:'e' MMMM y",
+                        'full': 'EEEE\'en\' \'den\' d:\'e\' MMMM y',
                         'long': 'd MMMM y',
                         'medium': 'd MMM y',
                         'short': 'y-MM-dd'
                     },
                     'timeFormats': {
-                        'full': "'kl'. HH:mm:ss zzzz",
+                        'full': '\'kl\'. HH:mm:ss zzzz',
                         'long': 'HH:mm:ss z',
                         'medium': 'HH:mm:ss',
                         'short': 'HH:mm'
@@ -2858,8 +2858,8 @@
                             'MMM': 'LLL',
                             'MMMd': 'd MMM',
                             'MMMEd': 'E d MMM',
-                            'MMMMd': "d:'e' MMMM",
-                            'MMMMEd': "E d:'e' MMMM",
+                            'MMMMd': 'd:\'e\' MMMM',
+                            'MMMMEd': 'E d:\'e\' MMMM',
                             'ms': 'mm:ss'
                         },
                         'appendItems': {

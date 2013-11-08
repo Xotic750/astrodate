@@ -167,7 +167,7 @@
                     'talu': 'New Tai Lue Digits',
                     'takr': 'Takri Digits',
                     'olck': 'Ol Chiki Digits',
-                    'nkoo': "N'Ko Digits",
+                    'nkoo': 'N\'Ko Digits',
                     'mymrshan': 'Myanmar Shan Digits',
                     'mymr': 'Myanmar Digits',
                     'mtei': 'Meetei Mayek Digits',
@@ -813,7 +813,7 @@
                             'exemplarCity': 'Louisville'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': "Lower Prince's Quarter"
+                            'exemplarCity': 'Lower Prince\'s Quarter'
                         },
                         'Maceio': {
                             'exemplarCity': 'Maceio'

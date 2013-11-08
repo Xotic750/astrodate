@@ -48,8 +48,8 @@
             },
             'types': {
                 'colHiraganaQuaternary': {
-                    'no': "Kana'y\u0131 Ayr\u0131 S\u0131ralama",
-                    'yes': "Kana'y\u0131 Farkl\u0131 S\u0131ralama"
+                    'no': 'Kana\'y\u0131 Ayr\u0131 S\u0131ralama',
+                    'yes': 'Kana\'y\u0131 Farkl\u0131 S\u0131ralama'
                 },
                 'colCaseLevel': {
                     'no': 'B\u00FCy\u00FCk/K\u00FC\u00E7\u00FCk Harfe Duyarl\u0131 Olmadan S\u0131ralama',
@@ -63,7 +63,7 @@
                 'colStrength': {
                     'identical': 'T\u00FCm\u00FCn\u00FC S\u0131ralama',
                     'primary': 'Yaln\u0131zca Taban Harflerini S\u0131ralama',
-                    'quaternary': "Aksanlar\u0131/B\u00FCy\u00FCk-K\u00FC\u00E7\u00FCk Harfleri/Geni\u015Fli\u011Fi/Kana'y\u0131 S\u0131ralama",
+                    'quaternary': 'Aksanlar\u0131/B\u00FCy\u00FCk-K\u00FC\u00E7\u00FCk Harfleri/Geni\u015Fli\u011Fi/Kana\'y\u0131 S\u0131ralama',
                     'secondary': 'Aksanlar\u0131 S\u0131ralama',
                     'tertiary': 'Aksanlar\u0131/B\u00FCy\u00FCk-K\u00FC\u00E7\u00FCk Harfleri/Geni\u015Fli\u011Fi S\u0131ralama'
                 },
@@ -160,7 +160,7 @@
                     'talu': 'talu',
                     'takr': 'takr',
                     'olck': 'Ol Chiki Rakamlar\u0131',
-                    'nkoo': "N'Ko Rakamlar\u0131",
+                    'nkoo': 'N\'Ko Rakamlar\u0131',
                     'mymrshan': 'Myanmar Shan Rakamlar\u0131',
                     'mymr': 'Myanmar Rakamlar\u0131',
                     'mtei': 'Meetei Mayek Rakamlar\u0131',
@@ -174,7 +174,7 @@
                     'lana': 'Tai Tham Hora Rakamlar\u0131',
                     'geor': 'G\u00FCrc\u00FC Rakamlar\u0131',
                     'fullwide': 'Tam Geni\u015Flikte Rakamlar',
-                    'ethi': "Ge'ez Rakamlar\u0131"
+                    'ethi': 'Ge\'ez Rakamlar\u0131'
                 },
                 'colAlternate': {
                     'non-ignorable': 'Sembolleri S\u0131ralama',
@@ -809,7 +809,7 @@
                             'exemplarCity': 'Louisville'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': "Lower Prince's Quarter"
+                            'exemplarCity': 'Lower Prince\'s Quarter'
                         },
                         'Maceio': {
                             'exemplarCity': 'Maceio'
@@ -2287,7 +2287,7 @@
                     },
                     'Brunei': {
                         'long': {
-                            'standard': "Brunei Dar\u00FC's-Selam Saati"
+                            'standard': 'Brunei Dar\u00FC\'s-Selam Saati'
                         }
                     },
                     'Gulf': {

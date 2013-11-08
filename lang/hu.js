@@ -809,7 +809,7 @@
                             'exemplarCity': 'Louisville'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': "Lower Prince's Quarter"
+                            'exemplarCity': 'Lower Prince\'s Quarter'
                         },
                         'Maceio': {
                             'exemplarCity': 'Macei\u00F3'
@@ -1866,7 +1866,7 @@
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': "Dumont-d'Urville-i id\u0151"
+                            'standard': 'Dumont-d\'Urville-i id\u0151'
                         }
                     },
                     'East_Timor': {

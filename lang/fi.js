@@ -160,7 +160,7 @@
                     'talu': 'uudet tai lue -numerot',
                     'takr': 'takr',
                     'olck': 'ol chiki -numerot',
-                    'nkoo': "n'ko-numerot",
+                    'nkoo': 'n\'ko-numerot',
                     'mymrshan': 'myanmarin shan-numerot',
                     'mymr': 'burmalaiset numerot',
                     'mtei': 'meetei mayek -numerot',
@@ -811,7 +811,7 @@
                             'exemplarCity': 'Louisville'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': "Lower Prince's Quarter"
+                            'exemplarCity': 'Lower Prince\'s Quarter'
                         },
                         'Maceio': {
                             'exemplarCity': 'Macei\u00F3'
@@ -967,7 +967,7 @@
                             'exemplarCity': 'Saint-Barth\u00E9lemy'
                         },
                         'St_Johns': {
-                            'exemplarCity': "St. John's"
+                            'exemplarCity': 'St. John\'s'
                         },
                         'St_Kitts': {
                             'exemplarCity': 'Saint Kitts'
@@ -1274,7 +1274,7 @@
                             'exemplarCity': 'Nairobi'
                         },
                         'Ndjamena': {
-                            'exemplarCity': "N'Djamena"
+                            'exemplarCity': 'N\'Djamena'
                         },
                         'Windhoek': {
                             'exemplarCity': 'Windhoek'
@@ -1782,9 +1782,9 @@
                     },
                     'Aqtau': {
                         'long': {
-                            'generic': "Aqtaw'n aika",
-                            'standard': "Aqtaw'n normaaliaika",
-                            'daylight': "Aqtaw'n kes\u00E4aika"
+                            'generic': 'Aqtaw\'n aika',
+                            'standard': 'Aqtaw\'n normaaliaika',
+                            'daylight': 'Aqtaw\'n kes\u00E4aika'
                         }
                     },
                     'Aqtobe': {
@@ -1877,7 +1877,7 @@
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': "Dumont-d'Urvillen aika"
+                            'standard': 'Dumont-d\'Urvillen aika'
                         }
                     },
                     'East_Timor': {

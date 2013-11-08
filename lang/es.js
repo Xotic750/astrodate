@@ -511,7 +511,7 @@
                             'exemplarCity': 'Davis'
                         },
                         'DumontDUrville': {
-                            'exemplarCity': "Dumont d'Urville"
+                            'exemplarCity': 'Dumont d\'Urville'
                         },
                         'Macquarie': {
                             'exemplarCity': 'Macquarie'
@@ -809,7 +809,7 @@
                             'exemplarCity': 'Louisville'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': "Lower Prince's Quarter"
+                            'exemplarCity': 'Lower Prince\'s Quarter'
                         },
                         'Maceio': {
                             'exemplarCity': 'Macei\u00F3'
@@ -2777,8 +2777,8 @@
                         }
                     },
                     'dateFormats': {
-                        'full': "EEEE, d 'de' MMMM 'de' y",
-                        'long': "d 'de' MMMM 'de' y",
+                        'full': 'EEEE, d \'de\' MMMM \'de\' y',
+                        'long': 'd \'de\' MMMM \'de\' y',
                         'medium': 'd/M/y',
                         'short': 'd/M/yy'
                     },
@@ -2802,18 +2802,18 @@
                             'ms': 'mm:ss',
                             'Ed': 'E d',
                             'd': 'd',
-                            'GyMMMd': "d MMM 'de' y G",
-                            'GyMMMEd': "E, d 'de' MMMM 'de' y G",
+                            'GyMMMd': 'd MMM \'de\' y G',
+                            'GyMMMEd': 'E, d \'de\' MMMM \'de\' y G',
                             'h': 'h a',
                             'H': 'H',
                             'hm': 'h:mm a',
                             'Hm': 'H:mm',
-                            'yQQQQ': "QQQQ 'de' y",
+                            'yQQQQ': 'QQQQ \'de\' y',
                             'yQQQ': 'QQQ y',
-                            'yMMMM': "MMMM 'de' y",
-                            'yMMMEd': "EEE, d 'de' MMMM 'de' y",
-                            'yMMMd': "d 'de' MMM 'de' y",
-                            'yMMM': "MMM 'de' y",
+                            'yMMMM': 'MMMM \'de\' y',
+                            'yMMMEd': 'EEE, d \'de\' MMMM \'de\' y',
+                            'yMMMd': 'd \'de\' MMM \'de\' y',
+                            'yMMM': 'MMM \'de\' y',
                             'Hms': 'H:mm:ss',
                             'hms': 'h:mm:ss a',
                             'Ehm': 'E, h:mm a',
@@ -2821,17 +2821,17 @@
                             'Ehms': 'E, h:mm:ss a',
                             'EHms': 'E, H:mm:ss',
                             'Gy': 'y G',
-                            'GyMMM': "MMM 'de' y G",
+                            'GyMMM': 'MMM \'de\' y G',
                             'M': 'L',
                             'Md': 'd/M',
                             'MEd': 'E, d/M',
                             'MMd': 'd/M',
                             'MMdd': 'd/M',
                             'MMM': 'LLL',
-                            'MMMd': "d 'de' MMM",
+                            'MMMd': 'd \'de\' MMM',
                             'MMMdd': 'dd-MMM',
-                            'MMMEd': "E d 'de' MMM",
-                            'MMMMd': "d 'de' MMMM"
+                            'MMMEd': 'E d \'de\' MMM',
+                            'MMMMd': 'd \'de\' MMMM'
                         },
                         'appendItems': {
                             'Second': '{0} ({2}: {1})',
@@ -2899,17 +2899,17 @@
                             },
                             'yMMMd': {
                                 'd': 'd\u2013d MMM y',
-                                'M': "d MMM\u2013d MMM 'de' y",
-                                'y': "d MMM 'de' y\u2013d MMM 'de' y"
+                                'M': 'd MMM\u2013d MMM \'de\' y',
+                                'y': 'd MMM \'de\' y\u2013d MMM \'de\' y'
                             },
                             'yMMMEd': {
-                                'd': "E, d MMM\u2013E, d MMM 'de' y",
-                                'M': "E, d MMM\u2013E, d MMM 'de' y",
-                                'y': "E, d MMM 'de' y\u2013E, d MMM 'de' y"
+                                'd': 'E, d MMM\u2013E, d MMM \'de\' y',
+                                'M': 'E, d MMM\u2013E, d MMM \'de\' y',
+                                'y': 'E, d MMM \'de\' y\u2013E, d MMM \'de\' y'
                             },
                             'yMMMM': {
-                                'M': "MMMM\u2013MMMM 'de' y",
-                                'y': "MMMM 'de' y\u2013MMMM 'de' y"
+                                'M': 'MMMM\u2013MMMM \'de\' y',
+                                'y': 'MMMM \'de\' y\u2013MMMM \'de\' y'
                             },
                             'Hmv': {
                                 'H': 'H:mm\u2013H:mm v',

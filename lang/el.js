@@ -809,7 +809,7 @@
                             'exemplarCity': '\u039B\u03BF\u03CD\u03B9\u03C3\u03B2\u03B9\u03BB'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': "[Lower Prince's Quarter]"
+                            'exemplarCity': '[Lower Prince\'s Quarter]'
                         },
                         'Maceio': {
                             'exemplarCity': '\u039C\u03B1\u03C3\u03AD\u03B9\u03BF'

@@ -81,8 +81,7 @@
                     'coptic': 'Koptischer Kalender',
                     'dangi': 'Dangi Kalender',
                     'ethiopic': '\u00C4thiopischer Kalender',
-                    'ethiopic-amete-alem': '\u00C4thiopischer Kalender '
-                    Amete Alem '',
+                    'ethiopic-amete-alem': '\u00C4thiopischer Kalender "Amete Alem"',
                     'gregorian': 'Gregorianischer Kalender',
                     'hebrew': 'Hebr\u00E4ischer Kalender',
                     'persian': 'Persischer Kalender',
@@ -512,7 +511,7 @@
                             'exemplarCity': 'Davis'
                         },
                         'DumontDUrville': {
-                            'exemplarCity': "Dumont D'Urville"
+                            'exemplarCity': 'Dumont D\'Urville'
                         },
                         'Macquarie': {
                             'exemplarCity': 'Macquarie'
@@ -810,7 +809,7 @@
                             'exemplarCity': 'Louisville'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': "Lower Prince's Quarter"
+                            'exemplarCity': 'Lower Prince\'s Quarter'
                         },
                         'Maceio': {
                             'exemplarCity': 'Maceio'
@@ -965,7 +964,7 @@
                             'exemplarCity': 'Saint-Barth\u00E9lemy'
                         },
                         'St_Johns': {
-                            'exemplarCity': "St. John's"
+                            'exemplarCity': 'St. John\'s'
                         },
                         'St_Kitts': {
                             'exemplarCity': 'St. Kitts'
@@ -1845,7 +1844,7 @@
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': "Dumont-d'Urville-Zeit"
+                            'standard': 'Dumont-d\'Urville-Zeit'
                         }
                     },
                     'East_Timor': {
@@ -2826,7 +2825,7 @@
                             'GyMMMd': 'd. MMM y G',
                             'GyMMMEd': 'E, d. MMM y G',
                             'h': 'h a',
-                            'H': "HH 'Uhr'",
+                            'H': 'HH \'Uhr\'',
                             'hm': 'h:mm a',
                             'Hm': 'HH:mm',
                             'hms': 'h:mm:ss a',
@@ -2892,7 +2891,7 @@
                                 'M': 'M.-M.'
                             },
                             'Hv': {
-                                'H': "HH-HH 'Uhr' v"
+                                'H': 'HH-HH \'Uhr\' v'
                             },
                             'hv': {
                                 'a': 'h a - h a v',
@@ -2956,7 +2955,7 @@
                                 'm': 'h:mm-h:mm a'
                             },
                             'H': {
-                                'H': "HH-HH 'Uhr'"
+                                'H': 'HH-HH \'Uhr\''
                             },
                             'h': {
                                 'a': 'h a - h a',

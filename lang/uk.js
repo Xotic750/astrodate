@@ -511,7 +511,7 @@
                             'exemplarCity': '\u0414\u0435\u0432\u0456\u0441'
                         },
                         'DumontDUrville': {
-                            'exemplarCity': "\u0414\u044E\u043C\u043E\u043D-\u0434'\u042E\u0440\u0432\u0456\u043B\u044C"
+                            'exemplarCity': '\u0414\u044E\u043C\u043E\u043D-\u0434\'\u042E\u0440\u0432\u0456\u043B\u044C'
                         },
                         'Macquarie': {
                             'exemplarCity': '\u041C\u0430\u043A\u043A\u0443\u043E\u0440\u0456'
@@ -984,7 +984,7 @@
                             'exemplarCity': '\u041F\u0456\u0432\u0434\u0435\u043D\u043D\u0430 \u0414\u0436\u043E\u0440\u0434\u0436\u0456\u044F'
                         },
                         'Reykjavik': {
-                            'exemplarCity': "\u0420\u0435\u0439\u043A'\u044F\u0432\u0456\u043A"
+                            'exemplarCity': '\u0420\u0435\u0439\u043A\'\u044F\u0432\u0456\u043A'
                         },
                         'Stanley': {
                             'exemplarCity': '\u0421\u0442\u0435\u043D\u043B\u0456'
@@ -2775,8 +2775,8 @@
                         }
                     },
                     'dateFormats': {
-                        'full': "EEEE, d MMMM y '\u0440'.",
-                        'long': "d MMMM y '\u0440'.",
+                        'full': 'EEEE, d MMMM y \'\u0440\'.',
+                        'long': 'd MMMM y \'\u0440\'.',
                         'medium': 'd MMM y',
                         'short': 'dd.MM.yy'
                     },
@@ -2805,7 +2805,7 @@
                             'h': 'h a',
                             'H': 'HH',
                             'HHmm': 'HH:mm',
-                            'yQQQQ': "QQQQ y '\u0440'.",
+                            'yQQQQ': 'QQQQ y \'\u0440\'.',
                             'yQQQ': 'QQQ y',
                             'yMMMM': 'LLLL y',
                             'yMMMEd': 'E, d MMM y',

@@ -81,8 +81,7 @@
                     'coptic': '\u041A\u043E\u043F\u0442\u0441\u043A\u0438\u0439 \u043A\u0430\u043B\u0435\u043D\u0434\u0430\u0440\u044C',
                     'dangi': '\u043A\u0430\u043B\u0435\u043D\u0434\u0430\u0440\u044C \u0434\u0430\u043D\u0433\u0438',
                     'ethiopic': '\u042D\u0444\u0438\u043E\u043F\u0441\u043A\u0438\u0439 \u043A\u0430\u043B\u0435\u043D\u0434\u0430\u0440\u044C',
-                    'ethiopic-amete-alem': '\u042D\u0444\u0438\u043E\u043F\u0441\u043A\u0438\u0439 \u043A\u0430\u043B\u0435\u043D\u0434\u0430\u0440\u044C '\u0410\u043C\u0435\u0442\u0435\u0410\u043B\u0435\u043C
-                    '',
+                    'ethiopic-amete-alem': '\u042D\u0444\u0438\u043E\u043F\u0441\u043A\u0438\u0439 \u043A\u0430\u043B\u0435\u043D\u0434\u0430\u0440\u044C "\u0410\u043C\u0435\u0442\u0435 \u0410\u043B\u0435\u043C"',
                     'gregorian': '\u0413\u0440\u0438\u0433\u043E\u0440\u0438\u0430\u043D\u0441\u043A\u0438\u0439 \u043A\u0430\u043B\u0435\u043D\u0434\u0430\u0440\u044C',
                     'hebrew': '\u0415\u0432\u0440\u0435\u0439\u0441\u043A\u0438\u0439 \u043A\u0430\u043B\u0435\u043D\u0434\u0430\u0440\u044C',
                     'persian': '\u041F\u0435\u0440\u0441\u0438\u0434\u0441\u043A\u0438\u0439 \u043A\u0430\u043B\u0435\u043D\u0434\u0430\u0440\u044C',
@@ -512,7 +511,7 @@
                             'exemplarCity': '\u0414\u0435\u0439\u0432\u0438\u0441'
                         },
                         'DumontDUrville': {
-                            'exemplarCity': "\u0414\u044E\u043C\u043E\u043D-\u0434'\u042E\u0440\u0432\u0438\u043B\u044C"
+                            'exemplarCity': '\u0414\u044E\u043C\u043E\u043D-\u0434\'\u042E\u0440\u0432\u0438\u043B\u044C'
                         },
                         'Macquarie': {
                             'exemplarCity': '\u041C\u0430\u043A\u043A\u0443\u043E\u0440\u0438'
@@ -1874,7 +1873,7 @@
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': "\u0414\u044E\u043C\u043E\u043D-\u0434'\u042E\u0440\u0432\u0438\u043B\u044C"
+                            'standard': '\u0414\u044E\u043C\u043E\u043D-\u0434\'\u042E\u0440\u0432\u0438\u043B\u044C'
                         }
                     },
                     'East_Timor': {
@@ -2790,9 +2789,9 @@
                         }
                     },
                     'dateFormats': {
-                        'full': "EEEE, d MMMM y '\u0433'.",
-                        'long': "d MMMM y '\u0433'.",
-                        'medium': "dd MMM y '\u0433'.",
+                        'full': 'EEEE, d MMMM y \'\u0433\'.',
+                        'long': 'd MMMM y \'\u0433\'.',
+                        'medium': 'dd MMM y \'\u0433\'.',
                         'short': 'dd.MM.yy'
                     },
                     'timeFormats': {
@@ -2809,22 +2808,22 @@
                         'availableFormats': {
                             'yMMM': 'LLL y',
                             'yMM': 'MM.y',
-                            'yMEd': "ccc, d.MM.y '\u0433'.",
+                            'yMEd': 'ccc, d.MM.y \'\u0433\'.',
                             'yMd': 'dd.MM.y',
                             'yM': 'MM.y',
                             'Ed': 'ccc, d',
                             'E': 'ccc',
                             'd': 'd',
                             'GyMMM': 'LLL y G',
-                            'GyMMMd': "d MMM y '\u0433'. G",
+                            'GyMMMd': 'd MMM y \'\u0433\'. G',
                             'GyMMMEd': 'E, d MMM y G',
                             'h': 'h a',
                             'H': 'H',
-                            'yQQQQ': "QQQQ y '\u0433'.",
-                            'yQQQ': "QQQ y '\u0433'.",
+                            'yQQQQ': 'QQQQ y \'\u0433\'.',
+                            'yQQQ': 'QQQ y \'\u0433\'.',
                             'yMMMM': 'LLLL y',
                             'yMMMEd': 'E, d MMM y',
-                            'yMMMd': "d MMM y '\u0433'.",
+                            'yMMMd': 'd MMM y \'\u0433\'.',
                             'hms': 'h:mm:ss a',
                             'Hm': 'H:mm',
                             'hm': 'h:mm a',
@@ -2907,22 +2906,22 @@
                                 'y': 'ccc, dd.MM.y - ccc, dd.MM.y'
                             },
                             'yMMM': {
-                                'M': "LLL-LLL y '\u0433'.",
-                                'y': "LLL y - LLL y '\u0433'."
+                                'M': 'LLL-LLL y \'\u0433\'.',
+                                'y': 'LLL y - LLL y \'\u0433\'.'
                             },
                             'yMMMd': {
-                                'd': "d-d MMM y '\u0433'.",
-                                'M': "d MMM - d MMM y '\u0433'.",
-                                'y': "d MMM y - d MMM y '\u0433'."
+                                'd': 'd-d MMM y \'\u0433\'.',
+                                'M': 'd MMM - d MMM y \'\u0433\'.',
+                                'y': 'd MMM y - d MMM y \'\u0433\'.'
                             },
                             'yMMMEd': {
-                                'd': "ccc, d - ccc, d MMM y '\u0433'.",
-                                'M': "ccc, d MMM - ccc, d MMM y '\u0433'.",
-                                'y': "ccc, d MMM y - ccc, d MMM y '\u0433'."
+                                'd': 'ccc, d - ccc, d MMM y \'\u0433\'.',
+                                'M': 'ccc, d MMM - ccc, d MMM y \'\u0433\'.',
+                                'y': 'ccc, d MMM y - ccc, d MMM y \'\u0433\'.'
                             },
                             'yMMMM': {
-                                'M': "LLLL-LLLL y '\u0433'.",
-                                'y': "LLLL y - LLLL y '\u0433'."
+                                'M': 'LLLL-LLLL y \'\u0433\'.',
+                                'y': 'LLLL y - LLLL y \'\u0433\'.'
                             },
                             'MMMM': {
                                 'M': 'LLLL-LLLL'

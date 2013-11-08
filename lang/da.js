@@ -160,7 +160,7 @@
                     'talu': 'Nye Tai Lue-tal',
                     'takr': 'Takri-tal',
                     'olck': 'Ol Chiki-tal',
-                    'nkoo': "N'Ko-tal",
+                    'nkoo': 'N\'Ko-tal',
                     'mymrshan': 'Myanmar Shan-tal',
                     'mymr': 'Myanmar tal',
                     'mtei': 'Meetei Mayek-tal',
@@ -809,7 +809,7 @@
                             'exemplarCity': 'Louisville'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': "Lower Prince's Quarter"
+                            'exemplarCity': 'Lower Prince\'s Quarter'
                         },
                         'Maceio': {
                             'exemplarCity': 'Maceio'
@@ -964,7 +964,7 @@
                             'exemplarCity': 'Saint-Barth\u00E9lemy'
                         },
                         'St_Johns': {
-                            'exemplarCity': "St. John's"
+                            'exemplarCity': 'St. John\'s'
                         },
                         'St_Kitts': {
                             'exemplarCity': 'St. Kitts'
@@ -1866,7 +1866,7 @@
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': "Dumont-d'Urville-tid"
+                            'standard': 'Dumont-d\'Urville-tid'
                         }
                     },
                     'East_Timor': {
@@ -2805,7 +2805,7 @@
                         }
                     },
                     'dateFormats': {
-                        'full': "EEEE 'den' d. MMMM y",
+                        'full': 'EEEE \'den\' d. MMMM y',
                         'long': 'd. MMM y',
                         'medium': 'dd/MM/y',
                         'short': 'dd/MM/yy'
@@ -2817,8 +2817,8 @@
                         'short': 'HH.mm'
                     },
                     'dateTimeFormats': {
-                        'full': "{1} 'kl.' {0}",
-                        'long': "{1} 'kl.' {0}",
+                        'full': '{1} \'kl.\' {0}',
+                        'long': '{1} \'kl.\' {0}',
                         'medium': '{1} {0}',
                         'short': '{1} {0}',
                         'availableFormats': {
@@ -2828,7 +2828,7 @@
                             'Ehms': 'E h.mm.ss a',
                             'EHm': 'E HH.mm',
                             'Ehm': 'E h.mm a',
-                            'Ed': "E 'd'. d.",
+                            'Ed': 'E \'d\'. d.',
                             'd': 'd.',
                             'GyMMMd': 'd. MMM y G',
                             'GyMMMEd': 'E d. MMM y G',
@@ -2873,8 +2873,8 @@
                         },
                         'intervalFormats': {
                             'MMMEd': {
-                                'd': "E 'den' d. \u2013 E 'den' d. MMM",
-                                'M': "E 'den' d. MMM \u2013 E 'den' d. MMM"
+                                'd': 'E \'den\' d. \u2013 E \'den\' d. MMM',
+                                'M': 'E \'den\' d. MMM \u2013 E \'den\' d. MMM'
                             },
                             'MMMd': {
                                 'd': 'd.\u2013d. MMM',
@@ -2928,9 +2928,9 @@
                                 'y': 'd. MMM y \u2013 d. MMM y'
                             },
                             'yMMMEd': {
-                                'd': "E 'den' d. \u2013 E 'den' d. MMM y",
-                                'M': "E 'den' d. MMM \u2013 E 'den' d. MMM y",
-                                'y': "E 'den' d. MMM y \u2013 E 'den' d. MMM y"
+                                'd': 'E \'den\' d. \u2013 E \'den\' d. MMM y',
+                                'M': 'E \'den\' d. MMM \u2013 E \'den\' d. MMM y',
+                                'y': 'E \'den\' d. MMM y \u2013 E \'den\' d. MMM y'
                             },
                             'yMMMM': {
                                 'M': 'MMMM\u2013MMMM y',

@@ -167,7 +167,7 @@
                     'talu': 'New Tai Lue Digits',
                     'takr': 'Takri Digits',
                     'olck': 'Ol Chiki Digits',
-                    'nkoo': "N'Ko Digits",
+                    'nkoo': 'N\'Ko Digits',
                     'mymrshan': 'Myanmar Shan Digits',
                     'mymr': 'Myanmar Digits',
                     'mtei': 'Meetei Mayek Digits',
@@ -818,7 +818,7 @@
                             'exemplarCity': 'Louisville'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': "Lower Prince's Quarter"
+                            'exemplarCity': 'Lower Prince\'s Quarter'
                         },
                         'Maceio': {
                             'exemplarCity': 'Maceio'
@@ -2866,8 +2866,8 @@
                         'short': 'h:mm a'
                     },
                     'dateTimeFormats': {
-                        'full': "{1} 'at' {0}",
-                        'long': "{1} 'at' {0}",
+                        'full': '{1} \'at\' {0}',
+                        'long': '{1} \'at\' {0}',
                         'medium': '{1}, {0}',
                         'short': '{1}, {0}',
                         'availableFormats': {

@@ -160,7 +160,7 @@
                     'talu': 'ny tai lue-tall',
                     'takr': 'takri-tall',
                     'olck': 'ol chiki-tall',
-                    'nkoo': "n'ko-tall",
+                    'nkoo': 'n\'ko-tall',
                     'mymrshan': 'myanmar shan-tall',
                     'mymr': 'myanmar-tall',
                     'mtei': 'meetei mayek-tall',
@@ -809,7 +809,7 @@
                             'exemplarCity': 'Louisville'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': "Lower Prince's Quarter"
+                            'exemplarCity': 'Lower Prince\'s Quarter'
                         },
                         'Maceio': {
                             'exemplarCity': 'Macei\u00F3'
@@ -964,7 +964,7 @@
                             'exemplarCity': 'Saint Barth\u00E9lemy'
                         },
                         'St_Johns': {
-                            'exemplarCity': "St John's"
+                            'exemplarCity': 'St John\'s'
                         },
                         'St_Kitts': {
                             'exemplarCity': 'St. Kitts'
@@ -1270,7 +1270,7 @@
                             'exemplarCity': 'Nairobi'
                         },
                         'Ndjamena': {
-                            'exemplarCity': "N'Djamena"
+                            'exemplarCity': 'N\'Djamena'
                         },
                         'Windhoek': {
                             'exemplarCity': 'Windhoek'
@@ -1873,7 +1873,7 @@
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': "tidssone for Dumont d'Urville"
+                            'standard': 'tidssone for Dumont d\'Urville'
                         }
                     },
                     'East_Timor': {
@@ -2820,7 +2820,7 @@
                     },
                     'dateTimeFormats': {
                         'full': '{1} {0}',
-                        'long': "{1} 'kl.' {0}",
+                        'long': '{1} \'kl.\' {0}',
                         'medium': '{1}, {0}',
                         'short': '{1}, {0}',
                         'availableFormats': {

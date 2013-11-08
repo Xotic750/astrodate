@@ -81,8 +81,7 @@
                     'coptic': 'Koptski kalendar',
                     'dangi': 'Dangi kalendar',
                     'ethiopic': 'Etiopski kalendar',
-                    'ethiopic-amete-alem': 'Etiopski kalendar '
-                    Amete Alem '',
+                    'ethiopic-amete-alem': 'Etiopski kalendar "Amete Alem"',
                     'gregorian': 'gregorijanski kalendar',
                     'hebrew': 'hebrejski kalendar',
                     'persian': 'Perzijski kalendar',
@@ -810,7 +809,7 @@
                             'exemplarCity': 'Louisville'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': "Lower Prince's Quarter"
+                            'exemplarCity': 'Lower Prince\'s Quarter'
                         },
                         'Maceio': {
                             'exemplarCity': 'Maceio'
@@ -1867,7 +1866,7 @@
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': "vrijeme Dumont-d'Urvillea"
+                            'standard': 'vrijeme Dumont-d\'Urvillea'
                         }
                     },
                     'East_Timor': {
@@ -2841,8 +2840,8 @@
                         'short': 'HH:mm'
                     },
                     'dateTimeFormats': {
-                        'full': "{1} 'u' {0}",
-                        'long': "{1} 'u' {0}",
+                        'full': '{1} \'u\' {0}',
+                        'long': '{1} \'u\' {0}',
                         'medium': '{1} {0}',
                         'short': '{1} {0}',
                         'availableFormats': {
@@ -2922,11 +2921,11 @@
                                 'M': 'MM. - MM.'
                             },
                             'Hv': {
-                                'H': "HH - HH 'h' v"
+                                'H': 'HH - HH \'h\' v'
                             },
                             'hv': {
                                 'a': 'h a - h a v',
-                                'h': "h - h 'h' a v"
+                                'h': 'h - h \'h\' a v'
                             },
                             'y': {
                                 'y': 'y. - y.'
@@ -2982,11 +2981,11 @@
                                 'm': 'h:mm-h:mm a'
                             },
                             'H': {
-                                'H': "HH-HH'h'"
+                                'H': 'HH-HH\'h\''
                             },
                             'h': {
                                 'a': 'h a - h a',
-                                'h': "h - h'h' a"
+                                'h': 'h - h\'h\' a'
                             },
                             'd': {
                                 'd': 'dd. - dd.'

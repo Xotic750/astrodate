@@ -160,7 +160,7 @@
                     'talu': 'Ch\u1EEF s\u1ED1 Th\u00E1i L\u1EB7c m\u1EDBi',
                     'takr': 'Ch\u1EEF s\u1ED1 Takri',
                     'olck': 'Ch\u1EEF s\u1ED1 Ol Chiki',
-                    'nkoo': "Ch\u1EEF s\u1ED1 N'Ko",
+                    'nkoo': 'Ch\u1EEF s\u1ED1 N\'Ko',
                     'mymrshan': 'Ch\u1EEF s\u1ED1 Myanmar Shan',
                     'mymr': 'Ch\u1EEF s\u1ED1 Myanma',
                     'mtei': 'Ch\u1EEF s\u1ED1 Meetei Mayek',
@@ -809,7 +809,7 @@
                             'exemplarCity': 'Louisville'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': "Lower Prince's Quarter"
+                            'exemplarCity': 'Lower Prince\'s Quarter'
                         },
                         'Maceio': {
                             'exemplarCity': 'Maceio'
@@ -2784,8 +2784,8 @@
                         }
                     },
                     'dateFormats': {
-                        'full': "EEEE, 'ng\u00E0y' dd MMMM 'n\u0103m' y",
-                        'long': "'Ng\u00E0y' dd 'th\u00E1ng' MM 'n\u0103m' y",
+                        'full': 'EEEE, \'ng\u00E0y\' dd MMMM \'n\u0103m\' y',
+                        'long': '\'Ng\u00E0y\' dd \'th\u00E1ng\' MM \'n\u0103m\' y',
                         'medium': 'dd-MM-y',
                         'short': 'dd/MM/y'
                     },
@@ -2805,7 +2805,7 @@
                             'yMEd': 'E, dd-M-y',
                             'yMd': 'd/M/y',
                             'yM': 'M/y',
-                            'y': "'N\u0103m' y",
+                            'y': '\'N\u0103m\' y',
                             'ms': 'mm:ss',
                             'Ed': 'E, dd',
                             'd': 'd',
@@ -2827,7 +2827,7 @@
                             'EHm': 'E HH:mm',
                             'Ehms': 'E h:mm:ss a',
                             'EHms': 'E HH:mm:ss',
-                            'Gy': "'N\u0103m' y G",
+                            'Gy': '\'N\u0103m\' y G',
                             'GyMMM': 'MMM y G',
                             'M': 'L',
                             'Md': 'dd-M',
@@ -2855,12 +2855,12 @@
                         },
                         'intervalFormats': {
                             'MMMEd': {
-                                'd': "EEEE, 'ng\u00E0y' dd - EEEE, 'ng\u00E0y' dd 'th\u00E1ng' M",
-                                'M': "EEEE, 'ng\u00E0y' dd 'th\u00E1ng' M - EEEE, 'ng\u00E0y' dd 'th\u00E1ng' M"
+                                'd': 'EEEE, \'ng\u00E0y\' dd - EEEE, \'ng\u00E0y\' dd \'th\u00E1ng\' M',
+                                'M': 'EEEE, \'ng\u00E0y\' dd \'th\u00E1ng\' M - EEEE, \'ng\u00E0y\' dd \'th\u00E1ng\' M'
                             },
                             'MMMd': {
-                                'd': "'Ng\u00E0y' dd 'th\u00E1ng' M - 'Ng\u00E0y' dd 'th\u00E1ng' M",
-                                'M': "'Ng\u00E0y' dd 'th\u00E1ng' M - 'Ng\u00E0y' dd 'th\u00E1ng' M"
+                                'd': '\'Ng\u00E0y\' dd \'th\u00E1ng\' M - \'Ng\u00E0y\' dd \'th\u00E1ng\' M',
+                                'M': '\'Ng\u00E0y\' dd \'th\u00E1ng\' M - \'Ng\u00E0y\' dd \'th\u00E1ng\' M'
                             },
                             'MMM': {
                                 'M': 'MMM-MMM'
@@ -2874,14 +2874,14 @@
                                 'M': 'dd/MM - dd/MM'
                             },
                             'M': {
-                                'M': "'Th\u00E1ng' M - 'Th\u00E1ng' M"
+                                'M': '\'Th\u00E1ng\' M - \'Th\u00E1ng\' M'
                             },
                             'Hv': {
-                                'H': "HH'h'-HH'h' v"
+                                'H': 'HH\'h\'-HH\'h\' v'
                             },
                             'hv': {
-                                'a': "h'h' a - h'h' a v",
-                                'h': "h'h'-h'h' a v"
+                                'a': 'h\'h\' a - h\'h\' a v',
+                                'h': 'h\'h\'-h\'h\' a v'
                             },
                             'y': {
                                 'y': 'y-y'
@@ -2901,18 +2901,18 @@
                                 'y': 'EEEE, dd/MM/y - EEEE, dd/MM/y'
                             },
                             'yMMM': {
-                                'M': "'Th\u00E1ng' M - 'Th\u00E1ng' M 'n\u0103m' y",
-                                'y': "'Th\u00E1ng' M 'n\u0103m' y - 'Th\u00E1ng' M 'n\u0103m' y"
+                                'M': '\'Th\u00E1ng\' M - \'Th\u00E1ng\' M \'n\u0103m\' y',
+                                'y': '\'Th\u00E1ng\' M \'n\u0103m\' y - \'Th\u00E1ng\' M \'n\u0103m\' y'
                             },
                             'yMMMd': {
-                                'd': "'Ng\u00E0y' dd 'th\u00E1ng' M - 'Ng\u00E0y' dd 'th\u00E1ng' M 'n\u0103m' y",
-                                'M': "'Ng\u00E0y' dd 'th\u00E1ng' M - 'Ng\u00E0y' dd 'th\u00E1ng' M 'n\u0103m' y",
-                                'y': "'Ng\u00E0y' dd 'th\u00E1ng' M 'n\u0103m' y - 'Ng\u00E0y' dd 'th\u00E1ng' M 'n\u0103m' y"
+                                'd': '\'Ng\u00E0y\' dd \'th\u00E1ng\' M - \'Ng\u00E0y\' dd \'th\u00E1ng\' M \'n\u0103m\' y',
+                                'M': '\'Ng\u00E0y\' dd \'th\u00E1ng\' M - \'Ng\u00E0y\' dd \'th\u00E1ng\' M \'n\u0103m\' y',
+                                'y': '\'Ng\u00E0y\' dd \'th\u00E1ng\' M \'n\u0103m\' y - \'Ng\u00E0y\' dd \'th\u00E1ng\' M \'n\u0103m\' y'
                             },
                             'yMMMEd': {
-                                'd': "EEEE, 'ng\u00E0y' dd MMM - EEEE, 'ng\u00E0y' dd MMM 'n\u0103m' y",
-                                'M': "E, dd 'th\u00E1ng' M - E, dd 'th\u00E1ng' M, y",
-                                'y': "E, dd 'th\u00E1ng' M, y - E, dd 'th\u00E1ng' M, y"
+                                'd': 'EEEE, \'ng\u00E0y\' dd MMM - EEEE, \'ng\u00E0y\' dd MMM \'n\u0103m\' y',
+                                'M': 'E, dd \'th\u00E1ng\' M - E, dd \'th\u00E1ng\' M, y',
+                                'y': 'E, dd \'th\u00E1ng\' M, y - E, dd \'th\u00E1ng\' M, y'
                             },
                             'yMMMM': {
                                 'M': 'MMMM-MMMM y',
@@ -2937,14 +2937,14 @@
                                 'm': 'h:mm-h:mm a'
                             },
                             'H': {
-                                'H': "HH'h' - HH'h'"
+                                'H': 'HH\'h\' - HH\'h\''
                             },
                             'h': {
-                                'a': "h'h' a - h'h' a",
-                                'h': "h'h' - h'h' a"
+                                'a': 'h\'h\' a - h\'h\' a',
+                                'h': 'h\'h\' - h\'h\' a'
                             },
                             'd': {
-                                'd': "'Ng\u00E0y' dd-dd"
+                                'd': '\'Ng\u00E0y\' dd-dd'
                             },
                             'intervalFormatFallback': '{0} - {1}'
                         }

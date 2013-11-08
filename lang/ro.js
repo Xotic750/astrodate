@@ -809,7 +809,7 @@
                             'exemplarCity': 'Louisville'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': "Lower Prince's Quarter"
+                            'exemplarCity': 'Lower Prince\'s Quarter'
                         },
                         'Maceio': {
                             'exemplarCity': 'Maceio'
@@ -1270,7 +1270,7 @@
                             'exemplarCity': 'Nairobi'
                         },
                         'Ndjamena': {
-                            'exemplarCity': "N'Djamena"
+                            'exemplarCity': 'N\'Djamena'
                         },
                         'Windhoek': {
                             'exemplarCity': 'Windhoek'
@@ -1856,7 +1856,7 @@
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': "Ora din Dumont-d'Urville"
+                            'standard': 'Ora din Dumont-d\'Urville'
                         }
                     },
                     'East_Timor': {

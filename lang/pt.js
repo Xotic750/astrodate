@@ -809,7 +809,7 @@
                             'exemplarCity': 'Louisville'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': "Lower Prince's Quarter"
+                            'exemplarCity': 'Lower Prince\'s Quarter'
                         },
                         'Maceio': {
                             'exemplarCity': 'Macei\u00F3'
@@ -1871,7 +1871,7 @@
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': "Hor\u00E1rio de Dumont-d'Urville"
+                            'standard': 'Hor\u00E1rio de Dumont-d\'Urville'
                         }
                     },
                     'East_Timor': {
@@ -2823,8 +2823,8 @@
                         }
                     },
                     'dateFormats': {
-                        'full': "EEEE, d 'de' MMMM 'de' y",
-                        'long': "d 'de' MMMM 'de' y",
+                        'full': 'EEEE, d \'de\' MMMM \'de\' y',
+                        'long': 'd \'de\' MMMM \'de\' y',
                         'medium': 'dd/MM/y',
                         'short': 'dd/MM/yy'
                     },
@@ -2840,7 +2840,7 @@
                         'medium': '{1} {0}',
                         'short': '{1} {0}',
                         'availableFormats': {
-                            'yMMM': "MMM 'de' y",
+                            'yMMM': 'MMM \'de\' y',
                             'yMM': 'MM/y',
                             'yMEd': 'E, dd/MM/y',
                             'yMd': 'dd/MM/y',
@@ -2848,14 +2848,14 @@
                             'Ehm': 'E, h:mm a',
                             'Ed': 'E, d',
                             'd': 'd',
-                            'GyMMMd': "d 'de' MMM 'de' y G",
-                            'GyMMMEd': "E, d 'de' MMM 'de' y G",
+                            'GyMMMd': 'd \'de\' MMM \'de\' y G',
+                            'GyMMMEd': 'E, d \'de\' MMM \'de\' y G',
                             'h': 'h a',
                             'H': 'HH',
                             'yQQQQ': 'y QQQQ',
                             'yQQQ': 'y QQQ',
-                            'yMMMEd': "E, d 'de' MMM 'de' y",
-                            'yMMMd': "d 'de' MMM 'de' y",
+                            'yMMMEd': 'E, d \'de\' MMM \'de\' y',
+                            'yMMMd': 'd \'de\' MMM \'de\' y',
                             'Hm': 'HH:mm',
                             'hm': 'h:mm a',
                             'HHmmss': 'HH:mm:ss',
@@ -2863,7 +2863,7 @@
                             'Ehms': 'E, h:mm:ss a',
                             'EHms': 'E, HH:mm:ss',
                             'Gy': 'y G',
-                            'GyMMM': "MMM 'de' y G",
+                            'GyMMM': 'MMM \'de\' y G',
                             'hms': 'h:mm:ss a',
                             'Hms': 'HH:mm:ss',
                             'M': 'L',
@@ -2871,8 +2871,8 @@
                             'MEd': 'E, dd/MM',
                             'MMdd': 'dd/MM',
                             'MMM': 'LLL',
-                            'MMMd': "d 'de' MMM",
-                            'MMMEd': "E, d 'de' MMM",
+                            'MMMd': 'd \'de\' MMM',
+                            'MMMEd': 'E, d \'de\' MMM',
                             'ms': 'mm:ss',
                             'y': 'y',
                             'yM': 'MM/y'
@@ -2892,12 +2892,12 @@
                         },
                         'intervalFormats': {
                             'MMMEd': {
-                                'd': "E, d - E, d 'de' MMM",
-                                'M': "E, d 'de' MMM - E, d 'de' MMM"
+                                'd': 'E, d - E, d \'de\' MMM',
+                                'M': 'E, d \'de\' MMM - E, d \'de\' MMM'
                             },
                             'MMMd': {
-                                'd': "d-d 'de' MMM",
-                                'M': "d 'de' MMM - d 'de' MMM"
+                                'd': 'd-d \'de\' MMM',
+                                'M': 'd \'de\' MMM - d \'de\' MMM'
                             },
                             'MMM': {
                                 'M': 'MMM - MMM'
@@ -2938,22 +2938,22 @@
                                 'y': 'E, dd/MM/y - E, dd/MM/y'
                             },
                             'yMMM': {
-                                'M': "MMM-MMM 'de' y",
-                                'y': "MMM 'de' y - MMM 'de' y"
+                                'M': 'MMM-MMM \'de\' y',
+                                'y': 'MMM \'de\' y - MMM \'de\' y'
                             },
                             'yMMMd': {
-                                'd': "d-d 'de' MMM 'de' y",
-                                'M': "d 'de' MMM - d 'de' MMM 'de' y",
-                                'y': "d 'de' MMM 'de' y - d 'de' MMM 'de' y"
+                                'd': 'd-d \'de\' MMM \'de\' y',
+                                'M': 'd \'de\' MMM - d \'de\' MMM \'de\' y',
+                                'y': 'd \'de\' MMM \'de\' y - d \'de\' MMM \'de\' y'
                             },
                             'yMMMEd': {
-                                'd': "E, d - E, d 'de' MMM 'de' y",
-                                'M': "E, d 'de' MMM - E, d 'de' MMM 'de' y",
-                                'y': "E, d 'de' MMM 'de' y - E, d 'de' MMM 'de' y"
+                                'd': 'E, d - E, d \'de\' MMM \'de\' y',
+                                'M': 'E, d \'de\' MMM - E, d \'de\' MMM \'de\' y',
+                                'y': 'E, d \'de\' MMM \'de\' y - E, d \'de\' MMM \'de\' y'
                             },
                             'yMMMM': {
-                                'M': "MMMM - MMMM 'de' y",
-                                'y': "MMMM 'de' y - MMMM 'de' y"
+                                'M': 'MMMM - MMMM \'de\' y',
+                                'y': 'MMMM \'de\' y - MMMM \'de\' y'
                             },
                             'Hmv': {
                                 'H': 'HH:mm\u2013HH:mm v',
@@ -2974,11 +2974,11 @@
                                 'm': 'h:mm\u2013h:mm a'
                             },
                             'H': {
-                                'H': "HH'h' - HH'h'"
+                                'H': 'HH\'h\' - HH\'h\''
                             },
                             'h': {
-                                'a': "h'h' a - h'h' a",
-                                'h': "h'h' - h'h' a"
+                                'a': 'h\'h\' a - h\'h\' a',
+                                'h': 'h\'h\' - h\'h\' a'
                             },
                             'd': {
                                 'd': 'd-d'
