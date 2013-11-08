@@ -35,6 +35,7 @@
         if ('object' === typeof module && null !== module && 'object' === typeof module.exports && null !== module.exports) {
             module.exports = definition(require(bigNumberString + '.js'));
             require('./lang/en.js');
+            require('./leapSeconds.js');
         } else if ('function' === typeof define && 'object' === typeof define.amd && null !== define.amd) {
             projectPaths = {};
             projectConfig = {};
@@ -123,8 +124,9 @@
                 datePatterns,
                 timePatterns,
                 formatTypes,
-                currentLanguage,
-                calendarTypes;
+                defaultLanguage,
+                calendarTypes,
+                leapSeconds;
 
             function toNumber(inputArg) {
                 return +inputArg;
@@ -2403,19 +2405,23 @@
                 });
             }
 
-            function makeNamesMin(objectNames) {
+            function makeNamesMin(objectNames, lang) {
                 var arrayNames = objectValues(objectNames),
                     arrayMinNames = [],
                     count = 1,
                     maxLength = 0,
                     anLength = arrayNames.length;
 
-                if (!isString(currentLanguage) || isEmptyString(currentLanguage) || !isPlainObject(languages[currentLanguage])) {
-                    throw new Error('Language not loaded!');
+                if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
+                    if (!isString(defaultLanguage) || isEmptyString(defaultLanguage) || !isPlainObject(languages[defaultLanguage])) {
+                        throw new Error('Language not loaded!');
+                    }
+
+                    lang = defaultLanguage;
                 }
 
                 function sliceCountCompare(element) {
-                    var characters = element[currentLanguage].slice(0, count),
+                    var characters = element[lang].slice(0, count),
                         ret;
 
                     if (arrayContains(arrayMinNames, characters)) {
@@ -2429,7 +2435,7 @@
                 }
 
                 arrayForEach(arrayNames, function (element) {
-                    var word = element[currentLanguage],
+                    var word = element[lang],
                         length = word.length;
 
                     if (length > maxLength) {
@@ -2447,7 +2453,7 @@
             }
 
             /*
-            function makeNamesArray(arrayNames, args) {
+            function makeNamesArray(arrayNames, args, lang) {
                 var shortName,
                     lang;
 
@@ -2459,17 +2465,21 @@
                     lang = args[1];
                 }
 
-                if (!isString(currentLanguage)) {
-                    throw new Error('Language not loaded!');
+                if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
+                    if (!isString(defaultLanguage) || isEmptyString(defaultLanguage) || !isPlainObject(languages[defaultLanguage])) {
+                        throw new Error('Language not loaded!');
+                    }
+
+                    lang = defaultLanguage;
                 }
 
                 return arrayMap(arrayNames, function (element) {
                     var name;
 
                     if (shortName) {
-                        name = makeNameShort(element[currentLanguage]);
+                        name = makeNameShort(element[lang]);
                     } else {
-                        name = element[currentLanguage];
+                        name = element[lang];
                     }
 
                     return name;
@@ -2501,28 +2511,36 @@
                 return dayNames[toNumber(dayOfWeekNumber(struct))];
             }
 
-            function dayOfWeek(struct, type) {
-                if (!isString(currentLanguage) || isEmptyString(currentLanguage) || !isPlainObject(languages[currentLanguage])) {
-                    throw new Error('Language not loaded!');
+            function dayOfWeek(struct, type, lang) {
+                if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
+                    if (!isString(defaultLanguage) || isEmptyString(defaultLanguage) || !isPlainObject(languages[defaultLanguage])) {
+                        throw new Error('Language not loaded!');
+                    }
+
+                    lang = defaultLanguage;
                 }
 
-                if (!isString(type) || isEmptyString(type) || !arrayContains(objectKeys(languages[currentLanguage].calendars.gregorian.days.format), type)) {
+                if (!isString(type) || isEmptyString(type) || !arrayContains(objectKeys(languages[lang].calendars.gregorian.days.format), type)) {
                     type = 'wide';
                 }
 
-                return languages[currentLanguage].calendars.gregorian.days.format[type][cldrDayKey(struct)];
+                return languages[lang].calendars.gregorian.days.format[type][cldrDayKey(struct)];
             }
 
-            function monthName(struct, type) {
-                if (!isString(currentLanguage) || isEmptyString(currentLanguage) || !isPlainObject(languages[currentLanguage])) {
-                    throw new Error('Language not loaded!');
+            function monthName(struct, type, lang) {
+                if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
+                    if (!isString(defaultLanguage) || isEmptyString(defaultLanguage) || !isPlainObject(languages[defaultLanguage])) {
+                        throw new Error('Language not loaded!');
+                    }
+
+                    lang = defaultLanguage;
                 }
 
-                if (!isString(type) || isEmptyString(type) || !arrayContains(objectKeys(languages[currentLanguage].calendars.gregorian.months.format), type)) {
+                if (!isString(type) || isEmptyString(type) || !arrayContains(objectKeys(languages[lang].calendars.gregorian.months.format), type)) {
                     type = 'wide';
                 }
 
-                return languages[currentLanguage].calendars.gregorian.months.format[type][struct.month.toString()];
+                return languages[lang].calendars.gregorian.months.format[type][struct.month.toString()];
             }
 
             function fractionToTime(fraction, fractionIn, struct, julian) {
@@ -4348,16 +4366,20 @@
 
             deepFreeze(calendarTypes);
 
-            function formatDate(struct, pattern, julian) {
+            function formatDate(struct, pattern, julian, lang) {
                 if (!isString(pattern) || isEmptyString(pattern)) {
                     pattern = arrayFirst(formatTypes);
                 }
 
-                if (!isString(currentLanguage) || isEmptyString(currentLanguage) || !isPlainObject(languages[currentLanguage])) {
-                    throw new Error('Language not loaded!');
+                if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
+                    if (!isString(defaultLanguage) || isEmptyString(defaultLanguage) || !isPlainObject(languages[defaultLanguage])) {
+                        throw new Error('Language not loaded!');
+                    }
+
+                    lang = defaultLanguage;
                 }
 
-                var gregorian = languages[currentLanguage].calendars.gregorian,
+                var gregorian = languages[lang].calendars.gregorian,
                     dateFormats = gregorian.dateFormats,
                     eras = gregorian.eras,
                     months = gregorian.months,
@@ -4443,6 +4465,7 @@
                 temp = sign + year;
                 pattern = replaceToken(pattern, 'u{1,}', temp);
 
+                /*
                 weekDate = calendarToWeekDate(struct);
                 year = weekDate.year.plus(eraNum - 1);
                 if (year.lt(0)) {
@@ -4450,12 +4473,13 @@
                 } else {
                     sign = '';
                 }
+                */
 
                 year = year.toString();
                 temp = sign + year;
                 pattern = replaceToken(pattern, 'Y{1,}', year);
-                week = weekDate.week.toString();
-                pattern = replaceToken(pattern, 'w{1,2}', week);
+                //week = weekDate.week.toString();
+                //pattern = replaceToken(pattern, 'w{1,2}', week);
                 //pattern = replaceToken(pattern, 'W', value);
 
                 /*
@@ -4498,7 +4522,7 @@
                 day = cldrDayKey(struct);
                 temp = days.format.short;
                 if (isUndefined(temp)) {
-                    temp = makeNamesMin(days.format.abbreviated)[day];
+                    temp = makeNamesMin(days.format.abbreviated, lang)[day];
                 }
 
                 pattern = replaceToken(pattern, 'EEEEEE', temp);
@@ -4516,7 +4540,7 @@
 
                 temp = days['stand-alone'].short;
                 if (isUndefined(temp)) {
-                    temp = makeNamesMin(days['stand-alone'].abbreviated)[day];
+                    temp = makeNamesMin(days['stand-alone'].abbreviated, lang)[day];
                 }
 
                 pattern = replaceToken(pattern, 'cccccc', temp);
@@ -4528,19 +4552,23 @@
                 return pattern;
             }
 
-            function formatTime(struct, pattern) {
+            function formatTime(struct, pattern, lang) {
                 if (!isString(pattern) || isEmptyString(pattern)) {
                     pattern = arrayFirst(formatTypes);
                 }
 
-                if (!isString(currentLanguage) || isEmptyString(currentLanguage) || !isPlainObject(languages[currentLanguage])) {
-                    throw new Error('Language not loaded!');
+                if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
+                    if (!isString(defaultLanguage) || isEmptyString(defaultLanguage) || !isPlainObject(languages[defaultLanguage])) {
+                        throw new Error('Language not loaded!');
+                    }
+
+                    lang = defaultLanguage;
                 }
 
-                var gregorian = languages[currentLanguage].calendars.gregorian,
+                var gregorian = languages[lang].calendars.gregorian,
                     timeFormats = gregorian.timeFormats,
                     dayPeriods = gregorian.dayPeriods,
-                    timeZoneNames = languages[currentLanguage].timeZoneNames,
+                    timeZoneNames = languages[lang].timeZoneNames,
                     hourFormat = timeZoneNames.hourFormat,
                     gmtFormat = timeZoneNames.gmtFormat,
                     dayPeriod,
@@ -4560,9 +4588,9 @@
                 }
 
                 pattern = replaceToken(pattern, 'a', dayPeriods.format.abbreviated[dayPeriod]);
-
                 hour = struct.hour.plus(11).mod(12).plus(1);
                 pattern = replaceToken(pattern, 'h{1,2}', hour.toString());
+
                 pattern = replaceToken(pattern, 'H{1,2}', struct.hour.toString());
                 pattern = replaceToken(pattern, 'K{1,2}', hour.minus(1).toString());
                 // if hour is 24, needs to be handled in date too
@@ -4602,26 +4630,30 @@
                 return pattern;
             }
 
-            function formatDateTime(struct, pattern, julian) {
+            function formatDateTime(struct, pattern, julian, lang) {
                 if (!isString(pattern) || isEmptyString(pattern)) {
                     pattern = arrayFirst(formatTypes);
                 }
 
-                if (!isString(currentLanguage) || isEmptyString(currentLanguage) || !isPlainObject(languages[currentLanguage])) {
-                    throw new Error('Language not loaded!');
+                if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
+                    if (!isString(defaultLanguage) || isEmptyString(defaultLanguage) || !isPlainObject(languages[defaultLanguage])) {
+                        throw new Error('Language not loaded!');
+                    }
+
+                    lang = defaultLanguage;
                 }
 
-                var gregorian = languages[currentLanguage].calendars.gregorian,
+                var gregorian = languages[lang].calendars.gregorian,
                     dateTimeFormats = gregorian.dateTimeFormats,
                     dateTimeFormat;
 
                 if (arrayContains(objectKeys(dateTimeFormats), pattern)) {
                     dateTimeFormat = dateTimeFormats[pattern];
-                    dateTimeFormat = replaceToken(dateTimeFormat, '{1}', formatDate(struct, pattern, julian));
-                    dateTimeFormat = replaceToken(dateTimeFormat, '{0}', formatTime(struct, pattern));
+                    dateTimeFormat = replaceToken(dateTimeFormat, '{1}', formatDate(struct, pattern, julian, lang));
+                    dateTimeFormat = replaceToken(dateTimeFormat, '{0}', formatTime(struct, pattern, lang));
                 } else {
-                    dateTimeFormat = formatDate(struct, pattern, julian);
-                    dateTimeFormat = formatTime(struct, dateTimeFormat);
+                    dateTimeFormat = formatDate(struct, pattern, julian, lang);
+                    dateTimeFormat = formatTime(struct, dateTimeFormat, lang);
                 }
 
                 return dateTimeFormat;
@@ -4636,6 +4668,7 @@
                     isTT = false,
                     isLocal = false,
                     error = null,
+                    currentLanguage = defaultLanguage,
                     struct,
                     arg;
 
@@ -4671,6 +4704,9 @@
                                     break;
                                 case 'error':
                                     got = error;
+                                    break;
+                                case 'lang':
+                                    got = currentLanguage;
                                     break;
                                 default:
                                     throw new SyntaxError(key);
@@ -4766,6 +4802,12 @@
                                     break;
                                 case 'isLocal':
                                     isLocal = Boolean(value);
+                                    break;
+                                case 'lang':
+                                    if (isString(value) && !isEmptyString(value) && isPlainObject(languages[value])) {
+                                        currentLanguage = value;
+                                    }
+
                                     break;
                                 default:
                                     struct = isoParse(key);
@@ -4957,6 +4999,12 @@
                     }
                 },
 
+                currentLang: {
+                    value: function () {
+                        return this.getter('lang');
+                    }
+                },
+
                 isWeekDay: {
                     value: function () {
                         var val;
@@ -5028,7 +5076,7 @@
                             }
 
                             struct = getCorrectStruct(this, struct);
-                            string = stripSingleQuotes(formatDateTime(struct, pattern, isJulian));
+                            string = stripSingleQuotes(formatDateTime(struct, pattern, isJulian, this.currentLang()));
                         } else {
                             string = 'Invalid Date';
                         }
@@ -5052,7 +5100,7 @@
                             }
 
                             struct = getCorrectStruct(this, struct);
-                            string = stripSingleQuotes(formatDate(struct, pattern, isJulian));
+                            string = stripSingleQuotes(formatDate(struct, pattern, isJulian, this.currentLang()));
                         } else {
                             string = 'Invalid Date';
                         }
@@ -5076,7 +5124,7 @@
                             }
 
                             struct = getCorrectStruct(this, struct);
-                            string += stripSingleQuotes(formatTime(struct, pattern));
+                            string = stripSingleQuotes(formatTime(struct, pattern, this.currentLang()));
                         } else {
                             string = 'Invalid Date';
                         }
@@ -5300,7 +5348,7 @@
                         if (this.isValid()) {
                             struct = getCorrectStruct(this, this.getter());
                             if (this.isJulian()) {
-                                val = monthName(gregorianToJulian(struct), type);
+                                val = monthName(gregorianToJulian(struct), type, this.currentLang());
                             } else {
                                 val = monthName(struct, type);
                             }
@@ -5315,7 +5363,7 @@
                         var val;
 
                         if (this.isValid()) {
-                            val = dayOfWeek(getCorrectStruct(this, this.getter()), type);
+                            val = dayOfWeek(getCorrectStruct(this, this.getter()), type, this.currentLang());
                         }
 
                         return val;
@@ -5454,7 +5502,7 @@
                 lang: {
                     value: function (id) {
                         if (isString(id) && !isEmptyString(id) && isPlainObject(languages[id])) {
-                            currentLanguage = id;
+                            this.setter('lang', id);
                         }
 
                         return this;
@@ -5473,17 +5521,28 @@
 
                         if (isString(id) && !isEmptyString(id)) {
                             if (isPlainObject(object)) {
-                                languages[id] = extend({}, object);
+                                languages[id] = object;
                                 deepFreeze(languages[id]);
                             }
 
                             if (isPlainObject(languages[id])) {
                                 val = languages[id];
-                                currentLanguage = id;
+                                defaultLanguage = id;
                             }
                         }
 
                         return val;
+                    }
+                },
+
+                leapSeconds: {
+                    value: function (object) {
+                        if (isPlainObject(object)) {
+                            leapSeconds = object;
+                            deepFreeze(leapSeconds);
+                        }
+
+                        return leapSeconds;
                     }
                 },
 
@@ -5530,8 +5589,8 @@
                 },
 
                 monthsMin: {
-                    value: function () {
-                        return makeNamesMin(monthNames);
+                    value: function (lang) {
+                        return makeNamesMin(monthNames, lang);
                     }
                 },
 
@@ -5542,8 +5601,8 @@
                 },
 
                 weekDaysMin: {
-                    value: function () {
-                        return makeNamesMin(dayNames);
+                    value: function (lang) {
+                        return makeNamesMin(dayNames, lang);
                     }
                 }
                 */
