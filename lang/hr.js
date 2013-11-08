@@ -82,7 +82,7 @@
                     'coptic': 'Koptski kalendar',
                     'dangi': 'Dangi kalendar',
                     'ethiopic': 'Etiopski kalendar',
-                    'ethiopic-amete-alem': 'Etiopski kalendar \'Amete Alem\'',
+                    'ethiopic-amete-alem': 'Etiopski kalendar "Amete Alem"',
                     'gregorian': 'gregorijanski kalendar',
                     'hebrew': 'hebrejski kalendar',
                     'persian': 'Perzijski kalendar',
