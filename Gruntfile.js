@@ -38,7 +38,7 @@
                     'funcscope': true,
                     'globalstrict': true,
                     'immed': true,
-                    'maxlen': 400,
+                    'maxlen': 500,
                     'newcap': true,
                     'noarg': true,
                     'nomen': true,
