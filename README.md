@@ -1,4 +1,7 @@
-Master [![Build Status](https://travis-ci.org/Xotic750/astrodate.png?branch=master)](https://travis-ci.org/Xotic750/astrodate) astrodate =========
+Master [![Build Status](https://travis-ci.org/Xotic750/astrodate.png?branch=master)](https://travis-ci.org/Xotic750/astrodate)
+
+astrodate
+=========
 
 <p>Date and time formats are specified by <em>date and time pattern</em> strings. Within date and time pattern strings, all unquoted ASCII letters [A-Za-z] are reserved as pattern letters representing calendar fields. <code>astrodate</code> supports the date and time formatting algorithm and pattern letters defined by <a href="http://www.unicode.org/reports/tr35/">UTS#35 Unicode Locale Data Markup Language (LDML)</a>. The following pattern letters are currently available:</p>
 
