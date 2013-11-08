@@ -21,6 +21,8 @@
 
     var AstroDate = require('../astrodate');
 
+    require('../lang/en.js');
+
     exports.create = {
         'periphery methods': function (test) {
             var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
