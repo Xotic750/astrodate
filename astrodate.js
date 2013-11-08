@@ -4590,11 +4590,13 @@
                     timeZoneNames = languages[lang].timeZoneNames,
                     hourFormat = timeZoneNames.hourFormat,
                     gmtFormat = timeZoneNames.gmtFormat,
+                    etc = timeZoneNames.zone.Etc,
                     dayPeriod,
                     hour,
                     offset,
                     offsetFormat,
-                    temp;
+                    zulu = '\'Z\'',
+                    iso;
 
                 if (arrayContains(formatTypes, pattern)) {
                     pattern = timeFormats[pattern];
@@ -4632,19 +4634,47 @@
                 offset = fractionToTime(struct.offset.abs(), 'minute');
                 offsetFormat = replaceToken(offsetFormat, 'H{1,2}', offset.hour.toString());
                 offsetFormat = replaceToken(offsetFormat, 'm{1,2}', offset.minute.toString());
-                gmtFormat = replaceToken(gmtFormat, '{0}', offsetFormat);
+                pattern = replaceToken(pattern, 'ZZZZZ', offsetFormat);
+                pattern = replaceToken(pattern, 'xxxxx', offsetFormat);
+                pattern = replaceToken(pattern, 'xxx', offsetFormat);
+                if (struct.offset.isZero()) {
+                    iso = zulu;
+                } else {
+                    iso = offsetFormat;
+                }
 
+                pattern = replaceToken(pattern, 'XXXXX', iso);
+                pattern = replaceToken(pattern, 'XXX', iso);
+
+                gmtFormat = replaceToken(gmtFormat, '{0}', offsetFormat);
+                pattern = replaceToken(pattern, 'OOOO', gmtFormat);
                 pattern = replaceToken(pattern, 'zzzz', gmtFormat);
+                pattern = replaceToken(pattern, 'ZZZZ', gmtFormat);
+                pattern = replaceToken(pattern, 'vvvv', gmtFormat);
+                pattern = replaceToken(pattern, 'v', gmtFormat);
+                pattern = replaceToken(pattern, 'VVVV', gmtFormat);
+
+                if (struct.offset.lte(0)) {
+                    offsetFormat = '+HHMM';
+                } else {
+                    offsetFormat = '-HHMM';
+                }
+
+                offsetFormat = replaceToken(offsetFormat, 'H{1,2}', offset.hour.toString());
+                offsetFormat = replaceToken(offsetFormat, 'm{1,2}', offset.minute.toString());
+
+                pattern = replaceToken(pattern, 'Z{1,3}', offsetFormat);
+                pattern = replaceToken(pattern, 'XXXX', iso);
+                pattern = replaceToken(pattern, 'XX', iso);
+                pattern = replaceToken(pattern, 'xxxx', offsetFormat);
+                pattern = replaceToken(pattern, 'xx', offsetFormat);
+
+                gmtFormat = replaceToken(gmtFormat, '{0}', offsetFormat);
+                pattern = replaceToken(pattern, 'O', gmtFormat);
                 pattern = replaceToken(pattern, 'z{1,3}', gmtFormat);
 
-                pattern = replaceToken(pattern, 'ZZZZ', gmtFormat);
-                pattern = replaceToken(pattern, 'Z{1,3}', gmtFormat);
-
-                pattern = replaceToken(pattern, 'vvvv', gmtFormat);
-                pattern = replaceToken(pattern, 'v{1,3}', gmtFormat);
-
-                pattern = replaceToken(pattern, 'VVVV', gmtFormat);
-                pattern = replaceToken(pattern, 'V{1,3}', gmtFormat);
+                pattern = replaceToken(pattern, 'V{2,3}', etc.Unknown.exemplarCity);
+                pattern = replaceToken(pattern, 'V', etc.Unknown.exemplarCity.slice(0, 3).toLowerCase());
 
                 return pattern;
             }
