@@ -2192,10 +2192,16 @@
                 var maxSecond = 60,
                     leapSecond;
 
-                if (struct.hour.equals(23) && struct.minute.equals(59)) {
-                    leapSecond = toNumber(leapSeconds[struct.year.toString()][struct.month.toString()][struct.day.toString()]);
-                    if (isFinite(leapSecond)) {
-                        maxSecond += leapSecond;
+                if (struct.hour.equals(23) && struct.minute.equals(59) && isPlainObject(leapSeconds)) {
+                    leapSecond = leapSeconds[struct.year.toString()];
+                    if (isPlainObject(leapSecond)) {
+                        leapSecond = leapSecond[struct.month.toString()];
+                        if (isPlainObject(leapSecond)) {
+                            leapSecond = toNumber(leapSecond[struct.day.toString()]);
+                            if (numberIsFinite(leapSecond)) {
+                                maxSecond += leapSecond;
+                            }
+                        }
                     }
                 }
 
