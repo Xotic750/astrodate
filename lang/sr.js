@@ -22,7 +22,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*jshint -W100 */
 (function (thisContext) {
     'use strict';
 
@@ -512,7 +511,7 @@
                             'exemplarCity': 'Дејвис'
                         },
                         'DumontDUrville': {
-                            'exemplarCity': 'Димон д’Урвил'
+                            'exemplarCity': 'Димон д\u2019Урвил'
                         },
                         'Macquarie': {
                             'exemplarCity': 'Меквори'
@@ -1867,7 +1866,7 @@
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': 'Димон д’Урвил време'
+                            'standard': 'Димон д\u2019Урвил време'
                         }
                     },
                     'East_Timor': {
@@ -2918,8 +2917,8 @@
                                 'y': 'E, dd. MMM y. - E, dd. MMM y.'
                             },
                             'yMMMM': {
-                                'M': 'y-MM – MM',
-                                'y': 'y-MM – y-MM'
+                                'M': 'y-MM \u2013 MM',
+                                'y': 'y-MM \u2013 y-MM'
                             },
                             'Hmv': {
                                 'H': 'HH.mm-HH.mm v',

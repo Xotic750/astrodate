@@ -22,7 +22,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*jshint -W100 */
 (function (thisContext) {
     'use strict';
 
@@ -2916,30 +2915,30 @@
                                 'M': 'M/dE至M/dE'
                             },
                             'Md': {
-                                'd': 'M/d – M/d',
-                                'M': 'M/d – M/d'
+                                'd': 'M/d \u2013 M/d',
+                                'M': 'M/d \u2013 M/d'
                             },
                             'M': {
-                                'M': 'M–M月'
+                                'M': 'M\u2013M月'
                             },
                             'Hv': {
-                                'H': 'v HH–HH'
+                                'H': 'v HH\u2013HH'
                             },
                             'hv': {
                                 'a': 'vah时至ah时',
                                 'h': 'vah时至h时'
                             },
                             'y': {
-                                'y': 'y–y年'
+                                'y': 'y\u2013y年'
                             },
                             'yM': {
                                 'M': 'y年M月至M月',
                                 'y': 'y年M月至y年M月'
                             },
                             'yMd': {
-                                'd': 'y/M/d – y/M/d',
-                                'M': 'y/M/d – y/M/d',
-                                'y': 'y/M/d – y/M/d'
+                                'd': 'y/M/d \u2013 y/M/d',
+                                'M': 'y/M/d \u2013 y/M/d',
+                                'y': 'y/M/d \u2013 y/M/d'
                             },
                             'yMEd': {
                                 'd': 'y/M/dE至y/M/dE',
@@ -2965,8 +2964,8 @@
                                 'y': 'y年M月至y年M月'
                             },
                             'Hmv': {
-                                'H': 'v HH:mm–HH:mm',
-                                'm': 'v HH:mm–HH:mm'
+                                'H': 'v HH:mm\u2013HH:mm',
+                                'm': 'v HH:mm\u2013HH:mm'
                             },
                             'hmv': {
                                 'a': 'vah:mm至ah:mm',
@@ -2974,8 +2973,8 @@
                                 'm': 'vah:mm至h:mm'
                             },
                             'Hm': {
-                                'H': 'HH:mm–HH:mm',
-                                'm': 'HH:mm–HH:mm'
+                                'H': 'HH:mm\u2013HH:mm',
+                                'm': 'HH:mm\u2013HH:mm'
                             },
                             'hm': {
                                 'a': 'ah:mm至ah:mm',
@@ -2983,16 +2982,16 @@
                                 'm': 'ah:mm至h:mm'
                             },
                             'H': {
-                                'H': 'HH–HH'
+                                'H': 'HH\u2013HH'
                             },
                             'h': {
                                 'a': 'ah时至ah时',
                                 'h': 'ah时至h时'
                             },
                             'd': {
-                                'd': 'd–d日'
+                                'd': 'd\u2013d日'
                             },
-                            'intervalFormatFallback': '{0} – {1}'
+                            'intervalFormatFallback': '{0} \u2013 {1}'
                         }
                     }
                 }

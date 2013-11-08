@@ -22,7 +22,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*jshint -W100 */
 (function (thisContext) {
     'use strict';
 
@@ -512,7 +511,7 @@
                             'exemplarCity': 'Davis'
                         },
                         'DumontDUrville': {
-                            'exemplarCity': 'Dumont d’Urville'
+                            'exemplarCity': 'Dumont d\u2019Urville'
                         },
                         'Macquarie': {
                             'exemplarCity': 'Macquarie'
@@ -965,7 +964,7 @@
                             'exemplarCity': 'Saint Barthélemy'
                         },
                         'St_Johns': {
-                            'exemplarCity': 'St. John’s'
+                            'exemplarCity': 'St. John\u2019s'
                         },
                         'St_Kitts': {
                             'exemplarCity': 'St. Kitts'
@@ -1867,7 +1866,7 @@
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': 'Giờ Dumont-d’Urville'
+                            'standard': 'Giờ Dumont-d\u2019Urville'
                         }
                     },
                     'East_Timor': {
@@ -2917,14 +2916,14 @@
                             },
                             'yMMMM': {
                                 'M': 'MMMM-MMMM y',
-                                'y': 'MMMM y – MMMM y'
+                                'y': 'MMMM y \u2013 MMMM y'
                             },
                             'Hmv': {
                                 'H': 'HH:mm-HH:mm v',
                                 'm': 'HH:mm-HH:mm v'
                             },
                             'hmv': {
-                                'a': 'h:mm a – h:mm a v',
+                                'a': 'h:mm a \u2013 h:mm a v',
                                 'h': 'h:mm-h:mm a v',
                                 'm': 'h:mm-h:mm a v'
                             },
@@ -2933,7 +2932,7 @@
                                 'm': 'HH:mm-HH:mm'
                             },
                             'hm': {
-                                'a': 'h:mm a – h:mm a',
+                                'a': 'h:mm a \u2013 h:mm a',
                                 'h': 'h:mm-h:mm a',
                                 'm': 'h:mm-h:mm a'
                             },

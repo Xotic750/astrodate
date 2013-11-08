@@ -22,7 +22,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*jshint -W100 */
 (function (thisContext) {
     'use strict';
 
@@ -102,7 +101,7 @@
                     'eor': 'европейские правила сортировки',
                     'ducet': 'cтандартная сортировка Unicode',
                     'dictionary': 'словарный порядок сортировки',
-                    'big5han': 'Сортировка традиционного китайского языка – Big5',
+                    'big5han': 'Сортировка традиционного китайского языка \u2013 Big5',
                     'traditional': 'традиционный порядок',
                     'standard': 'стандартное сопоставление',
                     'zhuyin': 'чжуинь',
@@ -1670,7 +1669,7 @@
                     },
                     'Papua_New_Guinea': {
                         'long': {
-                            'standard': 'Папуа – Новая Гвинея'
+                            'standard': 'Папуа \u2013 Новая Гвинея'
                         }
                     },
                     'Palau': {

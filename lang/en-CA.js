@@ -22,7 +22,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*jshint -W100 */
 (function (thisContext) {
     'use strict';
 
@@ -521,7 +520,7 @@
                             'exemplarCity': 'Davis'
                         },
                         'DumontDUrville': {
-                            'exemplarCity': 'Dumont d’Urville'
+                            'exemplarCity': 'Dumont d\u2019Urville'
                         },
                         'Macquarie': {
                             'exemplarCity': 'Macquarie'
@@ -974,7 +973,7 @@
                             'exemplarCity': 'Saint Barthélemy'
                         },
                         'St_Johns': {
-                            'exemplarCity': 'St. John’s'
+                            'exemplarCity': 'St. John\u2019s'
                         },
                         'St_Kitts': {
                             'exemplarCity': 'St. Kitts'
@@ -1908,7 +1907,7 @@
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': 'Dumont-d’Urville Time'
+                            'standard': 'Dumont-d\u2019Urville Time'
                         }
                     },
                     'East_Timor': {
@@ -2925,98 +2924,98 @@
                         },
                         'intervalFormats': {
                             'MMMEd': {
-                                'd': 'E, MMM d – E, MMM d',
-                                'M': 'E, MMM d – E, MMM d'
+                                'd': 'E, MMM d \u2013 E, MMM d',
+                                'M': 'E, MMM d \u2013 E, MMM d'
                             },
                             'MMMd': {
-                                'd': 'MMM d – d',
-                                'M': 'MMM d – MMM d'
+                                'd': 'MMM d \u2013 d',
+                                'M': 'MMM d \u2013 MMM d'
                             },
                             'MMM': {
-                                'M': 'MMM – MMM'
+                                'M': 'MMM \u2013 MMM'
                             },
                             'MEd': {
-                                'd': 'E, M/d – E, M/d',
-                                'M': 'E, M/d – E, M/d'
+                                'd': 'E, M/d \u2013 E, M/d',
+                                'M': 'E, M/d \u2013 E, M/d'
                             },
                             'Md': {
-                                'd': 'M/d – M/d',
-                                'M': 'M/d – M/d'
+                                'd': 'M/d \u2013 M/d',
+                                'M': 'M/d \u2013 M/d'
                             },
                             'M': {
-                                'M': 'M – M'
+                                'M': 'M \u2013 M'
                             },
                             'Hv': {
-                                'H': 'HH – HH v'
+                                'H': 'HH \u2013 HH v'
                             },
                             'hv': {
-                                'a': 'h a – h a v',
-                                'h': 'h – h a v'
+                                'a': 'h a \u2013 h a v',
+                                'h': 'h \u2013 h a v'
                             },
                             'y': {
-                                'y': 'y – y'
+                                'y': 'y \u2013 y'
                             },
                             'yM': {
-                                'M': 'M/y – M/y',
-                                'y': 'M/y – M/y'
+                                'M': 'M/y \u2013 M/y',
+                                'y': 'M/y \u2013 M/y'
                             },
                             'yMd': {
-                                'd': 'M/d/y – M/d/y',
-                                'M': 'M/d/y – M/d/y',
-                                'y': 'M/d/y – M/d/y'
+                                'd': 'M/d/y \u2013 M/d/y',
+                                'M': 'M/d/y \u2013 M/d/y',
+                                'y': 'M/d/y \u2013 M/d/y'
                             },
                             'yMEd': {
-                                'd': 'E, M/d/y – E, M/d/y',
-                                'M': 'E, M/d/y – E, M/d/y',
-                                'y': 'E, M/d/y – E, M/d/y'
+                                'd': 'E, M/d/y \u2013 E, M/d/y',
+                                'M': 'E, M/d/y \u2013 E, M/d/y',
+                                'y': 'E, M/d/y \u2013 E, M/d/y'
                             },
                             'yMMM': {
-                                'M': 'MMM – MMM y',
-                                'y': 'MMM y – MMM y'
+                                'M': 'MMM \u2013 MMM y',
+                                'y': 'MMM y \u2013 MMM y'
                             },
                             'yMMMd': {
-                                'd': 'MMM d – d, y',
-                                'M': 'MMM d – MMM d, y',
-                                'y': 'MMM d, y – MMM d, y'
+                                'd': 'MMM d \u2013 d, y',
+                                'M': 'MMM d \u2013 MMM d, y',
+                                'y': 'MMM d, y \u2013 MMM d, y'
                             },
                             'yMMMEd': {
-                                'd': 'E, MMM d – E, MMM d, y',
-                                'M': 'E, MMM d – E, MMM d, y',
-                                'y': 'E, MMM d, y – E, MMM d, y'
+                                'd': 'E, MMM d \u2013 E, MMM d, y',
+                                'M': 'E, MMM d \u2013 E, MMM d, y',
+                                'y': 'E, MMM d, y \u2013 E, MMM d, y'
                             },
                             'yMMMM': {
-                                'M': 'MMMM – MMMM y',
-                                'y': 'MMMM y – MMMM y'
+                                'M': 'MMMM \u2013 MMMM y',
+                                'y': 'MMMM y \u2013 MMMM y'
                             },
                             'Hmv': {
-                                'H': 'HH:mm – HH:mm v',
-                                'm': 'HH:mm – HH:mm v'
+                                'H': 'HH:mm \u2013 HH:mm v',
+                                'm': 'HH:mm \u2013 HH:mm v'
                             },
                             'hmv': {
-                                'a': 'h:mm a – h:mm a v',
-                                'h': 'h:mm – h:mm a v',
-                                'm': 'h:mm – h:mm a v'
+                                'a': 'h:mm a \u2013 h:mm a v',
+                                'h': 'h:mm \u2013 h:mm a v',
+                                'm': 'h:mm \u2013 h:mm a v'
                             },
                             'Hm': {
-                                'H': 'HH:mm – HH:mm',
-                                'm': 'HH:mm – HH:mm'
+                                'H': 'HH:mm \u2013 HH:mm',
+                                'm': 'HH:mm \u2013 HH:mm'
                             },
                             'hm': {
-                                'a': 'h:mm a – h:mm a',
-                                'h': 'h:mm – h:mm a',
-                                'm': 'h:mm – h:mm a'
+                                'a': 'h:mm a \u2013 h:mm a',
+                                'h': 'h:mm \u2013 h:mm a',
+                                'm': 'h:mm \u2013 h:mm a'
                             },
                             'H': {
-                                'H': 'HH – HH'
+                                'H': 'HH \u2013 HH'
                             },
                             'h': {
-                                'a': 'h a – h a',
-                                'h': 'h – h a'
+                                'a': 'h a \u2013 h a',
+                                'h': 'h \u2013 h a'
                             },
                             'd': {
-                                'd': 'd – d'
+                                'd': 'd \u2013 d'
                             },
-                            'intervalFormatFallback': '{0} – {1}'
+                            'intervalFormatFallback': '{0} \u2013 {1}'
                         }
                     }
                 }

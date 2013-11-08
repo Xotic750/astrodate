@@ -15,6 +15,6 @@ do
     sed -e "s/<%= id %>/$LANGUAGE/g" -e "s/<%= version1 %>/$VERSION1/g" -e "s/<%= version2 %>/$VERSION2/g" -e "s/<%= version3 %>/$VERSION3/g" ./template.tpl | awk -v v="$JOINED" '{gsub("<%= data %>",v); print}' > ./$LANGUAGE.js
     fixjsstyle ./$LANGUAGE.js
     /bin/js-beautify -j ./$LANGUAGE.js | sponge ./$LANGUAGE.js
-    sed -i -e 's/<%= doubleQuote %>/"/g' -e "s/<%= singleQuote %>/\\\'/g" ./$LANGUAGE.js
+    sed -i -e 's/<%= doubleQuote %>/"/g' -e "s/<%= singleQuote %>/\\\'/g" -e "s/’/\\\u2019/g" -e "s/–/\\\u2013/g" ./$LANGUAGE.js
 done
 

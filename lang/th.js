@@ -22,7 +22,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*jshint -W100 */
 (function (thisContext) {
     'use strict';
 
@@ -2881,7 +2880,7 @@
                                 'M': 'M-M'
                             },
                             'Hv': {
-                                'H': 'HH–HH v'
+                                'H': 'HH\u2013HH v'
                             },
                             'hv': {
                                 'a': 'h a - h a v',
@@ -2905,7 +2904,7 @@
                                 'y': 'E d/M/y - E d/M/y'
                             },
                             'yMMM': {
-                                'M': 'MMM–MMM y',
+                                'M': 'MMM\u2013MMM y',
                                 'y': 'MMM y - MMM y'
                             },
                             'yMMMd': {
@@ -2919,7 +2918,7 @@
                                 'y': 'E d MMM y - E d MMM y'
                             },
                             'yMMMM': {
-                                'M': 'MMMM–MMMM y',
+                                'M': 'MMMM\u2013MMMM y',
                                 'y': 'MMMM y - MMMM y'
                             },
                             'Hmv': {
@@ -2941,7 +2940,7 @@
                                 'm': 'h:mm-h:mm a'
                             },
                             'H': {
-                                'H': 'HH–HH'
+                                'H': 'HH\u2013HH'
                             },
                             'h': {
                                 'a': 'h a - h a',
@@ -2950,7 +2949,7 @@
                             'd': {
                                 'd': 'd-d'
                             },
-                            'intervalFormatFallback': '{0} – {1}'
+                            'intervalFormatFallback': '{0} \u2013 {1}'
                         }
                     }
                 }

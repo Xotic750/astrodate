@@ -22,7 +22,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*jshint -W100 */
 (function (thisContext) {
     'use strict';
 
@@ -516,7 +515,7 @@
                             'exemplarCity': 'Davis'
                         },
                         'DumontDUrville': {
-                            'exemplarCity': 'Dumont d’Urville'
+                            'exemplarCity': 'Dumont d\u2019Urville'
                         },
                         'Macquarie': {
                             'exemplarCity': 'Macquarie'
@@ -969,7 +968,7 @@
                             'exemplarCity': 'Saint Barthélemy'
                         },
                         'St_Johns': {
-                            'exemplarCity': 'St. John’s'
+                            'exemplarCity': 'St. John\u2019s'
                         },
                         'St_Kitts': {
                             'exemplarCity': 'St. Kitts'
@@ -1878,7 +1877,7 @@
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': 'Dumont-d’Urville Time'
+                            'standard': 'Dumont-d\u2019Urville Time'
                         }
                     },
                     'East_Timor': {
@@ -2908,7 +2907,7 @@
                                 'M': 'M-M'
                             },
                             'Hv': {
-                                'H': 'HH–HH v'
+                                'H': 'HH\u2013HH v'
                             },
                             'hv': {
                                 'a': 'h a - h a v',
@@ -2946,12 +2945,12 @@
                                 'y': 'E d MMM y - E d MMM y'
                             },
                             'yMMMM': {
-                                'M': 'MMMM–MMMM y',
-                                'y': 'MMMM y – MMMM y'
+                                'M': 'MMMM\u2013MMMM y',
+                                'y': 'MMMM y \u2013 MMMM y'
                             },
                             'Hmv': {
-                                'H': 'HH:mm–HH:mm v',
-                                'm': 'HH:mm–HH:mm v'
+                                'H': 'HH:mm\u2013HH:mm v',
+                                'm': 'HH:mm\u2013HH:mm v'
                             },
                             'hmv': {
                                 'a': 'h:mm a - h:mm a v',
@@ -2959,8 +2958,8 @@
                                 'm': 'h:mm-h:mm a v'
                             },
                             'Hm': {
-                                'H': 'HH:mm–HH:mm',
-                                'm': 'HH:mm–HH:mm'
+                                'H': 'HH:mm\u2013HH:mm',
+                                'm': 'HH:mm\u2013HH:mm'
                             },
                             'hm': {
                                 'a': 'h:mm a - h:mm a',
@@ -2968,7 +2967,7 @@
                                 'm': 'h:mm-h:mm a'
                             },
                             'H': {
-                                'H': 'HH–HH'
+                                'H': 'HH\u2013HH'
                             },
                             'h': {
                                 'a': 'h a - h a',

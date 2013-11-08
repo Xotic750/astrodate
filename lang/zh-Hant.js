@@ -22,7 +22,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*jshint -W100 */
 (function (thisContext) {
     'use strict';
 
@@ -2923,7 +2922,7 @@
                                 'M': 'M月至M月'
                             },
                             'Hv': {
-                                'H': 'HH–HH [v]'
+                                'H': 'HH\u2013HH [v]'
                             },
                             'hv': {
                                 'a': 'a h 時至a h 時 [v]',
@@ -2969,8 +2968,8 @@
                                 'M': 'LLLL至 LLLL'
                             },
                             'Hmv': {
-                                'H': 'HH:mm–HH:mm [v]',
-                                'm': 'HH:mm–HH:mm [v]'
+                                'H': 'HH:mm\u2013HH:mm [v]',
+                                'm': 'HH:mm\u2013HH:mm [v]'
                             },
                             'hmv': {
                                 'a': 'a h:mm 至a h:mm [v]',
@@ -2978,7 +2977,7 @@
                                 'm': 'a h:mm 至 h:mm [v]'
                             },
                             'Hm': {
-                                'H': 'HH:mm–HH:mm',
+                                'H': 'HH:mm\u2013HH:mm',
                                 'm': 'HH:mm至HH:mm'
                             },
                             'hm': {
@@ -2987,7 +2986,7 @@
                                 'm': 'ah:mm至h:mm'
                             },
                             'H': {
-                                'H': 'HH–HH'
+                                'H': 'HH\u2013HH'
                             },
                             'h': {
                                 'a': 'ah時至ah時',

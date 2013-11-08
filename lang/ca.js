@@ -22,7 +22,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*jshint -W100 */
 (function (thisContext) {
     'use strict';
 
@@ -512,7 +511,7 @@
                             'exemplarCity': 'Davis'
                         },
                         'DumontDUrville': {
-                            'exemplarCity': 'Dumont d’Urville'
+                            'exemplarCity': 'Dumont d\u2019Urville'
                         },
                         'Macquarie': {
                             'exemplarCity': 'Macquarie'
@@ -965,7 +964,7 @@
                             'exemplarCity': 'Saint Barthélemy'
                         },
                         'St_Johns': {
-                            'exemplarCity': 'Saint John’s'
+                            'exemplarCity': 'Saint John\u2019s'
                         },
                         'St_Kitts': {
                             'exemplarCity': 'Saint Kitts'
@@ -1447,7 +1446,7 @@
                             'exemplarCity': 'Urumchi'
                         },
                         'Ust-Nera': {
-                            'exemplarCity': 'Ust’-Nera'
+                            'exemplarCity': 'Ust\u2019-Nera'
                         },
                         'Vientiane': {
                             'exemplarCity': 'Vientiane'
@@ -2866,7 +2865,7 @@
                             },
                             'hmv': {
                                 'a': 'h:mm a - h:mm a v',
-                                'h': 'h:mm–h:mm a v',
+                                'h': 'h:mm\u2013h:mm a v',
                                 'm': 'h:mm-h:mm a v'
                             },
                             'Hm': {

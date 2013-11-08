@@ -22,7 +22,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*jshint -W100 */
 (function (thisContext) {
     'use strict';
 
@@ -512,7 +511,7 @@
                             'exemplarCity': 'Davis'
                         },
                         'DumontDUrville': {
-                            'exemplarCity': 'Dumont d’Urville'
+                            'exemplarCity': 'Dumont d\u2019Urville'
                         },
                         'Macquarie': {
                             'exemplarCity': 'Macquarie'
@@ -965,7 +964,7 @@
                             'exemplarCity': 'São Bartolomeu'
                         },
                         'St_Johns': {
-                            'exemplarCity': 'St. John’s'
+                            'exemplarCity': 'St. John\u2019s'
                         },
                         'St_Kitts': {
                             'exemplarCity': 'São Cristóvão'
@@ -2972,7 +2971,7 @@
                                 'm': 'HH:mm - HH:mm v'
                             },
                             'hmv': {
-                                'a': 'h:mm a – h:mm a v',
+                                'a': 'h:mm a \u2013 h:mm a v',
                                 'h': 'h:mm - h:mm a v',
                                 'm': 'h:mm - h:mm a v'
                             },
@@ -2986,14 +2985,14 @@
                                 'm': 'h:mm - h:mm a'
                             },
                             'H': {
-                                'H': 'HH–HH'
+                                'H': 'HH\u2013HH'
                             },
                             'h': {
                                 'a': 'h a - h a',
                                 'h': 'h-h a'
                             },
                             'd': {
-                                'd': 'd–d'
+                                'd': 'd\u2013d'
                             },
                             'intervalFormatFallback': '{0} - {1}'
                         }

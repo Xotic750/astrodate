@@ -22,7 +22,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-/*jshint -W100 */
 (function (thisContext) {
     'use strict';
 
@@ -2807,7 +2806,7 @@
                                 'M': 'd. MMM - d. MMM'
                             },
                             'MMM': {
-                                'M': 'LLL – LLL'
+                                'M': 'LLL \u2013 LLL'
                             },
                             'MEd': {
                                 'd': 'E, d.M. - E, d.M.',
@@ -2818,16 +2817,16 @@
                                 'M': 'd.M. - d.M.'
                             },
                             'M': {
-                                'M': 'M. – M.'
+                                'M': 'M. \u2013 M.'
                             },
                             'Hv': {
-                                'H': 'HH – HH v'
+                                'H': 'HH \u2013 HH v'
                             },
                             'hv': {
                                 'a': 'h a - h a v',
-                                'h': 'h – h a v'
+                                'h': 'h \u2013 h a v'
                             },
-                            'intervalFormatFallback': '{0} – {1}',
+                            'intervalFormatFallback': '{0} \u2013 {1}',
                             'y': {
                                 'y': 'y - y'
                             },
@@ -2867,8 +2866,8 @@
                                 'M': 'LLLL-LLLL'
                             },
                             'Hmv': {
-                                'H': 'H:mm – H:mm v',
-                                'm': 'H:mm – H:mm v'
+                                'H': 'H:mm \u2013 H:mm v',
+                                'm': 'H:mm \u2013 H:mm v'
                             },
                             'hmv': {
                                 'a': 'h:mm a - h:mm a v',
@@ -2876,8 +2875,8 @@
                                 'm': 'h:mm - h:mm a v'
                             },
                             'Hm': {
-                                'H': 'H:mm – H:mm',
-                                'm': 'H:mm – H:mm'
+                                'H': 'H:mm \u2013 H:mm',
+                                'm': 'H:mm \u2013 H:mm'
                             },
                             'hm': {
                                 'a': 'h:mm a - h:mm a',
@@ -2885,14 +2884,14 @@
                                 'm': 'h:mm - h:mm a'
                             },
                             'H': {
-                                'H': 'HH – HH'
+                                'H': 'HH \u2013 HH'
                             },
                             'h': {
-                                'a': 'h a – h a',
-                                'h': 'h – h a'
+                                'a': 'h a \u2013 h a',
+                                'h': 'h \u2013 h a'
                             },
                             'd': {
-                                'd': 'd. – d.'
+                                'd': 'd. \u2013 d.'
                             }
                         }
                     }
