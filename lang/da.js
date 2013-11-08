@@ -44,36 +44,36 @@
             'codePatterns': {
                 'language': 'Sprog: {0}',
                 'script': 'Instruks: {0}',
-                'territory': 'Område: {0}'
+                'territory': 'Omr\u00E5de: {0}'
             },
             'types': {
                 'colHiraganaQuaternary': {
-                    'no': 'Sortér kana separat',
-                    'yes': 'Sortér kana med forskel på varianter'
+                    'no': 'Sort\u00E9r kana separat',
+                    'yes': 'Sort\u00E9r kana med forskel p\u00E5 varianter'
                 },
                 'colCaseLevel': {
-                    'no': 'Sortér uden forskel på store og små bogstaver',
-                    'yes': 'Sortér med skelnen mellem store og små bogstaver'
+                    'no': 'Sort\u00E9r uden forskel p\u00E5 store og sm\u00E5 bogstaver',
+                    'yes': 'Sort\u00E9r med skelnen mellem store og sm\u00E5 bogstaver'
                 },
                 'colCaseFirst': {
-                    'lower': 'Sortér med små bogstaver først',
-                    'no': 'Sortér efter store og små bogstaver i almindelig rækkefølge',
-                    'upper': 'Sortér med store bogstaver først'
+                    'lower': 'Sort\u00E9r med sm\u00E5 bogstaver f\u00F8rst',
+                    'no': 'Sort\u00E9r efter store og sm\u00E5 bogstaver i almindelig r\u00E6kkef\u00F8lge',
+                    'upper': 'Sort\u00E9r med store bogstaver f\u00F8rst'
                 },
                 'colStrength': {
-                    'identical': 'Sortér alt',
-                    'primary': 'Sortér kun efter basisbogstaver',
-                    'quaternary': 'Sortér efter accenter/små og store bogstaver/bredde/kana',
-                    'secondary': 'Sortér efter accenter',
-                    'tertiary': 'Sortér efter accenter/store og små bogstaver/bredde'
+                    'identical': 'Sort\u00E9r alt',
+                    'primary': 'Sort\u00E9r kun efter basisbogstaver',
+                    'quaternary': 'Sort\u00E9r efter accenter/sm\u00E5 og store bogstaver/bredde/kana',
+                    'secondary': 'Sort\u00E9r efter accenter',
+                    'tertiary': 'Sort\u00E9r efter accenter/store og sm\u00E5 bogstaver/bredde'
                 },
                 'colNumeric': {
-                    'no': 'Sortér efter individuelle cifre',
-                    'yes': 'Sortér tal numerisk'
+                    'no': 'Sort\u00E9r efter individuelle cifre',
+                    'yes': 'Sort\u00E9r tal numerisk'
                 },
                 'colNormalization': {
-                    'no': 'Sortér uden normalisering',
-                    'yes': 'Sortér Unicode efter første normalisering'
+                    'no': 'Sort\u00E9r uden normalisering',
+                    'yes': 'Sort\u00E9r Unicode efter f\u00F8rste normalisering'
                 },
                 'calendar': {
                     'japanese': 'japansk kalender',
@@ -83,7 +83,7 @@
                     'ethiopic': 'etiopisk kalender',
                     'ethiopic-amete-alem': 'etiopisk amete-alem-kalender',
                     'gregorian': 'gregoriansk kalender',
-                    'hebrew': 'jødisk kalender',
+                    'hebrew': 'j\u00F8disk kalender',
                     'persian': 'persisk kalender',
                     'roc': 'kalender for Republikken Kina',
                     'chinese': 'kinesisk kalender',
@@ -96,22 +96,22 @@
                     'islamic-umalqura': 'islamisk kalender (Umm al-Qura)'
                 },
                 'collation': {
-                    'phonebook': 'sorteringsrækkefølge i telefonbøger',
-                    'gb2312han': 'sorteringsrækkefølge forkortet kinesisk - GB2312',
-                    'eor': 'europæisk sorteringsrækkefølge',
+                    'phonebook': 'sorteringsr\u00E6kkef\u00F8lge i telefonb\u00F8ger',
+                    'gb2312han': 'sorteringsr\u00E6kkef\u00F8lge forkortet kinesisk - GB2312',
+                    'eor': 'europ\u00E6isk sorteringsr\u00E6kkef\u00F8lge',
                     'ducet': 'Unicode-standardsortering',
-                    'dictionary': 'sorteringsrækkefølge for ordbog',
-                    'big5han': 'sorteringsrækkefølge uforkortet kinesisk - Big5',
-                    'traditional': 'traditionel sorteringsrækkefølge',
-                    'standard': 'standardsorteringsrækkefølge',
-                    'zhuyin': 'zhuyin-sorteringsrækkefølge',
+                    'dictionary': 'sorteringsr\u00E6kkef\u00F8lge for ordbog',
+                    'big5han': 'sorteringsr\u00E6kkef\u00F8lge uforkortet kinesisk - Big5',
+                    'traditional': 'traditionel sorteringsr\u00E6kkef\u00F8lge',
+                    'standard': 'standardsorteringsr\u00E6kkef\u00F8lge',
+                    'zhuyin': 'zhuyin-sorteringsr\u00E6kkef\u00F8lge',
                     'unihan': 'sortering efter streger i rodtegn',
-                    'stroke': 'stregbaseret sorteringsrækkefølge',
-                    'searchjl': 'sortér efter den første konsonant i hangul',
-                    'search': 'generel søgning',
-                    'reformed': 'ny sorteringsrækkefølge',
-                    'pinyin': 'pinyin-baseret sorteringsrækkefølge',
-                    'phonetic': 'fonetisk sorteringsrækkefølge'
+                    'stroke': 'stregbaseret sorteringsr\u00E6kkef\u00F8lge',
+                    'searchjl': 'sort\u00E9r efter den f\u00F8rste konsonant i hangul',
+                    'search': 'generel s\u00F8gning',
+                    'reformed': 'ny sorteringsr\u00E6kkef\u00F8lge',
+                    'pinyin': 'pinyin-baseret sorteringsr\u00E6kkef\u00F8lge',
+                    'phonetic': 'fonetisk sorteringsr\u00E6kkef\u00F8lge'
                 },
                 'numbers': {
                     'knda': 'Kannada tal',
@@ -120,7 +120,7 @@
                     'jpanfin': 'Japanske financielle tal',
                     'jpan': 'Japanske tal',
                     'java': 'Javanesiske tal',
-                    'hebr': 'Hebræiske tal',
+                    'hebr': 'Hebr\u00E6iske tal',
                     'hantfin': 'Traditionelle kinesiske finansielle tal',
                     'hant': 'Traditionelle kinesiske tal',
                     'hansfin': 'Forenklede kinesiske financielle tal',
@@ -128,10 +128,10 @@
                     'hanidec': 'Kinesiske decimaltal',
                     'guru': 'Gurmukhi tal',
                     'gujr': 'Gujarati tal',
-                    'greklow': 'Græske tal i små bogstaver',
-                    'grek': 'Græske tal',
+                    'greklow': 'Gr\u00E6ske tal i sm\u00E5 bogstaver',
+                    'grek': 'Gr\u00E6ske tal',
                     'bali': 'Balinesiske tal',
-                    'armnlow': 'Armenske tal i små bogstaver',
+                    'armnlow': 'Armenske tal i sm\u00E5 bogstaver',
                     'armn': 'Armenske tal',
                     'arabext': 'Udvidede hindu-arabiske tal',
                     'arab': 'Hindu-arabiske tal',
@@ -146,7 +146,7 @@
                     'orya': 'Oriya tal',
                     'osma': 'Osmanya-tal',
                     'roman': 'Romertal',
-                    'romanlow': 'Romertal i små bogstaver',
+                    'romanlow': 'Romertal i sm\u00E5 bogstaver',
                     'saur': 'Saurashtra-tal',
                     'shrd': 'Sharada-tal',
                     'sora': 'Sora Sompeng-tal',
@@ -160,7 +160,7 @@
                     'talu': 'Nye Tai Lue-tal',
                     'takr': 'Takri-tal',
                     'olck': 'Ol Chiki-tal',
-                    'nkoo': 'N\'Ko-tal',
+                    'nkoo': "N'Ko-tal",
                     'mymrshan': 'Myanmar Shan-tal',
                     'mymr': 'Myanmar tal',
                     'mtei': 'Meetei Mayek-tal',
@@ -177,25 +177,25 @@
                     'ethi': 'Etiopiske tal'
                 },
                 'colAlternate': {
-                    'non-ignorable': 'Sortér efter symboler',
-                    'shifted': 'Sortér, og ignorer symboler'
+                    'non-ignorable': 'Sort\u00E9r efter symboler',
+                    'shifted': 'Sort\u00E9r, og ignorer symboler'
                 },
                 'colBackwards': {
-                    'no': 'Sortér efter accenter i normal rækkefølge',
-                    'yes': 'Sortér efter accenter i omvendt rækkefølge'
+                    'no': 'Sort\u00E9r efter accenter i normal r\u00E6kkef\u00F8lge',
+                    'yes': 'Sort\u00E9r efter accenter i omvendt r\u00E6kkef\u00F8lge'
                 }
             },
             'keys': {
                 'colNormalization': 'Normaliseret sortering',
                 'collation': 'Sortering',
                 'colHiraganaQuaternary': 'Sortering efter kana',
-                'colCaseLevel': 'Sortering med forskel på små og store bogstaver',
-                'colCaseFirst': 'Sortering efter store/små bogstaver',
+                'colCaseLevel': 'Sortering med forskel p\u00E5 sm\u00E5 og store bogstaver',
+                'colCaseFirst': 'Sortering efter store/sm\u00E5 bogstaver',
                 'colBackwards': 'Omvendt sortering efter accenter',
                 'colAlternate': 'Ignorer symboler under sortering',
                 'calendar': 'Kalender',
                 'x': 'Privatbrug',
-                'variableTop': 'Sortér som symboler',
+                'variableTop': 'Sort\u00E9r som symboler',
                 'va': 'Sprogvariant',
                 'timezone': 'Tidszone',
                 'numbers': 'Tal',
@@ -281,7 +281,7 @@
                             'exemplarCity': 'Chatham'
                         },
                         'Easter': {
-                            'exemplarCity': 'Påskeøen'
+                            'exemplarCity': 'P\u00E5ske\u00F8en'
                         },
                         'Efate': {
                             'exemplarCity': 'Efate'
@@ -375,7 +375,7 @@
                             'exemplarCity': 'Kerguelen'
                         },
                         'Reunion': {
-                            'exemplarCity': 'Réunion'
+                            'exemplarCity': 'R\u00E9union'
                         },
                         'Mayotte': {
                             'exemplarCity': 'Mayotte'
@@ -575,7 +575,7 @@
                             'exemplarCity': 'Boise'
                         },
                         'Asuncion': {
-                            'exemplarCity': 'Asunción'
+                            'exemplarCity': 'Asunci\u00F3n'
                         },
                         'Aruba': {
                             'exemplarCity': 'Aruba'
@@ -643,7 +643,7 @@
                             'exemplarCity': 'Bogota'
                         },
                         'Curacao': {
-                            'exemplarCity': 'Curaçao'
+                            'exemplarCity': 'Cura\u00E7ao'
                         },
                         'Danmarkshavn': {
                             'exemplarCity': 'Danmarkshavn'
@@ -809,7 +809,7 @@
                             'exemplarCity': 'Louisville'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': 'Lower Prince\'s Quarter'
+                            'exemplarCity': "Lower Prince's Quarter"
                         },
                         'Maceio': {
                             'exemplarCity': 'Maceio'
@@ -949,7 +949,7 @@
                             'exemplarCity': 'Santo Domingo'
                         },
                         'Sao_Paulo': {
-                            'exemplarCity': 'São Paulo'
+                            'exemplarCity': 'S\u00E3o Paulo'
                         },
                         'Scoresbysund': {
                             'exemplarCity': 'Ittoqqortoormiit'
@@ -961,10 +961,10 @@
                             'exemplarCity': 'Sitka'
                         },
                         'St_Barthelemy': {
-                            'exemplarCity': 'Saint-Barthélemy'
+                            'exemplarCity': 'Saint-Barth\u00E9lemy'
                         },
                         'St_Johns': {
-                            'exemplarCity': 'St. John\'s'
+                            'exemplarCity': "St. John's"
                         },
                         'St_Kitts': {
                             'exemplarCity': 'St. Kitts'
@@ -999,13 +999,13 @@
                             'exemplarCity': 'Bermuda'
                         },
                         'Canary': {
-                            'exemplarCity': 'De Kanariske Øer'
+                            'exemplarCity': 'De Kanariske \u00D8er'
                         },
                         'Cape_Verde': {
                             'exemplarCity': 'Kap Verde'
                         },
                         'Faeroe': {
-                            'exemplarCity': 'Færøerne'
+                            'exemplarCity': 'F\u00E6r\u00F8erne'
                         },
                         'Madeira': {
                             'exemplarCity': 'Madeira'
@@ -1112,7 +1112,7 @@
                             'exemplarCity': 'Vaduz'
                         },
                         'Zurich': {
-                            'exemplarCity': 'Zürich'
+                            'exemplarCity': 'Z\u00FCrich'
                         },
                         'Zaporozhye': {
                             'exemplarCity': 'Zaporizjzja'
@@ -1175,7 +1175,7 @@
                             'exemplarCity': 'Dublin'
                         },
                         'Copenhagen': {
-                            'exemplarCity': 'København'
+                            'exemplarCity': 'K\u00F8benhavn'
                         },
                         'Chisinau': {
                             'exemplarCity': 'Chisinau'
@@ -1282,7 +1282,7 @@
                             'exemplarCity': 'Tripoli'
                         },
                         'Sao_Tome': {
-                            'exemplarCity': 'São Tomé'
+                            'exemplarCity': 'S\u00E3o Tom\u00E9'
                         },
                         'Porto-Novo': {
                             'exemplarCity': 'Porto-Novo'
@@ -1648,7 +1648,7 @@
                     },
                     'Phoenix_Islands': {
                         'long': {
-                            'standard': 'Phoenixøen-tid'
+                            'standard': 'Phoenix\u00F8en-tid'
                         }
                     },
                     'Philippines': {
@@ -1717,7 +1717,7 @@
                     },
                     'Norfolk': {
                         'long': {
-                            'standard': 'Norfolkøen-tid'
+                            'standard': 'Norfolk\u00F8en-tid'
                         }
                     },
                     'Niue': {
@@ -1835,7 +1835,7 @@
                     },
                     'Cocos': {
                         'long': {
-                            'standard': 'Cocosøerne-normaltid'
+                            'standard': 'Cocos\u00F8erne-normaltid'
                         }
                     },
                     'Colombia': {
@@ -1847,9 +1847,9 @@
                     },
                     'Cook': {
                         'long': {
-                            'generic': 'Cookøerne-tid',
-                            'standard': 'Cookøerne-normaltid',
-                            'daylight': 'Cookøerne-sommertid'
+                            'generic': 'Cook\u00F8erne-tid',
+                            'standard': 'Cook\u00F8erne-normaltid',
+                            'daylight': 'Cook\u00F8erne-sommertid'
                         }
                     },
                     'Cuba': {
@@ -1866,19 +1866,19 @@
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': 'Dumont-d\'Urville-tid'
+                            'standard': "Dumont-d'Urville-tid"
                         }
                     },
                     'East_Timor': {
                         'long': {
-                            'standard': 'Østtimor-tid'
+                            'standard': '\u00D8sttimor-tid'
                         }
                     },
                     'Easter': {
                         'long': {
-                            'generic': 'Påskeøen-tid',
-                            'standard': 'Påskeøen-normaltid',
-                            'daylight': 'Påskeøen-sommertid'
+                            'generic': 'P\u00E5ske\u00F8en-tid',
+                            'standard': 'P\u00E5ske\u00F8en-normaltid',
+                            'daylight': 'P\u00E5ske\u00F8en-sommertid'
                         }
                     },
                     'Ecuador': {
@@ -1888,9 +1888,9 @@
                     },
                     'Europe_Central': {
                         'long': {
-                            'generic': 'Centraleuropæisk tid',
-                            'standard': 'Centraleuropæisk normaltid',
-                            'daylight': 'Centraleuropæisk sommertid'
+                            'generic': 'Centraleurop\u00E6isk tid',
+                            'standard': 'Centraleurop\u00E6isk normaltid',
+                            'daylight': 'Centraleurop\u00E6isk sommertid'
                         },
                         'short': {
                             'generic': 'CET',
@@ -1900,9 +1900,9 @@
                     },
                     'Europe_Eastern': {
                         'long': {
-                            'generic': 'Østeuropæisk tid',
-                            'standard': 'Østeuropæisk normaltid',
-                            'daylight': 'Østeuropæisk sommertid'
+                            'generic': '\u00D8steurop\u00E6isk tid',
+                            'standard': '\u00D8steurop\u00E6isk normaltid',
+                            'daylight': '\u00D8steurop\u00E6isk sommertid'
                         },
                         'short': {
                             'generic': 'EET',
@@ -1912,9 +1912,9 @@
                     },
                     'Europe_Western': {
                         'long': {
-                            'generic': 'Vesteuropæisk tid',
-                            'standard': 'Vesteuropæisk normaltid',
-                            'daylight': 'Vesteuropæisk sommertid'
+                            'generic': 'Vesteurop\u00E6isk tid',
+                            'standard': 'Vesteurop\u00E6isk normaltid',
+                            'daylight': 'Vesteurop\u00E6isk sommertid'
                         },
                         'short': {
                             'generic': 'WET',
@@ -1924,9 +1924,9 @@
                     },
                     'Falkland': {
                         'long': {
-                            'generic': 'Falklandsøerne-tid',
-                            'standard': 'Falklandsøerne-normaltid',
-                            'daylight': 'Falklandsøerne-sommertid'
+                            'generic': 'Falklands\u00F8erne-tid',
+                            'standard': 'Falklands\u00F8erne-normaltid',
+                            'daylight': 'Falklands\u00F8erne-sommertid'
                         }
                     },
                     'Fiji': {
@@ -2022,7 +2022,7 @@
                     },
                     'Wake': {
                         'long': {
-                            'standard': 'Wakeøen-tid'
+                            'standard': 'Wake\u00F8en-tid'
                         }
                     },
                     'Vostok': {
@@ -2083,7 +2083,7 @@
                     },
                     'Solomon': {
                         'long': {
-                            'standard': 'Salomonøerne-tid'
+                            'standard': 'Salomon\u00F8erne-tid'
                         }
                     },
                     'Singapore': {
@@ -2103,16 +2103,16 @@
                     },
                     'Greenland_Western': {
                         'long': {
-                            'generic': 'Vestgrønlandsk tid',
-                            'standard': 'Vestgrønlandsk normaltid',
-                            'daylight': 'Vestgrønlandsk sommertid'
+                            'generic': 'Vestgr\u00F8nlandsk tid',
+                            'standard': 'Vestgr\u00F8nlandsk normaltid',
+                            'daylight': 'Vestgr\u00F8nlandsk sommertid'
                         }
                     },
                     'Greenland_Eastern': {
                         'long': {
-                            'generic': 'Østgrønlandsk tid',
-                            'standard': 'Østgrønlandsk normaltid',
-                            'daylight': 'Østgrønlandsk sommertid'
+                            'generic': '\u00D8stgr\u00F8nlandsk tid',
+                            'standard': '\u00D8stgr\u00F8nlandsk normaltid',
+                            'daylight': '\u00D8stgr\u00F8nlandsk sommertid'
                         }
                     },
                     'GMT': {
@@ -2122,7 +2122,7 @@
                     },
                     'Gilbert_Islands': {
                         'long': {
-                            'standard': 'Gilbertøerne-tid'
+                            'standard': 'Gilbert\u00F8erne-tid'
                         }
                     },
                     'Georgia': {
@@ -2156,7 +2156,7 @@
                     },
                     'Africa_Eastern': {
                         'long': {
-                            'standard': 'Østafrikansk tid'
+                            'standard': '\u00D8stafrikansk tid'
                         }
                     },
                     'Africa_Southern': {
@@ -2236,9 +2236,9 @@
                     },
                     'Australia_Eastern': {
                         'long': {
-                            'generic': 'Østaustralsk tid',
-                            'standard': 'Østaustralsk normaltid',
-                            'daylight': 'Østaustralsk sommertid'
+                            'generic': '\u00D8staustralsk tid',
+                            'standard': '\u00D8staustralsk normaltid',
+                            'daylight': '\u00D8staustralsk sommertid'
                         }
                     },
                     'Australia_Western': {
@@ -2339,7 +2339,7 @@
                     },
                     'Indonesia_Eastern': {
                         'long': {
-                            'standard': 'Østindonesisk tid'
+                            'standard': '\u00D8stindonesisk tid'
                         }
                     },
                     'Indonesia_Western': {
@@ -2384,7 +2384,7 @@
                     },
                     'Kazakhstan_Eastern': {
                         'long': {
-                            'standard': 'Østkasakhstansk tid'
+                            'standard': '\u00D8stkasakhstansk tid'
                         }
                     },
                     'Kazakhstan_Western': {
@@ -2423,7 +2423,7 @@
                     },
                     'Line_Islands': {
                         'long': {
-                            'standard': 'Linjeøerne-tid'
+                            'standard': 'Linje\u00F8erne-tid'
                         }
                     },
                     'Lord_Howe': {
@@ -2469,7 +2469,7 @@
                     },
                     'Marshall_Islands': {
                         'long': {
-                            'standard': 'Marshalløerne-tid'
+                            'standard': 'Marshall\u00F8erne-tid'
                         }
                     },
                     'Mauritius': {
@@ -2631,13 +2631,13 @@
                     'days': {
                         'format': {
                             'abbreviated': {
-                                'sun': 'søn.',
+                                'sun': 's\u00F8n.',
                                 'mon': 'man.',
                                 'tue': 'tir.',
                                 'wed': 'ons.',
                                 'thu': 'tor.',
                                 'fri': 'fre.',
-                                'sat': 'lør.'
+                                'sat': 'l\u00F8r.'
                             },
                             'narrow': {
                                 'sun': 'S',
@@ -2649,33 +2649,33 @@
                                 'sat': 'L'
                             },
                             'short': {
-                                'sun': 'sø',
+                                'sun': 's\u00F8',
                                 'mon': 'ma',
                                 'tue': 'ti',
                                 'wed': 'on',
                                 'thu': 'to',
                                 'fri': 'fr',
-                                'sat': 'lø'
+                                'sat': 'l\u00F8'
                             },
                             'wide': {
-                                'sun': 'søndag',
+                                'sun': 's\u00F8ndag',
                                 'mon': 'mandag',
                                 'tue': 'tirsdag',
                                 'wed': 'onsdag',
                                 'thu': 'torsdag',
                                 'fri': 'fredag',
-                                'sat': 'lørdag'
+                                'sat': 'l\u00F8rdag'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
-                                'sun': 'søn',
+                                'sun': 's\u00F8n',
                                 'mon': 'man',
                                 'tue': 'tir',
                                 'wed': 'ons',
                                 'thu': 'tor',
                                 'fri': 'fre',
-                                'sat': 'lør'
+                                'sat': 'l\u00F8r'
                             },
                             'narrow': {
                                 'sun': 'S',
@@ -2687,22 +2687,22 @@
                                 'sat': 'L'
                             },
                             'short': {
-                                'sun': 'sø',
+                                'sun': 's\u00F8',
                                 'mon': 'ma',
                                 'tue': 'ti',
                                 'wed': 'on',
                                 'thu': 'to',
                                 'fri': 'fr',
-                                'sat': 'lø'
+                                'sat': 'l\u00F8'
                             },
                             'wide': {
-                                'sun': 'søndag',
+                                'sun': 's\u00F8ndag',
                                 'mon': 'mandag',
                                 'tue': 'tirsdag',
                                 'wed': 'onsdag',
                                 'thu': 'torsdag',
                                 'fri': 'fredag',
-                                'sat': 'lørdag'
+                                'sat': 'l\u00F8rdag'
                             }
                         }
                     },
@@ -2787,7 +2787,7 @@
                     'eras': {
                         'eraNames': {
                             '0': 'f.Kr.',
-                            '0-alt-variant': 'før vesterlandsk tidsregning',
+                            '0-alt-variant': 'f\u00F8r vesterlandsk tidsregning',
                             '1': 'e.Kr.',
                             '1-alt-variant': 'vesterlandsk tidsregning'
                         },
@@ -2805,7 +2805,7 @@
                         }
                     },
                     'dateFormats': {
-                        'full': 'EEEE \'den\' d. MMMM y',
+                        'full': "EEEE 'den' d. MMMM y",
                         'long': 'd. MMM y',
                         'medium': 'dd/MM/y',
                         'short': 'dd/MM/yy'
@@ -2817,8 +2817,8 @@
                         'short': 'HH.mm'
                     },
                     'dateTimeFormats': {
-                        'full': '{1} \'kl.\' {0}',
-                        'long': '{1} \'kl.\' {0}',
+                        'full': "{1} 'kl.' {0}",
+                        'long': "{1} 'kl.' {0}",
                         'medium': '{1} {0}',
                         'short': '{1} {0}',
                         'availableFormats': {
@@ -2828,7 +2828,7 @@
                             'Ehms': 'E h.mm.ss a',
                             'EHm': 'E HH.mm',
                             'Ehm': 'E h.mm a',
-                            'Ed': 'E \'d\'. d.',
+                            'Ed': "E 'd'. d.",
                             'd': 'd.',
                             'GyMMMd': 'd. MMM y G',
                             'GyMMMEd': 'E d. MMM y G',
@@ -2873,8 +2873,8 @@
                         },
                         'intervalFormats': {
                             'MMMEd': {
-                                'd': 'E \'den\' d. \u2013 E \'den\' d. MMM',
-                                'M': 'E \'den\' d. MMM \u2013 E \'den\' d. MMM'
+                                'd': "E 'den' d. \u2013 E 'den' d. MMM",
+                                'M': "E 'den' d. MMM \u2013 E 'den' d. MMM"
                             },
                             'MMMd': {
                                 'd': 'd.\u2013d. MMM',
@@ -2928,9 +2928,9 @@
                                 'y': 'd. MMM y \u2013 d. MMM y'
                             },
                             'yMMMEd': {
-                                'd': 'E \'den\' d. \u2013 E \'den\' d. MMM y',
-                                'M': 'E \'den\' d. MMM \u2013 E \'den\' d. MMM y',
-                                'y': 'E \'den\' d. MMM y \u2013 E \'den\' d. MMM y'
+                                'd': "E 'den' d. \u2013 E 'den' d. MMM y",
+                                'M': "E 'den' d. MMM \u2013 E 'den' d. MMM y",
+                                'y': "E 'den' d. MMM y \u2013 E 'den' d. MMM y"
                             },
                             'yMMMM': {
                                 'M': 'MMMM\u2013MMMM y',

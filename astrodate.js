@@ -4539,7 +4539,7 @@
                 pattern = replaceToken(pattern, 'g{1,}', mjd.toString());
 
                 day = cldrDayKey(struct);
-                temp = days.format.short;
+                temp = days.format[arrayLast(formatTypes)];
                 if (isUndefined(temp)) {
                     temp = makeNamesMin(days.format.abbreviated, lang)[day];
                 }
@@ -4557,7 +4557,7 @@
                 pattern = replaceToken(pattern, 'eeee', temp);
                 //pattern = replaceToken(pattern, 'e{1,2}', local starting day of the week);
 
-                temp = days['stand-alone'].short;
+                temp = days['stand-alone'][arrayLast(formatTypes)];
                 if (isUndefined(temp)) {
                     temp = makeNamesMin(days['stand-alone'].abbreviated, lang)[day];
                 }

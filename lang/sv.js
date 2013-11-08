@@ -42,7 +42,7 @@
     }(function (AstroDate) {
         AstroDate.lang('sv', {
             'codePatterns': {
-                'language': 'språk: {0}',
+                'language': 'spr\u00E5k: {0}',
                 'script': 'skrift: {0}',
                 'territory': 'region: {0}'
             },
@@ -52,23 +52,23 @@
                     'yes': 'Sortera efter kana'
                 },
                 'colCaseLevel': {
-                    'no': 'Sortera oavsett skiftläge',
-                    'yes': 'Sortera efter skiftläge'
+                    'no': 'Sortera oavsett skiftl\u00E4ge',
+                    'yes': 'Sortera efter skiftl\u00E4ge'
                 },
                 'colCaseFirst': {
-                    'lower': 'Sortera gemener först',
-                    'no': 'Ordna normalt efter skiftläge',
-                    'upper': 'Sortera versaler först'
+                    'lower': 'Sortera gemener f\u00F6rst',
+                    'no': 'Ordna normalt efter skiftl\u00E4ge',
+                    'upper': 'Sortera versaler f\u00F6rst'
                 },
                 'colStrength': {
                     'identical': 'Sortera alla',
-                    'primary': 'Sortera endast efter grundbokstäver',
-                    'quaternary': 'Sortera efter accent/skiftläge/bredd/kana',
+                    'primary': 'Sortera endast efter grundbokst\u00E4ver',
+                    'quaternary': 'Sortera efter accent/skiftl\u00E4ge/bredd/kana',
                     'secondary': 'Sortera accenter',
-                    'tertiary': 'Sortera accenter/skiftläge/bredd'
+                    'tertiary': 'Sortera accenter/skiftl\u00E4ge/bredd'
                 },
                 'colNumeric': {
-                    'no': 'Sortera siffror för sig',
+                    'no': 'Sortera siffror f\u00F6r sig',
                     'yes': 'Sortera siffror numeriskt'
                 },
                 'colNormalization': {
@@ -98,8 +98,8 @@
                 'collation': {
                     'phonebook': 'telefonkatalogssorteringsordning',
                     'gb2312han': 'gb2312-sorteringsordning',
-                    'eor': 'sorteringsordning för flerspråkliga europeiska dokument',
-                    'ducet': 'grundläggande Unicode-sorteringsordning',
+                    'eor': 'sorteringsordning f\u00F6r flerspr\u00E5kliga europeiska dokument',
+                    'ducet': 'grundl\u00E4ggande Unicode-sorteringsordning',
                     'dictionary': 'ordbokssorteringsordning',
                     'big5han': 'big5-sorteringsordning',
                     'traditional': 'traditionell ordning',
@@ -107,8 +107,8 @@
                     'zhuyin': 'zhuyin-sorteringsordning',
                     'unihan': 'radikal-streck-sorteringsordning',
                     'stroke': 'strecksorteringsordning',
-                    'searchjl': 'söksorteringsordning för att söka på inledande Hangul-konsonant',
-                    'search': 'allmän sökning',
+                    'searchjl': 's\u00F6ksorteringsordning f\u00F6r att s\u00F6ka p\u00E5 inledande Hangul-konsonant',
+                    'search': 'allm\u00E4n s\u00F6kning',
                     'reformed': 'reformerad sorteringsordning',
                     'pinyin': 'pinyin-sorteringsordning',
                     'phonetic': 'fonetisk sorteringsordning'
@@ -123,21 +123,21 @@
                     'hebr': 'hebreiska numeraler',
                     'hantfin': 'traditionellt kinesiskt finansiellt stavade tal',
                     'hant': 'traditionellt kinesiskt stavade tal',
-                    'hansfin': 'förenklat kinesiskt finansiellt stavade tal',
-                    'hans': 'förenklat kinesiskt stavade tal',
+                    'hansfin': 'f\u00F6renklat kinesiskt finansiellt stavade tal',
+                    'hans': 'f\u00F6renklat kinesiskt stavade tal',
                     'hanidec': 'kinesiska decimaltal',
                     'guru': 'gurmukhiska siffror',
                     'gujr': 'gujaratiska siffror',
-                    'greklow': 'små grekiska numeraler',
+                    'greklow': 'sm\u00E5 grekiska numeraler',
                     'grek': 'grekiska numeraler',
                     'bali': 'balinesiska siffror',
-                    'armnlow': 'små armeniska numeraler',
+                    'armnlow': 'sm\u00E5 armeniska numeraler',
                     'armn': 'armeniska numeraler',
-                    'arabext': 'utökade indo-arabiska siffror',
+                    'arabext': 'ut\u00F6kade indo-arabiska siffror',
                     'arab': 'indo-arabiska siffror',
                     'finance': 'Finansiella siffror',
                     'traditional': 'Traditionella siffror',
-                    'native': 'Språkspecifika siffror',
+                    'native': 'Spr\u00E5kspecifika siffror',
                     'beng': 'bengaliska siffror',
                     'brah': 'brahmiska siffror',
                     'cakm': 'chakma-siffror',
@@ -146,21 +146,21 @@
                     'orya': 'oriyiska siffror',
                     'osma': 'osmanya-siffror',
                     'roman': 'romerska numeraler',
-                    'romanlow': 'små romerska numeraler',
+                    'romanlow': 'sm\u00E5 romerska numeraler',
                     'saur': 'saurashtra-siffror',
                     'shrd': 'sharada-siffror',
                     'sora': 'sora sompeng-siffror',
                     'sund': 'sundanesiska siffror',
                     'vaii': 'vai-siffror',
                     'tibt': 'tibetanska siffror',
-                    'thai': 'thailändska siffror',
+                    'thai': 'thail\u00E4ndska siffror',
                     'telu': 'telugiska siffror',
                     'tamldec': 'tamilska siffror',
                     'taml': 'traditionella tamilska numeraler',
-                    'talu': 'ny tai lü-siffror',
+                    'talu': 'ny tai l\u00FC-siffror',
                     'takr': 'takri-siffror',
                     'olck': 'ol chiki-siffror',
-                    'nkoo': 'n-kå-siffor',
+                    'nkoo': 'n-k\u00E5-siffor',
                     'mymrshan': 'burmesiska shan-siffror',
                     'mymr': 'burmesiska siffror',
                     'mtei': 'meetei mayek-siffror',
@@ -168,7 +168,7 @@
                     'mlym': 'malayalamiska siffror',
                     'limb': 'limbu-siffror',
                     'lepc': 'lepcha-siffror',
-                    'latn': 'västerländska siffror',
+                    'latn': 'v\u00E4sterl\u00E4ndska siffror',
                     'laoo': 'laotiska siffror',
                     'lanatham': 'tai tham tham-siffror',
                     'lana': 'tai tham hora-siffror',
@@ -182,21 +182,21 @@
                 },
                 'colBackwards': {
                     'no': 'sortera accenter normalt',
-                    'yes': 'sortera accenter omvänt'
+                    'yes': 'sortera accenter omv\u00E4nt'
                 }
             },
             'keys': {
                 'colNormalization': 'Normaliserad sortering',
                 'collation': 'sorteringsordning',
                 'colHiraganaQuaternary': 'Sortering efter kana',
-                'colCaseLevel': 'Skiftlägeskänslig sortering',
+                'colCaseLevel': 'Skiftl\u00E4gesk\u00E4nslig sortering',
                 'colCaseFirst': 'Ordna efter versaler/gemener',
-                'colBackwards': 'Sortera accenter omvänt',
+                'colBackwards': 'Sortera accenter omv\u00E4nt',
                 'colAlternate': 'Ignorera symboler vid sortering',
                 'calendar': 'kalender',
                 'x': 'privat',
                 'variableTop': 'Sortera som symboler',
-                'va': 'Språkvariant',
+                'va': 'Spr\u00E5kvariant',
                 'timezone': 'Tidszon',
                 'numbers': 'siffror',
                 'currency': 'valuta',
@@ -224,7 +224,7 @@
                             'exemplarCity': 'Pohnpei'
                         },
                         'Pitcairn': {
-                            'exemplarCity': 'Pitcairnöarna'
+                            'exemplarCity': 'Pitcairn\u00F6arna'
                         },
                         'Palau': {
                             'exemplarCity': 'Palau'
@@ -239,10 +239,10 @@
                             'exemplarCity': 'Funafuti'
                         },
                         'Galapagos': {
-                            'exemplarCity': 'Galápagos'
+                            'exemplarCity': 'Gal\u00E1pagos'
                         },
                         'Gambier': {
-                            'exemplarCity': 'Gambieröarna'
+                            'exemplarCity': 'Gambier\u00F6arna'
                         },
                         'Guadalcanal': {
                             'exemplarCity': 'Guadalcanal'
@@ -254,7 +254,7 @@
                             'exemplarCity': 'Honolulu'
                         },
                         'Wallis': {
-                            'exemplarCity': 'Wallisön'
+                            'exemplarCity': 'Wallis\u00F6n'
                         },
                         'Wake': {
                             'exemplarCity': 'Wake'
@@ -281,7 +281,7 @@
                             'exemplarCity': 'Chatham'
                         },
                         'Easter': {
-                            'exemplarCity': 'Påskön'
+                            'exemplarCity': 'P\u00E5sk\u00F6n'
                         },
                         'Efate': {
                             'exemplarCity': 'Efate'
@@ -305,10 +305,10 @@
                             'exemplarCity': 'Majuro'
                         },
                         'Marquesas': {
-                            'exemplarCity': 'Marquesasöarna'
+                            'exemplarCity': 'Marquesas\u00F6arna'
                         },
                         'Midway': {
-                            'exemplarCity': 'Midwayöarna'
+                            'exemplarCity': 'Midway\u00F6arna'
                         },
                         'Nauru': {
                             'exemplarCity': 'Nauru'
@@ -320,7 +320,7 @@
                             'exemplarCity': 'Norfolk'
                         },
                         'Noumea': {
-                            'exemplarCity': 'Nouméa'
+                            'exemplarCity': 'Noum\u00E9a'
                         },
                         'Pago_Pago': {
                             'exemplarCity': 'Pago Pago'
@@ -369,13 +369,13 @@
                             'exemplarCity': 'Maldiverna'
                         },
                         'Mahe': {
-                            'exemplarCity': 'Mahé'
+                            'exemplarCity': 'Mah\u00E9'
                         },
                         'Kerguelen': {
-                            'exemplarCity': 'Kerguelenöarna'
+                            'exemplarCity': 'Kerguelen\u00F6arna'
                         },
                         'Reunion': {
-                            'exemplarCity': 'Réunion'
+                            'exemplarCity': 'R\u00E9union'
                         },
                         'Mayotte': {
                             'exemplarCity': 'Mayotte'
@@ -387,13 +387,13 @@
                             'exemplarCity': 'Antananarivo'
                         },
                         'Chagos': {
-                            'exemplarCity': 'Chagosöarna'
+                            'exemplarCity': 'Chagos\u00F6arna'
                         },
                         'Christmas': {
-                            'exemplarCity': 'Julön'
+                            'exemplarCity': 'Jul\u00F6n'
                         },
                         'Cocos': {
-                            'exemplarCity': 'Kokosöarna'
+                            'exemplarCity': 'Kokos\u00F6arna'
                         },
                         'Comoro': {
                             'exemplarCity': 'Komorerna'
@@ -458,7 +458,7 @@
                             'exemplarCity': 'GMT-9'
                         },
                         'Unknown': {
-                            'exemplarCity': 'okänd stad'
+                            'exemplarCity': 'ok\u00E4nd stad'
                         },
                         'GMT-2': {
                             'exemplarCity': 'GMT-2'
@@ -548,7 +548,7 @@
                             'exemplarCity': 'Chicago'
                         },
                         'Cayman': {
-                            'exemplarCity': 'Caymanöarna'
+                            'exemplarCity': 'Cayman\u00F6arna'
                         },
                         'Cayenne': {
                             'exemplarCity': 'Cayenne'
@@ -560,7 +560,7 @@
                             'exemplarCity': 'Caracas'
                         },
                         'Cancun': {
-                            'exemplarCity': 'Cancún'
+                            'exemplarCity': 'Canc\u00FAn'
                         },
                         'Campo_Grande': {
                             'exemplarCity': 'Campo Grande'
@@ -575,14 +575,14 @@
                             'exemplarCity': 'Boise'
                         },
                         'Asuncion': {
-                            'exemplarCity': 'Asunción'
+                            'exemplarCity': 'Asunci\u00F3n'
                         },
                         'Aruba': {
                             'exemplarCity': 'Aruba'
                         },
                         'Argentina': {
                             'Rio_Gallegos': {
-                                'exemplarCity': 'Río Gallegos'
+                                'exemplarCity': 'R\u00EDo Gallegos'
                             },
                             'San_Juan': {
                                 'exemplarCity': 'San Juan'
@@ -600,11 +600,11 @@
                                 'exemplarCity': 'Salta'
                             },
                             'Tucuman': {
-                                'exemplarCity': 'Tucumán'
+                                'exemplarCity': 'Tucum\u00E1n'
                             }
                         },
                         'Araguaina': {
-                            'exemplarCity': 'Araguaína'
+                            'exemplarCity': 'Aragua\u00EDna'
                         },
                         'Antigua': {
                             'exemplarCity': 'Antigua'
@@ -622,13 +622,13 @@
                             'exemplarCity': 'Bahia'
                         },
                         'Bahia_Banderas': {
-                            'exemplarCity': 'Bahía de Banderas'
+                            'exemplarCity': 'Bah\u00EDa de Banderas'
                         },
                         'Barbados': {
                             'exemplarCity': 'Barbados'
                         },
                         'Belem': {
-                            'exemplarCity': 'Belém'
+                            'exemplarCity': 'Bel\u00E9m'
                         },
                         'Belize': {
                             'exemplarCity': 'Belize'
@@ -640,10 +640,10 @@
                             'exemplarCity': 'Boa Vista'
                         },
                         'Bogota': {
-                            'exemplarCity': 'Bogotá'
+                            'exemplarCity': 'Bogot\u00E1'
                         },
                         'Curacao': {
-                            'exemplarCity': 'Curaçao'
+                            'exemplarCity': 'Cura\u00E7ao'
                         },
                         'Danmarkshavn': {
                             'exemplarCity': 'Danmarkshavn'
@@ -770,7 +770,7 @@
                             'exemplarCity': 'El Salvador'
                         },
                         'Eirunepe': {
-                            'exemplarCity': 'Eirunepé'
+                            'exemplarCity': 'Eirunep\u00E9'
                         },
                         'Edmonton': {
                             'exemplarCity': 'Edmonton'
@@ -785,7 +785,7 @@
                             'exemplarCity': 'Atikokan'
                         },
                         'Cordoba': {
-                            'exemplarCity': 'Córdoba'
+                            'exemplarCity': 'C\u00F3rdoba'
                         },
                         'Costa_Rica': {
                             'exemplarCity': 'Costa Rica'
@@ -794,7 +794,7 @@
                             'exemplarCity': 'Creston'
                         },
                         'Cuiaba': {
-                            'exemplarCity': 'Cuiabá'
+                            'exemplarCity': 'Cuiab\u00E1'
                         },
                         'La_Paz': {
                             'exemplarCity': 'La Paz'
@@ -812,7 +812,7 @@
                             'exemplarCity': 'Lower Prince\u2019s Quarter'
                         },
                         'Maceio': {
-                            'exemplarCity': 'Maceió'
+                            'exemplarCity': 'Macei\u00F3'
                         },
                         'Managua': {
                             'exemplarCity': 'Managua'
@@ -830,7 +830,7 @@
                             'exemplarCity': 'Matamoros'
                         },
                         'Mazatlan': {
-                            'exemplarCity': 'Mazatlán'
+                            'exemplarCity': 'Mazatl\u00E1n'
                         },
                         'Mendoza': {
                             'exemplarCity': 'Mendoza'
@@ -839,7 +839,7 @@
                             'exemplarCity': 'Menominee'
                         },
                         'Merida': {
-                            'exemplarCity': 'Mérida'
+                            'exemplarCity': 'M\u00E9rida'
                         },
                         'Metlakatla': {
                             'exemplarCity': 'Metlakatla'
@@ -860,7 +860,7 @@
                             'exemplarCity': 'Montevideo'
                         },
                         'Montreal': {
-                            'exemplarCity': 'Montréal'
+                            'exemplarCity': 'Montr\u00E9al'
                         },
                         'Montserrat': {
                             'exemplarCity': 'Montserrat'
@@ -940,7 +940,7 @@
                             'exemplarCity': 'Santa Isabel'
                         },
                         'Santarem': {
-                            'exemplarCity': 'Santarém'
+                            'exemplarCity': 'Santar\u00E9m'
                         },
                         'Santiago': {
                             'exemplarCity': 'Santiago'
@@ -949,7 +949,7 @@
                             'exemplarCity': 'Santo Domingo'
                         },
                         'Sao_Paulo': {
-                            'exemplarCity': 'São Paulo'
+                            'exemplarCity': 'S\u00E3o Paulo'
                         },
                         'Scoresbysund': {
                             'exemplarCity': 'Ittoqqortoormiit'
@@ -961,7 +961,7 @@
                             'exemplarCity': 'Sitka'
                         },
                         'St_Barthelemy': {
-                            'exemplarCity': 'S:t Barthélemy'
+                            'exemplarCity': 'S:t Barth\u00E9lemy'
                         },
                         'St_Johns': {
                             'exemplarCity': 'S:t Johns'
@@ -999,7 +999,7 @@
                             'exemplarCity': 'Bermuda'
                         },
                         'Canary': {
-                            'exemplarCity': 'Kanarieöarna'
+                            'exemplarCity': 'Kanarie\u00F6arna'
                         },
                         'Cape_Verde': {
                             'exemplarCity': 'Kap Verde'
@@ -1112,7 +1112,7 @@
                             'exemplarCity': 'Vaduz'
                         },
                         'Zurich': {
-                            'exemplarCity': 'Zürich'
+                            'exemplarCity': 'Z\u00FCrich'
                         },
                         'Zaporozhye': {
                             'exemplarCity': 'Zaporizjzja'
@@ -1170,18 +1170,18 @@
                         },
                         'Dublin': {
                             'long': {
-                                'daylight': 'irländsk sommartid'
+                                'daylight': 'irl\u00E4ndsk sommartid'
                             },
                             'exemplarCity': 'Dublin'
                         },
                         'Copenhagen': {
-                            'exemplarCity': 'Köpenhamn'
+                            'exemplarCity': 'K\u00F6penhamn'
                         },
                         'Chisinau': {
-                            'exemplarCity': 'Chișinău'
+                            'exemplarCity': 'Chi\u0219in\u0103u'
                         },
                         'Busingen': {
-                            'exemplarCity': 'Büsingen am Hochrhein'
+                            'exemplarCity': 'B\u00FCsingen am Hochrhein'
                         },
                         'Budapest': {
                             'exemplarCity': 'Budapest'
@@ -1222,7 +1222,7 @@
                             'exemplarCity': 'Freetown'
                         },
                         'El_Aaiun': {
-                            'exemplarCity': 'El-Aaiún'
+                            'exemplarCity': 'El-Aai\u00FAn'
                         },
                         'Douala': {
                             'exemplarCity': 'Douala'
@@ -1270,7 +1270,7 @@
                             'exemplarCity': 'Nairobi'
                         },
                         'Ndjamena': {
-                            'exemplarCity': 'N\'Djamena'
+                            'exemplarCity': "N'Djamena"
                         },
                         'Windhoek': {
                             'exemplarCity': 'Windhoek'
@@ -1282,7 +1282,7 @@
                             'exemplarCity': 'Tripoli'
                         },
                         'Sao_Tome': {
-                            'exemplarCity': 'São Tomé'
+                            'exemplarCity': 'S\u00E3o Tom\u00E9'
                         },
                         'Porto-Novo': {
                             'exemplarCity': 'Porto-Novo'
@@ -1306,7 +1306,7 @@
                             'exemplarCity': 'Luanda'
                         },
                         'Lome': {
-                            'exemplarCity': 'Lomé'
+                            'exemplarCity': 'Lom\u00E9'
                         },
                         'Conakry': {
                             'exemplarCity': 'Conakry'
@@ -1350,7 +1350,7 @@
                             'exemplarCity': 'Shanghai'
                         },
                         'Seoul': {
-                            'exemplarCity': 'Söul'
+                            'exemplarCity': 'S\u00F6ul'
                         },
                         'Samarkand': {
                             'exemplarCity': 'Samarkand'
@@ -1443,7 +1443,7 @@
                             'exemplarCity': 'Ulan Bator'
                         },
                         'Urumqi': {
-                            'exemplarCity': 'Ürümqi'
+                            'exemplarCity': '\u00DCr\u00FCmqi'
                         },
                         'Ust-Nera': {
                             'exemplarCity': 'Ust-Nera'
@@ -1491,7 +1491,7 @@
                             'exemplarCity': 'Asjchabad'
                         },
                         'Aqtobe': {
-                            'exemplarCity': 'Aqtöbe'
+                            'exemplarCity': 'Aqt\u00F6be'
                         },
                         'Aqtau': {
                             'exemplarCity': 'Aktau'
@@ -1614,7 +1614,7 @@
                     },
                     'Reunion': {
                         'long': {
-                            'standard': 'Réuniontid'
+                            'standard': 'R\u00E9uniontid'
                         }
                     },
                     'Qyzylorda': {
@@ -1712,7 +1712,7 @@
                     },
                     'Norfolk': {
                         'long': {
-                            'standard': 'Norfolköns tid'
+                            'standard': 'Norfolk\u00F6ns tid'
                         }
                     },
                     'Niue': {
@@ -1729,9 +1729,9 @@
                     },
                     'New_Zealand': {
                         'long': {
-                            'generic': 'nyzeeländsk tid',
-                            'standard': 'nyzeeländsk normaltid',
-                            'daylight': 'nyzeeländsk sommartid'
+                            'generic': 'nyzeel\u00E4ndsk tid',
+                            'standard': 'nyzeel\u00E4ndsk normaltid',
+                            'daylight': 'nyzeel\u00E4ndsk sommartid'
                         }
                     },
                     'New_Caledonia': {
@@ -1750,7 +1750,7 @@
                     },
                     'America_Eastern': {
                         'long': {
-                            'generic': 'östnordamerikansk tid',
+                            'generic': '\u00F6stnordamerikansk tid',
                             'standard': 'Eastern, normaltid',
                             'daylight': 'Eastern, sommartid'
                         }
@@ -1764,7 +1764,7 @@
                     },
                     'America_Pacific': {
                         'long': {
-                            'generic': 'västnordamerikansk tid',
+                            'generic': 'v\u00E4stnordamerikansk tid',
                             'standard': 'Pacific, normaltid',
                             'daylight': 'Pacific, sommartid'
                         }
@@ -1785,9 +1785,9 @@
                     },
                     'Aqtobe': {
                         'long': {
-                            'generic': 'Aqtöbetid',
-                            'standard': 'Aqtöbenormaltid',
-                            'daylight': 'Aqtöbesommartid'
+                            'generic': 'Aqt\u00F6betid',
+                            'standard': 'Aqt\u00F6benormaltid',
+                            'daylight': 'Aqt\u00F6besommartid'
                         }
                     },
                     'Cape_Verde': {
@@ -1837,12 +1837,12 @@
                     },
                     'Christmas': {
                         'long': {
-                            'standard': 'Julöns tid'
+                            'standard': 'Jul\u00F6ns tid'
                         }
                     },
                     'Cocos': {
                         'long': {
-                            'standard': 'Keelingöarnas tid'
+                            'standard': 'Keeling\u00F6arnas tid'
                         }
                     },
                     'Colombia': {
@@ -1854,9 +1854,9 @@
                     },
                     'Cook': {
                         'long': {
-                            'generic': 'Cooköarnas tid',
-                            'standard': 'Cooköarnas normaltid',
-                            'daylight': 'Cooköarnas sommartid'
+                            'generic': 'Cook\u00F6arnas tid',
+                            'standard': 'Cook\u00F6arnas normaltid',
+                            'daylight': 'Cook\u00F6arnas sommartid'
                         }
                     },
                     'Cuba': {
@@ -1878,14 +1878,14 @@
                     },
                     'East_Timor': {
                         'long': {
-                            'standard': 'östtimorisk tid'
+                            'standard': '\u00F6sttimorisk tid'
                         }
                     },
                     'Easter': {
                         'long': {
-                            'generic': 'Påsköns tid',
-                            'standard': 'Påsköns normaltid',
-                            'daylight': 'Påsköns sommartid'
+                            'generic': 'P\u00E5sk\u00F6ns tid',
+                            'standard': 'P\u00E5sk\u00F6ns normaltid',
+                            'daylight': 'P\u00E5sk\u00F6ns sommartid'
                         }
                     },
                     'Ecuador': {
@@ -1907,9 +1907,9 @@
                     },
                     'Europe_Eastern': {
                         'long': {
-                            'generic': 'östeuropeisk tid',
-                            'standard': 'östeuropeisk normaltid',
-                            'daylight': 'östeuropeisk sommartid'
+                            'generic': '\u00F6steuropeisk tid',
+                            'standard': '\u00F6steuropeisk normaltid',
+                            'daylight': '\u00F6steuropeisk sommartid'
                         },
                         'short': {
                             'generic': 'EET',
@@ -1919,9 +1919,9 @@
                     },
                     'Europe_Western': {
                         'long': {
-                            'generic': 'västeuropeisk tid',
-                            'standard': 'västeuropeisk normaltid',
-                            'daylight': 'västeuropeisk sommartid'
+                            'generic': 'v\u00E4steuropeisk tid',
+                            'standard': 'v\u00E4steuropeisk normaltid',
+                            'daylight': 'v\u00E4steuropeisk sommartid'
                         },
                         'short': {
                             'generic': 'WET',
@@ -1931,9 +1931,9 @@
                     },
                     'Falkland': {
                         'long': {
-                            'generic': 'Falklandsöarnas tid',
-                            'standard': 'Falklandsöarnas normaltid',
-                            'daylight': 'Falklandsöarnas sommartid'
+                            'generic': 'Falklands\u00F6arnas tid',
+                            'standard': 'Falklands\u00F6arnas normaltid',
+                            'daylight': 'Falklands\u00F6arnas sommartid'
                         }
                     },
                     'Fiji': {
@@ -1955,7 +1955,7 @@
                     },
                     'Galapagos': {
                         'long': {
-                            'standard': 'Galápagostid'
+                            'standard': 'Gal\u00E1pagostid'
                         }
                     },
                     'Tokelau': {
@@ -2024,12 +2024,12 @@
                     },
                     'Wallis': {
                         'long': {
-                            'standard': 'Wallis- och Futunaöarnas tid'
+                            'standard': 'Wallis- och Futuna\u00F6arnas tid'
                         }
                     },
                     'Wake': {
                         'long': {
-                            'standard': 'Wakeöarnas tid'
+                            'standard': 'Wake\u00F6arnas tid'
                         }
                     },
                     'Vostok': {
@@ -2090,7 +2090,7 @@
                     },
                     'Solomon': {
                         'long': {
-                            'standard': 'Salomonöarnas tid'
+                            'standard': 'Salomon\u00F6arnas tid'
                         }
                     },
                     'Singapore': {
@@ -2110,16 +2110,16 @@
                     },
                     'Greenland_Western': {
                         'long': {
-                            'generic': 'västgrönländsk tid',
-                            'standard': 'västgrönländsk normaltid',
-                            'daylight': 'västgrönländsk sommartid'
+                            'generic': 'v\u00E4stgr\u00F6nl\u00E4ndsk tid',
+                            'standard': 'v\u00E4stgr\u00F6nl\u00E4ndsk normaltid',
+                            'daylight': 'v\u00E4stgr\u00F6nl\u00E4ndsk sommartid'
                         }
                     },
                     'Greenland_Eastern': {
                         'long': {
-                            'generic': 'östgrönländsk tid',
-                            'standard': 'östgrönländsk normaltid',
-                            'daylight': 'östgrönländsk sommartid'
+                            'generic': '\u00F6stgr\u00F6nl\u00E4ndsk tid',
+                            'standard': '\u00F6stgr\u00F6nl\u00E4ndsk normaltid',
+                            'daylight': '\u00F6stgr\u00F6nl\u00E4ndsk sommartid'
                         }
                     },
                     'GMT': {
@@ -2156,9 +2156,9 @@
                     },
                     'Acre': {
                         'long': {
-                            'generic': 'västbrasiliansk tid',
-                            'standard': 'västbrasiliansk normaltid',
-                            'daylight': 'västbrasiliansk sommartid'
+                            'generic': 'v\u00E4stbrasiliansk tid',
+                            'standard': 'v\u00E4stbrasiliansk normaltid',
+                            'daylight': 'v\u00E4stbrasiliansk sommartid'
                         }
                     },
                     'Afghanistan': {
@@ -2173,7 +2173,7 @@
                     },
                     'Africa_Eastern': {
                         'long': {
-                            'standard': 'östafrikansk tid'
+                            'standard': '\u00F6stafrikansk tid'
                         }
                     },
                     'Africa_Southern': {
@@ -2183,9 +2183,9 @@
                     },
                     'Africa_Western': {
                         'long': {
-                            'generic': 'västafrikansk tid',
-                            'standard': 'västafrikansk normaltid',
-                            'daylight': 'västafrikansk sommartid'
+                            'generic': 'v\u00E4stafrikansk tid',
+                            'standard': 'v\u00E4stafrikansk normaltid',
+                            'daylight': 'v\u00E4stafrikansk sommartid'
                         }
                     },
                     'Alaska': {
@@ -2211,16 +2211,16 @@
                     },
                     'Argentina': {
                         'long': {
-                            'generic': 'östargentinsk tid',
-                            'standard': 'östargentinsk normaltid',
-                            'daylight': 'östargentinsk sommartid'
+                            'generic': '\u00F6stargentinsk tid',
+                            'standard': '\u00F6stargentinsk normaltid',
+                            'daylight': '\u00F6stargentinsk sommartid'
                         }
                     },
                     'Argentina_Western': {
                         'long': {
-                            'generic': 'västargentinsk tid',
-                            'standard': 'västargentinsk normaltid',
-                            'daylight': 'västargentinsk sommartid'
+                            'generic': 'v\u00E4stargentinsk tid',
+                            'standard': 'v\u00E4stargentinsk normaltid',
+                            'daylight': 'v\u00E4stargentinsk sommartid'
                         }
                     },
                     'Armenia': {
@@ -2246,23 +2246,23 @@
                     },
                     'Australia_CentralWestern': {
                         'long': {
-                            'generic': 'västcentralaustralisk tid',
-                            'standard': 'västcentralaustralisk normaltid',
-                            'daylight': 'västcentralaustralisk sommartid'
+                            'generic': 'v\u00E4stcentralaustralisk tid',
+                            'standard': 'v\u00E4stcentralaustralisk normaltid',
+                            'daylight': 'v\u00E4stcentralaustralisk sommartid'
                         }
                     },
                     'Australia_Eastern': {
                         'long': {
-                            'generic': 'östaustralisk tid',
-                            'standard': 'östaustralisk normaltid',
-                            'daylight': 'östaustralisk sommartid'
+                            'generic': '\u00F6staustralisk tid',
+                            'standard': '\u00F6staustralisk normaltid',
+                            'daylight': '\u00F6staustralisk sommartid'
                         }
                     },
                     'Australia_Western': {
                         'long': {
-                            'generic': 'västaustralisk tid',
-                            'standard': 'västaustralisk normaltid',
-                            'daylight': 'västaustralisk sommartid'
+                            'generic': 'v\u00E4staustralisk tid',
+                            'standard': 'v\u00E4staustralisk normaltid',
+                            'daylight': 'v\u00E4staustralisk sommartid'
                         }
                     },
                     'Azerbaijan': {
@@ -2346,7 +2346,7 @@
                     },
                     'Indian_Ocean': {
                         'long': {
-                            'standard': 'Brittiska Indiska oceanöarnas tid'
+                            'standard': 'Brittiska Indiska ocean\u00F6arnas tid'
                         }
                     },
                     'Indochina': {
@@ -2361,12 +2361,12 @@
                     },
                     'Indonesia_Eastern': {
                         'long': {
-                            'standard': 'östindonesisk tid'
+                            'standard': '\u00F6stindonesisk tid'
                         }
                     },
                     'Indonesia_Western': {
                         'long': {
-                            'standard': 'västindonesisk tid'
+                            'standard': 'v\u00E4stindonesisk tid'
                         }
                     },
                     'Iran': {
@@ -2406,12 +2406,12 @@
                     },
                     'Kazakhstan_Eastern': {
                         'long': {
-                            'standard': 'östkazakstansk tid'
+                            'standard': '\u00F6stkazakstansk tid'
                         }
                     },
                     'Kazakhstan_Western': {
                         'long': {
-                            'standard': 'västkazakstansk tid'
+                            'standard': 'v\u00E4stkazakstansk tid'
                         }
                     },
                     'Korea': {
@@ -2445,7 +2445,7 @@
                     },
                     'Line_Islands': {
                         'long': {
-                            'standard': 'Lineöarnas tid'
+                            'standard': 'Line\u00F6arnas tid'
                         }
                     },
                     'Lord_Howe': {
@@ -2491,7 +2491,7 @@
                     },
                     'Marshall_Islands': {
                         'long': {
-                            'standard': 'Marshallöarnas tid'
+                            'standard': 'Marshall\u00F6arnas tid'
                         }
                     },
                     'Mauritius': {
@@ -2536,7 +2536,7 @@
                         }
                     }
                 },
-                'hourFormat': '+HH:mm;−HH:mm',
+                'hourFormat': '+HH:mm;\u2212HH:mm',
                 'gmtFormat': 'GMT{0}',
                 'gmtZeroFormat': 'GMT',
                 'regionFormat': '{0}tid',
@@ -2639,13 +2639,13 @@
                     'days': {
                         'format': {
                             'abbreviated': {
-                                'sun': 'sön',
-                                'mon': 'mån',
+                                'sun': 's\u00F6n',
+                                'mon': 'm\u00E5n',
                                 'tue': 'tis',
                                 'wed': 'ons',
                                 'thu': 'tors',
                                 'fri': 'fre',
-                                'sat': 'lör'
+                                'sat': 'l\u00F6r'
                             },
                             'narrow': {
                                 'sun': 'S',
@@ -2657,33 +2657,33 @@
                                 'sat': 'L'
                             },
                             'short': {
-                                'sun': 'sö',
-                                'mon': 'må',
+                                'sun': 's\u00F6',
+                                'mon': 'm\u00E5',
                                 'tue': 'ti',
                                 'wed': 'on',
                                 'thu': 'to',
                                 'fri': 'fr',
-                                'sat': 'lö'
+                                'sat': 'l\u00F6'
                             },
                             'wide': {
-                                'sun': 'söndag',
-                                'mon': 'måndag',
+                                'sun': 's\u00F6ndag',
+                                'mon': 'm\u00E5ndag',
                                 'tue': 'tisdag',
                                 'wed': 'onsdag',
                                 'thu': 'torsdag',
                                 'fri': 'fredag',
-                                'sat': 'lördag'
+                                'sat': 'l\u00F6rdag'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
-                                'sun': 'Sön',
-                                'mon': 'Mån',
+                                'sun': 'S\u00F6n',
+                                'mon': 'M\u00E5n',
                                 'tue': 'Tis',
                                 'wed': 'Ons',
                                 'thu': 'Tor',
                                 'fri': 'Fre',
-                                'sat': 'Lör'
+                                'sat': 'L\u00F6r'
                             },
                             'narrow': {
                                 'sun': 'S',
@@ -2695,22 +2695,22 @@
                                 'sat': 'L'
                             },
                             'short': {
-                                'sun': 'Sö',
-                                'mon': 'Må',
+                                'sun': 'S\u00F6',
+                                'mon': 'M\u00E5',
                                 'tue': 'Ti',
                                 'wed': 'On',
                                 'thu': 'To',
                                 'fri': 'Fr',
-                                'sat': 'Lö'
+                                'sat': 'L\u00F6'
                             },
                             'wide': {
-                                'sun': 'Söndag',
-                                'mon': 'Måndag',
+                                'sun': 'S\u00F6ndag',
+                                'mon': 'M\u00E5ndag',
                                 'tue': 'Tisdag',
                                 'wed': 'Onsdag',
                                 'thu': 'Torsdag',
                                 'fri': 'Fredag',
-                                'sat': 'Lördag'
+                                'sat': 'L\u00F6rdag'
                             }
                         }
                     },
@@ -2781,17 +2781,17 @@
                                 'pm': 'e.m.'
                             },
                             'wide': {
-                                'am': 'förmiddag',
+                                'am': 'f\u00F6rmiddag',
                                 'pm': 'eftermiddag'
                             }
                         }
                     },
                     'eras': {
                         'eraNames': {
-                            '0': 'före Kristus',
-                            '0-alt-variant': 'före västerländsk tideräkning',
+                            '0': 'f\u00F6re Kristus',
+                            '0-alt-variant': 'f\u00F6re v\u00E4sterl\u00E4ndsk tider\u00E4kning',
                             '1': 'efter Kristus',
-                            '1-alt-variant': 'västerländsk tideräkning'
+                            '1-alt-variant': 'v\u00E4sterl\u00E4ndsk tider\u00E4kning'
                         },
                         'eraAbbr': {
                             '0': 'f.Kr.',
@@ -2807,13 +2807,13 @@
                         }
                     },
                     'dateFormats': {
-                        'full': 'EEEE\'en\' \'den\' d:\'e\' MMMM y',
+                        'full': "EEEE'en' 'den' d:'e' MMMM y",
                         'long': 'd MMMM y',
                         'medium': 'd MMM y',
                         'short': 'y-MM-dd'
                     },
                     'timeFormats': {
-                        'full': '\'kl\'. HH:mm:ss zzzz',
+                        'full': "'kl'. HH:mm:ss zzzz",
                         'long': 'HH:mm:ss z',
                         'medium': 'HH:mm:ss',
                         'short': 'HH:mm'
@@ -2858,8 +2858,8 @@
                             'MMM': 'LLL',
                             'MMMd': 'd MMM',
                             'MMMEd': 'E d MMM',
-                            'MMMMd': 'd:\'e\' MMMM',
-                            'MMMMEd': 'E d:\'e\' MMMM',
+                            'MMMMd': "d:'e' MMMM",
+                            'MMMMEd': "E d:'e' MMMM",
                             'ms': 'mm:ss'
                         },
                         'appendItems': {

@@ -42,361 +42,361 @@
     }(function (AstroDate) {
         AstroDate.lang('ja', {
             'codePatterns': {
-                'language': '言語: {0}',
-                'script': '文字: {0}',
-                'territory': '地域: {0}'
+                'language': '\u8A00\u8A9E: {0}',
+                'script': '\u6587\u5B57: {0}',
+                'territory': '\u5730\u57DF: {0}'
             },
             'types': {
                 'colHiraganaQuaternary': {
-                    'no': '仮名を区別しないで並べ替え',
-                    'yes': '仮名を区別して並べ替え'
+                    'no': '\u4EEE\u540D\u3092\u533A\u5225\u3057\u306A\u3044\u3067\u4E26\u3079\u66FF\u3048',
+                    'yes': '\u4EEE\u540D\u3092\u533A\u5225\u3057\u3066\u4E26\u3079\u66FF\u3048'
                 },
                 'colCaseLevel': {
-                    'no': '大文字小文字を区別しないで並べ替え',
-                    'yes': '大文字小文字を区別して並べ替え'
+                    'no': '\u5927\u6587\u5B57\u5C0F\u6587\u5B57\u3092\u533A\u5225\u3057\u306A\u3044\u3067\u4E26\u3079\u66FF\u3048',
+                    'yes': '\u5927\u6587\u5B57\u5C0F\u6587\u5B57\u3092\u533A\u5225\u3057\u3066\u4E26\u3079\u66FF\u3048'
                 },
                 'colCaseFirst': {
-                    'lower': '小文字優先で並べ替え',
-                    'no': '大文字小文字を通常の順序で並べ替え',
-                    'upper': '大文字優先で並べ替え'
+                    'lower': '\u5C0F\u6587\u5B57\u512A\u5148\u3067\u4E26\u3079\u66FF\u3048',
+                    'no': '\u5927\u6587\u5B57\u5C0F\u6587\u5B57\u3092\u901A\u5E38\u306E\u9806\u5E8F\u3067\u4E26\u3079\u66FF\u3048',
+                    'upper': '\u5927\u6587\u5B57\u512A\u5148\u3067\u4E26\u3079\u66FF\u3048'
                 },
                 'colStrength': {
-                    'identical': 'すべてを区別して並べ替え',
-                    'primary': '基本文字のみで並べ替え',
-                    'quaternary': 'アクセント/大文字小文字/全角半角/仮名で並べ替え',
-                    'secondary': 'アクセントで並べ替え',
-                    'tertiary': 'アクセント/大文字小文字/全角半角で並べ替え'
+                    'identical': '\u3059\u3079\u3066\u3092\u533A\u5225\u3057\u3066\u4E26\u3079\u66FF\u3048',
+                    'primary': '\u57FA\u672C\u6587\u5B57\u306E\u307F\u3067\u4E26\u3079\u66FF\u3048',
+                    'quaternary': '\u30A2\u30AF\u30BB\u30F3\u30C8/\u5927\u6587\u5B57\u5C0F\u6587\u5B57/\u5168\u89D2\u534A\u89D2/\u4EEE\u540D\u3067\u4E26\u3079\u66FF\u3048',
+                    'secondary': '\u30A2\u30AF\u30BB\u30F3\u30C8\u3067\u4E26\u3079\u66FF\u3048',
+                    'tertiary': '\u30A2\u30AF\u30BB\u30F3\u30C8/\u5927\u6587\u5B57\u5C0F\u6587\u5B57/\u5168\u89D2\u534A\u89D2\u3067\u4E26\u3079\u66FF\u3048'
                 },
                 'colNumeric': {
-                    'no': '数値を独立して並べ替え',
-                    'yes': '数値を数値として並べ替え'
+                    'no': '\u6570\u5024\u3092\u72EC\u7ACB\u3057\u3066\u4E26\u3079\u66FF\u3048',
+                    'yes': '\u6570\u5024\u3092\u6570\u5024\u3068\u3057\u3066\u4E26\u3079\u66FF\u3048'
                 },
                 'colNormalization': {
-                    'no': '正規化しないで並べ替え',
-                    'yes': 'Unicode 正規化で並べ替え'
+                    'no': '\u6B63\u898F\u5316\u3057\u306A\u3044\u3067\u4E26\u3079\u66FF\u3048',
+                    'yes': 'Unicode \u6B63\u898F\u5316\u3067\u4E26\u3079\u66FF\u3048'
                 },
                 'calendar': {
-                    'japanese': '和暦',
+                    'japanese': '\u548C\u66A6',
                     'iso8601': 'ISO-8601',
-                    'coptic': 'コプト暦',
-                    'dangi': 'ダンギ暦',
-                    'ethiopic': 'エチオピア暦',
-                    'ethiopic-amete-alem': 'エチオピア創世紀元暦',
-                    'gregorian': '西暦(グレゴリオ暦)',
-                    'hebrew': 'ユダヤ暦',
-                    'persian': 'ペルシア暦',
-                    'roc': '中華民国暦',
-                    'chinese': '中国暦',
-                    'buddhist': 'タイ仏教暦',
-                    'indian': 'インド国定暦',
-                    'islamic': 'イスラム暦',
-                    'islamic-civil': '太陽イスラム暦',
-                    'islamic-rgsa': 'イスラム暦(サウジアラビア、月観測)',
-                    'islamic-tbla': 'イスラム暦(天文紀元)',
-                    'islamic-umalqura': 'イスラム暦(ウンム・アルクラー)'
+                    'coptic': '\u30B3\u30D7\u30C8\u66A6',
+                    'dangi': '\u30C0\u30F3\u30AE\u66A6',
+                    'ethiopic': '\u30A8\u30C1\u30AA\u30D4\u30A2\u66A6',
+                    'ethiopic-amete-alem': '\u30A8\u30C1\u30AA\u30D4\u30A2\u5275\u4E16\u7D00\u5143\u66A6',
+                    'gregorian': '\u897F\u66A6(\u30B0\u30EC\u30B4\u30EA\u30AA\u66A6)',
+                    'hebrew': '\u30E6\u30C0\u30E4\u66A6',
+                    'persian': '\u30DA\u30EB\u30B7\u30A2\u66A6',
+                    'roc': '\u4E2D\u83EF\u6C11\u56FD\u66A6',
+                    'chinese': '\u4E2D\u56FD\u66A6',
+                    'buddhist': '\u30BF\u30A4\u4ECF\u6559\u66A6',
+                    'indian': '\u30A4\u30F3\u30C9\u56FD\u5B9A\u66A6',
+                    'islamic': '\u30A4\u30B9\u30E9\u30E0\u66A6',
+                    'islamic-civil': '\u592A\u967D\u30A4\u30B9\u30E9\u30E0\u66A6',
+                    'islamic-rgsa': '\u30A4\u30B9\u30E9\u30E0\u66A6(\u30B5\u30A6\u30B8\u30A2\u30E9\u30D3\u30A2\u3001\u6708\u89B3\u6E2C)',
+                    'islamic-tbla': '\u30A4\u30B9\u30E9\u30E0\u66A6(\u5929\u6587\u7D00\u5143)',
+                    'islamic-umalqura': '\u30A4\u30B9\u30E9\u30E0\u66A6(\u30A6\u30F3\u30E0\u30FB\u30A2\u30EB\u30AF\u30E9\u30FC)'
                 },
                 'collation': {
-                    'phonebook': '電話帳順',
-                    'gb2312han': '簡体字中国語順(GB2312)',
+                    'phonebook': '\u96FB\u8A71\u5E33\u9806',
+                    'gb2312han': '\u7C21\u4F53\u5B57\u4E2D\u56FD\u8A9E\u9806(GB2312)',
                     'eor': 'eor',
-                    'ducet': 'ユニコード照合順',
-                    'dictionary': '辞書順',
-                    'big5han': '繁体字中国語順(Big5)',
-                    'traditional': 'トラディッショナル',
-                    'standard': '標準ソート順序',
-                    'zhuyin': '注音順',
-                    'unihan': '部首順',
-                    'stroke': '画数順',
-                    'searchjl': 'ハングル語頭子音による並べ替え',
-                    'search': '汎用検索',
-                    'reformed': 'リフォーム',
-                    'pinyin': 'ピンイン',
-                    'phonetic': '音声順による並べ替え'
+                    'ducet': '\u30E6\u30CB\u30B3\u30FC\u30C9\u7167\u5408\u9806',
+                    'dictionary': '\u8F9E\u66F8\u9806',
+                    'big5han': '\u7E41\u4F53\u5B57\u4E2D\u56FD\u8A9E\u9806(Big5)',
+                    'traditional': '\u30C8\u30E9\u30C7\u30A3\u30C3\u30B7\u30E7\u30CA\u30EB',
+                    'standard': '\u6A19\u6E96\u30BD\u30FC\u30C8\u9806\u5E8F',
+                    'zhuyin': '\u6CE8\u97F3\u9806',
+                    'unihan': '\u90E8\u9996\u9806',
+                    'stroke': '\u753B\u6570\u9806',
+                    'searchjl': '\u30CF\u30F3\u30B0\u30EB\u8A9E\u982D\u5B50\u97F3\u306B\u3088\u308B\u4E26\u3079\u66FF\u3048',
+                    'search': '\u6C4E\u7528\u691C\u7D22',
+                    'reformed': '\u30EA\u30D5\u30A9\u30FC\u30E0',
+                    'pinyin': '\u30D4\u30F3\u30A4\u30F3',
+                    'phonetic': '\u97F3\u58F0\u9806\u306B\u3088\u308B\u4E26\u3079\u66FF\u3048'
                 },
                 'numbers': {
-                    'knda': 'カンナダ数字',
-                    'khmr': 'クメール数字',
-                    'kali': 'カヤー数字',
-                    'jpanfin': '大字',
-                    'jpan': '漢数字',
-                    'java': 'ジャワ数字',
-                    'hebr': 'ヘブライ数字',
-                    'hantfin': '繁体大字',
-                    'hant': '繁体漢数字',
-                    'hansfin': '簡体大字',
-                    'hans': '簡体漢数字',
-                    'hanidec': '漢数字(位取り記数法)',
-                    'guru': 'グルムキー数字',
-                    'gujr': 'グジャラート数字',
-                    'greklow': 'ギリシャ数字(小文字)',
-                    'grek': 'ギリシャ数字',
-                    'bali': 'バリ数字',
-                    'armnlow': 'アルメニア数字(小文字)',
-                    'armn': 'アルメニア数字',
-                    'arabext': 'ペルシア数字',
-                    'arab': 'アラビア・インド数字',
-                    'finance': '財務用漢数字',
-                    'traditional': '従来の記数法',
-                    'native': '独自の記数法',
-                    'beng': 'ベンガル数字',
-                    'brah': 'ブラーフミー数字',
-                    'cakm': 'チャクマ数字',
-                    'cham': 'チャム数字',
-                    'deva': 'デーヴァナーガリー数字',
-                    'orya': 'オリヤー数字',
-                    'osma': 'オスマニア数字',
-                    'roman': 'ローマ数字',
-                    'romanlow': 'ローマ数字(小文字)',
-                    'saur': 'サウラーシュトラ数字',
-                    'shrd': 'シャーラダー数字',
-                    'sora': 'ソラ・ソンペン数字',
-                    'sund': 'スンダ数字',
-                    'vaii': 'ヴァイ文字の記数法',
-                    'tibt': 'チベット数字',
-                    'thai': 'タイ数字',
-                    'telu': 'テルグ数字',
-                    'tamldec': 'タミル数字',
-                    'taml': 'タミール数字',
-                    'talu': '新タイ・ルー数字',
-                    'takr': 'タークリー数字',
-                    'olck': 'オルチキ数字',
-                    'nkoo': 'ンコ数字',
-                    'mymrshan': 'ミャンマー・シャン数字',
-                    'mymr': 'ミャンマー数字',
-                    'mtei': 'マニプリ数字',
-                    'mong': 'モンゴル数字',
-                    'mlym': 'マラヤーラム数字',
-                    'limb': 'リンブ数字',
-                    'lepc': 'レプチャ数字',
-                    'latn': '算用数字',
-                    'laoo': 'ラオ数字',
-                    'lanatham': 'ラーンナー・タム数字',
-                    'lana': 'ラーンナー数字',
-                    'geor': 'グルジア数字',
-                    'fullwide': '全角数字',
-                    'ethi': 'エチオピア数字'
+                    'knda': '\u30AB\u30F3\u30CA\u30C0\u6570\u5B57',
+                    'khmr': '\u30AF\u30E1\u30FC\u30EB\u6570\u5B57',
+                    'kali': '\u30AB\u30E4\u30FC\u6570\u5B57',
+                    'jpanfin': '\u5927\u5B57',
+                    'jpan': '\u6F22\u6570\u5B57',
+                    'java': '\u30B8\u30E3\u30EF\u6570\u5B57',
+                    'hebr': '\u30D8\u30D6\u30E9\u30A4\u6570\u5B57',
+                    'hantfin': '\u7E41\u4F53\u5927\u5B57',
+                    'hant': '\u7E41\u4F53\u6F22\u6570\u5B57',
+                    'hansfin': '\u7C21\u4F53\u5927\u5B57',
+                    'hans': '\u7C21\u4F53\u6F22\u6570\u5B57',
+                    'hanidec': '\u6F22\u6570\u5B57(\u4F4D\u53D6\u308A\u8A18\u6570\u6CD5)',
+                    'guru': '\u30B0\u30EB\u30E0\u30AD\u30FC\u6570\u5B57',
+                    'gujr': '\u30B0\u30B8\u30E3\u30E9\u30FC\u30C8\u6570\u5B57',
+                    'greklow': '\u30AE\u30EA\u30B7\u30E3\u6570\u5B57(\u5C0F\u6587\u5B57)',
+                    'grek': '\u30AE\u30EA\u30B7\u30E3\u6570\u5B57',
+                    'bali': '\u30D0\u30EA\u6570\u5B57',
+                    'armnlow': '\u30A2\u30EB\u30E1\u30CB\u30A2\u6570\u5B57(\u5C0F\u6587\u5B57)',
+                    'armn': '\u30A2\u30EB\u30E1\u30CB\u30A2\u6570\u5B57',
+                    'arabext': '\u30DA\u30EB\u30B7\u30A2\u6570\u5B57',
+                    'arab': '\u30A2\u30E9\u30D3\u30A2\u30FB\u30A4\u30F3\u30C9\u6570\u5B57',
+                    'finance': '\u8CA1\u52D9\u7528\u6F22\u6570\u5B57',
+                    'traditional': '\u5F93\u6765\u306E\u8A18\u6570\u6CD5',
+                    'native': '\u72EC\u81EA\u306E\u8A18\u6570\u6CD5',
+                    'beng': '\u30D9\u30F3\u30AC\u30EB\u6570\u5B57',
+                    'brah': '\u30D6\u30E9\u30FC\u30D5\u30DF\u30FC\u6570\u5B57',
+                    'cakm': '\u30C1\u30E3\u30AF\u30DE\u6570\u5B57',
+                    'cham': '\u30C1\u30E3\u30E0\u6570\u5B57',
+                    'deva': '\u30C7\u30FC\u30F4\u30A1\u30CA\u30FC\u30AC\u30EA\u30FC\u6570\u5B57',
+                    'orya': '\u30AA\u30EA\u30E4\u30FC\u6570\u5B57',
+                    'osma': '\u30AA\u30B9\u30DE\u30CB\u30A2\u6570\u5B57',
+                    'roman': '\u30ED\u30FC\u30DE\u6570\u5B57',
+                    'romanlow': '\u30ED\u30FC\u30DE\u6570\u5B57(\u5C0F\u6587\u5B57)',
+                    'saur': '\u30B5\u30A6\u30E9\u30FC\u30B7\u30E5\u30C8\u30E9\u6570\u5B57',
+                    'shrd': '\u30B7\u30E3\u30FC\u30E9\u30C0\u30FC\u6570\u5B57',
+                    'sora': '\u30BD\u30E9\u30FB\u30BD\u30F3\u30DA\u30F3\u6570\u5B57',
+                    'sund': '\u30B9\u30F3\u30C0\u6570\u5B57',
+                    'vaii': '\u30F4\u30A1\u30A4\u6587\u5B57\u306E\u8A18\u6570\u6CD5',
+                    'tibt': '\u30C1\u30D9\u30C3\u30C8\u6570\u5B57',
+                    'thai': '\u30BF\u30A4\u6570\u5B57',
+                    'telu': '\u30C6\u30EB\u30B0\u6570\u5B57',
+                    'tamldec': '\u30BF\u30DF\u30EB\u6570\u5B57',
+                    'taml': '\u30BF\u30DF\u30FC\u30EB\u6570\u5B57',
+                    'talu': '\u65B0\u30BF\u30A4\u30FB\u30EB\u30FC\u6570\u5B57',
+                    'takr': '\u30BF\u30FC\u30AF\u30EA\u30FC\u6570\u5B57',
+                    'olck': '\u30AA\u30EB\u30C1\u30AD\u6570\u5B57',
+                    'nkoo': '\u30F3\u30B3\u6570\u5B57',
+                    'mymrshan': '\u30DF\u30E3\u30F3\u30DE\u30FC\u30FB\u30B7\u30E3\u30F3\u6570\u5B57',
+                    'mymr': '\u30DF\u30E3\u30F3\u30DE\u30FC\u6570\u5B57',
+                    'mtei': '\u30DE\u30CB\u30D7\u30EA\u6570\u5B57',
+                    'mong': '\u30E2\u30F3\u30B4\u30EB\u6570\u5B57',
+                    'mlym': '\u30DE\u30E9\u30E4\u30FC\u30E9\u30E0\u6570\u5B57',
+                    'limb': '\u30EA\u30F3\u30D6\u6570\u5B57',
+                    'lepc': '\u30EC\u30D7\u30C1\u30E3\u6570\u5B57',
+                    'latn': '\u7B97\u7528\u6570\u5B57',
+                    'laoo': '\u30E9\u30AA\u6570\u5B57',
+                    'lanatham': '\u30E9\u30FC\u30F3\u30CA\u30FC\u30FB\u30BF\u30E0\u6570\u5B57',
+                    'lana': '\u30E9\u30FC\u30F3\u30CA\u30FC\u6570\u5B57',
+                    'geor': '\u30B0\u30EB\u30B8\u30A2\u6570\u5B57',
+                    'fullwide': '\u5168\u89D2\u6570\u5B57',
+                    'ethi': '\u30A8\u30C1\u30AA\u30D4\u30A2\u6570\u5B57'
                 },
                 'colAlternate': {
-                    'non-ignorable': '記号で並べ替え',
-                    'shifted': '記号を無視して並べ替え'
+                    'non-ignorable': '\u8A18\u53F7\u3067\u4E26\u3079\u66FF\u3048',
+                    'shifted': '\u8A18\u53F7\u3092\u7121\u8996\u3057\u3066\u4E26\u3079\u66FF\u3048'
                 },
                 'colBackwards': {
-                    'no': 'アクセント（順方向）で並べ替え',
-                    'yes': 'アクセント（逆方向）で並べ替え'
+                    'no': '\u30A2\u30AF\u30BB\u30F3\u30C8\uFF08\u9806\u65B9\u5411\uFF09\u3067\u4E26\u3079\u66FF\u3048',
+                    'yes': '\u30A2\u30AF\u30BB\u30F3\u30C8\uFF08\u9006\u65B9\u5411\uFF09\u3067\u4E26\u3079\u66FF\u3048'
                 }
             },
             'keys': {
-                'colNormalization': '正規化による並べ替え',
-                'collation': '並べ替え順序',
-                'colHiraganaQuaternary': '仮名による並べ替え',
-                'colCaseLevel': '大文字小文字を区別した並べ替え',
-                'colCaseFirst': '大文字順/小文字順による並べ替え',
-                'colBackwards': 'アクセント（逆方向）による並べ替え',
-                'colAlternate': '記号を無視した並べ替え',
-                'calendar': '暦法',
-                'x': '私用',
-                'variableTop': '記号として並べ替え',
-                'va': 'ロケールのバリアント',
-                'timezone': 'タイムゾーン',
-                'numbers': '数値書式',
-                'currency': '通貨',
-                'colStrength': '強度による並べ替え',
-                'colNumeric': '数値による並べ替え'
+                'colNormalization': '\u6B63\u898F\u5316\u306B\u3088\u308B\u4E26\u3079\u66FF\u3048',
+                'collation': '\u4E26\u3079\u66FF\u3048\u9806\u5E8F',
+                'colHiraganaQuaternary': '\u4EEE\u540D\u306B\u3088\u308B\u4E26\u3079\u66FF\u3048',
+                'colCaseLevel': '\u5927\u6587\u5B57\u5C0F\u6587\u5B57\u3092\u533A\u5225\u3057\u305F\u4E26\u3079\u66FF\u3048',
+                'colCaseFirst': '\u5927\u6587\u5B57\u9806/\u5C0F\u6587\u5B57\u9806\u306B\u3088\u308B\u4E26\u3079\u66FF\u3048',
+                'colBackwards': '\u30A2\u30AF\u30BB\u30F3\u30C8\uFF08\u9006\u65B9\u5411\uFF09\u306B\u3088\u308B\u4E26\u3079\u66FF\u3048',
+                'colAlternate': '\u8A18\u53F7\u3092\u7121\u8996\u3057\u305F\u4E26\u3079\u66FF\u3048',
+                'calendar': '\u66A6\u6CD5',
+                'x': '\u79C1\u7528',
+                'variableTop': '\u8A18\u53F7\u3068\u3057\u3066\u4E26\u3079\u66FF\u3048',
+                'va': '\u30ED\u30B1\u30FC\u30EB\u306E\u30D0\u30EA\u30A2\u30F3\u30C8',
+                'timezone': '\u30BF\u30A4\u30E0\u30BE\u30FC\u30F3',
+                'numbers': '\u6570\u5024\u66F8\u5F0F',
+                'currency': '\u901A\u8CA8',
+                'colStrength': '\u5F37\u5EA6\u306B\u3088\u308B\u4E26\u3079\u66FF\u3048',
+                'colNumeric': '\u6570\u5024\u306B\u3088\u308B\u4E26\u3079\u66FF\u3048'
             },
             'localeDisplayPattern': {
                 'localePattern': '{0} ({1})',
-                'localeSeparator': '{0}、{1}',
+                'localeSeparator': '{0}\u3001{1}',
                 'localeKeyTypePattern': '{0}: {1}'
             },
             'timeZoneNames': {
                 'zone': {
                     'Pacific': {
                         'Saipan': {
-                            'exemplarCity': 'サイパン'
+                            'exemplarCity': '\u30B5\u30A4\u30D1\u30F3'
                         },
                         'Rarotonga': {
-                            'exemplarCity': 'ラロトンガ'
+                            'exemplarCity': '\u30E9\u30ED\u30C8\u30F3\u30AC'
                         },
                         'Port_Moresby': {
-                            'exemplarCity': 'ポートモレスビー'
+                            'exemplarCity': '\u30DD\u30FC\u30C8\u30E2\u30EC\u30B9\u30D3\u30FC'
                         },
                         'Ponape': {
-                            'exemplarCity': 'ポンペイ島'
+                            'exemplarCity': '\u30DD\u30F3\u30DA\u30A4\u5CF6'
                         },
                         'Pitcairn': {
-                            'exemplarCity': 'ピトケアン諸島'
+                            'exemplarCity': '\u30D4\u30C8\u30B1\u30A2\u30F3\u8AF8\u5CF6'
                         },
                         'Palau': {
-                            'exemplarCity': 'パラオ'
+                            'exemplarCity': '\u30D1\u30E9\u30AA'
                         },
                         'Auckland': {
-                            'exemplarCity': 'オークランド'
+                            'exemplarCity': '\u30AA\u30FC\u30AF\u30E9\u30F3\u30C9'
                         },
                         'Apia': {
-                            'exemplarCity': 'アピア'
+                            'exemplarCity': '\u30A2\u30D4\u30A2'
                         },
                         'Funafuti': {
-                            'exemplarCity': 'フナフティ'
+                            'exemplarCity': '\u30D5\u30CA\u30D5\u30C6\u30A3'
                         },
                         'Galapagos': {
-                            'exemplarCity': 'ガラパゴス'
+                            'exemplarCity': '\u30AC\u30E9\u30D1\u30B4\u30B9'
                         },
                         'Gambier': {
-                            'exemplarCity': 'ガンビエ諸島'
+                            'exemplarCity': '\u30AC\u30F3\u30D3\u30A8\u8AF8\u5CF6'
                         },
                         'Guadalcanal': {
-                            'exemplarCity': 'ガダルカナル'
+                            'exemplarCity': '\u30AC\u30C0\u30EB\u30AB\u30CA\u30EB'
                         },
                         'Guam': {
-                            'exemplarCity': 'グアム'
+                            'exemplarCity': '\u30B0\u30A2\u30E0'
                         },
                         'Honolulu': {
-                            'exemplarCity': 'ホノルル'
+                            'exemplarCity': '\u30DB\u30CE\u30EB\u30EB'
                         },
                         'Wallis': {
-                            'exemplarCity': 'ウォリス諸島'
+                            'exemplarCity': '\u30A6\u30A9\u30EA\u30B9\u8AF8\u5CF6'
                         },
                         'Wake': {
-                            'exemplarCity': 'ウェーク島'
+                            'exemplarCity': '\u30A6\u30A7\u30FC\u30AF\u5CF6'
                         },
                         'Truk': {
-                            'exemplarCity': 'チューク'
+                            'exemplarCity': '\u30C1\u30E5\u30FC\u30AF'
                         },
                         'Tongatapu': {
-                            'exemplarCity': 'トンガタプ'
+                            'exemplarCity': '\u30C8\u30F3\u30AC\u30BF\u30D7'
                         },
                         'Tarawa': {
-                            'exemplarCity': 'タラワ'
+                            'exemplarCity': '\u30BF\u30E9\u30EF'
                         },
                         'Tahiti': {
-                            'exemplarCity': 'タヒチ'
+                            'exemplarCity': '\u30BF\u30D2\u30C1'
                         },
                         'Kiritimati': {
-                            'exemplarCity': 'キリスィマスィ島'
+                            'exemplarCity': '\u30AD\u30EA\u30B9\u30A3\u30DE\u30B9\u30A3\u5CF6'
                         },
                         'Johnston': {
-                            'exemplarCity': 'ジョンストン島'
+                            'exemplarCity': '\u30B8\u30E7\u30F3\u30B9\u30C8\u30F3\u5CF6'
                         },
                         'Chatham': {
-                            'exemplarCity': 'チャタム'
+                            'exemplarCity': '\u30C1\u30E3\u30BF\u30E0'
                         },
                         'Easter': {
-                            'exemplarCity': 'イースター島'
+                            'exemplarCity': '\u30A4\u30FC\u30B9\u30BF\u30FC\u5CF6'
                         },
                         'Efate': {
-                            'exemplarCity': 'エフェテ島'
+                            'exemplarCity': '\u30A8\u30D5\u30A7\u30C6\u5CF6'
                         },
                         'Enderbury': {
-                            'exemplarCity': 'エンダーベリー島'
+                            'exemplarCity': '\u30A8\u30F3\u30C0\u30FC\u30D9\u30EA\u30FC\u5CF6'
                         },
                         'Fakaofo': {
-                            'exemplarCity': 'ファカオフォ'
+                            'exemplarCity': '\u30D5\u30A1\u30AB\u30AA\u30D5\u30A9'
                         },
                         'Fiji': {
-                            'exemplarCity': 'フィジー'
+                            'exemplarCity': '\u30D5\u30A3\u30B8\u30FC'
                         },
                         'Kosrae': {
-                            'exemplarCity': 'コスラエ'
+                            'exemplarCity': '\u30B3\u30B9\u30E9\u30A8'
                         },
                         'Kwajalein': {
-                            'exemplarCity': 'クェゼリン'
+                            'exemplarCity': '\u30AF\u30A7\u30BC\u30EA\u30F3'
                         },
                         'Majuro': {
-                            'exemplarCity': 'マジュロ'
+                            'exemplarCity': '\u30DE\u30B8\u30E5\u30ED'
                         },
                         'Marquesas': {
-                            'exemplarCity': 'マルキーズ'
+                            'exemplarCity': '\u30DE\u30EB\u30AD\u30FC\u30BA'
                         },
                         'Midway': {
-                            'exemplarCity': 'ミッドウェー島'
+                            'exemplarCity': '\u30DF\u30C3\u30C9\u30A6\u30A7\u30FC\u5CF6'
                         },
                         'Nauru': {
-                            'exemplarCity': 'ナウル'
+                            'exemplarCity': '\u30CA\u30A6\u30EB'
                         },
                         'Niue': {
-                            'exemplarCity': 'ニウエ'
+                            'exemplarCity': '\u30CB\u30A6\u30A8'
                         },
                         'Norfolk': {
-                            'exemplarCity': 'ノーフォーク島'
+                            'exemplarCity': '\u30CE\u30FC\u30D5\u30A9\u30FC\u30AF\u5CF6'
                         },
                         'Noumea': {
-                            'exemplarCity': 'ヌメア'
+                            'exemplarCity': '\u30CC\u30E1\u30A2'
                         },
                         'Pago_Pago': {
-                            'exemplarCity': 'パゴパゴ'
+                            'exemplarCity': '\u30D1\u30B4\u30D1\u30B4'
                         }
                     },
                     'Australia': {
                         'Lindeman': {
-                            'exemplarCity': 'リンデマン'
+                            'exemplarCity': '\u30EA\u30F3\u30C7\u30DE\u30F3'
                         },
                         'Hobart': {
-                            'exemplarCity': 'ホバート'
+                            'exemplarCity': '\u30DB\u30D0\u30FC\u30C8'
                         },
                         'Eucla': {
-                            'exemplarCity': 'ユークラ'
+                            'exemplarCity': '\u30E6\u30FC\u30AF\u30E9'
                         },
                         'Darwin': {
-                            'exemplarCity': 'ダーウィン'
+                            'exemplarCity': '\u30C0\u30FC\u30A6\u30A3\u30F3'
                         },
                         'Sydney': {
-                            'exemplarCity': 'シドニー'
+                            'exemplarCity': '\u30B7\u30C9\u30CB\u30FC'
                         },
                         'Perth': {
-                            'exemplarCity': 'パース'
+                            'exemplarCity': '\u30D1\u30FC\u30B9'
                         },
                         'Melbourne': {
-                            'exemplarCity': 'メルボルン'
+                            'exemplarCity': '\u30E1\u30EB\u30DC\u30EB\u30F3'
                         },
                         'Lord_Howe': {
-                            'exemplarCity': 'ロードハウ'
+                            'exemplarCity': '\u30ED\u30FC\u30C9\u30CF\u30A6'
                         },
                         'Adelaide': {
-                            'exemplarCity': 'アデレード'
+                            'exemplarCity': '\u30A2\u30C7\u30EC\u30FC\u30C9'
                         },
                         'Brisbane': {
-                            'exemplarCity': 'ブリスベン'
+                            'exemplarCity': '\u30D6\u30EA\u30B9\u30D9\u30F3'
                         },
                         'Broken_Hill': {
-                            'exemplarCity': 'ブロークンヒル'
+                            'exemplarCity': '\u30D6\u30ED\u30FC\u30AF\u30F3\u30D2\u30EB'
                         },
                         'Currie': {
-                            'exemplarCity': 'カリー'
+                            'exemplarCity': '\u30AB\u30EA\u30FC'
                         }
                     },
                     'Indian': {
                         'Maldives': {
-                            'exemplarCity': 'モルディブ'
+                            'exemplarCity': '\u30E2\u30EB\u30C7\u30A3\u30D6'
                         },
                         'Mahe': {
-                            'exemplarCity': 'マヘ'
+                            'exemplarCity': '\u30DE\u30D8'
                         },
                         'Kerguelen': {
-                            'exemplarCity': 'ケルゲレン諸島'
+                            'exemplarCity': '\u30B1\u30EB\u30B2\u30EC\u30F3\u8AF8\u5CF6'
                         },
                         'Reunion': {
-                            'exemplarCity': 'レユニオン'
+                            'exemplarCity': '\u30EC\u30E6\u30CB\u30AA\u30F3'
                         },
                         'Mayotte': {
-                            'exemplarCity': 'マヨット'
+                            'exemplarCity': '\u30DE\u30E8\u30C3\u30C8'
                         },
                         'Mauritius': {
-                            'exemplarCity': 'モーリシャス'
+                            'exemplarCity': '\u30E2\u30FC\u30EA\u30B7\u30E3\u30B9'
                         },
                         'Antananarivo': {
-                            'exemplarCity': 'アンタナナリボ'
+                            'exemplarCity': '\u30A2\u30F3\u30BF\u30CA\u30CA\u30EA\u30DC'
                         },
                         'Chagos': {
-                            'exemplarCity': 'チャゴス'
+                            'exemplarCity': '\u30C1\u30E3\u30B4\u30B9'
                         },
                         'Christmas': {
-                            'exemplarCity': 'クリスマス島'
+                            'exemplarCity': '\u30AF\u30EA\u30B9\u30DE\u30B9\u5CF6'
                         },
                         'Cocos': {
-                            'exemplarCity': 'ココス諸島'
+                            'exemplarCity': '\u30B3\u30B3\u30B9\u8AF8\u5CF6'
                         },
                         'Comoro': {
-                            'exemplarCity': 'コモロ'
+                            'exemplarCity': '\u30B3\u30E2\u30ED'
                         }
                     },
                     'Etc': {
@@ -458,7 +458,7 @@
                             'exemplarCity': 'GMT-9'
                         },
                         'Unknown': {
-                            'exemplarCity': '地域不明'
+                            'exemplarCity': '\u5730\u57DF\u4E0D\u660E'
                         },
                         'GMT-2': {
                             'exemplarCity': 'GMT-2'
@@ -487,1896 +487,1896 @@
                     },
                     'Antarctica': {
                         'Rothera': {
-                            'exemplarCity': 'ロゼラ基地'
+                            'exemplarCity': '\u30ED\u30BC\u30E9\u57FA\u5730'
                         },
                         'Palmer': {
-                            'exemplarCity': 'パーマー基地'
+                            'exemplarCity': '\u30D1\u30FC\u30DE\u30FC\u57FA\u5730'
                         },
                         'McMurdo': {
-                            'exemplarCity': 'マクマード基地'
+                            'exemplarCity': '\u30DE\u30AF\u30DE\u30FC\u30C9\u57FA\u5730'
                         },
                         'Vostok': {
-                            'exemplarCity': 'ボストーク基地'
+                            'exemplarCity': '\u30DC\u30B9\u30C8\u30FC\u30AF\u57FA\u5730'
                         },
                         'Syowa': {
-                            'exemplarCity': '昭和基地'
+                            'exemplarCity': '\u662D\u548C\u57FA\u5730'
                         },
                         'South_Pole': {
-                            'exemplarCity': 'サウスポール基地'
+                            'exemplarCity': '\u30B5\u30A6\u30B9\u30DD\u30FC\u30EB\u57FA\u5730'
                         },
                         'Casey': {
-                            'exemplarCity': 'ケーシー基地'
+                            'exemplarCity': '\u30B1\u30FC\u30B7\u30FC\u57FA\u5730'
                         },
                         'Davis': {
-                            'exemplarCity': 'デービス基地'
+                            'exemplarCity': '\u30C7\u30FC\u30D3\u30B9\u57FA\u5730'
                         },
                         'DumontDUrville': {
-                            'exemplarCity': 'デュモン・デュルビル基地'
+                            'exemplarCity': '\u30C7\u30E5\u30E2\u30F3\u30FB\u30C7\u30E5\u30EB\u30D3\u30EB\u57FA\u5730'
                         },
                         'Macquarie': {
-                            'exemplarCity': 'マッコリー'
+                            'exemplarCity': '\u30DE\u30C3\u30B3\u30EA\u30FC'
                         },
                         'Mawson': {
-                            'exemplarCity': 'モーソン基地'
+                            'exemplarCity': '\u30E2\u30FC\u30BD\u30F3\u57FA\u5730'
                         }
                     },
                     'Arctic': {
                         'Longyearbyen': {
-                            'exemplarCity': 'ロングイェールビーン'
+                            'exemplarCity': '\u30ED\u30F3\u30B0\u30A4\u30A7\u30FC\u30EB\u30D3\u30FC\u30F3'
                         }
                     },
                     'America': {
                         'Toronto': {
-                            'exemplarCity': 'トロント'
+                            'exemplarCity': '\u30C8\u30ED\u30F3\u30C8'
                         },
                         'Tijuana': {
-                            'exemplarCity': 'ティフアナ'
+                            'exemplarCity': '\u30C6\u30A3\u30D5\u30A2\u30CA'
                         },
                         'Thunder_Bay': {
-                            'exemplarCity': 'サンダーベイ'
+                            'exemplarCity': '\u30B5\u30F3\u30C0\u30FC\u30D9\u30A4'
                         },
                         'Thule': {
-                            'exemplarCity': 'チューレ'
+                            'exemplarCity': '\u30C1\u30E5\u30FC\u30EC'
                         },
                         'Tegucigalpa': {
-                            'exemplarCity': 'テグシガルパ'
+                            'exemplarCity': '\u30C6\u30B0\u30B7\u30AC\u30EB\u30D1'
                         },
                         'Swift_Current': {
-                            'exemplarCity': 'スウィフトカレント'
+                            'exemplarCity': '\u30B9\u30A6\u30A3\u30D5\u30C8\u30AB\u30EC\u30F3\u30C8'
                         },
                         'Chicago': {
-                            'exemplarCity': 'シカゴ'
+                            'exemplarCity': '\u30B7\u30AB\u30B4'
                         },
                         'Cayman': {
-                            'exemplarCity': 'ケイマン'
+                            'exemplarCity': '\u30B1\u30A4\u30DE\u30F3'
                         },
                         'Cayenne': {
-                            'exemplarCity': 'カイエンヌ'
+                            'exemplarCity': '\u30AB\u30A4\u30A8\u30F3\u30CC'
                         },
                         'Catamarca': {
-                            'exemplarCity': 'カタマルカ'
+                            'exemplarCity': '\u30AB\u30BF\u30DE\u30EB\u30AB'
                         },
                         'Caracas': {
-                            'exemplarCity': 'カラカス'
+                            'exemplarCity': '\u30AB\u30E9\u30AB\u30B9'
                         },
                         'Cancun': {
-                            'exemplarCity': 'カンクン'
+                            'exemplarCity': '\u30AB\u30F3\u30AF\u30F3'
                         },
                         'Campo_Grande': {
-                            'exemplarCity': 'カンポグランデ'
+                            'exemplarCity': '\u30AB\u30F3\u30DD\u30B0\u30E9\u30F3\u30C7'
                         },
                         'Cambridge_Bay': {
-                            'exemplarCity': 'ケンブリッジベイ'
+                            'exemplarCity': '\u30B1\u30F3\u30D6\u30EA\u30C3\u30B8\u30D9\u30A4'
                         },
                         'Buenos_Aires': {
-                            'exemplarCity': 'ブエノスアイレス'
+                            'exemplarCity': '\u30D6\u30A8\u30CE\u30B9\u30A2\u30A4\u30EC\u30B9'
                         },
                         'Boise': {
-                            'exemplarCity': 'ボイシ'
+                            'exemplarCity': '\u30DC\u30A4\u30B7'
                         },
                         'Asuncion': {
-                            'exemplarCity': 'アスンシオン'
+                            'exemplarCity': '\u30A2\u30B9\u30F3\u30B7\u30AA\u30F3'
                         },
                         'Aruba': {
-                            'exemplarCity': 'アルバ'
+                            'exemplarCity': '\u30A2\u30EB\u30D0'
                         },
                         'Argentina': {
                             'Rio_Gallegos': {
-                                'exemplarCity': 'リオガジェゴス'
+                                'exemplarCity': '\u30EA\u30AA\u30AC\u30B8\u30A7\u30B4\u30B9'
                             },
                             'San_Juan': {
-                                'exemplarCity': 'サンファン'
+                                'exemplarCity': '\u30B5\u30F3\u30D5\u30A1\u30F3'
                             },
                             'Ushuaia': {
-                                'exemplarCity': 'ウシュアイア'
+                                'exemplarCity': '\u30A6\u30B7\u30E5\u30A2\u30A4\u30A2'
                             },
                             'La_Rioja': {
-                                'exemplarCity': 'ラリオハ'
+                                'exemplarCity': '\u30E9\u30EA\u30AA\u30CF'
                             },
                             'San_Luis': {
-                                'exemplarCity': 'サンルイス'
+                                'exemplarCity': '\u30B5\u30F3\u30EB\u30A4\u30B9'
                             },
                             'Salta': {
-                                'exemplarCity': 'サルタ'
+                                'exemplarCity': '\u30B5\u30EB\u30BF'
                             },
                             'Tucuman': {
-                                'exemplarCity': 'トゥクマン'
+                                'exemplarCity': '\u30C8\u30A5\u30AF\u30DE\u30F3'
                             }
                         },
                         'Araguaina': {
-                            'exemplarCity': 'アラグァイナ'
+                            'exemplarCity': '\u30A2\u30E9\u30B0\u30A1\u30A4\u30CA'
                         },
                         'Antigua': {
-                            'exemplarCity': 'アンティグア'
+                            'exemplarCity': '\u30A2\u30F3\u30C6\u30A3\u30B0\u30A2'
                         },
                         'Anguilla': {
-                            'exemplarCity': 'アンギラ'
+                            'exemplarCity': '\u30A2\u30F3\u30AE\u30E9'
                         },
                         'Anchorage': {
-                            'exemplarCity': 'アンカレッジ'
+                            'exemplarCity': '\u30A2\u30F3\u30AB\u30EC\u30C3\u30B8'
                         },
                         'Adak': {
-                            'exemplarCity': 'アダック'
+                            'exemplarCity': '\u30A2\u30C0\u30C3\u30AF'
                         },
                         'Bahia': {
-                            'exemplarCity': 'バイーア'
+                            'exemplarCity': '\u30D0\u30A4\u30FC\u30A2'
                         },
                         'Bahia_Banderas': {
-                            'exemplarCity': 'バイアバンデラ'
+                            'exemplarCity': '\u30D0\u30A4\u30A2\u30D0\u30F3\u30C7\u30E9'
                         },
                         'Barbados': {
-                            'exemplarCity': 'バルバドス'
+                            'exemplarCity': '\u30D0\u30EB\u30D0\u30C9\u30B9'
                         },
                         'Belem': {
-                            'exemplarCity': 'ベレン'
+                            'exemplarCity': '\u30D9\u30EC\u30F3'
                         },
                         'Belize': {
-                            'exemplarCity': 'ベリーズ'
+                            'exemplarCity': '\u30D9\u30EA\u30FC\u30BA'
                         },
                         'Blanc-Sablon': {
-                            'exemplarCity': 'ブラン・サブロン'
+                            'exemplarCity': '\u30D6\u30E9\u30F3\u30FB\u30B5\u30D6\u30ED\u30F3'
                         },
                         'Boa_Vista': {
-                            'exemplarCity': 'ボアビスタ'
+                            'exemplarCity': '\u30DC\u30A2\u30D3\u30B9\u30BF'
                         },
                         'Bogota': {
-                            'exemplarCity': 'ボゴタ'
+                            'exemplarCity': '\u30DC\u30B4\u30BF'
                         },
                         'Curacao': {
-                            'exemplarCity': 'キュラソー'
+                            'exemplarCity': '\u30AD\u30E5\u30E9\u30BD\u30FC'
                         },
                         'Danmarkshavn': {
-                            'exemplarCity': 'デンマークシャウン'
+                            'exemplarCity': '\u30C7\u30F3\u30DE\u30FC\u30AF\u30B7\u30E3\u30A6\u30F3'
                         },
                         'Dawson': {
-                            'exemplarCity': 'ドーソン'
+                            'exemplarCity': '\u30C9\u30FC\u30BD\u30F3'
                         },
                         'Dawson_Creek': {
-                            'exemplarCity': 'ドーソンクリーク'
+                            'exemplarCity': '\u30C9\u30FC\u30BD\u30F3\u30AF\u30EA\u30FC\u30AF'
                         },
                         'Denver': {
-                            'exemplarCity': 'デンバー'
+                            'exemplarCity': '\u30C7\u30F3\u30D0\u30FC'
                         },
                         'Detroit': {
-                            'exemplarCity': 'デトロイト'
+                            'exemplarCity': '\u30C7\u30C8\u30ED\u30A4\u30C8'
                         },
                         'Hermosillo': {
-                            'exemplarCity': 'エルモシヨ'
+                            'exemplarCity': '\u30A8\u30EB\u30E2\u30B7\u30E8'
                         },
                         'Indiana': {
                             'Vincennes': {
-                                'exemplarCity': 'インディアナ州ビンセンス'
+                                'exemplarCity': '\u30A4\u30F3\u30C7\u30A3\u30A2\u30CA\u5DDE\u30D3\u30F3\u30BB\u30F3\u30B9'
                             },
                             'Petersburg': {
-                                'exemplarCity': 'インディアナ州ピーターズバーグ'
+                                'exemplarCity': '\u30A4\u30F3\u30C7\u30A3\u30A2\u30CA\u5DDE\u30D4\u30FC\u30BF\u30FC\u30BA\u30D0\u30FC\u30B0'
                             },
                             'Tell_City': {
-                                'exemplarCity': 'インディアナ州テルシティ'
+                                'exemplarCity': '\u30A4\u30F3\u30C7\u30A3\u30A2\u30CA\u5DDE\u30C6\u30EB\u30B7\u30C6\u30A3'
                             },
                             'Knox': {
-                                'exemplarCity': 'インディアナ州ノックス'
+                                'exemplarCity': '\u30A4\u30F3\u30C7\u30A3\u30A2\u30CA\u5DDE\u30CE\u30C3\u30AF\u30B9'
                             },
                             'Winamac': {
-                                'exemplarCity': 'インディアナ州ウィナマック'
+                                'exemplarCity': '\u30A4\u30F3\u30C7\u30A3\u30A2\u30CA\u5DDE\u30A6\u30A3\u30CA\u30DE\u30C3\u30AF'
                             },
                             'Marengo': {
-                                'exemplarCity': 'インディアナ州マレンゴ'
+                                'exemplarCity': '\u30A4\u30F3\u30C7\u30A3\u30A2\u30CA\u5DDE\u30DE\u30EC\u30F3\u30B4'
                             },
                             'Vevay': {
-                                'exemplarCity': 'インディアナ州ビベー'
+                                'exemplarCity': '\u30A4\u30F3\u30C7\u30A3\u30A2\u30CA\u5DDE\u30D3\u30D9\u30FC'
                             }
                         },
                         'Indianapolis': {
-                            'exemplarCity': 'インディアナポリス'
+                            'exemplarCity': '\u30A4\u30F3\u30C7\u30A3\u30A2\u30CA\u30DD\u30EA\u30B9'
                         },
                         'Inuvik': {
-                            'exemplarCity': 'イヌヴィク'
+                            'exemplarCity': '\u30A4\u30CC\u30F4\u30A3\u30AF'
                         },
                         'Iqaluit': {
-                            'exemplarCity': 'イカルイット'
+                            'exemplarCity': '\u30A4\u30AB\u30EB\u30A4\u30C3\u30C8'
                         },
                         'Jamaica': {
-                            'exemplarCity': 'ジャマイカ'
+                            'exemplarCity': '\u30B8\u30E3\u30DE\u30A4\u30AB'
                         },
                         'Jujuy': {
-                            'exemplarCity': 'フフイ'
+                            'exemplarCity': '\u30D5\u30D5\u30A4'
                         },
                         'Juneau': {
-                            'exemplarCity': 'ジュノー'
+                            'exemplarCity': '\u30B8\u30E5\u30CE\u30FC'
                         },
                         'Yellowknife': {
-                            'exemplarCity': 'イエローナイフ'
+                            'exemplarCity': '\u30A4\u30A8\u30ED\u30FC\u30CA\u30A4\u30D5'
                         },
                         'Yakutat': {
-                            'exemplarCity': 'ヤクタット'
+                            'exemplarCity': '\u30E4\u30AF\u30BF\u30C3\u30C8'
                         },
                         'Winnipeg': {
-                            'exemplarCity': 'ウィニペグ'
+                            'exemplarCity': '\u30A6\u30A3\u30CB\u30DA\u30B0'
                         },
                         'Whitehorse': {
-                            'exemplarCity': 'ホワイトホース'
+                            'exemplarCity': '\u30DB\u30EF\u30A4\u30C8\u30DB\u30FC\u30B9'
                         },
                         'Vancouver': {
-                            'exemplarCity': 'バンクーバー'
+                            'exemplarCity': '\u30D0\u30F3\u30AF\u30FC\u30D0\u30FC'
                         },
                         'Tortola': {
-                            'exemplarCity': 'トルトーラ'
+                            'exemplarCity': '\u30C8\u30EB\u30C8\u30FC\u30E9'
                         },
                         'Kralendijk': {
-                            'exemplarCity': 'クラレンダイク'
+                            'exemplarCity': '\u30AF\u30E9\u30EC\u30F3\u30C0\u30A4\u30AF'
                         },
                         'Kentucky': {
                             'Monticello': {
-                                'exemplarCity': 'ケンタッキー州モンティチェロ'
+                                'exemplarCity': '\u30B1\u30F3\u30BF\u30C3\u30AD\u30FC\u5DDE\u30E2\u30F3\u30C6\u30A3\u30C1\u30A7\u30ED'
                             }
                         },
                         'Havana': {
-                            'exemplarCity': 'ハバナ'
+                            'exemplarCity': '\u30CF\u30D0\u30CA'
                         },
                         'Halifax': {
-                            'exemplarCity': 'ハリファクス'
+                            'exemplarCity': '\u30CF\u30EA\u30D5\u30A1\u30AF\u30B9'
                         },
                         'Guyana': {
-                            'exemplarCity': 'ガイアナ'
+                            'exemplarCity': '\u30AC\u30A4\u30A2\u30CA'
                         },
                         'Guayaquil': {
-                            'exemplarCity': 'グアヤキル'
+                            'exemplarCity': '\u30B0\u30A2\u30E4\u30AD\u30EB'
                         },
                         'Guatemala': {
-                            'exemplarCity': 'グアテマラ'
+                            'exemplarCity': '\u30B0\u30A2\u30C6\u30DE\u30E9'
                         },
                         'Guadeloupe': {
-                            'exemplarCity': 'グアダループ'
+                            'exemplarCity': '\u30B0\u30A2\u30C0\u30EB\u30FC\u30D7'
                         },
                         'Grenada': {
-                            'exemplarCity': 'グレナダ'
+                            'exemplarCity': '\u30B0\u30EC\u30CA\u30C0'
                         },
                         'Grand_Turk': {
-                            'exemplarCity': 'グランドターク'
+                            'exemplarCity': '\u30B0\u30E9\u30F3\u30C9\u30BF\u30FC\u30AF'
                         },
                         'Goose_Bay': {
-                            'exemplarCity': 'グースベイ'
+                            'exemplarCity': '\u30B0\u30FC\u30B9\u30D9\u30A4'
                         },
                         'Godthab': {
-                            'exemplarCity': 'ゴッドホープ'
+                            'exemplarCity': '\u30B4\u30C3\u30C9\u30DB\u30FC\u30D7'
                         },
                         'Glace_Bay': {
-                            'exemplarCity': 'グレースベイ'
+                            'exemplarCity': '\u30B0\u30EC\u30FC\u30B9\u30D9\u30A4'
                         },
                         'Fortaleza': {
-                            'exemplarCity': 'フォルタレザ'
+                            'exemplarCity': '\u30D5\u30A9\u30EB\u30BF\u30EC\u30B6'
                         },
                         'El_Salvador': {
-                            'exemplarCity': 'エルサルバドル'
+                            'exemplarCity': '\u30A8\u30EB\u30B5\u30EB\u30D0\u30C9\u30EB'
                         },
                         'Eirunepe': {
-                            'exemplarCity': 'エイルネペ'
+                            'exemplarCity': '\u30A8\u30A4\u30EB\u30CD\u30DA'
                         },
                         'Edmonton': {
-                            'exemplarCity': 'エドモントン'
+                            'exemplarCity': '\u30A8\u30C9\u30E2\u30F3\u30C8\u30F3'
                         },
                         'Dominica': {
-                            'exemplarCity': 'ドミニカ'
+                            'exemplarCity': '\u30C9\u30DF\u30CB\u30AB'
                         },
                         'Chihuahua': {
-                            'exemplarCity': 'チワワ'
+                            'exemplarCity': '\u30C1\u30EF\u30EF'
                         },
                         'Coral_Harbour': {
-                            'exemplarCity': 'アティコカン'
+                            'exemplarCity': '\u30A2\u30C6\u30A3\u30B3\u30AB\u30F3'
                         },
                         'Cordoba': {
-                            'exemplarCity': 'コルドバ'
+                            'exemplarCity': '\u30B3\u30EB\u30C9\u30D0'
                         },
                         'Costa_Rica': {
-                            'exemplarCity': 'コスタリカ'
+                            'exemplarCity': '\u30B3\u30B9\u30BF\u30EA\u30AB'
                         },
                         'Creston': {
-                            'exemplarCity': 'クレストン'
+                            'exemplarCity': '\u30AF\u30EC\u30B9\u30C8\u30F3'
                         },
                         'Cuiaba': {
-                            'exemplarCity': 'クイアバ'
+                            'exemplarCity': '\u30AF\u30A4\u30A2\u30D0'
                         },
                         'La_Paz': {
-                            'exemplarCity': 'ラパス'
+                            'exemplarCity': '\u30E9\u30D1\u30B9'
                         },
                         'Lima': {
-                            'exemplarCity': 'リマ'
+                            'exemplarCity': '\u30EA\u30DE'
                         },
                         'Los_Angeles': {
-                            'exemplarCity': 'ロサンゼルス'
+                            'exemplarCity': '\u30ED\u30B5\u30F3\u30BC\u30EB\u30B9'
                         },
                         'Louisville': {
-                            'exemplarCity': 'ルイビル'
+                            'exemplarCity': '\u30EB\u30A4\u30D3\u30EB'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': 'ローワー・プリンセズ・クウォーター'
+                            'exemplarCity': '\u30ED\u30FC\u30EF\u30FC\u30FB\u30D7\u30EA\u30F3\u30BB\u30BA\u30FB\u30AF\u30A6\u30A9\u30FC\u30BF\u30FC'
                         },
                         'Maceio': {
-                            'exemplarCity': 'マセイオ'
+                            'exemplarCity': '\u30DE\u30BB\u30A4\u30AA'
                         },
                         'Managua': {
-                            'exemplarCity': 'マナグア'
+                            'exemplarCity': '\u30DE\u30CA\u30B0\u30A2'
                         },
                         'Manaus': {
-                            'exemplarCity': 'マナウス'
+                            'exemplarCity': '\u30DE\u30CA\u30A6\u30B9'
                         },
                         'Marigot': {
-                            'exemplarCity': 'マリゴ'
+                            'exemplarCity': '\u30DE\u30EA\u30B4'
                         },
                         'Martinique': {
-                            'exemplarCity': 'マルティニーク'
+                            'exemplarCity': '\u30DE\u30EB\u30C6\u30A3\u30CB\u30FC\u30AF'
                         },
                         'Matamoros': {
-                            'exemplarCity': 'マタモロス'
+                            'exemplarCity': '\u30DE\u30BF\u30E2\u30ED\u30B9'
                         },
                         'Mazatlan': {
-                            'exemplarCity': 'マサトラン'
+                            'exemplarCity': '\u30DE\u30B5\u30C8\u30E9\u30F3'
                         },
                         'Mendoza': {
-                            'exemplarCity': 'メンドーサ'
+                            'exemplarCity': '\u30E1\u30F3\u30C9\u30FC\u30B5'
                         },
                         'Menominee': {
-                            'exemplarCity': 'メノミニー'
+                            'exemplarCity': '\u30E1\u30CE\u30DF\u30CB\u30FC'
                         },
                         'Merida': {
-                            'exemplarCity': 'メリダ'
+                            'exemplarCity': '\u30E1\u30EA\u30C0'
                         },
                         'Metlakatla': {
-                            'exemplarCity': 'メトラカトラ'
+                            'exemplarCity': '\u30E1\u30C8\u30E9\u30AB\u30C8\u30E9'
                         },
                         'Mexico_City': {
-                            'exemplarCity': 'メキシコシティー'
+                            'exemplarCity': '\u30E1\u30AD\u30B7\u30B3\u30B7\u30C6\u30A3\u30FC'
                         },
                         'Miquelon': {
-                            'exemplarCity': 'ミクロン島'
+                            'exemplarCity': '\u30DF\u30AF\u30ED\u30F3\u5CF6'
                         },
                         'Moncton': {
-                            'exemplarCity': 'モンクトン'
+                            'exemplarCity': '\u30E2\u30F3\u30AF\u30C8\u30F3'
                         },
                         'Monterrey': {
-                            'exemplarCity': 'モンテレイ'
+                            'exemplarCity': '\u30E2\u30F3\u30C6\u30EC\u30A4'
                         },
                         'Montevideo': {
-                            'exemplarCity': 'モンテビデオ'
+                            'exemplarCity': '\u30E2\u30F3\u30C6\u30D3\u30C7\u30AA'
                         },
                         'Montreal': {
-                            'exemplarCity': 'モントリオール'
+                            'exemplarCity': '\u30E2\u30F3\u30C8\u30EA\u30AA\u30FC\u30EB'
                         },
                         'Montserrat': {
-                            'exemplarCity': 'モントセラト'
+                            'exemplarCity': '\u30E2\u30F3\u30C8\u30BB\u30E9\u30C8'
                         },
                         'Nassau': {
-                            'exemplarCity': 'ナッソー'
+                            'exemplarCity': '\u30CA\u30C3\u30BD\u30FC'
                         },
                         'New_York': {
-                            'exemplarCity': 'ニューヨーク'
+                            'exemplarCity': '\u30CB\u30E5\u30FC\u30E8\u30FC\u30AF'
                         },
                         'Nipigon': {
-                            'exemplarCity': 'ニピゴン'
+                            'exemplarCity': '\u30CB\u30D4\u30B4\u30F3'
                         },
                         'Nome': {
-                            'exemplarCity': 'ノーム'
+                            'exemplarCity': '\u30CE\u30FC\u30E0'
                         },
                         'Noronha': {
-                            'exemplarCity': 'ノローニャ'
+                            'exemplarCity': '\u30CE\u30ED\u30FC\u30CB\u30E3'
                         },
                         'North_Dakota': {
                             'Beulah': {
-                                'exemplarCity': 'ノースダコタ州ビューラー'
+                                'exemplarCity': '\u30CE\u30FC\u30B9\u30C0\u30B3\u30BF\u5DDE\u30D3\u30E5\u30FC\u30E9\u30FC'
                             },
                             'New_Salem': {
-                                'exemplarCity': 'ノースダコタ州ニューセーラム'
+                                'exemplarCity': '\u30CE\u30FC\u30B9\u30C0\u30B3\u30BF\u5DDE\u30CB\u30E5\u30FC\u30BB\u30FC\u30E9\u30E0'
                             },
                             'Center': {
-                                'exemplarCity': 'ノースダコタ州センター'
+                                'exemplarCity': '\u30CE\u30FC\u30B9\u30C0\u30B3\u30BF\u5DDE\u30BB\u30F3\u30BF\u30FC'
                             }
                         },
                         'Ojinaga': {
-                            'exemplarCity': 'オヒナガ'
+                            'exemplarCity': '\u30AA\u30D2\u30CA\u30AC'
                         },
                         'Panama': {
-                            'exemplarCity': 'パナマ'
+                            'exemplarCity': '\u30D1\u30CA\u30DE'
                         },
                         'Pangnirtung': {
-                            'exemplarCity': 'パンナータング'
+                            'exemplarCity': '\u30D1\u30F3\u30CA\u30FC\u30BF\u30F3\u30B0'
                         },
                         'Paramaribo': {
-                            'exemplarCity': 'パラマリボ'
+                            'exemplarCity': '\u30D1\u30E9\u30DE\u30EA\u30DC'
                         },
                         'Phoenix': {
-                            'exemplarCity': 'フェニックス'
+                            'exemplarCity': '\u30D5\u30A7\u30CB\u30C3\u30AF\u30B9'
                         },
                         'Port-au-Prince': {
-                            'exemplarCity': 'ポルトープランス'
+                            'exemplarCity': '\u30DD\u30EB\u30C8\u30FC\u30D7\u30E9\u30F3\u30B9'
                         },
                         'Port_of_Spain': {
-                            'exemplarCity': 'ポートオブスペイン'
+                            'exemplarCity': '\u30DD\u30FC\u30C8\u30AA\u30D6\u30B9\u30DA\u30A4\u30F3'
                         },
                         'Porto_Velho': {
-                            'exemplarCity': 'ポルトベーリョ'
+                            'exemplarCity': '\u30DD\u30EB\u30C8\u30D9\u30FC\u30EA\u30E7'
                         },
                         'Puerto_Rico': {
-                            'exemplarCity': 'プエルトリコ'
+                            'exemplarCity': '\u30D7\u30A8\u30EB\u30C8\u30EA\u30B3'
                         },
                         'Rainy_River': {
-                            'exemplarCity': 'レイニーリバー'
+                            'exemplarCity': '\u30EC\u30A4\u30CB\u30FC\u30EA\u30D0\u30FC'
                         },
                         'Rankin_Inlet': {
-                            'exemplarCity': 'ランキンインレット'
+                            'exemplarCity': '\u30E9\u30F3\u30AD\u30F3\u30A4\u30F3\u30EC\u30C3\u30C8'
                         },
                         'Recife': {
-                            'exemplarCity': 'レシフェ'
+                            'exemplarCity': '\u30EC\u30B7\u30D5\u30A7'
                         },
                         'Regina': {
-                            'exemplarCity': 'レジャイナ'
+                            'exemplarCity': '\u30EC\u30B8\u30E3\u30A4\u30CA'
                         },
                         'Resolute': {
-                            'exemplarCity': 'レゾリュート'
+                            'exemplarCity': '\u30EC\u30BE\u30EA\u30E5\u30FC\u30C8'
                         },
                         'Rio_Branco': {
-                            'exemplarCity': 'リオブランコ'
+                            'exemplarCity': '\u30EA\u30AA\u30D6\u30E9\u30F3\u30B3'
                         },
                         'Santa_Isabel': {
-                            'exemplarCity': 'サンタイサベル'
+                            'exemplarCity': '\u30B5\u30F3\u30BF\u30A4\u30B5\u30D9\u30EB'
                         },
                         'Santarem': {
-                            'exemplarCity': 'サンタレム'
+                            'exemplarCity': '\u30B5\u30F3\u30BF\u30EC\u30E0'
                         },
                         'Santiago': {
-                            'exemplarCity': 'サンチアゴ'
+                            'exemplarCity': '\u30B5\u30F3\u30C1\u30A2\u30B4'
                         },
                         'Santo_Domingo': {
-                            'exemplarCity': 'サントドミンゴ'
+                            'exemplarCity': '\u30B5\u30F3\u30C8\u30C9\u30DF\u30F3\u30B4'
                         },
                         'Sao_Paulo': {
-                            'exemplarCity': 'サンパウロ'
+                            'exemplarCity': '\u30B5\u30F3\u30D1\u30A6\u30ED'
                         },
                         'Scoresbysund': {
-                            'exemplarCity': 'スコルズビスーン'
+                            'exemplarCity': '\u30B9\u30B3\u30EB\u30BA\u30D3\u30B9\u30FC\u30F3'
                         },
                         'Shiprock': {
-                            'exemplarCity': 'シップロック'
+                            'exemplarCity': '\u30B7\u30C3\u30D7\u30ED\u30C3\u30AF'
                         },
                         'Sitka': {
-                            'exemplarCity': 'シトカ'
+                            'exemplarCity': '\u30B7\u30C8\u30AB'
                         },
                         'St_Barthelemy': {
-                            'exemplarCity': 'サン・バルテルミー'
+                            'exemplarCity': '\u30B5\u30F3\u30FB\u30D0\u30EB\u30C6\u30EB\u30DF\u30FC'
                         },
                         'St_Johns': {
-                            'exemplarCity': 'セントジョンズ'
+                            'exemplarCity': '\u30BB\u30F3\u30C8\u30B8\u30E7\u30F3\u30BA'
                         },
                         'St_Kitts': {
-                            'exemplarCity': 'セントキッツ'
+                            'exemplarCity': '\u30BB\u30F3\u30C8\u30AD\u30C3\u30C4'
                         },
                         'St_Lucia': {
-                            'exemplarCity': 'セントルシア'
+                            'exemplarCity': '\u30BB\u30F3\u30C8\u30EB\u30B7\u30A2'
                         },
                         'St_Thomas': {
-                            'exemplarCity': 'セントトーマス'
+                            'exemplarCity': '\u30BB\u30F3\u30C8\u30C8\u30FC\u30DE\u30B9'
                         },
                         'St_Vincent': {
-                            'exemplarCity': 'セントビンセント'
+                            'exemplarCity': '\u30BB\u30F3\u30C8\u30D3\u30F3\u30BB\u30F3\u30C8'
                         }
                     },
                     'Atlantic': {
                         'South_Georgia': {
-                            'exemplarCity': 'サウスジョージア'
+                            'exemplarCity': '\u30B5\u30A6\u30B9\u30B8\u30E7\u30FC\u30B8\u30A2'
                         },
                         'Reykjavik': {
-                            'exemplarCity': 'レイキャビク'
+                            'exemplarCity': '\u30EC\u30A4\u30AD\u30E3\u30D3\u30AF'
                         },
                         'Stanley': {
-                            'exemplarCity': 'スタンレー'
+                            'exemplarCity': '\u30B9\u30BF\u30F3\u30EC\u30FC'
                         },
                         'St_Helena': {
-                            'exemplarCity': 'セントヘレナ'
+                            'exemplarCity': '\u30BB\u30F3\u30C8\u30D8\u30EC\u30CA'
                         },
                         'Azores': {
-                            'exemplarCity': 'アゾレス'
+                            'exemplarCity': '\u30A2\u30BE\u30EC\u30B9'
                         },
                         'Bermuda': {
-                            'exemplarCity': 'バミューダ'
+                            'exemplarCity': '\u30D0\u30DF\u30E5\u30FC\u30C0'
                         },
                         'Canary': {
-                            'exemplarCity': 'カナリア'
+                            'exemplarCity': '\u30AB\u30CA\u30EA\u30A2'
                         },
                         'Cape_Verde': {
-                            'exemplarCity': 'カーボベルデ'
+                            'exemplarCity': '\u30AB\u30FC\u30DC\u30D9\u30EB\u30C7'
                         },
                         'Faeroe': {
-                            'exemplarCity': 'フェロー'
+                            'exemplarCity': '\u30D5\u30A7\u30ED\u30FC'
                         },
                         'Madeira': {
-                            'exemplarCity': 'マデイラ'
+                            'exemplarCity': '\u30DE\u30C7\u30A4\u30E9'
                         }
                     },
                     'Europe': {
                         'Oslo': {
-                            'exemplarCity': 'オスロ'
+                            'exemplarCity': '\u30AA\u30B9\u30ED'
                         },
                         'Moscow': {
-                            'exemplarCity': 'モスクワ'
+                            'exemplarCity': '\u30E2\u30B9\u30AF\u30EF'
                         },
                         'Monaco': {
-                            'exemplarCity': 'モナコ'
+                            'exemplarCity': '\u30E2\u30CA\u30B3'
                         },
                         'Minsk': {
-                            'exemplarCity': 'ミンスク'
+                            'exemplarCity': '\u30DF\u30F3\u30B9\u30AF'
                         },
                         'Mariehamn': {
-                            'exemplarCity': 'マリエハムン'
+                            'exemplarCity': '\u30DE\u30EA\u30A8\u30CF\u30E0\u30F3'
                         },
                         'Malta': {
-                            'exemplarCity': 'マルタ'
+                            'exemplarCity': '\u30DE\u30EB\u30BF'
                         },
                         'Madrid': {
-                            'exemplarCity': 'マドリード'
+                            'exemplarCity': '\u30DE\u30C9\u30EA\u30FC\u30C9'
                         },
                         'Luxembourg': {
-                            'exemplarCity': 'ルクセンブルグ'
+                            'exemplarCity': '\u30EB\u30AF\u30BB\u30F3\u30D6\u30EB\u30B0'
                         },
                         'London': {
                             'long': {
-                                'daylight': '英国夏時間'
+                                'daylight': '\u82F1\u56FD\u590F\u6642\u9593'
                             },
-                            'exemplarCity': 'ロンドン'
+                            'exemplarCity': '\u30ED\u30F3\u30C9\u30F3'
                         },
                         'Ljubljana': {
-                            'exemplarCity': 'リュブリャナ'
+                            'exemplarCity': '\u30EA\u30E5\u30D6\u30EA\u30E3\u30CA'
                         },
                         'Lisbon': {
-                            'exemplarCity': 'リスボン'
+                            'exemplarCity': '\u30EA\u30B9\u30DC\u30F3'
                         },
                         'Kiev': {
-                            'exemplarCity': 'キエフ'
+                            'exemplarCity': '\u30AD\u30A8\u30D5'
                         },
                         'Kaliningrad': {
-                            'exemplarCity': 'カリーニングラード'
+                            'exemplarCity': '\u30AB\u30EA\u30FC\u30CB\u30F3\u30B0\u30E9\u30FC\u30C9'
                         },
                         'Jersey': {
-                            'exemplarCity': 'ジャージー'
+                            'exemplarCity': '\u30B8\u30E3\u30FC\u30B8\u30FC'
                         },
                         'Istanbul': {
-                            'exemplarCity': 'イスタンブール'
+                            'exemplarCity': '\u30A4\u30B9\u30BF\u30F3\u30D6\u30FC\u30EB'
                         },
                         'Isle_of_Man': {
-                            'exemplarCity': 'マン島'
+                            'exemplarCity': '\u30DE\u30F3\u5CF6'
                         },
                         'Bucharest': {
-                            'exemplarCity': 'ブカレスト'
+                            'exemplarCity': '\u30D6\u30AB\u30EC\u30B9\u30C8'
                         },
                         'Brussels': {
-                            'exemplarCity': 'ブリュッセル'
+                            'exemplarCity': '\u30D6\u30EA\u30E5\u30C3\u30BB\u30EB'
                         },
                         'Bratislava': {
-                            'exemplarCity': 'ブラチスラバ'
+                            'exemplarCity': '\u30D6\u30E9\u30C1\u30B9\u30E9\u30D0'
                         },
                         'Berlin': {
-                            'exemplarCity': 'ベルリン'
+                            'exemplarCity': '\u30D9\u30EB\u30EA\u30F3'
                         },
                         'Belgrade': {
-                            'exemplarCity': 'ベオグラード'
+                            'exemplarCity': '\u30D9\u30AA\u30B0\u30E9\u30FC\u30C9'
                         },
                         'Athens': {
-                            'exemplarCity': 'アテネ'
+                            'exemplarCity': '\u30A2\u30C6\u30CD'
                         },
                         'Andorra': {
-                            'exemplarCity': 'アンドラ'
+                            'exemplarCity': '\u30A2\u30F3\u30C9\u30E9'
                         },
                         'Amsterdam': {
-                            'exemplarCity': 'アムステルダム'
+                            'exemplarCity': '\u30A2\u30E0\u30B9\u30C6\u30EB\u30C0\u30E0'
                         },
                         'Simferopol': {
-                            'exemplarCity': 'シンフェロポリ'
+                            'exemplarCity': '\u30B7\u30F3\u30D5\u30A7\u30ED\u30DD\u30EA'
                         },
                         'Skopje': {
-                            'exemplarCity': 'スコピエ'
+                            'exemplarCity': '\u30B9\u30B3\u30D4\u30A8'
                         },
                         'Sofia': {
-                            'exemplarCity': 'ソフィア'
+                            'exemplarCity': '\u30BD\u30D5\u30A3\u30A2'
                         },
                         'Stockholm': {
-                            'exemplarCity': 'ストックホルム'
+                            'exemplarCity': '\u30B9\u30C8\u30C3\u30AF\u30DB\u30EB\u30E0'
                         },
                         'Tallinn': {
-                            'exemplarCity': 'タリン'
+                            'exemplarCity': '\u30BF\u30EA\u30F3'
                         },
                         'Tirane': {
-                            'exemplarCity': 'ティラナ'
+                            'exemplarCity': '\u30C6\u30A3\u30E9\u30CA'
                         },
                         'Uzhgorod': {
-                            'exemplarCity': 'ウージュホロド'
+                            'exemplarCity': '\u30A6\u30FC\u30B8\u30E5\u30DB\u30ED\u30C9'
                         },
                         'Vaduz': {
-                            'exemplarCity': 'ファドゥーツ'
+                            'exemplarCity': '\u30D5\u30A1\u30C9\u30A5\u30FC\u30C4'
                         },
                         'Zurich': {
-                            'exemplarCity': 'チューリッヒ'
+                            'exemplarCity': '\u30C1\u30E5\u30FC\u30EA\u30C3\u30D2'
                         },
                         'Zaporozhye': {
-                            'exemplarCity': 'ザポリージャ'
+                            'exemplarCity': '\u30B6\u30DD\u30EA\u30FC\u30B8\u30E3'
                         },
                         'Zagreb': {
-                            'exemplarCity': 'ザグレブ'
+                            'exemplarCity': '\u30B6\u30B0\u30EC\u30D6'
                         },
                         'Warsaw': {
-                            'exemplarCity': 'ワルシャワ'
+                            'exemplarCity': '\u30EF\u30EB\u30B7\u30E3\u30EF'
                         },
                         'Volgograd': {
-                            'exemplarCity': 'ボルゴグラード'
+                            'exemplarCity': '\u30DC\u30EB\u30B4\u30B0\u30E9\u30FC\u30C9'
                         },
                         'Vilnius': {
-                            'exemplarCity': 'ヴィリニュス'
+                            'exemplarCity': '\u30F4\u30A3\u30EA\u30CB\u30E5\u30B9'
                         },
                         'Vienna': {
-                            'exemplarCity': 'ウィーン'
+                            'exemplarCity': '\u30A6\u30A3\u30FC\u30F3'
                         },
                         'Vatican': {
-                            'exemplarCity': 'バチカン'
+                            'exemplarCity': '\u30D0\u30C1\u30AB\u30F3'
                         },
                         'Sarajevo': {
-                            'exemplarCity': 'サラエボ'
+                            'exemplarCity': '\u30B5\u30E9\u30A8\u30DC'
                         },
                         'San_Marino': {
-                            'exemplarCity': 'サンマリノ'
+                            'exemplarCity': '\u30B5\u30F3\u30DE\u30EA\u30CE'
                         },
                         'Samara': {
-                            'exemplarCity': 'サマラ'
+                            'exemplarCity': '\u30B5\u30DE\u30E9'
                         },
                         'Rome': {
-                            'exemplarCity': 'ローマ'
+                            'exemplarCity': '\u30ED\u30FC\u30DE'
                         },
                         'Riga': {
-                            'exemplarCity': 'リガ'
+                            'exemplarCity': '\u30EA\u30AC'
                         },
                         'Prague': {
-                            'exemplarCity': 'プラハ'
+                            'exemplarCity': '\u30D7\u30E9\u30CF'
                         },
                         'Podgorica': {
-                            'exemplarCity': 'ポドゴリツァ'
+                            'exemplarCity': '\u30DD\u30C9\u30B4\u30EA\u30C4\u30A1'
                         },
                         'Paris': {
-                            'exemplarCity': 'パリ'
+                            'exemplarCity': '\u30D1\u30EA'
                         },
                         'Helsinki': {
-                            'exemplarCity': 'ヘルシンキ'
+                            'exemplarCity': '\u30D8\u30EB\u30B7\u30F3\u30AD'
                         },
                         'Guernsey': {
-                            'exemplarCity': 'ガーンジー'
+                            'exemplarCity': '\u30AC\u30FC\u30F3\u30B8\u30FC'
                         },
                         'Gibraltar': {
-                            'exemplarCity': 'ジブラルタル'
+                            'exemplarCity': '\u30B8\u30D6\u30E9\u30EB\u30BF\u30EB'
                         },
                         'Dublin': {
                             'long': {
-                                'daylight': 'アイルランド夏時間'
+                                'daylight': '\u30A2\u30A4\u30EB\u30E9\u30F3\u30C9\u590F\u6642\u9593'
                             },
-                            'exemplarCity': 'ダブリン'
+                            'exemplarCity': '\u30C0\u30D6\u30EA\u30F3'
                         },
                         'Copenhagen': {
-                            'exemplarCity': 'コペンハーゲン'
+                            'exemplarCity': '\u30B3\u30DA\u30F3\u30CF\u30FC\u30B2\u30F3'
                         },
                         'Chisinau': {
-                            'exemplarCity': 'キシナウ'
+                            'exemplarCity': '\u30AD\u30B7\u30CA\u30A6'
                         },
                         'Busingen': {
-                            'exemplarCity': 'ビュージンゲン'
+                            'exemplarCity': '\u30D3\u30E5\u30FC\u30B8\u30F3\u30B2\u30F3'
                         },
                         'Budapest': {
-                            'exemplarCity': 'ブダペスト'
+                            'exemplarCity': '\u30D6\u30C0\u30DA\u30B9\u30C8'
                         }
                     },
                     'Africa': {
                         'Libreville': {
-                            'exemplarCity': 'リーブルヴィル'
+                            'exemplarCity': '\u30EA\u30FC\u30D6\u30EB\u30F4\u30A3\u30EB'
                         },
                         'Lagos': {
-                            'exemplarCity': 'ラゴス'
+                            'exemplarCity': '\u30E9\u30B4\u30B9'
                         },
                         'Kinshasa': {
-                            'exemplarCity': 'キンシャサ'
+                            'exemplarCity': '\u30AD\u30F3\u30B7\u30E3\u30B5'
                         },
                         'Kigali': {
-                            'exemplarCity': 'キガリ'
+                            'exemplarCity': '\u30AD\u30AC\u30EA'
                         },
                         'Khartoum': {
-                            'exemplarCity': 'ハルツーム'
+                            'exemplarCity': '\u30CF\u30EB\u30C4\u30FC\u30E0'
                         },
                         'Kampala': {
-                            'exemplarCity': 'カンパラ'
+                            'exemplarCity': '\u30AB\u30F3\u30D1\u30E9'
                         },
                         'Juba': {
-                            'exemplarCity': 'ジュバ'
+                            'exemplarCity': '\u30B8\u30E5\u30D0'
                         },
                         'Johannesburg': {
-                            'exemplarCity': 'ヨハネスブルグ'
+                            'exemplarCity': '\u30E8\u30CF\u30CD\u30B9\u30D6\u30EB\u30B0'
                         },
                         'Harare': {
-                            'exemplarCity': 'ハラレ'
+                            'exemplarCity': '\u30CF\u30E9\u30EC'
                         },
                         'Gaborone': {
-                            'exemplarCity': 'ハボローネ'
+                            'exemplarCity': '\u30CF\u30DC\u30ED\u30FC\u30CD'
                         },
                         'Freetown': {
-                            'exemplarCity': 'フリータウン'
+                            'exemplarCity': '\u30D5\u30EA\u30FC\u30BF\u30A6\u30F3'
                         },
                         'El_Aaiun': {
-                            'exemplarCity': 'アイウン'
+                            'exemplarCity': '\u30A2\u30A4\u30A6\u30F3'
                         },
                         'Douala': {
-                            'exemplarCity': 'ドゥアラ'
+                            'exemplarCity': '\u30C9\u30A5\u30A2\u30E9'
                         },
                         'Djibouti': {
-                            'exemplarCity': 'ジブチ'
+                            'exemplarCity': '\u30B8\u30D6\u30C1'
                         },
                         'Dar_es_Salaam': {
-                            'exemplarCity': 'ダルエスサラーム'
+                            'exemplarCity': '\u30C0\u30EB\u30A8\u30B9\u30B5\u30E9\u30FC\u30E0'
                         },
                         'Dakar': {
-                            'exemplarCity': 'ダカール'
+                            'exemplarCity': '\u30C0\u30AB\u30FC\u30EB'
                         },
                         'Banjul': {
-                            'exemplarCity': 'バンジュール'
+                            'exemplarCity': '\u30D0\u30F3\u30B8\u30E5\u30FC\u30EB'
                         },
                         'Bangui': {
-                            'exemplarCity': 'バンギ'
+                            'exemplarCity': '\u30D0\u30F3\u30AE'
                         },
                         'Bamako': {
-                            'exemplarCity': 'バマコ'
+                            'exemplarCity': '\u30D0\u30DE\u30B3'
                         },
                         'Asmera': {
-                            'exemplarCity': 'アスマラ'
+                            'exemplarCity': '\u30A2\u30B9\u30DE\u30E9'
                         },
                         'Malabo': {
-                            'exemplarCity': 'マラボ'
+                            'exemplarCity': '\u30DE\u30E9\u30DC'
                         },
                         'Maputo': {
-                            'exemplarCity': 'マプト'
+                            'exemplarCity': '\u30DE\u30D7\u30C8'
                         },
                         'Maseru': {
-                            'exemplarCity': 'マセル'
+                            'exemplarCity': '\u30DE\u30BB\u30EB'
                         },
                         'Mbabane': {
-                            'exemplarCity': 'ムババーネ'
+                            'exemplarCity': '\u30E0\u30D0\u30D0\u30FC\u30CD'
                         },
                         'Mogadishu': {
-                            'exemplarCity': 'モガディシオ'
+                            'exemplarCity': '\u30E2\u30AC\u30C7\u30A3\u30B7\u30AA'
                         },
                         'Monrovia': {
-                            'exemplarCity': 'モンロビア'
+                            'exemplarCity': '\u30E2\u30F3\u30ED\u30D3\u30A2'
                         },
                         'Nairobi': {
-                            'exemplarCity': 'ナイロビ'
+                            'exemplarCity': '\u30CA\u30A4\u30ED\u30D3'
                         },
                         'Ndjamena': {
-                            'exemplarCity': 'ンジャメナ'
+                            'exemplarCity': '\u30F3\u30B8\u30E3\u30E1\u30CA'
                         },
                         'Windhoek': {
-                            'exemplarCity': 'ウィントフック'
+                            'exemplarCity': '\u30A6\u30A3\u30F3\u30C8\u30D5\u30C3\u30AF'
                         },
                         'Tunis': {
-                            'exemplarCity': 'チュニス'
+                            'exemplarCity': '\u30C1\u30E5\u30CB\u30B9'
                         },
                         'Tripoli': {
-                            'exemplarCity': 'トリポリ'
+                            'exemplarCity': '\u30C8\u30EA\u30DD\u30EA'
                         },
                         'Sao_Tome': {
-                            'exemplarCity': 'サントメ'
+                            'exemplarCity': '\u30B5\u30F3\u30C8\u30E1'
                         },
                         'Porto-Novo': {
-                            'exemplarCity': 'ポルトノボ'
+                            'exemplarCity': '\u30DD\u30EB\u30C8\u30CE\u30DC'
                         },
                         'Ouagadougou': {
-                            'exemplarCity': 'ワガドゥグー'
+                            'exemplarCity': '\u30EF\u30AC\u30C9\u30A5\u30B0\u30FC'
                         },
                         'Nouakchott': {
-                            'exemplarCity': 'ヌアクショット'
+                            'exemplarCity': '\u30CC\u30A2\u30AF\u30B7\u30E7\u30C3\u30C8'
                         },
                         'Niamey': {
-                            'exemplarCity': 'ニアメ'
+                            'exemplarCity': '\u30CB\u30A2\u30E1'
                         },
                         'Lusaka': {
-                            'exemplarCity': 'ルサカ'
+                            'exemplarCity': '\u30EB\u30B5\u30AB'
                         },
                         'Lubumbashi': {
-                            'exemplarCity': 'ルブンバシ'
+                            'exemplarCity': '\u30EB\u30D6\u30F3\u30D0\u30B7'
                         },
                         'Luanda': {
-                            'exemplarCity': 'ルアンダ'
+                            'exemplarCity': '\u30EB\u30A2\u30F3\u30C0'
                         },
                         'Lome': {
-                            'exemplarCity': 'ロメ'
+                            'exemplarCity': '\u30ED\u30E1'
                         },
                         'Conakry': {
-                            'exemplarCity': 'コナクリ'
+                            'exemplarCity': '\u30B3\u30CA\u30AF\u30EA'
                         },
                         'Ceuta': {
-                            'exemplarCity': 'セウタ'
+                            'exemplarCity': '\u30BB\u30A6\u30BF'
                         },
                         'Casablanca': {
-                            'exemplarCity': 'カサブランカ'
+                            'exemplarCity': '\u30AB\u30B5\u30D6\u30E9\u30F3\u30AB'
                         },
                         'Cairo': {
-                            'exemplarCity': 'カイロ'
+                            'exemplarCity': '\u30AB\u30A4\u30ED'
                         },
                         'Bujumbura': {
-                            'exemplarCity': 'ブジュンブラ'
+                            'exemplarCity': '\u30D6\u30B8\u30E5\u30F3\u30D6\u30E9'
                         },
                         'Brazzaville': {
-                            'exemplarCity': 'ブラザビル'
+                            'exemplarCity': '\u30D6\u30E9\u30B6\u30D3\u30EB'
                         },
                         'Blantyre': {
-                            'exemplarCity': 'ブランタイヤ'
+                            'exemplarCity': '\u30D6\u30E9\u30F3\u30BF\u30A4\u30E4'
                         },
                         'Bissau': {
-                            'exemplarCity': 'ビサウ'
+                            'exemplarCity': '\u30D3\u30B5\u30A6'
                         },
                         'Abidjan': {
-                            'exemplarCity': 'アビジャン'
+                            'exemplarCity': '\u30A2\u30D3\u30B8\u30E3\u30F3'
                         },
                         'Accra': {
-                            'exemplarCity': 'アクラ'
+                            'exemplarCity': '\u30A2\u30AF\u30E9'
                         },
                         'Addis_Ababa': {
-                            'exemplarCity': 'アジスアベバ'
+                            'exemplarCity': '\u30A2\u30B8\u30B9\u30A2\u30D9\u30D0'
                         },
                         'Algiers': {
-                            'exemplarCity': 'アルジェ'
+                            'exemplarCity': '\u30A2\u30EB\u30B8\u30A7'
                         }
                     },
                     'Asia': {
                         'Shanghai': {
-                            'exemplarCity': '上海'
+                            'exemplarCity': '\u4E0A\u6D77'
                         },
                         'Seoul': {
-                            'exemplarCity': 'ソウル'
+                            'exemplarCity': '\u30BD\u30A6\u30EB'
                         },
                         'Samarkand': {
-                            'exemplarCity': 'サマルカンド'
+                            'exemplarCity': '\u30B5\u30DE\u30EB\u30AB\u30F3\u30C9'
                         },
                         'Sakhalin': {
-                            'exemplarCity': 'サハリン'
+                            'exemplarCity': '\u30B5\u30CF\u30EA\u30F3'
                         },
                         'Saigon': {
-                            'exemplarCity': 'ホーチミン'
+                            'exemplarCity': '\u30DB\u30FC\u30C1\u30DF\u30F3'
                         },
                         'Riyadh': {
-                            'exemplarCity': 'リヤド'
+                            'exemplarCity': '\u30EA\u30E4\u30C9'
                         },
                         'Rangoon': {
-                            'exemplarCity': 'ラングーン'
+                            'exemplarCity': '\u30E9\u30F3\u30B0\u30FC\u30F3'
                         },
                         'Qyzylorda': {
-                            'exemplarCity': 'クズロルダ'
+                            'exemplarCity': '\u30AF\u30BA\u30ED\u30EB\u30C0'
                         },
                         'Qatar': {
-                            'exemplarCity': 'カタール'
+                            'exemplarCity': '\u30AB\u30BF\u30FC\u30EB'
                         },
                         'Pyongyang': {
-                            'exemplarCity': '平壌'
+                            'exemplarCity': '\u5E73\u58CC'
                         },
                         'Pontianak': {
-                            'exemplarCity': 'ポンティアナック'
+                            'exemplarCity': '\u30DD\u30F3\u30C6\u30A3\u30A2\u30CA\u30C3\u30AF'
                         },
                         'Phnom_Penh': {
-                            'exemplarCity': 'プノンペン'
+                            'exemplarCity': '\u30D7\u30CE\u30F3\u30DA\u30F3'
                         },
                         'Oral': {
-                            'exemplarCity': 'オラル'
+                            'exemplarCity': '\u30AA\u30E9\u30EB'
                         },
                         'Omsk': {
-                            'exemplarCity': 'オムスク'
+                            'exemplarCity': '\u30AA\u30E0\u30B9\u30AF'
                         },
                         'Novosibirsk': {
-                            'exemplarCity': 'ノヴォシビルスク'
+                            'exemplarCity': '\u30CE\u30F4\u30A9\u30B7\u30D3\u30EB\u30B9\u30AF'
                         },
                         'Baghdad': {
-                            'exemplarCity': 'バグダッド'
+                            'exemplarCity': '\u30D0\u30B0\u30C0\u30C3\u30C9'
                         },
                         'Chongqing': {
-                            'exemplarCity': '重慶'
+                            'exemplarCity': '\u91CD\u6176'
                         },
                         'Colombo': {
-                            'exemplarCity': 'コロンボ'
+                            'exemplarCity': '\u30B3\u30ED\u30F3\u30DC'
                         },
                         'Damascus': {
-                            'exemplarCity': 'ダマスカス'
+                            'exemplarCity': '\u30C0\u30DE\u30B9\u30AB\u30B9'
                         },
                         'Dhaka': {
-                            'exemplarCity': 'ダッカ'
+                            'exemplarCity': '\u30C0\u30C3\u30AB'
                         },
                         'Dili': {
-                            'exemplarCity': 'ディリ'
+                            'exemplarCity': '\u30C7\u30A3\u30EA'
                         },
                         'Dubai': {
-                            'exemplarCity': 'ドバイ'
+                            'exemplarCity': '\u30C9\u30D0\u30A4'
                         },
                         'Dushanbe': {
-                            'exemplarCity': 'ドゥシャンベ'
+                            'exemplarCity': '\u30C9\u30A5\u30B7\u30E3\u30F3\u30D9'
                         },
                         'Gaza': {
-                            'exemplarCity': 'ガザ'
+                            'exemplarCity': '\u30AC\u30B6'
                         },
                         'Harbin': {
-                            'exemplarCity': 'ハルビン'
+                            'exemplarCity': '\u30CF\u30EB\u30D3\u30F3'
                         },
                         'Hebron': {
-                            'exemplarCity': 'ヘブロン'
+                            'exemplarCity': '\u30D8\u30D6\u30ED\u30F3'
                         },
                         'Hong_Kong': {
-                            'exemplarCity': '香港'
+                            'exemplarCity': '\u9999\u6E2F'
                         },
                         'Hovd': {
-                            'exemplarCity': 'ホブド'
+                            'exemplarCity': '\u30DB\u30D6\u30C9'
                         },
                         'Irkutsk': {
-                            'exemplarCity': 'イルクーツク'
+                            'exemplarCity': '\u30A4\u30EB\u30AF\u30FC\u30C4\u30AF'
                         },
                         'Jakarta': {
-                            'exemplarCity': 'ジャカルタ'
+                            'exemplarCity': '\u30B8\u30E3\u30AB\u30EB\u30BF'
                         },
                         'Jayapura': {
-                            'exemplarCity': 'ジャヤプラ'
+                            'exemplarCity': '\u30B8\u30E3\u30E4\u30D7\u30E9'
                         },
                         'Ulaanbaatar': {
-                            'exemplarCity': 'ウランバートル'
+                            'exemplarCity': '\u30A6\u30E9\u30F3\u30D0\u30FC\u30C8\u30EB'
                         },
                         'Urumqi': {
-                            'exemplarCity': 'ウルムチ'
+                            'exemplarCity': '\u30A6\u30EB\u30E0\u30C1'
                         },
                         'Ust-Nera': {
-                            'exemplarCity': 'ウスチネラ'
+                            'exemplarCity': '\u30A6\u30B9\u30C1\u30CD\u30E9'
                         },
                         'Vientiane': {
-                            'exemplarCity': 'ビエンチャン'
+                            'exemplarCity': '\u30D3\u30A8\u30F3\u30C1\u30E3\u30F3'
                         },
                         'Vladivostok': {
-                            'exemplarCity': 'ウラジオストク'
+                            'exemplarCity': '\u30A6\u30E9\u30B8\u30AA\u30B9\u30C8\u30AF'
                         },
                         'Yakutsk': {
-                            'exemplarCity': 'ヤクーツク'
+                            'exemplarCity': '\u30E4\u30AF\u30FC\u30C4\u30AF'
                         },
                         'Yekaterinburg': {
-                            'exemplarCity': 'エカテリンブルグ'
+                            'exemplarCity': '\u30A8\u30AB\u30C6\u30EA\u30F3\u30D6\u30EB\u30B0'
                         },
                         'Yerevan': {
-                            'exemplarCity': 'エレバン'
+                            'exemplarCity': '\u30A8\u30EC\u30D0\u30F3'
                         },
                         'Tokyo': {
-                            'exemplarCity': '東京'
+                            'exemplarCity': '\u6771\u4EAC'
                         },
                         'Thimphu': {
-                            'exemplarCity': 'ティンプー'
+                            'exemplarCity': '\u30C6\u30A3\u30F3\u30D7\u30FC'
                         },
                         'Tehran': {
-                            'exemplarCity': 'テヘラン'
+                            'exemplarCity': '\u30C6\u30D8\u30E9\u30F3'
                         },
                         'Tbilisi': {
-                            'exemplarCity': 'トビリシ'
+                            'exemplarCity': '\u30C8\u30D3\u30EA\u30B7'
                         },
                         'Tashkent': {
-                            'exemplarCity': 'タシケント'
+                            'exemplarCity': '\u30BF\u30B7\u30B1\u30F3\u30C8'
                         },
                         'Taipei': {
-                            'exemplarCity': '台北'
+                            'exemplarCity': '\u53F0\u5317'
                         },
                         'Singapore': {
-                            'exemplarCity': 'シンガポール'
+                            'exemplarCity': '\u30B7\u30F3\u30AC\u30DD\u30FC\u30EB'
                         },
                         'Jerusalem': {
-                            'exemplarCity': 'エルサレム'
+                            'exemplarCity': '\u30A8\u30EB\u30B5\u30EC\u30E0'
                         },
                         'Ashgabat': {
-                            'exemplarCity': 'アシガバード'
+                            'exemplarCity': '\u30A2\u30B7\u30AC\u30D0\u30FC\u30C9'
                         },
                         'Aqtobe': {
-                            'exemplarCity': 'アクトベ'
+                            'exemplarCity': '\u30A2\u30AF\u30C8\u30D9'
                         },
                         'Aqtau': {
-                            'exemplarCity': 'アクタウ'
+                            'exemplarCity': '\u30A2\u30AF\u30BF\u30A6'
                         },
                         'Anadyr': {
-                            'exemplarCity': 'アナディリ'
+                            'exemplarCity': '\u30A2\u30CA\u30C7\u30A3\u30EA'
                         },
                         'Amman': {
-                            'exemplarCity': 'アンマン'
+                            'exemplarCity': '\u30A2\u30F3\u30DE\u30F3'
                         },
                         'Almaty': {
-                            'exemplarCity': 'アルマトイ'
+                            'exemplarCity': '\u30A2\u30EB\u30DE\u30C8\u30A4'
                         },
                         'Aden': {
-                            'exemplarCity': 'アデン'
+                            'exemplarCity': '\u30A2\u30C7\u30F3'
                         },
                         'Bahrain': {
-                            'exemplarCity': 'バーレーン'
+                            'exemplarCity': '\u30D0\u30FC\u30EC\u30FC\u30F3'
                         },
                         'Baku': {
-                            'exemplarCity': 'バクー'
+                            'exemplarCity': '\u30D0\u30AF\u30FC'
                         },
                         'Bangkok': {
-                            'exemplarCity': 'バンコク'
+                            'exemplarCity': '\u30D0\u30F3\u30B3\u30AF'
                         },
                         'Beirut': {
-                            'exemplarCity': 'ベイルート'
+                            'exemplarCity': '\u30D9\u30A4\u30EB\u30FC\u30C8'
                         },
                         'Bishkek': {
-                            'exemplarCity': 'ビシュケク'
+                            'exemplarCity': '\u30D3\u30B7\u30E5\u30B1\u30AF'
                         },
                         'Brunei': {
-                            'exemplarCity': 'ブルネイ'
+                            'exemplarCity': '\u30D6\u30EB\u30CD\u30A4'
                         },
                         'Calcutta': {
-                            'exemplarCity': 'コルカタ'
+                            'exemplarCity': '\u30B3\u30EB\u30AB\u30BF'
                         },
                         'Choibalsan': {
-                            'exemplarCity': 'チョイバルサン'
+                            'exemplarCity': '\u30C1\u30E7\u30A4\u30D0\u30EB\u30B5\u30F3'
                         },
                         'Kabul': {
-                            'exemplarCity': 'カブール'
+                            'exemplarCity': '\u30AB\u30D6\u30FC\u30EB'
                         },
                         'Kamchatka': {
-                            'exemplarCity': 'カムチャッカ'
+                            'exemplarCity': '\u30AB\u30E0\u30C1\u30E3\u30C3\u30AB'
                         },
                         'Karachi': {
-                            'exemplarCity': 'カラチ'
+                            'exemplarCity': '\u30AB\u30E9\u30C1'
                         },
                         'Kashgar': {
-                            'exemplarCity': 'カシュガル'
+                            'exemplarCity': '\u30AB\u30B7\u30E5\u30AC\u30EB'
                         },
                         'Katmandu': {
-                            'exemplarCity': 'カトマンズ'
+                            'exemplarCity': '\u30AB\u30C8\u30DE\u30F3\u30BA'
                         },
                         'Khandyga': {
-                            'exemplarCity': 'ハンドゥイガ'
+                            'exemplarCity': '\u30CF\u30F3\u30C9\u30A5\u30A4\u30AC'
                         },
                         'Krasnoyarsk': {
-                            'exemplarCity': 'クラスノヤルスク'
+                            'exemplarCity': '\u30AF\u30E9\u30B9\u30CE\u30E4\u30EB\u30B9\u30AF'
                         },
                         'Kuala_Lumpur': {
-                            'exemplarCity': 'クアラルンプール'
+                            'exemplarCity': '\u30AF\u30A2\u30E9\u30EB\u30F3\u30D7\u30FC\u30EB'
                         },
                         'Kuching': {
-                            'exemplarCity': 'クチン'
+                            'exemplarCity': '\u30AF\u30C1\u30F3'
                         },
                         'Kuwait': {
-                            'exemplarCity': 'クウェート'
+                            'exemplarCity': '\u30AF\u30A6\u30A7\u30FC\u30C8'
                         },
                         'Macau': {
-                            'exemplarCity': 'マカオ'
+                            'exemplarCity': '\u30DE\u30AB\u30AA'
                         },
                         'Magadan': {
-                            'exemplarCity': 'マガダン'
+                            'exemplarCity': '\u30DE\u30AC\u30C0\u30F3'
                         },
                         'Makassar': {
-                            'exemplarCity': 'マカッサル'
+                            'exemplarCity': '\u30DE\u30AB\u30C3\u30B5\u30EB'
                         },
                         'Manila': {
-                            'exemplarCity': 'マニラ'
+                            'exemplarCity': '\u30DE\u30CB\u30E9'
                         },
                         'Muscat': {
-                            'exemplarCity': 'マスカット'
+                            'exemplarCity': '\u30DE\u30B9\u30AB\u30C3\u30C8'
                         },
                         'Nicosia': {
-                            'exemplarCity': 'ニコシア'
+                            'exemplarCity': '\u30CB\u30B3\u30B7\u30A2'
                         },
                         'Novokuznetsk': {
-                            'exemplarCity': 'ノヴォクズネツク'
+                            'exemplarCity': '\u30CE\u30F4\u30A9\u30AF\u30BA\u30CD\u30C4\u30AF'
                         }
                     }
                 },
                 'metazone': {
                     'Samoa': {
                         'long': {
-                            'generic': 'サモア時間',
-                            'standard': 'サモア標準時',
-                            'daylight': 'サモア夏時間'
+                            'generic': '\u30B5\u30E2\u30A2\u6642\u9593',
+                            'standard': '\u30B5\u30E2\u30A2\u6A19\u6E96\u6642',
+                            'daylight': '\u30B5\u30E2\u30A2\u590F\u6642\u9593'
                         }
                     },
                     'Samara': {
                         'long': {
-                            'generic': 'サマラ時間',
-                            'standard': 'サマラ標準時',
-                            'daylight': 'サマラ夏時間'
+                            'generic': '\u30B5\u30DE\u30E9\u6642\u9593',
+                            'standard': '\u30B5\u30DE\u30E9\u6A19\u6E96\u6642',
+                            'daylight': '\u30B5\u30DE\u30E9\u590F\u6642\u9593'
                         }
                     },
                     'Sakhalin': {
                         'long': {
-                            'generic': 'サハリン時間',
-                            'standard': 'サハリン標準時',
-                            'daylight': 'サハリン夏時間'
+                            'generic': '\u30B5\u30CF\u30EA\u30F3\u6642\u9593',
+                            'standard': '\u30B5\u30CF\u30EA\u30F3\u6A19\u6E96\u6642',
+                            'daylight': '\u30B5\u30CF\u30EA\u30F3\u590F\u6642\u9593'
                         }
                     },
                     'Rothera': {
                         'long': {
-                            'standard': 'ロゼラ基地時間'
+                            'standard': '\u30ED\u30BC\u30E9\u57FA\u5730\u6642\u9593'
                         }
                     },
                     'Reunion': {
                         'long': {
-                            'standard': 'レユニオン時間'
+                            'standard': '\u30EC\u30E6\u30CB\u30AA\u30F3\u6642\u9593'
                         }
                     },
                     'Qyzylorda': {
                         'long': {
-                            'generic': 'クズロルダ時間',
-                            'standard': 'クズロルダ標準時',
-                            'daylight': 'クズロルダ夏時間'
+                            'generic': '\u30AF\u30BA\u30ED\u30EB\u30C0\u6642\u9593',
+                            'standard': '\u30AF\u30BA\u30ED\u30EB\u30C0\u6A19\u6E96\u6642',
+                            'daylight': '\u30AF\u30BA\u30ED\u30EB\u30C0\u590F\u6642\u9593'
                         }
                     },
                     'Ponape': {
                         'long': {
-                            'standard': 'ポナペ時間'
+                            'standard': '\u30DD\u30CA\u30DA\u6642\u9593'
                         }
                     },
                     'Pitcairn': {
                         'long': {
-                            'standard': 'ピトケアン時間'
+                            'standard': '\u30D4\u30C8\u30B1\u30A2\u30F3\u6642\u9593'
                         }
                     },
                     'Pierre_Miquelon': {
                         'long': {
-                            'generic': 'サンピエール・ミクロン時間',
-                            'standard': 'サンピエール・ミクロン標準時',
-                            'daylight': 'サンピエール・ミクロン夏時間'
+                            'generic': '\u30B5\u30F3\u30D4\u30A8\u30FC\u30EB\u30FB\u30DF\u30AF\u30ED\u30F3\u6642\u9593',
+                            'standard': '\u30B5\u30F3\u30D4\u30A8\u30FC\u30EB\u30FB\u30DF\u30AF\u30ED\u30F3\u6A19\u6E96\u6642',
+                            'daylight': '\u30B5\u30F3\u30D4\u30A8\u30FC\u30EB\u30FB\u30DF\u30AF\u30ED\u30F3\u590F\u6642\u9593'
                         }
                     },
                     'Phoenix_Islands': {
                         'long': {
-                            'standard': 'フェニックス諸島時間'
+                            'standard': '\u30D5\u30A7\u30CB\u30C3\u30AF\u30B9\u8AF8\u5CF6\u6642\u9593'
                         }
                     },
                     'Philippines': {
                         'long': {
-                            'generic': 'フィリピン時間',
-                            'standard': 'フィリピン標準時',
-                            'daylight': 'フィリピン夏時間'
+                            'generic': '\u30D5\u30A3\u30EA\u30D4\u30F3\u6642\u9593',
+                            'standard': '\u30D5\u30A3\u30EA\u30D4\u30F3\u6A19\u6E96\u6642',
+                            'daylight': '\u30D5\u30A3\u30EA\u30D4\u30F3\u590F\u6642\u9593'
                         }
                     },
                     'Peru': {
                         'long': {
-                            'generic': 'ペルー時間',
-                            'standard': 'ペルー標準時',
-                            'daylight': 'ペルー夏時間'
+                            'generic': '\u30DA\u30EB\u30FC\u6642\u9593',
+                            'standard': '\u30DA\u30EB\u30FC\u6A19\u6E96\u6642',
+                            'daylight': '\u30DA\u30EB\u30FC\u590F\u6642\u9593'
                         }
                     },
                     'Paraguay': {
                         'long': {
-                            'generic': 'パラグアイ時間',
-                            'standard': 'パラグアイ標準時',
-                            'daylight': 'パラグアイ夏時間'
+                            'generic': '\u30D1\u30E9\u30B0\u30A2\u30A4\u6642\u9593',
+                            'standard': '\u30D1\u30E9\u30B0\u30A2\u30A4\u6A19\u6E96\u6642',
+                            'daylight': '\u30D1\u30E9\u30B0\u30A2\u30A4\u590F\u6642\u9593'
                         }
                     },
                     'Papua_New_Guinea': {
                         'long': {
-                            'standard': 'パプアニューギニア時間'
+                            'standard': '\u30D1\u30D7\u30A2\u30CB\u30E5\u30FC\u30AE\u30CB\u30A2\u6642\u9593'
                         }
                     },
                     'Palau': {
                         'long': {
-                            'standard': 'パラオ時間'
+                            'standard': '\u30D1\u30E9\u30AA\u6642\u9593'
                         }
                     },
                     'Pakistan': {
                         'long': {
-                            'generic': 'パキスタン時間',
-                            'standard': 'パキスタン標準時',
-                            'daylight': 'パキスタン夏時間'
+                            'generic': '\u30D1\u30AD\u30B9\u30BF\u30F3\u6642\u9593',
+                            'standard': '\u30D1\u30AD\u30B9\u30BF\u30F3\u6A19\u6E96\u6642',
+                            'daylight': '\u30D1\u30AD\u30B9\u30BF\u30F3\u590F\u6642\u9593'
                         }
                     },
                     'Omsk': {
                         'long': {
-                            'generic': 'オムスク時間',
-                            'standard': 'オムスク標準時',
-                            'daylight': 'オムスク夏時間'
+                            'generic': '\u30AA\u30E0\u30B9\u30AF\u6642\u9593',
+                            'standard': '\u30AA\u30E0\u30B9\u30AF\u6A19\u6E96\u6642',
+                            'daylight': '\u30AA\u30E0\u30B9\u30AF\u590F\u6642\u9593'
                         }
                     },
                     'Novosibirsk': {
                         'long': {
-                            'generic': 'ノヴォシビルスク時間',
-                            'standard': 'ノヴォシビルスク標準時',
-                            'daylight': 'ノヴォシビルスク夏時間'
+                            'generic': '\u30CE\u30F4\u30A9\u30B7\u30D3\u30EB\u30B9\u30AF\u6642\u9593',
+                            'standard': '\u30CE\u30F4\u30A9\u30B7\u30D3\u30EB\u30B9\u30AF\u6A19\u6E96\u6642',
+                            'daylight': '\u30CE\u30F4\u30A9\u30B7\u30D3\u30EB\u30B9\u30AF\u590F\u6642\u9593'
                         }
                     },
                     'North_Mariana': {
                         'long': {
-                            'standard': '北マリアナ諸島時間'
+                            'standard': '\u5317\u30DE\u30EA\u30A2\u30CA\u8AF8\u5CF6\u6642\u9593'
                         }
                     },
                     'Noronha': {
                         'long': {
-                            'generic': 'フェルナンド・デ・ノローニャ時間',
-                            'standard': 'フェルナンド・デ・ノローニャ標準時',
-                            'daylight': 'フェルナンド・デ・ノローニャ夏時間'
+                            'generic': '\u30D5\u30A7\u30EB\u30CA\u30F3\u30C9\u30FB\u30C7\u30FB\u30CE\u30ED\u30FC\u30CB\u30E3\u6642\u9593',
+                            'standard': '\u30D5\u30A7\u30EB\u30CA\u30F3\u30C9\u30FB\u30C7\u30FB\u30CE\u30ED\u30FC\u30CB\u30E3\u6A19\u6E96\u6642',
+                            'daylight': '\u30D5\u30A7\u30EB\u30CA\u30F3\u30C9\u30FB\u30C7\u30FB\u30CE\u30ED\u30FC\u30CB\u30E3\u590F\u6642\u9593'
                         }
                     },
                     'Norfolk': {
                         'long': {
-                            'standard': 'ノーフォーク島時間'
+                            'standard': '\u30CE\u30FC\u30D5\u30A9\u30FC\u30AF\u5CF6\u6642\u9593'
                         }
                     },
                     'Niue': {
                         'long': {
-                            'standard': 'ニウエ時間'
+                            'standard': '\u30CB\u30A6\u30A8\u6642\u9593'
                         }
                     },
                     'Newfoundland': {
                         'long': {
-                            'generic': 'ニューファンドランド時間',
-                            'standard': 'ニューファンドランド標準時',
-                            'daylight': 'ニューファンドランド夏時間'
+                            'generic': '\u30CB\u30E5\u30FC\u30D5\u30A1\u30F3\u30C9\u30E9\u30F3\u30C9\u6642\u9593',
+                            'standard': '\u30CB\u30E5\u30FC\u30D5\u30A1\u30F3\u30C9\u30E9\u30F3\u30C9\u6A19\u6E96\u6642',
+                            'daylight': '\u30CB\u30E5\u30FC\u30D5\u30A1\u30F3\u30C9\u30E9\u30F3\u30C9\u590F\u6642\u9593'
                         }
                     },
                     'New_Zealand': {
                         'long': {
-                            'generic': 'ニュージーランド時間',
-                            'standard': 'ニュージーランド標準時',
-                            'daylight': 'ニュージーランド夏時間'
+                            'generic': '\u30CB\u30E5\u30FC\u30B8\u30FC\u30E9\u30F3\u30C9\u6642\u9593',
+                            'standard': '\u30CB\u30E5\u30FC\u30B8\u30FC\u30E9\u30F3\u30C9\u6A19\u6E96\u6642',
+                            'daylight': '\u30CB\u30E5\u30FC\u30B8\u30FC\u30E9\u30F3\u30C9\u590F\u6642\u9593'
                         }
                     },
                     'New_Caledonia': {
                         'long': {
-                            'generic': 'ニューカレドニア時間',
-                            'standard': 'ニューカレドニア標準時',
-                            'daylight': 'ニューカレドニア夏時間'
+                            'generic': '\u30CB\u30E5\u30FC\u30AB\u30EC\u30C9\u30CB\u30A2\u6642\u9593',
+                            'standard': '\u30CB\u30E5\u30FC\u30AB\u30EC\u30C9\u30CB\u30A2\u6A19\u6E96\u6642',
+                            'daylight': '\u30CB\u30E5\u30FC\u30AB\u30EC\u30C9\u30CB\u30A2\u590F\u6642\u9593'
                         }
                     },
                     'America_Central': {
                         'long': {
-                            'generic': 'アメリカ中部時間',
-                            'standard': 'アメリカ中部標準時',
-                            'daylight': 'アメリカ中部夏時間'
+                            'generic': '\u30A2\u30E1\u30EA\u30AB\u4E2D\u90E8\u6642\u9593',
+                            'standard': '\u30A2\u30E1\u30EA\u30AB\u4E2D\u90E8\u6A19\u6E96\u6642',
+                            'daylight': '\u30A2\u30E1\u30EA\u30AB\u4E2D\u90E8\u590F\u6642\u9593'
                         }
                     },
                     'America_Eastern': {
                         'long': {
-                            'generic': 'アメリカ東部時間',
-                            'standard': 'アメリカ東部標準時',
-                            'daylight': 'アメリカ東部夏時間'
+                            'generic': '\u30A2\u30E1\u30EA\u30AB\u6771\u90E8\u6642\u9593',
+                            'standard': '\u30A2\u30E1\u30EA\u30AB\u6771\u90E8\u6A19\u6E96\u6642',
+                            'daylight': '\u30A2\u30E1\u30EA\u30AB\u6771\u90E8\u590F\u6642\u9593'
                         }
                     },
                     'America_Mountain': {
                         'long': {
-                            'generic': 'アメリカ山地時間',
-                            'standard': 'アメリカ山地標準時',
-                            'daylight': 'アメリカ山地夏時間'
+                            'generic': '\u30A2\u30E1\u30EA\u30AB\u5C71\u5730\u6642\u9593',
+                            'standard': '\u30A2\u30E1\u30EA\u30AB\u5C71\u5730\u6A19\u6E96\u6642',
+                            'daylight': '\u30A2\u30E1\u30EA\u30AB\u5C71\u5730\u590F\u6642\u9593'
                         }
                     },
                     'America_Pacific': {
                         'long': {
-                            'generic': 'アメリカ太平洋時間',
-                            'standard': 'アメリカ太平洋標準時',
-                            'daylight': 'アメリカ太平洋夏時間'
+                            'generic': '\u30A2\u30E1\u30EA\u30AB\u592A\u5E73\u6D0B\u6642\u9593',
+                            'standard': '\u30A2\u30E1\u30EA\u30AB\u592A\u5E73\u6D0B\u6A19\u6E96\u6642',
+                            'daylight': '\u30A2\u30E1\u30EA\u30AB\u592A\u5E73\u6D0B\u590F\u6642\u9593'
                         }
                     },
                     'Anadyr': {
                         'long': {
-                            'generic': 'アナディリ時間',
-                            'standard': 'アナディリ標準時',
-                            'daylight': 'アナディリ夏時間'
+                            'generic': '\u30A2\u30CA\u30C7\u30A3\u30EA\u6642\u9593',
+                            'standard': '\u30A2\u30CA\u30C7\u30A3\u30EA\u6A19\u6E96\u6642',
+                            'daylight': '\u30A2\u30CA\u30C7\u30A3\u30EA\u590F\u6642\u9593'
                         }
                     },
                     'Aqtau': {
                         'long': {
-                            'generic': 'アクタウ時間',
-                            'standard': 'アクタウ標準時',
-                            'daylight': 'アクタウ夏時間'
+                            'generic': '\u30A2\u30AF\u30BF\u30A6\u6642\u9593',
+                            'standard': '\u30A2\u30AF\u30BF\u30A6\u6A19\u6E96\u6642',
+                            'daylight': '\u30A2\u30AF\u30BF\u30A6\u590F\u6642\u9593'
                         }
                     },
                     'Aqtobe': {
                         'long': {
-                            'generic': 'アクトベ時間',
-                            'standard': 'アクトベ標準時',
-                            'daylight': 'アクトベ夏時間'
+                            'generic': '\u30A2\u30AF\u30C8\u30D9\u6642\u9593',
+                            'standard': '\u30A2\u30AF\u30C8\u30D9\u6A19\u6E96\u6642',
+                            'daylight': '\u30A2\u30AF\u30C8\u30D9\u590F\u6642\u9593'
                         }
                     },
                     'Cape_Verde': {
                         'long': {
-                            'generic': 'カーボベルデ時間',
-                            'standard': 'カーボベルデ標準時',
-                            'daylight': 'カーボベルデ夏時間'
+                            'generic': '\u30AB\u30FC\u30DC\u30D9\u30EB\u30C7\u6642\u9593',
+                            'standard': '\u30AB\u30FC\u30DC\u30D9\u30EB\u30C7\u6A19\u6E96\u6642',
+                            'daylight': '\u30AB\u30FC\u30DC\u30D9\u30EB\u30C7\u590F\u6642\u9593'
                         }
                     },
                     'Casey': {
                         'long': {
-                            'standard': 'ケイシー基地時間'
+                            'standard': '\u30B1\u30A4\u30B7\u30FC\u57FA\u5730\u6642\u9593'
                         }
                     },
                     'Chamorro': {
                         'long': {
-                            'standard': 'チャモロ時間'
+                            'standard': '\u30C1\u30E3\u30E2\u30ED\u6642\u9593'
                         }
                     },
                     'Chatham': {
                         'long': {
-                            'generic': 'チャタム時間',
-                            'standard': 'チャタム標準時',
-                            'daylight': 'チャタム夏時間'
+                            'generic': '\u30C1\u30E3\u30BF\u30E0\u6642\u9593',
+                            'standard': '\u30C1\u30E3\u30BF\u30E0\u6A19\u6E96\u6642',
+                            'daylight': '\u30C1\u30E3\u30BF\u30E0\u590F\u6642\u9593'
                         }
                     },
                     'Chile': {
                         'long': {
-                            'generic': 'チリ時間',
-                            'standard': 'チリ標準時',
-                            'daylight': 'チリ夏時間'
+                            'generic': '\u30C1\u30EA\u6642\u9593',
+                            'standard': '\u30C1\u30EA\u6A19\u6E96\u6642',
+                            'daylight': '\u30C1\u30EA\u590F\u6642\u9593'
                         }
                     },
                     'China': {
                         'long': {
-                            'generic': '中国時間',
-                            'standard': '中国標準時',
-                            'daylight': '中国夏時間'
+                            'generic': '\u4E2D\u56FD\u6642\u9593',
+                            'standard': '\u4E2D\u56FD\u6A19\u6E96\u6642',
+                            'daylight': '\u4E2D\u56FD\u590F\u6642\u9593'
                         }
                     },
                     'Choibalsan': {
                         'long': {
-                            'generic': 'チョイバルサン時間',
-                            'standard': 'チョイバルサン標準時',
-                            'daylight': 'チョイバルサン夏時間'
+                            'generic': '\u30C1\u30E7\u30A4\u30D0\u30EB\u30B5\u30F3\u6642\u9593',
+                            'standard': '\u30C1\u30E7\u30A4\u30D0\u30EB\u30B5\u30F3\u6A19\u6E96\u6642',
+                            'daylight': '\u30C1\u30E7\u30A4\u30D0\u30EB\u30B5\u30F3\u590F\u6642\u9593'
                         }
                     },
                     'Christmas': {
                         'long': {
-                            'standard': 'クリスマス島時間'
+                            'standard': '\u30AF\u30EA\u30B9\u30DE\u30B9\u5CF6\u6642\u9593'
                         }
                     },
                     'Cocos': {
                         'long': {
-                            'standard': 'ココス諸島時間'
+                            'standard': '\u30B3\u30B3\u30B9\u8AF8\u5CF6\u6642\u9593'
                         }
                     },
                     'Colombia': {
                         'long': {
-                            'generic': 'コロンビア時間',
-                            'standard': 'コロンビア標準時',
-                            'daylight': 'コロンビア夏時間'
+                            'generic': '\u30B3\u30ED\u30F3\u30D3\u30A2\u6642\u9593',
+                            'standard': '\u30B3\u30ED\u30F3\u30D3\u30A2\u6A19\u6E96\u6642',
+                            'daylight': '\u30B3\u30ED\u30F3\u30D3\u30A2\u590F\u6642\u9593'
                         }
                     },
                     'Cook': {
                         'long': {
-                            'generic': 'クック諸島時間',
-                            'standard': 'クック諸島標準時',
-                            'daylight': 'クック諸島夏時間'
+                            'generic': '\u30AF\u30C3\u30AF\u8AF8\u5CF6\u6642\u9593',
+                            'standard': '\u30AF\u30C3\u30AF\u8AF8\u5CF6\u6A19\u6E96\u6642',
+                            'daylight': '\u30AF\u30C3\u30AF\u8AF8\u5CF6\u590F\u6642\u9593'
                         }
                     },
                     'Cuba': {
                         'long': {
-                            'generic': 'キューバ時間',
-                            'standard': 'キューバ標準時',
-                            'daylight': 'キューバ夏時間'
+                            'generic': '\u30AD\u30E5\u30FC\u30D0\u6642\u9593',
+                            'standard': '\u30AD\u30E5\u30FC\u30D0\u6A19\u6E96\u6642',
+                            'daylight': '\u30AD\u30E5\u30FC\u30D0\u590F\u6642\u9593'
                         }
                     },
                     'Davis': {
                         'long': {
-                            'standard': 'デービス基地時間'
+                            'standard': '\u30C7\u30FC\u30D3\u30B9\u57FA\u5730\u6642\u9593'
                         }
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': 'デュモン・デュルヴィル基地時間'
+                            'standard': '\u30C7\u30E5\u30E2\u30F3\u30FB\u30C7\u30E5\u30EB\u30F4\u30A3\u30EB\u57FA\u5730\u6642\u9593'
                         }
                     },
                     'East_Timor': {
                         'long': {
-                            'standard': '東ティモール時間'
+                            'standard': '\u6771\u30C6\u30A3\u30E2\u30FC\u30EB\u6642\u9593'
                         }
                     },
                     'Easter': {
                         'long': {
-                            'generic': 'イースター島時間',
-                            'standard': 'イースター島標準時',
-                            'daylight': 'イースター島夏時間'
+                            'generic': '\u30A4\u30FC\u30B9\u30BF\u30FC\u5CF6\u6642\u9593',
+                            'standard': '\u30A4\u30FC\u30B9\u30BF\u30FC\u5CF6\u6A19\u6E96\u6642',
+                            'daylight': '\u30A4\u30FC\u30B9\u30BF\u30FC\u5CF6\u590F\u6642\u9593'
                         }
                     },
                     'Ecuador': {
                         'long': {
-                            'standard': 'エクアドル時間'
+                            'standard': '\u30A8\u30AF\u30A2\u30C9\u30EB\u6642\u9593'
                         }
                     },
                     'Europe_Central': {
                         'long': {
-                            'generic': '中央ヨーロッパ時間',
-                            'standard': '中央ヨーロッパ標準時',
-                            'daylight': '中央ヨーロッパ夏時間'
+                            'generic': '\u4E2D\u592E\u30E8\u30FC\u30ED\u30C3\u30D1\u6642\u9593',
+                            'standard': '\u4E2D\u592E\u30E8\u30FC\u30ED\u30C3\u30D1\u6A19\u6E96\u6642',
+                            'daylight': '\u4E2D\u592E\u30E8\u30FC\u30ED\u30C3\u30D1\u590F\u6642\u9593'
                         }
                     },
                     'Europe_Eastern': {
                         'long': {
-                            'generic': '東ヨーロッパ時間',
-                            'standard': '東ヨーロッパ標準時',
-                            'daylight': '東ヨーロッパ夏時間'
+                            'generic': '\u6771\u30E8\u30FC\u30ED\u30C3\u30D1\u6642\u9593',
+                            'standard': '\u6771\u30E8\u30FC\u30ED\u30C3\u30D1\u6A19\u6E96\u6642',
+                            'daylight': '\u6771\u30E8\u30FC\u30ED\u30C3\u30D1\u590F\u6642\u9593'
                         }
                     },
                     'Europe_Western': {
                         'long': {
-                            'generic': '西ヨーロッパ時間',
-                            'standard': '西ヨーロッパ標準時',
-                            'daylight': '西ヨーロッパ夏時間'
+                            'generic': '\u897F\u30E8\u30FC\u30ED\u30C3\u30D1\u6642\u9593',
+                            'standard': '\u897F\u30E8\u30FC\u30ED\u30C3\u30D1\u6A19\u6E96\u6642',
+                            'daylight': '\u897F\u30E8\u30FC\u30ED\u30C3\u30D1\u590F\u6642\u9593'
                         }
                     },
                     'Falkland': {
                         'long': {
-                            'generic': 'フォークランド諸島時間',
-                            'standard': 'フォークランド諸島標準時',
-                            'daylight': 'フォークランド諸島夏時間'
+                            'generic': '\u30D5\u30A9\u30FC\u30AF\u30E9\u30F3\u30C9\u8AF8\u5CF6\u6642\u9593',
+                            'standard': '\u30D5\u30A9\u30FC\u30AF\u30E9\u30F3\u30C9\u8AF8\u5CF6\u6A19\u6E96\u6642',
+                            'daylight': '\u30D5\u30A9\u30FC\u30AF\u30E9\u30F3\u30C9\u8AF8\u5CF6\u590F\u6642\u9593'
                         }
                     },
                     'Fiji': {
                         'long': {
-                            'generic': 'フィジー時間',
-                            'standard': 'フィジー標準時',
-                            'daylight': 'フィジー夏時間'
+                            'generic': '\u30D5\u30A3\u30B8\u30FC\u6642\u9593',
+                            'standard': '\u30D5\u30A3\u30B8\u30FC\u6A19\u6E96\u6642',
+                            'daylight': '\u30D5\u30A3\u30B8\u30FC\u590F\u6642\u9593'
                         }
                     },
                     'French_Guiana': {
                         'long': {
-                            'standard': '仏領ギアナ時間'
+                            'standard': '\u4ECF\u9818\u30AE\u30A2\u30CA\u6642\u9593'
                         }
                     },
                     'French_Southern': {
                         'long': {
-                            'standard': '仏領南方南極時間'
+                            'standard': '\u4ECF\u9818\u5357\u65B9\u5357\u6975\u6642\u9593'
                         }
                     },
                     'Galapagos': {
                         'long': {
-                            'standard': 'ガラパゴス時間'
+                            'standard': '\u30AC\u30E9\u30D1\u30B4\u30B9\u6642\u9593'
                         }
                     },
                     'Tokelau': {
                         'long': {
-                            'standard': 'トケラウ時間'
+                            'standard': '\u30C8\u30B1\u30E9\u30A6\u6642\u9593'
                         }
                     },
                     'Tonga': {
                         'long': {
-                            'generic': 'トンガ時間',
-                            'standard': 'トンガ標準時',
-                            'daylight': 'トンガ夏時間'
+                            'generic': '\u30C8\u30F3\u30AC\u6642\u9593',
+                            'standard': '\u30C8\u30F3\u30AC\u6A19\u6E96\u6642',
+                            'daylight': '\u30C8\u30F3\u30AC\u590F\u6642\u9593'
                         }
                     },
                     'Truk': {
                         'long': {
-                            'standard': 'チューク時間'
+                            'standard': '\u30C1\u30E5\u30FC\u30AF\u6642\u9593'
                         }
                     },
                     'Turkmenistan': {
                         'long': {
-                            'generic': 'トルクメニスタン時間',
-                            'standard': 'トルクメニスタン標準時',
-                            'daylight': 'トルクメニスタン夏時間'
+                            'generic': '\u30C8\u30EB\u30AF\u30E1\u30CB\u30B9\u30BF\u30F3\u6642\u9593',
+                            'standard': '\u30C8\u30EB\u30AF\u30E1\u30CB\u30B9\u30BF\u30F3\u6A19\u6E96\u6642',
+                            'daylight': '\u30C8\u30EB\u30AF\u30E1\u30CB\u30B9\u30BF\u30F3\u590F\u6642\u9593'
                         }
                     },
                     'Tuvalu': {
                         'long': {
-                            'standard': 'ツバル時間'
+                            'standard': '\u30C4\u30D0\u30EB\u6642\u9593'
                         }
                     },
                     'Uruguay': {
                         'long': {
-                            'generic': 'ウルグアイ時間',
-                            'standard': 'ウルグアイ標準時',
-                            'daylight': 'ウルグアイ夏時間'
+                            'generic': '\u30A6\u30EB\u30B0\u30A2\u30A4\u6642\u9593',
+                            'standard': '\u30A6\u30EB\u30B0\u30A2\u30A4\u6A19\u6E96\u6642',
+                            'daylight': '\u30A6\u30EB\u30B0\u30A2\u30A4\u590F\u6642\u9593'
                         }
                     },
                     'Uzbekistan': {
                         'long': {
-                            'generic': 'ウズベキスタン時間',
-                            'standard': 'ウズベキスタン標準時',
-                            'daylight': 'ウズベキスタン夏時間'
+                            'generic': '\u30A6\u30BA\u30D9\u30AD\u30B9\u30BF\u30F3\u6642\u9593',
+                            'standard': '\u30A6\u30BA\u30D9\u30AD\u30B9\u30BF\u30F3\u6A19\u6E96\u6642',
+                            'daylight': '\u30A6\u30BA\u30D9\u30AD\u30B9\u30BF\u30F3\u590F\u6642\u9593'
                         }
                     },
                     'Vanuatu': {
                         'long': {
-                            'generic': 'バヌアツ時間',
-                            'standard': 'バヌアツ標準時',
-                            'daylight': 'バヌアツ夏時間'
+                            'generic': '\u30D0\u30CC\u30A2\u30C4\u6642\u9593',
+                            'standard': '\u30D0\u30CC\u30A2\u30C4\u6A19\u6E96\u6642',
+                            'daylight': '\u30D0\u30CC\u30A2\u30C4\u590F\u6642\u9593'
                         }
                     },
                     'Yekaterinburg': {
                         'long': {
-                            'generic': 'エカテリンブルグ時間',
-                            'standard': 'エカテリンブルグ標準時',
-                            'daylight': 'エカテリンブルグ夏時間'
+                            'generic': '\u30A8\u30AB\u30C6\u30EA\u30F3\u30D6\u30EB\u30B0\u6642\u9593',
+                            'standard': '\u30A8\u30AB\u30C6\u30EA\u30F3\u30D6\u30EB\u30B0\u6A19\u6E96\u6642',
+                            'daylight': '\u30A8\u30AB\u30C6\u30EA\u30F3\u30D6\u30EB\u30B0\u590F\u6642\u9593'
                         }
                     },
                     'Yakutsk': {
                         'long': {
-                            'generic': 'ヤクーツク時間',
-                            'standard': 'ヤクーツク標準時',
-                            'daylight': 'ヤクーツク夏時間'
+                            'generic': '\u30E4\u30AF\u30FC\u30C4\u30AF\u6642\u9593',
+                            'standard': '\u30E4\u30AF\u30FC\u30C4\u30AF\u6A19\u6E96\u6642',
+                            'daylight': '\u30E4\u30AF\u30FC\u30C4\u30AF\u590F\u6642\u9593'
                         }
                     },
                     'Wallis': {
                         'long': {
-                            'standard': 'ウォリス・フツナ時間'
+                            'standard': '\u30A6\u30A9\u30EA\u30B9\u30FB\u30D5\u30C4\u30CA\u6642\u9593'
                         }
                     },
                     'Wake': {
                         'long': {
-                            'standard': 'ウェーク島時間'
+                            'standard': '\u30A6\u30A7\u30FC\u30AF\u5CF6\u6642\u9593'
                         }
                     },
                     'Vostok': {
                         'long': {
-                            'standard': 'ボストーク基地時間'
+                            'standard': '\u30DC\u30B9\u30C8\u30FC\u30AF\u57FA\u5730\u6642\u9593'
                         }
                     },
                     'Volgograd': {
                         'long': {
-                            'generic': 'ボルゴグラード時間',
-                            'standard': 'ヴォルゴグラード標準時',
-                            'daylight': 'ボルゴグラード夏時間'
+                            'generic': '\u30DC\u30EB\u30B4\u30B0\u30E9\u30FC\u30C9\u6642\u9593',
+                            'standard': '\u30F4\u30A9\u30EB\u30B4\u30B0\u30E9\u30FC\u30C9\u6A19\u6E96\u6642',
+                            'daylight': '\u30DC\u30EB\u30B4\u30B0\u30E9\u30FC\u30C9\u590F\u6642\u9593'
                         }
                     },
                     'Vladivostok': {
                         'long': {
-                            'generic': 'ウラジオストク時間',
-                            'standard': 'ウラジオストク標準時',
-                            'daylight': 'ウラジオストク夏時間'
+                            'generic': '\u30A6\u30E9\u30B8\u30AA\u30B9\u30C8\u30AF\u6642\u9593',
+                            'standard': '\u30A6\u30E9\u30B8\u30AA\u30B9\u30C8\u30AF\u6A19\u6E96\u6642',
+                            'daylight': '\u30A6\u30E9\u30B8\u30AA\u30B9\u30C8\u30AF\u590F\u6642\u9593'
                         }
                     },
                     'Venezuela': {
                         'long': {
-                            'standard': 'ベネズエラ時間'
+                            'standard': '\u30D9\u30CD\u30BA\u30A8\u30E9\u6642\u9593'
                         }
                     },
                     'Tajikistan': {
                         'long': {
-                            'standard': 'タジキスタン時間'
+                            'standard': '\u30BF\u30B8\u30AD\u30B9\u30BF\u30F3\u6642\u9593'
                         }
                     },
                     'Taipei': {
                         'long': {
-                            'generic': '台北時間',
-                            'standard': '台北標準時',
-                            'daylight': '台北夏時間'
+                            'generic': '\u53F0\u5317\u6642\u9593',
+                            'standard': '\u53F0\u5317\u6A19\u6E96\u6642',
+                            'daylight': '\u53F0\u5317\u590F\u6642\u9593'
                         }
                     },
                     'Tahiti': {
                         'long': {
-                            'standard': 'タヒチ時間'
+                            'standard': '\u30BF\u30D2\u30C1\u6642\u9593'
                         }
                     },
                     'Syowa': {
                         'long': {
-                            'standard': '昭和基地時間'
+                            'standard': '\u662D\u548C\u57FA\u5730\u6642\u9593'
                         }
                     },
                     'Suriname': {
                         'long': {
-                            'standard': 'スリナム時間'
+                            'standard': '\u30B9\u30EA\u30CA\u30E0\u6642\u9593'
                         }
                     },
                     'South_Georgia': {
                         'long': {
-                            'standard': 'サウスジョージア時間'
+                            'standard': '\u30B5\u30A6\u30B9\u30B8\u30E7\u30FC\u30B8\u30A2\u6642\u9593'
                         }
                     },
                     'Solomon': {
                         'long': {
-                            'standard': 'ソロモン諸島時間'
+                            'standard': '\u30BD\u30ED\u30E2\u30F3\u8AF8\u5CF6\u6642\u9593'
                         }
                     },
                     'Singapore': {
                         'long': {
-                            'standard': 'シンガポール時間'
+                            'standard': '\u30B7\u30F3\u30AC\u30DD\u30FC\u30EB\u6642\u9593'
                         }
                     },
                     'Seychelles': {
                         'long': {
-                            'standard': 'セーシェル時間'
+                            'standard': '\u30BB\u30FC\u30B7\u30A7\u30EB\u6642\u9593'
                         }
                     },
                     'Guam': {
                         'long': {
-                            'standard': 'グアム時間'
+                            'standard': '\u30B0\u30A2\u30E0\u6642\u9593'
                         }
                     },
                     'Greenland_Western': {
                         'long': {
-                            'generic': 'グリーンランド西部時間',
-                            'standard': 'グリーンランド西部標準時',
-                            'daylight': 'グリーンランド西部夏時間'
+                            'generic': '\u30B0\u30EA\u30FC\u30F3\u30E9\u30F3\u30C9\u897F\u90E8\u6642\u9593',
+                            'standard': '\u30B0\u30EA\u30FC\u30F3\u30E9\u30F3\u30C9\u897F\u90E8\u6A19\u6E96\u6642',
+                            'daylight': '\u30B0\u30EA\u30FC\u30F3\u30E9\u30F3\u30C9\u897F\u90E8\u590F\u6642\u9593'
                         }
                     },
                     'Greenland_Eastern': {
                         'long': {
-                            'generic': 'グリーンランド東部時間',
-                            'standard': 'グリーンランド東部標準時',
-                            'daylight': 'グリーンランド東部夏時間'
+                            'generic': '\u30B0\u30EA\u30FC\u30F3\u30E9\u30F3\u30C9\u6771\u90E8\u6642\u9593',
+                            'standard': '\u30B0\u30EA\u30FC\u30F3\u30E9\u30F3\u30C9\u6771\u90E8\u6A19\u6E96\u6642',
+                            'daylight': '\u30B0\u30EA\u30FC\u30F3\u30E9\u30F3\u30C9\u6771\u90E8\u590F\u6642\u9593'
                         }
                     },
                     'GMT': {
                         'long': {
-                            'standard': 'グリニッジ標準時'
+                            'standard': '\u30B0\u30EA\u30CB\u30C3\u30B8\u6A19\u6E96\u6642'
                         }
                     },
                     'Gilbert_Islands': {
                         'long': {
-                            'standard': 'ギルバート諸島時間'
+                            'standard': '\u30AE\u30EB\u30D0\u30FC\u30C8\u8AF8\u5CF6\u6642\u9593'
                         }
                     },
                     'Georgia': {
                         'long': {
-                            'generic': 'グルジア時間',
-                            'standard': 'グルジア標準時',
-                            'daylight': 'グルジア夏時間'
+                            'generic': '\u30B0\u30EB\u30B8\u30A2\u6642\u9593',
+                            'standard': '\u30B0\u30EB\u30B8\u30A2\u6A19\u6E96\u6642',
+                            'daylight': '\u30B0\u30EB\u30B8\u30A2\u590F\u6642\u9593'
                         }
                     },
                     'Gambier': {
                         'long': {
-                            'standard': 'ガンビエ諸島時間'
+                            'standard': '\u30AC\u30F3\u30D3\u30A8\u8AF8\u5CF6\u6642\u9593'
                         }
                     },
                     'Amazon': {
                         'long': {
-                            'generic': 'アマゾン時間',
-                            'standard': 'アマゾン標準時',
-                            'daylight': 'アマゾン夏時間'
+                            'generic': '\u30A2\u30DE\u30BE\u30F3\u6642\u9593',
+                            'standard': '\u30A2\u30DE\u30BE\u30F3\u6A19\u6E96\u6642',
+                            'daylight': '\u30A2\u30DE\u30BE\u30F3\u590F\u6642\u9593'
                         }
                     },
                     'Acre': {
                         'long': {
-                            'generic': 'アクレ時間',
-                            'standard': 'アクレ標準時',
-                            'daylight': 'アクレ夏時間'
+                            'generic': '\u30A2\u30AF\u30EC\u6642\u9593',
+                            'standard': '\u30A2\u30AF\u30EC\u6A19\u6E96\u6642',
+                            'daylight': '\u30A2\u30AF\u30EC\u590F\u6642\u9593'
                         }
                     },
                     'Afghanistan': {
                         'long': {
-                            'standard': 'アフガニスタン時間'
+                            'standard': '\u30A2\u30D5\u30AC\u30CB\u30B9\u30BF\u30F3\u6642\u9593'
                         }
                     },
                     'Africa_Central': {
                         'long': {
-                            'standard': '中央アフリカ時間'
+                            'standard': '\u4E2D\u592E\u30A2\u30D5\u30EA\u30AB\u6642\u9593'
                         }
                     },
                     'Africa_Eastern': {
                         'long': {
-                            'standard': '東アフリカ時間'
+                            'standard': '\u6771\u30A2\u30D5\u30EA\u30AB\u6642\u9593'
                         }
                     },
                     'Africa_Southern': {
                         'long': {
-                            'standard': '南アフリカ時間'
+                            'standard': '\u5357\u30A2\u30D5\u30EA\u30AB\u6642\u9593'
                         }
                     },
                     'Africa_Western': {
                         'long': {
-                            'generic': '西アフリカ時間',
-                            'standard': '西アフリカ標準時',
-                            'daylight': '西アフリカ夏時間'
+                            'generic': '\u897F\u30A2\u30D5\u30EA\u30AB\u6642\u9593',
+                            'standard': '\u897F\u30A2\u30D5\u30EA\u30AB\u6A19\u6E96\u6642',
+                            'daylight': '\u897F\u30A2\u30D5\u30EA\u30AB\u590F\u6642\u9593'
                         }
                     },
                     'Alaska': {
                         'long': {
-                            'generic': 'アラスカ時間',
-                            'standard': 'アラスカ標準時',
-                            'daylight': 'アラスカ夏時間'
+                            'generic': '\u30A2\u30E9\u30B9\u30AB\u6642\u9593',
+                            'standard': '\u30A2\u30E9\u30B9\u30AB\u6A19\u6E96\u6642',
+                            'daylight': '\u30A2\u30E9\u30B9\u30AB\u590F\u6642\u9593'
                         }
                     },
                     'Almaty': {
                         'long': {
-                            'generic': 'アルトマイ時間',
-                            'standard': 'アルトマイ標準時',
-                            'daylight': 'アルマトイ夏時間'
+                            'generic': '\u30A2\u30EB\u30C8\u30DE\u30A4\u6642\u9593',
+                            'standard': '\u30A2\u30EB\u30C8\u30DE\u30A4\u6A19\u6E96\u6642',
+                            'daylight': '\u30A2\u30EB\u30DE\u30C8\u30A4\u590F\u6642\u9593'
                         }
                     },
                     'Arabian': {
                         'long': {
-                            'generic': 'アラビア時間',
-                            'standard': 'アラビア標準時',
-                            'daylight': 'アラビア夏時間'
+                            'generic': '\u30A2\u30E9\u30D3\u30A2\u6642\u9593',
+                            'standard': '\u30A2\u30E9\u30D3\u30A2\u6A19\u6E96\u6642',
+                            'daylight': '\u30A2\u30E9\u30D3\u30A2\u590F\u6642\u9593'
                         }
                     },
                     'Argentina': {
                         'long': {
-                            'generic': 'アルゼンチン時間',
-                            'standard': 'アルゼンチン標準時',
-                            'daylight': 'アルゼンチン夏時間'
+                            'generic': '\u30A2\u30EB\u30BC\u30F3\u30C1\u30F3\u6642\u9593',
+                            'standard': '\u30A2\u30EB\u30BC\u30F3\u30C1\u30F3\u6A19\u6E96\u6642',
+                            'daylight': '\u30A2\u30EB\u30BC\u30F3\u30C1\u30F3\u590F\u6642\u9593'
                         }
                     },
                     'Argentina_Western': {
                         'long': {
-                            'generic': '西部アルゼンチン時間',
-                            'standard': '西部アルゼンチン標準時',
-                            'daylight': '西部アルゼンチン夏時間'
+                            'generic': '\u897F\u90E8\u30A2\u30EB\u30BC\u30F3\u30C1\u30F3\u6642\u9593',
+                            'standard': '\u897F\u90E8\u30A2\u30EB\u30BC\u30F3\u30C1\u30F3\u6A19\u6E96\u6642',
+                            'daylight': '\u897F\u90E8\u30A2\u30EB\u30BC\u30F3\u30C1\u30F3\u590F\u6642\u9593'
                         }
                     },
                     'Armenia': {
                         'long': {
-                            'generic': 'アルメニア時間',
-                            'standard': 'アルメニア標準時',
-                            'daylight': 'アルメニア夏時間'
+                            'generic': '\u30A2\u30EB\u30E1\u30CB\u30A2\u6642\u9593',
+                            'standard': '\u30A2\u30EB\u30E1\u30CB\u30A2\u6A19\u6E96\u6642',
+                            'daylight': '\u30A2\u30EB\u30E1\u30CB\u30A2\u590F\u6642\u9593'
                         }
                     },
                     'Atlantic': {
                         'long': {
-                            'generic': '大西洋時間',
-                            'standard': '大西洋標準時',
-                            'daylight': '大西洋夏時間'
+                            'generic': '\u5927\u897F\u6D0B\u6642\u9593',
+                            'standard': '\u5927\u897F\u6D0B\u6A19\u6E96\u6642',
+                            'daylight': '\u5927\u897F\u6D0B\u590F\u6642\u9593'
                         }
                     },
                     'Australia_Central': {
                         'long': {
-                            'generic': 'オーストラリア中部時間',
-                            'standard': 'オーストラリア中部標準時',
-                            'daylight': 'オーストラリア中部夏時間'
+                            'generic': '\u30AA\u30FC\u30B9\u30C8\u30E9\u30EA\u30A2\u4E2D\u90E8\u6642\u9593',
+                            'standard': '\u30AA\u30FC\u30B9\u30C8\u30E9\u30EA\u30A2\u4E2D\u90E8\u6A19\u6E96\u6642',
+                            'daylight': '\u30AA\u30FC\u30B9\u30C8\u30E9\u30EA\u30A2\u4E2D\u90E8\u590F\u6642\u9593'
                         }
                     },
                     'Australia_CentralWestern': {
                         'long': {
-                            'generic': 'オーストラリア中西部時間',
-                            'standard': 'オーストラリア中西部標準時',
-                            'daylight': 'オーストラリア中西部夏時間'
+                            'generic': '\u30AA\u30FC\u30B9\u30C8\u30E9\u30EA\u30A2\u4E2D\u897F\u90E8\u6642\u9593',
+                            'standard': '\u30AA\u30FC\u30B9\u30C8\u30E9\u30EA\u30A2\u4E2D\u897F\u90E8\u6A19\u6E96\u6642',
+                            'daylight': '\u30AA\u30FC\u30B9\u30C8\u30E9\u30EA\u30A2\u4E2D\u897F\u90E8\u590F\u6642\u9593'
                         }
                     },
                     'Australia_Eastern': {
                         'long': {
-                            'generic': 'オーストラリア東部時間',
-                            'standard': 'オーストラリア東部標準時',
-                            'daylight': 'オーストラリア東部夏時間'
+                            'generic': '\u30AA\u30FC\u30B9\u30C8\u30E9\u30EA\u30A2\u6771\u90E8\u6642\u9593',
+                            'standard': '\u30AA\u30FC\u30B9\u30C8\u30E9\u30EA\u30A2\u6771\u90E8\u6A19\u6E96\u6642',
+                            'daylight': '\u30AA\u30FC\u30B9\u30C8\u30E9\u30EA\u30A2\u6771\u90E8\u590F\u6642\u9593'
                         }
                     },
                     'Australia_Western': {
                         'long': {
-                            'generic': 'オーストラリア西部時間',
-                            'standard': 'オーストラリア西部標準時',
-                            'daylight': 'オーストラリア西部夏時間'
+                            'generic': '\u30AA\u30FC\u30B9\u30C8\u30E9\u30EA\u30A2\u897F\u90E8\u6642\u9593',
+                            'standard': '\u30AA\u30FC\u30B9\u30C8\u30E9\u30EA\u30A2\u897F\u90E8\u6A19\u6E96\u6642',
+                            'daylight': '\u30AA\u30FC\u30B9\u30C8\u30E9\u30EA\u30A2\u897F\u90E8\u590F\u6642\u9593'
                         }
                     },
                     'Azerbaijan': {
                         'long': {
-                            'generic': 'アゼルバイジャン時間',
-                            'standard': 'アゼルバイジャン標準時',
-                            'daylight': 'アゼルバイジャン夏時間'
+                            'generic': '\u30A2\u30BC\u30EB\u30D0\u30A4\u30B8\u30E3\u30F3\u6642\u9593',
+                            'standard': '\u30A2\u30BC\u30EB\u30D0\u30A4\u30B8\u30E3\u30F3\u6A19\u6E96\u6642',
+                            'daylight': '\u30A2\u30BC\u30EB\u30D0\u30A4\u30B8\u30E3\u30F3\u590F\u6642\u9593'
                         }
                     },
                     'Azores': {
                         'long': {
-                            'generic': 'アゾレス時間',
-                            'standard': 'アゾレス標準時',
-                            'daylight': 'アゾレス夏時間'
+                            'generic': '\u30A2\u30BE\u30EC\u30B9\u6642\u9593',
+                            'standard': '\u30A2\u30BE\u30EC\u30B9\u6A19\u6E96\u6642',
+                            'daylight': '\u30A2\u30BE\u30EC\u30B9\u590F\u6642\u9593'
                         }
                     },
                     'Bangladesh': {
                         'long': {
-                            'generic': 'バングラデシュ時間',
-                            'standard': 'バングラデシュ標準時',
-                            'daylight': 'バングラデシュ夏時間'
+                            'generic': '\u30D0\u30F3\u30B0\u30E9\u30C7\u30B7\u30E5\u6642\u9593',
+                            'standard': '\u30D0\u30F3\u30B0\u30E9\u30C7\u30B7\u30E5\u6A19\u6E96\u6642',
+                            'daylight': '\u30D0\u30F3\u30B0\u30E9\u30C7\u30B7\u30E5\u590F\u6642\u9593'
                         }
                     },
                     'Bhutan': {
                         'long': {
-                            'standard': 'ブータン時間'
+                            'standard': '\u30D6\u30FC\u30BF\u30F3\u6642\u9593'
                         }
                     },
                     'Bolivia': {
                         'long': {
-                            'standard': 'ボリビア時間'
+                            'standard': '\u30DC\u30EA\u30D3\u30A2\u6642\u9593'
                         }
                     },
                     'Brasilia': {
                         'long': {
-                            'generic': 'ブラジリア時間',
-                            'standard': 'ブラジリア標準時',
-                            'daylight': 'ブラジリア夏時間'
+                            'generic': '\u30D6\u30E9\u30B8\u30EA\u30A2\u6642\u9593',
+                            'standard': '\u30D6\u30E9\u30B8\u30EA\u30A2\u6A19\u6E96\u6642',
+                            'daylight': '\u30D6\u30E9\u30B8\u30EA\u30A2\u590F\u6642\u9593'
                         }
                     },
                     'Brunei': {
                         'long': {
-                            'standard': 'ブルネイ・ダルサラーム時間'
+                            'standard': '\u30D6\u30EB\u30CD\u30A4\u30FB\u30C0\u30EB\u30B5\u30E9\u30FC\u30E0\u6642\u9593'
                         }
                     },
                     'Gulf': {
                         'long': {
-                            'standard': '湾岸時間'
+                            'standard': '\u6E7E\u5CB8\u6642\u9593'
                         }
                     },
                     'Guyana': {
                         'long': {
-                            'standard': 'ガイアナ時間'
+                            'standard': '\u30AC\u30A4\u30A2\u30CA\u6642\u9593'
                         }
                     },
                     'Hawaii_Aleutian': {
                         'long': {
-                            'generic': 'ハワイ・アリューシャン時間',
-                            'standard': 'ハワイ・アリューシャン標準時',
-                            'daylight': 'ハワイ・アリューシャン夏時間'
+                            'generic': '\u30CF\u30EF\u30A4\u30FB\u30A2\u30EA\u30E5\u30FC\u30B7\u30E3\u30F3\u6642\u9593',
+                            'standard': '\u30CF\u30EF\u30A4\u30FB\u30A2\u30EA\u30E5\u30FC\u30B7\u30E3\u30F3\u6A19\u6E96\u6642',
+                            'daylight': '\u30CF\u30EF\u30A4\u30FB\u30A2\u30EA\u30E5\u30FC\u30B7\u30E3\u30F3\u590F\u6642\u9593'
                         }
                     },
                     'Hong_Kong': {
                         'long': {
-                            'generic': '香港時間',
-                            'standard': '香港標準時',
-                            'daylight': '香港夏時間'
+                            'generic': '\u9999\u6E2F\u6642\u9593',
+                            'standard': '\u9999\u6E2F\u6A19\u6E96\u6642',
+                            'daylight': '\u9999\u6E2F\u590F\u6642\u9593'
                         }
                     },
                     'Hovd': {
                         'long': {
-                            'generic': 'ホブド時間',
-                            'standard': 'ホブド標準時',
-                            'daylight': 'ホブド夏時間'
+                            'generic': '\u30DB\u30D6\u30C9\u6642\u9593',
+                            'standard': '\u30DB\u30D6\u30C9\u6A19\u6E96\u6642',
+                            'daylight': '\u30DB\u30D6\u30C9\u590F\u6642\u9593'
                         }
                     },
                     'India': {
                         'long': {
-                            'standard': 'インド時間'
+                            'standard': '\u30A4\u30F3\u30C9\u6642\u9593'
                         }
                     },
                     'Indian_Ocean': {
                         'long': {
-                            'standard': 'インド洋時間'
+                            'standard': '\u30A4\u30F3\u30C9\u6D0B\u6642\u9593'
                         }
                     },
                     'Indochina': {
                         'long': {
-                            'standard': 'インドシナ時間'
+                            'standard': '\u30A4\u30F3\u30C9\u30B7\u30CA\u6642\u9593'
                         }
                     },
                     'Indonesia_Central': {
                         'long': {
-                            'standard': 'インドネシア中部時間'
+                            'standard': '\u30A4\u30F3\u30C9\u30CD\u30B7\u30A2\u4E2D\u90E8\u6642\u9593'
                         }
                     },
                     'Indonesia_Eastern': {
                         'long': {
-                            'standard': 'インドネシア東部時間'
+                            'standard': '\u30A4\u30F3\u30C9\u30CD\u30B7\u30A2\u6771\u90E8\u6642\u9593'
                         }
                     },
                     'Indonesia_Western': {
                         'long': {
-                            'standard': 'インドネシア西部時間'
+                            'standard': '\u30A4\u30F3\u30C9\u30CD\u30B7\u30A2\u897F\u90E8\u6642\u9593'
                         }
                     },
                     'Iran': {
                         'long': {
-                            'generic': 'イラン時間',
-                            'standard': 'イラン標準時',
-                            'daylight': 'イラン夏時間'
+                            'generic': '\u30A4\u30E9\u30F3\u6642\u9593',
+                            'standard': '\u30A4\u30E9\u30F3\u6A19\u6E96\u6642',
+                            'daylight': '\u30A4\u30E9\u30F3\u590F\u6642\u9593'
                         }
                     },
                     'Irkutsk': {
                         'long': {
-                            'generic': 'イルクーツク時間',
-                            'standard': 'イルクーツク標準時',
-                            'daylight': 'イルクーツク夏時間'
+                            'generic': '\u30A4\u30EB\u30AF\u30FC\u30C4\u30AF\u6642\u9593',
+                            'standard': '\u30A4\u30EB\u30AF\u30FC\u30C4\u30AF\u6A19\u6E96\u6642',
+                            'daylight': '\u30A4\u30EB\u30AF\u30FC\u30C4\u30AF\u590F\u6642\u9593'
                         }
                     },
                     'Israel': {
                         'long': {
-                            'generic': 'イスラエル時間',
-                            'standard': 'イスラエル標準時',
-                            'daylight': 'イスラエル夏時間'
+                            'generic': '\u30A4\u30B9\u30E9\u30A8\u30EB\u6642\u9593',
+                            'standard': '\u30A4\u30B9\u30E9\u30A8\u30EB\u6A19\u6E96\u6642',
+                            'daylight': '\u30A4\u30B9\u30E9\u30A8\u30EB\u590F\u6642\u9593'
                         }
                     },
                     'Japan': {
                         'long': {
-                            'generic': '日本時間',
-                            'standard': '日本標準時',
-                            'daylight': '日本夏時間'
+                            'generic': '\u65E5\u672C\u6642\u9593',
+                            'standard': '\u65E5\u672C\u6A19\u6E96\u6642',
+                            'daylight': '\u65E5\u672C\u590F\u6642\u9593'
                         },
                         'short': {
                             'standard': 'JST',
@@ -2385,168 +2385,168 @@
                     },
                     'Kamchatka': {
                         'long': {
-                            'generic': 'ペトロパブロフスク・カムチャツキー時間',
-                            'standard': 'ペトロパブロフスク・カムチャツキー標準時',
-                            'daylight': 'ペトロパブロフスク・カムチャツキー夏時間'
+                            'generic': '\u30DA\u30C8\u30ED\u30D1\u30D6\u30ED\u30D5\u30B9\u30AF\u30FB\u30AB\u30E0\u30C1\u30E3\u30C4\u30AD\u30FC\u6642\u9593',
+                            'standard': '\u30DA\u30C8\u30ED\u30D1\u30D6\u30ED\u30D5\u30B9\u30AF\u30FB\u30AB\u30E0\u30C1\u30E3\u30C4\u30AD\u30FC\u6A19\u6E96\u6642',
+                            'daylight': '\u30DA\u30C8\u30ED\u30D1\u30D6\u30ED\u30D5\u30B9\u30AF\u30FB\u30AB\u30E0\u30C1\u30E3\u30C4\u30AD\u30FC\u590F\u6642\u9593'
                         }
                     },
                     'Kazakhstan_Eastern': {
                         'long': {
-                            'standard': '東カザフスタン時間'
+                            'standard': '\u6771\u30AB\u30B6\u30D5\u30B9\u30BF\u30F3\u6642\u9593'
                         }
                     },
                     'Kazakhstan_Western': {
                         'long': {
-                            'standard': '西カザフスタン時間'
+                            'standard': '\u897F\u30AB\u30B6\u30D5\u30B9\u30BF\u30F3\u6642\u9593'
                         }
                     },
                     'Korea': {
                         'long': {
-                            'generic': '韓国時間',
-                            'standard': '韓国標準時',
-                            'daylight': '韓国夏時間'
+                            'generic': '\u97D3\u56FD\u6642\u9593',
+                            'standard': '\u97D3\u56FD\u6A19\u6E96\u6642',
+                            'daylight': '\u97D3\u56FD\u590F\u6642\u9593'
                         }
                     },
                     'Kosrae': {
                         'long': {
-                            'standard': 'コスラエ時間'
+                            'standard': '\u30B3\u30B9\u30E9\u30A8\u6642\u9593'
                         }
                     },
                     'Krasnoyarsk': {
                         'long': {
-                            'generic': 'クラスノヤルスク時間',
-                            'standard': 'クラスノヤルスク標準時',
-                            'daylight': 'クラスノヤルスク夏時間'
+                            'generic': '\u30AF\u30E9\u30B9\u30CE\u30E4\u30EB\u30B9\u30AF\u6642\u9593',
+                            'standard': '\u30AF\u30E9\u30B9\u30CE\u30E4\u30EB\u30B9\u30AF\u6A19\u6E96\u6642',
+                            'daylight': '\u30AF\u30E9\u30B9\u30CE\u30E4\u30EB\u30B9\u30AF\u590F\u6642\u9593'
                         }
                     },
                     'Kyrgystan': {
                         'long': {
-                            'standard': 'キルギスタン時間'
+                            'standard': '\u30AD\u30EB\u30AE\u30B9\u30BF\u30F3\u6642\u9593'
                         }
                     },
                     'Lanka': {
                         'long': {
-                            'standard': 'ランカ時間'
+                            'standard': '\u30E9\u30F3\u30AB\u6642\u9593'
                         }
                     },
                     'Line_Islands': {
                         'long': {
-                            'standard': 'ライン諸島時間'
+                            'standard': '\u30E9\u30A4\u30F3\u8AF8\u5CF6\u6642\u9593'
                         }
                     },
                     'Lord_Howe': {
                         'long': {
-                            'generic': 'ロードハウ時間',
-                            'standard': 'ロードハウ標準時',
-                            'daylight': 'ロードハウ夏時間'
+                            'generic': '\u30ED\u30FC\u30C9\u30CF\u30A6\u6642\u9593',
+                            'standard': '\u30ED\u30FC\u30C9\u30CF\u30A6\u6A19\u6E96\u6642',
+                            'daylight': '\u30ED\u30FC\u30C9\u30CF\u30A6\u590F\u6642\u9593'
                         }
                     },
                     'Macau': {
                         'long': {
-                            'generic': 'マカオ時間',
-                            'standard': 'マカオ標準時',
-                            'daylight': 'マカオ夏時間'
+                            'generic': '\u30DE\u30AB\u30AA\u6642\u9593',
+                            'standard': '\u30DE\u30AB\u30AA\u6A19\u6E96\u6642',
+                            'daylight': '\u30DE\u30AB\u30AA\u590F\u6642\u9593'
                         }
                     },
                     'Macquarie': {
                         'long': {
-                            'standard': 'マッコーリー島時間'
+                            'standard': '\u30DE\u30C3\u30B3\u30FC\u30EA\u30FC\u5CF6\u6642\u9593'
                         }
                     },
                     'Magadan': {
                         'long': {
-                            'generic': 'マガダン時間',
-                            'standard': 'マガダン標準時',
-                            'daylight': 'マガダン夏時間'
+                            'generic': '\u30DE\u30AC\u30C0\u30F3\u6642\u9593',
+                            'standard': '\u30DE\u30AC\u30C0\u30F3\u6A19\u6E96\u6642',
+                            'daylight': '\u30DE\u30AC\u30C0\u30F3\u590F\u6642\u9593'
                         }
                     },
                     'Malaysia': {
                         'long': {
-                            'standard': 'マレーシア時間'
+                            'standard': '\u30DE\u30EC\u30FC\u30B7\u30A2\u6642\u9593'
                         }
                     },
                     'Maldives': {
                         'long': {
-                            'standard': 'モルディブ時間'
+                            'standard': '\u30E2\u30EB\u30C7\u30A3\u30D6\u6642\u9593'
                         }
                     },
                     'Marquesas': {
                         'long': {
-                            'standard': 'マルキーズ時間'
+                            'standard': '\u30DE\u30EB\u30AD\u30FC\u30BA\u6642\u9593'
                         }
                     },
                     'Marshall_Islands': {
                         'long': {
-                            'standard': 'マーシャル諸島時間'
+                            'standard': '\u30DE\u30FC\u30B7\u30E3\u30EB\u8AF8\u5CF6\u6642\u9593'
                         }
                     },
                     'Mauritius': {
                         'long': {
-                            'generic': 'モーリシャス時間',
-                            'standard': 'モーリシャス標準時',
-                            'daylight': 'モーリシャス夏時間'
+                            'generic': '\u30E2\u30FC\u30EA\u30B7\u30E3\u30B9\u6642\u9593',
+                            'standard': '\u30E2\u30FC\u30EA\u30B7\u30E3\u30B9\u6A19\u6E96\u6642',
+                            'daylight': '\u30E2\u30FC\u30EA\u30B7\u30E3\u30B9\u590F\u6642\u9593'
                         }
                     },
                     'Mawson': {
                         'long': {
-                            'standard': 'モーソン基地時間'
+                            'standard': '\u30E2\u30FC\u30BD\u30F3\u57FA\u5730\u6642\u9593'
                         }
                     },
                     'Mongolia': {
                         'long': {
-                            'generic': 'ウランバートル時間',
-                            'standard': 'ウランバートル標準時',
-                            'daylight': 'ウランバートル夏時間'
+                            'generic': '\u30A6\u30E9\u30F3\u30D0\u30FC\u30C8\u30EB\u6642\u9593',
+                            'standard': '\u30A6\u30E9\u30F3\u30D0\u30FC\u30C8\u30EB\u6A19\u6E96\u6642',
+                            'daylight': '\u30A6\u30E9\u30F3\u30D0\u30FC\u30C8\u30EB\u590F\u6642\u9593'
                         }
                     },
                     'Moscow': {
                         'long': {
-                            'generic': 'モスクワ時間',
-                            'standard': 'モスクワ標準時',
-                            'daylight': 'モスクワ夏時間'
+                            'generic': '\u30E2\u30B9\u30AF\u30EF\u6642\u9593',
+                            'standard': '\u30E2\u30B9\u30AF\u30EF\u6A19\u6E96\u6642',
+                            'daylight': '\u30E2\u30B9\u30AF\u30EF\u590F\u6642\u9593'
                         }
                     },
                     'Myanmar': {
                         'long': {
-                            'standard': 'ミャンマー時間'
+                            'standard': '\u30DF\u30E3\u30F3\u30DE\u30FC\u6642\u9593'
                         }
                     },
                     'Nauru': {
                         'long': {
-                            'standard': 'ナウル時間'
+                            'standard': '\u30CA\u30A6\u30EB\u6642\u9593'
                         }
                     },
                     'Nepal': {
                         'long': {
-                            'standard': 'ネパール時間'
+                            'standard': '\u30CD\u30D1\u30FC\u30EB\u6642\u9593'
                         }
                     }
                 },
                 'hourFormat': '+HH:mm;-HH:mm',
                 'gmtFormat': 'GMT{0}',
                 'gmtZeroFormat': 'GMT',
-                'regionFormat': '{0}時間',
-                'regionFormat-type-daylight': '{0}夏時間',
-                'regionFormat-type-standard': '{0}標準時',
-                'fallbackFormat': '{1}（{0}）'
+                'regionFormat': '{0}\u6642\u9593',
+                'regionFormat-type-daylight': '{0}\u590F\u6642\u9593',
+                'regionFormat-type-standard': '{0}\u6A19\u6E96\u6642',
+                'fallbackFormat': '{1}\uFF08{0}\uFF09'
             },
             'calendars': {
                 'gregorian': {
                     'months': {
                         'format': {
                             'abbreviated': {
-                                '8': '8月',
-                                '7': '7月',
-                                '6': '6月',
-                                '5': '5月',
-                                '12': '12月',
-                                '11': '11月',
-                                '10': '10月',
-                                '9': '9月',
-                                '1': '1月',
-                                '2': '2月',
-                                '3': '3月',
-                                '4': '4月'
+                                '8': '8\u6708',
+                                '7': '7\u6708',
+                                '6': '6\u6708',
+                                '5': '5\u6708',
+                                '12': '12\u6708',
+                                '11': '11\u6708',
+                                '10': '10\u6708',
+                                '9': '9\u6708',
+                                '1': '1\u6708',
+                                '2': '2\u6708',
+                                '3': '3\u6708',
+                                '4': '4\u6708'
                             },
                             'narrow': {
                                 '8': '8',
@@ -2563,34 +2563,34 @@
                                 '4': '4'
                             },
                             'wide': {
-                                '8': '8月',
-                                '7': '7月',
-                                '6': '6月',
-                                '5': '5月',
-                                '12': '12月',
-                                '11': '11月',
-                                '10': '10月',
-                                '9': '9月',
-                                '1': '1月',
-                                '2': '2月',
-                                '3': '3月',
-                                '4': '4月'
+                                '8': '8\u6708',
+                                '7': '7\u6708',
+                                '6': '6\u6708',
+                                '5': '5\u6708',
+                                '12': '12\u6708',
+                                '11': '11\u6708',
+                                '10': '10\u6708',
+                                '9': '9\u6708',
+                                '1': '1\u6708',
+                                '2': '2\u6708',
+                                '3': '3\u6708',
+                                '4': '4\u6708'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
-                                '8': '8月',
-                                '7': '7月',
-                                '6': '6月',
-                                '5': '5月',
-                                '12': '12月',
-                                '11': '11月',
-                                '10': '10月',
-                                '9': '9月',
-                                '1': '1月',
-                                '2': '2月',
-                                '3': '3月',
-                                '4': '4月'
+                                '8': '8\u6708',
+                                '7': '7\u6708',
+                                '6': '6\u6708',
+                                '5': '5\u6708',
+                                '12': '12\u6708',
+                                '11': '11\u6708',
+                                '10': '10\u6708',
+                                '9': '9\u6708',
+                                '1': '1\u6708',
+                                '2': '2\u6708',
+                                '3': '3\u6708',
+                                '4': '4\u6708'
                             },
                             'narrow': {
                                 '8': '8',
@@ -2607,96 +2607,96 @@
                                 '4': '4'
                             },
                             'wide': {
-                                '8': '8月',
-                                '7': '7月',
-                                '6': '6月',
-                                '5': '5月',
-                                '12': '12月',
-                                '11': '11月',
-                                '10': '10月',
-                                '9': '9月',
-                                '1': '1月',
-                                '2': '2月',
-                                '3': '3月',
-                                '4': '4月'
+                                '8': '8\u6708',
+                                '7': '7\u6708',
+                                '6': '6\u6708',
+                                '5': '5\u6708',
+                                '12': '12\u6708',
+                                '11': '11\u6708',
+                                '10': '10\u6708',
+                                '9': '9\u6708',
+                                '1': '1\u6708',
+                                '2': '2\u6708',
+                                '3': '3\u6708',
+                                '4': '4\u6708'
                             }
                         }
                     },
                     'days': {
                         'format': {
                             'abbreviated': {
-                                'sun': '日',
-                                'mon': '月',
-                                'tue': '火',
-                                'wed': '水',
-                                'thu': '木',
-                                'fri': '金',
-                                'sat': '土'
+                                'sun': '\u65E5',
+                                'mon': '\u6708',
+                                'tue': '\u706B',
+                                'wed': '\u6C34',
+                                'thu': '\u6728',
+                                'fri': '\u91D1',
+                                'sat': '\u571F'
                             },
                             'narrow': {
-                                'sun': '日',
-                                'mon': '月',
-                                'tue': '火',
-                                'wed': '水',
-                                'thu': '木',
-                                'fri': '金',
-                                'sat': '土'
+                                'sun': '\u65E5',
+                                'mon': '\u6708',
+                                'tue': '\u706B',
+                                'wed': '\u6C34',
+                                'thu': '\u6728',
+                                'fri': '\u91D1',
+                                'sat': '\u571F'
                             },
                             'short': {
-                                'sun': '日',
-                                'mon': '月',
-                                'tue': '火',
-                                'wed': '水',
-                                'thu': '木',
-                                'fri': '金',
-                                'sat': '土'
+                                'sun': '\u65E5',
+                                'mon': '\u6708',
+                                'tue': '\u706B',
+                                'wed': '\u6C34',
+                                'thu': '\u6728',
+                                'fri': '\u91D1',
+                                'sat': '\u571F'
                             },
                             'wide': {
-                                'sun': '日曜日',
-                                'mon': '月曜日',
-                                'tue': '火曜日',
-                                'wed': '水曜日',
-                                'thu': '木曜日',
-                                'fri': '金曜日',
-                                'sat': '土曜日'
+                                'sun': '\u65E5\u66DC\u65E5',
+                                'mon': '\u6708\u66DC\u65E5',
+                                'tue': '\u706B\u66DC\u65E5',
+                                'wed': '\u6C34\u66DC\u65E5',
+                                'thu': '\u6728\u66DC\u65E5',
+                                'fri': '\u91D1\u66DC\u65E5',
+                                'sat': '\u571F\u66DC\u65E5'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
-                                'sun': '日',
-                                'mon': '月',
-                                'tue': '火',
-                                'wed': '水',
-                                'thu': '木',
-                                'fri': '金',
-                                'sat': '土'
+                                'sun': '\u65E5',
+                                'mon': '\u6708',
+                                'tue': '\u706B',
+                                'wed': '\u6C34',
+                                'thu': '\u6728',
+                                'fri': '\u91D1',
+                                'sat': '\u571F'
                             },
                             'narrow': {
-                                'sun': '日',
-                                'mon': '月',
-                                'tue': '火',
-                                'wed': '水',
-                                'thu': '木',
-                                'fri': '金',
-                                'sat': '土'
+                                'sun': '\u65E5',
+                                'mon': '\u6708',
+                                'tue': '\u706B',
+                                'wed': '\u6C34',
+                                'thu': '\u6728',
+                                'fri': '\u91D1',
+                                'sat': '\u571F'
                             },
                             'short': {
-                                'sun': '日',
-                                'mon': '月',
-                                'tue': '火',
-                                'wed': '水',
-                                'thu': '木',
-                                'fri': '金',
-                                'sat': '土'
+                                'sun': '\u65E5',
+                                'mon': '\u6708',
+                                'tue': '\u706B',
+                                'wed': '\u6C34',
+                                'thu': '\u6728',
+                                'fri': '\u91D1',
+                                'sat': '\u571F'
                             },
                             'wide': {
-                                'sun': '日曜日',
-                                'mon': '月曜日',
-                                'tue': '火曜日',
-                                'wed': '水曜日',
-                                'thu': '木曜日',
-                                'fri': '金曜日',
-                                'sat': '土曜日'
+                                'sun': '\u65E5\u66DC\u65E5',
+                                'mon': '\u6708\u66DC\u65E5',
+                                'tue': '\u706B\u66DC\u65E5',
+                                'wed': '\u6C34\u66DC\u65E5',
+                                'thu': '\u6728\u66DC\u65E5',
+                                'fri': '\u91D1\u66DC\u65E5',
+                                'sat': '\u571F\u66DC\u65E5'
                             }
                         }
                     },
@@ -2715,10 +2715,10 @@
                                 '4': '4'
                             },
                             'wide': {
-                                '1': '第1四半期',
-                                '2': '第2四半期',
-                                '3': '第3四半期',
-                                '4': '第4四半期'
+                                '1': '\u7B2C1\u56DB\u534A\u671F',
+                                '2': '\u7B2C2\u56DB\u534A\u671F',
+                                '3': '\u7B2C3\u56DB\u534A\u671F',
+                                '4': '\u7B2C4\u56DB\u534A\u671F'
                             }
                         },
                         'stand-alone': {
@@ -2735,60 +2735,60 @@
                                 '4': '4'
                             },
                             'wide': {
-                                '1': '第1四半期',
-                                '2': '第2四半期',
-                                '3': '第3四半期',
-                                '4': '第4四半期'
+                                '1': '\u7B2C1\u56DB\u534A\u671F',
+                                '2': '\u7B2C2\u56DB\u534A\u671F',
+                                '3': '\u7B2C3\u56DB\u534A\u671F',
+                                '4': '\u7B2C4\u56DB\u534A\u671F'
                             }
                         }
                     },
                     'dayPeriods': {
                         'format': {
                             'abbreviated': {
-                                'am': '午前',
-                                'noon': '正午',
-                                'pm': '午後'
+                                'am': '\u5348\u524D',
+                                'noon': '\u6B63\u5348',
+                                'pm': '\u5348\u5F8C'
                             },
                             'narrow': {
-                                'am': '午前',
-                                'noon': '正午',
-                                'pm': '午後'
+                                'am': '\u5348\u524D',
+                                'noon': '\u6B63\u5348',
+                                'pm': '\u5348\u5F8C'
                             },
                             'wide': {
-                                'am': '午前',
-                                'noon': '正午',
-                                'pm': '午後'
+                                'am': '\u5348\u524D',
+                                'noon': '\u6B63\u5348',
+                                'pm': '\u5348\u5F8C'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
-                                'am': '午前',
-                                'noon': '正午',
-                                'pm': '午後'
+                                'am': '\u5348\u524D',
+                                'noon': '\u6B63\u5348',
+                                'pm': '\u5348\u5F8C'
                             },
                             'narrow': {
-                                'am': '午前',
-                                'noon': '正午',
-                                'pm': '午後'
+                                'am': '\u5348\u524D',
+                                'noon': '\u6B63\u5348',
+                                'pm': '\u5348\u5F8C'
                             },
                             'wide': {
-                                'am': '午前',
-                                'noon': '正午',
-                                'pm': '午後'
+                                'am': '\u5348\u524D',
+                                'noon': '\u6B63\u5348',
+                                'pm': '\u5348\u5F8C'
                             }
                         }
                     },
                     'eras': {
                         'eraNames': {
-                            '0': '紀元前',
-                            '0-alt-variant': '西暦紀元前',
-                            '1': '西暦',
+                            '0': '\u7D00\u5143\u524D',
+                            '0-alt-variant': '\u897F\u66A6\u7D00\u5143\u524D',
+                            '1': '\u897F\u66A6',
                             '1-alt-variant': 'CE'
                         },
                         'eraAbbr': {
-                            '0': '紀元前',
-                            '0-alt-variant': '西暦紀元前',
-                            '1': '西暦',
+                            '0': '\u7D00\u5143\u524D',
+                            '0-alt-variant': '\u897F\u66A6\u7D00\u5143\u524D',
+                            '1': '\u897F\u66A6',
                             '1-alt-variant': 'CE'
                         },
                         'eraNarrow': {
@@ -2799,13 +2799,13 @@
                         }
                     },
                     'dateFormats': {
-                        'full': 'y年M月d日EEEE',
-                        'long': 'y年M月d日',
+                        'full': 'y\u5E74M\u6708d\u65E5EEEE',
+                        'long': 'y\u5E74M\u6708d\u65E5',
                         'medium': 'y/MM/dd',
                         'short': 'y/MM/dd'
                     },
                     'timeFormats': {
-                        'full': 'H時mm分ss秒 zzzz',
+                        'full': 'H\u6642mm\u5206ss\u79D2 zzzz',
                         'long': 'H:mm:ss z',
                         'medium': 'H:mm:ss',
                         'short': 'H:mm'
@@ -2820,41 +2820,41 @@
                             'yMEd': 'y/M/d(E)',
                             'yMd': 'y/M/d',
                             'yM': 'y/M',
-                            'y': 'y年',
+                            'y': 'y\u5E74',
                             'ms': 'mm:ss',
-                            'MMMEEEEd': 'M月d日EEEE',
-                            'd': 'd日',
-                            'GyMMM': 'Gy年M月',
-                            'GyMMMd': 'Gy年M月d日',
-                            'GyMMMEd': 'Gy年M月d日(E)',
-                            'GyMMMEEEEd': 'Gy年M月d日EEEE',
-                            'h': 'aK時',
-                            'H': 'H時',
+                            'MMMEEEEd': 'M\u6708d\u65E5EEEE',
+                            'd': 'd\u65E5',
+                            'GyMMM': 'Gy\u5E74M\u6708',
+                            'GyMMMd': 'Gy\u5E74M\u6708d\u65E5',
+                            'GyMMMEd': 'Gy\u5E74M\u6708d\u65E5(E)',
+                            'GyMMMEEEEd': 'Gy\u5E74M\u6708d\u65E5EEEE',
+                            'h': 'aK\u6642',
+                            'H': 'H\u6642',
                             'hm': 'aK:mm',
                             'yQQQQ': 'yQQQQ',
                             'yQQQ': 'y/QQQ',
-                            'yMMMEEEEd': 'y年M月d日EEEE',
-                            'yMMMEd': 'y年M月d日(E)',
-                            'yMMMd': 'y年M月d日',
-                            'yMMM': 'y年M月',
+                            'yMMMEEEEd': 'y\u5E74M\u6708d\u65E5EEEE',
+                            'yMMMEd': 'y\u5E74M\u6708d\u65E5(E)',
+                            'yMMMd': 'y\u5E74M\u6708d\u65E5',
+                            'yMMM': 'y\u5E74M\u6708',
                             'yMM': 'y/MM',
                             'Hm': 'H:mm',
-                            'Ed': 'd日(E)',
-                            'EEEEd': 'd日EEEE',
-                            'Ehm': 'a K 時 mm 分 (E)',
-                            'EHm': 'HH 時 mm 分 (E)',
-                            'Ehms': 'a K 時 mm 分 ss 秒 (E)',
-                            'EHms': 'HH 時 mm 分 ss 秒 (E)',
-                            'Gy': 'Gy年',
+                            'Ed': 'd\u65E5(E)',
+                            'EEEEd': 'd\u65E5EEEE',
+                            'Ehm': 'a K \u6642 mm \u5206 (E)',
+                            'EHm': 'HH \u6642 mm \u5206 (E)',
+                            'Ehms': 'a K \u6642 mm \u5206 ss \u79D2 (E)',
+                            'EHms': 'HH \u6642 mm \u5206 ss \u79D2 (E)',
+                            'Gy': 'Gy\u5E74',
                             'hms': 'aK:mm:ss',
                             'Hms': 'H:mm:ss',
-                            'M': 'M月',
+                            'M': 'M\u6708',
                             'Md': 'M/d',
                             'MEd': 'M/d(E)',
                             'MEEEEd': 'M/dEEEE',
-                            'MMM': 'M月',
-                            'MMMd': 'M月d日',
-                            'MMMEd': 'M月d日(E)'
+                            'MMM': 'M\u6708',
+                            'MMMd': 'M\u6708d\u65E5',
+                            'MMMEd': 'M\u6708d\u65E5(E)'
                         },
                         'appendItems': {
                             'Second': '{0} ({2}: {1})',
@@ -2871,100 +2871,100 @@
                         },
                         'intervalFormats': {
                             'MMMEd': {
-                                'd': 'M月d日(E)～d日(E)',
-                                'M': 'M月d日(E)～M月d日(E)'
+                                'd': 'M\u6708d\u65E5(E)\uFF5Ed\u65E5(E)',
+                                'M': 'M\u6708d\u65E5(E)\uFF5EM\u6708d\u65E5(E)'
                             },
                             'MMMd': {
-                                'd': 'M月d日～d日',
-                                'M': 'M月d日～M月d日'
+                                'd': 'M\u6708d\u65E5\uFF5Ed\u65E5',
+                                'M': 'M\u6708d\u65E5\uFF5EM\u6708d\u65E5'
                             },
                             'MMM': {
-                                'M': 'M月～M月'
+                                'M': 'M\u6708\uFF5EM\u6708'
                             },
                             'MEd': {
-                                'd': 'MM/dd(E)～MM/dd(E)',
-                                'M': 'MM/dd(E)～MM/dd(E)'
+                                'd': 'MM/dd(E)\uFF5EMM/dd(E)',
+                                'M': 'MM/dd(E)\uFF5EMM/dd(E)'
                             },
                             'Md': {
-                                'd': 'MM/dd～MM/dd',
-                                'M': 'MM/dd～MM/dd'
+                                'd': 'MM/dd\uFF5EMM/dd',
+                                'M': 'MM/dd\uFF5EMM/dd'
                             },
                             'M': {
-                                'M': 'M月～M月'
+                                'M': 'M\u6708\uFF5EM\u6708'
                             },
                             'Hv': {
-                                'H': 'H時～H時(v)'
+                                'H': 'H\u6642\uFF5EH\u6642(v)'
                             },
                             'hv': {
-                                'a': 'aK時～aK時(v)',
-                                'h': 'aK時～K時(v)'
+                                'a': 'aK\u6642\uFF5EaK\u6642(v)',
+                                'h': 'aK\u6642\uFF5EK\u6642(v)'
                             },
-                            'intervalFormatFallback': '{0}～{1}',
+                            'intervalFormatFallback': '{0}\uFF5E{1}',
                             'y': {
-                                'y': 'y年～y年'
+                                'y': 'y\u5E74\uFF5Ey\u5E74'
                             },
                             'yM': {
-                                'M': 'y/MM～y/MM',
-                                'y': 'y/MM～y/MM'
+                                'M': 'y/MM\uFF5Ey/MM',
+                                'y': 'y/MM\uFF5Ey/MM'
                             },
                             'yMd': {
-                                'd': 'y/MM/dd～y/MM/dd',
-                                'M': 'y/MM/dd～y/MM/dd',
-                                'y': 'y/MM/dd～y/MM/dd'
+                                'd': 'y/MM/dd\uFF5Ey/MM/dd',
+                                'M': 'y/MM/dd\uFF5Ey/MM/dd',
+                                'y': 'y/MM/dd\uFF5Ey/MM/dd'
                             },
                             'yMEd': {
-                                'd': 'y/MM/dd(E)～y/MM/dd(E)',
-                                'M': 'y/MM/dd(E)～y/MM/dd(E)',
-                                'y': 'y/MM/dd(E)～y/MM/dd(E)'
+                                'd': 'y/MM/dd(E)\uFF5Ey/MM/dd(E)',
+                                'M': 'y/MM/dd(E)\uFF5Ey/MM/dd(E)',
+                                'y': 'y/MM/dd(E)\uFF5Ey/MM/dd(E)'
                             },
                             'yMMM': {
-                                'M': 'y年M月～M月',
-                                'y': 'y年M月～y年M月'
+                                'M': 'y\u5E74M\u6708\uFF5EM\u6708',
+                                'y': 'y\u5E74M\u6708\uFF5Ey\u5E74M\u6708'
                             },
                             'yMMMd': {
-                                'd': 'y年M月d日～d日',
-                                'M': 'y年M月d日～M月d日',
-                                'y': 'y年M月d日～y年M月d日'
+                                'd': 'y\u5E74M\u6708d\u65E5\uFF5Ed\u65E5',
+                                'M': 'y\u5E74M\u6708d\u65E5\uFF5EM\u6708d\u65E5',
+                                'y': 'y\u5E74M\u6708d\u65E5\uFF5Ey\u5E74M\u6708d\u65E5'
                             },
                             'yMMMEd': {
-                                'd': 'y年M月d日(E)～d日(E)',
-                                'M': 'y年M月d日(E)～M月d日(E)',
-                                'y': 'y年M月d日(E)～y年M月d日(E)'
+                                'd': 'y\u5E74M\u6708d\u65E5(E)\uFF5Ed\u65E5(E)',
+                                'M': 'y\u5E74M\u6708d\u65E5(E)\uFF5EM\u6708d\u65E5(E)',
+                                'y': 'y\u5E74M\u6708d\u65E5(E)\uFF5Ey\u5E74M\u6708d\u65E5(E)'
                             },
                             'yMMMM': {
-                                'M': 'y年M月～M月',
-                                'y': 'y年M月～y年M月'
+                                'M': 'y\u5E74M\u6708\uFF5EM\u6708',
+                                'y': 'y\u5E74M\u6708\uFF5Ey\u5E74M\u6708'
                             },
                             'MMMM': {
-                                'M': 'M月～M月'
+                                'M': 'M\u6708\uFF5EM\u6708'
                             },
                             'Hmv': {
-                                'H': 'H時mm分～H時mm分(v)',
-                                'm': 'H時mm分～H時mm分(v)'
+                                'H': 'H\u6642mm\u5206\uFF5EH\u6642mm\u5206(v)',
+                                'm': 'H\u6642mm\u5206\uFF5EH\u6642mm\u5206(v)'
                             },
                             'hmv': {
-                                'a': 'aK時mm分～aK時mm分(v)',
-                                'h': 'aK時mm分～K時mm分(v)',
-                                'm': 'aK時mm分～K時mm分(v)'
+                                'a': 'aK\u6642mm\u5206\uFF5EaK\u6642mm\u5206(v)',
+                                'h': 'aK\u6642mm\u5206\uFF5EK\u6642mm\u5206(v)',
+                                'm': 'aK\u6642mm\u5206\uFF5EK\u6642mm\u5206(v)'
                             },
                             'Hm': {
-                                'H': 'H時mm分～H時mm分',
-                                'm': 'H時mm分～H時mm分'
+                                'H': 'H\u6642mm\u5206\uFF5EH\u6642mm\u5206',
+                                'm': 'H\u6642mm\u5206\uFF5EH\u6642mm\u5206'
                             },
                             'hm': {
-                                'a': 'aK時mm分～aK時mm分',
-                                'h': 'aK時mm分～K時mm分',
-                                'm': 'aK時mm分～K時mm分'
+                                'a': 'aK\u6642mm\u5206\uFF5EaK\u6642mm\u5206',
+                                'h': 'aK\u6642mm\u5206\uFF5EK\u6642mm\u5206',
+                                'm': 'aK\u6642mm\u5206\uFF5EK\u6642mm\u5206'
                             },
                             'H': {
-                                'H': 'H時～H時'
+                                'H': 'H\u6642\uFF5EH\u6642'
                             },
                             'h': {
-                                'a': 'aK時～aK時',
-                                'h': 'aK時～K時'
+                                'a': 'aK\u6642\uFF5EaK\u6642',
+                                'h': 'aK\u6642\uFF5EK\u6642'
                             },
                             'd': {
-                                'd': 'd日～d日'
+                                'd': 'd\u65E5\uFF5Ed\u65E5'
                             }
                         }
                     }

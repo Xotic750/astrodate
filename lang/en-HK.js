@@ -167,7 +167,7 @@
                     'talu': 'New Tai Lue Digits',
                     'takr': 'Takri Digits',
                     'olck': 'Ol Chiki Digits',
-                    'nkoo': 'N\'Ko Digits',
+                    'nkoo': "N'Ko Digits",
                     'mymrshan': 'Myanmar Shan Digits',
                     'mymr': 'Myanmar Digits',
                     'mtei': 'Meetei Mayek Digits',
@@ -379,7 +379,7 @@
                             'exemplarCity': 'Kerguelen'
                         },
                         'Reunion': {
-                            'exemplarCity': 'Réunion'
+                            'exemplarCity': 'R\u00E9union'
                         },
                         'Mayotte': {
                             'exemplarCity': 'Mayotte'
@@ -579,7 +579,7 @@
                             'exemplarCity': 'Boise'
                         },
                         'Asuncion': {
-                            'exemplarCity': 'Asunción'
+                            'exemplarCity': 'Asunci\u00F3n'
                         },
                         'Aruba': {
                             'exemplarCity': 'Aruba'
@@ -647,7 +647,7 @@
                             'exemplarCity': 'Bogota'
                         },
                         'Curacao': {
-                            'exemplarCity': 'Curaçao'
+                            'exemplarCity': 'Cura\u00E7ao'
                         },
                         'Danmarkshavn': {
                             'exemplarCity': 'Danmarkshavn'
@@ -813,7 +813,7 @@
                             'exemplarCity': 'Louisville'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': 'Lower Prince\'s Quarter'
+                            'exemplarCity': "Lower Prince's Quarter"
                         },
                         'Maceio': {
                             'exemplarCity': 'Maceio'
@@ -965,7 +965,7 @@
                             'exemplarCity': 'Sitka'
                         },
                         'St_Barthelemy': {
-                            'exemplarCity': 'Saint Barthélemy'
+                            'exemplarCity': 'Saint Barth\u00E9lemy'
                         },
                         'St_Johns': {
                             'exemplarCity': 'St. John\u2019s'
@@ -1286,7 +1286,7 @@
                             'exemplarCity': 'Tripoli'
                         },
                         'Sao_Tome': {
-                            'exemplarCity': 'São Tomé'
+                            'exemplarCity': 'S\u00E3o Tom\u00E9'
                         },
                         'Porto-Novo': {
                             'exemplarCity': 'Porto-Novo'

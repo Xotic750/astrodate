@@ -42,166 +42,166 @@
     }(function (AstroDate) {
         AstroDate.lang('el', {
             'codePatterns': {
-                'language': 'Γλώσσα: {0}',
-                'script': 'Σύστημα γραφής: {0}',
-                'territory': 'Περιοχή: {0}'
+                'language': '\u0393\u03BB\u03CE\u03C3\u03C3\u03B1: {0}',
+                'script': '\u03A3\u03CD\u03C3\u03C4\u03B7\u03BC\u03B1 \u03B3\u03C1\u03B1\u03C6\u03AE\u03C2: {0}',
+                'territory': '\u03A0\u03B5\u03C1\u03B9\u03BF\u03C7\u03AE: {0}'
             },
             'types': {
                 'colHiraganaQuaternary': {
-                    'no': 'Ξεχωριστή ταξινόμηση χαρακτήρων Κάνα',
-                    'yes': 'Διαφορετική ταξινόμηση Κάνα'
+                    'no': '\u039E\u03B5\u03C7\u03C9\u03C1\u03B9\u03C3\u03C4\u03AE \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u039A\u03AC\u03BD\u03B1',
+                    'yes': '\u0394\u03B9\u03B1\u03C6\u03BF\u03C1\u03B5\u03C4\u03B9\u03BA\u03AE \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u039A\u03AC\u03BD\u03B1'
                 },
                 'colCaseLevel': {
-                    'no': 'Ταξινόμηση με διάκριση χαρακτήρων',
-                    'yes': 'Ταξινόμηση χαρακτήρων διάκρισης'
+                    'no': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03BC\u03B5 \u03B4\u03B9\u03AC\u03BA\u03C1\u03B9\u03C3\u03B7 \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD',
+                    'yes': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u03B4\u03B9\u03AC\u03BA\u03C1\u03B9\u03C3\u03B7\u03C2'
                 },
                 'colCaseFirst': {
-                    'lower': 'Ταξινόμηση πεζών χαρακτήρων πρώτα',
-                    'no': 'Κανονική ταξινόμηση χαρακτήρων',
-                    'upper': 'Ταξινόμηση κεφαλαίων χαρακτήρων πρώτα'
+                    'lower': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C0\u03B5\u03B6\u03CE\u03BD \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u03C0\u03C1\u03CE\u03C4\u03B1',
+                    'no': '\u039A\u03B1\u03BD\u03BF\u03BD\u03B9\u03BA\u03AE \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD',
+                    'upper': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03BA\u03B5\u03C6\u03B1\u03BB\u03B1\u03AF\u03C9\u03BD \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u03C0\u03C1\u03CE\u03C4\u03B1'
                 },
                 'colStrength': {
-                    'identical': 'Ταξινόμηση όλων',
-                    'primary': 'Ταξινόμηση μόνο βασικών χαρακτήρων',
-                    'quaternary': 'Ταξινόμηση τόνων/χαρακτήρων διάκρισης/χαρακτήρων μεγάλου μεγέθους/χαρακτήρων Κάνα',
-                    'secondary': 'Ταξινόμηση τόνων',
-                    'tertiary': 'Ταξινόμηση τόνων/χαρακτήρων διάκρισης/χαρακτήρων μεγάλου μεγέθους'
+                    'identical': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03CC\u03BB\u03C9\u03BD',
+                    'primary': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03BC\u03CC\u03BD\u03BF \u03B2\u03B1\u03C3\u03B9\u03BA\u03CE\u03BD \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD',
+                    'quaternary': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C4\u03CC\u03BD\u03C9\u03BD/\u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u03B4\u03B9\u03AC\u03BA\u03C1\u03B9\u03C3\u03B7\u03C2/\u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u03BC\u03B5\u03B3\u03AC\u03BB\u03BF\u03C5 \u03BC\u03B5\u03B3\u03AD\u03B8\u03BF\u03C5\u03C2/\u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u039A\u03AC\u03BD\u03B1',
+                    'secondary': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C4\u03CC\u03BD\u03C9\u03BD',
+                    'tertiary': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C4\u03CC\u03BD\u03C9\u03BD/\u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u03B4\u03B9\u03AC\u03BA\u03C1\u03B9\u03C3\u03B7\u03C2/\u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u03BC\u03B5\u03B3\u03AC\u03BB\u03BF\u03C5 \u03BC\u03B5\u03B3\u03AD\u03B8\u03BF\u03C5\u03C2'
                 },
                 'colNumeric': {
-                    'no': 'Μεμονωμένη ταξινόμηση ψηφίων',
-                    'yes': 'Αριθμητική ταξινόμηση ψηφίων'
+                    'no': '\u039C\u03B5\u03BC\u03BF\u03BD\u03C9\u03BC\u03AD\u03BD\u03B7 \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C8\u03B7\u03C6\u03AF\u03C9\u03BD',
+                    'yes': '\u0391\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AE \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C8\u03B7\u03C6\u03AF\u03C9\u03BD'
                 },
                 'colNormalization': {
-                    'no': 'Ταξινόμηση χωρίς κανονικοποίηση',
-                    'yes': 'Κανονικοποιημένη ταξινόμηση Unicode'
+                    'no': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C7\u03C9\u03C1\u03AF\u03C2 \u03BA\u03B1\u03BD\u03BF\u03BD\u03B9\u03BA\u03BF\u03C0\u03BF\u03AF\u03B7\u03C3\u03B7',
+                    'yes': '\u039A\u03B1\u03BD\u03BF\u03BD\u03B9\u03BA\u03BF\u03C0\u03BF\u03B9\u03B7\u03BC\u03AD\u03BD\u03B7 \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 Unicode'
                 },
                 'calendar': {
-                    'japanese': 'Ιαπωνικό ημερολόγιο',
+                    'japanese': '\u0399\u03B1\u03C0\u03C9\u03BD\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
                     'iso8601': 'iso8601',
-                    'coptic': 'Κοπτικό ημερολόγιο',
+                    'coptic': '\u039A\u03BF\u03C0\u03C4\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
                     'dangi': 'dangi',
-                    'ethiopic': 'Αιθιοπικό ημερολόγιο',
-                    'ethiopic-amete-alem': 'Αιθιοπικό ημερολόγιο Άμετ Άλεμ',
-                    'gregorian': 'Γρηγοριανό ημερολόγιο',
-                    'hebrew': 'Εβραϊκό ημερολόγιο',
-                    'persian': 'Περσικό ημερολόγιο',
-                    'roc': 'Ημερολόγιο της Δημοκρατίας της Κίνας',
-                    'chinese': 'Κινεζικό ημερολόγιο',
-                    'buddhist': 'Βουδιστικό ημερολόγιο',
-                    'indian': 'Ινδικό εθνικό ημερολόγιο',
-                    'islamic': 'Ισλαμικό ημερολόγιο',
-                    'islamic-civil': 'Ισλαμικό αστικό ημερολόγιο',
-                    'islamic-rgsa': 'Ισλαμικό ημερολόγιο (Σαουδική Αραβία, θέαση)',
-                    'islamic-tbla': 'Ισλαμικό ημερολόγιο (δομημένο, αστρονομική εποχή)',
+                    'ethiopic': '\u0391\u03B9\u03B8\u03B9\u03BF\u03C0\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
+                    'ethiopic-amete-alem': '\u0391\u03B9\u03B8\u03B9\u03BF\u03C0\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF \u0386\u03BC\u03B5\u03C4 \u0386\u03BB\u03B5\u03BC',
+                    'gregorian': '\u0393\u03C1\u03B7\u03B3\u03BF\u03C1\u03B9\u03B1\u03BD\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
+                    'hebrew': '\u0395\u03B2\u03C1\u03B1\u03CA\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
+                    'persian': '\u03A0\u03B5\u03C1\u03C3\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
+                    'roc': '\u0397\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF \u03C4\u03B7\u03C2 \u0394\u03B7\u03BC\u03BF\u03BA\u03C1\u03B1\u03C4\u03AF\u03B1\u03C2 \u03C4\u03B7\u03C2 \u039A\u03AF\u03BD\u03B1\u03C2',
+                    'chinese': '\u039A\u03B9\u03BD\u03B5\u03B6\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
+                    'buddhist': '\u0392\u03BF\u03C5\u03B4\u03B9\u03C3\u03C4\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
+                    'indian': '\u0399\u03BD\u03B4\u03B9\u03BA\u03CC \u03B5\u03B8\u03BD\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
+                    'islamic': '\u0399\u03C3\u03BB\u03B1\u03BC\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
+                    'islamic-civil': '\u0399\u03C3\u03BB\u03B1\u03BC\u03B9\u03BA\u03CC \u03B1\u03C3\u03C4\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
+                    'islamic-rgsa': '\u0399\u03C3\u03BB\u03B1\u03BC\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF (\u03A3\u03B1\u03BF\u03C5\u03B4\u03B9\u03BA\u03AE \u0391\u03C1\u03B1\u03B2\u03AF\u03B1, \u03B8\u03AD\u03B1\u03C3\u03B7)',
+                    'islamic-tbla': '\u0399\u03C3\u03BB\u03B1\u03BC\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF (\u03B4\u03BF\u03BC\u03B7\u03BC\u03AD\u03BD\u03BF, \u03B1\u03C3\u03C4\u03C1\u03BF\u03BD\u03BF\u03BC\u03B9\u03BA\u03AE \u03B5\u03C0\u03BF\u03C7\u03AE)',
                     'islamic-umalqura': 'islamic-umalqura'
                 },
                 'collation': {
-                    'phonebook': 'Σειρά ταξινόμησης τηλεφωνικού καταλόγου',
-                    'gb2312han': 'Σειρά ταξινόμησης Απλουστευμένων Κινεζικών - GB2312',
+                    'phonebook': '\u03A3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2 \u03C4\u03B7\u03BB\u03B5\u03C6\u03C9\u03BD\u03B9\u03BA\u03BF\u03CD \u03BA\u03B1\u03C4\u03B1\u03BB\u03CC\u03B3\u03BF\u03C5',
+                    'gb2312han': '\u03A3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2 \u0391\u03C0\u03BB\u03BF\u03C5\u03C3\u03C4\u03B5\u03C5\u03BC\u03AD\u03BD\u03C9\u03BD \u039A\u03B9\u03BD\u03B5\u03B6\u03B9\u03BA\u03CE\u03BD - GB2312',
                     'eor': 'eor',
-                    'ducet': 'Προεπιλεγμένη σειρά ταξινόμησης Unicode',
-                    'dictionary': 'Σειρά ταξινόμησης ημερολογίου',
-                    'big5han': 'Σειρά ταξινόμησης Παραδοσιακών Κινεζικών - Big5',
-                    'traditional': 'Παραδοσιακή σειρά ταξινόμησης',
-                    'standard': 'Τυπική σειρά ταξινόμησης',
+                    'ducet': '\u03A0\u03C1\u03BF\u03B5\u03C0\u03B9\u03BB\u03B5\u03B3\u03BC\u03AD\u03BD\u03B7 \u03C3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2 Unicode',
+                    'dictionary': '\u03A3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2 \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03BF\u03B3\u03AF\u03BF\u03C5',
+                    'big5han': '\u03A3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2 \u03A0\u03B1\u03C1\u03B1\u03B4\u03BF\u03C3\u03B9\u03B1\u03BA\u03CE\u03BD \u039A\u03B9\u03BD\u03B5\u03B6\u03B9\u03BA\u03CE\u03BD - Big5',
+                    'traditional': '\u03A0\u03B1\u03C1\u03B1\u03B4\u03BF\u03C3\u03B9\u03B1\u03BA\u03AE \u03C3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2',
+                    'standard': '\u03A4\u03C5\u03C0\u03B9\u03BA\u03AE \u03C3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2',
                     'zhuyin': 'zhuyin',
-                    'unihan': 'Σειρά ταξινόμησης ριζικής αρίθμησης',
-                    'stroke': 'Σειρά ταξινόμησης κινήσεων',
-                    'searchjl': 'Αναζήτηση κατά αρχικό σύμφωνο Χανγκούλ',
-                    'search': 'Αναζήτηση γενικού τύπου',
-                    'reformed': 'Ανασχηματισμένη σειρά ταξινόμησης',
-                    'pinyin': 'Σειρά ταξινόμησης Πινγίν',
-                    'phonetic': 'Φωνητική σειρά ταξινόμησης'
+                    'unihan': '\u03A3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2 \u03C1\u03B9\u03B6\u03B9\u03BA\u03AE\u03C2 \u03B1\u03C1\u03AF\u03B8\u03BC\u03B7\u03C3\u03B7\u03C2',
+                    'stroke': '\u03A3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2 \u03BA\u03B9\u03BD\u03AE\u03C3\u03B5\u03C9\u03BD',
+                    'searchjl': '\u0391\u03BD\u03B1\u03B6\u03AE\u03C4\u03B7\u03C3\u03B7 \u03BA\u03B1\u03C4\u03AC \u03B1\u03C1\u03C7\u03B9\u03BA\u03CC \u03C3\u03CD\u03BC\u03C6\u03C9\u03BD\u03BF \u03A7\u03B1\u03BD\u03B3\u03BA\u03BF\u03CD\u03BB',
+                    'search': '\u0391\u03BD\u03B1\u03B6\u03AE\u03C4\u03B7\u03C3\u03B7 \u03B3\u03B5\u03BD\u03B9\u03BA\u03BF\u03CD \u03C4\u03CD\u03C0\u03BF\u03C5',
+                    'reformed': '\u0391\u03BD\u03B1\u03C3\u03C7\u03B7\u03BC\u03B1\u03C4\u03B9\u03C3\u03BC\u03AD\u03BD\u03B7 \u03C3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2',
+                    'pinyin': '\u03A3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2 \u03A0\u03B9\u03BD\u03B3\u03AF\u03BD',
+                    'phonetic': '\u03A6\u03C9\u03BD\u03B7\u03C4\u03B9\u03BA\u03AE \u03C3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2'
                 },
                 'numbers': {
-                    'knda': 'Ψηφία Κανάντα',
-                    'khmr': 'Ψηφία Χμερ',
+                    'knda': '\u03A8\u03B7\u03C6\u03AF\u03B1 \u039A\u03B1\u03BD\u03AC\u03BD\u03C4\u03B1',
+                    'khmr': '\u03A8\u03B7\u03C6\u03AF\u03B1 \u03A7\u03BC\u03B5\u03C1',
                     'kali': 'kali',
-                    'jpanfin': 'Ιαπωνικά οικονομικά αριθμητικά',
-                    'jpan': 'Ιαπωνικά αριθμητικά',
+                    'jpanfin': '\u0399\u03B1\u03C0\u03C9\u03BD\u03B9\u03BA\u03AC \u03BF\u03B9\u03BA\u03BF\u03BD\u03BF\u03BC\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'jpan': '\u0399\u03B1\u03C0\u03C9\u03BD\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
                     'java': 'java',
-                    'hebr': 'Εβραϊκά αριθμητικά',
-                    'hantfin': 'Παραδοσιακά κινεζικά οικονομικά αριθμητικά',
-                    'hant': 'Παραδοσιακά κινεζικά αριθμητικά',
-                    'hansfin': 'Απλοποιημένα κινεζικά οικονομικά αριθμητικά',
-                    'hans': 'Απλοποιημένα κινεζικά αριθμητικά',
-                    'hanidec': 'Κινεζικά δεκαδικά αριθμητικά',
-                    'guru': 'Ψηφία Γκουρμούκι',
-                    'gujr': 'Γκουτζαρατικά ψηφία',
-                    'greklow': 'Ελληνικά αριθμητικά με πεζά γράμματα',
-                    'grek': 'Ελληνικά αριθμητικά',
+                    'hebr': '\u0395\u03B2\u03C1\u03B1\u03CA\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'hantfin': '\u03A0\u03B1\u03C1\u03B1\u03B4\u03BF\u03C3\u03B9\u03B1\u03BA\u03AC \u03BA\u03B9\u03BD\u03B5\u03B6\u03B9\u03BA\u03AC \u03BF\u03B9\u03BA\u03BF\u03BD\u03BF\u03BC\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'hant': '\u03A0\u03B1\u03C1\u03B1\u03B4\u03BF\u03C3\u03B9\u03B1\u03BA\u03AC \u03BA\u03B9\u03BD\u03B5\u03B6\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'hansfin': '\u0391\u03C0\u03BB\u03BF\u03C0\u03BF\u03B9\u03B7\u03BC\u03AD\u03BD\u03B1 \u03BA\u03B9\u03BD\u03B5\u03B6\u03B9\u03BA\u03AC \u03BF\u03B9\u03BA\u03BF\u03BD\u03BF\u03BC\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'hans': '\u0391\u03C0\u03BB\u03BF\u03C0\u03BF\u03B9\u03B7\u03BC\u03AD\u03BD\u03B1 \u03BA\u03B9\u03BD\u03B5\u03B6\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'hanidec': '\u039A\u03B9\u03BD\u03B5\u03B6\u03B9\u03BA\u03AC \u03B4\u03B5\u03BA\u03B1\u03B4\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'guru': '\u03A8\u03B7\u03C6\u03AF\u03B1 \u0393\u03BA\u03BF\u03C5\u03C1\u03BC\u03BF\u03CD\u03BA\u03B9',
+                    'gujr': '\u0393\u03BA\u03BF\u03C5\u03C4\u03B6\u03B1\u03C1\u03B1\u03C4\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
+                    'greklow': '\u0395\u03BB\u03BB\u03B7\u03BD\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC \u03BC\u03B5 \u03C0\u03B5\u03B6\u03AC \u03B3\u03C1\u03AC\u03BC\u03BC\u03B1\u03C4\u03B1',
+                    'grek': '\u0395\u03BB\u03BB\u03B7\u03BD\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
                     'bali': 'bali',
-                    'armnlow': 'Πεζά αρμενικά αριθμητικά',
-                    'armn': 'Αρμενικά αριθμητικά',
-                    'arabext': 'Εκτεταμένα αραβικό-ινδικά ψηφία',
-                    'arab': 'Αραβικό-Ινδικά ψηφία',
-                    'finance': 'Οικονομικά αριθμητικά',
-                    'traditional': 'Παραδοσιακά αριθμητικά',
-                    'native': 'Εγγενή ψηφία',
-                    'beng': 'Βεγγαλικά ψηφία',
+                    'armnlow': '\u03A0\u03B5\u03B6\u03AC \u03B1\u03C1\u03BC\u03B5\u03BD\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'armn': '\u0391\u03C1\u03BC\u03B5\u03BD\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'arabext': '\u0395\u03BA\u03C4\u03B5\u03C4\u03B1\u03BC\u03AD\u03BD\u03B1 \u03B1\u03C1\u03B1\u03B2\u03B9\u03BA\u03CC-\u03B9\u03BD\u03B4\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
+                    'arab': '\u0391\u03C1\u03B1\u03B2\u03B9\u03BA\u03CC-\u0399\u03BD\u03B4\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
+                    'finance': '\u039F\u03B9\u03BA\u03BF\u03BD\u03BF\u03BC\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'traditional': '\u03A0\u03B1\u03C1\u03B1\u03B4\u03BF\u03C3\u03B9\u03B1\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'native': '\u0395\u03B3\u03B3\u03B5\u03BD\u03AE \u03C8\u03B7\u03C6\u03AF\u03B1',
+                    'beng': '\u0392\u03B5\u03B3\u03B3\u03B1\u03BB\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
                     'brah': 'brah',
                     'cakm': 'cakm',
                     'cham': 'cham',
-                    'deva': 'Ψηφία Ντεβαναγκάρι',
-                    'orya': 'Οριγικά ψηφία',
+                    'deva': '\u03A8\u03B7\u03C6\u03AF\u03B1 \u039D\u03C4\u03B5\u03B2\u03B1\u03BD\u03B1\u03B3\u03BA\u03AC\u03C1\u03B9',
+                    'orya': '\u039F\u03C1\u03B9\u03B3\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
                     'osma': 'osma',
-                    'roman': 'Λατινικοί αριθμοί',
-                    'romanlow': 'Πεζοί λατινικοί αριθμοί',
+                    'roman': '\u039B\u03B1\u03C4\u03B9\u03BD\u03B9\u03BA\u03BF\u03AF \u03B1\u03C1\u03B9\u03B8\u03BC\u03BF\u03AF',
+                    'romanlow': '\u03A0\u03B5\u03B6\u03BF\u03AF \u03BB\u03B1\u03C4\u03B9\u03BD\u03B9\u03BA\u03BF\u03AF \u03B1\u03C1\u03B9\u03B8\u03BC\u03BF\u03AF',
                     'saur': 'saur',
                     'shrd': 'shrd',
                     'sora': 'sora',
                     'sund': 'sund',
-                    'vaii': 'Ψηφία Βάι',
-                    'tibt': 'Θιβετανικά ψηφία',
-                    'thai': 'Ταϊλανδικά ψηφία',
-                    'telu': 'Τελουγκουϊκά ψηφία',
-                    'tamldec': 'Ταμιλικά ψηφία',
-                    'taml': 'Ταμιλικά αριθμητικά',
+                    'vaii': '\u03A8\u03B7\u03C6\u03AF\u03B1 \u0392\u03AC\u03B9',
+                    'tibt': '\u0398\u03B9\u03B2\u03B5\u03C4\u03B1\u03BD\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
+                    'thai': '\u03A4\u03B1\u03CA\u03BB\u03B1\u03BD\u03B4\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
+                    'telu': '\u03A4\u03B5\u03BB\u03BF\u03C5\u03B3\u03BA\u03BF\u03C5\u03CA\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
+                    'tamldec': '\u03A4\u03B1\u03BC\u03B9\u03BB\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
+                    'taml': '\u03A4\u03B1\u03BC\u03B9\u03BB\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
                     'talu': 'talu',
                     'takr': 'takr',
                     'olck': 'olck',
                     'nkoo': 'nkoo',
                     'mymrshan': 'mymrshan',
-                    'mymr': 'Ψηφία Μιανμάρ',
+                    'mymr': '\u03A8\u03B7\u03C6\u03AF\u03B1 \u039C\u03B9\u03B1\u03BD\u03BC\u03AC\u03C1',
                     'mtei': 'mtei',
-                    'mong': 'Μογγολικά ψηφία',
-                    'mlym': 'Μαλαγιαλαμικά ψηφία',
+                    'mong': '\u039C\u03BF\u03B3\u03B3\u03BF\u03BB\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
+                    'mlym': '\u039C\u03B1\u03BB\u03B1\u03B3\u03B9\u03B1\u03BB\u03B1\u03BC\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
                     'limb': 'limb',
                     'lepc': 'lepc',
-                    'latn': 'Ψηφία της Δύσης',
-                    'laoo': 'Λαοϊκά ψηφία',
+                    'latn': '\u03A8\u03B7\u03C6\u03AF\u03B1 \u03C4\u03B7\u03C2 \u0394\u03CD\u03C3\u03B7\u03C2',
+                    'laoo': '\u039B\u03B1\u03BF\u03CA\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
                     'lanatham': 'lanatham',
                     'lana': 'lana',
-                    'geor': 'Γεωργιανά αριθμητικά',
-                    'fullwide': 'Ψηφία πλήρους πλάτους',
-                    'ethi': 'Αιθιοπικά αριθμητικά'
+                    'geor': '\u0393\u03B5\u03C9\u03C1\u03B3\u03B9\u03B1\u03BD\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'fullwide': '\u03A8\u03B7\u03C6\u03AF\u03B1 \u03C0\u03BB\u03AE\u03C1\u03BF\u03C5\u03C2 \u03C0\u03BB\u03AC\u03C4\u03BF\u03C5\u03C2',
+                    'ethi': '\u0391\u03B9\u03B8\u03B9\u03BF\u03C0\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC'
                 },
                 'colAlternate': {
-                    'non-ignorable': 'Ταξινόμηση συμβόλων',
-                    'shifted': 'Ταξινόμηση με αγνόηση συμβόλων'
+                    'non-ignorable': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C3\u03C5\u03BC\u03B2\u03CC\u03BB\u03C9\u03BD',
+                    'shifted': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03BC\u03B5 \u03B1\u03B3\u03BD\u03CC\u03B7\u03C3\u03B7 \u03C3\u03C5\u03BC\u03B2\u03CC\u03BB\u03C9\u03BD'
                 },
                 'colBackwards': {
-                    'no': 'Κανονικά ταξινόμηση τόνων',
-                    'yes': 'Αντίστροφη ταξινόμηση τόνων'
+                    'no': '\u039A\u03B1\u03BD\u03BF\u03BD\u03B9\u03BA\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C4\u03CC\u03BD\u03C9\u03BD',
+                    'yes': '\u0391\u03BD\u03C4\u03AF\u03C3\u03C4\u03C1\u03BF\u03C6\u03B7 \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C4\u03CC\u03BD\u03C9\u03BD'
                 }
             },
             'keys': {
-                'colNormalization': 'Κανονικοποιημένη ταξινόμηση',
-                'collation': 'Σειρά ταξινόμησης',
-                'colHiraganaQuaternary': 'Ταξινόμηση Κάνα',
-                'colCaseLevel': 'Ταξινόμηση με διάκριση χαρακτήρων',
-                'colCaseFirst': 'Ταξινόμηση με κεφαλαίους/πεζούς χαρακτήρες',
-                'colBackwards': 'Ταξινόμηση με αντεστραμμένο τονισμό',
-                'colAlternate': 'Ταξινόμηση με αγνόηση συμβόλων',
-                'calendar': 'Ημερολόγιο',
-                'x': 'Προσωπική χρήση',
-                'variableTop': 'Ταξινόμηση ως σύμβολα',
-                'va': 'Παραλλαγή τοπικών ρυθμίσεων',
-                'timezone': 'Ζώνη ώρας',
-                'numbers': 'Αριθμοί',
-                'currency': 'Νόμισμα',
-                'colStrength': 'Ισχύς ταξινόμησης',
-                'colNumeric': 'Αριθμητική ταξινόμηση'
+                'colNormalization': '\u039A\u03B1\u03BD\u03BF\u03BD\u03B9\u03BA\u03BF\u03C0\u03BF\u03B9\u03B7\u03BC\u03AD\u03BD\u03B7 \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7',
+                'collation': '\u03A3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2',
+                'colHiraganaQuaternary': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u039A\u03AC\u03BD\u03B1',
+                'colCaseLevel': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03BC\u03B5 \u03B4\u03B9\u03AC\u03BA\u03C1\u03B9\u03C3\u03B7 \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD',
+                'colCaseFirst': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03BC\u03B5 \u03BA\u03B5\u03C6\u03B1\u03BB\u03B1\u03AF\u03BF\u03C5\u03C2/\u03C0\u03B5\u03B6\u03BF\u03CD\u03C2 \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03B5\u03C2',
+                'colBackwards': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03BC\u03B5 \u03B1\u03BD\u03C4\u03B5\u03C3\u03C4\u03C1\u03B1\u03BC\u03BC\u03AD\u03BD\u03BF \u03C4\u03BF\u03BD\u03B9\u03C3\u03BC\u03CC',
+                'colAlternate': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03BC\u03B5 \u03B1\u03B3\u03BD\u03CC\u03B7\u03C3\u03B7 \u03C3\u03C5\u03BC\u03B2\u03CC\u03BB\u03C9\u03BD',
+                'calendar': '\u0397\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
+                'x': '\u03A0\u03C1\u03BF\u03C3\u03C9\u03C0\u03B9\u03BA\u03AE \u03C7\u03C1\u03AE\u03C3\u03B7',
+                'variableTop': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C9\u03C2 \u03C3\u03CD\u03BC\u03B2\u03BF\u03BB\u03B1',
+                'va': '\u03A0\u03B1\u03C1\u03B1\u03BB\u03BB\u03B1\u03B3\u03AE \u03C4\u03BF\u03C0\u03B9\u03BA\u03CE\u03BD \u03C1\u03C5\u03B8\u03BC\u03AF\u03C3\u03B5\u03C9\u03BD',
+                'timezone': '\u0396\u03CE\u03BD\u03B7 \u03CE\u03C1\u03B1\u03C2',
+                'numbers': '\u0391\u03C1\u03B9\u03B8\u03BC\u03BF\u03AF',
+                'currency': '\u039D\u03CC\u03BC\u03B9\u03C3\u03BC\u03B1',
+                'colStrength': '\u0399\u03C3\u03C7\u03CD\u03C2 \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2',
+                'colNumeric': '\u0391\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AE \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7'
             },
             'localeDisplayPattern': {
                 'localePattern': '{0} ({1})',
@@ -212,191 +212,191 @@
                 'zone': {
                     'Pacific': {
                         'Saipan': {
-                            'exemplarCity': 'Σάιπαν'
+                            'exemplarCity': '\u03A3\u03AC\u03B9\u03C0\u03B1\u03BD'
                         },
                         'Rarotonga': {
-                            'exemplarCity': 'Ραροτόνγκα'
+                            'exemplarCity': '\u03A1\u03B1\u03C1\u03BF\u03C4\u03CC\u03BD\u03B3\u03BA\u03B1'
                         },
                         'Port_Moresby': {
-                            'exemplarCity': 'Πορτ Μόρεσμπυ'
+                            'exemplarCity': '\u03A0\u03BF\u03C1\u03C4 \u039C\u03CC\u03C1\u03B5\u03C3\u03BC\u03C0\u03C5'
                         },
                         'Ponape': {
-                            'exemplarCity': 'Πονάπε'
+                            'exemplarCity': '\u03A0\u03BF\u03BD\u03AC\u03C0\u03B5'
                         },
                         'Pitcairn': {
-                            'exemplarCity': 'Πίτκερν'
+                            'exemplarCity': '\u03A0\u03AF\u03C4\u03BA\u03B5\u03C1\u03BD'
                         },
                         'Palau': {
-                            'exemplarCity': 'Παλάου'
+                            'exemplarCity': '\u03A0\u03B1\u03BB\u03AC\u03BF\u03C5'
                         },
                         'Auckland': {
-                            'exemplarCity': 'Όκλαντ'
+                            'exemplarCity': '\u038C\u03BA\u03BB\u03B1\u03BD\u03C4'
                         },
                         'Apia': {
-                            'exemplarCity': 'Άπια'
+                            'exemplarCity': '\u0386\u03C0\u03B9\u03B1'
                         },
                         'Funafuti': {
-                            'exemplarCity': 'Φουναφούτι'
+                            'exemplarCity': '\u03A6\u03BF\u03C5\u03BD\u03B1\u03C6\u03BF\u03CD\u03C4\u03B9'
                         },
                         'Galapagos': {
-                            'exemplarCity': 'Γκαλαπάγκος'
+                            'exemplarCity': '\u0393\u03BA\u03B1\u03BB\u03B1\u03C0\u03AC\u03B3\u03BA\u03BF\u03C2'
                         },
                         'Gambier': {
-                            'exemplarCity': 'Γκάμπιερ'
+                            'exemplarCity': '\u0393\u03BA\u03AC\u03BC\u03C0\u03B9\u03B5\u03C1'
                         },
                         'Guadalcanal': {
-                            'exemplarCity': 'Γκουανταλκανάλ'
+                            'exemplarCity': '\u0393\u03BA\u03BF\u03C5\u03B1\u03BD\u03C4\u03B1\u03BB\u03BA\u03B1\u03BD\u03AC\u03BB'
                         },
                         'Guam': {
-                            'exemplarCity': 'Γκουάμ'
+                            'exemplarCity': '\u0393\u03BA\u03BF\u03C5\u03AC\u03BC'
                         },
                         'Honolulu': {
-                            'exemplarCity': 'Χονολουλού'
+                            'exemplarCity': '\u03A7\u03BF\u03BD\u03BF\u03BB\u03BF\u03C5\u03BB\u03BF\u03CD'
                         },
                         'Wallis': {
-                            'exemplarCity': 'Γουόλις'
+                            'exemplarCity': '\u0393\u03BF\u03C5\u03CC\u03BB\u03B9\u03C2'
                         },
                         'Wake': {
-                            'exemplarCity': 'Γουέικ'
+                            'exemplarCity': '\u0393\u03BF\u03C5\u03AD\u03B9\u03BA'
                         },
                         'Truk': {
-                            'exemplarCity': 'Τσουκ'
+                            'exemplarCity': '\u03A4\u03C3\u03BF\u03C5\u03BA'
                         },
                         'Tongatapu': {
-                            'exemplarCity': 'Τονγκατάπου'
+                            'exemplarCity': '\u03A4\u03BF\u03BD\u03B3\u03BA\u03B1\u03C4\u03AC\u03C0\u03BF\u03C5'
                         },
                         'Tarawa': {
-                            'exemplarCity': 'Ταράουα'
+                            'exemplarCity': '\u03A4\u03B1\u03C1\u03AC\u03BF\u03C5\u03B1'
                         },
                         'Tahiti': {
-                            'exemplarCity': 'Ταϊτή'
+                            'exemplarCity': '\u03A4\u03B1\u03CA\u03C4\u03AE'
                         },
                         'Kiritimati': {
-                            'exemplarCity': 'Κιριτιμάτι'
+                            'exemplarCity': '\u039A\u03B9\u03C1\u03B9\u03C4\u03B9\u03BC\u03AC\u03C4\u03B9'
                         },
                         'Johnston': {
-                            'exemplarCity': 'Τζόνστον'
+                            'exemplarCity': '\u03A4\u03B6\u03CC\u03BD\u03C3\u03C4\u03BF\u03BD'
                         },
                         'Chatham': {
-                            'exemplarCity': 'Τσάταμ'
+                            'exemplarCity': '\u03A4\u03C3\u03AC\u03C4\u03B1\u03BC'
                         },
                         'Easter': {
-                            'exemplarCity': 'Νήσος Πάσχα'
+                            'exemplarCity': '\u039D\u03AE\u03C3\u03BF\u03C2 \u03A0\u03AC\u03C3\u03C7\u03B1'
                         },
                         'Efate': {
-                            'exemplarCity': 'Εφάτε'
+                            'exemplarCity': '\u0395\u03C6\u03AC\u03C4\u03B5'
                         },
                         'Enderbury': {
-                            'exemplarCity': 'Εντερμπέρυ'
+                            'exemplarCity': '\u0395\u03BD\u03C4\u03B5\u03C1\u03BC\u03C0\u03AD\u03C1\u03C5'
                         },
                         'Fakaofo': {
-                            'exemplarCity': 'Φακαόφο'
+                            'exemplarCity': '\u03A6\u03B1\u03BA\u03B1\u03CC\u03C6\u03BF'
                         },
                         'Fiji': {
-                            'exemplarCity': 'Φίτζι'
+                            'exemplarCity': '\u03A6\u03AF\u03C4\u03B6\u03B9'
                         },
                         'Kosrae': {
-                            'exemplarCity': 'Κοσράη'
+                            'exemplarCity': '\u039A\u03BF\u03C3\u03C1\u03AC\u03B7'
                         },
                         'Kwajalein': {
-                            'exemplarCity': 'Κουαχαλέιν'
+                            'exemplarCity': '\u039A\u03BF\u03C5\u03B1\u03C7\u03B1\u03BB\u03AD\u03B9\u03BD'
                         },
                         'Majuro': {
-                            'exemplarCity': 'Μαχούρο'
+                            'exemplarCity': '\u039C\u03B1\u03C7\u03BF\u03CD\u03C1\u03BF'
                         },
                         'Marquesas': {
-                            'exemplarCity': 'Μαρκέσας'
+                            'exemplarCity': '\u039C\u03B1\u03C1\u03BA\u03AD\u03C3\u03B1\u03C2'
                         },
                         'Midway': {
-                            'exemplarCity': 'Μίντγουεϊ'
+                            'exemplarCity': '\u039C\u03AF\u03BD\u03C4\u03B3\u03BF\u03C5\u03B5\u03CA'
                         },
                         'Nauru': {
-                            'exemplarCity': 'Ναούρου'
+                            'exemplarCity': '\u039D\u03B1\u03BF\u03CD\u03C1\u03BF\u03C5'
                         },
                         'Niue': {
-                            'exemplarCity': 'Νιούε'
+                            'exemplarCity': '\u039D\u03B9\u03BF\u03CD\u03B5'
                         },
                         'Norfolk': {
-                            'exemplarCity': 'Νόρφολκ'
+                            'exemplarCity': '\u039D\u03CC\u03C1\u03C6\u03BF\u03BB\u03BA'
                         },
                         'Noumea': {
-                            'exemplarCity': 'Νουμέα'
+                            'exemplarCity': '\u039D\u03BF\u03C5\u03BC\u03AD\u03B1'
                         },
                         'Pago_Pago': {
-                            'exemplarCity': 'Πάγκο Πάγκο'
+                            'exemplarCity': '\u03A0\u03AC\u03B3\u03BA\u03BF \u03A0\u03AC\u03B3\u03BA\u03BF'
                         }
                     },
                     'Australia': {
                         'Lindeman': {
-                            'exemplarCity': 'Λίντεμαν'
+                            'exemplarCity': '\u039B\u03AF\u03BD\u03C4\u03B5\u03BC\u03B1\u03BD'
                         },
                         'Hobart': {
-                            'exemplarCity': 'Χόμπαρτ'
+                            'exemplarCity': '\u03A7\u03CC\u03BC\u03C0\u03B1\u03C1\u03C4'
                         },
                         'Eucla': {
-                            'exemplarCity': 'Εούκλα'
+                            'exemplarCity': '\u0395\u03BF\u03CD\u03BA\u03BB\u03B1'
                         },
                         'Darwin': {
-                            'exemplarCity': 'Ντάργουιν'
+                            'exemplarCity': '\u039D\u03C4\u03AC\u03C1\u03B3\u03BF\u03C5\u03B9\u03BD'
                         },
                         'Sydney': {
-                            'exemplarCity': 'Σίδνεϊ'
+                            'exemplarCity': '\u03A3\u03AF\u03B4\u03BD\u03B5\u03CA'
                         },
                         'Perth': {
-                            'exemplarCity': 'Περθ'
+                            'exemplarCity': '\u03A0\u03B5\u03C1\u03B8'
                         },
                         'Melbourne': {
-                            'exemplarCity': 'Μελβούρνη'
+                            'exemplarCity': '\u039C\u03B5\u03BB\u03B2\u03BF\u03CD\u03C1\u03BD\u03B7'
                         },
                         'Lord_Howe': {
-                            'exemplarCity': 'Λορντ Χάουι'
+                            'exemplarCity': '\u039B\u03BF\u03C1\u03BD\u03C4 \u03A7\u03AC\u03BF\u03C5\u03B9'
                         },
                         'Adelaide': {
-                            'exemplarCity': 'Αδελαΐδα'
+                            'exemplarCity': '\u0391\u03B4\u03B5\u03BB\u03B1\u0390\u03B4\u03B1'
                         },
                         'Brisbane': {
-                            'exemplarCity': 'Μπρισμπέιν'
+                            'exemplarCity': '\u039C\u03C0\u03C1\u03B9\u03C3\u03BC\u03C0\u03AD\u03B9\u03BD'
                         },
                         'Broken_Hill': {
-                            'exemplarCity': 'Μπρόκεν Χιλ'
+                            'exemplarCity': '\u039C\u03C0\u03C1\u03CC\u03BA\u03B5\u03BD \u03A7\u03B9\u03BB'
                         },
                         'Currie': {
-                            'exemplarCity': 'Κιουρί'
+                            'exemplarCity': '\u039A\u03B9\u03BF\u03C5\u03C1\u03AF'
                         }
                     },
                     'Indian': {
                         'Maldives': {
-                            'exemplarCity': 'Μαλδίβες'
+                            'exemplarCity': '\u039C\u03B1\u03BB\u03B4\u03AF\u03B2\u03B5\u03C2'
                         },
                         'Mahe': {
-                            'exemplarCity': 'Μάχε'
+                            'exemplarCity': '\u039C\u03AC\u03C7\u03B5'
                         },
                         'Kerguelen': {
-                            'exemplarCity': 'Κέργκουελεν'
+                            'exemplarCity': '\u039A\u03AD\u03C1\u03B3\u03BA\u03BF\u03C5\u03B5\u03BB\u03B5\u03BD'
                         },
                         'Reunion': {
-                            'exemplarCity': 'Ρεϊνιόν'
+                            'exemplarCity': '\u03A1\u03B5\u03CA\u03BD\u03B9\u03CC\u03BD'
                         },
                         'Mayotte': {
-                            'exemplarCity': 'Μαγιότε'
+                            'exemplarCity': '\u039C\u03B1\u03B3\u03B9\u03CC\u03C4\u03B5'
                         },
                         'Mauritius': {
-                            'exemplarCity': 'Μαυρίκιος'
+                            'exemplarCity': '\u039C\u03B1\u03C5\u03C1\u03AF\u03BA\u03B9\u03BF\u03C2'
                         },
                         'Antananarivo': {
-                            'exemplarCity': 'Ανταναναρίβο'
+                            'exemplarCity': '\u0391\u03BD\u03C4\u03B1\u03BD\u03B1\u03BD\u03B1\u03C1\u03AF\u03B2\u03BF'
                         },
                         'Chagos': {
-                            'exemplarCity': 'Τσάγκος'
+                            'exemplarCity': '\u03A4\u03C3\u03AC\u03B3\u03BA\u03BF\u03C2'
                         },
                         'Christmas': {
-                            'exemplarCity': 'Χριστούγεννα'
+                            'exemplarCity': '\u03A7\u03C1\u03B9\u03C3\u03C4\u03BF\u03CD\u03B3\u03B5\u03BD\u03BD\u03B1'
                         },
                         'Cocos': {
-                            'exemplarCity': 'Κόκος'
+                            'exemplarCity': '\u039A\u03CC\u03BA\u03BF\u03C2'
                         },
                         'Comoro': {
-                            'exemplarCity': 'Κομόρο'
+                            'exemplarCity': '\u039A\u03BF\u03BC\u03CC\u03C1\u03BF'
                         }
                     },
                     'Etc': {
@@ -458,7 +458,7 @@
                             'exemplarCity': 'GMT-9'
                         },
                         'Unknown': {
-                            'exemplarCity': 'Άγνωστη πόλη'
+                            'exemplarCity': '\u0386\u03B3\u03BD\u03C9\u03C3\u03C4\u03B7 \u03C0\u03CC\u03BB\u03B7'
                         },
                         'GMT-2': {
                             'exemplarCity': 'GMT-2'
@@ -487,1374 +487,1374 @@
                     },
                     'Antarctica': {
                         'Rothera': {
-                            'exemplarCity': 'Ροθέρα'
+                            'exemplarCity': '\u03A1\u03BF\u03B8\u03AD\u03C1\u03B1'
                         },
                         'Palmer': {
-                            'exemplarCity': 'Πάλμερ'
+                            'exemplarCity': '\u03A0\u03AC\u03BB\u03BC\u03B5\u03C1'
                         },
                         'McMurdo': {
-                            'exemplarCity': 'Μακμέρντο'
+                            'exemplarCity': '\u039C\u03B1\u03BA\u03BC\u03AD\u03C1\u03BD\u03C4\u03BF'
                         },
                         'Vostok': {
-                            'exemplarCity': 'Βόστοκ'
+                            'exemplarCity': '\u0392\u03CC\u03C3\u03C4\u03BF\u03BA'
                         },
                         'Syowa': {
-                            'exemplarCity': 'Σίοβα'
+                            'exemplarCity': '\u03A3\u03AF\u03BF\u03B2\u03B1'
                         },
                         'South_Pole': {
-                            'exemplarCity': 'Νότιος Πόλος'
+                            'exemplarCity': '\u039D\u03CC\u03C4\u03B9\u03BF\u03C2 \u03A0\u03CC\u03BB\u03BF\u03C2'
                         },
                         'Casey': {
-                            'exemplarCity': 'Κάσεϊ'
+                            'exemplarCity': '\u039A\u03AC\u03C3\u03B5\u03CA'
                         },
                         'Davis': {
-                            'exemplarCity': 'Ντέιβις'
+                            'exemplarCity': '\u039D\u03C4\u03AD\u03B9\u03B2\u03B9\u03C2'
                         },
                         'DumontDUrville': {
-                            'exemplarCity': 'Ντιμόντ Ντερβίλ'
+                            'exemplarCity': '\u039D\u03C4\u03B9\u03BC\u03CC\u03BD\u03C4 \u039D\u03C4\u03B5\u03C1\u03B2\u03AF\u03BB'
                         },
                         'Macquarie': {
-                            'exemplarCity': 'Μακουάρι'
+                            'exemplarCity': '\u039C\u03B1\u03BA\u03BF\u03C5\u03AC\u03C1\u03B9'
                         },
                         'Mawson': {
-                            'exemplarCity': 'Μόουσον'
+                            'exemplarCity': '\u039C\u03CC\u03BF\u03C5\u03C3\u03BF\u03BD'
                         }
                     },
                     'Arctic': {
                         'Longyearbyen': {
-                            'exemplarCity': 'Λόνγκιεαρμπιεν'
+                            'exemplarCity': '\u039B\u03CC\u03BD\u03B3\u03BA\u03B9\u03B5\u03B1\u03C1\u03BC\u03C0\u03B9\u03B5\u03BD'
                         }
                     },
                     'America': {
                         'Toronto': {
-                            'exemplarCity': 'Τορόντο'
+                            'exemplarCity': '\u03A4\u03BF\u03C1\u03CC\u03BD\u03C4\u03BF'
                         },
                         'Tijuana': {
-                            'exemplarCity': 'Τιχουάνα'
+                            'exemplarCity': '\u03A4\u03B9\u03C7\u03BF\u03C5\u03AC\u03BD\u03B1'
                         },
                         'Thunder_Bay': {
-                            'exemplarCity': 'Θάντερ Μπέι'
+                            'exemplarCity': '\u0398\u03AC\u03BD\u03C4\u03B5\u03C1 \u039C\u03C0\u03AD\u03B9'
                         },
                         'Thule': {
-                            'exemplarCity': 'Τούλε'
+                            'exemplarCity': '\u03A4\u03BF\u03CD\u03BB\u03B5'
                         },
                         'Tegucigalpa': {
-                            'exemplarCity': 'Τεγκουσιγκάλπα'
+                            'exemplarCity': '\u03A4\u03B5\u03B3\u03BA\u03BF\u03C5\u03C3\u03B9\u03B3\u03BA\u03AC\u03BB\u03C0\u03B1'
                         },
                         'Swift_Current': {
-                            'exemplarCity': 'Σουίφτ Κάρρεντ'
+                            'exemplarCity': '\u03A3\u03BF\u03C5\u03AF\u03C6\u03C4 \u039A\u03AC\u03C1\u03C1\u03B5\u03BD\u03C4'
                         },
                         'Chicago': {
-                            'exemplarCity': 'Σικάγο'
+                            'exemplarCity': '\u03A3\u03B9\u03BA\u03AC\u03B3\u03BF'
                         },
                         'Cayman': {
-                            'exemplarCity': 'Κέιμαν'
+                            'exemplarCity': '\u039A\u03AD\u03B9\u03BC\u03B1\u03BD'
                         },
                         'Cayenne': {
-                            'exemplarCity': 'Καγιένε'
+                            'exemplarCity': '\u039A\u03B1\u03B3\u03B9\u03AD\u03BD\u03B5'
                         },
                         'Catamarca': {
-                            'exemplarCity': 'Καταμάρκα'
+                            'exemplarCity': '\u039A\u03B1\u03C4\u03B1\u03BC\u03AC\u03C1\u03BA\u03B1'
                         },
                         'Caracas': {
-                            'exemplarCity': 'Καράκας'
+                            'exemplarCity': '\u039A\u03B1\u03C1\u03AC\u03BA\u03B1\u03C2'
                         },
                         'Cancun': {
-                            'exemplarCity': 'Κανκούν'
+                            'exemplarCity': '\u039A\u03B1\u03BD\u03BA\u03BF\u03CD\u03BD'
                         },
                         'Campo_Grande': {
-                            'exemplarCity': 'Κάμπο Γκράντε'
+                            'exemplarCity': '\u039A\u03AC\u03BC\u03C0\u03BF \u0393\u03BA\u03C1\u03AC\u03BD\u03C4\u03B5'
                         },
                         'Cambridge_Bay': {
-                            'exemplarCity': 'Κέμπριτζ Μπέι'
+                            'exemplarCity': '\u039A\u03AD\u03BC\u03C0\u03C1\u03B9\u03C4\u03B6 \u039C\u03C0\u03AD\u03B9'
                         },
                         'Buenos_Aires': {
-                            'exemplarCity': 'Μπουένος Άιρες'
+                            'exemplarCity': '\u039C\u03C0\u03BF\u03C5\u03AD\u03BD\u03BF\u03C2 \u0386\u03B9\u03C1\u03B5\u03C2'
                         },
                         'Boise': {
-                            'exemplarCity': 'Μπόιζ'
+                            'exemplarCity': '\u039C\u03C0\u03CC\u03B9\u03B6'
                         },
                         'Asuncion': {
-                            'exemplarCity': 'Ασουνσιόν'
+                            'exemplarCity': '\u0391\u03C3\u03BF\u03C5\u03BD\u03C3\u03B9\u03CC\u03BD'
                         },
                         'Aruba': {
-                            'exemplarCity': 'Αρούμπα'
+                            'exemplarCity': '\u0391\u03C1\u03BF\u03CD\u03BC\u03C0\u03B1'
                         },
                         'Argentina': {
                             'Rio_Gallegos': {
-                                'exemplarCity': 'Ρίο Γκαγιέγκος'
+                                'exemplarCity': '\u03A1\u03AF\u03BF \u0393\u03BA\u03B1\u03B3\u03B9\u03AD\u03B3\u03BA\u03BF\u03C2'
                             },
                             'San_Juan': {
-                                'exemplarCity': 'Σαν Χουάν'
+                                'exemplarCity': '\u03A3\u03B1\u03BD \u03A7\u03BF\u03C5\u03AC\u03BD'
                             },
                             'Ushuaia': {
-                                'exemplarCity': 'Ουσουάια'
+                                'exemplarCity': '\u039F\u03C5\u03C3\u03BF\u03C5\u03AC\u03B9\u03B1'
                             },
                             'La_Rioja': {
-                                'exemplarCity': 'Λα Ριόχα'
+                                'exemplarCity': '\u039B\u03B1 \u03A1\u03B9\u03CC\u03C7\u03B1'
                             },
                             'San_Luis': {
-                                'exemplarCity': 'Σαν Λούις'
+                                'exemplarCity': '\u03A3\u03B1\u03BD \u039B\u03BF\u03CD\u03B9\u03C2'
                             },
                             'Salta': {
-                                'exemplarCity': 'Σάλτα'
+                                'exemplarCity': '\u03A3\u03AC\u03BB\u03C4\u03B1'
                             },
                             'Tucuman': {
-                                'exemplarCity': 'Τουκουμάν'
+                                'exemplarCity': '\u03A4\u03BF\u03C5\u03BA\u03BF\u03C5\u03BC\u03AC\u03BD'
                             }
                         },
                         'Araguaina': {
-                            'exemplarCity': 'Αραγκουάινα'
+                            'exemplarCity': '\u0391\u03C1\u03B1\u03B3\u03BA\u03BF\u03C5\u03AC\u03B9\u03BD\u03B1'
                         },
                         'Antigua': {
-                            'exemplarCity': 'Αντίγκουα'
+                            'exemplarCity': '\u0391\u03BD\u03C4\u03AF\u03B3\u03BA\u03BF\u03C5\u03B1'
                         },
                         'Anguilla': {
-                            'exemplarCity': 'Ανγκουίλα'
+                            'exemplarCity': '\u0391\u03BD\u03B3\u03BA\u03BF\u03C5\u03AF\u03BB\u03B1'
                         },
                         'Anchorage': {
-                            'exemplarCity': 'Άνκορατζ'
+                            'exemplarCity': '\u0386\u03BD\u03BA\u03BF\u03C1\u03B1\u03C4\u03B6'
                         },
                         'Adak': {
-                            'exemplarCity': 'Άντακ'
+                            'exemplarCity': '\u0386\u03BD\u03C4\u03B1\u03BA'
                         },
                         'Bahia': {
-                            'exemplarCity': 'Μπάχια'
+                            'exemplarCity': '\u039C\u03C0\u03AC\u03C7\u03B9\u03B1'
                         },
                         'Bahia_Banderas': {
-                            'exemplarCity': 'Μπαχία Ντε Μπαντέρας'
+                            'exemplarCity': '\u039C\u03C0\u03B1\u03C7\u03AF\u03B1 \u039D\u03C4\u03B5 \u039C\u03C0\u03B1\u03BD\u03C4\u03AD\u03C1\u03B1\u03C2'
                         },
                         'Barbados': {
-                            'exemplarCity': 'Μπαρμπάντος'
+                            'exemplarCity': '\u039C\u03C0\u03B1\u03C1\u03BC\u03C0\u03AC\u03BD\u03C4\u03BF\u03C2'
                         },
                         'Belem': {
-                            'exemplarCity': 'Μπέλεμ'
+                            'exemplarCity': '\u039C\u03C0\u03AD\u03BB\u03B5\u03BC'
                         },
                         'Belize': {
-                            'exemplarCity': 'Μπελίζ'
+                            'exemplarCity': '\u039C\u03C0\u03B5\u03BB\u03AF\u03B6'
                         },
                         'Blanc-Sablon': {
-                            'exemplarCity': 'Μπλαν Σαμπλόν'
+                            'exemplarCity': '\u039C\u03C0\u03BB\u03B1\u03BD \u03A3\u03B1\u03BC\u03C0\u03BB\u03CC\u03BD'
                         },
                         'Boa_Vista': {
-                            'exemplarCity': 'Μπόα Βίστα'
+                            'exemplarCity': '\u039C\u03C0\u03CC\u03B1 \u0392\u03AF\u03C3\u03C4\u03B1'
                         },
                         'Bogota': {
-                            'exemplarCity': 'Μπογκοτά'
+                            'exemplarCity': '\u039C\u03C0\u03BF\u03B3\u03BA\u03BF\u03C4\u03AC'
                         },
                         'Curacao': {
-                            'exemplarCity': 'Κουρασάο'
+                            'exemplarCity': '\u039A\u03BF\u03C5\u03C1\u03B1\u03C3\u03AC\u03BF'
                         },
                         'Danmarkshavn': {
-                            'exemplarCity': 'Ντανμαρκσάβν'
+                            'exemplarCity': '\u039D\u03C4\u03B1\u03BD\u03BC\u03B1\u03C1\u03BA\u03C3\u03AC\u03B2\u03BD'
                         },
                         'Dawson': {
-                            'exemplarCity': 'Ντόσον'
+                            'exemplarCity': '\u039D\u03C4\u03CC\u03C3\u03BF\u03BD'
                         },
                         'Dawson_Creek': {
-                            'exemplarCity': 'Ντόσον Κρικ'
+                            'exemplarCity': '\u039D\u03C4\u03CC\u03C3\u03BF\u03BD \u039A\u03C1\u03B9\u03BA'
                         },
                         'Denver': {
-                            'exemplarCity': 'Ντένβερ'
+                            'exemplarCity': '\u039D\u03C4\u03AD\u03BD\u03B2\u03B5\u03C1'
                         },
                         'Detroit': {
-                            'exemplarCity': 'Ντιτρόιτ'
+                            'exemplarCity': '\u039D\u03C4\u03B9\u03C4\u03C1\u03CC\u03B9\u03C4'
                         },
                         'Hermosillo': {
-                            'exemplarCity': 'Ερμοσίγιο'
+                            'exemplarCity': '\u0395\u03C1\u03BC\u03BF\u03C3\u03AF\u03B3\u03B9\u03BF'
                         },
                         'Indiana': {
                             'Vincennes': {
-                                'exemplarCity': 'Βίνκενες, Ιντιάνα'
+                                'exemplarCity': '\u0392\u03AF\u03BD\u03BA\u03B5\u03BD\u03B5\u03C2, \u0399\u03BD\u03C4\u03B9\u03AC\u03BD\u03B1'
                             },
                             'Petersburg': {
-                                'exemplarCity': 'Πίτερσμπεργκ, Ιντιάνα'
+                                'exemplarCity': '\u03A0\u03AF\u03C4\u03B5\u03C1\u03C3\u03BC\u03C0\u03B5\u03C1\u03B3\u03BA, \u0399\u03BD\u03C4\u03B9\u03AC\u03BD\u03B1'
                             },
                             'Tell_City': {
-                                'exemplarCity': 'Τελ Σίτυ, Ιντιάνα'
+                                'exemplarCity': '\u03A4\u03B5\u03BB \u03A3\u03AF\u03C4\u03C5, \u0399\u03BD\u03C4\u03B9\u03AC\u03BD\u03B1'
                             },
                             'Knox': {
-                                'exemplarCity': 'Νοξ, Ιντιάνα'
+                                'exemplarCity': '\u039D\u03BF\u03BE, \u0399\u03BD\u03C4\u03B9\u03AC\u03BD\u03B1'
                             },
                             'Winamac': {
-                                'exemplarCity': 'Γουίναμακ, Ιντιάνα'
+                                'exemplarCity': '\u0393\u03BF\u03C5\u03AF\u03BD\u03B1\u03BC\u03B1\u03BA, \u0399\u03BD\u03C4\u03B9\u03AC\u03BD\u03B1'
                             },
                             'Marengo': {
-                                'exemplarCity': 'Μαρένγκο, Ιντιάνα'
+                                'exemplarCity': '\u039C\u03B1\u03C1\u03AD\u03BD\u03B3\u03BA\u03BF, \u0399\u03BD\u03C4\u03B9\u03AC\u03BD\u03B1'
                             },
                             'Vevay': {
-                                'exemplarCity': 'Βεβάι, Ιντιάνα'
+                                'exemplarCity': '\u0392\u03B5\u03B2\u03AC\u03B9, \u0399\u03BD\u03C4\u03B9\u03AC\u03BD\u03B1'
                             }
                         },
                         'Indianapolis': {
-                            'exemplarCity': 'Ιντιανάπολις'
+                            'exemplarCity': '\u0399\u03BD\u03C4\u03B9\u03B1\u03BD\u03AC\u03C0\u03BF\u03BB\u03B9\u03C2'
                         },
                         'Inuvik': {
-                            'exemplarCity': 'Ινούβικ'
+                            'exemplarCity': '\u0399\u03BD\u03BF\u03CD\u03B2\u03B9\u03BA'
                         },
                         'Iqaluit': {
-                            'exemplarCity': 'Ικαλούτ'
+                            'exemplarCity': '\u0399\u03BA\u03B1\u03BB\u03BF\u03CD\u03C4'
                         },
                         'Jamaica': {
-                            'exemplarCity': 'Τζαμάικα'
+                            'exemplarCity': '\u03A4\u03B6\u03B1\u03BC\u03AC\u03B9\u03BA\u03B1'
                         },
                         'Jujuy': {
-                            'exemplarCity': 'Χουχούι'
+                            'exemplarCity': '\u03A7\u03BF\u03C5\u03C7\u03BF\u03CD\u03B9'
                         },
                         'Juneau': {
-                            'exemplarCity': 'Τζούνο'
+                            'exemplarCity': '\u03A4\u03B6\u03BF\u03CD\u03BD\u03BF'
                         },
                         'Yellowknife': {
-                            'exemplarCity': 'Γέλοουναϊφ'
+                            'exemplarCity': '\u0393\u03AD\u03BB\u03BF\u03BF\u03C5\u03BD\u03B1\u03CA\u03C6'
                         },
                         'Yakutat': {
-                            'exemplarCity': 'Γιακούτατ'
+                            'exemplarCity': '\u0393\u03B9\u03B1\u03BA\u03BF\u03CD\u03C4\u03B1\u03C4'
                         },
                         'Winnipeg': {
-                            'exemplarCity': 'Γουίνιπεγκ'
+                            'exemplarCity': '\u0393\u03BF\u03C5\u03AF\u03BD\u03B9\u03C0\u03B5\u03B3\u03BA'
                         },
                         'Whitehorse': {
-                            'exemplarCity': 'Γουάιτχορς'
+                            'exemplarCity': '\u0393\u03BF\u03C5\u03AC\u03B9\u03C4\u03C7\u03BF\u03C1\u03C2'
                         },
                         'Vancouver': {
-                            'exemplarCity': 'Βανκούβερ'
+                            'exemplarCity': '\u0392\u03B1\u03BD\u03BA\u03BF\u03CD\u03B2\u03B5\u03C1'
                         },
                         'Tortola': {
-                            'exemplarCity': 'Τορτόλα'
+                            'exemplarCity': '\u03A4\u03BF\u03C1\u03C4\u03CC\u03BB\u03B1'
                         },
                         'Kralendijk': {
-                            'exemplarCity': 'Κραλέντικ'
+                            'exemplarCity': '\u039A\u03C1\u03B1\u03BB\u03AD\u03BD\u03C4\u03B9\u03BA'
                         },
                         'Kentucky': {
                             'Monticello': {
-                                'exemplarCity': 'Μοντιτσέλο, Κεντάκι'
+                                'exemplarCity': '\u039C\u03BF\u03BD\u03C4\u03B9\u03C4\u03C3\u03AD\u03BB\u03BF, \u039A\u03B5\u03BD\u03C4\u03AC\u03BA\u03B9'
                             }
                         },
                         'Havana': {
-                            'exemplarCity': 'Αβάνα'
+                            'exemplarCity': '\u0391\u03B2\u03AC\u03BD\u03B1'
                         },
                         'Halifax': {
-                            'exemplarCity': 'Χάλιφαξ'
+                            'exemplarCity': '\u03A7\u03AC\u03BB\u03B9\u03C6\u03B1\u03BE'
                         },
                         'Guyana': {
-                            'exemplarCity': 'Γουιάνα'
+                            'exemplarCity': '\u0393\u03BF\u03C5\u03B9\u03AC\u03BD\u03B1'
                         },
                         'Guayaquil': {
-                            'exemplarCity': 'Γκουαγιακύλ'
+                            'exemplarCity': '\u0393\u03BA\u03BF\u03C5\u03B1\u03B3\u03B9\u03B1\u03BA\u03CD\u03BB'
                         },
                         'Guatemala': {
-                            'exemplarCity': 'Γουατεμάλα'
+                            'exemplarCity': '\u0393\u03BF\u03C5\u03B1\u03C4\u03B5\u03BC\u03AC\u03BB\u03B1'
                         },
                         'Guadeloupe': {
-                            'exemplarCity': 'Γουαδελούπη'
+                            'exemplarCity': '\u0393\u03BF\u03C5\u03B1\u03B4\u03B5\u03BB\u03BF\u03CD\u03C0\u03B7'
                         },
                         'Grenada': {
-                            'exemplarCity': 'Γρενάδα'
+                            'exemplarCity': '\u0393\u03C1\u03B5\u03BD\u03AC\u03B4\u03B1'
                         },
                         'Grand_Turk': {
-                            'exemplarCity': 'Γκραντ Τουρκ'
+                            'exemplarCity': '\u0393\u03BA\u03C1\u03B1\u03BD\u03C4 \u03A4\u03BF\u03C5\u03C1\u03BA'
                         },
                         'Goose_Bay': {
-                            'exemplarCity': 'Γκους Μπέι'
+                            'exemplarCity': '\u0393\u03BA\u03BF\u03C5\u03C2 \u039C\u03C0\u03AD\u03B9'
                         },
                         'Godthab': {
-                            'exemplarCity': 'Γκόνθαμπ'
+                            'exemplarCity': '\u0393\u03BA\u03CC\u03BD\u03B8\u03B1\u03BC\u03C0'
                         },
                         'Glace_Bay': {
-                            'exemplarCity': 'Γκλέις Μπέι'
+                            'exemplarCity': '\u0393\u03BA\u03BB\u03AD\u03B9\u03C2 \u039C\u03C0\u03AD\u03B9'
                         },
                         'Fortaleza': {
-                            'exemplarCity': 'Φορταλέζα'
+                            'exemplarCity': '\u03A6\u03BF\u03C1\u03C4\u03B1\u03BB\u03AD\u03B6\u03B1'
                         },
                         'El_Salvador': {
-                            'exemplarCity': 'Ελ Σαλβαδόρ'
+                            'exemplarCity': '\u0395\u03BB \u03A3\u03B1\u03BB\u03B2\u03B1\u03B4\u03CC\u03C1'
                         },
                         'Eirunepe': {
-                            'exemplarCity': 'Εϊρουνέπε'
+                            'exemplarCity': '\u0395\u03CA\u03C1\u03BF\u03C5\u03BD\u03AD\u03C0\u03B5'
                         },
                         'Edmonton': {
-                            'exemplarCity': 'Έντμοντον'
+                            'exemplarCity': '\u0388\u03BD\u03C4\u03BC\u03BF\u03BD\u03C4\u03BF\u03BD'
                         },
                         'Dominica': {
-                            'exemplarCity': 'Δομινίκα'
+                            'exemplarCity': '\u0394\u03BF\u03BC\u03B9\u03BD\u03AF\u03BA\u03B1'
                         },
                         'Chihuahua': {
-                            'exemplarCity': 'Τσιουάουα'
+                            'exemplarCity': '\u03A4\u03C3\u03B9\u03BF\u03C5\u03AC\u03BF\u03C5\u03B1'
                         },
                         'Coral_Harbour': {
-                            'exemplarCity': 'Κόραλ Χάρμπουρ'
+                            'exemplarCity': '\u039A\u03CC\u03C1\u03B1\u03BB \u03A7\u03AC\u03C1\u03BC\u03C0\u03BF\u03C5\u03C1'
                         },
                         'Cordoba': {
-                            'exemplarCity': 'Κόρδοβα'
+                            'exemplarCity': '\u039A\u03CC\u03C1\u03B4\u03BF\u03B2\u03B1'
                         },
                         'Costa_Rica': {
-                            'exemplarCity': 'Κόστα Ρίκα'
+                            'exemplarCity': '\u039A\u03CC\u03C3\u03C4\u03B1 \u03A1\u03AF\u03BA\u03B1'
                         },
                         'Creston': {
-                            'exemplarCity': 'Κρέστον'
+                            'exemplarCity': '\u039A\u03C1\u03AD\u03C3\u03C4\u03BF\u03BD'
                         },
                         'Cuiaba': {
-                            'exemplarCity': 'Κουϊάμπα'
+                            'exemplarCity': '\u039A\u03BF\u03C5\u03CA\u03AC\u03BC\u03C0\u03B1'
                         },
                         'La_Paz': {
-                            'exemplarCity': 'Λα Παζ'
+                            'exemplarCity': '\u039B\u03B1 \u03A0\u03B1\u03B6'
                         },
                         'Lima': {
-                            'exemplarCity': 'Λίμα'
+                            'exemplarCity': '\u039B\u03AF\u03BC\u03B1'
                         },
                         'Los_Angeles': {
-                            'exemplarCity': 'Λος Άντζελες'
+                            'exemplarCity': '\u039B\u03BF\u03C2 \u0386\u03BD\u03C4\u03B6\u03B5\u03BB\u03B5\u03C2'
                         },
                         'Louisville': {
-                            'exemplarCity': 'Λούισβιλ'
+                            'exemplarCity': '\u039B\u03BF\u03CD\u03B9\u03C3\u03B2\u03B9\u03BB'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': '[Lower Prince\'s Quarter]'
+                            'exemplarCity': "[Lower Prince's Quarter]"
                         },
                         'Maceio': {
-                            'exemplarCity': 'Μασέιο'
+                            'exemplarCity': '\u039C\u03B1\u03C3\u03AD\u03B9\u03BF'
                         },
                         'Managua': {
-                            'exemplarCity': 'Μανάγκουα'
+                            'exemplarCity': '\u039C\u03B1\u03BD\u03AC\u03B3\u03BA\u03BF\u03C5\u03B1'
                         },
                         'Manaus': {
-                            'exemplarCity': 'Μανάος'
+                            'exemplarCity': '\u039C\u03B1\u03BD\u03AC\u03BF\u03C2'
                         },
                         'Marigot': {
-                            'exemplarCity': 'Μάριγκοτ'
+                            'exemplarCity': '\u039C\u03AC\u03C1\u03B9\u03B3\u03BA\u03BF\u03C4'
                         },
                         'Martinique': {
-                            'exemplarCity': 'Μαρτινίκα'
+                            'exemplarCity': '\u039C\u03B1\u03C1\u03C4\u03B9\u03BD\u03AF\u03BA\u03B1'
                         },
                         'Matamoros': {
-                            'exemplarCity': 'Ματαμόρος'
+                            'exemplarCity': '\u039C\u03B1\u03C4\u03B1\u03BC\u03CC\u03C1\u03BF\u03C2'
                         },
                         'Mazatlan': {
-                            'exemplarCity': 'Μαζατλάν'
+                            'exemplarCity': '\u039C\u03B1\u03B6\u03B1\u03C4\u03BB\u03AC\u03BD'
                         },
                         'Mendoza': {
-                            'exemplarCity': 'Μεντόζα'
+                            'exemplarCity': '\u039C\u03B5\u03BD\u03C4\u03CC\u03B6\u03B1'
                         },
                         'Menominee': {
-                            'exemplarCity': 'Μενομίνε'
+                            'exemplarCity': '\u039C\u03B5\u03BD\u03BF\u03BC\u03AF\u03BD\u03B5'
                         },
                         'Merida': {
-                            'exemplarCity': 'Μέριντα'
+                            'exemplarCity': '\u039C\u03AD\u03C1\u03B9\u03BD\u03C4\u03B1'
                         },
                         'Metlakatla': {
-                            'exemplarCity': 'Μετλακάτλα'
+                            'exemplarCity': '\u039C\u03B5\u03C4\u03BB\u03B1\u03BA\u03AC\u03C4\u03BB\u03B1'
                         },
                         'Mexico_City': {
-                            'exemplarCity': 'Πόλη του Μεξικού'
+                            'exemplarCity': '\u03A0\u03CC\u03BB\u03B7 \u03C4\u03BF\u03C5 \u039C\u03B5\u03BE\u03B9\u03BA\u03BF\u03CD'
                         },
                         'Miquelon': {
-                            'exemplarCity': 'Μικελόν'
+                            'exemplarCity': '\u039C\u03B9\u03BA\u03B5\u03BB\u03CC\u03BD'
                         },
                         'Moncton': {
-                            'exemplarCity': 'Μονκτόν'
+                            'exemplarCity': '\u039C\u03BF\u03BD\u03BA\u03C4\u03CC\u03BD'
                         },
                         'Monterrey': {
-                            'exemplarCity': 'Μοντερέι'
+                            'exemplarCity': '\u039C\u03BF\u03BD\u03C4\u03B5\u03C1\u03AD\u03B9'
                         },
                         'Montevideo': {
-                            'exemplarCity': 'Μοντεβιδέο'
+                            'exemplarCity': '\u039C\u03BF\u03BD\u03C4\u03B5\u03B2\u03B9\u03B4\u03AD\u03BF'
                         },
                         'Montreal': {
-                            'exemplarCity': 'Μόντρεαλ'
+                            'exemplarCity': '\u039C\u03CC\u03BD\u03C4\u03C1\u03B5\u03B1\u03BB'
                         },
                         'Montserrat': {
-                            'exemplarCity': 'Μονσεράτ'
+                            'exemplarCity': '\u039C\u03BF\u03BD\u03C3\u03B5\u03C1\u03AC\u03C4'
                         },
                         'Nassau': {
-                            'exemplarCity': 'Νασάου'
+                            'exemplarCity': '\u039D\u03B1\u03C3\u03AC\u03BF\u03C5'
                         },
                         'New_York': {
-                            'exemplarCity': 'Νέα Υόρκη'
+                            'exemplarCity': '\u039D\u03AD\u03B1 \u03A5\u03CC\u03C1\u03BA\u03B7'
                         },
                         'Nipigon': {
-                            'exemplarCity': 'Νιπιγκόν'
+                            'exemplarCity': '\u039D\u03B9\u03C0\u03B9\u03B3\u03BA\u03CC\u03BD'
                         },
                         'Nome': {
-                            'exemplarCity': 'Νόμε'
+                            'exemplarCity': '\u039D\u03CC\u03BC\u03B5'
                         },
                         'Noronha': {
-                            'exemplarCity': 'Νορόνχα'
+                            'exemplarCity': '\u039D\u03BF\u03C1\u03CC\u03BD\u03C7\u03B1'
                         },
                         'North_Dakota': {
                             'Beulah': {
-                                'exemplarCity': 'Μπέουλαχ, Βόρεια Ντακότα'
+                                'exemplarCity': '\u039C\u03C0\u03AD\u03BF\u03C5\u03BB\u03B1\u03C7, \u0392\u03CC\u03C1\u03B5\u03B9\u03B1 \u039D\u03C4\u03B1\u03BA\u03CC\u03C4\u03B1'
                             },
                             'New_Salem': {
-                                'exemplarCity': 'Νιου Σάλεμ, Βόρεια Ντακότα'
+                                'exemplarCity': '\u039D\u03B9\u03BF\u03C5 \u03A3\u03AC\u03BB\u03B5\u03BC, \u0392\u03CC\u03C1\u03B5\u03B9\u03B1 \u039D\u03C4\u03B1\u03BA\u03CC\u03C4\u03B1'
                             },
                             'Center': {
-                                'exemplarCity': 'Κέντρο, Βόρεια Ντακότα'
+                                'exemplarCity': '\u039A\u03AD\u03BD\u03C4\u03C1\u03BF, \u0392\u03CC\u03C1\u03B5\u03B9\u03B1 \u039D\u03C4\u03B1\u03BA\u03CC\u03C4\u03B1'
                             }
                         },
                         'Ojinaga': {
-                            'exemplarCity': 'Οχινάγκα'
+                            'exemplarCity': '\u039F\u03C7\u03B9\u03BD\u03AC\u03B3\u03BA\u03B1'
                         },
                         'Panama': {
-                            'exemplarCity': 'Παναμάς'
+                            'exemplarCity': '\u03A0\u03B1\u03BD\u03B1\u03BC\u03AC\u03C2'
                         },
                         'Pangnirtung': {
-                            'exemplarCity': 'Πανγκνίρτουνγκ'
+                            'exemplarCity': '\u03A0\u03B1\u03BD\u03B3\u03BA\u03BD\u03AF\u03C1\u03C4\u03BF\u03C5\u03BD\u03B3\u03BA'
                         },
                         'Paramaribo': {
-                            'exemplarCity': 'Παραμαρίμπο'
+                            'exemplarCity': '\u03A0\u03B1\u03C1\u03B1\u03BC\u03B1\u03C1\u03AF\u03BC\u03C0\u03BF'
                         },
                         'Phoenix': {
-                            'exemplarCity': 'Φοίνιξ'
+                            'exemplarCity': '\u03A6\u03BF\u03AF\u03BD\u03B9\u03BE'
                         },
                         'Port-au-Prince': {
-                            'exemplarCity': 'Πορτ-ο-Πρενς'
+                            'exemplarCity': '\u03A0\u03BF\u03C1\u03C4-\u03BF-\u03A0\u03C1\u03B5\u03BD\u03C2'
                         },
                         'Port_of_Spain': {
-                            'exemplarCity': 'Πορτ οφ Σπέιν'
+                            'exemplarCity': '\u03A0\u03BF\u03C1\u03C4 \u03BF\u03C6 \u03A3\u03C0\u03AD\u03B9\u03BD'
                         },
                         'Porto_Velho': {
-                            'exemplarCity': 'Πόρτο Βέλο'
+                            'exemplarCity': '\u03A0\u03CC\u03C1\u03C4\u03BF \u0392\u03AD\u03BB\u03BF'
                         },
                         'Puerto_Rico': {
-                            'exemplarCity': 'Πουέρτο Ρίκο'
+                            'exemplarCity': '\u03A0\u03BF\u03C5\u03AD\u03C1\u03C4\u03BF \u03A1\u03AF\u03BA\u03BF'
                         },
                         'Rainy_River': {
-                            'exemplarCity': 'Ρέινι Ρίβερ'
+                            'exemplarCity': '\u03A1\u03AD\u03B9\u03BD\u03B9 \u03A1\u03AF\u03B2\u03B5\u03C1'
                         },
                         'Rankin_Inlet': {
-                            'exemplarCity': 'Ρέινκιν Ίνλετ'
+                            'exemplarCity': '\u03A1\u03AD\u03B9\u03BD\u03BA\u03B9\u03BD \u038A\u03BD\u03BB\u03B5\u03C4'
                         },
                         'Recife': {
-                            'exemplarCity': 'Ρεσίφε'
+                            'exemplarCity': '\u03A1\u03B5\u03C3\u03AF\u03C6\u03B5'
                         },
                         'Regina': {
-                            'exemplarCity': 'Ρετζίνα'
+                            'exemplarCity': '\u03A1\u03B5\u03C4\u03B6\u03AF\u03BD\u03B1'
                         },
                         'Resolute': {
-                            'exemplarCity': 'Ρέσολουτ'
+                            'exemplarCity': '\u03A1\u03AD\u03C3\u03BF\u03BB\u03BF\u03C5\u03C4'
                         },
                         'Rio_Branco': {
-                            'exemplarCity': 'Ρίο Μπράνκο'
+                            'exemplarCity': '\u03A1\u03AF\u03BF \u039C\u03C0\u03C1\u03AC\u03BD\u03BA\u03BF'
                         },
                         'Santa_Isabel': {
-                            'exemplarCity': 'Σάντα Ιζαμπέλ'
+                            'exemplarCity': '\u03A3\u03AC\u03BD\u03C4\u03B1 \u0399\u03B6\u03B1\u03BC\u03C0\u03AD\u03BB'
                         },
                         'Santarem': {
-                            'exemplarCity': 'Σανταρέμ'
+                            'exemplarCity': '\u03A3\u03B1\u03BD\u03C4\u03B1\u03C1\u03AD\u03BC'
                         },
                         'Santiago': {
-                            'exemplarCity': 'Σαντιάγκο'
+                            'exemplarCity': '\u03A3\u03B1\u03BD\u03C4\u03B9\u03AC\u03B3\u03BA\u03BF'
                         },
                         'Santo_Domingo': {
-                            'exemplarCity': 'Άγιος Δομίνικος'
+                            'exemplarCity': '\u0386\u03B3\u03B9\u03BF\u03C2 \u0394\u03BF\u03BC\u03AF\u03BD\u03B9\u03BA\u03BF\u03C2'
                         },
                         'Sao_Paulo': {
-                            'exemplarCity': 'Σάο Πάολο'
+                            'exemplarCity': '\u03A3\u03AC\u03BF \u03A0\u03AC\u03BF\u03BB\u03BF'
                         },
                         'Scoresbysund': {
-                            'exemplarCity': 'Σκορεσμπίσουντ'
+                            'exemplarCity': '\u03A3\u03BA\u03BF\u03C1\u03B5\u03C3\u03BC\u03C0\u03AF\u03C3\u03BF\u03C5\u03BD\u03C4'
                         },
                         'Shiprock': {
-                            'exemplarCity': 'Σίπροκ'
+                            'exemplarCity': '\u03A3\u03AF\u03C0\u03C1\u03BF\u03BA'
                         },
                         'Sitka': {
-                            'exemplarCity': 'Σίτκα'
+                            'exemplarCity': '\u03A3\u03AF\u03C4\u03BA\u03B1'
                         },
                         'St_Barthelemy': {
-                            'exemplarCity': 'Άγιος Βαρθολομαίος'
+                            'exemplarCity': '\u0386\u03B3\u03B9\u03BF\u03C2 \u0392\u03B1\u03C1\u03B8\u03BF\u03BB\u03BF\u03BC\u03B1\u03AF\u03BF\u03C2'
                         },
                         'St_Johns': {
-                            'exemplarCity': 'Σεντ Τζονς'
+                            'exemplarCity': '\u03A3\u03B5\u03BD\u03C4 \u03A4\u03B6\u03BF\u03BD\u03C2'
                         },
                         'St_Kitts': {
-                            'exemplarCity': 'Άγιος Χριστόφορος (Σαιντ Κιτς)'
+                            'exemplarCity': '\u0386\u03B3\u03B9\u03BF\u03C2 \u03A7\u03C1\u03B9\u03C3\u03C4\u03CC\u03C6\u03BF\u03C1\u03BF\u03C2 (\u03A3\u03B1\u03B9\u03BD\u03C4 \u039A\u03B9\u03C4\u03C2)'
                         },
                         'St_Lucia': {
-                            'exemplarCity': 'Αγία Λουκία'
+                            'exemplarCity': '\u0391\u03B3\u03AF\u03B1 \u039B\u03BF\u03C5\u03BA\u03AF\u03B1'
                         },
                         'St_Thomas': {
-                            'exemplarCity': 'Άγιος Θωμάς'
+                            'exemplarCity': '\u0386\u03B3\u03B9\u03BF\u03C2 \u0398\u03C9\u03BC\u03AC\u03C2'
                         },
                         'St_Vincent': {
-                            'exemplarCity': 'Άγιος Βικέντιος'
+                            'exemplarCity': '\u0386\u03B3\u03B9\u03BF\u03C2 \u0392\u03B9\u03BA\u03AD\u03BD\u03C4\u03B9\u03BF\u03C2'
                         }
                     },
                     'Atlantic': {
                         'South_Georgia': {
-                            'exemplarCity': 'Νότια Γεωργία'
+                            'exemplarCity': '\u039D\u03CC\u03C4\u03B9\u03B1 \u0393\u03B5\u03C9\u03C1\u03B3\u03AF\u03B1'
                         },
                         'Reykjavik': {
-                            'exemplarCity': 'Ρέυκιαβικ'
+                            'exemplarCity': '\u03A1\u03AD\u03C5\u03BA\u03B9\u03B1\u03B2\u03B9\u03BA'
                         },
                         'Stanley': {
-                            'exemplarCity': 'Στάνλεϋ'
+                            'exemplarCity': '\u03A3\u03C4\u03AC\u03BD\u03BB\u03B5\u03CB'
                         },
                         'St_Helena': {
-                            'exemplarCity': 'Αγ. Ελένη'
+                            'exemplarCity': '\u0391\u03B3. \u0395\u03BB\u03AD\u03BD\u03B7'
                         },
                         'Azores': {
-                            'exemplarCity': 'Αζόρες'
+                            'exemplarCity': '\u0391\u03B6\u03CC\u03C1\u03B5\u03C2'
                         },
                         'Bermuda': {
-                            'exemplarCity': 'Βερμούδα'
+                            'exemplarCity': '\u0392\u03B5\u03C1\u03BC\u03BF\u03CD\u03B4\u03B1'
                         },
                         'Canary': {
-                            'exemplarCity': 'Κανάρια'
+                            'exemplarCity': '\u039A\u03B1\u03BD\u03AC\u03C1\u03B9\u03B1'
                         },
                         'Cape_Verde': {
-                            'exemplarCity': 'Πράσινο Ακρωτήριο'
+                            'exemplarCity': '\u03A0\u03C1\u03AC\u03C3\u03B9\u03BD\u03BF \u0391\u03BA\u03C1\u03C9\u03C4\u03AE\u03C1\u03B9\u03BF'
                         },
                         'Faeroe': {
-                            'exemplarCity': 'Φερόες'
+                            'exemplarCity': '\u03A6\u03B5\u03C1\u03CC\u03B5\u03C2'
                         },
                         'Madeira': {
-                            'exemplarCity': 'Μαδέρα'
+                            'exemplarCity': '\u039C\u03B1\u03B4\u03AD\u03C1\u03B1'
                         }
                     },
                     'Europe': {
                         'Oslo': {
-                            'exemplarCity': 'Όσλο'
+                            'exemplarCity': '\u038C\u03C3\u03BB\u03BF'
                         },
                         'Moscow': {
-                            'exemplarCity': 'Μόσχα'
+                            'exemplarCity': '\u039C\u03CC\u03C3\u03C7\u03B1'
                         },
                         'Monaco': {
-                            'exemplarCity': 'Μονακό'
+                            'exemplarCity': '\u039C\u03BF\u03BD\u03B1\u03BA\u03CC'
                         },
                         'Minsk': {
-                            'exemplarCity': 'Μινσκ'
+                            'exemplarCity': '\u039C\u03B9\u03BD\u03C3\u03BA'
                         },
                         'Mariehamn': {
-                            'exemplarCity': 'Μαριέχαμν'
+                            'exemplarCity': '\u039C\u03B1\u03C1\u03B9\u03AD\u03C7\u03B1\u03BC\u03BD'
                         },
                         'Malta': {
-                            'exemplarCity': 'Μάλτα'
+                            'exemplarCity': '\u039C\u03AC\u03BB\u03C4\u03B1'
                         },
                         'Madrid': {
-                            'exemplarCity': 'Μαδρίτη'
+                            'exemplarCity': '\u039C\u03B1\u03B4\u03C1\u03AF\u03C4\u03B7'
                         },
                         'Luxembourg': {
-                            'exemplarCity': 'Λουξεμβούργο'
+                            'exemplarCity': '\u039B\u03BF\u03C5\u03BE\u03B5\u03BC\u03B2\u03BF\u03CD\u03C1\u03B3\u03BF'
                         },
                         'London': {
                             'long': {
-                                'daylight': 'Θερινή ώρα Βρετανίας'
+                                'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0392\u03C1\u03B5\u03C4\u03B1\u03BD\u03AF\u03B1\u03C2'
                             },
-                            'exemplarCity': 'Λονδίνο'
+                            'exemplarCity': '\u039B\u03BF\u03BD\u03B4\u03AF\u03BD\u03BF'
                         },
                         'Ljubljana': {
-                            'exemplarCity': 'Λιουμπλιάνα'
+                            'exemplarCity': '\u039B\u03B9\u03BF\u03C5\u03BC\u03C0\u03BB\u03B9\u03AC\u03BD\u03B1'
                         },
                         'Lisbon': {
-                            'exemplarCity': 'Λισαβόνα'
+                            'exemplarCity': '\u039B\u03B9\u03C3\u03B1\u03B2\u03CC\u03BD\u03B1'
                         },
                         'Kiev': {
-                            'exemplarCity': 'Κίεβο'
+                            'exemplarCity': '\u039A\u03AF\u03B5\u03B2\u03BF'
                         },
                         'Kaliningrad': {
-                            'exemplarCity': 'Καλίνινγκραντ'
+                            'exemplarCity': '\u039A\u03B1\u03BB\u03AF\u03BD\u03B9\u03BD\u03B3\u03BA\u03C1\u03B1\u03BD\u03C4'
                         },
                         'Jersey': {
-                            'exemplarCity': 'Τζέρσεϊ'
+                            'exemplarCity': '\u03A4\u03B6\u03AD\u03C1\u03C3\u03B5\u03CA'
                         },
                         'Istanbul': {
-                            'exemplarCity': 'Κωνσταντινούπολη'
+                            'exemplarCity': '\u039A\u03C9\u03BD\u03C3\u03C4\u03B1\u03BD\u03C4\u03B9\u03BD\u03BF\u03CD\u03C0\u03BF\u03BB\u03B7'
                         },
                         'Isle_of_Man': {
-                            'exemplarCity': 'Νήσος του Μαν'
+                            'exemplarCity': '\u039D\u03AE\u03C3\u03BF\u03C2 \u03C4\u03BF\u03C5 \u039C\u03B1\u03BD'
                         },
                         'Bucharest': {
-                            'exemplarCity': 'Βουκουρέστι'
+                            'exemplarCity': '\u0392\u03BF\u03C5\u03BA\u03BF\u03C5\u03C1\u03AD\u03C3\u03C4\u03B9'
                         },
                         'Brussels': {
-                            'exemplarCity': 'Βρυξέλλες'
+                            'exemplarCity': '\u0392\u03C1\u03C5\u03BE\u03AD\u03BB\u03BB\u03B5\u03C2'
                         },
                         'Bratislava': {
-                            'exemplarCity': 'Μπρατισλάβα'
+                            'exemplarCity': '\u039C\u03C0\u03C1\u03B1\u03C4\u03B9\u03C3\u03BB\u03AC\u03B2\u03B1'
                         },
                         'Berlin': {
-                            'exemplarCity': 'Βερολίνο'
+                            'exemplarCity': '\u0392\u03B5\u03C1\u03BF\u03BB\u03AF\u03BD\u03BF'
                         },
                         'Belgrade': {
-                            'exemplarCity': 'Βελιγράδι'
+                            'exemplarCity': '\u0392\u03B5\u03BB\u03B9\u03B3\u03C1\u03AC\u03B4\u03B9'
                         },
                         'Athens': {
-                            'exemplarCity': 'Αθήνα'
+                            'exemplarCity': '\u0391\u03B8\u03AE\u03BD\u03B1'
                         },
                         'Andorra': {
-                            'exemplarCity': 'Ανδόρα'
+                            'exemplarCity': '\u0391\u03BD\u03B4\u03CC\u03C1\u03B1'
                         },
                         'Amsterdam': {
-                            'exemplarCity': 'Άμστερνταμ'
+                            'exemplarCity': '\u0386\u03BC\u03C3\u03C4\u03B5\u03C1\u03BD\u03C4\u03B1\u03BC'
                         },
                         'Simferopol': {
-                            'exemplarCity': 'Συμφερόπολη'
+                            'exemplarCity': '\u03A3\u03C5\u03BC\u03C6\u03B5\u03C1\u03CC\u03C0\u03BF\u03BB\u03B7'
                         },
                         'Skopje': {
-                            'exemplarCity': 'Σκόπια'
+                            'exemplarCity': '\u03A3\u03BA\u03CC\u03C0\u03B9\u03B1'
                         },
                         'Sofia': {
-                            'exemplarCity': 'Σόφια'
+                            'exemplarCity': '\u03A3\u03CC\u03C6\u03B9\u03B1'
                         },
                         'Stockholm': {
-                            'exemplarCity': 'Στοκχόλμη'
+                            'exemplarCity': '\u03A3\u03C4\u03BF\u03BA\u03C7\u03CC\u03BB\u03BC\u03B7'
                         },
                         'Tallinn': {
-                            'exemplarCity': 'Ταλίν'
+                            'exemplarCity': '\u03A4\u03B1\u03BB\u03AF\u03BD'
                         },
                         'Tirane': {
-                            'exemplarCity': 'Τίρανα'
+                            'exemplarCity': '\u03A4\u03AF\u03C1\u03B1\u03BD\u03B1'
                         },
                         'Uzhgorod': {
-                            'exemplarCity': 'Ουζκόροντ'
+                            'exemplarCity': '\u039F\u03C5\u03B6\u03BA\u03CC\u03C1\u03BF\u03BD\u03C4'
                         },
                         'Vaduz': {
-                            'exemplarCity': 'Βαντούζ'
+                            'exemplarCity': '\u0392\u03B1\u03BD\u03C4\u03BF\u03CD\u03B6'
                         },
                         'Zurich': {
-                            'exemplarCity': 'Ζυρίχη'
+                            'exemplarCity': '\u0396\u03C5\u03C1\u03AF\u03C7\u03B7'
                         },
                         'Zaporozhye': {
-                            'exemplarCity': 'Ζαπορόζιε'
+                            'exemplarCity': '\u0396\u03B1\u03C0\u03BF\u03C1\u03CC\u03B6\u03B9\u03B5'
                         },
                         'Zagreb': {
-                            'exemplarCity': 'Ζάγκρεμπ'
+                            'exemplarCity': '\u0396\u03AC\u03B3\u03BA\u03C1\u03B5\u03BC\u03C0'
                         },
                         'Warsaw': {
-                            'exemplarCity': 'Βαρσοβία'
+                            'exemplarCity': '\u0392\u03B1\u03C1\u03C3\u03BF\u03B2\u03AF\u03B1'
                         },
                         'Volgograd': {
-                            'exemplarCity': 'Βόλγκοκραντ'
+                            'exemplarCity': '\u0392\u03CC\u03BB\u03B3\u03BA\u03BF\u03BA\u03C1\u03B1\u03BD\u03C4'
                         },
                         'Vilnius': {
-                            'exemplarCity': 'Βίλνιους'
+                            'exemplarCity': '\u0392\u03AF\u03BB\u03BD\u03B9\u03BF\u03C5\u03C2'
                         },
                         'Vienna': {
-                            'exemplarCity': 'Βιέννη'
+                            'exemplarCity': '\u0392\u03B9\u03AD\u03BD\u03BD\u03B7'
                         },
                         'Vatican': {
-                            'exemplarCity': 'Βατικανό'
+                            'exemplarCity': '\u0392\u03B1\u03C4\u03B9\u03BA\u03B1\u03BD\u03CC'
                         },
                         'Sarajevo': {
-                            'exemplarCity': 'Σαράγεβο'
+                            'exemplarCity': '\u03A3\u03B1\u03C1\u03AC\u03B3\u03B5\u03B2\u03BF'
                         },
                         'San_Marino': {
-                            'exemplarCity': 'Άγιος Μαρίνος'
+                            'exemplarCity': '\u0386\u03B3\u03B9\u03BF\u03C2 \u039C\u03B1\u03C1\u03AF\u03BD\u03BF\u03C2'
                         },
                         'Samara': {
-                            'exemplarCity': 'Σαμάρα'
+                            'exemplarCity': '\u03A3\u03B1\u03BC\u03AC\u03C1\u03B1'
                         },
                         'Rome': {
-                            'exemplarCity': 'Ρώμη'
+                            'exemplarCity': '\u03A1\u03CE\u03BC\u03B7'
                         },
                         'Riga': {
-                            'exemplarCity': 'Ρίγα'
+                            'exemplarCity': '\u03A1\u03AF\u03B3\u03B1'
                         },
                         'Prague': {
-                            'exemplarCity': 'Πράγα'
+                            'exemplarCity': '\u03A0\u03C1\u03AC\u03B3\u03B1'
                         },
                         'Podgorica': {
-                            'exemplarCity': 'Ποντγκόριτσα'
+                            'exemplarCity': '\u03A0\u03BF\u03BD\u03C4\u03B3\u03BA\u03CC\u03C1\u03B9\u03C4\u03C3\u03B1'
                         },
                         'Paris': {
-                            'exemplarCity': 'Παρίσι'
+                            'exemplarCity': '\u03A0\u03B1\u03C1\u03AF\u03C3\u03B9'
                         },
                         'Helsinki': {
-                            'exemplarCity': 'Ελσίνκι'
+                            'exemplarCity': '\u0395\u03BB\u03C3\u03AF\u03BD\u03BA\u03B9'
                         },
                         'Guernsey': {
-                            'exemplarCity': 'Γκέρνσεϊ'
+                            'exemplarCity': '\u0393\u03BA\u03AD\u03C1\u03BD\u03C3\u03B5\u03CA'
                         },
                         'Gibraltar': {
-                            'exemplarCity': 'Γιβραλτάρ'
+                            'exemplarCity': '\u0393\u03B9\u03B2\u03C1\u03B1\u03BB\u03C4\u03AC\u03C1'
                         },
                         'Dublin': {
                             'long': {
-                                'daylight': 'Θερινή ώρα Ιρλανδίας'
+                                'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0399\u03C1\u03BB\u03B1\u03BD\u03B4\u03AF\u03B1\u03C2'
                             },
-                            'exemplarCity': 'Δουβλίνο'
+                            'exemplarCity': '\u0394\u03BF\u03C5\u03B2\u03BB\u03AF\u03BD\u03BF'
                         },
                         'Copenhagen': {
-                            'exemplarCity': 'Κοπεγχάγη'
+                            'exemplarCity': '\u039A\u03BF\u03C0\u03B5\u03B3\u03C7\u03AC\u03B3\u03B7'
                         },
                         'Chisinau': {
-                            'exemplarCity': 'Κισινάου'
+                            'exemplarCity': '\u039A\u03B9\u03C3\u03B9\u03BD\u03AC\u03BF\u03C5'
                         },
                         'Busingen': {
-                            'exemplarCity': 'Μπίσινγκεν'
+                            'exemplarCity': '\u039C\u03C0\u03AF\u03C3\u03B9\u03BD\u03B3\u03BA\u03B5\u03BD'
                         },
                         'Budapest': {
-                            'exemplarCity': 'Βουδαπέστη'
+                            'exemplarCity': '\u0392\u03BF\u03C5\u03B4\u03B1\u03C0\u03AD\u03C3\u03C4\u03B7'
                         }
                     },
                     'Africa': {
                         'Libreville': {
-                            'exemplarCity': 'Λιμπρεβίλ'
+                            'exemplarCity': '\u039B\u03B9\u03BC\u03C0\u03C1\u03B5\u03B2\u03AF\u03BB'
                         },
                         'Lagos': {
-                            'exemplarCity': 'Λάγκος'
+                            'exemplarCity': '\u039B\u03AC\u03B3\u03BA\u03BF\u03C2'
                         },
                         'Kinshasa': {
-                            'exemplarCity': 'Κινσάσα'
+                            'exemplarCity': '\u039A\u03B9\u03BD\u03C3\u03AC\u03C3\u03B1'
                         },
                         'Kigali': {
-                            'exemplarCity': 'Κιγκάλι'
+                            'exemplarCity': '\u039A\u03B9\u03B3\u03BA\u03AC\u03BB\u03B9'
                         },
                         'Khartoum': {
-                            'exemplarCity': 'Χαρτούμ'
+                            'exemplarCity': '\u03A7\u03B1\u03C1\u03C4\u03BF\u03CD\u03BC'
                         },
                         'Kampala': {
-                            'exemplarCity': 'Καμπάλα'
+                            'exemplarCity': '\u039A\u03B1\u03BC\u03C0\u03AC\u03BB\u03B1'
                         },
                         'Juba': {
-                            'exemplarCity': 'Γιούμπα'
+                            'exemplarCity': '\u0393\u03B9\u03BF\u03CD\u03BC\u03C0\u03B1'
                         },
                         'Johannesburg': {
-                            'exemplarCity': 'Γιοχάνεσμπουργκ'
+                            'exemplarCity': '\u0393\u03B9\u03BF\u03C7\u03AC\u03BD\u03B5\u03C3\u03BC\u03C0\u03BF\u03C5\u03C1\u03B3\u03BA'
                         },
                         'Harare': {
-                            'exemplarCity': 'Χαράρε'
+                            'exemplarCity': '\u03A7\u03B1\u03C1\u03AC\u03C1\u03B5'
                         },
                         'Gaborone': {
-                            'exemplarCity': 'Γκαμπορόνε'
+                            'exemplarCity': '\u0393\u03BA\u03B1\u03BC\u03C0\u03BF\u03C1\u03CC\u03BD\u03B5'
                         },
                         'Freetown': {
-                            'exemplarCity': 'Φρίταουν'
+                            'exemplarCity': '\u03A6\u03C1\u03AF\u03C4\u03B1\u03BF\u03C5\u03BD'
                         },
                         'El_Aaiun': {
-                            'exemplarCity': 'Ελ Αγιούν'
+                            'exemplarCity': '\u0395\u03BB \u0391\u03B3\u03B9\u03BF\u03CD\u03BD'
                         },
                         'Douala': {
-                            'exemplarCity': 'Ντουάλα'
+                            'exemplarCity': '\u039D\u03C4\u03BF\u03C5\u03AC\u03BB\u03B1'
                         },
                         'Djibouti': {
-                            'exemplarCity': 'Τζιμπουτί'
+                            'exemplarCity': '\u03A4\u03B6\u03B9\u03BC\u03C0\u03BF\u03C5\u03C4\u03AF'
                         },
                         'Dar_es_Salaam': {
-                            'exemplarCity': 'Νταρ Ες Σαλάμ'
+                            'exemplarCity': '\u039D\u03C4\u03B1\u03C1 \u0395\u03C2 \u03A3\u03B1\u03BB\u03AC\u03BC'
                         },
                         'Dakar': {
-                            'exemplarCity': 'Ντακάρ'
+                            'exemplarCity': '\u039D\u03C4\u03B1\u03BA\u03AC\u03C1'
                         },
                         'Banjul': {
-                            'exemplarCity': 'Μπάνζουλ'
+                            'exemplarCity': '\u039C\u03C0\u03AC\u03BD\u03B6\u03BF\u03C5\u03BB'
                         },
                         'Bangui': {
-                            'exemplarCity': 'Μπανγκί'
+                            'exemplarCity': '\u039C\u03C0\u03B1\u03BD\u03B3\u03BA\u03AF'
                         },
                         'Bamako': {
-                            'exemplarCity': 'Μπαμάκο'
+                            'exemplarCity': '\u039C\u03C0\u03B1\u03BC\u03AC\u03BA\u03BF'
                         },
                         'Asmera': {
-                            'exemplarCity': 'Ασμάρα'
+                            'exemplarCity': '\u0391\u03C3\u03BC\u03AC\u03C1\u03B1'
                         },
                         'Malabo': {
-                            'exemplarCity': 'Μαλάμπο'
+                            'exemplarCity': '\u039C\u03B1\u03BB\u03AC\u03BC\u03C0\u03BF'
                         },
                         'Maputo': {
-                            'exemplarCity': 'Μαπούτο'
+                            'exemplarCity': '\u039C\u03B1\u03C0\u03BF\u03CD\u03C4\u03BF'
                         },
                         'Maseru': {
-                            'exemplarCity': 'Μασέρου'
+                            'exemplarCity': '\u039C\u03B1\u03C3\u03AD\u03C1\u03BF\u03C5'
                         },
                         'Mbabane': {
-                            'exemplarCity': 'Μπαμπάνε'
+                            'exemplarCity': '\u039C\u03C0\u03B1\u03BC\u03C0\u03AC\u03BD\u03B5'
                         },
                         'Mogadishu': {
-                            'exemplarCity': 'Μογκαντίσου'
+                            'exemplarCity': '\u039C\u03BF\u03B3\u03BA\u03B1\u03BD\u03C4\u03AF\u03C3\u03BF\u03C5'
                         },
                         'Monrovia': {
-                            'exemplarCity': 'Μονρόβια'
+                            'exemplarCity': '\u039C\u03BF\u03BD\u03C1\u03CC\u03B2\u03B9\u03B1'
                         },
                         'Nairobi': {
-                            'exemplarCity': 'Ναϊρόμπι'
+                            'exemplarCity': '\u039D\u03B1\u03CA\u03C1\u03CC\u03BC\u03C0\u03B9'
                         },
                         'Ndjamena': {
-                            'exemplarCity': 'Ντζαμένα'
+                            'exemplarCity': '\u039D\u03C4\u03B6\u03B1\u03BC\u03AD\u03BD\u03B1'
                         },
                         'Windhoek': {
-                            'exemplarCity': 'Βίντχουκ'
+                            'exemplarCity': '\u0392\u03AF\u03BD\u03C4\u03C7\u03BF\u03C5\u03BA'
                         },
                         'Tunis': {
-                            'exemplarCity': 'Τύνιδα'
+                            'exemplarCity': '\u03A4\u03CD\u03BD\u03B9\u03B4\u03B1'
                         },
                         'Tripoli': {
-                            'exemplarCity': 'Τρίπολη'
+                            'exemplarCity': '\u03A4\u03C1\u03AF\u03C0\u03BF\u03BB\u03B7'
                         },
                         'Sao_Tome': {
-                            'exemplarCity': 'Σάο Τομέ'
+                            'exemplarCity': '\u03A3\u03AC\u03BF \u03A4\u03BF\u03BC\u03AD'
                         },
                         'Porto-Novo': {
-                            'exemplarCity': 'Πόρτο-Νόβο'
+                            'exemplarCity': '\u03A0\u03CC\u03C1\u03C4\u03BF-\u039D\u03CC\u03B2\u03BF'
                         },
                         'Ouagadougou': {
-                            'exemplarCity': 'Ουαγκαντούγκου'
+                            'exemplarCity': '\u039F\u03C5\u03B1\u03B3\u03BA\u03B1\u03BD\u03C4\u03BF\u03CD\u03B3\u03BA\u03BF\u03C5'
                         },
                         'Nouakchott': {
-                            'exemplarCity': 'Νουακσότ'
+                            'exemplarCity': '\u039D\u03BF\u03C5\u03B1\u03BA\u03C3\u03CC\u03C4'
                         },
                         'Niamey': {
-                            'exemplarCity': 'Νιαμέι'
+                            'exemplarCity': '\u039D\u03B9\u03B1\u03BC\u03AD\u03B9'
                         },
                         'Lusaka': {
-                            'exemplarCity': 'Λουζάκα'
+                            'exemplarCity': '\u039B\u03BF\u03C5\u03B6\u03AC\u03BA\u03B1'
                         },
                         'Lubumbashi': {
-                            'exemplarCity': 'Λουμπουμπάσι'
+                            'exemplarCity': '\u039B\u03BF\u03C5\u03BC\u03C0\u03BF\u03C5\u03BC\u03C0\u03AC\u03C3\u03B9'
                         },
                         'Luanda': {
-                            'exemplarCity': 'Λουάντα'
+                            'exemplarCity': '\u039B\u03BF\u03C5\u03AC\u03BD\u03C4\u03B1'
                         },
                         'Lome': {
-                            'exemplarCity': 'Λομέ'
+                            'exemplarCity': '\u039B\u03BF\u03BC\u03AD'
                         },
                         'Conakry': {
-                            'exemplarCity': 'Κόνακρι'
+                            'exemplarCity': '\u039A\u03CC\u03BD\u03B1\u03BA\u03C1\u03B9'
                         },
                         'Ceuta': {
-                            'exemplarCity': 'Κέουτα'
+                            'exemplarCity': '\u039A\u03AD\u03BF\u03C5\u03C4\u03B1'
                         },
                         'Casablanca': {
-                            'exemplarCity': 'Καζαμπλάνκα'
+                            'exemplarCity': '\u039A\u03B1\u03B6\u03B1\u03BC\u03C0\u03BB\u03AC\u03BD\u03BA\u03B1'
                         },
                         'Cairo': {
-                            'exemplarCity': 'Κάιρο'
+                            'exemplarCity': '\u039A\u03AC\u03B9\u03C1\u03BF'
                         },
                         'Bujumbura': {
-                            'exemplarCity': 'Μπουζουμπούρα'
+                            'exemplarCity': '\u039C\u03C0\u03BF\u03C5\u03B6\u03BF\u03C5\u03BC\u03C0\u03BF\u03CD\u03C1\u03B1'
                         },
                         'Brazzaville': {
-                            'exemplarCity': 'Μπράζαβιλ'
+                            'exemplarCity': '\u039C\u03C0\u03C1\u03AC\u03B6\u03B1\u03B2\u03B9\u03BB'
                         },
                         'Blantyre': {
-                            'exemplarCity': 'Μπλαντάιρ'
+                            'exemplarCity': '\u039C\u03C0\u03BB\u03B1\u03BD\u03C4\u03AC\u03B9\u03C1'
                         },
                         'Bissau': {
-                            'exemplarCity': 'Μπισάου'
+                            'exemplarCity': '\u039C\u03C0\u03B9\u03C3\u03AC\u03BF\u03C5'
                         },
                         'Abidjan': {
-                            'exemplarCity': 'Αμπιτζάν'
+                            'exemplarCity': '\u0391\u03BC\u03C0\u03B9\u03C4\u03B6\u03AC\u03BD'
                         },
                         'Accra': {
-                            'exemplarCity': 'Άκρα'
+                            'exemplarCity': '\u0386\u03BA\u03C1\u03B1'
                         },
                         'Addis_Ababa': {
-                            'exemplarCity': 'Αντίς Αμπέμπα'
+                            'exemplarCity': '\u0391\u03BD\u03C4\u03AF\u03C2 \u0391\u03BC\u03C0\u03AD\u03BC\u03C0\u03B1'
                         },
                         'Algiers': {
-                            'exemplarCity': 'Αλγέρι'
+                            'exemplarCity': '\u0391\u03BB\u03B3\u03AD\u03C1\u03B9'
                         }
                     },
                     'Asia': {
                         'Shanghai': {
-                            'exemplarCity': 'Σανγκάη'
+                            'exemplarCity': '\u03A3\u03B1\u03BD\u03B3\u03BA\u03AC\u03B7'
                         },
                         'Seoul': {
-                            'exemplarCity': 'Σεούλ'
+                            'exemplarCity': '\u03A3\u03B5\u03BF\u03CD\u03BB'
                         },
                         'Samarkand': {
-                            'exemplarCity': 'Σαμαρκάνδη'
+                            'exemplarCity': '\u03A3\u03B1\u03BC\u03B1\u03C1\u03BA\u03AC\u03BD\u03B4\u03B7'
                         },
                         'Sakhalin': {
-                            'exemplarCity': 'Σακαλίνσκ'
+                            'exemplarCity': '\u03A3\u03B1\u03BA\u03B1\u03BB\u03AF\u03BD\u03C3\u03BA'
                         },
                         'Saigon': {
-                            'exemplarCity': 'Πόλη Χο Τσι Μινχ'
+                            'exemplarCity': '\u03A0\u03CC\u03BB\u03B7 \u03A7\u03BF \u03A4\u03C3\u03B9 \u039C\u03B9\u03BD\u03C7'
                         },
                         'Riyadh': {
-                            'exemplarCity': 'Ριάντ'
+                            'exemplarCity': '\u03A1\u03B9\u03AC\u03BD\u03C4'
                         },
                         'Rangoon': {
-                            'exemplarCity': 'Ρανγκούν'
+                            'exemplarCity': '\u03A1\u03B1\u03BD\u03B3\u03BA\u03BF\u03CD\u03BD'
                         },
                         'Qyzylorda': {
-                            'exemplarCity': 'Κτζιλ-Ορντά'
+                            'exemplarCity': '\u039A\u03C4\u03B6\u03B9\u03BB-\u039F\u03C1\u03BD\u03C4\u03AC'
                         },
                         'Qatar': {
-                            'exemplarCity': 'Κατάρ'
+                            'exemplarCity': '\u039A\u03B1\u03C4\u03AC\u03C1'
                         },
                         'Pyongyang': {
-                            'exemplarCity': 'Πιονγκγιάνγκ'
+                            'exemplarCity': '\u03A0\u03B9\u03BF\u03BD\u03B3\u03BA\u03B3\u03B9\u03AC\u03BD\u03B3\u03BA'
                         },
                         'Pontianak': {
-                            'exemplarCity': 'Πόντιανακ'
+                            'exemplarCity': '\u03A0\u03CC\u03BD\u03C4\u03B9\u03B1\u03BD\u03B1\u03BA'
                         },
                         'Phnom_Penh': {
-                            'exemplarCity': 'Πνομ Πενχ'
+                            'exemplarCity': '\u03A0\u03BD\u03BF\u03BC \u03A0\u03B5\u03BD\u03C7'
                         },
                         'Oral': {
-                            'exemplarCity': 'Όραλ'
+                            'exemplarCity': '\u038C\u03C1\u03B1\u03BB'
                         },
                         'Omsk': {
-                            'exemplarCity': 'Ομσκ'
+                            'exemplarCity': '\u039F\u03BC\u03C3\u03BA'
                         },
                         'Novosibirsk': {
-                            'exemplarCity': 'Νοβοσιμπίρσκ'
+                            'exemplarCity': '\u039D\u03BF\u03B2\u03BF\u03C3\u03B9\u03BC\u03C0\u03AF\u03C1\u03C3\u03BA'
                         },
                         'Baghdad': {
-                            'exemplarCity': 'Βαγδάτη'
+                            'exemplarCity': '\u0392\u03B1\u03B3\u03B4\u03AC\u03C4\u03B7'
                         },
                         'Chongqing': {
-                            'exemplarCity': 'Τσονγκίνγκ'
+                            'exemplarCity': '\u03A4\u03C3\u03BF\u03BD\u03B3\u03BA\u03AF\u03BD\u03B3\u03BA'
                         },
                         'Colombo': {
-                            'exemplarCity': 'Κολόμπο'
+                            'exemplarCity': '\u039A\u03BF\u03BB\u03CC\u03BC\u03C0\u03BF'
                         },
                         'Damascus': {
-                            'exemplarCity': 'Δαμασκός'
+                            'exemplarCity': '\u0394\u03B1\u03BC\u03B1\u03C3\u03BA\u03CC\u03C2'
                         },
                         'Dhaka': {
-                            'exemplarCity': 'Ντάκα'
+                            'exemplarCity': '\u039D\u03C4\u03AC\u03BA\u03B1'
                         },
                         'Dili': {
-                            'exemplarCity': 'Ντίλι'
+                            'exemplarCity': '\u039D\u03C4\u03AF\u03BB\u03B9'
                         },
                         'Dubai': {
-                            'exemplarCity': 'Ντουμπάι'
+                            'exemplarCity': '\u039D\u03C4\u03BF\u03C5\u03BC\u03C0\u03AC\u03B9'
                         },
                         'Dushanbe': {
-                            'exemplarCity': 'Ντουσάμπε'
+                            'exemplarCity': '\u039D\u03C4\u03BF\u03C5\u03C3\u03AC\u03BC\u03C0\u03B5'
                         },
                         'Gaza': {
-                            'exemplarCity': 'Γάζα'
+                            'exemplarCity': '\u0393\u03AC\u03B6\u03B1'
                         },
                         'Harbin': {
-                            'exemplarCity': 'Χαρμπίν'
+                            'exemplarCity': '\u03A7\u03B1\u03C1\u03BC\u03C0\u03AF\u03BD'
                         },
                         'Hebron': {
-                            'exemplarCity': 'Χεμπρόν'
+                            'exemplarCity': '\u03A7\u03B5\u03BC\u03C0\u03C1\u03CC\u03BD'
                         },
                         'Hong_Kong': {
-                            'exemplarCity': 'Χονγκ Κονγκ'
+                            'exemplarCity': '\u03A7\u03BF\u03BD\u03B3\u03BA \u039A\u03BF\u03BD\u03B3\u03BA'
                         },
                         'Hovd': {
-                            'exemplarCity': 'Χοβντ'
+                            'exemplarCity': '\u03A7\u03BF\u03B2\u03BD\u03C4'
                         },
                         'Irkutsk': {
-                            'exemplarCity': 'Ιρκούτσκ'
+                            'exemplarCity': '\u0399\u03C1\u03BA\u03BF\u03CD\u03C4\u03C3\u03BA'
                         },
                         'Jakarta': {
-                            'exemplarCity': 'Τζακάρτα'
+                            'exemplarCity': '\u03A4\u03B6\u03B1\u03BA\u03AC\u03C1\u03C4\u03B1'
                         },
                         'Jayapura': {
-                            'exemplarCity': 'Χαγιαπούρα'
+                            'exemplarCity': '\u03A7\u03B1\u03B3\u03B9\u03B1\u03C0\u03BF\u03CD\u03C1\u03B1'
                         },
                         'Ulaanbaatar': {
-                            'exemplarCity': 'Ουλάν Μπατόρ'
+                            'exemplarCity': '\u039F\u03C5\u03BB\u03AC\u03BD \u039C\u03C0\u03B1\u03C4\u03CC\u03C1'
                         },
                         'Urumqi': {
-                            'exemplarCity': 'Ουρουμκί'
+                            'exemplarCity': '\u039F\u03C5\u03C1\u03BF\u03C5\u03BC\u03BA\u03AF'
                         },
                         'Ust-Nera': {
-                            'exemplarCity': 'Ουστ-Νερά'
+                            'exemplarCity': '\u039F\u03C5\u03C3\u03C4-\u039D\u03B5\u03C1\u03AC'
                         },
                         'Vientiane': {
-                            'exemplarCity': 'Βιεντιάνε'
+                            'exemplarCity': '\u0392\u03B9\u03B5\u03BD\u03C4\u03B9\u03AC\u03BD\u03B5'
                         },
                         'Vladivostok': {
-                            'exemplarCity': 'Βλαδιβοστόκ'
+                            'exemplarCity': '\u0392\u03BB\u03B1\u03B4\u03B9\u03B2\u03BF\u03C3\u03C4\u03CC\u03BA'
                         },
                         'Yakutsk': {
-                            'exemplarCity': 'Γιάκουτσκ'
+                            'exemplarCity': '\u0393\u03B9\u03AC\u03BA\u03BF\u03C5\u03C4\u03C3\u03BA'
                         },
                         'Yekaterinburg': {
-                            'exemplarCity': 'Αικατερίνμπουργκ'
+                            'exemplarCity': '\u0391\u03B9\u03BA\u03B1\u03C4\u03B5\u03C1\u03AF\u03BD\u03BC\u03C0\u03BF\u03C5\u03C1\u03B3\u03BA'
                         },
                         'Yerevan': {
-                            'exemplarCity': 'Γερεβάν'
+                            'exemplarCity': '\u0393\u03B5\u03C1\u03B5\u03B2\u03AC\u03BD'
                         },
                         'Tokyo': {
-                            'exemplarCity': 'Τόκυο'
+                            'exemplarCity': '\u03A4\u03CC\u03BA\u03C5\u03BF'
                         },
                         'Thimphu': {
-                            'exemplarCity': 'Τρίμφου'
+                            'exemplarCity': '\u03A4\u03C1\u03AF\u03BC\u03C6\u03BF\u03C5'
                         },
                         'Tehran': {
-                            'exemplarCity': 'Τεχεράνη'
+                            'exemplarCity': '\u03A4\u03B5\u03C7\u03B5\u03C1\u03AC\u03BD\u03B7'
                         },
                         'Tbilisi': {
-                            'exemplarCity': 'Τιφλίδα'
+                            'exemplarCity': '\u03A4\u03B9\u03C6\u03BB\u03AF\u03B4\u03B1'
                         },
                         'Tashkent': {
-                            'exemplarCity': 'Τασκένδη'
+                            'exemplarCity': '\u03A4\u03B1\u03C3\u03BA\u03AD\u03BD\u03B4\u03B7'
                         },
                         'Taipei': {
-                            'exemplarCity': 'Ταϊπέι'
+                            'exemplarCity': '\u03A4\u03B1\u03CA\u03C0\u03AD\u03B9'
                         },
                         'Singapore': {
-                            'exemplarCity': 'Σιγκαπούρη'
+                            'exemplarCity': '\u03A3\u03B9\u03B3\u03BA\u03B1\u03C0\u03BF\u03CD\u03C1\u03B7'
                         },
                         'Jerusalem': {
-                            'exemplarCity': 'Ιερουσαλήμ'
+                            'exemplarCity': '\u0399\u03B5\u03C1\u03BF\u03C5\u03C3\u03B1\u03BB\u03AE\u03BC'
                         },
                         'Ashgabat': {
-                            'exemplarCity': 'Ασχαμπάτ'
+                            'exemplarCity': '\u0391\u03C3\u03C7\u03B1\u03BC\u03C0\u03AC\u03C4'
                         },
                         'Aqtobe': {
-                            'exemplarCity': 'Ακτόμπε'
+                            'exemplarCity': '\u0391\u03BA\u03C4\u03CC\u03BC\u03C0\u03B5'
                         },
                         'Aqtau': {
-                            'exemplarCity': 'Ακτάου'
+                            'exemplarCity': '\u0391\u03BA\u03C4\u03AC\u03BF\u03C5'
                         },
                         'Anadyr': {
-                            'exemplarCity': 'Αναντίρ'
+                            'exemplarCity': '\u0391\u03BD\u03B1\u03BD\u03C4\u03AF\u03C1'
                         },
                         'Amman': {
-                            'exemplarCity': 'Αμμάν'
+                            'exemplarCity': '\u0391\u03BC\u03BC\u03AC\u03BD'
                         },
                         'Almaty': {
-                            'exemplarCity': 'Αλμάτυ'
+                            'exemplarCity': '\u0391\u03BB\u03BC\u03AC\u03C4\u03C5'
                         },
                         'Aden': {
-                            'exemplarCity': 'Άντεν'
+                            'exemplarCity': '\u0386\u03BD\u03C4\u03B5\u03BD'
                         },
                         'Bahrain': {
-                            'exemplarCity': 'Μπαχρέιν'
+                            'exemplarCity': '\u039C\u03C0\u03B1\u03C7\u03C1\u03AD\u03B9\u03BD'
                         },
                         'Baku': {
-                            'exemplarCity': 'Μπακού'
+                            'exemplarCity': '\u039C\u03C0\u03B1\u03BA\u03BF\u03CD'
                         },
                         'Bangkok': {
-                            'exemplarCity': 'Μπανγκόκ'
+                            'exemplarCity': '\u039C\u03C0\u03B1\u03BD\u03B3\u03BA\u03CC\u03BA'
                         },
                         'Beirut': {
-                            'exemplarCity': 'Βυρητός'
+                            'exemplarCity': '\u0392\u03C5\u03C1\u03B7\u03C4\u03CC\u03C2'
                         },
                         'Bishkek': {
-                            'exemplarCity': 'Μπισκέκ'
+                            'exemplarCity': '\u039C\u03C0\u03B9\u03C3\u03BA\u03AD\u03BA'
                         },
                         'Brunei': {
-                            'exemplarCity': 'Μπρουνέι'
+                            'exemplarCity': '\u039C\u03C0\u03C1\u03BF\u03C5\u03BD\u03AD\u03B9'
                         },
                         'Calcutta': {
-                            'exemplarCity': 'Καλκούτα'
+                            'exemplarCity': '\u039A\u03B1\u03BB\u03BA\u03BF\u03CD\u03C4\u03B1'
                         },
                         'Choibalsan': {
-                            'exemplarCity': 'Χόιμπαλσαν'
+                            'exemplarCity': '\u03A7\u03CC\u03B9\u03BC\u03C0\u03B1\u03BB\u03C3\u03B1\u03BD'
                         },
                         'Kabul': {
-                            'exemplarCity': 'Καμπούλ'
+                            'exemplarCity': '\u039A\u03B1\u03BC\u03C0\u03BF\u03CD\u03BB'
                         },
                         'Kamchatka': {
-                            'exemplarCity': 'Καμτσάτκα'
+                            'exemplarCity': '\u039A\u03B1\u03BC\u03C4\u03C3\u03AC\u03C4\u03BA\u03B1'
                         },
                         'Karachi': {
-                            'exemplarCity': 'Καράτσι'
+                            'exemplarCity': '\u039A\u03B1\u03C1\u03AC\u03C4\u03C3\u03B9'
                         },
                         'Kashgar': {
-                            'exemplarCity': 'Κάσγκαρ'
+                            'exemplarCity': '\u039A\u03AC\u03C3\u03B3\u03BA\u03B1\u03C1'
                         },
                         'Katmandu': {
-                            'exemplarCity': 'Κατμαντού'
+                            'exemplarCity': '\u039A\u03B1\u03C4\u03BC\u03B1\u03BD\u03C4\u03BF\u03CD'
                         },
                         'Khandyga': {
-                            'exemplarCity': 'Χαντίγκα'
+                            'exemplarCity': '\u03A7\u03B1\u03BD\u03C4\u03AF\u03B3\u03BA\u03B1'
                         },
                         'Krasnoyarsk': {
-                            'exemplarCity': 'Κρασνογιάρσκ'
+                            'exemplarCity': '\u039A\u03C1\u03B1\u03C3\u03BD\u03BF\u03B3\u03B9\u03AC\u03C1\u03C3\u03BA'
                         },
                         'Kuala_Lumpur': {
-                            'exemplarCity': 'Κουάλα Λουμπούρ'
+                            'exemplarCity': '\u039A\u03BF\u03C5\u03AC\u03BB\u03B1 \u039B\u03BF\u03C5\u03BC\u03C0\u03BF\u03CD\u03C1'
                         },
                         'Kuching': {
-                            'exemplarCity': 'Κουτσίνγκ'
+                            'exemplarCity': '\u039A\u03BF\u03C5\u03C4\u03C3\u03AF\u03BD\u03B3\u03BA'
                         },
                         'Kuwait': {
-                            'exemplarCity': 'Κουβέιτ'
+                            'exemplarCity': '\u039A\u03BF\u03C5\u03B2\u03AD\u03B9\u03C4'
                         },
                         'Macau': {
-                            'exemplarCity': 'Μακάο'
+                            'exemplarCity': '\u039C\u03B1\u03BA\u03AC\u03BF'
                         },
                         'Magadan': {
-                            'exemplarCity': 'Μαγκαντάν'
+                            'exemplarCity': '\u039C\u03B1\u03B3\u03BA\u03B1\u03BD\u03C4\u03AC\u03BD'
                         },
                         'Makassar': {
-                            'exemplarCity': 'Μακασάρ'
+                            'exemplarCity': '\u039C\u03B1\u03BA\u03B1\u03C3\u03AC\u03C1'
                         },
                         'Manila': {
-                            'exemplarCity': 'Μανίλα'
+                            'exemplarCity': '\u039C\u03B1\u03BD\u03AF\u03BB\u03B1'
                         },
                         'Muscat': {
-                            'exemplarCity': 'Μασκάτ'
+                            'exemplarCity': '\u039C\u03B1\u03C3\u03BA\u03AC\u03C4'
                         },
                         'Nicosia': {
-                            'exemplarCity': 'Λευκωσία'
+                            'exemplarCity': '\u039B\u03B5\u03C5\u03BA\u03C9\u03C3\u03AF\u03B1'
                         },
                         'Novokuznetsk': {
-                            'exemplarCity': 'Νοβοκουζνέτσκ'
+                            'exemplarCity': '\u039D\u03BF\u03B2\u03BF\u03BA\u03BF\u03C5\u03B6\u03BD\u03AD\u03C4\u03C3\u03BA'
                         }
                     }
                 },
                 'metazone': {
                     'Tahiti': {
                         'long': {
-                            'standard': 'Ώρα Αϊτής'
+                            'standard': '\u038F\u03C1\u03B1 \u0391\u03CA\u03C4\u03AE\u03C2'
                         }
                     },
                     'Syowa': {
                         'long': {
-                            'standard': 'Ώρα Σίοβα'
+                            'standard': '\u038F\u03C1\u03B1 \u03A3\u03AF\u03BF\u03B2\u03B1'
                         }
                     },
                     'Suriname': {
                         'long': {
-                            'standard': 'Ώρα Σουρινάμ'
+                            'standard': '\u038F\u03C1\u03B1 \u03A3\u03BF\u03C5\u03C1\u03B9\u03BD\u03AC\u03BC'
                         }
                     },
                     'South_Georgia': {
                         'long': {
-                            'standard': 'Ώρα Νότιας Γεωργίας'
+                            'standard': '\u038F\u03C1\u03B1 \u039D\u03CC\u03C4\u03B9\u03B1\u03C2 \u0393\u03B5\u03C9\u03C1\u03B3\u03AF\u03B1\u03C2'
                         }
                     },
                     'Solomon': {
                         'long': {
-                            'standard': 'Ώρα Νησιών Σολομώντα'
+                            'standard': '\u038F\u03C1\u03B1 \u039D\u03B7\u03C3\u03B9\u03CE\u03BD \u03A3\u03BF\u03BB\u03BF\u03BC\u03CE\u03BD\u03C4\u03B1'
                         }
                     },
                     'Singapore': {
                         'long': {
-                            'standard': 'Ώρα Σιγκαπούρης'
+                            'standard': '\u038F\u03C1\u03B1 \u03A3\u03B9\u03B3\u03BA\u03B1\u03C0\u03BF\u03CD\u03C1\u03B7\u03C2'
                         }
                     },
                     'Seychelles': {
                         'long': {
-                            'standard': 'Ώρα Σεϋχελλών'
+                            'standard': '\u038F\u03C1\u03B1 \u03A3\u03B5\u03CB\u03C7\u03B5\u03BB\u03BB\u03CE\u03BD'
                         }
                     },
                     'Samoa': {
                         'long': {
-                            'generic': 'Ώρα Σαμόα',
-                            'standard': 'Χειμερινή ώρα Σαμόα',
-                            'daylight': 'Θερινή ώρα Σαμόα'
+                            'generic': '\u038F\u03C1\u03B1 \u03A3\u03B1\u03BC\u03CC\u03B1',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A3\u03B1\u03BC\u03CC\u03B1',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A3\u03B1\u03BC\u03CC\u03B1'
                         }
                     },
                     'Samara': {
                         'long': {
-                            'generic': 'Ώρα Σάμαρας',
-                            'standard': 'Χειμερινή ώρα Σάμαρας',
-                            'daylight': 'Θερινή ώρα Σαμάρας'
+                            'generic': '\u038F\u03C1\u03B1 \u03A3\u03AC\u03BC\u03B1\u03C1\u03B1\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A3\u03AC\u03BC\u03B1\u03C1\u03B1\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A3\u03B1\u03BC\u03AC\u03C1\u03B1\u03C2'
                         }
                     },
                     'Sakhalin': {
                         'long': {
-                            'generic': 'Ώρα Σαχαλίνης',
-                            'standard': 'Χειμερινή ώρα Σαχαλίνης',
-                            'daylight': 'Θερινή ώρα Σαχαλίνης'
+                            'generic': '\u038F\u03C1\u03B1 \u03A3\u03B1\u03C7\u03B1\u03BB\u03AF\u03BD\u03B7\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A3\u03B1\u03C7\u03B1\u03BB\u03AF\u03BD\u03B7\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A3\u03B1\u03C7\u03B1\u03BB\u03AF\u03BD\u03B7\u03C2'
                         }
                     },
                     'Rothera': {
                         'long': {
-                            'standard': 'Ώρα Ροθέρα'
+                            'standard': '\u038F\u03C1\u03B1 \u03A1\u03BF\u03B8\u03AD\u03C1\u03B1'
                         }
                     },
                     'Reunion': {
                         'long': {
-                            'standard': 'Ώρα Ρεϊνιόν'
+                            'standard': '\u038F\u03C1\u03B1 \u03A1\u03B5\u03CA\u03BD\u03B9\u03CC\u03BD'
                         }
                     },
                     'Ponape': {
                         'long': {
-                            'standard': 'Ώρα Πονάπε'
+                            'standard': '\u038F\u03C1\u03B1 \u03A0\u03BF\u03BD\u03AC\u03C0\u03B5'
                         }
                     },
                     'Pitcairn': {
                         'long': {
-                            'standard': 'Ώρα Πίτκερν'
+                            'standard': '\u038F\u03C1\u03B1 \u03A0\u03AF\u03C4\u03BA\u03B5\u03C1\u03BD'
                         }
                     },
                     'Pierre_Miquelon': {
                         'long': {
-                            'generic': 'Ώρα Σαιντ Πιερ και Μικελόν',
-                            'standard': 'Χειμερινή ώρα Σαιντ Πιερ και Μικελόν',
-                            'daylight': 'Θερινή ώρα Σαιντ Πιερ και Μικελόν'
+                            'generic': '\u038F\u03C1\u03B1 \u03A3\u03B1\u03B9\u03BD\u03C4 \u03A0\u03B9\u03B5\u03C1 \u03BA\u03B1\u03B9 \u039C\u03B9\u03BA\u03B5\u03BB\u03CC\u03BD',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A3\u03B1\u03B9\u03BD\u03C4 \u03A0\u03B9\u03B5\u03C1 \u03BA\u03B1\u03B9 \u039C\u03B9\u03BA\u03B5\u03BB\u03CC\u03BD',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A3\u03B1\u03B9\u03BD\u03C4 \u03A0\u03B9\u03B5\u03C1 \u03BA\u03B1\u03B9 \u039C\u03B9\u03BA\u03B5\u03BB\u03CC\u03BD'
                         }
                     },
                     'Phoenix_Islands': {
                         'long': {
-                            'standard': 'Ώρα Νησιών Φίνιξ'
+                            'standard': '\u038F\u03C1\u03B1 \u039D\u03B7\u03C3\u03B9\u03CE\u03BD \u03A6\u03AF\u03BD\u03B9\u03BE'
                         }
                     },
                     'Philippines': {
                         'long': {
-                            'generic': 'Ώρα Φιλιππινών',
-                            'standard': 'Χειμερινή ώρα Φιλιππινών',
-                            'daylight': 'Θερινή ώρα Φιλιππινών'
+                            'generic': '\u038F\u03C1\u03B1 \u03A6\u03B9\u03BB\u03B9\u03C0\u03C0\u03B9\u03BD\u03CE\u03BD',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A6\u03B9\u03BB\u03B9\u03C0\u03C0\u03B9\u03BD\u03CE\u03BD',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A6\u03B9\u03BB\u03B9\u03C0\u03C0\u03B9\u03BD\u03CE\u03BD'
                         }
                     },
                     'Peru': {
                         'long': {
-                            'generic': 'Ώρα Περού',
-                            'standard': 'Χειμερινή ώρα Περού',
-                            'daylight': 'Θερινή ώρα Περού'
+                            'generic': '\u038F\u03C1\u03B1 \u03A0\u03B5\u03C1\u03BF\u03CD',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A0\u03B5\u03C1\u03BF\u03CD',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A0\u03B5\u03C1\u03BF\u03CD'
                         }
                     },
                     'Alaska': {
                         'long': {
-                            'generic': 'Ώρα Αλάσκας',
-                            'standard': 'Χειμερινή ώρα Αλάσκας',
-                            'daylight': 'Θερινή ώρα Αλάσκας'
+                            'generic': '\u038F\u03C1\u03B1 \u0391\u03BB\u03AC\u03C3\u03BA\u03B1\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0391\u03BB\u03AC\u03C3\u03BA\u03B1\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0391\u03BB\u03AC\u03C3\u03BA\u03B1\u03C2'
                         }
                     },
                     'Africa_Western': {
                         'long': {
-                            'generic': 'Ώρα Δυτικής Αφρικής',
-                            'standard': 'Χειμερινή ώρα Δυτικής Αφρικής',
-                            'daylight': 'Θερινή ώρα Δυτικής Αφρικής'
+                            'generic': '\u038F\u03C1\u03B1 \u0394\u03C5\u03C4\u03B9\u03BA\u03AE\u03C2 \u0391\u03C6\u03C1\u03B9\u03BA\u03AE\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0394\u03C5\u03C4\u03B9\u03BA\u03AE\u03C2 \u0391\u03C6\u03C1\u03B9\u03BA\u03AE\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0394\u03C5\u03C4\u03B9\u03BA\u03AE\u03C2 \u0391\u03C6\u03C1\u03B9\u03BA\u03AE\u03C2'
                         }
                     },
                     'Africa_Southern': {
                         'long': {
-                            'standard': 'Ώρα Νότιας Αφρικής'
+                            'standard': '\u038F\u03C1\u03B1 \u039D\u03CC\u03C4\u03B9\u03B1\u03C2 \u0391\u03C6\u03C1\u03B9\u03BA\u03AE\u03C2'
                         }
                     },
                     'Africa_Eastern': {
                         'long': {
-                            'standard': 'Ώρα Ανατολικής Αφρικής'
+                            'standard': '\u038F\u03C1\u03B1 \u0391\u03BD\u03B1\u03C4\u03BF\u03BB\u03B9\u03BA\u03AE\u03C2 \u0391\u03C6\u03C1\u03B9\u03BA\u03AE\u03C2'
                         }
                     },
                     'Africa_Central': {
                         'long': {
-                            'standard': 'Ώρα Κεντρικής Αφρικής'
+                            'standard': '\u038F\u03C1\u03B1 \u039A\u03B5\u03BD\u03C4\u03C1\u03B9\u03BA\u03AE\u03C2 \u0391\u03C6\u03C1\u03B9\u03BA\u03AE\u03C2'
                         }
                     },
                     'Afghanistan': {
                         'long': {
-                            'standard': 'Ώρα Αφγανιστάν'
+                            'standard': '\u038F\u03C1\u03B1 \u0391\u03C6\u03B3\u03B1\u03BD\u03B9\u03C3\u03C4\u03AC\u03BD'
                         }
                     },
                     'America_Eastern': {
                         'long': {
-                            'generic': 'Ανατολική ώρα Βόρειας Αμερικής',
-                            'standard': 'Ανατολική χειμερινή ώρα Βόρειας Αμερικής',
-                            'daylight': 'Ανατολική θερινή ώρα Βόρειας Αμερικής'
+                            'generic': '\u0391\u03BD\u03B1\u03C4\u03BF\u03BB\u03B9\u03BA\u03AE \u03CE\u03C1\u03B1 \u0392\u03CC\u03C1\u03B5\u03B9\u03B1\u03C2 \u0391\u03BC\u03B5\u03C1\u03B9\u03BA\u03AE\u03C2',
+                            'standard': '\u0391\u03BD\u03B1\u03C4\u03BF\u03BB\u03B9\u03BA\u03AE \u03C7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0392\u03CC\u03C1\u03B5\u03B9\u03B1\u03C2 \u0391\u03BC\u03B5\u03C1\u03B9\u03BA\u03AE\u03C2',
+                            'daylight': '\u0391\u03BD\u03B1\u03C4\u03BF\u03BB\u03B9\u03BA\u03AE \u03B8\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0392\u03CC\u03C1\u03B5\u03B9\u03B1\u03C2 \u0391\u03BC\u03B5\u03C1\u03B9\u03BA\u03AE\u03C2'
                         }
                     },
                     'America_Mountain': {
                         'long': {
-                            'generic': 'Ορεινή ώρα Βόρειας Αμερικής',
-                            'standard': 'Ορεινή χειμερινή ώρα Βόρειας Αμερικής',
-                            'daylight': 'Ορεινή θερινή ώρα Βόρειας Αμερικής'
+                            'generic': '\u039F\u03C1\u03B5\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0392\u03CC\u03C1\u03B5\u03B9\u03B1\u03C2 \u0391\u03BC\u03B5\u03C1\u03B9\u03BA\u03AE\u03C2',
+                            'standard': '\u039F\u03C1\u03B5\u03B9\u03BD\u03AE \u03C7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0392\u03CC\u03C1\u03B5\u03B9\u03B1\u03C2 \u0391\u03BC\u03B5\u03C1\u03B9\u03BA\u03AE\u03C2',
+                            'daylight': '\u039F\u03C1\u03B5\u03B9\u03BD\u03AE \u03B8\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0392\u03CC\u03C1\u03B5\u03B9\u03B1\u03C2 \u0391\u03BC\u03B5\u03C1\u03B9\u03BA\u03AE\u03C2'
                         }
                     },
                     'America_Pacific': {
                         'long': {
-                            'generic': 'Ώρα Βόρειας Αμερικής',
-                            'standard': 'Χειμερινή ώρα Βόρειας Αμερικής',
-                            'daylight': 'Θερινή ώρα Βόρειας Αμερικής'
+                            'generic': '\u038F\u03C1\u03B1 \u0392\u03CC\u03C1\u03B5\u03B9\u03B1\u03C2 \u0391\u03BC\u03B5\u03C1\u03B9\u03BA\u03AE\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0392\u03CC\u03C1\u03B5\u03B9\u03B1\u03C2 \u0391\u03BC\u03B5\u03C1\u03B9\u03BA\u03AE\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0392\u03CC\u03C1\u03B5\u03B9\u03B1\u03C2 \u0391\u03BC\u03B5\u03C1\u03B9\u03BA\u03AE\u03C2'
                         }
                     },
                     'Anadyr': {
                         'long': {
-                            'generic': 'Ώρα Αναντίρ',
-                            'standard': 'Χειμερινή ώρα Αναντίρ',
-                            'daylight': 'Θερινή ώρα Αναντίρ'
+                            'generic': '\u038F\u03C1\u03B1 \u0391\u03BD\u03B1\u03BD\u03C4\u03AF\u03C1',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0391\u03BD\u03B1\u03BD\u03C4\u03AF\u03C1',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0391\u03BD\u03B1\u03BD\u03C4\u03AF\u03C1'
                         }
                     },
                     'Arabian': {
                         'long': {
-                            'generic': 'Αραβική ώρα',
-                            'standard': 'Αραβική χειμερινή ώρα',
-                            'daylight': 'Αραβική θερινή ώρα'
+                            'generic': '\u0391\u03C1\u03B1\u03B2\u03B9\u03BA\u03AE \u03CE\u03C1\u03B1',
+                            'standard': '\u0391\u03C1\u03B1\u03B2\u03B9\u03BA\u03AE \u03C7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1',
+                            'daylight': '\u0391\u03C1\u03B1\u03B2\u03B9\u03BA\u03AE \u03B8\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1'
                         }
                     },
                     'Argentina': {
                         'long': {
-                            'generic': 'Ώρα Αργεντινής',
-                            'standard': 'Χειμερινή ώρα Αργεντινής',
-                            'daylight': 'Θερινή ώρα Αργεντινής'
+                            'generic': '\u038F\u03C1\u03B1 \u0391\u03C1\u03B3\u03B5\u03BD\u03C4\u03B9\u03BD\u03AE\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0391\u03C1\u03B3\u03B5\u03BD\u03C4\u03B9\u03BD\u03AE\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0391\u03C1\u03B3\u03B5\u03BD\u03C4\u03B9\u03BD\u03AE\u03C2'
                         }
                     },
                     'Argentina_Western': {
                         'long': {
-                            'generic': 'Ώρα Δυτικής Αργεντινής',
-                            'standard': 'Χειμερινή ώρα Δυτικής Αργεντινής',
-                            'daylight': 'Θερινή ώρα Δυτικής Αργεντινής'
+                            'generic': '\u038F\u03C1\u03B1 \u0394\u03C5\u03C4\u03B9\u03BA\u03AE\u03C2 \u0391\u03C1\u03B3\u03B5\u03BD\u03C4\u03B9\u03BD\u03AE\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0394\u03C5\u03C4\u03B9\u03BA\u03AE\u03C2 \u0391\u03C1\u03B3\u03B5\u03BD\u03C4\u03B9\u03BD\u03AE\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0394\u03C5\u03C4\u03B9\u03BA\u03AE\u03C2 \u0391\u03C1\u03B3\u03B5\u03BD\u03C4\u03B9\u03BD\u03AE\u03C2'
                         }
                     },
                     'Armenia': {
                         'long': {
-                            'generic': 'Ώρα Αρμενίας',
-                            'standard': 'Χειμερινή ώρα Αρμενίας',
-                            'daylight': 'Θερινή ώρα Αρμενίας'
+                            'generic': '\u038F\u03C1\u03B1 \u0391\u03C1\u03BC\u03B5\u03BD\u03AF\u03B1\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0391\u03C1\u03BC\u03B5\u03BD\u03AF\u03B1\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0391\u03C1\u03BC\u03B5\u03BD\u03AF\u03B1\u03C2'
                         }
                     },
                     'China': {
                         'long': {
-                            'generic': 'Ώρα Κίνας',
-                            'standard': 'Χειμερινή ώρα Κίνας',
-                            'daylight': 'Θερινή ώρα Κίνας'
+                            'generic': '\u038F\u03C1\u03B1 \u039A\u03AF\u03BD\u03B1\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039A\u03AF\u03BD\u03B1\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039A\u03AF\u03BD\u03B1\u03C2'
                         }
                     },
                     'Choibalsan': {
                         'long': {
-                            'generic': 'Ώρα Τσοϊμπαλσάν',
-                            'standard': 'Χειμερινή ώρα Τσοϊμπαλσάν',
-                            'daylight': 'Θερινή ώρα Τσοϊμπαλσάν'
+                            'generic': '\u038F\u03C1\u03B1 \u03A4\u03C3\u03BF\u03CA\u03BC\u03C0\u03B1\u03BB\u03C3\u03AC\u03BD',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A4\u03C3\u03BF\u03CA\u03BC\u03C0\u03B1\u03BB\u03C3\u03AC\u03BD',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A4\u03C3\u03BF\u03CA\u03BC\u03C0\u03B1\u03BB\u03C3\u03AC\u03BD'
                         }
                     },
                     'Christmas': {
                         'long': {
-                            'standard': 'Ώρα Νησιού Χριστουγέννων'
+                            'standard': '\u038F\u03C1\u03B1 \u039D\u03B7\u03C3\u03B9\u03BF\u03CD \u03A7\u03C1\u03B9\u03C3\u03C4\u03BF\u03C5\u03B3\u03AD\u03BD\u03BD\u03C9\u03BD'
                         }
                     },
                     'Cocos': {
                         'long': {
-                            'standard': 'Ώρα Νησιών Κόκος'
+                            'standard': '\u038F\u03C1\u03B1 \u039D\u03B7\u03C3\u03B9\u03CE\u03BD \u039A\u03CC\u03BA\u03BF\u03C2'
                         }
                     },
                     'Colombia': {
                         'long': {
-                            'generic': 'Ώρα Κολομβίας',
-                            'standard': 'Χειμερινή ώρα Κολομβίας',
-                            'daylight': 'Θερινή ώρα Κολομβίας'
+                            'generic': '\u038F\u03C1\u03B1 \u039A\u03BF\u03BB\u03BF\u03BC\u03B2\u03AF\u03B1\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039A\u03BF\u03BB\u03BF\u03BC\u03B2\u03AF\u03B1\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039A\u03BF\u03BB\u03BF\u03BC\u03B2\u03AF\u03B1\u03C2'
                         }
                     },
                     'Cook': {
                         'long': {
-                            'generic': 'Ώρα Νησιών Κουκ',
-                            'standard': 'Χειμερινή ώρα Νησιών Κουκ',
-                            'daylight': 'Θερινή ώρα Νησιών Κουκ'
+                            'generic': '\u038F\u03C1\u03B1 \u039D\u03B7\u03C3\u03B9\u03CE\u03BD \u039A\u03BF\u03C5\u03BA',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039D\u03B7\u03C3\u03B9\u03CE\u03BD \u039A\u03BF\u03C5\u03BA',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039D\u03B7\u03C3\u03B9\u03CE\u03BD \u039A\u03BF\u03C5\u03BA'
                         }
                     },
                     'Cuba': {
                         'long': {
-                            'generic': 'Ώρα Κούβας',
-                            'standard': 'Χειμερινή ώρα Κούβας',
-                            'daylight': 'Θερινή ώρα Κούβας'
+                            'generic': '\u038F\u03C1\u03B1 \u039A\u03BF\u03CD\u03B2\u03B1\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039A\u03BF\u03CD\u03B2\u03B1\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039A\u03BF\u03CD\u03B2\u03B1\u03C2'
                         }
                     },
                     'Davis': {
                         'long': {
-                            'standard': 'Ώρα Ντέιβις'
+                            'standard': '\u038F\u03C1\u03B1 \u039D\u03C4\u03AD\u03B9\u03B2\u03B9\u03C2'
                         }
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': 'Ώρα Ντιμόντ Ντερβίλ'
+                            'standard': '\u038F\u03C1\u03B1 \u039D\u03C4\u03B9\u03BC\u03CC\u03BD\u03C4 \u039D\u03C4\u03B5\u03C1\u03B2\u03AF\u03BB'
                         }
                     },
                     'East_Timor': {
                         'long': {
-                            'standard': 'Ώρα Ανατολικού Τιμόρ'
+                            'standard': '\u038F\u03C1\u03B1 \u0391\u03BD\u03B1\u03C4\u03BF\u03BB\u03B9\u03BA\u03BF\u03CD \u03A4\u03B9\u03BC\u03CC\u03C1'
                         }
                     },
                     'Easter': {
                         'long': {
-                            'generic': 'Ώρα Νησιού Πάσχα',
-                            'standard': 'Χειμερινή ώρα Νησιού Πάσχα',
-                            'daylight': 'Θερινή ώρα Νησιού Πάσχα'
+                            'generic': '\u038F\u03C1\u03B1 \u039D\u03B7\u03C3\u03B9\u03BF\u03CD \u03A0\u03AC\u03C3\u03C7\u03B1',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039D\u03B7\u03C3\u03B9\u03BF\u03CD \u03A0\u03AC\u03C3\u03C7\u03B1',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039D\u03B7\u03C3\u03B9\u03BF\u03CD \u03A0\u03AC\u03C3\u03C7\u03B1'
                         }
                     },
                     'Ecuador': {
                         'long': {
-                            'standard': 'Ώρα Εκουαδόρ'
+                            'standard': '\u038F\u03C1\u03B1 \u0395\u03BA\u03BF\u03C5\u03B1\u03B4\u03CC\u03C1'
                         }
                     },
                     'Europe_Central': {
                         'long': {
-                            'generic': 'Ώρα Κεντρικής Ευρώπης',
-                            'standard': 'Χειμερινή ώρα Κεντρικής Ευρώπης',
-                            'daylight': 'Θερινή ώρα Κεντρικής Ευρώπης'
+                            'generic': '\u038F\u03C1\u03B1 \u039A\u03B5\u03BD\u03C4\u03C1\u03B9\u03BA\u03AE\u03C2 \u0395\u03C5\u03C1\u03CE\u03C0\u03B7\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039A\u03B5\u03BD\u03C4\u03C1\u03B9\u03BA\u03AE\u03C2 \u0395\u03C5\u03C1\u03CE\u03C0\u03B7\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039A\u03B5\u03BD\u03C4\u03C1\u03B9\u03BA\u03AE\u03C2 \u0395\u03C5\u03C1\u03CE\u03C0\u03B7\u03C2'
                         },
                         'short': {
                             'generic': 'CET',
@@ -1864,9 +1864,9 @@
                     },
                     'Europe_Eastern': {
                         'long': {
-                            'generic': 'Ώρα Ανατολικής Ευρώπης',
-                            'standard': 'Χειμερινή ώρα Ανατολικής Ευρώπης',
-                            'daylight': 'Θερινή ώρα Ανατολικής Ευρώπης'
+                            'generic': '\u038F\u03C1\u03B1 \u0391\u03BD\u03B1\u03C4\u03BF\u03BB\u03B9\u03BA\u03AE\u03C2 \u0395\u03C5\u03C1\u03CE\u03C0\u03B7\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0391\u03BD\u03B1\u03C4\u03BF\u03BB\u03B9\u03BA\u03AE\u03C2 \u0395\u03C5\u03C1\u03CE\u03C0\u03B7\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0391\u03BD\u03B1\u03C4\u03BF\u03BB\u03B9\u03BA\u03AE\u03C2 \u0395\u03C5\u03C1\u03CE\u03C0\u03B7\u03C2'
                         },
                         'short': {
                             'generic': 'EET',
@@ -1876,9 +1876,9 @@
                     },
                     'Europe_Western': {
                         'long': {
-                            'generic': 'Ώρα Δυτικής Ευρώπης',
-                            'standard': 'Χειμερινή ώρα Δυτικής Ευρώπης',
-                            'daylight': 'Θερινή ώρα Δυτικής Ευρώπης'
+                            'generic': '\u038F\u03C1\u03B1 \u0394\u03C5\u03C4\u03B9\u03BA\u03AE\u03C2 \u0395\u03C5\u03C1\u03CE\u03C0\u03B7\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0394\u03C5\u03C4\u03B9\u03BA\u03AE\u03C2 \u0395\u03C5\u03C1\u03CE\u03C0\u03B7\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0394\u03C5\u03C4\u03B9\u03BA\u03AE\u03C2 \u0395\u03C5\u03C1\u03CE\u03C0\u03B7\u03C2'
                         },
                         'short': {
                             'generic': 'WET',
@@ -1888,612 +1888,612 @@
                     },
                     'Falkland': {
                         'long': {
-                            'generic': 'Ώρα Νησιών Φώκλαντ',
-                            'standard': 'Χειμερινή ώρα Νησιών Φώκλαντ',
-                            'daylight': 'Θερινή ώρα Νησιών Φώκλαντ'
+                            'generic': '\u038F\u03C1\u03B1 \u039D\u03B7\u03C3\u03B9\u03CE\u03BD \u03A6\u03CE\u03BA\u03BB\u03B1\u03BD\u03C4',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039D\u03B7\u03C3\u03B9\u03CE\u03BD \u03A6\u03CE\u03BA\u03BB\u03B1\u03BD\u03C4',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039D\u03B7\u03C3\u03B9\u03CE\u03BD \u03A6\u03CE\u03BA\u03BB\u03B1\u03BD\u03C4'
                         }
                     },
                     'Fiji': {
                         'long': {
-                            'generic': 'Ώρα Φίτζι',
-                            'standard': 'Χειμερινή ώρα Φίτζι',
-                            'daylight': 'Θερινή ώρα Φίτζι'
+                            'generic': '\u038F\u03C1\u03B1 \u03A6\u03AF\u03C4\u03B6\u03B9',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A6\u03AF\u03C4\u03B6\u03B9',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A6\u03AF\u03C4\u03B6\u03B9'
                         }
                     },
                     'French_Guiana': {
                         'long': {
-                            'standard': 'Ώρα Γαλλικής Γουιάνας'
+                            'standard': '\u038F\u03C1\u03B1 \u0393\u03B1\u03BB\u03BB\u03B9\u03BA\u03AE\u03C2 \u0393\u03BF\u03C5\u03B9\u03AC\u03BD\u03B1\u03C2'
                         }
                     },
                     'Tokelau': {
                         'long': {
-                            'standard': 'Ώρα Τοκελάου'
+                            'standard': '\u038F\u03C1\u03B1 \u03A4\u03BF\u03BA\u03B5\u03BB\u03AC\u03BF\u03C5'
                         }
                     },
                     'Tonga': {
                         'long': {
-                            'generic': 'Ώρα Τόνγκα',
-                            'standard': 'Χειμερινή ώρα Τόνγκα',
-                            'daylight': 'Θερινή ώρα Τόνγκα'
+                            'generic': '\u038F\u03C1\u03B1 \u03A4\u03CC\u03BD\u03B3\u03BA\u03B1',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A4\u03CC\u03BD\u03B3\u03BA\u03B1',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A4\u03CC\u03BD\u03B3\u03BA\u03B1'
                         }
                     },
                     'Truk': {
                         'long': {
-                            'standard': 'Ώρα Τσουκ'
+                            'standard': '\u038F\u03C1\u03B1 \u03A4\u03C3\u03BF\u03C5\u03BA'
                         }
                     },
                     'Turkmenistan': {
                         'long': {
-                            'generic': 'Ώρα Τουρκμενιστάν',
-                            'standard': 'Χειμερινή ώρα Τουρκμενιστάν',
-                            'daylight': 'Θερινή ώρα Τουρκμενιστάν'
+                            'generic': '\u038F\u03C1\u03B1 \u03A4\u03BF\u03C5\u03C1\u03BA\u03BC\u03B5\u03BD\u03B9\u03C3\u03C4\u03AC\u03BD',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A4\u03BF\u03C5\u03C1\u03BA\u03BC\u03B5\u03BD\u03B9\u03C3\u03C4\u03AC\u03BD',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A4\u03BF\u03C5\u03C1\u03BA\u03BC\u03B5\u03BD\u03B9\u03C3\u03C4\u03AC\u03BD'
                         }
                     },
                     'Tuvalu': {
                         'long': {
-                            'standard': 'Ώρα Τουβαλού'
+                            'standard': '\u038F\u03C1\u03B1 \u03A4\u03BF\u03C5\u03B2\u03B1\u03BB\u03BF\u03CD'
                         }
                     },
                     'Uruguay': {
                         'long': {
-                            'generic': 'Ώρα Ουρουγουάης',
-                            'standard': 'Χειμερινή ώρα Ουρουγουάης',
-                            'daylight': 'Θερινή ώρα Ουρουγουάης'
+                            'generic': '\u038F\u03C1\u03B1 \u039F\u03C5\u03C1\u03BF\u03C5\u03B3\u03BF\u03C5\u03AC\u03B7\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039F\u03C5\u03C1\u03BF\u03C5\u03B3\u03BF\u03C5\u03AC\u03B7\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039F\u03C5\u03C1\u03BF\u03C5\u03B3\u03BF\u03C5\u03AC\u03B7\u03C2'
                         }
                     },
                     'Uzbekistan': {
                         'long': {
-                            'generic': 'Ώρα Ουζμπεκιστάν',
-                            'standard': 'Χειμερινή ώρα Ουζμπεκιστάν',
-                            'daylight': 'Θερινή ώρα Ουζμπεκιστάν'
+                            'generic': '\u038F\u03C1\u03B1 \u039F\u03C5\u03B6\u03BC\u03C0\u03B5\u03BA\u03B9\u03C3\u03C4\u03AC\u03BD',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039F\u03C5\u03B6\u03BC\u03C0\u03B5\u03BA\u03B9\u03C3\u03C4\u03AC\u03BD',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039F\u03C5\u03B6\u03BC\u03C0\u03B5\u03BA\u03B9\u03C3\u03C4\u03AC\u03BD'
                         }
                     },
                     'Vanuatu': {
                         'long': {
-                            'generic': 'Ώρα Βανουάτου',
-                            'standard': 'Χειμερινή ώρα Βανουάτου',
-                            'daylight': 'Θερινή ώρα Βανουάτου'
+                            'generic': '\u038F\u03C1\u03B1 \u0392\u03B1\u03BD\u03BF\u03C5\u03AC\u03C4\u03BF\u03C5',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0392\u03B1\u03BD\u03BF\u03C5\u03AC\u03C4\u03BF\u03C5',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0392\u03B1\u03BD\u03BF\u03C5\u03AC\u03C4\u03BF\u03C5'
                         }
                     },
                     'Yekaterinburg': {
                         'long': {
-                            'generic': 'Ώρα Αικατερίνμπουργκ',
-                            'standard': 'Χειμερινή ώρα Αικατερίνμπουργκ',
-                            'daylight': 'Θερινή ώρα Αικατερίνμπουργκ'
+                            'generic': '\u038F\u03C1\u03B1 \u0391\u03B9\u03BA\u03B1\u03C4\u03B5\u03C1\u03AF\u03BD\u03BC\u03C0\u03BF\u03C5\u03C1\u03B3\u03BA',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0391\u03B9\u03BA\u03B1\u03C4\u03B5\u03C1\u03AF\u03BD\u03BC\u03C0\u03BF\u03C5\u03C1\u03B3\u03BA',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0391\u03B9\u03BA\u03B1\u03C4\u03B5\u03C1\u03AF\u03BD\u03BC\u03C0\u03BF\u03C5\u03C1\u03B3\u03BA'
                         }
                     },
                     'Yakutsk': {
                         'long': {
-                            'generic': 'Ώρα Γιακούτσκ',
-                            'standard': 'Χειμερινή ώρα Γιακούτσκ',
-                            'daylight': 'Θερινή ώρα Γιακούτσκ'
+                            'generic': '\u038F\u03C1\u03B1 \u0393\u03B9\u03B1\u03BA\u03BF\u03CD\u03C4\u03C3\u03BA',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0393\u03B9\u03B1\u03BA\u03BF\u03CD\u03C4\u03C3\u03BA',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0393\u03B9\u03B1\u03BA\u03BF\u03CD\u03C4\u03C3\u03BA'
                         }
                     },
                     'Wallis': {
                         'long': {
-                            'standard': 'Ώρα Ουόλις και Φουτούνα'
+                            'standard': '\u038F\u03C1\u03B1 \u039F\u03C5\u03CC\u03BB\u03B9\u03C2 \u03BA\u03B1\u03B9 \u03A6\u03BF\u03C5\u03C4\u03BF\u03CD\u03BD\u03B1'
                         }
                     },
                     'Wake': {
                         'long': {
-                            'standard': 'Ώρα Νησιού Γουέικ'
+                            'standard': '\u038F\u03C1\u03B1 \u039D\u03B7\u03C3\u03B9\u03BF\u03CD \u0393\u03BF\u03C5\u03AD\u03B9\u03BA'
                         }
                     },
                     'Vostok': {
                         'long': {
-                            'standard': 'Ώρα Βόστοκ'
+                            'standard': '\u038F\u03C1\u03B1 \u0392\u03CC\u03C3\u03C4\u03BF\u03BA'
                         }
                     },
                     'Volgograd': {
                         'long': {
-                            'generic': 'Ώρα Βόλγκογκραντ',
-                            'standard': 'Χειμερινή ώρα Βόλγκογκραντ',
-                            'daylight': 'Θερινή ώρα Βόλγκογκραντ'
+                            'generic': '\u038F\u03C1\u03B1 \u0392\u03CC\u03BB\u03B3\u03BA\u03BF\u03B3\u03BA\u03C1\u03B1\u03BD\u03C4',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0392\u03CC\u03BB\u03B3\u03BA\u03BF\u03B3\u03BA\u03C1\u03B1\u03BD\u03C4',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0392\u03CC\u03BB\u03B3\u03BA\u03BF\u03B3\u03BA\u03C1\u03B1\u03BD\u03C4'
                         }
                     },
                     'Vladivostok': {
                         'long': {
-                            'generic': 'Ώρα Βλαδιβοστόκ',
-                            'standard': 'Χειμερινή ώρα Βλαδιβοστόκ',
-                            'daylight': 'Θερινή ώρα Βλαδιβοστόκ'
+                            'generic': '\u038F\u03C1\u03B1 \u0392\u03BB\u03B1\u03B4\u03B9\u03B2\u03BF\u03C3\u03C4\u03CC\u03BA',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0392\u03BB\u03B1\u03B4\u03B9\u03B2\u03BF\u03C3\u03C4\u03CC\u03BA',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0392\u03BB\u03B1\u03B4\u03B9\u03B2\u03BF\u03C3\u03C4\u03CC\u03BA'
                         }
                     },
                     'Venezuela': {
                         'long': {
-                            'standard': 'Ώρα Βενεζουέλας'
+                            'standard': '\u038F\u03C1\u03B1 \u0392\u03B5\u03BD\u03B5\u03B6\u03BF\u03C5\u03AD\u03BB\u03B1\u03C2'
                         }
                     },
                     'Tajikistan': {
                         'long': {
-                            'standard': 'Ώρα Τατζικιστάν'
+                            'standard': '\u038F\u03C1\u03B1 \u03A4\u03B1\u03C4\u03B6\u03B9\u03BA\u03B9\u03C3\u03C4\u03AC\u03BD'
                         }
                     },
                     'Taipei': {
                         'long': {
-                            'generic': 'Ώρα Ταϊπέι',
-                            'standard': 'Χειμερινή ώρα Ταϊπέι',
-                            'daylight': 'Θερινή ώρα Ταϊπέι'
+                            'generic': '\u038F\u03C1\u03B1 \u03A4\u03B1\u03CA\u03C0\u03AD\u03B9',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A4\u03B1\u03CA\u03C0\u03AD\u03B9',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A4\u03B1\u03CA\u03C0\u03AD\u03B9'
                         }
                     },
                     'Hovd': {
                         'long': {
-                            'generic': 'Ώρα Χοβντ',
-                            'standard': 'Χειμερινή ώρα Χοβντ',
-                            'daylight': 'Θερινή ώρα Χοβντ'
+                            'generic': '\u038F\u03C1\u03B1 \u03A7\u03BF\u03B2\u03BD\u03C4',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A7\u03BF\u03B2\u03BD\u03C4',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A7\u03BF\u03B2\u03BD\u03C4'
                         }
                     },
                     'Hong_Kong': {
                         'long': {
-                            'generic': 'Ώρα Χονγκ Κονγκ',
-                            'standard': 'Χειμερινή ώρα Χονγκ Κονγκ',
-                            'daylight': 'Θερινή ώρα Χονγκ Κονγκ'
+                            'generic': '\u038F\u03C1\u03B1 \u03A7\u03BF\u03BD\u03B3\u03BA \u039A\u03BF\u03BD\u03B3\u03BA',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A7\u03BF\u03BD\u03B3\u03BA \u039A\u03BF\u03BD\u03B3\u03BA',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A7\u03BF\u03BD\u03B3\u03BA \u039A\u03BF\u03BD\u03B3\u03BA'
                         }
                     },
                     'Hawaii_Aleutian': {
                         'long': {
-                            'generic': 'Ώρα Χαβάης-Αλεούτιων νήσων',
-                            'standard': 'Χειμερινή ώρα Χαβάης-Αλεούτιων νήσων',
-                            'daylight': 'Θερινή ώρα Χαβάης-Αλεούτιων νήσων'
+                            'generic': '\u038F\u03C1\u03B1 \u03A7\u03B1\u03B2\u03AC\u03B7\u03C2-\u0391\u03BB\u03B5\u03BF\u03CD\u03C4\u03B9\u03C9\u03BD \u03BD\u03AE\u03C3\u03C9\u03BD',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A7\u03B1\u03B2\u03AC\u03B7\u03C2-\u0391\u03BB\u03B5\u03BF\u03CD\u03C4\u03B9\u03C9\u03BD \u03BD\u03AE\u03C3\u03C9\u03BD',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A7\u03B1\u03B2\u03AC\u03B7\u03C2-\u0391\u03BB\u03B5\u03BF\u03CD\u03C4\u03B9\u03C9\u03BD \u03BD\u03AE\u03C3\u03C9\u03BD'
                         }
                     },
                     'Guyana': {
                         'long': {
-                            'standard': 'Ώρα Γουιάνας'
+                            'standard': '\u038F\u03C1\u03B1 \u0393\u03BF\u03C5\u03B9\u03AC\u03BD\u03B1\u03C2'
                         }
                     },
                     'Gulf': {
                         'long': {
-                            'standard': 'Ώρα Κόλπου'
+                            'standard': '\u038F\u03C1\u03B1 \u039A\u03CC\u03BB\u03C0\u03BF\u03C5'
                         }
                     },
                     'Guam': {
                         'long': {
-                            'standard': 'Ώρα Γκουάμ'
+                            'standard': '\u038F\u03C1\u03B1 \u0393\u03BA\u03BF\u03C5\u03AC\u03BC'
                         }
                     },
                     'Greenland_Western': {
                         'long': {
-                            'generic': 'Ώρα Δυτικής Γροιλανδίας',
-                            'standard': 'Χειμερινή ώρα Δυτικής Γροιλανδίας',
-                            'daylight': 'Θερινή ώρα Δυτικής Γροιλανδίας'
+                            'generic': '\u038F\u03C1\u03B1 \u0394\u03C5\u03C4\u03B9\u03BA\u03AE\u03C2 \u0393\u03C1\u03BF\u03B9\u03BB\u03B1\u03BD\u03B4\u03AF\u03B1\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0394\u03C5\u03C4\u03B9\u03BA\u03AE\u03C2 \u0393\u03C1\u03BF\u03B9\u03BB\u03B1\u03BD\u03B4\u03AF\u03B1\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0394\u03C5\u03C4\u03B9\u03BA\u03AE\u03C2 \u0393\u03C1\u03BF\u03B9\u03BB\u03B1\u03BD\u03B4\u03AF\u03B1\u03C2'
                         }
                     },
                     'Greenland_Eastern': {
                         'long': {
-                            'generic': 'Ώρα Ανατολικής Γροιλανδίας',
-                            'standard': 'Χειμερινή ώρα Ανατολικής Γροιλανδίας',
-                            'daylight': 'Θερινή ώρα Ανατολικής Γροιλανδίας'
+                            'generic': '\u038F\u03C1\u03B1 \u0391\u03BD\u03B1\u03C4\u03BF\u03BB\u03B9\u03BA\u03AE\u03C2 \u0393\u03C1\u03BF\u03B9\u03BB\u03B1\u03BD\u03B4\u03AF\u03B1\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0391\u03BD\u03B1\u03C4\u03BF\u03BB\u03B9\u03BA\u03AE\u03C2 \u0393\u03C1\u03BF\u03B9\u03BB\u03B1\u03BD\u03B4\u03AF\u03B1\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0391\u03BD\u03B1\u03C4\u03BF\u03BB\u03B9\u03BA\u03AE\u03C2 \u0393\u03C1\u03BF\u03B9\u03BB\u03B1\u03BD\u03B4\u03AF\u03B1\u03C2'
                         }
                     },
                     'GMT': {
                         'long': {
-                            'standard': 'Μέση ώρα Γκρίνουιτς'
+                            'standard': '\u039C\u03AD\u03C3\u03B7 \u03CE\u03C1\u03B1 \u0393\u03BA\u03C1\u03AF\u03BD\u03BF\u03C5\u03B9\u03C4\u03C2'
                         }
                     },
                     'Gilbert_Islands': {
                         'long': {
-                            'standard': 'Ώρα Νησιών Γκίλμπερτ'
+                            'standard': '\u038F\u03C1\u03B1 \u039D\u03B7\u03C3\u03B9\u03CE\u03BD \u0393\u03BA\u03AF\u03BB\u03BC\u03C0\u03B5\u03C1\u03C4'
                         }
                     },
                     'Georgia': {
                         'long': {
-                            'generic': 'Ώρα Γεωργίας',
-                            'standard': 'Χειμερινή ώρα Γεωργίας',
-                            'daylight': 'Θερινή ώρα Γεωργίας'
+                            'generic': '\u038F\u03C1\u03B1 \u0393\u03B5\u03C9\u03C1\u03B3\u03AF\u03B1\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0393\u03B5\u03C9\u03C1\u03B3\u03AF\u03B1\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0393\u03B5\u03C9\u03C1\u03B3\u03AF\u03B1\u03C2'
                         }
                     },
                     'Gambier': {
                         'long': {
-                            'standard': 'Ώρα Γκάμπιερ'
+                            'standard': '\u038F\u03C1\u03B1 \u0393\u03BA\u03AC\u03BC\u03C0\u03B9\u03B5\u03C1'
                         }
                     },
                     'Galapagos': {
                         'long': {
-                            'standard': 'Ώρα Γκαλάπαγκος'
+                            'standard': '\u038F\u03C1\u03B1 \u0393\u03BA\u03B1\u03BB\u03AC\u03C0\u03B1\u03B3\u03BA\u03BF\u03C2'
                         }
                     },
                     'French_Southern': {
                         'long': {
-                            'standard': 'Ώρα Γαλλικού Νότου και Ανταρκτικής'
+                            'standard': '\u038F\u03C1\u03B1 \u0393\u03B1\u03BB\u03BB\u03B9\u03BA\u03BF\u03CD \u039D\u03CC\u03C4\u03BF\u03C5 \u03BA\u03B1\u03B9 \u0391\u03BD\u03C4\u03B1\u03C1\u03BA\u03C4\u03B9\u03BA\u03AE\u03C2'
                         }
                     },
                     'Amazon': {
                         'long': {
-                            'generic': 'Ώρα Αμαζονίου',
-                            'standard': 'Χειμερινή ώρα Αμαζονίου',
-                            'daylight': 'Θερινή ώρα Αμαζονίου'
+                            'generic': '\u038F\u03C1\u03B1 \u0391\u03BC\u03B1\u03B6\u03BF\u03BD\u03AF\u03BF\u03C5',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0391\u03BC\u03B1\u03B6\u03BF\u03BD\u03AF\u03BF\u03C5',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0391\u03BC\u03B1\u03B6\u03BF\u03BD\u03AF\u03BF\u03C5'
                         }
                     },
                     'America_Central': {
                         'long': {
-                            'generic': 'Κεντρική ώρα Βόρειας Αμερικής',
-                            'standard': 'Κεντρική χειμερινή ώρα Βόρειας Αμερικής',
-                            'daylight': 'Κεντρική θερινή ώρα Βόρειας Αμερικής'
+                            'generic': '\u039A\u03B5\u03BD\u03C4\u03C1\u03B9\u03BA\u03AE \u03CE\u03C1\u03B1 \u0392\u03CC\u03C1\u03B5\u03B9\u03B1\u03C2 \u0391\u03BC\u03B5\u03C1\u03B9\u03BA\u03AE\u03C2',
+                            'standard': '\u039A\u03B5\u03BD\u03C4\u03C1\u03B9\u03BA\u03AE \u03C7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0392\u03CC\u03C1\u03B5\u03B9\u03B1\u03C2 \u0391\u03BC\u03B5\u03C1\u03B9\u03BA\u03AE\u03C2',
+                            'daylight': '\u039A\u03B5\u03BD\u03C4\u03C1\u03B9\u03BA\u03AE \u03B8\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0392\u03CC\u03C1\u03B5\u03B9\u03B1\u03C2 \u0391\u03BC\u03B5\u03C1\u03B9\u03BA\u03AE\u03C2'
                         }
                     },
                     'Atlantic': {
                         'long': {
-                            'generic': 'Ώρα Ατλαντικού',
-                            'standard': 'Χειμερινή ώρα Ατλαντικού',
-                            'daylight': 'Θερινή ώρα Ατλαντικού'
+                            'generic': '\u038F\u03C1\u03B1 \u0391\u03C4\u03BB\u03B1\u03BD\u03C4\u03B9\u03BA\u03BF\u03CD',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0391\u03C4\u03BB\u03B1\u03BD\u03C4\u03B9\u03BA\u03BF\u03CD',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0391\u03C4\u03BB\u03B1\u03BD\u03C4\u03B9\u03BA\u03BF\u03CD'
                         }
                     },
                     'Australia_Central': {
                         'long': {
-                            'generic': 'Ώρα Κεντρικής Αυστραλίας',
-                            'standard': 'Χειμερινή ώρα Κεντρικής Αυστραλίας',
-                            'daylight': 'Θερινή ώρα Κεντρικής Αυστραλίας'
+                            'generic': '\u038F\u03C1\u03B1 \u039A\u03B5\u03BD\u03C4\u03C1\u03B9\u03BA\u03AE\u03C2 \u0391\u03C5\u03C3\u03C4\u03C1\u03B1\u03BB\u03AF\u03B1\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039A\u03B5\u03BD\u03C4\u03C1\u03B9\u03BA\u03AE\u03C2 \u0391\u03C5\u03C3\u03C4\u03C1\u03B1\u03BB\u03AF\u03B1\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039A\u03B5\u03BD\u03C4\u03C1\u03B9\u03BA\u03AE\u03C2 \u0391\u03C5\u03C3\u03C4\u03C1\u03B1\u03BB\u03AF\u03B1\u03C2'
                         }
                     },
                     'Australia_CentralWestern': {
                         'long': {
-                            'generic': 'Ώρα Κεντροδυτικής Αυστραλίας',
-                            'standard': 'Χειμερινή ώρα Κεντροδυτικής Αυστραλίας',
-                            'daylight': 'Θερινή ώρα Κεντροδυτικής Αυστραλίας'
+                            'generic': '\u038F\u03C1\u03B1 \u039A\u03B5\u03BD\u03C4\u03C1\u03BF\u03B4\u03C5\u03C4\u03B9\u03BA\u03AE\u03C2 \u0391\u03C5\u03C3\u03C4\u03C1\u03B1\u03BB\u03AF\u03B1\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039A\u03B5\u03BD\u03C4\u03C1\u03BF\u03B4\u03C5\u03C4\u03B9\u03BA\u03AE\u03C2 \u0391\u03C5\u03C3\u03C4\u03C1\u03B1\u03BB\u03AF\u03B1\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039A\u03B5\u03BD\u03C4\u03C1\u03BF\u03B4\u03C5\u03C4\u03B9\u03BA\u03AE\u03C2 \u0391\u03C5\u03C3\u03C4\u03C1\u03B1\u03BB\u03AF\u03B1\u03C2'
                         }
                     },
                     'Australia_Eastern': {
                         'long': {
-                            'generic': 'Ώρα Ανατολικής Αυστραλίας',
-                            'standard': 'Χειμερινή ώρα Ανατολικής Αυστραλίας',
-                            'daylight': 'Θερινή ώρα Ανατολικής Αυστραλίας'
+                            'generic': '\u038F\u03C1\u03B1 \u0391\u03BD\u03B1\u03C4\u03BF\u03BB\u03B9\u03BA\u03AE\u03C2 \u0391\u03C5\u03C3\u03C4\u03C1\u03B1\u03BB\u03AF\u03B1\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0391\u03BD\u03B1\u03C4\u03BF\u03BB\u03B9\u03BA\u03AE\u03C2 \u0391\u03C5\u03C3\u03C4\u03C1\u03B1\u03BB\u03AF\u03B1\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0391\u03BD\u03B1\u03C4\u03BF\u03BB\u03B9\u03BA\u03AE\u03C2 \u0391\u03C5\u03C3\u03C4\u03C1\u03B1\u03BB\u03AF\u03B1\u03C2'
                         }
                     },
                     'Australia_Western': {
                         'long': {
-                            'generic': 'Ώρα Δυτικής Αυστραλίας',
-                            'standard': 'Χειμερινή ώρα Δυτικής Αυστραλίας',
-                            'daylight': 'Θερινή ώρα Δυτικής Αυστραλίας'
+                            'generic': '\u038F\u03C1\u03B1 \u0394\u03C5\u03C4\u03B9\u03BA\u03AE\u03C2 \u0391\u03C5\u03C3\u03C4\u03C1\u03B1\u03BB\u03AF\u03B1\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0394\u03C5\u03C4\u03B9\u03BA\u03AE\u03C2 \u0391\u03C5\u03C3\u03C4\u03C1\u03B1\u03BB\u03AF\u03B1\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0394\u03C5\u03C4\u03B9\u03BA\u03AE\u03C2 \u0391\u03C5\u03C3\u03C4\u03C1\u03B1\u03BB\u03AF\u03B1\u03C2'
                         }
                     },
                     'Azerbaijan': {
                         'long': {
-                            'generic': 'Ώρα Αζερμπαϊτζάν',
-                            'standard': 'Χειμερινή ώρα Αζερμπαϊτζάν',
-                            'daylight': 'Θερινή ώρα Αζερμπαϊτζάν'
+                            'generic': '\u038F\u03C1\u03B1 \u0391\u03B6\u03B5\u03C1\u03BC\u03C0\u03B1\u03CA\u03C4\u03B6\u03AC\u03BD',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0391\u03B6\u03B5\u03C1\u03BC\u03C0\u03B1\u03CA\u03C4\u03B6\u03AC\u03BD',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0391\u03B6\u03B5\u03C1\u03BC\u03C0\u03B1\u03CA\u03C4\u03B6\u03AC\u03BD'
                         }
                     },
                     'Azores': {
                         'long': {
-                            'generic': 'Ώρα Αζορών',
-                            'standard': 'Χειμερινή ώρα Αζορών',
-                            'daylight': 'Θερινή ώρα Αζορών'
+                            'generic': '\u038F\u03C1\u03B1 \u0391\u03B6\u03BF\u03C1\u03CE\u03BD',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0391\u03B6\u03BF\u03C1\u03CE\u03BD',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0391\u03B6\u03BF\u03C1\u03CE\u03BD'
                         }
                     },
                     'Bangladesh': {
                         'long': {
-                            'generic': 'Ώρα Μπανγκλαντές',
-                            'standard': 'Χειμερινή ώρα Μπανγκλαντές',
-                            'daylight': 'Θερινή ώρα Μπανγκλαντές'
+                            'generic': '\u038F\u03C1\u03B1 \u039C\u03C0\u03B1\u03BD\u03B3\u03BA\u03BB\u03B1\u03BD\u03C4\u03AD\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039C\u03C0\u03B1\u03BD\u03B3\u03BA\u03BB\u03B1\u03BD\u03C4\u03AD\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039C\u03C0\u03B1\u03BD\u03B3\u03BA\u03BB\u03B1\u03BD\u03C4\u03AD\u03C2'
                         }
                     },
                     'Bhutan': {
                         'long': {
-                            'standard': 'Ώρα Μπουτάν'
+                            'standard': '\u038F\u03C1\u03B1 \u039C\u03C0\u03BF\u03C5\u03C4\u03AC\u03BD'
                         }
                     },
                     'Bolivia': {
                         'long': {
-                            'standard': 'Ώρα Βολιβίας'
+                            'standard': '\u038F\u03C1\u03B1 \u0392\u03BF\u03BB\u03B9\u03B2\u03AF\u03B1\u03C2'
                         }
                     },
                     'Brasilia': {
                         'long': {
-                            'generic': 'Ώρα Μπραζίλια',
-                            'standard': 'Χειμερινή ώρα Μπραζίλια',
-                            'daylight': 'Θερινή ώρα Μπραζίλια'
+                            'generic': '\u038F\u03C1\u03B1 \u039C\u03C0\u03C1\u03B1\u03B6\u03AF\u03BB\u03B9\u03B1',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039C\u03C0\u03C1\u03B1\u03B6\u03AF\u03BB\u03B9\u03B1',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039C\u03C0\u03C1\u03B1\u03B6\u03AF\u03BB\u03B9\u03B1'
                         }
                     },
                     'Brunei': {
                         'long': {
-                            'standard': 'Ώρα Μπρουνέι Νταρουσαλάμ'
+                            'standard': '\u038F\u03C1\u03B1 \u039C\u03C0\u03C1\u03BF\u03C5\u03BD\u03AD\u03B9 \u039D\u03C4\u03B1\u03C1\u03BF\u03C5\u03C3\u03B1\u03BB\u03AC\u03BC'
                         }
                     },
                     'Cape_Verde': {
                         'long': {
-                            'generic': 'Ώρα Πράσινου Ακρωτηρίου',
-                            'standard': 'Χειμερινή ώρα Πράσινου Ακρωτηρίου',
-                            'daylight': 'Θερινή ώρα Πράσινου Ακρωτηρίου'
+                            'generic': '\u038F\u03C1\u03B1 \u03A0\u03C1\u03AC\u03C3\u03B9\u03BD\u03BF\u03C5 \u0391\u03BA\u03C1\u03C9\u03C4\u03B7\u03C1\u03AF\u03BF\u03C5',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A0\u03C1\u03AC\u03C3\u03B9\u03BD\u03BF\u03C5 \u0391\u03BA\u03C1\u03C9\u03C4\u03B7\u03C1\u03AF\u03BF\u03C5',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A0\u03C1\u03AC\u03C3\u03B9\u03BD\u03BF\u03C5 \u0391\u03BA\u03C1\u03C9\u03C4\u03B7\u03C1\u03AF\u03BF\u03C5'
                         }
                     },
                     'Chamorro': {
                         'long': {
-                            'standard': 'Ώρα Τσαμόρο'
+                            'standard': '\u038F\u03C1\u03B1 \u03A4\u03C3\u03B1\u03BC\u03CC\u03C1\u03BF'
                         }
                     },
                     'Chatham': {
                         'long': {
-                            'generic': 'Ώρα Τσάθαμ',
-                            'standard': 'Χειμερινή ώρα Τσάθαμ',
-                            'daylight': 'Θερινή ώρα Τσάθαμ'
+                            'generic': '\u038F\u03C1\u03B1 \u03A4\u03C3\u03AC\u03B8\u03B1\u03BC',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A4\u03C3\u03AC\u03B8\u03B1\u03BC',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A4\u03C3\u03AC\u03B8\u03B1\u03BC'
                         }
                     },
                     'Chile': {
                         'long': {
-                            'generic': 'Ώρα Χιλής',
-                            'standard': 'Χειμερινή ώρα Χιλής',
-                            'daylight': 'Θερινή ώρα Χιλής'
+                            'generic': '\u038F\u03C1\u03B1 \u03A7\u03B9\u03BB\u03AE\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A7\u03B9\u03BB\u03AE\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A7\u03B9\u03BB\u03AE\u03C2'
                         }
                     },
                     'India': {
                         'long': {
-                            'standard': 'Ώρα Ινδίας'
+                            'standard': '\u038F\u03C1\u03B1 \u0399\u03BD\u03B4\u03AF\u03B1\u03C2'
                         }
                     },
                     'Indian_Ocean': {
                         'long': {
-                            'standard': 'Ώρα Ινδικού Ωκεανού'
+                            'standard': '\u038F\u03C1\u03B1 \u0399\u03BD\u03B4\u03B9\u03BA\u03BF\u03CD \u03A9\u03BA\u03B5\u03B1\u03BD\u03BF\u03CD'
                         }
                     },
                     'Indochina': {
                         'long': {
-                            'standard': 'Ώρα Ινδοκίνας'
+                            'standard': '\u038F\u03C1\u03B1 \u0399\u03BD\u03B4\u03BF\u03BA\u03AF\u03BD\u03B1\u03C2'
                         }
                     },
                     'Indonesia_Central': {
                         'long': {
-                            'standard': 'Ώρα: Κεντρική Ινδονησία'
+                            'standard': '\u038F\u03C1\u03B1: \u039A\u03B5\u03BD\u03C4\u03C1\u03B9\u03BA\u03AE \u0399\u03BD\u03B4\u03BF\u03BD\u03B7\u03C3\u03AF\u03B1'
                         }
                     },
                     'Indonesia_Eastern': {
                         'long': {
-                            'standard': 'Ώρα: Ανατολική Ινδονησία'
+                            'standard': '\u038F\u03C1\u03B1: \u0391\u03BD\u03B1\u03C4\u03BF\u03BB\u03B9\u03BA\u03AE \u0399\u03BD\u03B4\u03BF\u03BD\u03B7\u03C3\u03AF\u03B1'
                         }
                     },
                     'Indonesia_Western': {
                         'long': {
-                            'standard': 'Ώρα: Δυτική Ινδονησία'
+                            'standard': '\u038F\u03C1\u03B1: \u0394\u03C5\u03C4\u03B9\u03BA\u03AE \u0399\u03BD\u03B4\u03BF\u03BD\u03B7\u03C3\u03AF\u03B1'
                         }
                     },
                     'Iran': {
                         'long': {
-                            'generic': 'Ώρα Ιράν',
-                            'standard': 'Χειμερινή ώρα Ιράν',
-                            'daylight': 'Θερινή ώρα Ιράν'
+                            'generic': '\u038F\u03C1\u03B1 \u0399\u03C1\u03AC\u03BD',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0399\u03C1\u03AC\u03BD',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0399\u03C1\u03AC\u03BD'
                         }
                     },
                     'Irkutsk': {
                         'long': {
-                            'generic': 'Ώρα Ιρκούτσκ',
-                            'standard': 'Χειμερινή ώρα Ιρκούτσκ',
-                            'daylight': 'Θερινή ώρα Ιρκούτσκ'
+                            'generic': '\u038F\u03C1\u03B1 \u0399\u03C1\u03BA\u03BF\u03CD\u03C4\u03C3\u03BA',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0399\u03C1\u03BA\u03BF\u03CD\u03C4\u03C3\u03BA',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0399\u03C1\u03BA\u03BF\u03CD\u03C4\u03C3\u03BA'
                         }
                     },
                     'Israel': {
                         'long': {
-                            'generic': 'Ώρα Ισραήλ',
-                            'standard': 'Χειμερινή ώρα Ισραήλ',
-                            'daylight': 'Θερινή ώρα Ισραήλ'
+                            'generic': '\u038F\u03C1\u03B1 \u0399\u03C3\u03C1\u03B1\u03AE\u03BB',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0399\u03C3\u03C1\u03B1\u03AE\u03BB',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0399\u03C3\u03C1\u03B1\u03AE\u03BB'
                         }
                     },
                     'Japan': {
                         'long': {
-                            'generic': 'Ώρα Ιαπωνίας',
-                            'standard': 'Χειμερινή ώρα Ιαπωνίας',
-                            'daylight': 'Θερινή ώρα Ιαπωνίας'
+                            'generic': '\u038F\u03C1\u03B1 \u0399\u03B1\u03C0\u03C9\u03BD\u03AF\u03B1\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0399\u03B1\u03C0\u03C9\u03BD\u03AF\u03B1\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u0399\u03B1\u03C0\u03C9\u03BD\u03AF\u03B1\u03C2'
                         }
                     },
                     'Kamchatka': {
                         'long': {
-                            'generic': 'Ώρα Καμτσάτκα',
-                            'standard': 'Χειμερινή ώρα Πετροπαβλόβσκ-Καμτσάτσκι',
-                            'daylight': 'Θερινή ώρα Πετροπαβλόβσκ-Καμτσάτσκι'
+                            'generic': '\u038F\u03C1\u03B1 \u039A\u03B1\u03BC\u03C4\u03C3\u03AC\u03C4\u03BA\u03B1',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A0\u03B5\u03C4\u03C1\u03BF\u03C0\u03B1\u03B2\u03BB\u03CC\u03B2\u03C3\u03BA-\u039A\u03B1\u03BC\u03C4\u03C3\u03AC\u03C4\u03C3\u03BA\u03B9',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A0\u03B5\u03C4\u03C1\u03BF\u03C0\u03B1\u03B2\u03BB\u03CC\u03B2\u03C3\u03BA-\u039A\u03B1\u03BC\u03C4\u03C3\u03AC\u03C4\u03C3\u03BA\u03B9'
                         }
                     },
                     'Kazakhstan_Eastern': {
                         'long': {
-                            'standard': 'Ώρα Ανατολικού Καζακστάν'
+                            'standard': '\u038F\u03C1\u03B1 \u0391\u03BD\u03B1\u03C4\u03BF\u03BB\u03B9\u03BA\u03BF\u03CD \u039A\u03B1\u03B6\u03B1\u03BA\u03C3\u03C4\u03AC\u03BD'
                         }
                     },
                     'Kazakhstan_Western': {
                         'long': {
-                            'standard': 'Ώρα Δυτικού Καζακστάν'
+                            'standard': '\u038F\u03C1\u03B1 \u0394\u03C5\u03C4\u03B9\u03BA\u03BF\u03CD \u039A\u03B1\u03B6\u03B1\u03BA\u03C3\u03C4\u03AC\u03BD'
                         }
                     },
                     'Korea': {
                         'long': {
-                            'generic': 'Ώρα Κορέας',
-                            'standard': 'Χειμερινή ώρα Κορέας',
-                            'daylight': 'Θερινή ώρα Κορέας'
+                            'generic': '\u038F\u03C1\u03B1 \u039A\u03BF\u03C1\u03AD\u03B1\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039A\u03BF\u03C1\u03AD\u03B1\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039A\u03BF\u03C1\u03AD\u03B1\u03C2'
                         }
                     },
                     'Kosrae': {
                         'long': {
-                            'standard': 'Ώρα Κοσράης'
+                            'standard': '\u038F\u03C1\u03B1 \u039A\u03BF\u03C3\u03C1\u03AC\u03B7\u03C2'
                         }
                     },
                     'Krasnoyarsk': {
                         'long': {
-                            'generic': 'Ώρα Κρασνόγιαρσκ',
-                            'standard': 'Χειμερινή ώρα Κρασνόγιαρσκ',
-                            'daylight': 'Θερινή ώρα Κρασνόγιαρσκ'
+                            'generic': '\u038F\u03C1\u03B1 \u039A\u03C1\u03B1\u03C3\u03BD\u03CC\u03B3\u03B9\u03B1\u03C1\u03C3\u03BA',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039A\u03C1\u03B1\u03C3\u03BD\u03CC\u03B3\u03B9\u03B1\u03C1\u03C3\u03BA',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039A\u03C1\u03B1\u03C3\u03BD\u03CC\u03B3\u03B9\u03B1\u03C1\u03C3\u03BA'
                         }
                     },
                     'Kyrgystan': {
                         'long': {
-                            'standard': 'Ώρα Κιργιστάν'
+                            'standard': '\u038F\u03C1\u03B1 \u039A\u03B9\u03C1\u03B3\u03B9\u03C3\u03C4\u03AC\u03BD'
                         }
                     },
                     'Line_Islands': {
                         'long': {
-                            'standard': 'Ώρα Νησιών Λάιν'
+                            'standard': '\u038F\u03C1\u03B1 \u039D\u03B7\u03C3\u03B9\u03CE\u03BD \u039B\u03AC\u03B9\u03BD'
                         }
                     },
                     'Lord_Howe': {
                         'long': {
-                            'generic': 'Ώρα Λορντ Χάου',
-                            'standard': 'Χειμερινή ώρα Λορντ Χάου',
-                            'daylight': 'Θερινή ώρα Λορντ Χάου'
+                            'generic': '\u038F\u03C1\u03B1 \u039B\u03BF\u03C1\u03BD\u03C4 \u03A7\u03AC\u03BF\u03C5',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039B\u03BF\u03C1\u03BD\u03C4 \u03A7\u03AC\u03BF\u03C5',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039B\u03BF\u03C1\u03BD\u03C4 \u03A7\u03AC\u03BF\u03C5'
                         }
                     },
                     'Macau': {
                         'long': {
-                            'generic': 'Ώρα Μακάο',
-                            'standard': 'Χειμερινή ώρα Μακάο',
-                            'daylight': 'Θερινή ώρα Μακάο'
+                            'generic': '\u038F\u03C1\u03B1 \u039C\u03B1\u03BA\u03AC\u03BF',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039C\u03B1\u03BA\u03AC\u03BF',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039C\u03B1\u03BA\u03AC\u03BF'
                         }
                     },
                     'Macquarie': {
                         'long': {
-                            'standard': 'Ώρα Νησιού Μακουάρι'
+                            'standard': '\u038F\u03C1\u03B1 \u039D\u03B7\u03C3\u03B9\u03BF\u03CD \u039C\u03B1\u03BA\u03BF\u03C5\u03AC\u03C1\u03B9'
                         }
                     },
                     'Magadan': {
                         'long': {
-                            'generic': 'Ώρα Μάγκανταν',
-                            'standard': 'Χειμερινή ώρα Μάγκανταν',
-                            'daylight': 'Θερινή ώρα Μάγκανταν'
+                            'generic': '\u038F\u03C1\u03B1 \u039C\u03AC\u03B3\u03BA\u03B1\u03BD\u03C4\u03B1\u03BD',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039C\u03AC\u03B3\u03BA\u03B1\u03BD\u03C4\u03B1\u03BD',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039C\u03AC\u03B3\u03BA\u03B1\u03BD\u03C4\u03B1\u03BD'
                         }
                     },
                     'Malaysia': {
                         'long': {
-                            'standard': 'Ώρα Μαλαισίας'
+                            'standard': '\u038F\u03C1\u03B1 \u039C\u03B1\u03BB\u03B1\u03B9\u03C3\u03AF\u03B1\u03C2'
                         }
                     },
                     'Maldives': {
                         'long': {
-                            'standard': 'Ώρα Μαλδίβων'
+                            'standard': '\u038F\u03C1\u03B1 \u039C\u03B1\u03BB\u03B4\u03AF\u03B2\u03C9\u03BD'
                         }
                     },
                     'Marquesas': {
                         'long': {
-                            'standard': 'Ώρα Μαρκέσας'
+                            'standard': '\u038F\u03C1\u03B1 \u039C\u03B1\u03C1\u03BA\u03AD\u03C3\u03B1\u03C2'
                         }
                     },
                     'Marshall_Islands': {
                         'long': {
-                            'standard': 'Ώρα Νησιών Μάρσαλ'
+                            'standard': '\u038F\u03C1\u03B1 \u039D\u03B7\u03C3\u03B9\u03CE\u03BD \u039C\u03AC\u03C1\u03C3\u03B1\u03BB'
                         }
                     },
                     'Mauritius': {
                         'long': {
-                            'generic': 'Ώρα Μαυρίκιου',
-                            'standard': 'Χειμερινή ώρα Μαυρίκιου',
-                            'daylight': 'Θερινή ώρα Μαυρίκιου'
+                            'generic': '\u038F\u03C1\u03B1 \u039C\u03B1\u03C5\u03C1\u03AF\u03BA\u03B9\u03BF\u03C5',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039C\u03B1\u03C5\u03C1\u03AF\u03BA\u03B9\u03BF\u03C5',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039C\u03B1\u03C5\u03C1\u03AF\u03BA\u03B9\u03BF\u03C5'
                         }
                     },
                     'Mawson': {
                         'long': {
-                            'standard': 'Ώρα Μόσον'
+                            'standard': '\u038F\u03C1\u03B1 \u039C\u03CC\u03C3\u03BF\u03BD'
                         }
                     },
                     'Mongolia': {
                         'long': {
-                            'generic': 'Ώρα Ουλάν Μπατόρ',
-                            'standard': 'Χειμερινή ώρα Ουλάν Μπατόρ',
-                            'daylight': 'Θερινή ώρα Ουλάν Μπατόρ'
+                            'generic': '\u038F\u03C1\u03B1 \u039F\u03C5\u03BB\u03AC\u03BD \u039C\u03C0\u03B1\u03C4\u03CC\u03C1',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039F\u03C5\u03BB\u03AC\u03BD \u039C\u03C0\u03B1\u03C4\u03CC\u03C1',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039F\u03C5\u03BB\u03AC\u03BD \u039C\u03C0\u03B1\u03C4\u03CC\u03C1'
                         }
                     },
                     'Moscow': {
                         'long': {
-                            'generic': 'Ώρα Μόσχας',
-                            'standard': 'Χειμερινή ώρα Μόσχας',
-                            'daylight': 'Θερινή ώρα Μόσχας'
+                            'generic': '\u038F\u03C1\u03B1 \u039C\u03CC\u03C3\u03C7\u03B1\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039C\u03CC\u03C3\u03C7\u03B1\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039C\u03CC\u03C3\u03C7\u03B1\u03C2'
                         }
                     },
                     'Myanmar': {
                         'long': {
-                            'standard': 'Ώρα Μιανμάρ'
+                            'standard': '\u038F\u03C1\u03B1 \u039C\u03B9\u03B1\u03BD\u03BC\u03AC\u03C1'
                         }
                     },
                     'Nauru': {
                         'long': {
-                            'standard': 'Ώρα Ναούρου'
+                            'standard': '\u038F\u03C1\u03B1 \u039D\u03B1\u03BF\u03CD\u03C1\u03BF\u03C5'
                         }
                     },
                     'Nepal': {
                         'long': {
-                            'standard': 'Ώρα Νεπάλ'
+                            'standard': '\u038F\u03C1\u03B1 \u039D\u03B5\u03C0\u03AC\u03BB'
                         }
                     },
                     'New_Caledonia': {
                         'long': {
-                            'generic': 'Ώρα Νέας Καληδονίας',
-                            'standard': 'Χειμερινή ώρα Νέας Καληδονίας',
-                            'daylight': 'Θερινή ώρα Νέας Καληδονίας'
+                            'generic': '\u038F\u03C1\u03B1 \u039D\u03AD\u03B1\u03C2 \u039A\u03B1\u03BB\u03B7\u03B4\u03BF\u03BD\u03AF\u03B1\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039D\u03AD\u03B1\u03C2 \u039A\u03B1\u03BB\u03B7\u03B4\u03BF\u03BD\u03AF\u03B1\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039D\u03AD\u03B1\u03C2 \u039A\u03B1\u03BB\u03B7\u03B4\u03BF\u03BD\u03AF\u03B1\u03C2'
                         }
                     },
                     'New_Zealand': {
                         'long': {
-                            'generic': 'Ώρα Νέας Ζηλανδίας',
-                            'standard': 'Χειμερινή ώρα Νέας Ζηλανδίας',
-                            'daylight': 'Θερινή ώρα Νέας Ζηλανδίας'
+                            'generic': '\u038F\u03C1\u03B1 \u039D\u03AD\u03B1\u03C2 \u0396\u03B7\u03BB\u03B1\u03BD\u03B4\u03AF\u03B1\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039D\u03AD\u03B1\u03C2 \u0396\u03B7\u03BB\u03B1\u03BD\u03B4\u03AF\u03B1\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039D\u03AD\u03B1\u03C2 \u0396\u03B7\u03BB\u03B1\u03BD\u03B4\u03AF\u03B1\u03C2'
                         }
                     },
                     'Newfoundland': {
                         'long': {
-                            'generic': 'Ώρα Νέας Γης',
-                            'standard': 'Χειμερινή ώρα Νέας Γης',
-                            'daylight': 'Θερινή ώρα Νέας Γης'
+                            'generic': '\u038F\u03C1\u03B1 \u039D\u03AD\u03B1\u03C2 \u0393\u03B7\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039D\u03AD\u03B1\u03C2 \u0393\u03B7\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039D\u03AD\u03B1\u03C2 \u0393\u03B7\u03C2'
                         }
                     },
                     'Niue': {
                         'long': {
-                            'standard': 'Ώρα Νιούε'
+                            'standard': '\u038F\u03C1\u03B1 \u039D\u03B9\u03BF\u03CD\u03B5'
                         }
                     },
                     'Norfolk': {
                         'long': {
-                            'standard': 'Ώρα Νησιών Νόρφολκ'
+                            'standard': '\u038F\u03C1\u03B1 \u039D\u03B7\u03C3\u03B9\u03CE\u03BD \u039D\u03CC\u03C1\u03C6\u03BF\u03BB\u03BA'
                         }
                     },
                     'Noronha': {
                         'long': {
-                            'generic': 'Ώρα Φερνάρντο ντε Νορόνια',
-                            'standard': 'Χειμερινή ώρα Φερνάρντο ντε Νορόνια',
-                            'daylight': 'Θερινή ώρα Φερνάρντο ντε Νορόνια'
+                            'generic': '\u038F\u03C1\u03B1 \u03A6\u03B5\u03C1\u03BD\u03AC\u03C1\u03BD\u03C4\u03BF \u03BD\u03C4\u03B5 \u039D\u03BF\u03C1\u03CC\u03BD\u03B9\u03B1',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A6\u03B5\u03C1\u03BD\u03AC\u03C1\u03BD\u03C4\u03BF \u03BD\u03C4\u03B5 \u039D\u03BF\u03C1\u03CC\u03BD\u03B9\u03B1',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A6\u03B5\u03C1\u03BD\u03AC\u03C1\u03BD\u03C4\u03BF \u03BD\u03C4\u03B5 \u039D\u03BF\u03C1\u03CC\u03BD\u03B9\u03B1'
                         }
                     },
                     'North_Mariana': {
                         'long': {
-                            'standard': 'Ώρα Νησιών Βόρειες Μαριάνες'
+                            'standard': '\u038F\u03C1\u03B1 \u039D\u03B7\u03C3\u03B9\u03CE\u03BD \u0392\u03CC\u03C1\u03B5\u03B9\u03B5\u03C2 \u039C\u03B1\u03C1\u03B9\u03AC\u03BD\u03B5\u03C2'
                         }
                     },
                     'Novosibirsk': {
                         'long': {
-                            'generic': 'Ώρα Νοβοσιμπίρσκ',
-                            'standard': 'Χειμερινή ώρα Νοβοσιμπίρσκ',
-                            'daylight': 'Θερινή ώρα Νοβοσιμπίρσκ'
+                            'generic': '\u038F\u03C1\u03B1 \u039D\u03BF\u03B2\u03BF\u03C3\u03B9\u03BC\u03C0\u03AF\u03C1\u03C3\u03BA',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039D\u03BF\u03B2\u03BF\u03C3\u03B9\u03BC\u03C0\u03AF\u03C1\u03C3\u03BA',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039D\u03BF\u03B2\u03BF\u03C3\u03B9\u03BC\u03C0\u03AF\u03C1\u03C3\u03BA'
                         }
                     },
                     'Omsk': {
                         'long': {
-                            'generic': 'Ώρα Ομσκ',
-                            'standard': 'Χειμερινή ώρα Ομσκ',
-                            'daylight': 'Θερινή ώρα Ομσκ'
+                            'generic': '\u038F\u03C1\u03B1 \u039F\u03BC\u03C3\u03BA',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039F\u03BC\u03C3\u03BA',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u039F\u03BC\u03C3\u03BA'
                         }
                     },
                     'Pakistan': {
                         'long': {
-                            'generic': 'Ώρα Πακιστάν',
-                            'standard': 'Χειμερινή ώρα Πακιστάν',
-                            'daylight': 'Θερινή ώρα Πακιστάν'
+                            'generic': '\u038F\u03C1\u03B1 \u03A0\u03B1\u03BA\u03B9\u03C3\u03C4\u03AC\u03BD',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A0\u03B1\u03BA\u03B9\u03C3\u03C4\u03AC\u03BD',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A0\u03B1\u03BA\u03B9\u03C3\u03C4\u03AC\u03BD'
                         }
                     },
                     'Palau': {
                         'long': {
-                            'standard': 'Ώρα Παλάου'
+                            'standard': '\u038F\u03C1\u03B1 \u03A0\u03B1\u03BB\u03AC\u03BF\u03C5'
                         }
                     },
                     'Papua_New_Guinea': {
                         'long': {
-                            'standard': 'Ώρα Παπουά Νέα Γουινέα'
+                            'standard': '\u038F\u03C1\u03B1 \u03A0\u03B1\u03C0\u03BF\u03C5\u03AC \u039D\u03AD\u03B1 \u0393\u03BF\u03C5\u03B9\u03BD\u03AD\u03B1'
                         }
                     },
                     'Paraguay': {
                         'long': {
-                            'generic': 'Ώρα Παραγουάης',
-                            'standard': 'Χειμερινή ώρα Παραγουάης',
-                            'daylight': 'Θερινή ώρα Παραγουάης'
+                            'generic': '\u038F\u03C1\u03B1 \u03A0\u03B1\u03C1\u03B1\u03B3\u03BF\u03C5\u03AC\u03B7\u03C2',
+                            'standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A0\u03B1\u03C1\u03B1\u03B3\u03BF\u03C5\u03AC\u03B7\u03C2',
+                            'daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 \u03A0\u03B1\u03C1\u03B1\u03B3\u03BF\u03C5\u03AC\u03B7\u03C2'
                         }
                     }
                 },
                 'hourFormat': '+HH:mm;-HH:mm',
                 'gmtFormat': 'GMT{0}',
                 'gmtZeroFormat': 'GMT',
-                'regionFormat': 'Ώρα ({0})',
-                'regionFormat-type-daylight': 'Θερινή ώρα ({0})',
-                'regionFormat-type-standard': 'Χειμερινή ώρα ({0})',
+                'regionFormat': '\u038F\u03C1\u03B1 ({0})',
+                'regionFormat-type-daylight': '\u0398\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 ({0})',
+                'regionFormat-type-standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 ({0})',
                 'fallbackFormat': '[{1} ({0})]'
             },
             'calendars': {
@@ -2501,178 +2501,178 @@
                     'months': {
                         'format': {
                             'abbreviated': {
-                                '8': 'Αυγ',
-                                '7': 'Ιουλ',
-                                '6': 'Ιουν',
-                                '5': 'Μαΐ',
-                                '12': 'Δεκ',
-                                '11': 'Νοε',
-                                '10': 'Οκτ',
-                                '9': 'Σεπ',
-                                '1': 'Ιαν',
-                                '2': 'Φεβ',
-                                '3': 'Μαρ',
-                                '4': 'Απρ'
+                                '8': '\u0391\u03C5\u03B3',
+                                '7': '\u0399\u03BF\u03C5\u03BB',
+                                '6': '\u0399\u03BF\u03C5\u03BD',
+                                '5': '\u039C\u03B1\u0390',
+                                '12': '\u0394\u03B5\u03BA',
+                                '11': '\u039D\u03BF\u03B5',
+                                '10': '\u039F\u03BA\u03C4',
+                                '9': '\u03A3\u03B5\u03C0',
+                                '1': '\u0399\u03B1\u03BD',
+                                '2': '\u03A6\u03B5\u03B2',
+                                '3': '\u039C\u03B1\u03C1',
+                                '4': '\u0391\u03C0\u03C1'
                             },
                             'narrow': {
-                                '8': 'Α',
-                                '7': 'Ι',
-                                '6': 'Ι',
-                                '5': 'Μ',
-                                '12': 'Δ',
-                                '11': 'Ν',
-                                '10': 'Ο',
-                                '9': 'Σ',
-                                '1': 'Ι',
-                                '2': 'Φ',
-                                '3': 'Μ',
-                                '4': 'Α'
+                                '8': '\u0391',
+                                '7': '\u0399',
+                                '6': '\u0399',
+                                '5': '\u039C',
+                                '12': '\u0394',
+                                '11': '\u039D',
+                                '10': '\u039F',
+                                '9': '\u03A3',
+                                '1': '\u0399',
+                                '2': '\u03A6',
+                                '3': '\u039C',
+                                '4': '\u0391'
                             },
                             'wide': {
-                                '8': 'Αυγούστου',
-                                '7': 'Ιουλίου',
-                                '6': 'Ιουνίου',
-                                '5': 'Μαΐου',
-                                '12': 'Δεκεμβρίου',
-                                '11': 'Νοεμβρίου',
-                                '10': 'Οκτωβρίου',
-                                '9': 'Σεπτεμβρίου',
-                                '1': 'Ιανουαρίου',
-                                '2': 'Φεβρουαρίου',
-                                '3': 'Μαρτίου',
-                                '4': 'Απριλίου'
+                                '8': '\u0391\u03C5\u03B3\u03BF\u03CD\u03C3\u03C4\u03BF\u03C5',
+                                '7': '\u0399\u03BF\u03C5\u03BB\u03AF\u03BF\u03C5',
+                                '6': '\u0399\u03BF\u03C5\u03BD\u03AF\u03BF\u03C5',
+                                '5': '\u039C\u03B1\u0390\u03BF\u03C5',
+                                '12': '\u0394\u03B5\u03BA\u03B5\u03BC\u03B2\u03C1\u03AF\u03BF\u03C5',
+                                '11': '\u039D\u03BF\u03B5\u03BC\u03B2\u03C1\u03AF\u03BF\u03C5',
+                                '10': '\u039F\u03BA\u03C4\u03C9\u03B2\u03C1\u03AF\u03BF\u03C5',
+                                '9': '\u03A3\u03B5\u03C0\u03C4\u03B5\u03BC\u03B2\u03C1\u03AF\u03BF\u03C5',
+                                '1': '\u0399\u03B1\u03BD\u03BF\u03C5\u03B1\u03C1\u03AF\u03BF\u03C5',
+                                '2': '\u03A6\u03B5\u03B2\u03C1\u03BF\u03C5\u03B1\u03C1\u03AF\u03BF\u03C5',
+                                '3': '\u039C\u03B1\u03C1\u03C4\u03AF\u03BF\u03C5',
+                                '4': '\u0391\u03C0\u03C1\u03B9\u03BB\u03AF\u03BF\u03C5'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
-                                '8': 'Αύγ',
-                                '7': 'Ιούλ',
-                                '6': 'Ιούν',
-                                '5': 'Μάι',
-                                '12': 'Δεκ',
-                                '11': 'Νοέ',
-                                '10': 'Οκτ',
-                                '9': 'Σεπ',
-                                '1': 'Ιαν',
-                                '2': 'Φεβ',
-                                '3': 'Μάρ',
-                                '4': 'Απρ'
+                                '8': '\u0391\u03CD\u03B3',
+                                '7': '\u0399\u03BF\u03CD\u03BB',
+                                '6': '\u0399\u03BF\u03CD\u03BD',
+                                '5': '\u039C\u03AC\u03B9',
+                                '12': '\u0394\u03B5\u03BA',
+                                '11': '\u039D\u03BF\u03AD',
+                                '10': '\u039F\u03BA\u03C4',
+                                '9': '\u03A3\u03B5\u03C0',
+                                '1': '\u0399\u03B1\u03BD',
+                                '2': '\u03A6\u03B5\u03B2',
+                                '3': '\u039C\u03AC\u03C1',
+                                '4': '\u0391\u03C0\u03C1'
                             },
                             'narrow': {
-                                '8': 'Α',
-                                '7': 'Ι',
-                                '6': 'Ι',
-                                '5': 'Μ',
-                                '12': 'Δ',
-                                '11': 'Ν',
-                                '10': 'Ο',
-                                '9': 'Σ',
-                                '1': 'Ι',
-                                '2': 'Φ',
-                                '3': 'Μ',
-                                '4': 'Α'
+                                '8': '\u0391',
+                                '7': '\u0399',
+                                '6': '\u0399',
+                                '5': '\u039C',
+                                '12': '\u0394',
+                                '11': '\u039D',
+                                '10': '\u039F',
+                                '9': '\u03A3',
+                                '1': '\u0399',
+                                '2': '\u03A6',
+                                '3': '\u039C',
+                                '4': '\u0391'
                             },
                             'wide': {
-                                '8': 'Αύγουστος',
-                                '7': 'Ιούλιος',
-                                '6': 'Ιούνιος',
-                                '5': 'Μάιος',
-                                '12': 'Δεκέμβριος',
-                                '11': 'Νοέμβριος',
-                                '10': 'Οκτώβριος',
-                                '9': 'Σεπτέμβριος',
-                                '1': 'Ιανουάριος',
-                                '2': 'Φεβρουάριος',
-                                '3': 'Μάρτιος',
-                                '4': 'Απρίλιος'
+                                '8': '\u0391\u03CD\u03B3\u03BF\u03C5\u03C3\u03C4\u03BF\u03C2',
+                                '7': '\u0399\u03BF\u03CD\u03BB\u03B9\u03BF\u03C2',
+                                '6': '\u0399\u03BF\u03CD\u03BD\u03B9\u03BF\u03C2',
+                                '5': '\u039C\u03AC\u03B9\u03BF\u03C2',
+                                '12': '\u0394\u03B5\u03BA\u03AD\u03BC\u03B2\u03C1\u03B9\u03BF\u03C2',
+                                '11': '\u039D\u03BF\u03AD\u03BC\u03B2\u03C1\u03B9\u03BF\u03C2',
+                                '10': '\u039F\u03BA\u03C4\u03CE\u03B2\u03C1\u03B9\u03BF\u03C2',
+                                '9': '\u03A3\u03B5\u03C0\u03C4\u03AD\u03BC\u03B2\u03C1\u03B9\u03BF\u03C2',
+                                '1': '\u0399\u03B1\u03BD\u03BF\u03C5\u03AC\u03C1\u03B9\u03BF\u03C2',
+                                '2': '\u03A6\u03B5\u03B2\u03C1\u03BF\u03C5\u03AC\u03C1\u03B9\u03BF\u03C2',
+                                '3': '\u039C\u03AC\u03C1\u03C4\u03B9\u03BF\u03C2',
+                                '4': '\u0391\u03C0\u03C1\u03AF\u03BB\u03B9\u03BF\u03C2'
                             }
                         }
                     },
                     'days': {
                         'format': {
                             'abbreviated': {
-                                'sun': 'Κυρ',
-                                'mon': 'Δευ',
-                                'tue': 'Τρί',
-                                'wed': 'Τετ',
-                                'thu': 'Πέμ',
-                                'fri': 'Παρ',
-                                'sat': 'Σάβ'
+                                'sun': '\u039A\u03C5\u03C1',
+                                'mon': '\u0394\u03B5\u03C5',
+                                'tue': '\u03A4\u03C1\u03AF',
+                                'wed': '\u03A4\u03B5\u03C4',
+                                'thu': '\u03A0\u03AD\u03BC',
+                                'fri': '\u03A0\u03B1\u03C1',
+                                'sat': '\u03A3\u03AC\u03B2'
                             },
                             'narrow': {
-                                'sun': 'Κ',
-                                'mon': 'Δ',
-                                'tue': 'Τ',
-                                'wed': 'Τ',
-                                'thu': 'Π',
-                                'fri': 'Π',
-                                'sat': 'Σ'
+                                'sun': '\u039A',
+                                'mon': '\u0394',
+                                'tue': '\u03A4',
+                                'wed': '\u03A4',
+                                'thu': '\u03A0',
+                                'fri': '\u03A0',
+                                'sat': '\u03A3'
                             },
                             'short': {
-                                'sun': 'Κυ',
-                                'mon': 'Δε',
-                                'tue': 'Τρ',
-                                'wed': 'Τε',
-                                'thu': 'Πέ',
-                                'fri': 'Πα',
-                                'sat': 'Σά'
+                                'sun': '\u039A\u03C5',
+                                'mon': '\u0394\u03B5',
+                                'tue': '\u03A4\u03C1',
+                                'wed': '\u03A4\u03B5',
+                                'thu': '\u03A0\u03AD',
+                                'fri': '\u03A0\u03B1',
+                                'sat': '\u03A3\u03AC'
                             },
                             'wide': {
-                                'sun': 'Κυριακή',
-                                'mon': 'Δευτέρα',
-                                'tue': 'Τρίτη',
-                                'wed': 'Τετάρτη',
-                                'thu': 'Πέμπτη',
-                                'fri': 'Παρασκευή',
-                                'sat': 'Σάββατο'
+                                'sun': '\u039A\u03C5\u03C1\u03B9\u03B1\u03BA\u03AE',
+                                'mon': '\u0394\u03B5\u03C5\u03C4\u03AD\u03C1\u03B1',
+                                'tue': '\u03A4\u03C1\u03AF\u03C4\u03B7',
+                                'wed': '\u03A4\u03B5\u03C4\u03AC\u03C1\u03C4\u03B7',
+                                'thu': '\u03A0\u03AD\u03BC\u03C0\u03C4\u03B7',
+                                'fri': '\u03A0\u03B1\u03C1\u03B1\u03C3\u03BA\u03B5\u03C5\u03AE',
+                                'sat': '\u03A3\u03AC\u03B2\u03B2\u03B1\u03C4\u03BF'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
-                                'sun': 'Κυρ',
-                                'mon': 'Δευ',
-                                'tue': 'Τρί',
-                                'wed': 'Τετ',
-                                'thu': 'Πέμ',
-                                'fri': 'Παρ',
-                                'sat': 'Σάβ'
+                                'sun': '\u039A\u03C5\u03C1',
+                                'mon': '\u0394\u03B5\u03C5',
+                                'tue': '\u03A4\u03C1\u03AF',
+                                'wed': '\u03A4\u03B5\u03C4',
+                                'thu': '\u03A0\u03AD\u03BC',
+                                'fri': '\u03A0\u03B1\u03C1',
+                                'sat': '\u03A3\u03AC\u03B2'
                             },
                             'narrow': {
-                                'sun': 'Κ',
-                                'mon': 'Δ',
-                                'tue': 'Τ',
-                                'wed': 'Τ',
-                                'thu': 'Π',
-                                'fri': 'Π',
-                                'sat': 'Σ'
+                                'sun': '\u039A',
+                                'mon': '\u0394',
+                                'tue': '\u03A4',
+                                'wed': '\u03A4',
+                                'thu': '\u03A0',
+                                'fri': '\u03A0',
+                                'sat': '\u03A3'
                             },
                             'short': {
-                                'sun': 'Κυ',
-                                'mon': 'Δε',
-                                'tue': 'Τρ',
-                                'wed': 'Τε',
-                                'thu': 'Πέ',
-                                'fri': 'Πα',
-                                'sat': 'Σά'
+                                'sun': '\u039A\u03C5',
+                                'mon': '\u0394\u03B5',
+                                'tue': '\u03A4\u03C1',
+                                'wed': '\u03A4\u03B5',
+                                'thu': '\u03A0\u03AD',
+                                'fri': '\u03A0\u03B1',
+                                'sat': '\u03A3\u03AC'
                             },
                             'wide': {
-                                'sun': 'Κυριακή',
-                                'mon': 'Δευτέρα',
-                                'tue': 'Τρίτη',
-                                'wed': 'Τετάρτη',
-                                'thu': 'Πέμπτη',
-                                'fri': 'Παρασκευή',
-                                'sat': 'Σάββατο'
+                                'sun': '\u039A\u03C5\u03C1\u03B9\u03B1\u03BA\u03AE',
+                                'mon': '\u0394\u03B5\u03C5\u03C4\u03AD\u03C1\u03B1',
+                                'tue': '\u03A4\u03C1\u03AF\u03C4\u03B7',
+                                'wed': '\u03A4\u03B5\u03C4\u03AC\u03C1\u03C4\u03B7',
+                                'thu': '\u03A0\u03AD\u03BC\u03C0\u03C4\u03B7',
+                                'fri': '\u03A0\u03B1\u03C1\u03B1\u03C3\u03BA\u03B5\u03C5\u03AE',
+                                'sat': '\u03A3\u03AC\u03B2\u03B2\u03B1\u03C4\u03BF'
                             }
                         }
                     },
                     'quarters': {
                         'format': {
                             'abbreviated': {
-                                '1': 'Τ1',
-                                '2': 'Τ2',
-                                '3': 'Τ3',
-                                '4': 'Τ4'
+                                '1': '\u03A41',
+                                '2': '\u03A42',
+                                '3': '\u03A43',
+                                '4': '\u03A44'
                             },
                             'narrow': {
                                 '1': '1',
@@ -2681,18 +2681,18 @@
                                 '4': '4'
                             },
                             'wide': {
-                                '1': '1ο τρίμηνο',
-                                '2': '2ο τρίμηνο',
-                                '3': '3ο τρίμηνο',
-                                '4': '4ο τρίμηνο'
+                                '1': '1\u03BF \u03C4\u03C1\u03AF\u03BC\u03B7\u03BD\u03BF',
+                                '2': '2\u03BF \u03C4\u03C1\u03AF\u03BC\u03B7\u03BD\u03BF',
+                                '3': '3\u03BF \u03C4\u03C1\u03AF\u03BC\u03B7\u03BD\u03BF',
+                                '4': '4\u03BF \u03C4\u03C1\u03AF\u03BC\u03B7\u03BD\u03BF'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
-                                '1': 'Τ1',
-                                '2': 'Τ2',
-                                '3': 'Τ3',
-                                '4': 'Τ4'
+                                '1': '\u03A41',
+                                '2': '\u03A42',
+                                '3': '\u03A43',
+                                '4': '\u03A44'
                             },
                             'narrow': {
                                 '1': '1',
@@ -2701,61 +2701,61 @@
                                 '4': '4'
                             },
                             'wide': {
-                                '1': '1ο τρίμηνο',
-                                '2': '2ο τρίμηνο',
-                                '3': '3ο τρίμηνο',
-                                '4': '4ο τρίμηνο'
+                                '1': '1\u03BF \u03C4\u03C1\u03AF\u03BC\u03B7\u03BD\u03BF',
+                                '2': '2\u03BF \u03C4\u03C1\u03AF\u03BC\u03B7\u03BD\u03BF',
+                                '3': '3\u03BF \u03C4\u03C1\u03AF\u03BC\u03B7\u03BD\u03BF',
+                                '4': '4\u03BF \u03C4\u03C1\u03AF\u03BC\u03B7\u03BD\u03BF'
                             }
                         }
                     },
                     'dayPeriods': {
                         'format': {
                             'abbreviated': {
-                                'am': 'π.μ.',
-                                'pm': 'μ.μ.'
+                                'am': '\u03C0.\u03BC.',
+                                'pm': '\u03BC.\u03BC.'
                             },
                             'narrow': {
-                                'am': 'π.μ.',
-                                'pm': 'μ.μ.'
+                                'am': '\u03C0.\u03BC.',
+                                'pm': '\u03BC.\u03BC.'
                             },
                             'wide': {
-                                'am': 'π.μ.',
-                                'pm': 'μ.μ.'
+                                'am': '\u03C0.\u03BC.',
+                                'pm': '\u03BC.\u03BC.'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
-                                'am': 'π.μ.',
-                                'pm': 'μ.μ.'
+                                'am': '\u03C0.\u03BC.',
+                                'pm': '\u03BC.\u03BC.'
                             },
                             'narrow': {
-                                'am': 'π.μ.',
-                                'pm': 'μ.μ.'
+                                'am': '\u03C0.\u03BC.',
+                                'pm': '\u03BC.\u03BC.'
                             },
                             'wide': {
-                                'am': 'π.μ.',
-                                'pm': 'μ.μ.'
+                                'am': '\u03C0.\u03BC.',
+                                'pm': '\u03BC.\u03BC.'
                             }
                         }
                     },
                     'eras': {
                         'eraNames': {
-                            '0': 'π.Χ.',
-                            '0-alt-variant': 'π.Κ.Χ.',
-                            '1': 'μ.Χ.',
-                            '1-alt-variant': 'ΚΧ'
+                            '0': '\u03C0.\u03A7.',
+                            '0-alt-variant': '\u03C0.\u039A.\u03A7.',
+                            '1': '\u03BC.\u03A7.',
+                            '1-alt-variant': '\u039A\u03A7'
                         },
                         'eraAbbr': {
-                            '0': 'π.Χ.',
-                            '0-alt-variant': 'π.Κ.Χ.',
-                            '1': 'μ.Χ.',
-                            '1-alt-variant': 'ΚΧ'
+                            '0': '\u03C0.\u03A7.',
+                            '0-alt-variant': '\u03C0.\u039A.\u03A7.',
+                            '1': '\u03BC.\u03A7.',
+                            '1-alt-variant': '\u039A\u03A7'
                         },
                         'eraNarrow': {
-                            '0': 'π.Χ.',
-                            '0-alt-variant': 'π.Κ.Χ.',
-                            '1': 'μ.Χ.',
-                            '1-alt-variant': 'ΚΧ'
+                            '0': '\u03C0.\u03A7.',
+                            '0-alt-variant': '\u03C0.\u039A.\u03A7.',
+                            '1': '\u03BC.\u03A7.',
+                            '1-alt-variant': '\u039A\u03A7'
                         }
                     },
                     'dateFormats': {

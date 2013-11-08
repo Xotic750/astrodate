@@ -49,27 +49,27 @@
             'types': {
                 'colHiraganaQuaternary': {
                     'no': 'Poredaj pismo kana zasebno',
-                    'yes': 'Poredaj pismo kana drugačije'
+                    'yes': 'Poredaj pismo kana druga\u010Dije'
                 },
                 'colCaseLevel': {
-                    'no': 'Poredaj zanemarujući veličinu',
-                    'yes': 'Poredaj u skladu s veličinom slova'
+                    'no': 'Poredaj zanemaruju\u0107i veli\u010Dinu',
+                    'yes': 'Poredaj u skladu s veli\u010Dinom slova'
                 },
                 'colCaseFirst': {
                     'lower': 'Prvo poredaj mala slova',
-                    'no': 'Poredaj po normalnom poretku veličine slova',
+                    'no': 'Poredaj po normalnom poretku veli\u010Dine slova',
                     'upper': 'Poredaj prvo velika slova'
                 },
                 'colStrength': {
                     'identical': 'Poredaj sve',
                     'primary': 'Poredaj samo po osnovnim slovima',
-                    'quaternary': 'Poredaj po naglascima/veličini/širini/pismu kana',
+                    'quaternary': 'Poredaj po naglascima/veli\u010Dini/\u0161irini/pismu kana',
                     'secondary': 'Poredaj po naglasku',
-                    'tertiary': 'Poredaj po naglascima/veličini/širini'
+                    'tertiary': 'Poredaj po naglascima/veli\u010Dini/\u0161irini'
                 },
                 'colNumeric': {
-                    'no': 'Poredaj znamenke pojedinačno',
-                    'yes': 'Poredaj znamenke numerički'
+                    'no': 'Poredaj znamenke pojedina\u010Dno',
+                    'yes': 'Poredaj znamenke numeri\u010Dki'
                 },
                 'colNormalization': {
                     'no': 'Poredaj bez normalizacije',
@@ -81,13 +81,14 @@
                     'coptic': 'Koptski kalendar',
                     'dangi': 'Dangi kalendar',
                     'ethiopic': 'Etiopski kalendar',
-                    'ethiopic-amete-alem': 'Etiopski kalendar "Amete Alem"',
+                    'ethiopic-amete-alem': 'Etiopski kalendar '
+                    Amete Alem '',
                     'gregorian': 'gregorijanski kalendar',
                     'hebrew': 'hebrejski kalendar',
                     'persian': 'Perzijski kalendar',
                     'roc': 'kalendar Republike Kine',
                     'chinese': 'kineski kalendar',
-                    'buddhist': 'budistički kalendar',
+                    'buddhist': 'budisti\u010Dki kalendar',
                     'indian': 'indijski nacionalni kalendar',
                     'islamic': 'islamski kalendar',
                     'islamic-civil': 'islamski civilni kalendar',
@@ -100,15 +101,15 @@
                     'gb2312han': 'razvrstavanje prema pojednostavljenom kineskom - GB2312',
                     'eor': 'eor',
                     'ducet': 'Standardno Unicode razvrstavanje',
-                    'dictionary': 'rječničko razvrstavanje',
+                    'dictionary': 'rje\u010Dni\u010Dko razvrstavanje',
                     'big5han': 'razvrstavanje prema tradicionalnom kineskom - Big5',
                     'traditional': 'tradicionalno razvrstavanje',
                     'standard': 'Standardno razvrstavanje',
                     'zhuyin': 'zhuyin razvrstavanje',
                     'unihan': 'razvrstavanje prema korijenu i potezu',
                     'stroke': 'razvrstavanje po redoslijedu poteza za kineski',
-                    'searchjl': 'Pretraživanje po početnom suglasniku hangula',
-                    'search': 'Općenito pretraživanje',
+                    'searchjl': 'Pretra\u017Eivanje po po\u010Detnom suglasniku hangula',
+                    'search': 'Op\u0107enito pretra\u017Eivanje',
                     'reformed': 'reformirano razvrstavanje',
                     'pinyin': 'Pinyin razvrstavanje',
                     'phonetic': 'Fonetski poredak'
@@ -127,13 +128,13 @@
                     'hans': 'pojednostavljeni kineski brojevi',
                     'hanidec': 'kineski decimalni brojevi',
                     'guru': 'znamenke pisma gurmukhi',
-                    'gujr': 'gudžaratske znamenke',
-                    'greklow': 'mali grčki brojevi',
-                    'grek': 'grčki brojevi',
+                    'gujr': 'gud\u017Earatske znamenke',
+                    'greklow': 'mali gr\u010Dki brojevi',
+                    'grek': 'gr\u010Dki brojevi',
                     'bali': 'bali',
                     'armnlow': 'mali armenski brojevi',
                     'armn': 'armenski brojevi',
-                    'arabext': 'proširene arapsko-indijske znamenke',
+                    'arabext': 'pro\u0161irene arapsko-indijske znamenke',
                     'arab': 'arapsko-indijske znamenke',
                     'finance': 'Financijski brojevi',
                     'traditional': 'Tradicionalni brojevi',
@@ -154,7 +155,7 @@
                     'vaii': 'Vai znamenke',
                     'tibt': 'tibetske znamenke',
                     'thai': 'tajske znamenke',
-                    'telu': 'znamenke teluškog pisma',
+                    'telu': 'znamenke telu\u0161kog pisma',
                     'tamldec': 'tamilske znamenke',
                     'taml': 'tamilski brojevi',
                     'talu': 'talu',
@@ -173,12 +174,12 @@
                     'lanatham': 'lanatham',
                     'lana': 'lana',
                     'geor': 'gruzijski brojevi',
-                    'fullwide': 'široke znamenke',
+                    'fullwide': '\u0161iroke znamenke',
                     'ethi': 'etiopski brojevi'
                 },
                 'colAlternate': {
                     'non-ignorable': 'Poredaj simbole',
-                    'shifted': 'Poredaj zanemarujući simbole'
+                    'shifted': 'Poredaj zanemaruju\u0107i simbole'
                 },
                 'colBackwards': {
                     'no': 'Poredaj naglaske normalno',
@@ -189,7 +190,7 @@
                 'colNormalization': 'Normalizirano poredavanje',
                 'collation': 'Redoslijed razvrstavanja',
                 'colHiraganaQuaternary': 'Poredavanje po pismu kana',
-                'colCaseLevel': 'Poredavanje u skladu s veličinom slova',
+                'colCaseLevel': 'Poredavanje u skladu s veli\u010Dinom slova',
                 'colCaseFirst': 'Poredavanje po velikim/malim slovima',
                 'colBackwards': 'Obrnuto poredavanje po naglasku',
                 'colAlternate': 'Zanemarivanje poredavanja simbola',
@@ -200,8 +201,8 @@
                 'timezone': 'Vremenska zona',
                 'numbers': 'brojevi',
                 'currency': 'valuta',
-                'colStrength': 'Jačina poredavanja',
-                'colNumeric': 'Numeričko poredavanje'
+                'colStrength': 'Ja\u010Dina poredavanja',
+                'colNumeric': 'Numeri\u010Dko poredavanje'
             },
             'localeDisplayPattern': {
                 'localePattern': '{0} ({1})',
@@ -293,7 +294,7 @@
                             'exemplarCity': 'Fakaofo'
                         },
                         'Fiji': {
-                            'exemplarCity': 'Fidži'
+                            'exemplarCity': 'Fid\u017Ei'
                         },
                         'Kosrae': {
                             'exemplarCity': 'Kosrae'
@@ -305,7 +306,7 @@
                             'exemplarCity': 'Majuro'
                         },
                         'Marquesas': {
-                            'exemplarCity': 'Markižansko otočje'
+                            'exemplarCity': 'Marki\u017Eansko oto\u010Dje'
                         },
                         'Midway': {
                             'exemplarCity': 'Midway'
@@ -375,7 +376,7 @@
                             'exemplarCity': 'Kerguelen'
                         },
                         'Reunion': {
-                            'exemplarCity': 'Réunion'
+                            'exemplarCity': 'R\u00E9union'
                         },
                         'Mayotte': {
                             'exemplarCity': 'Mayotte'
@@ -390,7 +391,7 @@
                             'exemplarCity': 'Chagos'
                         },
                         'Christmas': {
-                            'exemplarCity': 'Božićni otok'
+                            'exemplarCity': 'Bo\u017Ei\u0107ni otok'
                         },
                         'Cocos': {
                             'exemplarCity': 'Kokosovi otoci'
@@ -502,7 +503,7 @@
                             'exemplarCity': 'Syowa'
                         },
                         'South_Pole': {
-                            'exemplarCity': 'Južni pol'
+                            'exemplarCity': 'Ju\u017Eni pol'
                         },
                         'Casey': {
                             'exemplarCity': 'Casey'
@@ -575,7 +576,7 @@
                             'exemplarCity': 'Boise'
                         },
                         'Asuncion': {
-                            'exemplarCity': 'Asunción'
+                            'exemplarCity': 'Asunci\u00F3n'
                         },
                         'Aruba': {
                             'exemplarCity': 'Aruba'
@@ -643,7 +644,7 @@
                             'exemplarCity': 'Bogota'
                         },
                         'Curacao': {
-                            'exemplarCity': 'Curaçao'
+                            'exemplarCity': 'Cura\u00E7ao'
                         },
                         'Danmarkshavn': {
                             'exemplarCity': 'Danmarkshavn'
@@ -809,7 +810,7 @@
                             'exemplarCity': 'Louisville'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': 'Lower Prince\'s Quarter'
+                            'exemplarCity': "Lower Prince's Quarter"
                         },
                         'Maceio': {
                             'exemplarCity': 'Maceio'
@@ -845,7 +846,7 @@
                             'exemplarCity': 'Metlakatla'
                         },
                         'Mexico_City': {
-                            'exemplarCity': 'Ciudad de México'
+                            'exemplarCity': 'Ciudad de M\u00E9xico'
                         },
                         'Miquelon': {
                             'exemplarCity': 'Miquelon'
@@ -961,7 +962,7 @@
                             'exemplarCity': 'Sitka'
                         },
                         'St_Barthelemy': {
-                            'exemplarCity': 'Saint Barthélemy'
+                            'exemplarCity': 'Saint Barth\u00E9lemy'
                         },
                         'St_Johns': {
                             'exemplarCity': 'St. John\u2019s'
@@ -981,7 +982,7 @@
                     },
                     'Atlantic': {
                         'South_Georgia': {
-                            'exemplarCity': 'Južna Georgija'
+                            'exemplarCity': 'Ju\u017Ena Georgija'
                         },
                         'Reykjavik': {
                             'exemplarCity': 'Reykjavik'
@@ -1064,7 +1065,7 @@
                             'exemplarCity': 'Otok Man'
                         },
                         'Bucharest': {
-                            'exemplarCity': 'Bukurešt'
+                            'exemplarCity': 'Bukure\u0161t'
                         },
                         'Brussels': {
                             'exemplarCity': 'Bruxelles'
@@ -1112,16 +1113,16 @@
                             'exemplarCity': 'Vaduz'
                         },
                         'Zurich': {
-                            'exemplarCity': 'Zürich'
+                            'exemplarCity': 'Z\u00FCrich'
                         },
                         'Zaporozhye': {
-                            'exemplarCity': 'Zaporožje'
+                            'exemplarCity': 'Zaporo\u017Eje'
                         },
                         'Zagreb': {
                             'exemplarCity': 'Zagreb'
                         },
                         'Warsaw': {
-                            'exemplarCity': 'Varšava'
+                            'exemplarCity': 'Var\u0161ava'
                         },
                         'Volgograd': {
                             'exemplarCity': 'Volgograd'
@@ -1130,7 +1131,7 @@
                             'exemplarCity': 'Vilnius'
                         },
                         'Vienna': {
-                            'exemplarCity': 'Beč'
+                            'exemplarCity': 'Be\u010D'
                         },
                         'Vatican': {
                             'exemplarCity': 'Vatikan'
@@ -1184,7 +1185,7 @@
                             'exemplarCity': 'Busingen'
                         },
                         'Budapest': {
-                            'exemplarCity': 'Budimpešta'
+                            'exemplarCity': 'Budimpe\u0161ta'
                         }
                     },
                     'Africa': {
@@ -1195,7 +1196,7 @@
                             'exemplarCity': 'Lagos'
                         },
                         'Kinshasa': {
-                            'exemplarCity': 'Kinšasa'
+                            'exemplarCity': 'Kin\u0161asa'
                         },
                         'Kigali': {
                             'exemplarCity': 'Kigali'
@@ -1228,7 +1229,7 @@
                             'exemplarCity': 'Douala'
                         },
                         'Djibouti': {
-                            'exemplarCity': 'Džibuti'
+                            'exemplarCity': 'D\u017Eibuti'
                         },
                         'Dar_es_Salaam': {
                             'exemplarCity': 'Dar es Salaam'
@@ -1282,7 +1283,7 @@
                             'exemplarCity': 'Tripoli'
                         },
                         'Sao_Tome': {
-                            'exemplarCity': 'São Tomé'
+                            'exemplarCity': 'S\u00E3o Tom\u00E9'
                         },
                         'Porto-Novo': {
                             'exemplarCity': 'Porto-Novo'
@@ -1300,7 +1301,7 @@
                             'exemplarCity': 'Lusaka'
                         },
                         'Lubumbashi': {
-                            'exemplarCity': 'Lubumbaši'
+                            'exemplarCity': 'Lubumba\u0161i'
                         },
                         'Luanda': {
                             'exemplarCity': 'Luanda'
@@ -1342,12 +1343,12 @@
                             'exemplarCity': 'Addis Abeba'
                         },
                         'Algiers': {
-                            'exemplarCity': 'Alžir'
+                            'exemplarCity': 'Al\u017Eir'
                         }
                     },
                     'Asia': {
                         'Shanghai': {
-                            'exemplarCity': 'Šangaj'
+                            'exemplarCity': '\u0160angaj'
                         },
                         'Seoul': {
                             'exemplarCity': 'Seoul'
@@ -1359,7 +1360,7 @@
                             'exemplarCity': 'Sahalin'
                         },
                         'Saigon': {
-                            'exemplarCity': 'Ho Ši Min'
+                            'exemplarCity': 'Ho \u0160i Min'
                         },
                         'Riyadh': {
                             'exemplarCity': 'Rijad'
@@ -1413,7 +1414,7 @@
                             'exemplarCity': 'Dubai'
                         },
                         'Dushanbe': {
-                            'exemplarCity': 'Dušanbe'
+                            'exemplarCity': 'Du\u0161anbe'
                         },
                         'Gaza': {
                             'exemplarCity': 'Gaza'
@@ -1434,7 +1435,7 @@
                             'exemplarCity': 'Irkutsk'
                         },
                         'Jakarta': {
-                            'exemplarCity': 'Džakarta'
+                            'exemplarCity': 'D\u017Eakarta'
                         },
                         'Jayapura': {
                             'exemplarCity': 'Jayapura'
@@ -1476,7 +1477,7 @@
                             'exemplarCity': 'Tbilisi'
                         },
                         'Tashkent': {
-                            'exemplarCity': 'Taškent'
+                            'exemplarCity': 'Ta\u0161kent'
                         },
                         'Taipei': {
                             'exemplarCity': 'Taipei'
@@ -1521,7 +1522,7 @@
                             'exemplarCity': 'Beirut'
                         },
                         'Bishkek': {
-                            'exemplarCity': 'Biškek'
+                            'exemplarCity': 'Bi\u0161kek'
                         },
                         'Brunei': {
                             'exemplarCity': 'Brunej'
@@ -1536,7 +1537,7 @@
                             'exemplarCity': 'Kabul'
                         },
                         'Kamchatka': {
-                            'exemplarCity': 'Kamčatka'
+                            'exemplarCity': 'Kam\u010Datka'
                         },
                         'Karachi': {
                             'exemplarCity': 'Karachi'
@@ -1588,7 +1589,7 @@
                 'metazone': {
                     'Seychelles': {
                         'long': {
-                            'standard': 'sejšelsko vrijeme'
+                            'standard': 'sej\u0161elsko vrijeme'
                         }
                     },
                     'Samoa': {
@@ -1741,16 +1742,16 @@
                     },
                     'America_Central': {
                         'long': {
-                            'generic': 'središnje vrijeme',
-                            'standard': 'središnje standardno vrijeme',
-                            'daylight': 'središnje ljetno vrijeme'
+                            'generic': 'sredi\u0161nje vrijeme',
+                            'standard': 'sredi\u0161nje standardno vrijeme',
+                            'daylight': 'sredi\u0161nje ljetno vrijeme'
                         }
                     },
                     'America_Eastern': {
                         'long': {
-                            'generic': 'istočno vrijeme',
-                            'standard': 'istočno standardno vrijeme',
-                            'daylight': 'istočno ljetno vrijeme'
+                            'generic': 'isto\u010Dno vrijeme',
+                            'standard': 'isto\u010Dno standardno vrijeme',
+                            'daylight': 'isto\u010Dno ljetno vrijeme'
                         }
                     },
                     'America_Mountain': {
@@ -1762,9 +1763,9 @@
                     },
                     'America_Pacific': {
                         'long': {
-                            'generic': 'pacifičko vrijeme',
-                            'standard': 'pacifičko standardno vrijeme',
-                            'daylight': 'pacifičko ljetno vrijeme'
+                            'generic': 'pacifi\u010Dko vrijeme',
+                            'standard': 'pacifi\u010Dko standardno vrijeme',
+                            'daylight': 'pacifi\u010Dko ljetno vrijeme'
                         }
                     },
                     'Anadyr': {
@@ -1790,9 +1791,9 @@
                     },
                     'Cape_Verde': {
                         'long': {
-                            'generic': 'vrijeme Zelenortskog otočja',
-                            'standard': 'standardno vrijeme Zelenortskog otočja',
-                            'daylight': 'ljetno vrijeme Zelenortskog otočja'
+                            'generic': 'vrijeme Zelenortskog oto\u010Dja',
+                            'standard': 'standardno vrijeme Zelenortskog oto\u010Dja',
+                            'daylight': 'ljetno vrijeme Zelenortskog oto\u010Dja'
                         }
                     },
                     'Chamorro': {
@@ -1809,9 +1810,9 @@
                     },
                     'Chile': {
                         'long': {
-                            'generic': 'čileansko vrijeme',
-                            'standard': 'čileansko standardno vrijeme',
-                            'daylight': 'čileansko ljetno vrijeme'
+                            'generic': '\u010Dileansko vrijeme',
+                            'standard': '\u010Dileansko standardno vrijeme',
+                            'daylight': '\u010Dileansko ljetno vrijeme'
                         }
                     },
                     'China': {
@@ -1830,7 +1831,7 @@
                     },
                     'Christmas': {
                         'long': {
-                            'standard': 'vrijeme Božićnog otoka'
+                            'standard': 'vrijeme Bo\u017Ei\u0107nog otoka'
                         }
                     },
                     'Cocos': {
@@ -1849,7 +1850,7 @@
                         'long': {
                             'generic': 'vrijeme Cookovih Otoka',
                             'standard': 'standardno vrijeme Cookovih Otoka',
-                            'daylight': 'Cookovo otočje, polusatni pomak, ljetno vrijeme'
+                            'daylight': 'Cookovo oto\u010Dje, polusatni pomak, ljetno vrijeme'
                         }
                     },
                     'Cuba': {
@@ -1866,19 +1867,19 @@
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': 'vrijeme Dumont-d\'Urvillea'
+                            'standard': "vrijeme Dumont-d'Urvillea"
                         }
                     },
                     'East_Timor': {
                         'long': {
-                            'standard': 'istočnotimorsko vrijeme'
+                            'standard': 'isto\u010Dnotimorsko vrijeme'
                         }
                     },
                     'Easter': {
                         'long': {
-                            'generic': 'vrijeme Uskršnjeg otoka',
-                            'standard': 'standardno vrijeme Uskršnjeg otoka',
-                            'daylight': 'ljetno vrijeme Uskršnjeg otoka'
+                            'generic': 'vrijeme Uskr\u0161njeg otoka',
+                            'standard': 'standardno vrijeme Uskr\u0161njeg otoka',
+                            'daylight': 'ljetno vrijeme Uskr\u0161njeg otoka'
                         }
                     },
                     'Ecuador': {
@@ -1900,9 +1901,9 @@
                     },
                     'Europe_Eastern': {
                         'long': {
-                            'generic': 'istočnoeuropsko vrijeme',
-                            'standard': 'istočnoeuropsko standardno vrijeme',
-                            'daylight': 'istočnoeuropsko ljetno vrijeme'
+                            'generic': 'isto\u010Dnoeuropsko vrijeme',
+                            'standard': 'isto\u010Dnoeuropsko standardno vrijeme',
+                            'daylight': 'isto\u010Dnoeuropsko ljetno vrijeme'
                         },
                         'short': {
                             'generic': 'EET',
@@ -1931,9 +1932,9 @@
                     },
                     'Fiji': {
                         'long': {
-                            'generic': 'vrijeme Fidžija',
-                            'standard': 'standardno vrijeme Fidžija',
-                            'daylight': 'ljetno vrijeme Fidžija'
+                            'generic': 'vrijeme Fid\u017Eija',
+                            'standard': 'standardno vrijeme Fid\u017Eija',
+                            'daylight': 'ljetno vrijeme Fid\u017Eija'
                         }
                     },
                     'French_Guiana': {
@@ -1943,7 +1944,7 @@
                     },
                     'French_Southern': {
                         'long': {
-                            'standard': 'južnofrancusko i antarktičko vrijeme'
+                            'standard': 'ju\u017Enofrancusko i antarkti\u010Dko vrijeme'
                         }
                     },
                     'Galapagos': {
@@ -2003,9 +2004,9 @@
                     },
                     'Yekaterinburg': {
                         'long': {
-                            'generic': 'ekaterinburško vrijeme',
-                            'standard': 'ekaterinburško standardno vrijeme',
-                            'daylight': 'ekaterinburško ljetno vrijeme'
+                            'generic': 'ekaterinbur\u0161ko vrijeme',
+                            'standard': 'ekaterinbur\u0161ko standardno vrijeme',
+                            'daylight': 'ekaterinbur\u0161ko ljetno vrijeme'
                         }
                     },
                     'Yakutsk': {
@@ -2027,7 +2028,7 @@
                     },
                     'Vostok': {
                         'long': {
-                            'standard': 'vostočko vrijeme'
+                            'standard': 'vosto\u010Dko vrijeme'
                         }
                     },
                     'Volgograd': {
@@ -2039,9 +2040,9 @@
                     },
                     'Vladivostok': {
                         'long': {
-                            'generic': 'vladivostočko vrijeme',
-                            'standard': 'vladivostočko standardno vrijeme',
-                            'daylight': 'vladivostočko ljetno vrijeme'
+                            'generic': 'vladivosto\u010Dko vrijeme',
+                            'standard': 'vladivosto\u010Dko standardno vrijeme',
+                            'daylight': 'vladivosto\u010Dko ljetno vrijeme'
                         }
                     },
                     'Venezuela': {
@@ -2051,14 +2052,14 @@
                     },
                     'Tajikistan': {
                         'long': {
-                            'standard': 'tadžikistansko vrijeme'
+                            'standard': 'tad\u017Eikistansko vrijeme'
                         }
                     },
                     'Taipei': {
                         'long': {
-                            'generic': 'tajpeško vrijeme',
-                            'standard': 'tajpeško standardno vrijeme',
-                            'daylight': 'tajpeško ljetno vrijeme'
+                            'generic': 'tajpe\u0161ko vrijeme',
+                            'standard': 'tajpe\u0161ko standardno vrijeme',
+                            'daylight': 'tajpe\u0161ko ljetno vrijeme'
                         }
                     },
                     'Tahiti': {
@@ -2078,7 +2079,7 @@
                     },
                     'South_Georgia': {
                         'long': {
-                            'standard': 'vrijeme Južne Georgije'
+                            'standard': 'vrijeme Ju\u017Ene Georgije'
                         }
                     },
                     'Solomon': {
@@ -2110,9 +2111,9 @@
                     },
                     'Greenland_Eastern': {
                         'long': {
-                            'generic': 'istočnogrenlandsko vrijeme',
-                            'standard': 'istočnogrenlandsko standardno vrijeme',
-                            'daylight': 'istočnogrenlandsko ljetno vrijeme'
+                            'generic': 'isto\u010Dnogrenlandsko vrijeme',
+                            'standard': 'isto\u010Dnogrenlandsko standardno vrijeme',
+                            'daylight': 'isto\u010Dnogrenlandsko ljetno vrijeme'
                         }
                     },
                     'GMT': {
@@ -2154,31 +2155,31 @@
                     },
                     'Africa_Central': {
                         'long': {
-                            'standard': 'srednjoafričko vrijeme'
+                            'standard': 'srednjoafri\u010Dko vrijeme'
                         }
                     },
                     'Africa_Eastern': {
                         'long': {
-                            'standard': 'istočnoafričko vrijeme'
+                            'standard': 'isto\u010Dnoafri\u010Dko vrijeme'
                         }
                     },
                     'Africa_Southern': {
                         'long': {
-                            'standard': 'južnoafričko vrijeme'
+                            'standard': 'ju\u017Enoafri\u010Dko vrijeme'
                         }
                     },
                     'Africa_Western': {
                         'long': {
-                            'generic': 'zapadnoafričko vrijeme',
-                            'standard': 'zapadnoafričko standardno vrijeme',
-                            'daylight': 'zapadnoafričko ljetno vrijeme'
+                            'generic': 'zapadnoafri\u010Dko vrijeme',
+                            'standard': 'zapadnoafri\u010Dko standardno vrijeme',
+                            'daylight': 'zapadnoafri\u010Dko ljetno vrijeme'
                         }
                     },
                     'Alaska': {
                         'long': {
-                            'generic': 'aljaško vrijeme',
-                            'standard': 'aljaško standardno vrijeme',
-                            'daylight': 'aljaško ljetno vrijeme'
+                            'generic': 'alja\u0161ko vrijeme',
+                            'standard': 'alja\u0161ko standardno vrijeme',
+                            'daylight': 'alja\u0161ko ljetno vrijeme'
                         }
                     },
                     'Almaty': {
@@ -2232,16 +2233,16 @@
                     },
                     'Australia_CentralWestern': {
                         'long': {
-                            'generic': 'australsko središnje zapadno vrijeme',
-                            'standard': 'australsko središnje zapadno standardno vrijeme',
-                            'daylight': 'australsko središnje zapadno ljetno vrijeme'
+                            'generic': 'australsko sredi\u0161nje zapadno vrijeme',
+                            'standard': 'australsko sredi\u0161nje zapadno standardno vrijeme',
+                            'daylight': 'australsko sredi\u0161nje zapadno ljetno vrijeme'
                         }
                     },
                     'Australia_Eastern': {
                         'long': {
-                            'generic': 'istočnoaustralsko vrijeme',
-                            'standard': 'istočnoaustralsko standardno vrijeme',
-                            'daylight': 'istočnoaustralsko ljetno vrijeme'
+                            'generic': 'isto\u010Dnoaustralsko vrijeme',
+                            'standard': 'isto\u010Dnoaustralsko standardno vrijeme',
+                            'daylight': 'isto\u010Dnoaustralsko ljetno vrijeme'
                         }
                     },
                     'Australia_Western': {
@@ -2253,9 +2254,9 @@
                     },
                     'Azerbaijan': {
                         'long': {
-                            'generic': 'azerbajdžansko vrijeme',
-                            'standard': 'azerbajdžansko standardno vrijeme',
-                            'daylight': 'azerbajdžansko ljetno vrijeme'
+                            'generic': 'azerbajd\u017Eansko vrijeme',
+                            'standard': 'azerbajd\u017Eansko standardno vrijeme',
+                            'daylight': 'azerbajd\u017Eansko ljetno vrijeme'
                         }
                     },
                     'Azores': {
@@ -2267,9 +2268,9 @@
                     },
                     'Bangladesh': {
                         'long': {
-                            'generic': 'bangladeško vrijeme',
-                            'standard': 'bangladeško standardno vrijeme',
-                            'daylight': 'bangladeško ljetno vrijeme'
+                            'generic': 'banglade\u0161ko vrijeme',
+                            'standard': 'banglade\u0161ko standardno vrijeme',
+                            'daylight': 'banglade\u0161ko ljetno vrijeme'
                         }
                     },
                     'Bhutan': {
@@ -2308,9 +2309,9 @@
                     },
                     'Hong_Kong': {
                         'long': {
-                            'generic': 'hongkonško vrijeme',
-                            'standard': 'hongkonško standardno vrijeme',
-                            'daylight': 'hongkonško ljetno vrijeme'
+                            'generic': 'hongkon\u0161ko vrijeme',
+                            'standard': 'hongkon\u0161ko standardno vrijeme',
+                            'daylight': 'hongkon\u0161ko ljetno vrijeme'
                         }
                     },
                     'Hovd': {
@@ -2342,7 +2343,7 @@
                     },
                     'Indonesia_Eastern': {
                         'long': {
-                            'standard': 'istočnoindonezijsko vrijeme'
+                            'standard': 'isto\u010Dnoindonezijsko vrijeme'
                         }
                     },
                     'Indonesia_Western': {
@@ -2380,14 +2381,14 @@
                     },
                     'Kamchatka': {
                         'long': {
-                            'generic': 'Petropavlovsk-kamčatsko vrijeme',
-                            'standard': 'Petropavlovsk-kamčatsko standardno vrijeme',
-                            'daylight': 'Petropavlovsk-kamčatsko ljetno vrijeme'
+                            'generic': 'Petropavlovsk-kam\u010Datsko vrijeme',
+                            'standard': 'Petropavlovsk-kam\u010Datsko standardno vrijeme',
+                            'daylight': 'Petropavlovsk-kam\u010Datsko ljetno vrijeme'
                         }
                     },
                     'Kazakhstan_Eastern': {
                         'long': {
-                            'standard': 'istočnokazahstansko vrijeme'
+                            'standard': 'isto\u010Dnokazahstansko vrijeme'
                         }
                     },
                     'Kazakhstan_Western': {
@@ -2467,12 +2468,12 @@
                     },
                     'Marquesas': {
                         'long': {
-                            'standard': 'markižansko vrijeme'
+                            'standard': 'marki\u017Eansko vrijeme'
                         }
                     },
                     'Marshall_Islands': {
                         'long': {
-                            'standard': 'vrijeme Maršalovih Otoka'
+                            'standard': 'vrijeme Mar\u0161alovih Otoka'
                         }
                     },
                     'Mauritius': {
@@ -2554,7 +2555,7 @@
                                 '9': 'ruj',
                                 '1': 'sij',
                                 '2': 'velj',
-                                '3': 'ožu',
+                                '3': 'o\u017Eu',
                                 '4': 'tra'
                             },
                             'narrow': {
@@ -2580,9 +2581,9 @@
                                 '11': 'studenoga',
                                 '10': 'listopada',
                                 '9': 'rujna',
-                                '1': 'siječnja',
-                                '2': 'veljače',
-                                '3': 'ožujka',
+                                '1': 'sije\u010Dnja',
+                                '2': 'velja\u010De',
+                                '3': 'o\u017Eujka',
                                 '4': 'travnja'
                             }
                         },
@@ -2598,7 +2599,7 @@
                                 '9': 'ruj',
                                 '1': 'sij',
                                 '2': 'velj',
-                                '3': 'ožu',
+                                '3': 'o\u017Eu',
                                 '4': 'tra'
                             },
                             'narrow': {
@@ -2624,9 +2625,9 @@
                                 '11': 'studeni',
                                 '10': 'listopad',
                                 '9': 'rujan',
-                                '1': 'siječanj',
-                                '2': 'veljača',
-                                '3': 'ožujak',
+                                '1': 'sije\u010Danj',
+                                '2': 'velja\u010Da',
+                                '3': 'o\u017Eujak',
                                 '4': 'travanj'
                             }
                         }
@@ -2638,7 +2639,7 @@
                                 'mon': 'pon',
                                 'tue': 'uto',
                                 'wed': 'sri',
-                                'thu': 'čet',
+                                'thu': '\u010Det',
                                 'fri': 'pet',
                                 'sat': 'sub'
                             },
@@ -2647,7 +2648,7 @@
                                 'mon': 'P',
                                 'tue': 'U',
                                 'wed': 'S',
-                                'thu': 'Č',
+                                'thu': '\u010C',
                                 'fri': 'P',
                                 'sat': 'S'
                             },
@@ -2656,7 +2657,7 @@
                                 'mon': 'pon',
                                 'tue': 'uto',
                                 'wed': 'sri',
-                                'thu': 'čet',
+                                'thu': '\u010Det',
                                 'fri': 'pet',
                                 'sat': 'sub'
                             },
@@ -2665,7 +2666,7 @@
                                 'mon': 'ponedjeljak',
                                 'tue': 'utorak',
                                 'wed': 'srijeda',
-                                'thu': 'četvrtak',
+                                'thu': '\u010Detvrtak',
                                 'fri': 'petak',
                                 'sat': 'subota'
                             }
@@ -2676,7 +2677,7 @@
                                 'mon': 'pon',
                                 'tue': 'uto',
                                 'wed': 'sri',
-                                'thu': 'čet',
+                                'thu': '\u010Det',
                                 'fri': 'pet',
                                 'sat': 'sub'
                             },
@@ -2685,7 +2686,7 @@
                                 'mon': 'p',
                                 'tue': 'u',
                                 'wed': 's',
-                                'thu': 'č',
+                                'thu': '\u010D',
                                 'fri': 'p',
                                 'sat': 's'
                             },
@@ -2694,7 +2695,7 @@
                                 'mon': 'pon',
                                 'tue': 'uto',
                                 'wed': 'sri',
-                                'thu': 'čet',
+                                'thu': '\u010Det',
                                 'fri': 'pet',
                                 'sat': 'sub'
                             },
@@ -2703,7 +2704,7 @@
                                 'mon': 'ponedjeljak',
                                 'tue': 'utorak',
                                 'wed': 'srijeda',
-                                'thu': 'četvrtak',
+                                'thu': '\u010Detvrtak',
                                 'fri': 'petak',
                                 'sat': 'subota'
                             }
@@ -2757,9 +2758,9 @@
                                 'afternoon': 'popodne',
                                 'am': 'AM',
                                 'earlyMorning': 'ujutro',
-                                'evening': 'navečer',
+                                'evening': 'nave\u010Der',
                                 'morning': 'prijepodne',
-                                'night': 'noću',
+                                'night': 'no\u0107u',
                                 'noon': 'podne',
                                 'pm': 'PM'
                             },
@@ -2767,9 +2768,9 @@
                                 'afternoon': 'popodne',
                                 'am': 'AM',
                                 'earlyMorning': 'ujutro',
-                                'evening': 'navečer',
+                                'evening': 'nave\u010Der',
                                 'morning': 'prijepodne',
-                                'night': 'noću',
+                                'night': 'no\u0107u',
                                 'noon': 'n',
                                 'pm': 'PM'
                             },
@@ -2784,9 +2785,9 @@
                                 'afternoon': 'popodne',
                                 'am': 'AM',
                                 'earlyMorning': 'ujutro',
-                                'evening': 'navečer',
+                                'evening': 'nave\u010Der',
                                 'morning': 'prijepodne',
-                                'night': 'noću',
+                                'night': 'no\u0107u',
                                 'noon': 'podne',
                                 'pm': 'PM'
                             },
@@ -2794,9 +2795,9 @@
                                 'afternoon': 'popodne',
                                 'am': 'AM',
                                 'earlyMorning': 'ujutro',
-                                'evening': 'navečer',
+                                'evening': 'nave\u010Der',
                                 'morning': 'prijepodne',
-                                'night': 'noću',
+                                'night': 'no\u0107u',
                                 'noon': 'n',
                                 'pm': 'PM'
                             },
@@ -2840,8 +2841,8 @@
                         'short': 'HH:mm'
                     },
                     'dateTimeFormats': {
-                        'full': '{1} \'u\' {0}',
-                        'long': '{1} \'u\' {0}',
+                        'full': "{1} 'u' {0}",
+                        'long': "{1} 'u' {0}",
                         'medium': '{1} {0}',
                         'short': '{1} {0}',
                         'availableFormats': {
@@ -2921,11 +2922,11 @@
                                 'M': 'MM. - MM.'
                             },
                             'Hv': {
-                                'H': 'HH - HH \'h\' v'
+                                'H': "HH - HH 'h' v"
                             },
                             'hv': {
                                 'a': 'h a - h a v',
-                                'h': 'h - h \'h\' a v'
+                                'h': "h - h 'h' a v"
                             },
                             'y': {
                                 'y': 'y. - y.'
@@ -2981,11 +2982,11 @@
                                 'm': 'h:mm-h:mm a'
                             },
                             'H': {
-                                'H': 'HH-HH\'h\''
+                                'H': "HH-HH'h'"
                             },
                             'h': {
                                 'a': 'h a - h a',
-                                'h': 'h - h\'h\' a'
+                                'h': "h - h'h' a"
                             },
                             'd': {
                                 'd': 'dd. - dd.'

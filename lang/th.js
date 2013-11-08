@@ -42,166 +42,166 @@
     }(function (AstroDate) {
         AstroDate.lang('th', {
             'codePatterns': {
-                'language': 'ภาษา: {0}',
-                'script': 'สคริปต์: {0}',
-                'territory': 'ภูมิภาค: {0}'
+                'language': '\u0E20\u0E32\u0E29\u0E32: {0}',
+                'script': '\u0E2A\u0E04\u0E23\u0E34\u0E1B\u0E15\u0E4C: {0}',
+                'territory': '\u0E20\u0E39\u0E21\u0E34\u0E20\u0E32\u0E04: {0}'
             },
             'types': {
                 'colHiraganaQuaternary': {
-                    'no': 'จัดเรียงตัวอักษรคะนะแยกต่างหาก',
-                    'yes': 'จัดเรียงตัวอักษรคะนะในแบบอื่น'
+                    'no': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E31\u0E27\u0E2D\u0E31\u0E01\u0E29\u0E23\u0E04\u0E30\u0E19\u0E30\u0E41\u0E22\u0E01\u0E15\u0E48\u0E32\u0E07\u0E2B\u0E32\u0E01',
+                    'yes': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E31\u0E27\u0E2D\u0E31\u0E01\u0E29\u0E23\u0E04\u0E30\u0E19\u0E30\u0E43\u0E19\u0E41\u0E1A\u0E1A\u0E2D\u0E37\u0E48\u0E19'
                 },
                 'colCaseLevel': {
-                    'no': 'จัดเรียงตามความสำคัญของตัวพิมพ์',
-                    'yes': 'จัดเรียงความสำคัญของตัวพิมพ์'
+                    'no': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E04\u0E27\u0E32\u0E21\u0E2A\u0E33\u0E04\u0E31\u0E0D\u0E02\u0E2D\u0E07\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C',
+                    'yes': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E04\u0E27\u0E32\u0E21\u0E2A\u0E33\u0E04\u0E31\u0E0D\u0E02\u0E2D\u0E07\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C'
                 },
                 'colCaseFirst': {
-                    'lower': 'จัดเรียงลำดับตัวพิมพ์เล็กก่อน',
-                    'no': 'จัดเรียงลำดับตามตัวพิมพ์ปกติ',
-                    'upper': 'จัดเรียงตัวพิมพ์ใหญ่ก่อน'
+                    'lower': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E40\u0E25\u0E47\u0E01\u0E01\u0E48\u0E2D\u0E19',
+                    'no': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E15\u0E32\u0E21\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E1B\u0E01\u0E15\u0E34',
+                    'upper': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E43\u0E2B\u0E0D\u0E48\u0E01\u0E48\u0E2D\u0E19'
                 },
                 'colStrength': {
-                    'identical': 'จัดเรียงทั้งหมด',
-                    'primary': 'จัดเรียงตัวอักษรฐานเท่านั้น',
-                    'quaternary': 'จัดเรียงตามเสียงหนักเบา/ตัวพิมพ์/ความกว้าง/ตัวอักษรคะนะ',
-                    'secondary': 'จัดเรียงเสียงหนักเบา',
-                    'tertiary': 'จัดเรียงเสียงหนักเบา/ตัวพิมพ์/ความกว้าง'
+                    'identical': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E17\u0E31\u0E49\u0E07\u0E2B\u0E21\u0E14',
+                    'primary': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E31\u0E27\u0E2D\u0E31\u0E01\u0E29\u0E23\u0E10\u0E32\u0E19\u0E40\u0E17\u0E48\u0E32\u0E19\u0E31\u0E49\u0E19',
+                    'quaternary': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E2B\u0E19\u0E31\u0E01\u0E40\u0E1A\u0E32/\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C/\u0E04\u0E27\u0E32\u0E21\u0E01\u0E27\u0E49\u0E32\u0E07/\u0E15\u0E31\u0E27\u0E2D\u0E31\u0E01\u0E29\u0E23\u0E04\u0E30\u0E19\u0E30',
+                    'secondary': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E2B\u0E19\u0E31\u0E01\u0E40\u0E1A\u0E32',
+                    'tertiary': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E2B\u0E19\u0E31\u0E01\u0E40\u0E1A\u0E32/\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C/\u0E04\u0E27\u0E32\u0E21\u0E01\u0E27\u0E49\u0E32\u0E07'
                 },
                 'colNumeric': {
-                    'no': 'จัดเรียงตัวเลขแยก',
-                    'yes': 'จัดเรัยงตัวเลขตามลำดับตัวเลข'
+                    'no': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E41\u0E22\u0E01',
+                    'yes': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E31\u0E22\u0E07\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E15\u0E32\u0E21\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02'
                 },
                 'colNormalization': {
-                    'no': 'จัดเรียงโดยไม่ต้องทำให้เป็นแบบปกติ',
-                    'yes': 'จัดเรียงยูนิโค้ดแบบที่เป็นปกติ'
+                    'no': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E42\u0E14\u0E22\u0E44\u0E21\u0E48\u0E15\u0E49\u0E2D\u0E07\u0E17\u0E33\u0E43\u0E2B\u0E49\u0E40\u0E1B\u0E47\u0E19\u0E41\u0E1A\u0E1A\u0E1B\u0E01\u0E15\u0E34',
+                    'yes': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E22\u0E39\u0E19\u0E34\u0E42\u0E04\u0E49\u0E14\u0E41\u0E1A\u0E1A\u0E17\u0E35\u0E48\u0E40\u0E1B\u0E47\u0E19\u0E1B\u0E01\u0E15\u0E34'
                 },
                 'calendar': {
-                    'japanese': 'ปฏิทินญี่ปุ่น',
-                    'iso8601': 'ปฏิทิน ISO-8601',
-                    'coptic': 'ปฏิทินคอปติก',
-                    'dangi': 'ปฏิทินทันกิ',
-                    'ethiopic': 'ปฏิทินเอธิโอเปีย',
-                    'ethiopic-amete-alem': 'ปฏิทินปีโลกเอธิโอเปีย',
-                    'gregorian': 'ปฏิทินเกรกอเรียน',
-                    'hebrew': 'ปฏิทินฮิบรู',
-                    'persian': 'ปฏิทินเปอร์เชีย',
-                    'roc': 'ปฏิทินไต้หวัน',
-                    'chinese': 'ปฏิทินจีน',
-                    'buddhist': 'ปฏิทินพุทธ',
-                    'indian': 'ปฏิทินแห่งชาติอินเดีย',
-                    'islamic': 'ปฏิทินอิสลาม',
-                    'islamic-civil': 'ปฏิทินอิสลามซีวิล',
-                    'islamic-rgsa': 'ปฏิทินอิสลาม (ซาอุดีอาระเบีย แบบพระจันทร์เสี้ยว)',
-                    'islamic-tbla': 'ปฏิทินอิสลาม (แบบตาราง สมัยดาราศาสตร์)',
-                    'islamic-umalqura': 'ปฏิทินอิสลาม (อุมม์อัลกุรา)'
+                    'japanese': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E0D\u0E35\u0E48\u0E1B\u0E38\u0E48\u0E19',
+                    'iso8601': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19 ISO-8601',
+                    'coptic': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E04\u0E2D\u0E1B\u0E15\u0E34\u0E01',
+                    'dangi': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E17\u0E31\u0E19\u0E01\u0E34',
+                    'ethiopic': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E40\u0E2D\u0E18\u0E34\u0E42\u0E2D\u0E40\u0E1B\u0E35\u0E22',
+                    'ethiopic-amete-alem': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E1B\u0E35\u0E42\u0E25\u0E01\u0E40\u0E2D\u0E18\u0E34\u0E42\u0E2D\u0E40\u0E1B\u0E35\u0E22',
+                    'gregorian': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E40\u0E01\u0E23\u0E01\u0E2D\u0E40\u0E23\u0E35\u0E22\u0E19',
+                    'hebrew': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E2E\u0E34\u0E1A\u0E23\u0E39',
+                    'persian': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E40\u0E1B\u0E2D\u0E23\u0E4C\u0E40\u0E0A\u0E35\u0E22',
+                    'roc': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E44\u0E15\u0E49\u0E2B\u0E27\u0E31\u0E19',
+                    'chinese': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E08\u0E35\u0E19',
+                    'buddhist': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E1E\u0E38\u0E17\u0E18',
+                    'indian': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E41\u0E2B\u0E48\u0E07\u0E0A\u0E32\u0E15\u0E34\u0E2D\u0E34\u0E19\u0E40\u0E14\u0E35\u0E22',
+                    'islamic': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E2D\u0E34\u0E2A\u0E25\u0E32\u0E21',
+                    'islamic-civil': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E2D\u0E34\u0E2A\u0E25\u0E32\u0E21\u0E0B\u0E35\u0E27\u0E34\u0E25',
+                    'islamic-rgsa': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E2D\u0E34\u0E2A\u0E25\u0E32\u0E21 (\u0E0B\u0E32\u0E2D\u0E38\u0E14\u0E35\u0E2D\u0E32\u0E23\u0E30\u0E40\u0E1A\u0E35\u0E22 \u0E41\u0E1A\u0E1A\u0E1E\u0E23\u0E30\u0E08\u0E31\u0E19\u0E17\u0E23\u0E4C\u0E40\u0E2A\u0E35\u0E49\u0E22\u0E27)',
+                    'islamic-tbla': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E2D\u0E34\u0E2A\u0E25\u0E32\u0E21 (\u0E41\u0E1A\u0E1A\u0E15\u0E32\u0E23\u0E32\u0E07 \u0E2A\u0E21\u0E31\u0E22\u0E14\u0E32\u0E23\u0E32\u0E28\u0E32\u0E2A\u0E15\u0E23\u0E4C)',
+                    'islamic-umalqura': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E2D\u0E34\u0E2A\u0E25\u0E32\u0E21 (\u0E2D\u0E38\u0E21\u0E21\u0E4C\u0E2D\u0E31\u0E25\u0E01\u0E38\u0E23\u0E32)'
                 },
                 'collation': {
-                    'phonebook': 'เรียงตามสมุดโทรศัพท์',
-                    'gb2312han': 'เรียงตามอักษรจีนประยุกต์',
-                    'eor': 'กฎการเรียงลำดับตามแบบยุโรป',
-                    'ducet': 'ลำดับการจัดเรียงตาม Unicode เริ่มต้น',
-                    'dictionary': 'เรียงตามพจนานุกรม',
-                    'big5han': 'เรียงตามอักษรจีนดั้งเดิม',
-                    'traditional': 'เรียงตามแบบดั้งเดิม',
-                    'standard': 'ลำดับการจัดเรียงแบบมาตรฐาน',
-                    'zhuyin': 'จัดเรียงตามการสะกดแบบจู้อิน',
-                    'unihan': 'เรียงลำดับตามจำนวนขีด',
-                    'stroke': 'เรียงตามการลากเส้น',
-                    'searchjl': 'ค้นหาตามพยัญชนะขึ้นต้นที่เป็นฮันกึล',
-                    'search': 'การค้นหาทั่วไป',
-                    'reformed': 'เรียงตามลำดับล่าสุด',
-                    'pinyin': 'เรียงตามการถอดเสียงภาษาจีน',
-                    'phonetic': 'ลำดักการจัดเรียงตามคำอ่าน'
+                    'phonebook': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E2A\u0E21\u0E38\u0E14\u0E42\u0E17\u0E23\u0E28\u0E31\u0E1E\u0E17\u0E4C',
+                    'gb2312han': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E2D\u0E31\u0E01\u0E29\u0E23\u0E08\u0E35\u0E19\u0E1B\u0E23\u0E30\u0E22\u0E38\u0E01\u0E15\u0E4C',
+                    'eor': '\u0E01\u0E0E\u0E01\u0E32\u0E23\u0E40\u0E23\u0E35\u0E22\u0E07\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E15\u0E32\u0E21\u0E41\u0E1A\u0E1A\u0E22\u0E38\u0E42\u0E23\u0E1B',
+                    'ducet': '\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21 Unicode \u0E40\u0E23\u0E34\u0E48\u0E21\u0E15\u0E49\u0E19',
+                    'dictionary': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E1E\u0E08\u0E19\u0E32\u0E19\u0E38\u0E01\u0E23\u0E21',
+                    'big5han': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E2D\u0E31\u0E01\u0E29\u0E23\u0E08\u0E35\u0E19\u0E14\u0E31\u0E49\u0E07\u0E40\u0E14\u0E34\u0E21',
+                    'traditional': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E41\u0E1A\u0E1A\u0E14\u0E31\u0E49\u0E07\u0E40\u0E14\u0E34\u0E21',
+                    'standard': '\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E41\u0E1A\u0E1A\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19',
+                    'zhuyin': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E01\u0E32\u0E23\u0E2A\u0E30\u0E01\u0E14\u0E41\u0E1A\u0E1A\u0E08\u0E39\u0E49\u0E2D\u0E34\u0E19',
+                    'unihan': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E15\u0E32\u0E21\u0E08\u0E33\u0E19\u0E27\u0E19\u0E02\u0E35\u0E14',
+                    'stroke': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E01\u0E32\u0E23\u0E25\u0E32\u0E01\u0E40\u0E2A\u0E49\u0E19',
+                    'searchjl': '\u0E04\u0E49\u0E19\u0E2B\u0E32\u0E15\u0E32\u0E21\u0E1E\u0E22\u0E31\u0E0D\u0E0A\u0E19\u0E30\u0E02\u0E36\u0E49\u0E19\u0E15\u0E49\u0E19\u0E17\u0E35\u0E48\u0E40\u0E1B\u0E47\u0E19\u0E2E\u0E31\u0E19\u0E01\u0E36\u0E25',
+                    'search': '\u0E01\u0E32\u0E23\u0E04\u0E49\u0E19\u0E2B\u0E32\u0E17\u0E31\u0E48\u0E27\u0E44\u0E1B',
+                    'reformed': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E25\u0E48\u0E32\u0E2A\u0E38\u0E14',
+                    'pinyin': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E01\u0E32\u0E23\u0E16\u0E2D\u0E14\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E20\u0E32\u0E29\u0E32\u0E08\u0E35\u0E19',
+                    'phonetic': '\u0E25\u0E33\u0E14\u0E31\u0E01\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E04\u0E33\u0E2D\u0E48\u0E32\u0E19'
                 },
                 'numbers': {
-                    'knda': 'ตัวเลขกันนาดา',
-                    'khmr': 'ตัวเลขเขมร',
-                    'kali': 'ตัวเลขคยาห์',
-                    'jpanfin': 'ตัวเลขทางการเงินของญี่ปุ่น',
-                    'jpan': 'ตัวเลขญี่ปุ่น',
-                    'java': 'ตัวเลขชวา',
-                    'hebr': 'ตัวเลขฮิบรู',
-                    'hantfin': 'ตัวเลขทางการเงินแบบตัวเต็มของจีน',
-                    'hant': 'ตัวเลขจีนตัวเต็ม',
-                    'hansfin': 'ตัวเลขทางการเงินแบบตัวย่อของจีน',
-                    'hans': 'ตัวเลขจีนตัวย่อ',
-                    'hanidec': 'ตัวเลขทศนิยมจีน',
-                    'guru': 'ตัวเลขกูร์มูคี',
-                    'gujr': 'ตัวเลขคุชราต',
-                    'greklow': 'ตัวเลขกรีกพิมพ์เล็ก',
-                    'grek': 'ตัวเลขกรีก',
-                    'bali': 'ตัวเลขบาหลี',
-                    'armnlow': 'ตัวเลขอาร์เมเนียพิมพ์เล็ก',
-                    'armn': 'ตัวเลขอาร์เมเนีย',
-                    'arabext': 'ตัวเลขอินเดีย-อารบิกตัวเต็ม',
-                    'arab': 'ตัวเลขอินเดีย-อารบิก',
-                    'finance': 'ตัวเลขทางการเงิน',
-                    'traditional': 'ตัวเลขแบบดั้งเดิม',
-                    'native': 'ตัวเลขพื้นเมือง',
-                    'beng': 'ตัวเลขบังกลาเทศ',
-                    'brah': 'ตัวเลขพราหมี',
-                    'cakm': 'ตัวเลขชากมา',
-                    'cham': 'ตัวเลขชาม',
-                    'deva': 'ตัวเลขเทวนาครี',
-                    'orya': 'ตัวเลขโอริยา',
-                    'osma': 'ตัวเลขออสมันยา',
-                    'roman': 'ตัวเลขโรมัน',
-                    'romanlow': 'ตัวเลขโรมันพิมพ์เล็ก',
-                    'saur': 'ตัวเลขเศารัชธรา',
-                    'shrd': 'ตัวเลขชาราดา',
-                    'sora': 'ตัวเลขโสราสมเป็ง',
-                    'sund': 'ตัวเลขซุนดา',
-                    'vaii': 'ตัวเลขไว',
-                    'tibt': 'ตัวเลขทิเบต',
-                    'thai': 'ตัวเลขไทย',
-                    'telu': 'ตัวเลขเตลูกู',
-                    'tamldec': 'ตัวเลขทมิฬ',
-                    'taml': 'ตัวเลขทมิฬดั้งเดิม',
-                    'talu': 'ตัวเลขไทลื้อใหม่',
-                    'takr': 'ตัวเลขทาครี',
-                    'olck': 'ตัวเลขโอลจิกิ',
-                    'nkoo': 'ตัวเลขเอ็นโก',
-                    'mymrshan': 'ตัวเลขชานพม่า',
-                    'mymr': 'ตัวเลขพม่า',
-                    'mtei': 'ตัวเลขเมไตมาเยก',
-                    'mong': 'ตัวเลขมองโกเลีย',
-                    'mlym': 'ตัวเลขมาลายาลัม',
-                    'limb': 'ตัวเลขลิมบู',
-                    'lepc': 'ตัวเลขเลปชา',
-                    'latn': 'ตัวเลขอารบิค',
-                    'laoo': 'ตัวเลขลาว',
-                    'lanatham': 'ตัวเลขไททัมทัม',
-                    'lana': 'ตัวเลขไททัมโฮรา',
-                    'geor': 'ตัวเลขจอร์เจีย',
-                    'fullwide': 'ตัวเลขแบบเต็มขนาด',
-                    'ethi': 'ตัวเลขเอธิโอเปีย'
+                    'knda': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E01\u0E31\u0E19\u0E19\u0E32\u0E14\u0E32',
+                    'khmr': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E40\u0E02\u0E21\u0E23',
+                    'kali': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E04\u0E22\u0E32\u0E2B\u0E4C',
+                    'jpanfin': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E32\u0E07\u0E01\u0E32\u0E23\u0E40\u0E07\u0E34\u0E19\u0E02\u0E2D\u0E07\u0E0D\u0E35\u0E48\u0E1B\u0E38\u0E48\u0E19',
+                    'jpan': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E0D\u0E35\u0E48\u0E1B\u0E38\u0E48\u0E19',
+                    'java': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E0A\u0E27\u0E32',
+                    'hebr': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E2E\u0E34\u0E1A\u0E23\u0E39',
+                    'hantfin': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E32\u0E07\u0E01\u0E32\u0E23\u0E40\u0E07\u0E34\u0E19\u0E41\u0E1A\u0E1A\u0E15\u0E31\u0E27\u0E40\u0E15\u0E47\u0E21\u0E02\u0E2D\u0E07\u0E08\u0E35\u0E19',
+                    'hant': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E08\u0E35\u0E19\u0E15\u0E31\u0E27\u0E40\u0E15\u0E47\u0E21',
+                    'hansfin': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E32\u0E07\u0E01\u0E32\u0E23\u0E40\u0E07\u0E34\u0E19\u0E41\u0E1A\u0E1A\u0E15\u0E31\u0E27\u0E22\u0E48\u0E2D\u0E02\u0E2D\u0E07\u0E08\u0E35\u0E19',
+                    'hans': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E08\u0E35\u0E19\u0E15\u0E31\u0E27\u0E22\u0E48\u0E2D',
+                    'hanidec': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E28\u0E19\u0E34\u0E22\u0E21\u0E08\u0E35\u0E19',
+                    'guru': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E01\u0E39\u0E23\u0E4C\u0E21\u0E39\u0E04\u0E35',
+                    'gujr': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E04\u0E38\u0E0A\u0E23\u0E32\u0E15',
+                    'greklow': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E01\u0E23\u0E35\u0E01\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E40\u0E25\u0E47\u0E01',
+                    'grek': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E01\u0E23\u0E35\u0E01',
+                    'bali': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E1A\u0E32\u0E2B\u0E25\u0E35',
+                    'armnlow': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E2D\u0E32\u0E23\u0E4C\u0E40\u0E21\u0E40\u0E19\u0E35\u0E22\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E40\u0E25\u0E47\u0E01',
+                    'armn': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E2D\u0E32\u0E23\u0E4C\u0E40\u0E21\u0E40\u0E19\u0E35\u0E22',
+                    'arabext': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E2D\u0E34\u0E19\u0E40\u0E14\u0E35\u0E22-\u0E2D\u0E32\u0E23\u0E1A\u0E34\u0E01\u0E15\u0E31\u0E27\u0E40\u0E15\u0E47\u0E21',
+                    'arab': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E2D\u0E34\u0E19\u0E40\u0E14\u0E35\u0E22-\u0E2D\u0E32\u0E23\u0E1A\u0E34\u0E01',
+                    'finance': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E32\u0E07\u0E01\u0E32\u0E23\u0E40\u0E07\u0E34\u0E19',
+                    'traditional': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E41\u0E1A\u0E1A\u0E14\u0E31\u0E49\u0E07\u0E40\u0E14\u0E34\u0E21',
+                    'native': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E1E\u0E37\u0E49\u0E19\u0E40\u0E21\u0E37\u0E2D\u0E07',
+                    'beng': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E1A\u0E31\u0E07\u0E01\u0E25\u0E32\u0E40\u0E17\u0E28',
+                    'brah': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E1E\u0E23\u0E32\u0E2B\u0E21\u0E35',
+                    'cakm': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E0A\u0E32\u0E01\u0E21\u0E32',
+                    'cham': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E0A\u0E32\u0E21',
+                    'deva': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E40\u0E17\u0E27\u0E19\u0E32\u0E04\u0E23\u0E35',
+                    'orya': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E42\u0E2D\u0E23\u0E34\u0E22\u0E32',
+                    'osma': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E2D\u0E2D\u0E2A\u0E21\u0E31\u0E19\u0E22\u0E32',
+                    'roman': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E42\u0E23\u0E21\u0E31\u0E19',
+                    'romanlow': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E42\u0E23\u0E21\u0E31\u0E19\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E40\u0E25\u0E47\u0E01',
+                    'saur': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E40\u0E28\u0E32\u0E23\u0E31\u0E0A\u0E18\u0E23\u0E32',
+                    'shrd': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E0A\u0E32\u0E23\u0E32\u0E14\u0E32',
+                    'sora': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E42\u0E2A\u0E23\u0E32\u0E2A\u0E21\u0E40\u0E1B\u0E47\u0E07',
+                    'sund': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E0B\u0E38\u0E19\u0E14\u0E32',
+                    'vaii': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E44\u0E27',
+                    'tibt': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E34\u0E40\u0E1A\u0E15',
+                    'thai': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E44\u0E17\u0E22',
+                    'telu': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E40\u0E15\u0E25\u0E39\u0E01\u0E39',
+                    'tamldec': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E21\u0E34\u0E2C',
+                    'taml': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E21\u0E34\u0E2C\u0E14\u0E31\u0E49\u0E07\u0E40\u0E14\u0E34\u0E21',
+                    'talu': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E44\u0E17\u0E25\u0E37\u0E49\u0E2D\u0E43\u0E2B\u0E21\u0E48',
+                    'takr': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E32\u0E04\u0E23\u0E35',
+                    'olck': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E42\u0E2D\u0E25\u0E08\u0E34\u0E01\u0E34',
+                    'nkoo': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E40\u0E2D\u0E47\u0E19\u0E42\u0E01',
+                    'mymrshan': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E0A\u0E32\u0E19\u0E1E\u0E21\u0E48\u0E32',
+                    'mymr': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E1E\u0E21\u0E48\u0E32',
+                    'mtei': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E40\u0E21\u0E44\u0E15\u0E21\u0E32\u0E40\u0E22\u0E01',
+                    'mong': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E21\u0E2D\u0E07\u0E42\u0E01\u0E40\u0E25\u0E35\u0E22',
+                    'mlym': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E21\u0E32\u0E25\u0E32\u0E22\u0E32\u0E25\u0E31\u0E21',
+                    'limb': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E25\u0E34\u0E21\u0E1A\u0E39',
+                    'lepc': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E40\u0E25\u0E1B\u0E0A\u0E32',
+                    'latn': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E2D\u0E32\u0E23\u0E1A\u0E34\u0E04',
+                    'laoo': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E25\u0E32\u0E27',
+                    'lanatham': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E44\u0E17\u0E17\u0E31\u0E21\u0E17\u0E31\u0E21',
+                    'lana': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E44\u0E17\u0E17\u0E31\u0E21\u0E42\u0E2E\u0E23\u0E32',
+                    'geor': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E08\u0E2D\u0E23\u0E4C\u0E40\u0E08\u0E35\u0E22',
+                    'fullwide': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E41\u0E1A\u0E1A\u0E40\u0E15\u0E47\u0E21\u0E02\u0E19\u0E32\u0E14',
+                    'ethi': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E40\u0E2D\u0E18\u0E34\u0E42\u0E2D\u0E40\u0E1B\u0E35\u0E22'
                 },
                 'colAlternate': {
-                    'non-ignorable': 'จัดเรียงสัญลักษณ์',
-                    'shifted': 'จัดเรียงสัญลักษณ์ที่ละไว้'
+                    'non-ignorable': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E2A\u0E31\u0E0D\u0E25\u0E31\u0E01\u0E29\u0E13\u0E4C',
+                    'shifted': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E2A\u0E31\u0E0D\u0E25\u0E31\u0E01\u0E29\u0E13\u0E4C\u0E17\u0E35\u0E48\u0E25\u0E30\u0E44\u0E27\u0E49'
                 },
                 'colBackwards': {
-                    'no': 'จัดเรียงเสียงหนักเบาตามปกติ',
-                    'yes': 'จัดเรียงเสียงหนักเบาในลำดับถอยหลัง'
+                    'no': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E2B\u0E19\u0E31\u0E01\u0E40\u0E1A\u0E32\u0E15\u0E32\u0E21\u0E1B\u0E01\u0E15\u0E34',
+                    'yes': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E2B\u0E19\u0E31\u0E01\u0E40\u0E1A\u0E32\u0E43\u0E19\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E16\u0E2D\u0E22\u0E2B\u0E25\u0E31\u0E07'
                 }
             },
             'keys': {
-                'colNormalization': 'การจัดเรียงแบบที่เป็นปกติ',
-                'collation': 'ลำดับการจัดเรียง',
-                'colHiraganaQuaternary': 'การจัดเรียงตัวอักษรคะนะ',
-                'colCaseLevel': 'การจัดเรียงตามความสำคัญของตัวพิมพ์อักษร',
-                'colCaseFirst': 'การเรียงลำดับตัวพิมพ์ใหญ่/ตัวพิมพ์เล็ก',
-                'colBackwards': 'การจัดเรียงเสียงหนักเบาในลำดับถอยหลัง',
-                'colAlternate': 'ละเว้นการจัดเรียงสัญลักษณ์',
-                'calendar': 'ปฏิทิน',
-                'x': 'ใช้งานส่วนบุคคล',
-                'variableTop': 'จัดเรียงเป็นสัญลักษณ์',
-                'va': 'ตัวแปรภาษาถิ่น',
-                'timezone': 'เขตเวลา',
-                'numbers': 'ตัวเลข',
-                'currency': 'สกุลเงิน',
-                'colStrength': 'ความแม่นยำในการจัดเรียง',
-                'colNumeric': 'การจัดเรียงตัวเลข'
+                'colNormalization': '\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E41\u0E1A\u0E1A\u0E17\u0E35\u0E48\u0E40\u0E1B\u0E47\u0E19\u0E1B\u0E01\u0E15\u0E34',
+                'collation': '\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07',
+                'colHiraganaQuaternary': '\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E31\u0E27\u0E2D\u0E31\u0E01\u0E29\u0E23\u0E04\u0E30\u0E19\u0E30',
+                'colCaseLevel': '\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E04\u0E27\u0E32\u0E21\u0E2A\u0E33\u0E04\u0E31\u0E0D\u0E02\u0E2D\u0E07\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E2D\u0E31\u0E01\u0E29\u0E23',
+                'colCaseFirst': '\u0E01\u0E32\u0E23\u0E40\u0E23\u0E35\u0E22\u0E07\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E43\u0E2B\u0E0D\u0E48/\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E40\u0E25\u0E47\u0E01',
+                'colBackwards': '\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E2B\u0E19\u0E31\u0E01\u0E40\u0E1A\u0E32\u0E43\u0E19\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E16\u0E2D\u0E22\u0E2B\u0E25\u0E31\u0E07',
+                'colAlternate': '\u0E25\u0E30\u0E40\u0E27\u0E49\u0E19\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E2A\u0E31\u0E0D\u0E25\u0E31\u0E01\u0E29\u0E13\u0E4C',
+                'calendar': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19',
+                'x': '\u0E43\u0E0A\u0E49\u0E07\u0E32\u0E19\u0E2A\u0E48\u0E27\u0E19\u0E1A\u0E38\u0E04\u0E04\u0E25',
+                'variableTop': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E40\u0E1B\u0E47\u0E19\u0E2A\u0E31\u0E0D\u0E25\u0E31\u0E01\u0E29\u0E13\u0E4C',
+                'va': '\u0E15\u0E31\u0E27\u0E41\u0E1B\u0E23\u0E20\u0E32\u0E29\u0E32\u0E16\u0E34\u0E48\u0E19',
+                'timezone': '\u0E40\u0E02\u0E15\u0E40\u0E27\u0E25\u0E32',
+                'numbers': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02',
+                'currency': '\u0E2A\u0E01\u0E38\u0E25\u0E40\u0E07\u0E34\u0E19',
+                'colStrength': '\u0E04\u0E27\u0E32\u0E21\u0E41\u0E21\u0E48\u0E19\u0E22\u0E33\u0E43\u0E19\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07',
+                'colNumeric': '\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02'
             },
             'localeDisplayPattern': {
                 'localePattern': '{0} ({1})',
@@ -212,191 +212,191 @@
                 'zone': {
                     'Pacific': {
                         'Saipan': {
-                            'exemplarCity': 'ไซปัน'
+                            'exemplarCity': '\u0E44\u0E0B\u0E1B\u0E31\u0E19'
                         },
                         'Rarotonga': {
-                            'exemplarCity': 'ราโรตองกา'
+                            'exemplarCity': '\u0E23\u0E32\u0E42\u0E23\u0E15\u0E2D\u0E07\u0E01\u0E32'
                         },
                         'Port_Moresby': {
-                            'exemplarCity': 'พอร์ตมอร์สบี'
+                            'exemplarCity': '\u0E1E\u0E2D\u0E23\u0E4C\u0E15\u0E21\u0E2D\u0E23\u0E4C\u0E2A\u0E1A\u0E35'
                         },
                         'Ponape': {
-                            'exemplarCity': 'โปนาเป'
+                            'exemplarCity': '\u0E42\u0E1B\u0E19\u0E32\u0E40\u0E1B'
                         },
                         'Pitcairn': {
-                            'exemplarCity': 'พิตแคร์น'
+                            'exemplarCity': '\u0E1E\u0E34\u0E15\u0E41\u0E04\u0E23\u0E4C\u0E19'
                         },
                         'Palau': {
-                            'exemplarCity': 'ปาเลา'
+                            'exemplarCity': '\u0E1B\u0E32\u0E40\u0E25\u0E32'
                         },
                         'Auckland': {
-                            'exemplarCity': 'โอคแลนด์'
+                            'exemplarCity': '\u0E42\u0E2D\u0E04\u0E41\u0E25\u0E19\u0E14\u0E4C'
                         },
                         'Apia': {
-                            'exemplarCity': 'อาปีอา'
+                            'exemplarCity': '\u0E2D\u0E32\u0E1B\u0E35\u0E2D\u0E32'
                         },
                         'Funafuti': {
-                            'exemplarCity': 'ฟูนะฟูตี'
+                            'exemplarCity': '\u0E1F\u0E39\u0E19\u0E30\u0E1F\u0E39\u0E15\u0E35'
                         },
                         'Galapagos': {
-                            'exemplarCity': 'กาลาปาโกส'
+                            'exemplarCity': '\u0E01\u0E32\u0E25\u0E32\u0E1B\u0E32\u0E42\u0E01\u0E2A'
                         },
                         'Gambier': {
-                            'exemplarCity': 'แกมเบียร์'
+                            'exemplarCity': '\u0E41\u0E01\u0E21\u0E40\u0E1A\u0E35\u0E22\u0E23\u0E4C'
                         },
                         'Guadalcanal': {
-                            'exemplarCity': 'กัวดัลคานัล'
+                            'exemplarCity': '\u0E01\u0E31\u0E27\u0E14\u0E31\u0E25\u0E04\u0E32\u0E19\u0E31\u0E25'
                         },
                         'Guam': {
-                            'exemplarCity': 'กวม'
+                            'exemplarCity': '\u0E01\u0E27\u0E21'
                         },
                         'Honolulu': {
-                            'exemplarCity': 'โฮโนลูลู'
+                            'exemplarCity': '\u0E42\u0E2E\u0E42\u0E19\u0E25\u0E39\u0E25\u0E39'
                         },
                         'Wallis': {
-                            'exemplarCity': 'วาลลิส'
+                            'exemplarCity': '\u0E27\u0E32\u0E25\u0E25\u0E34\u0E2A'
                         },
                         'Wake': {
-                            'exemplarCity': 'เวก'
+                            'exemplarCity': '\u0E40\u0E27\u0E01'
                         },
                         'Truk': {
-                            'exemplarCity': 'ทรัก'
+                            'exemplarCity': '\u0E17\u0E23\u0E31\u0E01'
                         },
                         'Tongatapu': {
-                            'exemplarCity': 'ตองกาตาปู'
+                            'exemplarCity': '\u0E15\u0E2D\u0E07\u0E01\u0E32\u0E15\u0E32\u0E1B\u0E39'
                         },
                         'Tarawa': {
-                            'exemplarCity': 'ตาระวา'
+                            'exemplarCity': '\u0E15\u0E32\u0E23\u0E30\u0E27\u0E32'
                         },
                         'Tahiti': {
-                            'exemplarCity': 'ทาฮิติ'
+                            'exemplarCity': '\u0E17\u0E32\u0E2E\u0E34\u0E15\u0E34'
                         },
                         'Kiritimati': {
-                            'exemplarCity': 'คิริทิมาตี'
+                            'exemplarCity': '\u0E04\u0E34\u0E23\u0E34\u0E17\u0E34\u0E21\u0E32\u0E15\u0E35'
                         },
                         'Johnston': {
-                            'exemplarCity': 'จอห์นสตัน'
+                            'exemplarCity': '\u0E08\u0E2D\u0E2B\u0E4C\u0E19\u0E2A\u0E15\u0E31\u0E19'
                         },
                         'Chatham': {
-                            'exemplarCity': 'แชแทม'
+                            'exemplarCity': '\u0E41\u0E0A\u0E41\u0E17\u0E21'
                         },
                         'Easter': {
-                            'exemplarCity': 'อีสเตอร์'
+                            'exemplarCity': '\u0E2D\u0E35\u0E2A\u0E40\u0E15\u0E2D\u0E23\u0E4C'
                         },
                         'Efate': {
-                            'exemplarCity': 'เอฟาเต'
+                            'exemplarCity': '\u0E40\u0E2D\u0E1F\u0E32\u0E40\u0E15'
                         },
                         'Enderbury': {
-                            'exemplarCity': 'เอนเดอร์เบอร์รี'
+                            'exemplarCity': '\u0E40\u0E2D\u0E19\u0E40\u0E14\u0E2D\u0E23\u0E4C\u0E40\u0E1A\u0E2D\u0E23\u0E4C\u0E23\u0E35'
                         },
                         'Fakaofo': {
-                            'exemplarCity': 'ฟาเคาโฟ'
+                            'exemplarCity': '\u0E1F\u0E32\u0E40\u0E04\u0E32\u0E42\u0E1F'
                         },
                         'Fiji': {
-                            'exemplarCity': 'ฟิจิ'
+                            'exemplarCity': '\u0E1F\u0E34\u0E08\u0E34'
                         },
                         'Kosrae': {
-                            'exemplarCity': 'คอสแร'
+                            'exemplarCity': '\u0E04\u0E2D\u0E2A\u0E41\u0E23'
                         },
                         'Kwajalein': {
-                            'exemplarCity': 'ควาจาเลน'
+                            'exemplarCity': '\u0E04\u0E27\u0E32\u0E08\u0E32\u0E40\u0E25\u0E19'
                         },
                         'Majuro': {
-                            'exemplarCity': 'มาจูโร'
+                            'exemplarCity': '\u0E21\u0E32\u0E08\u0E39\u0E42\u0E23'
                         },
                         'Marquesas': {
-                            'exemplarCity': 'มาร์เควซัส'
+                            'exemplarCity': '\u0E21\u0E32\u0E23\u0E4C\u0E40\u0E04\u0E27\u0E0B\u0E31\u0E2A'
                         },
                         'Midway': {
-                            'exemplarCity': 'มิดเวย์'
+                            'exemplarCity': '\u0E21\u0E34\u0E14\u0E40\u0E27\u0E22\u0E4C'
                         },
                         'Nauru': {
-                            'exemplarCity': 'นาอูรู'
+                            'exemplarCity': '\u0E19\u0E32\u0E2D\u0E39\u0E23\u0E39'
                         },
                         'Niue': {
-                            'exemplarCity': 'นีอูเอ'
+                            'exemplarCity': '\u0E19\u0E35\u0E2D\u0E39\u0E40\u0E2D'
                         },
                         'Norfolk': {
-                            'exemplarCity': 'นอร์ฟอล์ก'
+                            'exemplarCity': '\u0E19\u0E2D\u0E23\u0E4C\u0E1F\u0E2D\u0E25\u0E4C\u0E01'
                         },
                         'Noumea': {
-                            'exemplarCity': 'นูเมอา'
+                            'exemplarCity': '\u0E19\u0E39\u0E40\u0E21\u0E2D\u0E32'
                         },
                         'Pago_Pago': {
-                            'exemplarCity': 'ปาโก ปาโก'
+                            'exemplarCity': '\u0E1B\u0E32\u0E42\u0E01 \u0E1B\u0E32\u0E42\u0E01'
                         }
                     },
                     'Australia': {
                         'Lindeman': {
-                            'exemplarCity': 'ลินดีแมน'
+                            'exemplarCity': '\u0E25\u0E34\u0E19\u0E14\u0E35\u0E41\u0E21\u0E19'
                         },
                         'Hobart': {
-                            'exemplarCity': 'โฮบาร์ต'
+                            'exemplarCity': '\u0E42\u0E2E\u0E1A\u0E32\u0E23\u0E4C\u0E15'
                         },
                         'Eucla': {
-                            'exemplarCity': 'ยูคลา'
+                            'exemplarCity': '\u0E22\u0E39\u0E04\u0E25\u0E32'
                         },
                         'Darwin': {
-                            'exemplarCity': 'ดาร์วิน'
+                            'exemplarCity': '\u0E14\u0E32\u0E23\u0E4C\u0E27\u0E34\u0E19'
                         },
                         'Sydney': {
-                            'exemplarCity': 'ซิดนีย์'
+                            'exemplarCity': '\u0E0B\u0E34\u0E14\u0E19\u0E35\u0E22\u0E4C'
                         },
                         'Perth': {
-                            'exemplarCity': 'เพิิร์ท'
+                            'exemplarCity': '\u0E40\u0E1E\u0E34\u0E34\u0E23\u0E4C\u0E17'
                         },
                         'Melbourne': {
-                            'exemplarCity': 'เมลเบิร์น'
+                            'exemplarCity': '\u0E40\u0E21\u0E25\u0E40\u0E1A\u0E34\u0E23\u0E4C\u0E19'
                         },
                         'Lord_Howe': {
-                            'exemplarCity': 'ลอร์ดโฮวี'
+                            'exemplarCity': '\u0E25\u0E2D\u0E23\u0E4C\u0E14\u0E42\u0E2E\u0E27\u0E35'
                         },
                         'Adelaide': {
-                            'exemplarCity': 'แอดิเลด'
+                            'exemplarCity': '\u0E41\u0E2D\u0E14\u0E34\u0E40\u0E25\u0E14'
                         },
                         'Brisbane': {
-                            'exemplarCity': 'บริสเบน'
+                            'exemplarCity': '\u0E1A\u0E23\u0E34\u0E2A\u0E40\u0E1A\u0E19'
                         },
                         'Broken_Hill': {
-                            'exemplarCity': 'โบรกเคนฮิลล์'
+                            'exemplarCity': '\u0E42\u0E1A\u0E23\u0E01\u0E40\u0E04\u0E19\u0E2E\u0E34\u0E25\u0E25\u0E4C'
                         },
                         'Currie': {
-                            'exemplarCity': 'คูร์รี'
+                            'exemplarCity': '\u0E04\u0E39\u0E23\u0E4C\u0E23\u0E35'
                         }
                     },
                     'Indian': {
                         'Maldives': {
-                            'exemplarCity': 'มัลดีฟส์'
+                            'exemplarCity': '\u0E21\u0E31\u0E25\u0E14\u0E35\u0E1F\u0E2A\u0E4C'
                         },
                         'Mahe': {
-                            'exemplarCity': 'มาเอ'
+                            'exemplarCity': '\u0E21\u0E32\u0E40\u0E2D'
                         },
                         'Kerguelen': {
-                            'exemplarCity': 'แกร์เกอลอง'
+                            'exemplarCity': '\u0E41\u0E01\u0E23\u0E4C\u0E40\u0E01\u0E2D\u0E25\u0E2D\u0E07'
                         },
                         'Reunion': {
-                            'exemplarCity': 'เรอูนียง'
+                            'exemplarCity': '\u0E40\u0E23\u0E2D\u0E39\u0E19\u0E35\u0E22\u0E07'
                         },
                         'Mayotte': {
-                            'exemplarCity': 'มาโยเต'
+                            'exemplarCity': '\u0E21\u0E32\u0E42\u0E22\u0E40\u0E15'
                         },
                         'Mauritius': {
-                            'exemplarCity': 'มอริเชียส'
+                            'exemplarCity': '\u0E21\u0E2D\u0E23\u0E34\u0E40\u0E0A\u0E35\u0E22\u0E2A'
                         },
                         'Antananarivo': {
-                            'exemplarCity': 'อันตานานาริโว'
+                            'exemplarCity': '\u0E2D\u0E31\u0E19\u0E15\u0E32\u0E19\u0E32\u0E19\u0E32\u0E23\u0E34\u0E42\u0E27'
                         },
                         'Chagos': {
-                            'exemplarCity': 'ชากัส'
+                            'exemplarCity': '\u0E0A\u0E32\u0E01\u0E31\u0E2A'
                         },
                         'Christmas': {
-                            'exemplarCity': 'คริสต์มาส'
+                            'exemplarCity': '\u0E04\u0E23\u0E34\u0E2A\u0E15\u0E4C\u0E21\u0E32\u0E2A'
                         },
                         'Cocos': {
-                            'exemplarCity': 'โคโคส'
+                            'exemplarCity': '\u0E42\u0E04\u0E42\u0E04\u0E2A'
                         },
                         'Comoro': {
-                            'exemplarCity': 'โคโมโร'
+                            'exemplarCity': '\u0E42\u0E04\u0E42\u0E21\u0E42\u0E23'
                         }
                     },
                     'Etc': {
@@ -458,7 +458,7 @@
                             'exemplarCity': 'GMT-9'
                         },
                         'Unknown': {
-                            'exemplarCity': 'เมืองที่ไม่รู้จัก'
+                            'exemplarCity': '\u0E40\u0E21\u0E37\u0E2D\u0E07\u0E17\u0E35\u0E48\u0E44\u0E21\u0E48\u0E23\u0E39\u0E49\u0E08\u0E31\u0E01'
                         },
                         'GMT-2': {
                             'exemplarCity': 'GMT-2'
@@ -487,2043 +487,2043 @@
                     },
                     'Antarctica': {
                         'Rothera': {
-                            'exemplarCity': 'โรเทรา'
+                            'exemplarCity': '\u0E42\u0E23\u0E40\u0E17\u0E23\u0E32'
                         },
                         'Palmer': {
-                            'exemplarCity': 'พาล์เมอร์'
+                            'exemplarCity': '\u0E1E\u0E32\u0E25\u0E4C\u0E40\u0E21\u0E2D\u0E23\u0E4C'
                         },
                         'McMurdo': {
-                            'exemplarCity': 'แมคมัวโด'
+                            'exemplarCity': '\u0E41\u0E21\u0E04\u0E21\u0E31\u0E27\u0E42\u0E14'
                         },
                         'Vostok': {
-                            'exemplarCity': 'วอสต็อค'
+                            'exemplarCity': '\u0E27\u0E2D\u0E2A\u0E15\u0E47\u0E2D\u0E04'
                         },
                         'Syowa': {
-                            'exemplarCity': 'เซียวา'
+                            'exemplarCity': '\u0E40\u0E0B\u0E35\u0E22\u0E27\u0E32'
                         },
                         'South_Pole': {
-                            'exemplarCity': 'ขั้วโลกใต้'
+                            'exemplarCity': '\u0E02\u0E31\u0E49\u0E27\u0E42\u0E25\u0E01\u0E43\u0E15\u0E49'
                         },
                         'Casey': {
-                            'exemplarCity': 'เคซีย์'
+                            'exemplarCity': '\u0E40\u0E04\u0E0B\u0E35\u0E22\u0E4C'
                         },
                         'Davis': {
-                            'exemplarCity': 'ดาวีส์'
+                            'exemplarCity': '\u0E14\u0E32\u0E27\u0E35\u0E2A\u0E4C'
                         },
                         'DumontDUrville': {
-                            'exemplarCity': 'ดูมองต์ดูร์วิลล์'
+                            'exemplarCity': '\u0E14\u0E39\u0E21\u0E2D\u0E07\u0E15\u0E4C\u0E14\u0E39\u0E23\u0E4C\u0E27\u0E34\u0E25\u0E25\u0E4C'
                         },
                         'Macquarie': {
-                            'exemplarCity': 'แมคควอรี'
+                            'exemplarCity': '\u0E41\u0E21\u0E04\u0E04\u0E27\u0E2D\u0E23\u0E35'
                         },
                         'Mawson': {
-                            'exemplarCity': 'มาว์ซัน'
+                            'exemplarCity': '\u0E21\u0E32\u0E27\u0E4C\u0E0B\u0E31\u0E19'
                         }
                     },
                     'Arctic': {
                         'Longyearbyen': {
-                            'exemplarCity': 'ลองเยียร์เบียน'
+                            'exemplarCity': '\u0E25\u0E2D\u0E07\u0E40\u0E22\u0E35\u0E22\u0E23\u0E4C\u0E40\u0E1A\u0E35\u0E22\u0E19'
                         }
                     },
                     'America': {
                         'Toronto': {
-                            'exemplarCity': 'โทรอนโต'
+                            'exemplarCity': '\u0E42\u0E17\u0E23\u0E2D\u0E19\u0E42\u0E15'
                         },
                         'Tijuana': {
-                            'exemplarCity': 'ทิฮัวนา'
+                            'exemplarCity': '\u0E17\u0E34\u0E2E\u0E31\u0E27\u0E19\u0E32'
                         },
                         'Thunder_Bay': {
-                            'exemplarCity': 'ทันเดอร์เบย์'
+                            'exemplarCity': '\u0E17\u0E31\u0E19\u0E40\u0E14\u0E2D\u0E23\u0E4C\u0E40\u0E1A\u0E22\u0E4C'
                         },
                         'Thule': {
-                            'exemplarCity': 'ทูเล'
+                            'exemplarCity': '\u0E17\u0E39\u0E40\u0E25'
                         },
                         'Tegucigalpa': {
-                            'exemplarCity': 'เตกูซิกัลปา'
+                            'exemplarCity': '\u0E40\u0E15\u0E01\u0E39\u0E0B\u0E34\u0E01\u0E31\u0E25\u0E1B\u0E32'
                         },
                         'Swift_Current': {
-                            'exemplarCity': 'สวิฟต์เคอร์เรนต์'
+                            'exemplarCity': '\u0E2A\u0E27\u0E34\u0E1F\u0E15\u0E4C\u0E40\u0E04\u0E2D\u0E23\u0E4C\u0E40\u0E23\u0E19\u0E15\u0E4C'
                         },
                         'Chicago': {
-                            'exemplarCity': 'ชิคาโก'
+                            'exemplarCity': '\u0E0A\u0E34\u0E04\u0E32\u0E42\u0E01'
                         },
                         'Cayman': {
-                            'exemplarCity': 'เคย์แมน'
+                            'exemplarCity': '\u0E40\u0E04\u0E22\u0E4C\u0E41\u0E21\u0E19'
                         },
                         'Cayenne': {
-                            'exemplarCity': 'กาแยน'
+                            'exemplarCity': '\u0E01\u0E32\u0E41\u0E22\u0E19'
                         },
                         'Catamarca': {
-                            'exemplarCity': 'กาตามาร์กา'
+                            'exemplarCity': '\u0E01\u0E32\u0E15\u0E32\u0E21\u0E32\u0E23\u0E4C\u0E01\u0E32'
                         },
                         'Caracas': {
-                            'exemplarCity': 'คาราคัส'
+                            'exemplarCity': '\u0E04\u0E32\u0E23\u0E32\u0E04\u0E31\u0E2A'
                         },
                         'Cancun': {
-                            'exemplarCity': 'แคนคุน'
+                            'exemplarCity': '\u0E41\u0E04\u0E19\u0E04\u0E38\u0E19'
                         },
                         'Campo_Grande': {
-                            'exemplarCity': 'กัมปูกรันดี'
+                            'exemplarCity': '\u0E01\u0E31\u0E21\u0E1B\u0E39\u0E01\u0E23\u0E31\u0E19\u0E14\u0E35'
                         },
                         'Cambridge_Bay': {
-                            'exemplarCity': 'อ่าวแคมบริดจ์'
+                            'exemplarCity': '\u0E2D\u0E48\u0E32\u0E27\u0E41\u0E04\u0E21\u0E1A\u0E23\u0E34\u0E14\u0E08\u0E4C'
                         },
                         'Buenos_Aires': {
-                            'exemplarCity': 'บัวโนสไอเรส'
+                            'exemplarCity': '\u0E1A\u0E31\u0E27\u0E42\u0E19\u0E2A\u0E44\u0E2D\u0E40\u0E23\u0E2A'
                         },
                         'Boise': {
-                            'exemplarCity': 'บอยซี'
+                            'exemplarCity': '\u0E1A\u0E2D\u0E22\u0E0B\u0E35'
                         },
                         'Asuncion': {
-                            'exemplarCity': 'อะซุนซิออง'
+                            'exemplarCity': '\u0E2D\u0E30\u0E0B\u0E38\u0E19\u0E0B\u0E34\u0E2D\u0E2D\u0E07'
                         },
                         'Aruba': {
-                            'exemplarCity': 'อารูบา'
+                            'exemplarCity': '\u0E2D\u0E32\u0E23\u0E39\u0E1A\u0E32'
                         },
                         'Argentina': {
                             'Rio_Gallegos': {
-                                'exemplarCity': 'ริโอกาลเลกอส'
+                                'exemplarCity': '\u0E23\u0E34\u0E42\u0E2D\u0E01\u0E32\u0E25\u0E40\u0E25\u0E01\u0E2D\u0E2A'
                             },
                             'San_Juan': {
-                                'exemplarCity': 'ซานฮวน'
+                                'exemplarCity': '\u0E0B\u0E32\u0E19\u0E2E\u0E27\u0E19'
                             },
                             'Ushuaia': {
-                                'exemplarCity': 'อูชูเอีย'
+                                'exemplarCity': '\u0E2D\u0E39\u0E0A\u0E39\u0E40\u0E2D\u0E35\u0E22'
                             },
                             'La_Rioja': {
-                                'exemplarCity': 'ลาริโอจา'
+                                'exemplarCity': '\u0E25\u0E32\u0E23\u0E34\u0E42\u0E2D\u0E08\u0E32'
                             },
                             'San_Luis': {
-                                'exemplarCity': 'ซันลูอิส'
+                                'exemplarCity': '\u0E0B\u0E31\u0E19\u0E25\u0E39\u0E2D\u0E34\u0E2A'
                             },
                             'Salta': {
-                                'exemplarCity': 'ซัลตา'
+                                'exemplarCity': '\u0E0B\u0E31\u0E25\u0E15\u0E32'
                             },
                             'Tucuman': {
-                                'exemplarCity': 'ทูคูแมน'
+                                'exemplarCity': '\u0E17\u0E39\u0E04\u0E39\u0E41\u0E21\u0E19'
                             }
                         },
                         'Araguaina': {
-                            'exemplarCity': 'อารากัวนา'
+                            'exemplarCity': '\u0E2D\u0E32\u0E23\u0E32\u0E01\u0E31\u0E27\u0E19\u0E32'
                         },
                         'Antigua': {
-                            'exemplarCity': 'แอนติกา'
+                            'exemplarCity': '\u0E41\u0E2D\u0E19\u0E15\u0E34\u0E01\u0E32'
                         },
                         'Anguilla': {
-                            'exemplarCity': 'แองกิลลา'
+                            'exemplarCity': '\u0E41\u0E2D\u0E07\u0E01\u0E34\u0E25\u0E25\u0E32'
                         },
                         'Anchorage': {
-                            'exemplarCity': 'แองเคอเรจ'
+                            'exemplarCity': '\u0E41\u0E2D\u0E07\u0E40\u0E04\u0E2D\u0E40\u0E23\u0E08'
                         },
                         'Adak': {
-                            'exemplarCity': 'เอดัก'
+                            'exemplarCity': '\u0E40\u0E2D\u0E14\u0E31\u0E01'
                         },
                         'Bahia': {
-                            'exemplarCity': 'บาเยีย'
+                            'exemplarCity': '\u0E1A\u0E32\u0E40\u0E22\u0E35\u0E22'
                         },
                         'Bahia_Banderas': {
-                            'exemplarCity': 'บาเอียบันเดรัส'
+                            'exemplarCity': '\u0E1A\u0E32\u0E40\u0E2D\u0E35\u0E22\u0E1A\u0E31\u0E19\u0E40\u0E14\u0E23\u0E31\u0E2A'
                         },
                         'Barbados': {
-                            'exemplarCity': 'บาร์เบโดส'
+                            'exemplarCity': '\u0E1A\u0E32\u0E23\u0E4C\u0E40\u0E1A\u0E42\u0E14\u0E2A'
                         },
                         'Belem': {
-                            'exemplarCity': 'เบเลง'
+                            'exemplarCity': '\u0E40\u0E1A\u0E40\u0E25\u0E07'
                         },
                         'Belize': {
-                            'exemplarCity': 'เบลีซ'
+                            'exemplarCity': '\u0E40\u0E1A\u0E25\u0E35\u0E0B'
                         },
                         'Blanc-Sablon': {
-                            'exemplarCity': 'บลังค์-ซาบลอน'
+                            'exemplarCity': '\u0E1A\u0E25\u0E31\u0E07\u0E04\u0E4C-\u0E0B\u0E32\u0E1A\u0E25\u0E2D\u0E19'
                         },
                         'Boa_Vista': {
-                            'exemplarCity': 'บัววีชตา'
+                            'exemplarCity': '\u0E1A\u0E31\u0E27\u0E27\u0E35\u0E0A\u0E15\u0E32'
                         },
                         'Bogota': {
-                            'exemplarCity': 'โบโกตา'
+                            'exemplarCity': '\u0E42\u0E1A\u0E42\u0E01\u0E15\u0E32'
                         },
                         'Curacao': {
-                            'exemplarCity': 'คูราเซา'
+                            'exemplarCity': '\u0E04\u0E39\u0E23\u0E32\u0E40\u0E0B\u0E32'
                         },
                         'Danmarkshavn': {
-                            'exemplarCity': 'ดานมาร์กสฮาวน์'
+                            'exemplarCity': '\u0E14\u0E32\u0E19\u0E21\u0E32\u0E23\u0E4C\u0E01\u0E2A\u0E2E\u0E32\u0E27\u0E19\u0E4C'
                         },
                         'Dawson': {
-                            'exemplarCity': 'ดอว์สัน'
+                            'exemplarCity': '\u0E14\u0E2D\u0E27\u0E4C\u0E2A\u0E31\u0E19'
                         },
                         'Dawson_Creek': {
-                            'exemplarCity': 'ดอว์สัน ครีก'
+                            'exemplarCity': '\u0E14\u0E2D\u0E27\u0E4C\u0E2A\u0E31\u0E19 \u0E04\u0E23\u0E35\u0E01'
                         },
                         'Denver': {
-                            'exemplarCity': 'เดนเวอร์'
+                            'exemplarCity': '\u0E40\u0E14\u0E19\u0E40\u0E27\u0E2D\u0E23\u0E4C'
                         },
                         'Detroit': {
-                            'exemplarCity': 'ดีทรอยต์'
+                            'exemplarCity': '\u0E14\u0E35\u0E17\u0E23\u0E2D\u0E22\u0E15\u0E4C'
                         },
                         'Hermosillo': {
-                            'exemplarCity': 'เอร์โมซีโย'
+                            'exemplarCity': '\u0E40\u0E2D\u0E23\u0E4C\u0E42\u0E21\u0E0B\u0E35\u0E42\u0E22'
                         },
                         'Indiana': {
                             'Vincennes': {
-                                'exemplarCity': 'วินเซนเนส, อินดีแอนา'
+                                'exemplarCity': '\u0E27\u0E34\u0E19\u0E40\u0E0B\u0E19\u0E40\u0E19\u0E2A, \u0E2D\u0E34\u0E19\u0E14\u0E35\u0E41\u0E2D\u0E19\u0E32'
                             },
                             'Petersburg': {
-                                'exemplarCity': 'ปีเตอร์สเบิร์ก, อินดีแอนา'
+                                'exemplarCity': '\u0E1B\u0E35\u0E40\u0E15\u0E2D\u0E23\u0E4C\u0E2A\u0E40\u0E1A\u0E34\u0E23\u0E4C\u0E01, \u0E2D\u0E34\u0E19\u0E14\u0E35\u0E41\u0E2D\u0E19\u0E32'
                             },
                             'Tell_City': {
-                                'exemplarCity': 'เทลล์ซิตี, อินดีแอนา'
+                                'exemplarCity': '\u0E40\u0E17\u0E25\u0E25\u0E4C\u0E0B\u0E34\u0E15\u0E35, \u0E2D\u0E34\u0E19\u0E14\u0E35\u0E41\u0E2D\u0E19\u0E32'
                             },
                             'Knox': {
-                                'exemplarCity': 'นอกซ์, อินดีแอนา'
+                                'exemplarCity': '\u0E19\u0E2D\u0E01\u0E0B\u0E4C, \u0E2D\u0E34\u0E19\u0E14\u0E35\u0E41\u0E2D\u0E19\u0E32'
                             },
                             'Winamac': {
-                                'exemplarCity': 'วินาแมค, อินดีแอนา'
+                                'exemplarCity': '\u0E27\u0E34\u0E19\u0E32\u0E41\u0E21\u0E04, \u0E2D\u0E34\u0E19\u0E14\u0E35\u0E41\u0E2D\u0E19\u0E32'
                             },
                             'Marengo': {
-                                'exemplarCity': 'มาเรงโก, อินดีแอนา'
+                                'exemplarCity': '\u0E21\u0E32\u0E40\u0E23\u0E07\u0E42\u0E01, \u0E2D\u0E34\u0E19\u0E14\u0E35\u0E41\u0E2D\u0E19\u0E32'
                             },
                             'Vevay': {
-                                'exemplarCity': 'วีเวย์, อินดีแอนา'
+                                'exemplarCity': '\u0E27\u0E35\u0E40\u0E27\u0E22\u0E4C, \u0E2D\u0E34\u0E19\u0E14\u0E35\u0E41\u0E2D\u0E19\u0E32'
                             }
                         },
                         'Indianapolis': {
-                            'exemplarCity': 'อินเดียแนโพลิส'
+                            'exemplarCity': '\u0E2D\u0E34\u0E19\u0E40\u0E14\u0E35\u0E22\u0E41\u0E19\u0E42\u0E1E\u0E25\u0E34\u0E2A'
                         },
                         'Inuvik': {
-                            'exemplarCity': 'อินูวิก'
+                            'exemplarCity': '\u0E2D\u0E34\u0E19\u0E39\u0E27\u0E34\u0E01'
                         },
                         'Iqaluit': {
-                            'exemplarCity': 'อีกวาลิต'
+                            'exemplarCity': '\u0E2D\u0E35\u0E01\u0E27\u0E32\u0E25\u0E34\u0E15'
                         },
                         'Jamaica': {
-                            'exemplarCity': 'จาเมกา'
+                            'exemplarCity': '\u0E08\u0E32\u0E40\u0E21\u0E01\u0E32'
                         },
                         'Jujuy': {
-                            'exemplarCity': 'จูจิว'
+                            'exemplarCity': '\u0E08\u0E39\u0E08\u0E34\u0E27'
                         },
                         'Juneau': {
-                            'exemplarCity': 'จูโน'
+                            'exemplarCity': '\u0E08\u0E39\u0E42\u0E19'
                         },
                         'Yellowknife': {
-                            'exemplarCity': 'เยลโลว์ไนฟ์'
+                            'exemplarCity': '\u0E40\u0E22\u0E25\u0E42\u0E25\u0E27\u0E4C\u0E44\u0E19\u0E1F\u0E4C'
                         },
                         'Yakutat': {
-                            'exemplarCity': 'ยากูทัต'
+                            'exemplarCity': '\u0E22\u0E32\u0E01\u0E39\u0E17\u0E31\u0E15'
                         },
                         'Winnipeg': {
-                            'exemplarCity': 'วินนิเพก'
+                            'exemplarCity': '\u0E27\u0E34\u0E19\u0E19\u0E34\u0E40\u0E1E\u0E01'
                         },
                         'Whitehorse': {
-                            'exemplarCity': 'ไวต์ฮอร์ส'
+                            'exemplarCity': '\u0E44\u0E27\u0E15\u0E4C\u0E2E\u0E2D\u0E23\u0E4C\u0E2A'
                         },
                         'Vancouver': {
-                            'exemplarCity': 'แวนคูเวอร์'
+                            'exemplarCity': '\u0E41\u0E27\u0E19\u0E04\u0E39\u0E40\u0E27\u0E2D\u0E23\u0E4C'
                         },
                         'Tortola': {
-                            'exemplarCity': 'ตอร์โตลา'
+                            'exemplarCity': '\u0E15\u0E2D\u0E23\u0E4C\u0E42\u0E15\u0E25\u0E32'
                         },
                         'Kralendijk': {
-                            'exemplarCity': 'คราเลนดิจค์'
+                            'exemplarCity': '\u0E04\u0E23\u0E32\u0E40\u0E25\u0E19\u0E14\u0E34\u0E08\u0E04\u0E4C'
                         },
                         'Kentucky': {
                             'Monticello': {
-                                'exemplarCity': 'มอนติเซลโล, เคนตักกี'
+                                'exemplarCity': '\u0E21\u0E2D\u0E19\u0E15\u0E34\u0E40\u0E0B\u0E25\u0E42\u0E25, \u0E40\u0E04\u0E19\u0E15\u0E31\u0E01\u0E01\u0E35'
                             }
                         },
                         'Havana': {
-                            'exemplarCity': 'ฮาวานา'
+                            'exemplarCity': '\u0E2E\u0E32\u0E27\u0E32\u0E19\u0E32'
                         },
                         'Halifax': {
-                            'exemplarCity': 'แฮลิแฟกซ์'
+                            'exemplarCity': '\u0E41\u0E2E\u0E25\u0E34\u0E41\u0E1F\u0E01\u0E0B\u0E4C'
                         },
                         'Guyana': {
-                            'exemplarCity': 'กายอานา'
+                            'exemplarCity': '\u0E01\u0E32\u0E22\u0E2D\u0E32\u0E19\u0E32'
                         },
                         'Guayaquil': {
-                            'exemplarCity': 'กัวยากิล'
+                            'exemplarCity': '\u0E01\u0E31\u0E27\u0E22\u0E32\u0E01\u0E34\u0E25'
                         },
                         'Guatemala': {
-                            'exemplarCity': 'กัวเตมาลา'
+                            'exemplarCity': '\u0E01\u0E31\u0E27\u0E40\u0E15\u0E21\u0E32\u0E25\u0E32'
                         },
                         'Guadeloupe': {
-                            'exemplarCity': 'กวาเดอลูป'
+                            'exemplarCity': '\u0E01\u0E27\u0E32\u0E40\u0E14\u0E2D\u0E25\u0E39\u0E1B'
                         },
                         'Grenada': {
-                            'exemplarCity': 'เกรนาดา'
+                            'exemplarCity': '\u0E40\u0E01\u0E23\u0E19\u0E32\u0E14\u0E32'
                         },
                         'Grand_Turk': {
-                            'exemplarCity': 'แกรนด์เติร์ก'
+                            'exemplarCity': '\u0E41\u0E01\u0E23\u0E19\u0E14\u0E4C\u0E40\u0E15\u0E34\u0E23\u0E4C\u0E01'
                         },
                         'Goose_Bay': {
-                            'exemplarCity': 'กูสเบย์'
+                            'exemplarCity': '\u0E01\u0E39\u0E2A\u0E40\u0E1A\u0E22\u0E4C'
                         },
                         'Godthab': {
-                            'exemplarCity': 'กอดแธบ'
+                            'exemplarCity': '\u0E01\u0E2D\u0E14\u0E41\u0E18\u0E1A'
                         },
                         'Glace_Bay': {
-                            'exemplarCity': 'แกลซเบย์'
+                            'exemplarCity': '\u0E41\u0E01\u0E25\u0E0B\u0E40\u0E1A\u0E22\u0E4C'
                         },
                         'Fortaleza': {
-                            'exemplarCity': 'ฟอร์ตาเลซา'
+                            'exemplarCity': '\u0E1F\u0E2D\u0E23\u0E4C\u0E15\u0E32\u0E40\u0E25\u0E0B\u0E32'
                         },
                         'El_Salvador': {
-                            'exemplarCity': 'เอลซัลวาดอร์'
+                            'exemplarCity': '\u0E40\u0E2D\u0E25\u0E0B\u0E31\u0E25\u0E27\u0E32\u0E14\u0E2D\u0E23\u0E4C'
                         },
                         'Eirunepe': {
-                            'exemplarCity': 'เอรูเนเป'
+                            'exemplarCity': '\u0E40\u0E2D\u0E23\u0E39\u0E40\u0E19\u0E40\u0E1B'
                         },
                         'Edmonton': {
-                            'exemplarCity': 'เอดมันตัน'
+                            'exemplarCity': '\u0E40\u0E2D\u0E14\u0E21\u0E31\u0E19\u0E15\u0E31\u0E19'
                         },
                         'Dominica': {
-                            'exemplarCity': 'โดมินิกา'
+                            'exemplarCity': '\u0E42\u0E14\u0E21\u0E34\u0E19\u0E34\u0E01\u0E32'
                         },
                         'Chihuahua': {
-                            'exemplarCity': 'ชีวาวา'
+                            'exemplarCity': '\u0E0A\u0E35\u0E27\u0E32\u0E27\u0E32'
                         },
                         'Coral_Harbour': {
-                            'exemplarCity': 'คอรัลฮาร์เบอร์'
+                            'exemplarCity': '\u0E04\u0E2D\u0E23\u0E31\u0E25\u0E2E\u0E32\u0E23\u0E4C\u0E40\u0E1A\u0E2D\u0E23\u0E4C'
                         },
                         'Cordoba': {
-                            'exemplarCity': 'คอร์โดบา'
+                            'exemplarCity': '\u0E04\u0E2D\u0E23\u0E4C\u0E42\u0E14\u0E1A\u0E32'
                         },
                         'Costa_Rica': {
-                            'exemplarCity': 'คอสตาริกา'
+                            'exemplarCity': '\u0E04\u0E2D\u0E2A\u0E15\u0E32\u0E23\u0E34\u0E01\u0E32'
                         },
                         'Creston': {
-                            'exemplarCity': 'เครสตัน'
+                            'exemplarCity': '\u0E40\u0E04\u0E23\u0E2A\u0E15\u0E31\u0E19'
                         },
                         'Cuiaba': {
-                            'exemplarCity': 'กุยาบา'
+                            'exemplarCity': '\u0E01\u0E38\u0E22\u0E32\u0E1A\u0E32'
                         },
                         'La_Paz': {
-                            'exemplarCity': 'ลาปาซ'
+                            'exemplarCity': '\u0E25\u0E32\u0E1B\u0E32\u0E0B'
                         },
                         'Lima': {
-                            'exemplarCity': 'ลิมา'
+                            'exemplarCity': '\u0E25\u0E34\u0E21\u0E32'
                         },
                         'Los_Angeles': {
-                            'exemplarCity': 'ลอสแองเจลิส'
+                            'exemplarCity': '\u0E25\u0E2D\u0E2A\u0E41\u0E2D\u0E07\u0E40\u0E08\u0E25\u0E34\u0E2A'
                         },
                         'Louisville': {
-                            'exemplarCity': 'ลูส์วิลล์'
+                            'exemplarCity': '\u0E25\u0E39\u0E2A\u0E4C\u0E27\u0E34\u0E25\u0E25\u0E4C'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': 'โลเวอร์พรินซ์ ควอเตอร์'
+                            'exemplarCity': '\u0E42\u0E25\u0E40\u0E27\u0E2D\u0E23\u0E4C\u0E1E\u0E23\u0E34\u0E19\u0E0B\u0E4C \u0E04\u0E27\u0E2D\u0E40\u0E15\u0E2D\u0E23\u0E4C'
                         },
                         'Maceio': {
-                            'exemplarCity': 'มาเซโอ'
+                            'exemplarCity': '\u0E21\u0E32\u0E40\u0E0B\u0E42\u0E2D'
                         },
                         'Managua': {
-                            'exemplarCity': 'มานากัว'
+                            'exemplarCity': '\u0E21\u0E32\u0E19\u0E32\u0E01\u0E31\u0E27'
                         },
                         'Manaus': {
-                            'exemplarCity': 'มาเนาส์'
+                            'exemplarCity': '\u0E21\u0E32\u0E40\u0E19\u0E32\u0E2A\u0E4C'
                         },
                         'Marigot': {
-                            'exemplarCity': 'มาริโกต์'
+                            'exemplarCity': '\u0E21\u0E32\u0E23\u0E34\u0E42\u0E01\u0E15\u0E4C'
                         },
                         'Martinique': {
-                            'exemplarCity': 'มาร์ตินีก'
+                            'exemplarCity': '\u0E21\u0E32\u0E23\u0E4C\u0E15\u0E34\u0E19\u0E35\u0E01'
                         },
                         'Matamoros': {
-                            'exemplarCity': 'มาตาโมรอส'
+                            'exemplarCity': '\u0E21\u0E32\u0E15\u0E32\u0E42\u0E21\u0E23\u0E2D\u0E2A'
                         },
                         'Mazatlan': {
-                            'exemplarCity': 'มาซาทลาน'
+                            'exemplarCity': '\u0E21\u0E32\u0E0B\u0E32\u0E17\u0E25\u0E32\u0E19'
                         },
                         'Mendoza': {
-                            'exemplarCity': 'เมนดูซา'
+                            'exemplarCity': '\u0E40\u0E21\u0E19\u0E14\u0E39\u0E0B\u0E32'
                         },
                         'Menominee': {
-                            'exemplarCity': 'เมโนมินี'
+                            'exemplarCity': '\u0E40\u0E21\u0E42\u0E19\u0E21\u0E34\u0E19\u0E35'
                         },
                         'Merida': {
-                            'exemplarCity': 'เมรีดา'
+                            'exemplarCity': '\u0E40\u0E21\u0E23\u0E35\u0E14\u0E32'
                         },
                         'Metlakatla': {
-                            'exemplarCity': 'เมทลากาตละ'
+                            'exemplarCity': '\u0E40\u0E21\u0E17\u0E25\u0E32\u0E01\u0E32\u0E15\u0E25\u0E30'
                         },
                         'Mexico_City': {
-                            'exemplarCity': 'เม็กซิโกซิตี'
+                            'exemplarCity': '\u0E40\u0E21\u0E47\u0E01\u0E0B\u0E34\u0E42\u0E01\u0E0B\u0E34\u0E15\u0E35'
                         },
                         'Miquelon': {
-                            'exemplarCity': 'มีเกอลง'
+                            'exemplarCity': '\u0E21\u0E35\u0E40\u0E01\u0E2D\u0E25\u0E07'
                         },
                         'Moncton': {
-                            'exemplarCity': 'มองตัน'
+                            'exemplarCity': '\u0E21\u0E2D\u0E07\u0E15\u0E31\u0E19'
                         },
                         'Monterrey': {
-                            'exemplarCity': 'มอนเตร์เรย์'
+                            'exemplarCity': '\u0E21\u0E2D\u0E19\u0E40\u0E15\u0E23\u0E4C\u0E40\u0E23\u0E22\u0E4C'
                         },
                         'Montevideo': {
-                            'exemplarCity': 'มอนเตวิเดโอ'
+                            'exemplarCity': '\u0E21\u0E2D\u0E19\u0E40\u0E15\u0E27\u0E34\u0E40\u0E14\u0E42\u0E2D'
                         },
                         'Montreal': {
-                            'exemplarCity': 'มอนทรีอัล'
+                            'exemplarCity': '\u0E21\u0E2D\u0E19\u0E17\u0E23\u0E35\u0E2D\u0E31\u0E25'
                         },
                         'Montserrat': {
-                            'exemplarCity': 'มอนเซอร์รัต'
+                            'exemplarCity': '\u0E21\u0E2D\u0E19\u0E40\u0E0B\u0E2D\u0E23\u0E4C\u0E23\u0E31\u0E15'
                         },
                         'Nassau': {
-                            'exemplarCity': 'แนสซอ'
+                            'exemplarCity': '\u0E41\u0E19\u0E2A\u0E0B\u0E2D'
                         },
                         'New_York': {
-                            'exemplarCity': 'นิวยอร์ก'
+                            'exemplarCity': '\u0E19\u0E34\u0E27\u0E22\u0E2D\u0E23\u0E4C\u0E01'
                         },
                         'Nipigon': {
-                            'exemplarCity': 'นิปิกอน'
+                            'exemplarCity': '\u0E19\u0E34\u0E1B\u0E34\u0E01\u0E2D\u0E19'
                         },
                         'Nome': {
-                            'exemplarCity': 'นอม'
+                            'exemplarCity': '\u0E19\u0E2D\u0E21'
                         },
                         'Noronha': {
-                            'exemplarCity': 'โนรอนฮา'
+                            'exemplarCity': '\u0E42\u0E19\u0E23\u0E2D\u0E19\u0E2E\u0E32'
                         },
                         'North_Dakota': {
                             'Beulah': {
-                                'exemplarCity': 'โบลาห์, นอร์ทดาโคตา'
+                                'exemplarCity': '\u0E42\u0E1A\u0E25\u0E32\u0E2B\u0E4C, \u0E19\u0E2D\u0E23\u0E4C\u0E17\u0E14\u0E32\u0E42\u0E04\u0E15\u0E32'
                             },
                             'New_Salem': {
-                                'exemplarCity': 'นิวเซเลม, นอร์ทดาโคตา'
+                                'exemplarCity': '\u0E19\u0E34\u0E27\u0E40\u0E0B\u0E40\u0E25\u0E21, \u0E19\u0E2D\u0E23\u0E4C\u0E17\u0E14\u0E32\u0E42\u0E04\u0E15\u0E32'
                             },
                             'Center': {
-                                'exemplarCity': 'เซนเตอร์, นอร์ทดาโคตา'
+                                'exemplarCity': '\u0E40\u0E0B\u0E19\u0E40\u0E15\u0E2D\u0E23\u0E4C, \u0E19\u0E2D\u0E23\u0E4C\u0E17\u0E14\u0E32\u0E42\u0E04\u0E15\u0E32'
                             }
                         },
                         'Ojinaga': {
-                            'exemplarCity': 'โอจินากา'
+                            'exemplarCity': '\u0E42\u0E2D\u0E08\u0E34\u0E19\u0E32\u0E01\u0E32'
                         },
                         'Panama': {
-                            'exemplarCity': 'ปานามา'
+                            'exemplarCity': '\u0E1B\u0E32\u0E19\u0E32\u0E21\u0E32'
                         },
                         'Pangnirtung': {
-                            'exemplarCity': 'พางนีทัง'
+                            'exemplarCity': '\u0E1E\u0E32\u0E07\u0E19\u0E35\u0E17\u0E31\u0E07'
                         },
                         'Paramaribo': {
-                            'exemplarCity': 'ปารามาริโบ'
+                            'exemplarCity': '\u0E1B\u0E32\u0E23\u0E32\u0E21\u0E32\u0E23\u0E34\u0E42\u0E1A'
                         },
                         'Phoenix': {
-                            'exemplarCity': 'ฟินิกซ์'
+                            'exemplarCity': '\u0E1F\u0E34\u0E19\u0E34\u0E01\u0E0B\u0E4C'
                         },
                         'Port-au-Prince': {
-                            'exemplarCity': 'ปอร์โตแปรงซ์'
+                            'exemplarCity': '\u0E1B\u0E2D\u0E23\u0E4C\u0E42\u0E15\u0E41\u0E1B\u0E23\u0E07\u0E0B\u0E4C'
                         },
                         'Port_of_Spain': {
-                            'exemplarCity': 'พอร์ทออฟสเปน'
+                            'exemplarCity': '\u0E1E\u0E2D\u0E23\u0E4C\u0E17\u0E2D\u0E2D\u0E1F\u0E2A\u0E40\u0E1B\u0E19'
                         },
                         'Porto_Velho': {
-                            'exemplarCity': 'ปอร์ตูเวลโย'
+                            'exemplarCity': '\u0E1B\u0E2D\u0E23\u0E4C\u0E15\u0E39\u0E40\u0E27\u0E25\u0E42\u0E22'
                         },
                         'Puerto_Rico': {
-                            'exemplarCity': 'เปอโตริโก'
+                            'exemplarCity': '\u0E40\u0E1B\u0E2D\u0E42\u0E15\u0E23\u0E34\u0E42\u0E01'
                         },
                         'Rainy_River': {
-                            'exemplarCity': 'เรนนี่ริเวอร์'
+                            'exemplarCity': '\u0E40\u0E23\u0E19\u0E19\u0E35\u0E48\u0E23\u0E34\u0E40\u0E27\u0E2D\u0E23\u0E4C'
                         },
                         'Rankin_Inlet': {
-                            'exemplarCity': 'แรงกินอินเล็ต'
+                            'exemplarCity': '\u0E41\u0E23\u0E07\u0E01\u0E34\u0E19\u0E2D\u0E34\u0E19\u0E40\u0E25\u0E47\u0E15'
                         },
                         'Recife': {
-                            'exemplarCity': 'เรซีเฟ'
+                            'exemplarCity': '\u0E40\u0E23\u0E0B\u0E35\u0E40\u0E1F'
                         },
                         'Regina': {
-                            'exemplarCity': 'ริไจนา'
+                            'exemplarCity': '\u0E23\u0E34\u0E44\u0E08\u0E19\u0E32'
                         },
                         'Resolute': {
-                            'exemplarCity': 'เรโซลูท'
+                            'exemplarCity': '\u0E40\u0E23\u0E42\u0E0B\u0E25\u0E39\u0E17'
                         },
                         'Rio_Branco': {
-                            'exemplarCity': 'รีโอบรังโก'
+                            'exemplarCity': '\u0E23\u0E35\u0E42\u0E2D\u0E1A\u0E23\u0E31\u0E07\u0E42\u0E01'
                         },
                         'Santa_Isabel': {
-                            'exemplarCity': 'ซานตาอิซาเบล'
+                            'exemplarCity': '\u0E0B\u0E32\u0E19\u0E15\u0E32\u0E2D\u0E34\u0E0B\u0E32\u0E40\u0E1A\u0E25'
                         },
                         'Santarem': {
-                            'exemplarCity': 'ซันตาเรม'
+                            'exemplarCity': '\u0E0B\u0E31\u0E19\u0E15\u0E32\u0E40\u0E23\u0E21'
                         },
                         'Santiago': {
-                            'exemplarCity': 'ซันติอาโก'
+                            'exemplarCity': '\u0E0B\u0E31\u0E19\u0E15\u0E34\u0E2D\u0E32\u0E42\u0E01'
                         },
                         'Santo_Domingo': {
-                            'exemplarCity': 'ซานโต โดมิงโก'
+                            'exemplarCity': '\u0E0B\u0E32\u0E19\u0E42\u0E15 \u0E42\u0E14\u0E21\u0E34\u0E07\u0E42\u0E01'
                         },
                         'Sao_Paulo': {
-                            'exemplarCity': 'เซาเปาลู'
+                            'exemplarCity': '\u0E40\u0E0B\u0E32\u0E40\u0E1B\u0E32\u0E25\u0E39'
                         },
                         'Scoresbysund': {
-                            'exemplarCity': 'สกอเรสไบซันด์'
+                            'exemplarCity': '\u0E2A\u0E01\u0E2D\u0E40\u0E23\u0E2A\u0E44\u0E1A\u0E0B\u0E31\u0E19\u0E14\u0E4C'
                         },
                         'Shiprock': {
-                            'exemplarCity': 'ชิปร็อก'
+                            'exemplarCity': '\u0E0A\u0E34\u0E1B\u0E23\u0E47\u0E2D\u0E01'
                         },
                         'Sitka': {
-                            'exemplarCity': 'ซิตกา'
+                            'exemplarCity': '\u0E0B\u0E34\u0E15\u0E01\u0E32'
                         },
                         'St_Barthelemy': {
-                            'exemplarCity': 'เซนต์บาร์เธเลมี'
+                            'exemplarCity': '\u0E40\u0E0B\u0E19\u0E15\u0E4C\u0E1A\u0E32\u0E23\u0E4C\u0E40\u0E18\u0E40\u0E25\u0E21\u0E35'
                         },
                         'St_Johns': {
-                            'exemplarCity': 'เซนต์จอนส์'
+                            'exemplarCity': '\u0E40\u0E0B\u0E19\u0E15\u0E4C\u0E08\u0E2D\u0E19\u0E2A\u0E4C'
                         },
                         'St_Kitts': {
-                            'exemplarCity': 'เซนต์คิตส์'
+                            'exemplarCity': '\u0E40\u0E0B\u0E19\u0E15\u0E4C\u0E04\u0E34\u0E15\u0E2A\u0E4C'
                         },
                         'St_Lucia': {
-                            'exemplarCity': 'เซนต์ลูเซีย'
+                            'exemplarCity': '\u0E40\u0E0B\u0E19\u0E15\u0E4C\u0E25\u0E39\u0E40\u0E0B\u0E35\u0E22'
                         },
                         'St_Thomas': {
-                            'exemplarCity': 'เซนต์โธมัส'
+                            'exemplarCity': '\u0E40\u0E0B\u0E19\u0E15\u0E4C\u0E42\u0E18\u0E21\u0E31\u0E2A'
                         },
                         'St_Vincent': {
-                            'exemplarCity': 'เซนต์วินเซนต์'
+                            'exemplarCity': '\u0E40\u0E0B\u0E19\u0E15\u0E4C\u0E27\u0E34\u0E19\u0E40\u0E0B\u0E19\u0E15\u0E4C'
                         }
                     },
                     'Atlantic': {
                         'South_Georgia': {
-                            'exemplarCity': 'เซาท์ จอร์เจีย'
+                            'exemplarCity': '\u0E40\u0E0B\u0E32\u0E17\u0E4C \u0E08\u0E2D\u0E23\u0E4C\u0E40\u0E08\u0E35\u0E22'
                         },
                         'Reykjavik': {
-                            'exemplarCity': 'เรคยาวิก'
+                            'exemplarCity': '\u0E40\u0E23\u0E04\u0E22\u0E32\u0E27\u0E34\u0E01'
                         },
                         'Stanley': {
-                            'exemplarCity': 'สแตนลีย์'
+                            'exemplarCity': '\u0E2A\u0E41\u0E15\u0E19\u0E25\u0E35\u0E22\u0E4C'
                         },
                         'St_Helena': {
-                            'exemplarCity': 'เซนต์เฮเลนา'
+                            'exemplarCity': '\u0E40\u0E0B\u0E19\u0E15\u0E4C\u0E40\u0E2E\u0E40\u0E25\u0E19\u0E32'
                         },
                         'Azores': {
-                            'exemplarCity': 'อาซอเรส'
+                            'exemplarCity': '\u0E2D\u0E32\u0E0B\u0E2D\u0E40\u0E23\u0E2A'
                         },
                         'Bermuda': {
-                            'exemplarCity': 'เบอร์มิวดา'
+                            'exemplarCity': '\u0E40\u0E1A\u0E2D\u0E23\u0E4C\u0E21\u0E34\u0E27\u0E14\u0E32'
                         },
                         'Canary': {
-                            'exemplarCity': 'คะเนรี'
+                            'exemplarCity': '\u0E04\u0E30\u0E40\u0E19\u0E23\u0E35'
                         },
                         'Cape_Verde': {
-                            'exemplarCity': 'เคปเวิร์ด'
+                            'exemplarCity': '\u0E40\u0E04\u0E1B\u0E40\u0E27\u0E34\u0E23\u0E4C\u0E14'
                         },
                         'Faeroe': {
-                            'exemplarCity': 'แฟโร'
+                            'exemplarCity': '\u0E41\u0E1F\u0E42\u0E23'
                         },
                         'Madeira': {
-                            'exemplarCity': 'มาเดรา'
+                            'exemplarCity': '\u0E21\u0E32\u0E40\u0E14\u0E23\u0E32'
                         }
                     },
                     'Europe': {
                         'Oslo': {
-                            'exemplarCity': 'ออสโล'
+                            'exemplarCity': '\u0E2D\u0E2D\u0E2A\u0E42\u0E25'
                         },
                         'Moscow': {
-                            'exemplarCity': 'มอสโก'
+                            'exemplarCity': '\u0E21\u0E2D\u0E2A\u0E42\u0E01'
                         },
                         'Monaco': {
-                            'exemplarCity': 'โมนาโก'
+                            'exemplarCity': '\u0E42\u0E21\u0E19\u0E32\u0E42\u0E01'
                         },
                         'Minsk': {
-                            'exemplarCity': 'มินสก์'
+                            'exemplarCity': '\u0E21\u0E34\u0E19\u0E2A\u0E01\u0E4C'
                         },
                         'Mariehamn': {
-                            'exemplarCity': 'มารีฮามน์'
+                            'exemplarCity': '\u0E21\u0E32\u0E23\u0E35\u0E2E\u0E32\u0E21\u0E19\u0E4C'
                         },
                         'Malta': {
-                            'exemplarCity': 'มอลตา'
+                            'exemplarCity': '\u0E21\u0E2D\u0E25\u0E15\u0E32'
                         },
                         'Madrid': {
-                            'exemplarCity': 'มาดริด'
+                            'exemplarCity': '\u0E21\u0E32\u0E14\u0E23\u0E34\u0E14'
                         },
                         'Luxembourg': {
-                            'exemplarCity': 'ลักเซมเบิร์ก'
+                            'exemplarCity': '\u0E25\u0E31\u0E01\u0E40\u0E0B\u0E21\u0E40\u0E1A\u0E34\u0E23\u0E4C\u0E01'
                         },
                         'London': {
                             'long': {
-                                'daylight': 'เวลาฤดูร้อนอังกฤษ'
+                                'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E2D\u0E31\u0E07\u0E01\u0E24\u0E29'
                             },
-                            'exemplarCity': 'ลอนดอน'
+                            'exemplarCity': '\u0E25\u0E2D\u0E19\u0E14\u0E2D\u0E19'
                         },
                         'Ljubljana': {
-                            'exemplarCity': 'ลูบลิยานา'
+                            'exemplarCity': '\u0E25\u0E39\u0E1A\u0E25\u0E34\u0E22\u0E32\u0E19\u0E32'
                         },
                         'Lisbon': {
-                            'exemplarCity': 'ลิสบอน'
+                            'exemplarCity': '\u0E25\u0E34\u0E2A\u0E1A\u0E2D\u0E19'
                         },
                         'Kiev': {
-                            'exemplarCity': 'เคียฟ'
+                            'exemplarCity': '\u0E40\u0E04\u0E35\u0E22\u0E1F'
                         },
                         'Kaliningrad': {
-                            'exemplarCity': 'คาลินิงกราด'
+                            'exemplarCity': '\u0E04\u0E32\u0E25\u0E34\u0E19\u0E34\u0E07\u0E01\u0E23\u0E32\u0E14'
                         },
                         'Jersey': {
-                            'exemplarCity': 'เจอร์ซีย์'
+                            'exemplarCity': '\u0E40\u0E08\u0E2D\u0E23\u0E4C\u0E0B\u0E35\u0E22\u0E4C'
                         },
                         'Istanbul': {
-                            'exemplarCity': 'อิสตันบูล'
+                            'exemplarCity': '\u0E2D\u0E34\u0E2A\u0E15\u0E31\u0E19\u0E1A\u0E39\u0E25'
                         },
                         'Isle_of_Man': {
-                            'exemplarCity': 'เกาะแมน'
+                            'exemplarCity': '\u0E40\u0E01\u0E32\u0E30\u0E41\u0E21\u0E19'
                         },
                         'Bucharest': {
-                            'exemplarCity': 'บูคาเรส'
+                            'exemplarCity': '\u0E1A\u0E39\u0E04\u0E32\u0E40\u0E23\u0E2A'
                         },
                         'Brussels': {
-                            'exemplarCity': 'บรัสเซลส์'
+                            'exemplarCity': '\u0E1A\u0E23\u0E31\u0E2A\u0E40\u0E0B\u0E25\u0E2A\u0E4C'
                         },
                         'Bratislava': {
-                            'exemplarCity': 'บราติสลาวา'
+                            'exemplarCity': '\u0E1A\u0E23\u0E32\u0E15\u0E34\u0E2A\u0E25\u0E32\u0E27\u0E32'
                         },
                         'Berlin': {
-                            'exemplarCity': 'เบอร์ลิน'
+                            'exemplarCity': '\u0E40\u0E1A\u0E2D\u0E23\u0E4C\u0E25\u0E34\u0E19'
                         },
                         'Belgrade': {
-                            'exemplarCity': 'เบลเกรด'
+                            'exemplarCity': '\u0E40\u0E1A\u0E25\u0E40\u0E01\u0E23\u0E14'
                         },
                         'Athens': {
-                            'exemplarCity': 'เอเธนส์'
+                            'exemplarCity': '\u0E40\u0E2D\u0E40\u0E18\u0E19\u0E2A\u0E4C'
                         },
                         'Andorra': {
-                            'exemplarCity': 'อันดอร์รา'
+                            'exemplarCity': '\u0E2D\u0E31\u0E19\u0E14\u0E2D\u0E23\u0E4C\u0E23\u0E32'
                         },
                         'Amsterdam': {
-                            'exemplarCity': 'อัมสเตอดัม'
+                            'exemplarCity': '\u0E2D\u0E31\u0E21\u0E2A\u0E40\u0E15\u0E2D\u0E14\u0E31\u0E21'
                         },
                         'Simferopol': {
-                            'exemplarCity': 'ซิมเฟอโรโปล'
+                            'exemplarCity': '\u0E0B\u0E34\u0E21\u0E40\u0E1F\u0E2D\u0E42\u0E23\u0E42\u0E1B\u0E25'
                         },
                         'Skopje': {
-                            'exemplarCity': 'สโกเปีย'
+                            'exemplarCity': '\u0E2A\u0E42\u0E01\u0E40\u0E1B\u0E35\u0E22'
                         },
                         'Sofia': {
-                            'exemplarCity': 'โซเฟีย'
+                            'exemplarCity': '\u0E42\u0E0B\u0E40\u0E1F\u0E35\u0E22'
                         },
                         'Stockholm': {
-                            'exemplarCity': 'สตอกโฮล์ม'
+                            'exemplarCity': '\u0E2A\u0E15\u0E2D\u0E01\u0E42\u0E2E\u0E25\u0E4C\u0E21'
                         },
                         'Tallinn': {
-                            'exemplarCity': 'ทาลลินน์'
+                            'exemplarCity': '\u0E17\u0E32\u0E25\u0E25\u0E34\u0E19\u0E19\u0E4C'
                         },
                         'Tirane': {
-                            'exemplarCity': 'ติรานา'
+                            'exemplarCity': '\u0E15\u0E34\u0E23\u0E32\u0E19\u0E32'
                         },
                         'Uzhgorod': {
-                            'exemplarCity': 'อัซโกร็อด'
+                            'exemplarCity': '\u0E2D\u0E31\u0E0B\u0E42\u0E01\u0E23\u0E47\u0E2D\u0E14'
                         },
                         'Vaduz': {
-                            'exemplarCity': 'วาดุซ'
+                            'exemplarCity': '\u0E27\u0E32\u0E14\u0E38\u0E0B'
                         },
                         'Zurich': {
-                            'exemplarCity': 'ซูริค'
+                            'exemplarCity': '\u0E0B\u0E39\u0E23\u0E34\u0E04'
                         },
                         'Zaporozhye': {
-                            'exemplarCity': 'ซาโปโรซี'
+                            'exemplarCity': '\u0E0B\u0E32\u0E42\u0E1B\u0E42\u0E23\u0E0B\u0E35'
                         },
                         'Zagreb': {
-                            'exemplarCity': 'ซาเกร็บ'
+                            'exemplarCity': '\u0E0B\u0E32\u0E40\u0E01\u0E23\u0E47\u0E1A'
                         },
                         'Warsaw': {
-                            'exemplarCity': 'วอร์ซอ'
+                            'exemplarCity': '\u0E27\u0E2D\u0E23\u0E4C\u0E0B\u0E2D'
                         },
                         'Volgograd': {
-                            'exemplarCity': 'วอลโกกราด'
+                            'exemplarCity': '\u0E27\u0E2D\u0E25\u0E42\u0E01\u0E01\u0E23\u0E32\u0E14'
                         },
                         'Vilnius': {
-                            'exemplarCity': 'วิลนีอุส'
+                            'exemplarCity': '\u0E27\u0E34\u0E25\u0E19\u0E35\u0E2D\u0E38\u0E2A'
                         },
                         'Vienna': {
-                            'exemplarCity': 'เวียนนา'
+                            'exemplarCity': '\u0E40\u0E27\u0E35\u0E22\u0E19\u0E19\u0E32'
                         },
                         'Vatican': {
-                            'exemplarCity': 'วาติกัน'
+                            'exemplarCity': '\u0E27\u0E32\u0E15\u0E34\u0E01\u0E31\u0E19'
                         },
                         'Sarajevo': {
-                            'exemplarCity': 'ซาราเยโว'
+                            'exemplarCity': '\u0E0B\u0E32\u0E23\u0E32\u0E40\u0E22\u0E42\u0E27'
                         },
                         'San_Marino': {
-                            'exemplarCity': 'ซานมารีโน'
+                            'exemplarCity': '\u0E0B\u0E32\u0E19\u0E21\u0E32\u0E23\u0E35\u0E42\u0E19'
                         },
                         'Samara': {
-                            'exemplarCity': 'ซามารา'
+                            'exemplarCity': '\u0E0B\u0E32\u0E21\u0E32\u0E23\u0E32'
                         },
                         'Rome': {
-                            'exemplarCity': 'โรม'
+                            'exemplarCity': '\u0E42\u0E23\u0E21'
                         },
                         'Riga': {
-                            'exemplarCity': 'ริกา'
+                            'exemplarCity': '\u0E23\u0E34\u0E01\u0E32'
                         },
                         'Prague': {
-                            'exemplarCity': 'ปราก'
+                            'exemplarCity': '\u0E1B\u0E23\u0E32\u0E01'
                         },
                         'Podgorica': {
-                            'exemplarCity': 'พอดกอรีตซา'
+                            'exemplarCity': '\u0E1E\u0E2D\u0E14\u0E01\u0E2D\u0E23\u0E35\u0E15\u0E0B\u0E32'
                         },
                         'Paris': {
-                            'exemplarCity': 'ปารีส'
+                            'exemplarCity': '\u0E1B\u0E32\u0E23\u0E35\u0E2A'
                         },
                         'Helsinki': {
-                            'exemplarCity': 'เฮลซิงกิ'
+                            'exemplarCity': '\u0E40\u0E2E\u0E25\u0E0B\u0E34\u0E07\u0E01\u0E34'
                         },
                         'Guernsey': {
-                            'exemplarCity': 'เกิร์นซีย์'
+                            'exemplarCity': '\u0E40\u0E01\u0E34\u0E23\u0E4C\u0E19\u0E0B\u0E35\u0E22\u0E4C'
                         },
                         'Gibraltar': {
-                            'exemplarCity': 'ยิบรอลตาร์'
+                            'exemplarCity': '\u0E22\u0E34\u0E1A\u0E23\u0E2D\u0E25\u0E15\u0E32\u0E23\u0E4C'
                         },
                         'Dublin': {
                             'long': {
-                                'daylight': 'เวลาฤดูร้อนไอร์แลนด์'
+                                'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E44\u0E2D\u0E23\u0E4C\u0E41\u0E25\u0E19\u0E14\u0E4C'
                             },
-                            'exemplarCity': 'ดับบลิน'
+                            'exemplarCity': '\u0E14\u0E31\u0E1A\u0E1A\u0E25\u0E34\u0E19'
                         },
                         'Copenhagen': {
-                            'exemplarCity': 'โคเปนเฮเกน'
+                            'exemplarCity': '\u0E42\u0E04\u0E40\u0E1B\u0E19\u0E40\u0E2E\u0E40\u0E01\u0E19'
                         },
                         'Chisinau': {
-                            'exemplarCity': 'คีชีเนา'
+                            'exemplarCity': '\u0E04\u0E35\u0E0A\u0E35\u0E40\u0E19\u0E32'
                         },
                         'Busingen': {
-                            'exemplarCity': 'บุสซิงเง็น'
+                            'exemplarCity': '\u0E1A\u0E38\u0E2A\u0E0B\u0E34\u0E07\u0E40\u0E07\u0E47\u0E19'
                         },
                         'Budapest': {
-                            'exemplarCity': 'บูดาเปส'
+                            'exemplarCity': '\u0E1A\u0E39\u0E14\u0E32\u0E40\u0E1B\u0E2A'
                         }
                     },
                     'Africa': {
                         'Libreville': {
-                            'exemplarCity': 'ลีเบรอวิล'
+                            'exemplarCity': '\u0E25\u0E35\u0E40\u0E1A\u0E23\u0E2D\u0E27\u0E34\u0E25'
                         },
                         'Lagos': {
-                            'exemplarCity': 'ลากอส'
+                            'exemplarCity': '\u0E25\u0E32\u0E01\u0E2D\u0E2A'
                         },
                         'Kinshasa': {
-                            'exemplarCity': 'กินชาซา'
+                            'exemplarCity': '\u0E01\u0E34\u0E19\u0E0A\u0E32\u0E0B\u0E32'
                         },
                         'Kigali': {
-                            'exemplarCity': 'คิกาลี'
+                            'exemplarCity': '\u0E04\u0E34\u0E01\u0E32\u0E25\u0E35'
                         },
                         'Khartoum': {
-                            'exemplarCity': 'คาร์ทูม'
+                            'exemplarCity': '\u0E04\u0E32\u0E23\u0E4C\u0E17\u0E39\u0E21'
                         },
                         'Kampala': {
-                            'exemplarCity': 'คัมพาลา'
+                            'exemplarCity': '\u0E04\u0E31\u0E21\u0E1E\u0E32\u0E25\u0E32'
                         },
                         'Juba': {
-                            'exemplarCity': 'จูบา'
+                            'exemplarCity': '\u0E08\u0E39\u0E1A\u0E32'
                         },
                         'Johannesburg': {
-                            'exemplarCity': 'โจฮันเนสเบอร์ก'
+                            'exemplarCity': '\u0E42\u0E08\u0E2E\u0E31\u0E19\u0E40\u0E19\u0E2A\u0E40\u0E1A\u0E2D\u0E23\u0E4C\u0E01'
                         },
                         'Harare': {
-                            'exemplarCity': 'ฮาราเร'
+                            'exemplarCity': '\u0E2E\u0E32\u0E23\u0E32\u0E40\u0E23'
                         },
                         'Gaborone': {
-                            'exemplarCity': 'กาโบโรเน'
+                            'exemplarCity': '\u0E01\u0E32\u0E42\u0E1A\u0E42\u0E23\u0E40\u0E19'
                         },
                         'Freetown': {
-                            'exemplarCity': 'ฟรีทาวน์'
+                            'exemplarCity': '\u0E1F\u0E23\u0E35\u0E17\u0E32\u0E27\u0E19\u0E4C'
                         },
                         'El_Aaiun': {
-                            'exemplarCity': 'เอลไอย์อุง'
+                            'exemplarCity': '\u0E40\u0E2D\u0E25\u0E44\u0E2D\u0E22\u0E4C\u0E2D\u0E38\u0E07'
                         },
                         'Douala': {
-                            'exemplarCity': 'ดูอาลา'
+                            'exemplarCity': '\u0E14\u0E39\u0E2D\u0E32\u0E25\u0E32'
                         },
                         'Djibouti': {
-                            'exemplarCity': 'จิบูตี'
+                            'exemplarCity': '\u0E08\u0E34\u0E1A\u0E39\u0E15\u0E35'
                         },
                         'Dar_es_Salaam': {
-                            'exemplarCity': 'ดาร์เอสซาลาม'
+                            'exemplarCity': '\u0E14\u0E32\u0E23\u0E4C\u0E40\u0E2D\u0E2A\u0E0B\u0E32\u0E25\u0E32\u0E21'
                         },
                         'Dakar': {
-                            'exemplarCity': 'ดาการ์'
+                            'exemplarCity': '\u0E14\u0E32\u0E01\u0E32\u0E23\u0E4C'
                         },
                         'Banjul': {
-                            'exemplarCity': 'บันจูล'
+                            'exemplarCity': '\u0E1A\u0E31\u0E19\u0E08\u0E39\u0E25'
                         },
                         'Bangui': {
-                            'exemplarCity': 'บังกี'
+                            'exemplarCity': '\u0E1A\u0E31\u0E07\u0E01\u0E35'
                         },
                         'Bamako': {
-                            'exemplarCity': 'บามาโก'
+                            'exemplarCity': '\u0E1A\u0E32\u0E21\u0E32\u0E42\u0E01'
                         },
                         'Asmera': {
-                            'exemplarCity': 'แอสมารา'
+                            'exemplarCity': '\u0E41\u0E2D\u0E2A\u0E21\u0E32\u0E23\u0E32'
                         },
                         'Malabo': {
-                            'exemplarCity': 'มาลาโบ'
+                            'exemplarCity': '\u0E21\u0E32\u0E25\u0E32\u0E42\u0E1A'
                         },
                         'Maputo': {
-                            'exemplarCity': 'มาปูโต'
+                            'exemplarCity': '\u0E21\u0E32\u0E1B\u0E39\u0E42\u0E15'
                         },
                         'Maseru': {
-                            'exemplarCity': 'มาเซรู'
+                            'exemplarCity': '\u0E21\u0E32\u0E40\u0E0B\u0E23\u0E39'
                         },
                         'Mbabane': {
-                            'exemplarCity': 'อัมบาบาเน'
+                            'exemplarCity': '\u0E2D\u0E31\u0E21\u0E1A\u0E32\u0E1A\u0E32\u0E40\u0E19'
                         },
                         'Mogadishu': {
-                            'exemplarCity': 'โมกาดิชู'
+                            'exemplarCity': '\u0E42\u0E21\u0E01\u0E32\u0E14\u0E34\u0E0A\u0E39'
                         },
                         'Monrovia': {
-                            'exemplarCity': 'มันโรเวีย'
+                            'exemplarCity': '\u0E21\u0E31\u0E19\u0E42\u0E23\u0E40\u0E27\u0E35\u0E22'
                         },
                         'Nairobi': {
-                            'exemplarCity': 'ไนโรเบีย'
+                            'exemplarCity': '\u0E44\u0E19\u0E42\u0E23\u0E40\u0E1A\u0E35\u0E22'
                         },
                         'Ndjamena': {
-                            'exemplarCity': 'เอ็นจาเมนา'
+                            'exemplarCity': '\u0E40\u0E2D\u0E47\u0E19\u0E08\u0E32\u0E40\u0E21\u0E19\u0E32'
                         },
                         'Windhoek': {
-                            'exemplarCity': 'วินด์ฮุก'
+                            'exemplarCity': '\u0E27\u0E34\u0E19\u0E14\u0E4C\u0E2E\u0E38\u0E01'
                         },
                         'Tunis': {
-                            'exemplarCity': 'ตูนิส'
+                            'exemplarCity': '\u0E15\u0E39\u0E19\u0E34\u0E2A'
                         },
                         'Tripoli': {
-                            'exemplarCity': 'ตรีโปลี'
+                            'exemplarCity': '\u0E15\u0E23\u0E35\u0E42\u0E1B\u0E25\u0E35'
                         },
                         'Sao_Tome': {
-                            'exemplarCity': 'เซาตูเม'
+                            'exemplarCity': '\u0E40\u0E0B\u0E32\u0E15\u0E39\u0E40\u0E21'
                         },
                         'Porto-Novo': {
-                            'exemplarCity': 'ปอร์โต-โนโว'
+                            'exemplarCity': '\u0E1B\u0E2D\u0E23\u0E4C\u0E42\u0E15-\u0E42\u0E19\u0E42\u0E27'
                         },
                         'Ouagadougou': {
-                            'exemplarCity': 'วากาดูกู'
+                            'exemplarCity': '\u0E27\u0E32\u0E01\u0E32\u0E14\u0E39\u0E01\u0E39'
                         },
                         'Nouakchott': {
-                            'exemplarCity': 'นูแอกชอต'
+                            'exemplarCity': '\u0E19\u0E39\u0E41\u0E2D\u0E01\u0E0A\u0E2D\u0E15'
                         },
                         'Niamey': {
-                            'exemplarCity': 'นีอาเมย์'
+                            'exemplarCity': '\u0E19\u0E35\u0E2D\u0E32\u0E40\u0E21\u0E22\u0E4C'
                         },
                         'Lusaka': {
-                            'exemplarCity': 'ลูซากา'
+                            'exemplarCity': '\u0E25\u0E39\u0E0B\u0E32\u0E01\u0E32'
                         },
                         'Lubumbashi': {
-                            'exemplarCity': 'ลูบัมบาชิ'
+                            'exemplarCity': '\u0E25\u0E39\u0E1A\u0E31\u0E21\u0E1A\u0E32\u0E0A\u0E34'
                         },
                         'Luanda': {
-                            'exemplarCity': 'ลูอันดา'
+                            'exemplarCity': '\u0E25\u0E39\u0E2D\u0E31\u0E19\u0E14\u0E32'
                         },
                         'Lome': {
-                            'exemplarCity': 'โลเม'
+                            'exemplarCity': '\u0E42\u0E25\u0E40\u0E21'
                         },
                         'Conakry': {
-                            'exemplarCity': 'โกนากรี'
+                            'exemplarCity': '\u0E42\u0E01\u0E19\u0E32\u0E01\u0E23\u0E35'
                         },
                         'Ceuta': {
-                            'exemplarCity': 'เซวตา'
+                            'exemplarCity': '\u0E40\u0E0B\u0E27\u0E15\u0E32'
                         },
                         'Casablanca': {
-                            'exemplarCity': 'คาสซาบลางก้า'
+                            'exemplarCity': '\u0E04\u0E32\u0E2A\u0E0B\u0E32\u0E1A\u0E25\u0E32\u0E07\u0E01\u0E49\u0E32'
                         },
                         'Cairo': {
-                            'exemplarCity': 'ไคโร'
+                            'exemplarCity': '\u0E44\u0E04\u0E42\u0E23'
                         },
                         'Bujumbura': {
-                            'exemplarCity': 'บูจุมบูรา'
+                            'exemplarCity': '\u0E1A\u0E39\u0E08\u0E38\u0E21\u0E1A\u0E39\u0E23\u0E32'
                         },
                         'Brazzaville': {
-                            'exemplarCity': 'บราซซาวิล'
+                            'exemplarCity': '\u0E1A\u0E23\u0E32\u0E0B\u0E0B\u0E32\u0E27\u0E34\u0E25'
                         },
                         'Blantyre': {
-                            'exemplarCity': 'แบลนไทร์'
+                            'exemplarCity': '\u0E41\u0E1A\u0E25\u0E19\u0E44\u0E17\u0E23\u0E4C'
                         },
                         'Bissau': {
-                            'exemplarCity': 'บิสเซา'
+                            'exemplarCity': '\u0E1A\u0E34\u0E2A\u0E40\u0E0B\u0E32'
                         },
                         'Abidjan': {
-                            'exemplarCity': 'อาบีจาน'
+                            'exemplarCity': '\u0E2D\u0E32\u0E1A\u0E35\u0E08\u0E32\u0E19'
                         },
                         'Accra': {
-                            'exemplarCity': 'อักกรา'
+                            'exemplarCity': '\u0E2D\u0E31\u0E01\u0E01\u0E23\u0E32'
                         },
                         'Addis_Ababa': {
-                            'exemplarCity': 'แอดดิสอาบาบา'
+                            'exemplarCity': '\u0E41\u0E2D\u0E14\u0E14\u0E34\u0E2A\u0E2D\u0E32\u0E1A\u0E32\u0E1A\u0E32'
                         },
                         'Algiers': {
-                            'exemplarCity': 'แอลเจียร์'
+                            'exemplarCity': '\u0E41\u0E2D\u0E25\u0E40\u0E08\u0E35\u0E22\u0E23\u0E4C'
                         }
                     },
                     'Asia': {
                         'Shanghai': {
-                            'exemplarCity': 'เซี่ยงไฮ้'
+                            'exemplarCity': '\u0E40\u0E0B\u0E35\u0E48\u0E22\u0E07\u0E44\u0E2E\u0E49'
                         },
                         'Seoul': {
-                            'exemplarCity': 'โซล'
+                            'exemplarCity': '\u0E42\u0E0B\u0E25'
                         },
                         'Samarkand': {
-                            'exemplarCity': 'ซามาร์กานด์'
+                            'exemplarCity': '\u0E0B\u0E32\u0E21\u0E32\u0E23\u0E4C\u0E01\u0E32\u0E19\u0E14\u0E4C'
                         },
                         'Sakhalin': {
-                            'exemplarCity': 'ซาคาลิน'
+                            'exemplarCity': '\u0E0B\u0E32\u0E04\u0E32\u0E25\u0E34\u0E19'
                         },
                         'Saigon': {
-                            'exemplarCity': 'นครโฮจิมินห์'
+                            'exemplarCity': '\u0E19\u0E04\u0E23\u0E42\u0E2E\u0E08\u0E34\u0E21\u0E34\u0E19\u0E2B\u0E4C'
                         },
                         'Riyadh': {
-                            'exemplarCity': 'ริยาร์ด'
+                            'exemplarCity': '\u0E23\u0E34\u0E22\u0E32\u0E23\u0E4C\u0E14'
                         },
                         'Rangoon': {
-                            'exemplarCity': 'ย่างกุ้ง'
+                            'exemplarCity': '\u0E22\u0E48\u0E32\u0E07\u0E01\u0E38\u0E49\u0E07'
                         },
                         'Qyzylorda': {
-                            'exemplarCity': 'ไคซีลอร์ดา'
+                            'exemplarCity': '\u0E44\u0E04\u0E0B\u0E35\u0E25\u0E2D\u0E23\u0E4C\u0E14\u0E32'
                         },
                         'Qatar': {
-                            'exemplarCity': 'กาตาร์'
+                            'exemplarCity': '\u0E01\u0E32\u0E15\u0E32\u0E23\u0E4C'
                         },
                         'Pyongyang': {
-                            'exemplarCity': 'เปียงยาง'
+                            'exemplarCity': '\u0E40\u0E1B\u0E35\u0E22\u0E07\u0E22\u0E32\u0E07'
                         },
                         'Pontianak': {
-                            'exemplarCity': 'พอนเทียนัก'
+                            'exemplarCity': '\u0E1E\u0E2D\u0E19\u0E40\u0E17\u0E35\u0E22\u0E19\u0E31\u0E01'
                         },
                         'Phnom_Penh': {
-                            'exemplarCity': 'พนมเปญ'
+                            'exemplarCity': '\u0E1E\u0E19\u0E21\u0E40\u0E1B\u0E0D'
                         },
                         'Oral': {
-                            'exemplarCity': 'ออรัล'
+                            'exemplarCity': '\u0E2D\u0E2D\u0E23\u0E31\u0E25'
                         },
                         'Omsk': {
-                            'exemplarCity': 'โอมสก์'
+                            'exemplarCity': '\u0E42\u0E2D\u0E21\u0E2A\u0E01\u0E4C'
                         },
                         'Novosibirsk': {
-                            'exemplarCity': 'โนโวซิบิร์สก์'
+                            'exemplarCity': '\u0E42\u0E19\u0E42\u0E27\u0E0B\u0E34\u0E1A\u0E34\u0E23\u0E4C\u0E2A\u0E01\u0E4C'
                         },
                         'Baghdad': {
-                            'exemplarCity': 'แบกแดด'
+                            'exemplarCity': '\u0E41\u0E1A\u0E01\u0E41\u0E14\u0E14'
                         },
                         'Chongqing': {
-                            'exemplarCity': 'ฉงชิ่ง'
+                            'exemplarCity': '\u0E09\u0E07\u0E0A\u0E34\u0E48\u0E07'
                         },
                         'Colombo': {
-                            'exemplarCity': 'โคลัมโบ'
+                            'exemplarCity': '\u0E42\u0E04\u0E25\u0E31\u0E21\u0E42\u0E1A'
                         },
                         'Damascus': {
-                            'exemplarCity': 'ดามัสกัส'
+                            'exemplarCity': '\u0E14\u0E32\u0E21\u0E31\u0E2A\u0E01\u0E31\u0E2A'
                         },
                         'Dhaka': {
-                            'exemplarCity': 'ดากา'
+                            'exemplarCity': '\u0E14\u0E32\u0E01\u0E32'
                         },
                         'Dili': {
-                            'exemplarCity': 'ดิลี'
+                            'exemplarCity': '\u0E14\u0E34\u0E25\u0E35'
                         },
                         'Dubai': {
-                            'exemplarCity': 'ดูไบ'
+                            'exemplarCity': '\u0E14\u0E39\u0E44\u0E1A'
                         },
                         'Dushanbe': {
-                            'exemplarCity': 'ดูชานเบ'
+                            'exemplarCity': '\u0E14\u0E39\u0E0A\u0E32\u0E19\u0E40\u0E1A'
                         },
                         'Gaza': {
-                            'exemplarCity': 'กาซา'
+                            'exemplarCity': '\u0E01\u0E32\u0E0B\u0E32'
                         },
                         'Harbin': {
-                            'exemplarCity': 'ฮาร์บิน'
+                            'exemplarCity': '\u0E2E\u0E32\u0E23\u0E4C\u0E1A\u0E34\u0E19'
                         },
                         'Hebron': {
-                            'exemplarCity': 'เฮบรอน'
+                            'exemplarCity': '\u0E40\u0E2E\u0E1A\u0E23\u0E2D\u0E19'
                         },
                         'Hong_Kong': {
-                            'exemplarCity': 'ฮ่องกง'
+                            'exemplarCity': '\u0E2E\u0E48\u0E2D\u0E07\u0E01\u0E07'
                         },
                         'Hovd': {
-                            'exemplarCity': 'ฮอฟด์'
+                            'exemplarCity': '\u0E2E\u0E2D\u0E1F\u0E14\u0E4C'
                         },
                         'Irkutsk': {
-                            'exemplarCity': 'อีร์คุตสค์'
+                            'exemplarCity': '\u0E2D\u0E35\u0E23\u0E4C\u0E04\u0E38\u0E15\u0E2A\u0E04\u0E4C'
                         },
                         'Jakarta': {
-                            'exemplarCity': 'จาการ์ตา'
+                            'exemplarCity': '\u0E08\u0E32\u0E01\u0E32\u0E23\u0E4C\u0E15\u0E32'
                         },
                         'Jayapura': {
-                            'exemplarCity': 'จายาปุระ'
+                            'exemplarCity': '\u0E08\u0E32\u0E22\u0E32\u0E1B\u0E38\u0E23\u0E30'
                         },
                         'Ulaanbaatar': {
-                            'exemplarCity': 'อูลานบาตอร์'
+                            'exemplarCity': '\u0E2D\u0E39\u0E25\u0E32\u0E19\u0E1A\u0E32\u0E15\u0E2D\u0E23\u0E4C'
                         },
                         'Urumqi': {
-                            'exemplarCity': 'อุรุมชี'
+                            'exemplarCity': '\u0E2D\u0E38\u0E23\u0E38\u0E21\u0E0A\u0E35'
                         },
                         'Ust-Nera': {
-                            'exemplarCity': 'อุสต์เนรา'
+                            'exemplarCity': '\u0E2D\u0E38\u0E2A\u0E15\u0E4C\u0E40\u0E19\u0E23\u0E32'
                         },
                         'Vientiane': {
-                            'exemplarCity': 'เวียงจันทน์'
+                            'exemplarCity': '\u0E40\u0E27\u0E35\u0E22\u0E07\u0E08\u0E31\u0E19\u0E17\u0E19\u0E4C'
                         },
                         'Vladivostok': {
-                            'exemplarCity': 'วลาดิโวสต็อก'
+                            'exemplarCity': '\u0E27\u0E25\u0E32\u0E14\u0E34\u0E42\u0E27\u0E2A\u0E15\u0E47\u0E2D\u0E01'
                         },
                         'Yakutsk': {
-                            'exemplarCity': 'ยาคุตสค์'
+                            'exemplarCity': '\u0E22\u0E32\u0E04\u0E38\u0E15\u0E2A\u0E04\u0E4C'
                         },
                         'Yekaterinburg': {
-                            'exemplarCity': 'ยีคาเตอรินเบิร์ก'
+                            'exemplarCity': '\u0E22\u0E35\u0E04\u0E32\u0E40\u0E15\u0E2D\u0E23\u0E34\u0E19\u0E40\u0E1A\u0E34\u0E23\u0E4C\u0E01'
                         },
                         'Yerevan': {
-                            'exemplarCity': 'เยเรวาน'
+                            'exemplarCity': '\u0E40\u0E22\u0E40\u0E23\u0E27\u0E32\u0E19'
                         },
                         'Tokyo': {
-                            'exemplarCity': 'โตเกียว'
+                            'exemplarCity': '\u0E42\u0E15\u0E40\u0E01\u0E35\u0E22\u0E27'
                         },
                         'Thimphu': {
-                            'exemplarCity': 'ทิมพู'
+                            'exemplarCity': '\u0E17\u0E34\u0E21\u0E1E\u0E39'
                         },
                         'Tehran': {
-                            'exemplarCity': 'เตหะราน'
+                            'exemplarCity': '\u0E40\u0E15\u0E2B\u0E30\u0E23\u0E32\u0E19'
                         },
                         'Tbilisi': {
-                            'exemplarCity': 'ทบิลิซิ'
+                            'exemplarCity': '\u0E17\u0E1A\u0E34\u0E25\u0E34\u0E0B\u0E34'
                         },
                         'Tashkent': {
-                            'exemplarCity': 'ทาชเคนต์'
+                            'exemplarCity': '\u0E17\u0E32\u0E0A\u0E40\u0E04\u0E19\u0E15\u0E4C'
                         },
                         'Taipei': {
-                            'exemplarCity': 'ไทเป'
+                            'exemplarCity': '\u0E44\u0E17\u0E40\u0E1B'
                         },
                         'Singapore': {
-                            'exemplarCity': 'สิงคโปร์'
+                            'exemplarCity': '\u0E2A\u0E34\u0E07\u0E04\u0E42\u0E1B\u0E23\u0E4C'
                         },
                         'Jerusalem': {
-                            'exemplarCity': 'เยรูซาเลม'
+                            'exemplarCity': '\u0E40\u0E22\u0E23\u0E39\u0E0B\u0E32\u0E40\u0E25\u0E21'
                         },
                         'Ashgabat': {
-                            'exemplarCity': 'อาชกาบัต'
+                            'exemplarCity': '\u0E2D\u0E32\u0E0A\u0E01\u0E32\u0E1A\u0E31\u0E15'
                         },
                         'Aqtobe': {
-                            'exemplarCity': 'อัคโทบี'
+                            'exemplarCity': '\u0E2D\u0E31\u0E04\u0E42\u0E17\u0E1A\u0E35'
                         },
                         'Aqtau': {
-                            'exemplarCity': 'อัคตาอู'
+                            'exemplarCity': '\u0E2D\u0E31\u0E04\u0E15\u0E32\u0E2D\u0E39'
                         },
                         'Anadyr': {
-                            'exemplarCity': 'อานาดีร์'
+                            'exemplarCity': '\u0E2D\u0E32\u0E19\u0E32\u0E14\u0E35\u0E23\u0E4C'
                         },
                         'Amman': {
-                            'exemplarCity': 'อัมมาน'
+                            'exemplarCity': '\u0E2D\u0E31\u0E21\u0E21\u0E32\u0E19'
                         },
                         'Almaty': {
-                            'exemplarCity': 'อัลมาตี'
+                            'exemplarCity': '\u0E2D\u0E31\u0E25\u0E21\u0E32\u0E15\u0E35'
                         },
                         'Aden': {
-                            'exemplarCity': 'เอเดน'
+                            'exemplarCity': '\u0E40\u0E2D\u0E40\u0E14\u0E19'
                         },
                         'Bahrain': {
-                            'exemplarCity': 'บาห์เรน'
+                            'exemplarCity': '\u0E1A\u0E32\u0E2B\u0E4C\u0E40\u0E23\u0E19'
                         },
                         'Baku': {
-                            'exemplarCity': 'บากู'
+                            'exemplarCity': '\u0E1A\u0E32\u0E01\u0E39'
                         },
                         'Bangkok': {
-                            'exemplarCity': 'กรุงเทพ'
+                            'exemplarCity': '\u0E01\u0E23\u0E38\u0E07\u0E40\u0E17\u0E1E'
                         },
                         'Beirut': {
-                            'exemplarCity': 'เบรุต'
+                            'exemplarCity': '\u0E40\u0E1A\u0E23\u0E38\u0E15'
                         },
                         'Bishkek': {
-                            'exemplarCity': 'บิชเคก'
+                            'exemplarCity': '\u0E1A\u0E34\u0E0A\u0E40\u0E04\u0E01'
                         },
                         'Brunei': {
-                            'exemplarCity': 'บรูไน'
+                            'exemplarCity': '\u0E1A\u0E23\u0E39\u0E44\u0E19'
                         },
                         'Calcutta': {
-                            'exemplarCity': 'โกลกาตา'
+                            'exemplarCity': '\u0E42\u0E01\u0E25\u0E01\u0E32\u0E15\u0E32'
                         },
                         'Choibalsan': {
-                            'exemplarCity': 'ชอยบาลซาน'
+                            'exemplarCity': '\u0E0A\u0E2D\u0E22\u0E1A\u0E32\u0E25\u0E0B\u0E32\u0E19'
                         },
                         'Kabul': {
-                            'exemplarCity': 'คาบูล'
+                            'exemplarCity': '\u0E04\u0E32\u0E1A\u0E39\u0E25'
                         },
                         'Kamchatka': {
-                            'exemplarCity': 'คามชัตกา'
+                            'exemplarCity': '\u0E04\u0E32\u0E21\u0E0A\u0E31\u0E15\u0E01\u0E32'
                         },
                         'Karachi': {
-                            'exemplarCity': 'การาจี'
+                            'exemplarCity': '\u0E01\u0E32\u0E23\u0E32\u0E08\u0E35'
                         },
                         'Kashgar': {
-                            'exemplarCity': 'กัชการ์'
+                            'exemplarCity': '\u0E01\u0E31\u0E0A\u0E01\u0E32\u0E23\u0E4C'
                         },
                         'Katmandu': {
-                            'exemplarCity': 'กาตมันดุ'
+                            'exemplarCity': '\u0E01\u0E32\u0E15\u0E21\u0E31\u0E19\u0E14\u0E38'
                         },
                         'Khandyga': {
-                            'exemplarCity': 'ฮันดืยกา'
+                            'exemplarCity': '\u0E2E\u0E31\u0E19\u0E14\u0E37\u0E22\u0E01\u0E32'
                         },
                         'Krasnoyarsk': {
-                            'exemplarCity': 'ครัสโนยาร์สก์'
+                            'exemplarCity': '\u0E04\u0E23\u0E31\u0E2A\u0E42\u0E19\u0E22\u0E32\u0E23\u0E4C\u0E2A\u0E01\u0E4C'
                         },
                         'Kuala_Lumpur': {
-                            'exemplarCity': 'กัวลาลัมเปอร์'
+                            'exemplarCity': '\u0E01\u0E31\u0E27\u0E25\u0E32\u0E25\u0E31\u0E21\u0E40\u0E1B\u0E2D\u0E23\u0E4C'
                         },
                         'Kuching': {
-                            'exemplarCity': 'กูชิง'
+                            'exemplarCity': '\u0E01\u0E39\u0E0A\u0E34\u0E07'
                         },
                         'Kuwait': {
-                            'exemplarCity': 'คูเวต'
+                            'exemplarCity': '\u0E04\u0E39\u0E40\u0E27\u0E15'
                         },
                         'Macau': {
-                            'exemplarCity': 'มาเก๊า'
+                            'exemplarCity': '\u0E21\u0E32\u0E40\u0E01\u0E4A\u0E32'
                         },
                         'Magadan': {
-                            'exemplarCity': 'มากาดาน'
+                            'exemplarCity': '\u0E21\u0E32\u0E01\u0E32\u0E14\u0E32\u0E19'
                         },
                         'Makassar': {
-                            'exemplarCity': 'มากัสซาร์'
+                            'exemplarCity': '\u0E21\u0E32\u0E01\u0E31\u0E2A\u0E0B\u0E32\u0E23\u0E4C'
                         },
                         'Manila': {
-                            'exemplarCity': 'มะนิลา'
+                            'exemplarCity': '\u0E21\u0E30\u0E19\u0E34\u0E25\u0E32'
                         },
                         'Muscat': {
-                            'exemplarCity': 'มัสกัต'
+                            'exemplarCity': '\u0E21\u0E31\u0E2A\u0E01\u0E31\u0E15'
                         },
                         'Nicosia': {
-                            'exemplarCity': 'นิโคเซีย'
+                            'exemplarCity': '\u0E19\u0E34\u0E42\u0E04\u0E40\u0E0B\u0E35\u0E22'
                         },
                         'Novokuznetsk': {
-                            'exemplarCity': 'โนโวคุซเนตสค์'
+                            'exemplarCity': '\u0E42\u0E19\u0E42\u0E27\u0E04\u0E38\u0E0B\u0E40\u0E19\u0E15\u0E2A\u0E04\u0E4C'
                         }
                     }
                 },
                 'metazone': {
                     'Samoa': {
                         'long': {
-                            'generic': 'เวลาซามัว',
-                            'standard': 'เวลามาตรฐานซามัว',
-                            'daylight': 'เวลาฤดูร้อนซามัว'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E0B\u0E32\u0E21\u0E31\u0E27',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E0B\u0E32\u0E21\u0E31\u0E27',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E0B\u0E32\u0E21\u0E31\u0E27'
                         }
                     },
                     'Samara': {
                         'long': {
-                            'generic': 'เวลาซามารา',
-                            'standard': 'เวลามาตรฐานซามารา',
-                            'daylight': 'เวลาฤดูร้อนซามารา'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E0B\u0E32\u0E21\u0E32\u0E23\u0E32',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E0B\u0E32\u0E21\u0E32\u0E23\u0E32',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E0B\u0E32\u0E21\u0E32\u0E23\u0E32'
                         }
                     },
                     'Sakhalin': {
                         'long': {
-                            'generic': 'เวลาซาคาลิน',
-                            'standard': 'เวลามาตรฐานซาคาลิน',
-                            'daylight': 'เวลาฤดูร้อนซาคาลิน'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E0B\u0E32\u0E04\u0E32\u0E25\u0E34\u0E19',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E0B\u0E32\u0E04\u0E32\u0E25\u0E34\u0E19',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E0B\u0E32\u0E04\u0E32\u0E25\u0E34\u0E19'
                         }
                     },
                     'Rothera': {
                         'long': {
-                            'standard': 'เวลาโรธีรา'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E42\u0E23\u0E18\u0E35\u0E23\u0E32'
                         }
                     },
                     'Reunion': {
                         'long': {
-                            'standard': 'เวลาเรอูนียง'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E40\u0E23\u0E2D\u0E39\u0E19\u0E35\u0E22\u0E07'
                         }
                     },
                     'Qyzylorda': {
                         'long': {
-                            'generic': 'เวลาคืยซิลออร์ดา',
-                            'standard': 'เวลามาตรฐานคืยซิลออร์ดา',
-                            'daylight': 'เวลาฤดูร้อนคืยซิลออร์ดา'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E04\u0E37\u0E22\u0E0B\u0E34\u0E25\u0E2D\u0E2D\u0E23\u0E4C\u0E14\u0E32',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E04\u0E37\u0E22\u0E0B\u0E34\u0E25\u0E2D\u0E2D\u0E23\u0E4C\u0E14\u0E32',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E04\u0E37\u0E22\u0E0B\u0E34\u0E25\u0E2D\u0E2D\u0E23\u0E4C\u0E14\u0E32'
                         }
                     },
                     'Ponape': {
                         'long': {
-                            'standard': 'เวลาโปเนป'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E42\u0E1B\u0E40\u0E19\u0E1B'
                         }
                     },
                     'Pitcairn': {
                         'long': {
-                            'standard': 'เวลาพิตแคร์น'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E1E\u0E34\u0E15\u0E41\u0E04\u0E23\u0E4C\u0E19'
                         }
                     },
                     'Pierre_Miquelon': {
                         'long': {
-                            'generic': 'เวลาแซงปีแยร์และมีเกอลง',
-                            'standard': 'เวลามาตรฐานแซงปีแยร์และมีเกอลง',
-                            'daylight': 'เวลาออมแสงของแซงปีแยร์และมีเกอลง'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E41\u0E0B\u0E07\u0E1B\u0E35\u0E41\u0E22\u0E23\u0E4C\u0E41\u0E25\u0E30\u0E21\u0E35\u0E40\u0E01\u0E2D\u0E25\u0E07',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E41\u0E0B\u0E07\u0E1B\u0E35\u0E41\u0E22\u0E23\u0E4C\u0E41\u0E25\u0E30\u0E21\u0E35\u0E40\u0E01\u0E2D\u0E25\u0E07',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E21\u0E41\u0E2A\u0E07\u0E02\u0E2D\u0E07\u0E41\u0E0B\u0E07\u0E1B\u0E35\u0E41\u0E22\u0E23\u0E4C\u0E41\u0E25\u0E30\u0E21\u0E35\u0E40\u0E01\u0E2D\u0E25\u0E07'
                         }
                     },
                     'Phoenix_Islands': {
                         'long': {
-                            'standard': 'เวลาหมู่เกาะฟินิกซ์'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E2B\u0E21\u0E39\u0E48\u0E40\u0E01\u0E32\u0E30\u0E1F\u0E34\u0E19\u0E34\u0E01\u0E0B\u0E4C'
                         }
                     },
                     'Philippines': {
                         'long': {
-                            'generic': 'เวลาฟิลิปปินส์',
-                            'standard': 'เวลามาตรฐานฟิลิปปินส์',
-                            'daylight': 'เวลาฤดูร้อนฟิลิปปินส์'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E1F\u0E34\u0E25\u0E34\u0E1B\u0E1B\u0E34\u0E19\u0E2A\u0E4C',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E1F\u0E34\u0E25\u0E34\u0E1B\u0E1B\u0E34\u0E19\u0E2A\u0E4C',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E1F\u0E34\u0E25\u0E34\u0E1B\u0E1B\u0E34\u0E19\u0E2A\u0E4C'
                         }
                     },
                     'Peru': {
                         'long': {
-                            'generic': 'เวลาเปรู',
-                            'standard': 'เวลามาตรฐานเปรู',
-                            'daylight': 'เวลาฤดูร้อนเปรู'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E40\u0E1B\u0E23\u0E39',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E40\u0E1B\u0E23\u0E39',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E40\u0E1B\u0E23\u0E39'
                         }
                     },
                     'Paraguay': {
                         'long': {
-                            'generic': 'เวลาปารากวัย',
-                            'standard': 'เวลามาตรฐานปารากวัย',
-                            'daylight': 'เวลาฤดูร้อนปารากวัย'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E1B\u0E32\u0E23\u0E32\u0E01\u0E27\u0E31\u0E22',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E1B\u0E32\u0E23\u0E32\u0E01\u0E27\u0E31\u0E22',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E1B\u0E32\u0E23\u0E32\u0E01\u0E27\u0E31\u0E22'
                         }
                     },
                     'Papua_New_Guinea': {
                         'long': {
-                            'standard': 'เวลาปาปัวนิวกินี'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E1B\u0E32\u0E1B\u0E31\u0E27\u0E19\u0E34\u0E27\u0E01\u0E34\u0E19\u0E35'
                         }
                     },
                     'Palau': {
                         'long': {
-                            'standard': 'เวลาปาเลา'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E1B\u0E32\u0E40\u0E25\u0E32'
                         }
                     },
                     'Pakistan': {
                         'long': {
-                            'generic': 'เวลาปากีสถาน',
-                            'standard': 'เวลามาตรฐานปากีสถาน',
-                            'daylight': 'เวลาฤดูร้อนปากีสถาน'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E1B\u0E32\u0E01\u0E35\u0E2A\u0E16\u0E32\u0E19',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E1B\u0E32\u0E01\u0E35\u0E2A\u0E16\u0E32\u0E19',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E1B\u0E32\u0E01\u0E35\u0E2A\u0E16\u0E32\u0E19'
                         }
                     },
                     'Omsk': {
                         'long': {
-                            'generic': 'เวลาออมสค์',
-                            'standard': 'เวลามาตรฐานออมสค์',
-                            'daylight': 'เวลาฤดูร้อนออมสค์'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E21\u0E2A\u0E04\u0E4C',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E2D\u0E2D\u0E21\u0E2A\u0E04\u0E4C',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E2D\u0E2D\u0E21\u0E2A\u0E04\u0E4C'
                         }
                     },
                     'Novosibirsk': {
                         'long': {
-                            'generic': 'เวลาโนโวซีบีสค์',
-                            'standard': 'เวลามาตรฐานโนโวซีบีสค์',
-                            'daylight': 'เวลาฤดูร้อนโนโวซีบีสค์'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E42\u0E19\u0E42\u0E27\u0E0B\u0E35\u0E1A\u0E35\u0E2A\u0E04\u0E4C',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E42\u0E19\u0E42\u0E27\u0E0B\u0E35\u0E1A\u0E35\u0E2A\u0E04\u0E4C',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E42\u0E19\u0E42\u0E27\u0E0B\u0E35\u0E1A\u0E35\u0E2A\u0E04\u0E4C'
                         }
                     },
                     'North_Mariana': {
                         'long': {
-                            'standard': 'เวลาหมู่เกาะมาเรียนาเหนือ'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E2B\u0E21\u0E39\u0E48\u0E40\u0E01\u0E32\u0E30\u0E21\u0E32\u0E40\u0E23\u0E35\u0E22\u0E19\u0E32\u0E40\u0E2B\u0E19\u0E37\u0E2D'
                         }
                     },
                     'Noronha': {
                         'long': {
-                            'generic': 'เวลาหมู่เกาะเฟอร์นันโด',
-                            'standard': 'เวลามาตรฐานหมู่เกาะเฟอร์นันโด',
-                            'daylight': 'เวลาฤดูร้อนของหมู่เกาะเฟอร์นันโด'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2B\u0E21\u0E39\u0E48\u0E40\u0E01\u0E32\u0E30\u0E40\u0E1F\u0E2D\u0E23\u0E4C\u0E19\u0E31\u0E19\u0E42\u0E14',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E2B\u0E21\u0E39\u0E48\u0E40\u0E01\u0E32\u0E30\u0E40\u0E1F\u0E2D\u0E23\u0E4C\u0E19\u0E31\u0E19\u0E42\u0E14',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E02\u0E2D\u0E07\u0E2B\u0E21\u0E39\u0E48\u0E40\u0E01\u0E32\u0E30\u0E40\u0E1F\u0E2D\u0E23\u0E4C\u0E19\u0E31\u0E19\u0E42\u0E14'
                         }
                     },
                     'Norfolk': {
                         'long': {
-                            'standard': 'เวลาเกาะนอร์ฟอล์ก'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E40\u0E01\u0E32\u0E30\u0E19\u0E2D\u0E23\u0E4C\u0E1F\u0E2D\u0E25\u0E4C\u0E01'
                         }
                     },
                     'Niue': {
                         'long': {
-                            'standard': 'เวลานีอูเอ'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E19\u0E35\u0E2D\u0E39\u0E40\u0E2D'
                         }
                     },
                     'Newfoundland': {
                         'long': {
-                            'generic': 'เวลานิวฟันด์แลนด์',
-                            'standard': 'เวลามาตรฐานนิวฟันด์แลนด์',
-                            'daylight': 'เวลาออมแสงนิวฟันด์แลนด์'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E19\u0E34\u0E27\u0E1F\u0E31\u0E19\u0E14\u0E4C\u0E41\u0E25\u0E19\u0E14\u0E4C',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E19\u0E34\u0E27\u0E1F\u0E31\u0E19\u0E14\u0E4C\u0E41\u0E25\u0E19\u0E14\u0E4C',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E21\u0E41\u0E2A\u0E07\u0E19\u0E34\u0E27\u0E1F\u0E31\u0E19\u0E14\u0E4C\u0E41\u0E25\u0E19\u0E14\u0E4C'
                         }
                     },
                     'New_Zealand': {
                         'long': {
-                            'generic': 'เวลานิวซีแลนด์',
-                            'standard': 'เวลามาตรฐานนิวซีแลนด์',
-                            'daylight': 'เวลาออมแสงนิวซีแลนด์'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E19\u0E34\u0E27\u0E0B\u0E35\u0E41\u0E25\u0E19\u0E14\u0E4C',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E19\u0E34\u0E27\u0E0B\u0E35\u0E41\u0E25\u0E19\u0E14\u0E4C',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E21\u0E41\u0E2A\u0E07\u0E19\u0E34\u0E27\u0E0B\u0E35\u0E41\u0E25\u0E19\u0E14\u0E4C'
                         }
                     },
                     'New_Caledonia': {
                         'long': {
-                            'generic': 'เวลานิวแคลิโดเนีย',
-                            'standard': 'เวลามาตรฐานนิวแคลิโดเนีย',
-                            'daylight': 'เวลาฤดูร้อนนิวแคลิโดเนีย'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E19\u0E34\u0E27\u0E41\u0E04\u0E25\u0E34\u0E42\u0E14\u0E40\u0E19\u0E35\u0E22',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E19\u0E34\u0E27\u0E41\u0E04\u0E25\u0E34\u0E42\u0E14\u0E40\u0E19\u0E35\u0E22',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E19\u0E34\u0E27\u0E41\u0E04\u0E25\u0E34\u0E42\u0E14\u0E40\u0E19\u0E35\u0E22'
                         }
                     },
                     'America_Central': {
                         'long': {
-                            'generic': 'เวลาตอนกลาง',
-                            'standard': 'เวลามาตรฐานตอนกลาง',
-                            'daylight': 'เวลาออมแสงทางตอนกลาง'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E15\u0E2D\u0E19\u0E01\u0E25\u0E32\u0E07',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E15\u0E2D\u0E19\u0E01\u0E25\u0E32\u0E07',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E21\u0E41\u0E2A\u0E07\u0E17\u0E32\u0E07\u0E15\u0E2D\u0E19\u0E01\u0E25\u0E32\u0E07'
                         }
                     },
                     'America_Eastern': {
                         'long': {
-                            'generic': 'เวลาตะวันออก',
-                            'standard': 'เวลามาตรฐานตะวันออก',
-                            'daylight': 'เวลาออมแสงทางตะวันออก'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E15\u0E30\u0E27\u0E31\u0E19\u0E2D\u0E2D\u0E01',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E15\u0E30\u0E27\u0E31\u0E19\u0E2D\u0E2D\u0E01',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E21\u0E41\u0E2A\u0E07\u0E17\u0E32\u0E07\u0E15\u0E30\u0E27\u0E31\u0E19\u0E2D\u0E2D\u0E01'
                         }
                     },
                     'America_Mountain': {
                         'long': {
-                            'generic': 'เวลาแถบภูเขา',
-                            'standard': 'เวลามาตรฐานแถบภูเขา',
-                            'daylight': 'เวลาออมแสงแถบภูเขา'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E41\u0E16\u0E1A\u0E20\u0E39\u0E40\u0E02\u0E32',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E41\u0E16\u0E1A\u0E20\u0E39\u0E40\u0E02\u0E32',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E21\u0E41\u0E2A\u0E07\u0E41\u0E16\u0E1A\u0E20\u0E39\u0E40\u0E02\u0E32'
                         }
                     },
                     'America_Pacific': {
                         'long': {
-                            'generic': 'เวลาแปซิฟิก',
-                            'standard': 'เวลามาตรฐานแปซิฟิก',
-                            'daylight': 'เวลาออมแสงของแปซิฟิก'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E41\u0E1B\u0E0B\u0E34\u0E1F\u0E34\u0E01',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E41\u0E1B\u0E0B\u0E34\u0E1F\u0E34\u0E01',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E21\u0E41\u0E2A\u0E07\u0E02\u0E2D\u0E07\u0E41\u0E1B\u0E0B\u0E34\u0E1F\u0E34\u0E01'
                         }
                     },
                     'Anadyr': {
                         'long': {
-                            'generic': 'เวลาอะนาดีร์',
-                            'standard': 'เวลามาตรฐานอะนาดีร์',
-                            'daylight': 'เวลาฤดูร้อนอะนาดีร์'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E30\u0E19\u0E32\u0E14\u0E35\u0E23\u0E4C',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E2D\u0E30\u0E19\u0E32\u0E14\u0E35\u0E23\u0E4C',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E2D\u0E30\u0E19\u0E32\u0E14\u0E35\u0E23\u0E4C'
                         }
                     },
                     'Aqtau': {
                         'long': {
-                            'generic': 'เวลาอัคตาอู',
-                            'standard': 'เวลามาตรฐานอัคตาอู',
-                            'daylight': 'เวลาฤดูร้อนอัคตาอู'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E31\u0E04\u0E15\u0E32\u0E2D\u0E39',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E2D\u0E31\u0E04\u0E15\u0E32\u0E2D\u0E39',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E2D\u0E31\u0E04\u0E15\u0E32\u0E2D\u0E39'
                         }
                     },
                     'Aqtobe': {
                         'long': {
-                            'generic': 'เวลาอัคโทเบ',
-                            'standard': 'เวลามาตรฐานอัคโทเบ',
-                            'daylight': 'เวลาฤดูร้อนอัคโทเบ'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E31\u0E04\u0E42\u0E17\u0E40\u0E1A',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E2D\u0E31\u0E04\u0E42\u0E17\u0E40\u0E1A',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E2D\u0E31\u0E04\u0E42\u0E17\u0E40\u0E1A'
                         }
                     },
                     'Cape_Verde': {
                         'long': {
-                            'generic': 'เวลาเคปเวิร์ด',
-                            'standard': 'เวลามาตรฐานเคปเวิร์ด',
-                            'daylight': 'เวลาฤดูร้อนเคปเวิร์ด'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E40\u0E04\u0E1B\u0E40\u0E27\u0E34\u0E23\u0E4C\u0E14',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E40\u0E04\u0E1B\u0E40\u0E27\u0E34\u0E23\u0E4C\u0E14',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E40\u0E04\u0E1B\u0E40\u0E27\u0E34\u0E23\u0E4C\u0E14'
                         }
                     },
                     'Casey': {
                         'long': {
-                            'standard': 'เวลาเคซีย์'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E40\u0E04\u0E0B\u0E35\u0E22\u0E4C'
                         }
                     },
                     'Chamorro': {
                         'long': {
-                            'standard': 'เวลาชามอร์โร'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E0A\u0E32\u0E21\u0E2D\u0E23\u0E4C\u0E42\u0E23'
                         }
                     },
                     'Chatham': {
                         'long': {
-                            'generic': 'เวลาแชทัม',
-                            'standard': 'เวลามาตรฐานแชทัม',
-                            'daylight': 'เวลาออมแสงแชทัม'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E41\u0E0A\u0E17\u0E31\u0E21',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E41\u0E0A\u0E17\u0E31\u0E21',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E21\u0E41\u0E2A\u0E07\u0E41\u0E0A\u0E17\u0E31\u0E21'
                         }
                     },
                     'Chile': {
                         'long': {
-                            'generic': 'เวลาชิลี',
-                            'standard': 'เวลามาตรฐานชิลี',
-                            'daylight': 'เวลาฤดูร้อนชิลี'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E0A\u0E34\u0E25\u0E35',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E0A\u0E34\u0E25\u0E35',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E0A\u0E34\u0E25\u0E35'
                         }
                     },
                     'China': {
                         'long': {
-                            'generic': 'เวลาจีน',
-                            'standard': 'เวลามาตรฐานจีน',
-                            'daylight': 'เวลาออมแสงจีน'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E08\u0E35\u0E19',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E08\u0E35\u0E19',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E21\u0E41\u0E2A\u0E07\u0E08\u0E35\u0E19'
                         }
                     },
                     'Choibalsan': {
                         'long': {
-                            'generic': 'เวลาชอยปาลชาน',
-                            'standard': 'เวลามาตรฐานชอยปาลชาน',
-                            'daylight': 'เวลาฤดูร้อนชอยปาลชาน'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E0A\u0E2D\u0E22\u0E1B\u0E32\u0E25\u0E0A\u0E32\u0E19',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E0A\u0E2D\u0E22\u0E1B\u0E32\u0E25\u0E0A\u0E32\u0E19',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E0A\u0E2D\u0E22\u0E1B\u0E32\u0E25\u0E0A\u0E32\u0E19'
                         }
                     },
                     'Christmas': {
                         'long': {
-                            'standard': 'เวลาเกาะคริสต์มาส'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E40\u0E01\u0E32\u0E30\u0E04\u0E23\u0E34\u0E2A\u0E15\u0E4C\u0E21\u0E32\u0E2A'
                         }
                     },
                     'Cocos': {
                         'long': {
-                            'standard': 'เวลาหมู่เกาะโคโคส'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E2B\u0E21\u0E39\u0E48\u0E40\u0E01\u0E32\u0E30\u0E42\u0E04\u0E42\u0E04\u0E2A'
                         }
                     },
                     'Colombia': {
                         'long': {
-                            'generic': 'เวลาโคลอมเบีย',
-                            'standard': 'เวลามาตรฐานโคลอมเบีย',
-                            'daylight': 'เวลาฤดูร้อนโคลอมเบีย'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E42\u0E04\u0E25\u0E2D\u0E21\u0E40\u0E1A\u0E35\u0E22',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E42\u0E04\u0E25\u0E2D\u0E21\u0E40\u0E1A\u0E35\u0E22',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E42\u0E04\u0E25\u0E2D\u0E21\u0E40\u0E1A\u0E35\u0E22'
                         }
                     },
                     'Cook': {
                         'long': {
-                            'generic': 'เวลาหมู่เกาะคุก',
-                            'standard': 'เวลามาตรฐานหมู่เกาะคุก',
-                            'daylight': 'เวลาครึ่งฤดูร้อนหมู่เกาะคุก'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2B\u0E21\u0E39\u0E48\u0E40\u0E01\u0E32\u0E30\u0E04\u0E38\u0E01',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E2B\u0E21\u0E39\u0E48\u0E40\u0E01\u0E32\u0E30\u0E04\u0E38\u0E01',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E04\u0E23\u0E36\u0E48\u0E07\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E2B\u0E21\u0E39\u0E48\u0E40\u0E01\u0E32\u0E30\u0E04\u0E38\u0E01'
                         }
                     },
                     'Cuba': {
                         'long': {
-                            'generic': 'เวลาคิวบา',
-                            'standard': 'เวลามาตรฐานคิวบา',
-                            'daylight': 'เวลาออมแสงของคิวบา'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E04\u0E34\u0E27\u0E1A\u0E32',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E04\u0E34\u0E27\u0E1A\u0E32',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E21\u0E41\u0E2A\u0E07\u0E02\u0E2D\u0E07\u0E04\u0E34\u0E27\u0E1A\u0E32'
                         }
                     },
                     'Davis': {
                         'long': {
-                            'standard': 'เวลาเดวิส'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E40\u0E14\u0E27\u0E34\u0E2A'
                         }
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': 'เวลาดูมองต์ดูร์วิลล์'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E14\u0E39\u0E21\u0E2D\u0E07\u0E15\u0E4C\u0E14\u0E39\u0E23\u0E4C\u0E27\u0E34\u0E25\u0E25\u0E4C'
                         }
                     },
                     'East_Timor': {
                         'long': {
-                            'standard': 'เวลาติมอร์ตะวันออก'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E15\u0E34\u0E21\u0E2D\u0E23\u0E4C\u0E15\u0E30\u0E27\u0E31\u0E19\u0E2D\u0E2D\u0E01'
                         }
                     },
                     'Easter': {
                         'long': {
-                            'generic': 'เวลาเกาะอีสเตอร์',
-                            'standard': 'เวลามาตรฐานเกาะอีสเตอร์',
-                            'daylight': 'เวลาฤดูร้อนเกาะอีสเตอร์'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E40\u0E01\u0E32\u0E30\u0E2D\u0E35\u0E2A\u0E40\u0E15\u0E2D\u0E23\u0E4C',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E40\u0E01\u0E32\u0E30\u0E2D\u0E35\u0E2A\u0E40\u0E15\u0E2D\u0E23\u0E4C',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E40\u0E01\u0E32\u0E30\u0E2D\u0E35\u0E2A\u0E40\u0E15\u0E2D\u0E23\u0E4C'
                         }
                     },
                     'Ecuador': {
                         'long': {
-                            'standard': 'เวลาเอกวาดอร์'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E40\u0E2D\u0E01\u0E27\u0E32\u0E14\u0E2D\u0E23\u0E4C'
                         }
                     },
                     'Europe_Central': {
                         'long': {
-                            'generic': 'เวลายุโรปกลาง',
-                            'standard': 'เวลามาตรฐานยุโรปกลาง',
-                            'daylight': 'เวลาฤดูร้อนยุโรปกลาง'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E22\u0E38\u0E42\u0E23\u0E1B\u0E01\u0E25\u0E32\u0E07',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E22\u0E38\u0E42\u0E23\u0E1B\u0E01\u0E25\u0E32\u0E07',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E22\u0E38\u0E42\u0E23\u0E1B\u0E01\u0E25\u0E32\u0E07'
                         }
                     },
                     'Europe_Eastern': {
                         'long': {
-                            'generic': 'เวลายุโรปตะวันออก',
-                            'standard': 'เวลามาตรฐานยุโรปตะวันออก',
-                            'daylight': 'เวลาฤดูร้อนยุโรปตะวันออก'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E22\u0E38\u0E42\u0E23\u0E1B\u0E15\u0E30\u0E27\u0E31\u0E19\u0E2D\u0E2D\u0E01',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E22\u0E38\u0E42\u0E23\u0E1B\u0E15\u0E30\u0E27\u0E31\u0E19\u0E2D\u0E2D\u0E01',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E22\u0E38\u0E42\u0E23\u0E1B\u0E15\u0E30\u0E27\u0E31\u0E19\u0E2D\u0E2D\u0E01'
                         }
                     },
                     'Europe_Western': {
                         'long': {
-                            'generic': 'เวลายุโรปตะวันตก',
-                            'standard': 'เวลามาตรฐานยุโรปตะวันตก',
-                            'daylight': 'เวลาฤดูร้อนยุโรปตะวันตก'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E22\u0E38\u0E42\u0E23\u0E1B\u0E15\u0E30\u0E27\u0E31\u0E19\u0E15\u0E01',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E22\u0E38\u0E42\u0E23\u0E1B\u0E15\u0E30\u0E27\u0E31\u0E19\u0E15\u0E01',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E22\u0E38\u0E42\u0E23\u0E1B\u0E15\u0E30\u0E27\u0E31\u0E19\u0E15\u0E01'
                         }
                     },
                     'Falkland': {
                         'long': {
-                            'generic': 'เวลาหมู่เกาะฟอล์กแลนด์',
-                            'standard': 'เวลามาตรฐานหมู่เกาะฟอล์กแลนด์',
-                            'daylight': 'เวลาฤดูร้อนหมู่เกาะฟอล์กแลนด์'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2B\u0E21\u0E39\u0E48\u0E40\u0E01\u0E32\u0E30\u0E1F\u0E2D\u0E25\u0E4C\u0E01\u0E41\u0E25\u0E19\u0E14\u0E4C',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E2B\u0E21\u0E39\u0E48\u0E40\u0E01\u0E32\u0E30\u0E1F\u0E2D\u0E25\u0E4C\u0E01\u0E41\u0E25\u0E19\u0E14\u0E4C',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E2B\u0E21\u0E39\u0E48\u0E40\u0E01\u0E32\u0E30\u0E1F\u0E2D\u0E25\u0E4C\u0E01\u0E41\u0E25\u0E19\u0E14\u0E4C'
                         }
                     },
                     'Fiji': {
                         'long': {
-                            'generic': 'เวลาฟิจิ',
-                            'standard': 'เวลามาตรฐานฟิจิ',
-                            'daylight': 'เวลาฤดูร้อนฟิจิ'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E1F\u0E34\u0E08\u0E34',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E1F\u0E34\u0E08\u0E34',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E1F\u0E34\u0E08\u0E34'
                         }
                     },
                     'French_Guiana': {
                         'long': {
-                            'standard': 'เวลาเฟรนช์เกียนา'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E40\u0E1F\u0E23\u0E19\u0E0A\u0E4C\u0E40\u0E01\u0E35\u0E22\u0E19\u0E32'
                         }
                     },
                     'French_Southern': {
                         'long': {
-                            'standard': 'เวลาเฟรนช์เซาเทิร์นและแอนตาร์กติก'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E40\u0E1F\u0E23\u0E19\u0E0A\u0E4C\u0E40\u0E0B\u0E32\u0E40\u0E17\u0E34\u0E23\u0E4C\u0E19\u0E41\u0E25\u0E30\u0E41\u0E2D\u0E19\u0E15\u0E32\u0E23\u0E4C\u0E01\u0E15\u0E34\u0E01'
                         }
                     },
                     'Galapagos': {
                         'long': {
-                            'standard': 'เวลากาลาปาโกส'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E01\u0E32\u0E25\u0E32\u0E1B\u0E32\u0E42\u0E01\u0E2A'
                         }
                     },
                     'Tokelau': {
                         'long': {
-                            'standard': 'เวลาโตเกเลา'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E42\u0E15\u0E40\u0E01\u0E40\u0E25\u0E32'
                         }
                     },
                     'Tonga': {
                         'long': {
-                            'generic': 'เวลาตองกา',
-                            'standard': 'เวลามาตรฐานตองกา',
-                            'daylight': 'เวลาฤดูร้อนตองกา'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E15\u0E2D\u0E07\u0E01\u0E32',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E15\u0E2D\u0E07\u0E01\u0E32',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E15\u0E2D\u0E07\u0E01\u0E32'
                         }
                     },
                     'Truk': {
                         'long': {
-                            'standard': 'เวลาชุก'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E0A\u0E38\u0E01'
                         }
                     },
                     'Turkmenistan': {
                         'long': {
-                            'generic': 'เวลาเติร์กเมนิสถาน',
-                            'standard': 'เวลามาตรฐานเติร์กเมนิสถาน',
-                            'daylight': 'เวลาฤดูร้อนเติร์กเมนิสถาน'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E40\u0E15\u0E34\u0E23\u0E4C\u0E01\u0E40\u0E21\u0E19\u0E34\u0E2A\u0E16\u0E32\u0E19',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E40\u0E15\u0E34\u0E23\u0E4C\u0E01\u0E40\u0E21\u0E19\u0E34\u0E2A\u0E16\u0E32\u0E19',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E40\u0E15\u0E34\u0E23\u0E4C\u0E01\u0E40\u0E21\u0E19\u0E34\u0E2A\u0E16\u0E32\u0E19'
                         }
                     },
                     'Tuvalu': {
                         'long': {
-                            'standard': 'เวลาตูวาลู'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E15\u0E39\u0E27\u0E32\u0E25\u0E39'
                         }
                     },
                     'Uruguay': {
                         'long': {
-                            'generic': 'เวลาอุรุกวัย',
-                            'standard': 'เวลามาตรฐานอุรุกวัย',
-                            'daylight': 'เวลาฤดูร้อนอุรุกวัย'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E38\u0E23\u0E38\u0E01\u0E27\u0E31\u0E22',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E2D\u0E38\u0E23\u0E38\u0E01\u0E27\u0E31\u0E22',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E2D\u0E38\u0E23\u0E38\u0E01\u0E27\u0E31\u0E22'
                         }
                     },
                     'Uzbekistan': {
                         'long': {
-                            'generic': 'เวลาอุซเบกิสถาน',
-                            'standard': 'เวลามาตรฐานอุซเบกิสถาน',
-                            'daylight': 'เวลาฤดูร้อนอุซเบกิสถาน'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E38\u0E0B\u0E40\u0E1A\u0E01\u0E34\u0E2A\u0E16\u0E32\u0E19',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E2D\u0E38\u0E0B\u0E40\u0E1A\u0E01\u0E34\u0E2A\u0E16\u0E32\u0E19',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E2D\u0E38\u0E0B\u0E40\u0E1A\u0E01\u0E34\u0E2A\u0E16\u0E32\u0E19'
                         }
                     },
                     'Vanuatu': {
                         'long': {
-                            'generic': 'เวลาวานูอาตู',
-                            'standard': 'เวลามาตรฐานวานูอาตู',
-                            'daylight': 'เวลาฤดูร้อนวานูอาตู'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E27\u0E32\u0E19\u0E39\u0E2D\u0E32\u0E15\u0E39',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E27\u0E32\u0E19\u0E39\u0E2D\u0E32\u0E15\u0E39',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E27\u0E32\u0E19\u0E39\u0E2D\u0E32\u0E15\u0E39'
                         }
                     },
                     'Yekaterinburg': {
                         'long': {
-                            'generic': 'เวลาเยคาเตรินบูร์ก',
-                            'standard': 'เวลามาตรฐานเยคาเตรินบูร์ก',
-                            'daylight': 'เวลาฤดูร้อนเยคาเตรินบูร์ก'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E40\u0E22\u0E04\u0E32\u0E40\u0E15\u0E23\u0E34\u0E19\u0E1A\u0E39\u0E23\u0E4C\u0E01',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E40\u0E22\u0E04\u0E32\u0E40\u0E15\u0E23\u0E34\u0E19\u0E1A\u0E39\u0E23\u0E4C\u0E01',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E40\u0E22\u0E04\u0E32\u0E40\u0E15\u0E23\u0E34\u0E19\u0E1A\u0E39\u0E23\u0E4C\u0E01'
                         }
                     },
                     'Yakutsk': {
                         'long': {
-                            'generic': 'เวลายาคุตสค์',
-                            'standard': 'เวลามาตรฐานยาคุตสค์',
-                            'daylight': 'เวลาฤดูร้อนยาคุตสค์'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E22\u0E32\u0E04\u0E38\u0E15\u0E2A\u0E04\u0E4C',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E22\u0E32\u0E04\u0E38\u0E15\u0E2A\u0E04\u0E4C',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E22\u0E32\u0E04\u0E38\u0E15\u0E2A\u0E04\u0E4C'
                         }
                     },
                     'Wallis': {
                         'long': {
-                            'standard': 'เวลาวาลลิสและฟุตูนา'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E27\u0E32\u0E25\u0E25\u0E34\u0E2A\u0E41\u0E25\u0E30\u0E1F\u0E38\u0E15\u0E39\u0E19\u0E32'
                         }
                     },
                     'Wake': {
                         'long': {
-                            'standard': 'เวลาเกาะเวก'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E40\u0E01\u0E32\u0E30\u0E40\u0E27\u0E01'
                         }
                     },
                     'Vostok': {
                         'long': {
-                            'standard': 'เวลาวอสตอค'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E27\u0E2D\u0E2A\u0E15\u0E2D\u0E04'
                         }
                     },
                     'Volgograd': {
                         'long': {
-                            'generic': 'เวลาวอลโกกราด',
-                            'standard': 'เวลามาตรฐานวอลโกกราด',
-                            'daylight': 'เวลาฤดูร้อนวอลโกกราด'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E27\u0E2D\u0E25\u0E42\u0E01\u0E01\u0E23\u0E32\u0E14',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E27\u0E2D\u0E25\u0E42\u0E01\u0E01\u0E23\u0E32\u0E14',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E27\u0E2D\u0E25\u0E42\u0E01\u0E01\u0E23\u0E32\u0E14'
                         }
                     },
                     'Vladivostok': {
                         'long': {
-                            'generic': 'เวลาวลาดีวอสตอค',
-                            'standard': 'เวลามาตรฐานวลาดีวอสตอค',
-                            'daylight': 'เวลาฤดูร้อนวลาดีวอสตอค'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E27\u0E25\u0E32\u0E14\u0E35\u0E27\u0E2D\u0E2A\u0E15\u0E2D\u0E04',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E27\u0E25\u0E32\u0E14\u0E35\u0E27\u0E2D\u0E2A\u0E15\u0E2D\u0E04',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E27\u0E25\u0E32\u0E14\u0E35\u0E27\u0E2D\u0E2A\u0E15\u0E2D\u0E04'
                         }
                     },
                     'Venezuela': {
                         'long': {
-                            'standard': 'เวลาเวเนซุเอลา'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E40\u0E27\u0E40\u0E19\u0E0B\u0E38\u0E40\u0E2D\u0E25\u0E32'
                         }
                     },
                     'Tajikistan': {
                         'long': {
-                            'standard': 'เวลาทาจิกิสถาน'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E17\u0E32\u0E08\u0E34\u0E01\u0E34\u0E2A\u0E16\u0E32\u0E19'
                         }
                     },
                     'Taipei': {
                         'long': {
-                            'generic': 'เวลาไทเป',
-                            'standard': 'เวลามาตรฐานไทเป',
-                            'daylight': 'เวลาออมแสงไทเป'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E44\u0E17\u0E40\u0E1B',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E44\u0E17\u0E40\u0E1B',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E21\u0E41\u0E2A\u0E07\u0E44\u0E17\u0E40\u0E1B'
                         }
                     },
                     'Tahiti': {
                         'long': {
-                            'standard': 'เวลาตาฮีตี'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E15\u0E32\u0E2E\u0E35\u0E15\u0E35'
                         }
                     },
                     'Syowa': {
                         'long': {
-                            'standard': 'เวลาโซวา'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E42\u0E0B\u0E27\u0E32'
                         }
                     },
                     'Suriname': {
                         'long': {
-                            'standard': 'เวลาซูรินาเม'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E0B\u0E39\u0E23\u0E34\u0E19\u0E32\u0E40\u0E21'
                         }
                     },
                     'South_Georgia': {
                         'long': {
-                            'standard': 'เวลาเซาท์จอร์เจีย'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E40\u0E0B\u0E32\u0E17\u0E4C\u0E08\u0E2D\u0E23\u0E4C\u0E40\u0E08\u0E35\u0E22'
                         }
                     },
                     'Solomon': {
                         'long': {
-                            'standard': 'เวลาหมู่เกาะโซโลมอน'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E2B\u0E21\u0E39\u0E48\u0E40\u0E01\u0E32\u0E30\u0E42\u0E0B\u0E42\u0E25\u0E21\u0E2D\u0E19'
                         }
                     },
                     'Singapore': {
                         'long': {
-                            'standard': 'เวลาสิงคโปร์'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E2A\u0E34\u0E07\u0E04\u0E42\u0E1B\u0E23\u0E4C'
                         }
                     },
                     'Seychelles': {
                         'long': {
-                            'standard': 'เวลาเซเชลส์'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E40\u0E0B\u0E40\u0E0A\u0E25\u0E2A\u0E4C'
                         }
                     },
                     'Guam': {
                         'long': {
-                            'standard': 'เวลากวม'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E01\u0E27\u0E21'
                         }
                     },
                     'Greenland_Western': {
                         'long': {
-                            'generic': 'เวลากรีนแลนด์ตะวันตก',
-                            'standard': 'เวลามาตรฐานกรีนแลนด์ตะวันตก',
-                            'daylight': 'เวลาฤดูร้อนกรีนแลนด์ตะวันตก'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E01\u0E23\u0E35\u0E19\u0E41\u0E25\u0E19\u0E14\u0E4C\u0E15\u0E30\u0E27\u0E31\u0E19\u0E15\u0E01',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E01\u0E23\u0E35\u0E19\u0E41\u0E25\u0E19\u0E14\u0E4C\u0E15\u0E30\u0E27\u0E31\u0E19\u0E15\u0E01',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E01\u0E23\u0E35\u0E19\u0E41\u0E25\u0E19\u0E14\u0E4C\u0E15\u0E30\u0E27\u0E31\u0E19\u0E15\u0E01'
                         }
                     },
                     'Greenland_Eastern': {
                         'long': {
-                            'generic': 'เวลากรีนแลนด์ตะวันออก',
-                            'standard': 'เวลามาตรฐานกรีนแลนด์ตะวันออก',
-                            'daylight': 'เวลาฤดูร้อนกรีนแลนด์ตะวันออก'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E01\u0E23\u0E35\u0E19\u0E41\u0E25\u0E19\u0E14\u0E4C\u0E15\u0E30\u0E27\u0E31\u0E19\u0E2D\u0E2D\u0E01',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E01\u0E23\u0E35\u0E19\u0E41\u0E25\u0E19\u0E14\u0E4C\u0E15\u0E30\u0E27\u0E31\u0E19\u0E2D\u0E2D\u0E01',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E01\u0E23\u0E35\u0E19\u0E41\u0E25\u0E19\u0E14\u0E4C\u0E15\u0E30\u0E27\u0E31\u0E19\u0E2D\u0E2D\u0E01'
                         }
                     },
                     'GMT': {
                         'long': {
-                            'standard': 'เวลามาตรฐานกรีนิช'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E01\u0E23\u0E35\u0E19\u0E34\u0E0A'
                         }
                     },
                     'Gilbert_Islands': {
                         'long': {
-                            'standard': 'เวลาหมู่เกาะกิลเบิร์ต'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E2B\u0E21\u0E39\u0E48\u0E40\u0E01\u0E32\u0E30\u0E01\u0E34\u0E25\u0E40\u0E1A\u0E34\u0E23\u0E4C\u0E15'
                         }
                     },
                     'Georgia': {
                         'long': {
-                            'generic': 'เวลาจอร์เจีย',
-                            'standard': 'เวลามาตรฐานจอร์เจีย',
-                            'daylight': 'เวลาฤดูร้อนจอร์เจีย'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E08\u0E2D\u0E23\u0E4C\u0E40\u0E08\u0E35\u0E22',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E08\u0E2D\u0E23\u0E4C\u0E40\u0E08\u0E35\u0E22',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E08\u0E2D\u0E23\u0E4C\u0E40\u0E08\u0E35\u0E22'
                         }
                     },
                     'Gambier': {
                         'long': {
-                            'standard': 'เวลาแกมเบียร์'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E41\u0E01\u0E21\u0E40\u0E1A\u0E35\u0E22\u0E23\u0E4C'
                         }
                     },
                     'Amazon': {
                         'long': {
-                            'generic': 'เวลาอะเมซอน',
-                            'standard': 'เวลามาตรฐานอะเมซอน',
-                            'daylight': 'เวลาฤดูร้อนอะเมซอน'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E30\u0E40\u0E21\u0E0B\u0E2D\u0E19',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E2D\u0E30\u0E40\u0E21\u0E0B\u0E2D\u0E19',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E2D\u0E30\u0E40\u0E21\u0E0B\u0E2D\u0E19'
                         }
                     },
                     'Acre': {
                         'long': {
-                            'generic': 'เวลาอาเกร',
-                            'standard': 'เวลามาตรฐานอาเกร',
-                            'daylight': 'เวลาฤดูร้อนอาเกร'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E32\u0E40\u0E01\u0E23',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E2D\u0E32\u0E40\u0E01\u0E23',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E2D\u0E32\u0E40\u0E01\u0E23'
                         }
                     },
                     'Afghanistan': {
                         'long': {
-                            'standard': 'เวลาอัฟกานิสถาน'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E31\u0E1F\u0E01\u0E32\u0E19\u0E34\u0E2A\u0E16\u0E32\u0E19'
                         }
                     },
                     'Africa_Central': {
                         'long': {
-                            'standard': 'เวลาแอฟริกากลาง'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E41\u0E2D\u0E1F\u0E23\u0E34\u0E01\u0E32\u0E01\u0E25\u0E32\u0E07'
                         }
                     },
                     'Africa_Eastern': {
                         'long': {
-                            'standard': 'เวลาแอฟริกาตะวันออก'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E41\u0E2D\u0E1F\u0E23\u0E34\u0E01\u0E32\u0E15\u0E30\u0E27\u0E31\u0E19\u0E2D\u0E2D\u0E01'
                         }
                     },
                     'Africa_Southern': {
                         'long': {
-                            'standard': 'เวลาแอฟริกาใต้'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E41\u0E2D\u0E1F\u0E23\u0E34\u0E01\u0E32\u0E43\u0E15\u0E49'
                         }
                     },
                     'Africa_Western': {
                         'long': {
-                            'generic': 'เวลาแอฟริกาตะวันตก',
-                            'standard': 'เวลามาตรฐานแอฟริกาตะวันตก',
-                            'daylight': 'เวลาฤดูร้อนแอฟริกาตะวันตก'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E41\u0E2D\u0E1F\u0E23\u0E34\u0E01\u0E32\u0E15\u0E30\u0E27\u0E31\u0E19\u0E15\u0E01',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E41\u0E2D\u0E1F\u0E23\u0E34\u0E01\u0E32\u0E15\u0E30\u0E27\u0E31\u0E19\u0E15\u0E01',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E41\u0E2D\u0E1F\u0E23\u0E34\u0E01\u0E32\u0E15\u0E30\u0E27\u0E31\u0E19\u0E15\u0E01'
                         }
                     },
                     'Alaska': {
                         'long': {
-                            'generic': 'เวลาอะแลสกา',
-                            'standard': 'เวลามาตรฐานอะแลสกา',
-                            'daylight': 'เวลาออมแสงของอะแลสกา'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E30\u0E41\u0E25\u0E2A\u0E01\u0E32',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E2D\u0E30\u0E41\u0E25\u0E2A\u0E01\u0E32',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E21\u0E41\u0E2A\u0E07\u0E02\u0E2D\u0E07\u0E2D\u0E30\u0E41\u0E25\u0E2A\u0E01\u0E32'
                         }
                     },
                     'Almaty': {
                         'long': {
-                            'generic': 'เวลาอัลมาตี',
-                            'standard': 'เวลามาตรฐานอัลมาตี',
-                            'daylight': 'เวลาฤดูร้อนอัลมาตี'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E31\u0E25\u0E21\u0E32\u0E15\u0E35',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E2D\u0E31\u0E25\u0E21\u0E32\u0E15\u0E35',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E2D\u0E31\u0E25\u0E21\u0E32\u0E15\u0E35'
                         }
                     },
                     'Arabian': {
                         'long': {
-                            'generic': 'เวลาอาหรับ',
-                            'standard': 'เวลามาตรฐานอาหรับ',
-                            'daylight': 'เวลาออมแสงอาหรับ'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E32\u0E2B\u0E23\u0E31\u0E1A',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E2D\u0E32\u0E2B\u0E23\u0E31\u0E1A',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E21\u0E41\u0E2A\u0E07\u0E2D\u0E32\u0E2B\u0E23\u0E31\u0E1A'
                         }
                     },
                     'Argentina': {
                         'long': {
-                            'generic': 'เวลาอาร์เจนตินา',
-                            'standard': 'เวลามาตรฐานอาร์เจนตินา',
-                            'daylight': 'เวลาฤดูร้อนอาร์เจนตินา'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E32\u0E23\u0E4C\u0E40\u0E08\u0E19\u0E15\u0E34\u0E19\u0E32',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E2D\u0E32\u0E23\u0E4C\u0E40\u0E08\u0E19\u0E15\u0E34\u0E19\u0E32',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E2D\u0E32\u0E23\u0E4C\u0E40\u0E08\u0E19\u0E15\u0E34\u0E19\u0E32'
                         }
                     },
                     'Argentina_Western': {
                         'long': {
-                            'generic': 'เวลาตะวันตกของอาร์เจนตินา',
-                            'standard': 'เวลามาตรฐานทางตะวันตกของอาร์เจนตินา',
-                            'daylight': 'เวลาฤดูร้อนทางตะวันตกของอาร์เจนตินา'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E15\u0E30\u0E27\u0E31\u0E19\u0E15\u0E01\u0E02\u0E2D\u0E07\u0E2D\u0E32\u0E23\u0E4C\u0E40\u0E08\u0E19\u0E15\u0E34\u0E19\u0E32',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E17\u0E32\u0E07\u0E15\u0E30\u0E27\u0E31\u0E19\u0E15\u0E01\u0E02\u0E2D\u0E07\u0E2D\u0E32\u0E23\u0E4C\u0E40\u0E08\u0E19\u0E15\u0E34\u0E19\u0E32',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E17\u0E32\u0E07\u0E15\u0E30\u0E27\u0E31\u0E19\u0E15\u0E01\u0E02\u0E2D\u0E07\u0E2D\u0E32\u0E23\u0E4C\u0E40\u0E08\u0E19\u0E15\u0E34\u0E19\u0E32'
                         }
                     },
                     'Armenia': {
                         'long': {
-                            'generic': 'เวลาอาร์เมเนีย',
-                            'standard': 'เวลามาตรฐานอาร์เมเนีย',
-                            'daylight': 'เวลาฤดูร้อนอาร์เมเนีย'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E32\u0E23\u0E4C\u0E40\u0E21\u0E40\u0E19\u0E35\u0E22',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E2D\u0E32\u0E23\u0E4C\u0E40\u0E21\u0E40\u0E19\u0E35\u0E22',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E2D\u0E32\u0E23\u0E4C\u0E40\u0E21\u0E40\u0E19\u0E35\u0E22'
                         }
                     },
                     'Atlantic': {
                         'long': {
-                            'generic': 'เวลาแอตแลนติก',
-                            'standard': 'เวลามาตรฐานแอตแลนติก',
-                            'daylight': 'เวลาออมแสงของแอตแลนติก'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E41\u0E2D\u0E15\u0E41\u0E25\u0E19\u0E15\u0E34\u0E01',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E41\u0E2D\u0E15\u0E41\u0E25\u0E19\u0E15\u0E34\u0E01',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E21\u0E41\u0E2A\u0E07\u0E02\u0E2D\u0E07\u0E41\u0E2D\u0E15\u0E41\u0E25\u0E19\u0E15\u0E34\u0E01'
                         }
                     },
                     'Australia_Central': {
                         'long': {
-                            'generic': 'เวลาออสเตรเลียกลาง',
-                            'standard': 'เวลามาตรฐานทางตอนกลางของออสเตรเลีย',
-                            'daylight': 'เวลาออมแสงทางตอนกลางของออสเตรเลีย'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E2A\u0E40\u0E15\u0E23\u0E40\u0E25\u0E35\u0E22\u0E01\u0E25\u0E32\u0E07',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E17\u0E32\u0E07\u0E15\u0E2D\u0E19\u0E01\u0E25\u0E32\u0E07\u0E02\u0E2D\u0E07\u0E2D\u0E2D\u0E2A\u0E40\u0E15\u0E23\u0E40\u0E25\u0E35\u0E22',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E21\u0E41\u0E2A\u0E07\u0E17\u0E32\u0E07\u0E15\u0E2D\u0E19\u0E01\u0E25\u0E32\u0E07\u0E02\u0E2D\u0E07\u0E2D\u0E2D\u0E2A\u0E40\u0E15\u0E23\u0E40\u0E25\u0E35\u0E22'
                         }
                     },
                     'Australia_CentralWestern': {
                         'long': {
-                            'generic': 'เวลาทางตะวันตกตอนกลางของออสเตรเลีย',
-                            'standard': 'เวลามาตรฐานทางตะวันตกตอนกลางของออสเตรเลีย',
-                            'daylight': 'เวลาออมแสงทางตะวันตกตอนกลางของออสเตรเลีย'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E17\u0E32\u0E07\u0E15\u0E30\u0E27\u0E31\u0E19\u0E15\u0E01\u0E15\u0E2D\u0E19\u0E01\u0E25\u0E32\u0E07\u0E02\u0E2D\u0E07\u0E2D\u0E2D\u0E2A\u0E40\u0E15\u0E23\u0E40\u0E25\u0E35\u0E22',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E17\u0E32\u0E07\u0E15\u0E30\u0E27\u0E31\u0E19\u0E15\u0E01\u0E15\u0E2D\u0E19\u0E01\u0E25\u0E32\u0E07\u0E02\u0E2D\u0E07\u0E2D\u0E2D\u0E2A\u0E40\u0E15\u0E23\u0E40\u0E25\u0E35\u0E22',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E21\u0E41\u0E2A\u0E07\u0E17\u0E32\u0E07\u0E15\u0E30\u0E27\u0E31\u0E19\u0E15\u0E01\u0E15\u0E2D\u0E19\u0E01\u0E25\u0E32\u0E07\u0E02\u0E2D\u0E07\u0E2D\u0E2D\u0E2A\u0E40\u0E15\u0E23\u0E40\u0E25\u0E35\u0E22'
                         }
                     },
                     'Australia_Eastern': {
                         'long': {
-                            'generic': 'เวลาออสเตรเลียตะวันออก',
-                            'standard': 'เวลามาตรฐานทางตะวันออกของออสเตรเลีย',
-                            'daylight': 'เวลาออมแสงทางตะวันออกของออสเตรเลีย'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E2A\u0E40\u0E15\u0E23\u0E40\u0E25\u0E35\u0E22\u0E15\u0E30\u0E27\u0E31\u0E19\u0E2D\u0E2D\u0E01',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E17\u0E32\u0E07\u0E15\u0E30\u0E27\u0E31\u0E19\u0E2D\u0E2D\u0E01\u0E02\u0E2D\u0E07\u0E2D\u0E2D\u0E2A\u0E40\u0E15\u0E23\u0E40\u0E25\u0E35\u0E22',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E21\u0E41\u0E2A\u0E07\u0E17\u0E32\u0E07\u0E15\u0E30\u0E27\u0E31\u0E19\u0E2D\u0E2D\u0E01\u0E02\u0E2D\u0E07\u0E2D\u0E2D\u0E2A\u0E40\u0E15\u0E23\u0E40\u0E25\u0E35\u0E22'
                         }
                     },
                     'Australia_Western': {
                         'long': {
-                            'generic': 'เวลาออสเตรเลียตะวันตก',
-                            'standard': 'เวลามาตรฐานทางตะวันตกของออสเตรเลีย',
-                            'daylight': 'เวลาออมแสงทางตะวันตกของออสเตรเลีย'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E2A\u0E40\u0E15\u0E23\u0E40\u0E25\u0E35\u0E22\u0E15\u0E30\u0E27\u0E31\u0E19\u0E15\u0E01',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E17\u0E32\u0E07\u0E15\u0E30\u0E27\u0E31\u0E19\u0E15\u0E01\u0E02\u0E2D\u0E07\u0E2D\u0E2D\u0E2A\u0E40\u0E15\u0E23\u0E40\u0E25\u0E35\u0E22',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E21\u0E41\u0E2A\u0E07\u0E17\u0E32\u0E07\u0E15\u0E30\u0E27\u0E31\u0E19\u0E15\u0E01\u0E02\u0E2D\u0E07\u0E2D\u0E2D\u0E2A\u0E40\u0E15\u0E23\u0E40\u0E25\u0E35\u0E22'
                         }
                     },
                     'Azerbaijan': {
                         'long': {
-                            'generic': 'เวลาอาเซอร์ไบจาน',
-                            'standard': 'เวลามาตรฐานอาเซอร์ไบจาน',
-                            'daylight': 'เวลาฤดูร้อนอาเซอร์ไบจาน'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E32\u0E40\u0E0B\u0E2D\u0E23\u0E4C\u0E44\u0E1A\u0E08\u0E32\u0E19',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E2D\u0E32\u0E40\u0E0B\u0E2D\u0E23\u0E4C\u0E44\u0E1A\u0E08\u0E32\u0E19',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E2D\u0E32\u0E40\u0E0B\u0E2D\u0E23\u0E4C\u0E44\u0E1A\u0E08\u0E32\u0E19'
                         }
                     },
                     'Azores': {
                         'long': {
-                            'generic': 'เวลาอะโซร์ส',
-                            'standard': 'เวลามาตรฐานอะโซร์ส',
-                            'daylight': 'เวลาฤดูร้อนอะโซร์ส'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E30\u0E42\u0E0B\u0E23\u0E4C\u0E2A',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E2D\u0E30\u0E42\u0E0B\u0E23\u0E4C\u0E2A',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E2D\u0E30\u0E42\u0E0B\u0E23\u0E4C\u0E2A'
                         }
                     },
                     'Bangladesh': {
                         'long': {
-                            'generic': 'เวลาบังกลาเทศ',
-                            'standard': 'เวลามาตรฐานบังกลาเทศ',
-                            'daylight': 'เวลาฤดูร้อนบังกลาเทศ'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E1A\u0E31\u0E07\u0E01\u0E25\u0E32\u0E40\u0E17\u0E28',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E1A\u0E31\u0E07\u0E01\u0E25\u0E32\u0E40\u0E17\u0E28',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E1A\u0E31\u0E07\u0E01\u0E25\u0E32\u0E40\u0E17\u0E28'
                         }
                     },
                     'Bhutan': {
                         'long': {
-                            'standard': 'เวลาภูฏาน'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E20\u0E39\u0E0F\u0E32\u0E19'
                         }
                     },
                     'Bolivia': {
                         'long': {
-                            'standard': 'เวลาโบลิเวีย'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E42\u0E1A\u0E25\u0E34\u0E40\u0E27\u0E35\u0E22'
                         }
                     },
                     'Brasilia': {
                         'long': {
-                            'generic': 'เวลาบราซิเลีย',
-                            'standard': 'เวลามาตรฐานบราซิเลีย',
-                            'daylight': 'เวลาฤดูร้อนบราซิเลีย'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E1A\u0E23\u0E32\u0E0B\u0E34\u0E40\u0E25\u0E35\u0E22',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E1A\u0E23\u0E32\u0E0B\u0E34\u0E40\u0E25\u0E35\u0E22',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E1A\u0E23\u0E32\u0E0B\u0E34\u0E40\u0E25\u0E35\u0E22'
                         }
                     },
                     'Brunei': {
                         'long': {
-                            'standard': 'เวลาบรูไนดารุสซาลาม'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E1A\u0E23\u0E39\u0E44\u0E19\u0E14\u0E32\u0E23\u0E38\u0E2A\u0E0B\u0E32\u0E25\u0E32\u0E21'
                         }
                     },
                     'Gulf': {
                         'long': {
-                            'standard': 'เวลากัลฟ์'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E01\u0E31\u0E25\u0E1F\u0E4C'
                         }
                     },
                     'Guyana': {
                         'long': {
-                            'standard': 'เวลากายอานา'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E01\u0E32\u0E22\u0E2D\u0E32\u0E19\u0E32'
                         }
                     },
                     'Hawaii_Aleutian': {
                         'long': {
-                            'generic': 'เวลาฮาวาย-อะลูเชียน',
-                            'standard': 'เวลามาตรฐานฮาวาย-อะลูเชียน',
-                            'daylight': 'เวลาออมแสงฮาวาย-อะลูเชียน'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2E\u0E32\u0E27\u0E32\u0E22-\u0E2D\u0E30\u0E25\u0E39\u0E40\u0E0A\u0E35\u0E22\u0E19',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E2E\u0E32\u0E27\u0E32\u0E22-\u0E2D\u0E30\u0E25\u0E39\u0E40\u0E0A\u0E35\u0E22\u0E19',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E21\u0E41\u0E2A\u0E07\u0E2E\u0E32\u0E27\u0E32\u0E22-\u0E2D\u0E30\u0E25\u0E39\u0E40\u0E0A\u0E35\u0E22\u0E19'
                         }
                     },
                     'Hong_Kong': {
                         'long': {
-                            'generic': 'เวลาฮ่องกง',
-                            'standard': 'เวลามาตรฐานฮ่องกง',
-                            'daylight': 'เวลาฤดูร้อนฮ่องกง'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2E\u0E48\u0E2D\u0E07\u0E01\u0E07',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E2E\u0E48\u0E2D\u0E07\u0E01\u0E07',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E2E\u0E48\u0E2D\u0E07\u0E01\u0E07'
                         }
                     },
                     'Hovd': {
                         'long': {
-                            'generic': 'เวลาฮอฟด์',
-                            'standard': 'เวลามาตรฐานฮอฟด์',
-                            'daylight': 'เวลาฤดูร้อนฮอฟด์'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2E\u0E2D\u0E1F\u0E14\u0E4C',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E2E\u0E2D\u0E1F\u0E14\u0E4C',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E2E\u0E2D\u0E1F\u0E14\u0E4C'
                         }
                     },
                     'India': {
                         'long': {
-                            'standard': 'เวลาอินเดีย'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E34\u0E19\u0E40\u0E14\u0E35\u0E22'
                         }
                     },
                     'Indian_Ocean': {
                         'long': {
-                            'standard': 'เวลามหาสมุทรอินเดีย'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E2B\u0E32\u0E2A\u0E21\u0E38\u0E17\u0E23\u0E2D\u0E34\u0E19\u0E40\u0E14\u0E35\u0E22'
                         }
                     },
                     'Indochina': {
                         'long': {
-                            'standard': 'เวลาอินโดจีน'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E34\u0E19\u0E42\u0E14\u0E08\u0E35\u0E19'
                         }
                     },
                     'Indonesia_Central': {
                         'long': {
-                            'standard': 'เวลาอินโดนีเซียตอนกลาง'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E34\u0E19\u0E42\u0E14\u0E19\u0E35\u0E40\u0E0B\u0E35\u0E22\u0E15\u0E2D\u0E19\u0E01\u0E25\u0E32\u0E07'
                         }
                     },
                     'Indonesia_Eastern': {
                         'long': {
-                            'standard': 'เวลาอินโดนีเซียฝั่งตะวันออก'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E34\u0E19\u0E42\u0E14\u0E19\u0E35\u0E40\u0E0B\u0E35\u0E22\u0E1D\u0E31\u0E48\u0E07\u0E15\u0E30\u0E27\u0E31\u0E19\u0E2D\u0E2D\u0E01'
                         }
                     },
                     'Indonesia_Western': {
                         'long': {
-                            'standard': 'เวลาอินโดนีเซียฝั่งตะวันตก'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E34\u0E19\u0E42\u0E14\u0E19\u0E35\u0E40\u0E0B\u0E35\u0E22\u0E1D\u0E31\u0E48\u0E07\u0E15\u0E30\u0E27\u0E31\u0E19\u0E15\u0E01'
                         }
                     },
                     'Iran': {
                         'long': {
-                            'generic': 'เวลาอิหร่าน',
-                            'standard': 'เวลามาตรฐานอิหร่าน',
-                            'daylight': 'เวลาออมแสงอิหร่าน'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E34\u0E2B\u0E23\u0E48\u0E32\u0E19',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E2D\u0E34\u0E2B\u0E23\u0E48\u0E32\u0E19',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E21\u0E41\u0E2A\u0E07\u0E2D\u0E34\u0E2B\u0E23\u0E48\u0E32\u0E19'
                         }
                     },
                     'Irkutsk': {
                         'long': {
-                            'generic': 'เวลาอีร์คุตสค์',
-                            'standard': 'เวลามาตรฐานอีร์คุตสค์',
-                            'daylight': 'เวลาฤดูร้อนอีร์คุตสค์'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E35\u0E23\u0E4C\u0E04\u0E38\u0E15\u0E2A\u0E04\u0E4C',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E2D\u0E35\u0E23\u0E4C\u0E04\u0E38\u0E15\u0E2A\u0E04\u0E4C',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E2D\u0E35\u0E23\u0E4C\u0E04\u0E38\u0E15\u0E2A\u0E04\u0E4C'
                         }
                     },
                     'Israel': {
                         'long': {
-                            'generic': 'เวลาอิสราเอล',
-                            'standard': 'เวลามาตรฐานอิสราเอล',
-                            'daylight': 'เวลาออมแสงอิสราเอล'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E34\u0E2A\u0E23\u0E32\u0E40\u0E2D\u0E25',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E2D\u0E34\u0E2A\u0E23\u0E32\u0E40\u0E2D\u0E25',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E21\u0E41\u0E2A\u0E07\u0E2D\u0E34\u0E2A\u0E23\u0E32\u0E40\u0E2D\u0E25'
                         }
                     },
                     'Japan': {
                         'long': {
-                            'generic': 'เวลาญี่ปุ่น',
-                            'standard': 'เวลามาตรฐานญี่ปุ่น',
-                            'daylight': 'เวลาออมแสงญี่ปุ่น'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E0D\u0E35\u0E48\u0E1B\u0E38\u0E48\u0E19',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E0D\u0E35\u0E48\u0E1B\u0E38\u0E48\u0E19',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E21\u0E41\u0E2A\u0E07\u0E0D\u0E35\u0E48\u0E1B\u0E38\u0E48\u0E19'
                         }
                     },
                     'Kamchatka': {
                         'long': {
-                            'generic': 'เวลาคัมชัตคา',
-                            'standard': 'เวลาเปโตรปัฟลอฟสค์-คัมชัตสกี',
-                            'daylight': 'เวลาฤดูร้อนเปโตรปัฟลอฟสค์-คัมชัตสกี'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E04\u0E31\u0E21\u0E0A\u0E31\u0E15\u0E04\u0E32',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E40\u0E1B\u0E42\u0E15\u0E23\u0E1B\u0E31\u0E1F\u0E25\u0E2D\u0E1F\u0E2A\u0E04\u0E4C-\u0E04\u0E31\u0E21\u0E0A\u0E31\u0E15\u0E2A\u0E01\u0E35',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E40\u0E1B\u0E42\u0E15\u0E23\u0E1B\u0E31\u0E1F\u0E25\u0E2D\u0E1F\u0E2A\u0E04\u0E4C-\u0E04\u0E31\u0E21\u0E0A\u0E31\u0E15\u0E2A\u0E01\u0E35'
                         }
                     },
                     'Kazakhstan_Eastern': {
                         'long': {
-                            'standard': 'เวลาคาซัคสถานตะวันออก'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E04\u0E32\u0E0B\u0E31\u0E04\u0E2A\u0E16\u0E32\u0E19\u0E15\u0E30\u0E27\u0E31\u0E19\u0E2D\u0E2D\u0E01'
                         }
                     },
                     'Kazakhstan_Western': {
                         'long': {
-                            'standard': 'เวลาคาซัคสถานตะวันตก'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E04\u0E32\u0E0B\u0E31\u0E04\u0E2A\u0E16\u0E32\u0E19\u0E15\u0E30\u0E27\u0E31\u0E19\u0E15\u0E01'
                         }
                     },
                     'Korea': {
                         'long': {
-                            'generic': 'เวลาเกาหลี',
-                            'standard': 'เวลามาตรฐานเกาหลี',
-                            'daylight': 'เวลาออมแสงเกาหลี'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E40\u0E01\u0E32\u0E2B\u0E25\u0E35',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E40\u0E01\u0E32\u0E2B\u0E25\u0E35',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E21\u0E41\u0E2A\u0E07\u0E40\u0E01\u0E32\u0E2B\u0E25\u0E35'
                         }
                     },
                     'Kosrae': {
                         'long': {
-                            'standard': 'เวลาคอสไร'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E04\u0E2D\u0E2A\u0E44\u0E23'
                         }
                     },
                     'Krasnoyarsk': {
                         'long': {
-                            'generic': 'เวลาครัสโนยาสค์',
-                            'standard': 'เวลามาตรฐานครัสโนยาสค์',
-                            'daylight': 'เวลาฤดูร้อนครัสโนยาสค์'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E04\u0E23\u0E31\u0E2A\u0E42\u0E19\u0E22\u0E32\u0E2A\u0E04\u0E4C',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E04\u0E23\u0E31\u0E2A\u0E42\u0E19\u0E22\u0E32\u0E2A\u0E04\u0E4C',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E04\u0E23\u0E31\u0E2A\u0E42\u0E19\u0E22\u0E32\u0E2A\u0E04\u0E4C'
                         }
                     },
                     'Kyrgystan': {
                         'long': {
-                            'standard': 'เวลาคีร์กีซสถาน'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E04\u0E35\u0E23\u0E4C\u0E01\u0E35\u0E0B\u0E2A\u0E16\u0E32\u0E19'
                         }
                     },
                     'Lanka': {
                         'long': {
-                            'standard': 'เวลาลังกา'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E25\u0E31\u0E07\u0E01\u0E32'
                         }
                     },
                     'Line_Islands': {
                         'long': {
-                            'standard': 'เวลาหมู่เกาะไลน์'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E2B\u0E21\u0E39\u0E48\u0E40\u0E01\u0E32\u0E30\u0E44\u0E25\u0E19\u0E4C'
                         }
                     },
                     'Lord_Howe': {
                         'long': {
-                            'generic': 'เวลาลอร์ดโฮว',
-                            'standard': 'เวลามาตรฐานลอร์ดโฮว์',
-                            'daylight': 'เวลาออมแสงของลอร์ดโฮว์'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E25\u0E2D\u0E23\u0E4C\u0E14\u0E42\u0E2E\u0E27',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E25\u0E2D\u0E23\u0E4C\u0E14\u0E42\u0E2E\u0E27\u0E4C',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E21\u0E41\u0E2A\u0E07\u0E02\u0E2D\u0E07\u0E25\u0E2D\u0E23\u0E4C\u0E14\u0E42\u0E2E\u0E27\u0E4C'
                         }
                     },
                     'Macau': {
                         'long': {
-                            'generic': 'เวลามาเก๊า',
-                            'standard': 'เวลามาตรฐานมาเก๊า',
-                            'daylight': 'เวลาฤดูร้อนมาเก๊า'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E40\u0E01\u0E4A\u0E32',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E21\u0E32\u0E40\u0E01\u0E4A\u0E32',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E21\u0E32\u0E40\u0E01\u0E4A\u0E32'
                         }
                     },
                     'Macquarie': {
                         'long': {
-                            'standard': 'เวลาเกาะแมกควอรี'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E40\u0E01\u0E32\u0E30\u0E41\u0E21\u0E01\u0E04\u0E27\u0E2D\u0E23\u0E35'
                         }
                     },
                     'Magadan': {
                         'long': {
-                            'generic': 'เวลามากาดาน',
-                            'standard': 'เวลามาตรฐานมากาดาน',
-                            'daylight': 'เวลาฤดูร้อนมากาดาน'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E01\u0E32\u0E14\u0E32\u0E19',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E21\u0E32\u0E01\u0E32\u0E14\u0E32\u0E19',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E21\u0E32\u0E01\u0E32\u0E14\u0E32\u0E19'
                         }
                     },
                     'Malaysia': {
                         'long': {
-                            'standard': 'เวลามาเลเซีย'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E40\u0E25\u0E40\u0E0B\u0E35\u0E22'
                         }
                     },
                     'Maldives': {
                         'long': {
-                            'standard': 'เวลามัลดีฟส์'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E31\u0E25\u0E14\u0E35\u0E1F\u0E2A\u0E4C'
                         }
                     },
                     'Marquesas': {
                         'long': {
-                            'standard': 'เวลามาร์เคซัส'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E23\u0E4C\u0E40\u0E04\u0E0B\u0E31\u0E2A'
                         }
                     },
                     'Marshall_Islands': {
                         'long': {
-                            'standard': 'เวลาหมู่เกาะมาร์แชลล์'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E2B\u0E21\u0E39\u0E48\u0E40\u0E01\u0E32\u0E30\u0E21\u0E32\u0E23\u0E4C\u0E41\u0E0A\u0E25\u0E25\u0E4C'
                         }
                     },
                     'Mauritius': {
                         'long': {
-                            'generic': 'เวลามอริเชียส',
-                            'standard': 'เวลามาตรฐานมอริเชียส',
-                            'daylight': 'เวลาฤดูร้อนของมอริเชียส'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E2D\u0E23\u0E34\u0E40\u0E0A\u0E35\u0E22\u0E2A',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E21\u0E2D\u0E23\u0E34\u0E40\u0E0A\u0E35\u0E22\u0E2A',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E02\u0E2D\u0E07\u0E21\u0E2D\u0E23\u0E34\u0E40\u0E0A\u0E35\u0E22\u0E2A'
                         }
                     },
                     'Mawson': {
                         'long': {
-                            'standard': 'เวลามอว์สัน'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E2D\u0E27\u0E4C\u0E2A\u0E31\u0E19'
                         }
                     },
                     'Mongolia': {
                         'long': {
-                            'generic': 'เวลาอูลานบาตอร์',
-                            'standard': 'เวลามาตรฐานอูลานบาตอร์',
-                            'daylight': 'เวลาฤดูร้อนอูลานบาตอร์'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E39\u0E25\u0E32\u0E19\u0E1A\u0E32\u0E15\u0E2D\u0E23\u0E4C',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E2D\u0E39\u0E25\u0E32\u0E19\u0E1A\u0E32\u0E15\u0E2D\u0E23\u0E4C',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E2D\u0E39\u0E25\u0E32\u0E19\u0E1A\u0E32\u0E15\u0E2D\u0E23\u0E4C'
                         }
                     },
                     'Moscow': {
                         'long': {
-                            'generic': 'เวลามอสโก',
-                            'standard': 'เวลามาตรฐานมอสโก',
-                            'daylight': 'เวลาฤดูร้อนมอสโก'
+                            'generic': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E2D\u0E2A\u0E42\u0E01',
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19\u0E21\u0E2D\u0E2A\u0E42\u0E01',
+                            'daylight': '\u0E40\u0E27\u0E25\u0E32\u0E24\u0E14\u0E39\u0E23\u0E49\u0E2D\u0E19\u0E21\u0E2D\u0E2A\u0E42\u0E01'
                         }
                     },
                     'Myanmar': {
                         'long': {
-                            'standard': 'เวลาพม่า'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E1E\u0E21\u0E48\u0E32'
                         }
                     },
                     'Nauru': {
                         'long': {
-                            'standard': 'เวลานาอูรู'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E19\u0E32\u0E2D\u0E39\u0E23\u0E39'
                         }
                     },
                     'Nepal': {
                         'long': {
-                            'standard': 'เวลาเนปาล'
+                            'standard': '\u0E40\u0E27\u0E25\u0E32\u0E40\u0E19\u0E1B\u0E32\u0E25'
                         }
                     }
                 },
                 'hourFormat': '+HH:mm;-HH:mm',
                 'gmtFormat': 'GMT{0}',
                 'gmtZeroFormat': 'GMT',
-                'regionFormat': 'เวลา{0}',
-                'regionFormat-type-daylight': 'เวลาออมแสง{0}',
-                'regionFormat-type-standard': 'เวลามาตรฐาน{0}',
+                'regionFormat': '\u0E40\u0E27\u0E25\u0E32{0}',
+                'regionFormat-type-daylight': '\u0E40\u0E27\u0E25\u0E32\u0E2D\u0E2D\u0E21\u0E41\u0E2A\u0E07{0}',
+                'regionFormat-type-standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19{0}',
                 'fallbackFormat': '{1} ({0})'
             },
             'calendars': {
@@ -2531,178 +2531,178 @@
                     'months': {
                         'format': {
                             'abbreviated': {
-                                '8': 'ส.ค.',
-                                '7': 'ก.ค.',
-                                '6': 'มิ.ย.',
-                                '5': 'พ.ค.',
-                                '12': 'ธ.ค.',
-                                '11': 'พ.ย.',
-                                '10': 'ต.ค.',
-                                '9': 'ก.ย.',
-                                '1': 'ม.ค.',
-                                '2': 'ก.พ.',
-                                '3': 'มี.ค.',
-                                '4': 'เม.ย.'
+                                '8': '\u0E2A.\u0E04.',
+                                '7': '\u0E01.\u0E04.',
+                                '6': '\u0E21\u0E34.\u0E22.',
+                                '5': '\u0E1E.\u0E04.',
+                                '12': '\u0E18.\u0E04.',
+                                '11': '\u0E1E.\u0E22.',
+                                '10': '\u0E15.\u0E04.',
+                                '9': '\u0E01.\u0E22.',
+                                '1': '\u0E21.\u0E04.',
+                                '2': '\u0E01.\u0E1E.',
+                                '3': '\u0E21\u0E35.\u0E04.',
+                                '4': '\u0E40\u0E21.\u0E22.'
                             },
                             'narrow': {
-                                '8': 'ส.ค.',
-                                '7': 'ก.ค.',
-                                '6': 'มิ.ย.',
-                                '5': 'พ.ค.',
-                                '12': 'ธ.ค.',
-                                '11': 'พ.ย.',
-                                '10': 'ต.ค.',
-                                '9': 'ก.ย.',
-                                '1': 'ม.ค.',
-                                '2': 'ก.พ.',
-                                '3': 'มี.ค.',
-                                '4': 'เม.ย.'
+                                '8': '\u0E2A.\u0E04.',
+                                '7': '\u0E01.\u0E04.',
+                                '6': '\u0E21\u0E34.\u0E22.',
+                                '5': '\u0E1E.\u0E04.',
+                                '12': '\u0E18.\u0E04.',
+                                '11': '\u0E1E.\u0E22.',
+                                '10': '\u0E15.\u0E04.',
+                                '9': '\u0E01.\u0E22.',
+                                '1': '\u0E21.\u0E04.',
+                                '2': '\u0E01.\u0E1E.',
+                                '3': '\u0E21\u0E35.\u0E04.',
+                                '4': '\u0E40\u0E21.\u0E22.'
                             },
                             'wide': {
-                                '8': 'สิงหาคม',
-                                '7': 'กรกฎาคม',
-                                '6': 'มิถุนายน',
-                                '5': 'พฤษภาคม',
-                                '12': 'ธันวาคม',
-                                '11': 'พฤศจิกายน',
-                                '10': 'ตุลาคม',
-                                '9': 'กันยายน',
-                                '1': 'มกราคม',
-                                '2': 'กุมภาพันธ์',
-                                '3': 'มีนาคม',
-                                '4': 'เมษายน'
+                                '8': '\u0E2A\u0E34\u0E07\u0E2B\u0E32\u0E04\u0E21',
+                                '7': '\u0E01\u0E23\u0E01\u0E0E\u0E32\u0E04\u0E21',
+                                '6': '\u0E21\u0E34\u0E16\u0E38\u0E19\u0E32\u0E22\u0E19',
+                                '5': '\u0E1E\u0E24\u0E29\u0E20\u0E32\u0E04\u0E21',
+                                '12': '\u0E18\u0E31\u0E19\u0E27\u0E32\u0E04\u0E21',
+                                '11': '\u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19',
+                                '10': '\u0E15\u0E38\u0E25\u0E32\u0E04\u0E21',
+                                '9': '\u0E01\u0E31\u0E19\u0E22\u0E32\u0E22\u0E19',
+                                '1': '\u0E21\u0E01\u0E23\u0E32\u0E04\u0E21',
+                                '2': '\u0E01\u0E38\u0E21\u0E20\u0E32\u0E1E\u0E31\u0E19\u0E18\u0E4C',
+                                '3': '\u0E21\u0E35\u0E19\u0E32\u0E04\u0E21',
+                                '4': '\u0E40\u0E21\u0E29\u0E32\u0E22\u0E19'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
-                                '8': 'ส.ค.',
-                                '7': 'ก.ค.',
-                                '6': 'มิ.ย.',
-                                '5': 'พ.ค.',
-                                '12': 'ธ.ค.',
-                                '11': 'พ.ย.',
-                                '10': 'ต.ค.',
-                                '9': 'ก.ย.',
-                                '1': 'ม.ค.',
-                                '2': 'ก.พ.',
-                                '3': 'มี.ค.',
-                                '4': 'เม.ย.'
+                                '8': '\u0E2A.\u0E04.',
+                                '7': '\u0E01.\u0E04.',
+                                '6': '\u0E21\u0E34.\u0E22.',
+                                '5': '\u0E1E.\u0E04.',
+                                '12': '\u0E18.\u0E04.',
+                                '11': '\u0E1E.\u0E22.',
+                                '10': '\u0E15.\u0E04.',
+                                '9': '\u0E01.\u0E22.',
+                                '1': '\u0E21.\u0E04.',
+                                '2': '\u0E01.\u0E1E.',
+                                '3': '\u0E21\u0E35.\u0E04.',
+                                '4': '\u0E40\u0E21.\u0E22.'
                             },
                             'narrow': {
-                                '8': 'ส.ค.',
-                                '7': 'ก.ค.',
-                                '6': 'มิ.ย.',
-                                '5': 'พ.ค.',
-                                '12': 'ธ.ค.',
-                                '11': 'พ.ย.',
-                                '10': 'ต.ค.',
-                                '9': 'ก.ย.',
-                                '1': 'ม.ค.',
-                                '2': 'ก.พ.',
-                                '3': 'มี.ค.',
-                                '4': 'เม.ย.'
+                                '8': '\u0E2A.\u0E04.',
+                                '7': '\u0E01.\u0E04.',
+                                '6': '\u0E21\u0E34.\u0E22.',
+                                '5': '\u0E1E.\u0E04.',
+                                '12': '\u0E18.\u0E04.',
+                                '11': '\u0E1E.\u0E22.',
+                                '10': '\u0E15.\u0E04.',
+                                '9': '\u0E01.\u0E22.',
+                                '1': '\u0E21.\u0E04.',
+                                '2': '\u0E01.\u0E1E.',
+                                '3': '\u0E21\u0E35.\u0E04.',
+                                '4': '\u0E40\u0E21.\u0E22.'
                             },
                             'wide': {
-                                '8': 'สิงหาคม',
-                                '7': 'กรกฎาคม',
-                                '6': 'มิถุนายน',
-                                '5': 'พฤษภาคม',
-                                '12': 'ธันวาคม',
-                                '11': 'พฤศจิกายน',
-                                '10': 'ตุลาคม',
-                                '9': 'กันยายน',
-                                '1': 'มกราคม',
-                                '2': 'กุมภาพันธ์',
-                                '3': 'มีนาคม',
-                                '4': 'เมษายน'
+                                '8': '\u0E2A\u0E34\u0E07\u0E2B\u0E32\u0E04\u0E21',
+                                '7': '\u0E01\u0E23\u0E01\u0E0E\u0E32\u0E04\u0E21',
+                                '6': '\u0E21\u0E34\u0E16\u0E38\u0E19\u0E32\u0E22\u0E19',
+                                '5': '\u0E1E\u0E24\u0E29\u0E20\u0E32\u0E04\u0E21',
+                                '12': '\u0E18\u0E31\u0E19\u0E27\u0E32\u0E04\u0E21',
+                                '11': '\u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19',
+                                '10': '\u0E15\u0E38\u0E25\u0E32\u0E04\u0E21',
+                                '9': '\u0E01\u0E31\u0E19\u0E22\u0E32\u0E22\u0E19',
+                                '1': '\u0E21\u0E01\u0E23\u0E32\u0E04\u0E21',
+                                '2': '\u0E01\u0E38\u0E21\u0E20\u0E32\u0E1E\u0E31\u0E19\u0E18\u0E4C',
+                                '3': '\u0E21\u0E35\u0E19\u0E32\u0E04\u0E21',
+                                '4': '\u0E40\u0E21\u0E29\u0E32\u0E22\u0E19'
                             }
                         }
                     },
                     'days': {
                         'format': {
                             'abbreviated': {
-                                'sun': 'อา.',
-                                'mon': 'จ.',
-                                'tue': 'อ.',
-                                'wed': 'พ.',
-                                'thu': 'พฤ.',
-                                'fri': 'ศ.',
-                                'sat': 'ส.'
+                                'sun': '\u0E2D\u0E32.',
+                                'mon': '\u0E08.',
+                                'tue': '\u0E2D.',
+                                'wed': '\u0E1E.',
+                                'thu': '\u0E1E\u0E24.',
+                                'fri': '\u0E28.',
+                                'sat': '\u0E2A.'
                             },
                             'narrow': {
-                                'sun': 'อา',
-                                'mon': 'จ',
-                                'tue': 'อ',
-                                'wed': 'พ',
-                                'thu': 'พฤ',
-                                'fri': 'ศ',
-                                'sat': 'ส'
+                                'sun': '\u0E2D\u0E32',
+                                'mon': '\u0E08',
+                                'tue': '\u0E2D',
+                                'wed': '\u0E1E',
+                                'thu': '\u0E1E\u0E24',
+                                'fri': '\u0E28',
+                                'sat': '\u0E2A'
                             },
                             'short': {
-                                'sun': 'อา.',
-                                'mon': 'จ.',
-                                'tue': 'อ.',
-                                'wed': 'พ.',
-                                'thu': 'พฤ.',
-                                'fri': 'ศ.',
-                                'sat': 'ส.'
+                                'sun': '\u0E2D\u0E32.',
+                                'mon': '\u0E08.',
+                                'tue': '\u0E2D.',
+                                'wed': '\u0E1E.',
+                                'thu': '\u0E1E\u0E24.',
+                                'fri': '\u0E28.',
+                                'sat': '\u0E2A.'
                             },
                             'wide': {
-                                'sun': 'วันอาทิตย์',
-                                'mon': 'วันจันทร์',
-                                'tue': 'วันอังคาร',
-                                'wed': 'วันพุธ',
-                                'thu': 'วันพฤหัสบดี',
-                                'fri': 'วันศุกร์',
-                                'sat': 'วันเสาร์'
+                                'sun': '\u0E27\u0E31\u0E19\u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C',
+                                'mon': '\u0E27\u0E31\u0E19\u0E08\u0E31\u0E19\u0E17\u0E23\u0E4C',
+                                'tue': '\u0E27\u0E31\u0E19\u0E2D\u0E31\u0E07\u0E04\u0E32\u0E23',
+                                'wed': '\u0E27\u0E31\u0E19\u0E1E\u0E38\u0E18',
+                                'thu': '\u0E27\u0E31\u0E19\u0E1E\u0E24\u0E2B\u0E31\u0E2A\u0E1A\u0E14\u0E35',
+                                'fri': '\u0E27\u0E31\u0E19\u0E28\u0E38\u0E01\u0E23\u0E4C',
+                                'sat': '\u0E27\u0E31\u0E19\u0E40\u0E2A\u0E32\u0E23\u0E4C'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
-                                'sun': 'อา.',
-                                'mon': 'จ.',
-                                'tue': 'อ.',
-                                'wed': 'พ.',
-                                'thu': 'พฤ.',
-                                'fri': 'ศ.',
-                                'sat': 'ส.'
+                                'sun': '\u0E2D\u0E32.',
+                                'mon': '\u0E08.',
+                                'tue': '\u0E2D.',
+                                'wed': '\u0E1E.',
+                                'thu': '\u0E1E\u0E24.',
+                                'fri': '\u0E28.',
+                                'sat': '\u0E2A.'
                             },
                             'narrow': {
-                                'sun': 'อา',
-                                'mon': 'จ',
-                                'tue': 'อ',
-                                'wed': 'พ',
-                                'thu': 'พฤ',
-                                'fri': 'ศ',
-                                'sat': 'ส'
+                                'sun': '\u0E2D\u0E32',
+                                'mon': '\u0E08',
+                                'tue': '\u0E2D',
+                                'wed': '\u0E1E',
+                                'thu': '\u0E1E\u0E24',
+                                'fri': '\u0E28',
+                                'sat': '\u0E2A'
                             },
                             'short': {
-                                'sun': 'อา.',
-                                'mon': 'จ.',
-                                'tue': 'อ.',
-                                'wed': 'พ.',
-                                'thu': 'พฤ.',
-                                'fri': 'ศ.',
-                                'sat': 'ส.'
+                                'sun': '\u0E2D\u0E32.',
+                                'mon': '\u0E08.',
+                                'tue': '\u0E2D.',
+                                'wed': '\u0E1E.',
+                                'thu': '\u0E1E\u0E24.',
+                                'fri': '\u0E28.',
+                                'sat': '\u0E2A.'
                             },
                             'wide': {
-                                'sun': 'วันอาทิตย์',
-                                'mon': 'วันจันทร์',
-                                'tue': 'วันอังคาร',
-                                'wed': 'วันพุธ',
-                                'thu': 'วันพฤหัสบดี',
-                                'fri': 'วันศุกร์',
-                                'sat': 'วันเสาร์'
+                                'sun': '\u0E27\u0E31\u0E19\u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C',
+                                'mon': '\u0E27\u0E31\u0E19\u0E08\u0E31\u0E19\u0E17\u0E23\u0E4C',
+                                'tue': '\u0E27\u0E31\u0E19\u0E2D\u0E31\u0E07\u0E04\u0E32\u0E23',
+                                'wed': '\u0E27\u0E31\u0E19\u0E1E\u0E38\u0E18',
+                                'thu': '\u0E27\u0E31\u0E19\u0E1E\u0E24\u0E2B\u0E31\u0E2A\u0E1A\u0E14\u0E35',
+                                'fri': '\u0E27\u0E31\u0E19\u0E28\u0E38\u0E01\u0E23\u0E4C',
+                                'sat': '\u0E27\u0E31\u0E19\u0E40\u0E2A\u0E32\u0E23\u0E4C'
                             }
                         }
                     },
                     'quarters': {
                         'format': {
                             'abbreviated': {
-                                '1': 'ไตรมาส 1',
-                                '2': 'ไตรมาส 2',
-                                '3': 'ไตรมาส 3',
-                                '4': 'ไตรมาส 4'
+                                '1': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 1',
+                                '2': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 2',
+                                '3': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 3',
+                                '4': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 4'
                             },
                             'narrow': {
                                 '1': '1',
@@ -2711,18 +2711,18 @@
                                 '4': '4'
                             },
                             'wide': {
-                                '1': 'ไตรมาส 1',
-                                '2': 'ไตรมาส 2',
-                                '3': 'ไตรมาส 3',
-                                '4': 'ไตรมาส 4'
+                                '1': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 1',
+                                '2': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 2',
+                                '3': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 3',
+                                '4': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 4'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
-                                '1': 'ไตรมาส 1',
-                                '2': 'ไตรมาส 2',
-                                '3': 'ไตรมาส 3',
-                                '4': 'ไตรมาส 4'
+                                '1': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 1',
+                                '2': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 2',
+                                '3': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 3',
+                                '4': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 4'
                             },
                             'narrow': {
                                 '1': '1',
@@ -2731,72 +2731,72 @@
                                 '4': '4'
                             },
                             'wide': {
-                                '1': 'ไตรมาส 1',
-                                '2': 'ไตรมาส 2',
-                                '3': 'ไตรมาส 3',
-                                '4': 'ไตรมาส 4'
+                                '1': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 1',
+                                '2': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 2',
+                                '3': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 3',
+                                '4': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 4'
                             }
                         }
                     },
                     'dayPeriods': {
                         'format': {
                             'abbreviated': {
-                                'am': 'ก่อนเที่ยง',
-                                'pm': 'หลังเที่ยง'
+                                'am': '\u0E01\u0E48\u0E2D\u0E19\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07',
+                                'pm': '\u0E2B\u0E25\u0E31\u0E07\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07'
                             },
                             'narrow': {
-                                'am': 'ก่อนเที่ยง',
-                                'pm': 'หลังเที่ยง'
+                                'am': '\u0E01\u0E48\u0E2D\u0E19\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07',
+                                'pm': '\u0E2B\u0E25\u0E31\u0E07\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07'
                             },
                             'wide': {
-                                'am': 'ก่อนเที่ยง',
-                                'pm': 'หลังเที่ยง'
+                                'am': '\u0E01\u0E48\u0E2D\u0E19\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07',
+                                'pm': '\u0E2B\u0E25\u0E31\u0E07\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
-                                'am': 'ก่อนเที่ยง',
-                                'pm': 'หลังเที่ยง'
+                                'am': '\u0E01\u0E48\u0E2D\u0E19\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07',
+                                'pm': '\u0E2B\u0E25\u0E31\u0E07\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07'
                             },
                             'narrow': {
-                                'am': 'ก่อนเที่ยง',
-                                'pm': 'หลังเที่ยง'
+                                'am': '\u0E01\u0E48\u0E2D\u0E19\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07',
+                                'pm': '\u0E2B\u0E25\u0E31\u0E07\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07'
                             },
                             'wide': {
-                                'am': 'ก่อนเที่ยง',
-                                'pm': 'หลังเที่ยง'
+                                'am': '\u0E01\u0E48\u0E2D\u0E19\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07',
+                                'pm': '\u0E2B\u0E25\u0E31\u0E07\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07'
                             }
                         }
                     },
                     'eras': {
                         'eraNames': {
-                            '0': 'ปีก่อนคริสต์ศักราช',
-                            '0-alt-variant': 'ก่อนสามัญศักราช',
-                            '1': 'คริสต์ศักราช',
-                            '1-alt-variant': 'สามัญศักราช'
+                            '0': '\u0E1B\u0E35\u0E01\u0E48\u0E2D\u0E19\u0E04\u0E23\u0E34\u0E2A\u0E15\u0E4C\u0E28\u0E31\u0E01\u0E23\u0E32\u0E0A',
+                            '0-alt-variant': '\u0E01\u0E48\u0E2D\u0E19\u0E2A\u0E32\u0E21\u0E31\u0E0D\u0E28\u0E31\u0E01\u0E23\u0E32\u0E0A',
+                            '1': '\u0E04\u0E23\u0E34\u0E2A\u0E15\u0E4C\u0E28\u0E31\u0E01\u0E23\u0E32\u0E0A',
+                            '1-alt-variant': '\u0E2A\u0E32\u0E21\u0E31\u0E0D\u0E28\u0E31\u0E01\u0E23\u0E32\u0E0A'
                         },
                         'eraAbbr': {
-                            '0': 'ปีก่อน ค.ศ.',
-                            '0-alt-variant': 'ก.ส.ศ.',
-                            '1': 'ค.ศ.',
-                            '1-alt-variant': 'ส.ศ.'
+                            '0': '\u0E1B\u0E35\u0E01\u0E48\u0E2D\u0E19 \u0E04.\u0E28.',
+                            '0-alt-variant': '\u0E01.\u0E2A.\u0E28.',
+                            '1': '\u0E04.\u0E28.',
+                            '1-alt-variant': '\u0E2A.\u0E28.'
                         },
                         'eraNarrow': {
-                            '0': 'ก่อน ค.ศ.',
-                            '0-alt-variant': 'ก.ส.ศ.',
-                            '1': 'ค.ศ.',
-                            '1-alt-variant': 'ส.ศ.'
+                            '0': '\u0E01\u0E48\u0E2D\u0E19 \u0E04.\u0E28.',
+                            '0-alt-variant': '\u0E01.\u0E2A.\u0E28.',
+                            '1': '\u0E04.\u0E28.',
+                            '1-alt-variant': '\u0E2A.\u0E28.'
                         }
                     },
                     'dateFormats': {
-                        'full': 'EEEEที่ d MMMM G y',
+                        'full': 'EEEE\u0E17\u0E35\u0E48 d MMMM G y',
                         'long': 'd MMMM y',
                         'medium': 'd MMM y',
                         'short': 'd/M/yy'
                     },
                     'timeFormats': {
-                        'full': 'H นาฬิกา mm นาที ss วินาที zzzz',
-                        'long': 'H นาฬิกา mm นาที ss วินาที z',
+                        'full': 'H \u0E19\u0E32\u0E2C\u0E34\u0E01\u0E32 mm \u0E19\u0E32\u0E17\u0E35 ss \u0E27\u0E34\u0E19\u0E32\u0E17\u0E35 zzzz',
+                        'long': 'H \u0E19\u0E32\u0E2C\u0E34\u0E01\u0E32 mm \u0E19\u0E32\u0E17\u0E35 ss \u0E27\u0E34\u0E19\u0E32\u0E17\u0E35 z',
                         'medium': 'HH:mm:ss',
                         'short': 'HH:mm'
                     },

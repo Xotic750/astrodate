@@ -44,164 +44,164 @@
             'codePatterns': {
                 'language': 'Dil: {0}',
                 'script': 'Alfabe: {0}',
-                'territory': 'Bölge: {0}'
+                'territory': 'B\u00F6lge: {0}'
             },
             'types': {
                 'colHiraganaQuaternary': {
-                    'no': 'Kana\'yı Ayrı Sıralama',
-                    'yes': 'Kana\'yı Farklı Sıralama'
+                    'no': "Kana'y\u0131 Ayr\u0131 S\u0131ralama",
+                    'yes': "Kana'y\u0131 Farkl\u0131 S\u0131ralama"
                 },
                 'colCaseLevel': {
-                    'no': 'Büyük/Küçük Harfe Duyarlı Olmadan Sıralama',
-                    'yes': 'Büyük/Küçük Harfe Duyarla Sıralama'
+                    'no': 'B\u00FCy\u00FCk/K\u00FC\u00E7\u00FCk Harfe Duyarl\u0131 Olmadan S\u0131ralama',
+                    'yes': 'B\u00FCy\u00FCk/K\u00FC\u00E7\u00FCk Harfe Duyarla S\u0131ralama'
                 },
                 'colCaseFirst': {
-                    'lower': 'Önce Küçük Harfleri Sıralama',
-                    'no': 'Normal Büyük/Küçük Harf Düzeninde Sıralama',
-                    'upper': 'Önce Büyük Harfleri Sıralama'
+                    'lower': '\u00D6nce K\u00FC\u00E7\u00FCk Harfleri S\u0131ralama',
+                    'no': 'Normal B\u00FCy\u00FCk/K\u00FC\u00E7\u00FCk Harf D\u00FCzeninde S\u0131ralama',
+                    'upper': '\u00D6nce B\u00FCy\u00FCk Harfleri S\u0131ralama'
                 },
                 'colStrength': {
-                    'identical': 'Tümünü Sıralama',
-                    'primary': 'Yalnızca Taban Harflerini Sıralama',
-                    'quaternary': 'Aksanları/Büyük-Küçük Harfleri/Genişliği/Kana\'yı Sıralama',
-                    'secondary': 'Aksanları Sıralama',
-                    'tertiary': 'Aksanları/Büyük-Küçük Harfleri/Genişliği Sıralama'
+                    'identical': 'T\u00FCm\u00FCn\u00FC S\u0131ralama',
+                    'primary': 'Yaln\u0131zca Taban Harflerini S\u0131ralama',
+                    'quaternary': "Aksanlar\u0131/B\u00FCy\u00FCk-K\u00FC\u00E7\u00FCk Harfleri/Geni\u015Fli\u011Fi/Kana'y\u0131 S\u0131ralama",
+                    'secondary': 'Aksanlar\u0131 S\u0131ralama',
+                    'tertiary': 'Aksanlar\u0131/B\u00FCy\u00FCk-K\u00FC\u00E7\u00FCk Harfleri/Geni\u015Fli\u011Fi S\u0131ralama'
                 },
                 'colNumeric': {
-                    'no': 'Rakamları Ayrı Sıralama',
-                    'yes': 'Rakamları Sayısal Olarak Sıralama'
+                    'no': 'Rakamlar\u0131 Ayr\u0131 S\u0131ralama',
+                    'yes': 'Rakamlar\u0131 Say\u0131sal Olarak S\u0131ralama'
                 },
                 'colNormalization': {
-                    'no': 'Normalleştirme Olmadan Sıralama',
-                    'yes': 'Unicode Normalleştirilmiş Olarak Sıralama'
+                    'no': 'Normalle\u015Ftirme Olmadan S\u0131ralama',
+                    'yes': 'Unicode Normalle\u015Ftirilmi\u015F Olarak S\u0131ralama'
                 },
                 'calendar': {
                     'japanese': 'Japon Takvimi',
                     'iso8601': 'ISO-8601 Takvimi',
-                    'coptic': 'Kıpti Takvim',
+                    'coptic': 'K\u0131pti Takvim',
                     'dangi': 'Dangi Takvimi',
                     'ethiopic': 'Etiyopik Takvim',
                     'ethiopic-amete-alem': 'Etiyopik Amete Alem Takvimi',
                     'gregorian': 'Miladi Takvim',
                     'hebrew': 'Yahudi Takvimi',
-                    'persian': 'Farsça Takvim',
-                    'roc': 'Çin Cumhuriyeti Takvimi',
-                    'chinese': 'Çin Takvimi',
+                    'persian': 'Fars\u00E7a Takvim',
+                    'roc': '\u00C7in Cumhuriyeti Takvimi',
+                    'chinese': '\u00C7in Takvimi',
                     'buddhist': 'Budist Takvimi',
                     'indian': 'Ulusal Hint Takvimi',
                     'islamic': 'Hicri Takvim',
                     'islamic-civil': 'Arap Takvimi',
                     'islamic-rgsa': 'Hicri Takvim (Suudi)',
                     'islamic-tbla': 'Hicri Takvim (Astronomik Evreler)',
-                    'islamic-umalqura': 'Hicri Takvim (Ümmü-l Kurra Takvimi)'
+                    'islamic-umalqura': 'Hicri Takvim (\u00DCmm\u00FC-l Kurra Takvimi)'
                 },
                 'collation': {
-                    'phonebook': 'Telefon Defteri Sıralaması',
-                    'gb2312han': 'Basitleştirilmiş Çince Sıralaması - GB2312',
-                    'eor': 'Avrupa Sıralama Kuralları',
-                    'ducet': 'Saptanmış Unicode Sıralaması',
-                    'dictionary': 'Sözlük Sıralama Düzeni',
-                    'big5han': 'Geleneksel Çince Sıralaması - Big5',
-                    'traditional': 'Geleneksel Sıralama',
-                    'standard': 'Standart Sıralama',
-                    'zhuyin': 'Zhuyin Sıralaması',
-                    'unihan': 'Radical-Stroke Sıralama Düzeni',
-                    'stroke': 'Geleneksel Çince Vuruş Sıralaması',
-                    'searchjl': 'Hangul İlk Sessiz Harfe Göre Arama',
-                    'search': 'Genel Amaçlı Arama',
-                    'reformed': 'Yeni Sıralama Düzeni',
-                    'pinyin': 'Basitleştirilmiş Çince Pinyin Sıralaması',
-                    'phonetic': 'Fonetik Sıralama Düzeni'
+                    'phonebook': 'Telefon Defteri S\u0131ralamas\u0131',
+                    'gb2312han': 'Basitle\u015Ftirilmi\u015F \u00C7ince S\u0131ralamas\u0131 - GB2312',
+                    'eor': 'Avrupa S\u0131ralama Kurallar\u0131',
+                    'ducet': 'Saptanm\u0131\u015F Unicode S\u0131ralamas\u0131',
+                    'dictionary': 'S\u00F6zl\u00FCk S\u0131ralama D\u00FCzeni',
+                    'big5han': 'Geleneksel \u00C7ince S\u0131ralamas\u0131 - Big5',
+                    'traditional': 'Geleneksel S\u0131ralama',
+                    'standard': 'Standart S\u0131ralama',
+                    'zhuyin': 'Zhuyin S\u0131ralamas\u0131',
+                    'unihan': 'Radical-Stroke S\u0131ralama D\u00FCzeni',
+                    'stroke': 'Geleneksel \u00C7ince Vuru\u015F S\u0131ralamas\u0131',
+                    'searchjl': 'Hangul \u0130lk Sessiz Harfe G\u00F6re Arama',
+                    'search': 'Genel Ama\u00E7l\u0131 Arama',
+                    'reformed': 'Yeni S\u0131ralama D\u00FCzeni',
+                    'pinyin': 'Basitle\u015Ftirilmi\u015F \u00C7ince Pinyin S\u0131ralamas\u0131',
+                    'phonetic': 'Fonetik S\u0131ralama D\u00FCzeni'
                 },
                 'numbers': {
-                    'knda': 'Kannada Rakamları',
-                    'khmr': 'Kmer Rakamları',
-                    'kali': 'Kayah Li Rakamları',
-                    'jpanfin': 'Finansal Japon Rakamları',
-                    'jpan': 'Japon Rakamları',
-                    'java': 'Cava Rakamları',
-                    'hebr': 'İbrani Rakamları',
-                    'hantfin': 'Finansal Geleneksel Çin Rakamları',
-                    'hant': 'Geleneksel Çin Rakamları',
-                    'hansfin': 'Finansal Basitleştirilmiş Çin Rakamları',
-                    'hans': 'Basitleştirilmiş Çin Rakamları',
-                    'hanidec': 'Çin Rakamları',
-                    'guru': 'Gurmukhi Rakamları',
-                    'gujr': 'Gucerat Rakamları',
-                    'greklow': 'Küçük Harf Yunan Rakamları',
-                    'grek': 'Yunan Rakamları',
-                    'bali': 'Bali Rakamları',
-                    'armnlow': 'Küçük Harf Ermeni Rakamları',
-                    'armn': 'Ermeni Rakamları',
-                    'arabext': 'Genişletilmiş Hint-Arap Rakamları',
-                    'arab': 'Hint-Arap Rakamları',
-                    'finance': 'Finansal Sayılar',
+                    'knda': 'Kannada Rakamlar\u0131',
+                    'khmr': 'Kmer Rakamlar\u0131',
+                    'kali': 'Kayah Li Rakamlar\u0131',
+                    'jpanfin': 'Finansal Japon Rakamlar\u0131',
+                    'jpan': 'Japon Rakamlar\u0131',
+                    'java': 'Cava Rakamlar\u0131',
+                    'hebr': '\u0130brani Rakamlar\u0131',
+                    'hantfin': 'Finansal Geleneksel \u00C7in Rakamlar\u0131',
+                    'hant': 'Geleneksel \u00C7in Rakamlar\u0131',
+                    'hansfin': 'Finansal Basitle\u015Ftirilmi\u015F \u00C7in Rakamlar\u0131',
+                    'hans': 'Basitle\u015Ftirilmi\u015F \u00C7in Rakamlar\u0131',
+                    'hanidec': '\u00C7in Rakamlar\u0131',
+                    'guru': 'Gurmukhi Rakamlar\u0131',
+                    'gujr': 'Gucerat Rakamlar\u0131',
+                    'greklow': 'K\u00FC\u00E7\u00FCk Harf Yunan Rakamlar\u0131',
+                    'grek': 'Yunan Rakamlar\u0131',
+                    'bali': 'Bali Rakamlar\u0131',
+                    'armnlow': 'K\u00FC\u00E7\u00FCk Harf Ermeni Rakamlar\u0131',
+                    'armn': 'Ermeni Rakamlar\u0131',
+                    'arabext': 'Geni\u015Fletilmi\u015F Hint-Arap Rakamlar\u0131',
+                    'arab': 'Hint-Arap Rakamlar\u0131',
+                    'finance': 'Finansal Say\u0131lar',
                     'traditional': 'Geleneksel Rakamlar',
                     'native': 'Yerel Rakamlar',
-                    'beng': 'Bengal Rakamları',
-                    'brah': 'Brahmi Rakamları',
-                    'cakm': 'Chakma Rakamları',
-                    'cham': 'Cham Rakamları',
-                    'deva': 'Devanagari Rakamları',
-                    'orya': 'Oriya Rakamları',
+                    'beng': 'Bengal Rakamlar\u0131',
+                    'brah': 'Brahmi Rakamlar\u0131',
+                    'cakm': 'Chakma Rakamlar\u0131',
+                    'cham': 'Cham Rakamlar\u0131',
+                    'deva': 'Devanagari Rakamlar\u0131',
+                    'orya': 'Oriya Rakamlar\u0131',
                     'osma': 'osma',
-                    'roman': 'Roma Rakamları',
-                    'romanlow': 'Küçük Harf Roma Rakamları',
+                    'roman': 'Roma Rakamlar\u0131',
+                    'romanlow': 'K\u00FC\u00E7\u00FCk Harf Roma Rakamlar\u0131',
                     'saur': 'saur',
                     'shrd': 'shrd',
                     'sora': 'sora',
                     'sund': 'sund',
-                    'vaii': 'Vai Rakamları',
-                    'tibt': 'Tibet Rakamları',
-                    'thai': 'Tay Rakamları',
-                    'telu': 'Telugu Rakamları',
-                    'tamldec': 'Tamil Rakamları',
-                    'taml': 'Geleneksel Tamil Rakamları',
+                    'vaii': 'Vai Rakamlar\u0131',
+                    'tibt': 'Tibet Rakamlar\u0131',
+                    'thai': 'Tay Rakamlar\u0131',
+                    'telu': 'Telugu Rakamlar\u0131',
+                    'tamldec': 'Tamil Rakamlar\u0131',
+                    'taml': 'Geleneksel Tamil Rakamlar\u0131',
                     'talu': 'talu',
                     'takr': 'takr',
-                    'olck': 'Ol Chiki Rakamları',
-                    'nkoo': 'N\'Ko Rakamları',
-                    'mymrshan': 'Myanmar Shan Rakamları',
-                    'mymr': 'Myanmar Rakamları',
-                    'mtei': 'Meetei Mayek Rakamları',
-                    'mong': 'Moğolca Rakamlar',
-                    'mlym': 'Malayalam Rakamları',
-                    'limb': 'Limbu Rakamları',
-                    'lepc': 'Lepça Rakamları',
-                    'latn': 'Batı Rakamları',
-                    'laoo': 'Lao Rakamları',
-                    'lanatham': 'Tai Tham Tham Rakamları',
-                    'lana': 'Tai Tham Hora Rakamları',
-                    'geor': 'Gürcü Rakamları',
-                    'fullwide': 'Tam Genişlikte Rakamlar',
-                    'ethi': 'Ge\'ez Rakamları'
+                    'olck': 'Ol Chiki Rakamlar\u0131',
+                    'nkoo': "N'Ko Rakamlar\u0131",
+                    'mymrshan': 'Myanmar Shan Rakamlar\u0131',
+                    'mymr': 'Myanmar Rakamlar\u0131',
+                    'mtei': 'Meetei Mayek Rakamlar\u0131',
+                    'mong': 'Mo\u011Folca Rakamlar',
+                    'mlym': 'Malayalam Rakamlar\u0131',
+                    'limb': 'Limbu Rakamlar\u0131',
+                    'lepc': 'Lep\u00E7a Rakamlar\u0131',
+                    'latn': 'Bat\u0131 Rakamlar\u0131',
+                    'laoo': 'Lao Rakamlar\u0131',
+                    'lanatham': 'Tai Tham Tham Rakamlar\u0131',
+                    'lana': 'Tai Tham Hora Rakamlar\u0131',
+                    'geor': 'G\u00FCrc\u00FC Rakamlar\u0131',
+                    'fullwide': 'Tam Geni\u015Flikte Rakamlar',
+                    'ethi': "Ge'ez Rakamlar\u0131"
                 },
                 'colAlternate': {
-                    'non-ignorable': 'Sembolleri Sıralama',
-                    'shifted': 'Sembolleri Yoksayarak Sıralama'
+                    'non-ignorable': 'Sembolleri S\u0131ralama',
+                    'shifted': 'Sembolleri Yoksayarak S\u0131ralama'
                 },
                 'colBackwards': {
-                    'no': 'Aksanları Normal Olarak Sıralama',
-                    'yes': 'Aksanları Ters Sıralama'
+                    'no': 'Aksanlar\u0131 Normal Olarak S\u0131ralama',
+                    'yes': 'Aksanlar\u0131 Ters S\u0131ralama'
                 }
             },
             'keys': {
-                'colNormalization': 'Normalleştirilmiş Sıralama',
-                'collation': 'Sıralama Düzeni',
-                'colHiraganaQuaternary': 'Kana Sıralaması',
-                'colCaseLevel': 'Büyük/Küçük Harfe Duyarlı Sıralama',
-                'colCaseFirst': 'Büyük/Küçük Harf Sıralama',
-                'colBackwards': 'Ters Aksan Sıralama',
-                'colAlternate': 'Sembolleri Sıralamayı Yoksayma',
+                'colNormalization': 'Normalle\u015Ftirilmi\u015F S\u0131ralama',
+                'collation': 'S\u0131ralama D\u00FCzeni',
+                'colHiraganaQuaternary': 'Kana S\u0131ralamas\u0131',
+                'colCaseLevel': 'B\u00FCy\u00FCk/K\u00FC\u00E7\u00FCk Harfe Duyarl\u0131 S\u0131ralama',
+                'colCaseFirst': 'B\u00FCy\u00FCk/K\u00FC\u00E7\u00FCk Harf S\u0131ralama',
+                'colBackwards': 'Ters Aksan S\u0131ralama',
+                'colAlternate': 'Sembolleri S\u0131ralamay\u0131 Yoksayma',
                 'calendar': 'Takvim',
-                'x': 'Özel Kullanım',
-                'variableTop': 'Sembollere Göre Sıralama',
+                'x': '\u00D6zel Kullan\u0131m',
+                'variableTop': 'Sembollere G\u00F6re S\u0131ralama',
                 'va': 'Yerel Varyant',
                 'timezone': 'Saat Dilimi',
                 'numbers': 'Rakamlar',
                 'currency': 'Para Birimi',
-                'colStrength': 'Sıralama Gücü',
-                'colNumeric': 'Sayısal Sıralama'
+                'colStrength': 'S\u0131ralama G\u00FCc\u00FC',
+                'colNumeric': 'Say\u0131sal S\u0131ralama'
             },
             'localeDisplayPattern': {
                 'localePattern': '{0} ({1})',
@@ -305,7 +305,7 @@
                             'exemplarCity': 'Majuro'
                         },
                         'Marquesas': {
-                            'exemplarCity': 'Markiz Adaları'
+                            'exemplarCity': 'Markiz Adalar\u0131'
                         },
                         'Midway': {
                             'exemplarCity': 'Midway'
@@ -375,7 +375,7 @@
                             'exemplarCity': 'Kerguelen'
                         },
                         'Reunion': {
-                            'exemplarCity': 'Réunion'
+                            'exemplarCity': 'R\u00E9union'
                         },
                         'Mayotte': {
                             'exemplarCity': 'Mayotte'
@@ -458,7 +458,7 @@
                             'exemplarCity': 'GMT-9'
                         },
                         'Unknown': {
-                            'exemplarCity': 'Bilinmeyen Şehir'
+                            'exemplarCity': 'Bilinmeyen \u015Eehir'
                         },
                         'GMT-2': {
                             'exemplarCity': 'GMT-2'
@@ -502,7 +502,7 @@
                             'exemplarCity': 'Syowa'
                         },
                         'South_Pole': {
-                            'exemplarCity': 'Güney Kutbu'
+                            'exemplarCity': 'G\u00FCney Kutbu'
                         },
                         'Casey': {
                             'exemplarCity': 'Casey'
@@ -575,7 +575,7 @@
                             'exemplarCity': 'Boise'
                         },
                         'Asuncion': {
-                            'exemplarCity': 'Asunción'
+                            'exemplarCity': 'Asunci\u00F3n'
                         },
                         'Aruba': {
                             'exemplarCity': 'Aruba'
@@ -643,7 +643,7 @@
                             'exemplarCity': 'Bogota'
                         },
                         'Curacao': {
-                            'exemplarCity': 'Curaçao'
+                            'exemplarCity': 'Cura\u00E7ao'
                         },
                         'Danmarkshavn': {
                             'exemplarCity': 'Danmarkshavn'
@@ -809,7 +809,7 @@
                             'exemplarCity': 'Louisville'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': 'Lower Prince\'s Quarter'
+                            'exemplarCity': "Lower Prince's Quarter"
                         },
                         'Maceio': {
                             'exemplarCity': 'Maceio'
@@ -961,7 +961,7 @@
                             'exemplarCity': 'Sitka'
                         },
                         'St_Barthelemy': {
-                            'exemplarCity': 'Saint Barthélemy'
+                            'exemplarCity': 'Saint Barth\u00E9lemy'
                         },
                         'St_Johns': {
                             'exemplarCity': 'St. John\u2019s'
@@ -981,7 +981,7 @@
                     },
                     'Atlantic': {
                         'South_Georgia': {
-                            'exemplarCity': 'Güney Georgia'
+                            'exemplarCity': 'G\u00FCney Georgia'
                         },
                         'Reykjavik': {
                             'exemplarCity': 'Reykjavik'
@@ -993,13 +993,13 @@
                             'exemplarCity': 'St. Helena'
                         },
                         'Azores': {
-                            'exemplarCity': 'Azor Adaları'
+                            'exemplarCity': 'Azor Adalar\u0131'
                         },
                         'Bermuda': {
                             'exemplarCity': 'Bermuda'
                         },
                         'Canary': {
-                            'exemplarCity': 'Kanarya Adaları'
+                            'exemplarCity': 'Kanarya Adalar\u0131'
                         },
                         'Cape_Verde': {
                             'exemplarCity': 'Cape Verde'
@@ -1008,7 +1008,7 @@
                             'exemplarCity': 'Faroe'
                         },
                         'Madeira': {
-                            'exemplarCity': 'Madeira Adaları'
+                            'exemplarCity': 'Madeira Adalar\u0131'
                         }
                     },
                     'Europe': {
@@ -1034,11 +1034,11 @@
                             'exemplarCity': 'Madrid'
                         },
                         'Luxembourg': {
-                            'exemplarCity': 'Lüksemburg'
+                            'exemplarCity': 'L\u00FCksemburg'
                         },
                         'London': {
                             'long': {
-                                'daylight': 'İngiltere Yaz Saati'
+                                'daylight': '\u0130ngiltere Yaz Saati'
                             },
                             'exemplarCity': 'Londra'
                         },
@@ -1058,16 +1058,16 @@
                             'exemplarCity': 'Jersey'
                         },
                         'Istanbul': {
-                            'exemplarCity': 'İstanbul'
+                            'exemplarCity': '\u0130stanbul'
                         },
                         'Isle_of_Man': {
-                            'exemplarCity': 'Man Adası'
+                            'exemplarCity': 'Man Adas\u0131'
                         },
                         'Bucharest': {
-                            'exemplarCity': 'Bükreş'
+                            'exemplarCity': 'B\u00FCkre\u015F'
                         },
                         'Brussels': {
-                            'exemplarCity': 'Brüksel'
+                            'exemplarCity': 'Br\u00FCksel'
                         },
                         'Bratislava': {
                             'exemplarCity': 'Bratislava'
@@ -1091,7 +1091,7 @@
                             'exemplarCity': 'Akmescit'
                         },
                         'Skopje': {
-                            'exemplarCity': 'Üsküp'
+                            'exemplarCity': '\u00DCsk\u00FCp'
                         },
                         'Sofia': {
                             'exemplarCity': 'Sofya'
@@ -1112,7 +1112,7 @@
                             'exemplarCity': 'Vaduz'
                         },
                         'Zurich': {
-                            'exemplarCity': 'Zürih'
+                            'exemplarCity': 'Z\u00FCrih'
                         },
                         'Zaporozhye': {
                             'exemplarCity': 'Zaporojye'
@@ -1121,7 +1121,7 @@
                             'exemplarCity': 'Zagreb'
                         },
                         'Warsaw': {
-                            'exemplarCity': 'Varşova'
+                            'exemplarCity': 'Var\u015Fova'
                         },
                         'Volgograd': {
                             'exemplarCity': 'Volgograd'
@@ -1166,11 +1166,11 @@
                             'exemplarCity': 'Guernsey'
                         },
                         'Gibraltar': {
-                            'exemplarCity': 'Cebelitarık'
+                            'exemplarCity': 'Cebelitar\u0131k'
                         },
                         'Dublin': {
                             'long': {
-                                'daylight': 'İrlanda Yaz Saati'
+                                'daylight': '\u0130rlanda Yaz Saati'
                             },
                             'exemplarCity': 'Dublin'
                         },
@@ -1178,13 +1178,13 @@
                             'exemplarCity': 'Kopenhag'
                         },
                         'Chisinau': {
-                            'exemplarCity': 'Kişinev'
+                            'exemplarCity': 'Ki\u015Finev'
                         },
                         'Busingen': {
                             'exemplarCity': 'Busingen'
                         },
                         'Budapest': {
-                            'exemplarCity': 'Budapeşte'
+                            'exemplarCity': 'Budape\u015Fte'
                         }
                     },
                     'Africa': {
@@ -1195,7 +1195,7 @@
                             'exemplarCity': 'Lagos'
                         },
                         'Kinshasa': {
-                            'exemplarCity': 'Kinşasa'
+                            'exemplarCity': 'Kin\u015Fasa'
                         },
                         'Kigali': {
                             'exemplarCity': 'Kigali'
@@ -1231,7 +1231,7 @@
                             'exemplarCity': 'Cibuti'
                         },
                         'Dar_es_Salaam': {
-                            'exemplarCity': 'Darüsselam'
+                            'exemplarCity': 'Dar\u00FCsselam'
                         },
                         'Dakar': {
                             'exemplarCity': 'Dakar'
@@ -1261,7 +1261,7 @@
                             'exemplarCity': 'Mbabane'
                         },
                         'Mogadishu': {
-                            'exemplarCity': 'Mogadişu'
+                            'exemplarCity': 'Mogadi\u015Fu'
                         },
                         'Monrovia': {
                             'exemplarCity': 'Monrovia'
@@ -1282,7 +1282,7 @@
                             'exemplarCity': 'Trablus'
                         },
                         'Sao_Tome': {
-                            'exemplarCity': 'São Tomé'
+                            'exemplarCity': 'S\u00E3o Tom\u00E9'
                         },
                         'Porto-Novo': {
                             'exemplarCity': 'Porto-Novo'
@@ -1347,7 +1347,7 @@
                     },
                     'Asia': {
                         'Shanghai': {
-                            'exemplarCity': 'Şanghay'
+                            'exemplarCity': '\u015Eanghay'
                         },
                         'Seoul': {
                             'exemplarCity': 'Seul'
@@ -1368,7 +1368,7 @@
                             'exemplarCity': 'Yangon'
                         },
                         'Qyzylorda': {
-                            'exemplarCity': 'Kızılorda'
+                            'exemplarCity': 'K\u0131z\u0131lorda'
                         },
                         'Qatar': {
                             'exemplarCity': 'Katar'
@@ -1392,16 +1392,16 @@
                             'exemplarCity': 'Novosibirsk'
                         },
                         'Baghdad': {
-                            'exemplarCity': 'Bağdat'
+                            'exemplarCity': 'Ba\u011Fdat'
                         },
                         'Chongqing': {
-                            'exemplarCity': 'Çongçing'
+                            'exemplarCity': '\u00C7ong\u00E7ing'
                         },
                         'Colombo': {
                             'exemplarCity': 'Kolombo'
                         },
                         'Damascus': {
-                            'exemplarCity': 'Şam'
+                            'exemplarCity': '\u015Eam'
                         },
                         'Dhaka': {
                             'exemplarCity': 'Dakka'
@@ -1413,7 +1413,7 @@
                             'exemplarCity': 'Dubai'
                         },
                         'Dushanbe': {
-                            'exemplarCity': 'Duşanbe'
+                            'exemplarCity': 'Du\u015Fanbe'
                         },
                         'Gaza': {
                             'exemplarCity': 'Gazze'
@@ -1431,7 +1431,7 @@
                             'exemplarCity': 'Hovd'
                         },
                         'Irkutsk': {
-                            'exemplarCity': 'İrkutsk'
+                            'exemplarCity': '\u0130rkutsk'
                         },
                         'Jakarta': {
                             'exemplarCity': 'Cakarta'
@@ -1443,7 +1443,7 @@
                             'exemplarCity': 'Ulan Batur'
                         },
                         'Urumqi': {
-                            'exemplarCity': 'Urumçi'
+                            'exemplarCity': 'Urum\u00E7i'
                         },
                         'Ust-Nera': {
                             'exemplarCity': 'Ust-Nera'
@@ -1476,7 +1476,7 @@
                             'exemplarCity': 'Tiflis'
                         },
                         'Tashkent': {
-                            'exemplarCity': 'Taşkent'
+                            'exemplarCity': 'Ta\u015Fkent'
                         },
                         'Taipei': {
                             'exemplarCity': 'Taipei'
@@ -1485,25 +1485,25 @@
                             'exemplarCity': 'Singapur'
                         },
                         'Jerusalem': {
-                            'exemplarCity': 'Kudüs'
+                            'exemplarCity': 'Kud\u00FCs'
                         },
                         'Ashgabat': {
-                            'exemplarCity': 'Aşkabat'
+                            'exemplarCity': 'A\u015Fkabat'
                         },
                         'Aqtobe': {
-                            'exemplarCity': 'Aktöbe'
+                            'exemplarCity': 'Akt\u00F6be'
                         },
                         'Aqtau': {
                             'exemplarCity': 'Aktav'
                         },
                         'Anadyr': {
-                            'exemplarCity': 'Anadır'
+                            'exemplarCity': 'Anad\u0131r'
                         },
                         'Amman': {
                             'exemplarCity': 'Amman'
                         },
                         'Almaty': {
-                            'exemplarCity': 'Almatı'
+                            'exemplarCity': 'Almat\u0131'
                         },
                         'Aden': {
                             'exemplarCity': 'Aden'
@@ -1512,7 +1512,7 @@
                             'exemplarCity': 'Bahreyn'
                         },
                         'Baku': {
-                            'exemplarCity': 'Bakü'
+                            'exemplarCity': 'Bak\u00FC'
                         },
                         'Bangkok': {
                             'exemplarCity': 'Bangkok'
@@ -1521,28 +1521,28 @@
                             'exemplarCity': 'Beyrut'
                         },
                         'Bishkek': {
-                            'exemplarCity': 'Bişkek'
+                            'exemplarCity': 'Bi\u015Fkek'
                         },
                         'Brunei': {
                             'exemplarCity': 'Brunei'
                         },
                         'Calcutta': {
-                            'exemplarCity': 'Kalküta'
+                            'exemplarCity': 'Kalk\u00FCta'
                         },
                         'Choibalsan': {
-                            'exemplarCity': 'Çoybalsan'
+                            'exemplarCity': '\u00C7oybalsan'
                         },
                         'Kabul': {
                             'exemplarCity': 'Kabil'
                         },
                         'Kamchatka': {
-                            'exemplarCity': 'Kamçatka'
+                            'exemplarCity': 'Kam\u00E7atka'
                         },
                         'Karachi': {
-                            'exemplarCity': 'Karaçi'
+                            'exemplarCity': 'Kara\u00E7i'
                         },
                         'Kashgar': {
-                            'exemplarCity': 'Kaşgar'
+                            'exemplarCity': 'Ka\u015Fgar'
                         },
                         'Katmandu': {
                             'exemplarCity': 'Katmandu'
@@ -1557,7 +1557,7 @@
                             'exemplarCity': 'Kuala Lumpur'
                         },
                         'Kuching': {
-                            'exemplarCity': 'Kuçing'
+                            'exemplarCity': 'Ku\u00E7ing'
                         },
                         'Kuwait': {
                             'exemplarCity': 'Kuveyt'
@@ -1578,7 +1578,7 @@
                             'exemplarCity': 'Maskat'
                         },
                         'Nicosia': {
-                            'exemplarCity': 'Lefkoşa'
+                            'exemplarCity': 'Lefko\u015Fa'
                         },
                         'Novokuznetsk': {
                             'exemplarCity': 'Novokuznetsk'
@@ -1619,9 +1619,9 @@
                     },
                     'Qyzylorda': {
                         'long': {
-                            'generic': 'Kızılorda Saati',
-                            'standard': 'Kızılorda Standart Saati',
-                            'daylight': 'Kızılorda Yaz Saati'
+                            'generic': 'K\u0131z\u0131lorda Saati',
+                            'standard': 'K\u0131z\u0131lorda Standart Saati',
+                            'daylight': 'K\u0131z\u0131lorda Yaz Saati'
                         }
                     },
                     'Ponape': {
@@ -1643,7 +1643,7 @@
                     },
                     'Phoenix_Islands': {
                         'long': {
-                            'standard': 'Phoenix Adaları Saati'
+                            'standard': 'Phoenix Adalar\u0131 Saati'
                         }
                     },
                     'Philippines': {
@@ -1700,7 +1700,7 @@
                     },
                     'North_Mariana': {
                         'long': {
-                            'standard': 'Kuzey Mariana Adaları Saati'
+                            'standard': 'Kuzey Mariana Adalar\u0131 Saati'
                         }
                     },
                     'Noronha': {
@@ -1712,7 +1712,7 @@
                     },
                     'Norfolk': {
                         'long': {
-                            'standard': 'Norfolk Adaları Saati'
+                            'standard': 'Norfolk Adalar\u0131 Saati'
                         }
                     },
                     'Niue': {
@@ -1750,16 +1750,16 @@
                     },
                     'America_Eastern': {
                         'long': {
-                            'generic': 'Kuzey Amerika Doğu Saati',
-                            'standard': 'Kuzey Amerika Doğu Standart Saati',
-                            'daylight': 'Kuzey Amerika Doğu Yaz Saati'
+                            'generic': 'Kuzey Amerika Do\u011Fu Saati',
+                            'standard': 'Kuzey Amerika Do\u011Fu Standart Saati',
+                            'daylight': 'Kuzey Amerika Do\u011Fu Yaz Saati'
                         }
                     },
                     'America_Mountain': {
                         'long': {
-                            'generic': 'Kuzey Amerika Dağ Saati',
-                            'standard': 'Kuzey Amerika Dağ Standart Saati',
-                            'daylight': 'Kuzey Amerika Dağ Yaz Saati'
+                            'generic': 'Kuzey Amerika Da\u011F Saati',
+                            'standard': 'Kuzey Amerika Da\u011F Standart Saati',
+                            'daylight': 'Kuzey Amerika Da\u011F Yaz Saati'
                         }
                     },
                     'America_Pacific': {
@@ -1772,8 +1772,8 @@
                     'Anadyr': {
                         'long': {
                             'generic': 'Anadyr Saati',
-                            'standard': 'Anadır Standart Saati',
-                            'daylight': 'Anadır Yaz Saati'
+                            'standard': 'Anad\u0131r Standart Saati',
+                            'daylight': 'Anad\u0131r Yaz Saati'
                         }
                     },
                     'Aqtau': {
@@ -1785,9 +1785,9 @@
                     },
                     'Aqtobe': {
                         'long': {
-                            'generic': 'Aktöbe Saati',
-                            'standard': 'Aktöbe Standart Saati',
-                            'daylight': 'Aktöbe Yaz Saati'
+                            'generic': 'Akt\u00F6be Saati',
+                            'standard': 'Akt\u00F6be Standart Saati',
+                            'daylight': 'Akt\u00F6be Yaz Saati'
                         }
                     },
                     'Cape_Verde': {
@@ -1816,33 +1816,33 @@
                     },
                     'Chile': {
                         'long': {
-                            'generic': 'Şili Saati',
-                            'standard': 'Şili Standart Saati',
-                            'daylight': 'Şili Yaz Saati'
+                            'generic': '\u015Eili Saati',
+                            'standard': '\u015Eili Standart Saati',
+                            'daylight': '\u015Eili Yaz Saati'
                         }
                     },
                     'China': {
                         'long': {
-                            'generic': 'Çin Saati',
-                            'standard': 'Çin Standart Saati',
-                            'daylight': 'Çin Yaz Saati'
+                            'generic': '\u00C7in Saati',
+                            'standard': '\u00C7in Standart Saati',
+                            'daylight': '\u00C7in Yaz Saati'
                         }
                     },
                     'Choibalsan': {
                         'long': {
-                            'generic': 'Çoybalsan Saati',
-                            'standard': 'Çoybalsan Standart Saati',
-                            'daylight': 'Çoybalsan Yaz Saati'
+                            'generic': '\u00C7oybalsan Saati',
+                            'standard': '\u00C7oybalsan Standart Saati',
+                            'daylight': '\u00C7oybalsan Yaz Saati'
                         }
                     },
                     'Christmas': {
                         'long': {
-                            'standard': 'Christmas Adası Saati'
+                            'standard': 'Christmas Adas\u0131 Saati'
                         }
                     },
                     'Cocos': {
                         'long': {
-                            'standard': 'Cocos Adaları Saati'
+                            'standard': 'Cocos Adalar\u0131 Saati'
                         }
                     },
                     'Colombia': {
@@ -1854,16 +1854,16 @@
                     },
                     'Cook': {
                         'long': {
-                            'generic': 'Cook Adaları Saati',
-                            'standard': 'Cook Adaları Standart Saati',
-                            'daylight': 'Cook Adaları Yarı Yaz Saati'
+                            'generic': 'Cook Adalar\u0131 Saati',
+                            'standard': 'Cook Adalar\u0131 Standart Saati',
+                            'daylight': 'Cook Adalar\u0131 Yar\u0131 Yaz Saati'
                         }
                     },
                     'Cuba': {
                         'long': {
-                            'generic': 'Küba Saati',
-                            'standard': 'Küba Standart Saati',
-                            'daylight': 'Küba Yaz Saati'
+                            'generic': 'K\u00FCba Saati',
+                            'standard': 'K\u00FCba Standart Saati',
+                            'daylight': 'K\u00FCba Yaz Saati'
                         }
                     },
                     'Davis': {
@@ -1878,14 +1878,14 @@
                     },
                     'East_Timor': {
                         'long': {
-                            'standard': 'Doğu Timor Saati'
+                            'standard': 'Do\u011Fu Timor Saati'
                         }
                     },
                     'Easter': {
                         'long': {
-                            'generic': 'Paskalya Adası Saati',
-                            'standard': 'Paskalya Adası Standart Saati',
-                            'daylight': 'Paskalya Adası Yaz Saati'
+                            'generic': 'Paskalya Adas\u0131 Saati',
+                            'standard': 'Paskalya Adas\u0131 Standart Saati',
+                            'daylight': 'Paskalya Adas\u0131 Yaz Saati'
                         }
                     },
                     'Ecuador': {
@@ -1902,23 +1902,23 @@
                     },
                     'Europe_Eastern': {
                         'long': {
-                            'generic': 'Doğu Avrupa Saati',
-                            'standard': 'Doğu Avrupa Standart Saati',
-                            'daylight': 'Doğu Avrupa Yaz Saati'
+                            'generic': 'Do\u011Fu Avrupa Saati',
+                            'standard': 'Do\u011Fu Avrupa Standart Saati',
+                            'daylight': 'Do\u011Fu Avrupa Yaz Saati'
                         }
                     },
                     'Europe_Western': {
                         'long': {
-                            'generic': 'Batı Avrupa Saati',
-                            'standard': 'Batı Avrupa Standart Saati',
-                            'daylight': 'Batı Avrupa Yaz Saati'
+                            'generic': 'Bat\u0131 Avrupa Saati',
+                            'standard': 'Bat\u0131 Avrupa Standart Saati',
+                            'daylight': 'Bat\u0131 Avrupa Yaz Saati'
                         }
                     },
                     'Falkland': {
                         'long': {
-                            'generic': 'Falkland Adaları Saati',
-                            'standard': 'Falkland Adaları Standart Saati',
-                            'daylight': 'Falkland Adaları Yaz Saati'
+                            'generic': 'Falkland Adalar\u0131 Saati',
+                            'standard': 'Falkland Adalar\u0131 Standart Saati',
+                            'daylight': 'Falkland Adalar\u0131 Yaz Saati'
                         }
                     },
                     'Fiji': {
@@ -1930,12 +1930,12 @@
                     },
                     'French_Guiana': {
                         'long': {
-                            'standard': 'Fransız Guyanası Saati'
+                            'standard': 'Frans\u0131z Guyanas\u0131 Saati'
                         }
                     },
                     'French_Southern': {
                         'long': {
-                            'standard': 'Fransız Güney ve Antarktika Saati'
+                            'standard': 'Frans\u0131z G\u00FCney ve Antarktika Saati'
                         }
                     },
                     'Galapagos': {
@@ -1962,9 +1962,9 @@
                     },
                     'Turkmenistan': {
                         'long': {
-                            'generic': 'Türkmenistan Saati',
-                            'standard': 'Türkmenistan Standart Saati',
-                            'daylight': 'Türkmenistan Yaz Saati'
+                            'generic': 'T\u00FCrkmenistan Saati',
+                            'standard': 'T\u00FCrkmenistan Standart Saati',
+                            'daylight': 'T\u00FCrkmenistan Yaz Saati'
                         }
                     },
                     'Tuvalu': {
@@ -1981,9 +1981,9 @@
                     },
                     'Uzbekistan': {
                         'long': {
-                            'generic': 'Özbekistan Saati',
-                            'standard': 'Özbekistan Standart Saati',
-                            'daylight': 'Özbekistan Yaz Saati'
+                            'generic': '\u00D6zbekistan Saati',
+                            'standard': '\u00D6zbekistan Standart Saati',
+                            'daylight': '\u00D6zbekistan Yaz Saati'
                         }
                     },
                     'Vanuatu': {
@@ -2014,7 +2014,7 @@
                     },
                     'Wake': {
                         'long': {
-                            'standard': 'Wake Adası Saati'
+                            'standard': 'Wake Adas\u0131 Saati'
                         }
                     },
                     'Vostok': {
@@ -2070,12 +2070,12 @@
                     },
                     'South_Georgia': {
                         'long': {
-                            'standard': 'Güney Georgia Saati'
+                            'standard': 'G\u00FCney Georgia Saati'
                         }
                     },
                     'Solomon': {
                         'long': {
-                            'standard': 'Solomon Adaları Saati'
+                            'standard': 'Solomon Adalar\u0131 Saati'
                         }
                     },
                     'Singapore': {
@@ -2085,7 +2085,7 @@
                     },
                     'Seychelles': {
                         'long': {
-                            'standard': 'Seyşeller Saati'
+                            'standard': 'Sey\u015Feller Saati'
                         }
                     },
                     'Guam': {
@@ -2095,16 +2095,16 @@
                     },
                     'Greenland_Western': {
                         'long': {
-                            'generic': 'Batı Grönland Saati',
-                            'standard': 'Batı Grönland Standart Saati',
-                            'daylight': 'Batı Grönland Yaz Saati'
+                            'generic': 'Bat\u0131 Gr\u00F6nland Saati',
+                            'standard': 'Bat\u0131 Gr\u00F6nland Standart Saati',
+                            'daylight': 'Bat\u0131 Gr\u00F6nland Yaz Saati'
                         }
                     },
                     'Greenland_Eastern': {
                         'long': {
-                            'generic': 'Doğu Grönland Saati',
-                            'standard': 'Doğu Grönland Standart Saati',
-                            'daylight': 'Doğu Grönland Yaz Saati'
+                            'generic': 'Do\u011Fu Gr\u00F6nland Saati',
+                            'standard': 'Do\u011Fu Gr\u00F6nland Standart Saati',
+                            'daylight': 'Do\u011Fu Gr\u00F6nland Yaz Saati'
                         }
                     },
                     'GMT': {
@@ -2114,14 +2114,14 @@
                     },
                     'Gilbert_Islands': {
                         'long': {
-                            'standard': 'Gilbert Adaları Saati'
+                            'standard': 'Gilbert Adalar\u0131 Saati'
                         }
                     },
                     'Georgia': {
                         'long': {
-                            'generic': 'Gürcistan Saati',
-                            'standard': 'Gürcistan Standart Saati',
-                            'daylight': 'Gürcistan Yaz Saati'
+                            'generic': 'G\u00FCrcistan Saati',
+                            'standard': 'G\u00FCrcistan Standart Saati',
+                            'daylight': 'G\u00FCrcistan Yaz Saati'
                         }
                     },
                     'Gambier': {
@@ -2155,19 +2155,19 @@
                     },
                     'Africa_Eastern': {
                         'long': {
-                            'standard': 'Doğu Afrika Saati'
+                            'standard': 'Do\u011Fu Afrika Saati'
                         }
                     },
                     'Africa_Southern': {
                         'long': {
-                            'standard': 'Güney Afrika Saati'
+                            'standard': 'G\u00FCney Afrika Saati'
                         }
                     },
                     'Africa_Western': {
                         'long': {
-                            'generic': 'Batı Afrika Saati',
-                            'standard': 'Batı Afrika Standart Saati',
-                            'daylight': 'Batı Afrika Yaz Saati'
+                            'generic': 'Bat\u0131 Afrika Saati',
+                            'standard': 'Bat\u0131 Afrika Standart Saati',
+                            'daylight': 'Bat\u0131 Afrika Yaz Saati'
                         }
                     },
                     'Alaska': {
@@ -2179,9 +2179,9 @@
                     },
                     'Almaty': {
                         'long': {
-                            'generic': 'Almatı Saati',
-                            'standard': 'Almatı Standart Saati',
-                            'daylight': 'Almatı Yaz Saati'
+                            'generic': 'Almat\u0131 Saati',
+                            'standard': 'Almat\u0131 Standart Saati',
+                            'daylight': 'Almat\u0131 Yaz Saati'
                         }
                     },
                     'Arabian': {
@@ -2200,9 +2200,9 @@
                     },
                     'Argentina_Western': {
                         'long': {
-                            'generic': 'Batı Arjantin Saati',
-                            'standard': 'Batı Arjantin Standart Saati',
-                            'daylight': 'Batı Arjantin Yaz Saati'
+                            'generic': 'Bat\u0131 Arjantin Saati',
+                            'standard': 'Bat\u0131 Arjantin Standart Saati',
+                            'daylight': 'Bat\u0131 Arjantin Yaz Saati'
                         }
                     },
                     'Armenia': {
@@ -2228,23 +2228,23 @@
                     },
                     'Australia_CentralWestern': {
                         'long': {
-                            'generic': 'İçbatı Avustralya Saati',
-                            'standard': 'İçbatı Avustralya Standart Saati',
-                            'daylight': 'İçbatı Avustralya Yaz Saati'
+                            'generic': '\u0130\u00E7bat\u0131 Avustralya Saati',
+                            'standard': '\u0130\u00E7bat\u0131 Avustralya Standart Saati',
+                            'daylight': '\u0130\u00E7bat\u0131 Avustralya Yaz Saati'
                         }
                     },
                     'Australia_Eastern': {
                         'long': {
-                            'generic': 'Doğu Avustralya Saati',
-                            'standard': 'Doğu Avustralya Standart Saati',
-                            'daylight': 'Doğu Avustralya Yaz Saati'
+                            'generic': 'Do\u011Fu Avustralya Saati',
+                            'standard': 'Do\u011Fu Avustralya Standart Saati',
+                            'daylight': 'Do\u011Fu Avustralya Yaz Saati'
                         }
                     },
                     'Australia_Western': {
                         'long': {
-                            'generic': 'Batı Avustralya Saati',
-                            'standard': 'Batı Avustralya Standart Saati',
-                            'daylight': 'Batı Avustralya Yaz Saati'
+                            'generic': 'Bat\u0131 Avustralya Saati',
+                            'standard': 'Bat\u0131 Avustralya Standart Saati',
+                            'daylight': 'Bat\u0131 Avustralya Yaz Saati'
                         }
                     },
                     'Azerbaijan': {
@@ -2263,9 +2263,9 @@
                     },
                     'Bangladesh': {
                         'long': {
-                            'generic': 'Bangladeş Saati',
-                            'standard': 'Bangladeş Standart Saati',
-                            'daylight': 'Bangladeş Yaz Saati'
+                            'generic': 'Banglade\u015F Saati',
+                            'standard': 'Banglade\u015F Standart Saati',
+                            'daylight': 'Banglade\u015F Yaz Saati'
                         }
                     },
                     'Bhutan': {
@@ -2287,12 +2287,12 @@
                     },
                     'Brunei': {
                         'long': {
-                            'standard': 'Brunei Darü\'s-Selam Saati'
+                            'standard': "Brunei Dar\u00FC's-Selam Saati"
                         }
                     },
                     'Gulf': {
                         'long': {
-                            'standard': 'Körfez Saati'
+                            'standard': 'K\u00F6rfez Saati'
                         }
                     },
                     'Guyana': {
@@ -2333,7 +2333,7 @@
                     },
                     'Indochina': {
                         'long': {
-                            'standard': 'Hindiçin Saati'
+                            'standard': 'Hindi\u00E7in Saati'
                         }
                     },
                     'Indonesia_Central': {
@@ -2343,33 +2343,33 @@
                     },
                     'Indonesia_Eastern': {
                         'long': {
-                            'standard': 'Doğu Endonezya Saati'
+                            'standard': 'Do\u011Fu Endonezya Saati'
                         }
                     },
                     'Indonesia_Western': {
                         'long': {
-                            'standard': 'Batı Endonezya Saati'
+                            'standard': 'Bat\u0131 Endonezya Saati'
                         }
                     },
                     'Iran': {
                         'long': {
-                            'generic': 'İran Saati',
-                            'standard': 'İran Standart Saati',
-                            'daylight': 'İran Yaz Saati'
+                            'generic': '\u0130ran Saati',
+                            'standard': '\u0130ran Standart Saati',
+                            'daylight': '\u0130ran Yaz Saati'
                         }
                     },
                     'Irkutsk': {
                         'long': {
-                            'generic': 'İrkutsk Saati',
-                            'standard': 'İrkutsk Standart Saati',
-                            'daylight': 'İrkutsk Yaz Saati'
+                            'generic': '\u0130rkutsk Saati',
+                            'standard': '\u0130rkutsk Standart Saati',
+                            'daylight': '\u0130rkutsk Yaz Saati'
                         }
                     },
                     'Israel': {
                         'long': {
-                            'generic': 'İsrail Saati',
-                            'standard': 'İsrail Standart Saati',
-                            'daylight': 'İsrail Yaz Saati'
+                            'generic': '\u0130srail Saati',
+                            'standard': '\u0130srail Standart Saati',
+                            'daylight': '\u0130srail Yaz Saati'
                         }
                     },
                     'Japan': {
@@ -2381,19 +2381,19 @@
                     },
                     'Kamchatka': {
                         'long': {
-                            'generic': 'Petropavlovsk-Kamçatski Saati',
-                            'standard': 'Petropavlovsk-Kamçatski Standart Saati',
-                            'daylight': 'Petropavlovsk-Kamçatski Yaz Saati'
+                            'generic': 'Petropavlovsk-Kam\u00E7atski Saati',
+                            'standard': 'Petropavlovsk-Kam\u00E7atski Standart Saati',
+                            'daylight': 'Petropavlovsk-Kam\u00E7atski Yaz Saati'
                         }
                     },
                     'Kazakhstan_Eastern': {
                         'long': {
-                            'standard': 'Doğu Kazakistan Saati'
+                            'standard': 'Do\u011Fu Kazakistan Saati'
                         }
                     },
                     'Kazakhstan_Western': {
                         'long': {
-                            'standard': 'Batı Kazakistan Saati'
+                            'standard': 'Bat\u0131 Kazakistan Saati'
                         }
                     },
                     'Korea': {
@@ -2417,7 +2417,7 @@
                     },
                     'Kyrgystan': {
                         'long': {
-                            'standard': 'Kırgızistan Saati'
+                            'standard': 'K\u0131rg\u0131zistan Saati'
                         }
                     },
                     'Lanka': {
@@ -2427,7 +2427,7 @@
                     },
                     'Line_Islands': {
                         'long': {
-                            'standard': 'Line Adaları Saati'
+                            'standard': 'Line Adalar\u0131 Saati'
                         }
                     },
                     'Lord_Howe': {
@@ -2446,7 +2446,7 @@
                     },
                     'Macquarie': {
                         'long': {
-                            'standard': 'Macquarie Adası Saati'
+                            'standard': 'Macquarie Adas\u0131 Saati'
                         }
                     },
                     'Magadan': {
@@ -2468,12 +2468,12 @@
                     },
                     'Marquesas': {
                         'long': {
-                            'standard': 'Markiz Adaları Saati'
+                            'standard': 'Markiz Adalar\u0131 Saati'
                         }
                     },
                     'Marshall_Islands': {
                         'long': {
-                            'standard': 'Marshall Adaları Saati'
+                            'standard': 'Marshall Adalar\u0131 Saati'
                         }
                     },
                     'Mauritius': {
@@ -2531,7 +2531,7 @@
                     'months': {
                         'format': {
                             'abbreviated': {
-                                '8': 'Ağu',
+                                '8': 'A\u011Fu',
                                 '7': 'Tem',
                                 '6': 'Haz',
                                 '5': 'May',
@@ -2540,7 +2540,7 @@
                                 '10': 'Eki',
                                 '9': 'Eyl',
                                 '1': 'Oca',
-                                '2': 'Şub',
+                                '2': '\u015Eub',
                                 '3': 'Mar',
                                 '4': 'Nis'
                             },
@@ -2554,28 +2554,28 @@
                                 '10': 'E',
                                 '9': 'E',
                                 '1': 'O',
-                                '2': 'Ş',
+                                '2': '\u015E',
                                 '3': 'M',
                                 '4': 'N'
                             },
                             'wide': {
-                                '8': 'Ağustos',
+                                '8': 'A\u011Fustos',
                                 '7': 'Temmuz',
                                 '6': 'Haziran',
-                                '5': 'Mayıs',
-                                '12': 'Aralık',
-                                '11': 'Kasım',
+                                '5': 'May\u0131s',
+                                '12': 'Aral\u0131k',
+                                '11': 'Kas\u0131m',
                                 '10': 'Ekim',
-                                '9': 'Eylül',
+                                '9': 'Eyl\u00FCl',
                                 '1': 'Ocak',
-                                '2': 'Şubat',
+                                '2': '\u015Eubat',
                                 '3': 'Mart',
                                 '4': 'Nisan'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
-                                '8': 'Ağu',
+                                '8': 'A\u011Fu',
                                 '7': 'Tem',
                                 '6': 'Haz',
                                 '5': 'May',
@@ -2584,7 +2584,7 @@
                                 '10': 'Eki',
                                 '9': 'Eyl',
                                 '1': 'Oca',
-                                '2': 'Şub',
+                                '2': '\u015Eub',
                                 '3': 'Mar',
                                 '4': 'Nis'
                             },
@@ -2598,21 +2598,21 @@
                                 '10': 'E',
                                 '9': 'E',
                                 '1': 'O',
-                                '2': 'Ş',
+                                '2': '\u015E',
                                 '3': 'M',
                                 '4': 'N'
                             },
                             'wide': {
-                                '8': 'Ağustos',
+                                '8': 'A\u011Fustos',
                                 '7': 'Temmuz',
                                 '6': 'Haziran',
-                                '5': 'Mayıs',
-                                '12': 'Aralık',
-                                '11': 'Kasım',
+                                '5': 'May\u0131s',
+                                '12': 'Aral\u0131k',
+                                '11': 'Kas\u0131m',
                                 '10': 'Ekim',
-                                '9': 'Eylül',
+                                '9': 'Eyl\u00FCl',
                                 '1': 'Ocak',
-                                '2': 'Şubat',
+                                '2': '\u015Eubat',
                                 '3': 'Mart',
                                 '4': 'Nisan'
                             }
@@ -2624,7 +2624,7 @@
                                 'sun': 'Paz',
                                 'mon': 'Pzt',
                                 'tue': 'Sal',
-                                'wed': 'Çar',
+                                'wed': '\u00C7ar',
                                 'thu': 'Per',
                                 'fri': 'Cum',
                                 'sat': 'Cmt'
@@ -2633,7 +2633,7 @@
                                 'sun': 'P',
                                 'mon': 'P',
                                 'tue': 'S',
-                                'wed': 'Ç',
+                                'wed': '\u00C7',
                                 'thu': 'P',
                                 'fri': 'C',
                                 'sat': 'C'
@@ -2642,7 +2642,7 @@
                                 'sun': 'Pa',
                                 'mon': 'Pt',
                                 'tue': 'Sa',
-                                'wed': 'Ça',
+                                'wed': '\u00C7a',
                                 'thu': 'Pe',
                                 'fri': 'Cu',
                                 'sat': 'Ct'
@@ -2650,9 +2650,9 @@
                             'wide': {
                                 'sun': 'Pazar',
                                 'mon': 'Pazartesi',
-                                'tue': 'Salı',
-                                'wed': 'Çarşamba',
-                                'thu': 'Perşembe',
+                                'tue': 'Sal\u0131',
+                                'wed': '\u00C7ar\u015Famba',
+                                'thu': 'Per\u015Fembe',
                                 'fri': 'Cuma',
                                 'sat': 'Cumartesi'
                             }
@@ -2662,7 +2662,7 @@
                                 'sun': 'Paz',
                                 'mon': 'Pzt',
                                 'tue': 'Sal',
-                                'wed': 'Çar',
+                                'wed': '\u00C7ar',
                                 'thu': 'Per',
                                 'fri': 'Cum',
                                 'sat': 'Cmt'
@@ -2671,7 +2671,7 @@
                                 'sun': 'P',
                                 'mon': 'P',
                                 'tue': 'S',
-                                'wed': 'Ç',
+                                'wed': '\u00C7',
                                 'thu': 'P',
                                 'fri': 'C',
                                 'sat': 'C'
@@ -2680,7 +2680,7 @@
                                 'sun': 'Pa',
                                 'mon': 'Pt',
                                 'tue': 'Sa',
-                                'wed': 'Ça',
+                                'wed': '\u00C7a',
                                 'thu': 'Pe',
                                 'fri': 'Cu',
                                 'sat': 'Ct'
@@ -2688,9 +2688,9 @@
                             'wide': {
                                 'sun': 'Pazar',
                                 'mon': 'Pazartesi',
-                                'tue': 'Salı',
-                                'wed': 'Çarşamba',
-                                'thu': 'Perşembe',
+                                'tue': 'Sal\u0131',
+                                'wed': '\u00C7ar\u015Famba',
+                                'thu': 'Per\u015Fembe',
                                 'fri': 'Cuma',
                                 'sat': 'Cumartesi'
                             }
@@ -2699,10 +2699,10 @@
                     'quarters': {
                         'format': {
                             'abbreviated': {
-                                '1': 'Ç1',
-                                '2': 'Ç2',
-                                '3': 'Ç3',
-                                '4': 'Ç4'
+                                '1': '\u00C71',
+                                '2': '\u00C72',
+                                '3': '\u00C73',
+                                '4': '\u00C74'
                             },
                             'narrow': {
                                 '1': '1.',
@@ -2711,18 +2711,18 @@
                                 '4': '4.'
                             },
                             'wide': {
-                                '1': '1. çeyrek',
-                                '2': '2. çeyrek',
-                                '3': '3. çeyrek',
-                                '4': '4. çeyrek'
+                                '1': '1. \u00E7eyrek',
+                                '2': '2. \u00E7eyrek',
+                                '3': '3. \u00E7eyrek',
+                                '4': '4. \u00E7eyrek'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
-                                '1': 'Ç1',
-                                '2': 'Ç2',
-                                '3': 'Ç3',
-                                '4': 'Ç4'
+                                '1': '\u00C71',
+                                '2': '\u00C72',
+                                '3': '\u00C73',
+                                '4': '\u00C74'
                             },
                             'narrow': {
                                 '1': '1.',
@@ -2731,61 +2731,61 @@
                                 '4': '4.'
                             },
                             'wide': {
-                                '1': '1. çeyrek',
-                                '2': '2. çeyrek',
-                                '3': '3. çeyrek',
-                                '4': '4. çeyrek'
+                                '1': '1. \u00E7eyrek',
+                                '2': '2. \u00E7eyrek',
+                                '3': '3. \u00E7eyrek',
+                                '4': '4. \u00E7eyrek'
                             }
                         }
                     },
                     'dayPeriods': {
                         'format': {
                             'abbreviated': {
-                                'am': 'ÖÖ',
-                                'pm': 'ÖS'
+                                'am': '\u00D6\u00D6',
+                                'pm': '\u00D6S'
                             },
                             'narrow': {
-                                'am': 'ÖÖ',
-                                'pm': 'ÖS'
+                                'am': '\u00D6\u00D6',
+                                'pm': '\u00D6S'
                             },
                             'wide': {
-                                'am': 'ÖÖ',
-                                'pm': 'ÖS'
+                                'am': '\u00D6\u00D6',
+                                'pm': '\u00D6S'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
-                                'am': 'ÖÖ',
-                                'pm': 'ÖS'
+                                'am': '\u00D6\u00D6',
+                                'pm': '\u00D6S'
                             },
                             'narrow': {
-                                'am': 'ÖÖ',
-                                'pm': 'ÖS'
+                                'am': '\u00D6\u00D6',
+                                'pm': '\u00D6S'
                             },
                             'wide': {
-                                'am': 'ÖÖ',
-                                'pm': 'ÖS'
+                                'am': '\u00D6\u00D6',
+                                'pm': '\u00D6S'
                             }
                         }
                     },
                     'eras': {
                         'eraNames': {
-                            '0': 'Milattan Önce',
-                            '0-alt-variant': 'İÖ',
+                            '0': 'Milattan \u00D6nce',
+                            '0-alt-variant': '\u0130\u00D6',
                             '1': 'Milattan Sonra',
-                            '1-alt-variant': 'İS'
+                            '1-alt-variant': '\u0130S'
                         },
                         'eraAbbr': {
-                            '0': 'MÖ',
-                            '0-alt-variant': 'İÖ',
+                            '0': 'M\u00D6',
+                            '0-alt-variant': '\u0130\u00D6',
                             '1': 'MS',
-                            '1-alt-variant': 'İS'
+                            '1-alt-variant': '\u0130S'
                         },
                         'eraNarrow': {
-                            '0': 'MÖ',
-                            '0-alt-variant': 'İÖ',
+                            '0': 'M\u00D6',
+                            '0-alt-variant': '\u0130\u00D6',
                             '1': 'MS',
-                            '1-alt-variant': 'İS'
+                            '1-alt-variant': '\u0130S'
                         }
                     },
                     'dateFormats': {

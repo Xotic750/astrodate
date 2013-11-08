@@ -42,361 +42,361 @@
     }(function (AstroDate) {
         AstroDate.lang('he', {
             'codePatterns': {
-                'language': 'שפה:‏ {0}',
-                'script': 'כתב: {0}',
-                'territory': 'אזור: {0}'
+                'language': '\u05E9\u05E4\u05D4:\u200F {0}',
+                'script': '\u05DB\u05EA\u05D1: {0}',
+                'territory': '\u05D0\u05D6\u05D5\u05E8: {0}'
             },
             'types': {
                 'colHiraganaQuaternary': {
-                    'no': 'מיין קאנה בנפרד',
-                    'yes': 'מיין קאנה אחרת'
+                    'no': '\u05DE\u05D9\u05D9\u05DF \u05E7\u05D0\u05E0\u05D4 \u05D1\u05E0\u05E4\u05E8\u05D3',
+                    'yes': '\u05DE\u05D9\u05D9\u05DF \u05E7\u05D0\u05E0\u05D4 \u05D0\u05D7\u05E8\u05EA'
                 },
                 'colCaseLevel': {
-                    'no': 'מיין באופן שאינו תלוי רישיות',
-                    'yes': 'מיין באופן תלוי רישיות'
+                    'no': '\u05DE\u05D9\u05D9\u05DF \u05D1\u05D0\u05D5\u05E4\u05DF \u05E9\u05D0\u05D9\u05E0\u05D5 \u05EA\u05DC\u05D5\u05D9 \u05E8\u05D9\u05E9\u05D9\u05D5\u05EA',
+                    'yes': '\u05DE\u05D9\u05D9\u05DF \u05D1\u05D0\u05D5\u05E4\u05DF \u05EA\u05DC\u05D5\u05D9 \u05E8\u05D9\u05E9\u05D9\u05D5\u05EA'
                 },
                 'colCaseFirst': {
-                    'lower': 'מיין תחילה לפי אותיות קטנות',
-                    'no': 'מיין לפי סדר רישיות רגיל',
-                    'upper': 'מיין תחילה לפי אותיות רישיות'
+                    'lower': '\u05DE\u05D9\u05D9\u05DF \u05EA\u05D7\u05D9\u05DC\u05D4 \u05DC\u05E4\u05D9 \u05D0\u05D5\u05EA\u05D9\u05D5\u05EA \u05E7\u05D8\u05E0\u05D5\u05EA',
+                    'no': '\u05DE\u05D9\u05D9\u05DF \u05DC\u05E4\u05D9 \u05E1\u05D3\u05E8 \u05E8\u05D9\u05E9\u05D9\u05D5\u05EA \u05E8\u05D2\u05D9\u05DC',
+                    'upper': '\u05DE\u05D9\u05D9\u05DF \u05EA\u05D7\u05D9\u05DC\u05D4 \u05DC\u05E4\u05D9 \u05D0\u05D5\u05EA\u05D9\u05D5\u05EA \u05E8\u05D9\u05E9\u05D9\u05D5\u05EA'
                 },
                 'colStrength': {
-                    'identical': 'מיין הכל',
-                    'primary': 'מיין תוך התעלמות מהטעמות',
-                    'quaternary': 'מיין לפי הטעמות/רישיות/רוחב/קאנה',
-                    'secondary': 'מיין לפי הטעמות',
-                    'tertiary': 'מיין הטעמות/רישיות/רוחב'
+                    'identical': '\u05DE\u05D9\u05D9\u05DF \u05D4\u05DB\u05DC',
+                    'primary': '\u05DE\u05D9\u05D9\u05DF \u05EA\u05D5\u05DA \u05D4\u05EA\u05E2\u05DC\u05DE\u05D5\u05EA \u05DE\u05D4\u05D8\u05E2\u05DE\u05D5\u05EA',
+                    'quaternary': '\u05DE\u05D9\u05D9\u05DF \u05DC\u05E4\u05D9 \u05D4\u05D8\u05E2\u05DE\u05D5\u05EA/\u05E8\u05D9\u05E9\u05D9\u05D5\u05EA/\u05E8\u05D5\u05D7\u05D1/\u05E7\u05D0\u05E0\u05D4',
+                    'secondary': '\u05DE\u05D9\u05D9\u05DF \u05DC\u05E4\u05D9 \u05D4\u05D8\u05E2\u05DE\u05D5\u05EA',
+                    'tertiary': '\u05DE\u05D9\u05D9\u05DF \u05D4\u05D8\u05E2\u05DE\u05D5\u05EA/\u05E8\u05D9\u05E9\u05D9\u05D5\u05EA/\u05E8\u05D5\u05D7\u05D1'
                 },
                 'colNumeric': {
-                    'no': 'מיין ספרות בנפרד',
-                    'yes': 'מיין ספרות לפי סדר מספרי'
+                    'no': '\u05DE\u05D9\u05D9\u05DF \u05E1\u05E4\u05E8\u05D5\u05EA \u05D1\u05E0\u05E4\u05E8\u05D3',
+                    'yes': '\u05DE\u05D9\u05D9\u05DF \u05E1\u05E4\u05E8\u05D5\u05EA \u05DC\u05E4\u05D9 \u05E1\u05D3\u05E8 \u05DE\u05E1\u05E4\u05E8\u05D9'
                 },
                 'colNormalization': {
-                    'no': 'מיין ללא נורמליזציה',
-                    'yes': 'מיין לפי Unicode מנורמל'
+                    'no': '\u05DE\u05D9\u05D9\u05DF \u05DC\u05DC\u05D0 \u05E0\u05D5\u05E8\u05DE\u05DC\u05D9\u05D6\u05E6\u05D9\u05D4',
+                    'yes': '\u05DE\u05D9\u05D9\u05DF \u05DC\u05E4\u05D9 Unicode \u05DE\u05E0\u05D5\u05E8\u05DE\u05DC'
                 },
                 'calendar': {
-                    'japanese': 'לוח שנה יפני',
+                    'japanese': '\u05DC\u05D5\u05D7 \u05E9\u05E0\u05D4 \u05D9\u05E4\u05E0\u05D9',
                     'iso8601': 'iso8601',
-                    'coptic': 'לוח שנה קופטי',
+                    'coptic': '\u05DC\u05D5\u05D7 \u05E9\u05E0\u05D4 \u05E7\u05D5\u05E4\u05D8\u05D9',
                     'dangi': 'dangi',
-                    'ethiopic': 'לוח השנה האתיופי',
-                    'ethiopic-amete-alem': 'לוח השנה אמטה אלם האתיופי',
-                    'gregorian': 'לוח שנה גרגוריאני',
-                    'hebrew': 'לוח שנה עברי',
-                    'persian': 'לוח השנה הפרסי',
-                    'roc': 'לוח השנה הסיני Minguo',
-                    'chinese': 'לוח שנה סיני',
-                    'buddhist': 'לוח שנה בודהיסטי',
-                    'indian': 'לוח השנה ההודי הלאומי',
-                    'islamic': 'לוח שנה מוסלמי',
-                    'islamic-civil': 'לוח שנה מוסלמי-אזרחי',
+                    'ethiopic': '\u05DC\u05D5\u05D7 \u05D4\u05E9\u05E0\u05D4 \u05D4\u05D0\u05EA\u05D9\u05D5\u05E4\u05D9',
+                    'ethiopic-amete-alem': '\u05DC\u05D5\u05D7 \u05D4\u05E9\u05E0\u05D4 \u05D0\u05DE\u05D8\u05D4 \u05D0\u05DC\u05DD \u05D4\u05D0\u05EA\u05D9\u05D5\u05E4\u05D9',
+                    'gregorian': '\u05DC\u05D5\u05D7 \u05E9\u05E0\u05D4 \u05D2\u05E8\u05D2\u05D5\u05E8\u05D9\u05D0\u05E0\u05D9',
+                    'hebrew': '\u05DC\u05D5\u05D7 \u05E9\u05E0\u05D4 \u05E2\u05D1\u05E8\u05D9',
+                    'persian': '\u05DC\u05D5\u05D7 \u05D4\u05E9\u05E0\u05D4 \u05D4\u05E4\u05E8\u05E1\u05D9',
+                    'roc': '\u05DC\u05D5\u05D7 \u05D4\u05E9\u05E0\u05D4 \u05D4\u05E1\u05D9\u05E0\u05D9 Minguo',
+                    'chinese': '\u05DC\u05D5\u05D7 \u05E9\u05E0\u05D4 \u05E1\u05D9\u05E0\u05D9',
+                    'buddhist': '\u05DC\u05D5\u05D7 \u05E9\u05E0\u05D4 \u05D1\u05D5\u05D3\u05D4\u05D9\u05E1\u05D8\u05D9',
+                    'indian': '\u05DC\u05D5\u05D7 \u05D4\u05E9\u05E0\u05D4 \u05D4\u05D4\u05D5\u05D3\u05D9 \u05D4\u05DC\u05D0\u05D5\u05DE\u05D9',
+                    'islamic': '\u05DC\u05D5\u05D7 \u05E9\u05E0\u05D4 \u05DE\u05D5\u05E1\u05DC\u05DE\u05D9',
+                    'islamic-civil': '\u05DC\u05D5\u05D7 \u05E9\u05E0\u05D4 \u05DE\u05D5\u05E1\u05DC\u05DE\u05D9-\u05D0\u05D6\u05E8\u05D7\u05D9',
                     'islamic-rgsa': 'islamic-rgsa',
-                    'islamic-tbla': 'לוח שנה מוסלמי-אסטרולוגי',
+                    'islamic-tbla': '\u05DC\u05D5\u05D7 \u05E9\u05E0\u05D4 \u05DE\u05D5\u05E1\u05DC\u05DE\u05D9-\u05D0\u05E1\u05D8\u05E8\u05D5\u05DC\u05D5\u05D2\u05D9',
                     'islamic-umalqura': 'islamic-umalqura'
                 },
                 'collation': {
-                    'phonebook': 'מיון ספר טלפונים',
-                    'gb2312han': 'מיון סינית מודרנית',
+                    'phonebook': '\u05DE\u05D9\u05D5\u05DF \u05E1\u05E4\u05E8 \u05D8\u05DC\u05E4\u05D5\u05E0\u05D9\u05DD',
+                    'gb2312han': '\u05DE\u05D9\u05D5\u05DF \u05E1\u05D9\u05E0\u05D9\u05EA \u05DE\u05D5\u05D3\u05E8\u05E0\u05D9\u05EA',
                     'eor': 'eor',
-                    'ducet': 'סדר מיון Unicode המוגדר כברירת מחדל',
-                    'dictionary': 'סדר מיון במילון',
-                    'big5han': 'מיון סינית מסורתית',
-                    'traditional': 'מיון מסורתי',
-                    'standard': 'סדר מיון רגיל',
+                    'ducet': '\u05E1\u05D3\u05E8 \u05DE\u05D9\u05D5\u05DF Unicode \u05D4\u05DE\u05D5\u05D2\u05D3\u05E8 \u05DB\u05D1\u05E8\u05D9\u05E8\u05EA \u05DE\u05D7\u05D3\u05DC',
+                    'dictionary': '\u05E1\u05D3\u05E8 \u05DE\u05D9\u05D5\u05DF \u05D1\u05DE\u05D9\u05DC\u05D5\u05DF',
+                    'big5han': '\u05DE\u05D9\u05D5\u05DF \u05E1\u05D9\u05E0\u05D9\u05EA \u05DE\u05E1\u05D5\u05E8\u05EA\u05D9\u05EA',
+                    'traditional': '\u05DE\u05D9\u05D5\u05DF \u05DE\u05E1\u05D5\u05E8\u05EA\u05D9',
+                    'standard': '\u05E1\u05D3\u05E8 \u05DE\u05D9\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC',
                     'zhuyin': 'zhuyin',
-                    'unihan': 'סדר מיון לפי ספירת תווים Radical-Stroke',
-                    'stroke': 'סדר מיון לפי ספירת תווים',
-                    'searchjl': 'חפש לפי העיצור הראשון באותיות הנגול',
-                    'search': 'חיפוש למטרה כללית',
-                    'reformed': 'סדר מיון מתוקן',
-                    'pinyin': 'מיון פיניין',
-                    'phonetic': 'סדר מיון פונטי'
+                    'unihan': '\u05E1\u05D3\u05E8 \u05DE\u05D9\u05D5\u05DF \u05DC\u05E4\u05D9 \u05E1\u05E4\u05D9\u05E8\u05EA \u05EA\u05D5\u05D5\u05D9\u05DD Radical-Stroke',
+                    'stroke': '\u05E1\u05D3\u05E8 \u05DE\u05D9\u05D5\u05DF \u05DC\u05E4\u05D9 \u05E1\u05E4\u05D9\u05E8\u05EA \u05EA\u05D5\u05D5\u05D9\u05DD',
+                    'searchjl': '\u05D7\u05E4\u05E9 \u05DC\u05E4\u05D9 \u05D4\u05E2\u05D9\u05E6\u05D5\u05E8 \u05D4\u05E8\u05D0\u05E9\u05D5\u05DF \u05D1\u05D0\u05D5\u05EA\u05D9\u05D5\u05EA \u05D4\u05E0\u05D2\u05D5\u05DC',
+                    'search': '\u05D7\u05D9\u05E4\u05D5\u05E9 \u05DC\u05DE\u05D8\u05E8\u05D4 \u05DB\u05DC\u05DC\u05D9\u05EA',
+                    'reformed': '\u05E1\u05D3\u05E8 \u05DE\u05D9\u05D5\u05DF \u05DE\u05EA\u05D5\u05E7\u05DF',
+                    'pinyin': '\u05DE\u05D9\u05D5\u05DF \u05E4\u05D9\u05E0\u05D9\u05D9\u05DF',
+                    'phonetic': '\u05E1\u05D3\u05E8 \u05DE\u05D9\u05D5\u05DF \u05E4\u05D5\u05E0\u05D8\u05D9'
                 },
                 'numbers': {
-                    'knda': 'מספרים של קאנאדה',
-                    'khmr': 'ספרות חמריות',
+                    'knda': '\u05DE\u05E1\u05E4\u05E8\u05D9\u05DD \u05E9\u05DC \u05E7\u05D0\u05E0\u05D0\u05D3\u05D4',
+                    'khmr': '\u05E1\u05E4\u05E8\u05D5\u05EA \u05D7\u05DE\u05E8\u05D9\u05D5\u05EA',
                     'kali': 'kali',
-                    'jpanfin': 'מספרים פיננסיים יפניים',
-                    'jpan': 'מספרים יפניים',
+                    'jpanfin': '\u05DE\u05E1\u05E4\u05E8\u05D9\u05DD \u05E4\u05D9\u05E0\u05E0\u05E1\u05D9\u05D9\u05DD \u05D9\u05E4\u05E0\u05D9\u05D9\u05DD',
+                    'jpan': '\u05DE\u05E1\u05E4\u05E8\u05D9\u05DD \u05D9\u05E4\u05E0\u05D9\u05D9\u05DD',
                     'java': 'java',
-                    'hebr': 'ספרות עבריות',
-                    'hantfin': 'מספרים פיננסיים בסינית מסורתית',
-                    'hant': 'מספרים בסינית מסורתית',
-                    'hansfin': 'מספרים פיננסיים בסינית פשוטה',
-                    'hans': 'מספרים בסינית פשוטה',
-                    'hanidec': 'מערכת המספרים העשרונית הסינית',
-                    'guru': 'מספרים גורמוקיים',
-                    'gujr': 'מספרים בגוג׳רטי',
-                    'greklow': 'מספרים יווניים קטנים',
-                    'grek': 'מספרים יווניים',
+                    'hebr': '\u05E1\u05E4\u05E8\u05D5\u05EA \u05E2\u05D1\u05E8\u05D9\u05D5\u05EA',
+                    'hantfin': '\u05DE\u05E1\u05E4\u05E8\u05D9\u05DD \u05E4\u05D9\u05E0\u05E0\u05E1\u05D9\u05D9\u05DD \u05D1\u05E1\u05D9\u05E0\u05D9\u05EA \u05DE\u05E1\u05D5\u05E8\u05EA\u05D9\u05EA',
+                    'hant': '\u05DE\u05E1\u05E4\u05E8\u05D9\u05DD \u05D1\u05E1\u05D9\u05E0\u05D9\u05EA \u05DE\u05E1\u05D5\u05E8\u05EA\u05D9\u05EA',
+                    'hansfin': '\u05DE\u05E1\u05E4\u05E8\u05D9\u05DD \u05E4\u05D9\u05E0\u05E0\u05E1\u05D9\u05D9\u05DD \u05D1\u05E1\u05D9\u05E0\u05D9\u05EA \u05E4\u05E9\u05D5\u05D8\u05D4',
+                    'hans': '\u05DE\u05E1\u05E4\u05E8\u05D9\u05DD \u05D1\u05E1\u05D9\u05E0\u05D9\u05EA \u05E4\u05E9\u05D5\u05D8\u05D4',
+                    'hanidec': '\u05DE\u05E2\u05E8\u05DB\u05EA \u05D4\u05DE\u05E1\u05E4\u05E8\u05D9\u05DD \u05D4\u05E2\u05E9\u05E8\u05D5\u05E0\u05D9\u05EA \u05D4\u05E1\u05D9\u05E0\u05D9\u05EA',
+                    'guru': '\u05DE\u05E1\u05E4\u05E8\u05D9\u05DD \u05D2\u05D5\u05E8\u05DE\u05D5\u05E7\u05D9\u05D9\u05DD',
+                    'gujr': '\u05DE\u05E1\u05E4\u05E8\u05D9\u05DD \u05D1\u05D2\u05D5\u05D2\u05F3\u05E8\u05D8\u05D9',
+                    'greklow': '\u05DE\u05E1\u05E4\u05E8\u05D9\u05DD \u05D9\u05D5\u05D5\u05E0\u05D9\u05D9\u05DD \u05E7\u05D8\u05E0\u05D9\u05DD',
+                    'grek': '\u05DE\u05E1\u05E4\u05E8\u05D9\u05DD \u05D9\u05D5\u05D5\u05E0\u05D9\u05D9\u05DD',
                     'bali': 'bali',
-                    'armnlow': 'מספרים ארמניים קטנים',
-                    'armn': 'מספרים ארמניים',
-                    'arabext': 'ספרות הודיות-ערביות',
-                    'arab': 'ספרות הודו-ערביות',
-                    'finance': 'ספרות פיננסיות',
-                    'traditional': 'ספרות מסורתיות',
-                    'native': 'ספרות מקומיות',
-                    'beng': 'ספרות בנגליות',
+                    'armnlow': '\u05DE\u05E1\u05E4\u05E8\u05D9\u05DD \u05D0\u05E8\u05DE\u05E0\u05D9\u05D9\u05DD \u05E7\u05D8\u05E0\u05D9\u05DD',
+                    'armn': '\u05DE\u05E1\u05E4\u05E8\u05D9\u05DD \u05D0\u05E8\u05DE\u05E0\u05D9\u05D9\u05DD',
+                    'arabext': '\u05E1\u05E4\u05E8\u05D5\u05EA \u05D4\u05D5\u05D3\u05D9\u05D5\u05EA-\u05E2\u05E8\u05D1\u05D9\u05D5\u05EA',
+                    'arab': '\u05E1\u05E4\u05E8\u05D5\u05EA \u05D4\u05D5\u05D3\u05D5-\u05E2\u05E8\u05D1\u05D9\u05D5\u05EA',
+                    'finance': '\u05E1\u05E4\u05E8\u05D5\u05EA \u05E4\u05D9\u05E0\u05E0\u05E1\u05D9\u05D5\u05EA',
+                    'traditional': '\u05E1\u05E4\u05E8\u05D5\u05EA \u05DE\u05E1\u05D5\u05E8\u05EA\u05D9\u05D5\u05EA',
+                    'native': '\u05E1\u05E4\u05E8\u05D5\u05EA \u05DE\u05E7\u05D5\u05DE\u05D9\u05D5\u05EA',
+                    'beng': '\u05E1\u05E4\u05E8\u05D5\u05EA \u05D1\u05E0\u05D2\u05DC\u05D9\u05D5\u05EA',
                     'brah': 'brah',
                     'cakm': 'cakm',
                     'cham': 'cham',
-                    'deva': 'מספרים של דוונגארי',
-                    'orya': 'ספרות אוריה',
+                    'deva': '\u05DE\u05E1\u05E4\u05E8\u05D9\u05DD \u05E9\u05DC \u05D3\u05D5\u05D5\u05E0\u05D2\u05D0\u05E8\u05D9',
+                    'orya': '\u05E1\u05E4\u05E8\u05D5\u05EA \u05D0\u05D5\u05E8\u05D9\u05D4',
                     'osma': 'osma',
-                    'roman': 'מספרים רומיים',
-                    'romanlow': 'מספרים רומיים קטנים',
+                    'roman': '\u05DE\u05E1\u05E4\u05E8\u05D9\u05DD \u05E8\u05D5\u05DE\u05D9\u05D9\u05DD',
+                    'romanlow': '\u05DE\u05E1\u05E4\u05E8\u05D9\u05DD \u05E8\u05D5\u05DE\u05D9\u05D9\u05DD \u05E7\u05D8\u05E0\u05D9\u05DD',
                     'saur': 'saur',
                     'shrd': 'shrd',
                     'sora': 'sora',
                     'sund': 'sund',
-                    'vaii': 'ספרות ואי',
-                    'tibt': 'מספרים טיבטיים',
-                    'thai': 'ספרות תאילנדיות',
-                    'telu': 'ספרות טלוגו',
-                    'tamldec': 'ספרות טמיליות',
-                    'taml': 'מספרים טמיליים',
+                    'vaii': '\u05E1\u05E4\u05E8\u05D5\u05EA \u05D5\u05D0\u05D9',
+                    'tibt': '\u05DE\u05E1\u05E4\u05E8\u05D9\u05DD \u05D8\u05D9\u05D1\u05D8\u05D9\u05D9\u05DD',
+                    'thai': '\u05E1\u05E4\u05E8\u05D5\u05EA \u05EA\u05D0\u05D9\u05DC\u05E0\u05D3\u05D9\u05D5\u05EA',
+                    'telu': '\u05E1\u05E4\u05E8\u05D5\u05EA \u05D8\u05DC\u05D5\u05D2\u05D5',
+                    'tamldec': '\u05E1\u05E4\u05E8\u05D5\u05EA \u05D8\u05DE\u05D9\u05DC\u05D9\u05D5\u05EA',
+                    'taml': '\u05DE\u05E1\u05E4\u05E8\u05D9\u05DD \u05D8\u05DE\u05D9\u05DC\u05D9\u05D9\u05DD',
                     'talu': 'talu',
                     'takr': 'takr',
                     'olck': 'olck',
                     'nkoo': 'nkoo',
                     'mymrshan': 'mymrshan',
-                    'mymr': 'ספרות של מיאנמר',
+                    'mymr': '\u05E1\u05E4\u05E8\u05D5\u05EA \u05E9\u05DC \u05DE\u05D9\u05D0\u05E0\u05DE\u05E8',
                     'mtei': 'mtei',
-                    'mong': 'ספרות מונגוליות',
-                    'mlym': 'מספרים של מליאלאם',
+                    'mong': '\u05E1\u05E4\u05E8\u05D5\u05EA \u05DE\u05D5\u05E0\u05D2\u05D5\u05DC\u05D9\u05D5\u05EA',
+                    'mlym': '\u05DE\u05E1\u05E4\u05E8\u05D9\u05DD \u05E9\u05DC \u05DE\u05DC\u05D9\u05D0\u05DC\u05D0\u05DD',
                     'limb': 'limb',
                     'lepc': 'lepc',
-                    'latn': 'ספרות מערביות',
-                    'laoo': 'מספרים של לאוס',
+                    'latn': '\u05E1\u05E4\u05E8\u05D5\u05EA \u05DE\u05E2\u05E8\u05D1\u05D9\u05D5\u05EA',
+                    'laoo': '\u05DE\u05E1\u05E4\u05E8\u05D9\u05DD \u05E9\u05DC \u05DC\u05D0\u05D5\u05E1',
                     'lanatham': 'lanatham',
                     'lana': 'lana',
-                    'geor': 'מספרים גיאורגיים',
-                    'fullwide': 'ספרות ברוחב מלא',
-                    'ethi': 'מספרים אתיופיים'
+                    'geor': '\u05DE\u05E1\u05E4\u05E8\u05D9\u05DD \u05D2\u05D9\u05D0\u05D5\u05E8\u05D2\u05D9\u05D9\u05DD',
+                    'fullwide': '\u05E1\u05E4\u05E8\u05D5\u05EA \u05D1\u05E8\u05D5\u05D7\u05D1 \u05DE\u05DC\u05D0',
+                    'ethi': '\u05DE\u05E1\u05E4\u05E8\u05D9\u05DD \u05D0\u05EA\u05D9\u05D5\u05E4\u05D9\u05D9\u05DD'
                 },
                 'colAlternate': {
-                    'non-ignorable': 'מיין סמלים',
-                    'shifted': 'מיין תוך התעלמות מסמלים'
+                    'non-ignorable': '\u05DE\u05D9\u05D9\u05DF \u05E1\u05DE\u05DC\u05D9\u05DD',
+                    'shifted': '\u05DE\u05D9\u05D9\u05DF \u05EA\u05D5\u05DA \u05D4\u05EA\u05E2\u05DC\u05DE\u05D5\u05EA \u05DE\u05E1\u05DE\u05DC\u05D9\u05DD'
                 },
                 'colBackwards': {
-                    'no': 'מיין הטעמות בצורה רגילה',
-                    'yes': 'מיין לפי הטעמות בסדר הפוך'
+                    'no': '\u05DE\u05D9\u05D9\u05DF \u05D4\u05D8\u05E2\u05DE\u05D5\u05EA \u05D1\u05E6\u05D5\u05E8\u05D4 \u05E8\u05D2\u05D9\u05DC\u05D4',
+                    'yes': '\u05DE\u05D9\u05D9\u05DF \u05DC\u05E4\u05D9 \u05D4\u05D8\u05E2\u05DE\u05D5\u05EA \u05D1\u05E1\u05D3\u05E8 \u05D4\u05E4\u05D5\u05DA'
                 }
             },
             'keys': {
-                'colNormalization': 'מיון מנורמל',
-                'collation': 'סדר מיון',
-                'colHiraganaQuaternary': 'מיון קאנה',
-                'colCaseLevel': 'מיון תלוי רישיות',
-                'colCaseFirst': 'סידור לפי אותיות רישיות/קטנות',
-                'colBackwards': 'מיון לפי הטעמות בסדר הפוך',
-                'colAlternate': 'התעלם מסמלים במיון',
-                'calendar': 'לוח שנה',
-                'x': 'שימוש פרטי',
-                'variableTop': 'מיין כסמלים',
-                'va': 'משתנה אזור',
-                'timezone': 'אזור זמן',
-                'numbers': 'מספרים',
-                'currency': 'מטבע',
-                'colStrength': 'עוצמת המיון',
-                'colNumeric': 'מיון לפי מספרים'
+                'colNormalization': '\u05DE\u05D9\u05D5\u05DF \u05DE\u05E0\u05D5\u05E8\u05DE\u05DC',
+                'collation': '\u05E1\u05D3\u05E8 \u05DE\u05D9\u05D5\u05DF',
+                'colHiraganaQuaternary': '\u05DE\u05D9\u05D5\u05DF \u05E7\u05D0\u05E0\u05D4',
+                'colCaseLevel': '\u05DE\u05D9\u05D5\u05DF \u05EA\u05DC\u05D5\u05D9 \u05E8\u05D9\u05E9\u05D9\u05D5\u05EA',
+                'colCaseFirst': '\u05E1\u05D9\u05D3\u05D5\u05E8 \u05DC\u05E4\u05D9 \u05D0\u05D5\u05EA\u05D9\u05D5\u05EA \u05E8\u05D9\u05E9\u05D9\u05D5\u05EA/\u05E7\u05D8\u05E0\u05D5\u05EA',
+                'colBackwards': '\u05DE\u05D9\u05D5\u05DF \u05DC\u05E4\u05D9 \u05D4\u05D8\u05E2\u05DE\u05D5\u05EA \u05D1\u05E1\u05D3\u05E8 \u05D4\u05E4\u05D5\u05DA',
+                'colAlternate': '\u05D4\u05EA\u05E2\u05DC\u05DD \u05DE\u05E1\u05DE\u05DC\u05D9\u05DD \u05D1\u05DE\u05D9\u05D5\u05DF',
+                'calendar': '\u05DC\u05D5\u05D7 \u05E9\u05E0\u05D4',
+                'x': '\u05E9\u05D9\u05DE\u05D5\u05E9 \u05E4\u05E8\u05D8\u05D9',
+                'variableTop': '\u05DE\u05D9\u05D9\u05DF \u05DB\u05E1\u05DE\u05DC\u05D9\u05DD',
+                'va': '\u05DE\u05E9\u05EA\u05E0\u05D4 \u05D0\u05D6\u05D5\u05E8',
+                'timezone': '\u05D0\u05D6\u05D5\u05E8 \u05D6\u05DE\u05DF',
+                'numbers': '\u05DE\u05E1\u05E4\u05E8\u05D9\u05DD',
+                'currency': '\u05DE\u05D8\u05D1\u05E2',
+                'colStrength': '\u05E2\u05D5\u05E6\u05DE\u05EA \u05D4\u05DE\u05D9\u05D5\u05DF',
+                'colNumeric': '\u05DE\u05D9\u05D5\u05DF \u05DC\u05E4\u05D9 \u05DE\u05E1\u05E4\u05E8\u05D9\u05DD'
             },
             'localeDisplayPattern': {
                 'localePattern': '{0} ({1})',
                 'localeSeparator': '{0}, {1}',
-                'localeKeyTypePattern': '{0}:‏ {1}'
+                'localeKeyTypePattern': '{0}:\u200F {1}'
             },
             'timeZoneNames': {
                 'zone': {
                     'Pacific': {
                         'Saipan': {
-                            'exemplarCity': 'סייפן'
+                            'exemplarCity': '\u05E1\u05D9\u05D9\u05E4\u05DF'
                         },
                         'Rarotonga': {
-                            'exemplarCity': 'רארוטונגה'
+                            'exemplarCity': '\u05E8\u05D0\u05E8\u05D5\u05D8\u05D5\u05E0\u05D2\u05D4'
                         },
                         'Port_Moresby': {
-                            'exemplarCity': 'פורט מורסבי'
+                            'exemplarCity': '\u05E4\u05D5\u05E8\u05D8 \u05DE\u05D5\u05E8\u05E1\u05D1\u05D9'
                         },
                         'Ponape': {
-                            'exemplarCity': 'פונפה'
+                            'exemplarCity': '\u05E4\u05D5\u05E0\u05E4\u05D4'
                         },
                         'Pitcairn': {
-                            'exemplarCity': 'פיטקרן'
+                            'exemplarCity': '\u05E4\u05D9\u05D8\u05E7\u05E8\u05DF'
                         },
                         'Palau': {
-                            'exemplarCity': 'פלאו'
+                            'exemplarCity': '\u05E4\u05DC\u05D0\u05D5'
                         },
                         'Auckland': {
-                            'exemplarCity': 'פסיפי/אוקלנד'
+                            'exemplarCity': '\u05E4\u05E1\u05D9\u05E4\u05D9/\u05D0\u05D5\u05E7\u05DC\u05E0\u05D3'
                         },
                         'Apia': {
-                            'exemplarCity': 'אפיה'
+                            'exemplarCity': '\u05D0\u05E4\u05D9\u05D4'
                         },
                         'Funafuti': {
-                            'exemplarCity': 'פונפוטי'
+                            'exemplarCity': '\u05E4\u05D5\u05E0\u05E4\u05D5\u05D8\u05D9'
                         },
                         'Galapagos': {
-                            'exemplarCity': 'פסיפי/גלאפגוס'
+                            'exemplarCity': '\u05E4\u05E1\u05D9\u05E4\u05D9/\u05D2\u05DC\u05D0\u05E4\u05D2\u05D5\u05E1'
                         },
                         'Gambier': {
-                            'exemplarCity': 'איי גמביר'
+                            'exemplarCity': '\u05D0\u05D9\u05D9 \u05D2\u05DE\u05D1\u05D9\u05E8'
                         },
                         'Guadalcanal': {
-                            'exemplarCity': 'גוודלקנאל'
+                            'exemplarCity': '\u05D2\u05D5\u05D5\u05D3\u05DC\u05E7\u05E0\u05D0\u05DC'
                         },
                         'Guam': {
-                            'exemplarCity': 'גואם'
+                            'exemplarCity': '\u05D2\u05D5\u05D0\u05DD'
                         },
                         'Honolulu': {
-                            'exemplarCity': 'פסיפי/הונולולו'
+                            'exemplarCity': '\u05E4\u05E1\u05D9\u05E4\u05D9/\u05D4\u05D5\u05E0\u05D5\u05DC\u05D5\u05DC\u05D5'
                         },
                         'Wallis': {
-                            'exemplarCity': 'ווליס'
+                            'exemplarCity': '\u05D5\u05D5\u05DC\u05D9\u05E1'
                         },
                         'Wake': {
-                            'exemplarCity': 'וואק'
+                            'exemplarCity': '\u05D5\u05D5\u05D0\u05E7'
                         },
                         'Truk': {
-                            'exemplarCity': 'טרוק'
+                            'exemplarCity': '\u05D8\u05E8\u05D5\u05E7'
                         },
                         'Tongatapu': {
-                            'exemplarCity': 'טונגטפו'
+                            'exemplarCity': '\u05D8\u05D5\u05E0\u05D2\u05D8\u05E4\u05D5'
                         },
                         'Tarawa': {
-                            'exemplarCity': 'טאראווה'
+                            'exemplarCity': '\u05D8\u05D0\u05E8\u05D0\u05D5\u05D5\u05D4'
                         },
                         'Tahiti': {
-                            'exemplarCity': 'פסיפי/טהיטי'
+                            'exemplarCity': '\u05E4\u05E1\u05D9\u05E4\u05D9/\u05D8\u05D4\u05D9\u05D8\u05D9'
                         },
                         'Kiritimati': {
-                            'exemplarCity': 'קיריטימאטי'
+                            'exemplarCity': '\u05E7\u05D9\u05E8\u05D9\u05D8\u05D9\u05DE\u05D0\u05D8\u05D9'
                         },
                         'Johnston': {
-                            'exemplarCity': 'ג׳ונסטון'
+                            'exemplarCity': '\u05D2\u05F3\u05D5\u05E0\u05E1\u05D8\u05D5\u05DF'
                         },
                         'Chatham': {
-                            'exemplarCity': 'צ׳אטהאם'
+                            'exemplarCity': '\u05E6\u05F3\u05D0\u05D8\u05D4\u05D0\u05DD'
                         },
                         'Easter': {
-                            'exemplarCity': 'איי הפסחא'
+                            'exemplarCity': '\u05D0\u05D9\u05D9 \u05D4\u05E4\u05E1\u05D7\u05D0'
                         },
                         'Efate': {
-                            'exemplarCity': 'אפטה'
+                            'exemplarCity': '\u05D0\u05E4\u05D8\u05D4'
                         },
                         'Enderbury': {
-                            'exemplarCity': 'אנדרבורי'
+                            'exemplarCity': '\u05D0\u05E0\u05D3\u05E8\u05D1\u05D5\u05E8\u05D9'
                         },
                         'Fakaofo': {
-                            'exemplarCity': 'פקאופו'
+                            'exemplarCity': '\u05E4\u05E7\u05D0\u05D5\u05E4\u05D5'
                         },
                         'Fiji': {
-                            'exemplarCity': 'פיג׳י'
+                            'exemplarCity': '\u05E4\u05D9\u05D2\u05F3\u05D9'
                         },
                         'Kosrae': {
-                            'exemplarCity': 'קוסרה'
+                            'exemplarCity': '\u05E7\u05D5\u05E1\u05E8\u05D4'
                         },
                         'Kwajalein': {
-                            'exemplarCity': 'קוואג׳ליין'
+                            'exemplarCity': '\u05E7\u05D5\u05D5\u05D0\u05D2\u05F3\u05DC\u05D9\u05D9\u05DF'
                         },
                         'Majuro': {
-                            'exemplarCity': 'מאג׳ורו'
+                            'exemplarCity': '\u05DE\u05D0\u05D2\u05F3\u05D5\u05E8\u05D5'
                         },
                         'Marquesas': {
-                            'exemplarCity': 'איי מרקיז'
+                            'exemplarCity': '\u05D0\u05D9\u05D9 \u05DE\u05E8\u05E7\u05D9\u05D6'
                         },
                         'Midway': {
-                            'exemplarCity': 'מידוויי'
+                            'exemplarCity': '\u05DE\u05D9\u05D3\u05D5\u05D5\u05D9\u05D9'
                         },
                         'Nauru': {
-                            'exemplarCity': 'נאורו'
+                            'exemplarCity': '\u05E0\u05D0\u05D5\u05E8\u05D5'
                         },
                         'Niue': {
-                            'exemplarCity': 'ניווה'
+                            'exemplarCity': '\u05E0\u05D9\u05D5\u05D5\u05D4'
                         },
                         'Norfolk': {
-                            'exemplarCity': 'נורפוק'
+                            'exemplarCity': '\u05E0\u05D5\u05E8\u05E4\u05D5\u05E7'
                         },
                         'Noumea': {
-                            'exemplarCity': 'נומאה'
+                            'exemplarCity': '\u05E0\u05D5\u05DE\u05D0\u05D4'
                         },
                         'Pago_Pago': {
-                            'exemplarCity': 'פאגו פאגו'
+                            'exemplarCity': '\u05E4\u05D0\u05D2\u05D5 \u05E4\u05D0\u05D2\u05D5'
                         }
                     },
                     'Australia': {
                         'Lindeman': {
-                            'exemplarCity': 'לינדמן'
+                            'exemplarCity': '\u05DC\u05D9\u05E0\u05D3\u05DE\u05DF'
                         },
                         'Hobart': {
-                            'exemplarCity': 'אוסטרליה/הוברט'
+                            'exemplarCity': '\u05D0\u05D5\u05E1\u05D8\u05E8\u05DC\u05D9\u05D4/\u05D4\u05D5\u05D1\u05E8\u05D8'
                         },
                         'Eucla': {
-                            'exemplarCity': 'יוקלה'
+                            'exemplarCity': '\u05D9\u05D5\u05E7\u05DC\u05D4'
                         },
                         'Darwin': {
-                            'exemplarCity': 'אוסטרליה/דרווין'
+                            'exemplarCity': '\u05D0\u05D5\u05E1\u05D8\u05E8\u05DC\u05D9\u05D4/\u05D3\u05E8\u05D5\u05D5\u05D9\u05DF'
                         },
                         'Sydney': {
-                            'exemplarCity': 'אוסטרליה/סידני'
+                            'exemplarCity': '\u05D0\u05D5\u05E1\u05D8\u05E8\u05DC\u05D9\u05D4/\u05E1\u05D9\u05D3\u05E0\u05D9'
                         },
                         'Perth': {
-                            'exemplarCity': 'אוסטרליה/פרת׳'
+                            'exemplarCity': '\u05D0\u05D5\u05E1\u05D8\u05E8\u05DC\u05D9\u05D4/\u05E4\u05E8\u05EA\u05F3'
                         },
                         'Melbourne': {
-                            'exemplarCity': 'אוסטרליה/מלבורן'
+                            'exemplarCity': '\u05D0\u05D5\u05E1\u05D8\u05E8\u05DC\u05D9\u05D4/\u05DE\u05DC\u05D1\u05D5\u05E8\u05DF'
                         },
                         'Lord_Howe': {
-                            'exemplarCity': 'לורד האו'
+                            'exemplarCity': '\u05DC\u05D5\u05E8\u05D3 \u05D4\u05D0\u05D5'
                         },
                         'Adelaide': {
-                            'exemplarCity': 'אדלייד'
+                            'exemplarCity': '\u05D0\u05D3\u05DC\u05D9\u05D9\u05D3'
                         },
                         'Brisbane': {
-                            'exemplarCity': 'אוסטרליה/בריסבן'
+                            'exemplarCity': '\u05D0\u05D5\u05E1\u05D8\u05E8\u05DC\u05D9\u05D4/\u05D1\u05E8\u05D9\u05E1\u05D1\u05DF'
                         },
                         'Broken_Hill': {
-                            'exemplarCity': 'אוסטרליה/ברוקן-היל'
+                            'exemplarCity': '\u05D0\u05D5\u05E1\u05D8\u05E8\u05DC\u05D9\u05D4/\u05D1\u05E8\u05D5\u05E7\u05DF-\u05D4\u05D9\u05DC'
                         },
                         'Currie': {
-                            'exemplarCity': 'קרי'
+                            'exemplarCity': '\u05E7\u05E8\u05D9'
                         }
                     },
                     'Indian': {
                         'Maldives': {
-                            'exemplarCity': 'האיים המלדיביים'
+                            'exemplarCity': '\u05D4\u05D0\u05D9\u05D9\u05DD \u05D4\u05DE\u05DC\u05D3\u05D9\u05D1\u05D9\u05D9\u05DD'
                         },
                         'Mahe': {
-                            'exemplarCity': 'מהא'
+                            'exemplarCity': '\u05DE\u05D4\u05D0'
                         },
                         'Kerguelen': {
-                            'exemplarCity': 'קרגוולן'
+                            'exemplarCity': '\u05E7\u05E8\u05D2\u05D5\u05D5\u05DC\u05DF'
                         },
                         'Reunion': {
-                            'exemplarCity': 'ראוניון'
+                            'exemplarCity': '\u05E8\u05D0\u05D5\u05E0\u05D9\u05D5\u05DF'
                         },
                         'Mayotte': {
-                            'exemplarCity': 'מאיוט'
+                            'exemplarCity': '\u05DE\u05D0\u05D9\u05D5\u05D8'
                         },
                         'Mauritius': {
-                            'exemplarCity': 'מאוריציוס'
+                            'exemplarCity': '\u05DE\u05D0\u05D5\u05E8\u05D9\u05E6\u05D9\u05D5\u05E1'
                         },
                         'Antananarivo': {
-                            'exemplarCity': 'אנטננריבו'
+                            'exemplarCity': '\u05D0\u05E0\u05D8\u05E0\u05E0\u05E8\u05D9\u05D1\u05D5'
                         },
                         'Chagos': {
-                            'exemplarCity': 'צ׳אגוס'
+                            'exemplarCity': '\u05E6\u05F3\u05D0\u05D2\u05D5\u05E1'
                         },
                         'Christmas': {
-                            'exemplarCity': 'קריסמס'
+                            'exemplarCity': '\u05E7\u05E8\u05D9\u05E1\u05DE\u05E1'
                         },
                         'Cocos': {
-                            'exemplarCity': 'קוקוס'
+                            'exemplarCity': '\u05E7\u05D5\u05E7\u05D5\u05E1'
                         },
                         'Comoro': {
-                            'exemplarCity': 'קומורו'
+                            'exemplarCity': '\u05E7\u05D5\u05DE\u05D5\u05E8\u05D5'
                         }
                     },
                     'Etc': {
@@ -458,7 +458,7 @@
                             'exemplarCity': 'GMT-9'
                         },
                         'Unknown': {
-                            'exemplarCity': 'עיר לא ידועה'
+                            'exemplarCity': '\u05E2\u05D9\u05E8 \u05DC\u05D0 \u05D9\u05D3\u05D5\u05E2\u05D4'
                         },
                         'GMT-2': {
                             'exemplarCity': 'GMT-2'
@@ -487,1988 +487,1988 @@
                     },
                     'Antarctica': {
                         'Rothera': {
-                            'exemplarCity': 'רות׳רה'
+                            'exemplarCity': '\u05E8\u05D5\u05EA\u05F3\u05E8\u05D4'
                         },
                         'Palmer': {
-                            'exemplarCity': 'אמריקה/פאלמר'
+                            'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05E4\u05D0\u05DC\u05DE\u05E8'
                         },
                         'McMurdo': {
-                            'exemplarCity': 'מקמרדו'
+                            'exemplarCity': '\u05DE\u05E7\u05DE\u05E8\u05D3\u05D5'
                         },
                         'Vostok': {
-                            'exemplarCity': 'ווסטוק'
+                            'exemplarCity': '\u05D5\u05D5\u05E1\u05D8\u05D5\u05E7'
                         },
                         'Syowa': {
-                            'exemplarCity': 'שויה'
+                            'exemplarCity': '\u05E9\u05D5\u05D9\u05D4'
                         },
                         'South_Pole': {
-                            'exemplarCity': 'הקוטב הדרומי'
+                            'exemplarCity': '\u05D4\u05E7\u05D5\u05D8\u05D1 \u05D4\u05D3\u05E8\u05D5\u05DE\u05D9'
                         },
                         'Casey': {
-                            'exemplarCity': 'קאסיי'
+                            'exemplarCity': '\u05E7\u05D0\u05E1\u05D9\u05D9'
                         },
                         'Davis': {
-                            'exemplarCity': 'דייויס'
+                            'exemplarCity': '\u05D3\u05D9\u05D9\u05D5\u05D9\u05E1'
                         },
                         'DumontDUrville': {
-                            'exemplarCity': 'דומון ד׳אורווי'
+                            'exemplarCity': '\u05D3\u05D5\u05DE\u05D5\u05DF \u05D3\u05F3\u05D0\u05D5\u05E8\u05D5\u05D5\u05D9'
                         },
                         'Macquarie': {
-                            'exemplarCity': 'מקרי'
+                            'exemplarCity': '\u05DE\u05E7\u05E8\u05D9'
                         },
                         'Mawson': {
-                            'exemplarCity': 'מאוסון'
+                            'exemplarCity': '\u05DE\u05D0\u05D5\u05E1\u05D5\u05DF'
                         }
                     },
                     'Arctic': {
                         'Longyearbyen': {
-                            'exemplarCity': 'לונגיירביאן'
+                            'exemplarCity': '\u05DC\u05D5\u05E0\u05D2\u05D9\u05D9\u05E8\u05D1\u05D9\u05D0\u05DF'
                         }
                     },
                     'America': {
                         'Toronto': {
-                            'exemplarCity': 'אמריקה/טורנטו'
+                            'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05D8\u05D5\u05E8\u05E0\u05D8\u05D5'
                         },
                         'Tijuana': {
-                            'exemplarCity': 'טיחואנה'
+                            'exemplarCity': '\u05D8\u05D9\u05D7\u05D5\u05D0\u05E0\u05D4'
                         },
                         'Thunder_Bay': {
-                            'exemplarCity': 'ת׳אנדר ביי'
+                            'exemplarCity': '\u05EA\u05F3\u05D0\u05E0\u05D3\u05E8 \u05D1\u05D9\u05D9'
                         },
                         'Thule': {
-                            'exemplarCity': 'טולה'
+                            'exemplarCity': '\u05D8\u05D5\u05DC\u05D4'
                         },
                         'Tegucigalpa': {
-                            'exemplarCity': 'טגוסיגלפה'
+                            'exemplarCity': '\u05D8\u05D2\u05D5\u05E1\u05D9\u05D2\u05DC\u05E4\u05D4'
                         },
                         'Swift_Current': {
-                            'exemplarCity': 'סוויפט קרנט'
+                            'exemplarCity': '\u05E1\u05D5\u05D5\u05D9\u05E4\u05D8 \u05E7\u05E8\u05E0\u05D8'
                         },
                         'Chicago': {
-                            'exemplarCity': 'אמריקה/שיקגו'
+                            'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05E9\u05D9\u05E7\u05D2\u05D5'
                         },
                         'Cayman': {
-                            'exemplarCity': 'קיימן'
+                            'exemplarCity': '\u05E7\u05D9\u05D9\u05DE\u05DF'
                         },
                         'Cayenne': {
-                            'exemplarCity': 'קאיין'
+                            'exemplarCity': '\u05E7\u05D0\u05D9\u05D9\u05DF'
                         },
                         'Catamarca': {
-                            'exemplarCity': 'קטמרקה'
+                            'exemplarCity': '\u05E7\u05D8\u05DE\u05E8\u05E7\u05D4'
                         },
                         'Caracas': {
-                            'exemplarCity': 'קראקס'
+                            'exemplarCity': '\u05E7\u05E8\u05D0\u05E7\u05E1'
                         },
                         'Cancun': {
-                            'exemplarCity': 'אמריקה/קנקון'
+                            'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05E7\u05E0\u05E7\u05D5\u05DF'
                         },
                         'Campo_Grande': {
-                            'exemplarCity': 'קמפו גרנדה'
+                            'exemplarCity': '\u05E7\u05DE\u05E4\u05D5 \u05D2\u05E8\u05E0\u05D3\u05D4'
                         },
                         'Cambridge_Bay': {
-                            'exemplarCity': 'קיימברידג׳ ביי'
+                            'exemplarCity': '\u05E7\u05D9\u05D9\u05DE\u05D1\u05E8\u05D9\u05D3\u05D2\u05F3 \u05D1\u05D9\u05D9'
                         },
                         'Buenos_Aires': {
-                            'exemplarCity': 'בואנוס איירס'
+                            'exemplarCity': '\u05D1\u05D5\u05D0\u05E0\u05D5\u05E1 \u05D0\u05D9\u05D9\u05E8\u05E1'
                         },
                         'Boise': {
-                            'exemplarCity': 'בויסי'
+                            'exemplarCity': '\u05D1\u05D5\u05D9\u05E1\u05D9'
                         },
                         'Asuncion': {
-                            'exemplarCity': 'אסונסיון'
+                            'exemplarCity': '\u05D0\u05E1\u05D5\u05E0\u05E1\u05D9\u05D5\u05DF'
                         },
                         'Aruba': {
-                            'exemplarCity': 'ארובה'
+                            'exemplarCity': '\u05D0\u05E8\u05D5\u05D1\u05D4'
                         },
                         'Argentina': {
                             'Rio_Gallegos': {
-                                'exemplarCity': 'ריו גאייגוס'
+                                'exemplarCity': '\u05E8\u05D9\u05D5 \u05D2\u05D0\u05D9\u05D9\u05D2\u05D5\u05E1'
                             },
                             'San_Juan': {
-                                'exemplarCity': 'אמריקה/ארגנטינה/סאן-חואן'
+                                'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05D0\u05E8\u05D2\u05E0\u05D8\u05D9\u05E0\u05D4/\u05E1\u05D0\u05DF-\u05D7\u05D5\u05D0\u05DF'
                             },
                             'Ushuaia': {
-                                'exemplarCity': 'אושוואיה'
+                                'exemplarCity': '\u05D0\u05D5\u05E9\u05D5\u05D5\u05D0\u05D9\u05D4'
                             },
                             'La_Rioja': {
-                                'exemplarCity': 'לה ריוחה'
+                                'exemplarCity': '\u05DC\u05D4 \u05E8\u05D9\u05D5\u05D7\u05D4'
                             },
                             'San_Luis': {
-                                'exemplarCity': 'סן לואיס'
+                                'exemplarCity': '\u05E1\u05DF \u05DC\u05D5\u05D0\u05D9\u05E1'
                             },
                             'Salta': {
-                                'exemplarCity': 'סלטה'
+                                'exemplarCity': '\u05E1\u05DC\u05D8\u05D4'
                             },
                             'Tucuman': {
-                                'exemplarCity': 'טוקומן'
+                                'exemplarCity': '\u05D8\u05D5\u05E7\u05D5\u05DE\u05DF'
                             }
                         },
                         'Araguaina': {
-                            'exemplarCity': 'אראגואינה'
+                            'exemplarCity': '\u05D0\u05E8\u05D0\u05D2\u05D5\u05D0\u05D9\u05E0\u05D4'
                         },
                         'Antigua': {
-                            'exemplarCity': 'אנטיגואה'
+                            'exemplarCity': '\u05D0\u05E0\u05D8\u05D9\u05D2\u05D5\u05D0\u05D4'
                         },
                         'Anguilla': {
-                            'exemplarCity': 'אנגווילה'
+                            'exemplarCity': '\u05D0\u05E0\u05D2\u05D5\u05D5\u05D9\u05DC\u05D4'
                         },
                         'Anchorage': {
-                            'exemplarCity': 'אנקורג׳'
+                            'exemplarCity': '\u05D0\u05E0\u05E7\u05D5\u05E8\u05D2\u05F3'
                         },
                         'Adak': {
-                            'exemplarCity': 'אדאק'
+                            'exemplarCity': '\u05D0\u05D3\u05D0\u05E7'
                         },
                         'Bahia': {
-                            'exemplarCity': 'אמריקה/בהיאה'
+                            'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05D1\u05D4\u05D9\u05D0\u05D4'
                         },
                         'Bahia_Banderas': {
-                            'exemplarCity': 'באהיה בנדרס'
+                            'exemplarCity': '\u05D1\u05D0\u05D4\u05D9\u05D4 \u05D1\u05E0\u05D3\u05E8\u05E1'
                         },
                         'Barbados': {
-                            'exemplarCity': 'ברבדוס'
+                            'exemplarCity': '\u05D1\u05E8\u05D1\u05D3\u05D5\u05E1'
                         },
                         'Belem': {
-                            'exemplarCity': 'בלם'
+                            'exemplarCity': '\u05D1\u05DC\u05DD'
                         },
                         'Belize': {
-                            'exemplarCity': 'בליז'
+                            'exemplarCity': '\u05D1\u05DC\u05D9\u05D6'
                         },
                         'Blanc-Sablon': {
-                            'exemplarCity': 'בלאן-סבלון'
+                            'exemplarCity': '\u05D1\u05DC\u05D0\u05DF-\u05E1\u05D1\u05DC\u05D5\u05DF'
                         },
                         'Boa_Vista': {
-                            'exemplarCity': 'בואה ויסטה'
+                            'exemplarCity': '\u05D1\u05D5\u05D0\u05D4 \u05D5\u05D9\u05E1\u05D8\u05D4'
                         },
                         'Bogota': {
-                            'exemplarCity': 'בוגוטה'
+                            'exemplarCity': '\u05D1\u05D5\u05D2\u05D5\u05D8\u05D4'
                         },
                         'Curacao': {
-                            'exemplarCity': 'קוראסאו'
+                            'exemplarCity': '\u05E7\u05D5\u05E8\u05D0\u05E1\u05D0\u05D5'
                         },
                         'Danmarkshavn': {
-                            'exemplarCity': 'דנמרקסהוון'
+                            'exemplarCity': '\u05D3\u05E0\u05DE\u05E8\u05E7\u05E1\u05D4\u05D5\u05D5\u05DF'
                         },
                         'Dawson': {
-                            'exemplarCity': 'דאוסון'
+                            'exemplarCity': '\u05D3\u05D0\u05D5\u05E1\u05D5\u05DF'
                         },
                         'Dawson_Creek': {
-                            'exemplarCity': 'אמריקה/דוסון-קריק'
+                            'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05D3\u05D5\u05E1\u05D5\u05DF-\u05E7\u05E8\u05D9\u05E7'
                         },
                         'Denver': {
-                            'exemplarCity': 'אמריקה/דנוור'
+                            'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05D3\u05E0\u05D5\u05D5\u05E8'
                         },
                         'Detroit': {
-                            'exemplarCity': 'אמריקה/דטרויט'
+                            'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05D3\u05D8\u05E8\u05D5\u05D9\u05D8'
                         },
                         'Hermosillo': {
-                            'exemplarCity': 'ארמוסיו'
+                            'exemplarCity': '\u05D0\u05E8\u05DE\u05D5\u05E1\u05D9\u05D5'
                         },
                         'Indiana': {
                             'Vincennes': {
-                                'exemplarCity': 'וינסנס, אינדיאנה'
+                                'exemplarCity': '\u05D5\u05D9\u05E0\u05E1\u05E0\u05E1, \u05D0\u05D9\u05E0\u05D3\u05D9\u05D0\u05E0\u05D4'
                             },
                             'Petersburg': {
-                                'exemplarCity': 'פיטרסבורג, אינדיאנה'
+                                'exemplarCity': '\u05E4\u05D9\u05D8\u05E8\u05E1\u05D1\u05D5\u05E8\u05D2, \u05D0\u05D9\u05E0\u05D3\u05D9\u05D0\u05E0\u05D4'
                             },
                             'Tell_City': {
-                                'exemplarCity': 'טל סיטי, אינדיאנה'
+                                'exemplarCity': '\u05D8\u05DC \u05E1\u05D9\u05D8\u05D9, \u05D0\u05D9\u05E0\u05D3\u05D9\u05D0\u05E0\u05D4'
                             },
                             'Knox': {
-                                'exemplarCity': 'נוקס, אינדיאנה'
+                                'exemplarCity': '\u05E0\u05D5\u05E7\u05E1, \u05D0\u05D9\u05E0\u05D3\u05D9\u05D0\u05E0\u05D4'
                             },
                             'Winamac': {
-                                'exemplarCity': 'וינמאק, אינדיאנה'
+                                'exemplarCity': '\u05D5\u05D9\u05E0\u05DE\u05D0\u05E7, \u05D0\u05D9\u05E0\u05D3\u05D9\u05D0\u05E0\u05D4'
                             },
                             'Marengo': {
-                                'exemplarCity': 'מרנגו, אינדיאנה'
+                                'exemplarCity': '\u05DE\u05E8\u05E0\u05D2\u05D5, \u05D0\u05D9\u05E0\u05D3\u05D9\u05D0\u05E0\u05D4'
                             },
                             'Vevay': {
-                                'exemplarCity': 'ויוואיי, אינדיאנה'
+                                'exemplarCity': '\u05D5\u05D9\u05D5\u05D5\u05D0\u05D9\u05D9, \u05D0\u05D9\u05E0\u05D3\u05D9\u05D0\u05E0\u05D4'
                             }
                         },
                         'Indianapolis': {
-                            'exemplarCity': 'אינדיאנפוליס'
+                            'exemplarCity': '\u05D0\u05D9\u05E0\u05D3\u05D9\u05D0\u05E0\u05E4\u05D5\u05DC\u05D9\u05E1'
                         },
                         'Inuvik': {
-                            'exemplarCity': 'אינוויק'
+                            'exemplarCity': '\u05D0\u05D9\u05E0\u05D5\u05D5\u05D9\u05E7'
                         },
                         'Iqaluit': {
-                            'exemplarCity': 'איקלואיט'
+                            'exemplarCity': '\u05D0\u05D9\u05E7\u05DC\u05D5\u05D0\u05D9\u05D8'
                         },
                         'Jamaica': {
-                            'exemplarCity': 'ג׳מייקה'
+                            'exemplarCity': '\u05D2\u05F3\u05DE\u05D9\u05D9\u05E7\u05D4'
                         },
                         'Jujuy': {
-                            'exemplarCity': 'חוחוי'
+                            'exemplarCity': '\u05D7\u05D5\u05D7\u05D5\u05D9'
                         },
                         'Juneau': {
-                            'exemplarCity': 'ג׳ונו'
+                            'exemplarCity': '\u05D2\u05F3\u05D5\u05E0\u05D5'
                         },
                         'Yellowknife': {
-                            'exemplarCity': 'ילונייף'
+                            'exemplarCity': '\u05D9\u05DC\u05D5\u05E0\u05D9\u05D9\u05E3'
                         },
                         'Yakutat': {
-                            'exemplarCity': 'יקוטאט'
+                            'exemplarCity': '\u05D9\u05E7\u05D5\u05D8\u05D0\u05D8'
                         },
                         'Winnipeg': {
-                            'exemplarCity': 'אמריקה/וויניפוג'
+                            'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05D5\u05D5\u05D9\u05E0\u05D9\u05E4\u05D5\u05D2'
                         },
                         'Whitehorse': {
-                            'exemplarCity': 'ווייטהורס'
+                            'exemplarCity': '\u05D5\u05D5\u05D9\u05D9\u05D8\u05D4\u05D5\u05E8\u05E1'
                         },
                         'Vancouver': {
-                            'exemplarCity': 'אמריקה/ונקובר'
+                            'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05D5\u05E0\u05E7\u05D5\u05D1\u05E8'
                         },
                         'Tortola': {
-                            'exemplarCity': 'טורטולה'
+                            'exemplarCity': '\u05D8\u05D5\u05E8\u05D8\u05D5\u05DC\u05D4'
                         },
                         'Kralendijk': {
-                            'exemplarCity': 'קרלנדייק'
+                            'exemplarCity': '\u05E7\u05E8\u05DC\u05E0\u05D3\u05D9\u05D9\u05E7'
                         },
                         'Kentucky': {
                             'Monticello': {
-                                'exemplarCity': 'מונטיצ׳לו, קנטאקי'
+                                'exemplarCity': '\u05DE\u05D5\u05E0\u05D8\u05D9\u05E6\u05F3\u05DC\u05D5, \u05E7\u05E0\u05D8\u05D0\u05E7\u05D9'
                             }
                         },
                         'Havana': {
-                            'exemplarCity': 'הוואנה'
+                            'exemplarCity': '\u05D4\u05D5\u05D5\u05D0\u05E0\u05D4'
                         },
                         'Halifax': {
-                            'exemplarCity': 'אמריקה/הליפקס'
+                            'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05D4\u05DC\u05D9\u05E4\u05E7\u05E1'
                         },
                         'Guyana': {
-                            'exemplarCity': 'גיאנה'
+                            'exemplarCity': '\u05D2\u05D9\u05D0\u05E0\u05D4'
                         },
                         'Guayaquil': {
-                            'exemplarCity': 'גואיאקיל'
+                            'exemplarCity': '\u05D2\u05D5\u05D0\u05D9\u05D0\u05E7\u05D9\u05DC'
                         },
                         'Guatemala': {
-                            'exemplarCity': 'גואטמלה'
+                            'exemplarCity': '\u05D2\u05D5\u05D0\u05D8\u05DE\u05DC\u05D4'
                         },
                         'Guadeloupe': {
-                            'exemplarCity': 'גואדלופ'
+                            'exemplarCity': '\u05D2\u05D5\u05D0\u05D3\u05DC\u05D5\u05E4'
                         },
                         'Grenada': {
-                            'exemplarCity': 'גרנדה'
+                            'exemplarCity': '\u05D2\u05E8\u05E0\u05D3\u05D4'
                         },
                         'Grand_Turk': {
-                            'exemplarCity': 'גרנד טורק'
+                            'exemplarCity': '\u05D2\u05E8\u05E0\u05D3 \u05D8\u05D5\u05E8\u05E7'
                         },
                         'Goose_Bay': {
-                            'exemplarCity': 'גוס ביי'
+                            'exemplarCity': '\u05D2\u05D5\u05E1 \u05D1\u05D9\u05D9'
                         },
                         'Godthab': {
-                            'exemplarCity': 'נואוק'
+                            'exemplarCity': '\u05E0\u05D5\u05D0\u05D5\u05E7'
                         },
                         'Glace_Bay': {
-                            'exemplarCity': 'גלייס ביי'
+                            'exemplarCity': '\u05D2\u05DC\u05D9\u05D9\u05E1 \u05D1\u05D9\u05D9'
                         },
                         'Fortaleza': {
-                            'exemplarCity': 'פורטאלזה'
+                            'exemplarCity': '\u05E4\u05D5\u05E8\u05D8\u05D0\u05DC\u05D6\u05D4'
                         },
                         'El_Salvador': {
-                            'exemplarCity': 'אל סלבדור'
+                            'exemplarCity': '\u05D0\u05DC \u05E1\u05DC\u05D1\u05D3\u05D5\u05E8'
                         },
                         'Eirunepe': {
-                            'exemplarCity': 'אירונפי'
+                            'exemplarCity': '\u05D0\u05D9\u05E8\u05D5\u05E0\u05E4\u05D9'
                         },
                         'Edmonton': {
-                            'exemplarCity': 'אמריקה/אדמנטון'
+                            'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05D0\u05D3\u05DE\u05E0\u05D8\u05D5\u05DF'
                         },
                         'Dominica': {
-                            'exemplarCity': 'דומיניקה'
+                            'exemplarCity': '\u05D3\u05D5\u05DE\u05D9\u05E0\u05D9\u05E7\u05D4'
                         },
                         'Chihuahua': {
-                            'exemplarCity': 'צ׳יוואווה'
+                            'exemplarCity': '\u05E6\u05F3\u05D9\u05D5\u05D5\u05D0\u05D5\u05D5\u05D4'
                         },
                         'Coral_Harbour': {
-                            'exemplarCity': 'אטיקוקן'
+                            'exemplarCity': '\u05D0\u05D8\u05D9\u05E7\u05D5\u05E7\u05DF'
                         },
                         'Cordoba': {
-                            'exemplarCity': 'אמריקה/קורדובה'
+                            'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05E7\u05D5\u05E8\u05D3\u05D5\u05D1\u05D4'
                         },
                         'Costa_Rica': {
-                            'exemplarCity': 'קוסטה ריקה'
+                            'exemplarCity': '\u05E7\u05D5\u05E1\u05D8\u05D4 \u05E8\u05D9\u05E7\u05D4'
                         },
                         'Creston': {
-                            'exemplarCity': 'קרסטון'
+                            'exemplarCity': '\u05E7\u05E8\u05E1\u05D8\u05D5\u05DF'
                         },
                         'Cuiaba': {
-                            'exemplarCity': 'קויאבה'
+                            'exemplarCity': '\u05E7\u05D5\u05D9\u05D0\u05D1\u05D4'
                         },
                         'La_Paz': {
-                            'exemplarCity': 'לה פאס'
+                            'exemplarCity': '\u05DC\u05D4 \u05E4\u05D0\u05E1'
                         },
                         'Lima': {
-                            'exemplarCity': 'לימה'
+                            'exemplarCity': '\u05DC\u05D9\u05DE\u05D4'
                         },
                         'Los_Angeles': {
-                            'exemplarCity': 'אמריקה/לוס-אנג׳לס'
+                            'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05DC\u05D5\u05E1-\u05D0\u05E0\u05D2\u05F3\u05DC\u05E1'
                         },
                         'Louisville': {
-                            'exemplarCity': 'אמריקה/לואיסוויל'
+                            'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05DC\u05D5\u05D0\u05D9\u05E1\u05D5\u05D5\u05D9\u05DC'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': 'לואוור פרינסס קוורטר'
+                            'exemplarCity': '\u05DC\u05D5\u05D0\u05D5\u05D5\u05E8 \u05E4\u05E8\u05D9\u05E0\u05E1\u05E1 \u05E7\u05D5\u05D5\u05E8\u05D8\u05E8'
                         },
                         'Maceio': {
-                            'exemplarCity': 'מאסיו'
+                            'exemplarCity': '\u05DE\u05D0\u05E1\u05D9\u05D5'
                         },
                         'Managua': {
-                            'exemplarCity': 'מנגואה'
+                            'exemplarCity': '\u05DE\u05E0\u05D2\u05D5\u05D0\u05D4'
                         },
                         'Manaus': {
-                            'exemplarCity': 'מנאוס'
+                            'exemplarCity': '\u05DE\u05E0\u05D0\u05D5\u05E1'
                         },
                         'Marigot': {
-                            'exemplarCity': 'מריגו'
+                            'exemplarCity': '\u05DE\u05E8\u05D9\u05D2\u05D5'
                         },
                         'Martinique': {
-                            'exemplarCity': 'מרטיניק'
+                            'exemplarCity': '\u05DE\u05E8\u05D8\u05D9\u05E0\u05D9\u05E7'
                         },
                         'Matamoros': {
-                            'exemplarCity': 'מטמורוס'
+                            'exemplarCity': '\u05DE\u05D8\u05DE\u05D5\u05E8\u05D5\u05E1'
                         },
                         'Mazatlan': {
-                            'exemplarCity': 'אמריקה/מזטלן'
+                            'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05DE\u05D6\u05D8\u05DC\u05DF'
                         },
                         'Mendoza': {
-                            'exemplarCity': 'אמריקה/מנדוזה'
+                            'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05DE\u05E0\u05D3\u05D5\u05D6\u05D4'
                         },
                         'Menominee': {
-                            'exemplarCity': 'מנומיני'
+                            'exemplarCity': '\u05DE\u05E0\u05D5\u05DE\u05D9\u05E0\u05D9'
                         },
                         'Merida': {
-                            'exemplarCity': 'מרידה'
+                            'exemplarCity': '\u05DE\u05E8\u05D9\u05D3\u05D4'
                         },
                         'Metlakatla': {
-                            'exemplarCity': 'מטלקטלה'
+                            'exemplarCity': '\u05DE\u05D8\u05DC\u05E7\u05D8\u05DC\u05D4'
                         },
                         'Mexico_City': {
-                            'exemplarCity': 'אמריקה/מקסיקו סיטי'
+                            'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05DE\u05E7\u05E1\u05D9\u05E7\u05D5 \u05E1\u05D9\u05D8\u05D9'
                         },
                         'Miquelon': {
-                            'exemplarCity': 'מיקלון'
+                            'exemplarCity': '\u05DE\u05D9\u05E7\u05DC\u05D5\u05DF'
                         },
                         'Moncton': {
-                            'exemplarCity': 'מונקטון'
+                            'exemplarCity': '\u05DE\u05D5\u05E0\u05E7\u05D8\u05D5\u05DF'
                         },
                         'Monterrey': {
-                            'exemplarCity': 'אמריקה/מונטריי'
+                            'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05DE\u05D5\u05E0\u05D8\u05E8\u05D9\u05D9'
                         },
                         'Montevideo': {
-                            'exemplarCity': 'מונטווידאו'
+                            'exemplarCity': '\u05DE\u05D5\u05E0\u05D8\u05D5\u05D5\u05D9\u05D3\u05D0\u05D5'
                         },
                         'Montreal': {
-                            'exemplarCity': 'אמריקה/מונטריאול'
+                            'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05DE\u05D5\u05E0\u05D8\u05E8\u05D9\u05D0\u05D5\u05DC'
                         },
                         'Montserrat': {
-                            'exemplarCity': 'מונסראט'
+                            'exemplarCity': '\u05DE\u05D5\u05E0\u05E1\u05E8\u05D0\u05D8'
                         },
                         'Nassau': {
-                            'exemplarCity': 'נסאו'
+                            'exemplarCity': '\u05E0\u05E1\u05D0\u05D5'
                         },
                         'New_York': {
-                            'exemplarCity': 'אמריקה/ניו-יורק'
+                            'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05E0\u05D9\u05D5-\u05D9\u05D5\u05E8\u05E7'
                         },
                         'Nipigon': {
-                            'exemplarCity': 'ניפיגון'
+                            'exemplarCity': '\u05E0\u05D9\u05E4\u05D9\u05D2\u05D5\u05DF'
                         },
                         'Nome': {
-                            'exemplarCity': 'נום'
+                            'exemplarCity': '\u05E0\u05D5\u05DD'
                         },
                         'Noronha': {
-                            'exemplarCity': 'נורונהה'
+                            'exemplarCity': '\u05E0\u05D5\u05E8\u05D5\u05E0\u05D4\u05D4'
                         },
                         'North_Dakota': {
                             'Beulah': {
-                                'exemplarCity': 'ביולה, צפון דקוטה'
+                                'exemplarCity': '\u05D1\u05D9\u05D5\u05DC\u05D4, \u05E6\u05E4\u05D5\u05DF \u05D3\u05E7\u05D5\u05D8\u05D4'
                             },
                             'New_Salem': {
-                                'exemplarCity': 'ניו סיילם, צפון דקוטה'
+                                'exemplarCity': '\u05E0\u05D9\u05D5 \u05E1\u05D9\u05D9\u05DC\u05DD, \u05E6\u05E4\u05D5\u05DF \u05D3\u05E7\u05D5\u05D8\u05D4'
                             },
                             'Center': {
-                                'exemplarCity': 'אמריקה/צפון דקוטה/מרכז'
+                                'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05E6\u05E4\u05D5\u05DF \u05D3\u05E7\u05D5\u05D8\u05D4/\u05DE\u05E8\u05DB\u05D6'
                             }
                         },
                         'Ojinaga': {
-                            'exemplarCity': 'אוג׳ינאגה'
+                            'exemplarCity': '\u05D0\u05D5\u05D2\u05F3\u05D9\u05E0\u05D0\u05D2\u05D4'
                         },
                         'Panama': {
-                            'exemplarCity': 'פנמה'
+                            'exemplarCity': '\u05E4\u05E0\u05DE\u05D4'
                         },
                         'Pangnirtung': {
-                            'exemplarCity': 'פנגנירטונג'
+                            'exemplarCity': '\u05E4\u05E0\u05D2\u05E0\u05D9\u05E8\u05D8\u05D5\u05E0\u05D2'
                         },
                         'Paramaribo': {
-                            'exemplarCity': 'פרמריבו'
+                            'exemplarCity': '\u05E4\u05E8\u05DE\u05E8\u05D9\u05D1\u05D5'
                         },
                         'Phoenix': {
-                            'exemplarCity': 'אמריקה/פיניקס'
+                            'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05E4\u05D9\u05E0\u05D9\u05E7\u05E1'
                         },
                         'Port-au-Prince': {
-                            'exemplarCity': 'פורט או פראנס'
+                            'exemplarCity': '\u05E4\u05D5\u05E8\u05D8 \u05D0\u05D5 \u05E4\u05E8\u05D0\u05E0\u05E1'
                         },
                         'Port_of_Spain': {
-                            'exemplarCity': 'פורט אוף ספיין'
+                            'exemplarCity': '\u05E4\u05D5\u05E8\u05D8 \u05D0\u05D5\u05E3 \u05E1\u05E4\u05D9\u05D9\u05DF'
                         },
                         'Porto_Velho': {
-                            'exemplarCity': 'פורטו וולהו'
+                            'exemplarCity': '\u05E4\u05D5\u05E8\u05D8\u05D5 \u05D5\u05D5\u05DC\u05D4\u05D5'
                         },
                         'Puerto_Rico': {
-                            'exemplarCity': 'פוארטו ריקו'
+                            'exemplarCity': '\u05E4\u05D5\u05D0\u05E8\u05D8\u05D5 \u05E8\u05D9\u05E7\u05D5'
                         },
                         'Rainy_River': {
-                            'exemplarCity': 'רייני ריבר'
+                            'exemplarCity': '\u05E8\u05D9\u05D9\u05E0\u05D9 \u05E8\u05D9\u05D1\u05E8'
                         },
                         'Rankin_Inlet': {
-                            'exemplarCity': 'רנקין אינלט'
+                            'exemplarCity': '\u05E8\u05E0\u05E7\u05D9\u05DF \u05D0\u05D9\u05E0\u05DC\u05D8'
                         },
                         'Recife': {
-                            'exemplarCity': 'רסיפה'
+                            'exemplarCity': '\u05E8\u05E1\u05D9\u05E4\u05D4'
                         },
                         'Regina': {
-                            'exemplarCity': 'רג׳ינה'
+                            'exemplarCity': '\u05E8\u05D2\u05F3\u05D9\u05E0\u05D4'
                         },
                         'Resolute': {
-                            'exemplarCity': 'רזולוט'
+                            'exemplarCity': '\u05E8\u05D6\u05D5\u05DC\u05D5\u05D8'
                         },
                         'Rio_Branco': {
-                            'exemplarCity': 'ריאו ברנצ׳ו'
+                            'exemplarCity': '\u05E8\u05D9\u05D0\u05D5 \u05D1\u05E8\u05E0\u05E6\u05F3\u05D5'
                         },
                         'Santa_Isabel': {
-                            'exemplarCity': 'סנטה איסבל'
+                            'exemplarCity': '\u05E1\u05E0\u05D8\u05D4 \u05D0\u05D9\u05E1\u05D1\u05DC'
                         },
                         'Santarem': {
-                            'exemplarCity': 'סנטרם'
+                            'exemplarCity': '\u05E1\u05E0\u05D8\u05E8\u05DD'
                         },
                         'Santiago': {
-                            'exemplarCity': 'אמריקה/סנטיאגו'
+                            'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05E1\u05E0\u05D8\u05D9\u05D0\u05D2\u05D5'
                         },
                         'Santo_Domingo': {
-                            'exemplarCity': 'סנטו דומינגו'
+                            'exemplarCity': '\u05E1\u05E0\u05D8\u05D5 \u05D3\u05D5\u05DE\u05D9\u05E0\u05D2\u05D5'
                         },
                         'Sao_Paulo': {
-                            'exemplarCity': 'אמריקה/סאן-פאולו'
+                            'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05E1\u05D0\u05DF-\u05E4\u05D0\u05D5\u05DC\u05D5'
                         },
                         'Scoresbysund': {
-                            'exemplarCity': 'סקורסביסונד'
+                            'exemplarCity': '\u05E1\u05E7\u05D5\u05E8\u05E1\u05D1\u05D9\u05E1\u05D5\u05E0\u05D3'
                         },
                         'Shiprock': {
-                            'exemplarCity': 'אמריקה/שיפרוק'
+                            'exemplarCity': '\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05E9\u05D9\u05E4\u05E8\u05D5\u05E7'
                         },
                         'Sitka': {
-                            'exemplarCity': 'סיטקה'
+                            'exemplarCity': '\u05E1\u05D9\u05D8\u05E7\u05D4'
                         },
                         'St_Barthelemy': {
-                            'exemplarCity': 'סנט ברתלמי'
+                            'exemplarCity': '\u05E1\u05E0\u05D8 \u05D1\u05E8\u05EA\u05DC\u05DE\u05D9'
                         },
                         'St_Johns': {
-                            'exemplarCity': 'סנט ג׳ונס'
+                            'exemplarCity': '\u05E1\u05E0\u05D8 \u05D2\u05F3\u05D5\u05E0\u05E1'
                         },
                         'St_Kitts': {
-                            'exemplarCity': 'סנט קיטס'
+                            'exemplarCity': '\u05E1\u05E0\u05D8 \u05E7\u05D9\u05D8\u05E1'
                         },
                         'St_Lucia': {
-                            'exemplarCity': 'סנט לוסיה'
+                            'exemplarCity': '\u05E1\u05E0\u05D8 \u05DC\u05D5\u05E1\u05D9\u05D4'
                         },
                         'St_Thomas': {
-                            'exemplarCity': 'סנט תומאס'
+                            'exemplarCity': '\u05E1\u05E0\u05D8 \u05EA\u05D5\u05DE\u05D0\u05E1'
                         },
                         'St_Vincent': {
-                            'exemplarCity': 'סנט וינסנט'
+                            'exemplarCity': '\u05E1\u05E0\u05D8 \u05D5\u05D9\u05E0\u05E1\u05E0\u05D8'
                         }
                     },
                     'Atlantic': {
                         'South_Georgia': {
-                            'exemplarCity': 'סאות׳ ג׳ורג׳יה'
+                            'exemplarCity': '\u05E1\u05D0\u05D5\u05EA\u05F3 \u05D2\u05F3\u05D5\u05E8\u05D2\u05F3\u05D9\u05D4'
                         },
                         'Reykjavik': {
-                            'exemplarCity': 'רייקיאוויק'
+                            'exemplarCity': '\u05E8\u05D9\u05D9\u05E7\u05D9\u05D0\u05D5\u05D5\u05D9\u05E7'
                         },
                         'Stanley': {
-                            'exemplarCity': 'סטנלי'
+                            'exemplarCity': '\u05E1\u05D8\u05E0\u05DC\u05D9'
                         },
                         'St_Helena': {
-                            'exemplarCity': 'סנט הלנה'
+                            'exemplarCity': '\u05E1\u05E0\u05D8 \u05D4\u05DC\u05E0\u05D4'
                         },
                         'Azores': {
-                            'exemplarCity': 'האיים האזורים'
+                            'exemplarCity': '\u05D4\u05D0\u05D9\u05D9\u05DD \u05D4\u05D0\u05D6\u05D5\u05E8\u05D9\u05DD'
                         },
                         'Bermuda': {
-                            'exemplarCity': 'ברמודה'
+                            'exemplarCity': '\u05D1\u05E8\u05DE\u05D5\u05D3\u05D4'
                         },
                         'Canary': {
-                            'exemplarCity': 'אטלנטי/קנרי'
+                            'exemplarCity': '\u05D0\u05D8\u05DC\u05E0\u05D8\u05D9/\u05E7\u05E0\u05E8\u05D9'
                         },
                         'Cape_Verde': {
-                            'exemplarCity': 'כף ורדה'
+                            'exemplarCity': '\u05DB\u05E3 \u05D5\u05E8\u05D3\u05D4'
                         },
                         'Faeroe': {
-                            'exemplarCity': 'פארו'
+                            'exemplarCity': '\u05E4\u05D0\u05E8\u05D5'
                         },
                         'Madeira': {
-                            'exemplarCity': 'מדיירה'
+                            'exemplarCity': '\u05DE\u05D3\u05D9\u05D9\u05E8\u05D4'
                         }
                     },
                     'Europe': {
                         'Oslo': {
-                            'exemplarCity': 'אוסלו'
+                            'exemplarCity': '\u05D0\u05D5\u05E1\u05DC\u05D5'
                         },
                         'Moscow': {
-                            'exemplarCity': 'אירופה/מוסקבה'
+                            'exemplarCity': '\u05D0\u05D9\u05E8\u05D5\u05E4\u05D4/\u05DE\u05D5\u05E1\u05E7\u05D1\u05D4'
                         },
                         'Monaco': {
-                            'exemplarCity': 'מונקו'
+                            'exemplarCity': '\u05DE\u05D5\u05E0\u05E7\u05D5'
                         },
                         'Minsk': {
-                            'exemplarCity': 'מינסק'
+                            'exemplarCity': '\u05DE\u05D9\u05E0\u05E1\u05E7'
                         },
                         'Mariehamn': {
-                            'exemplarCity': 'מריהמן'
+                            'exemplarCity': '\u05DE\u05E8\u05D9\u05D4\u05DE\u05DF'
                         },
                         'Malta': {
-                            'exemplarCity': 'מלטה'
+                            'exemplarCity': '\u05DE\u05DC\u05D8\u05D4'
                         },
                         'Madrid': {
-                            'exemplarCity': 'אירופה/מדריד'
+                            'exemplarCity': '\u05D0\u05D9\u05E8\u05D5\u05E4\u05D4/\u05DE\u05D3\u05E8\u05D9\u05D3'
                         },
                         'Luxembourg': {
-                            'exemplarCity': 'לוקסמבורג'
+                            'exemplarCity': '\u05DC\u05D5\u05E7\u05E1\u05DE\u05D1\u05D5\u05E8\u05D2'
                         },
                         'London': {
                             'long': {
-                                'daylight': 'שעון קיץ בריטי'
+                                'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D1\u05E8\u05D9\u05D8\u05D9'
                             },
-                            'exemplarCity': 'אירופה/לונדון'
+                            'exemplarCity': '\u05D0\u05D9\u05E8\u05D5\u05E4\u05D4/\u05DC\u05D5\u05E0\u05D3\u05D5\u05DF'
                         },
                         'Ljubljana': {
-                            'exemplarCity': 'לובליאנה'
+                            'exemplarCity': '\u05DC\u05D5\u05D1\u05DC\u05D9\u05D0\u05E0\u05D4'
                         },
                         'Lisbon': {
-                            'exemplarCity': 'אירופה/ליסבון'
+                            'exemplarCity': '\u05D0\u05D9\u05E8\u05D5\u05E4\u05D4/\u05DC\u05D9\u05E1\u05D1\u05D5\u05DF'
                         },
                         'Kiev': {
-                            'exemplarCity': 'אירופה/קייב'
+                            'exemplarCity': '\u05D0\u05D9\u05E8\u05D5\u05E4\u05D4/\u05E7\u05D9\u05D9\u05D1'
                         },
                         'Kaliningrad': {
-                            'exemplarCity': 'קלינינגרד'
+                            'exemplarCity': '\u05E7\u05DC\u05D9\u05E0\u05D9\u05E0\u05D2\u05E8\u05D3'
                         },
                         'Jersey': {
-                            'exemplarCity': 'ג׳רסי'
+                            'exemplarCity': '\u05D2\u05F3\u05E8\u05E1\u05D9'
                         },
                         'Istanbul': {
-                            'exemplarCity': 'איסטנבול'
+                            'exemplarCity': '\u05D0\u05D9\u05E1\u05D8\u05E0\u05D1\u05D5\u05DC'
                         },
                         'Isle_of_Man': {
-                            'exemplarCity': 'האי מאן'
+                            'exemplarCity': '\u05D4\u05D0\u05D9 \u05DE\u05D0\u05DF'
                         },
                         'Bucharest': {
-                            'exemplarCity': 'בוקרשט'
+                            'exemplarCity': '\u05D1\u05D5\u05E7\u05E8\u05E9\u05D8'
                         },
                         'Brussels': {
-                            'exemplarCity': 'בריסל'
+                            'exemplarCity': '\u05D1\u05E8\u05D9\u05E1\u05DC'
                         },
                         'Bratislava': {
-                            'exemplarCity': 'ברטיסלבה'
+                            'exemplarCity': '\u05D1\u05E8\u05D8\u05D9\u05E1\u05DC\u05D1\u05D4'
                         },
                         'Berlin': {
-                            'exemplarCity': 'ברלין'
+                            'exemplarCity': '\u05D1\u05E8\u05DC\u05D9\u05DF'
                         },
                         'Belgrade': {
-                            'exemplarCity': 'בלגרד'
+                            'exemplarCity': '\u05D1\u05DC\u05D2\u05E8\u05D3'
                         },
                         'Athens': {
-                            'exemplarCity': 'אתונה'
+                            'exemplarCity': '\u05D0\u05EA\u05D5\u05E0\u05D4'
                         },
                         'Andorra': {
-                            'exemplarCity': 'אנדורה'
+                            'exemplarCity': '\u05D0\u05E0\u05D3\u05D5\u05E8\u05D4'
                         },
                         'Amsterdam': {
-                            'exemplarCity': 'אמסטרדם'
+                            'exemplarCity': '\u05D0\u05DE\u05E1\u05D8\u05E8\u05D3\u05DD'
                         },
                         'Simferopol': {
-                            'exemplarCity': 'סימפרופול'
+                            'exemplarCity': '\u05E1\u05D9\u05DE\u05E4\u05E8\u05D5\u05E4\u05D5\u05DC'
                         },
                         'Skopje': {
-                            'exemplarCity': 'סקופיה'
+                            'exemplarCity': '\u05E1\u05E7\u05D5\u05E4\u05D9\u05D4'
                         },
                         'Sofia': {
-                            'exemplarCity': 'סופיה'
+                            'exemplarCity': '\u05E1\u05D5\u05E4\u05D9\u05D4'
                         },
                         'Stockholm': {
-                            'exemplarCity': 'שטוקהולם'
+                            'exemplarCity': '\u05E9\u05D8\u05D5\u05E7\u05D4\u05D5\u05DC\u05DD'
                         },
                         'Tallinn': {
-                            'exemplarCity': 'טלין'
+                            'exemplarCity': '\u05D8\u05DC\u05D9\u05DF'
                         },
                         'Tirane': {
-                            'exemplarCity': 'טיראנה'
+                            'exemplarCity': '\u05D8\u05D9\u05E8\u05D0\u05E0\u05D4'
                         },
                         'Uzhgorod': {
-                            'exemplarCity': 'אוז׳הורוד'
+                            'exemplarCity': '\u05D0\u05D5\u05D6\u05F3\u05D4\u05D5\u05E8\u05D5\u05D3'
                         },
                         'Vaduz': {
-                            'exemplarCity': 'ואדוז'
+                            'exemplarCity': '\u05D5\u05D0\u05D3\u05D5\u05D6'
                         },
                         'Zurich': {
-                            'exemplarCity': 'ציריך'
+                            'exemplarCity': '\u05E6\u05D9\u05E8\u05D9\u05DA'
                         },
                         'Zaporozhye': {
-                            'exemplarCity': 'זפוריז׳יה'
+                            'exemplarCity': '\u05D6\u05E4\u05D5\u05E8\u05D9\u05D6\u05F3\u05D9\u05D4'
                         },
                         'Zagreb': {
-                            'exemplarCity': 'זגרב'
+                            'exemplarCity': '\u05D6\u05D2\u05E8\u05D1'
                         },
                         'Warsaw': {
-                            'exemplarCity': 'ורשה'
+                            'exemplarCity': '\u05D5\u05E8\u05E9\u05D4'
                         },
                         'Volgograd': {
-                            'exemplarCity': 'וולגוגרד'
+                            'exemplarCity': '\u05D5\u05D5\u05DC\u05D2\u05D5\u05D2\u05E8\u05D3'
                         },
                         'Vilnius': {
-                            'exemplarCity': 'וילנה'
+                            'exemplarCity': '\u05D5\u05D9\u05DC\u05E0\u05D4'
                         },
                         'Vienna': {
-                            'exemplarCity': 'וינה'
+                            'exemplarCity': '\u05D5\u05D9\u05E0\u05D4'
                         },
                         'Vatican': {
-                            'exemplarCity': 'ותיקן'
+                            'exemplarCity': '\u05D5\u05EA\u05D9\u05E7\u05DF'
                         },
                         'Sarajevo': {
-                            'exemplarCity': 'סרייבו'
+                            'exemplarCity': '\u05E1\u05E8\u05D9\u05D9\u05D1\u05D5'
                         },
                         'San_Marino': {
-                            'exemplarCity': 'סן מרינו'
+                            'exemplarCity': '\u05E1\u05DF \u05DE\u05E8\u05D9\u05E0\u05D5'
                         },
                         'Samara': {
-                            'exemplarCity': 'אירופה/סמרה'
+                            'exemplarCity': '\u05D0\u05D9\u05E8\u05D5\u05E4\u05D4/\u05E1\u05DE\u05E8\u05D4'
                         },
                         'Rome': {
-                            'exemplarCity': 'רומא'
+                            'exemplarCity': '\u05E8\u05D5\u05DE\u05D0'
                         },
                         'Riga': {
-                            'exemplarCity': 'ריגה'
+                            'exemplarCity': '\u05E8\u05D9\u05D2\u05D4'
                         },
                         'Prague': {
-                            'exemplarCity': 'פראג'
+                            'exemplarCity': '\u05E4\u05E8\u05D0\u05D2'
                         },
                         'Podgorica': {
-                            'exemplarCity': 'פודגוריקה'
+                            'exemplarCity': '\u05E4\u05D5\u05D3\u05D2\u05D5\u05E8\u05D9\u05E7\u05D4'
                         },
                         'Paris': {
-                            'exemplarCity': 'פריז'
+                            'exemplarCity': '\u05E4\u05E8\u05D9\u05D6'
                         },
                         'Helsinki': {
-                            'exemplarCity': 'הלסינקי'
+                            'exemplarCity': '\u05D4\u05DC\u05E1\u05D9\u05E0\u05E7\u05D9'
                         },
                         'Guernsey': {
-                            'exemplarCity': 'גרנזי'
+                            'exemplarCity': '\u05D2\u05E8\u05E0\u05D6\u05D9'
                         },
                         'Gibraltar': {
-                            'exemplarCity': 'גיברלטר'
+                            'exemplarCity': '\u05D2\u05D9\u05D1\u05E8\u05DC\u05D8\u05E8'
                         },
                         'Dublin': {
                             'long': {
-                                'daylight': 'שעון קיץ אירי'
+                                'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D0\u05D9\u05E8\u05D9'
                             },
-                            'exemplarCity': 'דבלין'
+                            'exemplarCity': '\u05D3\u05D1\u05DC\u05D9\u05DF'
                         },
                         'Copenhagen': {
-                            'exemplarCity': 'קופנהגן'
+                            'exemplarCity': '\u05E7\u05D5\u05E4\u05E0\u05D4\u05D2\u05DF'
                         },
                         'Chisinau': {
-                            'exemplarCity': 'צ׳יסינאו'
+                            'exemplarCity': '\u05E6\u05F3\u05D9\u05E1\u05D9\u05E0\u05D0\u05D5'
                         },
                         'Busingen': {
-                            'exemplarCity': 'בוזינגן'
+                            'exemplarCity': '\u05D1\u05D5\u05D6\u05D9\u05E0\u05D2\u05DF'
                         },
                         'Budapest': {
-                            'exemplarCity': 'בודפשט'
+                            'exemplarCity': '\u05D1\u05D5\u05D3\u05E4\u05E9\u05D8'
                         }
                     },
                     'Africa': {
                         'Libreville': {
-                            'exemplarCity': 'ליברוויל'
+                            'exemplarCity': '\u05DC\u05D9\u05D1\u05E8\u05D5\u05D5\u05D9\u05DC'
                         },
                         'Lagos': {
-                            'exemplarCity': 'לגוס'
+                            'exemplarCity': '\u05DC\u05D2\u05D5\u05E1'
                         },
                         'Kinshasa': {
-                            'exemplarCity': 'קינשסה'
+                            'exemplarCity': '\u05E7\u05D9\u05E0\u05E9\u05E1\u05D4'
                         },
                         'Kigali': {
-                            'exemplarCity': 'קיגלי'
+                            'exemplarCity': '\u05E7\u05D9\u05D2\u05DC\u05D9'
                         },
                         'Khartoum': {
-                            'exemplarCity': 'חרטום'
+                            'exemplarCity': '\u05D7\u05E8\u05D8\u05D5\u05DD'
                         },
                         'Kampala': {
-                            'exemplarCity': 'קמפאלה'
+                            'exemplarCity': '\u05E7\u05DE\u05E4\u05D0\u05DC\u05D4'
                         },
                         'Juba': {
-                            'exemplarCity': 'ג׳ובה'
+                            'exemplarCity': '\u05D2\u05F3\u05D5\u05D1\u05D4'
                         },
                         'Johannesburg': {
-                            'exemplarCity': 'יוהנסבורג'
+                            'exemplarCity': '\u05D9\u05D5\u05D4\u05E0\u05E1\u05D1\u05D5\u05E8\u05D2'
                         },
                         'Harare': {
-                            'exemplarCity': 'הרארה'
+                            'exemplarCity': '\u05D4\u05E8\u05D0\u05E8\u05D4'
                         },
                         'Gaborone': {
-                            'exemplarCity': 'גבורונה'
+                            'exemplarCity': '\u05D2\u05D1\u05D5\u05E8\u05D5\u05E0\u05D4'
                         },
                         'Freetown': {
-                            'exemplarCity': 'פריטאון'
+                            'exemplarCity': '\u05E4\u05E8\u05D9\u05D8\u05D0\u05D5\u05DF'
                         },
                         'El_Aaiun': {
-                            'exemplarCity': 'אל עיון'
+                            'exemplarCity': '\u05D0\u05DC \u05E2\u05D9\u05D5\u05DF'
                         },
                         'Douala': {
-                            'exemplarCity': 'דואלה'
+                            'exemplarCity': '\u05D3\u05D5\u05D0\u05DC\u05D4'
                         },
                         'Djibouti': {
-                            'exemplarCity': 'ג׳יבוטי'
+                            'exemplarCity': '\u05D2\u05F3\u05D9\u05D1\u05D5\u05D8\u05D9'
                         },
                         'Dar_es_Salaam': {
-                            'exemplarCity': 'דאר א-סלאם'
+                            'exemplarCity': '\u05D3\u05D0\u05E8 \u05D0-\u05E1\u05DC\u05D0\u05DD'
                         },
                         'Dakar': {
-                            'exemplarCity': 'דקאר'
+                            'exemplarCity': '\u05D3\u05E7\u05D0\u05E8'
                         },
                         'Banjul': {
-                            'exemplarCity': 'בנג׳ול'
+                            'exemplarCity': '\u05D1\u05E0\u05D2\u05F3\u05D5\u05DC'
                         },
                         'Bangui': {
-                            'exemplarCity': 'בנגואי'
+                            'exemplarCity': '\u05D1\u05E0\u05D2\u05D5\u05D0\u05D9'
                         },
                         'Bamako': {
-                            'exemplarCity': 'במאקו'
+                            'exemplarCity': '\u05D1\u05DE\u05D0\u05E7\u05D5'
                         },
                         'Asmera': {
-                            'exemplarCity': 'אסמרה'
+                            'exemplarCity': '\u05D0\u05E1\u05DE\u05E8\u05D4'
                         },
                         'Malabo': {
-                            'exemplarCity': 'מלבו'
+                            'exemplarCity': '\u05DE\u05DC\u05D1\u05D5'
                         },
                         'Maputo': {
-                            'exemplarCity': 'מאפוטו'
+                            'exemplarCity': '\u05DE\u05D0\u05E4\u05D5\u05D8\u05D5'
                         },
                         'Maseru': {
-                            'exemplarCity': 'מסרו'
+                            'exemplarCity': '\u05DE\u05E1\u05E8\u05D5'
                         },
                         'Mbabane': {
-                            'exemplarCity': 'אמבאבאנה'
+                            'exemplarCity': '\u05D0\u05DE\u05D1\u05D0\u05D1\u05D0\u05E0\u05D4'
                         },
                         'Mogadishu': {
-                            'exemplarCity': 'מוגדישו'
+                            'exemplarCity': '\u05DE\u05D5\u05D2\u05D3\u05D9\u05E9\u05D5'
                         },
                         'Monrovia': {
-                            'exemplarCity': 'מונרוביה'
+                            'exemplarCity': '\u05DE\u05D5\u05E0\u05E8\u05D5\u05D1\u05D9\u05D4'
                         },
                         'Nairobi': {
-                            'exemplarCity': 'ניירובי'
+                            'exemplarCity': '\u05E0\u05D9\u05D9\u05E8\u05D5\u05D1\u05D9'
                         },
                         'Ndjamena': {
-                            'exemplarCity': 'נג׳מנה'
+                            'exemplarCity': '\u05E0\u05D2\u05F3\u05DE\u05E0\u05D4'
                         },
                         'Windhoek': {
-                            'exemplarCity': 'וינדהוק'
+                            'exemplarCity': '\u05D5\u05D9\u05E0\u05D3\u05D4\u05D5\u05E7'
                         },
                         'Tunis': {
-                            'exemplarCity': 'טוניס'
+                            'exemplarCity': '\u05D8\u05D5\u05E0\u05D9\u05E1'
                         },
                         'Tripoli': {
-                            'exemplarCity': 'טריפולי'
+                            'exemplarCity': '\u05D8\u05E8\u05D9\u05E4\u05D5\u05DC\u05D9'
                         },
                         'Sao_Tome': {
-                            'exemplarCity': 'סאו טומה'
+                            'exemplarCity': '\u05E1\u05D0\u05D5 \u05D8\u05D5\u05DE\u05D4'
                         },
                         'Porto-Novo': {
-                            'exemplarCity': 'פורטו נובו'
+                            'exemplarCity': '\u05E4\u05D5\u05E8\u05D8\u05D5 \u05E0\u05D5\u05D1\u05D5'
                         },
                         'Ouagadougou': {
-                            'exemplarCity': 'וואגאדוגו'
+                            'exemplarCity': '\u05D5\u05D5\u05D0\u05D2\u05D0\u05D3\u05D5\u05D2\u05D5'
                         },
                         'Nouakchott': {
-                            'exemplarCity': 'נואקצ׳וט'
+                            'exemplarCity': '\u05E0\u05D5\u05D0\u05E7\u05E6\u05F3\u05D5\u05D8'
                         },
                         'Niamey': {
-                            'exemplarCity': 'ניאמיי'
+                            'exemplarCity': '\u05E0\u05D9\u05D0\u05DE\u05D9\u05D9'
                         },
                         'Lusaka': {
-                            'exemplarCity': 'לוסקה'
+                            'exemplarCity': '\u05DC\u05D5\u05E1\u05E7\u05D4'
                         },
                         'Lubumbashi': {
-                            'exemplarCity': 'לובומבאשי'
+                            'exemplarCity': '\u05DC\u05D5\u05D1\u05D5\u05DE\u05D1\u05D0\u05E9\u05D9'
                         },
                         'Luanda': {
-                            'exemplarCity': 'לואנדה'
+                            'exemplarCity': '\u05DC\u05D5\u05D0\u05E0\u05D3\u05D4'
                         },
                         'Lome': {
-                            'exemplarCity': 'לומה'
+                            'exemplarCity': '\u05DC\u05D5\u05DE\u05D4'
                         },
                         'Conakry': {
-                            'exemplarCity': 'קונאקרי'
+                            'exemplarCity': '\u05E7\u05D5\u05E0\u05D0\u05E7\u05E8\u05D9'
                         },
                         'Ceuta': {
-                            'exemplarCity': 'סאוטה'
+                            'exemplarCity': '\u05E1\u05D0\u05D5\u05D8\u05D4'
                         },
                         'Casablanca': {
-                            'exemplarCity': 'קזבלנקה'
+                            'exemplarCity': '\u05E7\u05D6\u05D1\u05DC\u05E0\u05E7\u05D4'
                         },
                         'Cairo': {
-                            'exemplarCity': 'קהיר'
+                            'exemplarCity': '\u05E7\u05D4\u05D9\u05E8'
                         },
                         'Bujumbura': {
-                            'exemplarCity': 'בוג׳ומבורה'
+                            'exemplarCity': '\u05D1\u05D5\u05D2\u05F3\u05D5\u05DE\u05D1\u05D5\u05E8\u05D4'
                         },
                         'Brazzaville': {
-                            'exemplarCity': 'ברזוויל'
+                            'exemplarCity': '\u05D1\u05E8\u05D6\u05D5\u05D5\u05D9\u05DC'
                         },
                         'Blantyre': {
-                            'exemplarCity': 'בלנטיר'
+                            'exemplarCity': '\u05D1\u05DC\u05E0\u05D8\u05D9\u05E8'
                         },
                         'Bissau': {
-                            'exemplarCity': 'ביסאו'
+                            'exemplarCity': '\u05D1\u05D9\u05E1\u05D0\u05D5'
                         },
                         'Abidjan': {
-                            'exemplarCity': 'אביג׳אן'
+                            'exemplarCity': '\u05D0\u05D1\u05D9\u05D2\u05F3\u05D0\u05DF'
                         },
                         'Accra': {
-                            'exemplarCity': 'אקרה'
+                            'exemplarCity': '\u05D0\u05E7\u05E8\u05D4'
                         },
                         'Addis_Ababa': {
-                            'exemplarCity': 'אדיס אבבה'
+                            'exemplarCity': '\u05D0\u05D3\u05D9\u05E1 \u05D0\u05D1\u05D1\u05D4'
                         },
                         'Algiers': {
-                            'exemplarCity': 'אלג׳יר'
+                            'exemplarCity': '\u05D0\u05DC\u05D2\u05F3\u05D9\u05E8'
                         }
                     },
                     'Asia': {
                         'Shanghai': {
-                            'exemplarCity': 'אסיה/שנחאי'
+                            'exemplarCity': '\u05D0\u05E1\u05D9\u05D4/\u05E9\u05E0\u05D7\u05D0\u05D9'
                         },
                         'Seoul': {
-                            'exemplarCity': 'סיאול'
+                            'exemplarCity': '\u05E1\u05D9\u05D0\u05D5\u05DC'
                         },
                         'Samarkand': {
-                            'exemplarCity': 'אסיה/סמרקנד'
+                            'exemplarCity': '\u05D0\u05E1\u05D9\u05D4/\u05E1\u05DE\u05E8\u05E7\u05E0\u05D3'
                         },
                         'Sakhalin': {
-                            'exemplarCity': 'סחלין'
+                            'exemplarCity': '\u05E1\u05D7\u05DC\u05D9\u05DF'
                         },
                         'Saigon': {
-                            'exemplarCity': 'הו צ׳י מין סיטי'
+                            'exemplarCity': '\u05D4\u05D5 \u05E6\u05F3\u05D9 \u05DE\u05D9\u05DF \u05E1\u05D9\u05D8\u05D9'
                         },
                         'Riyadh': {
-                            'exemplarCity': 'ריאד'
+                            'exemplarCity': '\u05E8\u05D9\u05D0\u05D3'
                         },
                         'Rangoon': {
-                            'exemplarCity': 'רנגון'
+                            'exemplarCity': '\u05E8\u05E0\u05D2\u05D5\u05DF'
                         },
                         'Qyzylorda': {
-                            'exemplarCity': 'קיזילורדה'
+                            'exemplarCity': '\u05E7\u05D9\u05D6\u05D9\u05DC\u05D5\u05E8\u05D3\u05D4'
                         },
                         'Qatar': {
-                            'exemplarCity': 'קטאר'
+                            'exemplarCity': '\u05E7\u05D8\u05D0\u05E8'
                         },
                         'Pyongyang': {
-                            'exemplarCity': 'פיונגיאנג'
+                            'exemplarCity': '\u05E4\u05D9\u05D5\u05E0\u05D2\u05D9\u05D0\u05E0\u05D2'
                         },
                         'Pontianak': {
-                            'exemplarCity': 'פונטיאנק'
+                            'exemplarCity': '\u05E4\u05D5\u05E0\u05D8\u05D9\u05D0\u05E0\u05E7'
                         },
                         'Phnom_Penh': {
-                            'exemplarCity': 'פנום פן'
+                            'exemplarCity': '\u05E4\u05E0\u05D5\u05DD \u05E4\u05DF'
                         },
                         'Oral': {
-                            'exemplarCity': 'אסיה/אורל'
+                            'exemplarCity': '\u05D0\u05E1\u05D9\u05D4/\u05D0\u05D5\u05E8\u05DC'
                         },
                         'Omsk': {
-                            'exemplarCity': 'איה/אומסק'
+                            'exemplarCity': '\u05D0\u05D9\u05D4/\u05D0\u05D5\u05DE\u05E1\u05E7'
                         },
                         'Novosibirsk': {
-                            'exemplarCity': 'אסיה/נובוסיבירסק'
+                            'exemplarCity': '\u05D0\u05E1\u05D9\u05D4/\u05E0\u05D5\u05D1\u05D5\u05E1\u05D9\u05D1\u05D9\u05E8\u05E1\u05E7'
                         },
                         'Baghdad': {
-                            'exemplarCity': 'בגדד'
+                            'exemplarCity': '\u05D1\u05D2\u05D3\u05D3'
                         },
                         'Chongqing': {
-                            'exemplarCity': 'צ׳ונגקינג'
+                            'exemplarCity': '\u05E6\u05F3\u05D5\u05E0\u05D2\u05E7\u05D9\u05E0\u05D2'
                         },
                         'Colombo': {
-                            'exemplarCity': 'קולומבו'
+                            'exemplarCity': '\u05E7\u05D5\u05DC\u05D5\u05DE\u05D1\u05D5'
                         },
                         'Damascus': {
-                            'exemplarCity': 'דמשק'
+                            'exemplarCity': '\u05D3\u05DE\u05E9\u05E7'
                         },
                         'Dhaka': {
-                            'exemplarCity': 'דאקה'
+                            'exemplarCity': '\u05D3\u05D0\u05E7\u05D4'
                         },
                         'Dili': {
-                            'exemplarCity': 'דילי'
+                            'exemplarCity': '\u05D3\u05D9\u05DC\u05D9'
                         },
                         'Dubai': {
-                            'exemplarCity': 'דובאי'
+                            'exemplarCity': '\u05D3\u05D5\u05D1\u05D0\u05D9'
                         },
                         'Dushanbe': {
-                            'exemplarCity': 'דושנבה'
+                            'exemplarCity': '\u05D3\u05D5\u05E9\u05E0\u05D1\u05D4'
                         },
                         'Gaza': {
-                            'exemplarCity': 'עזה'
+                            'exemplarCity': '\u05E2\u05D6\u05D4'
                         },
                         'Harbin': {
-                            'exemplarCity': 'חרבין'
+                            'exemplarCity': '\u05D7\u05E8\u05D1\u05D9\u05DF'
                         },
                         'Hebron': {
-                            'exemplarCity': 'חברון'
+                            'exemplarCity': '\u05D7\u05D1\u05E8\u05D5\u05DF'
                         },
                         'Hong_Kong': {
-                            'exemplarCity': 'הונג קונג'
+                            'exemplarCity': '\u05D4\u05D5\u05E0\u05D2 \u05E7\u05D5\u05E0\u05D2'
                         },
                         'Hovd': {
-                            'exemplarCity': 'חובד'
+                            'exemplarCity': '\u05D7\u05D5\u05D1\u05D3'
                         },
                         'Irkutsk': {
-                            'exemplarCity': 'אירקוטסק'
+                            'exemplarCity': '\u05D0\u05D9\u05E8\u05E7\u05D5\u05D8\u05E1\u05E7'
                         },
                         'Jakarta': {
-                            'exemplarCity': 'אסיה/ג׳קרטה'
+                            'exemplarCity': '\u05D0\u05E1\u05D9\u05D4/\u05D2\u05F3\u05E7\u05E8\u05D8\u05D4'
                         },
                         'Jayapura': {
-                            'exemplarCity': 'ג׳איאפורה'
+                            'exemplarCity': '\u05D2\u05F3\u05D0\u05D9\u05D0\u05E4\u05D5\u05E8\u05D4'
                         },
                         'Ulaanbaatar': {
-                            'exemplarCity': 'אולאאנבטאר'
+                            'exemplarCity': '\u05D0\u05D5\u05DC\u05D0\u05D0\u05E0\u05D1\u05D8\u05D0\u05E8'
                         },
                         'Urumqi': {
-                            'exemplarCity': 'אורומקי'
+                            'exemplarCity': '\u05D0\u05D5\u05E8\u05D5\u05DE\u05E7\u05D9'
                         },
                         'Ust-Nera': {
-                            'exemplarCity': 'אוסט-נרה'
+                            'exemplarCity': '\u05D0\u05D5\u05E1\u05D8-\u05E0\u05E8\u05D4'
                         },
                         'Vientiane': {
-                            'exemplarCity': 'האנוי'
+                            'exemplarCity': '\u05D4\u05D0\u05E0\u05D5\u05D9'
                         },
                         'Vladivostok': {
-                            'exemplarCity': 'ולדיווסטוק'
+                            'exemplarCity': '\u05D5\u05DC\u05D3\u05D9\u05D5\u05D5\u05E1\u05D8\u05D5\u05E7'
                         },
                         'Yakutsk': {
-                            'exemplarCity': 'יקוטסק'
+                            'exemplarCity': '\u05D9\u05E7\u05D5\u05D8\u05E1\u05E7'
                         },
                         'Yekaterinburg': {
-                            'exemplarCity': 'יקטרינבורג'
+                            'exemplarCity': '\u05D9\u05E7\u05D8\u05E8\u05D9\u05E0\u05D1\u05D5\u05E8\u05D2'
                         },
                         'Yerevan': {
-                            'exemplarCity': 'ירוואן'
+                            'exemplarCity': '\u05D9\u05E8\u05D5\u05D5\u05D0\u05DF'
                         },
                         'Tokyo': {
-                            'exemplarCity': 'טוקיו'
+                            'exemplarCity': '\u05D8\u05D5\u05E7\u05D9\u05D5'
                         },
                         'Thimphu': {
-                            'exemplarCity': 'ת׳ימפו'
+                            'exemplarCity': '\u05EA\u05F3\u05D9\u05DE\u05E4\u05D5'
                         },
                         'Tehran': {
-                            'exemplarCity': 'טהרן'
+                            'exemplarCity': '\u05D8\u05D4\u05E8\u05DF'
                         },
                         'Tbilisi': {
-                            'exemplarCity': 'טביליסי'
+                            'exemplarCity': '\u05D8\u05D1\u05D9\u05DC\u05D9\u05E1\u05D9'
                         },
                         'Tashkent': {
-                            'exemplarCity': 'אסיה/טשקנט'
+                            'exemplarCity': '\u05D0\u05E1\u05D9\u05D4/\u05D8\u05E9\u05E7\u05E0\u05D8'
                         },
                         'Taipei': {
-                            'exemplarCity': 'טאיפיי'
+                            'exemplarCity': '\u05D8\u05D0\u05D9\u05E4\u05D9\u05D9'
                         },
                         'Singapore': {
-                            'exemplarCity': 'סינגפור'
+                            'exemplarCity': '\u05E1\u05D9\u05E0\u05D2\u05E4\u05D5\u05E8'
                         },
                         'Jerusalem': {
-                            'exemplarCity': 'ירושלים'
+                            'exemplarCity': '\u05D9\u05E8\u05D5\u05E9\u05DC\u05D9\u05DD'
                         },
                         'Ashgabat': {
-                            'exemplarCity': 'אשגבט'
+                            'exemplarCity': '\u05D0\u05E9\u05D2\u05D1\u05D8'
                         },
                         'Aqtobe': {
-                            'exemplarCity': 'אקטובה'
+                            'exemplarCity': '\u05D0\u05E7\u05D8\u05D5\u05D1\u05D4'
                         },
                         'Aqtau': {
-                            'exemplarCity': 'אקטאו'
+                            'exemplarCity': '\u05D0\u05E7\u05D8\u05D0\u05D5'
                         },
                         'Anadyr': {
-                            'exemplarCity': 'אנדיר'
+                            'exemplarCity': '\u05D0\u05E0\u05D3\u05D9\u05E8'
                         },
                         'Amman': {
-                            'exemplarCity': 'עמאן'
+                            'exemplarCity': '\u05E2\u05DE\u05D0\u05DF'
                         },
                         'Almaty': {
-                            'exemplarCity': 'אלמאטי'
+                            'exemplarCity': '\u05D0\u05DC\u05DE\u05D0\u05D8\u05D9'
                         },
                         'Aden': {
-                            'exemplarCity': 'עדן'
+                            'exemplarCity': '\u05E2\u05D3\u05DF'
                         },
                         'Bahrain': {
-                            'exemplarCity': 'בחריין'
+                            'exemplarCity': '\u05D1\u05D7\u05E8\u05D9\u05D9\u05DF'
                         },
                         'Baku': {
-                            'exemplarCity': 'באקו'
+                            'exemplarCity': '\u05D1\u05D0\u05E7\u05D5'
                         },
                         'Bangkok': {
-                            'exemplarCity': 'בנגקוק'
+                            'exemplarCity': '\u05D1\u05E0\u05D2\u05E7\u05D5\u05E7'
                         },
                         'Beirut': {
-                            'exemplarCity': 'ביירות'
+                            'exemplarCity': '\u05D1\u05D9\u05D9\u05E8\u05D5\u05EA'
                         },
                         'Bishkek': {
-                            'exemplarCity': 'בישקק'
+                            'exemplarCity': '\u05D1\u05D9\u05E9\u05E7\u05E7'
                         },
                         'Brunei': {
-                            'exemplarCity': 'ברוניי'
+                            'exemplarCity': '\u05D1\u05E8\u05D5\u05E0\u05D9\u05D9'
                         },
                         'Calcutta': {
-                            'exemplarCity': 'קולקטה'
+                            'exemplarCity': '\u05E7\u05D5\u05DC\u05E7\u05D8\u05D4'
                         },
                         'Choibalsan': {
-                            'exemplarCity': 'צ׳ואיבלסאן'
+                            'exemplarCity': '\u05E6\u05F3\u05D5\u05D0\u05D9\u05D1\u05DC\u05E1\u05D0\u05DF'
                         },
                         'Kabul': {
-                            'exemplarCity': 'קאבול'
+                            'exemplarCity': '\u05E7\u05D0\u05D1\u05D5\u05DC'
                         },
                         'Kamchatka': {
-                            'exemplarCity': 'קמצ׳טקה'
+                            'exemplarCity': '\u05E7\u05DE\u05E6\u05F3\u05D8\u05E7\u05D4'
                         },
                         'Karachi': {
-                            'exemplarCity': 'קרצ׳י'
+                            'exemplarCity': '\u05E7\u05E8\u05E6\u05F3\u05D9'
                         },
                         'Kashgar': {
-                            'exemplarCity': 'קשגר'
+                            'exemplarCity': '\u05E7\u05E9\u05D2\u05E8'
                         },
                         'Katmandu': {
-                            'exemplarCity': 'קטמנדו'
+                            'exemplarCity': '\u05E7\u05D8\u05DE\u05E0\u05D3\u05D5'
                         },
                         'Khandyga': {
-                            'exemplarCity': 'חנדיגה'
+                            'exemplarCity': '\u05D7\u05E0\u05D3\u05D9\u05D2\u05D4'
                         },
                         'Krasnoyarsk': {
-                            'exemplarCity': 'קרסנויארסק'
+                            'exemplarCity': '\u05E7\u05E8\u05E1\u05E0\u05D5\u05D9\u05D0\u05E8\u05E1\u05E7'
                         },
                         'Kuala_Lumpur': {
-                            'exemplarCity': 'קואלה לומפור'
+                            'exemplarCity': '\u05E7\u05D5\u05D0\u05DC\u05D4 \u05DC\u05D5\u05DE\u05E4\u05D5\u05E8'
                         },
                         'Kuching': {
-                            'exemplarCity': 'קוצ׳ינג'
+                            'exemplarCity': '\u05E7\u05D5\u05E6\u05F3\u05D9\u05E0\u05D2'
                         },
                         'Kuwait': {
-                            'exemplarCity': 'כווית'
+                            'exemplarCity': '\u05DB\u05D5\u05D5\u05D9\u05EA'
                         },
                         'Macau': {
-                            'exemplarCity': 'מקאו'
+                            'exemplarCity': '\u05DE\u05E7\u05D0\u05D5'
                         },
                         'Magadan': {
-                            'exemplarCity': 'מגדן'
+                            'exemplarCity': '\u05DE\u05D2\u05D3\u05DF'
                         },
                         'Makassar': {
-                            'exemplarCity': 'מאקאסאר'
+                            'exemplarCity': '\u05DE\u05D0\u05E7\u05D0\u05E1\u05D0\u05E8'
                         },
                         'Manila': {
-                            'exemplarCity': 'מנילה'
+                            'exemplarCity': '\u05DE\u05E0\u05D9\u05DC\u05D4'
                         },
                         'Muscat': {
-                            'exemplarCity': 'מוסקט'
+                            'exemplarCity': '\u05DE\u05D5\u05E1\u05E7\u05D8'
                         },
                         'Nicosia': {
-                            'exemplarCity': 'ניקוסיה'
+                            'exemplarCity': '\u05E0\u05D9\u05E7\u05D5\u05E1\u05D9\u05D4'
                         },
                         'Novokuznetsk': {
-                            'exemplarCity': 'נובוקוזנטסק'
+                            'exemplarCity': '\u05E0\u05D5\u05D1\u05D5\u05E7\u05D5\u05D6\u05E0\u05D8\u05E1\u05E7'
                         }
                     }
                 },
                 'metazone': {
                     'Tajikistan': {
                         'long': {
-                            'standard': 'שעון טג׳יקיסטן'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D8\u05D2\u05F3\u05D9\u05E7\u05D9\u05E1\u05D8\u05DF'
                         }
                     },
                     'Taipei': {
                         'long': {
-                            'generic': 'שעון טאיפיי',
-                            'standard': 'שעון רגיל טאיפיי',
-                            'daylight': 'שעון קיץ טאיפיי'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D8\u05D0\u05D9\u05E4\u05D9\u05D9',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D8\u05D0\u05D9\u05E4\u05D9\u05D9',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D8\u05D0\u05D9\u05E4\u05D9\u05D9'
                         }
                     },
                     'Tahiti': {
                         'long': {
-                            'standard': 'שעון טהיטי'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D8\u05D4\u05D9\u05D8\u05D9'
                         }
                     },
                     'Syowa': {
                         'long': {
-                            'standard': 'שעון סייווה'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E1\u05D9\u05D9\u05D5\u05D5\u05D4'
                         }
                     },
                     'Suriname': {
                         'long': {
-                            'standard': 'שעון סורינאם'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E1\u05D5\u05E8\u05D9\u05E0\u05D0\u05DD'
                         }
                     },
                     'South_Georgia': {
                         'long': {
-                            'standard': 'שעון דרום ג׳ורג׳יה'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D3\u05E8\u05D5\u05DD \u05D2\u05F3\u05D5\u05E8\u05D2\u05F3\u05D9\u05D4'
                         }
                     },
                     'Solomon': {
                         'long': {
-                            'standard': 'שעון איי שלמה'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05D9\u05D9 \u05E9\u05DC\u05DE\u05D4'
                         }
                     },
                     'Singapore': {
                         'long': {
-                            'standard': 'שעון סינגפור'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E1\u05D9\u05E0\u05D2\u05E4\u05D5\u05E8'
                         }
                     },
                     'Seychelles': {
                         'long': {
-                            'standard': 'שעון איי סיישל'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05D9\u05D9 \u05E1\u05D9\u05D9\u05E9\u05DC'
                         }
                     },
                     'Samoa': {
                         'long': {
-                            'generic': 'שעון סמואה',
-                            'standard': 'שעון רגיל סמואה',
-                            'daylight': 'שעון קיץ סמואה'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05E1\u05DE\u05D5\u05D0\u05D4',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05E1\u05DE\u05D5\u05D0\u05D4',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05E1\u05DE\u05D5\u05D0\u05D4'
                         }
                     },
                     'Samara': {
                         'long': {
-                            'generic': 'שעון סמרה',
-                            'standard': 'שעון רגיל סמרה',
-                            'daylight': 'שעון קיץ סמרה'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05E1\u05DE\u05E8\u05D4',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05E1\u05DE\u05E8\u05D4',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05E1\u05DE\u05E8\u05D4'
                         }
                     },
                     'Sakhalin': {
                         'long': {
-                            'generic': 'שעון סחלין',
-                            'standard': 'שעון רגיל סחלין',
-                            'daylight': 'שעון קיץ סחלין'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05E1\u05D7\u05DC\u05D9\u05DF',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05E1\u05D7\u05DC\u05D9\u05DF',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05E1\u05D7\u05DC\u05D9\u05DF'
                         }
                     },
                     'Rothera': {
                         'long': {
-                            'standard': 'שעון רות׳רה'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D5\u05EA\u05F3\u05E8\u05D4'
                         }
                     },
                     'Reunion': {
                         'long': {
-                            'standard': 'שעון ראוניון'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D0\u05D5\u05E0\u05D9\u05D5\u05DF'
                         }
                     },
                     'Ponape': {
                         'long': {
-                            'standard': 'שעון פונאפי'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E4\u05D5\u05E0\u05D0\u05E4\u05D9'
                         }
                     },
                     'Pitcairn': {
                         'long': {
-                            'standard': 'שעון פיטקרן'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E4\u05D9\u05D8\u05E7\u05E8\u05DF'
                         }
                     },
                     'America_Central': {
                         'long': {
-                            'generic': 'שעון מרכז ארה״ב (אמריקה/שיקגו)',
-                            'standard': 'שעון רגיל מרכז ארה״ב',
-                            'daylight': 'שעון קיץ, צפון אמריקה'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05E8\u05DB\u05D6 \u05D0\u05E8\u05D4\u05F4\u05D1 (\u05D0\u05DE\u05E8\u05D9\u05E7\u05D4/\u05E9\u05D9\u05E7\u05D2\u05D5)',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05DE\u05E8\u05DB\u05D6 \u05D0\u05E8\u05D4\u05F4\u05D1',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5, \u05E6\u05E4\u05D5\u05DF \u05D0\u05DE\u05E8\u05D9\u05E7\u05D4'
                         }
                     },
                     'Amazon': {
                         'long': {
-                            'generic': 'שעון אזור האמזונס',
-                            'standard': 'שעון רגיל אזור האמזונס',
-                            'daylight': 'שעון קיץ אזור האמזונס'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05D6\u05D5\u05E8 \u05D4\u05D0\u05DE\u05D6\u05D5\u05E0\u05E1',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D0\u05D6\u05D5\u05E8 \u05D4\u05D0\u05DE\u05D6\u05D5\u05E0\u05E1',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D0\u05D6\u05D5\u05E8 \u05D4\u05D0\u05DE\u05D6\u05D5\u05E0\u05E1'
                         }
                     },
                     'Alaska': {
                         'long': {
-                            'generic': 'שעון אלסקה',
-                            'standard': 'שעון רגיל אלסקה',
-                            'daylight': 'שעון קיץ אלסקה'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05DC\u05E1\u05E7\u05D4',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D0\u05DC\u05E1\u05E7\u05D4',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D0\u05DC\u05E1\u05E7\u05D4'
                         }
                     },
                     'Africa_Western': {
                         'long': {
-                            'generic': 'שעון מערב אפריקה',
-                            'standard': 'שעון רגיל מערב אפריקה',
-                            'daylight': 'שעון קיץ, מערב אפריקה'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05E2\u05E8\u05D1 \u05D0\u05E4\u05E8\u05D9\u05E7\u05D4',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05DE\u05E2\u05E8\u05D1 \u05D0\u05E4\u05E8\u05D9\u05E7\u05D4',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5, \u05DE\u05E2\u05E8\u05D1 \u05D0\u05E4\u05E8\u05D9\u05E7\u05D4'
                         }
                     },
                     'Africa_Southern': {
                         'long': {
-                            'standard': 'שעון דרום אפריקה'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D3\u05E8\u05D5\u05DD \u05D0\u05E4\u05E8\u05D9\u05E7\u05D4'
                         }
                     },
                     'Africa_Eastern': {
                         'long': {
-                            'standard': 'שעון מזרח אפריקה'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05D6\u05E8\u05D7 \u05D0\u05E4\u05E8\u05D9\u05E7\u05D4'
                         }
                     },
                     'Africa_Central': {
                         'long': {
-                            'standard': 'שעון מרכז אפריקה'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05E8\u05DB\u05D6 \u05D0\u05E4\u05E8\u05D9\u05E7\u05D4'
                         }
                     },
                     'Afghanistan': {
                         'long': {
-                            'standard': 'שעון אפגניסטן'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05E4\u05D2\u05E0\u05D9\u05E1\u05D8\u05DF'
                         }
                     },
                     'America_Eastern': {
                         'long': {
-                            'generic': 'שעון החוף המזרחי',
-                            'standard': 'שעון רגיל של החוף המזרחי',
-                            'daylight': 'שעון קיץ מזרח ארה״ב'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D4\u05D7\u05D5\u05E3 \u05D4\u05DE\u05D6\u05E8\u05D7\u05D9',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05E9\u05DC \u05D4\u05D7\u05D5\u05E3 \u05D4\u05DE\u05D6\u05E8\u05D7\u05D9',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05DE\u05D6\u05E8\u05D7 \u05D0\u05E8\u05D4\u05F4\u05D1'
                         }
                     },
                     'America_Mountain': {
                         'long': {
-                            'generic': 'שעון אזור ההרים בארה״ב (דנוור)',
-                            'standard': 'שעון רגיל אזור ההרים',
-                            'daylight': 'שעון קיץ, אזור ההרים בארה״ב'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05D6\u05D5\u05E8 \u05D4\u05D4\u05E8\u05D9\u05DD \u05D1\u05D0\u05E8\u05D4\u05F4\u05D1 (\u05D3\u05E0\u05D5\u05D5\u05E8)',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D0\u05D6\u05D5\u05E8 \u05D4\u05D4\u05E8\u05D9\u05DD',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5, \u05D0\u05D6\u05D5\u05E8 \u05D4\u05D4\u05E8\u05D9\u05DD \u05D1\u05D0\u05E8\u05D4\u05F4\u05D1'
                         }
                     },
                     'America_Pacific': {
                         'long': {
-                            'generic': 'שעון מערב ארה״ב (לוס אנג׳לס)',
-                            'standard': 'שעון רגיל האוקיינוס השקט',
-                            'daylight': 'שעון קיץ, מערב ארה״ב (לוס אנג׳לס)'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05E2\u05E8\u05D1 \u05D0\u05E8\u05D4\u05F4\u05D1 (\u05DC\u05D5\u05E1 \u05D0\u05E0\u05D2\u05F3\u05DC\u05E1)',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D4\u05D0\u05D5\u05E7\u05D9\u05D9\u05E0\u05D5\u05E1 \u05D4\u05E9\u05E7\u05D8',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5, \u05DE\u05E2\u05E8\u05D1 \u05D0\u05E8\u05D4\u05F4\u05D1 (\u05DC\u05D5\u05E1 \u05D0\u05E0\u05D2\u05F3\u05DC\u05E1)'
                         }
                     },
                     'Anadyr': {
                         'long': {
-                            'generic': 'שעון אנדיר',
-                            'standard': 'שעון רגיל אנדיר',
-                            'daylight': 'שעון קיץ אנדיר'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05E0\u05D3\u05D9\u05E8',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D0\u05E0\u05D3\u05D9\u05E8',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D0\u05E0\u05D3\u05D9\u05E8'
                         }
                     },
                     'Arabian': {
                         'long': {
-                            'generic': 'שעון חצי האי ערב',
-                            'standard': 'שעון רגיל חצי האי ערב',
-                            'daylight': 'שעון קיץ חצי האי ערב'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D7\u05E6\u05D9 \u05D4\u05D0\u05D9 \u05E2\u05E8\u05D1',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D7\u05E6\u05D9 \u05D4\u05D0\u05D9 \u05E2\u05E8\u05D1',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D7\u05E6\u05D9 \u05D4\u05D0\u05D9 \u05E2\u05E8\u05D1'
                         }
                     },
                     'Argentina': {
                         'long': {
-                            'generic': 'שעון ארגנטינה',
-                            'standard': 'שעון רגיל ארגנטינה',
-                            'daylight': 'שעון קיץ ארגנטינה'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05E8\u05D2\u05E0\u05D8\u05D9\u05E0\u05D4',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D0\u05E8\u05D2\u05E0\u05D8\u05D9\u05E0\u05D4',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D0\u05E8\u05D2\u05E0\u05D8\u05D9\u05E0\u05D4'
                         }
                     },
                     'Argentina_Western': {
                         'long': {
-                            'generic': 'שעון מערב ארגנטינה',
-                            'standard': 'שעון רגיל מערב ארגנטינה',
-                            'daylight': 'שעון קיץ מערב ארגנטינה'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05E2\u05E8\u05D1 \u05D0\u05E8\u05D2\u05E0\u05D8\u05D9\u05E0\u05D4',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05DE\u05E2\u05E8\u05D1 \u05D0\u05E8\u05D2\u05E0\u05D8\u05D9\u05E0\u05D4',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05DE\u05E2\u05E8\u05D1 \u05D0\u05E8\u05D2\u05E0\u05D8\u05D9\u05E0\u05D4'
                         }
                     },
                     'Armenia': {
                         'long': {
-                            'generic': 'שעון ארמניה',
-                            'standard': 'שעון רגיל ארמניה',
-                            'daylight': 'שעון קיץ ארמניה'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05E8\u05DE\u05E0\u05D9\u05D4',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D0\u05E8\u05DE\u05E0\u05D9\u05D4',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D0\u05E8\u05DE\u05E0\u05D9\u05D4'
                         }
                     },
                     'China': {
                         'long': {
-                            'generic': 'שעון סין',
-                            'standard': 'שעון חורף סין',
-                            'daylight': 'שעון קיץ סין'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05E1\u05D9\u05DF',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D7\u05D5\u05E8\u05E3 \u05E1\u05D9\u05DF',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05E1\u05D9\u05DF'
                         }
                     },
                     'Choibalsan': {
                         'long': {
-                            'generic': 'שעון צ׳ויבלסן',
-                            'standard': 'שעון רגיל צ׳ויבלסן',
-                            'daylight': 'שעון קיץ צ׳ויבלסן'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05E6\u05F3\u05D5\u05D9\u05D1\u05DC\u05E1\u05DF',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05E6\u05F3\u05D5\u05D9\u05D1\u05DC\u05E1\u05DF',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05E6\u05F3\u05D5\u05D9\u05D1\u05DC\u05E1\u05DF'
                         }
                     },
                     'Christmas': {
                         'long': {
-                            'standard': 'שעון אי חג המולד'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05D9 \u05D7\u05D2 \u05D4\u05DE\u05D5\u05DC\u05D3'
                         }
                     },
                     'Cocos': {
                         'long': {
-                            'standard': 'שעון איי קוקוס'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05D9\u05D9 \u05E7\u05D5\u05E7\u05D5\u05E1'
                         }
                     },
                     'Colombia': {
                         'long': {
-                            'generic': 'שעון קולומביה',
-                            'standard': 'שעון רגיל קולומביה',
-                            'daylight': 'שעון קיץ קולומביה'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D5\u05DC\u05D5\u05DE\u05D1\u05D9\u05D4',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05E7\u05D5\u05DC\u05D5\u05DE\u05D1\u05D9\u05D4',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05E7\u05D5\u05DC\u05D5\u05DE\u05D1\u05D9\u05D4'
                         }
                     },
                     'Cook': {
                         'long': {
-                            'generic': 'שעון איי קוק',
-                            'standard': 'שעון רגיל איי קוק',
-                            'daylight': 'שעון מחצית הקיץ איי קוק'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05D9\u05D9 \u05E7\u05D5\u05E7',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D0\u05D9\u05D9 \u05E7\u05D5\u05E7',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05D7\u05E6\u05D9\u05EA \u05D4\u05E7\u05D9\u05E5 \u05D0\u05D9\u05D9 \u05E7\u05D5\u05E7'
                         }
                     },
                     'Cuba': {
                         'long': {
-                            'generic': 'שעון קובה',
-                            'standard': 'שעון רגיל קובה',
-                            'daylight': 'שעון קיץ קובה'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D5\u05D1\u05D4',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05E7\u05D5\u05D1\u05D4',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05E7\u05D5\u05D1\u05D4'
                         }
                     },
                     'Davis': {
                         'long': {
-                            'standard': 'שעון דיוויס'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D3\u05D9\u05D5\u05D5\u05D9\u05E1'
                         }
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': 'שעון דומון ד׳אורוויל'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D3\u05D5\u05DE\u05D5\u05DF \u05D3\u05F3\u05D0\u05D5\u05E8\u05D5\u05D5\u05D9\u05DC'
                         }
                     },
                     'East_Timor': {
                         'long': {
-                            'standard': 'שעון מזרח טימור'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05D6\u05E8\u05D7 \u05D8\u05D9\u05DE\u05D5\u05E8'
                         }
                     },
                     'Easter': {
                         'long': {
-                            'generic': 'שעון אי הפסחא',
-                            'standard': 'שעון רגיל אי הפסחא',
-                            'daylight': 'שעון קיץ אי הפסחא'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05D9 \u05D4\u05E4\u05E1\u05D7\u05D0',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D0\u05D9 \u05D4\u05E4\u05E1\u05D7\u05D0',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D0\u05D9 \u05D4\u05E4\u05E1\u05D7\u05D0'
                         }
                     },
                     'Ecuador': {
                         'long': {
-                            'standard': 'שעון אקוודור'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05E7\u05D5\u05D5\u05D3\u05D5\u05E8'
                         }
                     },
                     'Europe_Central': {
                         'long': {
-                            'generic': 'שעון מרכז אירופה',
-                            'standard': 'שעון רגיל מרכז אירופה',
-                            'daylight': 'שעון קיץ מרכז אירופה'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05E8\u05DB\u05D6 \u05D0\u05D9\u05E8\u05D5\u05E4\u05D4',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05DE\u05E8\u05DB\u05D6 \u05D0\u05D9\u05E8\u05D5\u05E4\u05D4',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05DE\u05E8\u05DB\u05D6 \u05D0\u05D9\u05E8\u05D5\u05E4\u05D4'
                         }
                     },
                     'Europe_Eastern': {
                         'long': {
-                            'generic': 'שעון מזרח אירופה',
-                            'standard': 'שעון רגיל מזרח אירופה',
-                            'daylight': 'שעון קיץ מזרח אירופה'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05D6\u05E8\u05D7 \u05D0\u05D9\u05E8\u05D5\u05E4\u05D4',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05DE\u05D6\u05E8\u05D7 \u05D0\u05D9\u05E8\u05D5\u05E4\u05D4',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05DE\u05D6\u05E8\u05D7 \u05D0\u05D9\u05E8\u05D5\u05E4\u05D4'
                         }
                     },
                     'Europe_Western': {
                         'long': {
-                            'generic': 'שעון מערב אירופה',
-                            'standard': 'שעון רגיל מערב אירופה',
-                            'daylight': 'שעון קיץ מערב אירופה'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05E2\u05E8\u05D1 \u05D0\u05D9\u05E8\u05D5\u05E4\u05D4',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05DE\u05E2\u05E8\u05D1 \u05D0\u05D9\u05E8\u05D5\u05E4\u05D4',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05DE\u05E2\u05E8\u05D1 \u05D0\u05D9\u05E8\u05D5\u05E4\u05D4'
                         }
                     },
                     'Falkland': {
                         'long': {
-                            'generic': 'שעון איי פוקלנד',
-                            'standard': 'שעון רגיל איי פוקלנד',
-                            'daylight': 'שעון קיץ איי פוקלנד'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05D9\u05D9 \u05E4\u05D5\u05E7\u05DC\u05E0\u05D3',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D0\u05D9\u05D9 \u05E4\u05D5\u05E7\u05DC\u05E0\u05D3',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D0\u05D9\u05D9 \u05E4\u05D5\u05E7\u05DC\u05E0\u05D3'
                         }
                     },
                     'Tokelau': {
                         'long': {
-                            'standard': 'שעון טוקלאו'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D8\u05D5\u05E7\u05DC\u05D0\u05D5'
                         }
                     },
                     'Tonga': {
                         'long': {
-                            'generic': 'שעון טונגה',
-                            'standard': 'שעון רגיל טונגה',
-                            'daylight': 'שעון קיץ טונגה'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D8\u05D5\u05E0\u05D2\u05D4',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D8\u05D5\u05E0\u05D2\u05D4',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D8\u05D5\u05E0\u05D2\u05D4'
                         }
                     },
                     'Truk': {
                         'long': {
-                            'standard': 'שעון צ׳וק'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E6\u05F3\u05D5\u05E7'
                         }
                     },
                     'Turkmenistan': {
                         'long': {
-                            'generic': 'שעון טורקמניסטן',
-                            'standard': 'שעון רגיל טורקמניסטן',
-                            'daylight': 'שעון קיץ טורקמניסטן'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D8\u05D5\u05E8\u05E7\u05DE\u05E0\u05D9\u05E1\u05D8\u05DF',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D8\u05D5\u05E8\u05E7\u05DE\u05E0\u05D9\u05E1\u05D8\u05DF',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D8\u05D5\u05E8\u05E7\u05DE\u05E0\u05D9\u05E1\u05D8\u05DF'
                         }
                     },
                     'Tuvalu': {
                         'long': {
-                            'standard': 'שעון טובאלו'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D8\u05D5\u05D1\u05D0\u05DC\u05D5'
                         }
                     },
                     'Uruguay': {
                         'long': {
-                            'generic': 'שעון אורוגוואי',
-                            'standard': 'שעון רגיל אורוגוואי',
-                            'daylight': 'שעון קיץ אורוגוואי'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05D5\u05E8\u05D5\u05D2\u05D5\u05D5\u05D0\u05D9',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D0\u05D5\u05E8\u05D5\u05D2\u05D5\u05D5\u05D0\u05D9',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D0\u05D5\u05E8\u05D5\u05D2\u05D5\u05D5\u05D0\u05D9'
                         }
                     },
                     'Uzbekistan': {
                         'long': {
-                            'generic': 'שעון אוזבקיסטן',
-                            'standard': 'שעון רגיל אוזבקיסטן',
-                            'daylight': 'שעון קיץ אוזבקיסטן'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05D5\u05D6\u05D1\u05E7\u05D9\u05E1\u05D8\u05DF',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D0\u05D5\u05D6\u05D1\u05E7\u05D9\u05E1\u05D8\u05DF',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D0\u05D5\u05D6\u05D1\u05E7\u05D9\u05E1\u05D8\u05DF'
                         }
                     },
                     'Vanuatu': {
                         'long': {
-                            'generic': 'שעון ונואטו',
-                            'standard': 'שעון רגיל ונואטו',
-                            'daylight': 'שעון קיץ ונואטו'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D5\u05E0\u05D5\u05D0\u05D8\u05D5',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D5\u05E0\u05D5\u05D0\u05D8\u05D5',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D5\u05E0\u05D5\u05D0\u05D8\u05D5'
                         }
                     },
                     'Yekaterinburg': {
                         'long': {
-                            'generic': 'שעון יקטרינבורג',
-                            'standard': 'שעון רגיל יקטרינבורג',
-                            'daylight': 'שעון קיץ יקטרינבורג'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D9\u05E7\u05D8\u05E8\u05D9\u05E0\u05D1\u05D5\u05E8\u05D2',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D9\u05E7\u05D8\u05E8\u05D9\u05E0\u05D1\u05D5\u05E8\u05D2',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D9\u05E7\u05D8\u05E8\u05D9\u05E0\u05D1\u05D5\u05E8\u05D2'
                         }
                     },
                     'Yakutsk': {
                         'long': {
-                            'generic': 'שעון יקוטסק',
-                            'standard': 'שעון רגיל יקוטסק',
-                            'daylight': 'שעון קיץ יקוטסק'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D9\u05E7\u05D5\u05D8\u05E1\u05E7',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D9\u05E7\u05D5\u05D8\u05E1\u05E7',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D9\u05E7\u05D5\u05D8\u05E1\u05E7'
                         }
                     },
                     'Wallis': {
                         'long': {
-                            'standard': 'שעון וואליס ופוטונה'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D5\u05D5\u05D0\u05DC\u05D9\u05E1 \u05D5\u05E4\u05D5\u05D8\u05D5\u05E0\u05D4'
                         }
                     },
                     'Wake': {
                         'long': {
-                            'standard': 'שעון האי וייק'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D4\u05D0\u05D9 \u05D5\u05D9\u05D9\u05E7'
                         }
                     },
                     'Vostok': {
                         'long': {
-                            'standard': 'שעון ווסטוק'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D5\u05D5\u05E1\u05D8\u05D5\u05E7'
                         }
                     },
                     'Volgograd': {
                         'long': {
-                            'generic': 'שעון וולגוגרד',
-                            'standard': 'שעון רגיל וולגוגרד',
-                            'daylight': 'שעון קיץ וולגוגרד'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D5\u05D5\u05DC\u05D2\u05D5\u05D2\u05E8\u05D3',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D5\u05D5\u05DC\u05D2\u05D5\u05D2\u05E8\u05D3',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D5\u05D5\u05DC\u05D2\u05D5\u05D2\u05E8\u05D3'
                         }
                     },
                     'Vladivostok': {
                         'long': {
-                            'generic': 'שעון ולדיווסטוק',
-                            'standard': 'שעון רגיל ולדיווסטוק',
-                            'daylight': 'שעון קיץ ולדיווסטוק'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D5\u05DC\u05D3\u05D9\u05D5\u05D5\u05E1\u05D8\u05D5\u05E7',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D5\u05DC\u05D3\u05D9\u05D5\u05D5\u05E1\u05D8\u05D5\u05E7',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D5\u05DC\u05D3\u05D9\u05D5\u05D5\u05E1\u05D8\u05D5\u05E7'
                         }
                     },
                     'Venezuela': {
                         'long': {
-                            'standard': 'שעון ונצואלה'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D5\u05E0\u05E6\u05D5\u05D0\u05DC\u05D4'
                         }
                     },
                     'India': {
                         'long': {
-                            'standard': 'שעון הודו'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D4\u05D5\u05D3\u05D5'
                         }
                     },
                     'Hovd': {
                         'long': {
-                            'generic': 'שעון חובד',
-                            'standard': 'שעון רגיל חובד',
-                            'daylight': 'שעון קיץ חובד'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D7\u05D5\u05D1\u05D3',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D7\u05D5\u05D1\u05D3',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D7\u05D5\u05D1\u05D3'
                         }
                     },
                     'Hong_Kong': {
                         'long': {
-                            'generic': 'שעון הונג קונג',
-                            'standard': 'שעון חורף הונג קונג',
-                            'daylight': 'שעון קיץ הונג קונג'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D4\u05D5\u05E0\u05D2 \u05E7\u05D5\u05E0\u05D2',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D7\u05D5\u05E8\u05E3 \u05D4\u05D5\u05E0\u05D2 \u05E7\u05D5\u05E0\u05D2',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D4\u05D5\u05E0\u05D2 \u05E7\u05D5\u05E0\u05D2'
                         }
                     },
                     'Hawaii_Aleutian': {
                         'long': {
-                            'generic': 'שעון האיים האלאוטיים הוואי',
-                            'standard': 'שעון רגיל האיים האלאוטיים הוואי',
-                            'daylight': 'שעון קיץ האיים האלאוטיים הוואי'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D4\u05D0\u05D9\u05D9\u05DD \u05D4\u05D0\u05DC\u05D0\u05D5\u05D8\u05D9\u05D9\u05DD \u05D4\u05D5\u05D5\u05D0\u05D9',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D4\u05D0\u05D9\u05D9\u05DD \u05D4\u05D0\u05DC\u05D0\u05D5\u05D8\u05D9\u05D9\u05DD \u05D4\u05D5\u05D5\u05D0\u05D9',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D4\u05D0\u05D9\u05D9\u05DD \u05D4\u05D0\u05DC\u05D0\u05D5\u05D8\u05D9\u05D9\u05DD \u05D4\u05D5\u05D5\u05D0\u05D9'
                         }
                     },
                     'Guyana': {
                         'long': {
-                            'standard': 'שעון גויאנה'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D2\u05D5\u05D9\u05D0\u05E0\u05D4'
                         }
                     },
                     'Gulf': {
                         'long': {
-                            'standard': 'שעון מדינות המפרץ'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05D3\u05D9\u05E0\u05D5\u05EA \u05D4\u05DE\u05E4\u05E8\u05E5'
                         }
                     },
                     'Greenland_Western': {
                         'long': {
-                            'generic': 'שעון מערב גרינלנד',
-                            'standard': 'שעון רגיל מערב גרינלנד',
-                            'daylight': 'שעון קיץ מערב גרינלנד'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05E2\u05E8\u05D1 \u05D2\u05E8\u05D9\u05E0\u05DC\u05E0\u05D3',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05DE\u05E2\u05E8\u05D1 \u05D2\u05E8\u05D9\u05E0\u05DC\u05E0\u05D3',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05DE\u05E2\u05E8\u05D1 \u05D2\u05E8\u05D9\u05E0\u05DC\u05E0\u05D3'
                         }
                     },
                     'Greenland_Eastern': {
                         'long': {
-                            'generic': 'שעון מזרח גרינלנד',
-                            'standard': 'שעון רגיל מזרח גרינלנד',
-                            'daylight': 'שעון קיץ מזרח גרינלנד'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05D6\u05E8\u05D7 \u05D2\u05E8\u05D9\u05E0\u05DC\u05E0\u05D3',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05DE\u05D6\u05E8\u05D7 \u05D2\u05E8\u05D9\u05E0\u05DC\u05E0\u05D3',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05DE\u05D6\u05E8\u05D7 \u05D2\u05E8\u05D9\u05E0\u05DC\u05E0\u05D3'
                         }
                     },
                     'GMT': {
                         'long': {
-                            'standard': 'שעון גריניץ׳‏'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D2\u05E8\u05D9\u05E0\u05D9\u05E5\u05F3\u200F'
                         }
                     },
                     'Gilbert_Islands': {
                         'long': {
-                            'standard': 'שעון איי גילברט'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05D9\u05D9 \u05D2\u05D9\u05DC\u05D1\u05E8\u05D8'
                         }
                     },
                     'Georgia': {
                         'long': {
-                            'generic': 'שעון גאורגיה',
-                            'standard': 'שעון רגיל גאורגיה',
-                            'daylight': 'שעון קיץ גאורגיה'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D2\u05D0\u05D5\u05E8\u05D2\u05D9\u05D4',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D2\u05D0\u05D5\u05E8\u05D2\u05D9\u05D4',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D2\u05D0\u05D5\u05E8\u05D2\u05D9\u05D4'
                         }
                     },
                     'Gambier': {
                         'long': {
-                            'standard': 'שעון גאמבייר'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D2\u05D0\u05DE\u05D1\u05D9\u05D9\u05E8'
                         }
                     },
                     'Galapagos': {
                         'long': {
-                            'standard': 'שעון איי גלאפגוס'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05D9\u05D9 \u05D2\u05DC\u05D0\u05E4\u05D2\u05D5\u05E1'
                         }
                     },
                     'French_Southern': {
                         'long': {
-                            'standard': 'שעון דרום צרפת ואנטארקטיקה'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D3\u05E8\u05D5\u05DD \u05E6\u05E8\u05E4\u05EA \u05D5\u05D0\u05E0\u05D8\u05D0\u05E8\u05E7\u05D8\u05D9\u05E7\u05D4'
                         }
                     },
                     'French_Guiana': {
                         'long': {
-                            'standard': 'שעון גיאנה הצרפתית'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D2\u05D9\u05D0\u05E0\u05D4 \u05D4\u05E6\u05E8\u05E4\u05EA\u05D9\u05EA'
                         }
                     },
                     'Fiji': {
                         'long': {
-                            'generic': 'שעון פיג׳י',
-                            'standard': 'שעון רגיל פיג׳י',
-                            'daylight': 'שעון קיץ פיג׳י'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05E4\u05D9\u05D2\u05F3\u05D9',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05E4\u05D9\u05D2\u05F3\u05D9',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05E4\u05D9\u05D2\u05F3\u05D9'
                         }
                     },
                     'Atlantic': {
                         'long': {
-                            'generic': 'שעון אטלנטי',
-                            'standard': 'שעון אטלנטי תקני',
-                            'daylight': 'שעון קיץ אטלנטי'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05D8\u05DC\u05E0\u05D8\u05D9',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05D8\u05DC\u05E0\u05D8\u05D9 \u05EA\u05E7\u05E0\u05D9',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D0\u05D8\u05DC\u05E0\u05D8\u05D9'
                         }
                     },
                     'Australia_Central': {
                         'long': {
-                            'generic': 'שעון מרכז אוסטרליה',
-                            'standard': 'שעון רגיל מרכז אוסטרליה',
-                            'daylight': 'שעון קיץ מרכז אוסטרליה'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05E8\u05DB\u05D6 \u05D0\u05D5\u05E1\u05D8\u05E8\u05DC\u05D9\u05D4',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05DE\u05E8\u05DB\u05D6 \u05D0\u05D5\u05E1\u05D8\u05E8\u05DC\u05D9\u05D4',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05DE\u05E8\u05DB\u05D6 \u05D0\u05D5\u05E1\u05D8\u05E8\u05DC\u05D9\u05D4'
                         }
                     },
                     'Australia_CentralWestern': {
                         'long': {
-                            'generic': 'שעון מרכז-מערב אוסטרליה',
-                            'standard': 'שעון רגיל מרכז מערב אוסטרליה',
-                            'daylight': 'שעון קיץ מרכז מערב אוסטרליה'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05E8\u05DB\u05D6-\u05DE\u05E2\u05E8\u05D1 \u05D0\u05D5\u05E1\u05D8\u05E8\u05DC\u05D9\u05D4',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05DE\u05E8\u05DB\u05D6 \u05DE\u05E2\u05E8\u05D1 \u05D0\u05D5\u05E1\u05D8\u05E8\u05DC\u05D9\u05D4',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05DE\u05E8\u05DB\u05D6 \u05DE\u05E2\u05E8\u05D1 \u05D0\u05D5\u05E1\u05D8\u05E8\u05DC\u05D9\u05D4'
                         }
                     },
                     'Australia_Eastern': {
                         'long': {
-                            'generic': 'שעון מזרח אוסטרליה',
-                            'standard': 'שעון רגיל מזרח אוסטרליה',
-                            'daylight': 'שעון קיץ מזרח אוסטרליה'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05D6\u05E8\u05D7 \u05D0\u05D5\u05E1\u05D8\u05E8\u05DC\u05D9\u05D4',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05DE\u05D6\u05E8\u05D7 \u05D0\u05D5\u05E1\u05D8\u05E8\u05DC\u05D9\u05D4',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05DE\u05D6\u05E8\u05D7 \u05D0\u05D5\u05E1\u05D8\u05E8\u05DC\u05D9\u05D4'
                         }
                     },
                     'Australia_Western': {
                         'long': {
-                            'generic': 'שעון מערב אוסטרליה',
-                            'standard': 'שעון רגיל מערב אוסטרליה',
-                            'daylight': 'שעון קיץ מערב אוסטרליה'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05E2\u05E8\u05D1 \u05D0\u05D5\u05E1\u05D8\u05E8\u05DC\u05D9\u05D4',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05DE\u05E2\u05E8\u05D1 \u05D0\u05D5\u05E1\u05D8\u05E8\u05DC\u05D9\u05D4',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05DE\u05E2\u05E8\u05D1 \u05D0\u05D5\u05E1\u05D8\u05E8\u05DC\u05D9\u05D4'
                         }
                     },
                     'Azerbaijan': {
                         'long': {
-                            'generic': 'שעון אזרבייג׳אן',
-                            'standard': 'שעון רגיל אזרבייג׳אן',
-                            'daylight': 'שעון קיץ אזרבייג׳אן'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05D6\u05E8\u05D1\u05D9\u05D9\u05D2\u05F3\u05D0\u05DF',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D0\u05D6\u05E8\u05D1\u05D9\u05D9\u05D2\u05F3\u05D0\u05DF',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D0\u05D6\u05E8\u05D1\u05D9\u05D9\u05D2\u05F3\u05D0\u05DF'
                         }
                     },
                     'Azores': {
                         'long': {
-                            'generic': 'שעון אזורס',
-                            'standard': 'שעון רגיל אזורס',
-                            'daylight': 'שעון קיץ אזורס'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05D6\u05D5\u05E8\u05E1',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D0\u05D6\u05D5\u05E8\u05E1',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D0\u05D6\u05D5\u05E8\u05E1'
                         }
                     },
                     'Bangladesh': {
                         'long': {
-                            'generic': 'שעון בנגלדש',
-                            'standard': 'שעון רגיל בנגלדש',
-                            'daylight': 'שעון קיץ בנגלדש'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D1\u05E0\u05D2\u05DC\u05D3\u05E9',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D1\u05E0\u05D2\u05DC\u05D3\u05E9',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D1\u05E0\u05D2\u05DC\u05D3\u05E9'
                         }
                     },
                     'Bhutan': {
                         'long': {
-                            'standard': 'שעון בהוטן'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D1\u05D4\u05D5\u05D8\u05DF'
                         }
                     },
                     'Bolivia': {
                         'long': {
-                            'standard': 'שעון בוליביה'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D1\u05D5\u05DC\u05D9\u05D1\u05D9\u05D4'
                         }
                     },
                     'Brasilia': {
                         'long': {
-                            'generic': 'שעון ברזיליה',
-                            'standard': 'שעון רגיל ברזיליה',
-                            'daylight': 'שעון קיץ ברזיליה'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D1\u05E8\u05D6\u05D9\u05DC\u05D9\u05D4',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D1\u05E8\u05D6\u05D9\u05DC\u05D9\u05D4',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D1\u05E8\u05D6\u05D9\u05DC\u05D9\u05D4'
                         }
                     },
                     'Brunei': {
                         'long': {
-                            'standard': 'שעון ברוניי דארוסלאם'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D1\u05E8\u05D5\u05E0\u05D9\u05D9 \u05D3\u05D0\u05E8\u05D5\u05E1\u05DC\u05D0\u05DD'
                         }
                     },
                     'Cape_Verde': {
                         'long': {
-                            'generic': 'שעון קייפ ורדה',
-                            'standard': 'שעון רגיל קייפ ורדה',
-                            'daylight': 'שעון קיץ קייפ ורדה'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05D9\u05E4 \u05D5\u05E8\u05D3\u05D4',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05E7\u05D9\u05D9\u05E4 \u05D5\u05E8\u05D3\u05D4',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05E7\u05D9\u05D9\u05E4 \u05D5\u05E8\u05D3\u05D4'
                         }
                     },
                     'Chamorro': {
                         'long': {
-                            'standard': 'שעון צ׳אמורו'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E6\u05F3\u05D0\u05DE\u05D5\u05E8\u05D5'
                         }
                     },
                     'Chatham': {
                         'long': {
-                            'generic': 'שעון צ׳טהאם',
-                            'standard': 'שעון רגיל צ׳טהאם',
-                            'daylight': 'שעון קיץ צ׳טהאם'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05E6\u05F3\u05D8\u05D4\u05D0\u05DD',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05E6\u05F3\u05D8\u05D4\u05D0\u05DD',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05E6\u05F3\u05D8\u05D4\u05D0\u05DD'
                         }
                     },
                     'Chile': {
                         'long': {
-                            'generic': 'שעון צ׳ילה',
-                            'standard': 'שעון רגיל צ׳ילה',
-                            'daylight': 'שעון קיץ צ׳ילה'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05E6\u05F3\u05D9\u05DC\u05D4',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05E6\u05F3\u05D9\u05DC\u05D4',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05E6\u05F3\u05D9\u05DC\u05D4'
                         }
                     },
                     'Indian_Ocean': {
                         'long': {
-                            'standard': 'שעון האוקיינוס ההודי'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D4\u05D0\u05D5\u05E7\u05D9\u05D9\u05E0\u05D5\u05E1 \u05D4\u05D4\u05D5\u05D3\u05D9'
                         }
                     },
                     'Indochina': {
                         'long': {
-                            'standard': 'שעון הודו-סין'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D4\u05D5\u05D3\u05D5-\u05E1\u05D9\u05DF'
                         }
                     },
                     'Indonesia_Central': {
                         'long': {
-                            'standard': 'שעון מרכז אינדונזיה'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05E8\u05DB\u05D6 \u05D0\u05D9\u05E0\u05D3\u05D5\u05E0\u05D6\u05D9\u05D4'
                         }
                     },
                     'Indonesia_Eastern': {
                         'long': {
-                            'standard': 'שעון מזרח אינדונזיה'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05D6\u05E8\u05D7 \u05D0\u05D9\u05E0\u05D3\u05D5\u05E0\u05D6\u05D9\u05D4'
                         }
                     },
                     'Indonesia_Western': {
                         'long': {
-                            'standard': 'שעון מערב אינדונזיה'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05E2\u05E8\u05D1 \u05D0\u05D9\u05E0\u05D3\u05D5\u05E0\u05D6\u05D9\u05D4'
                         }
                     },
                     'Iran': {
                         'long': {
-                            'generic': 'שעון איראן',
-                            'standard': 'שעון רגיל איראן',
-                            'daylight': 'שעון קיץ איראן'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05D9\u05E8\u05D0\u05DF',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D0\u05D9\u05E8\u05D0\u05DF',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D0\u05D9\u05E8\u05D0\u05DF'
                         }
                     },
                     'Irkutsk': {
                         'long': {
-                            'generic': 'שעון אירקוטסק',
-                            'standard': 'שעון רגיל אירקוטסק',
-                            'daylight': 'שעון קיץ אירקוטסק'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05D9\u05E8\u05E7\u05D5\u05D8\u05E1\u05E7',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D0\u05D9\u05E8\u05E7\u05D5\u05D8\u05E1\u05E7',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D0\u05D9\u05E8\u05E7\u05D5\u05D8\u05E1\u05E7'
                         }
                     },
                     'Israel': {
                         'long': {
-                            'generic': 'שעון ישראל',
-                            'standard': 'שעון רגיל ישראל',
-                            'daylight': 'שעון קיץ ישראל'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D9\u05E9\u05E8\u05D0\u05DC',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D9\u05E9\u05E8\u05D0\u05DC',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D9\u05E9\u05E8\u05D0\u05DC'
                         }
                     },
                     'Japan': {
                         'long': {
-                            'generic': 'שעון יפן',
-                            'standard': 'שעון חורף יפן',
-                            'daylight': 'שעון קיץ יפן'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D9\u05E4\u05DF',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D7\u05D5\u05E8\u05E3 \u05D9\u05E4\u05DF',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D9\u05E4\u05DF'
                         }
                     },
                     'Kamchatka': {
                         'long': {
-                            'generic': 'שעון פטרופבלובסק-קמצ׳טסקי',
-                            'standard': 'שעון רגיל פטרופבלובסק-קמצ׳טסקי',
-                            'daylight': 'שעון קיץ פטרופבלובסק-קמצ׳טסקי'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05E4\u05D8\u05E8\u05D5\u05E4\u05D1\u05DC\u05D5\u05D1\u05E1\u05E7-\u05E7\u05DE\u05E6\u05F3\u05D8\u05E1\u05E7\u05D9',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05E4\u05D8\u05E8\u05D5\u05E4\u05D1\u05DC\u05D5\u05D1\u05E1\u05E7-\u05E7\u05DE\u05E6\u05F3\u05D8\u05E1\u05E7\u05D9',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05E4\u05D8\u05E8\u05D5\u05E4\u05D1\u05DC\u05D5\u05D1\u05E1\u05E7-\u05E7\u05DE\u05E6\u05F3\u05D8\u05E1\u05E7\u05D9'
                         }
                     },
                     'Kazakhstan_Eastern': {
                         'long': {
-                            'standard': 'שעון מזרח קזחסטן'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05D6\u05E8\u05D7 \u05E7\u05D6\u05D7\u05E1\u05D8\u05DF'
                         }
                     },
                     'Kazakhstan_Western': {
                         'long': {
-                            'standard': 'שעון מערב קזחסטן'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05E2\u05E8\u05D1 \u05E7\u05D6\u05D7\u05E1\u05D8\u05DF'
                         }
                     },
                     'Korea': {
                         'long': {
-                            'generic': 'שעון קוריאה',
-                            'standard': 'שעון חורף קוריאה',
-                            'daylight': 'שעון קיץ קוריאה'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D5\u05E8\u05D9\u05D0\u05D4',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D7\u05D5\u05E8\u05E3 \u05E7\u05D5\u05E8\u05D9\u05D0\u05D4',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05E7\u05D5\u05E8\u05D9\u05D0\u05D4'
                         }
                     },
                     'Kosrae': {
                         'long': {
-                            'standard': 'שעון קוסראה'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D5\u05E1\u05E8\u05D0\u05D4'
                         }
                     },
                     'Krasnoyarsk': {
                         'long': {
-                            'generic': 'שעון קרסנויארסק',
-                            'standard': 'שעון רגיל קרסנויארסק',
-                            'daylight': 'שעון קיץ קרסנויארסק'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05E8\u05E1\u05E0\u05D5\u05D9\u05D0\u05E8\u05E1\u05E7',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05E7\u05E8\u05E1\u05E0\u05D5\u05D9\u05D0\u05E8\u05E1\u05E7',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05E7\u05E8\u05E1\u05E0\u05D5\u05D9\u05D0\u05E8\u05E1\u05E7'
                         }
                     },
                     'Kyrgystan': {
                         'long': {
-                            'standard': 'שעון קירגיזסטן'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E8\u05D2\u05D9\u05D6\u05E1\u05D8\u05DF'
                         }
                     },
                     'Line_Islands': {
                         'long': {
-                            'standard': 'שעון איי ליין'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05D9\u05D9 \u05DC\u05D9\u05D9\u05DF'
                         }
                     },
                     'Lord_Howe': {
                         'long': {
-                            'generic': 'שעון של אי הלורד האו',
-                            'standard': 'שעון רגיל של אי הלורד האו',
-                            'daylight': 'שעון קיץ של אי הלורד האו'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05E9\u05DC \u05D0\u05D9 \u05D4\u05DC\u05D5\u05E8\u05D3 \u05D4\u05D0\u05D5',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05E9\u05DC \u05D0\u05D9 \u05D4\u05DC\u05D5\u05E8\u05D3 \u05D4\u05D0\u05D5',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05E9\u05DC \u05D0\u05D9 \u05D4\u05DC\u05D5\u05E8\u05D3 \u05D4\u05D0\u05D5'
                         }
                     },
                     'Macau': {
                         'long': {
-                            'generic': 'שעון מקאו',
-                            'standard': 'שעון חורף מקאו',
-                            'daylight': 'שעון קיץ מקאו'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05E7\u05D0\u05D5',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D7\u05D5\u05E8\u05E3 \u05DE\u05E7\u05D0\u05D5',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05DE\u05E7\u05D0\u05D5'
                         }
                     },
                     'Macquarie': {
                         'long': {
-                            'standard': 'שעון מקווארי'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05E7\u05D5\u05D5\u05D0\u05E8\u05D9'
                         }
                     },
                     'Magadan': {
                         'long': {
-                            'generic': 'שעון מגדן',
-                            'standard': 'שעון רגיל מגדן',
-                            'daylight': 'שעון קיץ מגדן'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05D2\u05D3\u05DF',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05DE\u05D2\u05D3\u05DF',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05DE\u05D2\u05D3\u05DF'
                         }
                     },
                     'Malaysia': {
                         'long': {
-                            'standard': 'שעון מלזיה'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05DC\u05D6\u05D9\u05D4'
                         }
                     },
                     'Maldives': {
                         'long': {
-                            'standard': 'שעון האיים המלדיביים'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D4\u05D0\u05D9\u05D9\u05DD \u05D4\u05DE\u05DC\u05D3\u05D9\u05D1\u05D9\u05D9\u05DD'
                         }
                     },
                     'Marquesas': {
                         'long': {
-                            'standard': 'שעון איי מרקיז'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05D9\u05D9 \u05DE\u05E8\u05E7\u05D9\u05D6'
                         }
                     },
                     'Marshall_Islands': {
                         'long': {
-                            'standard': 'שעון איי מרשל'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05D9\u05D9 \u05DE\u05E8\u05E9\u05DC'
                         }
                     },
                     'Mauritius': {
                         'long': {
-                            'generic': 'שעון מאוריציוס',
-                            'standard': 'שעון חורף מאוריציוס',
-                            'daylight': 'שעון קיץ מאוריציוס'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05D0\u05D5\u05E8\u05D9\u05E6\u05D9\u05D5\u05E1',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D7\u05D5\u05E8\u05E3 \u05DE\u05D0\u05D5\u05E8\u05D9\u05E6\u05D9\u05D5\u05E1',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05DE\u05D0\u05D5\u05E8\u05D9\u05E6\u05D9\u05D5\u05E1'
                         }
                     },
                     'Mawson': {
                         'long': {
-                            'standard': 'שעון מאוסון'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05D0\u05D5\u05E1\u05D5\u05DF'
                         }
                     },
                     'Mongolia': {
                         'long': {
-                            'generic': 'שעון אולן בטור',
-                            'standard': 'שעון רגיל אולן בטור',
-                            'daylight': 'שעון קיץ אולן בטור'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05D5\u05DC\u05DF \u05D1\u05D8\u05D5\u05E8',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D0\u05D5\u05DC\u05DF \u05D1\u05D8\u05D5\u05E8',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D0\u05D5\u05DC\u05DF \u05D1\u05D8\u05D5\u05E8'
                         }
                     },
                     'Moscow': {
                         'long': {
-                            'generic': 'שעון מוסקבה',
-                            'standard': 'שעון רגיל מוסקבה',
-                            'daylight': 'שעון קיץ מוסקבה'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05DE\u05D5\u05E1\u05E7\u05D1\u05D4',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05DE\u05D5\u05E1\u05E7\u05D1\u05D4',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05DE\u05D5\u05E1\u05E7\u05D1\u05D4'
                         }
                     },
                     'Myanmar': {
                         'long': {
-                            'standard': 'שעון בורמה'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D1\u05D5\u05E8\u05DE\u05D4'
                         }
                     },
                     'Nauru': {
                         'long': {
-                            'standard': 'שעון נאורו'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E0\u05D0\u05D5\u05E8\u05D5'
                         }
                     },
                     'Nepal': {
                         'long': {
-                            'standard': 'שעון נפאל'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E0\u05E4\u05D0\u05DC'
                         }
                     },
                     'New_Caledonia': {
                         'long': {
-                            'generic': 'שעון ניו-קלדוניה',
-                            'standard': 'שעון רגיל ניו-קלדוניה',
-                            'daylight': 'שעון קיץ ניו-קלדוניה'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05E0\u05D9\u05D5-\u05E7\u05DC\u05D3\u05D5\u05E0\u05D9\u05D4',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05E0\u05D9\u05D5-\u05E7\u05DC\u05D3\u05D5\u05E0\u05D9\u05D4',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05E0\u05D9\u05D5-\u05E7\u05DC\u05D3\u05D5\u05E0\u05D9\u05D4'
                         }
                     },
                     'New_Zealand': {
                         'long': {
-                            'generic': 'שעון ניו זילנד',
-                            'standard': 'שעון רגיל ניו זילנד',
-                            'daylight': 'שעון קיץ ניו זילנד'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05E0\u05D9\u05D5 \u05D6\u05D9\u05DC\u05E0\u05D3',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05E0\u05D9\u05D5 \u05D6\u05D9\u05DC\u05E0\u05D3',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05E0\u05D9\u05D5 \u05D6\u05D9\u05DC\u05E0\u05D3'
                         }
                     },
                     'Newfoundland': {
                         'long': {
-                            'generic': 'שעון ניופאונדלנד',
-                            'standard': 'שעון רגיל ניופאונדלנד',
-                            'daylight': 'שעון קיץ ניופאונדלנד'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05E0\u05D9\u05D5\u05E4\u05D0\u05D5\u05E0\u05D3\u05DC\u05E0\u05D3',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05E0\u05D9\u05D5\u05E4\u05D0\u05D5\u05E0\u05D3\u05DC\u05E0\u05D3',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05E0\u05D9\u05D5\u05E4\u05D0\u05D5\u05E0\u05D3\u05DC\u05E0\u05D3'
                         }
                     },
                     'Niue': {
                         'long': {
-                            'standard': 'שעון ניואה'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E0\u05D9\u05D5\u05D0\u05D4'
                         }
                     },
                     'Norfolk': {
                         'long': {
-                            'standard': 'שעון איי נורפולק'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05D9\u05D9 \u05E0\u05D5\u05E8\u05E4\u05D5\u05DC\u05E7'
                         }
                     },
                     'Noronha': {
                         'long': {
-                            'generic': 'שעון פרננדו דה נורוניה',
-                            'standard': 'שעון רגיל פרננדו דה נורוניה',
-                            'daylight': 'שעון קיץ פרננדו דה נורוניה'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05E4\u05E8\u05E0\u05E0\u05D3\u05D5 \u05D3\u05D4 \u05E0\u05D5\u05E8\u05D5\u05E0\u05D9\u05D4',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05E4\u05E8\u05E0\u05E0\u05D3\u05D5 \u05D3\u05D4 \u05E0\u05D5\u05E8\u05D5\u05E0\u05D9\u05D4',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05E4\u05E8\u05E0\u05E0\u05D3\u05D5 \u05D3\u05D4 \u05E0\u05D5\u05E8\u05D5\u05E0\u05D9\u05D4'
                         }
                     },
                     'Novosibirsk': {
                         'long': {
-                            'generic': 'שעון נובוסיבירסק',
-                            'standard': 'שעון רגיל נובוסיבירסק',
-                            'daylight': 'שעון קיץ נובוסיבירסק'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05E0\u05D5\u05D1\u05D5\u05E1\u05D9\u05D1\u05D9\u05E8\u05E1\u05E7',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05E0\u05D5\u05D1\u05D5\u05E1\u05D9\u05D1\u05D9\u05E8\u05E1\u05E7',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05E0\u05D5\u05D1\u05D5\u05E1\u05D9\u05D1\u05D9\u05E8\u05E1\u05E7'
                         }
                     },
                     'Omsk': {
                         'long': {
-                            'generic': 'שעון אומסק',
-                            'standard': 'שעון רגיל אומסק',
-                            'daylight': 'שעון קיץ אומסק'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05D5\u05DE\u05E1\u05E7',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05D0\u05D5\u05DE\u05E1\u05E7',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D0\u05D5\u05DE\u05E1\u05E7'
                         }
                     },
                     'Pakistan': {
                         'long': {
-                            'generic': 'שעון פקיסטן',
-                            'standard': 'שעון רגיל פקיסטן',
-                            'daylight': 'שעון קיץ פקיסטן'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05E4\u05E7\u05D9\u05E1\u05D8\u05DF',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05E4\u05E7\u05D9\u05E1\u05D8\u05DF',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05E4\u05E7\u05D9\u05E1\u05D8\u05DF'
                         }
                     },
                     'Palau': {
                         'long': {
-                            'standard': 'שעון פלאו'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E4\u05DC\u05D0\u05D5'
                         }
                     },
                     'Papua_New_Guinea': {
                         'long': {
-                            'standard': 'שעון פפואה גיניאה החדשה'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E4\u05E4\u05D5\u05D0\u05D4 \u05D2\u05D9\u05E0\u05D9\u05D0\u05D4 \u05D4\u05D7\u05D3\u05E9\u05D4'
                         }
                     },
                     'Paraguay': {
                         'long': {
-                            'generic': 'שעון פרגוואי',
-                            'standard': 'שעון רגיל פרגוואי',
-                            'daylight': 'שעון קיץ פרגוואי'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05E4\u05E8\u05D2\u05D5\u05D5\u05D0\u05D9',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05E4\u05E8\u05D2\u05D5\u05D5\u05D0\u05D9',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05E4\u05E8\u05D2\u05D5\u05D5\u05D0\u05D9'
                         }
                     },
                     'Peru': {
                         'long': {
-                            'generic': 'שעון פרו',
-                            'standard': 'שעון רגיל פרו',
-                            'daylight': 'שעון קיץ פרו'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05E4\u05E8\u05D5',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05E4\u05E8\u05D5',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05E4\u05E8\u05D5'
                         }
                     },
                     'Philippines': {
                         'long': {
-                            'generic': 'שעון הפיליפינים',
-                            'standard': 'שעון רגיל פיליפינים',
-                            'daylight': 'שעון קיץ הפיליפינים'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05D4\u05E4\u05D9\u05DC\u05D9\u05E4\u05D9\u05E0\u05D9\u05DD',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05E4\u05D9\u05DC\u05D9\u05E4\u05D9\u05E0\u05D9\u05DD',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05D4\u05E4\u05D9\u05DC\u05D9\u05E4\u05D9\u05E0\u05D9\u05DD'
                         }
                     },
                     'Phoenix_Islands': {
                         'long': {
-                            'standard': 'שעון איי פיניקס'
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05D0\u05D9\u05D9 \u05E4\u05D9\u05E0\u05D9\u05E7\u05E1'
                         }
                     },
                     'Pierre_Miquelon': {
                         'long': {
-                            'generic': 'שעון סנט פייר ומיקלון',
-                            'standard': 'שעון רגיל סנט פייר ומיקלון',
-                            'daylight': 'שעון קיץ סנט פייר ומיקלון'
+                            'generic': '\u05E9\u05E2\u05D5\u05DF \u05E1\u05E0\u05D8 \u05E4\u05D9\u05D9\u05E8 \u05D5\u05DE\u05D9\u05E7\u05DC\u05D5\u05DF',
+                            'standard': '\u05E9\u05E2\u05D5\u05DF \u05E8\u05D2\u05D9\u05DC \u05E1\u05E0\u05D8 \u05E4\u05D9\u05D9\u05E8 \u05D5\u05DE\u05D9\u05E7\u05DC\u05D5\u05DF',
+                            'daylight': '\u05E9\u05E2\u05D5\u05DF \u05E7\u05D9\u05E5 \u05E1\u05E0\u05D8 \u05E4\u05D9\u05D9\u05E8 \u05D5\u05DE\u05D9\u05E7\u05DC\u05D5\u05DF'
                         }
                     }
                 },
                 'hourFormat': '+HH:mm;-HH:mm',
                 'gmtFormat': 'GMT{0}',
                 'gmtZeroFormat': 'GMT',
-                'regionFormat': 'שעון {0}',
-                'regionFormat-type-daylight': 'שעון {0} (קיץ)',
-                'regionFormat-type-standard': 'שעון {0} (חורף)',
+                'regionFormat': '\u05E9\u05E2\u05D5\u05DF {0}',
+                'regionFormat-type-daylight': '\u05E9\u05E2\u05D5\u05DF {0} (\u05E7\u05D9\u05E5)',
+                'regionFormat-type-standard': '\u05E9\u05E2\u05D5\u05DF {0} (\u05D7\u05D5\u05E8\u05E3)',
                 'fallbackFormat': '{1} ({0})'
             },
             'calendars': {
@@ -2476,18 +2476,18 @@
                     'months': {
                         'format': {
                             'abbreviated': {
-                                '8': 'אוג',
-                                '7': 'יול',
-                                '6': 'יונ',
-                                '5': 'מאי',
-                                '12': 'דצמ',
-                                '11': 'נוב',
-                                '10': 'אוק',
-                                '9': 'ספט',
-                                '1': 'ינו',
-                                '2': 'פבר',
-                                '3': 'מרץ',
-                                '4': 'אפר'
+                                '8': '\u05D0\u05D5\u05D2',
+                                '7': '\u05D9\u05D5\u05DC',
+                                '6': '\u05D9\u05D5\u05E0',
+                                '5': '\u05DE\u05D0\u05D9',
+                                '12': '\u05D3\u05E6\u05DE',
+                                '11': '\u05E0\u05D5\u05D1',
+                                '10': '\u05D0\u05D5\u05E7',
+                                '9': '\u05E1\u05E4\u05D8',
+                                '1': '\u05D9\u05E0\u05D5',
+                                '2': '\u05E4\u05D1\u05E8',
+                                '3': '\u05DE\u05E8\u05E5',
+                                '4': '\u05D0\u05E4\u05E8'
                             },
                             'narrow': {
                                 '8': '8',
@@ -2504,34 +2504,34 @@
                                 '4': '4'
                             },
                             'wide': {
-                                '8': 'אוגוסט',
-                                '7': 'יולי',
-                                '6': 'יוני',
-                                '5': 'מאי',
-                                '12': 'דצמבר',
-                                '11': 'נובמבר',
-                                '10': 'אוקטובר',
-                                '9': 'ספטמבר',
-                                '1': 'ינואר',
-                                '2': 'פברואר',
-                                '3': 'מרץ',
-                                '4': 'אפריל'
+                                '8': '\u05D0\u05D5\u05D2\u05D5\u05E1\u05D8',
+                                '7': '\u05D9\u05D5\u05DC\u05D9',
+                                '6': '\u05D9\u05D5\u05E0\u05D9',
+                                '5': '\u05DE\u05D0\u05D9',
+                                '12': '\u05D3\u05E6\u05DE\u05D1\u05E8',
+                                '11': '\u05E0\u05D5\u05D1\u05DE\u05D1\u05E8',
+                                '10': '\u05D0\u05D5\u05E7\u05D8\u05D5\u05D1\u05E8',
+                                '9': '\u05E1\u05E4\u05D8\u05DE\u05D1\u05E8',
+                                '1': '\u05D9\u05E0\u05D5\u05D0\u05E8',
+                                '2': '\u05E4\u05D1\u05E8\u05D5\u05D0\u05E8',
+                                '3': '\u05DE\u05E8\u05E5',
+                                '4': '\u05D0\u05E4\u05E8\u05D9\u05DC'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
-                                '8': 'אוג׳',
-                                '7': 'יול׳',
-                                '6': 'יונ׳',
-                                '5': 'מאי',
-                                '12': 'דצמ׳',
-                                '11': 'נוב׳',
-                                '10': 'אוק׳',
-                                '9': 'ספט׳',
-                                '1': 'ינו׳',
-                                '2': 'פבר׳',
-                                '3': 'מרץ',
-                                '4': 'אפר׳'
+                                '8': '\u05D0\u05D5\u05D2\u05F3',
+                                '7': '\u05D9\u05D5\u05DC\u05F3',
+                                '6': '\u05D9\u05D5\u05E0\u05F3',
+                                '5': '\u05DE\u05D0\u05D9',
+                                '12': '\u05D3\u05E6\u05DE\u05F3',
+                                '11': '\u05E0\u05D5\u05D1\u05F3',
+                                '10': '\u05D0\u05D5\u05E7\u05F3',
+                                '9': '\u05E1\u05E4\u05D8\u05F3',
+                                '1': '\u05D9\u05E0\u05D5\u05F3',
+                                '2': '\u05E4\u05D1\u05E8\u05F3',
+                                '3': '\u05DE\u05E8\u05E5',
+                                '4': '\u05D0\u05E4\u05E8\u05F3'
                             },
                             'narrow': {
                                 '8': '8',
@@ -2548,106 +2548,106 @@
                                 '4': '4'
                             },
                             'wide': {
-                                '8': 'אוגוסט',
-                                '7': 'יולי',
-                                '6': 'יוני',
-                                '5': 'מאי',
-                                '12': 'דצמבר',
-                                '11': 'נובמבר',
-                                '10': 'אוקטובר',
-                                '9': 'ספטמבר',
-                                '1': 'ינואר',
-                                '2': 'פברואר',
-                                '3': 'מרץ',
-                                '4': 'אפריל'
+                                '8': '\u05D0\u05D5\u05D2\u05D5\u05E1\u05D8',
+                                '7': '\u05D9\u05D5\u05DC\u05D9',
+                                '6': '\u05D9\u05D5\u05E0\u05D9',
+                                '5': '\u05DE\u05D0\u05D9',
+                                '12': '\u05D3\u05E6\u05DE\u05D1\u05E8',
+                                '11': '\u05E0\u05D5\u05D1\u05DE\u05D1\u05E8',
+                                '10': '\u05D0\u05D5\u05E7\u05D8\u05D5\u05D1\u05E8',
+                                '9': '\u05E1\u05E4\u05D8\u05DE\u05D1\u05E8',
+                                '1': '\u05D9\u05E0\u05D5\u05D0\u05E8',
+                                '2': '\u05E4\u05D1\u05E8\u05D5\u05D0\u05E8',
+                                '3': '\u05DE\u05E8\u05E5',
+                                '4': '\u05D0\u05E4\u05E8\u05D9\u05DC'
                             }
                         }
                     },
                     'days': {
                         'format': {
                             'abbreviated': {
-                                'sun': 'יום א׳',
-                                'mon': 'יום ב׳',
-                                'tue': 'יום ג׳',
-                                'wed': 'יום ד׳',
-                                'thu': 'יום ה׳',
-                                'fri': 'יום ו׳',
-                                'sat': 'שבת'
+                                'sun': '\u05D9\u05D5\u05DD \u05D0\u05F3',
+                                'mon': '\u05D9\u05D5\u05DD \u05D1\u05F3',
+                                'tue': '\u05D9\u05D5\u05DD \u05D2\u05F3',
+                                'wed': '\u05D9\u05D5\u05DD \u05D3\u05F3',
+                                'thu': '\u05D9\u05D5\u05DD \u05D4\u05F3',
+                                'fri': '\u05D9\u05D5\u05DD \u05D5\u05F3',
+                                'sat': '\u05E9\u05D1\u05EA'
                             },
                             'narrow': {
-                                'sun': 'א׳',
-                                'mon': 'ב׳',
-                                'tue': 'ג׳',
-                                'wed': 'ד׳',
-                                'thu': 'ה׳',
-                                'fri': 'ו׳',
-                                'sat': 'ש׳'
+                                'sun': '\u05D0\u05F3',
+                                'mon': '\u05D1\u05F3',
+                                'tue': '\u05D2\u05F3',
+                                'wed': '\u05D3\u05F3',
+                                'thu': '\u05D4\u05F3',
+                                'fri': '\u05D5\u05F3',
+                                'sat': '\u05E9\u05F3'
                             },
                             'short': {
-                                'sun': 'א׳',
-                                'mon': 'ב׳',
-                                'tue': 'ג׳',
-                                'wed': 'ד׳',
-                                'thu': 'ה׳',
-                                'fri': 'ו׳',
-                                'sat': 'ש׳'
+                                'sun': '\u05D0\u05F3',
+                                'mon': '\u05D1\u05F3',
+                                'tue': '\u05D2\u05F3',
+                                'wed': '\u05D3\u05F3',
+                                'thu': '\u05D4\u05F3',
+                                'fri': '\u05D5\u05F3',
+                                'sat': '\u05E9\u05F3'
                             },
                             'wide': {
-                                'sun': 'יום ראשון',
-                                'mon': 'יום שני',
-                                'tue': 'יום שלישי',
-                                'wed': 'יום רביעי',
-                                'thu': 'יום חמישי',
-                                'fri': 'יום שישי',
-                                'sat': 'יום שבת'
+                                'sun': '\u05D9\u05D5\u05DD \u05E8\u05D0\u05E9\u05D5\u05DF',
+                                'mon': '\u05D9\u05D5\u05DD \u05E9\u05E0\u05D9',
+                                'tue': '\u05D9\u05D5\u05DD \u05E9\u05DC\u05D9\u05E9\u05D9',
+                                'wed': '\u05D9\u05D5\u05DD \u05E8\u05D1\u05D9\u05E2\u05D9',
+                                'thu': '\u05D9\u05D5\u05DD \u05D7\u05DE\u05D9\u05E9\u05D9',
+                                'fri': '\u05D9\u05D5\u05DD \u05E9\u05D9\u05E9\u05D9',
+                                'sat': '\u05D9\u05D5\u05DD \u05E9\u05D1\u05EA'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
-                                'sun': 'יום א׳',
-                                'mon': 'יום ב׳',
-                                'tue': 'יום ג׳',
-                                'wed': 'יום ד׳',
-                                'thu': 'יום ה׳',
-                                'fri': 'יום ו׳',
-                                'sat': 'שבת'
+                                'sun': '\u05D9\u05D5\u05DD \u05D0\u05F3',
+                                'mon': '\u05D9\u05D5\u05DD \u05D1\u05F3',
+                                'tue': '\u05D9\u05D5\u05DD \u05D2\u05F3',
+                                'wed': '\u05D9\u05D5\u05DD \u05D3\u05F3',
+                                'thu': '\u05D9\u05D5\u05DD \u05D4\u05F3',
+                                'fri': '\u05D9\u05D5\u05DD \u05D5\u05F3',
+                                'sat': '\u05E9\u05D1\u05EA'
                             },
                             'narrow': {
-                                'sun': 'א׳',
-                                'mon': 'ב׳',
-                                'tue': 'ג׳',
-                                'wed': 'ד׳',
-                                'thu': 'ה׳',
-                                'fri': 'ו׳',
-                                'sat': 'ש׳'
+                                'sun': '\u05D0\u05F3',
+                                'mon': '\u05D1\u05F3',
+                                'tue': '\u05D2\u05F3',
+                                'wed': '\u05D3\u05F3',
+                                'thu': '\u05D4\u05F3',
+                                'fri': '\u05D5\u05F3',
+                                'sat': '\u05E9\u05F3'
                             },
                             'short': {
-                                'sun': 'א׳',
-                                'mon': 'ב׳',
-                                'tue': 'ג׳',
-                                'wed': 'ד׳',
-                                'thu': 'ה׳',
-                                'fri': 'ו׳',
-                                'sat': 'ש׳'
+                                'sun': '\u05D0\u05F3',
+                                'mon': '\u05D1\u05F3',
+                                'tue': '\u05D2\u05F3',
+                                'wed': '\u05D3\u05F3',
+                                'thu': '\u05D4\u05F3',
+                                'fri': '\u05D5\u05F3',
+                                'sat': '\u05E9\u05F3'
                             },
                             'wide': {
-                                'sun': 'יום ראשון',
-                                'mon': 'יום שני',
-                                'tue': 'יום שלישי',
-                                'wed': 'יום רביעי',
-                                'thu': 'יום חמישי',
-                                'fri': 'יום שישי',
-                                'sat': 'יום שבת'
+                                'sun': '\u05D9\u05D5\u05DD \u05E8\u05D0\u05E9\u05D5\u05DF',
+                                'mon': '\u05D9\u05D5\u05DD \u05E9\u05E0\u05D9',
+                                'tue': '\u05D9\u05D5\u05DD \u05E9\u05DC\u05D9\u05E9\u05D9',
+                                'wed': '\u05D9\u05D5\u05DD \u05E8\u05D1\u05D9\u05E2\u05D9',
+                                'thu': '\u05D9\u05D5\u05DD \u05D7\u05DE\u05D9\u05E9\u05D9',
+                                'fri': '\u05D9\u05D5\u05DD \u05E9\u05D9\u05E9\u05D9',
+                                'sat': '\u05D9\u05D5\u05DD \u05E9\u05D1\u05EA'
                             }
                         }
                     },
                     'quarters': {
                         'format': {
                             'abbreviated': {
-                                '1': 'רבעון 1',
-                                '2': 'רבעון 2',
-                                '3': 'רבעון 3',
-                                '4': 'רבעון 4'
+                                '1': '\u05E8\u05D1\u05E2\u05D5\u05DF 1',
+                                '2': '\u05E8\u05D1\u05E2\u05D5\u05DF 2',
+                                '3': '\u05E8\u05D1\u05E2\u05D5\u05DF 3',
+                                '4': '\u05E8\u05D1\u05E2\u05D5\u05DF 4'
                             },
                             'narrow': {
                                 '1': '1',
@@ -2656,87 +2656,87 @@
                                 '4': '4'
                             },
                             'wide': {
-                                '1': 'רבעון 1',
-                                '2': 'רבעון 2',
-                                '3': 'רבעון 3',
-                                '4': 'רבעון 4'
+                                '1': '\u05E8\u05D1\u05E2\u05D5\u05DF 1',
+                                '2': '\u05E8\u05D1\u05E2\u05D5\u05DF 2',
+                                '3': '\u05E8\u05D1\u05E2\u05D5\u05DF 3',
+                                '4': '\u05E8\u05D1\u05E2\u05D5\u05DF 4'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
-                                '1': 'רבעון 1',
-                                '2': 'רבעון 2',
-                                '3': 'רבעון 3',
-                                '4': 'רבעון 4'
+                                '1': '\u05E8\u05D1\u05E2\u05D5\u05DF 1',
+                                '2': '\u05E8\u05D1\u05E2\u05D5\u05DF 2',
+                                '3': '\u05E8\u05D1\u05E2\u05D5\u05DF 3',
+                                '4': '\u05E8\u05D1\u05E2\u05D5\u05DF 4'
                             },
                             'narrow': {
-                                '1': 'ר1',
-                                '2': 'ר2',
-                                '3': 'ר3',
-                                '4': 'ר4'
+                                '1': '\u05E81',
+                                '2': '\u05E82',
+                                '3': '\u05E83',
+                                '4': '\u05E84'
                             },
                             'wide': {
-                                '1': 'רבעון 1',
-                                '2': 'רבעון 2',
-                                '3': 'רבעון 3',
-                                '4': 'רבעון 4'
+                                '1': '\u05E8\u05D1\u05E2\u05D5\u05DF 1',
+                                '2': '\u05E8\u05D1\u05E2\u05D5\u05DF 2',
+                                '3': '\u05E8\u05D1\u05E2\u05D5\u05DF 3',
+                                '4': '\u05E8\u05D1\u05E2\u05D5\u05DF 4'
                             }
                         }
                     },
                     'dayPeriods': {
                         'format': {
                             'abbreviated': {
-                                'am': 'לפנה״צ',
-                                'pm': 'אחה״צ'
+                                'am': '\u05DC\u05E4\u05E0\u05D4\u05F4\u05E6',
+                                'pm': '\u05D0\u05D7\u05D4\u05F4\u05E6'
                             },
                             'narrow': {
-                                'am': 'לפנה״צ',
-                                'pm': 'אחה״צ'
+                                'am': '\u05DC\u05E4\u05E0\u05D4\u05F4\u05E6',
+                                'pm': '\u05D0\u05D7\u05D4\u05F4\u05E6'
                             },
                             'wide': {
-                                'am': 'לפנה״צ',
-                                'pm': 'אחה״צ'
+                                'am': '\u05DC\u05E4\u05E0\u05D4\u05F4\u05E6',
+                                'pm': '\u05D0\u05D7\u05D4\u05F4\u05E6'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
-                                'am': 'לפנה״צ',
-                                'pm': 'אחה״צ'
+                                'am': '\u05DC\u05E4\u05E0\u05D4\u05F4\u05E6',
+                                'pm': '\u05D0\u05D7\u05D4\u05F4\u05E6'
                             },
                             'narrow': {
-                                'am': 'לפנה״צ',
-                                'pm': 'אחה״צ'
+                                'am': '\u05DC\u05E4\u05E0\u05D4\u05F4\u05E6',
+                                'pm': '\u05D0\u05D7\u05D4\u05F4\u05E6'
                             },
                             'wide': {
-                                'am': 'לפנה״צ',
-                                'pm': 'אחה״צ'
+                                'am': '\u05DC\u05E4\u05E0\u05D4\u05F4\u05E6',
+                                'pm': '\u05D0\u05D7\u05D4\u05F4\u05E6'
                             }
                         }
                     },
                     'eras': {
                         'eraNames': {
-                            '0': 'לפני הספירה',
+                            '0': '\u05DC\u05E4\u05E0\u05D9 \u05D4\u05E1\u05E4\u05D9\u05E8\u05D4',
                             '0-alt-variant': 'BCE',
-                            '1': 'לספירה',
+                            '1': '\u05DC\u05E1\u05E4\u05D9\u05E8\u05D4',
                             '1-alt-variant': 'CE'
                         },
                         'eraAbbr': {
-                            '0': 'לפנה״ס',
+                            '0': '\u05DC\u05E4\u05E0\u05D4\u05F4\u05E1',
                             '0-alt-variant': 'BCE',
-                            '1': 'לסה״נ',
+                            '1': '\u05DC\u05E1\u05D4\u05F4\u05E0',
                             '1-alt-variant': 'CE'
                         },
                         'eraNarrow': {
-                            '0': 'לפנה״ס',
+                            '0': '\u05DC\u05E4\u05E0\u05D4\u05F4\u05E1',
                             '0-alt-variant': 'BCE',
-                            '1': 'לסה״נ',
+                            '1': '\u05DC\u05E1\u05D4\u05F4\u05E0',
                             '1-alt-variant': 'CE'
                         }
                     },
                     'dateFormats': {
-                        'full': 'EEEE, d בMMMM y',
-                        'long': 'd בMMMM y',
-                        'medium': 'd בMMM y',
+                        'full': 'EEEE, d \u05D1MMMM y',
+                        'long': 'd \u05D1MMMM y',
+                        'medium': 'd \u05D1MMM y',
                         'short': 'dd/MM/yy'
                     },
                     'timeFormats': {
@@ -2746,21 +2746,21 @@
                         'short': 'HH:mm'
                     },
                     'dateTimeFormats': {
-                        'full': '{1} בשעה {0}',
-                        'long': '{1} בשעה {0}',
+                        'full': '{1} \u05D1\u05E9\u05E2\u05D4 {0}',
+                        'long': '{1} \u05D1\u05E9\u05E2\u05D4 {0}',
                         'medium': '{1}, {0}',
                         'short': '{1}, {0}',
                         'availableFormats': {
                             'yMMMM': 'MMMM y',
-                            'yMMMEd': 'E, d בMMM y',
+                            'yMMMEd': 'E, d \u05D1MMM y',
                             'EHms': 'E H:mm:ss',
                             'Ehms': 'E h:mm:ss a',
                             'EHm': 'E H:mm',
                             'Ehm': 'E h:mm a',
-                            'Ed': 'E ה-d',
+                            'Ed': 'E \u05D4-d',
                             'd': 'd',
-                            'GyMMMd': 'd בMMM y G',
-                            'GyMMMEd': 'E, d בMMM y G',
+                            'GyMMMd': 'd \u05D1MMM y G',
+                            'GyMMMEd': 'E, d \u05D1MMM y G',
                             'yQQQQ': 'y QQQQ',
                             'yQQQ': 'y QQQ',
                             'Hms': 'HH:mm:ss',
@@ -2768,15 +2768,15 @@
                             'Hm': 'HH:mm',
                             'hm': 'h:mm a',
                             'H': 'HH',
-                            'h': '‏h a',
+                            'h': '\u200Fh a',
                             'Gy': 'y G',
                             'GyMMM': 'MMM y G',
                             'M': 'L',
                             'Md': 'd/M',
                             'MEd': 'E, d/M',
                             'MMM': 'LLL',
-                            'MMMd': 'd בMMM',
-                            'MMMEd': 'E, d בMMM',
+                            'MMMd': 'd \u05D1MMM',
+                            'MMMEd': 'E, d \u05D1MMM',
                             'ms': 'mm:ss',
                             'y': 'y',
                             'yM': 'M.y',
@@ -2784,7 +2784,7 @@
                             'yMEd': 'E, d/M/y',
                             'yMM': 'MM/y',
                             'yMMM': 'MMM y',
-                            'yMMMd': 'd בMMM y'
+                            'yMMMd': 'd \u05D1MMM y'
                         },
                         'appendItems': {
                             'Second': '{0} ({2}: {1})',
@@ -2835,7 +2835,7 @@
                             },
                             'yM': {
                                 'M': 'M.y\u2013M.y',
-                                'y': 'M.y‏-M.y'
+                                'y': 'M.y\u200F-M.y'
                             },
                             'yMd': {
                                 'd': 'dd.M.y \u2013 dd.M.y',

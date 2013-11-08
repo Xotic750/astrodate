@@ -43,165 +43,165 @@
         AstroDate.lang('hu', {
             'codePatterns': {
                 'language': 'Nyelv: {0}',
-                'script': 'Írásrendszer: {0}',
-                'territory': 'Régió: {0}'
+                'script': '\u00CDr\u00E1srendszer: {0}',
+                'territory': 'R\u00E9gi\u00F3: {0}'
             },
             'types': {
                 'colHiraganaQuaternary': {
-                    'no': 'Kanák rendezése külön',
-                    'yes': 'Kanák megkülönböztető rendezése'
+                    'no': 'Kan\u00E1k rendez\u00E9se k\u00FCl\u00F6n',
+                    'yes': 'Kan\u00E1k megk\u00FCl\u00F6nb\u00F6ztet\u0151 rendez\u00E9se'
                 },
                 'colCaseLevel': {
-                    'no': 'Kis- és nagybetűket meg nem különböztető rendezés',
-                    'yes': 'Rendezés kisbetű-nagybetű szerint'
+                    'no': 'Kis- \u00E9s nagybet\u0171ket meg nem k\u00FCl\u00F6nb\u00F6ztet\u0151 rendez\u00E9s',
+                    'yes': 'Rendez\u00E9s kisbet\u0171-nagybet\u0171 szerint'
                 },
                 'colCaseFirst': {
-                    'lower': 'Kisbetűs szavak rendezése előre',
-                    'no': 'Kisbetűs-nagybetűs szavak normál rendezése',
-                    'upper': 'Nagybetűs szavak rendezése előre'
+                    'lower': 'Kisbet\u0171s szavak rendez\u00E9se el\u0151re',
+                    'no': 'Kisbet\u0171s-nagybet\u0171s szavak norm\u00E1l rendez\u00E9se',
+                    'upper': 'Nagybet\u0171s szavak rendez\u00E9se el\u0151re'
                 },
                 'colStrength': {
-                    'identical': 'Összes rendezése',
-                    'primary': 'Csak az alapbetűk rendezése',
-                    'quaternary': 'Ékezetek/kisbetű-nagybetű/szélesség/kanák rendezése',
-                    'secondary': 'Ékezetek rendezése',
-                    'tertiary': 'Ékezetek/kisbetű-nagybetű/szélesség rendezése'
+                    'identical': '\u00D6sszes rendez\u00E9se',
+                    'primary': 'Csak az alapbet\u0171k rendez\u00E9se',
+                    'quaternary': '\u00C9kezetek/kisbet\u0171-nagybet\u0171/sz\u00E9less\u00E9g/kan\u00E1k rendez\u00E9se',
+                    'secondary': '\u00C9kezetek rendez\u00E9se',
+                    'tertiary': '\u00C9kezetek/kisbet\u0171-nagybet\u0171/sz\u00E9less\u00E9g rendez\u00E9se'
                 },
                 'colNumeric': {
-                    'no': 'Számjegyek egyedi rendezése',
-                    'yes': 'Számjegyek numerikus rendezése'
+                    'no': 'Sz\u00E1mjegyek egyedi rendez\u00E9se',
+                    'yes': 'Sz\u00E1mjegyek numerikus rendez\u00E9se'
                 },
                 'colNormalization': {
-                    'no': 'Rendezés normalizálás nélkül',
-                    'yes': 'Unicode szerinti normalizált rendezés'
+                    'no': 'Rendez\u00E9s normaliz\u00E1l\u00E1s n\u00E9lk\u00FCl',
+                    'yes': 'Unicode szerinti normaliz\u00E1lt rendez\u00E9s'
                 },
                 'calendar': {
-                    'japanese': 'Japán naptár',
+                    'japanese': 'Jap\u00E1n napt\u00E1r',
                     'iso8601': 'iso8601',
-                    'coptic': 'Kopt naptár',
+                    'coptic': 'Kopt napt\u00E1r',
                     'dangi': 'dangi',
-                    'ethiopic': 'Etióp naptár',
-                    'ethiopic-amete-alem': 'Etióp amete alem naptár',
-                    'gregorian': 'Gergely-naptár',
-                    'hebrew': 'Héber naptár',
-                    'persian': 'Perzsa naptár',
-                    'roc': 'Kínai köztársasági naptár',
-                    'chinese': 'Kínai naptár',
-                    'buddhist': 'Buddhista naptár',
-                    'indian': 'Indiai nemzeti naptár',
-                    'islamic': 'Iszlám naptár',
-                    'islamic-civil': 'Iszlám civil naptár',
+                    'ethiopic': 'Eti\u00F3p napt\u00E1r',
+                    'ethiopic-amete-alem': 'Eti\u00F3p amete alem napt\u00E1r',
+                    'gregorian': 'Gergely-napt\u00E1r',
+                    'hebrew': 'H\u00E9ber napt\u00E1r',
+                    'persian': 'Perzsa napt\u00E1r',
+                    'roc': 'K\u00EDnai k\u00F6zt\u00E1rsas\u00E1gi napt\u00E1r',
+                    'chinese': 'K\u00EDnai napt\u00E1r',
+                    'buddhist': 'Buddhista napt\u00E1r',
+                    'indian': 'Indiai nemzeti napt\u00E1r',
+                    'islamic': 'Iszl\u00E1m napt\u00E1r',
+                    'islamic-civil': 'Iszl\u00E1m civil napt\u00E1r',
                     'islamic-rgsa': 'islamic-rgsa',
                     'islamic-tbla': 'islamic-tbla',
                     'islamic-umalqura': 'islamic-umalqura'
                 },
                 'collation': {
-                    'phonebook': 'Telefonkönyv sorrend',
-                    'gb2312han': 'Egyszerűsített kínai sorrend - GB2312',
+                    'phonebook': 'Telefonk\u00F6nyv sorrend',
+                    'gb2312han': 'Egyszer\u0171s\u00EDtett k\u00EDnai sorrend - GB2312',
                     'eor': 'eor',
-                    'ducet': 'Alapértelmezett Unicode rendezési sorrend',
-                    'dictionary': 'Szótári rendezési sorrend',
-                    'big5han': 'Hagyományos kínai sorrend - Big5',
-                    'traditional': 'Hagyományos',
-                    'standard': 'Normál rendezési sorrend',
+                    'ducet': 'Alap\u00E9rtelmezett Unicode rendez\u00E9si sorrend',
+                    'dictionary': 'Sz\u00F3t\u00E1ri rendez\u00E9si sorrend',
+                    'big5han': 'Hagyom\u00E1nyos k\u00EDnai sorrend - Big5',
+                    'traditional': 'Hagyom\u00E1nyos',
+                    'standard': 'Norm\u00E1l rendez\u00E9si sorrend',
                     'zhuyin': 'zhuyin',
-                    'unihan': 'Szótővonás rendezési sorrend',
-                    'stroke': 'Vonássorrend',
-                    'searchjl': 'Keresés hangul kezdő mássalhangzó szerint',
-                    'search': 'Általános célú keresés',
-                    'reformed': 'Átalakított rendezési elv',
+                    'unihan': 'Sz\u00F3t\u0151von\u00E1s rendez\u00E9si sorrend',
+                    'stroke': 'Von\u00E1ssorrend',
+                    'searchjl': 'Keres\u00E9s hangul kezd\u0151 m\u00E1ssalhangz\u00F3 szerint',
+                    'search': '\u00C1ltal\u00E1nos c\u00E9l\u00FA keres\u00E9s',
+                    'reformed': '\u00C1talak\u00EDtott rendez\u00E9si elv',
                     'pinyin': 'Pinyin sorrend',
-                    'phonetic': 'Fonetikus rendezési sorrend'
+                    'phonetic': 'Fonetikus rendez\u00E9si sorrend'
                 },
                 'numbers': {
-                    'knda': 'Kannada számjegyek',
-                    'khmr': 'Khmer számjegyek',
+                    'knda': 'Kannada sz\u00E1mjegyek',
+                    'khmr': 'Khmer sz\u00E1mjegyek',
                     'kali': 'kali',
-                    'jpanfin': 'Japán pénzügyi számok',
-                    'jpan': 'Japán számok',
+                    'jpanfin': 'Jap\u00E1n p\u00E9nz\u00FCgyi sz\u00E1mok',
+                    'jpan': 'Jap\u00E1n sz\u00E1mok',
                     'java': 'java',
-                    'hebr': 'Héber számok',
-                    'hantfin': 'Hagyományos kínai pénzügyi számok',
-                    'hant': 'Hagyományos kínai számok',
-                    'hansfin': 'Egyszerűsített kínai pénzügyi számok',
-                    'hans': 'Egyszerűsített kínai számok',
-                    'hanidec': 'Kínai tizedes számok',
-                    'guru': 'Gurmuki számjegyek',
-                    'gujr': 'Gudzsaráti számjegyek',
-                    'greklow': 'Görög kisbetűs számok',
-                    'grek': 'Görög számok',
+                    'hebr': 'H\u00E9ber sz\u00E1mok',
+                    'hantfin': 'Hagyom\u00E1nyos k\u00EDnai p\u00E9nz\u00FCgyi sz\u00E1mok',
+                    'hant': 'Hagyom\u00E1nyos k\u00EDnai sz\u00E1mok',
+                    'hansfin': 'Egyszer\u0171s\u00EDtett k\u00EDnai p\u00E9nz\u00FCgyi sz\u00E1mok',
+                    'hans': 'Egyszer\u0171s\u00EDtett k\u00EDnai sz\u00E1mok',
+                    'hanidec': 'K\u00EDnai tizedes sz\u00E1mok',
+                    'guru': 'Gurmuki sz\u00E1mjegyek',
+                    'gujr': 'Gudzsar\u00E1ti sz\u00E1mjegyek',
+                    'greklow': 'G\u00F6r\u00F6g kisbet\u0171s sz\u00E1mok',
+                    'grek': 'G\u00F6r\u00F6g sz\u00E1mok',
                     'bali': 'bali',
-                    'armnlow': 'Örmény kisbetűs számok',
-                    'armn': 'Örmény számok',
-                    'arabext': 'Kibővített arab-indiai számjegyek',
-                    'arab': 'Arab-indiai számjegyek',
-                    'finance': 'Pénzügyi számok',
-                    'traditional': 'Hagyományos számok',
-                    'native': 'Natív számjegyek',
-                    'beng': 'Bengáli számjegyek',
+                    'armnlow': '\u00D6rm\u00E9ny kisbet\u0171s sz\u00E1mok',
+                    'armn': '\u00D6rm\u00E9ny sz\u00E1mok',
+                    'arabext': 'Kib\u0151v\u00EDtett arab-indiai sz\u00E1mjegyek',
+                    'arab': 'Arab-indiai sz\u00E1mjegyek',
+                    'finance': 'P\u00E9nz\u00FCgyi sz\u00E1mok',
+                    'traditional': 'Hagyom\u00E1nyos sz\u00E1mok',
+                    'native': 'Nat\u00EDv sz\u00E1mjegyek',
+                    'beng': 'Beng\u00E1li sz\u00E1mjegyek',
                     'brah': 'brah',
                     'cakm': 'cakm',
                     'cham': 'cham',
-                    'deva': 'Dévanágari számjegyek',
-                    'orya': 'Orija számjegyek',
+                    'deva': 'D\u00E9van\u00E1gari sz\u00E1mjegyek',
+                    'orya': 'Orija sz\u00E1mjegyek',
                     'osma': 'osma',
-                    'roman': 'Római számok',
-                    'romanlow': 'Római kisbetűs számok',
+                    'roman': 'R\u00F3mai sz\u00E1mok',
+                    'romanlow': 'R\u00F3mai kisbet\u0171s sz\u00E1mok',
                     'saur': 'saur',
                     'shrd': 'shrd',
                     'sora': 'sora',
                     'sund': 'sund',
-                    'vaii': 'Vai számjegyek',
-                    'tibt': 'Tibeti számjegyek',
-                    'thai': 'Thai számjegyek',
-                    'telu': 'Telugu számjegyek',
-                    'tamldec': 'Tamil számjegyek',
-                    'taml': 'Tamil hagyományos számok',
+                    'vaii': 'Vai sz\u00E1mjegyek',
+                    'tibt': 'Tibeti sz\u00E1mjegyek',
+                    'thai': 'Thai sz\u00E1mjegyek',
+                    'telu': 'Telugu sz\u00E1mjegyek',
+                    'tamldec': 'Tamil sz\u00E1mjegyek',
+                    'taml': 'Tamil hagyom\u00E1nyos sz\u00E1mok',
                     'talu': 'talu',
                     'takr': 'takr',
                     'olck': 'olck',
                     'nkoo': 'nkoo',
                     'mymrshan': 'mymrshan',
-                    'mymr': 'Mianmari számjegyek',
+                    'mymr': 'Mianmari sz\u00E1mjegyek',
                     'mtei': 'mtei',
-                    'mong': 'Mongol számjegyek',
-                    'mlym': 'Malajálam számjegyek',
+                    'mong': 'Mongol sz\u00E1mjegyek',
+                    'mlym': 'Malaj\u00E1lam sz\u00E1mjegyek',
                     'limb': 'limb',
                     'lepc': 'lepc',
-                    'latn': 'Nyugati számjegyek',
-                    'laoo': 'Lao számjegyek',
+                    'latn': 'Nyugati sz\u00E1mjegyek',
+                    'laoo': 'Lao sz\u00E1mjegyek',
                     'lanatham': 'lanatham',
                     'lana': 'lana',
-                    'geor': 'Grúz számok',
-                    'fullwide': 'Teljes szélességű számjegyek',
-                    'ethi': 'Etióp számok'
+                    'geor': 'Gr\u00FAz sz\u00E1mok',
+                    'fullwide': 'Teljes sz\u00E9less\u00E9g\u0171 sz\u00E1mjegyek',
+                    'ethi': 'Eti\u00F3p sz\u00E1mok'
                 },
                 'colAlternate': {
-                    'non-ignorable': 'Szimbólumok rendezése',
-                    'shifted': 'Rendezés szimbólumok figyelmen kívül hagyásával'
+                    'non-ignorable': 'Szimb\u00F3lumok rendez\u00E9se',
+                    'shifted': 'Rendez\u00E9s szimb\u00F3lumok figyelmen k\u00EDv\u00FCl hagy\u00E1s\u00E1val'
                 },
                 'colBackwards': {
-                    'no': 'Ékezetek normál rendezése',
-                    'yes': 'Ékezetek szerinti fordított rendezés'
+                    'no': '\u00C9kezetek norm\u00E1l rendez\u00E9se',
+                    'yes': '\u00C9kezetek szerinti ford\u00EDtott rendez\u00E9s'
                 }
             },
             'keys': {
-                'colNormalization': 'Normalizált rendezés',
-                'collation': 'Rendezési sorrend',
-                'colHiraganaQuaternary': 'Kanák szerinti rendezés',
-                'colCaseLevel': 'Kisbetű-nagybetű érzékeny rendezés',
-                'colCaseFirst': 'Rendezés nagy- vagy kisbetűk szerint',
-                'colBackwards': 'Ékezetek fordított rendezése',
-                'colAlternate': 'Szimbólumokat figyelmen kívül hagyó rendezés',
-                'calendar': 'Naptár',
-                'x': 'Privát használatra',
-                'variableTop': 'Rendezés szimbólumok szerint',
-                'va': 'Földrajzi helyvariáns',
-                'timezone': 'Időzóna',
-                'numbers': 'Számok',
-                'currency': 'Pénznem',
-                'colStrength': 'Rendezés erőssége',
-                'colNumeric': 'Numerikus rendezés'
+                'colNormalization': 'Normaliz\u00E1lt rendez\u00E9s',
+                'collation': 'Rendez\u00E9si sorrend',
+                'colHiraganaQuaternary': 'Kan\u00E1k szerinti rendez\u00E9s',
+                'colCaseLevel': 'Kisbet\u0171-nagybet\u0171 \u00E9rz\u00E9keny rendez\u00E9s',
+                'colCaseFirst': 'Rendez\u00E9s nagy- vagy kisbet\u0171k szerint',
+                'colBackwards': '\u00C9kezetek ford\u00EDtott rendez\u00E9se',
+                'colAlternate': 'Szimb\u00F3lumokat figyelmen k\u00EDv\u00FCl hagy\u00F3 rendez\u00E9s',
+                'calendar': 'Napt\u00E1r',
+                'x': 'Priv\u00E1t haszn\u00E1latra',
+                'variableTop': 'Rendez\u00E9s szimb\u00F3lumok szerint',
+                'va': 'F\u00F6ldrajzi helyvari\u00E1ns',
+                'timezone': 'Id\u0151z\u00F3na',
+                'numbers': 'Sz\u00E1mok',
+                'currency': 'P\u00E9nznem',
+                'colStrength': 'Rendez\u00E9s er\u0151ss\u00E9ge',
+                'colNumeric': 'Numerikus rendez\u00E9s'
             },
             'localeDisplayPattern': {
                 'localePattern': '{0} ({1})',
@@ -281,7 +281,7 @@
                             'exemplarCity': 'Chatham-szigetek'
                         },
                         'Easter': {
-                            'exemplarCity': 'Húsvét-szigetek'
+                            'exemplarCity': 'H\u00FAsv\u00E9t-szigetek'
                         },
                         'Efate': {
                             'exemplarCity': 'Efate'
@@ -299,10 +299,10 @@
                             'exemplarCity': 'Kosrae-szigetek'
                         },
                         'Kwajalein': {
-                            'exemplarCity': 'Kwajalein-zátony'
+                            'exemplarCity': 'Kwajalein-z\u00E1tony'
                         },
                         'Majuro': {
-                            'exemplarCity': 'Majuro-zátony'
+                            'exemplarCity': 'Majuro-z\u00E1tony'
                         },
                         'Marquesas': {
                             'exemplarCity': 'Marquesas-szigetek'
@@ -366,7 +366,7 @@
                     },
                     'Indian': {
                         'Maldives': {
-                            'exemplarCity': 'Maldív-szigetek'
+                            'exemplarCity': 'Mald\u00EDv-szigetek'
                         },
                         'Mahe': {
                             'exemplarCity': 'Mahe'
@@ -375,7 +375,7 @@
                             'exemplarCity': 'Kerguelen'
                         },
                         'Reunion': {
-                            'exemplarCity': 'Réunion'
+                            'exemplarCity': 'R\u00E9union'
                         },
                         'Mayotte': {
                             'exemplarCity': 'Mayotte'
@@ -390,13 +390,13 @@
                             'exemplarCity': 'Chagos'
                         },
                         'Christmas': {
-                            'exemplarCity': 'Karácsony-sziget'
+                            'exemplarCity': 'Kar\u00E1csony-sziget'
                         },
                         'Cocos': {
-                            'exemplarCity': 'Kókusz-sziget'
+                            'exemplarCity': 'K\u00F3kusz-sziget'
                         },
                         'Comoro': {
-                            'exemplarCity': 'Komoró'
+                            'exemplarCity': 'Komor\u00F3'
                         }
                     },
                     'Etc': {
@@ -458,7 +458,7 @@
                             'exemplarCity': 'GMT-9'
                         },
                         'Unknown': {
-                            'exemplarCity': 'Ismeretlen város'
+                            'exemplarCity': 'Ismeretlen v\u00E1ros'
                         },
                         'GMT-2': {
                             'exemplarCity': 'GMT-2'
@@ -502,7 +502,7 @@
                             'exemplarCity': 'Syowa'
                         },
                         'South_Pole': {
-                            'exemplarCity': 'Déli-sark'
+                            'exemplarCity': 'D\u00E9li-sark'
                         },
                         'Casey': {
                             'exemplarCity': 'Casey'
@@ -548,7 +548,7 @@
                             'exemplarCity': 'Chicago'
                         },
                         'Cayman': {
-                            'exemplarCity': 'Kajmán-szigetek'
+                            'exemplarCity': 'Kajm\u00E1n-szigetek'
                         },
                         'Cayenne': {
                             'exemplarCity': 'Cayenne'
@@ -560,7 +560,7 @@
                             'exemplarCity': 'Caracas'
                         },
                         'Cancun': {
-                            'exemplarCity': 'Cancún'
+                            'exemplarCity': 'Canc\u00FAn'
                         },
                         'Campo_Grande': {
                             'exemplarCity': 'Campo Grande'
@@ -575,14 +575,14 @@
                             'exemplarCity': 'Boise'
                         },
                         'Asuncion': {
-                            'exemplarCity': 'Asunción'
+                            'exemplarCity': 'Asunci\u00F3n'
                         },
                         'Aruba': {
                             'exemplarCity': 'Aruba'
                         },
                         'Argentina': {
                             'Rio_Gallegos': {
-                                'exemplarCity': 'Río Gallegos'
+                                'exemplarCity': 'R\u00EDo Gallegos'
                             },
                             'San_Juan': {
                                 'exemplarCity': 'San Juan'
@@ -600,11 +600,11 @@
                                 'exemplarCity': 'Salta'
                             },
                             'Tucuman': {
-                                'exemplarCity': 'Tucumán'
+                                'exemplarCity': 'Tucum\u00E1n'
                             }
                         },
                         'Araguaina': {
-                            'exemplarCity': 'Araguaína'
+                            'exemplarCity': 'Aragua\u00EDna'
                         },
                         'Antigua': {
                             'exemplarCity': 'Antigua'
@@ -628,7 +628,7 @@
                             'exemplarCity': 'Barbados'
                         },
                         'Belem': {
-                            'exemplarCity': 'Belém'
+                            'exemplarCity': 'Bel\u00E9m'
                         },
                         'Belize': {
                             'exemplarCity': 'Belize'
@@ -640,7 +640,7 @@
                             'exemplarCity': 'Boa Vista'
                         },
                         'Bogota': {
-                            'exemplarCity': 'Bogotá'
+                            'exemplarCity': 'Bogot\u00E1'
                         },
                         'Curacao': {
                             'exemplarCity': 'Curacao'
@@ -770,7 +770,7 @@
                             'exemplarCity': 'Salvador'
                         },
                         'Eirunepe': {
-                            'exemplarCity': 'Eirunepé'
+                            'exemplarCity': 'Eirunep\u00E9'
                         },
                         'Edmonton': {
                             'exemplarCity': 'Edmonton'
@@ -785,7 +785,7 @@
                             'exemplarCity': 'Atikokan'
                         },
                         'Cordoba': {
-                            'exemplarCity': 'Córdoba'
+                            'exemplarCity': 'C\u00F3rdoba'
                         },
                         'Costa_Rica': {
                             'exemplarCity': 'Costa Rica'
@@ -794,7 +794,7 @@
                             'exemplarCity': 'Creston'
                         },
                         'Cuiaba': {
-                            'exemplarCity': 'Cuiabá'
+                            'exemplarCity': 'Cuiab\u00E1'
                         },
                         'La_Paz': {
                             'exemplarCity': 'La Paz'
@@ -809,10 +809,10 @@
                             'exemplarCity': 'Louisville'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': 'Lower Prince\'s Quarter'
+                            'exemplarCity': "Lower Prince's Quarter"
                         },
                         'Maceio': {
-                            'exemplarCity': 'Maceió'
+                            'exemplarCity': 'Macei\u00F3'
                         },
                         'Managua': {
                             'exemplarCity': 'Managua'
@@ -830,7 +830,7 @@
                             'exemplarCity': 'Matamoros'
                         },
                         'Mazatlan': {
-                            'exemplarCity': 'Mazatlán'
+                            'exemplarCity': 'Mazatl\u00E1n'
                         },
                         'Mendoza': {
                             'exemplarCity': 'Mendoza'
@@ -839,13 +839,13 @@
                             'exemplarCity': 'Menominee'
                         },
                         'Merida': {
-                            'exemplarCity': 'Mérida'
+                            'exemplarCity': 'M\u00E9rida'
                         },
                         'Metlakatla': {
                             'exemplarCity': 'Metlakatla'
                         },
                         'Mexico_City': {
-                            'exemplarCity': 'Mexikóváros'
+                            'exemplarCity': 'Mexik\u00F3v\u00E1ros'
                         },
                         'Miquelon': {
                             'exemplarCity': 'Miquelon'
@@ -882,13 +882,13 @@
                         },
                         'North_Dakota': {
                             'Beulah': {
-                                'exemplarCity': 'Beulah, Észak-Dakota'
+                                'exemplarCity': 'Beulah, \u00C9szak-Dakota'
                             },
                             'New_Salem': {
-                                'exemplarCity': 'New Salem, Észak-Dakota'
+                                'exemplarCity': 'New Salem, \u00C9szak-Dakota'
                             },
                             'Center': {
-                                'exemplarCity': 'Középső, Észak-Dakota'
+                                'exemplarCity': 'K\u00F6z\u00E9ps\u0151, \u00C9szak-Dakota'
                             }
                         },
                         'Ojinaga': {
@@ -934,7 +934,7 @@
                             'exemplarCity': 'Resolute'
                         },
                         'Rio_Branco': {
-                            'exemplarCity': 'Río Branco'
+                            'exemplarCity': 'R\u00EDo Branco'
                         },
                         'Santa_Isabel': {
                             'exemplarCity': 'Santa Isabel'
@@ -949,7 +949,7 @@
                             'exemplarCity': 'Santo Domingo'
                         },
                         'Sao_Paulo': {
-                            'exemplarCity': 'São Paulo'
+                            'exemplarCity': 'S\u00E3o Paulo'
                         },
                         'Scoresbysund': {
                             'exemplarCity': 'Ittoqqortoormiit'
@@ -961,7 +961,7 @@
                             'exemplarCity': 'Sitka'
                         },
                         'St_Barthelemy': {
-                            'exemplarCity': 'Saint Barthélemy'
+                            'exemplarCity': 'Saint Barth\u00E9lemy'
                         },
                         'St_Johns': {
                             'exemplarCity': 'St. John\u2019s'
@@ -981,10 +981,10 @@
                     },
                     'Atlantic': {
                         'South_Georgia': {
-                            'exemplarCity': 'Déli-Georgia'
+                            'exemplarCity': 'D\u00E9li-Georgia'
                         },
                         'Reykjavik': {
-                            'exemplarCity': 'Reykjavík'
+                            'exemplarCity': 'Reykjav\u00EDk'
                         },
                         'Stanley': {
                             'exemplarCity': 'Stanley'
@@ -999,10 +999,10 @@
                             'exemplarCity': 'Bermuda'
                         },
                         'Canary': {
-                            'exemplarCity': 'Kanári-szigetek'
+                            'exemplarCity': 'Kan\u00E1ri-szigetek'
                         },
                         'Cape_Verde': {
-                            'exemplarCity': 'Zöld-Foki Szigetek'
+                            'exemplarCity': 'Z\u00F6ld-Foki Szigetek'
                         },
                         'Faeroe': {
                             'exemplarCity': 'Faroe'
@@ -1028,7 +1028,7 @@
                             'exemplarCity': 'Mariehamn'
                         },
                         'Malta': {
-                            'exemplarCity': 'Málta'
+                            'exemplarCity': 'M\u00E1lta'
                         },
                         'Madrid': {
                             'exemplarCity': 'Madrid'
@@ -1038,7 +1038,7 @@
                         },
                         'London': {
                             'long': {
-                                'daylight': 'Brit nyári idő'
+                                'daylight': 'Brit ny\u00E1ri id\u0151'
                             },
                             'exemplarCity': 'London'
                         },
@@ -1052,7 +1052,7 @@
                             'exemplarCity': 'Kijev'
                         },
                         'Kaliningrad': {
-                            'exemplarCity': 'Kalinyingrád'
+                            'exemplarCity': 'Kalinyingr\u00E1d'
                         },
                         'Jersey': {
                             'exemplarCity': 'Jersey'
@@ -1067,7 +1067,7 @@
                             'exemplarCity': 'Bukarest'
                         },
                         'Brussels': {
-                            'exemplarCity': 'Brüsszel'
+                            'exemplarCity': 'Br\u00FCsszel'
                         },
                         'Bratislava': {
                             'exemplarCity': 'Pozsony'
@@ -1076,10 +1076,10 @@
                             'exemplarCity': 'Berlin'
                         },
                         'Belgrade': {
-                            'exemplarCity': 'Belgrád'
+                            'exemplarCity': 'Belgr\u00E1d'
                         },
                         'Athens': {
-                            'exemplarCity': 'Athén'
+                            'exemplarCity': 'Ath\u00E9n'
                         },
                         'Andorra': {
                             'exemplarCity': 'Andorra'
@@ -1094,7 +1094,7 @@
                             'exemplarCity': 'Skopje'
                         },
                         'Sofia': {
-                            'exemplarCity': 'Szófia'
+                            'exemplarCity': 'Sz\u00F3fia'
                         },
                         'Stockholm': {
                             'exemplarCity': 'Stockholm'
@@ -1106,37 +1106,37 @@
                             'exemplarCity': 'Tirana'
                         },
                         'Uzhgorod': {
-                            'exemplarCity': 'Ungvár'
+                            'exemplarCity': 'Ungv\u00E1r'
                         },
                         'Vaduz': {
                             'exemplarCity': 'Vaduz'
                         },
                         'Zurich': {
-                            'exemplarCity': 'Zürich'
+                            'exemplarCity': 'Z\u00FCrich'
                         },
                         'Zaporozhye': {
                             'exemplarCity': 'Zaporozsje'
                         },
                         'Zagreb': {
-                            'exemplarCity': 'Zágráb'
+                            'exemplarCity': 'Z\u00E1gr\u00E1b'
                         },
                         'Warsaw': {
-                            'exemplarCity': 'Varsó'
+                            'exemplarCity': 'Vars\u00F3'
                         },
                         'Volgograd': {
-                            'exemplarCity': 'Volgográd'
+                            'exemplarCity': 'Volgogr\u00E1d'
                         },
                         'Vilnius': {
                             'exemplarCity': 'Vilniusz'
                         },
                         'Vienna': {
-                            'exemplarCity': 'Bécs'
+                            'exemplarCity': 'B\u00E9cs'
                         },
                         'Vatican': {
-                            'exemplarCity': 'Vatikán'
+                            'exemplarCity': 'Vatik\u00E1n'
                         },
                         'Sarajevo': {
-                            'exemplarCity': 'Szarajevó'
+                            'exemplarCity': 'Szarajev\u00F3'
                         },
                         'San_Marino': {
                             'exemplarCity': 'San Marino'
@@ -1145,19 +1145,19 @@
                             'exemplarCity': 'Szamara'
                         },
                         'Rome': {
-                            'exemplarCity': 'Róma'
+                            'exemplarCity': 'R\u00F3ma'
                         },
                         'Riga': {
                             'exemplarCity': 'Riga'
                         },
                         'Prague': {
-                            'exemplarCity': 'Prága'
+                            'exemplarCity': 'Pr\u00E1ga'
                         },
                         'Podgorica': {
                             'exemplarCity': 'Podgorica'
                         },
                         'Paris': {
-                            'exemplarCity': 'Párizs'
+                            'exemplarCity': 'P\u00E1rizs'
                         },
                         'Helsinki': {
                             'exemplarCity': 'Helsinki'
@@ -1166,22 +1166,22 @@
                             'exemplarCity': 'Guernsey'
                         },
                         'Gibraltar': {
-                            'exemplarCity': 'Gibraltár'
+                            'exemplarCity': 'Gibralt\u00E1r'
                         },
                         'Dublin': {
                             'long': {
-                                'daylight': 'Ír nyári idő'
+                                'daylight': '\u00CDr ny\u00E1ri id\u0151'
                             },
                             'exemplarCity': 'Dublin'
                         },
                         'Copenhagen': {
-                            'exemplarCity': 'Koppenhága'
+                            'exemplarCity': 'Koppenh\u00E1ga'
                         },
                         'Chisinau': {
                             'exemplarCity': 'Chisinau'
                         },
                         'Busingen': {
-                            'exemplarCity': 'Büsingen'
+                            'exemplarCity': 'B\u00FCsingen'
                         },
                         'Budapest': {
                             'exemplarCity': 'Budapest'
@@ -1201,7 +1201,7 @@
                             'exemplarCity': 'Kigali'
                         },
                         'Khartoum': {
-                            'exemplarCity': 'Kartúm'
+                            'exemplarCity': 'Kart\u00FAm'
                         },
                         'Kampala': {
                             'exemplarCity': 'Kampala'
@@ -1222,7 +1222,7 @@
                             'exemplarCity': 'Freetown'
                         },
                         'El_Aaiun': {
-                            'exemplarCity': 'El-Ajún'
+                            'exemplarCity': 'El-Aj\u00FAn'
                         },
                         'Douala': {
                             'exemplarCity': 'Douala'
@@ -1249,7 +1249,7 @@
                             'exemplarCity': 'Asmera'
                         },
                         'Malabo': {
-                            'exemplarCity': 'Malabó'
+                            'exemplarCity': 'Malab\u00F3'
                         },
                         'Maputo': {
                             'exemplarCity': 'Maputo'
@@ -1282,7 +1282,7 @@
                             'exemplarCity': 'Tripoli'
                         },
                         'Sao_Tome': {
-                            'exemplarCity': 'São Tomé'
+                            'exemplarCity': 'S\u00E3o Tom\u00E9'
                         },
                         'Porto-Novo': {
                             'exemplarCity': 'Porto-Novo'
@@ -1318,7 +1318,7 @@
                             'exemplarCity': 'Casablanca'
                         },
                         'Cairo': {
-                            'exemplarCity': 'Kairó'
+                            'exemplarCity': 'Kair\u00F3'
                         },
                         'Bujumbura': {
                             'exemplarCity': 'Bujumbura'
@@ -1342,7 +1342,7 @@
                             'exemplarCity': 'Addisz-Abeba'
                         },
                         'Algiers': {
-                            'exemplarCity': 'Algír'
+                            'exemplarCity': 'Alg\u00EDr'
                         }
                     },
                     'Asia': {
@@ -1350,7 +1350,7 @@
                             'exemplarCity': 'Sanghaj'
                         },
                         'Seoul': {
-                            'exemplarCity': 'Szöul'
+                            'exemplarCity': 'Sz\u00F6ul'
                         },
                         'Samarkand': {
                             'exemplarCity': 'Szamarkand'
@@ -1359,10 +1359,10 @@
                             'exemplarCity': 'Szahalin'
                         },
                         'Saigon': {
-                            'exemplarCity': 'Ho Si Minh-város'
+                            'exemplarCity': 'Ho Si Minh-v\u00E1ros'
                         },
                         'Riyadh': {
-                            'exemplarCity': 'Rijád'
+                            'exemplarCity': 'Rij\u00E1d'
                         },
                         'Rangoon': {
                             'exemplarCity': 'Rangoon'
@@ -1404,7 +1404,7 @@
                             'exemplarCity': 'Damaszkusz'
                         },
                         'Dhaka': {
-                            'exemplarCity': 'Dháka'
+                            'exemplarCity': 'Dh\u00E1ka'
                         },
                         'Dili': {
                             'exemplarCity': 'Dili'
@@ -1416,7 +1416,7 @@
                             'exemplarCity': 'Dushanbe'
                         },
                         'Gaza': {
-                            'exemplarCity': 'Gáza'
+                            'exemplarCity': 'G\u00E1za'
                         },
                         'Harbin': {
                             'exemplarCity': 'Harbin'
@@ -1440,16 +1440,16 @@
                             'exemplarCity': 'Jayapura'
                         },
                         'Ulaanbaatar': {
-                            'exemplarCity': 'Ulánbátor'
+                            'exemplarCity': 'Ul\u00E1nb\u00E1tor'
                         },
                         'Urumqi': {
-                            'exemplarCity': 'Ürümqi'
+                            'exemplarCity': '\u00DCr\u00FCmqi'
                         },
                         'Ust-Nera': {
                             'exemplarCity': 'Uszty-Nyera'
                         },
                         'Vientiane': {
-                            'exemplarCity': 'Vientián'
+                            'exemplarCity': 'Vienti\u00E1n'
                         },
                         'Vladivostok': {
                             'exemplarCity': 'Vlagyivosztok'
@@ -1461,7 +1461,7 @@
                             'exemplarCity': 'Jekatyerinburg'
                         },
                         'Yerevan': {
-                            'exemplarCity': 'Jereván'
+                            'exemplarCity': 'Jerev\u00E1n'
                         },
                         'Tokyo': {
                             'exemplarCity': 'Tokio'
@@ -1470,7 +1470,7 @@
                             'exemplarCity': 'Thimphu'
                         },
                         'Tehran': {
-                            'exemplarCity': 'Teherán'
+                            'exemplarCity': 'Teher\u00E1n'
                         },
                         'Tbilisi': {
                             'exemplarCity': 'Tbiliszi'
@@ -1482,16 +1482,16 @@
                             'exemplarCity': 'Tajpej'
                         },
                         'Singapore': {
-                            'exemplarCity': 'Szingapúr'
+                            'exemplarCity': 'Szingap\u00FAr'
                         },
                         'Jerusalem': {
-                            'exemplarCity': 'Jeruzsálem'
+                            'exemplarCity': 'Jeruzs\u00E1lem'
                         },
                         'Ashgabat': {
                             'exemplarCity': 'Asgabat'
                         },
                         'Aqtobe': {
-                            'exemplarCity': 'Aktöbe'
+                            'exemplarCity': 'Akt\u00F6be'
                         },
                         'Aqtau': {
                             'exemplarCity': 'Aktau'
@@ -1500,13 +1500,13 @@
                             'exemplarCity': 'Anadir'
                         },
                         'Amman': {
-                            'exemplarCity': 'Ammán'
+                            'exemplarCity': 'Amm\u00E1n'
                         },
                         'Almaty': {
                             'exemplarCity': 'Alma-Ata'
                         },
                         'Aden': {
-                            'exemplarCity': 'Áden'
+                            'exemplarCity': '\u00C1den'
                         },
                         'Bahrain': {
                             'exemplarCity': 'Bahrein'
@@ -1518,7 +1518,7 @@
                             'exemplarCity': 'Bangkok'
                         },
                         'Beirut': {
-                            'exemplarCity': 'Bejrút'
+                            'exemplarCity': 'Bejr\u00FAt'
                         },
                         'Bishkek': {
                             'exemplarCity': 'Biskek'
@@ -1542,7 +1542,7 @@
                             'exemplarCity': 'Karacsi'
                         },
                         'Kashgar': {
-                            'exemplarCity': 'Kasgár'
+                            'exemplarCity': 'Kasg\u00E1r'
                         },
                         'Katmandu': {
                             'exemplarCity': 'Katmandu'
@@ -1563,10 +1563,10 @@
                             'exemplarCity': 'Kuvait'
                         },
                         'Macau': {
-                            'exemplarCity': 'Makaó'
+                            'exemplarCity': 'Maka\u00F3'
                         },
                         'Magadan': {
-                            'exemplarCity': 'Magadán'
+                            'exemplarCity': 'Magad\u00E1n'
                         },
                         'Makassar': {
                             'exemplarCity': 'Makasar'
@@ -1588,309 +1588,309 @@
                 'metazone': {
                     'Seychelles': {
                         'long': {
-                            'standard': 'Seychelle-szigeteki idő'
+                            'standard': 'Seychelle-szigeteki id\u0151'
                         }
                     },
                     'Samoa': {
                         'long': {
-                            'generic': 'Szamoai idő',
-                            'standard': 'Szamoai zónaidő',
-                            'daylight': 'Szamoai nyári idő'
+                            'generic': 'Szamoai id\u0151',
+                            'standard': 'Szamoai z\u00F3naid\u0151',
+                            'daylight': 'Szamoai ny\u00E1ri id\u0151'
                         }
                     },
                     'Samara': {
                         'long': {
-                            'generic': 'Szamarai idő',
-                            'standard': 'Szamarai zónaidő',
-                            'daylight': 'Szamarai nyári idő'
+                            'generic': 'Szamarai id\u0151',
+                            'standard': 'Szamarai z\u00F3naid\u0151',
+                            'daylight': 'Szamarai ny\u00E1ri id\u0151'
                         }
                     },
                     'Sakhalin': {
                         'long': {
-                            'generic': 'Szahalini idő',
-                            'standard': 'Szahalini zónaidő',
-                            'daylight': 'Szahalini nyári idő'
+                            'generic': 'Szahalini id\u0151',
+                            'standard': 'Szahalini z\u00F3naid\u0151',
+                            'daylight': 'Szahalini ny\u00E1ri id\u0151'
                         }
                     },
                     'Rothera': {
                         'long': {
-                            'standard': 'Rotherai idő'
+                            'standard': 'Rotherai id\u0151'
                         }
                     },
                     'Reunion': {
                         'long': {
-                            'standard': 'Réunioni idő'
+                            'standard': 'R\u00E9unioni id\u0151'
                         }
                     },
                     'Qyzylorda': {
                         'long': {
-                            'generic': 'Qyzylordai idő',
-                            'standard': 'Qyzylordai zónaidő',
-                            'daylight': 'Qyzylordai nyári idő'
+                            'generic': 'Qyzylordai id\u0151',
+                            'standard': 'Qyzylordai z\u00F3naid\u0151',
+                            'daylight': 'Qyzylordai ny\u00E1ri id\u0151'
                         }
                     },
                     'Ponape': {
                         'long': {
-                            'standard': 'Ponapei idő'
+                            'standard': 'Ponapei id\u0151'
                         }
                     },
                     'Pitcairn': {
                         'long': {
-                            'standard': 'Pitcairni idő'
+                            'standard': 'Pitcairni id\u0151'
                         }
                     },
                     'Pierre_Miquelon': {
                         'long': {
-                            'generic': 'Saint Pierre és Miquelon-i idő',
-                            'standard': 'Saint Pierre és Miquelon-i zónaidő',
-                            'daylight': 'Saint Pierre és Miquelon-i nyári idő'
+                            'generic': 'Saint Pierre \u00E9s Miquelon-i id\u0151',
+                            'standard': 'Saint Pierre \u00E9s Miquelon-i z\u00F3naid\u0151',
+                            'daylight': 'Saint Pierre \u00E9s Miquelon-i ny\u00E1ri id\u0151'
                         }
                     },
                     'Phoenix_Islands': {
                         'long': {
-                            'standard': 'Phoenix-szigeteki idő'
+                            'standard': 'Phoenix-szigeteki id\u0151'
                         }
                     },
                     'Philippines': {
                         'long': {
-                            'generic': 'Fülöp-szigeteki idő',
-                            'standard': 'Fülöp-szigeteki zónaidő',
-                            'daylight': 'Fülöp-szigeteki nyári idő'
+                            'generic': 'F\u00FCl\u00F6p-szigeteki id\u0151',
+                            'standard': 'F\u00FCl\u00F6p-szigeteki z\u00F3naid\u0151',
+                            'daylight': 'F\u00FCl\u00F6p-szigeteki ny\u00E1ri id\u0151'
                         }
                     },
                     'Peru': {
                         'long': {
-                            'generic': 'Perui idő',
-                            'standard': 'Perui zónaidő',
-                            'daylight': 'Perui nyári idő'
+                            'generic': 'Perui id\u0151',
+                            'standard': 'Perui z\u00F3naid\u0151',
+                            'daylight': 'Perui ny\u00E1ri id\u0151'
                         }
                     },
                     'Paraguay': {
                         'long': {
-                            'generic': 'Paraguayi idő',
-                            'standard': 'Paraguayi zónaidő',
-                            'daylight': 'Paraguayi nyári idő'
+                            'generic': 'Paraguayi id\u0151',
+                            'standard': 'Paraguayi z\u00F3naid\u0151',
+                            'daylight': 'Paraguayi ny\u00E1ri id\u0151'
                         }
                     },
                     'Papua_New_Guinea': {
                         'long': {
-                            'standard': 'Pápua új-guineai idő'
+                            'standard': 'P\u00E1pua \u00FAj-guineai id\u0151'
                         }
                     },
                     'Palau': {
                         'long': {
-                            'standard': 'Palaui idő'
+                            'standard': 'Palaui id\u0151'
                         }
                     },
                     'Pakistan': {
                         'long': {
-                            'generic': 'Pakisztáni idő',
-                            'standard': 'Pakisztáni zónaidő',
-                            'daylight': 'Pakisztáni nyári idő'
+                            'generic': 'Pakiszt\u00E1ni id\u0151',
+                            'standard': 'Pakiszt\u00E1ni z\u00F3naid\u0151',
+                            'daylight': 'Pakiszt\u00E1ni ny\u00E1ri id\u0151'
                         }
                     },
                     'Omsk': {
                         'long': {
-                            'generic': 'Omszki idő',
-                            'standard': 'Omszki zónaidő',
-                            'daylight': 'Omszki nyári idő'
+                            'generic': 'Omszki id\u0151',
+                            'standard': 'Omszki z\u00F3naid\u0151',
+                            'daylight': 'Omszki ny\u00E1ri id\u0151'
                         }
                     },
                     'Novosibirsk': {
                         'long': {
-                            'generic': 'Novoszibirszki idő',
-                            'standard': 'Novoszibirszki zónaidő',
-                            'daylight': 'Novoszibirszki nyári idő'
+                            'generic': 'Novoszibirszki id\u0151',
+                            'standard': 'Novoszibirszki z\u00F3naid\u0151',
+                            'daylight': 'Novoszibirszki ny\u00E1ri id\u0151'
                         }
                     },
                     'North_Mariana': {
                         'long': {
-                            'standard': 'Észak-mariana-szigeteki idő'
+                            'standard': '\u00C9szak-mariana-szigeteki id\u0151'
                         }
                     },
                     'Noronha': {
                         'long': {
-                            'generic': 'Fernando de Noronha-i idő',
-                            'standard': 'Fernando de Noronha-i zónaidő',
-                            'daylight': 'Fernando de Noronha-i nyári idő'
+                            'generic': 'Fernando de Noronha-i id\u0151',
+                            'standard': 'Fernando de Noronha-i z\u00F3naid\u0151',
+                            'daylight': 'Fernando de Noronha-i ny\u00E1ri id\u0151'
                         }
                     },
                     'Norfolk': {
                         'long': {
-                            'standard': 'Norfolk-szigeteki idő'
+                            'standard': 'Norfolk-szigeteki id\u0151'
                         }
                     },
                     'Niue': {
                         'long': {
-                            'standard': 'Niuei idő'
+                            'standard': 'Niuei id\u0151'
                         }
                     },
                     'Newfoundland': {
                         'long': {
-                            'generic': 'Új-fundlandi idő',
-                            'standard': 'Új-fundlandi zónaidő',
-                            'daylight': 'Új-fundlandi nyári idő'
+                            'generic': '\u00DAj-fundlandi id\u0151',
+                            'standard': '\u00DAj-fundlandi z\u00F3naid\u0151',
+                            'daylight': '\u00DAj-fundlandi ny\u00E1ri id\u0151'
                         }
                     },
                     'Amazon': {
                         'long': {
-                            'generic': 'Amazóniai idő',
-                            'standard': 'Amazóniai zónaidő',
-                            'daylight': 'Amazóniai nyári idő'
+                            'generic': 'Amaz\u00F3niai id\u0151',
+                            'standard': 'Amaz\u00F3niai z\u00F3naid\u0151',
+                            'daylight': 'Amaz\u00F3niai ny\u00E1ri id\u0151'
                         }
                     },
                     'America_Central': {
                         'long': {
-                            'generic': 'Középső államokbeli idő',
-                            'standard': 'Középső államokbeli zónaidő',
-                            'daylight': 'Középső államokbeli nyári idő'
+                            'generic': 'K\u00F6z\u00E9ps\u0151 \u00E1llamokbeli id\u0151',
+                            'standard': 'K\u00F6z\u00E9ps\u0151 \u00E1llamokbeli z\u00F3naid\u0151',
+                            'daylight': 'K\u00F6z\u00E9ps\u0151 \u00E1llamokbeli ny\u00E1ri id\u0151'
                         }
                     },
                     'America_Eastern': {
                         'long': {
-                            'generic': 'Keleti államokbeli idő',
-                            'standard': 'Keleti államokbeli zónaidő',
-                            'daylight': 'Keleti államokbeli nyári idő'
+                            'generic': 'Keleti \u00E1llamokbeli id\u0151',
+                            'standard': 'Keleti \u00E1llamokbeli z\u00F3naid\u0151',
+                            'daylight': 'Keleti \u00E1llamokbeli ny\u00E1ri id\u0151'
                         }
                     },
                     'America_Mountain': {
                         'long': {
-                            'generic': 'Hegyvidéki idő',
-                            'standard': 'Hegyvidéki zónaidő',
-                            'daylight': 'Hegyvidéki nyári idő'
+                            'generic': 'Hegyvid\u00E9ki id\u0151',
+                            'standard': 'Hegyvid\u00E9ki z\u00F3naid\u0151',
+                            'daylight': 'Hegyvid\u00E9ki ny\u00E1ri id\u0151'
                         }
                     },
                     'America_Pacific': {
                         'long': {
-                            'generic': 'Csendes-óceáni idő',
-                            'standard': 'Csendes-óceáni zónaidő',
-                            'daylight': 'Csendes-óceáni nyári idő'
+                            'generic': 'Csendes-\u00F3ce\u00E1ni id\u0151',
+                            'standard': 'Csendes-\u00F3ce\u00E1ni z\u00F3naid\u0151',
+                            'daylight': 'Csendes-\u00F3ce\u00E1ni ny\u00E1ri id\u0151'
                         }
                     },
                     'Anadyr': {
                         'long': {
-                            'generic': 'Anadiri idő',
-                            'standard': 'Anadíri zónaidő',
-                            'daylight': 'Anadíri nyári idő'
+                            'generic': 'Anadiri id\u0151',
+                            'standard': 'Anad\u00EDri z\u00F3naid\u0151',
+                            'daylight': 'Anad\u00EDri ny\u00E1ri id\u0151'
                         }
                     },
                     'Aqtau': {
                         'long': {
-                            'generic': 'Aqtaui idő',
-                            'standard': 'Aqtaui zónaidő',
-                            'daylight': 'Aqtaui nyári idő'
+                            'generic': 'Aqtaui id\u0151',
+                            'standard': 'Aqtaui z\u00F3naid\u0151',
+                            'daylight': 'Aqtaui ny\u00E1ri id\u0151'
                         }
                     },
                     'Aqtobe': {
                         'long': {
-                            'generic': 'Aqtobei idő',
-                            'standard': 'Aqtobei zónaidő',
-                            'daylight': 'Aqtobei nyári idő'
+                            'generic': 'Aqtobei id\u0151',
+                            'standard': 'Aqtobei z\u00F3naid\u0151',
+                            'daylight': 'Aqtobei ny\u00E1ri id\u0151'
                         }
                     },
                     'Cape_Verde': {
                         'long': {
-                            'generic': 'Zöld-foki-szigeteki idő',
-                            'standard': 'Zöld-foki-szigeteki zónaidő',
-                            'daylight': 'Zöld-foki-szigeteki nyári idő'
+                            'generic': 'Z\u00F6ld-foki-szigeteki id\u0151',
+                            'standard': 'Z\u00F6ld-foki-szigeteki z\u00F3naid\u0151',
+                            'daylight': 'Z\u00F6ld-foki-szigeteki ny\u00E1ri id\u0151'
                         }
                     },
                     'Chamorro': {
                         'long': {
-                            'standard': 'Chamorrói idő'
+                            'standard': 'Chamorr\u00F3i id\u0151'
                         }
                     },
                     'Chatham': {
                         'long': {
-                            'generic': 'Chathami idő',
-                            'standard': 'Chathami zónaidő',
-                            'daylight': 'Chathami nyári idő'
+                            'generic': 'Chathami id\u0151',
+                            'standard': 'Chathami z\u00F3naid\u0151',
+                            'daylight': 'Chathami ny\u00E1ri id\u0151'
                         }
                     },
                     'Chile': {
                         'long': {
-                            'generic': 'Chilei idő',
-                            'standard': 'Chilei zónaidő',
-                            'daylight': 'Chilei nyári idő'
+                            'generic': 'Chilei id\u0151',
+                            'standard': 'Chilei z\u00F3naid\u0151',
+                            'daylight': 'Chilei ny\u00E1ri id\u0151'
                         }
                     },
                     'China': {
                         'long': {
-                            'generic': 'Kínai idő',
-                            'standard': 'Kínai zónaidő',
-                            'daylight': 'Kínai nyári idő'
+                            'generic': 'K\u00EDnai id\u0151',
+                            'standard': 'K\u00EDnai z\u00F3naid\u0151',
+                            'daylight': 'K\u00EDnai ny\u00E1ri id\u0151'
                         }
                     },
                     'Choibalsan': {
                         'long': {
-                            'generic': 'Csojbalszani idő',
-                            'standard': 'Csojbalszani zónaidő',
-                            'daylight': 'Csojbalszani nyári idő'
+                            'generic': 'Csojbalszani id\u0151',
+                            'standard': 'Csojbalszani z\u00F3naid\u0151',
+                            'daylight': 'Csojbalszani ny\u00E1ri id\u0151'
                         }
                     },
                     'Christmas': {
                         'long': {
-                            'standard': 'Karácsony-szigeti idő'
+                            'standard': 'Kar\u00E1csony-szigeti id\u0151'
                         }
                     },
                     'Cocos': {
                         'long': {
-                            'standard': 'Kókusz-szigeteki idő'
+                            'standard': 'K\u00F3kusz-szigeteki id\u0151'
                         }
                     },
                     'Colombia': {
                         'long': {
-                            'generic': 'Kolumbiai idő',
-                            'standard': 'Kolumbiai zónaidő',
-                            'daylight': 'Kolumbiai nyári idő'
+                            'generic': 'Kolumbiai id\u0151',
+                            'standard': 'Kolumbiai z\u00F3naid\u0151',
+                            'daylight': 'Kolumbiai ny\u00E1ri id\u0151'
                         }
                     },
                     'Cook': {
                         'long': {
-                            'generic': 'Cook-szigeteki idő',
-                            'standard': 'Cook-szigeteki zónaidő',
-                            'daylight': 'Cook-szigeteki fél nyári idő'
+                            'generic': 'Cook-szigeteki id\u0151',
+                            'standard': 'Cook-szigeteki z\u00F3naid\u0151',
+                            'daylight': 'Cook-szigeteki f\u00E9l ny\u00E1ri id\u0151'
                         }
                     },
                     'Cuba': {
                         'long': {
-                            'generic': 'Kubai idő',
-                            'standard': 'Kubai zónaidő',
-                            'daylight': 'Kubai nyári idő'
+                            'generic': 'Kubai id\u0151',
+                            'standard': 'Kubai z\u00F3naid\u0151',
+                            'daylight': 'Kubai ny\u00E1ri id\u0151'
                         }
                     },
                     'Davis': {
                         'long': {
-                            'standard': 'Davisi idő'
+                            'standard': 'Davisi id\u0151'
                         }
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': 'Dumont-d\'Urville-i idő'
+                            'standard': "Dumont-d'Urville-i id\u0151"
                         }
                     },
                     'East_Timor': {
                         'long': {
-                            'standard': 'Kelet-timori idő'
+                            'standard': 'Kelet-timori id\u0151'
                         }
                     },
                     'Easter': {
                         'long': {
-                            'generic': 'Húsvét-szigeteki idő',
-                            'standard': 'Húsvét-szigeteki zónaidő',
-                            'daylight': 'Húsvét-szigeteki nyári idő'
+                            'generic': 'H\u00FAsv\u00E9t-szigeteki id\u0151',
+                            'standard': 'H\u00FAsv\u00E9t-szigeteki z\u00F3naid\u0151',
+                            'daylight': 'H\u00FAsv\u00E9t-szigeteki ny\u00E1ri id\u0151'
                         }
                     },
                     'Ecuador': {
                         'long': {
-                            'standard': 'Ecuadori idő'
+                            'standard': 'Ecuadori id\u0151'
                         }
                     },
                     'Europe_Central': {
                         'long': {
-                            'generic': 'Közép-európai idő',
-                            'standard': 'Közép-európai zónaidő',
-                            'daylight': 'Közép-európai nyári idő'
+                            'generic': 'K\u00F6z\u00E9p-eur\u00F3pai id\u0151',
+                            'standard': 'K\u00F6z\u00E9p-eur\u00F3pai z\u00F3naid\u0151',
+                            'daylight': 'K\u00F6z\u00E9p-eur\u00F3pai ny\u00E1ri id\u0151'
                         },
                         'short': {
                             'generic': 'CET',
@@ -1900,9 +1900,9 @@
                     },
                     'Europe_Eastern': {
                         'long': {
-                            'generic': 'Kelet-európai idő',
-                            'standard': 'Kelet-európai zónaidő',
-                            'daylight': 'Kelet-európai nyári idő'
+                            'generic': 'Kelet-eur\u00F3pai id\u0151',
+                            'standard': 'Kelet-eur\u00F3pai z\u00F3naid\u0151',
+                            'daylight': 'Kelet-eur\u00F3pai ny\u00E1ri id\u0151'
                         },
                         'short': {
                             'generic': 'EET',
@@ -1912,9 +1912,9 @@
                     },
                     'Europe_Western': {
                         'long': {
-                            'generic': 'Nyugat-európai idő',
-                            'standard': 'Nyugat-európai zónaidő',
-                            'daylight': 'Nyugat-európai nyári idő'
+                            'generic': 'Nyugat-eur\u00F3pai id\u0151',
+                            'standard': 'Nyugat-eur\u00F3pai z\u00F3naid\u0151',
+                            'daylight': 'Nyugat-eur\u00F3pai ny\u00E1ri id\u0151'
                         },
                         'short': {
                             'generic': 'WET',
@@ -1924,200 +1924,200 @@
                     },
                     'Falkland': {
                         'long': {
-                            'generic': 'Falkland-szigeteki idő',
-                            'standard': 'Falkland-szigeteki zónaidő',
-                            'daylight': 'Falkland-szigeteki nyári idő'
+                            'generic': 'Falkland-szigeteki id\u0151',
+                            'standard': 'Falkland-szigeteki z\u00F3naid\u0151',
+                            'daylight': 'Falkland-szigeteki ny\u00E1ri id\u0151'
                         }
                     },
                     'Fiji': {
                         'long': {
-                            'generic': 'Fidzsi idő',
-                            'standard': 'Fidzsi zónaidő',
-                            'daylight': 'Fidzsi nyári idő'
+                            'generic': 'Fidzsi id\u0151',
+                            'standard': 'Fidzsi z\u00F3naid\u0151',
+                            'daylight': 'Fidzsi ny\u00E1ri id\u0151'
                         }
                     },
                     'French_Guiana': {
                         'long': {
-                            'standard': 'Francia-guianai idő'
+                            'standard': 'Francia-guianai id\u0151'
                         }
                     },
                     'French_Southern': {
                         'long': {
-                            'standard': 'Francia déli és antarktikus idő'
+                            'standard': 'Francia d\u00E9li \u00E9s antarktikus id\u0151'
                         }
                     },
                     'Galapagos': {
                         'long': {
-                            'standard': 'Galapagosi idő'
+                            'standard': 'Galapagosi id\u0151'
                         }
                     },
                     'Tokelau': {
                         'long': {
-                            'standard': 'Tokelaui idő'
+                            'standard': 'Tokelaui id\u0151'
                         }
                     },
                     'Tonga': {
                         'long': {
-                            'generic': 'Tongai idő',
-                            'standard': 'Tongai zónaidő',
-                            'daylight': 'Tongai nyári idő'
+                            'generic': 'Tongai id\u0151',
+                            'standard': 'Tongai z\u00F3naid\u0151',
+                            'daylight': 'Tongai ny\u00E1ri id\u0151'
                         }
                     },
                     'Truk': {
                         'long': {
-                            'standard': 'Truki idő'
+                            'standard': 'Truki id\u0151'
                         }
                     },
                     'Turkmenistan': {
                         'long': {
-                            'generic': 'Türkmenisztáni idő',
-                            'standard': 'Türkmenisztáni zónaidő',
-                            'daylight': 'Türkmenisztáni nyári idő'
+                            'generic': 'T\u00FCrkmeniszt\u00E1ni id\u0151',
+                            'standard': 'T\u00FCrkmeniszt\u00E1ni z\u00F3naid\u0151',
+                            'daylight': 'T\u00FCrkmeniszt\u00E1ni ny\u00E1ri id\u0151'
                         }
                     },
                     'Tuvalu': {
                         'long': {
-                            'standard': 'Tuvalui idő'
+                            'standard': 'Tuvalui id\u0151'
                         }
                     },
                     'Uruguay': {
                         'long': {
-                            'generic': 'Uruguayi idő',
-                            'standard': 'Uruguayi zónaidő',
-                            'daylight': 'Uruguayi nyári idő'
+                            'generic': 'Uruguayi id\u0151',
+                            'standard': 'Uruguayi z\u00F3naid\u0151',
+                            'daylight': 'Uruguayi ny\u00E1ri id\u0151'
                         }
                     },
                     'Uzbekistan': {
                         'long': {
-                            'generic': 'Üzbegisztáni idő',
-                            'standard': 'Üzbegisztáni zónaidő',
-                            'daylight': 'Üzbegisztáni nyári idő'
+                            'generic': '\u00DCzbegiszt\u00E1ni id\u0151',
+                            'standard': '\u00DCzbegiszt\u00E1ni z\u00F3naid\u0151',
+                            'daylight': '\u00DCzbegiszt\u00E1ni ny\u00E1ri id\u0151'
                         }
                     },
                     'Vanuatu': {
                         'long': {
-                            'generic': 'Vanuatui idő',
-                            'standard': 'Vanuatui zónaidő',
-                            'daylight': 'Vanuatui nyári idő'
+                            'generic': 'Vanuatui id\u0151',
+                            'standard': 'Vanuatui z\u00F3naid\u0151',
+                            'daylight': 'Vanuatui ny\u00E1ri id\u0151'
                         }
                     },
                     'Yekaterinburg': {
                         'long': {
-                            'generic': 'Jekatyerinburgi idő',
-                            'standard': 'Jekatyerinburgi zónaidő',
-                            'daylight': 'Jekatyerinburgi nyári idő'
+                            'generic': 'Jekatyerinburgi id\u0151',
+                            'standard': 'Jekatyerinburgi z\u00F3naid\u0151',
+                            'daylight': 'Jekatyerinburgi ny\u00E1ri id\u0151'
                         }
                     },
                     'Yakutsk': {
                         'long': {
-                            'generic': 'Jakutszki idő',
-                            'standard': 'Jakutszki zónaidő',
-                            'daylight': 'Jakutszki nyári idő'
+                            'generic': 'Jakutszki id\u0151',
+                            'standard': 'Jakutszki z\u00F3naid\u0151',
+                            'daylight': 'Jakutszki ny\u00E1ri id\u0151'
                         }
                     },
                     'Wallis': {
                         'long': {
-                            'standard': 'Wallis és futunai idő'
+                            'standard': 'Wallis \u00E9s futunai id\u0151'
                         }
                     },
                     'Wake': {
                         'long': {
-                            'standard': 'Wake-szigeti idő'
+                            'standard': 'Wake-szigeti id\u0151'
                         }
                     },
                     'Vostok': {
                         'long': {
-                            'standard': 'Vosztoki idő'
+                            'standard': 'Vosztoki id\u0151'
                         }
                     },
                     'Volgograd': {
                         'long': {
-                            'generic': 'Volgográdi idő',
-                            'standard': 'Volgográdi zónaidő',
-                            'daylight': 'Volgográdi nyári idő'
+                            'generic': 'Volgogr\u00E1di id\u0151',
+                            'standard': 'Volgogr\u00E1di z\u00F3naid\u0151',
+                            'daylight': 'Volgogr\u00E1di ny\u00E1ri id\u0151'
                         }
                     },
                     'Vladivostok': {
                         'long': {
-                            'generic': 'Vlagyivosztoki idő',
-                            'standard': 'Vlagyivosztoki zónaidő',
-                            'daylight': 'Vlagyivosztoki nyári idő'
+                            'generic': 'Vlagyivosztoki id\u0151',
+                            'standard': 'Vlagyivosztoki z\u00F3naid\u0151',
+                            'daylight': 'Vlagyivosztoki ny\u00E1ri id\u0151'
                         }
                     },
                     'Venezuela': {
                         'long': {
-                            'standard': 'Venezuelai idő'
+                            'standard': 'Venezuelai id\u0151'
                         }
                     },
                     'Tajikistan': {
                         'long': {
-                            'standard': 'Tádzsikisztáni idő'
+                            'standard': 'T\u00E1dzsikiszt\u00E1ni id\u0151'
                         }
                     },
                     'Taipei': {
                         'long': {
-                            'generic': 'Taipei idő',
-                            'standard': 'Taipei zónaidő',
-                            'daylight': 'Taipei nyári idő'
+                            'generic': 'Taipei id\u0151',
+                            'standard': 'Taipei z\u00F3naid\u0151',
+                            'daylight': 'Taipei ny\u00E1ri id\u0151'
                         }
                     },
                     'Tahiti': {
                         'long': {
-                            'standard': 'Tahiti idő'
+                            'standard': 'Tahiti id\u0151'
                         }
                     },
                     'Syowa': {
                         'long': {
-                            'standard': 'Syowai idő'
+                            'standard': 'Syowai id\u0151'
                         }
                     },
                     'Suriname': {
                         'long': {
-                            'standard': 'Szurinámi idő'
+                            'standard': 'Szurin\u00E1mi id\u0151'
                         }
                     },
                     'South_Georgia': {
                         'long': {
-                            'standard': 'Dél-georgiai idő'
+                            'standard': 'D\u00E9l-georgiai id\u0151'
                         }
                     },
                     'Solomon': {
                         'long': {
-                            'standard': 'Salamon-szigeteki idő'
+                            'standard': 'Salamon-szigeteki id\u0151'
                         }
                     },
                     'Singapore': {
                         'long': {
-                            'standard': 'Szingapúri zónaidő'
+                            'standard': 'Szingap\u00FAri z\u00F3naid\u0151'
                         }
                     },
                     'Gulf': {
                         'long': {
-                            'standard': 'Öbölbeli zónaidő'
+                            'standard': '\u00D6b\u00F6lbeli z\u00F3naid\u0151'
                         }
                     },
                     'Guam': {
                         'long': {
-                            'standard': 'Guami zónaidő'
+                            'standard': 'Guami z\u00F3naid\u0151'
                         }
                     },
                     'Greenland_Western': {
                         'long': {
-                            'generic': 'Nyugat-grönlandi idő',
-                            'standard': 'Nyugat-grönlandi zónaidő',
-                            'daylight': 'Nyugat-grönlandi nyári idő'
+                            'generic': 'Nyugat-gr\u00F6nlandi id\u0151',
+                            'standard': 'Nyugat-gr\u00F6nlandi z\u00F3naid\u0151',
+                            'daylight': 'Nyugat-gr\u00F6nlandi ny\u00E1ri id\u0151'
                         }
                     },
                     'Greenland_Eastern': {
                         'long': {
-                            'generic': 'Kelet-grönlandi idő',
-                            'standard': 'Kelet-grönlandi zónaidő',
-                            'daylight': 'Kelet-grönlandi nyári idő'
+                            'generic': 'Kelet-gr\u00F6nlandi id\u0151',
+                            'standard': 'Kelet-gr\u00F6nlandi z\u00F3naid\u0151',
+                            'daylight': 'Kelet-gr\u00F6nlandi ny\u00E1ri id\u0151'
                         }
                     },
                     'GMT': {
                         'long': {
-                            'standard': 'Greenwichi középidő'
+                            'standard': 'Greenwichi k\u00F6z\u00E9pid\u0151'
                         },
                         'short': {
                             'standard': 'GMT'
@@ -2125,418 +2125,418 @@
                     },
                     'Gilbert_Islands': {
                         'long': {
-                            'standard': 'Gilbert-szigeteki idő'
+                            'standard': 'Gilbert-szigeteki id\u0151'
                         }
                     },
                     'Georgia': {
                         'long': {
-                            'generic': 'Grúz idő',
-                            'standard': 'Grúz zónaidő',
-                            'daylight': 'Grúz nyári idő'
+                            'generic': 'Gr\u00FAz id\u0151',
+                            'standard': 'Gr\u00FAz z\u00F3naid\u0151',
+                            'daylight': 'Gr\u00FAz ny\u00E1ri id\u0151'
                         }
                     },
                     'Gambier': {
                         'long': {
-                            'standard': 'Gambieri idő'
+                            'standard': 'Gambieri id\u0151'
                         }
                     },
                     'Acre': {
                         'long': {
-                            'generic': 'Acre idő',
-                            'standard': 'Acre zónaidő',
-                            'daylight': 'Acre nyári idő'
+                            'generic': 'Acre id\u0151',
+                            'standard': 'Acre z\u00F3naid\u0151',
+                            'daylight': 'Acre ny\u00E1ri id\u0151'
                         }
                     },
                     'Afghanistan': {
                         'long': {
-                            'standard': 'Afganisztáni idő'
+                            'standard': 'Afganiszt\u00E1ni id\u0151'
                         }
                     },
                     'Africa_Central': {
                         'long': {
-                            'standard': 'Közép-afrikai idő'
+                            'standard': 'K\u00F6z\u00E9p-afrikai id\u0151'
                         }
                     },
                     'Africa_Eastern': {
                         'long': {
-                            'standard': 'Kelet-afrikai idő'
+                            'standard': 'Kelet-afrikai id\u0151'
                         }
                     },
                     'Africa_Southern': {
                         'long': {
-                            'standard': 'Dél-afrikai idő'
+                            'standard': 'D\u00E9l-afrikai id\u0151'
                         }
                     },
                     'Africa_Western': {
                         'long': {
-                            'generic': 'Nyugat-afrikai idő',
-                            'standard': 'Nyugat-afrikai zónaidő',
-                            'daylight': 'Nyugat-afrikai nyári idő'
+                            'generic': 'Nyugat-afrikai id\u0151',
+                            'standard': 'Nyugat-afrikai z\u00F3naid\u0151',
+                            'daylight': 'Nyugat-afrikai ny\u00E1ri id\u0151'
                         }
                     },
                     'Alaska': {
                         'long': {
-                            'generic': 'Alaszkai idő',
-                            'standard': 'Alaszkai zónaidő',
-                            'daylight': 'Alaszkai nyári idő'
+                            'generic': 'Alaszkai id\u0151',
+                            'standard': 'Alaszkai z\u00F3naid\u0151',
+                            'daylight': 'Alaszkai ny\u00E1ri id\u0151'
                         }
                     },
                     'Almaty': {
                         'long': {
-                            'generic': 'Almati idő',
-                            'standard': 'Almati zónaidő',
-                            'daylight': 'Almati nyári idő'
+                            'generic': 'Almati id\u0151',
+                            'standard': 'Almati z\u00F3naid\u0151',
+                            'daylight': 'Almati ny\u00E1ri id\u0151'
                         }
                     },
                     'Arabian': {
                         'long': {
-                            'generic': 'Arab idő',
-                            'standard': 'Arab zónaidő',
-                            'daylight': 'Arab nyári idő'
+                            'generic': 'Arab id\u0151',
+                            'standard': 'Arab z\u00F3naid\u0151',
+                            'daylight': 'Arab ny\u00E1ri id\u0151'
                         }
                     },
                     'Argentina': {
                         'long': {
-                            'generic': 'Argentínai idő',
-                            'standard': 'Argentínai zónaidő',
-                            'daylight': 'Argentínai nyári idő'
+                            'generic': 'Argent\u00EDnai id\u0151',
+                            'standard': 'Argent\u00EDnai z\u00F3naid\u0151',
+                            'daylight': 'Argent\u00EDnai ny\u00E1ri id\u0151'
                         }
                     },
                     'Argentina_Western': {
                         'long': {
-                            'generic': 'Nyugat-argentínai idő',
-                            'standard': 'Nyugat-argentínai zónaidő',
-                            'daylight': 'Nyugat-argentínai nyári idő'
+                            'generic': 'Nyugat-argent\u00EDnai id\u0151',
+                            'standard': 'Nyugat-argent\u00EDnai z\u00F3naid\u0151',
+                            'daylight': 'Nyugat-argent\u00EDnai ny\u00E1ri id\u0151'
                         }
                     },
                     'Armenia': {
                         'long': {
-                            'generic': 'Örmény idő',
-                            'standard': 'Örmény zónaidő',
-                            'daylight': 'Örmény nyári idő'
+                            'generic': '\u00D6rm\u00E9ny id\u0151',
+                            'standard': '\u00D6rm\u00E9ny z\u00F3naid\u0151',
+                            'daylight': '\u00D6rm\u00E9ny ny\u00E1ri id\u0151'
                         }
                     },
                     'Atlantic': {
                         'long': {
-                            'generic': 'Atlanti-óceáni idő',
-                            'standard': 'Atlanti-óceáni zónaidő',
-                            'daylight': 'Atlanti-óceáni nyári idő'
+                            'generic': 'Atlanti-\u00F3ce\u00E1ni id\u0151',
+                            'standard': 'Atlanti-\u00F3ce\u00E1ni z\u00F3naid\u0151',
+                            'daylight': 'Atlanti-\u00F3ce\u00E1ni ny\u00E1ri id\u0151'
                         }
                     },
                     'Australia_Central': {
                         'long': {
-                            'generic': 'Közép-ausztráliai idő',
-                            'standard': 'Ausztrál középső zónaidő',
-                            'daylight': 'Ausztrál középső nyári idő'
+                            'generic': 'K\u00F6z\u00E9p-ausztr\u00E1liai id\u0151',
+                            'standard': 'Ausztr\u00E1l k\u00F6z\u00E9ps\u0151 z\u00F3naid\u0151',
+                            'daylight': 'Ausztr\u00E1l k\u00F6z\u00E9ps\u0151 ny\u00E1ri id\u0151'
                         }
                     },
                     'Australia_CentralWestern': {
                         'long': {
-                            'generic': 'Ausztrál középső nyugati idő',
-                            'standard': 'Ausztrál középső nyugati zónaidő',
-                            'daylight': 'Ausztrál középső nyugati nyári idő'
+                            'generic': 'Ausztr\u00E1l k\u00F6z\u00E9ps\u0151 nyugati id\u0151',
+                            'standard': 'Ausztr\u00E1l k\u00F6z\u00E9ps\u0151 nyugati z\u00F3naid\u0151',
+                            'daylight': 'Ausztr\u00E1l k\u00F6z\u00E9ps\u0151 nyugati ny\u00E1ri id\u0151'
                         }
                     },
                     'Australia_Eastern': {
                         'long': {
-                            'generic': 'Kelet-ausztrál idő',
-                            'standard': 'Ausztrál keleti zónaidő',
-                            'daylight': 'Ausztrál keleti nyári idő'
+                            'generic': 'Kelet-ausztr\u00E1l id\u0151',
+                            'standard': 'Ausztr\u00E1l keleti z\u00F3naid\u0151',
+                            'daylight': 'Ausztr\u00E1l keleti ny\u00E1ri id\u0151'
                         }
                     },
                     'Australia_Western': {
                         'long': {
-                            'generic': 'Nyugat-ausztrál idő',
-                            'standard': 'Ausztrál nyugati zónaidő',
-                            'daylight': 'Ausztrál nyugati nyári idő'
+                            'generic': 'Nyugat-ausztr\u00E1l id\u0151',
+                            'standard': 'Ausztr\u00E1l nyugati z\u00F3naid\u0151',
+                            'daylight': 'Ausztr\u00E1l nyugati ny\u00E1ri id\u0151'
                         }
                     },
                     'Azerbaijan': {
                         'long': {
-                            'generic': 'Azerbajdzsáni idő',
-                            'standard': 'Azerbajdzsáni zónaidő',
-                            'daylight': 'Azerbajdzsáni nyári idő'
+                            'generic': 'Azerbajdzs\u00E1ni id\u0151',
+                            'standard': 'Azerbajdzs\u00E1ni z\u00F3naid\u0151',
+                            'daylight': 'Azerbajdzs\u00E1ni ny\u00E1ri id\u0151'
                         }
                     },
                     'Azores': {
                         'long': {
-                            'generic': 'Azori idő',
-                            'standard': 'Azori zónaidő',
-                            'daylight': 'Azori nyári idő'
+                            'generic': 'Azori id\u0151',
+                            'standard': 'Azori z\u00F3naid\u0151',
+                            'daylight': 'Azori ny\u00E1ri id\u0151'
                         }
                     },
                     'Bangladesh': {
                         'long': {
-                            'generic': 'Bangladesi idő',
-                            'standard': 'Bangladesi zónaidő',
-                            'daylight': 'Bangladesi nyári idő'
+                            'generic': 'Bangladesi id\u0151',
+                            'standard': 'Bangladesi z\u00F3naid\u0151',
+                            'daylight': 'Bangladesi ny\u00E1ri id\u0151'
                         }
                     },
                     'Bhutan': {
                         'long': {
-                            'standard': 'Butáni idő'
+                            'standard': 'But\u00E1ni id\u0151'
                         }
                     },
                     'Bolivia': {
                         'long': {
-                            'standard': 'Bolíviai idő'
+                            'standard': 'Bol\u00EDviai id\u0151'
                         }
                     },
                     'Brasilia': {
                         'long': {
-                            'generic': 'Brazíliai idő',
-                            'standard': 'Brazíliai zónaidő',
-                            'daylight': 'Brazíliai nyári idő'
+                            'generic': 'Braz\u00EDliai id\u0151',
+                            'standard': 'Braz\u00EDliai z\u00F3naid\u0151',
+                            'daylight': 'Braz\u00EDliai ny\u00E1ri id\u0151'
                         }
                     },
                     'Brunei': {
                         'long': {
-                            'standard': 'Brunei Darussalam-i idő'
+                            'standard': 'Brunei Darussalam-i id\u0151'
                         }
                     },
                     'Guyana': {
                         'long': {
-                            'standard': 'Guyanai idő'
+                            'standard': 'Guyanai id\u0151'
                         }
                     },
                     'Hawaii_Aleutian': {
                         'long': {
-                            'generic': 'Hawaii-aleuti idő',
-                            'standard': 'Hawaii-aleuti zónaidő',
-                            'daylight': 'Hawaii-aleuti nyári idő'
+                            'generic': 'Hawaii-aleuti id\u0151',
+                            'standard': 'Hawaii-aleuti z\u00F3naid\u0151',
+                            'daylight': 'Hawaii-aleuti ny\u00E1ri id\u0151'
                         }
                     },
                     'Hong_Kong': {
                         'long': {
-                            'generic': 'Hongkongi idő',
-                            'standard': 'Hongkongi zónaidő',
-                            'daylight': 'Hongkongi nyári idő'
+                            'generic': 'Hongkongi id\u0151',
+                            'standard': 'Hongkongi z\u00F3naid\u0151',
+                            'daylight': 'Hongkongi ny\u00E1ri id\u0151'
                         }
                     },
                     'Hovd': {
                         'long': {
-                            'generic': 'Hovdi idő',
-                            'standard': 'Hovdi zónaidő',
-                            'daylight': 'Hovdi nyári idő'
+                            'generic': 'Hovdi id\u0151',
+                            'standard': 'Hovdi z\u00F3naid\u0151',
+                            'daylight': 'Hovdi ny\u00E1ri id\u0151'
                         }
                     },
                     'India': {
                         'long': {
-                            'standard': 'Indiai zónaidő'
+                            'standard': 'Indiai z\u00F3naid\u0151'
                         }
                     },
                     'Indian_Ocean': {
                         'long': {
-                            'standard': 'Indiai-óceáni idő'
+                            'standard': 'Indiai-\u00F3ce\u00E1ni id\u0151'
                         }
                     },
                     'Indochina': {
                         'long': {
-                            'standard': 'Indokínai idő'
+                            'standard': 'Indok\u00EDnai id\u0151'
                         }
                     },
                     'Indonesia_Central': {
                         'long': {
-                            'standard': 'Közép-indonéziai idő'
+                            'standard': 'K\u00F6z\u00E9p-indon\u00E9ziai id\u0151'
                         }
                     },
                     'Indonesia_Eastern': {
                         'long': {
-                            'standard': 'Kelet-indonéziai idő'
+                            'standard': 'Kelet-indon\u00E9ziai id\u0151'
                         }
                     },
                     'Indonesia_Western': {
                         'long': {
-                            'standard': 'Nyugat-indonéziai idő'
+                            'standard': 'Nyugat-indon\u00E9ziai id\u0151'
                         }
                     },
                     'Iran': {
                         'long': {
-                            'generic': 'Iráni idő',
-                            'standard': 'Iráni zónaidő',
-                            'daylight': 'Iráni nyári idő'
+                            'generic': 'Ir\u00E1ni id\u0151',
+                            'standard': 'Ir\u00E1ni z\u00F3naid\u0151',
+                            'daylight': 'Ir\u00E1ni ny\u00E1ri id\u0151'
                         }
                     },
                     'Irkutsk': {
                         'long': {
-                            'generic': 'Irkutszki idő',
-                            'standard': 'Irkutszki zónaidő',
-                            'daylight': 'Irkutszki nyári idő'
+                            'generic': 'Irkutszki id\u0151',
+                            'standard': 'Irkutszki z\u00F3naid\u0151',
+                            'daylight': 'Irkutszki ny\u00E1ri id\u0151'
                         }
                     },
                     'Israel': {
                         'long': {
-                            'generic': 'Izraeli idő',
-                            'standard': 'Izraeli zónaidő',
-                            'daylight': 'Izraeli nyári idő'
+                            'generic': 'Izraeli id\u0151',
+                            'standard': 'Izraeli z\u00F3naid\u0151',
+                            'daylight': 'Izraeli ny\u00E1ri id\u0151'
                         }
                     },
                     'Japan': {
                         'long': {
-                            'generic': 'Japán idő',
-                            'standard': 'Japán zónaidő',
-                            'daylight': 'Japán nyári idő'
+                            'generic': 'Jap\u00E1n id\u0151',
+                            'standard': 'Jap\u00E1n z\u00F3naid\u0151',
+                            'daylight': 'Jap\u00E1n ny\u00E1ri id\u0151'
                         }
                     },
                     'Kamchatka': {
                         'long': {
-                            'generic': 'Petropavlovszk-kamcsatkai idő',
-                            'standard': 'Petropavlovszk-kamcsatkai zónaidő',
-                            'daylight': 'Petropavlovszk-kamcsatkai nyári idő'
+                            'generic': 'Petropavlovszk-kamcsatkai id\u0151',
+                            'standard': 'Petropavlovszk-kamcsatkai z\u00F3naid\u0151',
+                            'daylight': 'Petropavlovszk-kamcsatkai ny\u00E1ri id\u0151'
                         }
                     },
                     'Kazakhstan_Eastern': {
                         'long': {
-                            'standard': 'Kelet-kazahsztáni idő'
+                            'standard': 'Kelet-kazahszt\u00E1ni id\u0151'
                         }
                     },
                     'Kazakhstan_Western': {
                         'long': {
-                            'standard': 'Nyugat-kazahsztáni idő'
+                            'standard': 'Nyugat-kazahszt\u00E1ni id\u0151'
                         }
                     },
                     'Korea': {
                         'long': {
-                            'generic': 'Koreai idő',
-                            'standard': 'Koreai zónaidő',
-                            'daylight': 'Koreai nyári idő'
+                            'generic': 'Koreai id\u0151',
+                            'standard': 'Koreai z\u00F3naid\u0151',
+                            'daylight': 'Koreai ny\u00E1ri id\u0151'
                         }
                     },
                     'Kosrae': {
                         'long': {
-                            'standard': 'Kosraei idő'
+                            'standard': 'Kosraei id\u0151'
                         }
                     },
                     'Krasnoyarsk': {
                         'long': {
-                            'generic': 'Krasznojarszki idő',
-                            'standard': 'Krasznojarszki zónaidő',
-                            'daylight': 'Krasznojarszki nyári idő'
+                            'generic': 'Krasznojarszki id\u0151',
+                            'standard': 'Krasznojarszki z\u00F3naid\u0151',
+                            'daylight': 'Krasznojarszki ny\u00E1ri id\u0151'
                         }
                     },
                     'Kyrgystan': {
                         'long': {
-                            'standard': 'Kirgiz idő'
+                            'standard': 'Kirgiz id\u0151'
                         }
                     },
                     'Lanka': {
                         'long': {
-                            'standard': 'Lankai idő'
+                            'standard': 'Lankai id\u0151'
                         }
                     },
                     'Line_Islands': {
                         'long': {
-                            'standard': 'Line-szigeteki idő'
+                            'standard': 'Line-szigeteki id\u0151'
                         }
                     },
                     'Lord_Howe': {
                         'long': {
-                            'generic': 'Lord Howe-i idő',
-                            'standard': 'Lord Howe-i zónaidő',
-                            'daylight': 'Lord Howe-i nyári idő'
+                            'generic': 'Lord Howe-i id\u0151',
+                            'standard': 'Lord Howe-i z\u00F3naid\u0151',
+                            'daylight': 'Lord Howe-i ny\u00E1ri id\u0151'
                         }
                     },
                     'Macau': {
                         'long': {
-                            'generic': 'Macaui idő',
-                            'standard': 'Macaui zónaidő',
-                            'daylight': 'Macaui nyári idő'
+                            'generic': 'Macaui id\u0151',
+                            'standard': 'Macaui z\u00F3naid\u0151',
+                            'daylight': 'Macaui ny\u00E1ri id\u0151'
                         }
                     },
                     'Macquarie': {
                         'long': {
-                            'standard': 'Macquarie-i idő'
+                            'standard': 'Macquarie-i id\u0151'
                         }
                     },
                     'Magadan': {
                         'long': {
-                            'generic': 'Magadáni idő',
-                            'standard': 'Magadáni zónaidő',
-                            'daylight': 'Magadáni nyári idő'
+                            'generic': 'Magad\u00E1ni id\u0151',
+                            'standard': 'Magad\u00E1ni z\u00F3naid\u0151',
+                            'daylight': 'Magad\u00E1ni ny\u00E1ri id\u0151'
                         }
                     },
                     'Malaysia': {
                         'long': {
-                            'standard': 'Malajziai idő'
+                            'standard': 'Malajziai id\u0151'
                         }
                     },
                     'Maldives': {
                         'long': {
-                            'standard': 'Maldív-szigeteki idő'
+                            'standard': 'Mald\u00EDv-szigeteki id\u0151'
                         }
                     },
                     'Marquesas': {
                         'long': {
-                            'standard': 'Marquesasi idő'
+                            'standard': 'Marquesasi id\u0151'
                         }
                     },
                     'Marshall_Islands': {
                         'long': {
-                            'standard': 'Marshall-szigeteki idő'
+                            'standard': 'Marshall-szigeteki id\u0151'
                         }
                     },
                     'Mauritius': {
                         'long': {
-                            'generic': 'Mauritiusi idő',
-                            'standard': 'Mauritiusi zónaidő',
-                            'daylight': 'Mauritiusi nyári idő'
+                            'generic': 'Mauritiusi id\u0151',
+                            'standard': 'Mauritiusi z\u00F3naid\u0151',
+                            'daylight': 'Mauritiusi ny\u00E1ri id\u0151'
                         }
                     },
                     'Mawson': {
                         'long': {
-                            'standard': 'Mawsoni idő'
+                            'standard': 'Mawsoni id\u0151'
                         }
                     },
                     'Mongolia': {
                         'long': {
-                            'generic': 'Ulánbátori idő',
-                            'standard': 'Ulánbátori zónaidő',
-                            'daylight': 'Ulánbátori nyári idő'
+                            'generic': 'Ul\u00E1nb\u00E1tori id\u0151',
+                            'standard': 'Ul\u00E1nb\u00E1tori z\u00F3naid\u0151',
+                            'daylight': 'Ul\u00E1nb\u00E1tori ny\u00E1ri id\u0151'
                         }
                     },
                     'Moscow': {
                         'long': {
-                            'generic': 'Moszkvai idő',
-                            'standard': 'Moszkvai zónaidő',
-                            'daylight': 'Moszkvai nyári idő'
+                            'generic': 'Moszkvai id\u0151',
+                            'standard': 'Moszkvai z\u00F3naid\u0151',
+                            'daylight': 'Moszkvai ny\u00E1ri id\u0151'
                         }
                     },
                     'Myanmar': {
                         'long': {
-                            'standard': 'Mianmari idő'
+                            'standard': 'Mianmari id\u0151'
                         }
                     },
                     'Nauru': {
                         'long': {
-                            'standard': 'Naurui idő'
+                            'standard': 'Naurui id\u0151'
                         }
                     },
                     'Nepal': {
                         'long': {
-                            'standard': 'Nepáli idő'
+                            'standard': 'Nep\u00E1li id\u0151'
                         }
                     },
                     'New_Caledonia': {
                         'long': {
-                            'generic': 'Új-kaledóniai idő',
-                            'standard': 'Új-kaledóniai zónaidő',
-                            'daylight': 'Új-kaledóniai nyári idő'
+                            'generic': '\u00DAj-kaled\u00F3niai id\u0151',
+                            'standard': '\u00DAj-kaled\u00F3niai z\u00F3naid\u0151',
+                            'daylight': '\u00DAj-kaled\u00F3niai ny\u00E1ri id\u0151'
                         }
                     },
                     'New_Zealand': {
                         'long': {
-                            'generic': 'Új-zélandi idő',
-                            'standard': 'Új-zélandi zónaidő',
-                            'daylight': 'Új-zélandi nyári idő'
+                            'generic': '\u00DAj-z\u00E9landi id\u0151',
+                            'standard': '\u00DAj-z\u00E9landi z\u00F3naid\u0151',
+                            'daylight': '\u00DAj-z\u00E9landi ny\u00E1ri id\u0151'
                         }
                     }
                 },
                 'hourFormat': '+HH:mm;-HH:mm',
                 'gmtFormat': 'GMT{0}',
                 'gmtZeroFormat': 'GMT',
-                'regionFormat': '{0} idő',
-                'regionFormat-type-daylight': '{0} nyári idő',
-                'regionFormat-type-standard': '{0} zónaidő',
+                'regionFormat': '{0} id\u0151',
+                'regionFormat-type-daylight': '{0} ny\u00E1ri id\u0151',
+                'regionFormat-type-standard': '{0} z\u00F3naid\u0151',
                 'fallbackFormat': '{1} ({0})'
             },
             'calendars': {
@@ -2545,17 +2545,17 @@
                         'format': {
                             'abbreviated': {
                                 '8': 'aug.',
-                                '7': 'júl.',
-                                '6': 'jún.',
-                                '5': 'máj.',
+                                '7': 'j\u00FAl.',
+                                '6': 'j\u00FAn.',
+                                '5': 'm\u00E1j.',
                                 '12': 'dec.',
                                 '11': 'nov.',
                                 '10': 'okt.',
                                 '9': 'szept.',
                                 '1': 'jan.',
                                 '2': 'febr.',
-                                '3': 'márc.',
-                                '4': 'ápr.'
+                                '3': 'm\u00E1rc.',
+                                '4': '\u00E1pr.'
                             },
                             'narrow': {
                                 '8': 'A',
@@ -2569,37 +2569,37 @@
                                 '1': 'J',
                                 '2': 'F',
                                 '3': 'M',
-                                '4': 'Á'
+                                '4': '\u00C1'
                             },
                             'wide': {
                                 '8': 'augusztus',
-                                '7': 'július',
-                                '6': 'június',
-                                '5': 'május',
+                                '7': 'j\u00FAlius',
+                                '6': 'j\u00FAnius',
+                                '5': 'm\u00E1jus',
                                 '12': 'december',
                                 '11': 'november',
-                                '10': 'október',
+                                '10': 'okt\u00F3ber',
                                 '9': 'szeptember',
-                                '1': 'január',
-                                '2': 'február',
-                                '3': 'március',
-                                '4': 'április'
+                                '1': 'janu\u00E1r',
+                                '2': 'febru\u00E1r',
+                                '3': 'm\u00E1rcius',
+                                '4': '\u00E1prilis'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
                                 '8': 'aug.',
-                                '7': 'júl.',
-                                '6': 'jún.',
-                                '5': 'máj.',
+                                '7': 'j\u00FAl.',
+                                '6': 'j\u00FAn.',
+                                '5': 'm\u00E1j.',
                                 '12': 'dec.',
                                 '11': 'nov.',
                                 '10': 'okt.',
                                 '9': 'szept.',
                                 '1': 'jan.',
                                 '2': 'febr.',
-                                '3': 'márc.',
-                                '4': 'ápr.'
+                                '3': 'm\u00E1rc.',
+                                '4': '\u00E1pr.'
                             },
                             'narrow': {
                                 '8': 'A',
@@ -2613,21 +2613,21 @@
                                 '1': 'J',
                                 '2': 'F',
                                 '3': 'M',
-                                '4': 'Á'
+                                '4': '\u00C1'
                             },
                             'wide': {
                                 '8': 'augusztus',
-                                '7': 'július',
-                                '6': 'június',
-                                '5': 'május',
+                                '7': 'j\u00FAlius',
+                                '6': 'j\u00FAnius',
+                                '5': 'm\u00E1jus',
                                 '12': 'december',
                                 '11': 'november',
-                                '10': 'október',
+                                '10': 'okt\u00F3ber',
                                 '9': 'szeptember',
-                                '1': 'január',
-                                '2': 'február',
-                                '3': 'március',
-                                '4': 'április'
+                                '1': 'janu\u00E1r',
+                                '2': 'febru\u00E1r',
+                                '3': 'm\u00E1rcius',
+                                '4': '\u00E1prilis'
                             }
                         }
                     },
@@ -2661,12 +2661,12 @@
                                 'sat': 'Szo'
                             },
                             'wide': {
-                                'sun': 'vasárnap',
-                                'mon': 'hétfő',
+                                'sun': 'vas\u00E1rnap',
+                                'mon': 'h\u00E9tf\u0151',
                                 'tue': 'kedd',
                                 'wed': 'szerda',
-                                'thu': 'csütörtök',
-                                'fri': 'péntek',
+                                'thu': 'cs\u00FCt\u00F6rt\u00F6k',
+                                'fri': 'p\u00E9ntek',
                                 'sat': 'szombat'
                             }
                         },
@@ -2699,12 +2699,12 @@
                                 'sat': 'Szo'
                             },
                             'wide': {
-                                'sun': 'vasárnap',
-                                'mon': 'hétfő',
+                                'sun': 'vas\u00E1rnap',
+                                'mon': 'h\u00E9tf\u0151',
                                 'tue': 'kedd',
                                 'wed': 'szerda',
-                                'thu': 'csütörtök',
-                                'fri': 'péntek',
+                                'thu': 'cs\u00FCt\u00F6rt\u00F6k',
+                                'fri': 'p\u00E9ntek',
                                 'sat': 'szombat'
                             }
                         }
@@ -2724,10 +2724,10 @@
                                 '4': '4.'
                             },
                             'wide': {
-                                '1': 'I. negyedév',
-                                '2': 'II. negyedév',
-                                '3': 'III. negyedév',
-                                '4': 'IV. negyedév'
+                                '1': 'I. negyed\u00E9v',
+                                '2': 'II. negyed\u00E9v',
+                                '3': 'III. negyed\u00E9v',
+                                '4': 'IV. negyed\u00E9v'
                             }
                         },
                         'stand-alone': {
@@ -2744,10 +2744,10 @@
                                 '4': '4.'
                             },
                             'wide': {
-                                '1': '1. negyedév',
-                                '2': '2. negyedév',
-                                '3': '3. negyedév',
-                                '4': '4. negyedév'
+                                '1': '1. negyed\u00E9v',
+                                '2': '2. negyed\u00E9v',
+                                '3': '3. negyed\u00E9v',
+                                '4': '4. negyed\u00E9v'
                             }
                         }
                     },
@@ -2783,9 +2783,9 @@
                     },
                     'eras': {
                         'eraNames': {
-                            '0': 'időszámításunk előtt',
+                            '0': 'id\u0151sz\u00E1m\u00EDt\u00E1sunk el\u0151tt',
                             '0-alt-variant': 'Kr. e.',
-                            '1': 'időszámításunk szerint',
+                            '1': 'id\u0151sz\u00E1m\u00EDt\u00E1sunk szerint',
                             '1-alt-variant': 'Kr. u.'
                         },
                         'eraAbbr': {

@@ -117,13 +117,13 @@
                     'knda': 'Kannada cijfers',
                     'khmr': 'Khmer cijfers',
                     'kali': 'kali',
-                    'jpanfin': 'Japanse financiële cijfers',
+                    'jpanfin': 'Japanse financi\u00EBle cijfers',
                     'jpan': 'Japanse cijfers',
                     'java': 'Javaanse cijfers',
                     'hebr': 'Hebreeuwse cijfers',
-                    'hantfin': 'Traditioneel Chinese financiële cijfers',
+                    'hantfin': 'Traditioneel Chinese financi\u00EBle cijfers',
                     'hant': 'Traditioneel Chinese cijfers',
-                    'hansfin': 'Vereenvoudigd Chinese financiële cijfers',
+                    'hansfin': 'Vereenvoudigd Chinese financi\u00EBle cijfers',
                     'hans': 'Vereenvoudigd Chinese cijfers',
                     'hanidec': 'Chinese decimale getallen',
                     'guru': 'Gurmukhi cijfers',
@@ -135,7 +135,7 @@
                     'armn': 'Armeense cijfers',
                     'arabext': 'Uitgebreide Arabisch-Indische cijfers',
                     'arab': 'Arabisch-Indische cijfers',
-                    'finance': 'Financiële cijfers',
+                    'finance': 'Financi\u00EBle cijfers',
                     'traditional': 'Traditionele cijfers',
                     'native': 'Binnenlandse cijfers',
                     'beng': 'Bengaalse cijfers',
@@ -194,7 +194,7 @@
                 'colBackwards': 'Omgekeerd sorteren op accenten',
                 'colAlternate': 'Sorteren van symbolen negeren',
                 'calendar': 'Kalender',
-                'x': 'Privégebruik',
+                'x': 'Priv\u00E9gebruik',
                 'variableTop': 'Sorteren als symbolen',
                 'va': 'Landvariant',
                 'timezone': 'Tijdzone',
@@ -239,7 +239,7 @@
                             'exemplarCity': 'Funafuti'
                         },
                         'Galapagos': {
-                            'exemplarCity': 'Galápagos'
+                            'exemplarCity': 'Gal\u00E1pagos'
                         },
                         'Gambier': {
                             'exemplarCity': 'Gambiereilanden'
@@ -320,7 +320,7 @@
                             'exemplarCity': 'Norfolk'
                         },
                         'Noumea': {
-                            'exemplarCity': 'Nouméa'
+                            'exemplarCity': 'Noum\u00E9a'
                         },
                         'Pago_Pago': {
                             'exemplarCity': 'Pago Pago'
@@ -369,13 +369,13 @@
                             'exemplarCity': 'Maldiven'
                         },
                         'Mahe': {
-                            'exemplarCity': 'Mahé'
+                            'exemplarCity': 'Mah\u00E9'
                         },
                         'Kerguelen': {
                             'exemplarCity': 'Kerguelen'
                         },
                         'Reunion': {
-                            'exemplarCity': 'Réunion'
+                            'exemplarCity': 'R\u00E9union'
                         },
                         'Mayotte': {
                             'exemplarCity': 'Mayotte'
@@ -575,14 +575,14 @@
                             'exemplarCity': 'Boise'
                         },
                         'Asuncion': {
-                            'exemplarCity': 'Asunción'
+                            'exemplarCity': 'Asunci\u00F3n'
                         },
                         'Aruba': {
                             'exemplarCity': 'Aruba'
                         },
                         'Argentina': {
                             'Rio_Gallegos': {
-                                'exemplarCity': 'Río Gallegos'
+                                'exemplarCity': 'R\u00EDo Gallegos'
                             },
                             'San_Juan': {
                                 'exemplarCity': 'San Juan'
@@ -600,7 +600,7 @@
                                 'exemplarCity': 'Salta'
                             },
                             'Tucuman': {
-                                'exemplarCity': 'Tucumán'
+                                'exemplarCity': 'Tucum\u00E1n'
                             }
                         },
                         'Araguaina': {
@@ -622,13 +622,13 @@
                             'exemplarCity': 'Bahia'
                         },
                         'Bahia_Banderas': {
-                            'exemplarCity': 'Bahía de Banderas'
+                            'exemplarCity': 'Bah\u00EDa de Banderas'
                         },
                         'Barbados': {
                             'exemplarCity': 'Barbados'
                         },
                         'Belem': {
-                            'exemplarCity': 'Belém'
+                            'exemplarCity': 'Bel\u00E9m'
                         },
                         'Belize': {
                             'exemplarCity': 'Belize'
@@ -640,10 +640,10 @@
                             'exemplarCity': 'Boa Vista'
                         },
                         'Bogota': {
-                            'exemplarCity': 'Bogotá'
+                            'exemplarCity': 'Bogot\u00E1'
                         },
                         'Curacao': {
-                            'exemplarCity': 'Curaçao'
+                            'exemplarCity': 'Cura\u00E7ao'
                         },
                         'Danmarkshavn': {
                             'exemplarCity': 'Danmarkshavn'
@@ -785,7 +785,7 @@
                             'exemplarCity': 'Atikokan'
                         },
                         'Cordoba': {
-                            'exemplarCity': 'Córdoba'
+                            'exemplarCity': 'C\u00F3rdoba'
                         },
                         'Costa_Rica': {
                             'exemplarCity': 'Costa Rica'
@@ -794,7 +794,7 @@
                             'exemplarCity': 'Creston'
                         },
                         'Cuiaba': {
-                            'exemplarCity': 'Cuiabá'
+                            'exemplarCity': 'Cuiab\u00E1'
                         },
                         'La_Paz': {
                             'exemplarCity': 'La Paz'
@@ -812,7 +812,7 @@
                             'exemplarCity': 'Beneden Prinsen Kwartier'
                         },
                         'Maceio': {
-                            'exemplarCity': 'Maceió'
+                            'exemplarCity': 'Macei\u00F3'
                         },
                         'Managua': {
                             'exemplarCity': 'Managua'
@@ -830,7 +830,7 @@
                             'exemplarCity': 'Matamoros'
                         },
                         'Mazatlan': {
-                            'exemplarCity': 'Mazatlán'
+                            'exemplarCity': 'Mazatl\u00E1n'
                         },
                         'Mendoza': {
                             'exemplarCity': 'Mendoza'
@@ -839,7 +839,7 @@
                             'exemplarCity': 'Menominee'
                         },
                         'Merida': {
-                            'exemplarCity': 'Mérida'
+                            'exemplarCity': 'M\u00E9rida'
                         },
                         'Metlakatla': {
                             'exemplarCity': 'Metlakatla'
@@ -913,7 +913,7 @@
                             'exemplarCity': 'Port of Spain'
                         },
                         'Porto_Velho': {
-                            'exemplarCity': 'Pôrto Velho'
+                            'exemplarCity': 'P\u00F4rto Velho'
                         },
                         'Puerto_Rico': {
                             'exemplarCity': 'Puerto Rico'
@@ -949,7 +949,7 @@
                             'exemplarCity': 'Santo Domingo'
                         },
                         'Sao_Paulo': {
-                            'exemplarCity': 'São Paulo'
+                            'exemplarCity': 'S\u00E3o Paulo'
                         },
                         'Scoresbysund': {
                             'exemplarCity': 'Ittoqqortoormiit'
@@ -961,7 +961,7 @@
                             'exemplarCity': 'Sitka'
                         },
                         'St_Barthelemy': {
-                            'exemplarCity': 'Saint-Barthélemy'
+                            'exemplarCity': 'Saint-Barth\u00E9lemy'
                         },
                         'St_Johns': {
                             'exemplarCity': 'St. John\u2019s'
@@ -1002,10 +1002,10 @@
                             'exemplarCity': 'Canarische Eilanden'
                         },
                         'Cape_Verde': {
-                            'exemplarCity': 'Kaapverdië'
+                            'exemplarCity': 'Kaapverdi\u00EB'
                         },
                         'Faeroe': {
-                            'exemplarCity': 'Faeröer'
+                            'exemplarCity': 'Faer\u00F6er'
                         },
                         'Madeira': {
                             'exemplarCity': 'Madeira'
@@ -1112,7 +1112,7 @@
                             'exemplarCity': 'Vaduz'
                         },
                         'Zurich': {
-                            'exemplarCity': 'Zürich'
+                            'exemplarCity': 'Z\u00FCrich'
                         },
                         'Zaporozhye': {
                             'exemplarCity': 'Zaporizja'
@@ -1282,7 +1282,7 @@
                             'exemplarCity': 'Tripoli'
                         },
                         'Sao_Tome': {
-                            'exemplarCity': 'Sao Tomé'
+                            'exemplarCity': 'Sao Tom\u00E9'
                         },
                         'Porto-Novo': {
                             'exemplarCity': 'Porto-Novo'
@@ -1306,7 +1306,7 @@
                             'exemplarCity': 'Luanda'
                         },
                         'Lome': {
-                            'exemplarCity': 'Lomé'
+                            'exemplarCity': 'Lom\u00E9'
                         },
                         'Conakry': {
                             'exemplarCity': 'Conakry'
@@ -1318,7 +1318,7 @@
                             'exemplarCity': 'Casablanca'
                         },
                         'Cairo': {
-                            'exemplarCity': 'Caïro'
+                            'exemplarCity': 'Ca\u00EFro'
                         },
                         'Bujumbura': {
                             'exemplarCity': 'Bujumbura'
@@ -1491,7 +1491,7 @@
                             'exemplarCity': 'Asjchabad'
                         },
                         'Aqtobe': {
-                            'exemplarCity': 'Aqtöbe'
+                            'exemplarCity': 'Aqt\u00F6be'
                         },
                         'Aqtau': {
                             'exemplarCity': 'Aqtau'
@@ -1619,7 +1619,7 @@
                     },
                     'Reunion': {
                         'long': {
-                            'standard': 'Réunionse tijd'
+                            'standard': 'R\u00E9unionse tijd'
                         }
                     },
                     'Qyzylorda': {
@@ -1783,9 +1783,9 @@
                     },
                     'Aqtobe': {
                         'long': {
-                            'generic': 'Aqtöbe-tijd',
-                            'standard': 'Aqtöbe-standaardtijd',
-                            'daylight': 'Aqtöbe-zomertijd'
+                            'generic': 'Aqt\u00F6be-tijd',
+                            'standard': 'Aqt\u00F6be-standaardtijd',
+                            'daylight': 'Aqt\u00F6be-zomertijd'
                         }
                     },
                     'Cape_Verde': {
@@ -1866,7 +1866,7 @@
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': 'Dumont-d\'Urville tijd'
+                            'standard': "Dumont-d'Urville tijd"
                         }
                     },
                     'East_Timor': {
@@ -2363,9 +2363,9 @@
                     },
                     'Israel': {
                         'long': {
-                            'generic': 'Israëlische tijd',
-                            'standard': 'Israëlische standaardtijd',
-                            'daylight': 'Israëlische zomertijd'
+                            'generic': 'Isra\u00EBlische tijd',
+                            'standard': 'Isra\u00EBlische standaardtijd',
+                            'daylight': 'Isra\u00EBlische zomertijd'
                         }
                     },
                     'Japan': {
@@ -2752,7 +2752,7 @@
                         'format': {
                             'abbreviated': {
                                 'am': 'AM',
-                                'noon': '12 uur \'s middags',
+                                'noon': "12 uur 's middags",
                                 'pm': 'PM'
                             },
                             'narrow': {
@@ -2762,14 +2762,14 @@
                             },
                             'wide': {
                                 'am': 'AM',
-                                'noon': '12 uur \'s middags',
+                                'noon': "12 uur 's middags",
                                 'pm': 'PM'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
                                 'am': 'a.m.',
-                                'noon': '12 uur \'s middags',
+                                'noon': "12 uur 's middags",
                                 'pm': 'p.m.'
                             },
                             'narrow': {
@@ -2779,7 +2779,7 @@
                             },
                             'wide': {
                                 'am': 'voormiddag',
-                                'noon': '12 uur \'s middags',
+                                'noon': "12 uur 's middags",
                                 'pm': 'p.m.'
                             }
                         }
@@ -2787,7 +2787,7 @@
                     'eras': {
                         'eraNames': {
                             '0': 'Voor Christus',
-                            '0-alt-variant': 'vóór gewone jaartelling',
+                            '0-alt-variant': 'v\u00F3\u00F3r gewone jaartelling',
                             '1': 'na Christus',
                             '1-alt-variant': 'gewone jaartelling'
                         },

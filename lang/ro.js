@@ -42,38 +42,38 @@
     }(function (AstroDate) {
         AstroDate.lang('ro', {
             'codePatterns': {
-                'language': 'Limbă: {0}',
+                'language': 'Limb\u0103: {0}',
                 'script': 'Scriere: {0}',
                 'territory': 'Regiune: {0}'
             },
             'types': {
                 'colHiraganaQuaternary': {
-                    'no': 'Ordonați caracterele kana separat',
-                    'yes': 'Ordonați kana diferențiat'
+                    'no': 'Ordona\u021Bi caracterele kana separat',
+                    'yes': 'Ordona\u021Bi kana diferen\u021Biat'
                 },
                 'colCaseLevel': {
-                    'no': 'Ordonați neținând seama de diferența dintre majuscule/minuscule',
-                    'yes': 'Ordonați ținând seama de diferența dintre majuscule/minuscule'
+                    'no': 'Ordona\u021Bi ne\u021Bin\u00E2nd seama de diferen\u021Ba dintre majuscule/minuscule',
+                    'yes': 'Ordona\u021Bi \u021Bin\u00E2nd seama de diferen\u021Ba dintre majuscule/minuscule'
                 },
                 'colCaseFirst': {
-                    'lower': 'Ordonați întâi minusculele',
-                    'no': 'Ordonați după dimensiunea normală a literei',
-                    'upper': 'Ordonați mai întâi majusculele'
+                    'lower': 'Ordona\u021Bi \u00EEnt\u00E2i minusculele',
+                    'no': 'Ordona\u021Bi dup\u0103 dimensiunea normal\u0103 a literei',
+                    'upper': 'Ordona\u021Bi mai \u00EEnt\u00E2i majusculele'
                 },
                 'colStrength': {
-                    'identical': 'Ordonați-le pe toate',
-                    'primary': 'Ordonați numai literele de bază',
-                    'quaternary': 'Ordonați după accente/dimensiunea literei/lățime/kana',
-                    'secondary': 'Ordonați după accent',
-                    'tertiary': 'Ordonați după accente/dimensiunea literei/lățime'
+                    'identical': 'Ordona\u021Bi-le pe toate',
+                    'primary': 'Ordona\u021Bi numai literele de baz\u0103',
+                    'quaternary': 'Ordona\u021Bi dup\u0103 accente/dimensiunea literei/l\u0103\u021Bime/kana',
+                    'secondary': 'Ordona\u021Bi dup\u0103 accent',
+                    'tertiary': 'Ordona\u021Bi dup\u0103 accente/dimensiunea literei/l\u0103\u021Bime'
                 },
                 'colNumeric': {
-                    'no': 'Ordonați cifrele individual',
-                    'yes': 'Ordonați cifrele în ordine numerică'
+                    'no': 'Ordona\u021Bi cifrele individual',
+                    'yes': 'Ordona\u021Bi cifrele \u00EEn ordine numeric\u0103'
                 },
                 'colNormalization': {
-                    'no': 'Ordonați fără normalizare',
-                    'yes': 'Ordonați caracterele unicode normalizat'
+                    'no': 'Ordona\u021Bi f\u0103r\u0103 normalizare',
+                    'yes': 'Ordona\u021Bi caracterele unicode normalizat'
                 },
                 'calendar': {
                     'japanese': 'calendar japonez',
@@ -88,7 +88,7 @@
                     'roc': 'calendar al Republicii Chineze',
                     'chinese': 'calendar chinezesc',
                     'buddhist': 'calendar budist',
-                    'indian': 'calendar național indian',
+                    'indian': 'calendar na\u021Bional indian',
                     'islamic': 'calendar islamic',
                     'islamic-civil': 'calendar islamic civil',
                     'islamic-rgsa': 'islamic-rgsa',
@@ -96,22 +96,22 @@
                     'islamic-umalqura': 'islamic-umalqura'
                 },
                 'collation': {
-                    'phonebook': 'sortare după cartea de telefon',
-                    'gb2312han': 'sortare pentru chineza simplificată - GB2312',
+                    'phonebook': 'sortare dup\u0103 cartea de telefon',
+                    'gb2312han': 'sortare pentru chineza simplificat\u0103 - GB2312',
                     'eor': 'regulile europene de sortare',
-                    'ducet': 'ordine de sortare Unicode implicită',
-                    'dictionary': 'Ordine de sortare a dicționarului',
-                    'big5han': 'sortare pentru chineza tradițională - Big5',
-                    'traditional': 'sortare tradițională',
+                    'ducet': 'ordine de sortare Unicode implicit\u0103',
+                    'dictionary': 'Ordine de sortare a dic\u021Bionarului',
+                    'big5han': 'sortare pentru chineza tradi\u021Bional\u0103 - Big5',
+                    'traditional': 'sortare tradi\u021Bional\u0103',
                     'standard': 'ordine de sortare standard',
                     'zhuyin': 'zhuyin',
                     'unihan': 'Ordine de sortare a liniilor ideogramelor',
-                    'stroke': 'ordine de sortare după trasare',
-                    'searchjl': 'Căutați în funcție de consoana inițială hangul',
-                    'search': 'căutare cu scop general',
-                    'reformed': 'Ordine de sortare reformată',
+                    'stroke': 'ordine de sortare dup\u0103 trasare',
+                    'searchjl': 'C\u0103uta\u021Bi \u00EEn func\u021Bie de consoana ini\u021Bial\u0103 hangul',
+                    'search': 'c\u0103utare cu scop general',
+                    'reformed': 'Ordine de sortare reformat\u0103',
                     'pinyin': 'sortare pinyin',
-                    'phonetic': 'Tip de ordonare fonetică'
+                    'phonetic': 'Tip de ordonare fonetic\u0103'
                 },
                 'numbers': {
                     'knda': 'cifre kannada',
@@ -121,22 +121,22 @@
                     'jpan': 'numerale japoneze',
                     'java': 'java',
                     'hebr': 'numerale ebraice',
-                    'hantfin': 'numerale financiare chinezești tradiționale',
-                    'hant': 'numerale chinezești tradiționale',
-                    'hansfin': 'numerale financiare chinezești simplificate',
-                    'hans': 'numerale chinezești simplificate',
-                    'hanidec': 'numerale zecimale chinezești',
+                    'hantfin': 'numerale financiare chineze\u0219ti tradi\u021Bionale',
+                    'hant': 'numerale chineze\u0219ti tradi\u021Bionale',
+                    'hansfin': 'numerale financiare chineze\u0219ti simplificate',
+                    'hans': 'numerale chineze\u0219ti simplificate',
+                    'hanidec': 'numerale zecimale chineze\u0219ti',
                     'guru': 'cifre gurmukhi',
                     'gujr': 'cifre gujarati',
-                    'greklow': 'numerale grecești cu minuscule',
-                    'grek': 'numerale grecești',
+                    'greklow': 'numerale grece\u0219ti cu minuscule',
+                    'grek': 'numerale grece\u0219ti',
                     'bali': 'bali',
-                    'armnlow': 'numerale armenești cu minuscule',
-                    'armn': 'numerale armenești',
+                    'armnlow': 'numerale armene\u0219ti cu minuscule',
+                    'armn': 'numerale armene\u0219ti',
                     'arabext': 'cifre indo-arabe extinse',
                     'arab': 'cifre indo-arabe',
                     'finance': 'Sistemul numeric financiar',
-                    'traditional': 'Numere tradiționale',
+                    'traditional': 'Numere tradi\u021Bionale',
                     'native': 'Cifre native',
                     'beng': 'cifre bengaleze',
                     'brah': 'brah',
@@ -155,8 +155,8 @@
                     'tibt': 'cifre tibetane',
                     'thai': 'cifre thailandeze',
                     'telu': 'cifre telugu',
-                    'tamldec': 'cifre tamilă',
-                    'taml': 'numerale tradiționale tamilă',
+                    'tamldec': 'cifre tamil\u0103',
+                    'taml': 'numerale tradi\u021Bionale tamil\u0103',
                     'talu': 'talu',
                     'takr': 'takr',
                     'olck': 'olck',
@@ -169,39 +169,39 @@
                     'limb': 'limb',
                     'lepc': 'lepc',
                     'latn': 'cifre occidentale',
-                    'laoo': 'cifre laoțiene',
+                    'laoo': 'cifre lao\u021Biene',
                     'lanatham': 'lanatham',
                     'lana': 'lana',
                     'geor': 'numerale georgiene',
-                    'fullwide': 'cifre cu lățimea întreagă',
+                    'fullwide': 'cifre cu l\u0103\u021Bimea \u00EEntreag\u0103',
                     'ethi': 'numerale etiopiene'
                 },
                 'colAlternate': {
-                    'non-ignorable': 'Ordonați simbolurile',
-                    'shifted': 'Ordonați ignorând simbolurile'
+                    'non-ignorable': 'Ordona\u021Bi simbolurile',
+                    'shifted': 'Ordona\u021Bi ignor\u00E2nd simbolurile'
                 },
                 'colBackwards': {
-                    'no': 'Ordonați accentele în mod normal',
-                    'yes': 'Ordonați după accente în ordine inversă'
+                    'no': 'Ordona\u021Bi accentele \u00EEn mod normal',
+                    'yes': 'Ordona\u021Bi dup\u0103 accente \u00EEn ordine invers\u0103'
                 }
             },
             'keys': {
-                'colNormalization': 'Ordonare normalizată',
+                'colNormalization': 'Ordonare normalizat\u0103',
                 'collation': 'ordine de sortare',
-                'colHiraganaQuaternary': 'Ordonare după kana',
-                'colCaseLevel': 'Ordonare care ține seama de majuscule/minuscule',
-                'colCaseFirst': 'Ordonare după majuscule/minuscule',
-                'colBackwards': 'Ordonare inversă după accent',
+                'colHiraganaQuaternary': 'Ordonare dup\u0103 kana',
+                'colCaseLevel': 'Ordonare care \u021Bine seama de majuscule/minuscule',
+                'colCaseFirst': 'Ordonare dup\u0103 majuscule/minuscule',
+                'colBackwards': 'Ordonare invers\u0103 dup\u0103 accent',
                 'colAlternate': 'Ordonare cu simbolurile ignorate',
                 'calendar': 'calendar',
-                'x': 'Utilizare privată',
-                'variableTop': 'Ordonați ca simboluri',
-                'va': 'Varianta locală',
+                'x': 'Utilizare privat\u0103',
+                'variableTop': 'Ordona\u021Bi ca simboluri',
+                'va': 'Varianta local\u0103',
                 'timezone': 'Fusul orar',
                 'numbers': 'numere',
-                'currency': 'monedă',
-                'colStrength': 'Puterea ordonării',
-                'colNumeric': 'Ordonare numerică'
+                'currency': 'moned\u0103',
+                'colStrength': 'Puterea ordon\u0103rii',
+                'colNumeric': 'Ordonare numeric\u0103'
             },
             'localeDisplayPattern': {
                 'localePattern': '{0} ({1})',
@@ -281,7 +281,7 @@
                             'exemplarCity': 'Chatham'
                         },
                         'Easter': {
-                            'exemplarCity': 'Insula Paștelui'
+                            'exemplarCity': 'Insula Pa\u0219telui'
                         },
                         'Efate': {
                             'exemplarCity': 'Efate'
@@ -375,7 +375,7 @@
                             'exemplarCity': 'Kerguelen'
                         },
                         'Reunion': {
-                            'exemplarCity': 'Réunion'
+                            'exemplarCity': 'R\u00E9union'
                         },
                         'Mayotte': {
                             'exemplarCity': 'Mayotte'
@@ -390,7 +390,7 @@
                             'exemplarCity': 'Chagos'
                         },
                         'Christmas': {
-                            'exemplarCity': 'Insula Crăciunului'
+                            'exemplarCity': 'Insula Cr\u0103ciunului'
                         },
                         'Cocos': {
                             'exemplarCity': 'Cocos'
@@ -458,7 +458,7 @@
                             'exemplarCity': 'GMT-9'
                         },
                         'Unknown': {
-                            'exemplarCity': 'Oraș necunoscut'
+                            'exemplarCity': 'Ora\u0219 necunoscut'
                         },
                         'GMT-2': {
                             'exemplarCity': 'GMT-2'
@@ -575,7 +575,7 @@
                             'exemplarCity': 'Boise'
                         },
                         'Asuncion': {
-                            'exemplarCity': 'Asunción'
+                            'exemplarCity': 'Asunci\u00F3n'
                         },
                         'Aruba': {
                             'exemplarCity': 'Aruba'
@@ -643,7 +643,7 @@
                             'exemplarCity': 'Bogota'
                         },
                         'Curacao': {
-                            'exemplarCity': 'Curaçao'
+                            'exemplarCity': 'Cura\u00E7ao'
                         },
                         'Danmarkshavn': {
                             'exemplarCity': 'Danmarkshavn'
@@ -809,7 +809,7 @@
                             'exemplarCity': 'Louisville'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': 'Lower Prince\'s Quarter'
+                            'exemplarCity': "Lower Prince's Quarter"
                         },
                         'Maceio': {
                             'exemplarCity': 'Maceio'
@@ -961,7 +961,7 @@
                             'exemplarCity': 'Sitka'
                         },
                         'St_Barthelemy': {
-                            'exemplarCity': 'Saint Barthélemy'
+                            'exemplarCity': 'Saint Barth\u00E9lemy'
                         },
                         'St_Johns': {
                             'exemplarCity': 'St. John\u2019s'
@@ -1038,7 +1038,7 @@
                         },
                         'London': {
                             'long': {
-                                'daylight': 'Ora de vară britanică'
+                                'daylight': 'Ora de var\u0103 britanic\u0103'
                             },
                             'exemplarCity': 'Londra'
                         },
@@ -1064,7 +1064,7 @@
                             'exemplarCity': 'Insula Man'
                         },
                         'Bucharest': {
-                            'exemplarCity': 'București'
+                            'exemplarCity': 'Bucure\u0219ti'
                         },
                         'Brussels': {
                             'exemplarCity': 'Bruxelles'
@@ -1112,7 +1112,7 @@
                             'exemplarCity': 'Vaduz'
                         },
                         'Zurich': {
-                            'exemplarCity': 'Zürich'
+                            'exemplarCity': 'Z\u00FCrich'
                         },
                         'Zaporozhye': {
                             'exemplarCity': 'Zaporoje'
@@ -1121,7 +1121,7 @@
                             'exemplarCity': 'Zagreb'
                         },
                         'Warsaw': {
-                            'exemplarCity': 'Varșovia'
+                            'exemplarCity': 'Var\u0219ovia'
                         },
                         'Volgograd': {
                             'exemplarCity': 'Volgograd'
@@ -1170,7 +1170,7 @@
                         },
                         'Dublin': {
                             'long': {
-                                'daylight': 'Ora de vară a Irlandei'
+                                'daylight': 'Ora de var\u0103 a Irlandei'
                             },
                             'exemplarCity': 'Dublin'
                         },
@@ -1178,7 +1178,7 @@
                             'exemplarCity': 'Copenhaga'
                         },
                         'Chisinau': {
-                            'exemplarCity': 'Chișinău'
+                            'exemplarCity': 'Chi\u0219in\u0103u'
                         },
                         'Busingen': {
                             'exemplarCity': 'Busingen'
@@ -1270,7 +1270,7 @@
                             'exemplarCity': 'Nairobi'
                         },
                         'Ndjamena': {
-                            'exemplarCity': 'N\'Djamena'
+                            'exemplarCity': "N'Djamena"
                         },
                         'Windhoek': {
                             'exemplarCity': 'Windhoek'
@@ -1282,7 +1282,7 @@
                             'exemplarCity': 'Tripoli'
                         },
                         'Sao_Tome': {
-                            'exemplarCity': 'São Tomé'
+                            'exemplarCity': 'S\u00E3o Tom\u00E9'
                         },
                         'Porto-Novo': {
                             'exemplarCity': 'Porto-Novo'
@@ -1359,7 +1359,7 @@
                             'exemplarCity': 'Sahalin'
                         },
                         'Saigon': {
-                            'exemplarCity': 'Ho Și Min'
+                            'exemplarCity': 'Ho \u0218i Min'
                         },
                         'Riyadh': {
                             'exemplarCity': 'Riyad'
@@ -1413,7 +1413,7 @@
                             'exemplarCity': 'Dubai'
                         },
                         'Dushanbe': {
-                            'exemplarCity': 'Dușanbe'
+                            'exemplarCity': 'Du\u0219anbe'
                         },
                         'Gaza': {
                             'exemplarCity': 'Gaza'
@@ -1431,7 +1431,7 @@
                             'exemplarCity': 'Hovd'
                         },
                         'Irkutsk': {
-                            'exemplarCity': 'Irkuțk'
+                            'exemplarCity': 'Irku\u021Bk'
                         },
                         'Jakarta': {
                             'exemplarCity': 'Jakarta'
@@ -1455,7 +1455,7 @@
                             'exemplarCity': 'Vladivostok'
                         },
                         'Yakutsk': {
-                            'exemplarCity': 'Yakuțk'
+                            'exemplarCity': 'Yaku\u021Bk'
                         },
                         'Yekaterinburg': {
                             'exemplarCity': 'Ekaterinburg'
@@ -1476,7 +1476,7 @@
                             'exemplarCity': 'Tbilisi'
                         },
                         'Tashkent': {
-                            'exemplarCity': 'Tașkent'
+                            'exemplarCity': 'Ta\u0219kent'
                         },
                         'Taipei': {
                             'exemplarCity': 'Taipei'
@@ -1488,7 +1488,7 @@
                             'exemplarCity': 'Ierusalim'
                         },
                         'Ashgabat': {
-                            'exemplarCity': 'Așgabat'
+                            'exemplarCity': 'A\u0219gabat'
                         },
                         'Aqtobe': {
                             'exemplarCity': 'Aktobe'
@@ -1503,7 +1503,7 @@
                             'exemplarCity': 'Amman'
                         },
                         'Almaty': {
-                            'exemplarCity': 'Almatî'
+                            'exemplarCity': 'Almat\u00EE'
                         },
                         'Aden': {
                             'exemplarCity': 'Aden'
@@ -1521,7 +1521,7 @@
                             'exemplarCity': 'Beirut'
                         },
                         'Bishkek': {
-                            'exemplarCity': 'Bișkek'
+                            'exemplarCity': 'Bi\u0219kek'
                         },
                         'Brunei': {
                             'exemplarCity': 'Brunei'
@@ -1581,7 +1581,7 @@
                             'exemplarCity': 'Nicosia'
                         },
                         'Novokuznetsk': {
-                            'exemplarCity': 'Novokuznețk'
+                            'exemplarCity': 'Novokuzne\u021Bk'
                         }
                     }
                 },
@@ -1620,21 +1620,21 @@
                         'long': {
                             'generic': 'Ora din Samoa',
                             'standard': 'Ora standard din Samoa',
-                            'daylight': 'Ora de vară din Samoa'
+                            'daylight': 'Ora de var\u0103 din Samoa'
                         }
                     },
                     'Samara': {
                         'long': {
                             'generic': 'Ora din Samara',
                             'standard': 'Ora standard din Samara',
-                            'daylight': 'Ora de vară din Samara'
+                            'daylight': 'Ora de var\u0103 din Samara'
                         }
                     },
                     'Sakhalin': {
                         'long': {
                             'generic': 'Ora din Sahalin',
                             'standard': 'Ora standard din Sahalin',
-                            'daylight': 'Ora de vară din Sahalin'
+                            'daylight': 'Ora de var\u0103 din Sahalin'
                         }
                     },
                     'Rothera': {
@@ -1659,9 +1659,9 @@
                     },
                     'Pierre_Miquelon': {
                         'long': {
-                            'generic': 'Ora din Saint-Pierre și Miquelon',
-                            'standard': 'Ora standard din Saint-Pierre și Miquelon',
-                            'daylight': 'Ora de vară din Saint-Pierre și Miquelon'
+                            'generic': 'Ora din Saint-Pierre \u0219i Miquelon',
+                            'standard': 'Ora standard din Saint-Pierre \u0219i Miquelon',
+                            'daylight': 'Ora de var\u0103 din Saint-Pierre \u0219i Miquelon'
                         }
                     },
                     'Phoenix_Islands': {
@@ -1673,21 +1673,21 @@
                         'long': {
                             'generic': 'Ora din Filipine',
                             'standard': 'Ora standard din Filipine',
-                            'daylight': 'Ora de vară din Filipine'
+                            'daylight': 'Ora de var\u0103 din Filipine'
                         }
                     },
                     'Peru': {
                         'long': {
                             'generic': 'Ora din Peru',
                             'standard': 'Ora standard din Peru',
-                            'daylight': 'Ora de vară din Peru'
+                            'daylight': 'Ora de var\u0103 din Peru'
                         }
                     },
                     'Paraguay': {
                         'long': {
                             'generic': 'Ora din Paraguay',
                             'standard': 'Ora standard din Paraguay',
-                            'daylight': 'Ora de vară din Paraguay'
+                            'daylight': 'Ora de var\u0103 din Paraguay'
                         }
                     },
                     'Papua_New_Guinea': {
@@ -1719,70 +1719,70 @@
                         'long': {
                             'generic': 'Ora Acre',
                             'standard': 'Ora standard Acre',
-                            'daylight': 'Ora de vară Acre'
+                            'daylight': 'Ora de var\u0103 Acre'
                         }
                     },
                     'Amazon': {
                         'long': {
                             'generic': 'Ora Amazonului',
                             'standard': 'Ora standard a Amazonului',
-                            'daylight': 'Ora de vară a Amazonului'
+                            'daylight': 'Ora de var\u0103 a Amazonului'
                         }
                     },
                     'America_Central': {
                         'long': {
-                            'generic': 'Ora centrală nord-americană',
-                            'standard': 'Ora standard centrală nord-americană',
-                            'daylight': 'Ora de vară centrală nord-americană'
+                            'generic': 'Ora central\u0103 nord-american\u0103',
+                            'standard': 'Ora standard central\u0103 nord-american\u0103',
+                            'daylight': 'Ora de var\u0103 central\u0103 nord-american\u0103'
                         }
                     },
                     'America_Eastern': {
                         'long': {
-                            'generic': 'Ora orientală nord-americană',
-                            'standard': 'Ora standard orientală nord-americană',
-                            'daylight': 'Ora de vară orientală nord-americană'
+                            'generic': 'Ora oriental\u0103 nord-american\u0103',
+                            'standard': 'Ora standard oriental\u0103 nord-american\u0103',
+                            'daylight': 'Ora de var\u0103 oriental\u0103 nord-american\u0103'
                         }
                     },
                     'America_Mountain': {
                         'long': {
                             'generic': 'Ora zonei montane nord-americane',
-                            'standard': 'Ora standard în zona montană nord-americană',
-                            'daylight': 'Ora de vară în zona montană nord-americană'
+                            'standard': 'Ora standard \u00EEn zona montan\u0103 nord-american\u0103',
+                            'daylight': 'Ora de var\u0103 \u00EEn zona montan\u0103 nord-american\u0103'
                         }
                     },
                     'America_Pacific': {
                         'long': {
                             'generic': 'Ora zonei Pacific nord-americane',
-                            'standard': 'Ora standard în zona Pacific nord-americană',
-                            'daylight': 'Ora de vară în zona Pacific nord-americană'
+                            'standard': 'Ora standard \u00EEn zona Pacific nord-american\u0103',
+                            'daylight': 'Ora de var\u0103 \u00EEn zona Pacific nord-american\u0103'
                         }
                     },
                     'Anadyr': {
                         'long': {
                             'generic': 'Ora din Anadyr',
                             'standard': 'Ora standard din Anadyr',
-                            'daylight': 'Ora de vară din Anadyr'
+                            'daylight': 'Ora de var\u0103 din Anadyr'
                         }
                     },
                     'Aqtau': {
                         'long': {
                             'generic': 'Ora Aqtau',
                             'standard': 'Ora standard Aqtau',
-                            'daylight': 'Ora de vară a zonei Aqtau'
+                            'daylight': 'Ora de var\u0103 a zonei Aqtau'
                         }
                     },
                     'Aqtobe': {
                         'long': {
                             'generic': 'Ora Aqtobe',
                             'standard': 'Ora standard Aqtobe',
-                            'daylight': 'Ora de vară a zonei Aqtobe'
+                            'daylight': 'Ora de var\u0103 a zonei Aqtobe'
                         }
                     },
                     'Cape_Verde': {
                         'long': {
                             'generic': 'Ora din Capul Verde',
                             'standard': 'Ora standard din Capul Verde',
-                            'daylight': 'Ora de vară din Capul Verde'
+                            'daylight': 'Ora de var\u0103 din Capul Verde'
                         }
                     },
                     'Chamorro': {
@@ -1794,28 +1794,28 @@
                         'long': {
                             'generic': 'Ora din Chatham',
                             'standard': 'Ora standard din Chatham',
-                            'daylight': 'Ora de vară din Chatham'
+                            'daylight': 'Ora de var\u0103 din Chatham'
                         }
                     },
                     'Chile': {
                         'long': {
                             'generic': 'Ora din Chile',
                             'standard': 'Ora standard din Chile',
-                            'daylight': 'Ora de vară din Chile'
+                            'daylight': 'Ora de var\u0103 din Chile'
                         }
                     },
                     'China': {
                         'long': {
                             'generic': 'Ora Chinei',
                             'standard': 'Ora standard a Chinei',
-                            'daylight': 'Ora de vară a Chinei'
+                            'daylight': 'Ora de var\u0103 a Chinei'
                         }
                     },
                     'Choibalsan': {
                         'long': {
                             'generic': 'Ora din Choibalsan',
                             'standard': 'Ora standard din Choibalsan',
-                            'daylight': 'Ora de vară din Choibalsan'
+                            'daylight': 'Ora de var\u0103 din Choibalsan'
                         }
                     },
                     'Christmas': {
@@ -1832,21 +1832,21 @@
                         'long': {
                             'generic': 'Ora Columbiei',
                             'standard': 'Ora standard a Columbiei',
-                            'daylight': 'Ora de vară a Columbiei'
+                            'daylight': 'Ora de var\u0103 a Columbiei'
                         }
                     },
                     'Cook': {
                         'long': {
                             'generic': 'Ora Insulelor Cook',
                             'standard': 'Ora standard a Insulelor Cook',
-                            'daylight': 'Ora de vară a Insulelor Cook'
+                            'daylight': 'Ora de var\u0103 a Insulelor Cook'
                         }
                     },
                     'Cuba': {
                         'long': {
                             'generic': 'Ora Cubei',
                             'standard': 'Ora standard a Cubei',
-                            'daylight': 'Ora de vară a Cubei'
+                            'daylight': 'Ora de var\u0103 a Cubei'
                         }
                     },
                     'Davis': {
@@ -1856,7 +1856,7 @@
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': 'Ora din Dumont-d\'Urville'
+                            'standard': "Ora din Dumont-d'Urville"
                         }
                     },
                     'East_Timor': {
@@ -1866,9 +1866,9 @@
                     },
                     'Easter': {
                         'long': {
-                            'generic': 'Ora din Insula Paștelui',
-                            'standard': 'Ora standard din Insula Paștelui',
-                            'daylight': 'Ora de vară din Insula Paștelui'
+                            'generic': 'Ora din Insula Pa\u0219telui',
+                            'standard': 'Ora standard din Insula Pa\u0219telui',
+                            'daylight': 'Ora de var\u0103 din Insula Pa\u0219telui'
                         }
                     },
                     'Ecuador': {
@@ -1880,21 +1880,21 @@
                         'long': {
                             'generic': 'Ora Europei Centrale',
                             'standard': 'Ora standard a Europei Centrale',
-                            'daylight': 'Ora de vară a Europei Centrale'
+                            'daylight': 'Ora de var\u0103 a Europei Centrale'
                         }
                     },
                     'Europe_Eastern': {
                         'long': {
                             'generic': 'Ora Europei de Est',
                             'standard': 'Ora standard a Europei de Est',
-                            'daylight': 'Ora de vară a Europei de Est'
+                            'daylight': 'Ora de var\u0103 a Europei de Est'
                         }
                     },
                     'Europe_Western': {
                         'long': {
                             'generic': 'Ora Europei de Vest',
                             'standard': 'Ora standard a Europei de Vest',
-                            'daylight': 'Ora de vară a Europei de Vest'
+                            'daylight': 'Ora de var\u0103 a Europei de Vest'
                         }
                     },
                     'Tokelau': {
@@ -1906,7 +1906,7 @@
                         'long': {
                             'generic': 'Ora din Tonga',
                             'standard': 'Ora standard din Tonga',
-                            'daylight': 'Ora de vară din Tonga'
+                            'daylight': 'Ora de var\u0103 din Tonga'
                         }
                     },
                     'Truk': {
@@ -1918,7 +1918,7 @@
                         'long': {
                             'generic': 'Ora din Turkmenistan',
                             'standard': 'Ora standard din Turkmenistan',
-                            'daylight': 'Ora de vară din Turkmenistan'
+                            'daylight': 'Ora de var\u0103 din Turkmenistan'
                         }
                     },
                     'Tuvalu': {
@@ -1930,40 +1930,40 @@
                         'long': {
                             'generic': 'Ora Uruguayului',
                             'standard': 'Ora standard a Uruguayului',
-                            'daylight': 'Ora de vară a Uruguayului'
+                            'daylight': 'Ora de var\u0103 a Uruguayului'
                         }
                     },
                     'Uzbekistan': {
                         'long': {
                             'generic': 'Ora din Uzbekistan',
                             'standard': 'Ora standard din Uzbekistan',
-                            'daylight': 'Ora de vară din Uzbekistan'
+                            'daylight': 'Ora de var\u0103 din Uzbekistan'
                         }
                     },
                     'Vanuatu': {
                         'long': {
                             'generic': 'Ora din Vanuatu',
                             'standard': 'Ora standard din Vanuatu',
-                            'daylight': 'Ora de vară din Vanuatu'
+                            'daylight': 'Ora de var\u0103 din Vanuatu'
                         }
                     },
                     'Yekaterinburg': {
                         'long': {
                             'generic': 'Ora din Ekaterinburg',
                             'standard': 'Ora standard din Ekaterinburg',
-                            'daylight': 'Ora de vară din Ekaterinburg'
+                            'daylight': 'Ora de var\u0103 din Ekaterinburg'
                         }
                     },
                     'Yakutsk': {
                         'long': {
-                            'generic': 'Ora din Yakuțk',
-                            'standard': 'Ora standard din Yakuțk',
-                            'daylight': 'Ora de vară din Yakuțk'
+                            'generic': 'Ora din Yaku\u021Bk',
+                            'standard': 'Ora standard din Yaku\u021Bk',
+                            'daylight': 'Ora de var\u0103 din Yaku\u021Bk'
                         }
                     },
                     'Wallis': {
                         'long': {
-                            'standard': 'Ora din Wallis și Futuna'
+                            'standard': 'Ora din Wallis \u0219i Futuna'
                         }
                     },
                     'Wake': {
@@ -1980,14 +1980,14 @@
                         'long': {
                             'generic': 'Ora din Volgograd',
                             'standard': 'Ora standard din Volgograd',
-                            'daylight': 'Ora de vară din Volgograd'
+                            'daylight': 'Ora de var\u0103 din Volgograd'
                         }
                     },
                     'Vladivostok': {
                         'long': {
                             'generic': 'Ora din Vladivostok',
                             'standard': 'Ora standard din Vladivostok',
-                            'daylight': 'Ora de vară din Vladivostok'
+                            'daylight': 'Ora de var\u0103 din Vladivostok'
                         }
                     },
                     'Venezuela': {
@@ -2004,7 +2004,7 @@
                         'long': {
                             'generic': 'Ora din Taipei',
                             'standard': 'Ora standard din Taipei',
-                            'daylight': 'Ora de vară din Taipei'
+                            'daylight': 'Ora de var\u0103 din Taipei'
                         }
                     },
                     'Tahiti': {
@@ -2026,14 +2026,14 @@
                         'long': {
                             'generic': 'Ora Groenlandei occidentale',
                             'standard': 'Ora standard a Groenlandei occidentale',
-                            'daylight': 'Ora de vară a Groenlandei occidentale'
+                            'daylight': 'Ora de var\u0103 a Groenlandei occidentale'
                         }
                     },
                     'Greenland_Eastern': {
                         'long': {
                             'generic': 'Ora Groenlandei orientale',
                             'standard': 'Ora standard a Groenlandei orientale',
-                            'daylight': 'Ora de vară a Groenlandei orientale'
+                            'daylight': 'Ora de var\u0103 a Groenlandei orientale'
                         }
                     },
                     'GMT': {
@@ -2050,7 +2050,7 @@
                         'long': {
                             'generic': 'Ora Georgiei',
                             'standard': 'Ora standard a Georgiei',
-                            'daylight': 'Ora de vară a Georgiei'
+                            'daylight': 'Ora de var\u0103 a Georgiei'
                         }
                     },
                     'Gambier': {
@@ -2065,7 +2065,7 @@
                     },
                     'French_Southern': {
                         'long': {
-                            'standard': 'Ora din Teritoriile Australe și Antarctice Franceze'
+                            'standard': 'Ora din Teritoriile Australe \u0219i Antarctice Franceze'
                         }
                     },
                     'French_Guiana': {
@@ -2077,119 +2077,119 @@
                         'long': {
                             'generic': 'Ora din Fiji',
                             'standard': 'Ora standard din Fiji',
-                            'daylight': 'Ora de vară din Fiji'
+                            'daylight': 'Ora de var\u0103 din Fiji'
                         }
                     },
                     'Falkland': {
                         'long': {
                             'generic': 'Ora din Insulele Falkland',
                             'standard': 'Ora standard din Insulele Falkland',
-                            'daylight': 'Ora de vară din Insulele Falkland'
+                            'daylight': 'Ora de var\u0103 din Insulele Falkland'
                         }
                     },
                     'Africa_Western': {
                         'long': {
                             'generic': 'Ora Africii Occidentale',
                             'standard': 'Ora standard a Africii Occidentale',
-                            'daylight': 'Ora de vară a Africii Occidentale'
+                            'daylight': 'Ora de var\u0103 a Africii Occidentale'
                         }
                     },
                     'Alaska': {
                         'long': {
                             'generic': 'Ora din Alaska',
                             'standard': 'Ora standard din Alaska',
-                            'daylight': 'Ora de vară din Alaska'
+                            'daylight': 'Ora de var\u0103 din Alaska'
                         }
                     },
                     'Almaty': {
                         'long': {
                             'generic': 'Ora Almaty',
                             'standard': 'Ora standard Almaty',
-                            'daylight': 'Ora de vară Almaty'
+                            'daylight': 'Ora de var\u0103 Almaty'
                         }
                     },
                     'Arabian': {
                         'long': {
-                            'generic': 'Ora arabă',
-                            'standard': 'Ora standard arabă',
-                            'daylight': 'Ora de vară arabă'
+                            'generic': 'Ora arab\u0103',
+                            'standard': 'Ora standard arab\u0103',
+                            'daylight': 'Ora de var\u0103 arab\u0103'
                         }
                     },
                     'Argentina': {
                         'long': {
                             'generic': 'Ora Argentinei',
                             'standard': 'Ora standard a Argentinei',
-                            'daylight': 'Ora de vară a Argentinei'
+                            'daylight': 'Ora de var\u0103 a Argentinei'
                         }
                     },
                     'Argentina_Western': {
                         'long': {
                             'generic': 'Ora Argentinei Occidentale',
                             'standard': 'Ora standard a Argentinei Occidentale',
-                            'daylight': 'Ora de vară a Argentinei Occidentale'
+                            'daylight': 'Ora de var\u0103 a Argentinei Occidentale'
                         }
                     },
                     'Armenia': {
                         'long': {
                             'generic': 'Ora Armeniei',
                             'standard': 'Ora standard a Armeniei',
-                            'daylight': 'Ora de vară a Armeniei'
+                            'daylight': 'Ora de var\u0103 a Armeniei'
                         }
                     },
                     'Atlantic': {
                         'long': {
                             'generic': 'Ora zonei Atlantic nord-americane',
-                            'standard': 'Ora standard în zona Atlantic nord-americană',
-                            'daylight': 'Ora de vară în zona Atlantic nord-americană'
+                            'standard': 'Ora standard \u00EEn zona Atlantic nord-american\u0103',
+                            'daylight': 'Ora de var\u0103 \u00EEn zona Atlantic nord-american\u0103'
                         }
                     },
                     'Australia_Central': {
                         'long': {
                             'generic': 'Ora Australiei Centrale',
                             'standard': 'Ora standard a Australiei Centrale',
-                            'daylight': 'Ora de vară a Australiei Centrale'
+                            'daylight': 'Ora de var\u0103 a Australiei Centrale'
                         }
                     },
                     'Australia_CentralWestern': {
                         'long': {
                             'generic': 'Ora Australiei Central Occidentale',
                             'standard': 'Ora standard a Australiei Central Occidentale',
-                            'daylight': 'Ora de vară a Australiei Central Occidentale'
+                            'daylight': 'Ora de var\u0103 a Australiei Central Occidentale'
                         }
                     },
                     'Australia_Eastern': {
                         'long': {
                             'generic': 'Ora Australiei Orientale',
                             'standard': 'Ora standard a Australiei Orientale',
-                            'daylight': 'Ora de vară a Australiei Orientale'
+                            'daylight': 'Ora de var\u0103 a Australiei Orientale'
                         }
                     },
                     'Australia_Western': {
                         'long': {
                             'generic': 'Ora Australiei Occidentale',
                             'standard': 'Ora standard a Australiei Occidentale',
-                            'daylight': 'Ora de vară a Australiei Occidentale'
+                            'daylight': 'Ora de var\u0103 a Australiei Occidentale'
                         }
                     },
                     'Azerbaijan': {
                         'long': {
                             'generic': 'Ora Azerbaidjanului',
                             'standard': 'Ora standard a Azerbaidjanului',
-                            'daylight': 'Ora de vară a Azerbaidjanului'
+                            'daylight': 'Ora de var\u0103 a Azerbaidjanului'
                         }
                     },
                     'Azores': {
                         'long': {
                             'generic': 'Ora din Azore',
                             'standard': 'Ora standard din Azore',
-                            'daylight': 'Ora de vară din Azore'
+                            'daylight': 'Ora de var\u0103 din Azore'
                         }
                     },
                     'Bangladesh': {
                         'long': {
                             'generic': 'Ora din Bangladesh',
                             'standard': 'Ora standard din Bangladesh',
-                            'daylight': 'Ora de vară din Bangladesh'
+                            'daylight': 'Ora de var\u0103 din Bangladesh'
                         }
                     },
                     'Bhutan': {
@@ -2206,7 +2206,7 @@
                         'long': {
                             'generic': 'Ora Brasiliei',
                             'standard': 'Ora standard a Brasiliei',
-                            'daylight': 'Ora de vară a Brasiliei'
+                            'daylight': 'Ora de var\u0103 a Brasiliei'
                         }
                     },
                     'Brunei': {
@@ -2218,21 +2218,21 @@
                         'long': {
                             'generic': 'Ora din Hawaii-Aleutine',
                             'standard': 'Ora standard din Hawaii-Aleutine',
-                            'daylight': 'Ora de vară din Hawaii-Aleutine'
+                            'daylight': 'Ora de var\u0103 din Hawaii-Aleutine'
                         }
                     },
                     'Hong_Kong': {
                         'long': {
                             'generic': 'Ora din Hong Kong',
                             'standard': 'Ora standard din Hong Kong',
-                            'daylight': 'Ora de vară din Hong Kong'
+                            'daylight': 'Ora de var\u0103 din Hong Kong'
                         }
                     },
                     'Hovd': {
                         'long': {
                             'generic': 'Ora din Hovd',
                             'standard': 'Ora standard din Hovd',
-                            'daylight': 'Ora de vară din Hovd'
+                            'daylight': 'Ora de var\u0103 din Hovd'
                         }
                     },
                     'India': {
@@ -2269,35 +2269,35 @@
                         'long': {
                             'generic': 'Ora Iranului',
                             'standard': 'Ora standard a Iranului',
-                            'daylight': 'Ora de vară a Iranului'
+                            'daylight': 'Ora de var\u0103 a Iranului'
                         }
                     },
                     'Irkutsk': {
                         'long': {
-                            'generic': 'Ora din Irkuțk',
-                            'standard': 'Ora standard din Irkuțk',
-                            'daylight': 'Ora de vară din Irkuțk'
+                            'generic': 'Ora din Irku\u021Bk',
+                            'standard': 'Ora standard din Irku\u021Bk',
+                            'daylight': 'Ora de var\u0103 din Irku\u021Bk'
                         }
                     },
                     'Israel': {
                         'long': {
                             'generic': 'Ora Israelului',
                             'standard': 'Ora standard a Israelului',
-                            'daylight': 'Ora de vară a Israelului'
+                            'daylight': 'Ora de var\u0103 a Israelului'
                         }
                     },
                     'Japan': {
                         'long': {
                             'generic': 'Ora Japoniei',
                             'standard': 'Ora standard a Japoniei',
-                            'daylight': 'Ora de vară a Japoniei'
+                            'daylight': 'Ora de var\u0103 a Japoniei'
                         }
                     },
                     'Kamchatka': {
                         'long': {
-                            'generic': 'Ora din Petropavlovsk-Kamciațki',
-                            'standard': 'Ora standard din Petropavlovsk-Kamciațki',
-                            'daylight': 'Ora de vară din Petropavlovsk-Kamciațki'
+                            'generic': 'Ora din Petropavlovsk-Kamcia\u021Bki',
+                            'standard': 'Ora standard din Petropavlovsk-Kamcia\u021Bki',
+                            'daylight': 'Ora de var\u0103 din Petropavlovsk-Kamcia\u021Bki'
                         }
                     },
                     'Kazakhstan_Eastern': {
@@ -2314,7 +2314,7 @@
                         'long': {
                             'generic': 'Ora Coreei',
                             'standard': 'Ora standard a Coreei',
-                            'daylight': 'Ora de vară a Coreei'
+                            'daylight': 'Ora de var\u0103 a Coreei'
                         }
                     },
                     'Kosrae': {
@@ -2326,12 +2326,12 @@
                         'long': {
                             'generic': 'Ora din Krasnoiarsk',
                             'standard': 'Ora standard din Krasnoiarsk',
-                            'daylight': 'Ora de vară din Krasnoiarsk'
+                            'daylight': 'Ora de var\u0103 din Krasnoiarsk'
                         }
                     },
                     'Kyrgystan': {
                         'long': {
-                            'standard': 'Ora din Kârgâzstan'
+                            'standard': 'Ora din K\u00E2rg\u00E2zstan'
                         }
                     },
                     'Line_Islands': {
@@ -2343,7 +2343,7 @@
                         'long': {
                             'generic': 'Ora din Lord Howe',
                             'standard': 'Ora standard din Lord Howe',
-                            'daylight': 'Ora de vară din Lord Howe'
+                            'daylight': 'Ora de var\u0103 din Lord Howe'
                         }
                     },
                     'Macquarie': {
@@ -2355,7 +2355,7 @@
                         'long': {
                             'generic': 'Ora din Magadan',
                             'standard': 'Ora standard din Magadan',
-                            'daylight': 'Ora de vară din Magadan'
+                            'daylight': 'Ora de var\u0103 din Magadan'
                         }
                     },
                     'Malaysia': {
@@ -2382,7 +2382,7 @@
                         'long': {
                             'generic': 'Ora din Mauritius',
                             'standard': 'Ora standard din Mauritius',
-                            'daylight': 'Ora de vară din Mauritius'
+                            'daylight': 'Ora de var\u0103 din Mauritius'
                         }
                     },
                     'Mawson': {
@@ -2394,14 +2394,14 @@
                         'long': {
                             'generic': 'Ora din Ulan Bator',
                             'standard': 'Ora standard din Ulan Bator',
-                            'daylight': 'Ora de vară din Ulan Bator'
+                            'daylight': 'Ora de var\u0103 din Ulan Bator'
                         }
                     },
                     'Moscow': {
                         'long': {
                             'generic': 'Ora Moscovei',
                             'standard': 'Ora standard a Moscovei',
-                            'daylight': 'Ora de vară a Moscovei'
+                            'daylight': 'Ora de var\u0103 a Moscovei'
                         }
                     },
                     'Myanmar': {
@@ -2423,21 +2423,21 @@
                         'long': {
                             'generic': 'Ora Noii Caledonii',
                             'standard': 'Ora standard a Noii Caledonii',
-                            'daylight': 'Ora de vară a Noii Caledonii'
+                            'daylight': 'Ora de var\u0103 a Noii Caledonii'
                         }
                     },
                     'New_Zealand': {
                         'long': {
                             'generic': 'Ora Noii Zeelande',
                             'standard': 'Ora standard a Noii Zeelande',
-                            'daylight': 'Ora de vară a Noii Zeelande'
+                            'daylight': 'Ora de var\u0103 a Noii Zeelande'
                         }
                     },
                     'Newfoundland': {
                         'long': {
                             'generic': 'Ora din Newfoundland',
                             'standard': 'Ora standard din Newfoundland',
-                            'daylight': 'Ora de vară din Newfoundland'
+                            'daylight': 'Ora de var\u0103 din Newfoundland'
                         }
                     },
                     'Niue': {
@@ -2454,28 +2454,28 @@
                         'long': {
                             'generic': 'Ora din Fernando de Noronha',
                             'standard': 'Ora standard din Fernando de Noronha',
-                            'daylight': 'Ora de vară din Fernando de Noronha'
+                            'daylight': 'Ora de var\u0103 din Fernando de Noronha'
                         }
                     },
                     'Novosibirsk': {
                         'long': {
                             'generic': 'Ora din Novosibirsk',
                             'standard': 'Ora standard din Novosibirsk',
-                            'daylight': 'Ora de vară din Novosibirsk'
+                            'daylight': 'Ora de var\u0103 din Novosibirsk'
                         }
                     },
                     'Omsk': {
                         'long': {
                             'generic': 'Ora din Omsk',
                             'standard': 'Ora standard din Omsk',
-                            'daylight': 'Ora de vară din Omsk'
+                            'daylight': 'Ora de var\u0103 din Omsk'
                         }
                     },
                     'Pakistan': {
                         'long': {
                             'generic': 'Ora Pakistanului',
                             'standard': 'Ora standard a Pakistanului',
-                            'daylight': 'Ora de vară a Pakistanului'
+                            'daylight': 'Ora de var\u0103 a Pakistanului'
                         }
                     },
                     'Palau': {
@@ -2488,7 +2488,7 @@
                 'gmtFormat': 'GMT{0}',
                 'gmtZeroFormat': 'GMT',
                 'regionFormat': 'Ora din {0}',
-                'regionFormat-type-daylight': 'Ora de vară din {0}',
+                'regionFormat-type-daylight': 'Ora de var\u0103 din {0}',
                 'regionFormat-type-standard': 'Ora standard din {0}',
                 'fallbackFormat': '{1} ({0})'
             },
@@ -2593,7 +2593,7 @@
                                 'wed': 'Mie',
                                 'thu': 'Joi',
                                 'fri': 'Vin',
-                                'sat': 'Sâm'
+                                'sat': 'S\u00E2m'
                             },
                             'narrow': {
                                 'sun': 'D',
@@ -2611,16 +2611,16 @@
                                 'wed': 'Mi',
                                 'thu': 'Jo',
                                 'fri': 'Vi',
-                                'sat': 'Sâ'
+                                'sat': 'S\u00E2'
                             },
                             'wide': {
-                                'sun': 'duminică',
+                                'sun': 'duminic\u0103',
                                 'mon': 'luni',
-                                'tue': 'marți',
+                                'tue': 'mar\u021Bi',
                                 'wed': 'miercuri',
                                 'thu': 'joi',
                                 'fri': 'vineri',
-                                'sat': 'sâmbătă'
+                                'sat': 's\u00E2mb\u0103t\u0103'
                             }
                         },
                         'stand-alone': {
@@ -2631,7 +2631,7 @@
                                 'wed': 'Mie',
                                 'thu': 'Joi',
                                 'fri': 'Vin',
-                                'sat': 'Sâm'
+                                'sat': 'S\u00E2m'
                             },
                             'narrow': {
                                 'sun': 'D',
@@ -2649,16 +2649,16 @@
                                 'wed': 'Mi',
                                 'thu': 'Jo',
                                 'fri': 'Vi',
-                                'sat': 'Sâ'
+                                'sat': 'S\u00E2'
                             },
                             'wide': {
-                                'sun': 'duminică',
+                                'sun': 'duminic\u0103',
                                 'mon': 'luni',
-                                'tue': 'marți',
+                                'tue': 'mar\u021Bi',
                                 'wed': 'miercuri',
                                 'thu': 'joi',
                                 'fri': 'vineri',
-                                'sat': 'sâmbătă'
+                                'sat': 's\u00E2mb\u0103t\u0103'
                             }
                         }
                     },
@@ -2736,20 +2736,20 @@
                     },
                     'eras': {
                         'eraNames': {
-                            '0': 'înainte de Hristos',
-                            '0-alt-variant': 'î.e.n',
-                            '1': 'după Hristos',
+                            '0': '\u00EEnainte de Hristos',
+                            '0-alt-variant': '\u00EE.e.n',
+                            '1': 'dup\u0103 Hristos',
                             '1-alt-variant': 'e.n.'
                         },
                         'eraAbbr': {
-                            '0': 'î.Hr.',
-                            '0-alt-variant': 'î.e.n',
+                            '0': '\u00EE.Hr.',
+                            '0-alt-variant': '\u00EE.e.n',
                             '1': 'd.Hr.',
                             '1-alt-variant': 'e.n.'
                         },
                         'eraNarrow': {
-                            '0': 'î.Hr.',
-                            '0-alt-variant': 'î.e.n',
+                            '0': '\u00EE.Hr.',
+                            '0-alt-variant': '\u00EE.e.n',
                             '1': 'd.Hr.',
                             '1-alt-variant': 'e.n.'
                         }

@@ -43,165 +43,165 @@
         AstroDate.lang('sk', {
             'codePatterns': {
                 'language': 'Jazyk: {0}',
-                'script': 'Písmo: {0}',
-                'territory': 'Región: {0}'
+                'script': 'P\u00EDsmo: {0}',
+                'territory': 'Regi\u00F3n: {0}'
             },
             'types': {
                 'colHiraganaQuaternary': {
-                    'no': 'Radiť slabičné písma (kana) samostatne',
-                    'yes': 'Radiť slabičné písma (kana) inak'
+                    'no': 'Radi\u0165 slabi\u010Dn\u00E9 p\u00EDsma (kana) samostatne',
+                    'yes': 'Radi\u0165 slabi\u010Dn\u00E9 p\u00EDsma (kana) inak'
                 },
                 'colCaseLevel': {
-                    'no': 'Pri radení nerozlišovať veľké a malé písmená',
-                    'yes': 'Pri radení rozlišovať veľké a malé písmená'
+                    'no': 'Pri raden\u00ED nerozli\u0161ova\u0165 ve\u013Ek\u00E9 a mal\u00E9 p\u00EDsmen\u00E1',
+                    'yes': 'Pri raden\u00ED rozli\u0161ova\u0165 ve\u013Ek\u00E9 a mal\u00E9 p\u00EDsmen\u00E1'
                 },
                 'colCaseFirst': {
-                    'lower': 'Najprv radiť malé písmená',
-                    'no': 'Normálne radenie veľkých a malých písmen',
-                    'upper': 'Najprv radiť veľké písmená'
+                    'lower': 'Najprv radi\u0165 mal\u00E9 p\u00EDsmen\u00E1',
+                    'no': 'Norm\u00E1lne radenie ve\u013Ek\u00FDch a mal\u00FDch p\u00EDsmen',
+                    'upper': 'Najprv radi\u0165 ve\u013Ek\u00E9 p\u00EDsmen\u00E1'
                 },
                 'colStrength': {
-                    'identical': 'Radiť všetko',
-                    'primary': 'Radiť iba základné písmená',
-                    'quaternary': 'Radiť akcenty/veľké a malé písmená/šírku/kana',
-                    'secondary': 'Radiť akcenty',
-                    'tertiary': 'Radiť akcenty/veľké a malé písmená/šírku'
+                    'identical': 'Radi\u0165 v\u0161etko',
+                    'primary': 'Radi\u0165 iba z\u00E1kladn\u00E9 p\u00EDsmen\u00E1',
+                    'quaternary': 'Radi\u0165 akcenty/ve\u013Ek\u00E9 a mal\u00E9 p\u00EDsmen\u00E1/\u0161\u00EDrku/kana',
+                    'secondary': 'Radi\u0165 akcenty',
+                    'tertiary': 'Radi\u0165 akcenty/ve\u013Ek\u00E9 a mal\u00E9 p\u00EDsmen\u00E1/\u0161\u00EDrku'
                 },
                 'colNumeric': {
-                    'no': 'Radiť číslice jednotlivo',
-                    'yes': 'Numerické radenie číslic'
+                    'no': 'Radi\u0165 \u010D\u00EDslice jednotlivo',
+                    'yes': 'Numerick\u00E9 radenie \u010D\u00EDslic'
                 },
                 'colNormalization': {
-                    'no': 'Radiť bez normalizácie',
-                    'yes': 'Radenie podľa normalizovaného kódovania Unicode'
+                    'no': 'Radi\u0165 bez normaliz\u00E1cie',
+                    'yes': 'Radenie pod\u013Ea normalizovan\u00E9ho k\u00F3dovania Unicode'
                 },
                 'calendar': {
-                    'japanese': 'Japonský kalendár',
+                    'japanese': 'Japonsk\u00FD kalend\u00E1r',
                     'iso8601': 'iso8601',
-                    'coptic': 'Koptický kalendár',
+                    'coptic': 'Koptick\u00FD kalend\u00E1r',
                     'dangi': 'dangi',
-                    'ethiopic': 'Etiópsky kalendár',
-                    'ethiopic-amete-alem': 'Etiópsky kalendár Amete Alem',
-                    'gregorian': 'Gregoriánsky kalendár',
-                    'hebrew': 'Židovský kalendár',
-                    'persian': 'Perzský kalendár',
-                    'roc': 'Kalendár Čínskej republiky',
-                    'chinese': 'Čínsky kalendár',
-                    'buddhist': 'Buddhistický kalendár',
-                    'indian': 'Indický národný kalendár',
-                    'islamic': 'Islamský kalendár',
-                    'islamic-civil': 'Islamský občiansky kalendár',
+                    'ethiopic': 'Eti\u00F3psky kalend\u00E1r',
+                    'ethiopic-amete-alem': 'Eti\u00F3psky kalend\u00E1r Amete Alem',
+                    'gregorian': 'Gregori\u00E1nsky kalend\u00E1r',
+                    'hebrew': '\u017Didovsk\u00FD kalend\u00E1r',
+                    'persian': 'Perzsk\u00FD kalend\u00E1r',
+                    'roc': 'Kalend\u00E1r \u010C\u00EDnskej republiky',
+                    'chinese': '\u010C\u00EDnsky kalend\u00E1r',
+                    'buddhist': 'Buddhistick\u00FD kalend\u00E1r',
+                    'indian': 'Indick\u00FD n\u00E1rodn\u00FD kalend\u00E1r',
+                    'islamic': 'Islamsk\u00FD kalend\u00E1r',
+                    'islamic-civil': 'Islamsk\u00FD ob\u010Diansky kalend\u00E1r',
                     'islamic-rgsa': 'islamic-rgsa',
                     'islamic-tbla': 'islamic-tbla',
                     'islamic-umalqura': 'islamic-umalqura'
                 },
                 'collation': {
-                    'phonebook': 'Lexikografické triedenie',
-                    'gb2312han': 'Zjednodušený čínsky GB2312',
+                    'phonebook': 'Lexikografick\u00E9 triedenie',
+                    'gb2312han': 'Zjednodu\u0161en\u00FD \u010D\u00EDnsky GB2312',
                     'eor': 'eor',
-                    'ducet': 'Predvolené usporiadanie unicode',
-                    'dictionary': 'Usporiadanie slovníka',
-                    'big5han': 'Tradičný čínsky Big5',
-                    'traditional': 'Tradičné',
-                    'standard': 'Štandardné poradie',
+                    'ducet': 'Predvolen\u00E9 usporiadanie unicode',
+                    'dictionary': 'Usporiadanie slovn\u00EDka',
+                    'big5han': 'Tradi\u010Dn\u00FD \u010D\u00EDnsky Big5',
+                    'traditional': 'Tradi\u010Dn\u00E9',
+                    'standard': '\u0160tandardn\u00E9 poradie',
                     'zhuyin': 'zhuyin',
-                    'unihan': 'Usporiadanie podľa znakov radikál',
-                    'stroke': 'Tiedenie podľa ťahov',
-                    'searchjl': 'Hľadať podľa počiatočnej spoluhlásky písma Hangul',
-                    'search': 'Všeobecné vyhľadávanie',
-                    'reformed': 'Reformované usporiadanie',
+                    'unihan': 'Usporiadanie pod\u013Ea znakov radik\u00E1l',
+                    'stroke': 'Tiedenie pod\u013Ea \u0165ahov',
+                    'searchjl': 'H\u013Eada\u0165 pod\u013Ea po\u010Diato\u010Dnej spoluhl\u00E1sky p\u00EDsma Hangul',
+                    'search': 'V\u0161eobecn\u00E9 vyh\u013Ead\u00E1vanie',
+                    'reformed': 'Reformovan\u00E9 usporiadanie',
                     'pinyin': 'Triedenie pinyin',
-                    'phonetic': 'Fonetické radenie'
+                    'phonetic': 'Fonetick\u00E9 radenie'
                 },
                 'numbers': {
-                    'knda': 'Kannadské číslice',
-                    'khmr': 'Khmérske číslice',
+                    'knda': 'Kannadsk\u00E9 \u010D\u00EDslice',
+                    'khmr': 'Khm\u00E9rske \u010D\u00EDslice',
                     'kali': 'kali',
-                    'jpanfin': 'Japonské finančné číslice',
-                    'jpan': 'Japonské číslice',
+                    'jpanfin': 'Japonsk\u00E9 finan\u010Dn\u00E9 \u010D\u00EDslice',
+                    'jpan': 'Japonsk\u00E9 \u010D\u00EDslice',
                     'java': 'java',
-                    'hebr': 'Hebrejské číslice',
-                    'hantfin': 'Finančné číslice tradičnej čínštiny',
-                    'hant': 'Číslice tradičnej čínštiny',
-                    'hansfin': 'Finančné číslice zjednodušenej čínštiny',
-                    'hans': 'Číslice zjednodušenej čínštiny',
-                    'hanidec': 'Čínske desatinné číslice',
-                    'guru': 'Číslice Gurmukhi',
-                    'gujr': 'Gudžarátske číslice',
-                    'greklow': 'Grécke číslice (malé písmená)',
-                    'grek': 'Grécke číslice',
+                    'hebr': 'Hebrejsk\u00E9 \u010D\u00EDslice',
+                    'hantfin': 'Finan\u010Dn\u00E9 \u010D\u00EDslice tradi\u010Dnej \u010D\u00EDn\u0161tiny',
+                    'hant': '\u010C\u00EDslice tradi\u010Dnej \u010D\u00EDn\u0161tiny',
+                    'hansfin': 'Finan\u010Dn\u00E9 \u010D\u00EDslice zjednodu\u0161enej \u010D\u00EDn\u0161tiny',
+                    'hans': '\u010C\u00EDslice zjednodu\u0161enej \u010D\u00EDn\u0161tiny',
+                    'hanidec': '\u010C\u00EDnske desatinn\u00E9 \u010D\u00EDslice',
+                    'guru': '\u010C\u00EDslice Gurmukhi',
+                    'gujr': 'Gud\u017Ear\u00E1tske \u010D\u00EDslice',
+                    'greklow': 'Gr\u00E9cke \u010D\u00EDslice (mal\u00E9 p\u00EDsmen\u00E1)',
+                    'grek': 'Gr\u00E9cke \u010D\u00EDslice',
                     'bali': 'bali',
-                    'armnlow': 'Arménske číslice (malé písmená)',
-                    'armn': 'Arménske číslice',
-                    'arabext': 'Rozšírené arabsko-indické číslice',
-                    'arab': 'Arabsko-indické číslice',
-                    'finance': 'Finančnícky zápis čísiel',
-                    'traditional': 'Tradičné číslovky',
-                    'native': 'Natívne číslice',
-                    'beng': 'Bengálske číslice',
+                    'armnlow': 'Arm\u00E9nske \u010D\u00EDslice (mal\u00E9 p\u00EDsmen\u00E1)',
+                    'armn': 'Arm\u00E9nske \u010D\u00EDslice',
+                    'arabext': 'Roz\u0161\u00EDren\u00E9 arabsko-indick\u00E9 \u010D\u00EDslice',
+                    'arab': 'Arabsko-indick\u00E9 \u010D\u00EDslice',
+                    'finance': 'Finan\u010Dn\u00EDcky z\u00E1pis \u010D\u00EDsiel',
+                    'traditional': 'Tradi\u010Dn\u00E9 \u010D\u00EDslovky',
+                    'native': 'Nat\u00EDvne \u010D\u00EDslice',
+                    'beng': 'Beng\u00E1lske \u010D\u00EDslice',
                     'brah': 'brah',
                     'cakm': 'cakm',
                     'cham': 'cham',
-                    'deva': 'Číslice písma Dévanágarí',
-                    'orya': 'Oríjske číslice',
+                    'deva': '\u010C\u00EDslice p\u00EDsma D\u00E9van\u00E1gar\u00ED',
+                    'orya': 'Or\u00EDjske \u010D\u00EDslice',
                     'osma': 'osma',
-                    'roman': 'Rímske číslice',
-                    'romanlow': 'Rímske číslice (malé písmená)',
+                    'roman': 'R\u00EDmske \u010D\u00EDslice',
+                    'romanlow': 'R\u00EDmske \u010D\u00EDslice (mal\u00E9 p\u00EDsmen\u00E1)',
                     'saur': 'saur',
                     'shrd': 'shrd',
                     'sora': 'sora',
                     'sund': 'sund',
-                    'vaii': 'Vaiské číslice',
-                    'tibt': 'Tibetské číslice',
-                    'thai': 'Thajské číslice',
-                    'telu': 'Telugské číslice',
-                    'tamldec': 'Tamilské číslice',
-                    'taml': 'Tamilské číslice',
+                    'vaii': 'Vaisk\u00E9 \u010D\u00EDslice',
+                    'tibt': 'Tibetsk\u00E9 \u010D\u00EDslice',
+                    'thai': 'Thajsk\u00E9 \u010D\u00EDslice',
+                    'telu': 'Telugsk\u00E9 \u010D\u00EDslice',
+                    'tamldec': 'Tamilsk\u00E9 \u010D\u00EDslice',
+                    'taml': 'Tamilsk\u00E9 \u010D\u00EDslice',
                     'talu': 'talu',
                     'takr': 'takr',
                     'olck': 'olck',
                     'nkoo': 'nkoo',
                     'mymrshan': 'mymrshan',
-                    'mymr': 'Mjanmarské číslice',
+                    'mymr': 'Mjanmarsk\u00E9 \u010D\u00EDslice',
                     'mtei': 'mtei',
-                    'mong': 'Mongolské číslice',
-                    'mlym': 'Malajámske číslice',
+                    'mong': 'Mongolsk\u00E9 \u010D\u00EDslice',
+                    'mlym': 'Malaj\u00E1mske \u010D\u00EDslice',
                     'limb': 'limb',
                     'lepc': 'lepc',
-                    'latn': 'Arabské číslice',
-                    'laoo': 'Číslice písma lao',
+                    'latn': 'Arabsk\u00E9 \u010D\u00EDslice',
+                    'laoo': '\u010C\u00EDslice p\u00EDsma lao',
                     'lanatham': 'lanatham',
                     'lana': 'lana',
-                    'geor': 'Gruzínske číslice',
-                    'fullwide': 'Číslice s celou šírkou',
-                    'ethi': 'Etiópske číslice'
+                    'geor': 'Gruz\u00EDnske \u010D\u00EDslice',
+                    'fullwide': '\u010C\u00EDslice s celou \u0161\u00EDrkou',
+                    'ethi': 'Eti\u00F3pske \u010D\u00EDslice'
                 },
                 'colAlternate': {
-                    'non-ignorable': 'Radiť symboly',
-                    'shifted': 'Pri radení ignorovať symboly'
+                    'non-ignorable': 'Radi\u0165 symboly',
+                    'shifted': 'Pri raden\u00ED ignorova\u0165 symboly'
                 },
                 'colBackwards': {
-                    'no': 'Normálne radenie akcentov',
-                    'yes': 'Radiť akcenty opačne'
+                    'no': 'Norm\u00E1lne radenie akcentov',
+                    'yes': 'Radi\u0165 akcenty opa\u010Dne'
                 }
             },
             'keys': {
-                'colNormalization': 'Normalizované radenie',
+                'colNormalization': 'Normalizovan\u00E9 radenie',
                 'collation': 'Triedenie',
-                'colHiraganaQuaternary': 'Radenie podľa slabičných písiem (kana)',
-                'colCaseLevel': 'Rozlišovanie veľkých a malých písmen pri radení',
-                'colCaseFirst': 'Radenie veľkých a malých písmen',
-                'colBackwards': 'Obrátené radenie akcentov',
-                'colAlternate': 'Ignorovať radenie symbolov',
-                'calendar': 'Kalendár',
-                'x': 'Súkromné použitie',
-                'variableTop': 'Radiť ako symboly',
+                'colHiraganaQuaternary': 'Radenie pod\u013Ea slabi\u010Dn\u00FDch p\u00EDsiem (kana)',
+                'colCaseLevel': 'Rozli\u0161ovanie ve\u013Ek\u00FDch a mal\u00FDch p\u00EDsmen pri raden\u00ED',
+                'colCaseFirst': 'Radenie ve\u013Ek\u00FDch a mal\u00FDch p\u00EDsmen',
+                'colBackwards': 'Obr\u00E1ten\u00E9 radenie akcentov',
+                'colAlternate': 'Ignorova\u0165 radenie symbolov',
+                'calendar': 'Kalend\u00E1r',
+                'x': 'S\u00FAkromn\u00E9 pou\u017Eitie',
+                'variableTop': 'Radi\u0165 ako symboly',
                 'va': 'Variant miestneho nastavenia',
-                'timezone': 'Časové pásmo',
-                'numbers': 'Číslice',
+                'timezone': '\u010Casov\u00E9 p\u00E1smo',
+                'numbers': '\u010C\u00EDslice',
                 'currency': 'Mena',
                 'colStrength': 'Sila radenia',
-                'colNumeric': 'Číselné radenie'
+                'colNumeric': '\u010C\u00EDseln\u00E9 radenie'
             },
             'localeDisplayPattern': {
                 'localePattern': '{0} ({1})',
@@ -239,7 +239,7 @@
                             'exemplarCity': 'Funafuti'
                         },
                         'Galapagos': {
-                            'exemplarCity': 'Galapágy'
+                            'exemplarCity': 'Galap\u00E1gy'
                         },
                         'Gambier': {
                             'exemplarCity': 'Gambier'
@@ -281,7 +281,7 @@
                             'exemplarCity': 'Chatham'
                         },
                         'Easter': {
-                            'exemplarCity': 'Veľkonočné ostrovy'
+                            'exemplarCity': 'Ve\u013Ekono\u010Dn\u00E9 ostrovy'
                         },
                         'Efate': {
                             'exemplarCity': 'Efate'
@@ -293,7 +293,7 @@
                             'exemplarCity': 'Fakaofo'
                         },
                         'Fiji': {
-                            'exemplarCity': 'Fidži'
+                            'exemplarCity': 'Fid\u017Ei'
                         },
                         'Kosrae': {
                             'exemplarCity': 'Kosrae'
@@ -375,13 +375,13 @@
                             'exemplarCity': 'Kerguelen'
                         },
                         'Reunion': {
-                            'exemplarCity': 'Réunion'
+                            'exemplarCity': 'R\u00E9union'
                         },
                         'Mayotte': {
                             'exemplarCity': 'Mayotte'
                         },
                         'Mauritius': {
-                            'exemplarCity': 'Maurícius'
+                            'exemplarCity': 'Maur\u00EDcius'
                         },
                         'Antananarivo': {
                             'exemplarCity': 'Antananarivo'
@@ -390,7 +390,7 @@
                             'exemplarCity': 'Chagos'
                         },
                         'Christmas': {
-                            'exemplarCity': 'Vianočný ostrov'
+                            'exemplarCity': 'Viano\u010Dn\u00FD ostrov'
                         },
                         'Cocos': {
                             'exemplarCity': 'Cocos'
@@ -458,7 +458,7 @@
                             'exemplarCity': 'GMT-9'
                         },
                         'Unknown': {
-                            'exemplarCity': 'Neznáme mesto'
+                            'exemplarCity': 'Nezn\u00E1me mesto'
                         },
                         'GMT-2': {
                             'exemplarCity': 'GMT-2'
@@ -502,7 +502,7 @@
                             'exemplarCity': 'Syowa'
                         },
                         'South_Pole': {
-                            'exemplarCity': 'Južný pól'
+                            'exemplarCity': 'Ju\u017En\u00FD p\u00F3l'
                         },
                         'Casey': {
                             'exemplarCity': 'Casey'
@@ -511,7 +511,7 @@
                             'exemplarCity': 'Davis'
                         },
                         'DumontDUrville': {
-                            'exemplarCity': 'Dumont D\'Urville'
+                            'exemplarCity': "Dumont D'Urville"
                         },
                         'Macquarie': {
                             'exemplarCity': 'Macquarie'
@@ -575,7 +575,7 @@
                             'exemplarCity': 'Boise'
                         },
                         'Asuncion': {
-                            'exemplarCity': 'Asunción'
+                            'exemplarCity': 'Asunci\u00F3n'
                         },
                         'Aruba': {
                             'exemplarCity': 'Aruba'
@@ -613,7 +613,7 @@
                             'exemplarCity': 'Anguilla'
                         },
                         'Anchorage': {
-                            'exemplarCity': 'Aljaška'
+                            'exemplarCity': 'Alja\u0161ka'
                         },
                         'Adak': {
                             'exemplarCity': 'Adak'
@@ -767,7 +767,7 @@
                             'exemplarCity': 'Fortaleza'
                         },
                         'El_Salvador': {
-                            'exemplarCity': 'Salvádor'
+                            'exemplarCity': 'Salv\u00E1dor'
                         },
                         'Eirunepe': {
                             'exemplarCity': 'Eirunepe'
@@ -809,7 +809,7 @@
                             'exemplarCity': 'Louisville'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': 'Lower Prince\'s Quarter'
+                            'exemplarCity': "Lower Prince's Quarter"
                         },
                         'Maceio': {
                             'exemplarCity': 'Maceio'
@@ -882,13 +882,13 @@
                         },
                         'North_Dakota': {
                             'Beulah': {
-                                'exemplarCity': 'Beulah, Severná Dakota'
+                                'exemplarCity': 'Beulah, Severn\u00E1 Dakota'
                             },
                             'New_Salem': {
-                                'exemplarCity': 'New Salem, Severná Dakota'
+                                'exemplarCity': 'New Salem, Severn\u00E1 Dakota'
                             },
                             'Center': {
-                                'exemplarCity': 'Center, Severná Dakota'
+                                'exemplarCity': 'Center, Severn\u00E1 Dakota'
                             }
                         },
                         'Ojinaga': {
@@ -961,19 +961,19 @@
                             'exemplarCity': 'Sitka'
                         },
                         'St_Barthelemy': {
-                            'exemplarCity': 'Svätý Bartolomej'
+                            'exemplarCity': 'Sv\u00E4t\u00FD Bartolomej'
                         },
                         'St_Johns': {
-                            'exemplarCity': 'Sv. Ján'
+                            'exemplarCity': 'Sv. J\u00E1n'
                         },
                         'St_Kitts': {
                             'exemplarCity': 'St. Kitts'
                         },
                         'St_Lucia': {
-                            'exemplarCity': 'Svätá Lucia'
+                            'exemplarCity': 'Sv\u00E4t\u00E1 Lucia'
                         },
                         'St_Thomas': {
-                            'exemplarCity': 'Sv. Tomáš'
+                            'exemplarCity': 'Sv. Tom\u00E1\u0161'
                         },
                         'St_Vincent': {
                             'exemplarCity': 'Sv. Vincent'
@@ -981,7 +981,7 @@
                     },
                     'Atlantic': {
                         'South_Georgia': {
-                            'exemplarCity': 'Južná Georgia'
+                            'exemplarCity': 'Ju\u017En\u00E1 Georgia'
                         },
                         'Reykjavik': {
                             'exemplarCity': 'Reykjavik'
@@ -993,19 +993,19 @@
                             'exemplarCity': 'Sv. Helena'
                         },
                         'Azores': {
-                            'exemplarCity': 'Azorské ostrovy'
+                            'exemplarCity': 'Azorsk\u00E9 ostrovy'
                         },
                         'Bermuda': {
                             'exemplarCity': 'Bermudy'
                         },
                         'Canary': {
-                            'exemplarCity': 'Kanárske ostrovy'
+                            'exemplarCity': 'Kan\u00E1rske ostrovy'
                         },
                         'Cape_Verde': {
                             'exemplarCity': 'Kapverdy'
                         },
                         'Faeroe': {
-                            'exemplarCity': 'Faerské ostrovy'
+                            'exemplarCity': 'Faersk\u00E9 ostrovy'
                         },
                         'Madeira': {
                             'exemplarCity': 'Madeira'
@@ -1038,12 +1038,12 @@
                         },
                         'London': {
                             'long': {
-                                'daylight': 'Britský letný čas'
+                                'daylight': 'Britsk\u00FD letn\u00FD \u010Das'
                             },
-                            'exemplarCity': 'Londýn'
+                            'exemplarCity': 'Lond\u00FDn'
                         },
                         'Ljubljana': {
-                            'exemplarCity': 'Ľubľana'
+                            'exemplarCity': '\u013Dub\u013Eana'
                         },
                         'Lisbon': {
                             'exemplarCity': 'Lisabon'
@@ -1064,7 +1064,7 @@
                             'exemplarCity': 'Ostrov Man'
                         },
                         'Bucharest': {
-                            'exemplarCity': 'Bukurešť'
+                            'exemplarCity': 'Bukure\u0161\u0165'
                         },
                         'Brussels': {
                             'exemplarCity': 'Brusel'
@@ -1073,13 +1073,13 @@
                             'exemplarCity': 'Bratislava'
                         },
                         'Berlin': {
-                            'exemplarCity': 'Berlín'
+                            'exemplarCity': 'Berl\u00EDn'
                         },
                         'Belgrade': {
                             'exemplarCity': 'Belehrad'
                         },
                         'Athens': {
-                            'exemplarCity': 'Atény'
+                            'exemplarCity': 'At\u00E9ny'
                         },
                         'Andorra': {
                             'exemplarCity': 'Andorra'
@@ -1097,7 +1097,7 @@
                             'exemplarCity': 'Sofia'
                         },
                         'Stockholm': {
-                            'exemplarCity': 'Štokholm'
+                            'exemplarCity': '\u0160tokholm'
                         },
                         'Tallinn': {
                             'exemplarCity': 'Tallinn'
@@ -1106,22 +1106,22 @@
                             'exemplarCity': 'Tirana'
                         },
                         'Uzhgorod': {
-                            'exemplarCity': 'Užhorod'
+                            'exemplarCity': 'U\u017Ehorod'
                         },
                         'Vaduz': {
                             'exemplarCity': 'Vaduz'
                         },
                         'Zurich': {
-                            'exemplarCity': 'Zürich'
+                            'exemplarCity': 'Z\u00FCrich'
                         },
                         'Zaporozhye': {
-                            'exemplarCity': 'Záporožie'
+                            'exemplarCity': 'Z\u00E1poro\u017Eie'
                         },
                         'Zagreb': {
-                            'exemplarCity': 'Záhreb'
+                            'exemplarCity': 'Z\u00E1hreb'
                         },
                         'Warsaw': {
-                            'exemplarCity': 'Varšava'
+                            'exemplarCity': 'Var\u0161ava'
                         },
                         'Volgograd': {
                             'exemplarCity': 'Volgograd'
@@ -1130,22 +1130,22 @@
                             'exemplarCity': 'Vilnius'
                         },
                         'Vienna': {
-                            'exemplarCity': 'Viedeň'
+                            'exemplarCity': 'Viede\u0148'
                         },
                         'Vatican': {
-                            'exemplarCity': 'Vatikán'
+                            'exemplarCity': 'Vatik\u00E1n'
                         },
                         'Sarajevo': {
                             'exemplarCity': 'Sarajevo'
                         },
                         'San_Marino': {
-                            'exemplarCity': 'San Maríno'
+                            'exemplarCity': 'San Mar\u00EDno'
                         },
                         'Samara': {
                             'exemplarCity': 'Samara'
                         },
                         'Rome': {
-                            'exemplarCity': 'Rím'
+                            'exemplarCity': 'R\u00EDm'
                         },
                         'Riga': {
                             'exemplarCity': 'Riga'
@@ -1157,7 +1157,7 @@
                             'exemplarCity': 'Podgorica'
                         },
                         'Paris': {
-                            'exemplarCity': 'Paríž'
+                            'exemplarCity': 'Par\u00ED\u017E'
                         },
                         'Helsinki': {
                             'exemplarCity': 'Helsinki'
@@ -1166,25 +1166,25 @@
                             'exemplarCity': 'Guernsey'
                         },
                         'Gibraltar': {
-                            'exemplarCity': 'Gibraltár'
+                            'exemplarCity': 'Gibralt\u00E1r'
                         },
                         'Dublin': {
                             'long': {
-                                'daylight': 'Írsky letný čas'
+                                'daylight': '\u00CDrsky letn\u00FD \u010Das'
                             },
                             'exemplarCity': 'Dublin'
                         },
                         'Copenhagen': {
-                            'exemplarCity': 'Kodaň'
+                            'exemplarCity': 'Koda\u0148'
                         },
                         'Chisinau': {
-                            'exemplarCity': 'Kišiňov'
+                            'exemplarCity': 'Ki\u0161i\u0148ov'
                         },
                         'Busingen': {
-                            'exemplarCity': 'Büsingen'
+                            'exemplarCity': 'B\u00FCsingen'
                         },
                         'Budapest': {
-                            'exemplarCity': 'Budapešť'
+                            'exemplarCity': 'Budape\u0161\u0165'
                         }
                     },
                     'Africa': {
@@ -1201,7 +1201,7 @@
                             'exemplarCity': 'Kigali'
                         },
                         'Khartoum': {
-                            'exemplarCity': 'Chartúm'
+                            'exemplarCity': 'Chart\u00FAm'
                         },
                         'Kampala': {
                             'exemplarCity': 'Kampala'
@@ -1228,7 +1228,7 @@
                             'exemplarCity': 'Douala'
                         },
                         'Djibouti': {
-                            'exemplarCity': 'Džibutsko'
+                            'exemplarCity': 'D\u017Eibutsko'
                         },
                         'Dar_es_Salaam': {
                             'exemplarCity': 'Dar es Salaam'
@@ -1261,7 +1261,7 @@
                             'exemplarCity': 'Mbabane'
                         },
                         'Mogadishu': {
-                            'exemplarCity': 'Mogadišo'
+                            'exemplarCity': 'Mogadi\u0161o'
                         },
                         'Monrovia': {
                             'exemplarCity': 'Monrovia'
@@ -1282,7 +1282,7 @@
                             'exemplarCity': 'Tripolis'
                         },
                         'Sao_Tome': {
-                            'exemplarCity': 'Svätý Tomáš'
+                            'exemplarCity': 'Sv\u00E4t\u00FD Tom\u00E1\u0161'
                         },
                         'Porto-Novo': {
                             'exemplarCity': 'Porto-Novo'
@@ -1318,7 +1318,7 @@
                             'exemplarCity': 'Casablanca'
                         },
                         'Cairo': {
-                            'exemplarCity': 'Káhira'
+                            'exemplarCity': 'K\u00E1hira'
                         },
                         'Bujumbura': {
                             'exemplarCity': 'Bujumbura'
@@ -1342,12 +1342,12 @@
                             'exemplarCity': 'Addis Ababa'
                         },
                         'Algiers': {
-                            'exemplarCity': 'Alžír'
+                            'exemplarCity': 'Al\u017E\u00EDr'
                         }
                     },
                     'Asia': {
                         'Shanghai': {
-                            'exemplarCity': 'Šanghaj'
+                            'exemplarCity': '\u0160anghaj'
                         },
                         'Seoul': {
                             'exemplarCity': 'Soul'
@@ -1359,13 +1359,13 @@
                             'exemplarCity': 'Sachalin'
                         },
                         'Saigon': {
-                            'exemplarCity': 'Hočiminovo Mesto'
+                            'exemplarCity': 'Ho\u010Diminovo Mesto'
                         },
                         'Riyadh': {
                             'exemplarCity': 'Riyadh'
                         },
                         'Rangoon': {
-                            'exemplarCity': 'Rangún'
+                            'exemplarCity': 'Rang\u00FAn'
                         },
                         'Qyzylorda': {
                             'exemplarCity': 'Qyzylorda'
@@ -1380,7 +1380,7 @@
                             'exemplarCity': 'Pontianak'
                         },
                         'Phnom_Penh': {
-                            'exemplarCity': 'Phnom Pénh'
+                            'exemplarCity': 'Phnom P\u00E9nh'
                         },
                         'Oral': {
                             'exemplarCity': 'Oral'
@@ -1404,7 +1404,7 @@
                             'exemplarCity': 'Damask'
                         },
                         'Dhaka': {
-                            'exemplarCity': 'Dháka'
+                            'exemplarCity': 'Dh\u00E1ka'
                         },
                         'Dili': {
                             'exemplarCity': 'Dili'
@@ -1413,7 +1413,7 @@
                             'exemplarCity': 'Dubaj'
                         },
                         'Dushanbe': {
-                            'exemplarCity': 'Dušanbe'
+                            'exemplarCity': 'Du\u0161anbe'
                         },
                         'Gaza': {
                             'exemplarCity': 'Gaza'
@@ -1440,13 +1440,13 @@
                             'exemplarCity': 'Jayapura'
                         },
                         'Ulaanbaatar': {
-                            'exemplarCity': 'Ulanbátar'
+                            'exemplarCity': 'Ulanb\u00E1tar'
                         },
                         'Urumqi': {
                             'exemplarCity': 'Urumqi'
                         },
                         'Ust-Nera': {
-                            'exemplarCity': 'Usť-Nera'
+                            'exemplarCity': 'Us\u0165-Nera'
                         },
                         'Vientiane': {
                             'exemplarCity': 'Vientiane'
@@ -1470,13 +1470,13 @@
                             'exemplarCity': 'Thimphu'
                         },
                         'Tehran': {
-                            'exemplarCity': 'Teherán'
+                            'exemplarCity': 'Teher\u00E1n'
                         },
                         'Tbilisi': {
                             'exemplarCity': 'Tbilisi'
                         },
                         'Tashkent': {
-                            'exemplarCity': 'Taškent'
+                            'exemplarCity': 'Ta\u0161kent'
                         },
                         'Taipei': {
                             'exemplarCity': 'Tchaj-pej'
@@ -1488,7 +1488,7 @@
                             'exemplarCity': 'Jeruzalem'
                         },
                         'Ashgabat': {
-                            'exemplarCity': 'Ašchabad'
+                            'exemplarCity': 'A\u0161chabad'
                         },
                         'Aqtobe': {
                             'exemplarCity': 'Aqtobe'
@@ -1518,10 +1518,10 @@
                             'exemplarCity': 'Bangkok'
                         },
                         'Beirut': {
-                            'exemplarCity': 'Bejrút'
+                            'exemplarCity': 'Bejr\u00FAt'
                         },
                         'Bishkek': {
-                            'exemplarCity': 'Biškek'
+                            'exemplarCity': 'Bi\u0161kek'
                         },
                         'Brunei': {
                             'exemplarCity': 'Brunej'
@@ -1533,19 +1533,19 @@
                             'exemplarCity': 'Choibalsan'
                         },
                         'Kabul': {
-                            'exemplarCity': 'Kábul'
+                            'exemplarCity': 'K\u00E1bul'
                         },
                         'Kamchatka': {
-                            'exemplarCity': 'Kamčatka'
+                            'exemplarCity': 'Kam\u010Datka'
                         },
                         'Karachi': {
-                            'exemplarCity': 'Karáči'
+                            'exemplarCity': 'Kar\u00E1\u010Di'
                         },
                         'Kashgar': {
                             'exemplarCity': 'Kashgar'
                         },
                         'Katmandu': {
-                            'exemplarCity': 'Káthmandu'
+                            'exemplarCity': 'K\u00E1thmandu'
                         },
                         'Khandyga': {
                             'exemplarCity': 'Khandyga'
@@ -1578,7 +1578,7 @@
                             'exemplarCity': 'Maskat'
                         },
                         'Nicosia': {
-                            'exemplarCity': 'Nikózia'
+                            'exemplarCity': 'Nik\u00F3zia'
                         },
                         'Novokuznetsk': {
                             'exemplarCity': 'Novokuzneck'
@@ -1588,878 +1588,878 @@
                 'metazone': {
                     'Tokelau': {
                         'long': {
-                            'standard': 'Tokelauský čas'
+                            'standard': 'Tokelausk\u00FD \u010Das'
                         }
                     },
                     'Tajikistan': {
                         'long': {
-                            'standard': 'Tadžický čas'
+                            'standard': 'Tad\u017Eick\u00FD \u010Das'
                         }
                     },
                     'Taipei': {
                         'long': {
-                            'generic': 'Tchajpejský čas',
-                            'standard': 'Tchajpejský štandardný čas',
-                            'daylight': 'Tchajpejský letný čas'
+                            'generic': 'Tchajpejsk\u00FD \u010Das',
+                            'standard': 'Tchajpejsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Tchajpejsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Tahiti': {
                         'long': {
-                            'standard': 'Tahitský čas'
+                            'standard': 'Tahitsk\u00FD \u010Das'
                         }
                     },
                     'Syowa': {
                         'long': {
-                            'standard': 'Čas stanice Šówa'
+                            'standard': '\u010Cas stanice \u0160\u00F3wa'
                         }
                     },
                     'Suriname': {
                         'long': {
-                            'standard': 'Surinamský čas'
+                            'standard': 'Surinamsk\u00FD \u010Das'
                         }
                     },
                     'South_Georgia': {
                         'long': {
-                            'standard': 'Čas Južnej Georgie'
+                            'standard': '\u010Cas Ju\u017Enej Georgie'
                         }
                     },
                     'Solomon': {
                         'long': {
-                            'standard': 'Čas Šalamúnových ostrovov'
+                            'standard': '\u010Cas \u0160alam\u00FAnov\u00FDch ostrovov'
                         }
                     },
                     'Singapore': {
                         'long': {
-                            'standard': 'Singapurský štandardný čas'
+                            'standard': 'Singapursk\u00FD \u0161tandardn\u00FD \u010Das'
                         }
                     },
                     'Seychelles': {
                         'long': {
-                            'standard': 'Seychelský čas'
+                            'standard': 'Seychelsk\u00FD \u010Das'
                         }
                     },
                     'Samoa': {
                         'long': {
-                            'generic': 'Samojský čas',
-                            'standard': 'Samojský štandardný čas',
-                            'daylight': 'Samojský letný čas'
+                            'generic': 'Samojsk\u00FD \u010Das',
+                            'standard': 'Samojsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Samojsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Samara': {
                         'long': {
-                            'generic': 'Samarský čas',
-                            'standard': 'Samarský štandardný čas',
-                            'daylight': 'Samarský letný čas'
+                            'generic': 'Samarsk\u00FD \u010Das',
+                            'standard': 'Samarsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Samarsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Sakhalin': {
                         'long': {
-                            'generic': 'Sachalinský čas',
-                            'standard': 'Sachalinský štandardný čas',
-                            'daylight': 'Sachalinský letný čas'
+                            'generic': 'Sachalinsk\u00FD \u010Das',
+                            'standard': 'Sachalinsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Sachalinsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Rothera': {
                         'long': {
-                            'standard': 'Čas Rotherovej stanice'
+                            'standard': '\u010Cas Rotherovej stanice'
                         }
                     },
                     'Reunion': {
                         'long': {
-                            'standard': 'Réunionský čas'
+                            'standard': 'R\u00E9unionsk\u00FD \u010Das'
                         }
                     },
                     'Atlantic': {
                         'long': {
-                            'generic': 'Atlantický čas',
-                            'standard': 'Atlantický štandardný čas',
-                            'daylight': 'Atlantický letný čas'
+                            'generic': 'Atlantick\u00FD \u010Das',
+                            'standard': 'Atlantick\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Atlantick\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'America_Central': {
                         'long': {
-                            'generic': 'Centrálny čas',
-                            'standard': 'Centrálny štandardný čas',
-                            'daylight': 'Centrálny letný čas'
+                            'generic': 'Centr\u00E1lny \u010Das',
+                            'standard': 'Centr\u00E1lny \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Centr\u00E1lny letn\u00FD \u010Das'
                         }
                     },
                     'Amazon': {
                         'long': {
-                            'generic': 'Amazonský čas',
-                            'standard': 'Amazonský štandardný čas',
-                            'daylight': 'Amazonský letný čas'
+                            'generic': 'Amazonsk\u00FD \u010Das',
+                            'standard': 'Amazonsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Amazonsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Alaska': {
                         'long': {
-                            'generic': 'Aljašský čas',
-                            'standard': 'Aljašský štandardný čas',
-                            'daylight': 'Aljašský letný čas'
+                            'generic': 'Alja\u0161sk\u00FD \u010Das',
+                            'standard': 'Alja\u0161sk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Alja\u0161sk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Africa_Western': {
                         'long': {
-                            'generic': 'Západoafrický čas',
-                            'standard': 'Západoafrický štandardný čas',
-                            'daylight': 'Západoafrický letný čas'
+                            'generic': 'Z\u00E1padoafrick\u00FD \u010Das',
+                            'standard': 'Z\u00E1padoafrick\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Z\u00E1padoafrick\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Africa_Southern': {
                         'long': {
-                            'standard': 'Juhoafrický čas'
+                            'standard': 'Juhoafrick\u00FD \u010Das'
                         }
                     },
                     'Africa_Eastern': {
                         'long': {
-                            'standard': 'Východoafrický čas'
+                            'standard': 'V\u00FDchodoafrick\u00FD \u010Das'
                         }
                     },
                     'Africa_Central': {
                         'long': {
-                            'standard': 'Stredoafrický čas'
+                            'standard': 'Stredoafrick\u00FD \u010Das'
                         }
                     },
                     'Afghanistan': {
                         'long': {
-                            'standard': 'Afganský čas'
+                            'standard': 'Afgansk\u00FD \u010Das'
                         }
                     },
                     'America_Eastern': {
                         'long': {
-                            'generic': 'Východný čas',
-                            'standard': 'Východný štandardný čas',
-                            'daylight': 'Východný letný čas'
+                            'generic': 'V\u00FDchodn\u00FD \u010Das',
+                            'standard': 'V\u00FDchodn\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'V\u00FDchodn\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'America_Mountain': {
                         'long': {
-                            'generic': 'Horský čas',
-                            'standard': 'Horský štandardný čas',
-                            'daylight': 'Horský letný čas'
+                            'generic': 'Horsk\u00FD \u010Das',
+                            'standard': 'Horsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Horsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'America_Pacific': {
                         'long': {
-                            'generic': 'Tichomorský čas',
-                            'standard': 'Tichomorský štandardný čas',
-                            'daylight': 'Tichomorský letný čas'
+                            'generic': 'Tichomorsk\u00FD \u010Das',
+                            'standard': 'Tichomorsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Tichomorsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Anadyr': {
                         'long': {
-                            'generic': 'Anadyrský čas',
-                            'standard': 'Anadyrský štandardný čas',
-                            'daylight': 'Anadyrský letný čas'
+                            'generic': 'Anadyrsk\u00FD \u010Das',
+                            'standard': 'Anadyrsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Anadyrsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Arabian': {
                         'long': {
-                            'generic': 'Arabský čas',
-                            'standard': 'Arabský štandardný čas',
-                            'daylight': 'Arabský letný čas'
+                            'generic': 'Arabsk\u00FD \u010Das',
+                            'standard': 'Arabsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Arabsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Argentina': {
                         'long': {
-                            'generic': 'Argentínsky čas',
-                            'standard': 'Argentínsky štandardný čas',
-                            'daylight': 'Argentínsky letný čas'
+                            'generic': 'Argent\u00EDnsky \u010Das',
+                            'standard': 'Argent\u00EDnsky \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Argent\u00EDnsky letn\u00FD \u010Das'
                         }
                     },
                     'Argentina_Western': {
                         'long': {
-                            'generic': 'Západoargentínsky čas',
-                            'standard': 'Západoargentínsky štandardný čas',
-                            'daylight': 'Západoargentínsky letný čas'
+                            'generic': 'Z\u00E1padoargent\u00EDnsky \u010Das',
+                            'standard': 'Z\u00E1padoargent\u00EDnsky \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Z\u00E1padoargent\u00EDnsky letn\u00FD \u010Das'
                         }
                     },
                     'Armenia': {
                         'long': {
-                            'generic': 'Arménsky čas',
-                            'standard': 'Arménsky štandardný čas',
-                            'daylight': 'Arménsky letný čas'
+                            'generic': 'Arm\u00E9nsky \u010Das',
+                            'standard': 'Arm\u00E9nsky \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Arm\u00E9nsky letn\u00FD \u010Das'
                         }
                     },
                     'China': {
                         'long': {
-                            'generic': 'Čínsky čas',
-                            'standard': 'Čínsky štandardný čas',
-                            'daylight': 'Čínsky letný čas'
+                            'generic': '\u010C\u00EDnsky \u010Das',
+                            'standard': '\u010C\u00EDnsky \u0161tandardn\u00FD \u010Das',
+                            'daylight': '\u010C\u00EDnsky letn\u00FD \u010Das'
                         }
                     },
                     'Choibalsan': {
                         'long': {
-                            'generic': 'Choibalsanský čas',
-                            'standard': 'Čojbalsanský štandardný čas',
-                            'daylight': 'Choibalsanský letný čas'
+                            'generic': 'Choibalsansk\u00FD \u010Das',
+                            'standard': '\u010Cojbalsansk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Choibalsansk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Christmas': {
                         'long': {
-                            'standard': 'Čas Vianočného ostrova'
+                            'standard': '\u010Cas Viano\u010Dn\u00E9ho ostrova'
                         }
                     },
                     'Cocos': {
                         'long': {
-                            'standard': 'Čas Kokosových ostrovov'
+                            'standard': '\u010Cas Kokosov\u00FDch ostrovov'
                         }
                     },
                     'Colombia': {
                         'long': {
-                            'generic': 'Kolumbijský čas',
-                            'standard': 'Kolumbijský štandardný čas',
-                            'daylight': 'Kolumbijský letný čas'
+                            'generic': 'Kolumbijsk\u00FD \u010Das',
+                            'standard': 'Kolumbijsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Kolumbijsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Cook': {
                         'long': {
-                            'generic': 'Čas Cookových ostrovov',
-                            'standard': 'Štandardný čas Cookových ostrovov',
-                            'daylight': 'Letný čas Cookových ostrovov'
+                            'generic': '\u010Cas Cookov\u00FDch ostrovov',
+                            'standard': '\u0160tandardn\u00FD \u010Das Cookov\u00FDch ostrovov',
+                            'daylight': 'Letn\u00FD \u010Das Cookov\u00FDch ostrovov'
                         }
                     },
                     'Cuba': {
                         'long': {
-                            'generic': 'Kubánsky čas',
-                            'standard': 'Kubánsky štandardný čas',
-                            'daylight': 'Kubánsky letný čas'
+                            'generic': 'Kub\u00E1nsky \u010Das',
+                            'standard': 'Kub\u00E1nsky \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Kub\u00E1nsky letn\u00FD \u010Das'
                         }
                     },
                     'Davis': {
                         'long': {
-                            'standard': 'Čas Davisovej stanice'
+                            'standard': '\u010Cas Davisovej stanice'
                         }
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': 'Čas stanice Dumonta d\'Urvillea'
+                            'standard': "\u010Cas stanice Dumonta d'Urvillea"
                         }
                     },
                     'East_Timor': {
                         'long': {
-                            'standard': 'Východotimorský čas'
+                            'standard': 'V\u00FDchodotimorsk\u00FD \u010Das'
                         }
                     },
                     'Easter': {
                         'long': {
-                            'generic': 'Čas Veľkonočného ostrova',
-                            'standard': 'Štandardný čas Veľkonočného ostrova',
-                            'daylight': 'Letný čas Veľkonočného ostrova'
+                            'generic': '\u010Cas Ve\u013Ekono\u010Dn\u00E9ho ostrova',
+                            'standard': '\u0160tandardn\u00FD \u010Das Ve\u013Ekono\u010Dn\u00E9ho ostrova',
+                            'daylight': 'Letn\u00FD \u010Das Ve\u013Ekono\u010Dn\u00E9ho ostrova'
                         }
                     },
                     'Ecuador': {
                         'long': {
-                            'standard': 'Ekvádorský čas'
+                            'standard': 'Ekv\u00E1dorsk\u00FD \u010Das'
                         }
                     },
                     'Europe_Central': {
                         'long': {
-                            'generic': 'Stredoeurópsky čas',
-                            'standard': 'Stredoeurópsky štandardný čas',
-                            'daylight': 'Stredoeurópsky letný čas'
+                            'generic': 'Stredoeur\u00F3psky \u010Das',
+                            'standard': 'Stredoeur\u00F3psky \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Stredoeur\u00F3psky letn\u00FD \u010Das'
                         }
                     },
                     'Europe_Eastern': {
                         'long': {
-                            'generic': 'Východoeurópsky čas',
-                            'standard': 'Východoeurópsky štandardný čas',
-                            'daylight': 'Východoeurópsky letný čas'
+                            'generic': 'V\u00FDchodoeur\u00F3psky \u010Das',
+                            'standard': 'V\u00FDchodoeur\u00F3psky \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'V\u00FDchodoeur\u00F3psky letn\u00FD \u010Das'
                         }
                     },
                     'Europe_Western': {
                         'long': {
-                            'generic': 'Západoeurópsky čas',
-                            'standard': 'Západoeurópsky štandardný čas',
-                            'daylight': 'Západoeurópsky letný čas'
+                            'generic': 'Z\u00E1padoeur\u00F3psky \u010Das',
+                            'standard': 'Z\u00E1padoeur\u00F3psky \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Z\u00E1padoeur\u00F3psky letn\u00FD \u010Das'
                         }
                     },
                     'India': {
                         'long': {
-                            'standard': 'Indický čas'
+                            'standard': 'Indick\u00FD \u010Das'
                         }
                     },
                     'Tonga': {
                         'long': {
-                            'generic': 'Tonžský čas',
-                            'standard': 'Tonžský štandardný čas',
-                            'daylight': 'Tonžský letný čas'
+                            'generic': 'Ton\u017Esk\u00FD \u010Das',
+                            'standard': 'Ton\u017Esk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Ton\u017Esk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Truk': {
                         'long': {
-                            'standard': 'Chuukský čas'
+                            'standard': 'Chuuksk\u00FD \u010Das'
                         }
                     },
                     'Turkmenistan': {
                         'long': {
-                            'generic': 'Turkménsky čas',
-                            'standard': 'Turkménsky štandardný čas',
-                            'daylight': 'Turkménsky letný čas'
+                            'generic': 'Turkm\u00E9nsky \u010Das',
+                            'standard': 'Turkm\u00E9nsky \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Turkm\u00E9nsky letn\u00FD \u010Das'
                         }
                     },
                     'Tuvalu': {
                         'long': {
-                            'standard': 'Tuvalský čas'
+                            'standard': 'Tuvalsk\u00FD \u010Das'
                         }
                     },
                     'Uruguay': {
                         'long': {
-                            'generic': 'Uruguajský čas',
-                            'standard': 'Uruguajský štandardný čas',
-                            'daylight': 'Uruguajský letný čas'
+                            'generic': 'Uruguajsk\u00FD \u010Das',
+                            'standard': 'Uruguajsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Uruguajsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Uzbekistan': {
                         'long': {
-                            'generic': 'Uzbecký čas',
-                            'standard': 'Uzbecký štandardný čas',
-                            'daylight': 'Uzbecký letný čas'
+                            'generic': 'Uzbeck\u00FD \u010Das',
+                            'standard': 'Uzbeck\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Uzbeck\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Vanuatu': {
                         'long': {
-                            'generic': 'Vanuatský čas',
-                            'standard': 'Vanuatský štandardný čas',
-                            'daylight': 'Vanuatský letný čas'
+                            'generic': 'Vanuatsk\u00FD \u010Das',
+                            'standard': 'Vanuatsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Vanuatsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Yekaterinburg': {
                         'long': {
-                            'generic': 'Jekaterinburgský čas',
-                            'standard': 'Jekaterinburgský štandardný čas',
-                            'daylight': 'Jekaterinburský letný čas'
+                            'generic': 'Jekaterinburgsk\u00FD \u010Das',
+                            'standard': 'Jekaterinburgsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Jekaterinbursk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Yakutsk': {
                         'long': {
-                            'generic': 'Jakutský čas',
-                            'standard': 'Jakutský štandardný čas',
-                            'daylight': 'Jakutský letný čas'
+                            'generic': 'Jakutsk\u00FD \u010Das',
+                            'standard': 'Jakutsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Jakutsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Wallis': {
                         'long': {
-                            'standard': 'Čas ostrovov Wallis a Futuna'
+                            'standard': '\u010Cas ostrovov Wallis a Futuna'
                         }
                     },
                     'Wake': {
                         'long': {
-                            'standard': 'Čas ostrova Wake'
+                            'standard': '\u010Cas ostrova Wake'
                         }
                     },
                     'Vostok': {
                         'long': {
-                            'standard': 'Čas stanice Vostok'
+                            'standard': '\u010Cas stanice Vostok'
                         }
                     },
                     'Volgograd': {
                         'long': {
-                            'generic': 'Volgogradský čas',
-                            'standard': 'Volgogradský štandardný čas',
-                            'daylight': 'Volgogradský letný čas'
+                            'generic': 'Volgogradsk\u00FD \u010Das',
+                            'standard': 'Volgogradsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Volgogradsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Vladivostok': {
                         'long': {
-                            'generic': 'Vladivostocký čas',
-                            'standard': 'Vladivostocký štandardný čas',
-                            'daylight': 'Vladivostocký letný čas'
+                            'generic': 'Vladivostock\u00FD \u010Das',
+                            'standard': 'Vladivostock\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Vladivostock\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Venezuela': {
                         'long': {
-                            'standard': 'Venezuelský čas'
+                            'standard': 'Venezuelsk\u00FD \u010Das'
                         }
                     },
                     'Hovd': {
                         'long': {
-                            'generic': 'Chovdský čas',
-                            'standard': 'Chovdský štandardný čas',
-                            'daylight': 'Chovdský letný čas'
+                            'generic': 'Chovdsk\u00FD \u010Das',
+                            'standard': 'Chovdsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Chovdsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Hong_Kong': {
                         'long': {
-                            'generic': 'Hongkongský čas',
-                            'standard': 'Hongkongský štandardný čas',
-                            'daylight': 'Hongkongský letný čas'
+                            'generic': 'Hongkongsk\u00FD \u010Das',
+                            'standard': 'Hongkongsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Hongkongsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Hawaii_Aleutian': {
                         'long': {
-                            'generic': 'Havajsko-aleutský čas',
-                            'standard': 'Havajsko-aleutský štandardný čas',
-                            'daylight': 'Havajsko-aleutský letný čas'
+                            'generic': 'Havajsko-aleutsk\u00FD \u010Das',
+                            'standard': 'Havajsko-aleutsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Havajsko-aleutsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Guyana': {
                         'long': {
-                            'standard': 'Guyanský čas'
+                            'standard': 'Guyansk\u00FD \u010Das'
                         }
                     },
                     'Gulf': {
                         'long': {
-                            'standard': 'Štandardný čas Perzského zálivu'
+                            'standard': '\u0160tandardn\u00FD \u010Das Perzsk\u00E9ho z\u00E1livu'
                         }
                     },
                     'Greenland_Western': {
                         'long': {
-                            'generic': 'Západogrónsky čas',
-                            'standard': 'Západogrónsky štandardný čas',
-                            'daylight': 'Západogrónsky letný čas'
+                            'generic': 'Z\u00E1padogr\u00F3nsky \u010Das',
+                            'standard': 'Z\u00E1padogr\u00F3nsky \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Z\u00E1padogr\u00F3nsky letn\u00FD \u010Das'
                         }
                     },
                     'Greenland_Eastern': {
                         'long': {
-                            'generic': 'Východogrónsky čas',
-                            'standard': 'Východogrónsky štandardný čas',
-                            'daylight': 'Východogrónsky letný čas'
+                            'generic': 'V\u00FDchodogr\u00F3nsky \u010Das',
+                            'standard': 'V\u00FDchodogr\u00F3nsky \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'V\u00FDchodogr\u00F3nsky letn\u00FD \u010Das'
                         }
                     },
                     'GMT': {
                         'long': {
-                            'standard': 'Greenwichský čas'
+                            'standard': 'Greenwichsk\u00FD \u010Das'
                         }
                     },
                     'Gilbert_Islands': {
                         'long': {
-                            'standard': 'Čas Gilbertových ostrovov'
+                            'standard': '\u010Cas Gilbertov\u00FDch ostrovov'
                         }
                     },
                     'Georgia': {
                         'long': {
-                            'generic': 'Gruzínsky čas',
-                            'standard': 'Gruzínsky štandardný čas',
-                            'daylight': 'Gruzínsky letný čas'
+                            'generic': 'Gruz\u00EDnsky \u010Das',
+                            'standard': 'Gruz\u00EDnsky \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Gruz\u00EDnsky letn\u00FD \u010Das'
                         }
                     },
                     'Gambier': {
                         'long': {
-                            'standard': 'Gambierský čas'
+                            'standard': 'Gambiersk\u00FD \u010Das'
                         }
                     },
                     'Galapagos': {
                         'long': {
-                            'standard': 'Galapágsky čas'
+                            'standard': 'Galap\u00E1gsky \u010Das'
                         }
                     },
                     'French_Southern': {
                         'long': {
-                            'standard': 'Francúzsky južný a antarktický čas'
+                            'standard': 'Franc\u00FAzsky ju\u017En\u00FD a antarktick\u00FD \u010Das'
                         }
                     },
                     'French_Guiana': {
                         'long': {
-                            'standard': 'Čas Francúzskej Guyany'
+                            'standard': '\u010Cas Franc\u00FAzskej Guyany'
                         }
                     },
                     'Fiji': {
                         'long': {
-                            'generic': 'Fidžijský čas',
-                            'standard': 'Fidžijský štandardný čas',
-                            'daylight': 'Fidžijský letný čas'
+                            'generic': 'Fid\u017Eijsk\u00FD \u010Das',
+                            'standard': 'Fid\u017Eijsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Fid\u017Eijsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Falkland': {
                         'long': {
-                            'generic': 'Čas Falklandských ostrovov',
-                            'standard': 'Štandardný čas Falklandských ostrovov',
-                            'daylight': 'Letný čas Falklandských ostrovov'
+                            'generic': '\u010Cas Falklandsk\u00FDch ostrovov',
+                            'standard': '\u0160tandardn\u00FD \u010Das Falklandsk\u00FDch ostrovov',
+                            'daylight': 'Letn\u00FD \u010Das Falklandsk\u00FDch ostrovov'
                         }
                     },
                     'Australia_Central': {
                         'long': {
-                            'generic': 'Stredoaustrálsky čas',
-                            'standard': 'Stredoaustrálsky štandardný čas',
-                            'daylight': 'Stredoaustrálsky letný čas'
+                            'generic': 'Stredoaustr\u00E1lsky \u010Das',
+                            'standard': 'Stredoaustr\u00E1lsky \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Stredoaustr\u00E1lsky letn\u00FD \u010Das'
                         }
                     },
                     'Australia_CentralWestern': {
                         'long': {
-                            'generic': 'Stredozápadný austrálsky čas',
-                            'standard': 'Stredozápadný austrálsky štandardný čas',
-                            'daylight': 'Stredozápadný austrálsky letný čas'
+                            'generic': 'Stredoz\u00E1padn\u00FD austr\u00E1lsky \u010Das',
+                            'standard': 'Stredoz\u00E1padn\u00FD austr\u00E1lsky \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Stredoz\u00E1padn\u00FD austr\u00E1lsky letn\u00FD \u010Das'
                         }
                     },
                     'Australia_Eastern': {
                         'long': {
-                            'generic': 'Východoaustrálsky čas',
-                            'standard': 'Východoaustrálsky štandardný čas',
-                            'daylight': 'Východoaustrálsky letný čas'
+                            'generic': 'V\u00FDchodoaustr\u00E1lsky \u010Das',
+                            'standard': 'V\u00FDchodoaustr\u00E1lsky \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'V\u00FDchodoaustr\u00E1lsky letn\u00FD \u010Das'
                         }
                     },
                     'Australia_Western': {
                         'long': {
-                            'generic': 'Západoaustrálsky čas',
-                            'standard': 'Západoaustrálsky štandardný čas',
-                            'daylight': 'Západoaustrálsky letný čas'
+                            'generic': 'Z\u00E1padoaustr\u00E1lsky \u010Das',
+                            'standard': 'Z\u00E1padoaustr\u00E1lsky \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Z\u00E1padoaustr\u00E1lsky letn\u00FD \u010Das'
                         }
                     },
                     'Azerbaijan': {
                         'long': {
-                            'generic': 'Azerbajdžanský čas',
-                            'standard': 'Azerbajdžanský štandardný čas',
-                            'daylight': 'Azerbajdžanský letný čas'
+                            'generic': 'Azerbajd\u017Eansk\u00FD \u010Das',
+                            'standard': 'Azerbajd\u017Eansk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Azerbajd\u017Eansk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Azores': {
                         'long': {
-                            'generic': 'Azorský čas',
-                            'standard': 'Azorský štandardný čas',
-                            'daylight': 'Azorský letný čas'
+                            'generic': 'Azorsk\u00FD \u010Das',
+                            'standard': 'Azorsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Azorsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Bangladesh': {
                         'long': {
-                            'generic': 'Bangladéšsky čas',
-                            'standard': 'Bangladéšsky štandardný čas',
-                            'daylight': 'Bangladéšsky letný čas'
+                            'generic': 'Banglad\u00E9\u0161sky \u010Das',
+                            'standard': 'Banglad\u00E9\u0161sky \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Banglad\u00E9\u0161sky letn\u00FD \u010Das'
                         }
                     },
                     'Bhutan': {
                         'long': {
-                            'standard': 'Bhutánsky čas'
+                            'standard': 'Bhut\u00E1nsky \u010Das'
                         }
                     },
                     'Bolivia': {
                         'long': {
-                            'standard': 'Bolívijský čas'
+                            'standard': 'Bol\u00EDvijsk\u00FD \u010Das'
                         }
                     },
                     'Brasilia': {
                         'long': {
-                            'generic': 'Brazílsky čas',
-                            'standard': 'Brazílsky štandardný čas',
-                            'daylight': 'Brazílsky letný čas'
+                            'generic': 'Braz\u00EDlsky \u010Das',
+                            'standard': 'Braz\u00EDlsky \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Braz\u00EDlsky letn\u00FD \u010Das'
                         }
                     },
                     'Brunei': {
                         'long': {
-                            'standard': 'Brunejský čas'
+                            'standard': 'Brunejsk\u00FD \u010Das'
                         }
                     },
                     'Cape_Verde': {
                         'long': {
-                            'generic': 'Kapverdský čas',
-                            'standard': 'Kapverdský štandardný čas',
-                            'daylight': 'Kapverdský letný čas'
+                            'generic': 'Kapverdsk\u00FD \u010Das',
+                            'standard': 'Kapverdsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Kapverdsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Chamorro': {
                         'long': {
-                            'standard': 'Chamorrský štandardný čas'
+                            'standard': 'Chamorrsk\u00FD \u0161tandardn\u00FD \u010Das'
                         }
                     },
                     'Chatham': {
                         'long': {
-                            'generic': 'Chathamský čas',
-                            'standard': 'Chathamský štandardný čas',
-                            'daylight': 'Chathamský letný čas'
+                            'generic': 'Chathamsk\u00FD \u010Das',
+                            'standard': 'Chathamsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Chathamsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Chile': {
                         'long': {
-                            'generic': 'Čilský čas',
-                            'standard': 'Čilský štandardný čas',
-                            'daylight': 'Čilský letný čas'
+                            'generic': '\u010Cilsk\u00FD \u010Das',
+                            'standard': '\u010Cilsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': '\u010Cilsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Indian_Ocean': {
                         'long': {
-                            'standard': 'Čas Indického oceánu'
+                            'standard': '\u010Cas Indick\u00E9ho oce\u00E1nu'
                         }
                     },
                     'Indochina': {
                         'long': {
-                            'standard': 'Indočínsky čas'
+                            'standard': 'Indo\u010D\u00EDnsky \u010Das'
                         }
                     },
                     'Indonesia_Central': {
                         'long': {
-                            'standard': 'Stredoindonézsky čas'
+                            'standard': 'Stredoindon\u00E9zsky \u010Das'
                         }
                     },
                     'Indonesia_Eastern': {
                         'long': {
-                            'standard': 'Východoindonézsky čas'
+                            'standard': 'V\u00FDchodoindon\u00E9zsky \u010Das'
                         }
                     },
                     'Indonesia_Western': {
                         'long': {
-                            'standard': 'Západoindonézsky čas'
+                            'standard': 'Z\u00E1padoindon\u00E9zsky \u010Das'
                         }
                     },
                     'Iran': {
                         'long': {
-                            'generic': 'Iránsky čas',
-                            'standard': 'Iránsky štandardný čas',
-                            'daylight': 'Iránsky letný čas'
+                            'generic': 'Ir\u00E1nsky \u010Das',
+                            'standard': 'Ir\u00E1nsky \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Ir\u00E1nsky letn\u00FD \u010Das'
                         }
                     },
                     'Irkutsk': {
                         'long': {
-                            'generic': 'Irkutský čas',
-                            'standard': 'Irkutský štandardný čas',
-                            'daylight': 'Irkutský letný čas'
+                            'generic': 'Irkutsk\u00FD \u010Das',
+                            'standard': 'Irkutsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Irkutsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Israel': {
                         'long': {
-                            'generic': 'Izraelský čas',
-                            'standard': 'Izraelský štandardný čas',
-                            'daylight': 'Izraelský letný čas'
+                            'generic': 'Izraelsk\u00FD \u010Das',
+                            'standard': 'Izraelsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Izraelsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Japan': {
                         'long': {
-                            'generic': 'Japonský čas',
-                            'standard': 'Japonský štandardný čas',
-                            'daylight': 'Japonský letný čas'
+                            'generic': 'Japonsk\u00FD \u010Das',
+                            'standard': 'Japonsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Japonsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Kamchatka': {
                         'long': {
-                            'generic': 'Petropavlovsk-Kamčatský čas',
-                            'standard': 'Petropavlovsk-Kamčatský štandardný čas',
-                            'daylight': 'Petropavlovsk-Kamčatskijský letný čas'
+                            'generic': 'Petropavlovsk-Kam\u010Datsk\u00FD \u010Das',
+                            'standard': 'Petropavlovsk-Kam\u010Datsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Petropavlovsk-Kam\u010Datskijsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Kazakhstan_Eastern': {
                         'long': {
-                            'standard': 'Východokazašský čas'
+                            'standard': 'V\u00FDchodokaza\u0161sk\u00FD \u010Das'
                         }
                     },
                     'Kazakhstan_Western': {
                         'long': {
-                            'standard': 'Západokazašský čas'
+                            'standard': 'Z\u00E1padokaza\u0161sk\u00FD \u010Das'
                         }
                     },
                     'Korea': {
                         'long': {
-                            'generic': 'Kórejský čas',
-                            'standard': 'Kórejský štandardný čas',
-                            'daylight': 'Kórejský letný čas'
+                            'generic': 'K\u00F3rejsk\u00FD \u010Das',
+                            'standard': 'K\u00F3rejsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'K\u00F3rejsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Kosrae': {
                         'long': {
-                            'standard': 'Kosraeský čas'
+                            'standard': 'Kosraesk\u00FD \u010Das'
                         }
                     },
                     'Krasnoyarsk': {
                         'long': {
-                            'generic': 'Krasnojarský čas',
-                            'standard': 'Krasnojarský štandardný čas',
-                            'daylight': 'Krasnojarský letný čas'
+                            'generic': 'Krasnojarsk\u00FD \u010Das',
+                            'standard': 'Krasnojarsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Krasnojarsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Kyrgystan': {
                         'long': {
-                            'standard': 'Kirgizský čas'
+                            'standard': 'Kirgizsk\u00FD \u010Das'
                         }
                     },
                     'Line_Islands': {
                         'long': {
-                            'standard': 'Čas Rovníkových ostrovov'
+                            'standard': '\u010Cas Rovn\u00EDkov\u00FDch ostrovov'
                         }
                     },
                     'Lord_Howe': {
                         'long': {
-                            'generic': 'Čas ostrova lorda Howa',
-                            'standard': 'Štandardný čas ostrova lorda Howa',
-                            'daylight': 'Letný čas ostrova lorda Howa'
+                            'generic': '\u010Cas ostrova lorda Howa',
+                            'standard': '\u0160tandardn\u00FD \u010Das ostrova lorda Howa',
+                            'daylight': 'Letn\u00FD \u010Das ostrova lorda Howa'
                         }
                     },
                     'Macquarie': {
                         'long': {
-                            'standard': 'Čas ostrova Macquarie'
+                            'standard': '\u010Cas ostrova Macquarie'
                         }
                     },
                     'Magadan': {
                         'long': {
-                            'generic': 'Magadanský čas',
-                            'standard': 'Magadanský štandardný čas',
-                            'daylight': 'Magadanský letný čas'
+                            'generic': 'Magadansk\u00FD \u010Das',
+                            'standard': 'Magadansk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Magadansk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Malaysia': {
                         'long': {
-                            'standard': 'Malajský čas'
+                            'standard': 'Malajsk\u00FD \u010Das'
                         }
                     },
                     'Maldives': {
                         'long': {
-                            'standard': 'Maledivský čas'
+                            'standard': 'Maledivsk\u00FD \u010Das'
                         }
                     },
                     'Marquesas': {
                         'long': {
-                            'standard': 'Markézsky čas'
+                            'standard': 'Mark\u00E9zsky \u010Das'
                         }
                     },
                     'Marshall_Islands': {
                         'long': {
-                            'standard': 'Čas Marshallových ostrovov'
+                            'standard': '\u010Cas Marshallov\u00FDch ostrovov'
                         }
                     },
                     'Mauritius': {
                         'long': {
-                            'generic': 'Maurícijský čas',
-                            'standard': 'Maurícijský štandardný čas',
-                            'daylight': 'Maurícijský letný čas'
+                            'generic': 'Maur\u00EDcijsk\u00FD \u010Das',
+                            'standard': 'Maur\u00EDcijsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Maur\u00EDcijsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Mawson': {
                         'long': {
-                            'standard': 'Čas Mawsonovej stanice'
+                            'standard': '\u010Cas Mawsonovej stanice'
                         }
                     },
                     'Mongolia': {
                         'long': {
-                            'generic': 'Ulanbátarský čas',
-                            'standard': 'Ulanbátarský štandardný čas',
-                            'daylight': 'Ulanbátarský letný čas'
+                            'generic': 'Ulanb\u00E1tarsk\u00FD \u010Das',
+                            'standard': 'Ulanb\u00E1tarsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Ulanb\u00E1tarsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Moscow': {
                         'long': {
-                            'generic': 'Moskovský čas',
-                            'standard': 'Moskovský štandardný čas',
-                            'daylight': 'Moskovský letný čas'
+                            'generic': 'Moskovsk\u00FD \u010Das',
+                            'standard': 'Moskovsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Moskovsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Myanmar': {
                         'long': {
-                            'standard': 'Mjanmarský čas'
+                            'standard': 'Mjanmarsk\u00FD \u010Das'
                         }
                     },
                     'Nauru': {
                         'long': {
-                            'standard': 'Čas ostrova Nauru'
+                            'standard': '\u010Cas ostrova Nauru'
                         }
                     },
                     'Nepal': {
                         'long': {
-                            'standard': 'Nepálsky čas'
+                            'standard': 'Nep\u00E1lsky \u010Das'
                         }
                     },
                     'New_Caledonia': {
                         'long': {
-                            'generic': 'Novokaledónsky čas',
-                            'standard': 'Novokaledónsky štandardný čas',
-                            'daylight': 'Novokaledónsky letný čas'
+                            'generic': 'Novokaled\u00F3nsky \u010Das',
+                            'standard': 'Novokaled\u00F3nsky \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Novokaled\u00F3nsky letn\u00FD \u010Das'
                         }
                     },
                     'New_Zealand': {
                         'long': {
-                            'generic': 'Novozélandský čas',
-                            'standard': 'Novozélandský štandardný čas',
-                            'daylight': 'Novozélandský letný čas'
+                            'generic': 'Novoz\u00E9landsk\u00FD \u010Das',
+                            'standard': 'Novoz\u00E9landsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Novoz\u00E9landsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Newfoundland': {
                         'long': {
-                            'generic': 'Newfoundlandský čas',
-                            'standard': 'Newfoundlandský štandardný čas',
-                            'daylight': 'Newfoundlandský letný čas'
+                            'generic': 'Newfoundlandsk\u00FD \u010Das',
+                            'standard': 'Newfoundlandsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Newfoundlandsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Niue': {
                         'long': {
-                            'standard': 'Čas ostrova Niue'
+                            'standard': '\u010Cas ostrova Niue'
                         }
                     },
                     'Norfolk': {
                         'long': {
-                            'standard': 'Čas Norfolkských ostrovov'
+                            'standard': '\u010Cas Norfolksk\u00FDch ostrovov'
                         }
                     },
                     'Noronha': {
                         'long': {
-                            'generic': 'Čas ostrova Fernando de Noronha',
-                            'standard': 'Štandardný čas ostrova Fernando de Noronha',
-                            'daylight': 'Letný čas ostrovov Fernanda de Noronha'
+                            'generic': '\u010Cas ostrova Fernando de Noronha',
+                            'standard': '\u0160tandardn\u00FD \u010Das ostrova Fernando de Noronha',
+                            'daylight': 'Letn\u00FD \u010Das ostrovov Fernanda de Noronha'
                         }
                     },
                     'Novosibirsk': {
                         'long': {
-                            'generic': 'Novosibírsky čas',
-                            'standard': 'Novosibirský štandardný čas',
-                            'daylight': 'Novosibírsky letný čas'
+                            'generic': 'Novosib\u00EDrsky \u010Das',
+                            'standard': 'Novosibirsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Novosib\u00EDrsky letn\u00FD \u010Das'
                         }
                     },
                     'Omsk': {
                         'long': {
-                            'generic': 'Omský čas',
-                            'standard': 'Omský štandardný čas',
-                            'daylight': 'Omský letný čas'
+                            'generic': 'Omsk\u00FD \u010Das',
+                            'standard': 'Omsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Omsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Pakistan': {
                         'long': {
-                            'generic': 'Pakistanský čas',
-                            'standard': 'Pakistanský štandardný čas',
-                            'daylight': 'Pakistanský letný čas'
+                            'generic': 'Pakistansk\u00FD \u010Das',
+                            'standard': 'Pakistansk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Pakistansk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Palau': {
                         'long': {
-                            'standard': 'Palauský čas'
+                            'standard': 'Palausk\u00FD \u010Das'
                         }
                     },
                     'Papua_New_Guinea': {
                         'long': {
-                            'standard': 'Čas Papuy-Novej Guiney'
+                            'standard': '\u010Cas Papuy-Novej Guiney'
                         }
                     },
                     'Paraguay': {
                         'long': {
-                            'generic': 'Paraguajský čas',
-                            'standard': 'Paraguajský štandardný čas',
-                            'daylight': 'Paraguajský letný čas'
+                            'generic': 'Paraguajsk\u00FD \u010Das',
+                            'standard': 'Paraguajsk\u00FD \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Paraguajsk\u00FD letn\u00FD \u010Das'
                         }
                     },
                     'Peru': {
                         'long': {
-                            'generic': 'Peruánsky čas',
-                            'standard': 'Peruánsky štandardný čas',
-                            'daylight': 'Peruánsky letný čas'
+                            'generic': 'Peru\u00E1nsky \u010Das',
+                            'standard': 'Peru\u00E1nsky \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Peru\u00E1nsky letn\u00FD \u010Das'
                         }
                     },
                     'Philippines': {
                         'long': {
-                            'generic': 'Filipínsky čas',
-                            'standard': 'Filipínsky štandardný čas',
-                            'daylight': 'Filipínsky letný čas'
+                            'generic': 'Filip\u00EDnsky \u010Das',
+                            'standard': 'Filip\u00EDnsky \u0161tandardn\u00FD \u010Das',
+                            'daylight': 'Filip\u00EDnsky letn\u00FD \u010Das'
                         }
                     },
                     'Phoenix_Islands': {
                         'long': {
-                            'standard': 'Čas Fénixových ostrovov'
+                            'standard': '\u010Cas F\u00E9nixov\u00FDch ostrovov'
                         }
                     },
                     'Pierre_Miquelon': {
                         'long': {
-                            'generic': 'Čas ostrovov Saint-Pierre a Miquelon',
-                            'standard': 'Štandardný čas ostrovov Saint-Pierre a Miquelon',
-                            'daylight': 'Letný čas ostrovov Saint-Pierre a Miquelon'
+                            'generic': '\u010Cas ostrovov Saint-Pierre a Miquelon',
+                            'standard': '\u0160tandardn\u00FD \u010Das ostrovov Saint-Pierre a Miquelon',
+                            'daylight': 'Letn\u00FD \u010Das ostrovov Saint-Pierre a Miquelon'
                         }
                     },
                     'Pitcairn': {
                         'long': {
-                            'standard': 'Čas Pitcairnovho ostrova'
+                            'standard': '\u010Cas Pitcairnovho ostrova'
                         }
                     },
                     'Ponape': {
                         'long': {
-                            'standard': 'Ponapský čas'
+                            'standard': 'Ponapsk\u00FD \u010Das'
                         }
                     }
                 },
                 'hourFormat': '+HH:mm;-HH:mm',
                 'gmtFormat': 'GMT{0}',
                 'gmtZeroFormat': 'GMT',
-                'regionFormat': 'Časové pásmo {0}',
+                'regionFormat': '\u010Casov\u00E9 p\u00E1smo {0}',
                 'regionFormat-type-daylight': '{0} (+1)',
                 'regionFormat-type-standard': '{0} (+0)',
                 'fallbackFormat': '{1} ({0})'
@@ -2470,9 +2470,9 @@
                         'format': {
                             'abbreviated': {
                                 '8': 'aug',
-                                '7': 'júl',
-                                '6': 'jún',
-                                '5': 'máj',
+                                '7': 'j\u00FAl',
+                                '6': 'j\u00FAn',
+                                '5': 'm\u00E1j',
                                 '12': 'dec',
                                 '11': 'nov',
                                 '10': 'okt',
@@ -2498,25 +2498,25 @@
                             },
                             'wide': {
                                 '8': 'augusta',
-                                '7': 'júla',
-                                '6': 'júna',
-                                '5': 'mája',
+                                '7': 'j\u00FAla',
+                                '6': 'j\u00FAna',
+                                '5': 'm\u00E1ja',
                                 '12': 'decembra',
                                 '11': 'novembra',
-                                '10': 'októbra',
+                                '10': 'okt\u00F3bra',
                                 '9': 'septembra',
-                                '1': 'januára',
-                                '2': 'februára',
+                                '1': 'janu\u00E1ra',
+                                '2': 'febru\u00E1ra',
                                 '3': 'marca',
-                                '4': 'apríla'
+                                '4': 'apr\u00EDla'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
                                 '8': 'aug',
-                                '7': 'júl',
-                                '6': 'jún',
-                                '5': 'máj',
+                                '7': 'j\u00FAl',
+                                '6': 'j\u00FAn',
+                                '5': 'm\u00E1j',
                                 '12': 'dec',
                                 '11': 'nov',
                                 '10': 'okt',
@@ -2542,17 +2542,17 @@
                             },
                             'wide': {
                                 '8': 'august',
-                                '7': 'júl',
-                                '6': 'jún',
-                                '5': 'máj',
+                                '7': 'j\u00FAl',
+                                '6': 'j\u00FAn',
+                                '5': 'm\u00E1j',
                                 '12': 'december',
                                 '11': 'november',
-                                '10': 'október',
+                                '10': 'okt\u00F3ber',
                                 '9': 'september',
-                                '1': 'január',
-                                '2': 'február',
+                                '1': 'janu\u00E1r',
+                                '2': 'febru\u00E1r',
                                 '3': 'marec',
-                                '4': 'apríl'
+                                '4': 'apr\u00EDl'
                             }
                         }
                     },
@@ -2563,7 +2563,7 @@
                                 'mon': 'po',
                                 'tue': 'ut',
                                 'wed': 'st',
-                                'thu': 'št',
+                                'thu': '\u0161t',
                                 'fri': 'pi',
                                 'sat': 'so'
                             },
@@ -2572,7 +2572,7 @@
                                 'mon': 'P',
                                 'tue': 'U',
                                 'wed': 'S',
-                                'thu': 'Š',
+                                'thu': '\u0160',
                                 'fri': 'P',
                                 'sat': 'S'
                             },
@@ -2581,16 +2581,16 @@
                                 'mon': 'Po',
                                 'tue': 'Ut',
                                 'wed': 'St',
-                                'thu': 'Št',
+                                'thu': '\u0160t',
                                 'fri': 'Pi',
                                 'sat': 'So'
                             },
                             'wide': {
-                                'sun': 'nedeľa',
+                                'sun': 'nede\u013Ea',
                                 'mon': 'pondelok',
                                 'tue': 'utorok',
                                 'wed': 'streda',
-                                'thu': 'štvrtok',
+                                'thu': '\u0161tvrtok',
                                 'fri': 'piatok',
                                 'sat': 'sobota'
                             }
@@ -2601,7 +2601,7 @@
                                 'mon': 'po',
                                 'tue': 'ut',
                                 'wed': 'st',
-                                'thu': 'št',
+                                'thu': '\u0161t',
                                 'fri': 'pi',
                                 'sat': 'so'
                             },
@@ -2610,7 +2610,7 @@
                                 'mon': 'P',
                                 'tue': 'U',
                                 'wed': 'S',
-                                'thu': 'Š',
+                                'thu': '\u0160',
                                 'fri': 'P',
                                 'sat': 'S'
                             },
@@ -2619,16 +2619,16 @@
                                 'mon': 'Po',
                                 'tue': 'Ut',
                                 'wed': 'St',
-                                'thu': 'Št',
+                                'thu': '\u0160t',
                                 'fri': 'Pi',
                                 'sat': 'So'
                             },
                             'wide': {
-                                'sun': 'nedeľa',
+                                'sun': 'nede\u013Ea',
                                 'mon': 'pondelok',
                                 'tue': 'utorok',
                                 'wed': 'streda',
-                                'thu': 'štvrtok',
+                                'thu': '\u0161tvrtok',
                                 'fri': 'piatok',
                                 'sat': 'sobota'
                             }
@@ -2649,10 +2649,10 @@
                                 '4': '4'
                             },
                             'wide': {
-                                '1': '1. štvrťrok',
-                                '2': '2. štvrťrok',
-                                '3': '3. štvrťrok',
-                                '4': '4. štvrťrok'
+                                '1': '1. \u0161tvr\u0165rok',
+                                '2': '2. \u0161tvr\u0165rok',
+                                '3': '3. \u0161tvr\u0165rok',
+                                '4': '4. \u0161tvr\u0165rok'
                             }
                         },
                         'stand-alone': {
@@ -2669,10 +2669,10 @@
                                 '4': '4'
                             },
                             'wide': {
-                                '1': '1. štvrťrok',
-                                '2': '2. štvrťrok',
-                                '3': '3. štvrťrok',
-                                '4': '4. štvrťrok'
+                                '1': '1. \u0161tvr\u0165rok',
+                                '2': '2. \u0161tvr\u0165rok',
+                                '3': '3. \u0161tvr\u0165rok',
+                                '4': '4. \u0161tvr\u0165rok'
                             }
                         }
                     },

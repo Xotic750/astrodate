@@ -42,166 +42,166 @@
     }(function (AstroDate) {
         AstroDate.lang('vi', {
             'codePatterns': {
-                'language': 'Ngôn ngữ: {0}',
-                'script': 'Chữ viết: {0}',
-                'territory': 'Vùng: {0}'
+                'language': 'Ng\u00F4n ng\u1EEF: {0}',
+                'script': 'Ch\u1EEF vi\u1EBFt: {0}',
+                'territory': 'V\u00F9ng: {0}'
             },
             'types': {
                 'colHiraganaQuaternary': {
-                    'no': 'Sắp xếp chữ Kana riêng biệt',
-                    'yes': 'Sắp xếp chữ Kana khác nhau'
+                    'no': 'S\u1EAFp x\u1EBFp ch\u1EEF Kana ri\u00EAng bi\u1EC7t',
+                    'yes': 'S\u1EAFp x\u1EBFp ch\u1EEF Kana kh\u00E1c nhau'
                 },
                 'colCaseLevel': {
-                    'no': 'Sắp xếp không phân biệt chữ hoa/chữ thường',
-                    'yes': 'Sắp xếp phân biệt chữ hoa/chữ thường'
+                    'no': 'S\u1EAFp x\u1EBFp kh\u00F4ng ph\u00E2n bi\u1EC7t ch\u1EEF hoa/ch\u1EEF th\u01B0\u1EDDng',
+                    'yes': 'S\u1EAFp x\u1EBFp ph\u00E2n bi\u1EC7t ch\u1EEF hoa/ch\u1EEF th\u01B0\u1EDDng'
                 },
                 'colCaseFirst': {
-                    'lower': 'Sắp xếp chữ thường đầu tiên',
-                    'no': 'Sắp xếp thứ tự chữ cái bình thường',
-                    'upper': 'Sắp xếp chữ hoa đầu tiên'
+                    'lower': 'S\u1EAFp x\u1EBFp ch\u1EEF th\u01B0\u1EDDng \u0111\u1EA7u ti\u00EAn',
+                    'no': 'S\u1EAFp x\u1EBFp th\u1EE9 t\u1EF1 ch\u1EEF c\u00E1i b\u00ECnh th\u01B0\u1EDDng',
+                    'upper': 'S\u1EAFp x\u1EBFp ch\u1EEF hoa \u0111\u1EA7u ti\u00EAn'
                 },
                 'colStrength': {
-                    'identical': 'Sắp xếp tất cả',
-                    'primary': 'Chỉ sắp xếp chữ cái cơ sở',
-                    'quaternary': 'Sắp xếp dấu trọng âm/chữ cái/độ rộng/chữ Kana',
-                    'secondary': 'Sắp xếp dấu trọng âm',
-                    'tertiary': 'Sắp xếp dấu trọng âm/chữ cái/độ rộng'
+                    'identical': 'S\u1EAFp x\u1EBFp t\u1EA5t c\u1EA3',
+                    'primary': 'Ch\u1EC9 s\u1EAFp x\u1EBFp ch\u1EEF c\u00E1i c\u01A1 s\u1EDF',
+                    'quaternary': 'S\u1EAFp x\u1EBFp d\u1EA5u tr\u1ECDng \u00E2m/ch\u1EEF c\u00E1i/\u0111\u1ED9 r\u1ED9ng/ch\u1EEF Kana',
+                    'secondary': 'S\u1EAFp x\u1EBFp d\u1EA5u tr\u1ECDng \u00E2m',
+                    'tertiary': 'S\u1EAFp x\u1EBFp d\u1EA5u tr\u1ECDng \u00E2m/ch\u1EEF c\u00E1i/\u0111\u1ED9 r\u1ED9ng'
                 },
                 'colNumeric': {
-                    'no': 'Sắp xếp từng chữ số',
-                    'yes': 'Sắp xếp chữ số theo số'
+                    'no': 'S\u1EAFp x\u1EBFp t\u1EEBng ch\u1EEF s\u1ED1',
+                    'yes': 'S\u1EAFp x\u1EBFp ch\u1EEF s\u1ED1 theo s\u1ED1'
                 },
                 'colNormalization': {
-                    'no': 'Sắp xếp không theo chuẩn hóa',
-                    'yes': 'Sắp xếp unicode được chuẩn hóa'
+                    'no': 'S\u1EAFp x\u1EBFp kh\u00F4ng theo chu\u1EA9n h\u00F3a',
+                    'yes': 'S\u1EAFp x\u1EBFp unicode \u0111\u01B0\u1EE3c chu\u1EA9n h\u00F3a'
                 },
                 'calendar': {
-                    'japanese': 'Lịch Nhật Bản',
-                    'iso8601': 'Lịch ISO-8601',
-                    'coptic': 'Lịch Copts',
-                    'dangi': 'Lịch Dangi',
-                    'ethiopic': 'Lịch Ethiopia',
-                    'ethiopic-amete-alem': 'Lịch Ethiopic Amete Alem',
-                    'gregorian': 'Lịch Gregory',
-                    'hebrew': 'Lịch Do Thái',
-                    'persian': 'Lịch Ba Tư',
-                    'roc': 'Lịch Trung Hoa Dân Quốc',
-                    'chinese': 'Lịch Trung Quốc',
-                    'buddhist': 'Lịch Phật Giáo',
-                    'indian': 'Lịch Quốc gia Ấn Độ',
-                    'islamic': 'Lịch Islamic',
-                    'islamic-civil': 'Lịch Islamic-Civil',
-                    'islamic-rgsa': 'Lịch Hồi Giáo - Ả Rập Xê-út',
-                    'islamic-tbla': 'Lịch Hồi Giáo - Thiên văn',
-                    'islamic-umalqura': 'Lịch Hồi Giáo - Umm al-Qura'
+                    'japanese': 'L\u1ECBch Nh\u1EADt B\u1EA3n',
+                    'iso8601': 'L\u1ECBch ISO-8601',
+                    'coptic': 'L\u1ECBch Copts',
+                    'dangi': 'L\u1ECBch Dangi',
+                    'ethiopic': 'L\u1ECBch Ethiopia',
+                    'ethiopic-amete-alem': 'L\u1ECBch Ethiopic Amete Alem',
+                    'gregorian': 'L\u1ECBch Gregory',
+                    'hebrew': 'L\u1ECBch Do Th\u00E1i',
+                    'persian': 'L\u1ECBch Ba T\u01B0',
+                    'roc': 'L\u1ECBch Trung Hoa D\u00E2n Qu\u1ED1c',
+                    'chinese': 'L\u1ECBch Trung Qu\u1ED1c',
+                    'buddhist': 'L\u1ECBch Ph\u1EADt Gi\u00E1o',
+                    'indian': 'L\u1ECBch Qu\u1ED1c gia \u1EA4n \u0110\u1ED9',
+                    'islamic': 'L\u1ECBch Islamic',
+                    'islamic-civil': 'L\u1ECBch Islamic-Civil',
+                    'islamic-rgsa': 'L\u1ECBch H\u1ED3i Gi\u00E1o - \u1EA2 R\u1EADp X\u00EA-\u00FAt',
+                    'islamic-tbla': 'L\u1ECBch H\u1ED3i Gi\u00E1o - Thi\u00EAn v\u0103n',
+                    'islamic-umalqura': 'L\u1ECBch H\u1ED3i Gi\u00E1o - Umm al-Qura'
                 },
                 'collation': {
-                    'phonebook': 'Thứ tự sắp xếp theo danh bạ điện thoại',
-                    'gb2312han': 'Thứ tự sắp xếp theo tiếng Trung giản thể - GB2312',
+                    'phonebook': 'Th\u1EE9 t\u1EF1 s\u1EAFp x\u1EBFp theo danh b\u1EA1 \u0111i\u1EC7n tho\u1EA1i',
+                    'gb2312han': 'Th\u1EE9 t\u1EF1 s\u1EAFp x\u1EBFp theo ti\u1EBFng Trung gi\u1EA3n th\u1EC3 - GB2312',
                     'eor': 'eor',
-                    'ducet': 'Thứ tự sắp xếp unicode mặc định',
-                    'dictionary': 'Thứ tự sắp xếp theo từ điển',
-                    'big5han': 'Thứ tự sắp xếp theo tiếng Trung phồn thể - Big5',
-                    'traditional': 'Thứ tự sắp xếp truyền thống',
-                    'standard': 'Thứ tự sắp xếp chuẩn',
-                    'zhuyin': 'Thứ tự sắp xếp Zhuyin',
-                    'unihan': 'Trình tự sắp xếp theo bộ-nét',
-                    'stroke': 'Thứ tự sắp xếp theo nét chữ',
-                    'searchjl': 'Tìm kiếm theo phụ âm đầu chữ Hangul',
-                    'search': 'Tìm kiếm mục đích chung',
-                    'reformed': 'Thứ tự sắp xếp đã sửa đổi',
-                    'pinyin': 'Thứ tự sắp xếp theo bính âm',
-                    'phonetic': 'Thứ tự sắp xếp theo ngữ âm'
+                    'ducet': 'Th\u1EE9 t\u1EF1 s\u1EAFp x\u1EBFp unicode m\u1EB7c \u0111\u1ECBnh',
+                    'dictionary': 'Th\u1EE9 t\u1EF1 s\u1EAFp x\u1EBFp theo t\u1EEB \u0111i\u1EC3n',
+                    'big5han': 'Th\u1EE9 t\u1EF1 s\u1EAFp x\u1EBFp theo ti\u1EBFng Trung ph\u1ED3n th\u1EC3 - Big5',
+                    'traditional': 'Th\u1EE9 t\u1EF1 s\u1EAFp x\u1EBFp truy\u1EC1n th\u1ED1ng',
+                    'standard': 'Th\u1EE9 t\u1EF1 s\u1EAFp x\u1EBFp chu\u1EA9n',
+                    'zhuyin': 'Th\u1EE9 t\u1EF1 s\u1EAFp x\u1EBFp Zhuyin',
+                    'unihan': 'Tr\u00ECnh t\u1EF1 s\u1EAFp x\u1EBFp theo b\u1ED9-n\u00E9t',
+                    'stroke': 'Th\u1EE9 t\u1EF1 s\u1EAFp x\u1EBFp theo n\u00E9t ch\u1EEF',
+                    'searchjl': 'T\u00ECm ki\u1EBFm theo ph\u1EE5 \u00E2m \u0111\u1EA7u ch\u1EEF Hangul',
+                    'search': 'T\u00ECm ki\u1EBFm m\u1EE5c \u0111\u00EDch chung',
+                    'reformed': 'Th\u1EE9 t\u1EF1 s\u1EAFp x\u1EBFp \u0111\u00E3 s\u1EEDa \u0111\u1ED5i',
+                    'pinyin': 'Th\u1EE9 t\u1EF1 s\u1EAFp x\u1EBFp theo b\u00EDnh \u00E2m',
+                    'phonetic': 'Th\u1EE9 t\u1EF1 s\u1EAFp x\u1EBFp theo ng\u1EEF \u00E2m'
                 },
                 'numbers': {
-                    'knda': 'Chữ số Kannada',
-                    'khmr': 'Chữ số Khơ-me',
-                    'kali': 'Chữ số Kayah Li',
-                    'jpanfin': 'Chữ số dùng trong tài chính của tiếng Nhật',
-                    'jpan': 'Chữ số Nhật Bản',
-                    'java': 'Chữ số Java',
-                    'hebr': 'Chữ số Do Thái',
-                    'hantfin': 'Chữ số dùng trong tài chính của tiếng Trung phồn thể',
-                    'hant': 'Chữ số tiếng Trung phồn thể',
-                    'hansfin': 'Chữ số dùng trong tài chính của tiếng Trung giản thể',
-                    'hans': 'Chữ số của tiếng Trung giản thể',
-                    'hanidec': 'Chữ số thập phân Trung Quốc',
-                    'guru': 'Chữ số Gurmukhi',
-                    'gujr': 'Chữ số Gujarati',
-                    'greklow': 'Chữ số Hy Lạp viết thường',
-                    'grek': 'Chữ số Hy Lạp',
-                    'bali': 'Chữ số Bali',
-                    'armnlow': 'Chữ số Armenia viết thường',
-                    'armn': 'Chữ số Armeni',
-                    'arabext': 'Chữ số Ả Rập - Ấn Độ mở rộng',
-                    'arab': 'Chữ số Ả Rập - Ấn Độ',
-                    'finance': 'Chữ số dùng trong tài chính',
-                    'traditional': 'Số truyền thống',
-                    'native': 'Chữ số tự nhiên',
-                    'beng': 'Chữ số Bangladesh',
-                    'brah': 'Chữ số Brahmi',
-                    'cakm': 'Chữ số Chakma',
-                    'cham': 'Chữ số Chăm',
-                    'deva': 'Chữ số Devanagari',
-                    'orya': 'Chữ số Oriya',
-                    'osma': 'Chữ số Osmanya',
-                    'roman': 'Chữ số La mã',
-                    'romanlow': 'Chữ số La Mã viết thường',
-                    'saur': 'Chữ số Saurashtra',
-                    'shrd': 'Chữ số Sharada',
-                    'sora': 'Chữ số Sora Sompeng',
-                    'sund': 'Chữ số Sudan',
-                    'vaii': 'Chữ số Vai',
-                    'tibt': 'Chữ số Tây Tạng',
-                    'thai': 'Chữ số Thái',
-                    'telu': 'Chữ số Telugu',
-                    'tamldec': 'Chữ số Tamil',
-                    'taml': 'Chữ số Tamil',
-                    'talu': 'Chữ số Thái Lặc mới',
-                    'takr': 'Chữ số Takri',
-                    'olck': 'Chữ số Ol Chiki',
-                    'nkoo': 'Chữ số N\'Ko',
-                    'mymrshan': 'Chữ số Myanmar Shan',
-                    'mymr': 'Chữ số Myanma',
-                    'mtei': 'Chữ số Meetei Mayek',
-                    'mong': 'Chữ số Mông Cổ',
-                    'mlym': 'Chữ số Malayalam',
-                    'limb': 'Chữ số Limbu',
-                    'lepc': 'Chữ số Lepcha',
-                    'latn': 'Chữ số phương Tây',
-                    'laoo': 'Chữ số Lào',
-                    'lanatham': 'Chữ số Tham Thái Đam',
-                    'lana': 'Chữ số Hora Thái Đam',
-                    'geor': 'Chữ số Gruzia',
-                    'fullwide': 'Chữ số có độ rộng đầy đủ',
-                    'ethi': 'Chữ số Ethiopia'
+                    'knda': 'Ch\u1EEF s\u1ED1 Kannada',
+                    'khmr': 'Ch\u1EEF s\u1ED1 Kh\u01A1-me',
+                    'kali': 'Ch\u1EEF s\u1ED1 Kayah Li',
+                    'jpanfin': 'Ch\u1EEF s\u1ED1 d\u00F9ng trong t\u00E0i ch\u00EDnh c\u1EE7a ti\u1EBFng Nh\u1EADt',
+                    'jpan': 'Ch\u1EEF s\u1ED1 Nh\u1EADt B\u1EA3n',
+                    'java': 'Ch\u1EEF s\u1ED1 Java',
+                    'hebr': 'Ch\u1EEF s\u1ED1 Do Th\u00E1i',
+                    'hantfin': 'Ch\u1EEF s\u1ED1 d\u00F9ng trong t\u00E0i ch\u00EDnh c\u1EE7a ti\u1EBFng Trung ph\u1ED3n th\u1EC3',
+                    'hant': 'Ch\u1EEF s\u1ED1 ti\u1EBFng Trung ph\u1ED3n th\u1EC3',
+                    'hansfin': 'Ch\u1EEF s\u1ED1 d\u00F9ng trong t\u00E0i ch\u00EDnh c\u1EE7a ti\u1EBFng Trung gi\u1EA3n th\u1EC3',
+                    'hans': 'Ch\u1EEF s\u1ED1 c\u1EE7a ti\u1EBFng Trung gi\u1EA3n th\u1EC3',
+                    'hanidec': 'Ch\u1EEF s\u1ED1 th\u1EADp ph\u00E2n Trung Qu\u1ED1c',
+                    'guru': 'Ch\u1EEF s\u1ED1 Gurmukhi',
+                    'gujr': 'Ch\u1EEF s\u1ED1 Gujarati',
+                    'greklow': 'Ch\u1EEF s\u1ED1 Hy L\u1EA1p vi\u1EBFt th\u01B0\u1EDDng',
+                    'grek': 'Ch\u1EEF s\u1ED1 Hy L\u1EA1p',
+                    'bali': 'Ch\u1EEF s\u1ED1 Bali',
+                    'armnlow': 'Ch\u1EEF s\u1ED1 Armenia vi\u1EBFt th\u01B0\u1EDDng',
+                    'armn': 'Ch\u1EEF s\u1ED1 Armeni',
+                    'arabext': 'Ch\u1EEF s\u1ED1 \u1EA2 R\u1EADp - \u1EA4n \u0110\u1ED9 m\u1EDF r\u1ED9ng',
+                    'arab': 'Ch\u1EEF s\u1ED1 \u1EA2 R\u1EADp - \u1EA4n \u0110\u1ED9',
+                    'finance': 'Ch\u1EEF s\u1ED1 d\u00F9ng trong t\u00E0i ch\u00EDnh',
+                    'traditional': 'S\u1ED1 truy\u1EC1n th\u1ED1ng',
+                    'native': 'Ch\u1EEF s\u1ED1 t\u1EF1 nhi\u00EAn',
+                    'beng': 'Ch\u1EEF s\u1ED1 Bangladesh',
+                    'brah': 'Ch\u1EEF s\u1ED1 Brahmi',
+                    'cakm': 'Ch\u1EEF s\u1ED1 Chakma',
+                    'cham': 'Ch\u1EEF s\u1ED1 Ch\u0103m',
+                    'deva': 'Ch\u1EEF s\u1ED1 Devanagari',
+                    'orya': 'Ch\u1EEF s\u1ED1 Oriya',
+                    'osma': 'Ch\u1EEF s\u1ED1 Osmanya',
+                    'roman': 'Ch\u1EEF s\u1ED1 La m\u00E3',
+                    'romanlow': 'Ch\u1EEF s\u1ED1 La M\u00E3 vi\u1EBFt th\u01B0\u1EDDng',
+                    'saur': 'Ch\u1EEF s\u1ED1 Saurashtra',
+                    'shrd': 'Ch\u1EEF s\u1ED1 Sharada',
+                    'sora': 'Ch\u1EEF s\u1ED1 Sora Sompeng',
+                    'sund': 'Ch\u1EEF s\u1ED1 Sudan',
+                    'vaii': 'Ch\u1EEF s\u1ED1 Vai',
+                    'tibt': 'Ch\u1EEF s\u1ED1 T\u00E2y T\u1EA1ng',
+                    'thai': 'Ch\u1EEF s\u1ED1 Th\u00E1i',
+                    'telu': 'Ch\u1EEF s\u1ED1 Telugu',
+                    'tamldec': 'Ch\u1EEF s\u1ED1 Tamil',
+                    'taml': 'Ch\u1EEF s\u1ED1 Tamil',
+                    'talu': 'Ch\u1EEF s\u1ED1 Th\u00E1i L\u1EB7c m\u1EDBi',
+                    'takr': 'Ch\u1EEF s\u1ED1 Takri',
+                    'olck': 'Ch\u1EEF s\u1ED1 Ol Chiki',
+                    'nkoo': "Ch\u1EEF s\u1ED1 N'Ko",
+                    'mymrshan': 'Ch\u1EEF s\u1ED1 Myanmar Shan',
+                    'mymr': 'Ch\u1EEF s\u1ED1 Myanma',
+                    'mtei': 'Ch\u1EEF s\u1ED1 Meetei Mayek',
+                    'mong': 'Ch\u1EEF s\u1ED1 M\u00F4ng C\u1ED5',
+                    'mlym': 'Ch\u1EEF s\u1ED1 Malayalam',
+                    'limb': 'Ch\u1EEF s\u1ED1 Limbu',
+                    'lepc': 'Ch\u1EEF s\u1ED1 Lepcha',
+                    'latn': 'Ch\u1EEF s\u1ED1 ph\u01B0\u01A1ng T\u00E2y',
+                    'laoo': 'Ch\u1EEF s\u1ED1 L\u00E0o',
+                    'lanatham': 'Ch\u1EEF s\u1ED1 Tham Th\u00E1i \u0110am',
+                    'lana': 'Ch\u1EEF s\u1ED1 Hora Th\u00E1i \u0110am',
+                    'geor': 'Ch\u1EEF s\u1ED1 Gruzia',
+                    'fullwide': 'Ch\u1EEF s\u1ED1 c\u00F3 \u0111\u1ED9 r\u1ED9ng \u0111\u1EA7y \u0111\u1EE7',
+                    'ethi': 'Ch\u1EEF s\u1ED1 Ethiopia'
                 },
                 'colAlternate': {
-                    'non-ignorable': 'Sắp xếp biểu tượng',
-                    'shifted': 'Sắp xếp biểu tượng bỏ qua'
+                    'non-ignorable': 'S\u1EAFp x\u1EBFp bi\u1EC3u t\u01B0\u1EE3ng',
+                    'shifted': 'S\u1EAFp x\u1EBFp bi\u1EC3u t\u01B0\u1EE3ng b\u1ECF qua'
                 },
                 'colBackwards': {
-                    'no': 'Sắp xếp dấu trọng âm bình thường',
-                    'yes': 'Sắp xếp dấu trọng âm đảo ngược'
+                    'no': 'S\u1EAFp x\u1EBFp d\u1EA5u tr\u1ECDng \u00E2m b\u00ECnh th\u01B0\u1EDDng',
+                    'yes': 'S\u1EAFp x\u1EBFp d\u1EA5u tr\u1ECDng \u00E2m \u0111\u1EA3o ng\u01B0\u1EE3c'
                 }
             },
             'keys': {
-                'colNormalization': 'Sắp xếp theo chuẩn hóa',
-                'collation': 'Thứ tự sắp xếp',
-                'colHiraganaQuaternary': 'Sắp xếp chữ Kana',
-                'colCaseLevel': 'Sắp xếp phân biệt chữ hoa/chữ thường',
-                'colCaseFirst': 'Sắp xếp chữ hoa/chữ thường',
-                'colBackwards': 'Sắp xếp dấu trọng âm đảo ngược',
-                'colAlternate': 'Bỏ qua sắp xếp biểu tượng',
-                'calendar': 'Lịch',
-                'x': 'Sử dụng cá nhân',
-                'variableTop': 'Sắp xếp dưới dạng biểu tượng',
-                'va': 'Biến thể ngôn ngữ',
-                'timezone': 'Múi giờ',
-                'numbers': 'Số',
-                'currency': 'Tiền tệ',
-                'colStrength': 'Cường độ sắp xếp',
-                'colNumeric': 'Sắp xếp theo số'
+                'colNormalization': 'S\u1EAFp x\u1EBFp theo chu\u1EA9n h\u00F3a',
+                'collation': 'Th\u1EE9 t\u1EF1 s\u1EAFp x\u1EBFp',
+                'colHiraganaQuaternary': 'S\u1EAFp x\u1EBFp ch\u1EEF Kana',
+                'colCaseLevel': 'S\u1EAFp x\u1EBFp ph\u00E2n bi\u1EC7t ch\u1EEF hoa/ch\u1EEF th\u01B0\u1EDDng',
+                'colCaseFirst': 'S\u1EAFp x\u1EBFp ch\u1EEF hoa/ch\u1EEF th\u01B0\u1EDDng',
+                'colBackwards': 'S\u1EAFp x\u1EBFp d\u1EA5u tr\u1ECDng \u00E2m \u0111\u1EA3o ng\u01B0\u1EE3c',
+                'colAlternate': 'B\u1ECF qua s\u1EAFp x\u1EBFp bi\u1EC3u t\u01B0\u1EE3ng',
+                'calendar': 'L\u1ECBch',
+                'x': 'S\u1EED d\u1EE5ng c\u00E1 nh\u00E2n',
+                'variableTop': 'S\u1EAFp x\u1EBFp d\u01B0\u1EDBi d\u1EA1ng bi\u1EC3u t\u01B0\u1EE3ng',
+                'va': 'Bi\u1EBFn th\u1EC3 ng\u00F4n ng\u1EEF',
+                'timezone': 'M\u00FAi gi\u1EDD',
+                'numbers': 'S\u1ED1',
+                'currency': 'Ti\u1EC1n t\u1EC7',
+                'colStrength': 'C\u01B0\u1EDDng \u0111\u1ED9 s\u1EAFp x\u1EBFp',
+                'colNumeric': 'S\u1EAFp x\u1EBFp theo s\u1ED1'
             },
             'localeDisplayPattern': {
                 'localePattern': '{0} ({1})',
@@ -458,7 +458,7 @@
                             'exemplarCity': 'GMT-9'
                         },
                         'Unknown': {
-                            'exemplarCity': 'Thành phố Không xác định'
+                            'exemplarCity': 'Th\u00E0nh ph\u1ED1 Kh\u00F4ng x\u00E1c \u0111\u1ECBnh'
                         },
                         'GMT-2': {
                             'exemplarCity': 'GMT-2'
@@ -643,7 +643,7 @@
                             'exemplarCity': 'Bogota'
                         },
                         'Curacao': {
-                            'exemplarCity': 'Curaçao'
+                            'exemplarCity': 'Cura\u00E7ao'
                         },
                         'Danmarkshavn': {
                             'exemplarCity': 'Danmarkshavn'
@@ -809,7 +809,7 @@
                             'exemplarCity': 'Louisville'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': 'Lower Prince\'s Quarter'
+                            'exemplarCity': "Lower Prince's Quarter"
                         },
                         'Maceio': {
                             'exemplarCity': 'Maceio'
@@ -882,13 +882,13 @@
                         },
                         'North_Dakota': {
                             'Beulah': {
-                                'exemplarCity': 'Beulah, Bắc Dakota'
+                                'exemplarCity': 'Beulah, B\u1EAFc Dakota'
                             },
                             'New_Salem': {
-                                'exemplarCity': 'New Salem, Bắc Dakota'
+                                'exemplarCity': 'New Salem, B\u1EAFc Dakota'
                             },
                             'Center': {
-                                'exemplarCity': 'Center, Bắc Dakota'
+                                'exemplarCity': 'Center, B\u1EAFc Dakota'
                             }
                         },
                         'Ojinaga': {
@@ -961,7 +961,7 @@
                             'exemplarCity': 'Sitka'
                         },
                         'St_Barthelemy': {
-                            'exemplarCity': 'Saint Barthélemy'
+                            'exemplarCity': 'Saint Barth\u00E9lemy'
                         },
                         'St_Johns': {
                             'exemplarCity': 'St. John\u2019s'
@@ -1016,7 +1016,7 @@
                             'exemplarCity': 'Oslo'
                         },
                         'Moscow': {
-                            'exemplarCity': 'Mát-xcơ-va'
+                            'exemplarCity': 'M\u00E1t-xc\u01A1-va'
                         },
                         'Monaco': {
                             'exemplarCity': 'Monaco'
@@ -1038,7 +1038,7 @@
                         },
                         'London': {
                             'long': {
-                                'daylight': 'Giờ Mùa Hè Anh'
+                                'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Anh'
                             },
                             'exemplarCity': 'London'
                         },
@@ -1061,7 +1061,7 @@
                             'exemplarCity': 'Istanbul'
                         },
                         'Isle_of_Man': {
-                            'exemplarCity': 'Đảo Man'
+                            'exemplarCity': '\u0110\u1EA3o Man'
                         },
                         'Bucharest': {
                             'exemplarCity': 'Bucharest'
@@ -1170,7 +1170,7 @@
                         },
                         'Dublin': {
                             'long': {
-                                'daylight': 'Giờ Mùa Hè Ai-len'
+                                'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Ai-len'
                             },
                             'exemplarCity': 'Dublin'
                         },
@@ -1282,7 +1282,7 @@
                             'exemplarCity': 'Tripoli'
                         },
                         'Sao_Tome': {
-                            'exemplarCity': 'São Tomé'
+                            'exemplarCity': 'S\u00E3o Tom\u00E9'
                         },
                         'Porto-Novo': {
                             'exemplarCity': 'Porto-Novo'
@@ -1347,7 +1347,7 @@
                     },
                     'Asia': {
                         'Shanghai': {
-                            'exemplarCity': 'Thượng Hải'
+                            'exemplarCity': 'Th\u01B0\u1EE3ng H\u1EA3i'
                         },
                         'Seoul': {
                             'exemplarCity': 'Seoul'
@@ -1359,7 +1359,7 @@
                             'exemplarCity': 'Sakhalin'
                         },
                         'Saigon': {
-                            'exemplarCity': 'TP Hồ Chí Minh'
+                            'exemplarCity': 'TP H\u1ED3 Ch\u00ED Minh'
                         },
                         'Riyadh': {
                             'exemplarCity': 'Riyadh'
@@ -1374,7 +1374,7 @@
                             'exemplarCity': 'Qatar'
                         },
                         'Pyongyang': {
-                            'exemplarCity': 'Bình Nhưỡng'
+                            'exemplarCity': 'B\u00ECnh Nh\u01B0\u1EE1ng'
                         },
                         'Pontianak': {
                             'exemplarCity': 'Pontianak'
@@ -1395,7 +1395,7 @@
                             'exemplarCity': 'Baghdad'
                         },
                         'Chongqing': {
-                            'exemplarCity': 'Trùng Khánh'
+                            'exemplarCity': 'Tr\u00F9ng Kh\u00E1nh'
                         },
                         'Colombo': {
                             'exemplarCity': 'Colombo'
@@ -1419,13 +1419,13 @@
                             'exemplarCity': 'Gaza'
                         },
                         'Harbin': {
-                            'exemplarCity': 'Cáp Nhĩ Tân'
+                            'exemplarCity': 'C\u00E1p Nh\u0129 T\u00E2n'
                         },
                         'Hebron': {
                             'exemplarCity': 'Hebron'
                         },
                         'Hong_Kong': {
-                            'exemplarCity': 'Hồng Kông'
+                            'exemplarCity': 'H\u1ED3ng K\u00F4ng'
                         },
                         'Hovd': {
                             'exemplarCity': 'Hovd'
@@ -1443,13 +1443,13 @@
                             'exemplarCity': 'Ulaanbaatar'
                         },
                         'Urumqi': {
-                            'exemplarCity': 'Ô Lỗ Mộc Tề'
+                            'exemplarCity': '\u00D4 L\u1ED7 M\u1ED9c T\u1EC1'
                         },
                         'Ust-Nera': {
                             'exemplarCity': 'Ust-Nera'
                         },
                         'Vientiane': {
-                            'exemplarCity': 'Viêng Chăn'
+                            'exemplarCity': 'Vi\u00EAng Ch\u0103n'
                         },
                         'Vladivostok': {
                             'exemplarCity': 'Vladivostok'
@@ -1479,7 +1479,7 @@
                             'exemplarCity': 'Tashkent'
                         },
                         'Taipei': {
-                            'exemplarCity': 'Đài Bắc'
+                            'exemplarCity': '\u0110\u00E0i B\u1EAFc'
                         },
                         'Singapore': {
                             'exemplarCity': 'Singapore'
@@ -1542,7 +1542,7 @@
                             'exemplarCity': 'Karachi'
                         },
                         'Kashgar': {
-                            'exemplarCity': 'Khách Thập'
+                            'exemplarCity': 'Kh\u00E1ch Th\u1EADp'
                         },
                         'Katmandu': {
                             'exemplarCity': 'Kathmandu'
@@ -1588,937 +1588,937 @@
                 'metazone': {
                     'Seychelles': {
                         'long': {
-                            'standard': 'Giờ Seychelles'
+                            'standard': 'Gi\u1EDD Seychelles'
                         }
                     },
                     'Samoa': {
                         'long': {
-                            'generic': 'Giờ Samoa',
-                            'standard': 'Giờ Chuẩn Samoa',
-                            'daylight': 'Giờ ban ngày Samoa'
+                            'generic': 'Gi\u1EDD Samoa',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Samoa',
+                            'daylight': 'Gi\u1EDD ban ng\u00E0y Samoa'
                         }
                     },
                     'Samara': {
                         'long': {
-                            'generic': 'Giờ Samara',
-                            'standard': 'Giờ Chuẩn Samara',
-                            'daylight': 'Giờ mùa hè Samara'
+                            'generic': 'Gi\u1EDD Samara',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Samara',
+                            'daylight': 'Gi\u1EDD m\u00F9a h\u00E8 Samara'
                         }
                     },
                     'Sakhalin': {
                         'long': {
-                            'generic': 'Giờ Sakhalin',
-                            'standard': 'Giờ Chuẩn Sakhalin',
-                            'daylight': 'Giờ mùa hè Sakhalin'
+                            'generic': 'Gi\u1EDD Sakhalin',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Sakhalin',
+                            'daylight': 'Gi\u1EDD m\u00F9a h\u00E8 Sakhalin'
                         }
                     },
                     'Rothera': {
                         'long': {
-                            'standard': 'Giờ Rothera'
+                            'standard': 'Gi\u1EDD Rothera'
                         }
                     },
                     'Reunion': {
                         'long': {
-                            'standard': 'Giờ Reunion'
+                            'standard': 'Gi\u1EDD Reunion'
                         }
                     },
                     'Qyzylorda': {
                         'long': {
-                            'generic': 'Giờ Qyzylorda',
-                            'standard': 'Giờ Chuẩn Qyzylorda',
-                            'daylight': 'Giờ Mùa Hè Qyzylorda'
+                            'generic': 'Gi\u1EDD Qyzylorda',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Qyzylorda',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Qyzylorda'
                         }
                     },
                     'Ponape': {
                         'long': {
-                            'standard': 'Giờ Ponape'
+                            'standard': 'Gi\u1EDD Ponape'
                         }
                     },
                     'Pitcairn': {
                         'long': {
-                            'standard': 'Giờ Pitcairn'
+                            'standard': 'Gi\u1EDD Pitcairn'
                         }
                     },
                     'Pierre_Miquelon': {
                         'long': {
-                            'generic': 'Giờ Saint Pierre và Miquelon',
-                            'standard': 'Giờ Chuẩn Saint Pierre và Miquelon',
-                            'daylight': 'Giờ Mùa Hè Saint Pierre và Miquelon'
+                            'generic': 'Gi\u1EDD Saint Pierre v\u00E0 Miquelon',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Saint Pierre v\u00E0 Miquelon',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Saint Pierre v\u00E0 Miquelon'
                         }
                     },
                     'Phoenix_Islands': {
                         'long': {
-                            'standard': 'Giờ Quần Đảo Phoenix'
+                            'standard': 'Gi\u1EDD Qu\u1EA7n \u0110\u1EA3o Phoenix'
                         }
                     },
                     'Philippines': {
                         'long': {
-                            'generic': 'Giờ Philippin',
-                            'standard': 'Giờ Chuẩn Philippin',
-                            'daylight': 'Giờ Mùa Hè Philippin'
+                            'generic': 'Gi\u1EDD Philippin',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Philippin',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Philippin'
                         }
                     },
                     'Peru': {
                         'long': {
-                            'generic': 'Giờ Peru',
-                            'standard': 'Giờ Chuẩn Peru',
-                            'daylight': 'Giờ Mùa Hè Peru'
+                            'generic': 'Gi\u1EDD Peru',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Peru',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Peru'
                         }
                     },
                     'Paraguay': {
                         'long': {
-                            'generic': 'Giờ Paraguay',
-                            'standard': 'Giờ Chuẩn Paraguay',
-                            'daylight': 'Giờ Mùa Hè Paraguay'
+                            'generic': 'Gi\u1EDD Paraguay',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Paraguay',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Paraguay'
                         }
                     },
                     'Papua_New_Guinea': {
                         'long': {
-                            'standard': 'Giờ Papua New Guinea'
+                            'standard': 'Gi\u1EDD Papua New Guinea'
                         }
                     },
                     'Palau': {
                         'long': {
-                            'standard': 'Giờ Palau'
+                            'standard': 'Gi\u1EDD Palau'
                         }
                     },
                     'Pakistan': {
                         'long': {
-                            'generic': 'Giờ Pakistan',
-                            'standard': 'Giờ Chuẩn Pakistan',
-                            'daylight': 'Giờ Mùa Hè Pakistan'
+                            'generic': 'Gi\u1EDD Pakistan',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Pakistan',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Pakistan'
                         }
                     },
                     'Omsk': {
                         'long': {
-                            'generic': 'Giờ Omsk',
-                            'standard': 'Giờ chuẩn Omsk',
-                            'daylight': 'Giờ mùa hè Omsk'
+                            'generic': 'Gi\u1EDD Omsk',
+                            'standard': 'Gi\u1EDD chu\u1EA9n Omsk',
+                            'daylight': 'Gi\u1EDD m\u00F9a h\u00E8 Omsk'
                         }
                     },
                     'Novosibirsk': {
                         'long': {
-                            'generic': 'Giờ Novosibirsk',
-                            'standard': 'Giờ chuẩn Novosibirsk',
-                            'daylight': 'Giờ mùa hè Novosibirsk'
+                            'generic': 'Gi\u1EDD Novosibirsk',
+                            'standard': 'Gi\u1EDD chu\u1EA9n Novosibirsk',
+                            'daylight': 'Gi\u1EDD m\u00F9a h\u00E8 Novosibirsk'
                         }
                     },
                     'North_Mariana': {
                         'long': {
-                            'standard': 'Giờ Quần Đảo Bắc Mariana'
+                            'standard': 'Gi\u1EDD Qu\u1EA7n \u0110\u1EA3o B\u1EAFc Mariana'
                         }
                     },
                     'Noronha': {
                         'long': {
-                            'generic': 'Giờ Fernando de Noronha',
-                            'standard': 'Giờ Chuẩn Fernando de Noronha',
-                            'daylight': 'Giờ Mùa Hè Fernando de Noronha'
+                            'generic': 'Gi\u1EDD Fernando de Noronha',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Fernando de Noronha',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Fernando de Noronha'
                         }
                     },
                     'Norfolk': {
                         'long': {
-                            'standard': 'Giờ đảo Norfolk'
+                            'standard': 'Gi\u1EDD \u0111\u1EA3o Norfolk'
                         }
                     },
                     'Niue': {
                         'long': {
-                            'standard': 'Giờ Niue'
+                            'standard': 'Gi\u1EDD Niue'
                         }
                     },
                     'Newfoundland': {
                         'long': {
-                            'generic': 'Giờ Newfoundland',
-                            'standard': 'Giờ Chuẩn Newfoundland',
-                            'daylight': 'Giờ Mùa Hè Newfoundland'
+                            'generic': 'Gi\u1EDD Newfoundland',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Newfoundland',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Newfoundland'
                         }
                     },
                     'Amazon': {
                         'long': {
-                            'generic': 'Giờ Amazon',
-                            'standard': 'Giờ Chuẩn Amazon',
-                            'daylight': 'Giờ Mùa Hè Amazon'
+                            'generic': 'Gi\u1EDD Amazon',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Amazon',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Amazon'
                         }
                     },
                     'America_Central': {
                         'long': {
-                            'generic': 'Giờ miền trung',
-                            'standard': 'Giờ chuẩn miền trung',
-                            'daylight': 'Giờ ban ngày miền trung'
+                            'generic': 'Gi\u1EDD mi\u1EC1n trung',
+                            'standard': 'Gi\u1EDD chu\u1EA9n mi\u1EC1n trung',
+                            'daylight': 'Gi\u1EDD ban ng\u00E0y mi\u1EC1n trung'
                         }
                     },
                     'America_Eastern': {
                         'long': {
-                            'generic': 'Giờ miền đông',
-                            'standard': 'Giờ chuẩn miền đông',
-                            'daylight': 'Giờ ban ngày miền đông'
+                            'generic': 'Gi\u1EDD mi\u1EC1n \u0111\u00F4ng',
+                            'standard': 'Gi\u1EDD chu\u1EA9n mi\u1EC1n \u0111\u00F4ng',
+                            'daylight': 'Gi\u1EDD ban ng\u00E0y mi\u1EC1n \u0111\u00F4ng'
                         }
                     },
                     'America_Mountain': {
                         'long': {
-                            'generic': 'Giờ miền núi',
-                            'standard': 'Giờ chuẩn miền núi',
-                            'daylight': 'Giờ ban ngày miền núi'
+                            'generic': 'Gi\u1EDD mi\u1EC1n n\u00FAi',
+                            'standard': 'Gi\u1EDD chu\u1EA9n mi\u1EC1n n\u00FAi',
+                            'daylight': 'Gi\u1EDD ban ng\u00E0y mi\u1EC1n n\u00FAi'
                         }
                     },
                     'America_Pacific': {
                         'long': {
-                            'generic': 'Giờ Thái Bình Dương',
-                            'standard': 'Giờ chuẩn Thái Bình Dương',
-                            'daylight': 'Giờ ban ngày Thái Bình Dương'
+                            'generic': 'Gi\u1EDD Th\u00E1i B\u00ECnh D\u01B0\u01A1ng',
+                            'standard': 'Gi\u1EDD chu\u1EA9n Th\u00E1i B\u00ECnh D\u01B0\u01A1ng',
+                            'daylight': 'Gi\u1EDD ban ng\u00E0y Th\u00E1i B\u00ECnh D\u01B0\u01A1ng'
                         }
                     },
                     'Anadyr': {
                         'long': {
-                            'generic': 'Giờ Anadyr',
-                            'standard': 'Giờ Chuẩn Anadyr',
-                            'daylight': 'Giờ mùa hè Anadyr'
+                            'generic': 'Gi\u1EDD Anadyr',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Anadyr',
+                            'daylight': 'Gi\u1EDD m\u00F9a h\u00E8 Anadyr'
                         }
                     },
                     'Aqtau': {
                         'long': {
-                            'generic': 'Giờ Aqtau',
-                            'standard': 'Giờ Chuẩn Aqtau',
-                            'daylight': 'Giờ Mùa Hè Aqtau'
+                            'generic': 'Gi\u1EDD Aqtau',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Aqtau',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Aqtau'
                         }
                     },
                     'Aqtobe': {
                         'long': {
-                            'generic': 'Giờ Aqtobe',
-                            'standard': 'Giờ Chuẩn Aqtobe',
-                            'daylight': 'Giờ Mùa Hè Aqtobe'
+                            'generic': 'Gi\u1EDD Aqtobe',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Aqtobe',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Aqtobe'
                         }
                     },
                     'Cape_Verde': {
                         'long': {
-                            'generic': 'Giờ Cape Verde',
-                            'standard': 'Giờ Chuẩn Cape Verde',
-                            'daylight': 'Giờ Mùa Hè Cape Verde'
+                            'generic': 'Gi\u1EDD Cape Verde',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Cape Verde',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Cape Verde'
                         }
                     },
                     'Chamorro': {
                         'long': {
-                            'standard': 'Giờ Chamorro'
+                            'standard': 'Gi\u1EDD Chamorro'
                         }
                     },
                     'Chatham': {
                         'long': {
-                            'generic': 'Giờ Chatham',
-                            'standard': 'Giờ Chuẩn Chatham',
-                            'daylight': 'Giờ Mùa Hè Chatham'
+                            'generic': 'Gi\u1EDD Chatham',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Chatham',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Chatham'
                         }
                     },
                     'Chile': {
                         'long': {
-                            'generic': 'Giờ Chile',
-                            'standard': 'Giờ Chuẩn Chile',
-                            'daylight': 'Giờ Mùa Hè Chile'
+                            'generic': 'Gi\u1EDD Chile',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Chile',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Chile'
                         }
                     },
                     'China': {
                         'long': {
-                            'generic': 'Giờ Trung Quốc',
-                            'standard': 'Giờ Chuẩn Trung Quốc',
-                            'daylight': 'Giờ Mùa Hè Trung Quốc'
+                            'generic': 'Gi\u1EDD Trung Qu\u1ED1c',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Trung Qu\u1ED1c',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Trung Qu\u1ED1c'
                         }
                     },
                     'Choibalsan': {
                         'long': {
-                            'generic': 'Giờ Choibalsan',
-                            'standard': 'Giờ Chuẩn Choibalsan',
-                            'daylight': 'Giờ Mùa Hè Choibalsan'
+                            'generic': 'Gi\u1EDD Choibalsan',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Choibalsan',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Choibalsan'
                         }
                     },
                     'Christmas': {
                         'long': {
-                            'standard': 'Giờ Đảo Christmas'
+                            'standard': 'Gi\u1EDD \u0110\u1EA3o Christmas'
                         }
                     },
                     'Cocos': {
                         'long': {
-                            'standard': 'Giờ Quần Đảo Cocos'
+                            'standard': 'Gi\u1EDD Qu\u1EA7n \u0110\u1EA3o Cocos'
                         }
                     },
                     'Colombia': {
                         'long': {
-                            'generic': 'Giờ Colombia',
-                            'standard': 'Giờ Chuẩn Colombia',
-                            'daylight': 'Giờ Mùa Hè Colombia'
+                            'generic': 'Gi\u1EDD Colombia',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Colombia',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Colombia'
                         }
                     },
                     'Cook': {
                         'long': {
-                            'generic': 'Giờ Quần Đảo Cook',
-                            'standard': 'Giờ Chuẩn Quần Đảo Cook',
-                            'daylight': 'Giờ Nửa Mùa Hè Quần Đảo Cook'
+                            'generic': 'Gi\u1EDD Qu\u1EA7n \u0110\u1EA3o Cook',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Qu\u1EA7n \u0110\u1EA3o Cook',
+                            'daylight': 'Gi\u1EDD N\u1EEDa M\u00F9a H\u00E8 Qu\u1EA7n \u0110\u1EA3o Cook'
                         }
                     },
                     'Cuba': {
                         'long': {
-                            'generic': 'Giờ Cuba',
-                            'standard': 'Giờ Chuẩn Cuba',
-                            'daylight': 'Giờ Mùa Hè Cuba'
+                            'generic': 'Gi\u1EDD Cuba',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Cuba',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Cuba'
                         }
                     },
                     'Davis': {
                         'long': {
-                            'standard': 'Giờ Davis'
+                            'standard': 'Gi\u1EDD Davis'
                         }
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': 'Giờ Dumont-d\u2019Urville'
+                            'standard': 'Gi\u1EDD Dumont-d\u2019Urville'
                         }
                     },
                     'East_Timor': {
                         'long': {
-                            'standard': 'Giờ Đông Timor'
+                            'standard': 'Gi\u1EDD \u0110\u00F4ng Timor'
                         }
                     },
                     'Easter': {
                         'long': {
-                            'generic': 'Giờ Đảo Phục Sinh',
-                            'standard': 'Giờ Chuẩn Đảo Phục Sinh',
-                            'daylight': 'Giờ Mùa Hè Đảo Phục Sinh'
+                            'generic': 'Gi\u1EDD \u0110\u1EA3o Ph\u1EE5c Sinh',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n \u0110\u1EA3o Ph\u1EE5c Sinh',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 \u0110\u1EA3o Ph\u1EE5c Sinh'
                         }
                     },
                     'Ecuador': {
                         'long': {
-                            'standard': 'Giờ Ecuador'
+                            'standard': 'Gi\u1EDD Ecuador'
                         }
                     },
                     'Europe_Central': {
                         'long': {
-                            'generic': 'Giờ Trung Âu',
-                            'standard': 'Giờ Chuẩn Trung Âu',
-                            'daylight': 'Giờ Mùa Hè Trung Âu'
+                            'generic': 'Gi\u1EDD Trung \u00C2u',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Trung \u00C2u',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Trung \u00C2u'
                         }
                     },
                     'Europe_Eastern': {
                         'long': {
-                            'generic': 'Giờ Đông Âu',
-                            'standard': 'Giờ Chuẩn Đông Âu',
-                            'daylight': 'Giờ Mùa Hè Đông Âu'
+                            'generic': 'Gi\u1EDD \u0110\u00F4ng \u00C2u',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n \u0110\u00F4ng \u00C2u',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 \u0110\u00F4ng \u00C2u'
                         }
                     },
                     'Europe_Western': {
                         'long': {
-                            'generic': 'Giờ Tây Âu',
-                            'standard': 'Giờ Chuẩn Tây Âu',
-                            'daylight': 'Giờ Mùa hè Tây Âu'
+                            'generic': 'Gi\u1EDD T\u00E2y \u00C2u',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n T\u00E2y \u00C2u',
+                            'daylight': 'Gi\u1EDD M\u00F9a h\u00E8 T\u00E2y \u00C2u'
                         }
                     },
                     'Falkland': {
                         'long': {
-                            'generic': 'Giờ Quần Đảo Falkland',
-                            'standard': 'Giờ Chuẩn Quần Đảo Falkland',
-                            'daylight': 'Giờ Mùa Hè Quần Đảo Falkland'
+                            'generic': 'Gi\u1EDD Qu\u1EA7n \u0110\u1EA3o Falkland',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Qu\u1EA7n \u0110\u1EA3o Falkland',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Qu\u1EA7n \u0110\u1EA3o Falkland'
                         }
                     },
                     'Fiji': {
                         'long': {
-                            'generic': 'Giờ Fiji',
-                            'standard': 'Giờ Chuẩn Fiji',
-                            'daylight': 'Giờ Mùa Hè Fiji'
+                            'generic': 'Gi\u1EDD Fiji',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Fiji',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Fiji'
                         }
                     },
                     'French_Guiana': {
                         'long': {
-                            'standard': 'Giờ Guiana thuộc Pháp'
+                            'standard': 'Gi\u1EDD Guiana thu\u1ED9c Ph\u00E1p'
                         }
                     },
                     'French_Southern': {
                         'long': {
-                            'standard': 'Giờ Nam Cực và Nam Nước Pháp'
+                            'standard': 'Gi\u1EDD Nam C\u1EF1c v\u00E0 Nam N\u01B0\u1EDBc Ph\u00E1p'
                         }
                     },
                     'Galapagos': {
                         'long': {
-                            'standard': 'Giờ Galapagos'
+                            'standard': 'Gi\u1EDD Galapagos'
                         }
                     },
                     'Tokelau': {
                         'long': {
-                            'standard': 'Giờ Tokelau'
+                            'standard': 'Gi\u1EDD Tokelau'
                         }
                     },
                     'Tonga': {
                         'long': {
-                            'generic': 'Giờ Tonga',
-                            'standard': 'Giờ Chuẩn Tonga',
-                            'daylight': 'Giờ Mùa Hè Tonga'
+                            'generic': 'Gi\u1EDD Tonga',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Tonga',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Tonga'
                         }
                     },
                     'Truk': {
                         'long': {
-                            'standard': 'Giờ Chuuk'
+                            'standard': 'Gi\u1EDD Chuuk'
                         }
                     },
                     'Turkmenistan': {
                         'long': {
-                            'generic': 'Giờ Turkmenistan',
-                            'standard': 'Giờ Chuẩn Turkmenistan',
-                            'daylight': 'Giờ Mùa Hè Turkmenistan'
+                            'generic': 'Gi\u1EDD Turkmenistan',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Turkmenistan',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Turkmenistan'
                         }
                     },
                     'Tuvalu': {
                         'long': {
-                            'standard': 'Giờ Tuvalu'
+                            'standard': 'Gi\u1EDD Tuvalu'
                         }
                     },
                     'Uruguay': {
                         'long': {
-                            'generic': 'Giờ Uruguay',
-                            'standard': 'Giờ Chuẩn Uruguay',
-                            'daylight': 'Giờ Mùa Hè Uruguay'
+                            'generic': 'Gi\u1EDD Uruguay',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Uruguay',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Uruguay'
                         }
                     },
                     'Uzbekistan': {
                         'long': {
-                            'generic': 'Giờ Uzbekistan',
-                            'standard': 'Giờ Chuẩn Uzbekistan',
-                            'daylight': 'Giờ Mùa Hè Uzbekistan'
+                            'generic': 'Gi\u1EDD Uzbekistan',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Uzbekistan',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Uzbekistan'
                         }
                     },
                     'Vanuatu': {
                         'long': {
-                            'generic': 'Giờ Vanuatu',
-                            'standard': 'Giờ Chuẩn Vanuatu',
-                            'daylight': 'Giờ Mùa Hè Vanuatu'
+                            'generic': 'Gi\u1EDD Vanuatu',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Vanuatu',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Vanuatu'
                         }
                     },
                     'Yekaterinburg': {
                         'long': {
-                            'generic': 'Giờ Yekaterinburg',
-                            'standard': 'Giờ Chuẩn Yekaterinburg',
-                            'daylight': 'Giờ mùa hè Yekaterinburg'
+                            'generic': 'Gi\u1EDD Yekaterinburg',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Yekaterinburg',
+                            'daylight': 'Gi\u1EDD m\u00F9a h\u00E8 Yekaterinburg'
                         }
                     },
                     'Yakutsk': {
                         'long': {
-                            'generic': 'Giờ Yakutsk',
-                            'standard': 'Giờ Chuẩn Yakutsk',
-                            'daylight': 'Giờ mùa hè Yakutsk'
+                            'generic': 'Gi\u1EDD Yakutsk',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Yakutsk',
+                            'daylight': 'Gi\u1EDD m\u00F9a h\u00E8 Yakutsk'
                         }
                     },
                     'Wallis': {
                         'long': {
-                            'standard': 'Giờ Wallis và Futuna'
+                            'standard': 'Gi\u1EDD Wallis v\u00E0 Futuna'
                         }
                     },
                     'Wake': {
                         'long': {
-                            'standard': 'Giờ Đảo Wake'
+                            'standard': 'Gi\u1EDD \u0110\u1EA3o Wake'
                         }
                     },
                     'Vostok': {
                         'long': {
-                            'standard': 'Giờ Vostok'
+                            'standard': 'Gi\u1EDD Vostok'
                         }
                     },
                     'Volgograd': {
                         'long': {
-                            'generic': 'Giờ Volgograd',
-                            'standard': 'Giờ Chuẩn Volgograd',
-                            'daylight': 'Giờ Mùa Hè Volgograd'
+                            'generic': 'Gi\u1EDD Volgograd',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Volgograd',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Volgograd'
                         }
                     },
                     'Vladivostok': {
                         'long': {
-                            'generic': 'Giờ Vladivostok',
-                            'standard': 'Giờ Chuẩn Vladivostok',
-                            'daylight': 'Giờ mùa hè Vladivostok'
+                            'generic': 'Gi\u1EDD Vladivostok',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Vladivostok',
+                            'daylight': 'Gi\u1EDD m\u00F9a h\u00E8 Vladivostok'
                         }
                     },
                     'Venezuela': {
                         'long': {
-                            'standard': 'Giờ Venezuela'
+                            'standard': 'Gi\u1EDD Venezuela'
                         }
                     },
                     'Tajikistan': {
                         'long': {
-                            'standard': 'Giờ Tajikistan'
+                            'standard': 'Gi\u1EDD Tajikistan'
                         }
                     },
                     'Taipei': {
                         'long': {
-                            'generic': 'Giờ Đài Bắc',
-                            'standard': 'Giờ Chuẩn Đài Bắc',
-                            'daylight': 'Giờ Mùa Hè Đài Bắc'
+                            'generic': 'Gi\u1EDD \u0110\u00E0i B\u1EAFc',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n \u0110\u00E0i B\u1EAFc',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 \u0110\u00E0i B\u1EAFc'
                         }
                     },
                     'Tahiti': {
                         'long': {
-                            'standard': 'Giờ Tahiti'
+                            'standard': 'Gi\u1EDD Tahiti'
                         }
                     },
                     'Syowa': {
                         'long': {
-                            'standard': 'Giờ Syowa'
+                            'standard': 'Gi\u1EDD Syowa'
                         }
                     },
                     'Suriname': {
                         'long': {
-                            'standard': 'Giờ Suriname'
+                            'standard': 'Gi\u1EDD Suriname'
                         }
                     },
                     'South_Georgia': {
                         'long': {
-                            'standard': 'Giờ Nam Georgia'
+                            'standard': 'Gi\u1EDD Nam Georgia'
                         }
                     },
                     'Solomon': {
                         'long': {
-                            'standard': 'Giờ Quần Đảo Solomon'
+                            'standard': 'Gi\u1EDD Qu\u1EA7n \u0110\u1EA3o Solomon'
                         }
                     },
                     'Singapore': {
                         'long': {
-                            'standard': 'Giờ Singapore'
+                            'standard': 'Gi\u1EDD Singapore'
                         }
                     },
                     'Gulf': {
                         'long': {
-                            'standard': 'Giờ Chuẩn Vùng Vịnh'
+                            'standard': 'Gi\u1EDD Chu\u1EA9n V\u00F9ng V\u1ECBnh'
                         }
                     },
                     'Guam': {
                         'long': {
-                            'standard': 'Giờ Chuẩn Guam'
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Guam'
                         }
                     },
                     'Greenland_Western': {
                         'long': {
-                            'generic': 'Giờ Miền Tây Greenland',
-                            'standard': 'Giờ Chuẩn Miền Tây Greenland',
-                            'daylight': 'Giờ Mùa Hè Miền Tây Greenland'
+                            'generic': 'Gi\u1EDD Mi\u1EC1n T\u00E2y Greenland',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Mi\u1EC1n T\u00E2y Greenland',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Mi\u1EC1n T\u00E2y Greenland'
                         }
                     },
                     'Greenland_Eastern': {
                         'long': {
-                            'generic': 'Giờ Miền Đông Greenland',
-                            'standard': 'Giờ Chuẩn Miền Đông Greenland',
-                            'daylight': 'Giờ Mùa Hè Miền Đông Greenland'
+                            'generic': 'Gi\u1EDD Mi\u1EC1n \u0110\u00F4ng Greenland',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Mi\u1EC1n \u0110\u00F4ng Greenland',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Mi\u1EC1n \u0110\u00F4ng Greenland'
                         }
                     },
                     'GMT': {
                         'long': {
-                            'standard': 'Giờ Trung bình Greenwich'
+                            'standard': 'Gi\u1EDD Trung b\u00ECnh Greenwich'
                         }
                     },
                     'Gilbert_Islands': {
                         'long': {
-                            'standard': 'Giờ Quần Đảo Gilbert'
+                            'standard': 'Gi\u1EDD Qu\u1EA7n \u0110\u1EA3o Gilbert'
                         }
                     },
                     'Georgia': {
                         'long': {
-                            'generic': 'Giờ Georgia',
-                            'standard': 'Giờ Chuẩn Georgia',
-                            'daylight': 'Giờ Mùa Hè Georgia'
+                            'generic': 'Gi\u1EDD Georgia',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Georgia',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Georgia'
                         }
                     },
                     'Gambier': {
                         'long': {
-                            'standard': 'Giờ Gambier'
+                            'standard': 'Gi\u1EDD Gambier'
                         }
                     },
                     'Acre': {
                         'long': {
-                            'generic': 'Giờ Acre',
-                            'standard': 'Giờ Chuẩn Acre',
-                            'daylight': 'Giờ Mùa Hè Acre'
+                            'generic': 'Gi\u1EDD Acre',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Acre',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Acre'
                         }
                     },
                     'Afghanistan': {
                         'long': {
-                            'standard': 'Giờ Afghanistan'
+                            'standard': 'Gi\u1EDD Afghanistan'
                         }
                     },
                     'Africa_Central': {
                         'long': {
-                            'standard': 'Giờ Trung Phi'
+                            'standard': 'Gi\u1EDD Trung Phi'
                         }
                     },
                     'Africa_Eastern': {
                         'long': {
-                            'standard': 'Giờ Đông Phi'
+                            'standard': 'Gi\u1EDD \u0110\u00F4ng Phi'
                         }
                     },
                     'Africa_Southern': {
                         'long': {
-                            'standard': 'Giờ Chuẩn Nam Phi'
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Nam Phi'
                         }
                     },
                     'Africa_Western': {
                         'long': {
-                            'generic': 'Giờ Tây Phi',
-                            'standard': 'Giờ Chuẩn Tây Phi',
-                            'daylight': 'Giờ Mùa Hè Tây Phi'
+                            'generic': 'Gi\u1EDD T\u00E2y Phi',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n T\u00E2y Phi',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 T\u00E2y Phi'
                         }
                     },
                     'Alaska': {
                         'long': {
-                            'generic': 'Giờ Alaska',
-                            'standard': 'Giờ Chuẩn Alaska',
-                            'daylight': 'Giờ Mùa Hè Alaska'
+                            'generic': 'Gi\u1EDD Alaska',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Alaska',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Alaska'
                         }
                     },
                     'Almaty': {
                         'long': {
-                            'generic': 'Giờ Almaty',
-                            'standard': 'Giờ Chuẩn Almaty',
-                            'daylight': 'Giờ Mùa Hè Almaty'
+                            'generic': 'Gi\u1EDD Almaty',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Almaty',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Almaty'
                         }
                     },
                     'Arabian': {
                         'long': {
-                            'generic': 'Giờ Ả Rập',
-                            'standard': 'Giờ chuẩn Ả Rập',
-                            'daylight': 'Giờ Mùa Hè Ả Rập'
+                            'generic': 'Gi\u1EDD \u1EA2 R\u1EADp',
+                            'standard': 'Gi\u1EDD chu\u1EA9n \u1EA2 R\u1EADp',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 \u1EA2 R\u1EADp'
                         }
                     },
                     'Argentina': {
                         'long': {
-                            'generic': 'Giờ Argentina',
-                            'standard': 'Giờ Chuẩn Argentina',
-                            'daylight': 'Giờ Mùa Hè Argentina'
+                            'generic': 'Gi\u1EDD Argentina',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Argentina',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Argentina'
                         }
                     },
                     'Argentina_Western': {
                         'long': {
-                            'generic': 'Giờ miền tây Argentina',
-                            'standard': 'Giờ chuẩn miền mây Argentina',
-                            'daylight': 'Giờ mùa hè miền tây Argentina'
+                            'generic': 'Gi\u1EDD mi\u1EC1n t\u00E2y Argentina',
+                            'standard': 'Gi\u1EDD chu\u1EA9n mi\u1EC1n m\u00E2y Argentina',
+                            'daylight': 'Gi\u1EDD m\u00F9a h\u00E8 mi\u1EC1n t\u00E2y Argentina'
                         }
                     },
                     'Armenia': {
                         'long': {
-                            'generic': 'Giờ Armenia',
-                            'standard': 'Giờ Chuẩn Armenia',
-                            'daylight': 'Giờ Mùa Hè Armenia'
+                            'generic': 'Gi\u1EDD Armenia',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Armenia',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Armenia'
                         }
                     },
                     'Atlantic': {
                         'long': {
-                            'generic': 'Giờ Đại Tây Dương',
-                            'standard': 'Giờ Chuẩn Đại Tây Dương',
-                            'daylight': 'Giờ Mùa hè Đại Tây Dương'
+                            'generic': 'Gi\u1EDD \u0110\u1EA1i T\u00E2y D\u01B0\u01A1ng',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n \u0110\u1EA1i T\u00E2y D\u01B0\u01A1ng',
+                            'daylight': 'Gi\u1EDD M\u00F9a h\u00E8 \u0110\u1EA1i T\u00E2y D\u01B0\u01A1ng'
                         }
                     },
                     'Australia_Central': {
                         'long': {
-                            'generic': 'Giờ Miền Trung Nước Úc',
-                            'standard': 'Giờ Chuẩn Miền Trung Nước Úc',
-                            'daylight': 'Giờ Mùa Hè Miền Trung Nước Úc'
+                            'generic': 'Gi\u1EDD Mi\u1EC1n Trung N\u01B0\u1EDBc \u00DAc',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Mi\u1EC1n Trung N\u01B0\u1EDBc \u00DAc',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Mi\u1EC1n Trung N\u01B0\u1EDBc \u00DAc'
                         }
                     },
                     'Australia_CentralWestern': {
                         'long': {
-                            'generic': 'Giờ Miền Trung Tây Nước Úc',
-                            'standard': 'Giờ Chuẩn Miền Trung Tây Nước Úc',
-                            'daylight': 'Giờ Mùa Hè Miền Trung Tây Nước Úc'
+                            'generic': 'Gi\u1EDD Mi\u1EC1n Trung T\u00E2y N\u01B0\u1EDBc \u00DAc',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Mi\u1EC1n Trung T\u00E2y N\u01B0\u1EDBc \u00DAc',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Mi\u1EC1n Trung T\u00E2y N\u01B0\u1EDBc \u00DAc'
                         }
                     },
                     'Australia_Eastern': {
                         'long': {
-                            'generic': 'Giờ Miền Đông Nước Úc',
-                            'standard': 'Giờ Chuẩn Miền Đông Nước Úc',
-                            'daylight': 'Giờ Mùa Hè Miền Đông Nước Úc'
+                            'generic': 'Gi\u1EDD Mi\u1EC1n \u0110\u00F4ng N\u01B0\u1EDBc \u00DAc',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Mi\u1EC1n \u0110\u00F4ng N\u01B0\u1EDBc \u00DAc',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Mi\u1EC1n \u0110\u00F4ng N\u01B0\u1EDBc \u00DAc'
                         }
                     },
                     'Australia_Western': {
                         'long': {
-                            'generic': 'Giờ Miền Tây Nước Úc',
-                            'standard': 'Giờ Chuẩn Miền Tây Nước Úc',
-                            'daylight': 'Giờ Mùa Hè Miền Tây Nước Úc'
+                            'generic': 'Gi\u1EDD Mi\u1EC1n T\u00E2y N\u01B0\u1EDBc \u00DAc',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Mi\u1EC1n T\u00E2y N\u01B0\u1EDBc \u00DAc',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Mi\u1EC1n T\u00E2y N\u01B0\u1EDBc \u00DAc'
                         }
                     },
                     'Azerbaijan': {
                         'long': {
-                            'generic': 'Giờ Azerbaijan',
-                            'standard': 'Giờ Chuẩn Azerbaijan',
-                            'daylight': 'Giờ Mùa Hè Azerbaijan'
+                            'generic': 'Gi\u1EDD Azerbaijan',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Azerbaijan',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Azerbaijan'
                         }
                     },
                     'Azores': {
                         'long': {
-                            'generic': 'Giờ Azores',
-                            'standard': 'Giờ Chuẩn Azores',
-                            'daylight': 'Giờ Mùa Hè Azores'
+                            'generic': 'Gi\u1EDD Azores',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Azores',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Azores'
                         }
                     },
                     'Bangladesh': {
                         'long': {
-                            'generic': 'Giờ Bangladesh',
-                            'standard': 'Giờ Chuẩn Bangladesh',
-                            'daylight': 'Giờ Mùa Hè Bangladesh'
+                            'generic': 'Gi\u1EDD Bangladesh',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Bangladesh',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Bangladesh'
                         }
                     },
                     'Bhutan': {
                         'long': {
-                            'standard': 'Giờ Bhutan'
+                            'standard': 'Gi\u1EDD Bhutan'
                         }
                     },
                     'Bolivia': {
                         'long': {
-                            'standard': 'Giờ Bolivia'
+                            'standard': 'Gi\u1EDD Bolivia'
                         }
                     },
                     'Brasilia': {
                         'long': {
-                            'generic': 'Giờ Brasilia',
-                            'standard': 'Giờ Chuẩn Brasilia',
-                            'daylight': 'Giờ Mùa Hè Brasilia'
+                            'generic': 'Gi\u1EDD Brasilia',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Brasilia',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Brasilia'
                         }
                     },
                     'Brunei': {
                         'long': {
-                            'standard': 'Giờ Brunei Darussalam'
+                            'standard': 'Gi\u1EDD Brunei Darussalam'
                         }
                     },
                     'Guyana': {
                         'long': {
-                            'standard': 'Giờ Guyana'
+                            'standard': 'Gi\u1EDD Guyana'
                         }
                     },
                     'Hawaii_Aleutian': {
                         'long': {
-                            'generic': 'Giờ Hawaii-Aleutian',
-                            'standard': 'Giờ Chuẩn Hawaii-Aleutian',
-                            'daylight': 'Giờ Mùa Hè Hawaii-Aleutian'
+                            'generic': 'Gi\u1EDD Hawaii-Aleutian',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Hawaii-Aleutian',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Hawaii-Aleutian'
                         }
                     },
                     'Hong_Kong': {
                         'long': {
-                            'generic': 'Giờ Hồng Kông',
-                            'standard': 'Giờ Chuẩn Hồng Kông',
-                            'daylight': 'Giờ Mùa Hè Hồng Kông'
+                            'generic': 'Gi\u1EDD H\u1ED3ng K\u00F4ng',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n H\u1ED3ng K\u00F4ng',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 H\u1ED3ng K\u00F4ng'
                         }
                     },
                     'Hovd': {
                         'long': {
-                            'generic': 'Giờ Hovd',
-                            'standard': 'Giờ Chuẩn Hovd',
-                            'daylight': 'Giờ Mùa Hè Hovd'
+                            'generic': 'Gi\u1EDD Hovd',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Hovd',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Hovd'
                         }
                     },
                     'India': {
                         'long': {
-                            'standard': 'Giờ Chuẩn Ấn Độ'
+                            'standard': 'Gi\u1EDD Chu\u1EA9n \u1EA4n \u0110\u1ED9'
                         }
                     },
                     'Indian_Ocean': {
                         'long': {
-                            'standard': 'Giờ Ấn Độ Dương'
+                            'standard': 'Gi\u1EDD \u1EA4n \u0110\u1ED9 D\u01B0\u01A1ng'
                         }
                     },
                     'Indochina': {
                         'long': {
-                            'standard': 'Giờ Đông Dương'
+                            'standard': 'Gi\u1EDD \u0110\u00F4ng D\u01B0\u01A1ng'
                         }
                     },
                     'Indonesia_Central': {
                         'long': {
-                            'standard': 'Giờ Miền Trung Indonesia'
+                            'standard': 'Gi\u1EDD Mi\u1EC1n Trung Indonesia'
                         }
                     },
                     'Indonesia_Eastern': {
                         'long': {
-                            'standard': 'Giờ Miền Đông Indonesia'
+                            'standard': 'Gi\u1EDD Mi\u1EC1n \u0110\u00F4ng Indonesia'
                         }
                     },
                     'Indonesia_Western': {
                         'long': {
-                            'standard': 'Giờ Miền Tây Indonesia'
+                            'standard': 'Gi\u1EDD Mi\u1EC1n T\u00E2y Indonesia'
                         }
                     },
                     'Iran': {
                         'long': {
-                            'generic': 'Giờ Iran',
-                            'standard': 'Giờ Chuẩn Iran',
-                            'daylight': 'Giờ Mùa Hè Iran'
+                            'generic': 'Gi\u1EDD Iran',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Iran',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Iran'
                         }
                     },
                     'Irkutsk': {
                         'long': {
-                            'generic': 'Giờ Irkutsk',
-                            'standard': 'Giờ Chuẩn Irkutsk',
-                            'daylight': 'Giờ Mùa Hè Irkutsk'
+                            'generic': 'Gi\u1EDD Irkutsk',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Irkutsk',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Irkutsk'
                         }
                     },
                     'Israel': {
                         'long': {
-                            'generic': 'Giờ Israel',
-                            'standard': 'Giờ Chuẩn Israel',
-                            'daylight': 'Giờ Mùa Hè Israel'
+                            'generic': 'Gi\u1EDD Israel',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Israel',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Israel'
                         }
                     },
                     'Japan': {
                         'long': {
-                            'generic': 'Giờ Nhật Bản',
-                            'standard': 'Giờ Chuẩn Nhật Bản',
-                            'daylight': 'Giờ Mùa Hè Nhật Bản'
+                            'generic': 'Gi\u1EDD Nh\u1EADt B\u1EA3n',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Nh\u1EADt B\u1EA3n',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Nh\u1EADt B\u1EA3n'
                         }
                     },
                     'Kamchatka': {
                         'long': {
-                            'generic': 'Giờ Petropavlovsk-Kamchatski',
-                            'standard': 'Giờ chuẩn Petropavlovsk-Kamchatski',
-                            'daylight': 'Giờ mùa hè Petropavlovsk-Kamchatski'
+                            'generic': 'Gi\u1EDD Petropavlovsk-Kamchatski',
+                            'standard': 'Gi\u1EDD chu\u1EA9n Petropavlovsk-Kamchatski',
+                            'daylight': 'Gi\u1EDD m\u00F9a h\u00E8 Petropavlovsk-Kamchatski'
                         }
                     },
                     'Kazakhstan_Eastern': {
                         'long': {
-                            'standard': 'Giờ Miền Đông Kazakhstan'
+                            'standard': 'Gi\u1EDD Mi\u1EC1n \u0110\u00F4ng Kazakhstan'
                         }
                     },
                     'Kazakhstan_Western': {
                         'long': {
-                            'standard': 'Giờ Miền Tây Kazakhstan'
+                            'standard': 'Gi\u1EDD Mi\u1EC1n T\u00E2y Kazakhstan'
                         }
                     },
                     'Korea': {
                         'long': {
-                            'generic': 'Giờ Hàn Quốc',
-                            'standard': 'Giờ Chuẩn Hàn Quốc',
-                            'daylight': 'Giờ Mùa Hè Hàn Quốc'
+                            'generic': 'Gi\u1EDD H\u00E0n Qu\u1ED1c',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n H\u00E0n Qu\u1ED1c',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 H\u00E0n Qu\u1ED1c'
                         }
                     },
                     'Kosrae': {
                         'long': {
-                            'standard': 'Giờ Kosrae'
+                            'standard': 'Gi\u1EDD Kosrae'
                         }
                     },
                     'Krasnoyarsk': {
                         'long': {
-                            'generic': 'Giờ Krasnoyarsk',
-                            'standard': 'Giờ Chuẩn Krasnoyarsk',
-                            'daylight': 'Giờ Mùa Hè Krasnoyarsk'
+                            'generic': 'Gi\u1EDD Krasnoyarsk',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Krasnoyarsk',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Krasnoyarsk'
                         }
                     },
                     'Kyrgystan': {
                         'long': {
-                            'standard': 'Giờ Kyrgystan'
+                            'standard': 'Gi\u1EDD Kyrgystan'
                         }
                     },
                     'Lanka': {
                         'long': {
-                            'standard': 'Giờ Lanka'
+                            'standard': 'Gi\u1EDD Lanka'
                         }
                     },
                     'Line_Islands': {
                         'long': {
-                            'standard': 'Giờ Quần Đảo Line'
+                            'standard': 'Gi\u1EDD Qu\u1EA7n \u0110\u1EA3o Line'
                         }
                     },
                     'Lord_Howe': {
                         'long': {
-                            'generic': 'Giờ Lord Howe',
-                            'standard': 'Giờ Chuẩn Lord Howe',
-                            'daylight': 'Giờ Mùa Hè Lord Howe'
+                            'generic': 'Gi\u1EDD Lord Howe',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Lord Howe',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Lord Howe'
                         }
                     },
                     'Macau': {
                         'long': {
-                            'generic': 'Giờ Ma Cao',
-                            'standard': 'Giờ Chuẩn Ma Cao',
-                            'daylight': 'Giờ Mùa Hè Ma Cao'
+                            'generic': 'Gi\u1EDD Ma Cao',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Ma Cao',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Ma Cao'
                         }
                     },
                     'Macquarie': {
                         'long': {
-                            'standard': 'Giờ đảo Macquarie'
+                            'standard': 'Gi\u1EDD \u0111\u1EA3o Macquarie'
                         }
                     },
                     'Magadan': {
                         'long': {
-                            'generic': 'Giờ Magadan',
-                            'standard': 'Giờ Chuẩn Magadan',
-                            'daylight': 'Giờ mùa hè Magadan'
+                            'generic': 'Gi\u1EDD Magadan',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Magadan',
+                            'daylight': 'Gi\u1EDD m\u00F9a h\u00E8 Magadan'
                         }
                     },
                     'Malaysia': {
                         'long': {
-                            'standard': 'Giờ Malaysia'
+                            'standard': 'Gi\u1EDD Malaysia'
                         }
                     },
                     'Maldives': {
                         'long': {
-                            'standard': 'Giờ Maldives'
+                            'standard': 'Gi\u1EDD Maldives'
                         }
                     },
                     'Marquesas': {
                         'long': {
-                            'standard': 'Giờ Marquesas'
+                            'standard': 'Gi\u1EDD Marquesas'
                         }
                     },
                     'Marshall_Islands': {
                         'long': {
-                            'standard': 'Giờ Quần Đảo Marshall'
+                            'standard': 'Gi\u1EDD Qu\u1EA7n \u0110\u1EA3o Marshall'
                         }
                     },
                     'Mauritius': {
                         'long': {
-                            'generic': 'Giờ Mauritius',
-                            'standard': 'Giờ Chuẩn Mauritius',
-                            'daylight': 'Giờ Mùa Hè Mauritius'
+                            'generic': 'Gi\u1EDD Mauritius',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Mauritius',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Mauritius'
                         }
                     },
                     'Mawson': {
                         'long': {
-                            'standard': 'Giờ Mawson'
+                            'standard': 'Gi\u1EDD Mawson'
                         }
                     },
                     'Mongolia': {
                         'long': {
-                            'generic': 'Giờ Ulan Bator',
-                            'standard': 'Giờ chuẩn Ulan Bator',
-                            'daylight': 'Giờ mùa hè Ulan Bator'
+                            'generic': 'Gi\u1EDD Ulan Bator',
+                            'standard': 'Gi\u1EDD chu\u1EA9n Ulan Bator',
+                            'daylight': 'Gi\u1EDD m\u00F9a h\u00E8 Ulan Bator'
                         }
                     },
                     'Moscow': {
                         'long': {
-                            'generic': 'Giờ Matxcơva',
-                            'standard': 'Giờ Chuẩn Matxcơva',
-                            'daylight': 'Giờ Mùa Hè Matxcơva'
+                            'generic': 'Gi\u1EDD Matxc\u01A1va',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n Matxc\u01A1va',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 Matxc\u01A1va'
                         }
                     },
                     'Myanmar': {
                         'long': {
-                            'standard': 'Giờ Myanmar'
+                            'standard': 'Gi\u1EDD Myanmar'
                         }
                     },
                     'Nauru': {
                         'long': {
-                            'standard': 'Giờ Nauru'
+                            'standard': 'Gi\u1EDD Nauru'
                         }
                     },
                     'Nepal': {
                         'long': {
-                            'standard': 'Giờ Nepal'
+                            'standard': 'Gi\u1EDD Nepal'
                         }
                     },
                     'New_Caledonia': {
                         'long': {
-                            'generic': 'Giờ New Caledonia',
-                            'standard': 'Giờ Chuẩn New Caledonia',
-                            'daylight': 'Giờ Mùa Hè New Caledonia'
+                            'generic': 'Gi\u1EDD New Caledonia',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n New Caledonia',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 New Caledonia'
                         }
                     },
                     'New_Zealand': {
                         'long': {
-                            'generic': 'Giờ New Zealand',
-                            'standard': 'Giờ Chuẩn New Zealand',
-                            'daylight': 'Giờ Mùa Hè New Zealand'
+                            'generic': 'Gi\u1EDD New Zealand',
+                            'standard': 'Gi\u1EDD Chu\u1EA9n New Zealand',
+                            'daylight': 'Gi\u1EDD M\u00F9a H\u00E8 New Zealand'
                         }
                     }
                 },
                 'hourFormat': '+HH:mm;-HH:mm',
                 'gmtFormat': 'GMT{0}',
                 'gmtZeroFormat': 'GMT',
-                'regionFormat': 'Giờ {0}',
-                'regionFormat-type-daylight': 'Giờ ban ngày {0}',
-                'regionFormat-type-standard': 'Giờ chuẩn {0}',
+                'regionFormat': 'Gi\u1EDD {0}',
+                'regionFormat-type-daylight': 'Gi\u1EDD ban ng\u00E0y {0}',
+                'regionFormat-type-standard': 'Gi\u1EDD chu\u1EA9n {0}',
                 'fallbackFormat': '{1} ({0})'
             },
             'calendars': {
@@ -2554,18 +2554,18 @@
                                 '4': '4'
                             },
                             'wide': {
-                                '8': 'tháng 8',
-                                '7': 'tháng 7',
-                                '6': 'tháng 6',
-                                '5': 'tháng 5',
-                                '12': 'tháng 12',
-                                '11': 'tháng 11',
-                                '10': 'tháng 10',
-                                '9': 'tháng 9',
-                                '1': 'tháng 1',
-                                '2': 'tháng 2',
-                                '3': 'tháng 3',
-                                '4': 'tháng 4'
+                                '8': 'th\u00E1ng 8',
+                                '7': 'th\u00E1ng 7',
+                                '6': 'th\u00E1ng 6',
+                                '5': 'th\u00E1ng 5',
+                                '12': 'th\u00E1ng 12',
+                                '11': 'th\u00E1ng 11',
+                                '10': 'th\u00E1ng 10',
+                                '9': 'th\u00E1ng 9',
+                                '1': 'th\u00E1ng 1',
+                                '2': 'th\u00E1ng 2',
+                                '3': 'th\u00E1ng 3',
+                                '4': 'th\u00E1ng 4'
                             }
                         },
                         'stand-alone': {
@@ -2598,18 +2598,18 @@
                                 '4': '4'
                             },
                             'wide': {
-                                '8': 'Tháng 8',
-                                '7': 'Tháng 7',
-                                '6': 'Tháng 6',
-                                '5': 'Tháng 5',
-                                '12': 'Tháng 12',
-                                '11': 'Tháng 11',
-                                '10': 'Tháng 10',
-                                '9': 'Tháng 9',
-                                '1': 'Tháng 1',
-                                '2': 'Tháng 2',
-                                '3': 'Tháng 3',
-                                '4': 'Tháng 4'
+                                '8': 'Th\u00E1ng 8',
+                                '7': 'Th\u00E1ng 7',
+                                '6': 'Th\u00E1ng 6',
+                                '5': 'Th\u00E1ng 5',
+                                '12': 'Th\u00E1ng 12',
+                                '11': 'Th\u00E1ng 11',
+                                '10': 'Th\u00E1ng 10',
+                                '9': 'Th\u00E1ng 9',
+                                '1': 'Th\u00E1ng 1',
+                                '2': 'Th\u00E1ng 2',
+                                '3': 'Th\u00E1ng 3',
+                                '4': 'Th\u00E1ng 4'
                             }
                         }
                     },
@@ -2643,13 +2643,13 @@
                                 'sat': 'T7'
                             },
                             'wide': {
-                                'sun': 'Chủ Nhật',
-                                'mon': 'Thứ Hai',
-                                'tue': 'Thứ Ba',
-                                'wed': 'Thứ Tư',
-                                'thu': 'Thứ Năm',
-                                'fri': 'Thứ Sáu',
-                                'sat': 'Thứ Bảy'
+                                'sun': 'Ch\u1EE7 Nh\u1EADt',
+                                'mon': 'Th\u1EE9 Hai',
+                                'tue': 'Th\u1EE9 Ba',
+                                'wed': 'Th\u1EE9 T\u01B0',
+                                'thu': 'Th\u1EE9 N\u0103m',
+                                'fri': 'Th\u1EE9 S\u00E1u',
+                                'sat': 'Th\u1EE9 B\u1EA3y'
                             }
                         },
                         'stand-alone': {
@@ -2681,13 +2681,13 @@
                                 'sat': 'T7'
                             },
                             'wide': {
-                                'sun': 'Chủ Nhật',
-                                'mon': 'Thứ Hai',
-                                'tue': 'Thứ Ba',
-                                'wed': 'Thứ Tư',
-                                'thu': 'Thứ Năm',
-                                'fri': 'Thứ Sáu',
-                                'sat': 'Thứ Bảy'
+                                'sun': 'Ch\u1EE7 Nh\u1EADt',
+                                'mon': 'Th\u1EE9 Hai',
+                                'tue': 'Th\u1EE9 Ba',
+                                'wed': 'Th\u1EE9 T\u01B0',
+                                'thu': 'Th\u1EE9 N\u0103m',
+                                'fri': 'Th\u1EE9 S\u00E1u',
+                                'sat': 'Th\u1EE9 B\u1EA3y'
                             }
                         }
                     },
@@ -2706,10 +2706,10 @@
                                 '4': '4'
                             },
                             'wide': {
-                                '1': 'Quý 1',
-                                '2': 'Quý 2',
-                                '3': 'Quý 3',
-                                '4': 'Quý 4'
+                                '1': 'Qu\u00FD 1',
+                                '2': 'Qu\u00FD 2',
+                                '3': 'Qu\u00FD 3',
+                                '4': 'Qu\u00FD 4'
                             }
                         },
                         'stand-alone': {
@@ -2726,10 +2726,10 @@
                                 '4': '4'
                             },
                             'wide': {
-                                '1': 'Quý 1',
-                                '2': 'Quý 2',
-                                '3': 'Quý 3',
-                                '4': 'Quý 4'
+                                '1': 'Qu\u00FD 1',
+                                '2': 'Qu\u00FD 2',
+                                '3': 'Qu\u00FD 3',
+                                '4': 'Qu\u00FD 4'
                             }
                         }
                     },
@@ -2784,8 +2784,8 @@
                         }
                     },
                     'dateFormats': {
-                        'full': 'EEEE, \'ngày\' dd MMMM \'năm\' y',
-                        'long': '\'Ngày\' dd \'tháng\' MM \'năm\' y',
+                        'full': "EEEE, 'ng\u00E0y' dd MMMM 'n\u0103m' y",
+                        'long': "'Ng\u00E0y' dd 'th\u00E1ng' MM 'n\u0103m' y",
                         'medium': 'dd-MM-y',
                         'short': 'dd/MM/y'
                     },
@@ -2805,7 +2805,7 @@
                             'yMEd': 'E, dd-M-y',
                             'yMd': 'd/M/y',
                             'yM': 'M/y',
-                            'y': '\'Năm\' y',
+                            'y': "'N\u0103m' y",
                             'ms': 'mm:ss',
                             'Ed': 'E, dd',
                             'd': 'd',
@@ -2827,7 +2827,7 @@
                             'EHm': 'E HH:mm',
                             'Ehms': 'E h:mm:ss a',
                             'EHms': 'E HH:mm:ss',
-                            'Gy': '\'Năm\' y G',
+                            'Gy': "'N\u0103m' y G",
                             'GyMMM': 'MMM y G',
                             'M': 'L',
                             'Md': 'dd-M',
@@ -2855,12 +2855,12 @@
                         },
                         'intervalFormats': {
                             'MMMEd': {
-                                'd': 'EEEE, \'ngày\' dd - EEEE, \'ngày\' dd \'tháng\' M',
-                                'M': 'EEEE, \'ngày\' dd \'tháng\' M - EEEE, \'ngày\' dd \'tháng\' M'
+                                'd': "EEEE, 'ng\u00E0y' dd - EEEE, 'ng\u00E0y' dd 'th\u00E1ng' M",
+                                'M': "EEEE, 'ng\u00E0y' dd 'th\u00E1ng' M - EEEE, 'ng\u00E0y' dd 'th\u00E1ng' M"
                             },
                             'MMMd': {
-                                'd': '\'Ngày\' dd \'tháng\' M - \'Ngày\' dd \'tháng\' M',
-                                'M': '\'Ngày\' dd \'tháng\' M - \'Ngày\' dd \'tháng\' M'
+                                'd': "'Ng\u00E0y' dd 'th\u00E1ng' M - 'Ng\u00E0y' dd 'th\u00E1ng' M",
+                                'M': "'Ng\u00E0y' dd 'th\u00E1ng' M - 'Ng\u00E0y' dd 'th\u00E1ng' M"
                             },
                             'MMM': {
                                 'M': 'MMM-MMM'
@@ -2874,14 +2874,14 @@
                                 'M': 'dd/MM - dd/MM'
                             },
                             'M': {
-                                'M': '\'Tháng\' M - \'Tháng\' M'
+                                'M': "'Th\u00E1ng' M - 'Th\u00E1ng' M"
                             },
                             'Hv': {
-                                'H': 'HH\'h\'-HH\'h\' v'
+                                'H': "HH'h'-HH'h' v"
                             },
                             'hv': {
-                                'a': 'h\'h\' a - h\'h\' a v',
-                                'h': 'h\'h\'-h\'h\' a v'
+                                'a': "h'h' a - h'h' a v",
+                                'h': "h'h'-h'h' a v"
                             },
                             'y': {
                                 'y': 'y-y'
@@ -2901,18 +2901,18 @@
                                 'y': 'EEEE, dd/MM/y - EEEE, dd/MM/y'
                             },
                             'yMMM': {
-                                'M': '\'Tháng\' M - \'Tháng\' M \'năm\' y',
-                                'y': '\'Tháng\' M \'năm\' y - \'Tháng\' M \'năm\' y'
+                                'M': "'Th\u00E1ng' M - 'Th\u00E1ng' M 'n\u0103m' y",
+                                'y': "'Th\u00E1ng' M 'n\u0103m' y - 'Th\u00E1ng' M 'n\u0103m' y"
                             },
                             'yMMMd': {
-                                'd': '\'Ngày\' dd \'tháng\' M - \'Ngày\' dd \'tháng\' M \'năm\' y',
-                                'M': '\'Ngày\' dd \'tháng\' M - \'Ngày\' dd \'tháng\' M \'năm\' y',
-                                'y': '\'Ngày\' dd \'tháng\' M \'năm\' y - \'Ngày\' dd \'tháng\' M \'năm\' y'
+                                'd': "'Ng\u00E0y' dd 'th\u00E1ng' M - 'Ng\u00E0y' dd 'th\u00E1ng' M 'n\u0103m' y",
+                                'M': "'Ng\u00E0y' dd 'th\u00E1ng' M - 'Ng\u00E0y' dd 'th\u00E1ng' M 'n\u0103m' y",
+                                'y': "'Ng\u00E0y' dd 'th\u00E1ng' M 'n\u0103m' y - 'Ng\u00E0y' dd 'th\u00E1ng' M 'n\u0103m' y"
                             },
                             'yMMMEd': {
-                                'd': 'EEEE, \'ngày\' dd MMM - EEEE, \'ngày\' dd MMM \'năm\' y',
-                                'M': 'E, dd \'tháng\' M - E, dd \'tháng\' M, y',
-                                'y': 'E, dd \'tháng\' M, y - E, dd \'tháng\' M, y'
+                                'd': "EEEE, 'ng\u00E0y' dd MMM - EEEE, 'ng\u00E0y' dd MMM 'n\u0103m' y",
+                                'M': "E, dd 'th\u00E1ng' M - E, dd 'th\u00E1ng' M, y",
+                                'y': "E, dd 'th\u00E1ng' M, y - E, dd 'th\u00E1ng' M, y"
                             },
                             'yMMMM': {
                                 'M': 'MMMM-MMMM y',
@@ -2937,14 +2937,14 @@
                                 'm': 'h:mm-h:mm a'
                             },
                             'H': {
-                                'H': 'HH\'h\' - HH\'h\''
+                                'H': "HH'h' - HH'h'"
                             },
                             'h': {
-                                'a': 'h\'h\' a - h\'h\' a',
-                                'h': 'h\'h\' - h\'h\' a'
+                                'a': "h'h' a - h'h' a",
+                                'h': "h'h' - h'h' a"
                             },
                             'd': {
-                                'd': '\'Ngày\' dd-dd'
+                                'd': "'Ng\u00E0y' dd-dd"
                             },
                             'intervalFormatFallback': '{0} - {1}'
                         }

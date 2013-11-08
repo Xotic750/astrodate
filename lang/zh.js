@@ -42,361 +42,361 @@
     }(function (AstroDate) {
         AstroDate.lang('zh', {
             'codePatterns': {
-                'language': '语言：{0}',
-                'script': '文字：{0}',
-                'territory': '地区：{0}'
+                'language': '\u8BED\u8A00\uFF1A{0}',
+                'script': '\u6587\u5B57\uFF1A{0}',
+                'territory': '\u5730\u533A\uFF1A{0}'
             },
             'types': {
                 'colHiraganaQuaternary': {
-                    'no': '对假名进行单独排序',
-                    'yes': '对假名进行区别排序'
+                    'no': '\u5BF9\u5047\u540D\u8FDB\u884C\u5355\u72EC\u6392\u5E8F',
+                    'yes': '\u5BF9\u5047\u540D\u8FDB\u884C\u533A\u522B\u6392\u5E8F'
                 },
                 'colCaseLevel': {
-                    'no': '不区分大小写进行排序',
-                    'yes': '区分大小写进行排序'
+                    'no': '\u4E0D\u533A\u5206\u5927\u5C0F\u5199\u8FDB\u884C\u6392\u5E8F',
+                    'yes': '\u533A\u5206\u5927\u5C0F\u5199\u8FDB\u884C\u6392\u5E8F'
                 },
                 'colCaseFirst': {
-                    'lower': '先对小写字母进行排序',
-                    'no': '对正常大小写顺序进行排序',
-                    'upper': '先对大写字母进行排序'
+                    'lower': '\u5148\u5BF9\u5C0F\u5199\u5B57\u6BCD\u8FDB\u884C\u6392\u5E8F',
+                    'no': '\u5BF9\u6B63\u5E38\u5927\u5C0F\u5199\u987A\u5E8F\u8FDB\u884C\u6392\u5E8F',
+                    'upper': '\u5148\u5BF9\u5927\u5199\u5B57\u6BCD\u8FDB\u884C\u6392\u5E8F'
                 },
                 'colStrength': {
-                    'identical': '对所有内容进行排序',
-                    'primary': '只对基本字母进行排序',
-                    'quaternary': '对重音/大小写/长度/假名进行排序',
-                    'secondary': '对重音进行排序',
-                    'tertiary': '对重音/大小写/长度进行排序'
+                    'identical': '\u5BF9\u6240\u6709\u5185\u5BB9\u8FDB\u884C\u6392\u5E8F',
+                    'primary': '\u53EA\u5BF9\u57FA\u672C\u5B57\u6BCD\u8FDB\u884C\u6392\u5E8F',
+                    'quaternary': '\u5BF9\u91CD\u97F3/\u5927\u5C0F\u5199/\u957F\u5EA6/\u5047\u540D\u8FDB\u884C\u6392\u5E8F',
+                    'secondary': '\u5BF9\u91CD\u97F3\u8FDB\u884C\u6392\u5E8F',
+                    'tertiary': '\u5BF9\u91CD\u97F3/\u5927\u5C0F\u5199/\u957F\u5EA6\u8FDB\u884C\u6392\u5E8F'
                 },
                 'colNumeric': {
-                    'no': '对数字进行单独排序',
-                    'yes': '按数字顺序对数字进行排序'
+                    'no': '\u5BF9\u6570\u5B57\u8FDB\u884C\u5355\u72EC\u6392\u5E8F',
+                    'yes': '\u6309\u6570\u5B57\u987A\u5E8F\u5BF9\u6570\u5B57\u8FDB\u884C\u6392\u5E8F'
                 },
                 'colNormalization': {
-                    'no': '非规范化排序',
-                    'yes': '对 Unicode 进行规范化排序'
+                    'no': '\u975E\u89C4\u8303\u5316\u6392\u5E8F',
+                    'yes': '\u5BF9 Unicode \u8FDB\u884C\u89C4\u8303\u5316\u6392\u5E8F'
                 },
                 'calendar': {
-                    'japanese': '日本日历',
+                    'japanese': '\u65E5\u672C\u65E5\u5386',
                     'iso8601': 'iso8601',
-                    'coptic': '科普特日历',
-                    'dangi': '檀纪日历',
-                    'ethiopic': '埃塞俄比亚日历',
-                    'ethiopic-amete-alem': '埃塞俄比亚阿米特阿莱姆日历',
-                    'gregorian': '公历',
-                    'hebrew': '希伯来日历',
-                    'persian': '波斯日历',
-                    'roc': '民国日历',
-                    'chinese': '农历',
-                    'buddhist': '佛教日历',
-                    'indian': '印度国家日历',
-                    'islamic': '伊斯兰日历',
-                    'islamic-civil': '伊斯兰希吉来日历',
+                    'coptic': '\u79D1\u666E\u7279\u65E5\u5386',
+                    'dangi': '\u6A80\u7EAA\u65E5\u5386',
+                    'ethiopic': '\u57C3\u585E\u4FC4\u6BD4\u4E9A\u65E5\u5386',
+                    'ethiopic-amete-alem': '\u57C3\u585E\u4FC4\u6BD4\u4E9A\u963F\u7C73\u7279\u963F\u83B1\u59C6\u65E5\u5386',
+                    'gregorian': '\u516C\u5386',
+                    'hebrew': '\u5E0C\u4F2F\u6765\u65E5\u5386',
+                    'persian': '\u6CE2\u65AF\u65E5\u5386',
+                    'roc': '\u6C11\u56FD\u65E5\u5386',
+                    'chinese': '\u519C\u5386',
+                    'buddhist': '\u4F5B\u6559\u65E5\u5386',
+                    'indian': '\u5370\u5EA6\u56FD\u5BB6\u65E5\u5386',
+                    'islamic': '\u4F0A\u65AF\u5170\u65E5\u5386',
+                    'islamic-civil': '\u4F0A\u65AF\u5170\u5E0C\u5409\u6765\u65E5\u5386',
                     'islamic-rgsa': 'islamic-rgsa',
                     'islamic-tbla': 'islamic-tbla',
                     'islamic-umalqura': 'islamic-umalqura'
                 },
                 'collation': {
-                    'phonebook': '电话簿排序顺序',
-                    'gb2312han': '简体中文排序 - GB2312',
+                    'phonebook': '\u7535\u8BDD\u7C3F\u6392\u5E8F\u987A\u5E8F',
+                    'gb2312han': '\u7B80\u4F53\u4E2D\u6587\u6392\u5E8F - GB2312',
                     'eor': 'eor',
-                    'ducet': '默认 Unicode 排序',
-                    'dictionary': '字典排序顺序',
-                    'big5han': '繁体中文排序 - Big5',
-                    'traditional': '传统排序顺序',
-                    'standard': '标准排序',
-                    'zhuyin': '注音排序',
-                    'unihan': '部首笔画排序',
-                    'stroke': '笔画排序',
-                    'searchjl': '按韩文字开首辅音来搜索',
-                    'search': '常规搜索',
-                    'reformed': '改良排序顺序',
-                    'pinyin': '拼音排序',
-                    'phonetic': '语音排序顺序'
+                    'ducet': '\u9ED8\u8BA4 Unicode \u6392\u5E8F',
+                    'dictionary': '\u5B57\u5178\u6392\u5E8F\u987A\u5E8F',
+                    'big5han': '\u7E41\u4F53\u4E2D\u6587\u6392\u5E8F - Big5',
+                    'traditional': '\u4F20\u7EDF\u6392\u5E8F\u987A\u5E8F',
+                    'standard': '\u6807\u51C6\u6392\u5E8F',
+                    'zhuyin': '\u6CE8\u97F3\u6392\u5E8F',
+                    'unihan': '\u90E8\u9996\u7B14\u753B\u6392\u5E8F',
+                    'stroke': '\u7B14\u753B\u6392\u5E8F',
+                    'searchjl': '\u6309\u97E9\u6587\u5B57\u5F00\u9996\u8F85\u97F3\u6765\u641C\u7D22',
+                    'search': '\u5E38\u89C4\u641C\u7D22',
+                    'reformed': '\u6539\u826F\u6392\u5E8F\u987A\u5E8F',
+                    'pinyin': '\u62FC\u97F3\u6392\u5E8F',
+                    'phonetic': '\u8BED\u97F3\u6392\u5E8F\u987A\u5E8F'
                 },
                 'numbers': {
-                    'knda': '卡纳达文数字',
-                    'khmr': '高棉文数字',
-                    'kali': '克耶字母数字',
-                    'jpanfin': '日文大写数字',
-                    'jpan': '日文数字',
-                    'java': '爪哇文数字',
-                    'hebr': '希伯来文数字',
-                    'hantfin': '繁体中文大写数字',
-                    'hant': '繁体中文数字',
-                    'hansfin': '简体中文大写数字',
-                    'hans': '简体中文数字',
-                    'hanidec': '中文十进制数字',
-                    'guru': '果鲁穆奇文数字',
-                    'gujr': '古吉拉特文数字',
-                    'greklow': '希腊文小写数字',
-                    'grek': '希腊文数字',
-                    'bali': '巴厘文数字',
-                    'armnlow': '亚美尼亚文小写数字',
-                    'armn': '亚美尼亚文数字',
-                    'arabext': '扩展阿拉伯印度文数字',
-                    'arab': '阿拉伯印度文数字',
-                    'finance': '金融数字',
-                    'traditional': '传统数字',
-                    'native': '当地数字',
-                    'beng': '孟加拉文数字',
+                    'knda': '\u5361\u7EB3\u8FBE\u6587\u6570\u5B57',
+                    'khmr': '\u9AD8\u68C9\u6587\u6570\u5B57',
+                    'kali': '\u514B\u8036\u5B57\u6BCD\u6570\u5B57',
+                    'jpanfin': '\u65E5\u6587\u5927\u5199\u6570\u5B57',
+                    'jpan': '\u65E5\u6587\u6570\u5B57',
+                    'java': '\u722A\u54C7\u6587\u6570\u5B57',
+                    'hebr': '\u5E0C\u4F2F\u6765\u6587\u6570\u5B57',
+                    'hantfin': '\u7E41\u4F53\u4E2D\u6587\u5927\u5199\u6570\u5B57',
+                    'hant': '\u7E41\u4F53\u4E2D\u6587\u6570\u5B57',
+                    'hansfin': '\u7B80\u4F53\u4E2D\u6587\u5927\u5199\u6570\u5B57',
+                    'hans': '\u7B80\u4F53\u4E2D\u6587\u6570\u5B57',
+                    'hanidec': '\u4E2D\u6587\u5341\u8FDB\u5236\u6570\u5B57',
+                    'guru': '\u679C\u9C81\u7A46\u5947\u6587\u6570\u5B57',
+                    'gujr': '\u53E4\u5409\u62C9\u7279\u6587\u6570\u5B57',
+                    'greklow': '\u5E0C\u814A\u6587\u5C0F\u5199\u6570\u5B57',
+                    'grek': '\u5E0C\u814A\u6587\u6570\u5B57',
+                    'bali': '\u5DF4\u5398\u6587\u6570\u5B57',
+                    'armnlow': '\u4E9A\u7F8E\u5C3C\u4E9A\u6587\u5C0F\u5199\u6570\u5B57',
+                    'armn': '\u4E9A\u7F8E\u5C3C\u4E9A\u6587\u6570\u5B57',
+                    'arabext': '\u6269\u5C55\u963F\u62C9\u4F2F\u5370\u5EA6\u6587\u6570\u5B57',
+                    'arab': '\u963F\u62C9\u4F2F\u5370\u5EA6\u6587\u6570\u5B57',
+                    'finance': '\u91D1\u878D\u6570\u5B57',
+                    'traditional': '\u4F20\u7EDF\u6570\u5B57',
+                    'native': '\u5F53\u5730\u6570\u5B57',
+                    'beng': '\u5B5F\u52A0\u62C9\u6587\u6570\u5B57',
                     'brah': 'brah',
                     'cakm': 'cakm',
-                    'cham': '占文数字',
-                    'deva': '梵文数字',
-                    'orya': '奥里亚文数字',
+                    'cham': '\u5360\u6587\u6570\u5B57',
+                    'deva': '\u68B5\u6587\u6570\u5B57',
+                    'orya': '\u5965\u91CC\u4E9A\u6587\u6570\u5B57',
                     'osma': 'osma',
-                    'roman': '罗马数字',
-                    'romanlow': '罗马小写数字',
-                    'saur': '索拉什特拉文数字',
+                    'roman': '\u7F57\u9A6C\u6570\u5B57',
+                    'romanlow': '\u7F57\u9A6C\u5C0F\u5199\u6570\u5B57',
+                    'saur': '\u7D22\u62C9\u4EC0\u7279\u62C9\u6587\u6570\u5B57',
                     'shrd': 'shrd',
                     'sora': 'sora',
-                    'sund': '苏丹文数字',
-                    'vaii': '瓦伊文数字',
-                    'tibt': '藏文数字',
-                    'thai': '泰文数字',
-                    'telu': '泰卢固文数字',
-                    'tamldec': '泰米尔文数字',
-                    'taml': '传统泰米尔文数字',
-                    'talu': '新傣仂文数字',
+                    'sund': '\u82CF\u4E39\u6587\u6570\u5B57',
+                    'vaii': '\u74E6\u4F0A\u6587\u6570\u5B57',
+                    'tibt': '\u85CF\u6587\u6570\u5B57',
+                    'thai': '\u6CF0\u6587\u6570\u5B57',
+                    'telu': '\u6CF0\u5362\u56FA\u6587\u6570\u5B57',
+                    'tamldec': '\u6CF0\u7C73\u5C14\u6587\u6570\u5B57',
+                    'taml': '\u4F20\u7EDF\u6CF0\u7C73\u5C14\u6587\u6570\u5B57',
+                    'talu': '\u65B0\u50A3\u4EC2\u6587\u6570\u5B57',
                     'takr': 'takr',
-                    'olck': '桑塔利文数字',
-                    'nkoo': '曼德数字',
-                    'mymrshan': '缅甸掸文数字',
-                    'mymr': '缅甸文数字',
-                    'mtei': '曼尼普尔数字',
-                    'mong': '蒙古文数字',
-                    'mlym': '马拉雅拉姆文数字',
-                    'limb': '林布文数字',
-                    'lepc': '雷布查文数字',
-                    'latn': '西方数字',
-                    'laoo': '老挝文数字',
-                    'lanatham': '兰纳文数字',
-                    'lana': '老傣文数字',
-                    'geor': '格鲁吉亚文数字',
-                    'fullwide': '全角数字',
-                    'ethi': '埃塞俄比亚文数字'
+                    'olck': '\u6851\u5854\u5229\u6587\u6570\u5B57',
+                    'nkoo': '\u66FC\u5FB7\u6570\u5B57',
+                    'mymrshan': '\u7F05\u7538\u63B8\u6587\u6570\u5B57',
+                    'mymr': '\u7F05\u7538\u6587\u6570\u5B57',
+                    'mtei': '\u66FC\u5C3C\u666E\u5C14\u6570\u5B57',
+                    'mong': '\u8499\u53E4\u6587\u6570\u5B57',
+                    'mlym': '\u9A6C\u62C9\u96C5\u62C9\u59C6\u6587\u6570\u5B57',
+                    'limb': '\u6797\u5E03\u6587\u6570\u5B57',
+                    'lepc': '\u96F7\u5E03\u67E5\u6587\u6570\u5B57',
+                    'latn': '\u897F\u65B9\u6570\u5B57',
+                    'laoo': '\u8001\u631D\u6587\u6570\u5B57',
+                    'lanatham': '\u5170\u7EB3\u6587\u6570\u5B57',
+                    'lana': '\u8001\u50A3\u6587\u6570\u5B57',
+                    'geor': '\u683C\u9C81\u5409\u4E9A\u6587\u6570\u5B57',
+                    'fullwide': '\u5168\u89D2\u6570\u5B57',
+                    'ethi': '\u57C3\u585E\u4FC4\u6BD4\u4E9A\u6587\u6570\u5B57'
                 },
                 'colAlternate': {
-                    'non-ignorable': '对符号进行排序',
-                    'shifted': '忽略符号进行排序'
+                    'non-ignorable': '\u5BF9\u7B26\u53F7\u8FDB\u884C\u6392\u5E8F',
+                    'shifted': '\u5FFD\u7565\u7B26\u53F7\u8FDB\u884C\u6392\u5E8F'
                 },
                 'colBackwards': {
-                    'no': '对重音进行正常排序',
-                    'yes': '对重音进行逆向排序'
+                    'no': '\u5BF9\u91CD\u97F3\u8FDB\u884C\u6B63\u5E38\u6392\u5E8F',
+                    'yes': '\u5BF9\u91CD\u97F3\u8FDB\u884C\u9006\u5411\u6392\u5E8F'
                 }
             },
             'keys': {
-                'colNormalization': '规范化排序',
-                'collation': '排序',
-                'colHiraganaQuaternary': '假名排序',
-                'colCaseLevel': '区分大小写的排序',
-                'colCaseFirst': '大写/小写字母排序',
-                'colBackwards': '对重音进行逆向排序',
-                'colAlternate': '忽略符号排序',
-                'calendar': '日历',
-                'x': '专用',
-                'variableTop': '按照符号排序',
-                'va': '语言区域别名',
-                'timezone': '时区',
-                'numbers': '数字',
-                'currency': '货币',
-                'colStrength': '排序强度',
-                'colNumeric': '数字排序'
+                'colNormalization': '\u89C4\u8303\u5316\u6392\u5E8F',
+                'collation': '\u6392\u5E8F',
+                'colHiraganaQuaternary': '\u5047\u540D\u6392\u5E8F',
+                'colCaseLevel': '\u533A\u5206\u5927\u5C0F\u5199\u7684\u6392\u5E8F',
+                'colCaseFirst': '\u5927\u5199/\u5C0F\u5199\u5B57\u6BCD\u6392\u5E8F',
+                'colBackwards': '\u5BF9\u91CD\u97F3\u8FDB\u884C\u9006\u5411\u6392\u5E8F',
+                'colAlternate': '\u5FFD\u7565\u7B26\u53F7\u6392\u5E8F',
+                'calendar': '\u65E5\u5386',
+                'x': '\u4E13\u7528',
+                'variableTop': '\u6309\u7167\u7B26\u53F7\u6392\u5E8F',
+                'va': '\u8BED\u8A00\u533A\u57DF\u522B\u540D',
+                'timezone': '\u65F6\u533A',
+                'numbers': '\u6570\u5B57',
+                'currency': '\u8D27\u5E01',
+                'colStrength': '\u6392\u5E8F\u5F3A\u5EA6',
+                'colNumeric': '\u6570\u5B57\u6392\u5E8F'
             },
             'localeDisplayPattern': {
-                'localePattern': '{0}（{1}）',
-                'localeSeparator': '{0}、{1}',
-                'localeKeyTypePattern': '{0}：{1}'
+                'localePattern': '{0}\uFF08{1}\uFF09',
+                'localeSeparator': '{0}\u3001{1}',
+                'localeKeyTypePattern': '{0}\uFF1A{1}'
             },
             'timeZoneNames': {
                 'zone': {
                     'Pacific': {
                         'Saipan': {
-                            'exemplarCity': '塞班'
+                            'exemplarCity': '\u585E\u73ED'
                         },
                         'Rarotonga': {
-                            'exemplarCity': '拉罗汤加'
+                            'exemplarCity': '\u62C9\u7F57\u6C64\u52A0'
                         },
                         'Port_Moresby': {
-                            'exemplarCity': '莫尔兹比港'
+                            'exemplarCity': '\u83AB\u5C14\u5179\u6BD4\u6E2F'
                         },
                         'Ponape': {
-                            'exemplarCity': '波纳佩岛'
+                            'exemplarCity': '\u6CE2\u7EB3\u4F69\u5C9B'
                         },
                         'Pitcairn': {
-                            'exemplarCity': '皮特凯恩'
+                            'exemplarCity': '\u76AE\u7279\u51EF\u6069'
                         },
                         'Palau': {
-                            'exemplarCity': '帕劳'
+                            'exemplarCity': '\u5E15\u52B3'
                         },
                         'Auckland': {
-                            'exemplarCity': '奥克兰'
+                            'exemplarCity': '\u5965\u514B\u5170'
                         },
                         'Apia': {
-                            'exemplarCity': '阿皮亚'
+                            'exemplarCity': '\u963F\u76AE\u4E9A'
                         },
                         'Funafuti': {
-                            'exemplarCity': '富纳富提'
+                            'exemplarCity': '\u5BCC\u7EB3\u5BCC\u63D0'
                         },
                         'Galapagos': {
-                            'exemplarCity': '加拉帕戈斯'
+                            'exemplarCity': '\u52A0\u62C9\u5E15\u6208\u65AF'
                         },
                         'Gambier': {
-                            'exemplarCity': '甘比尔'
+                            'exemplarCity': '\u7518\u6BD4\u5C14'
                         },
                         'Guadalcanal': {
-                            'exemplarCity': '瓜达尔卡纳尔'
+                            'exemplarCity': '\u74DC\u8FBE\u5C14\u5361\u7EB3\u5C14'
                         },
                         'Guam': {
-                            'exemplarCity': '关岛'
+                            'exemplarCity': '\u5173\u5C9B'
                         },
                         'Honolulu': {
-                            'exemplarCity': '檀香山'
+                            'exemplarCity': '\u6A80\u9999\u5C71'
                         },
                         'Wallis': {
-                            'exemplarCity': '瓦利斯'
+                            'exemplarCity': '\u74E6\u5229\u65AF'
                         },
                         'Wake': {
-                            'exemplarCity': '威克'
+                            'exemplarCity': '\u5A01\u514B'
                         },
                         'Truk': {
-                            'exemplarCity': '特鲁克群岛'
+                            'exemplarCity': '\u7279\u9C81\u514B\u7FA4\u5C9B'
                         },
                         'Tongatapu': {
-                            'exemplarCity': '东加塔布'
+                            'exemplarCity': '\u4E1C\u52A0\u5854\u5E03'
                         },
                         'Tarawa': {
-                            'exemplarCity': '塔拉瓦'
+                            'exemplarCity': '\u5854\u62C9\u74E6'
                         },
                         'Tahiti': {
-                            'exemplarCity': '塔希提'
+                            'exemplarCity': '\u5854\u5E0C\u63D0'
                         },
                         'Kiritimati': {
-                            'exemplarCity': '基里地马地岛'
+                            'exemplarCity': '\u57FA\u91CC\u5730\u9A6C\u5730\u5C9B'
                         },
                         'Johnston': {
-                            'exemplarCity': '约翰斯顿'
+                            'exemplarCity': '\u7EA6\u7FF0\u65AF\u987F'
                         },
                         'Chatham': {
-                            'exemplarCity': '查塔姆'
+                            'exemplarCity': '\u67E5\u5854\u59C6'
                         },
                         'Easter': {
-                            'exemplarCity': '复活节岛'
+                            'exemplarCity': '\u590D\u6D3B\u8282\u5C9B'
                         },
                         'Efate': {
-                            'exemplarCity': '埃法特'
+                            'exemplarCity': '\u57C3\u6CD5\u7279'
                         },
                         'Enderbury': {
-                            'exemplarCity': '恩德伯里'
+                            'exemplarCity': '\u6069\u5FB7\u4F2F\u91CC'
                         },
                         'Fakaofo': {
-                            'exemplarCity': '法考福'
+                            'exemplarCity': '\u6CD5\u8003\u798F'
                         },
                         'Fiji': {
-                            'exemplarCity': '斐济'
+                            'exemplarCity': '\u6590\u6D4E'
                         },
                         'Kosrae': {
-                            'exemplarCity': '库赛埃'
+                            'exemplarCity': '\u5E93\u8D5B\u57C3'
                         },
                         'Kwajalein': {
-                            'exemplarCity': '夸贾林'
+                            'exemplarCity': '\u5938\u8D3E\u6797'
                         },
                         'Majuro': {
-                            'exemplarCity': '马朱罗'
+                            'exemplarCity': '\u9A6C\u6731\u7F57'
                         },
                         'Marquesas': {
-                            'exemplarCity': '马克萨斯'
+                            'exemplarCity': '\u9A6C\u514B\u8428\u65AF'
                         },
                         'Midway': {
-                            'exemplarCity': '中途岛'
+                            'exemplarCity': '\u4E2D\u9014\u5C9B'
                         },
                         'Nauru': {
-                            'exemplarCity': '瑙鲁'
+                            'exemplarCity': '\u7459\u9C81'
                         },
                         'Niue': {
-                            'exemplarCity': '纽埃'
+                            'exemplarCity': '\u7EBD\u57C3'
                         },
                         'Norfolk': {
-                            'exemplarCity': '诺福克'
+                            'exemplarCity': '\u8BFA\u798F\u514B'
                         },
                         'Noumea': {
-                            'exemplarCity': '努美阿'
+                            'exemplarCity': '\u52AA\u7F8E\u963F'
                         },
                         'Pago_Pago': {
-                            'exemplarCity': '帕果帕果'
+                            'exemplarCity': '\u5E15\u679C\u5E15\u679C'
                         }
                     },
                     'Australia': {
                         'Lindeman': {
-                            'exemplarCity': '林德曼'
+                            'exemplarCity': '\u6797\u5FB7\u66FC'
                         },
                         'Hobart': {
-                            'exemplarCity': '霍巴特'
+                            'exemplarCity': '\u970D\u5DF4\u7279'
                         },
                         'Eucla': {
-                            'exemplarCity': '尤克拉'
+                            'exemplarCity': '\u5C24\u514B\u62C9'
                         },
                         'Darwin': {
-                            'exemplarCity': '达尔文'
+                            'exemplarCity': '\u8FBE\u5C14\u6587'
                         },
                         'Sydney': {
-                            'exemplarCity': '悉尼'
+                            'exemplarCity': '\u6089\u5C3C'
                         },
                         'Perth': {
-                            'exemplarCity': '珀斯'
+                            'exemplarCity': '\u73C0\u65AF'
                         },
                         'Melbourne': {
-                            'exemplarCity': '墨尔本'
+                            'exemplarCity': '\u58A8\u5C14\u672C'
                         },
                         'Lord_Howe': {
-                            'exemplarCity': '豪勋爵'
+                            'exemplarCity': '\u8C6A\u52CB\u7235'
                         },
                         'Adelaide': {
-                            'exemplarCity': '阿德莱德'
+                            'exemplarCity': '\u963F\u5FB7\u83B1\u5FB7'
                         },
                         'Brisbane': {
-                            'exemplarCity': '布里斯班'
+                            'exemplarCity': '\u5E03\u91CC\u65AF\u73ED'
                         },
                         'Broken_Hill': {
-                            'exemplarCity': '布罗肯希尔'
+                            'exemplarCity': '\u5E03\u7F57\u80AF\u5E0C\u5C14'
                         },
                         'Currie': {
-                            'exemplarCity': '库利'
+                            'exemplarCity': '\u5E93\u5229'
                         }
                     },
                     'Indian': {
                         'Maldives': {
-                            'exemplarCity': '马尔代夫'
+                            'exemplarCity': '\u9A6C\u5C14\u4EE3\u592B'
                         },
                         'Mahe': {
-                            'exemplarCity': '马埃岛'
+                            'exemplarCity': '\u9A6C\u57C3\u5C9B'
                         },
                         'Kerguelen': {
-                            'exemplarCity': '凯尔盖朗'
+                            'exemplarCity': '\u51EF\u5C14\u76D6\u6717'
                         },
                         'Reunion': {
-                            'exemplarCity': '留尼汪'
+                            'exemplarCity': '\u7559\u5C3C\u6C6A'
                         },
                         'Mayotte': {
-                            'exemplarCity': '马约特'
+                            'exemplarCity': '\u9A6C\u7EA6\u7279'
                         },
                         'Mauritius': {
-                            'exemplarCity': '毛里求斯'
+                            'exemplarCity': '\u6BDB\u91CC\u6C42\u65AF'
                         },
                         'Antananarivo': {
-                            'exemplarCity': '安塔那那利佛'
+                            'exemplarCity': '\u5B89\u5854\u90A3\u90A3\u5229\u4F5B'
                         },
                         'Chagos': {
-                            'exemplarCity': '查戈斯'
+                            'exemplarCity': '\u67E5\u6208\u65AF'
                         },
                         'Christmas': {
-                            'exemplarCity': '圣诞岛'
+                            'exemplarCity': '\u5723\u8BDE\u5C9B'
                         },
                         'Cocos': {
-                            'exemplarCity': '可可斯'
+                            'exemplarCity': '\u53EF\u53EF\u65AF'
                         },
                         'Comoro': {
-                            'exemplarCity': '科摩罗'
+                            'exemplarCity': '\u79D1\u6469\u7F57'
                         }
                     },
                     'Etc': {
@@ -458,7 +458,7 @@
                             'exemplarCity': 'GMT-9'
                         },
                         'Unknown': {
-                            'exemplarCity': '未知城市'
+                            'exemplarCity': '\u672A\u77E5\u57CE\u5E02'
                         },
                         'GMT-2': {
                             'exemplarCity': 'GMT-2'
@@ -487,2062 +487,2062 @@
                     },
                     'Antarctica': {
                         'Rothera': {
-                            'exemplarCity': '罗瑟拉'
+                            'exemplarCity': '\u7F57\u745F\u62C9'
                         },
                         'Palmer': {
-                            'exemplarCity': '帕默尔'
+                            'exemplarCity': '\u5E15\u9ED8\u5C14'
                         },
                         'McMurdo': {
-                            'exemplarCity': '麦克默多'
+                            'exemplarCity': '\u9EA6\u514B\u9ED8\u591A'
                         },
                         'Vostok': {
-                            'exemplarCity': '沃斯托克'
+                            'exemplarCity': '\u6C83\u65AF\u6258\u514B'
                         },
                         'Syowa': {
-                            'exemplarCity': '昭和'
+                            'exemplarCity': '\u662D\u548C'
                         },
                         'South_Pole': {
-                            'exemplarCity': '南极'
+                            'exemplarCity': '\u5357\u6781'
                         },
                         'Casey': {
-                            'exemplarCity': '卡塞'
+                            'exemplarCity': '\u5361\u585E'
                         },
                         'Davis': {
-                            'exemplarCity': '戴维斯'
+                            'exemplarCity': '\u6234\u7EF4\u65AF'
                         },
                         'DumontDUrville': {
-                            'exemplarCity': '迪蒙迪尔维尔'
+                            'exemplarCity': '\u8FEA\u8499\u8FEA\u5C14\u7EF4\u5C14'
                         },
                         'Macquarie': {
-                            'exemplarCity': '麦格理'
+                            'exemplarCity': '\u9EA6\u683C\u7406'
                         },
                         'Mawson': {
-                            'exemplarCity': '莫森'
+                            'exemplarCity': '\u83AB\u68EE'
                         }
                     },
                     'Arctic': {
                         'Longyearbyen': {
-                            'exemplarCity': '朗伊尔城'
+                            'exemplarCity': '\u6717\u4F0A\u5C14\u57CE'
                         }
                     },
                     'America': {
                         'Toronto': {
-                            'exemplarCity': '多伦多'
+                            'exemplarCity': '\u591A\u4F26\u591A'
                         },
                         'Tijuana': {
-                            'exemplarCity': '蒂华纳'
+                            'exemplarCity': '\u8482\u534E\u7EB3'
                         },
                         'Thunder_Bay': {
-                            'exemplarCity': '桑德贝'
+                            'exemplarCity': '\u6851\u5FB7\u8D1D'
                         },
                         'Thule': {
-                            'exemplarCity': '图勒'
+                            'exemplarCity': '\u56FE\u52D2'
                         },
                         'Tegucigalpa': {
-                            'exemplarCity': '特古西加尔巴'
+                            'exemplarCity': '\u7279\u53E4\u897F\u52A0\u5C14\u5DF4'
                         },
                         'Swift_Current': {
-                            'exemplarCity': '斯威夫特卡伦特'
+                            'exemplarCity': '\u65AF\u5A01\u592B\u7279\u5361\u4F26\u7279'
                         },
                         'Chicago': {
-                            'exemplarCity': '芝加哥'
+                            'exemplarCity': '\u829D\u52A0\u54E5'
                         },
                         'Cayman': {
-                            'exemplarCity': '开曼'
+                            'exemplarCity': '\u5F00\u66FC'
                         },
                         'Cayenne': {
-                            'exemplarCity': '卡宴'
+                            'exemplarCity': '\u5361\u5BB4'
                         },
                         'Catamarca': {
-                            'exemplarCity': '卡塔马卡'
+                            'exemplarCity': '\u5361\u5854\u9A6C\u5361'
                         },
                         'Caracas': {
-                            'exemplarCity': '加拉加斯'
+                            'exemplarCity': '\u52A0\u62C9\u52A0\u65AF'
                         },
                         'Cancun': {
-                            'exemplarCity': '坎昆'
+                            'exemplarCity': '\u574E\u6606'
                         },
                         'Campo_Grande': {
-                            'exemplarCity': '大坎普'
+                            'exemplarCity': '\u5927\u574E\u666E'
                         },
                         'Cambridge_Bay': {
-                            'exemplarCity': '剑桥湾'
+                            'exemplarCity': '\u5251\u6865\u6E7E'
                         },
                         'Buenos_Aires': {
-                            'exemplarCity': '布宜诺斯艾利斯'
+                            'exemplarCity': '\u5E03\u5B9C\u8BFA\u65AF\u827E\u5229\u65AF'
                         },
                         'Boise': {
-                            'exemplarCity': '博伊西'
+                            'exemplarCity': '\u535A\u4F0A\u897F'
                         },
                         'Asuncion': {
-                            'exemplarCity': '亚松森'
+                            'exemplarCity': '\u4E9A\u677E\u68EE'
                         },
                         'Aruba': {
-                            'exemplarCity': '阿鲁巴'
+                            'exemplarCity': '\u963F\u9C81\u5DF4'
                         },
                         'Argentina': {
                             'Rio_Gallegos': {
-                                'exemplarCity': '里奥加耶戈斯'
+                                'exemplarCity': '\u91CC\u5965\u52A0\u8036\u6208\u65AF'
                             },
                             'San_Juan': {
-                                'exemplarCity': '圣胡安'
+                                'exemplarCity': '\u5723\u80E1\u5B89'
                             },
                             'Ushuaia': {
-                                'exemplarCity': '乌斯怀亚'
+                                'exemplarCity': '\u4E4C\u65AF\u6000\u4E9A'
                             },
                             'La_Rioja': {
-                                'exemplarCity': '拉里奥哈'
+                                'exemplarCity': '\u62C9\u91CC\u5965\u54C8'
                             },
                             'San_Luis': {
-                                'exemplarCity': '圣路易斯'
+                                'exemplarCity': '\u5723\u8DEF\u6613\u65AF'
                             },
                             'Salta': {
-                                'exemplarCity': '萨尔塔'
+                                'exemplarCity': '\u8428\u5C14\u5854'
                             },
                             'Tucuman': {
-                                'exemplarCity': '图库曼'
+                                'exemplarCity': '\u56FE\u5E93\u66FC'
                             }
                         },
                         'Araguaina': {
-                            'exemplarCity': '阿拉瓜伊纳'
+                            'exemplarCity': '\u963F\u62C9\u74DC\u4F0A\u7EB3'
                         },
                         'Antigua': {
-                            'exemplarCity': '安提瓜'
+                            'exemplarCity': '\u5B89\u63D0\u74DC'
                         },
                         'Anguilla': {
-                            'exemplarCity': '安圭拉'
+                            'exemplarCity': '\u5B89\u572D\u62C9'
                         },
                         'Anchorage': {
-                            'exemplarCity': '安克雷奇'
+                            'exemplarCity': '\u5B89\u514B\u96F7\u5947'
                         },
                         'Adak': {
-                            'exemplarCity': '埃达克'
+                            'exemplarCity': '\u57C3\u8FBE\u514B'
                         },
                         'Bahia': {
-                            'exemplarCity': '巴伊亚'
+                            'exemplarCity': '\u5DF4\u4F0A\u4E9A'
                         },
                         'Bahia_Banderas': {
-                            'exemplarCity': '巴伊亚班德拉斯'
+                            'exemplarCity': '\u5DF4\u4F0A\u4E9A\u73ED\u5FB7\u62C9\u65AF'
                         },
                         'Barbados': {
-                            'exemplarCity': '巴巴多斯'
+                            'exemplarCity': '\u5DF4\u5DF4\u591A\u65AF'
                         },
                         'Belem': {
-                            'exemplarCity': '贝伦'
+                            'exemplarCity': '\u8D1D\u4F26'
                         },
                         'Belize': {
-                            'exemplarCity': '伯利兹'
+                            'exemplarCity': '\u4F2F\u5229\u5179'
                         },
                         'Blanc-Sablon': {
-                            'exemplarCity': '布兰克萨布隆'
+                            'exemplarCity': '\u5E03\u5170\u514B\u8428\u5E03\u9686'
                         },
                         'Boa_Vista': {
-                            'exemplarCity': '博阿维斯塔'
+                            'exemplarCity': '\u535A\u963F\u7EF4\u65AF\u5854'
                         },
                         'Bogota': {
-                            'exemplarCity': '波哥大'
+                            'exemplarCity': '\u6CE2\u54E5\u5927'
                         },
                         'Curacao': {
-                            'exemplarCity': '库拉索'
+                            'exemplarCity': '\u5E93\u62C9\u7D22'
                         },
                         'Danmarkshavn': {
-                            'exemplarCity': '丹马沙文'
+                            'exemplarCity': '\u4E39\u9A6C\u6C99\u6587'
                         },
                         'Dawson': {
-                            'exemplarCity': '道森'
+                            'exemplarCity': '\u9053\u68EE'
                         },
                         'Dawson_Creek': {
-                            'exemplarCity': '道森克里克'
+                            'exemplarCity': '\u9053\u68EE\u514B\u91CC\u514B'
                         },
                         'Denver': {
-                            'exemplarCity': '丹佛'
+                            'exemplarCity': '\u4E39\u4F5B'
                         },
                         'Detroit': {
-                            'exemplarCity': '底特律'
+                            'exemplarCity': '\u5E95\u7279\u5F8B'
                         },
                         'Hermosillo': {
-                            'exemplarCity': '埃莫西约'
+                            'exemplarCity': '\u57C3\u83AB\u897F\u7EA6'
                         },
                         'Indiana': {
                             'Vincennes': {
-                                'exemplarCity': '印第安纳州温森斯'
+                                'exemplarCity': '\u5370\u7B2C\u5B89\u7EB3\u5DDE\u6E29\u68EE\u65AF'
                             },
                             'Petersburg': {
-                                'exemplarCity': '印第安纳州彼得斯堡'
+                                'exemplarCity': '\u5370\u7B2C\u5B89\u7EB3\u5DDE\u5F7C\u5F97\u65AF\u5821'
                             },
                             'Tell_City': {
-                                'exemplarCity': '印第安纳州特尔城'
+                                'exemplarCity': '\u5370\u7B2C\u5B89\u7EB3\u5DDE\u7279\u5C14\u57CE'
                             },
                             'Knox': {
-                                'exemplarCity': '印第安纳州诺克斯'
+                                'exemplarCity': '\u5370\u7B2C\u5B89\u7EB3\u5DDE\u8BFA\u514B\u65AF'
                             },
                             'Winamac': {
-                                'exemplarCity': '印第安纳州威纳马克'
+                                'exemplarCity': '\u5370\u7B2C\u5B89\u7EB3\u5DDE\u5A01\u7EB3\u9A6C\u514B'
                             },
                             'Marengo': {
-                                'exemplarCity': '印第安纳州马伦戈'
+                                'exemplarCity': '\u5370\u7B2C\u5B89\u7EB3\u5DDE\u9A6C\u4F26\u6208'
                             },
                             'Vevay': {
-                                'exemplarCity': '印第安纳州维维市'
+                                'exemplarCity': '\u5370\u7B2C\u5B89\u7EB3\u5DDE\u7EF4\u7EF4\u5E02'
                             }
                         },
                         'Indianapolis': {
-                            'exemplarCity': '印第安纳波利斯'
+                            'exemplarCity': '\u5370\u7B2C\u5B89\u7EB3\u6CE2\u5229\u65AF'
                         },
                         'Inuvik': {
-                            'exemplarCity': '伊努维克'
+                            'exemplarCity': '\u4F0A\u52AA\u7EF4\u514B'
                         },
                         'Iqaluit': {
-                            'exemplarCity': '伊魁特'
+                            'exemplarCity': '\u4F0A\u9B41\u7279'
                         },
                         'Jamaica': {
-                            'exemplarCity': '牙买加'
+                            'exemplarCity': '\u7259\u4E70\u52A0'
                         },
                         'Jujuy': {
-                            'exemplarCity': '胡胡伊'
+                            'exemplarCity': '\u80E1\u80E1\u4F0A'
                         },
                         'Juneau': {
-                            'exemplarCity': '朱诺'
+                            'exemplarCity': '\u6731\u8BFA'
                         },
                         'Yellowknife': {
-                            'exemplarCity': '耶洛奈夫'
+                            'exemplarCity': '\u8036\u6D1B\u5948\u592B'
                         },
                         'Yakutat': {
-                            'exemplarCity': '亚库塔特'
+                            'exemplarCity': '\u4E9A\u5E93\u5854\u7279'
                         },
                         'Winnipeg': {
-                            'exemplarCity': '温尼伯'
+                            'exemplarCity': '\u6E29\u5C3C\u4F2F'
                         },
                         'Whitehorse': {
-                            'exemplarCity': '怀特霍斯'
+                            'exemplarCity': '\u6000\u7279\u970D\u65AF'
                         },
                         'Vancouver': {
-                            'exemplarCity': '温哥华'
+                            'exemplarCity': '\u6E29\u54E5\u534E'
                         },
                         'Tortola': {
-                            'exemplarCity': '托尔托拉'
+                            'exemplarCity': '\u6258\u5C14\u6258\u62C9'
                         },
                         'Kralendijk': {
-                            'exemplarCity': '克拉伦代克'
+                            'exemplarCity': '\u514B\u62C9\u4F26\u4EE3\u514B'
                         },
                         'Kentucky': {
                             'Monticello': {
-                                'exemplarCity': '肯塔基州蒙蒂塞洛'
+                                'exemplarCity': '\u80AF\u5854\u57FA\u5DDE\u8499\u8482\u585E\u6D1B'
                             }
                         },
                         'Havana': {
-                            'exemplarCity': '哈瓦那'
+                            'exemplarCity': '\u54C8\u74E6\u90A3'
                         },
                         'Halifax': {
-                            'exemplarCity': '哈利法克斯'
+                            'exemplarCity': '\u54C8\u5229\u6CD5\u514B\u65AF'
                         },
                         'Guyana': {
-                            'exemplarCity': '圭亚那'
+                            'exemplarCity': '\u572D\u4E9A\u90A3'
                         },
                         'Guayaquil': {
-                            'exemplarCity': '瓜亚基尔'
+                            'exemplarCity': '\u74DC\u4E9A\u57FA\u5C14'
                         },
                         'Guatemala': {
-                            'exemplarCity': '危地马拉'
+                            'exemplarCity': '\u5371\u5730\u9A6C\u62C9'
                         },
                         'Guadeloupe': {
-                            'exemplarCity': '瓜德罗普'
+                            'exemplarCity': '\u74DC\u5FB7\u7F57\u666E'
                         },
                         'Grenada': {
-                            'exemplarCity': '格林纳达'
+                            'exemplarCity': '\u683C\u6797\u7EB3\u8FBE'
                         },
                         'Grand_Turk': {
-                            'exemplarCity': '大特克'
+                            'exemplarCity': '\u5927\u7279\u514B'
                         },
                         'Goose_Bay': {
-                            'exemplarCity': '古斯湾'
+                            'exemplarCity': '\u53E4\u65AF\u6E7E'
                         },
                         'Godthab': {
-                            'exemplarCity': '戈特霍布'
+                            'exemplarCity': '\u6208\u7279\u970D\u5E03'
                         },
                         'Glace_Bay': {
-                            'exemplarCity': '格莱斯贝'
+                            'exemplarCity': '\u683C\u83B1\u65AF\u8D1D'
                         },
                         'Fortaleza': {
-                            'exemplarCity': '福塔雷萨'
+                            'exemplarCity': '\u798F\u5854\u96F7\u8428'
                         },
                         'El_Salvador': {
-                            'exemplarCity': '萨尔瓦多'
+                            'exemplarCity': '\u8428\u5C14\u74E6\u591A'
                         },
                         'Eirunepe': {
-                            'exemplarCity': '依伦尼贝'
+                            'exemplarCity': '\u4F9D\u4F26\u5C3C\u8D1D'
                         },
                         'Edmonton': {
-                            'exemplarCity': '埃德蒙顿'
+                            'exemplarCity': '\u57C3\u5FB7\u8499\u987F'
                         },
                         'Dominica': {
-                            'exemplarCity': '多米尼加'
+                            'exemplarCity': '\u591A\u7C73\u5C3C\u52A0'
                         },
                         'Chihuahua': {
-                            'exemplarCity': '奇瓦瓦'
+                            'exemplarCity': '\u5947\u74E6\u74E6'
                         },
                         'Coral_Harbour': {
-                            'exemplarCity': '阿蒂科肯'
+                            'exemplarCity': '\u963F\u8482\u79D1\u80AF'
                         },
                         'Cordoba': {
-                            'exemplarCity': '科尔多瓦'
+                            'exemplarCity': '\u79D1\u5C14\u591A\u74E6'
                         },
                         'Costa_Rica': {
-                            'exemplarCity': '哥斯达黎加'
+                            'exemplarCity': '\u54E5\u65AF\u8FBE\u9ECE\u52A0'
                         },
                         'Creston': {
-                            'exemplarCity': '克雷斯顿'
+                            'exemplarCity': '\u514B\u96F7\u65AF\u987F'
                         },
                         'Cuiaba': {
-                            'exemplarCity': '库亚巴'
+                            'exemplarCity': '\u5E93\u4E9A\u5DF4'
                         },
                         'La_Paz': {
-                            'exemplarCity': '拉巴斯'
+                            'exemplarCity': '\u62C9\u5DF4\u65AF'
                         },
                         'Lima': {
-                            'exemplarCity': '利马'
+                            'exemplarCity': '\u5229\u9A6C'
                         },
                         'Los_Angeles': {
-                            'exemplarCity': '洛杉矶'
+                            'exemplarCity': '\u6D1B\u6749\u77F6'
                         },
                         'Louisville': {
-                            'exemplarCity': '路易斯维尔'
+                            'exemplarCity': '\u8DEF\u6613\u65AF\u7EF4\u5C14'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': '下太子区'
+                            'exemplarCity': '\u4E0B\u592A\u5B50\u533A'
                         },
                         'Maceio': {
-                            'exemplarCity': '马塞约'
+                            'exemplarCity': '\u9A6C\u585E\u7EA6'
                         },
                         'Managua': {
-                            'exemplarCity': '马那瓜'
+                            'exemplarCity': '\u9A6C\u90A3\u74DC'
                         },
                         'Manaus': {
-                            'exemplarCity': '马瑙斯'
+                            'exemplarCity': '\u9A6C\u7459\u65AF'
                         },
                         'Marigot': {
-                            'exemplarCity': '马里戈特'
+                            'exemplarCity': '\u9A6C\u91CC\u6208\u7279'
                         },
                         'Martinique': {
-                            'exemplarCity': '马提尼克'
+                            'exemplarCity': '\u9A6C\u63D0\u5C3C\u514B'
                         },
                         'Matamoros': {
-                            'exemplarCity': '马塔莫罗斯'
+                            'exemplarCity': '\u9A6C\u5854\u83AB\u7F57\u65AF'
                         },
                         'Mazatlan': {
-                            'exemplarCity': '马萨特兰'
+                            'exemplarCity': '\u9A6C\u8428\u7279\u5170'
                         },
                         'Mendoza': {
-                            'exemplarCity': '门多萨'
+                            'exemplarCity': '\u95E8\u591A\u8428'
                         },
                         'Menominee': {
-                            'exemplarCity': '密诺米尼'
+                            'exemplarCity': '\u5BC6\u8BFA\u7C73\u5C3C'
                         },
                         'Merida': {
-                            'exemplarCity': '梅里达'
+                            'exemplarCity': '\u6885\u91CC\u8FBE'
                         },
                         'Metlakatla': {
-                            'exemplarCity': '梅特拉卡特拉'
+                            'exemplarCity': '\u6885\u7279\u62C9\u5361\u7279\u62C9'
                         },
                         'Mexico_City': {
-                            'exemplarCity': '墨西哥城'
+                            'exemplarCity': '\u58A8\u897F\u54E5\u57CE'
                         },
                         'Miquelon': {
-                            'exemplarCity': '密克隆'
+                            'exemplarCity': '\u5BC6\u514B\u9686'
                         },
                         'Moncton': {
-                            'exemplarCity': '蒙克顿'
+                            'exemplarCity': '\u8499\u514B\u987F'
                         },
                         'Monterrey': {
-                            'exemplarCity': '蒙特雷'
+                            'exemplarCity': '\u8499\u7279\u96F7'
                         },
                         'Montevideo': {
-                            'exemplarCity': '蒙得维的亚'
+                            'exemplarCity': '\u8499\u5F97\u7EF4\u7684\u4E9A'
                         },
                         'Montreal': {
-                            'exemplarCity': '蒙特利尔'
+                            'exemplarCity': '\u8499\u7279\u5229\u5C14'
                         },
                         'Montserrat': {
-                            'exemplarCity': '蒙特塞拉特'
+                            'exemplarCity': '\u8499\u7279\u585E\u62C9\u7279'
                         },
                         'Nassau': {
-                            'exemplarCity': '拿骚'
+                            'exemplarCity': '\u62FF\u9A9A'
                         },
                         'New_York': {
-                            'exemplarCity': '纽约'
+                            'exemplarCity': '\u7EBD\u7EA6'
                         },
                         'Nipigon': {
-                            'exemplarCity': '尼皮贡'
+                            'exemplarCity': '\u5C3C\u76AE\u8D21'
                         },
                         'Nome': {
-                            'exemplarCity': '诺姆'
+                            'exemplarCity': '\u8BFA\u59C6'
                         },
                         'Noronha': {
-                            'exemplarCity': '洛罗尼亚'
+                            'exemplarCity': '\u6D1B\u7F57\u5C3C\u4E9A'
                         },
                         'North_Dakota': {
                             'Beulah': {
-                                'exemplarCity': '北达科他州比尤拉'
+                                'exemplarCity': '\u5317\u8FBE\u79D1\u4ED6\u5DDE\u6BD4\u5C24\u62C9'
                             },
                             'New_Salem': {
-                                'exemplarCity': '北达科他州新塞勒姆'
+                                'exemplarCity': '\u5317\u8FBE\u79D1\u4ED6\u5DDE\u65B0\u585E\u52D2\u59C6'
                             },
                             'Center': {
-                                'exemplarCity': '北达科他州申特'
+                                'exemplarCity': '\u5317\u8FBE\u79D1\u4ED6\u5DDE\u7533\u7279'
                             }
                         },
                         'Ojinaga': {
-                            'exemplarCity': '奥希纳加'
+                            'exemplarCity': '\u5965\u5E0C\u7EB3\u52A0'
                         },
                         'Panama': {
-                            'exemplarCity': '巴拿马'
+                            'exemplarCity': '\u5DF4\u62FF\u9A6C'
                         },
                         'Pangnirtung': {
-                            'exemplarCity': '旁涅唐'
+                            'exemplarCity': '\u65C1\u6D85\u5510'
                         },
                         'Paramaribo': {
-                            'exemplarCity': '帕拉马里博'
+                            'exemplarCity': '\u5E15\u62C9\u9A6C\u91CC\u535A'
                         },
                         'Phoenix': {
-                            'exemplarCity': '凤凰城'
+                            'exemplarCity': '\u51E4\u51F0\u57CE'
                         },
                         'Port-au-Prince': {
-                            'exemplarCity': '太子港'
+                            'exemplarCity': '\u592A\u5B50\u6E2F'
                         },
                         'Port_of_Spain': {
-                            'exemplarCity': '西班牙港'
+                            'exemplarCity': '\u897F\u73ED\u7259\u6E2F'
                         },
                         'Porto_Velho': {
-                            'exemplarCity': '波多韦柳'
+                            'exemplarCity': '\u6CE2\u591A\u97E6\u67F3'
                         },
                         'Puerto_Rico': {
-                            'exemplarCity': '波多黎各'
+                            'exemplarCity': '\u6CE2\u591A\u9ECE\u5404'
                         },
                         'Rainy_River': {
-                            'exemplarCity': '雷尼河'
+                            'exemplarCity': '\u96F7\u5C3C\u6CB3'
                         },
                         'Rankin_Inlet': {
-                            'exemplarCity': '兰今湾'
+                            'exemplarCity': '\u5170\u4ECA\u6E7E'
                         },
                         'Recife': {
-                            'exemplarCity': '累西腓'
+                            'exemplarCity': '\u7D2F\u897F\u8153'
                         },
                         'Regina': {
-                            'exemplarCity': '里贾纳'
+                            'exemplarCity': '\u91CC\u8D3E\u7EB3'
                         },
                         'Resolute': {
-                            'exemplarCity': '雷索卢特'
+                            'exemplarCity': '\u96F7\u7D22\u5362\u7279'
                         },
                         'Rio_Branco': {
-                            'exemplarCity': '里奥布郎库'
+                            'exemplarCity': '\u91CC\u5965\u5E03\u90CE\u5E93'
                         },
                         'Santa_Isabel': {
-                            'exemplarCity': '圣伊萨贝尔'
+                            'exemplarCity': '\u5723\u4F0A\u8428\u8D1D\u5C14'
                         },
                         'Santarem': {
-                            'exemplarCity': '圣塔伦'
+                            'exemplarCity': '\u5723\u5854\u4F26'
                         },
                         'Santiago': {
-                            'exemplarCity': '圣地亚哥'
+                            'exemplarCity': '\u5723\u5730\u4E9A\u54E5'
                         },
                         'Santo_Domingo': {
-                            'exemplarCity': '圣多明各'
+                            'exemplarCity': '\u5723\u591A\u660E\u5404'
                         },
                         'Sao_Paulo': {
-                            'exemplarCity': '圣保罗'
+                            'exemplarCity': '\u5723\u4FDD\u7F57'
                         },
                         'Scoresbysund': {
-                            'exemplarCity': '斯科列斯比桑德'
+                            'exemplarCity': '\u65AF\u79D1\u5217\u65AF\u6BD4\u6851\u5FB7'
                         },
                         'Shiprock': {
-                            'exemplarCity': '希普罗克'
+                            'exemplarCity': '\u5E0C\u666E\u7F57\u514B'
                         },
                         'Sitka': {
-                            'exemplarCity': '锡特卡'
+                            'exemplarCity': '\u9521\u7279\u5361'
                         },
                         'St_Barthelemy': {
-                            'exemplarCity': '圣巴泰勒米岛'
+                            'exemplarCity': '\u5723\u5DF4\u6CF0\u52D2\u7C73\u5C9B'
                         },
                         'St_Johns': {
-                            'exemplarCity': '圣约翰斯'
+                            'exemplarCity': '\u5723\u7EA6\u7FF0\u65AF'
                         },
                         'St_Kitts': {
-                            'exemplarCity': '圣基茨'
+                            'exemplarCity': '\u5723\u57FA\u8328'
                         },
                         'St_Lucia': {
-                            'exemplarCity': '圣卢西亚'
+                            'exemplarCity': '\u5723\u5362\u897F\u4E9A'
                         },
                         'St_Thomas': {
-                            'exemplarCity': '圣托马斯'
+                            'exemplarCity': '\u5723\u6258\u9A6C\u65AF'
                         },
                         'St_Vincent': {
-                            'exemplarCity': '圣文森特'
+                            'exemplarCity': '\u5723\u6587\u68EE\u7279'
                         }
                     },
                     'Atlantic': {
                         'South_Georgia': {
-                            'exemplarCity': '南乔治亚'
+                            'exemplarCity': '\u5357\u4E54\u6CBB\u4E9A'
                         },
                         'Reykjavik': {
-                            'exemplarCity': '雷克雅未克'
+                            'exemplarCity': '\u96F7\u514B\u96C5\u672A\u514B'
                         },
                         'Stanley': {
-                            'exemplarCity': '斯坦利'
+                            'exemplarCity': '\u65AF\u5766\u5229'
                         },
                         'St_Helena': {
-                            'exemplarCity': '圣赫勒拿'
+                            'exemplarCity': '\u5723\u8D6B\u52D2\u62FF'
                         },
                         'Azores': {
-                            'exemplarCity': '亚速尔群岛'
+                            'exemplarCity': '\u4E9A\u901F\u5C14\u7FA4\u5C9B'
                         },
                         'Bermuda': {
-                            'exemplarCity': '百慕大'
+                            'exemplarCity': '\u767E\u6155\u5927'
                         },
                         'Canary': {
-                            'exemplarCity': '加那利'
+                            'exemplarCity': '\u52A0\u90A3\u5229'
                         },
                         'Cape_Verde': {
-                            'exemplarCity': '佛得角'
+                            'exemplarCity': '\u4F5B\u5F97\u89D2'
                         },
                         'Faeroe': {
-                            'exemplarCity': '法罗'
+                            'exemplarCity': '\u6CD5\u7F57'
                         },
                         'Madeira': {
-                            'exemplarCity': '马德拉'
+                            'exemplarCity': '\u9A6C\u5FB7\u62C9'
                         }
                     },
                     'Europe': {
                         'Oslo': {
-                            'exemplarCity': '奥斯陆'
+                            'exemplarCity': '\u5965\u65AF\u9646'
                         },
                         'Moscow': {
-                            'exemplarCity': '莫斯科'
+                            'exemplarCity': '\u83AB\u65AF\u79D1'
                         },
                         'Monaco': {
-                            'exemplarCity': '摩纳哥'
+                            'exemplarCity': '\u6469\u7EB3\u54E5'
                         },
                         'Minsk': {
-                            'exemplarCity': '明斯克'
+                            'exemplarCity': '\u660E\u65AF\u514B'
                         },
                         'Mariehamn': {
-                            'exemplarCity': '玛丽港'
+                            'exemplarCity': '\u739B\u4E3D\u6E2F'
                         },
                         'Malta': {
-                            'exemplarCity': '马耳他'
+                            'exemplarCity': '\u9A6C\u8033\u4ED6'
                         },
                         'Madrid': {
-                            'exemplarCity': '马德里'
+                            'exemplarCity': '\u9A6C\u5FB7\u91CC'
                         },
                         'Luxembourg': {
-                            'exemplarCity': '卢森堡'
+                            'exemplarCity': '\u5362\u68EE\u5821'
                         },
                         'London': {
                             'long': {
-                                'daylight': '英国夏令时间'
+                                'daylight': '\u82F1\u56FD\u590F\u4EE4\u65F6\u95F4'
                             },
-                            'exemplarCity': '伦敦'
+                            'exemplarCity': '\u4F26\u6566'
                         },
                         'Ljubljana': {
-                            'exemplarCity': '卢布尔雅那'
+                            'exemplarCity': '\u5362\u5E03\u5C14\u96C5\u90A3'
                         },
                         'Lisbon': {
-                            'exemplarCity': '里斯本'
+                            'exemplarCity': '\u91CC\u65AF\u672C'
                         },
                         'Kiev': {
-                            'exemplarCity': '基辅'
+                            'exemplarCity': '\u57FA\u8F85'
                         },
                         'Kaliningrad': {
-                            'exemplarCity': '加里宁格勒'
+                            'exemplarCity': '\u52A0\u91CC\u5B81\u683C\u52D2'
                         },
                         'Jersey': {
-                            'exemplarCity': '泽西岛'
+                            'exemplarCity': '\u6CFD\u897F\u5C9B'
                         },
                         'Istanbul': {
-                            'exemplarCity': '伊斯坦布尔'
+                            'exemplarCity': '\u4F0A\u65AF\u5766\u5E03\u5C14'
                         },
                         'Isle_of_Man': {
-                            'exemplarCity': '曼岛'
+                            'exemplarCity': '\u66FC\u5C9B'
                         },
                         'Bucharest': {
-                            'exemplarCity': '布加勒斯特'
+                            'exemplarCity': '\u5E03\u52A0\u52D2\u65AF\u7279'
                         },
                         'Brussels': {
-                            'exemplarCity': '布鲁塞尔'
+                            'exemplarCity': '\u5E03\u9C81\u585E\u5C14'
                         },
                         'Bratislava': {
-                            'exemplarCity': '布拉迪斯拉发'
+                            'exemplarCity': '\u5E03\u62C9\u8FEA\u65AF\u62C9\u53D1'
                         },
                         'Berlin': {
-                            'exemplarCity': '柏林'
+                            'exemplarCity': '\u67CF\u6797'
                         },
                         'Belgrade': {
-                            'exemplarCity': '贝尔格莱德'
+                            'exemplarCity': '\u8D1D\u5C14\u683C\u83B1\u5FB7'
                         },
                         'Athens': {
-                            'exemplarCity': '雅典'
+                            'exemplarCity': '\u96C5\u5178'
                         },
                         'Andorra': {
-                            'exemplarCity': '安道尔'
+                            'exemplarCity': '\u5B89\u9053\u5C14'
                         },
                         'Amsterdam': {
-                            'exemplarCity': '阿姆斯特丹'
+                            'exemplarCity': '\u963F\u59C6\u65AF\u7279\u4E39'
                         },
                         'Simferopol': {
-                            'exemplarCity': '辛菲罗波尔'
+                            'exemplarCity': '\u8F9B\u83F2\u7F57\u6CE2\u5C14'
                         },
                         'Skopje': {
-                            'exemplarCity': '斯科普里'
+                            'exemplarCity': '\u65AF\u79D1\u666E\u91CC'
                         },
                         'Sofia': {
-                            'exemplarCity': '索非亚'
+                            'exemplarCity': '\u7D22\u975E\u4E9A'
                         },
                         'Stockholm': {
-                            'exemplarCity': '斯德哥尔摩'
+                            'exemplarCity': '\u65AF\u5FB7\u54E5\u5C14\u6469'
                         },
                         'Tallinn': {
-                            'exemplarCity': '塔林'
+                            'exemplarCity': '\u5854\u6797'
                         },
                         'Tirane': {
-                            'exemplarCity': '地拉那'
+                            'exemplarCity': '\u5730\u62C9\u90A3'
                         },
                         'Uzhgorod': {
-                            'exemplarCity': '乌日哥罗德'
+                            'exemplarCity': '\u4E4C\u65E5\u54E5\u7F57\u5FB7'
                         },
                         'Vaduz': {
-                            'exemplarCity': '瓦杜兹'
+                            'exemplarCity': '\u74E6\u675C\u5179'
                         },
                         'Zurich': {
-                            'exemplarCity': '苏黎世'
+                            'exemplarCity': '\u82CF\u9ECE\u4E16'
                         },
                         'Zaporozhye': {
-                            'exemplarCity': '扎波罗热'
+                            'exemplarCity': '\u624E\u6CE2\u7F57\u70ED'
                         },
                         'Zagreb': {
-                            'exemplarCity': '萨格勒布'
+                            'exemplarCity': '\u8428\u683C\u52D2\u5E03'
                         },
                         'Warsaw': {
-                            'exemplarCity': '华沙'
+                            'exemplarCity': '\u534E\u6C99'
                         },
                         'Volgograd': {
-                            'exemplarCity': '伏尔加格勒'
+                            'exemplarCity': '\u4F0F\u5C14\u52A0\u683C\u52D2'
                         },
                         'Vilnius': {
-                            'exemplarCity': '维尔纽斯'
+                            'exemplarCity': '\u7EF4\u5C14\u7EBD\u65AF'
                         },
                         'Vienna': {
-                            'exemplarCity': '维也纳'
+                            'exemplarCity': '\u7EF4\u4E5F\u7EB3'
                         },
                         'Vatican': {
-                            'exemplarCity': '梵蒂冈'
+                            'exemplarCity': '\u68B5\u8482\u5188'
                         },
                         'Sarajevo': {
-                            'exemplarCity': '萨拉热窝'
+                            'exemplarCity': '\u8428\u62C9\u70ED\u7A9D'
                         },
                         'San_Marino': {
-                            'exemplarCity': '圣马力诺'
+                            'exemplarCity': '\u5723\u9A6C\u529B\u8BFA'
                         },
                         'Samara': {
-                            'exemplarCity': '萨马拉'
+                            'exemplarCity': '\u8428\u9A6C\u62C9'
                         },
                         'Rome': {
-                            'exemplarCity': '罗马'
+                            'exemplarCity': '\u7F57\u9A6C'
                         },
                         'Riga': {
-                            'exemplarCity': '里加'
+                            'exemplarCity': '\u91CC\u52A0'
                         },
                         'Prague': {
-                            'exemplarCity': '布拉格'
+                            'exemplarCity': '\u5E03\u62C9\u683C'
                         },
                         'Podgorica': {
-                            'exemplarCity': '波德戈里察'
+                            'exemplarCity': '\u6CE2\u5FB7\u6208\u91CC\u5BDF'
                         },
                         'Paris': {
-                            'exemplarCity': '巴黎'
+                            'exemplarCity': '\u5DF4\u9ECE'
                         },
                         'Helsinki': {
-                            'exemplarCity': '赫尔辛基'
+                            'exemplarCity': '\u8D6B\u5C14\u8F9B\u57FA'
                         },
                         'Guernsey': {
-                            'exemplarCity': '根西岛'
+                            'exemplarCity': '\u6839\u897F\u5C9B'
                         },
                         'Gibraltar': {
-                            'exemplarCity': '直布罗陀'
+                            'exemplarCity': '\u76F4\u5E03\u7F57\u9640'
                         },
                         'Dublin': {
                             'long': {
-                                'daylight': '爱尔兰夏令时间'
+                                'daylight': '\u7231\u5C14\u5170\u590F\u4EE4\u65F6\u95F4'
                             },
-                            'exemplarCity': '都柏林'
+                            'exemplarCity': '\u90FD\u67CF\u6797'
                         },
                         'Copenhagen': {
-                            'exemplarCity': '哥本哈根'
+                            'exemplarCity': '\u54E5\u672C\u54C8\u6839'
                         },
                         'Chisinau': {
-                            'exemplarCity': '基希讷乌'
+                            'exemplarCity': '\u57FA\u5E0C\u8BB7\u4E4C'
                         },
                         'Busingen': {
-                            'exemplarCity': '布辛根'
+                            'exemplarCity': '\u5E03\u8F9B\u6839'
                         },
                         'Budapest': {
-                            'exemplarCity': '布达佩斯'
+                            'exemplarCity': '\u5E03\u8FBE\u4F69\u65AF'
                         }
                     },
                     'Africa': {
                         'Libreville': {
-                            'exemplarCity': '利伯维尔'
+                            'exemplarCity': '\u5229\u4F2F\u7EF4\u5C14'
                         },
                         'Lagos': {
-                            'exemplarCity': '拉各斯'
+                            'exemplarCity': '\u62C9\u5404\u65AF'
                         },
                         'Kinshasa': {
-                            'exemplarCity': '金沙萨'
+                            'exemplarCity': '\u91D1\u6C99\u8428'
                         },
                         'Kigali': {
-                            'exemplarCity': '基加利'
+                            'exemplarCity': '\u57FA\u52A0\u5229'
                         },
                         'Khartoum': {
-                            'exemplarCity': '喀土穆'
+                            'exemplarCity': '\u5580\u571F\u7A46'
                         },
                         'Kampala': {
-                            'exemplarCity': '坎帕拉'
+                            'exemplarCity': '\u574E\u5E15\u62C9'
                         },
                         'Juba': {
-                            'exemplarCity': '朱巴'
+                            'exemplarCity': '\u6731\u5DF4'
                         },
                         'Johannesburg': {
-                            'exemplarCity': '约翰内斯堡'
+                            'exemplarCity': '\u7EA6\u7FF0\u5185\u65AF\u5821'
                         },
                         'Harare': {
-                            'exemplarCity': '哈拉雷'
+                            'exemplarCity': '\u54C8\u62C9\u96F7'
                         },
                         'Gaborone': {
-                            'exemplarCity': '哈博罗内'
+                            'exemplarCity': '\u54C8\u535A\u7F57\u5185'
                         },
                         'Freetown': {
-                            'exemplarCity': '弗里敦'
+                            'exemplarCity': '\u5F17\u91CC\u6566'
                         },
                         'El_Aaiun': {
-                            'exemplarCity': '阿尤恩'
+                            'exemplarCity': '\u963F\u5C24\u6069'
                         },
                         'Douala': {
-                            'exemplarCity': '杜阿拉'
+                            'exemplarCity': '\u675C\u963F\u62C9'
                         },
                         'Djibouti': {
-                            'exemplarCity': '吉布提'
+                            'exemplarCity': '\u5409\u5E03\u63D0'
                         },
                         'Dar_es_Salaam': {
-                            'exemplarCity': '达累斯萨拉姆'
+                            'exemplarCity': '\u8FBE\u7D2F\u65AF\u8428\u62C9\u59C6'
                         },
                         'Dakar': {
-                            'exemplarCity': '达喀尔'
+                            'exemplarCity': '\u8FBE\u5580\u5C14'
                         },
                         'Banjul': {
-                            'exemplarCity': '班珠尔'
+                            'exemplarCity': '\u73ED\u73E0\u5C14'
                         },
                         'Bangui': {
-                            'exemplarCity': '班吉'
+                            'exemplarCity': '\u73ED\u5409'
                         },
                         'Bamako': {
-                            'exemplarCity': '巴马科'
+                            'exemplarCity': '\u5DF4\u9A6C\u79D1'
                         },
                         'Asmera': {
-                            'exemplarCity': '阿斯马拉'
+                            'exemplarCity': '\u963F\u65AF\u9A6C\u62C9'
                         },
                         'Malabo': {
-                            'exemplarCity': '马拉博'
+                            'exemplarCity': '\u9A6C\u62C9\u535A'
                         },
                         'Maputo': {
-                            'exemplarCity': '马普托'
+                            'exemplarCity': '\u9A6C\u666E\u6258'
                         },
                         'Maseru': {
-                            'exemplarCity': '马塞卢'
+                            'exemplarCity': '\u9A6C\u585E\u5362'
                         },
                         'Mbabane': {
-                            'exemplarCity': '姆巴巴纳'
+                            'exemplarCity': '\u59C6\u5DF4\u5DF4\u7EB3'
                         },
                         'Mogadishu': {
-                            'exemplarCity': '摩加迪沙'
+                            'exemplarCity': '\u6469\u52A0\u8FEA\u6C99'
                         },
                         'Monrovia': {
-                            'exemplarCity': '蒙罗维亚'
+                            'exemplarCity': '\u8499\u7F57\u7EF4\u4E9A'
                         },
                         'Nairobi': {
-                            'exemplarCity': '内罗毕'
+                            'exemplarCity': '\u5185\u7F57\u6BD5'
                         },
                         'Ndjamena': {
-                            'exemplarCity': '恩贾梅纳'
+                            'exemplarCity': '\u6069\u8D3E\u6885\u7EB3'
                         },
                         'Windhoek': {
-                            'exemplarCity': '温得和克'
+                            'exemplarCity': '\u6E29\u5F97\u548C\u514B'
                         },
                         'Tunis': {
-                            'exemplarCity': '突尼斯'
+                            'exemplarCity': '\u7A81\u5C3C\u65AF'
                         },
                         'Tripoli': {
-                            'exemplarCity': '的黎波里'
+                            'exemplarCity': '\u7684\u9ECE\u6CE2\u91CC'
                         },
                         'Sao_Tome': {
-                            'exemplarCity': '圣多美'
+                            'exemplarCity': '\u5723\u591A\u7F8E'
                         },
                         'Porto-Novo': {
-                            'exemplarCity': '波多诺伏'
+                            'exemplarCity': '\u6CE2\u591A\u8BFA\u4F0F'
                         },
                         'Ouagadougou': {
-                            'exemplarCity': '瓦加杜古'
+                            'exemplarCity': '\u74E6\u52A0\u675C\u53E4'
                         },
                         'Nouakchott': {
-                            'exemplarCity': '努瓦克肖特'
+                            'exemplarCity': '\u52AA\u74E6\u514B\u8096\u7279'
                         },
                         'Niamey': {
-                            'exemplarCity': '尼亚美'
+                            'exemplarCity': '\u5C3C\u4E9A\u7F8E'
                         },
                         'Lusaka': {
-                            'exemplarCity': '卢萨卡'
+                            'exemplarCity': '\u5362\u8428\u5361'
                         },
                         'Lubumbashi': {
-                            'exemplarCity': '卢本巴希'
+                            'exemplarCity': '\u5362\u672C\u5DF4\u5E0C'
                         },
                         'Luanda': {
-                            'exemplarCity': '罗安达'
+                            'exemplarCity': '\u7F57\u5B89\u8FBE'
                         },
                         'Lome': {
-                            'exemplarCity': '洛美'
+                            'exemplarCity': '\u6D1B\u7F8E'
                         },
                         'Conakry': {
-                            'exemplarCity': '科纳克里'
+                            'exemplarCity': '\u79D1\u7EB3\u514B\u91CC'
                         },
                         'Ceuta': {
-                            'exemplarCity': '休达'
+                            'exemplarCity': '\u4F11\u8FBE'
                         },
                         'Casablanca': {
-                            'exemplarCity': '卡萨布兰卡'
+                            'exemplarCity': '\u5361\u8428\u5E03\u5170\u5361'
                         },
                         'Cairo': {
-                            'exemplarCity': '开罗'
+                            'exemplarCity': '\u5F00\u7F57'
                         },
                         'Bujumbura': {
-                            'exemplarCity': '布琼布拉'
+                            'exemplarCity': '\u5E03\u743C\u5E03\u62C9'
                         },
                         'Brazzaville': {
-                            'exemplarCity': '布拉柴维尔'
+                            'exemplarCity': '\u5E03\u62C9\u67F4\u7EF4\u5C14'
                         },
                         'Blantyre': {
-                            'exemplarCity': '布兰太尔'
+                            'exemplarCity': '\u5E03\u5170\u592A\u5C14'
                         },
                         'Bissau': {
-                            'exemplarCity': '比绍'
+                            'exemplarCity': '\u6BD4\u7ECD'
                         },
                         'Abidjan': {
-                            'exemplarCity': '阿比让'
+                            'exemplarCity': '\u963F\u6BD4\u8BA9'
                         },
                         'Accra': {
-                            'exemplarCity': '阿克拉'
+                            'exemplarCity': '\u963F\u514B\u62C9'
                         },
                         'Addis_Ababa': {
-                            'exemplarCity': '亚的斯亚贝巴'
+                            'exemplarCity': '\u4E9A\u7684\u65AF\u4E9A\u8D1D\u5DF4'
                         },
                         'Algiers': {
-                            'exemplarCity': '阿尔及尔'
+                            'exemplarCity': '\u963F\u5C14\u53CA\u5C14'
                         }
                     },
                     'Asia': {
                         'Shanghai': {
-                            'exemplarCity': '上海'
+                            'exemplarCity': '\u4E0A\u6D77'
                         },
                         'Seoul': {
-                            'exemplarCity': '首尔'
+                            'exemplarCity': '\u9996\u5C14'
                         },
                         'Samarkand': {
-                            'exemplarCity': '撒马尔罕'
+                            'exemplarCity': '\u6492\u9A6C\u5C14\u7F55'
                         },
                         'Sakhalin': {
-                            'exemplarCity': '萨哈林'
+                            'exemplarCity': '\u8428\u54C8\u6797'
                         },
                         'Saigon': {
-                            'exemplarCity': '胡志明市'
+                            'exemplarCity': '\u80E1\u5FD7\u660E\u5E02'
                         },
                         'Riyadh': {
-                            'exemplarCity': '利雅得'
+                            'exemplarCity': '\u5229\u96C5\u5F97'
                         },
                         'Rangoon': {
-                            'exemplarCity': '仰光'
+                            'exemplarCity': '\u4EF0\u5149'
                         },
                         'Qyzylorda': {
-                            'exemplarCity': '克孜洛尔达'
+                            'exemplarCity': '\u514B\u5B5C\u6D1B\u5C14\u8FBE'
                         },
                         'Qatar': {
-                            'exemplarCity': '卡塔尔'
+                            'exemplarCity': '\u5361\u5854\u5C14'
                         },
                         'Pyongyang': {
-                            'exemplarCity': '平壤'
+                            'exemplarCity': '\u5E73\u58E4'
                         },
                         'Pontianak': {
-                            'exemplarCity': '坤甸'
+                            'exemplarCity': '\u5764\u7538'
                         },
                         'Phnom_Penh': {
-                            'exemplarCity': '金边'
+                            'exemplarCity': '\u91D1\u8FB9'
                         },
                         'Oral': {
-                            'exemplarCity': '乌拉尔'
+                            'exemplarCity': '\u4E4C\u62C9\u5C14'
                         },
                         'Omsk': {
-                            'exemplarCity': '鄂木斯克'
+                            'exemplarCity': '\u9102\u6728\u65AF\u514B'
                         },
                         'Novosibirsk': {
-                            'exemplarCity': '诺沃西比尔斯克'
+                            'exemplarCity': '\u8BFA\u6C83\u897F\u6BD4\u5C14\u65AF\u514B'
                         },
                         'Baghdad': {
-                            'exemplarCity': '巴格达'
+                            'exemplarCity': '\u5DF4\u683C\u8FBE'
                         },
                         'Chongqing': {
-                            'exemplarCity': '重庆'
+                            'exemplarCity': '\u91CD\u5E86'
                         },
                         'Colombo': {
-                            'exemplarCity': '科伦坡'
+                            'exemplarCity': '\u79D1\u4F26\u5761'
                         },
                         'Damascus': {
-                            'exemplarCity': '大马士革'
+                            'exemplarCity': '\u5927\u9A6C\u58EB\u9769'
                         },
                         'Dhaka': {
-                            'exemplarCity': '达卡'
+                            'exemplarCity': '\u8FBE\u5361'
                         },
                         'Dili': {
-                            'exemplarCity': '帝力'
+                            'exemplarCity': '\u5E1D\u529B'
                         },
                         'Dubai': {
-                            'exemplarCity': '迪拜'
+                            'exemplarCity': '\u8FEA\u62DC'
                         },
                         'Dushanbe': {
-                            'exemplarCity': '杜尚别'
+                            'exemplarCity': '\u675C\u5C1A\u522B'
                         },
                         'Gaza': {
-                            'exemplarCity': '加沙'
+                            'exemplarCity': '\u52A0\u6C99'
                         },
                         'Harbin': {
-                            'exemplarCity': '哈尔滨'
+                            'exemplarCity': '\u54C8\u5C14\u6EE8'
                         },
                         'Hebron': {
-                            'exemplarCity': '希伯伦'
+                            'exemplarCity': '\u5E0C\u4F2F\u4F26'
                         },
                         'Hong_Kong': {
-                            'exemplarCity': '香港'
+                            'exemplarCity': '\u9999\u6E2F'
                         },
                         'Hovd': {
-                            'exemplarCity': '科布多'
+                            'exemplarCity': '\u79D1\u5E03\u591A'
                         },
                         'Irkutsk': {
-                            'exemplarCity': '伊尔库茨克'
+                            'exemplarCity': '\u4F0A\u5C14\u5E93\u8328\u514B'
                         },
                         'Jakarta': {
-                            'exemplarCity': '雅加达'
+                            'exemplarCity': '\u96C5\u52A0\u8FBE'
                         },
                         'Jayapura': {
-                            'exemplarCity': '查亚普拉'
+                            'exemplarCity': '\u67E5\u4E9A\u666E\u62C9'
                         },
                         'Ulaanbaatar': {
-                            'exemplarCity': '乌兰巴托'
+                            'exemplarCity': '\u4E4C\u5170\u5DF4\u6258'
                         },
                         'Urumqi': {
-                            'exemplarCity': '乌鲁木齐'
+                            'exemplarCity': '\u4E4C\u9C81\u6728\u9F50'
                         },
                         'Ust-Nera': {
-                            'exemplarCity': '乌斯内拉'
+                            'exemplarCity': '\u4E4C\u65AF\u5185\u62C9'
                         },
                         'Vientiane': {
-                            'exemplarCity': '万象'
+                            'exemplarCity': '\u4E07\u8C61'
                         },
                         'Vladivostok': {
-                            'exemplarCity': '符拉迪沃斯托克'
+                            'exemplarCity': '\u7B26\u62C9\u8FEA\u6C83\u65AF\u6258\u514B'
                         },
                         'Yakutsk': {
-                            'exemplarCity': '雅库茨克'
+                            'exemplarCity': '\u96C5\u5E93\u8328\u514B'
                         },
                         'Yekaterinburg': {
-                            'exemplarCity': '叶卡捷琳堡'
+                            'exemplarCity': '\u53F6\u5361\u6377\u7433\u5821'
                         },
                         'Yerevan': {
-                            'exemplarCity': '埃里温'
+                            'exemplarCity': '\u57C3\u91CC\u6E29'
                         },
                         'Tokyo': {
-                            'exemplarCity': '东京'
+                            'exemplarCity': '\u4E1C\u4EAC'
                         },
                         'Thimphu': {
-                            'exemplarCity': '廷布'
+                            'exemplarCity': '\u5EF7\u5E03'
                         },
                         'Tehran': {
-                            'exemplarCity': '德黑兰'
+                            'exemplarCity': '\u5FB7\u9ED1\u5170'
                         },
                         'Tbilisi': {
-                            'exemplarCity': '第比利斯'
+                            'exemplarCity': '\u7B2C\u6BD4\u5229\u65AF'
                         },
                         'Tashkent': {
-                            'exemplarCity': '塔什干'
+                            'exemplarCity': '\u5854\u4EC0\u5E72'
                         },
                         'Taipei': {
-                            'exemplarCity': '台北'
+                            'exemplarCity': '\u53F0\u5317'
                         },
                         'Singapore': {
-                            'exemplarCity': '新加坡'
+                            'exemplarCity': '\u65B0\u52A0\u5761'
                         },
                         'Jerusalem': {
-                            'exemplarCity': '耶路撒冷'
+                            'exemplarCity': '\u8036\u8DEF\u6492\u51B7'
                         },
                         'Ashgabat': {
-                            'exemplarCity': '阿什哈巴德'
+                            'exemplarCity': '\u963F\u4EC0\u54C8\u5DF4\u5FB7'
                         },
                         'Aqtobe': {
-                            'exemplarCity': '阿克托别'
+                            'exemplarCity': '\u963F\u514B\u6258\u522B'
                         },
                         'Aqtau': {
-                            'exemplarCity': '阿克套'
+                            'exemplarCity': '\u963F\u514B\u5957'
                         },
                         'Anadyr': {
-                            'exemplarCity': '阿纳德尔'
+                            'exemplarCity': '\u963F\u7EB3\u5FB7\u5C14'
                         },
                         'Amman': {
-                            'exemplarCity': '安曼'
+                            'exemplarCity': '\u5B89\u66FC'
                         },
                         'Almaty': {
-                            'exemplarCity': '阿拉木图'
+                            'exemplarCity': '\u963F\u62C9\u6728\u56FE'
                         },
                         'Aden': {
-                            'exemplarCity': '亚丁'
+                            'exemplarCity': '\u4E9A\u4E01'
                         },
                         'Bahrain': {
-                            'exemplarCity': '巴林'
+                            'exemplarCity': '\u5DF4\u6797'
                         },
                         'Baku': {
-                            'exemplarCity': '巴库'
+                            'exemplarCity': '\u5DF4\u5E93'
                         },
                         'Bangkok': {
-                            'exemplarCity': '曼谷'
+                            'exemplarCity': '\u66FC\u8C37'
                         },
                         'Beirut': {
-                            'exemplarCity': '贝鲁特'
+                            'exemplarCity': '\u8D1D\u9C81\u7279'
                         },
                         'Bishkek': {
-                            'exemplarCity': '比什凯克'
+                            'exemplarCity': '\u6BD4\u4EC0\u51EF\u514B'
                         },
                         'Brunei': {
-                            'exemplarCity': '文莱'
+                            'exemplarCity': '\u6587\u83B1'
                         },
                         'Calcutta': {
-                            'exemplarCity': '加尔各答'
+                            'exemplarCity': '\u52A0\u5C14\u5404\u7B54'
                         },
                         'Choibalsan': {
-                            'exemplarCity': '乔巴山'
+                            'exemplarCity': '\u4E54\u5DF4\u5C71'
                         },
                         'Kabul': {
-                            'exemplarCity': '喀布尔'
+                            'exemplarCity': '\u5580\u5E03\u5C14'
                         },
                         'Kamchatka': {
-                            'exemplarCity': '堪察加'
+                            'exemplarCity': '\u582A\u5BDF\u52A0'
                         },
                         'Karachi': {
-                            'exemplarCity': '卡拉奇'
+                            'exemplarCity': '\u5361\u62C9\u5947'
                         },
                         'Kashgar': {
-                            'exemplarCity': '喀什葛尔'
+                            'exemplarCity': '\u5580\u4EC0\u845B\u5C14'
                         },
                         'Katmandu': {
-                            'exemplarCity': '加德满都'
+                            'exemplarCity': '\u52A0\u5FB7\u6EE1\u90FD'
                         },
                         'Khandyga': {
-                            'exemplarCity': '汉德加'
+                            'exemplarCity': '\u6C49\u5FB7\u52A0'
                         },
                         'Krasnoyarsk': {
-                            'exemplarCity': '克拉斯诺亚尔斯克'
+                            'exemplarCity': '\u514B\u62C9\u65AF\u8BFA\u4E9A\u5C14\u65AF\u514B'
                         },
                         'Kuala_Lumpur': {
-                            'exemplarCity': '吉隆坡'
+                            'exemplarCity': '\u5409\u9686\u5761'
                         },
                         'Kuching': {
-                            'exemplarCity': '古晋'
+                            'exemplarCity': '\u53E4\u664B'
                         },
                         'Kuwait': {
-                            'exemplarCity': '科威特'
+                            'exemplarCity': '\u79D1\u5A01\u7279'
                         },
                         'Macau': {
-                            'exemplarCity': '澳门'
+                            'exemplarCity': '\u6FB3\u95E8'
                         },
                         'Magadan': {
-                            'exemplarCity': '马加丹'
+                            'exemplarCity': '\u9A6C\u52A0\u4E39'
                         },
                         'Makassar': {
-                            'exemplarCity': '望加锡'
+                            'exemplarCity': '\u671B\u52A0\u9521'
                         },
                         'Manila': {
-                            'exemplarCity': '马尼拉'
+                            'exemplarCity': '\u9A6C\u5C3C\u62C9'
                         },
                         'Muscat': {
-                            'exemplarCity': '马斯喀特'
+                            'exemplarCity': '\u9A6C\u65AF\u5580\u7279'
                         },
                         'Nicosia': {
-                            'exemplarCity': '尼科西亚'
+                            'exemplarCity': '\u5C3C\u79D1\u897F\u4E9A'
                         },
                         'Novokuznetsk': {
-                            'exemplarCity': '新库兹涅茨克'
+                            'exemplarCity': '\u65B0\u5E93\u5179\u6D85\u8328\u514B'
                         }
                     }
                 },
                 'metazone': {
                     'Samoa': {
                         'long': {
-                            'generic': '萨摩亚时间',
-                            'standard': '萨摩亚标准时间',
-                            'daylight': '萨摩亚夏令时间'
+                            'generic': '\u8428\u6469\u4E9A\u65F6\u95F4',
+                            'standard': '\u8428\u6469\u4E9A\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u8428\u6469\u4E9A\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Samara': {
                         'long': {
-                            'generic': '萨马拉时间',
-                            'standard': '萨马拉标准时间',
-                            'daylight': '萨马拉夏令时间'
+                            'generic': '\u8428\u9A6C\u62C9\u65F6\u95F4',
+                            'standard': '\u8428\u9A6C\u62C9\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u8428\u9A6C\u62C9\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Sakhalin': {
                         'long': {
-                            'generic': '库页岛时间',
-                            'standard': '库页岛标准时间',
-                            'daylight': '库页岛夏令时间'
+                            'generic': '\u5E93\u9875\u5C9B\u65F6\u95F4',
+                            'standard': '\u5E93\u9875\u5C9B\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u5E93\u9875\u5C9B\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Rothera': {
                         'long': {
-                            'standard': '罗瑟拉时间'
+                            'standard': '\u7F57\u745F\u62C9\u65F6\u95F4'
                         }
                     },
                     'Reunion': {
                         'long': {
-                            'standard': '留尼汪时间'
+                            'standard': '\u7559\u5C3C\u6C6A\u65F6\u95F4'
                         }
                     },
                     'Qyzylorda': {
                         'long': {
-                            'generic': '克孜洛尔达时间',
-                            'standard': '克孜洛尔达标准时间',
-                            'daylight': '克孜洛尔达夏令时间'
+                            'generic': '\u514B\u5B5C\u6D1B\u5C14\u8FBE\u65F6\u95F4',
+                            'standard': '\u514B\u5B5C\u6D1B\u5C14\u8FBE\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u514B\u5B5C\u6D1B\u5C14\u8FBE\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Ponape': {
                         'long': {
-                            'standard': '波纳佩时间'
+                            'standard': '\u6CE2\u7EB3\u4F69\u65F6\u95F4'
                         }
                     },
                     'Pitcairn': {
                         'long': {
-                            'standard': '皮特凯恩时间'
+                            'standard': '\u76AE\u7279\u51EF\u6069\u65F6\u95F4'
                         }
                     },
                     'Pierre_Miquelon': {
                         'long': {
-                            'generic': '圣皮埃尔和密克隆群岛时间',
-                            'standard': '圣皮埃尔和密克隆群岛标准时间',
-                            'daylight': '圣皮埃尔和密克隆群岛夏令时间'
+                            'generic': '\u5723\u76AE\u57C3\u5C14\u548C\u5BC6\u514B\u9686\u7FA4\u5C9B\u65F6\u95F4',
+                            'standard': '\u5723\u76AE\u57C3\u5C14\u548C\u5BC6\u514B\u9686\u7FA4\u5C9B\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u5723\u76AE\u57C3\u5C14\u548C\u5BC6\u514B\u9686\u7FA4\u5C9B\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Phoenix_Islands': {
                         'long': {
-                            'standard': '菲尼克斯群岛时间'
+                            'standard': '\u83F2\u5C3C\u514B\u65AF\u7FA4\u5C9B\u65F6\u95F4'
                         }
                     },
                     'Philippines': {
                         'long': {
-                            'generic': '菲律宾时间',
-                            'standard': '菲律宾标准时间',
-                            'daylight': '菲律宾夏令时间'
+                            'generic': '\u83F2\u5F8B\u5BBE\u65F6\u95F4',
+                            'standard': '\u83F2\u5F8B\u5BBE\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u83F2\u5F8B\u5BBE\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Peru': {
                         'long': {
-                            'generic': '秘鲁时间',
-                            'standard': '秘鲁标准时间',
-                            'daylight': '秘鲁夏令时间'
+                            'generic': '\u79D8\u9C81\u65F6\u95F4',
+                            'standard': '\u79D8\u9C81\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u79D8\u9C81\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Paraguay': {
                         'long': {
-                            'generic': '巴拉圭时间',
-                            'standard': '巴拉圭标准时间',
-                            'daylight': '巴拉圭夏令时间'
+                            'generic': '\u5DF4\u62C9\u572D\u65F6\u95F4',
+                            'standard': '\u5DF4\u62C9\u572D\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u5DF4\u62C9\u572D\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Papua_New_Guinea': {
                         'long': {
-                            'standard': '巴布亚新几内亚时间'
+                            'standard': '\u5DF4\u5E03\u4E9A\u65B0\u51E0\u5185\u4E9A\u65F6\u95F4'
                         }
                     },
                     'Palau': {
                         'long': {
-                            'standard': '帕劳时间'
+                            'standard': '\u5E15\u52B3\u65F6\u95F4'
                         }
                     },
                     'Pakistan': {
                         'long': {
-                            'generic': '巴基斯坦时间',
-                            'standard': '巴基斯坦标准时间',
-                            'daylight': '巴基斯坦夏令时间'
+                            'generic': '\u5DF4\u57FA\u65AF\u5766\u65F6\u95F4',
+                            'standard': '\u5DF4\u57FA\u65AF\u5766\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u5DF4\u57FA\u65AF\u5766\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Omsk': {
                         'long': {
-                            'generic': '鄂木斯克时间',
-                            'standard': '鄂木斯克标准时间',
-                            'daylight': '鄂木斯克夏令时间'
+                            'generic': '\u9102\u6728\u65AF\u514B\u65F6\u95F4',
+                            'standard': '\u9102\u6728\u65AF\u514B\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u9102\u6728\u65AF\u514B\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Novosibirsk': {
                         'long': {
-                            'generic': '新西伯利亚时间',
-                            'standard': '新西伯利亚标准时间',
-                            'daylight': '新西伯利亚夏令时间'
+                            'generic': '\u65B0\u897F\u4F2F\u5229\u4E9A\u65F6\u95F4',
+                            'standard': '\u65B0\u897F\u4F2F\u5229\u4E9A\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u65B0\u897F\u4F2F\u5229\u4E9A\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'North_Mariana': {
                         'long': {
-                            'standard': '北马里亚纳群岛时间'
+                            'standard': '\u5317\u9A6C\u91CC\u4E9A\u7EB3\u7FA4\u5C9B\u65F6\u95F4'
                         }
                     },
                     'Noronha': {
                         'long': {
-                            'generic': '费尔南多-迪诺罗尼亚岛时间',
-                            'standard': '费尔南多-迪诺罗尼亚岛标准时间',
-                            'daylight': '费尔南多-迪诺罗尼亚岛夏令时间'
+                            'generic': '\u8D39\u5C14\u5357\u591A-\u8FEA\u8BFA\u7F57\u5C3C\u4E9A\u5C9B\u65F6\u95F4',
+                            'standard': '\u8D39\u5C14\u5357\u591A-\u8FEA\u8BFA\u7F57\u5C3C\u4E9A\u5C9B\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u8D39\u5C14\u5357\u591A-\u8FEA\u8BFA\u7F57\u5C3C\u4E9A\u5C9B\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Norfolk': {
                         'long': {
-                            'standard': '诺福克岛时间'
+                            'standard': '\u8BFA\u798F\u514B\u5C9B\u65F6\u95F4'
                         }
                     },
                     'Niue': {
                         'long': {
-                            'standard': '纽埃时间'
+                            'standard': '\u7EBD\u57C3\u65F6\u95F4'
                         }
                     },
                     'Newfoundland': {
                         'long': {
-                            'generic': '纽芬兰时间',
-                            'standard': '纽芬兰标准时间',
-                            'daylight': '纽芬兰夏令时间'
+                            'generic': '\u7EBD\u82AC\u5170\u65F6\u95F4',
+                            'standard': '\u7EBD\u82AC\u5170\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u7EBD\u82AC\u5170\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'New_Zealand': {
                         'long': {
-                            'generic': '新西兰时间',
-                            'standard': '新西兰标准时间',
-                            'daylight': '新西兰夏令时间'
+                            'generic': '\u65B0\u897F\u5170\u65F6\u95F4',
+                            'standard': '\u65B0\u897F\u5170\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u65B0\u897F\u5170\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'New_Caledonia': {
                         'long': {
-                            'generic': '新喀里多尼亚时间',
-                            'standard': '新喀里多尼亚标准时间',
-                            'daylight': '新喀里多尼亚夏令时间'
+                            'generic': '\u65B0\u5580\u91CC\u591A\u5C3C\u4E9A\u65F6\u95F4',
+                            'standard': '\u65B0\u5580\u91CC\u591A\u5C3C\u4E9A\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u65B0\u5580\u91CC\u591A\u5C3C\u4E9A\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'America_Central': {
                         'long': {
-                            'generic': '北美中部时间',
-                            'standard': '北美中部标准时间',
-                            'daylight': '北美中部夏令时间'
+                            'generic': '\u5317\u7F8E\u4E2D\u90E8\u65F6\u95F4',
+                            'standard': '\u5317\u7F8E\u4E2D\u90E8\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u5317\u7F8E\u4E2D\u90E8\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'America_Eastern': {
                         'long': {
-                            'generic': '北美东部时间',
-                            'standard': '北美东部标准时间',
-                            'daylight': '北美东部夏令时间'
+                            'generic': '\u5317\u7F8E\u4E1C\u90E8\u65F6\u95F4',
+                            'standard': '\u5317\u7F8E\u4E1C\u90E8\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u5317\u7F8E\u4E1C\u90E8\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'America_Mountain': {
                         'long': {
-                            'generic': '北美山区时间',
-                            'standard': '北美山区标准时间',
-                            'daylight': '北美山区夏令时间'
+                            'generic': '\u5317\u7F8E\u5C71\u533A\u65F6\u95F4',
+                            'standard': '\u5317\u7F8E\u5C71\u533A\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u5317\u7F8E\u5C71\u533A\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'America_Pacific': {
                         'long': {
-                            'generic': '北美太平洋时间',
-                            'standard': '北美太平洋标准时间',
-                            'daylight': '北美太平洋夏令时间'
+                            'generic': '\u5317\u7F8E\u592A\u5E73\u6D0B\u65F6\u95F4',
+                            'standard': '\u5317\u7F8E\u592A\u5E73\u6D0B\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u5317\u7F8E\u592A\u5E73\u6D0B\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Anadyr': {
                         'long': {
-                            'generic': '阿纳德尔时间',
-                            'standard': '阿纳德尔标准时间',
-                            'daylight': '阿纳德尔夏令时间'
+                            'generic': '\u963F\u7EB3\u5FB7\u5C14\u65F6\u95F4',
+                            'standard': '\u963F\u7EB3\u5FB7\u5C14\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u963F\u7EB3\u5FB7\u5C14\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Aqtau': {
                         'long': {
-                            'generic': '阿克套时间',
-                            'standard': '阿克套标准时间',
-                            'daylight': '阿克套夏令时间'
+                            'generic': '\u963F\u514B\u5957\u65F6\u95F4',
+                            'standard': '\u963F\u514B\u5957\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u963F\u514B\u5957\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Aqtobe': {
                         'long': {
-                            'generic': '阿克托别时间',
-                            'standard': '阿克托别标准时间',
-                            'daylight': '阿克托别夏令时间'
+                            'generic': '\u963F\u514B\u6258\u522B\u65F6\u95F4',
+                            'standard': '\u963F\u514B\u6258\u522B\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u963F\u514B\u6258\u522B\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Cape_Verde': {
                         'long': {
-                            'generic': '佛得角时间',
-                            'standard': '佛得角标准时间',
-                            'daylight': '佛得角夏令时间'
+                            'generic': '\u4F5B\u5F97\u89D2\u65F6\u95F4',
+                            'standard': '\u4F5B\u5F97\u89D2\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u4F5B\u5F97\u89D2\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Casey': {
                         'long': {
-                            'standard': '凯西时间'
+                            'standard': '\u51EF\u897F\u65F6\u95F4'
                         }
                     },
                     'Chamorro': {
                         'long': {
-                            'standard': '查莫罗时间'
+                            'standard': '\u67E5\u83AB\u7F57\u65F6\u95F4'
                         }
                     },
                     'Chatham': {
                         'long': {
-                            'generic': '查坦时间',
-                            'standard': '查坦标准时间',
-                            'daylight': '查坦夏令时间'
+                            'generic': '\u67E5\u5766\u65F6\u95F4',
+                            'standard': '\u67E5\u5766\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u67E5\u5766\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Chile': {
                         'long': {
-                            'generic': '智利时间',
-                            'standard': '智利标准时间',
-                            'daylight': '智利夏令时间'
+                            'generic': '\u667A\u5229\u65F6\u95F4',
+                            'standard': '\u667A\u5229\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u667A\u5229\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'China': {
                         'long': {
-                            'generic': '中国时间',
-                            'standard': '中国标准时间',
-                            'daylight': '中国夏令时间'
+                            'generic': '\u4E2D\u56FD\u65F6\u95F4',
+                            'standard': '\u4E2D\u56FD\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u4E2D\u56FD\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Choibalsan': {
                         'long': {
-                            'generic': '乔巴山时间',
-                            'standard': '乔巴山标准时间',
-                            'daylight': '乔巴山夏令时间'
+                            'generic': '\u4E54\u5DF4\u5C71\u65F6\u95F4',
+                            'standard': '\u4E54\u5DF4\u5C71\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u4E54\u5DF4\u5C71\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Christmas': {
                         'long': {
-                            'standard': '圣诞岛时间'
+                            'standard': '\u5723\u8BDE\u5C9B\u65F6\u95F4'
                         }
                     },
                     'Cocos': {
                         'long': {
-                            'standard': '科科斯群岛时间'
+                            'standard': '\u79D1\u79D1\u65AF\u7FA4\u5C9B\u65F6\u95F4'
                         }
                     },
                     'Colombia': {
                         'long': {
-                            'generic': '哥伦比亚时间',
-                            'standard': '哥伦比亚标准时间',
-                            'daylight': '哥伦比亚夏令时间'
+                            'generic': '\u54E5\u4F26\u6BD4\u4E9A\u65F6\u95F4',
+                            'standard': '\u54E5\u4F26\u6BD4\u4E9A\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u54E5\u4F26\u6BD4\u4E9A\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Cook': {
                         'long': {
-                            'generic': '库克群岛时间',
-                            'standard': '库克群岛标准时间',
-                            'daylight': '库克群岛仲夏时间'
+                            'generic': '\u5E93\u514B\u7FA4\u5C9B\u65F6\u95F4',
+                            'standard': '\u5E93\u514B\u7FA4\u5C9B\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u5E93\u514B\u7FA4\u5C9B\u4EF2\u590F\u65F6\u95F4'
                         }
                     },
                     'Cuba': {
                         'long': {
-                            'generic': '古巴时间',
-                            'standard': '古巴标准时间',
-                            'daylight': '古巴夏令时间'
+                            'generic': '\u53E4\u5DF4\u65F6\u95F4',
+                            'standard': '\u53E4\u5DF4\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u53E4\u5DF4\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Davis': {
                         'long': {
-                            'standard': '戴维斯时间'
+                            'standard': '\u6234\u7EF4\u65AF\u65F6\u95F4'
                         }
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': '迪蒙迪尔维尔时间'
+                            'standard': '\u8FEA\u8499\u8FEA\u5C14\u7EF4\u5C14\u65F6\u95F4'
                         }
                     },
                     'East_Timor': {
                         'long': {
-                            'standard': '东帝汶时间'
+                            'standard': '\u4E1C\u5E1D\u6C76\u65F6\u95F4'
                         }
                     },
                     'Easter': {
                         'long': {
-                            'generic': '复活节岛时间',
-                            'standard': '复活节岛标准时间',
-                            'daylight': '复活节岛夏令时间'
+                            'generic': '\u590D\u6D3B\u8282\u5C9B\u65F6\u95F4',
+                            'standard': '\u590D\u6D3B\u8282\u5C9B\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u590D\u6D3B\u8282\u5C9B\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Ecuador': {
                         'long': {
-                            'standard': '厄瓜多尔时间'
+                            'standard': '\u5384\u74DC\u591A\u5C14\u65F6\u95F4'
                         }
                     },
                     'Europe_Central': {
                         'long': {
-                            'generic': '中欧时间',
-                            'standard': '中欧标准时间',
-                            'daylight': '中欧夏令时间'
+                            'generic': '\u4E2D\u6B27\u65F6\u95F4',
+                            'standard': '\u4E2D\u6B27\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u4E2D\u6B27\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Europe_Eastern': {
                         'long': {
-                            'generic': '东欧时间',
-                            'standard': '东欧标准时间',
-                            'daylight': '东欧夏令时间'
+                            'generic': '\u4E1C\u6B27\u65F6\u95F4',
+                            'standard': '\u4E1C\u6B27\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u4E1C\u6B27\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Europe_Western': {
                         'long': {
-                            'generic': '西欧时间',
-                            'standard': '西欧标准时间',
-                            'daylight': '西欧夏令时间'
+                            'generic': '\u897F\u6B27\u65F6\u95F4',
+                            'standard': '\u897F\u6B27\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u897F\u6B27\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Falkland': {
                         'long': {
-                            'generic': '福克兰群岛时间',
-                            'standard': '福克兰群岛标准时间',
-                            'daylight': '福克兰群岛夏令时间'
+                            'generic': '\u798F\u514B\u5170\u7FA4\u5C9B\u65F6\u95F4',
+                            'standard': '\u798F\u514B\u5170\u7FA4\u5C9B\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u798F\u514B\u5170\u7FA4\u5C9B\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Fiji': {
                         'long': {
-                            'generic': '斐济时间',
-                            'standard': '斐济标准时间',
-                            'daylight': '斐济夏令时间'
+                            'generic': '\u6590\u6D4E\u65F6\u95F4',
+                            'standard': '\u6590\u6D4E\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u6590\u6D4E\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'French_Guiana': {
                         'long': {
-                            'standard': '法属圭亚那时间'
+                            'standard': '\u6CD5\u5C5E\u572D\u4E9A\u90A3\u65F6\u95F4'
                         }
                     },
                     'French_Southern': {
                         'long': {
-                            'standard': '法属南方和南极领地时间'
+                            'standard': '\u6CD5\u5C5E\u5357\u65B9\u548C\u5357\u6781\u9886\u5730\u65F6\u95F4'
                         }
                     },
                     'Galapagos': {
                         'long': {
-                            'standard': '加拉帕戈斯时间'
+                            'standard': '\u52A0\u62C9\u5E15\u6208\u65AF\u65F6\u95F4'
                         }
                     },
                     'Tokelau': {
                         'long': {
-                            'standard': '托克劳时间'
+                            'standard': '\u6258\u514B\u52B3\u65F6\u95F4'
                         }
                     },
                     'Tonga': {
                         'long': {
-                            'generic': '汤加时间',
-                            'standard': '汤加标准时间',
-                            'daylight': '汤加夏令时间'
+                            'generic': '\u6C64\u52A0\u65F6\u95F4',
+                            'standard': '\u6C64\u52A0\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u6C64\u52A0\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Truk': {
                         'long': {
-                            'standard': '楚克时间'
+                            'standard': '\u695A\u514B\u65F6\u95F4'
                         }
                     },
                     'Turkmenistan': {
                         'long': {
-                            'generic': '土库曼斯坦时间',
-                            'standard': '土库曼斯坦标准时间',
-                            'daylight': '土库曼斯坦夏令时间'
+                            'generic': '\u571F\u5E93\u66FC\u65AF\u5766\u65F6\u95F4',
+                            'standard': '\u571F\u5E93\u66FC\u65AF\u5766\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u571F\u5E93\u66FC\u65AF\u5766\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Tuvalu': {
                         'long': {
-                            'standard': '图瓦卢时间'
+                            'standard': '\u56FE\u74E6\u5362\u65F6\u95F4'
                         }
                     },
                     'Uruguay': {
                         'long': {
-                            'generic': '乌拉圭时间',
-                            'standard': '乌拉圭标准时间',
-                            'daylight': '乌拉圭夏令时间'
+                            'generic': '\u4E4C\u62C9\u572D\u65F6\u95F4',
+                            'standard': '\u4E4C\u62C9\u572D\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u4E4C\u62C9\u572D\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Uzbekistan': {
                         'long': {
-                            'generic': '乌兹别克斯坦时间',
-                            'standard': '乌兹别克斯坦标准时间',
-                            'daylight': '乌兹别克斯坦夏令时间'
+                            'generic': '\u4E4C\u5179\u522B\u514B\u65AF\u5766\u65F6\u95F4',
+                            'standard': '\u4E4C\u5179\u522B\u514B\u65AF\u5766\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u4E4C\u5179\u522B\u514B\u65AF\u5766\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Vanuatu': {
                         'long': {
-                            'generic': '瓦努阿图时间',
-                            'standard': '瓦努阿图标准时间',
-                            'daylight': '瓦努阿图夏令时间'
+                            'generic': '\u74E6\u52AA\u963F\u56FE\u65F6\u95F4',
+                            'standard': '\u74E6\u52AA\u963F\u56FE\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u74E6\u52AA\u963F\u56FE\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Yekaterinburg': {
                         'long': {
-                            'generic': '叶卡捷琳堡时间',
-                            'standard': '叶卡捷琳堡标准时间',
-                            'daylight': '叶卡捷琳堡夏令时间'
+                            'generic': '\u53F6\u5361\u6377\u7433\u5821\u65F6\u95F4',
+                            'standard': '\u53F6\u5361\u6377\u7433\u5821\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u53F6\u5361\u6377\u7433\u5821\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Yakutsk': {
                         'long': {
-                            'generic': '雅库茨克时间',
-                            'standard': '雅库茨克标准时间',
-                            'daylight': '雅库茨克夏令时间'
+                            'generic': '\u96C5\u5E93\u8328\u514B\u65F6\u95F4',
+                            'standard': '\u96C5\u5E93\u8328\u514B\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u96C5\u5E93\u8328\u514B\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Wallis': {
                         'long': {
-                            'standard': '瓦利斯和富图纳时间'
+                            'standard': '\u74E6\u5229\u65AF\u548C\u5BCC\u56FE\u7EB3\u65F6\u95F4'
                         }
                     },
                     'Wake': {
                         'long': {
-                            'standard': '威克岛时间'
+                            'standard': '\u5A01\u514B\u5C9B\u65F6\u95F4'
                         }
                     },
                     'Vostok': {
                         'long': {
-                            'standard': '沃斯托克时间'
+                            'standard': '\u6C83\u65AF\u6258\u514B\u65F6\u95F4'
                         }
                     },
                     'Volgograd': {
                         'long': {
-                            'generic': '伏尔加格勒时间',
-                            'standard': '伏尔加格勒标准时间',
-                            'daylight': '伏尔加格勒夏令时间'
+                            'generic': '\u4F0F\u5C14\u52A0\u683C\u52D2\u65F6\u95F4',
+                            'standard': '\u4F0F\u5C14\u52A0\u683C\u52D2\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u4F0F\u5C14\u52A0\u683C\u52D2\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Vladivostok': {
                         'long': {
-                            'generic': '海参崴时间',
-                            'standard': '海参崴标准时间',
-                            'daylight': '海参崴夏令时间'
+                            'generic': '\u6D77\u53C2\u5D34\u65F6\u95F4',
+                            'standard': '\u6D77\u53C2\u5D34\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u6D77\u53C2\u5D34\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Venezuela': {
                         'long': {
-                            'standard': '委内瑞拉时间'
+                            'standard': '\u59D4\u5185\u745E\u62C9\u65F6\u95F4'
                         }
                     },
                     'Tajikistan': {
                         'long': {
-                            'standard': '塔吉克斯坦时间'
+                            'standard': '\u5854\u5409\u514B\u65AF\u5766\u65F6\u95F4'
                         }
                     },
                     'Taipei': {
                         'long': {
-                            'generic': '台北时间',
-                            'standard': '台北标准时间',
-                            'daylight': '台北夏令时间'
+                            'generic': '\u53F0\u5317\u65F6\u95F4',
+                            'standard': '\u53F0\u5317\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u53F0\u5317\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Tahiti': {
                         'long': {
-                            'standard': '塔希提岛时间'
+                            'standard': '\u5854\u5E0C\u63D0\u5C9B\u65F6\u95F4'
                         }
                     },
                     'Syowa': {
                         'long': {
-                            'standard': '昭和时间'
+                            'standard': '\u662D\u548C\u65F6\u95F4'
                         }
                     },
                     'Suriname': {
                         'long': {
-                            'standard': '苏里南时间'
+                            'standard': '\u82CF\u91CC\u5357\u65F6\u95F4'
                         }
                     },
                     'South_Georgia': {
                         'long': {
-                            'standard': '南乔治亚岛时间'
+                            'standard': '\u5357\u4E54\u6CBB\u4E9A\u5C9B\u65F6\u95F4'
                         }
                     },
                     'Solomon': {
                         'long': {
-                            'standard': '所罗门群岛时间'
+                            'standard': '\u6240\u7F57\u95E8\u7FA4\u5C9B\u65F6\u95F4'
                         }
                     },
                     'Singapore': {
                         'long': {
-                            'standard': '新加坡时间'
+                            'standard': '\u65B0\u52A0\u5761\u65F6\u95F4'
                         }
                     },
                     'Seychelles': {
                         'long': {
-                            'standard': '塞舌尔时间'
+                            'standard': '\u585E\u820C\u5C14\u65F6\u95F4'
                         }
                     },
                     'Guam': {
                         'long': {
-                            'standard': '关岛时间'
+                            'standard': '\u5173\u5C9B\u65F6\u95F4'
                         }
                     },
                     'Greenland_Western': {
                         'long': {
-                            'generic': '格陵兰岛西部时间',
-                            'standard': '格陵兰岛西部标准时间',
-                            'daylight': '格陵兰岛西部夏令时间'
+                            'generic': '\u683C\u9675\u5170\u5C9B\u897F\u90E8\u65F6\u95F4',
+                            'standard': '\u683C\u9675\u5170\u5C9B\u897F\u90E8\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u683C\u9675\u5170\u5C9B\u897F\u90E8\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Greenland_Eastern': {
                         'long': {
-                            'generic': '格陵兰岛东部时间',
-                            'standard': '格陵兰岛东部标准时间',
-                            'daylight': '格陵兰岛东部夏令时间'
+                            'generic': '\u683C\u9675\u5170\u5C9B\u4E1C\u90E8\u65F6\u95F4',
+                            'standard': '\u683C\u9675\u5170\u5C9B\u4E1C\u90E8\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u683C\u9675\u5170\u5C9B\u4E1C\u90E8\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'GMT': {
                         'long': {
-                            'standard': '格林尼治标准时间'
+                            'standard': '\u683C\u6797\u5C3C\u6CBB\u6807\u51C6\u65F6\u95F4'
                         }
                     },
                     'Gilbert_Islands': {
                         'long': {
-                            'standard': '吉尔伯特群岛时间'
+                            'standard': '\u5409\u5C14\u4F2F\u7279\u7FA4\u5C9B\u65F6\u95F4'
                         }
                     },
                     'Georgia': {
                         'long': {
-                            'generic': '格鲁吉亚时间',
-                            'standard': '格鲁吉亚标准时间',
-                            'daylight': '格鲁吉亚夏令时间'
+                            'generic': '\u683C\u9C81\u5409\u4E9A\u65F6\u95F4',
+                            'standard': '\u683C\u9C81\u5409\u4E9A\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u683C\u9C81\u5409\u4E9A\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Gambier': {
                         'long': {
-                            'standard': '甘比尔时间'
+                            'standard': '\u7518\u6BD4\u5C14\u65F6\u95F4'
                         }
                     },
                     'Amazon': {
                         'long': {
-                            'generic': '亚马逊时间',
-                            'standard': '亚马逊标准时间',
-                            'daylight': '亚马逊夏令时间'
+                            'generic': '\u4E9A\u9A6C\u900A\u65F6\u95F4',
+                            'standard': '\u4E9A\u9A6C\u900A\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u4E9A\u9A6C\u900A\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Acre': {
                         'long': {
-                            'generic': '阿克里时间',
-                            'standard': '阿克里标准时间',
-                            'daylight': '阿克里夏令时间'
+                            'generic': '\u963F\u514B\u91CC\u65F6\u95F4',
+                            'standard': '\u963F\u514B\u91CC\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u963F\u514B\u91CC\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Afghanistan': {
                         'long': {
-                            'standard': '阿富汗时间'
+                            'standard': '\u963F\u5BCC\u6C57\u65F6\u95F4'
                         }
                     },
                     'Africa_Central': {
                         'long': {
-                            'standard': '中部非洲时间'
+                            'standard': '\u4E2D\u90E8\u975E\u6D32\u65F6\u95F4'
                         }
                     },
                     'Africa_Eastern': {
                         'long': {
-                            'standard': '东部非洲时间'
+                            'standard': '\u4E1C\u90E8\u975E\u6D32\u65F6\u95F4'
                         }
                     },
                     'Africa_Southern': {
                         'long': {
-                            'standard': '南部非洲时间'
+                            'standard': '\u5357\u90E8\u975E\u6D32\u65F6\u95F4'
                         }
                     },
                     'Africa_Western': {
                         'long': {
-                            'generic': '西部非洲时间',
-                            'standard': '西部非洲标准时间',
-                            'daylight': '西部非洲夏令时间'
+                            'generic': '\u897F\u90E8\u975E\u6D32\u65F6\u95F4',
+                            'standard': '\u897F\u90E8\u975E\u6D32\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u897F\u90E8\u975E\u6D32\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Alaska': {
                         'long': {
-                            'generic': '阿拉斯加时间',
-                            'standard': '阿拉斯加标准时间',
-                            'daylight': '阿拉斯加夏令时间'
+                            'generic': '\u963F\u62C9\u65AF\u52A0\u65F6\u95F4',
+                            'standard': '\u963F\u62C9\u65AF\u52A0\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u963F\u62C9\u65AF\u52A0\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Almaty': {
                         'long': {
-                            'generic': '阿拉木图时间',
-                            'standard': '阿拉木图标准时间',
-                            'daylight': '阿拉木图夏令时间'
+                            'generic': '\u963F\u62C9\u6728\u56FE\u65F6\u95F4',
+                            'standard': '\u963F\u62C9\u6728\u56FE\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u963F\u62C9\u6728\u56FE\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Arabian': {
                         'long': {
-                            'generic': '阿拉伯时间',
-                            'standard': '阿拉伯标准时间',
-                            'daylight': '阿拉伯夏令时间'
+                            'generic': '\u963F\u62C9\u4F2F\u65F6\u95F4',
+                            'standard': '\u963F\u62C9\u4F2F\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u963F\u62C9\u4F2F\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Argentina': {
                         'long': {
-                            'generic': '阿根廷时间',
-                            'standard': '阿根廷标准时间',
-                            'daylight': '阿根廷夏令时间'
+                            'generic': '\u963F\u6839\u5EF7\u65F6\u95F4',
+                            'standard': '\u963F\u6839\u5EF7\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u963F\u6839\u5EF7\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Argentina_Western': {
                         'long': {
-                            'generic': '阿根廷西部时间',
-                            'standard': '阿根廷西部标准时间',
-                            'daylight': '阿根廷西部夏令时间'
+                            'generic': '\u963F\u6839\u5EF7\u897F\u90E8\u65F6\u95F4',
+                            'standard': '\u963F\u6839\u5EF7\u897F\u90E8\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u963F\u6839\u5EF7\u897F\u90E8\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Armenia': {
                         'long': {
-                            'generic': '亚美尼亚时间',
-                            'standard': '亚美尼亚标准时间',
-                            'daylight': '亚美尼亚夏令时间'
+                            'generic': '\u4E9A\u7F8E\u5C3C\u4E9A\u65F6\u95F4',
+                            'standard': '\u4E9A\u7F8E\u5C3C\u4E9A\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u4E9A\u7F8E\u5C3C\u4E9A\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Atlantic': {
                         'long': {
-                            'generic': '大西洋时间',
-                            'standard': '大西洋标准时间',
-                            'daylight': '大西洋夏令时间'
+                            'generic': '\u5927\u897F\u6D0B\u65F6\u95F4',
+                            'standard': '\u5927\u897F\u6D0B\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u5927\u897F\u6D0B\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Australia_Central': {
                         'long': {
-                            'generic': '澳大利亚中部时间',
-                            'standard': '澳大利亚中部标准时间',
-                            'daylight': '澳大利亚中部夏令时间'
+                            'generic': '\u6FB3\u5927\u5229\u4E9A\u4E2D\u90E8\u65F6\u95F4',
+                            'standard': '\u6FB3\u5927\u5229\u4E9A\u4E2D\u90E8\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u6FB3\u5927\u5229\u4E9A\u4E2D\u90E8\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Australia_CentralWestern': {
                         'long': {
-                            'generic': '澳大利亚中西部时间',
-                            'standard': '澳大利亚中西部标准时间',
-                            'daylight': '澳大利亚中西部夏令时间'
+                            'generic': '\u6FB3\u5927\u5229\u4E9A\u4E2D\u897F\u90E8\u65F6\u95F4',
+                            'standard': '\u6FB3\u5927\u5229\u4E9A\u4E2D\u897F\u90E8\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u6FB3\u5927\u5229\u4E9A\u4E2D\u897F\u90E8\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Australia_Eastern': {
                         'long': {
-                            'generic': '澳大利亚东部时间',
-                            'standard': '澳大利亚东部标准时间',
-                            'daylight': '澳大利亚东部夏令时间'
+                            'generic': '\u6FB3\u5927\u5229\u4E9A\u4E1C\u90E8\u65F6\u95F4',
+                            'standard': '\u6FB3\u5927\u5229\u4E9A\u4E1C\u90E8\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u6FB3\u5927\u5229\u4E9A\u4E1C\u90E8\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Australia_Western': {
                         'long': {
-                            'generic': '澳大利亚西部时间',
-                            'standard': '澳大利亚西部标准时间',
-                            'daylight': '澳大利亚西部夏令时间'
+                            'generic': '\u6FB3\u5927\u5229\u4E9A\u897F\u90E8\u65F6\u95F4',
+                            'standard': '\u6FB3\u5927\u5229\u4E9A\u897F\u90E8\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u6FB3\u5927\u5229\u4E9A\u897F\u90E8\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Azerbaijan': {
                         'long': {
-                            'generic': '阿塞拜疆时间',
-                            'standard': '阿塞拜疆标准时间',
-                            'daylight': '阿塞拜疆夏令时间'
+                            'generic': '\u963F\u585E\u62DC\u7586\u65F6\u95F4',
+                            'standard': '\u963F\u585E\u62DC\u7586\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u963F\u585E\u62DC\u7586\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Azores': {
                         'long': {
-                            'generic': '亚速尔群岛时间',
-                            'standard': '亚速尔群岛标准时间',
-                            'daylight': '亚速尔群岛夏令时间'
+                            'generic': '\u4E9A\u901F\u5C14\u7FA4\u5C9B\u65F6\u95F4',
+                            'standard': '\u4E9A\u901F\u5C14\u7FA4\u5C9B\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u4E9A\u901F\u5C14\u7FA4\u5C9B\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Bangladesh': {
                         'long': {
-                            'generic': '孟加拉时间',
-                            'standard': '孟加拉标准时间',
-                            'daylight': '孟加拉夏令时间'
+                            'generic': '\u5B5F\u52A0\u62C9\u65F6\u95F4',
+                            'standard': '\u5B5F\u52A0\u62C9\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u5B5F\u52A0\u62C9\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Bhutan': {
                         'long': {
-                            'standard': '不丹时间'
+                            'standard': '\u4E0D\u4E39\u65F6\u95F4'
                         }
                     },
                     'Bolivia': {
                         'long': {
-                            'standard': '玻利维亚时间'
+                            'standard': '\u73BB\u5229\u7EF4\u4E9A\u65F6\u95F4'
                         }
                     },
                     'Brasilia': {
                         'long': {
-                            'generic': '巴西利亚时间',
-                            'standard': '巴西利亚标准时间',
-                            'daylight': '巴西利亚夏令时间'
+                            'generic': '\u5DF4\u897F\u5229\u4E9A\u65F6\u95F4',
+                            'standard': '\u5DF4\u897F\u5229\u4E9A\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u5DF4\u897F\u5229\u4E9A\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Brunei': {
                         'long': {
-                            'standard': '文莱达鲁萨兰时间'
+                            'standard': '\u6587\u83B1\u8FBE\u9C81\u8428\u5170\u65F6\u95F4'
                         }
                     },
                     'Gulf': {
                         'long': {
-                            'standard': '海湾时间'
+                            'standard': '\u6D77\u6E7E\u65F6\u95F4'
                         }
                     },
                     'Guyana': {
                         'long': {
-                            'standard': '圭亚那时间'
+                            'standard': '\u572D\u4E9A\u90A3\u65F6\u95F4'
                         }
                     },
                     'Hawaii_Aleutian': {
                         'long': {
-                            'generic': '夏威夷-阿留申时间',
-                            'standard': '夏威夷-阿留申标准时间',
-                            'daylight': '夏威夷-阿留申夏令时间'
+                            'generic': '\u590F\u5A01\u5937-\u963F\u7559\u7533\u65F6\u95F4',
+                            'standard': '\u590F\u5A01\u5937-\u963F\u7559\u7533\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u590F\u5A01\u5937-\u963F\u7559\u7533\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Hong_Kong': {
                         'long': {
-                            'generic': '香港时间',
-                            'standard': '香港标准时间',
-                            'daylight': '香港夏令时间'
+                            'generic': '\u9999\u6E2F\u65F6\u95F4',
+                            'standard': '\u9999\u6E2F\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u9999\u6E2F\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Hovd': {
                         'long': {
-                            'generic': '科布多时间',
-                            'standard': '科布多标准时间',
-                            'daylight': '科布多夏令时间'
+                            'generic': '\u79D1\u5E03\u591A\u65F6\u95F4',
+                            'standard': '\u79D1\u5E03\u591A\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u79D1\u5E03\u591A\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'India': {
                         'long': {
-                            'standard': '印度时间'
+                            'standard': '\u5370\u5EA6\u65F6\u95F4'
                         }
                     },
                     'Indian_Ocean': {
                         'long': {
-                            'standard': '印度洋时间'
+                            'standard': '\u5370\u5EA6\u6D0B\u65F6\u95F4'
                         }
                     },
                     'Indochina': {
                         'long': {
-                            'standard': '印度支那时间'
+                            'standard': '\u5370\u5EA6\u652F\u90A3\u65F6\u95F4'
                         }
                     },
                     'Indonesia_Central': {
                         'long': {
-                            'standard': '印度尼西亚中部时间'
+                            'standard': '\u5370\u5EA6\u5C3C\u897F\u4E9A\u4E2D\u90E8\u65F6\u95F4'
                         }
                     },
                     'Indonesia_Eastern': {
                         'long': {
-                            'standard': '印度尼西亚东部时间'
+                            'standard': '\u5370\u5EA6\u5C3C\u897F\u4E9A\u4E1C\u90E8\u65F6\u95F4'
                         }
                     },
                     'Indonesia_Western': {
                         'long': {
-                            'standard': '印度尼西亚西部时间'
+                            'standard': '\u5370\u5EA6\u5C3C\u897F\u4E9A\u897F\u90E8\u65F6\u95F4'
                         }
                     },
                     'Iran': {
                         'long': {
-                            'generic': '伊朗时间',
-                            'standard': '伊朗标准时间',
-                            'daylight': '伊朗夏令时间'
+                            'generic': '\u4F0A\u6717\u65F6\u95F4',
+                            'standard': '\u4F0A\u6717\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u4F0A\u6717\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Irkutsk': {
                         'long': {
-                            'generic': '伊尔库茨克时间',
-                            'standard': '伊尔库茨克标准时间',
-                            'daylight': '伊尔库茨克夏令时间'
+                            'generic': '\u4F0A\u5C14\u5E93\u8328\u514B\u65F6\u95F4',
+                            'standard': '\u4F0A\u5C14\u5E93\u8328\u514B\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u4F0A\u5C14\u5E93\u8328\u514B\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Israel': {
                         'long': {
-                            'generic': '以色列时间',
-                            'standard': '以色列标准时间',
-                            'daylight': '以色列夏令时间'
+                            'generic': '\u4EE5\u8272\u5217\u65F6\u95F4',
+                            'standard': '\u4EE5\u8272\u5217\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u4EE5\u8272\u5217\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Japan': {
                         'long': {
-                            'generic': '日本时间',
-                            'standard': '日本标准时间',
-                            'daylight': '日本夏令时间'
+                            'generic': '\u65E5\u672C\u65F6\u95F4',
+                            'standard': '\u65E5\u672C\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u65E5\u672C\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Kamchatka': {
                         'long': {
-                            'generic': '彼得罗巴甫洛夫斯克-堪察加时间',
-                            'standard': '彼得罗巴甫洛夫斯克-堪察加标准时间',
-                            'daylight': '彼得罗巴甫洛夫斯克-堪察加夏令时间'
+                            'generic': '\u5F7C\u5F97\u7F57\u5DF4\u752B\u6D1B\u592B\u65AF\u514B-\u582A\u5BDF\u52A0\u65F6\u95F4',
+                            'standard': '\u5F7C\u5F97\u7F57\u5DF4\u752B\u6D1B\u592B\u65AF\u514B-\u582A\u5BDF\u52A0\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u5F7C\u5F97\u7F57\u5DF4\u752B\u6D1B\u592B\u65AF\u514B-\u582A\u5BDF\u52A0\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Kazakhstan_Eastern': {
                         'long': {
-                            'standard': '哈萨克斯坦东部时间'
+                            'standard': '\u54C8\u8428\u514B\u65AF\u5766\u4E1C\u90E8\u65F6\u95F4'
                         }
                     },
                     'Kazakhstan_Western': {
                         'long': {
-                            'standard': '哈萨克斯坦西部时间'
+                            'standard': '\u54C8\u8428\u514B\u65AF\u5766\u897F\u90E8\u65F6\u95F4'
                         }
                     },
                     'Korea': {
                         'long': {
-                            'generic': '韩国时间',
-                            'standard': '韩国标准时间',
-                            'daylight': '韩国夏令时间'
+                            'generic': '\u97E9\u56FD\u65F6\u95F4',
+                            'standard': '\u97E9\u56FD\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u97E9\u56FD\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Kosrae': {
                         'long': {
-                            'standard': '科斯雷时间'
+                            'standard': '\u79D1\u65AF\u96F7\u65F6\u95F4'
                         }
                     },
                     'Krasnoyarsk': {
                         'long': {
-                            'generic': '克拉斯诺亚尔斯克时间',
-                            'standard': '克拉斯诺亚尔斯克标准时间',
-                            'daylight': '克拉斯诺亚尔斯克夏令时间'
+                            'generic': '\u514B\u62C9\u65AF\u8BFA\u4E9A\u5C14\u65AF\u514B\u65F6\u95F4',
+                            'standard': '\u514B\u62C9\u65AF\u8BFA\u4E9A\u5C14\u65AF\u514B\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u514B\u62C9\u65AF\u8BFA\u4E9A\u5C14\u65AF\u514B\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Kyrgystan': {
                         'long': {
-                            'standard': '吉尔吉斯斯坦时间'
+                            'standard': '\u5409\u5C14\u5409\u65AF\u65AF\u5766\u65F6\u95F4'
                         }
                     },
                     'Lanka': {
                         'long': {
-                            'standard': '兰卡时间'
+                            'standard': '\u5170\u5361\u65F6\u95F4'
                         }
                     },
                     'Line_Islands': {
                         'long': {
-                            'standard': '莱恩群岛时间'
+                            'standard': '\u83B1\u6069\u7FA4\u5C9B\u65F6\u95F4'
                         }
                     },
                     'Lord_Howe': {
                         'long': {
-                            'generic': '豪勋爵岛时间',
-                            'standard': '豪勋爵岛标准时间',
-                            'daylight': '豪勋爵岛夏令时间'
+                            'generic': '\u8C6A\u52CB\u7235\u5C9B\u65F6\u95F4',
+                            'standard': '\u8C6A\u52CB\u7235\u5C9B\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u8C6A\u52CB\u7235\u5C9B\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Macau': {
                         'long': {
-                            'generic': '澳门时间',
-                            'standard': '澳门标准时间',
-                            'daylight': '澳门夏令时间'
+                            'generic': '\u6FB3\u95E8\u65F6\u95F4',
+                            'standard': '\u6FB3\u95E8\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u6FB3\u95E8\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Macquarie': {
                         'long': {
-                            'standard': '麦夸里岛时间'
+                            'standard': '\u9EA6\u5938\u91CC\u5C9B\u65F6\u95F4'
                         }
                     },
                     'Magadan': {
                         'long': {
-                            'generic': '马加丹时间',
-                            'standard': '马加丹标准时间',
-                            'daylight': '马加丹夏令时间'
+                            'generic': '\u9A6C\u52A0\u4E39\u65F6\u95F4',
+                            'standard': '\u9A6C\u52A0\u4E39\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u9A6C\u52A0\u4E39\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Malaysia': {
                         'long': {
-                            'standard': '马来西亚时间'
+                            'standard': '\u9A6C\u6765\u897F\u4E9A\u65F6\u95F4'
                         }
                     },
                     'Maldives': {
                         'long': {
-                            'standard': '马尔代夫时间'
+                            'standard': '\u9A6C\u5C14\u4EE3\u592B\u65F6\u95F4'
                         }
                     },
                     'Marquesas': {
                         'long': {
-                            'standard': '马克萨斯群岛时间'
+                            'standard': '\u9A6C\u514B\u8428\u65AF\u7FA4\u5C9B\u65F6\u95F4'
                         }
                     },
                     'Marshall_Islands': {
                         'long': {
-                            'standard': '马绍尔群岛时间'
+                            'standard': '\u9A6C\u7ECD\u5C14\u7FA4\u5C9B\u65F6\u95F4'
                         }
                     },
                     'Mauritius': {
                         'long': {
-                            'generic': '毛里求斯时间',
-                            'standard': '毛里求斯标准时间',
-                            'daylight': '毛里求斯夏令时间'
+                            'generic': '\u6BDB\u91CC\u6C42\u65AF\u65F6\u95F4',
+                            'standard': '\u6BDB\u91CC\u6C42\u65AF\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u6BDB\u91CC\u6C42\u65AF\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Mawson': {
                         'long': {
-                            'standard': '莫森时间'
+                            'standard': '\u83AB\u68EE\u65F6\u95F4'
                         }
                     },
                     'Mongolia': {
                         'long': {
-                            'generic': '乌兰巴托时间',
-                            'standard': '乌兰巴托标准时间',
-                            'daylight': '乌兰巴托夏令时间'
+                            'generic': '\u4E4C\u5170\u5DF4\u6258\u65F6\u95F4',
+                            'standard': '\u4E4C\u5170\u5DF4\u6258\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u4E4C\u5170\u5DF4\u6258\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Moscow': {
                         'long': {
-                            'generic': '莫斯科时间',
-                            'standard': '莫斯科标准时间',
-                            'daylight': '莫斯科夏令时间'
+                            'generic': '\u83AB\u65AF\u79D1\u65F6\u95F4',
+                            'standard': '\u83AB\u65AF\u79D1\u6807\u51C6\u65F6\u95F4',
+                            'daylight': '\u83AB\u65AF\u79D1\u590F\u4EE4\u65F6\u95F4'
                         }
                     },
                     'Myanmar': {
                         'long': {
-                            'standard': '缅甸时间'
+                            'standard': '\u7F05\u7538\u65F6\u95F4'
                         }
                     },
                     'Nauru': {
                         'long': {
-                            'standard': '瑙鲁时间'
+                            'standard': '\u7459\u9C81\u65F6\u95F4'
                         }
                     },
                     'Nepal': {
                         'long': {
-                            'standard': '尼泊尔时间'
+                            'standard': '\u5C3C\u6CCA\u5C14\u65F6\u95F4'
                         }
                     }
                 },
                 'hourFormat': '+HH:mm;-HH:mm',
                 'gmtFormat': 'GMT{0}',
                 'gmtZeroFormat': 'GMT',
-                'regionFormat': '{0}时间',
-                'regionFormat-type-daylight': '{0}夏令时间',
-                'regionFormat-type-standard': '{0}标准时间',
-                'fallbackFormat': '{1}（{0}）'
+                'regionFormat': '{0}\u65F6\u95F4',
+                'regionFormat-type-daylight': '{0}\u590F\u4EE4\u65F6\u95F4',
+                'regionFormat-type-standard': '{0}\u6807\u51C6\u65F6\u95F4',
+                'fallbackFormat': '{1}\uFF08{0}\uFF09'
             },
             'calendars': {
                 'gregorian': {
                     'months': {
                         'format': {
                             'abbreviated': {
-                                '8': '8月',
-                                '7': '7月',
-                                '6': '6月',
-                                '5': '5月',
-                                '12': '12月',
-                                '11': '11月',
-                                '10': '10月',
-                                '9': '9月',
-                                '1': '1月',
-                                '2': '2月',
-                                '3': '3月',
-                                '4': '4月'
+                                '8': '8\u6708',
+                                '7': '7\u6708',
+                                '6': '6\u6708',
+                                '5': '5\u6708',
+                                '12': '12\u6708',
+                                '11': '11\u6708',
+                                '10': '10\u6708',
+                                '9': '9\u6708',
+                                '1': '1\u6708',
+                                '2': '2\u6708',
+                                '3': '3\u6708',
+                                '4': '4\u6708'
                             },
                             'narrow': {
                                 '8': '8',
@@ -2559,34 +2559,34 @@
                                 '4': '4'
                             },
                             'wide': {
-                                '8': '八月',
-                                '7': '七月',
-                                '6': '六月',
-                                '5': '五月',
-                                '12': '十二月',
-                                '11': '十一月',
-                                '10': '十月',
-                                '9': '九月',
-                                '1': '一月',
-                                '2': '二月',
-                                '3': '三月',
-                                '4': '四月'
+                                '8': '\u516B\u6708',
+                                '7': '\u4E03\u6708',
+                                '6': '\u516D\u6708',
+                                '5': '\u4E94\u6708',
+                                '12': '\u5341\u4E8C\u6708',
+                                '11': '\u5341\u4E00\u6708',
+                                '10': '\u5341\u6708',
+                                '9': '\u4E5D\u6708',
+                                '1': '\u4E00\u6708',
+                                '2': '\u4E8C\u6708',
+                                '3': '\u4E09\u6708',
+                                '4': '\u56DB\u6708'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
-                                '8': '8月',
-                                '7': '7月',
-                                '6': '6月',
-                                '5': '5月',
-                                '12': '12月',
-                                '11': '11月',
-                                '10': '10月',
-                                '9': '9月',
-                                '1': '1月',
-                                '2': '2月',
-                                '3': '3月',
-                                '4': '4月'
+                                '8': '8\u6708',
+                                '7': '7\u6708',
+                                '6': '6\u6708',
+                                '5': '5\u6708',
+                                '12': '12\u6708',
+                                '11': '11\u6708',
+                                '10': '10\u6708',
+                                '9': '9\u6708',
+                                '1': '1\u6708',
+                                '2': '2\u6708',
+                                '3': '3\u6708',
+                                '4': '4\u6708'
                             },
                             'narrow': {
                                 '8': '8',
@@ -2603,106 +2603,106 @@
                                 '4': '4'
                             },
                             'wide': {
-                                '8': '八月',
-                                '7': '七月',
-                                '6': '六月',
-                                '5': '五月',
-                                '12': '十二月',
-                                '11': '十一月',
-                                '10': '十月',
-                                '9': '九月',
-                                '1': '一月',
-                                '2': '二月',
-                                '3': '三月',
-                                '4': '四月'
+                                '8': '\u516B\u6708',
+                                '7': '\u4E03\u6708',
+                                '6': '\u516D\u6708',
+                                '5': '\u4E94\u6708',
+                                '12': '\u5341\u4E8C\u6708',
+                                '11': '\u5341\u4E00\u6708',
+                                '10': '\u5341\u6708',
+                                '9': '\u4E5D\u6708',
+                                '1': '\u4E00\u6708',
+                                '2': '\u4E8C\u6708',
+                                '3': '\u4E09\u6708',
+                                '4': '\u56DB\u6708'
                             }
                         }
                     },
                     'days': {
                         'format': {
                             'abbreviated': {
-                                'sun': '周日',
-                                'mon': '周一',
-                                'tue': '周二',
-                                'wed': '周三',
-                                'thu': '周四',
-                                'fri': '周五',
-                                'sat': '周六'
+                                'sun': '\u5468\u65E5',
+                                'mon': '\u5468\u4E00',
+                                'tue': '\u5468\u4E8C',
+                                'wed': '\u5468\u4E09',
+                                'thu': '\u5468\u56DB',
+                                'fri': '\u5468\u4E94',
+                                'sat': '\u5468\u516D'
                             },
                             'narrow': {
-                                'sun': '日',
-                                'mon': '一',
-                                'tue': '二',
-                                'wed': '三',
-                                'thu': '四',
-                                'fri': '五',
-                                'sat': '六'
+                                'sun': '\u65E5',
+                                'mon': '\u4E00',
+                                'tue': '\u4E8C',
+                                'wed': '\u4E09',
+                                'thu': '\u56DB',
+                                'fri': '\u4E94',
+                                'sat': '\u516D'
                             },
                             'short': {
-                                'sun': '周日',
-                                'mon': '周一',
-                                'tue': '周二',
-                                'wed': '周三',
-                                'thu': '周四',
-                                'fri': '周五',
-                                'sat': '周六'
+                                'sun': '\u5468\u65E5',
+                                'mon': '\u5468\u4E00',
+                                'tue': '\u5468\u4E8C',
+                                'wed': '\u5468\u4E09',
+                                'thu': '\u5468\u56DB',
+                                'fri': '\u5468\u4E94',
+                                'sat': '\u5468\u516D'
                             },
                             'wide': {
-                                'sun': '星期日',
-                                'mon': '星期一',
-                                'tue': '星期二',
-                                'wed': '星期三',
-                                'thu': '星期四',
-                                'fri': '星期五',
-                                'sat': '星期六'
+                                'sun': '\u661F\u671F\u65E5',
+                                'mon': '\u661F\u671F\u4E00',
+                                'tue': '\u661F\u671F\u4E8C',
+                                'wed': '\u661F\u671F\u4E09',
+                                'thu': '\u661F\u671F\u56DB',
+                                'fri': '\u661F\u671F\u4E94',
+                                'sat': '\u661F\u671F\u516D'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
-                                'sun': '周日',
-                                'mon': '周一',
-                                'tue': '周二',
-                                'wed': '周三',
-                                'thu': '周四',
-                                'fri': '周五',
-                                'sat': '周六'
+                                'sun': '\u5468\u65E5',
+                                'mon': '\u5468\u4E00',
+                                'tue': '\u5468\u4E8C',
+                                'wed': '\u5468\u4E09',
+                                'thu': '\u5468\u56DB',
+                                'fri': '\u5468\u4E94',
+                                'sat': '\u5468\u516D'
                             },
                             'narrow': {
-                                'sun': '日',
-                                'mon': '一',
-                                'tue': '二',
-                                'wed': '三',
-                                'thu': '四',
-                                'fri': '五',
-                                'sat': '六'
+                                'sun': '\u65E5',
+                                'mon': '\u4E00',
+                                'tue': '\u4E8C',
+                                'wed': '\u4E09',
+                                'thu': '\u56DB',
+                                'fri': '\u4E94',
+                                'sat': '\u516D'
                             },
                             'short': {
-                                'sun': '周日',
-                                'mon': '周一',
-                                'tue': '周二',
-                                'wed': '周三',
-                                'thu': '周四',
-                                'fri': '周五',
-                                'sat': '周六'
+                                'sun': '\u5468\u65E5',
+                                'mon': '\u5468\u4E00',
+                                'tue': '\u5468\u4E8C',
+                                'wed': '\u5468\u4E09',
+                                'thu': '\u5468\u56DB',
+                                'fri': '\u5468\u4E94',
+                                'sat': '\u5468\u516D'
                             },
                             'wide': {
-                                'sun': '星期日',
-                                'mon': '星期一',
-                                'tue': '星期二',
-                                'wed': '星期三',
-                                'thu': '星期四',
-                                'fri': '星期五',
-                                'sat': '星期六'
+                                'sun': '\u661F\u671F\u65E5',
+                                'mon': '\u661F\u671F\u4E00',
+                                'tue': '\u661F\u671F\u4E8C',
+                                'wed': '\u661F\u671F\u4E09',
+                                'thu': '\u661F\u671F\u56DB',
+                                'fri': '\u661F\u671F\u4E94',
+                                'sat': '\u661F\u671F\u516D'
                             }
                         }
                     },
                     'quarters': {
                         'format': {
                             'abbreviated': {
-                                '1': '1季度',
-                                '2': '2季度',
-                                '3': '3季度',
-                                '4': '4季度'
+                                '1': '1\u5B63\u5EA6',
+                                '2': '2\u5B63\u5EA6',
+                                '3': '3\u5B63\u5EA6',
+                                '4': '4\u5B63\u5EA6'
                             },
                             'narrow': {
                                 '1': '1',
@@ -2711,18 +2711,18 @@
                                 '4': '4'
                             },
                             'wide': {
-                                '1': '第一季度',
-                                '2': '第二季度',
-                                '3': '第三季度',
-                                '4': '第四季度'
+                                '1': '\u7B2C\u4E00\u5B63\u5EA6',
+                                '2': '\u7B2C\u4E8C\u5B63\u5EA6',
+                                '3': '\u7B2C\u4E09\u5B63\u5EA6',
+                                '4': '\u7B2C\u56DB\u5B63\u5EA6'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
-                                '1': '1季度',
-                                '2': '2季度',
-                                '3': '3季度',
-                                '4': '4季度'
+                                '1': '1\u5B63\u5EA6',
+                                '2': '2\u5B63\u5EA6',
+                                '3': '3\u5B63\u5EA6',
+                                '4': '4\u5B63\u5EA6'
                             },
                             'narrow': {
                                 '1': '1',
@@ -2731,109 +2731,109 @@
                                 '4': '4'
                             },
                             'wide': {
-                                '1': '第一季度',
-                                '2': '第二季度',
-                                '3': '第三季度',
-                                '4': '第四季度'
+                                '1': '\u7B2C\u4E00\u5B63\u5EA6',
+                                '2': '\u7B2C\u4E8C\u5B63\u5EA6',
+                                '3': '\u7B2C\u4E09\u5B63\u5EA6',
+                                '4': '\u7B2C\u56DB\u5B63\u5EA6'
                             }
                         }
                     },
                     'dayPeriods': {
                         'format': {
                             'abbreviated': {
-                                'pm': '下午',
-                                'weeHours': '凌晨',
-                                'afternoon': '下午',
-                                'am': '上午',
-                                'earlyMorning': '清晨',
-                                'midDay': '中午',
-                                'morning': '上午',
-                                'night': '晚上',
-                                'noon': '中午'
+                                'pm': '\u4E0B\u5348',
+                                'weeHours': '\u51CC\u6668',
+                                'afternoon': '\u4E0B\u5348',
+                                'am': '\u4E0A\u5348',
+                                'earlyMorning': '\u6E05\u6668',
+                                'midDay': '\u4E2D\u5348',
+                                'morning': '\u4E0A\u5348',
+                                'night': '\u665A\u4E0A',
+                                'noon': '\u4E2D\u5348'
                             },
                             'narrow': {
-                                'pm': '下午',
-                                'weeHours': '凌晨',
-                                'afternoon': '下午',
-                                'am': '上午',
-                                'earlyMorning': '清晨',
-                                'midDay': '中午',
-                                'morning': '上午',
-                                'night': '晚上',
-                                'noon': '中午'
+                                'pm': '\u4E0B\u5348',
+                                'weeHours': '\u51CC\u6668',
+                                'afternoon': '\u4E0B\u5348',
+                                'am': '\u4E0A\u5348',
+                                'earlyMorning': '\u6E05\u6668',
+                                'midDay': '\u4E2D\u5348',
+                                'morning': '\u4E0A\u5348',
+                                'night': '\u665A\u4E0A',
+                                'noon': '\u4E2D\u5348'
                             },
                             'wide': {
-                                'pm': '下午',
-                                'weeHours': '凌晨',
-                                'afternoon': '下午',
-                                'am': '上午',
-                                'earlyMorning': '清晨',
-                                'midDay': '中午',
-                                'morning': '上午',
-                                'night': '晚上',
-                                'noon': '中午'
+                                'pm': '\u4E0B\u5348',
+                                'weeHours': '\u51CC\u6668',
+                                'afternoon': '\u4E0B\u5348',
+                                'am': '\u4E0A\u5348',
+                                'earlyMorning': '\u6E05\u6668',
+                                'midDay': '\u4E2D\u5348',
+                                'morning': '\u4E0A\u5348',
+                                'night': '\u665A\u4E0A',
+                                'noon': '\u4E2D\u5348'
                             }
                         },
                         'stand-alone': {
                             'abbreviated': {
-                                'pm': '下午',
-                                'weeHours': '凌晨',
-                                'afternoon': '下午',
-                                'am': '上午',
-                                'earlyMorning': '清晨',
-                                'midDay': '中午',
-                                'morning': '上午',
-                                'night': '晚上',
-                                'noon': '中午'
+                                'pm': '\u4E0B\u5348',
+                                'weeHours': '\u51CC\u6668',
+                                'afternoon': '\u4E0B\u5348',
+                                'am': '\u4E0A\u5348',
+                                'earlyMorning': '\u6E05\u6668',
+                                'midDay': '\u4E2D\u5348',
+                                'morning': '\u4E0A\u5348',
+                                'night': '\u665A\u4E0A',
+                                'noon': '\u4E2D\u5348'
                             },
                             'narrow': {
-                                'pm': '下午',
-                                'weeHours': '凌晨',
-                                'afternoon': '下午',
-                                'am': '上午',
-                                'earlyMorning': '清晨',
-                                'midDay': '中午',
-                                'morning': '上午',
-                                'night': '晚上',
-                                'noon': '中午'
+                                'pm': '\u4E0B\u5348',
+                                'weeHours': '\u51CC\u6668',
+                                'afternoon': '\u4E0B\u5348',
+                                'am': '\u4E0A\u5348',
+                                'earlyMorning': '\u6E05\u6668',
+                                'midDay': '\u4E2D\u5348',
+                                'morning': '\u4E0A\u5348',
+                                'night': '\u665A\u4E0A',
+                                'noon': '\u4E2D\u5348'
                             },
                             'wide': {
-                                'pm': '下午',
-                                'weeHours': '凌晨',
-                                'afternoon': '下午',
-                                'am': '上午',
-                                'earlyMorning': '清晨',
-                                'midDay': '中午',
-                                'morning': '上午',
-                                'night': '晚上',
-                                'noon': '中午'
+                                'pm': '\u4E0B\u5348',
+                                'weeHours': '\u51CC\u6668',
+                                'afternoon': '\u4E0B\u5348',
+                                'am': '\u4E0A\u5348',
+                                'earlyMorning': '\u6E05\u6668',
+                                'midDay': '\u4E2D\u5348',
+                                'morning': '\u4E0A\u5348',
+                                'night': '\u665A\u4E0A',
+                                'noon': '\u4E2D\u5348'
                             }
                         }
                     },
                     'eras': {
                         'eraNames': {
-                            '0': '公元前',
+                            '0': '\u516C\u5143\u524D',
                             '0-alt-variant': 'BCE',
-                            '1': '公元',
+                            '1': '\u516C\u5143',
                             '1-alt-variant': 'CE'
                         },
                         'eraAbbr': {
-                            '0': '公元前',
+                            '0': '\u516C\u5143\u524D',
                             '0-alt-variant': 'BCE',
-                            '1': '公元',
+                            '1': '\u516C\u5143',
                             '1-alt-variant': 'CE'
                         },
                         'eraNarrow': {
-                            '0': '公元前',
+                            '0': '\u516C\u5143\u524D',
                             '0-alt-variant': 'BCE',
-                            '1': '公元',
+                            '1': '\u516C\u5143',
                             '1-alt-variant': 'CE'
                         }
                     },
                     'dateFormats': {
-                        'full': 'y年M月d日EEEE',
-                        'long': 'y年M月d日',
-                        'medium': 'y年M月d日',
+                        'full': 'y\u5E74M\u6708d\u65E5EEEE',
+                        'long': 'y\u5E74M\u6708d\u65E5',
+                        'medium': 'y\u5E74M\u6708d\u65E5',
                         'short': 'yy/M/d'
                     },
                     'timeFormats': {
@@ -2848,40 +2848,40 @@
                         'medium': '{1} {0}',
                         'short': '{1} {0}',
                         'availableFormats': {
-                            'yMMMd': 'y年M月d日',
-                            'yMMM': 'y年M月',
-                            'yMM': 'y年M月',
+                            'yMMMd': 'y\u5E74M\u6708d\u65E5',
+                            'yMMM': 'y\u5E74M\u6708',
+                            'yMM': 'y\u5E74M\u6708',
                             'yMEd': 'y/M/dE',
                             'EHm': 'EHH:mm',
                             'Ehm': 'Eah:mm',
-                            'Ed': 'd日E',
-                            'd': 'd日',
-                            'GyMMMd': 'Gy年M月d日',
-                            'GyMMMEd': 'Gy年M月d日E',
-                            'h': 'ah时',
-                            'H': 'H时',
-                            'yQQQQ': 'y年第Q季度',
-                            'yQQQ': 'y年第Q季度',
-                            'yMMMM': 'y年M月',
-                            'yMMMEd': 'y年M月d日E',
+                            'Ed': 'd\u65E5E',
+                            'd': 'd\u65E5',
+                            'GyMMMd': 'Gy\u5E74M\u6708d\u65E5',
+                            'GyMMMEd': 'Gy\u5E74M\u6708d\u65E5E',
+                            'h': 'ah\u65F6',
+                            'H': 'H\u65F6',
+                            'yQQQQ': 'y\u5E74\u7B2CQ\u5B63\u5EA6',
+                            'yQQQ': 'y\u5E74\u7B2CQ\u5B63\u5EA6',
+                            'yMMMM': 'y\u5E74M\u6708',
+                            'yMMMEd': 'y\u5E74M\u6708d\u65E5E',
                             'Hms': 'HH:mm:ss',
                             'hms': 'ah:mm:ss',
                             'Hm': 'HH:mm',
                             'hm': 'ah:mm',
                             'Ehms': 'Eah:mm:ss',
                             'EHms': 'EHH:mm:ss',
-                            'Gy': 'Gy年',
-                            'GyMMM': 'Gy年M月',
-                            'M': 'M月',
+                            'Gy': 'Gy\u5E74',
+                            'GyMMM': 'Gy\u5E74M\u6708',
+                            'M': 'M\u6708',
                             'Md': 'M/d',
                             'MEd': 'M/dE',
                             'MMdd': 'MM/dd',
                             'MMM': 'LLL',
-                            'MMMd': 'M月d日',
-                            'MMMEd': 'M月d日E',
-                            'MMMMdd': 'M月dd日',
+                            'MMMd': 'M\u6708d\u65E5',
+                            'MMMEd': 'M\u6708d\u65E5E',
+                            'MMMMdd': 'M\u6708dd\u65E5',
                             'ms': 'mm:ss',
-                            'y': 'y年',
+                            'y': 'y\u5E74',
                             'yM': 'y/M',
                             'yMd': 'y/M/d'
                         },
@@ -2900,40 +2900,40 @@
                         },
                         'intervalFormats': {
                             'MMMEd': {
-                                'd': 'M月d日E至d日E',
-                                'M': 'M月d日E至M月d日E'
+                                'd': 'M\u6708d\u65E5E\u81F3d\u65E5E',
+                                'M': 'M\u6708d\u65E5E\u81F3M\u6708d\u65E5E'
                             },
                             'MMMd': {
-                                'd': 'M月d日至d日',
-                                'M': 'M月d日至M月d日'
+                                'd': 'M\u6708d\u65E5\u81F3d\u65E5',
+                                'M': 'M\u6708d\u65E5\u81F3M\u6708d\u65E5'
                             },
                             'MMM': {
-                                'M': 'LLL至LLL'
+                                'M': 'LLL\u81F3LLL'
                             },
                             'MEd': {
-                                'd': 'M/dE至M/dE',
-                                'M': 'M/dE至M/dE'
+                                'd': 'M/dE\u81F3M/dE',
+                                'M': 'M/dE\u81F3M/dE'
                             },
                             'Md': {
                                 'd': 'M/d \u2013 M/d',
                                 'M': 'M/d \u2013 M/d'
                             },
                             'M': {
-                                'M': 'M\u2013M月'
+                                'M': 'M\u2013M\u6708'
                             },
                             'Hv': {
                                 'H': 'v HH\u2013HH'
                             },
                             'hv': {
-                                'a': 'vah时至ah时',
-                                'h': 'vah时至h时'
+                                'a': 'vah\u65F6\u81F3ah\u65F6',
+                                'h': 'vah\u65F6\u81F3h\u65F6'
                             },
                             'y': {
-                                'y': 'y\u2013y年'
+                                'y': 'y\u2013y\u5E74'
                             },
                             'yM': {
-                                'M': 'y年M月至M月',
-                                'y': 'y年M月至y年M月'
+                                'M': 'y\u5E74M\u6708\u81F3M\u6708',
+                                'y': 'y\u5E74M\u6708\u81F3y\u5E74M\u6708'
                             },
                             'yMd': {
                                 'd': 'y/M/d \u2013 y/M/d',
@@ -2941,55 +2941,55 @@
                                 'y': 'y/M/d \u2013 y/M/d'
                             },
                             'yMEd': {
-                                'd': 'y/M/dE至y/M/dE',
-                                'M': 'y/M/dE至y/M/dE',
-                                'y': 'y/M/dE至y/M/dE'
+                                'd': 'y/M/dE\u81F3y/M/dE',
+                                'M': 'y/M/dE\u81F3y/M/dE',
+                                'y': 'y/M/dE\u81F3y/M/dE'
                             },
                             'yMMM': {
-                                'M': 'y年M月至M月',
-                                'y': 'y年M月至y年M月'
+                                'M': 'y\u5E74M\u6708\u81F3M\u6708',
+                                'y': 'y\u5E74M\u6708\u81F3y\u5E74M\u6708'
                             },
                             'yMMMd': {
-                                'd': 'y年M月d日至d日',
-                                'M': 'y年M月d日至M月d日',
-                                'y': 'y年M月d日至y年M月d日'
+                                'd': 'y\u5E74M\u6708d\u65E5\u81F3d\u65E5',
+                                'M': 'y\u5E74M\u6708d\u65E5\u81F3M\u6708d\u65E5',
+                                'y': 'y\u5E74M\u6708d\u65E5\u81F3y\u5E74M\u6708d\u65E5'
                             },
                             'yMMMEd': {
-                                'd': 'y年M月d日E至d日E',
-                                'M': 'y年M月d日E至M月d日E',
-                                'y': 'y年M月d日E至y年M月d日E'
+                                'd': 'y\u5E74M\u6708d\u65E5E\u81F3d\u65E5E',
+                                'M': 'y\u5E74M\u6708d\u65E5E\u81F3M\u6708d\u65E5E',
+                                'y': 'y\u5E74M\u6708d\u65E5E\u81F3y\u5E74M\u6708d\u65E5E'
                             },
                             'yMMMM': {
-                                'M': 'y年M月至M月',
-                                'y': 'y年M月至y年M月'
+                                'M': 'y\u5E74M\u6708\u81F3M\u6708',
+                                'y': 'y\u5E74M\u6708\u81F3y\u5E74M\u6708'
                             },
                             'Hmv': {
                                 'H': 'v HH:mm\u2013HH:mm',
                                 'm': 'v HH:mm\u2013HH:mm'
                             },
                             'hmv': {
-                                'a': 'vah:mm至ah:mm',
-                                'h': 'vah:mm至h:mm',
-                                'm': 'vah:mm至h:mm'
+                                'a': 'vah:mm\u81F3ah:mm',
+                                'h': 'vah:mm\u81F3h:mm',
+                                'm': 'vah:mm\u81F3h:mm'
                             },
                             'Hm': {
                                 'H': 'HH:mm\u2013HH:mm',
                                 'm': 'HH:mm\u2013HH:mm'
                             },
                             'hm': {
-                                'a': 'ah:mm至ah:mm',
-                                'h': 'ah:mm至h:mm',
-                                'm': 'ah:mm至h:mm'
+                                'a': 'ah:mm\u81F3ah:mm',
+                                'h': 'ah:mm\u81F3h:mm',
+                                'm': 'ah:mm\u81F3h:mm'
                             },
                             'H': {
                                 'H': 'HH\u2013HH'
                             },
                             'h': {
-                                'a': 'ah时至ah时',
-                                'h': 'ah时至h时'
+                                'a': 'ah\u65F6\u81F3ah\u65F6',
+                                'h': 'ah\u65F6\u81F3h\u65F6'
                             },
                             'd': {
-                                'd': 'd\u2013d日'
+                                'd': 'd\u2013d\u65E5'
                             },
                             'intervalFormatFallback': '{0} \u2013 {1}'
                         }

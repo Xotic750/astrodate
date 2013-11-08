@@ -44,141 +44,141 @@
             'codePatterns': {
                 'language': 'Idioma: {0}',
                 'script': 'Escriptura: {0}',
-                'territory': 'Regió: {0}'
+                'territory': 'Regi\u00F3: {0}'
             },
             'types': {
                 'colHiraganaQuaternary': {
-                    'no': 'Ordena els caràcters kana de manera independent',
-                    'yes': 'Ordena els caràcters kana de manera diferent'
+                    'no': 'Ordena els car\u00E0cters kana de manera independent',
+                    'yes': 'Ordena els car\u00E0cters kana de manera diferent'
                 },
                 'colCaseLevel': {
-                    'no': 'Ordena sense distingir majúscules i minúscules',
-                    'yes': 'Ordena amb detecció de majúscules i minúscules'
+                    'no': 'Ordena sense distingir maj\u00FAscules i min\u00FAscules',
+                    'yes': 'Ordena amb detecci\u00F3 de maj\u00FAscules i min\u00FAscules'
                 },
                 'colCaseFirst': {
-                    'lower': 'Mostra primer les minúscules',
+                    'lower': 'Mostra primer les min\u00FAscules',
                     'no': 'Ordena per tipus de lletra normal',
-                    'upper': 'Ordena amb majúscules primer'
+                    'upper': 'Ordena amb maj\u00FAscules primer'
                 },
                 'colStrength': {
                     'identical': 'Ordena-ho tot',
-                    'primary': 'Ordena només les lletres de base',
-                    'quaternary': 'Ordena per accents/majúscules/amplada/kana',
+                    'primary': 'Ordena nom\u00E9s les lletres de base',
+                    'quaternary': 'Ordena per accents/maj\u00FAscules/amplada/kana',
                     'secondary': 'Ordena els accents',
-                    'tertiary': 'Ordena per accent/majúscules/amplada'
+                    'tertiary': 'Ordena per accent/maj\u00FAscules/amplada'
                 },
                 'colNumeric': {
-                    'no': 'Ordena els dígits individualment',
-                    'yes': 'Ordena els dígits numèricament'
+                    'no': 'Ordena els d\u00EDgits individualment',
+                    'yes': 'Ordena els d\u00EDgits num\u00E8ricament'
                 },
                 'colNormalization': {
-                    'no': 'Ordena sense normalització',
-                    'yes': 'Ordena per caràcters Unicode normalitzats'
+                    'no': 'Ordena sense normalitzaci\u00F3',
+                    'yes': 'Ordena per car\u00E0cters Unicode normalitzats'
                 },
                 'calendar': {
-                    'japanese': 'calendari japonès',
+                    'japanese': 'calendari japon\u00E8s',
                     'iso8601': 'iso8601',
                     'coptic': 'calendari copte',
                     'dangi': 'dangi',
-                    'ethiopic': 'calendari etíop',
-                    'ethiopic-amete-alem': 'calendari etíop amete-alem',
-                    'gregorian': 'calendari gregorià',
+                    'ethiopic': 'calendari et\u00EDop',
+                    'ethiopic-amete-alem': 'calendari et\u00EDop amete-alem',
+                    'gregorian': 'calendari gregori\u00E0',
                     'hebrew': 'calendari hebreu',
                     'persian': 'calendari persa',
-                    'roc': 'calendari de la República de Xina',
-                    'chinese': 'calendari xinès',
+                    'roc': 'calendari de la Rep\u00FAblica de Xina',
+                    'chinese': 'calendari xin\u00E8s',
                     'buddhist': 'calendari budista',
-                    'indian': 'calendari hindú',
-                    'islamic': 'calendari musulmà',
-                    'islamic-civil': 'calendari civil islàmic',
+                    'indian': 'calendari hind\u00FA',
+                    'islamic': 'calendari musulm\u00E0',
+                    'islamic-civil': 'calendari civil isl\u00E0mic',
                     'islamic-rgsa': 'islamic-rgsa',
                     'islamic-tbla': 'islamic-tbla',
                     'islamic-umalqura': 'islamic-umalqura'
                 },
                 'collation': {
-                    'phonebook': 'ordre de la guia telefònica',
-                    'gb2312han': 'ordre del xinès simplificat - GB2312',
-                    'eor': 'normes europees d\'ordenació',
-                    'ducet': 'ordenació Unicode predeterminada',
-                    'dictionary': 'ordenació de diccionari',
-                    'big5han': 'ordre del xinès tradicional - Big5',
+                    'phonebook': 'ordre de la guia telef\u00F2nica',
+                    'gb2312han': 'ordre del xin\u00E8s simplificat - GB2312',
+                    'eor': "normes europees d'ordenaci\u00F3",
+                    'ducet': 'ordenaci\u00F3 Unicode predeterminada',
+                    'dictionary': 'ordenaci\u00F3 de diccionari',
+                    'big5han': 'ordre del xin\u00E8s tradicional - Big5',
                     'traditional': 'ordre tradicional',
-                    'standard': 'ordenació estàndard',
+                    'standard': 'ordenaci\u00F3 est\u00E0ndard',
                     'zhuyin': 'zhuyin',
-                    'unihan': 'ordenació per quantitat de traços radicals',
-                    'stroke': 'ordre dels traços',
+                    'unihan': 'ordenaci\u00F3 per quantitat de tra\u00E7os radicals',
+                    'stroke': 'ordre dels tra\u00E7os',
                     'searchjl': 'cerca per consonant inicial del hangul',
-                    'search': 'cerca de propòsit general',
-                    'reformed': 'ordenació reformada',
+                    'search': 'cerca de prop\u00F2sit general',
+                    'reformed': 'ordenaci\u00F3 reformada',
                     'pinyin': 'ordre pinyin',
-                    'phonetic': 'Ordenació fonètica'
+                    'phonetic': 'Ordenaci\u00F3 fon\u00E8tica'
                 },
                 'numbers': {
-                    'knda': 'dígits kannada',
-                    'khmr': 'dígits khmer',
-                    'kali': 'dígits kayah',
+                    'knda': 'd\u00EDgits kannada',
+                    'khmr': 'd\u00EDgits khmer',
+                    'kali': 'd\u00EDgits kayah',
                     'jpanfin': 'numerals financers japonesos',
                     'jpan': 'numerals japonesos',
-                    'java': 'dígits javanesos',
+                    'java': 'd\u00EDgits javanesos',
                     'hebr': 'numerals hebreus',
                     'hantfin': 'numerals financers xinesos tradicionals',
                     'hant': 'numerals xinesos tradicionals',
                     'hansfin': 'numerals financers xinesos simplificats',
                     'hans': 'numerals xinesos simplificats',
                     'hanidec': 'numerals decimals xinesos',
-                    'guru': 'dígits gurmukhi',
-                    'gujr': 'dígits gujarati',
-                    'greklow': 'numerals grecs en minúscules',
+                    'guru': 'd\u00EDgits gurmukhi',
+                    'gujr': 'd\u00EDgits gujarati',
+                    'greklow': 'numerals grecs en min\u00FAscules',
                     'grek': 'numerals grecs',
-                    'bali': 'dígits balinesos',
-                    'armnlow': 'numerals armenis en minúscules',
+                    'bali': 'd\u00EDgits balinesos',
+                    'armnlow': 'numerals armenis en min\u00FAscules',
                     'armn': 'numerals armenis',
-                    'arabext': 'dígits àrabs i índics ampliats',
-                    'arab': 'dígits àrabs i índics',
+                    'arabext': 'd\u00EDgits \u00E0rabs i \u00EDndics ampliats',
+                    'arab': 'd\u00EDgits \u00E0rabs i \u00EDndics',
                     'finance': 'Numerals financers',
                     'traditional': 'Numerals tradicionals',
-                    'native': 'Dígits natius',
-                    'beng': 'dígits bengalins',
+                    'native': 'D\u00EDgits natius',
+                    'beng': 'd\u00EDgits bengalins',
                     'brah': 'brah',
                     'cakm': 'cakm',
-                    'cham': 'dígits txams',
-                    'deva': 'dígits devanagaris',
-                    'orya': 'dígits oriya',
+                    'cham': 'd\u00EDgits txams',
+                    'deva': 'd\u00EDgits devanagaris',
+                    'orya': 'd\u00EDgits oriya',
                     'osma': 'osma',
                     'roman': 'numerals romans',
-                    'romanlow': 'numerals romans en minúscules',
-                    'saur': 'dígits saurashtra',
+                    'romanlow': 'numerals romans en min\u00FAscules',
+                    'saur': 'd\u00EDgits saurashtra',
                     'shrd': 'shrd',
                     'sora': 'sora',
-                    'sund': 'dígits sudanesos',
-                    'vaii': 'dígits vai',
-                    'tibt': 'dígits tibetans',
-                    'thai': 'dígits thai',
-                    'telu': 'dígits telugu',
-                    'tamldec': 'dígits tamils',
+                    'sund': 'd\u00EDgits sudanesos',
+                    'vaii': 'd\u00EDgits vai',
+                    'tibt': 'd\u00EDgits tibetans',
+                    'thai': 'd\u00EDgits thai',
+                    'telu': 'd\u00EDgits telugu',
+                    'tamldec': 'd\u00EDgits tamils',
                     'taml': 'numerals tamils tradicionals',
-                    'talu': 'dígits tai lue nous',
+                    'talu': 'd\u00EDgits tai lue nous',
                     'takr': 'takr',
-                    'olck': 'dígits ol chiki',
-                    'nkoo': 'dígits n\'ko',
-                    'mymrshan': 'dígits shan de Myanmar',
-                    'mymr': 'dígits de Myanmar',
-                    'mtei': 'dígits meitei mayek',
-                    'mong': 'dígits mongols',
-                    'mlym': 'dígits malaiàlam',
-                    'limb': 'dígits limbu',
-                    'lepc': 'dígits lepcha',
-                    'latn': 'dígits aràbics',
-                    'laoo': 'dígits lao',
-                    'lanatham': 'dígits tai tham tham',
-                    'lana': 'dígits tai tham hora',
+                    'olck': 'd\u00EDgits ol chiki',
+                    'nkoo': "d\u00EDgits n'ko",
+                    'mymrshan': 'd\u00EDgits shan de Myanmar',
+                    'mymr': 'd\u00EDgits de Myanmar',
+                    'mtei': 'd\u00EDgits meitei mayek',
+                    'mong': 'd\u00EDgits mongols',
+                    'mlym': 'd\u00EDgits malai\u00E0lam',
+                    'limb': 'd\u00EDgits limbu',
+                    'lepc': 'd\u00EDgits lepcha',
+                    'latn': 'd\u00EDgits ar\u00E0bics',
+                    'laoo': 'd\u00EDgits lao',
+                    'lanatham': 'd\u00EDgits tai tham tham',
+                    'lana': 'd\u00EDgits tai tham hora',
                     'geor': 'numerals georgians',
-                    'fullwide': 'dígits d\'amplada completa',
-                    'ethi': 'numerals etiòpics'
+                    'fullwide': "d\u00EDgits d'amplada completa",
+                    'ethi': 'numerals eti\u00F2pics'
                 },
                 'colAlternate': {
-                    'non-ignorable': 'Ordena els símbols',
-                    'shifted': 'Ordena sense tenir en compte els símbols'
+                    'non-ignorable': 'Ordena els s\u00EDmbols',
+                    'shifted': 'Ordena sense tenir en compte els s\u00EDmbols'
                 },
                 'colBackwards': {
                     'no': 'Ordena els accents de manera normal',
@@ -186,22 +186,22 @@
                 }
             },
             'keys': {
-                'colNormalization': 'Ordenació normalitzada',
-                'collation': 'ordenació',
-                'colHiraganaQuaternary': 'Ordenació per kana',
-                'colCaseLevel': 'Ordenació per detecció de majúscules',
-                'colCaseFirst': 'Ordenació per majúscules i minúscules',
-                'colBackwards': 'Ordenació per accents invertida',
-                'colAlternate': 'Ordenació sense tenir en compte els símbols',
+                'colNormalization': 'Ordenaci\u00F3 normalitzada',
+                'collation': 'ordenaci\u00F3',
+                'colHiraganaQuaternary': 'Ordenaci\u00F3 per kana',
+                'colCaseLevel': 'Ordenaci\u00F3 per detecci\u00F3 de maj\u00FAscules',
+                'colCaseFirst': 'Ordenaci\u00F3 per maj\u00FAscules i min\u00FAscules',
+                'colBackwards': 'Ordenaci\u00F3 per accents invertida',
+                'colAlternate': 'Ordenaci\u00F3 sense tenir en compte els s\u00EDmbols',
                 'calendar': 'calendari',
-                'x': 'ús privat',
-                'variableTop': 'Ordena com a símbols',
+                'x': '\u00FAs privat',
+                'variableTop': 'Ordena com a s\u00EDmbols',
                 'va': 'Variant local',
-                'timezone': 'Zona horària',
+                'timezone': 'Zona hor\u00E0ria',
                 'numbers': 'xifres',
                 'currency': 'moneda',
-                'colStrength': 'Força de l\'ordenació',
-                'colNumeric': 'Ordenació numèrica'
+                'colStrength': "For\u00E7a de l'ordenaci\u00F3",
+                'colNumeric': 'Ordenaci\u00F3 num\u00E8rica'
             },
             'localeDisplayPattern': {
                 'localePattern': '{0} ({1})',
@@ -239,7 +239,7 @@
                             'exemplarCity': 'Funafuti'
                         },
                         'Galapagos': {
-                            'exemplarCity': 'Galápagos'
+                            'exemplarCity': 'Gal\u00E1pagos'
                         },
                         'Gambier': {
                             'exemplarCity': 'Gambier'
@@ -269,7 +269,7 @@
                             'exemplarCity': 'Tarawa'
                         },
                         'Tahiti': {
-                            'exemplarCity': 'Tahití'
+                            'exemplarCity': 'Tahit\u00ED'
                         },
                         'Kiritimati': {
                             'exemplarCity': 'Kiritimati'
@@ -320,7 +320,7 @@
                             'exemplarCity': 'Norfolk'
                         },
                         'Noumea': {
-                            'exemplarCity': 'Nouméa'
+                            'exemplarCity': 'Noum\u00E9a'
                         },
                         'Pago_Pago': {
                             'exemplarCity': 'Pago Pago'
@@ -375,7 +375,7 @@
                             'exemplarCity': 'Kerguelen'
                         },
                         'Reunion': {
-                            'exemplarCity': 'Reunió'
+                            'exemplarCity': 'Reuni\u00F3'
                         },
                         'Mayotte': {
                             'exemplarCity': 'Mayotte'
@@ -575,14 +575,14 @@
                             'exemplarCity': 'Boise'
                         },
                         'Asuncion': {
-                            'exemplarCity': 'Asunción'
+                            'exemplarCity': 'Asunci\u00F3n'
                         },
                         'Aruba': {
                             'exemplarCity': 'Aruba'
                         },
                         'Argentina': {
                             'Rio_Gallegos': {
-                                'exemplarCity': 'Río Gallegos'
+                                'exemplarCity': 'R\u00EDo Gallegos'
                             },
                             'San_Juan': {
                                 'exemplarCity': 'San Juan'
@@ -600,11 +600,11 @@
                                 'exemplarCity': 'Salta'
                             },
                             'Tucuman': {
-                                'exemplarCity': 'Tucumán'
+                                'exemplarCity': 'Tucum\u00E1n'
                             }
                         },
                         'Araguaina': {
-                            'exemplarCity': 'Araguaína'
+                            'exemplarCity': 'Aragua\u00EDna'
                         },
                         'Antigua': {
                             'exemplarCity': 'Antigua'
@@ -622,13 +622,13 @@
                             'exemplarCity': 'Bahia'
                         },
                         'Bahia_Banderas': {
-                            'exemplarCity': 'bahía de Banderas'
+                            'exemplarCity': 'bah\u00EDa de Banderas'
                         },
                         'Barbados': {
                             'exemplarCity': 'Barbados'
                         },
                         'Belem': {
-                            'exemplarCity': 'Belém'
+                            'exemplarCity': 'Bel\u00E9m'
                         },
                         'Belize': {
                             'exemplarCity': 'Belize'
@@ -640,10 +640,10 @@
                             'exemplarCity': 'Boa Vista'
                         },
                         'Bogota': {
-                            'exemplarCity': 'Bogotà'
+                            'exemplarCity': 'Bogot\u00E0'
                         },
                         'Curacao': {
-                            'exemplarCity': 'Curaçao'
+                            'exemplarCity': 'Cura\u00E7ao'
                         },
                         'Danmarkshavn': {
                             'exemplarCity': 'Danmarkshavn'
@@ -770,7 +770,7 @@
                             'exemplarCity': 'El Salvador'
                         },
                         'Eirunepe': {
-                            'exemplarCity': 'Eirunepé'
+                            'exemplarCity': 'Eirunep\u00E9'
                         },
                         'Edmonton': {
                             'exemplarCity': 'Edmonton'
@@ -785,7 +785,7 @@
                             'exemplarCity': 'Atikokan'
                         },
                         'Cordoba': {
-                            'exemplarCity': 'Córdoba'
+                            'exemplarCity': 'C\u00F3rdoba'
                         },
                         'Costa_Rica': {
                             'exemplarCity': 'Costa Rica'
@@ -794,7 +794,7 @@
                             'exemplarCity': 'Creston'
                         },
                         'Cuiaba': {
-                            'exemplarCity': 'Cuiabá'
+                            'exemplarCity': 'Cuiab\u00E1'
                         },
                         'La_Paz': {
                             'exemplarCity': 'La Paz'
@@ -809,10 +809,10 @@
                             'exemplarCity': 'Louisville'
                         },
                         'Lower_Princes': {
-                            'exemplarCity': 'Lower Prince\'s Quarter'
+                            'exemplarCity': "Lower Prince's Quarter"
                         },
                         'Maceio': {
-                            'exemplarCity': 'Maceió'
+                            'exemplarCity': 'Macei\u00F3'
                         },
                         'Managua': {
                             'exemplarCity': 'Managua'
@@ -830,7 +830,7 @@
                             'exemplarCity': 'Matamoros'
                         },
                         'Mazatlan': {
-                            'exemplarCity': 'Mazatlán'
+                            'exemplarCity': 'Mazatl\u00E1n'
                         },
                         'Mendoza': {
                             'exemplarCity': 'Mendoza'
@@ -839,13 +839,13 @@
                             'exemplarCity': 'Menominee'
                         },
                         'Merida': {
-                            'exemplarCity': 'Mérida'
+                            'exemplarCity': 'M\u00E9rida'
                         },
                         'Metlakatla': {
                             'exemplarCity': 'Metlakatla'
                         },
                         'Mexico_City': {
-                            'exemplarCity': 'Ciutat de Mèxic'
+                            'exemplarCity': 'Ciutat de M\u00E8xic'
                         },
                         'Miquelon': {
                             'exemplarCity': 'Miquelon'
@@ -895,7 +895,7 @@
                             'exemplarCity': 'Ojinaga'
                         },
                         'Panama': {
-                            'exemplarCity': 'Panamà'
+                            'exemplarCity': 'Panam\u00E0'
                         },
                         'Pangnirtung': {
                             'exemplarCity': 'Pangnirtung'
@@ -934,13 +934,13 @@
                             'exemplarCity': 'Resolute'
                         },
                         'Rio_Branco': {
-                            'exemplarCity': 'Río Branco'
+                            'exemplarCity': 'R\u00EDo Branco'
                         },
                         'Santa_Isabel': {
                             'exemplarCity': 'Santa Isabel'
                         },
                         'Santarem': {
-                            'exemplarCity': 'Santarém'
+                            'exemplarCity': 'Santar\u00E9m'
                         },
                         'Santiago': {
                             'exemplarCity': 'Santiago'
@@ -949,7 +949,7 @@
                             'exemplarCity': 'Santo Domingo'
                         },
                         'Sao_Paulo': {
-                            'exemplarCity': 'São Paulo'
+                            'exemplarCity': 'S\u00E3o Paulo'
                         },
                         'Scoresbysund': {
                             'exemplarCity': 'Scoresbysund'
@@ -961,7 +961,7 @@
                             'exemplarCity': 'Sitka'
                         },
                         'St_Barthelemy': {
-                            'exemplarCity': 'Saint Barthélemy'
+                            'exemplarCity': 'Saint Barth\u00E9lemy'
                         },
                         'St_Johns': {
                             'exemplarCity': 'Saint John\u2019s'
@@ -981,7 +981,7 @@
                     },
                     'Atlantic': {
                         'South_Georgia': {
-                            'exemplarCity': 'Geòrgia del Sud'
+                            'exemplarCity': 'Ge\u00F2rgia del Sud'
                         },
                         'Reykjavik': {
                             'exemplarCity': 'Reykjavik'
@@ -993,19 +993,19 @@
                             'exemplarCity': 'Saint Helena'
                         },
                         'Azores': {
-                            'exemplarCity': 'Açores'
+                            'exemplarCity': 'A\u00E7ores'
                         },
                         'Bermuda': {
                             'exemplarCity': 'Bermudes'
                         },
                         'Canary': {
-                            'exemplarCity': 'Illes Canàries'
+                            'exemplarCity': 'Illes Can\u00E0ries'
                         },
                         'Cape_Verde': {
                             'exemplarCity': 'Cap Verd'
                         },
                         'Faeroe': {
-                            'exemplarCity': 'Illes Fèroe'
+                            'exemplarCity': 'Illes F\u00E8roe'
                         },
                         'Madeira': {
                             'exemplarCity': 'Madeira'
@@ -1019,7 +1019,7 @@
                             'exemplarCity': 'Moscou'
                         },
                         'Monaco': {
-                            'exemplarCity': 'Mònaco'
+                            'exemplarCity': 'M\u00F2naco'
                         },
                         'Minsk': {
                             'exemplarCity': 'Minsk'
@@ -1038,7 +1038,7 @@
                         },
                         'London': {
                             'long': {
-                                'daylight': 'Hora d\'estiu britànica'
+                                'daylight': "Hora d'estiu brit\u00E0nica"
                             },
                             'exemplarCity': 'Londres'
                         },
@@ -1049,7 +1049,7 @@
                             'exemplarCity': 'Lisboa'
                         },
                         'Kiev': {
-                            'exemplarCity': 'Kíev'
+                            'exemplarCity': 'K\u00EDev'
                         },
                         'Kaliningrad': {
                             'exemplarCity': 'Kaliningrad'
@@ -1067,13 +1067,13 @@
                             'exemplarCity': 'Bucarest'
                         },
                         'Brussels': {
-                            'exemplarCity': 'Brussel·les'
+                            'exemplarCity': 'Brussel\u00B7les'
                         },
                         'Bratislava': {
                             'exemplarCity': 'Bratislava'
                         },
                         'Berlin': {
-                            'exemplarCity': 'Berlín'
+                            'exemplarCity': 'Berl\u00EDn'
                         },
                         'Belgrade': {
                             'exemplarCity': 'Belgrad'
@@ -1115,25 +1115,25 @@
                             'exemplarCity': 'Zuric'
                         },
                         'Zaporozhye': {
-                            'exemplarCity': 'Zaporójjia'
+                            'exemplarCity': 'Zapor\u00F3jjia'
                         },
                         'Zagreb': {
                             'exemplarCity': 'Zagreb'
                         },
                         'Warsaw': {
-                            'exemplarCity': 'Varsòvia'
+                            'exemplarCity': 'Vars\u00F2via'
                         },
                         'Volgograd': {
                             'exemplarCity': 'Volgograd'
                         },
                         'Vilnius': {
-                            'exemplarCity': 'Vílnius'
+                            'exemplarCity': 'V\u00EDlnius'
                         },
                         'Vienna': {
                             'exemplarCity': 'Viena'
                         },
                         'Vatican': {
-                            'exemplarCity': 'Vaticà'
+                            'exemplarCity': 'Vatic\u00E0'
                         },
                         'Sarajevo': {
                             'exemplarCity': 'Sarajevo'
@@ -1157,10 +1157,10 @@
                             'exemplarCity': 'Podgorica'
                         },
                         'Paris': {
-                            'exemplarCity': 'París'
+                            'exemplarCity': 'Par\u00EDs'
                         },
                         'Helsinki': {
-                            'exemplarCity': 'Hèlsinki'
+                            'exemplarCity': 'H\u00E8lsinki'
                         },
                         'Guernsey': {
                             'exemplarCity': 'Guernsey'
@@ -1170,9 +1170,9 @@
                         },
                         'Dublin': {
                             'long': {
-                                'daylight': 'Horari d\'estiu irlandès'
+                                'daylight': "Horari d'estiu irland\u00E8s"
                             },
-                            'exemplarCity': 'Dublín'
+                            'exemplarCity': 'Dubl\u00EDn'
                         },
                         'Copenhagen': {
                             'exemplarCity': 'Copenhagen'
@@ -1279,10 +1279,10 @@
                             'exemplarCity': 'Tunis'
                         },
                         'Tripoli': {
-                            'exemplarCity': 'Trípoli'
+                            'exemplarCity': 'Tr\u00EDpoli'
                         },
                         'Sao_Tome': {
-                            'exemplarCity': 'São Tomé'
+                            'exemplarCity': 'S\u00E3o Tom\u00E9'
                         },
                         'Porto-Novo': {
                             'exemplarCity': 'Porto-Novo'
@@ -1350,7 +1350,7 @@
                             'exemplarCity': 'Xangai'
                         },
                         'Seoul': {
-                            'exemplarCity': 'Seül'
+                            'exemplarCity': 'Se\u00FCl'
                         },
                         'Samarkand': {
                             'exemplarCity': 'Samarcanda'
@@ -1362,13 +1362,13 @@
                             'exemplarCity': 'Ho Chi Minh'
                         },
                         'Riyadh': {
-                            'exemplarCity': 'Al-Riyād'
+                            'exemplarCity': 'Al-Riy\u0101d'
                         },
                         'Rangoon': {
                             'exemplarCity': 'Rangoon'
                         },
                         'Qyzylorda': {
-                            'exemplarCity': 'Kizilordà'
+                            'exemplarCity': 'Kizilord\u00E0'
                         },
                         'Qatar': {
                             'exemplarCity': 'Qatar'
@@ -1464,7 +1464,7 @@
                             'exemplarCity': 'Erevan'
                         },
                         'Tokyo': {
-                            'exemplarCity': 'Tòquio'
+                            'exemplarCity': 'T\u00F2quio'
                         },
                         'Thimphu': {
                             'exemplarCity': 'Thimbu'
@@ -1491,13 +1491,13 @@
                             'exemplarCity': 'Ashgabat'
                         },
                         'Aqtobe': {
-                            'exemplarCity': 'Aķtöbe'
+                            'exemplarCity': 'A\u0137t\u00F6be'
                         },
                         'Aqtau': {
-                            'exemplarCity': 'Aqtaū'
+                            'exemplarCity': 'Aqta\u016B'
                         },
                         'Anadyr': {
-                            'exemplarCity': 'Anadyr\''
+                            'exemplarCity': "Anadyr'"
                         },
                         'Amman': {
                             'exemplarCity': 'Amman'
@@ -1512,7 +1512,7 @@
                             'exemplarCity': 'Bahrain'
                         },
                         'Baku': {
-                            'exemplarCity': 'Bakú'
+                            'exemplarCity': 'Bak\u00FA'
                         },
                         'Bangkok': {
                             'exemplarCity': 'Bangkok'
@@ -1530,10 +1530,10 @@
                             'exemplarCity': 'Calcuta'
                         },
                         'Choibalsan': {
-                            'exemplarCity': 'Čojbalsan'
+                            'exemplarCity': '\u010Cojbalsan'
                         },
                         'Kabul': {
-                            'exemplarCity': 'Kābul'
+                            'exemplarCity': 'K\u0101bul'
                         },
                         'Kamchatka': {
                             'exemplarCity': 'Kamtxatka'
@@ -1545,7 +1545,7 @@
                             'exemplarCity': 'Kaixgar'
                         },
                         'Katmandu': {
-                            'exemplarCity': 'Katmandú'
+                            'exemplarCity': 'Katmand\u00FA'
                         },
                         'Khandyga': {
                             'exemplarCity': 'Khandyga'
@@ -1578,7 +1578,7 @@
                             'exemplarCity': 'Masqat'
                         },
                         'Nicosia': {
-                            'exemplarCity': 'Nicòsia'
+                            'exemplarCity': 'Nic\u00F2sia'
                         },
                         'Novokuznetsk': {
                             'exemplarCity': 'Novokuznetsk'
@@ -1599,13 +1599,13 @@
                     'Taipei': {
                         'long': {
                             'generic': 'Hora de Taipei',
-                            'standard': 'Hora estàndard de Taipei',
-                            'daylight': 'Hora d\'estiu de Taipei'
+                            'standard': 'Hora est\u00E0ndard de Taipei',
+                            'daylight': "Hora d'estiu de Taipei"
                         }
                     },
                     'Tahiti': {
                         'long': {
-                            'standard': 'Hora de Tahití'
+                            'standard': 'Hora de Tahit\u00ED'
                         }
                     },
                     'Syowa': {
@@ -1620,12 +1620,12 @@
                     },
                     'South_Georgia': {
                         'long': {
-                            'standard': 'Hora de Geòrgia del Sud'
+                            'standard': 'Hora de Ge\u00F2rgia del Sud'
                         }
                     },
                     'Solomon': {
                         'long': {
-                            'standard': 'Hora de Salomó'
+                            'standard': 'Hora de Salom\u00F3'
                         }
                     },
                     'Singapore': {
@@ -1641,22 +1641,22 @@
                     'Samoa': {
                         'long': {
                             'generic': 'Hora de Samoa',
-                            'standard': 'Hora estàndard de Samoa',
-                            'daylight': 'Hora d\'estiu de Samoa'
+                            'standard': 'Hora est\u00E0ndard de Samoa',
+                            'daylight': "Hora d'estiu de Samoa"
                         }
                     },
                     'Samara': {
                         'long': {
                             'generic': 'Hora de Samara',
-                            'standard': 'Hora estàndard de Samara',
-                            'daylight': 'Hora d\'estiu de Samara'
+                            'standard': 'Hora est\u00E0ndard de Samara',
+                            'daylight': "Hora d'estiu de Samara"
                         }
                     },
                     'Sakhalin': {
                         'long': {
                             'generic': 'Hora de Sakhalin',
-                            'standard': 'Hora estàndard de Sakhalin',
-                            'daylight': 'Hora d\'estiu de Sakhalin'
+                            'standard': 'Hora est\u00E0ndard de Sakhalin',
+                            'daylight': "Hora d'estiu de Sakhalin"
                         }
                     },
                     'Rothera': {
@@ -1666,132 +1666,132 @@
                     },
                     'Reunion': {
                         'long': {
-                            'standard': 'Hora de Reunió'
+                            'standard': 'Hora de Reuni\u00F3'
                         }
                     },
                     'Atlantic': {
                         'long': {
-                            'generic': 'Hora de l\'Atlàntic',
-                            'standard': 'Hora estàndard de l\'Atlàntic',
-                            'daylight': 'Hora d\'estiu de l\'Atlàntic'
+                            'generic': "Hora de l'Atl\u00E0ntic",
+                            'standard': "Hora est\u00E0ndard de l'Atl\u00E0ntic",
+                            'daylight': "Hora d'estiu de l'Atl\u00E0ntic"
                         }
                     },
                     'America_Central': {
                         'long': {
-                            'generic': 'Hora central d\'Amèrica del Nord',
-                            'standard': 'Hora estàndard central d\'Amèrica del Nord',
-                            'daylight': 'Hora d\'estiu central d\'Amèrica del Nord'
+                            'generic': "Hora central d'Am\u00E8rica del Nord",
+                            'standard': "Hora est\u00E0ndard central d'Am\u00E8rica del Nord",
+                            'daylight': "Hora d'estiu central d'Am\u00E8rica del Nord"
                         }
                     },
                     'Amazon': {
                         'long': {
-                            'generic': 'Hora de l\'Amazones',
-                            'standard': 'Hora estàndard de l\'Amazones',
-                            'daylight': 'Hora d\'estiu de l\'Amazones'
+                            'generic': "Hora de l'Amazones",
+                            'standard': "Hora est\u00E0ndard de l'Amazones",
+                            'daylight': "Hora d'estiu de l'Amazones"
                         }
                     },
                     'Alaska': {
                         'long': {
-                            'generic': 'Hora d\'Alaska',
-                            'standard': 'Hora estàndard d\'Alaska',
-                            'daylight': 'Hora d\'estiu d\'Alaska'
+                            'generic': "Hora d'Alaska",
+                            'standard': "Hora est\u00E0ndard d'Alaska",
+                            'daylight': "Hora d'estiu d'Alaska"
                         }
                     },
                     'Africa_Western': {
                         'long': {
-                            'generic': 'Hora de l\'Àfrica Occidental',
-                            'standard': 'Hora estàndard de l\'Àfrica Occidental',
-                            'daylight': 'Hora d\'estiu de l\'Àfrica Occidental'
+                            'generic': "Hora de l'\u00C0frica Occidental",
+                            'standard': "Hora est\u00E0ndard de l'\u00C0frica Occidental",
+                            'daylight': "Hora d'estiu de l'\u00C0frica Occidental"
                         }
                     },
                     'Africa_Southern': {
                         'long': {
-                            'standard': 'Hora estàndard del sud de l\'Àfrica'
+                            'standard': "Hora est\u00E0ndard del sud de l'\u00C0frica"
                         }
                     },
                     'Africa_Eastern': {
                         'long': {
-                            'standard': 'Hora de l\'Àfrica Oriental'
+                            'standard': "Hora de l'\u00C0frica Oriental"
                         }
                     },
                     'Africa_Central': {
                         'long': {
-                            'standard': 'Hora de l\'Àfrica Central'
+                            'standard': "Hora de l'\u00C0frica Central"
                         }
                     },
                     'Afghanistan': {
                         'long': {
-                            'standard': 'Hora de l\'Afganistan'
+                            'standard': "Hora de l'Afganistan"
                         }
                     },
                     'America_Eastern': {
                         'long': {
-                            'generic': 'Hora oriental d\'Amèrica del Nord',
-                            'standard': 'Hora estàndard oriental d\'Amèrica del Nord',
-                            'daylight': 'Hora d\'estiu oriental d\'Amèrica del Nord'
+                            'generic': "Hora oriental d'Am\u00E8rica del Nord",
+                            'standard': "Hora est\u00E0ndard oriental d'Am\u00E8rica del Nord",
+                            'daylight': "Hora d'estiu oriental d'Am\u00E8rica del Nord"
                         }
                     },
                     'America_Mountain': {
                         'long': {
-                            'generic': 'Hora de muntanya d\'Amèrica del Nord',
-                            'standard': 'Hora estàndard de muntanya d\'Amèrica del Nord',
-                            'daylight': 'Hora d\'estiu de muntanya d\'Amèrica del Nord'
+                            'generic': "Hora de muntanya d'Am\u00E8rica del Nord",
+                            'standard': "Hora est\u00E0ndard de muntanya d'Am\u00E8rica del Nord",
+                            'daylight': "Hora d'estiu de muntanya d'Am\u00E8rica del Nord"
                         }
                     },
                     'America_Pacific': {
                         'long': {
-                            'generic': 'Hora del Pacífic',
-                            'standard': 'Hora estàndard del Pacífic',
-                            'daylight': 'Hora d\'estiu del Pacífic'
+                            'generic': 'Hora del Pac\u00EDfic',
+                            'standard': 'Hora est\u00E0ndard del Pac\u00EDfic',
+                            'daylight': "Hora d'estiu del Pac\u00EDfic"
                         }
                     },
                     'Anadyr': {
                         'long': {
-                            'generic': 'Hora d\'Anadyr',
-                            'standard': 'Hora estàndard d\'Anadyr',
-                            'daylight': 'Horari d\'estiu d\'Anadyr'
+                            'generic': "Hora d'Anadyr",
+                            'standard': "Hora est\u00E0ndard d'Anadyr",
+                            'daylight': "Horari d'estiu d'Anadyr"
                         }
                     },
                     'Arabian': {
                         'long': {
-                            'generic': 'Hora àrab',
-                            'standard': 'Hora estàndard àrab',
-                            'daylight': 'Hora d\'estiu àrab'
+                            'generic': 'Hora \u00E0rab',
+                            'standard': 'Hora est\u00E0ndard \u00E0rab',
+                            'daylight': "Hora d'estiu \u00E0rab"
                         }
                     },
                     'Argentina': {
                         'long': {
-                            'generic': 'Hora de l\'Argentina',
-                            'standard': 'Hora estàndard de l\'Argentina',
-                            'daylight': 'Hora d\'estiu de l\'Argentina'
+                            'generic': "Hora de l'Argentina",
+                            'standard': "Hora est\u00E0ndard de l'Argentina",
+                            'daylight': "Hora d'estiu de l'Argentina"
                         }
                     },
                     'Argentina_Western': {
                         'long': {
-                            'generic': 'Hora de l\'oest de l\'Argentina',
-                            'standard': 'Hora estàndard de l\'oest de l\'Argentina',
-                            'daylight': 'Hora d\'estiu de l\'oest de l\'Argentina'
+                            'generic': "Hora de l'oest de l'Argentina",
+                            'standard': "Hora est\u00E0ndard de l'oest de l'Argentina",
+                            'daylight': "Hora d'estiu de l'oest de l'Argentina"
                         }
                     },
                     'Armenia': {
                         'long': {
-                            'generic': 'Hora d\'Armènia',
-                            'standard': 'Hora estàndard d\'Armènia',
-                            'daylight': 'Hora d\'estiu d\'Armènia'
+                            'generic': "Hora d'Arm\u00E8nia",
+                            'standard': "Hora est\u00E0ndard d'Arm\u00E8nia",
+                            'daylight': "Hora d'estiu d'Arm\u00E8nia"
                         }
                     },
                     'China': {
                         'long': {
                             'generic': 'Hora de la Xina',
-                            'standard': 'Hora estàndard de la Xina',
-                            'daylight': 'Hora d\'estiu de la Xina'
+                            'standard': 'Hora est\u00E0ndard de la Xina',
+                            'daylight': "Hora d'estiu de la Xina"
                         }
                     },
                     'Choibalsan': {
                         'long': {
                             'generic': 'Hora de Choibalsan',
-                            'standard': 'Hora estàndard de Choibalsan',
-                            'daylight': 'Hora d\'estiu de Choibalsan'
+                            'standard': 'Hora est\u00E0ndard de Choibalsan',
+                            'daylight': "Hora d'estiu de Choibalsan"
                         }
                     },
                     'Christmas': {
@@ -1806,23 +1806,23 @@
                     },
                     'Colombia': {
                         'long': {
-                            'generic': 'Hora de Colòmbia',
-                            'standard': 'Hora estàndard de Colòmbia',
-                            'daylight': 'Hora d\'estiu de Colòmbia'
+                            'generic': 'Hora de Col\u00F2mbia',
+                            'standard': 'Hora est\u00E0ndard de Col\u00F2mbia',
+                            'daylight': "Hora d'estiu de Col\u00F2mbia"
                         }
                     },
                     'Cook': {
                         'long': {
                             'generic': 'Hora de les illes Cook',
-                            'standard': 'Hora estàndard de les illes Cook',
+                            'standard': 'Hora est\u00E0ndard de les illes Cook',
                             'daylight': 'Hora de mig estiu de les illes Cook'
                         }
                     },
                     'Cuba': {
                         'long': {
                             'generic': 'Hora de Cuba',
-                            'standard': 'Hora estàndard de Cuba',
-                            'daylight': 'Hora d\'estiu de Cuba'
+                            'standard': 'Hora est\u00E0ndard de Cuba',
+                            'daylight': "Hora d'estiu de Cuba"
                         }
                     },
                     'Davis': {
@@ -1832,7 +1832,7 @@
                     },
                     'DumontDUrville': {
                         'long': {
-                            'standard': 'Hora de Dumont-d\'Urville'
+                            'standard': "Hora de Dumont-d'Urville"
                         }
                     },
                     'East_Timor': {
@@ -1842,47 +1842,47 @@
                     },
                     'Easter': {
                         'long': {
-                            'generic': 'Hora de l\'illa de Pasqua',
-                            'standard': 'Hora estàndard de l\'illa de Pasqua',
-                            'daylight': 'Hora d\'estiu de l\'illa de Pasqua'
+                            'generic': "Hora de l'illa de Pasqua",
+                            'standard': "Hora est\u00E0ndard de l'illa de Pasqua",
+                            'daylight': "Hora d'estiu de l'illa de Pasqua"
                         }
                     },
                     'Ecuador': {
                         'long': {
-                            'standard': 'Hora de l\'Equador'
+                            'standard': "Hora de l'Equador"
                         }
                     },
                     'Europe_Central': {
                         'long': {
-                            'generic': 'Hora del Centre d\'Europa',
-                            'standard': 'Hora estàndard del Centre d\'Europa',
-                            'daylight': 'Hora d\'estiu del Centre d\'Europa'
+                            'generic': "Hora del Centre d'Europa",
+                            'standard': "Hora est\u00E0ndard del Centre d'Europa",
+                            'daylight': "Hora d'estiu del Centre d'Europa"
                         }
                     },
                     'Europe_Eastern': {
                         'long': {
-                            'generic': 'Hora de l\'Est d\'Europa',
-                            'standard': 'Hora estàndard de l\'Est d\'Europa',
-                            'daylight': 'Hora d\'estiu de l\'Est d\'Europa'
+                            'generic': "Hora de l'Est d'Europa",
+                            'standard': "Hora est\u00E0ndard de l'Est d'Europa",
+                            'daylight': "Hora d'estiu de l'Est d'Europa"
                         }
                     },
                     'Europe_Western': {
                         'long': {
-                            'generic': 'Hora de l\'Oest d\'Europa',
-                            'standard': 'Hora estàndard de l\'Oest d\'Europa',
-                            'daylight': 'Hora d\'estiu de l\'Oest d\'Europa'
+                            'generic': "Hora de l'Oest d'Europa",
+                            'standard': "Hora est\u00E0ndard de l'Oest d'Europa",
+                            'daylight': "Hora d'estiu de l'Oest d'Europa"
                         }
                     },
                     'India': {
                         'long': {
-                            'standard': 'Hora estàndard de l\'Índia'
+                            'standard': "Hora est\u00E0ndard de l'\u00CDndia"
                         }
                     },
                     'Tonga': {
                         'long': {
                             'generic': 'Hora de Tonga',
-                            'standard': 'Hora estàndard de Tonga',
-                            'daylight': 'Hora d\'estiu de Tonga'
+                            'standard': 'Hora est\u00E0ndard de Tonga',
+                            'daylight': "Hora d'estiu de Tonga"
                         }
                     },
                     'Truk': {
@@ -1893,8 +1893,8 @@
                     'Turkmenistan': {
                         'long': {
                             'generic': 'Hora del Turkmenistan',
-                            'standard': 'Hora estàndard del Turkmenistan',
-                            'daylight': 'Hora d\'estiu del Turkmenistan'
+                            'standard': 'Hora est\u00E0ndard del Turkmenistan',
+                            'daylight': "Hora d'estiu del Turkmenistan"
                         }
                     },
                     'Tuvalu': {
@@ -1904,37 +1904,37 @@
                     },
                     'Uruguay': {
                         'long': {
-                            'generic': 'Hora de l\'Uruguai',
-                            'standard': 'Hora estàndard de l\'Uruguai',
-                            'daylight': 'Hora d\'estiu de l\'Uruguai'
+                            'generic': "Hora de l'Uruguai",
+                            'standard': "Hora est\u00E0ndard de l'Uruguai",
+                            'daylight': "Hora d'estiu de l'Uruguai"
                         }
                     },
                     'Uzbekistan': {
                         'long': {
-                            'generic': 'Hora de l\'Uzbekistan',
-                            'standard': 'Hora estàndard de l\'Uzbekistan',
-                            'daylight': 'Hora d\'estiu de l\'Uzbekistan'
+                            'generic': "Hora de l'Uzbekistan",
+                            'standard': "Hora est\u00E0ndard de l'Uzbekistan",
+                            'daylight': "Hora d'estiu de l'Uzbekistan"
                         }
                     },
                     'Vanuatu': {
                         'long': {
                             'generic': 'Hora de Vanatu',
-                            'standard': 'Hora estàndard de Vanatu',
-                            'daylight': 'Hora d\'estiu de Vanatu'
+                            'standard': 'Hora est\u00E0ndard de Vanatu',
+                            'daylight': "Hora d'estiu de Vanatu"
                         }
                     },
                     'Yekaterinburg': {
                         'long': {
-                            'generic': 'Hora d\'Ekaterinburg',
-                            'standard': 'Hora estàndard d\'Ekaterinburg',
-                            'daylight': 'Hora d\'estiu d\'Ekaterinburg'
+                            'generic': "Hora d'Ekaterinburg",
+                            'standard': "Hora est\u00E0ndard d'Ekaterinburg",
+                            'daylight': "Hora d'estiu d'Ekaterinburg"
                         }
                     },
                     'Yakutsk': {
                         'long': {
                             'generic': 'Hora de Iakutsk',
-                            'standard': 'Hora estàndard de Iakutsk',
-                            'daylight': 'Hora d\'estiu de Iakutsk'
+                            'standard': 'Hora est\u00E0ndard de Iakutsk',
+                            'daylight': "Hora d'estiu de Iakutsk"
                         }
                     },
                     'Wallis': {
@@ -1955,41 +1955,41 @@
                     'Volgograd': {
                         'long': {
                             'generic': 'Hora de Volgograd',
-                            'standard': 'Hora estàndard de Volgograd',
-                            'daylight': 'Hora d\'estiu de Volgograd'
+                            'standard': 'Hora est\u00E0ndard de Volgograd',
+                            'daylight': "Hora d'estiu de Volgograd"
                         }
                     },
                     'Vladivostok': {
                         'long': {
                             'generic': 'Hora de Vladivostok',
-                            'standard': 'Hora estàndard de Vladivostok',
-                            'daylight': 'Hora d\'estiu de Vladivostok'
+                            'standard': 'Hora est\u00E0ndard de Vladivostok',
+                            'daylight': "Hora d'estiu de Vladivostok"
                         }
                     },
                     'Venezuela': {
                         'long': {
-                            'standard': 'Hora de Veneçuela'
+                            'standard': 'Hora de Vene\u00E7uela'
                         }
                     },
                     'Hovd': {
                         'long': {
                             'generic': 'Hora de Hovd',
-                            'standard': 'Hora estàndard de Hovd',
-                            'daylight': 'Hora d\'estiu de Hovd'
+                            'standard': 'Hora est\u00E0ndard de Hovd',
+                            'daylight': "Hora d'estiu de Hovd"
                         }
                     },
                     'Hong_Kong': {
                         'long': {
                             'generic': 'Hora de Hong Kong',
-                            'standard': 'Hora estàndard de Hong Kong',
-                            'daylight': 'Hora d\'estiu de Hong Kong'
+                            'standard': 'Hora est\u00E0ndard de Hong Kong',
+                            'daylight': "Hora d'estiu de Hong Kong"
                         }
                     },
                     'Hawaii_Aleutian': {
                         'long': {
                             'generic': 'Hora de Hawaii-Aleutianes',
-                            'standard': 'Hora estàndard de Hawaii-Aleutianes',
-                            'daylight': 'Hora d\'estiu de Hawaii-Aleutianes'
+                            'standard': 'Hora est\u00E0ndard de Hawaii-Aleutianes',
+                            'daylight': "Hora d'estiu de Hawaii-Aleutianes"
                         }
                     },
                     'Guyana': {
@@ -2004,21 +2004,21 @@
                     },
                     'Greenland_Western': {
                         'long': {
-                            'generic': 'Hora de l\'Oest de Grenlàndia',
-                            'standard': 'Hora estàndard de l\'Oest de Grenlàndia',
-                            'daylight': 'Hora d\'estiu de l\'Oest de Grenlàndia'
+                            'generic': "Hora de l'Oest de Grenl\u00E0ndia",
+                            'standard': "Hora est\u00E0ndard de l'Oest de Grenl\u00E0ndia",
+                            'daylight': "Hora d'estiu de l'Oest de Grenl\u00E0ndia"
                         }
                     },
                     'Greenland_Eastern': {
                         'long': {
-                            'generic': 'Hora de l\'Est de Grenlàndia',
-                            'standard': 'Hora estàndard de l\'Est de Grenlàndia',
-                            'daylight': 'Hora d\'estiu de l\'Est de Grenlàndia'
+                            'generic': "Hora de l'Est de Grenl\u00E0ndia",
+                            'standard': "Hora est\u00E0ndard de l'Est de Grenl\u00E0ndia",
+                            'daylight': "Hora d'estiu de l'Est de Grenl\u00E0ndia"
                         }
                     },
                     'GMT': {
                         'long': {
-                            'standard': 'Hora del Meridià de Greenwich'
+                            'standard': 'Hora del Meridi\u00E0 de Greenwich'
                         }
                     },
                     'Gilbert_Islands': {
@@ -2028,9 +2028,9 @@
                     },
                     'Georgia': {
                         'long': {
-                            'generic': 'Hora de Geòrgia',
-                            'standard': 'Hora estàndard de Geòrgia',
-                            'daylight': 'Hora d\'estiu de Geòrgia'
+                            'generic': 'Hora de Ge\u00F2rgia',
+                            'standard': 'Hora est\u00E0ndard de Ge\u00F2rgia',
+                            'daylight': "Hora d'estiu de Ge\u00F2rgia"
                         }
                     },
                     'Gambier': {
@@ -2040,80 +2040,80 @@
                     },
                     'Galapagos': {
                         'long': {
-                            'standard': 'Hora de Galápagos'
+                            'standard': 'Hora de Gal\u00E1pagos'
                         }
                     },
                     'French_Southern': {
                         'long': {
-                            'standard': 'Hora d\'Antàrtida i França del Sud'
+                            'standard': "Hora d'Ant\u00E0rtida i Fran\u00E7a del Sud"
                         }
                     },
                     'French_Guiana': {
                         'long': {
-                            'standard': 'Hora d\'estiu de la Guaiana Francesa'
+                            'standard': "Hora d'estiu de la Guaiana Francesa"
                         }
                     },
                     'Fiji': {
                         'long': {
                             'generic': 'Hora de Fiji',
-                            'standard': 'Hora estàndard de Fiji',
-                            'daylight': 'Hora d\'estiu de Fiji'
+                            'standard': 'Hora est\u00E0ndard de Fiji',
+                            'daylight': "Hora d'estiu de Fiji"
                         }
                     },
                     'Falkland': {
                         'long': {
                             'generic': 'Hora de les illes Malvines',
-                            'standard': 'Hora estàndard de les illes Malvines',
-                            'daylight': 'Hora d\'estiu de les illes Malvines'
+                            'standard': 'Hora est\u00E0ndard de les illes Malvines',
+                            'daylight': "Hora d'estiu de les illes Malvines"
                         }
                     },
                     'Australia_Central': {
                         'long': {
-                            'generic': 'Hora d\'Austràlia Central',
-                            'standard': 'Hora estàndard d\'Austràlia Central',
-                            'daylight': 'Hora d\'estiu d\'Austràlia Central'
+                            'generic': "Hora d'Austr\u00E0lia Central",
+                            'standard': "Hora est\u00E0ndard d'Austr\u00E0lia Central",
+                            'daylight': "Hora d'estiu d'Austr\u00E0lia Central"
                         }
                     },
                     'Australia_CentralWestern': {
                         'long': {
-                            'generic': 'Hora d\'Austràlia centre-occidental',
-                            'standard': 'Hora estàndard d\'Austràlia centre-occidental',
-                            'daylight': 'Hora d\'estiu d\'Austràlia centre-occidental'
+                            'generic': "Hora d'Austr\u00E0lia centre-occidental",
+                            'standard': "Hora est\u00E0ndard d'Austr\u00E0lia centre-occidental",
+                            'daylight': "Hora d'estiu d'Austr\u00E0lia centre-occidental"
                         }
                     },
                     'Australia_Eastern': {
                         'long': {
-                            'generic': 'Hora d\'Austràlia Oriental',
-                            'standard': 'Hora estàndard d\'Austràlia Oriental',
-                            'daylight': 'Hora d\'estiu d\'Austràlia Oriental'
+                            'generic': "Hora d'Austr\u00E0lia Oriental",
+                            'standard': "Hora est\u00E0ndard d'Austr\u00E0lia Oriental",
+                            'daylight': "Hora d'estiu d'Austr\u00E0lia Oriental"
                         }
                     },
                     'Australia_Western': {
                         'long': {
-                            'generic': 'Hora d\'Austràlia Occidental',
-                            'standard': 'Hora estàndard d\'Austràlia Occidental',
-                            'daylight': 'Hora d\'estiu d\'Austràlia Occidental'
+                            'generic': "Hora d'Austr\u00E0lia Occidental",
+                            'standard': "Hora est\u00E0ndard d'Austr\u00E0lia Occidental",
+                            'daylight': "Hora d'estiu d'Austr\u00E0lia Occidental"
                         }
                     },
                     'Azerbaijan': {
                         'long': {
-                            'generic': 'Hora d\'Azerbaidjan',
-                            'standard': 'Hora estàndard d\'Azerbaidjan',
-                            'daylight': 'Hora d\'estiu d\'Azerbaidjan'
+                            'generic': "Hora d'Azerbaidjan",
+                            'standard': "Hora est\u00E0ndard d'Azerbaidjan",
+                            'daylight': "Hora d'estiu d'Azerbaidjan"
                         }
                     },
                     'Azores': {
                         'long': {
-                            'generic': 'Hora de les Açores',
-                            'standard': 'Hora estàndard de les Açores',
-                            'daylight': 'Hora d\'estiu de les Açores'
+                            'generic': 'Hora de les A\u00E7ores',
+                            'standard': 'Hora est\u00E0ndard de les A\u00E7ores',
+                            'daylight': "Hora d'estiu de les A\u00E7ores"
                         }
                     },
                     'Bangladesh': {
                         'long': {
                             'generic': 'Hora de Bangla Desh',
-                            'standard': 'Hora estàndard de Bangla Desh',
-                            'daylight': 'Hora d\'estiu de Bangla Desh'
+                            'standard': 'Hora est\u00E0ndard de Bangla Desh',
+                            'daylight': "Hora d'estiu de Bangla Desh"
                         }
                     },
                     'Bhutan': {
@@ -2123,14 +2123,14 @@
                     },
                     'Bolivia': {
                         'long': {
-                            'standard': 'Hora de Bolívia'
+                            'standard': 'Hora de Bol\u00EDvia'
                         }
                     },
                     'Brasilia': {
                         'long': {
-                            'generic': 'Hora de Brasília',
-                            'standard': 'Hora estàndard de Brasília',
-                            'daylight': 'Hora d\'estiu de Brasília'
+                            'generic': 'Hora de Bras\u00EDlia',
+                            'standard': 'Hora est\u00E0ndard de Bras\u00EDlia',
+                            'daylight': "Hora d'estiu de Bras\u00EDlia"
                         }
                     },
                     'Brunei': {
@@ -2141,8 +2141,8 @@
                     'Cape_Verde': {
                         'long': {
                             'generic': 'Hora de Cap Verd',
-                            'standard': 'Hora estàndard de Cap Verd',
-                            'daylight': 'Hora d\'estiu de Cap Verd'
+                            'standard': 'Hora est\u00E0ndard de Cap Verd',
+                            'daylight': "Hora d'estiu de Cap Verd"
                         }
                     },
                     'Chamorro': {
@@ -2153,92 +2153,92 @@
                     'Chatham': {
                         'long': {
                             'generic': 'Hora de Chatham',
-                            'standard': 'Hora estàndard de Chatham',
-                            'daylight': 'Hora d\'estiu de Chatham'
+                            'standard': 'Hora est\u00E0ndard de Chatham',
+                            'daylight': "Hora d'estiu de Chatham"
                         }
                     },
                     'Chile': {
                         'long': {
                             'generic': 'Hora de Xile',
-                            'standard': 'Hora estàndard de Xile',
-                            'daylight': 'Hora d\'estiu de Xile'
+                            'standard': 'Hora est\u00E0ndard de Xile',
+                            'daylight': "Hora d'estiu de Xile"
                         }
                     },
                     'Indian_Ocean': {
                         'long': {
-                            'standard': 'Hora de l\'oceà Índic'
+                            'standard': "Hora de l'oce\u00E0 \u00CDndic"
                         }
                     },
                     'Indochina': {
                         'long': {
-                            'standard': 'Hora d\'Indoxina'
+                            'standard': "Hora d'Indoxina"
                         }
                     },
                     'Indonesia_Central': {
                         'long': {
-                            'standard': 'Hora central d\'Indonèsia'
+                            'standard': "Hora central d'Indon\u00E8sia"
                         }
                     },
                     'Indonesia_Eastern': {
                         'long': {
-                            'standard': 'Hora de l\'est d\'Indonèsia'
+                            'standard': "Hora de l'est d'Indon\u00E8sia"
                         }
                     },
                     'Indonesia_Western': {
                         'long': {
-                            'standard': 'Hora de l\'oest d\'Indonèsia'
+                            'standard': "Hora de l'oest d'Indon\u00E8sia"
                         }
                     },
                     'Iran': {
                         'long': {
-                            'generic': 'Hora d\'Iran',
-                            'standard': 'Hora estàndard d\'Iran',
-                            'daylight': 'Hora d\'estiu d\'Iran'
+                            'generic': "Hora d'Iran",
+                            'standard': "Hora est\u00E0ndard d'Iran",
+                            'daylight': "Hora d'estiu d'Iran"
                         }
                     },
                     'Irkutsk': {
                         'long': {
-                            'generic': 'Hora d\'Irkutsk',
-                            'standard': 'Hora estàndard d\'Irkutsk',
-                            'daylight': 'Hora d\'estiu d\'Irkutsk'
+                            'generic': "Hora d'Irkutsk",
+                            'standard': "Hora est\u00E0ndard d'Irkutsk",
+                            'daylight': "Hora d'estiu d'Irkutsk"
                         }
                     },
                     'Israel': {
                         'long': {
-                            'generic': 'Hora d\'Israel',
-                            'standard': 'Hora estàndard d\'Israel',
-                            'daylight': 'Hora d\'estiu d\'Israel'
+                            'generic': "Hora d'Israel",
+                            'standard': "Hora est\u00E0ndard d'Israel",
+                            'daylight': "Hora d'estiu d'Israel"
                         }
                     },
                     'Japan': {
                         'long': {
-                            'generic': 'Hora del Japó',
-                            'standard': 'Hora estàndard del Japó',
-                            'daylight': 'Hora d\'estiu del Japó'
+                            'generic': 'Hora del Jap\u00F3',
+                            'standard': 'Hora est\u00E0ndard del Jap\u00F3',
+                            'daylight': "Hora d'estiu del Jap\u00F3"
                         }
                     },
                     'Kamchatka': {
                         'long': {
                             'generic': 'Hora de Kamtxatka',
-                            'standard': 'Hora estàndard de Petropavlovsk de Kamtxatka',
-                            'daylight': 'Horari d\'estiu de Petropavlovsk de Kamtxatka'
+                            'standard': 'Hora est\u00E0ndard de Petropavlovsk de Kamtxatka',
+                            'daylight': "Horari d'estiu de Petropavlovsk de Kamtxatka"
                         }
                     },
                     'Kazakhstan_Eastern': {
                         'long': {
-                            'standard': 'Hora de l\'est del Kazakhstan'
+                            'standard': "Hora de l'est del Kazakhstan"
                         }
                     },
                     'Kazakhstan_Western': {
                         'long': {
-                            'standard': 'Hora de l\'oest del Kazakhstan'
+                            'standard': "Hora de l'oest del Kazakhstan"
                         }
                     },
                     'Korea': {
                         'long': {
                             'generic': 'Hora de Corea',
-                            'standard': 'Hora estàndard de Corea',
-                            'daylight': 'Hora d\'estiu de Corea'
+                            'standard': 'Hora est\u00E0ndard de Corea',
+                            'daylight': "Hora d'estiu de Corea"
                         }
                     },
                     'Kosrae': {
@@ -2249,8 +2249,8 @@
                     'Krasnoyarsk': {
                         'long': {
                             'generic': 'Hora de Krasnoiarsk',
-                            'standard': 'Hora estàndard de Krasnoiarsk',
-                            'daylight': 'Hora d\'estiu de Krasnoiarsk'
+                            'standard': 'Hora est\u00E0ndard de Krasnoiarsk',
+                            'daylight': "Hora d'estiu de Krasnoiarsk"
                         }
                     },
                     'Kyrgystan': {
@@ -2266,8 +2266,8 @@
                     'Lord_Howe': {
                         'long': {
                             'generic': 'Hora de Lord Howe',
-                            'standard': 'Hora estàndard de Lord Howe',
-                            'daylight': 'Horari d\'estiu de Lord Howe'
+                            'standard': 'Hora est\u00E0ndard de Lord Howe',
+                            'daylight': "Horari d'estiu de Lord Howe"
                         }
                     },
                     'Macquarie': {
@@ -2278,13 +2278,13 @@
                     'Magadan': {
                         'long': {
                             'generic': 'Hora de Magadan',
-                            'standard': 'Hora estàndard de Magadan',
-                            'daylight': 'Hora d\'estiu de Magadan'
+                            'standard': 'Hora est\u00E0ndard de Magadan',
+                            'daylight': "Hora d'estiu de Magadan"
                         }
                     },
                     'Malaysia': {
                         'long': {
-                            'standard': 'Hora de Malàisia'
+                            'standard': 'Hora de Mal\u00E0isia'
                         }
                     },
                     'Maldives': {
@@ -2305,8 +2305,8 @@
                     'Mauritius': {
                         'long': {
                             'generic': 'Hora de Maurici',
-                            'standard': 'Hora estàndard de Maurici',
-                            'daylight': 'Hora d\'estiu de Maurici'
+                            'standard': 'Hora est\u00E0ndard de Maurici',
+                            'daylight': "Hora d'estiu de Maurici"
                         }
                     },
                     'Mawson': {
@@ -2316,16 +2316,16 @@
                     },
                     'Mongolia': {
                         'long': {
-                            'generic': 'Hora d\'Ulan Bator',
-                            'standard': 'Hora estàndard d\'Ulan Bator',
-                            'daylight': 'Hora d\'estiu d\'Ulan Bator'
+                            'generic': "Hora d'Ulan Bator",
+                            'standard': "Hora est\u00E0ndard d'Ulan Bator",
+                            'daylight': "Hora d'estiu d'Ulan Bator"
                         }
                     },
                     'Moscow': {
                         'long': {
                             'generic': 'Hora de Moscou',
-                            'standard': 'Hora estàndard de Moscou',
-                            'daylight': 'Hora d\'estiu de Moscou'
+                            'standard': 'Hora est\u00E0ndard de Moscou',
+                            'daylight': "Hora d'estiu de Moscou"
                         }
                     },
                     'Myanmar': {
@@ -2345,23 +2345,23 @@
                     },
                     'New_Caledonia': {
                         'long': {
-                            'generic': 'Hora de Nova Caledònia',
-                            'standard': 'Hora estàndard de Nova Caledònia',
-                            'daylight': 'Hora d\'estiu de Nova Caledònia'
+                            'generic': 'Hora de Nova Caled\u00F2nia',
+                            'standard': 'Hora est\u00E0ndard de Nova Caled\u00F2nia',
+                            'daylight': "Hora d'estiu de Nova Caled\u00F2nia"
                         }
                     },
                     'New_Zealand': {
                         'long': {
                             'generic': 'Hora de Nova Zelanda',
-                            'standard': 'Hora estàndard de Nova Zelanda',
-                            'daylight': 'Hora d\'estiu de Nova Zelanda'
+                            'standard': 'Hora est\u00E0ndard de Nova Zelanda',
+                            'daylight': "Hora d'estiu de Nova Zelanda"
                         }
                     },
                     'Newfoundland': {
                         'long': {
                             'generic': 'Hora de Terranova',
-                            'standard': 'Hora estàndard de Terranova',
-                            'daylight': 'Hora d\'estiu de Terranova'
+                            'standard': 'Hora est\u00E0ndard de Terranova',
+                            'daylight': "Hora d'estiu de Terranova"
                         }
                     },
                     'Niue': {
@@ -2377,29 +2377,29 @@
                     'Noronha': {
                         'long': {
                             'generic': 'Hora de Fernando de Noronha',
-                            'standard': 'Hora estàndard de Fernando de Noronha',
-                            'daylight': 'Hora d\'estiu de Fernando de Noronha'
+                            'standard': 'Hora est\u00E0ndard de Fernando de Noronha',
+                            'daylight': "Hora d'estiu de Fernando de Noronha"
                         }
                     },
                     'Novosibirsk': {
                         'long': {
                             'generic': 'Hora de Novosibirsk',
-                            'standard': 'Hora estàndard de Novosibirsk',
-                            'daylight': 'Hora d\'estiu de Novosibirsk'
+                            'standard': 'Hora est\u00E0ndard de Novosibirsk',
+                            'daylight': "Hora d'estiu de Novosibirsk"
                         }
                     },
                     'Omsk': {
                         'long': {
-                            'generic': 'Hora d\'Omsk',
-                            'standard': 'Hora estàndard d\'Omsk',
-                            'daylight': 'Hora d\'estiu d\'Omsk'
+                            'generic': "Hora d'Omsk",
+                            'standard': "Hora est\u00E0ndard d'Omsk",
+                            'daylight': "Hora d'estiu d'Omsk"
                         }
                     },
                     'Pakistan': {
                         'long': {
                             'generic': 'Hora del Pakistan',
-                            'standard': 'Hora estàndard del Pakistan',
-                            'daylight': 'Hora d\'estiu del Pakistan'
+                            'standard': 'Hora est\u00E0ndard del Pakistan',
+                            'daylight': "Hora d'estiu del Pakistan"
                         }
                     },
                     'Palau': {
@@ -2415,22 +2415,22 @@
                     'Paraguay': {
                         'long': {
                             'generic': 'Hora del Paraguai',
-                            'standard': 'Hora estàndard del Paraguai',
-                            'daylight': 'Hora d\'estiu del Paraguai'
+                            'standard': 'Hora est\u00E0ndard del Paraguai',
+                            'daylight': "Hora d'estiu del Paraguai"
                         }
                     },
                     'Peru': {
                         'long': {
-                            'generic': 'Hora del Perú',
-                            'standard': 'Hora estàndard del Perú',
-                            'daylight': 'Hora d\'estiu del Perú'
+                            'generic': 'Hora del Per\u00FA',
+                            'standard': 'Hora est\u00E0ndard del Per\u00FA',
+                            'daylight': "Hora d'estiu del Per\u00FA"
                         }
                     },
                     'Philippines': {
                         'long': {
                             'generic': 'Hora de Filipines',
-                            'standard': 'Hora estàndard de Filipines',
-                            'daylight': 'Hora d\'estiu de Filipines'
+                            'standard': 'Hora est\u00E0ndard de Filipines',
+                            'daylight': "Hora d'estiu de Filipines"
                         }
                     },
                     'Phoenix_Islands': {
@@ -2441,8 +2441,8 @@
                     'Pierre_Miquelon': {
                         'long': {
                             'generic': 'Hora de Saint-Pierre i Miquelon',
-                            'standard': 'Hora estàndard de Saint-Pierre i Miquelon',
-                            'daylight': 'Hora d\'estiu de Saint-Pierre i Miquelon'
+                            'standard': 'Hora est\u00E0ndard de Saint-Pierre i Miquelon',
+                            'daylight': "Hora d'estiu de Saint-Pierre i Miquelon"
                         }
                     },
                     'Pitcairn': {
@@ -2460,8 +2460,8 @@
                 'gmtFormat': 'GMT{0}',
                 'gmtZeroFormat': 'GMT',
                 'regionFormat': 'Hora de: {0}',
-                'regionFormat-type-daylight': 'Horari d\'estiu, {0}',
-                'regionFormat-type-standard': 'Hora estàndard, {0}',
+                'regionFormat-type-daylight': "Horari d'estiu, {0}",
+                'regionFormat-type-standard': 'Hora est\u00E0ndard, {0}',
                 'fallbackFormat': '{1} ({0})'
             },
             'calendars': {
@@ -2479,7 +2479,7 @@
                                 '9': 'set.',
                                 '1': 'gen.',
                                 '2': 'feb.',
-                                '3': 'març',
+                                '3': 'mar\u00E7',
                                 '4': 'abr.'
                             },
                             'narrow': {
@@ -2493,7 +2493,7 @@
                                 '9': 'ST',
                                 '1': 'GN',
                                 '2': 'FB',
-                                '3': 'MÇ',
+                                '3': 'M\u00C7',
                                 '4': 'AB'
                             },
                             'wide': {
@@ -2507,7 +2507,7 @@
                                 '9': 'setembre',
                                 '1': 'gener',
                                 '2': 'febrer',
-                                '3': 'març',
+                                '3': 'mar\u00E7',
                                 '4': 'abril'
                             }
                         },
@@ -2523,7 +2523,7 @@
                                 '9': 'set.',
                                 '1': 'gen.',
                                 '2': 'feb.',
-                                '3': 'març',
+                                '3': 'mar\u00E7',
                                 '4': 'abr.'
                             },
                             'narrow': {
@@ -2537,7 +2537,7 @@
                                 '9': 'ST',
                                 '1': 'GN',
                                 '2': 'FB',
-                                '3': 'MÇ',
+                                '3': 'M\u00C7',
                                 '4': 'AB'
                             },
                             'wide': {
@@ -2551,7 +2551,7 @@
                                 '9': 'setembre',
                                 '1': 'gener',
                                 '2': 'febrer',
-                                '3': 'març',
+                                '3': 'mar\u00E7',
                                 '4': 'abril'
                             }
                         }
@@ -2710,7 +2710,7 @@
                         'eraNames': {
                             '0': 'abans de Crist',
                             '0-alt-variant': 'a. de la n. e.',
-                            '1': 'després de Crist',
+                            '1': 'despr\u00E9s de Crist',
                             '1-alt-variant': 'de la n. e.'
                         },
                         'eraAbbr': {
@@ -2727,8 +2727,8 @@
                         }
                     },
                     'dateFormats': {
-                        'full': 'EEEE, d MMMM \'de\' y',
-                        'long': 'd MMMM \'de\' y',
+                        'full': "EEEE, d MMMM 'de' y",
+                        'long': "d MMMM 'de' y",
                         'medium': 'dd/MM/y',
                         'short': 'd/M/yy'
                     },
@@ -2754,11 +2754,11 @@
                             'd': 'd',
                             'GyMMMd': 'd MMM y G',
                             'GyMMMEd': 'E, d MMM, y G',
-                            'GyMMMM': 'LLLL \'de\' y G',
+                            'GyMMMM': "LLLL 'de' y G",
                             'h': 'h a',
                             'yQQQQ': 'QQQQ y',
                             'yQQQ': 'QQQ y',
-                            'yMMMM': 'LLLL \'de\' y',
+                            'yMMMM': "LLLL 'de' y",
                             'yMMMEd': 'E, d MMM, y',
                             'hms': 'h:mm:ss a',
                             'Hm': 'HH:mm',
@@ -2842,22 +2842,22 @@
                                 'y': 'E dd/MM/y - E dd/MM/y'
                             },
                             'yMMM': {
-                                'M': 'LLL-LLL \'de\' y',
-                                'y': 'LLL \'de\' y - LLL \'de\' y'
+                                'M': "LLL-LLL 'de' y",
+                                'y': "LLL 'de' y - LLL 'de' y"
                             },
                             'yMMMd': {
-                                'd': 'd-d MMM \'de\' y',
-                                'M': 'd MMM - d MMM \'de\' y',
-                                'y': 'd MMM \'de\' y - d MMM \'de\' y'
+                                'd': "d-d MMM 'de' y",
+                                'M': "d MMM - d MMM 'de' y",
+                                'y': "d MMM 'de' y - d MMM 'de' y"
                             },
                             'yMMMEd': {
-                                'd': 'E d - E d MMM \'de\' y',
-                                'M': 'E d MMM - E d MMM \'de\' y',
-                                'y': 'E d MMM \'de\' y - E d MMM \'de\' y'
+                                'd': "E d - E d MMM 'de' y",
+                                'M': "E d MMM - E d MMM 'de' y",
+                                'y': "E d MMM 'de' y - E d MMM 'de' y"
                             },
                             'yMMMM': {
-                                'M': 'LLLL-LLLL \'de\' y',
-                                'y': 'LLLL \'de\' y - LLLL \'de\' y'
+                                'M': "LLLL-LLLL 'de' y",
+                                'y': "LLLL 'de' y - LLLL 'de' y"
                             },
                             'Hmv': {
                                 'H': 'HH.mm-HH.mm v',
