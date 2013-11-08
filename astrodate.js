@@ -46,6 +46,7 @@
                 config: projectConfig
             });
 
+            // "name" should be removed when finished with local testing
             define(name, [bigNumberString], definition);
         } else {
             thisContext[name] = definition(thisContext[bigNumberFunc]);
@@ -2185,8 +2186,18 @@
                 return (hour.equals(24) && minute.isZero()) || (!hour.equals(24) && minute.gte(0) && minute.lt(60));
             }
 
-            function inSecondRange(second, hour) {
-                return (hour.equals(24) && second.isZero()) || (!hour.equals(24) && second.gte(0) && second.lt(60));
+            function inSecondRange(second, struct) {
+                var maxSecond = 60,
+                    leapSecond;
+
+                if (struct.hour.equals(23) && struct.minute.equals(59)) {
+                    leapSecond = toNumber(leapSeconds[struct.year.toString()][struct.month.toString()][struct.day.toString()]);
+                    if (isFinite(leapSecond)) {
+                        maxSecond += leapSecond;
+                    }
+                }
+
+                return (struct.hour.equals(24) && second.isZero()) || (!struct.hour.equals(24) && second.gte(0) && second.lt(maxSecond));
             }
 
             function inMillisecondRange(millisecond, hour) {
@@ -2257,7 +2268,7 @@
 
                             break;
                         case 'second':
-                            if (!inSecondRange(bn, struct.hour)) {
+                            if (!inSecondRange(bn, struct)) {
                                 return true;
                             }
 
@@ -2737,7 +2748,7 @@
                                 bn = bnZero();
                             }
 
-                            if (!inSecondRange(bn, struct.hour)) {
+                            if (!inSecondRange(bn, struct)) {
                                 struct = {};
                                 return true;
                             }
@@ -2878,7 +2889,7 @@
                                 bn = bnZero();
                             }
 
-                            if (!inSecondRange(bn, struct.hour)) {
+                            if (!inSecondRange(bn, struct)) {
                                 struct = {};
                                 return true;
                             }
@@ -4751,7 +4762,7 @@
                                     valid = inMinuteRange(bn, struct.hour);
                                     break;
                                 case 'second':
-                                    valid = inSecondRange(bn, struct.hour);
+                                    valid = inSecondRange(bn, struct);
                                     break;
                                 case 'millisecond':
                                     valid = inMillisecondRange(bn, struct.hour);
