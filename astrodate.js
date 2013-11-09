@@ -2621,7 +2621,7 @@
             }
 
             function getTime(struct) {
-                return gregorianToJd(struct).minus(2440587.5).times(86400000).round(1);
+                return gregorianToJd(struct).minus(2440587.5).times(86400000).floor();
             }
 
             // DeltaT
