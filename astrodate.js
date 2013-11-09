@@ -58,8 +58,8 @@
 
         tempSafariNFE = function nfeDefinition(BigNumber) {
             BigNumber.config({
-                DECIMAL_PLACES: 50,
-                ROUNDING_MODE: 4,
+                DECIMAL_PLACES: 9,
+                ROUNDING_MODE: 0,
                 EXPONENTIAL_AT: [-7, 20],
                 RANGE: [-1000000000, 1000000000],
                 ERRORS: true
@@ -2192,7 +2192,11 @@
                 var maxSecond = 60,
                     leapSecond;
 
-                if (struct.hour.equals(23) && struct.minute.equals(59) && isPlainObject(leapSeconds)) {
+                if (struct.hour.equals(23) && struct.minute.equals(59)) {
+                    if (!isPlainObject(leapSeconds)) {
+                        throw new Error('No leap second table!');
+                    }
+
                     leapSecond = leapSeconds[struct.year.toString()];
                     if (isPlainObject(leapSecond)) {
                         leapSecond = leapSecond[struct.month.toString()];
@@ -2617,7 +2621,7 @@
             }
 
             function getTime(struct) {
-                return gregorianToJd(struct).minus(2440587.5).times(86400000).round();
+                return gregorianToJd(struct).minus(2440587.5).times(86400000).round(1);
             }
 
             // DeltaT
@@ -3126,12 +3130,12 @@
             }
 
             function toUT(struct) {
-                return jdToGregorian(gregorianToJd(struct).times(86400000).plus(struct.offset.times(60000)).div(86400000).round(8, 2));
+                return jdToGregorian(gregorianToJd(struct).times(86400000).plus(struct.offset.times(60000)).div(86400000));
             }
 
             function toTT(struct) {
                 var offset = struct.offset,
-                    structTT = jdToGregorian(gregorianToJd(struct).times(86400000).minus(timeTo(fractionToTime(deltaTime(struct), 'minute'), 'millisecond')).div(86400000).round(8, 2));
+                    structTT = jdToGregorian(gregorianToJd(struct).times(86400000).minus(timeTo(fractionToTime(deltaTime(struct), 'minute'), 'millisecond')).div(86400000));
 
                 structTT.offset = offset;
 
@@ -3144,7 +3148,7 @@
 
             function toLocal(struct) {
                 var timezoneOffset = bnGetTimezoneOffset(),
-                    structLocal = jdToGregorian(gregorianToJd(struct).times(86400000).plus(struct.offset.times(60000)).minus(bnGetTimezoneOffset().times(60000)).div(86400000).round(8, 2));
+                    structLocal = jdToGregorian(gregorianToJd(struct).times(86400000).plus(struct.offset.times(60000)).minus(bnGetTimezoneOffset().times(60000)).div(86400000));
 
                 structLocal.offset = timezoneOffset;
 
@@ -3154,7 +3158,7 @@
             /*
             function toTAI(struct) {
                 var offset = struct.offset,
-                    structTT = jdToGregorian(gregorianToJd(struct).times(86400000).minus(timeTo(fractionToTime(deltaTime(struct), 'minute'), 'millisecond')).minus(32184).div(86400000).round(8, 2));
+                    structTT = jdToGregorian(gregorianToJd(struct).times(86400000).minus(timeTo(fractionToTime(deltaTime(struct), 'minute'), 'millisecond')).minus(32184).div(86400000));
 
                 structTT.offset = offset;
 
@@ -3163,7 +3167,7 @@
 
             function toGPS(struct) {
                   var offset = struct.offset,
-                    structTT = jdToGregorian(gregorianToJd(struct).times(86400000).minus(timeTo(fractionToTime(deltaTime(struct), 'minute'), 'millisecond')).minus(51184).div(86400000).round(8, 2));
+                    structTT = jdToGregorian(gregorianToJd(struct).times(86400000).minus(timeTo(fractionToTime(deltaTime(struct), 'minute'), 'millisecond')).minus(51184).div(86400000));
 
                 structTT.offset = offset;
 
