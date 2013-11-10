@@ -2681,7 +2681,7 @@
                     r.plus(y.minus(1955).pow(2).times(-0.000012932));
                 }
 
-                return r;
+                return r.times(1000).round();
             }
 
             function arrayToStruct(arr, julian) {
@@ -3135,7 +3135,7 @@
 
             function toTT(struct) {
                 var offset = struct.offset,
-                    structTT = jdToGregorian(gregorianToJd(struct).times(86400000).minus(timeTo(fractionToTime(deltaTime(struct), 'minute'), 'millisecond')).div(86400000));
+                    structTT = jdToGregorian(gregorianToJd(struct).times(86400000).minus(deltaTime(struct)).div(86400000));
 
                 structTT.offset = offset;
 
@@ -3158,7 +3158,7 @@
             /*
             function toTAI(struct) {
                 var offset = struct.offset,
-                    structTT = jdToGregorian(gregorianToJd(struct).times(86400000).minus(timeTo(fractionToTime(deltaTime(struct), 'minute'), 'millisecond')).minus(32184).div(86400000));
+                    structTT = jdToGregorian(gregorianToJd(struct).times(86400000).minus(deltaTime(struct)).minus(32184).div(86400000));
 
                 structTT.offset = offset;
 
@@ -3167,7 +3167,7 @@
 
             function toGPS(struct) {
                   var offset = struct.offset,
-                    structTT = jdToGregorian(gregorianToJd(struct).times(86400000).minus(timeTo(fractionToTime(deltaTime(struct), 'minute'), 'millisecond')).minus(51184).div(86400000));
+                    structTT = jdToGregorian(gregorianToJd(struct).times(86400000).minus(deltaTime(struct)).minus(51184).div(86400000));
 
                 structTT.offset = offset;
 
