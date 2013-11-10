@@ -27,7 +27,7 @@ do
         fi
     fi
 done <leapSeconds.json
-
+DATA=$(echo $DATA | sed -e 's/Jan/1/g' -e 's/Feb/2/g' -e 's/Mar/3/g' -e 's/Apr/4/g' -e 's/May/5/g' -e 's/Jun/6/g' -e 's/Jul/7/g' -e 's/Aug/8/g' -e 's/Sep/9/g' -e 's/Oct/10/g' -e 's/Nov/11/g' -e 's/Dec/12/g')
 echo $DATA > leapSeconds.json
 /bin/js-beautify -j ./leapSeconds.json | sponge ./leapSeconds.json > /dev/null
 sed -e "s/<%= version %>/$VERSION/g" -e "s/<%= date %>/$DATE/g" ./template.tpl | awk -v v="$DATA" '{gsub("<%= data %>",v); print}' > ./leapSeconds.js
