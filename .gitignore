@@ -1,4 +1,5 @@
 node_modules/
-cldr/*
+lang/cldr/
+tz/tz/
 .DS_Store
 *.komodoproject

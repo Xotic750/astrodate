@@ -1,5 +1,8 @@
 #!/bin/bash
-FILES=$(find ../cldr/ -maxdepth 2 -type f -name ca-gregorian.json)
+curl http://unicode.org/Public/cldr/24/json.zip -o json.zip
+unzip -o json.zip -d cldr
+rm json.zip
+FILES=$(find cldr/ -maxdepth 2 -type f -name ca-gregorian.json)
 for f in $FILES
 do
     DIRNAME=$(dirname $f)
