@@ -5323,7 +5323,7 @@
                             if (this.isJulian()) {
                                 val = monthName(gregorianToJulian(struct), type, this.currentLang());
                             } else {
-                                val = monthName(struct, type);
+                                val = monthName(struct, type, this.currentLang());
                             }
                         }
 
