@@ -2475,10 +2475,10 @@
                     width = arrayFirst(widthTypes);
                 }
 
-                if (strictEqual(width, widthTypeShort) && isUndefined(languages[lang].calendars.gregorian.days[arrayFirst(nameTypes)][width])) {
-                    val = makeNamesMin(languages[lang].calendars.gregorian.days[arrayFirst(nameTypes)].abbreviated);
+                if (strictEqual(width, widthTypeShort) && isUndefined(languages[lang].calendars.gregorian.months[arrayFirst(nameTypes)][width])) {
+                    val = makeNamesMin(languages[lang].calendars.gregorian.months[arrayFirst(nameTypes)].abbreviated);
                 } else {
-                    val = languages[lang].calendars.gregorian.days[arrayFirst(nameTypes)][width];
+                    val = languages[lang].calendars.gregorian.months[arrayFirst(nameTypes)][width];
                 }
 
                 return val[struct.month.toString()];
