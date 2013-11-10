@@ -4476,7 +4476,7 @@
                     sign = '';
                 }
 
-                year = year.toString();
+                year = year.abs().toString();
                 temp = sign + year;
                 pattern = replaceToken(pattern, 'y{3,}', temp);
                 pattern = replaceToken(pattern, 'yy', sign + year.slice(-2));
