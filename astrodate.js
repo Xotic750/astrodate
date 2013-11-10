@@ -79,7 +79,8 @@
                 baseNumber = 0,
                 baseBoolean = true,
                 fullKeys,
-                dayNames,
+                dayKeys,
+                monthKeys,
                 protoName = '__proto__',
                 invalidISOCharsRx = new RegExp('[^\\d\\-+WT Z:,\\.]'),
                 replaceTokenRX = new RegExp('([^\\\']+)|(\\\'[^\\\']+\\\')', 'g'),
@@ -121,6 +122,9 @@
                 datePatterns,
                 timePatterns,
                 formatTypes,
+                nameTypes,
+                widthTypes,
+                widthTypeShort,
                 defaultLanguage,
                 calendarTypes,
                 leapSeconds;
@@ -2322,29 +2326,29 @@
             }
             */
 
-            function objectValues(inputArg) {
-                return arrayMap(objectKeys(inputArg), function (key) {
+            function objectValues(inputArg, order) {
+                var val;
+
+                if (arrayIsArray(order)) {
+                    val = order;
+                } else {
+                    val = objectKeys(inputArg);
+                }
+
+                return arrayMap(val, function (key) {
                     return inputArg[key];
                 });
             }
 
-            function makeNamesMin(objectNames, lang) {
-                var arrayNames = objectValues(objectNames),
+            function makeNamesMin(objectNames, order) {
+                var arrayNames = objectValues(objectNames, order),
                     arrayMinNames = [],
-                    count = 1,
+                    count = 0,
                     maxLength = 0,
-                    anLength = arrayNames.length;
-
-                if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
-                    if (!isString(defaultLanguage) || isEmptyString(defaultLanguage) || !isPlainObject(languages[defaultLanguage])) {
-                        throw new Error('Language not loaded!');
-                    }
-
-                    lang = defaultLanguage;
-                }
+                    arrayNamesLength = arrayNames.length;
 
                 function sliceCountCompare(element) {
-                    var characters = element[lang].slice(0, count),
+                    var characters = element.slice(0, count + 1),
                         ret;
 
                     if (arrayContains(arrayMinNames, characters)) {
@@ -2358,15 +2362,14 @@
                 }
 
                 arrayForEach(arrayNames, function (element) {
-                    var word = element[lang],
-                        length = word.length;
+                    var length = element.length;
 
-                    if (length > maxLength) {
+                    if (gt(length, maxLength)) {
                         maxLength = length;
                     }
                 });
 
-                while (!strictEqual(arrayMinNames.length, anLength) && count <= maxLength) {
+                while (!strictEqual(arrayMinNames.length, arrayNamesLength) && lt(count, maxLength)) {
                     arrayMinNames.length = 0;
                     arraySome(arrayNames, sliceCountCompare);
                     count += 1;
@@ -2375,17 +2378,21 @@
                 return arrayMinNames;
             }
 
-            /*
-            function makeNamesArray(arrayNames, args, lang) {
-                var shortName,
-                    lang;
+            nameTypes = ['format', 'stand-alone'];
+            deepFreeze(nameTypes);
+            widthTypes = ['wide', 'abbreviated', 'short', 'narrow'];
+            widthTypeShort = widthTypes[2];
+            deepFreeze(widthTypes);
 
-                if (isBoolean(args[1])) {
-                    shortName = args[1];
-                    lang = args[2];
-                } else if (isString(args[1])) {
-                    shortName = false;
-                    lang = args[1];
+            function makeNamesArray(name, type, width, lang, order) {
+                var val;
+
+                if (!isString(type) || isEmptyString(type) || !arrayContains(nameTypes, type)) {
+                    type = arrayLast(nameTypes);
+                }
+
+                if (!isString(width) || isEmptyString(width) || !arrayContains(widthTypes, width)) {
+                    width = arrayFirst(widthTypes);
                 }
 
                 if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
@@ -2396,19 +2403,14 @@
                     lang = defaultLanguage;
                 }
 
-                return arrayMap(arrayNames, function (element) {
-                    var name;
+                if (strictEqual(width, widthTypeShort) && isUndefined(languages[lang].calendars.gregorian[name][type][width])) {
+                    val = makeNamesMin(languages[lang].calendars.gregorian[name][type].abbreviated, order);
+                } else {
+                    val = objectValues(languages[lang].calendars.gregorian[name][type][width], order);
+                }
 
-                    if (shortName) {
-                        name = makeNameShort(element[lang]);
-                    } else {
-                        name = element[lang];
-                    }
-
-                    return name;
-                });
+                return val;
             }
-            */
 
             function dayOfWeekNumber(struct) {
                 var day = gregorianToJd(struct).plus(1.5).mod(7).floor();
@@ -2431,10 +2433,12 @@
             }
 
             function cldrDayKey(struct) {
-                return dayNames[toNumber(dayOfWeekNumber(struct))];
+                return dayKeys[toNumber(dayOfWeekNumber(struct))];
             }
 
-            function dayOfWeek(struct, type, lang) {
+            function dayOfWeek(struct, width, lang) {
+                var val;
+
                 if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
                     if (!isString(defaultLanguage) || isEmptyString(defaultLanguage) || !isPlainObject(languages[defaultLanguage])) {
                         throw new Error('Language not loaded!');
@@ -2443,14 +2447,22 @@
                     lang = defaultLanguage;
                 }
 
-                if (!isString(type) || isEmptyString(type) || !arrayContains(objectKeys(languages[lang].calendars.gregorian.days.format), type)) {
-                    type = 'wide';
+                if (!isString(width) || isEmptyString(width) || !arrayContains(objectKeys(languages[lang].calendars.gregorian.days[arrayFirst(nameTypes)]), width)) {
+                    width = arrayFirst(widthTypes);
                 }
 
-                return languages[lang].calendars.gregorian.days.format[type][cldrDayKey(struct)];
+                if (strictEqual(width, widthTypeShort) && isUndefined(languages[lang].calendars.gregorian.days[arrayFirst(nameTypes)][width])) {
+                    val = makeNamesMin(languages[lang].calendars.gregorian.days[arrayFirst(nameTypes)].abbreviated);
+                } else {
+                    val = languages[lang].calendars.gregorian.days[arrayFirst(nameTypes)][width];
+                }
+
+                return val[cldrDayKey(struct)];
             }
 
-            function monthName(struct, type, lang) {
+            function monthName(struct, width, lang) {
+                var val;
+
                 if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
                     if (!isString(defaultLanguage) || isEmptyString(defaultLanguage) || !isPlainObject(languages[defaultLanguage])) {
                         throw new Error('Language not loaded!');
@@ -2459,11 +2471,17 @@
                     lang = defaultLanguage;
                 }
 
-                if (!isString(type) || isEmptyString(type) || !arrayContains(objectKeys(languages[lang].calendars.gregorian.months.format), type)) {
-                    type = 'wide';
+                if (!isString(width) || isEmptyString(width) || !arrayContains(objectKeys(languages[lang].calendars.gregorian.months.format), width)) {
+                    width = arrayFirst(widthTypes);
                 }
 
-                return languages[lang].calendars.gregorian.months.format[type][struct.month.toString()];
+                if (strictEqual(width, widthTypeShort) && isUndefined(languages[lang].calendars.gregorian.days[arrayFirst(nameTypes)][width])) {
+                    val = makeNamesMin(languages[lang].calendars.gregorian.days[arrayFirst(nameTypes)].abbreviated);
+                } else {
+                    val = languages[lang].calendars.gregorian.days[arrayFirst(nameTypes)][width];
+                }
+
+                return val[struct.month.toString()];
             }
 
             function fractionToTime(fraction, fractionIn, struct, julian) {
@@ -4421,9 +4439,9 @@
                 pattern = replaceToken(pattern, 'MMMM', months.format.wide[month]);
                 pattern = replaceToken(pattern, 'MMM', months.format.abbreviated[month]);
                 pattern = replaceToken(pattern, 'M{1,2}', month);
-                pattern = replaceToken(pattern, 'LLLLL', months['stand-alone'].narrow[month]);
-                pattern = replaceToken(pattern, 'LLLL', months['stand-alone'].wide[month]);
-                pattern = replaceToken(pattern, 'LLL', months['stand-alone'].abbreviated[month]);
+                pattern = replaceToken(pattern, 'LLLLL', months[arrayLast(nameTypes)].narrow[month]);
+                pattern = replaceToken(pattern, 'LLLL', months[arrayLast(nameTypes)].wide[month]);
+                pattern = replaceToken(pattern, 'LLL', months[arrayLast(nameTypes)].abbreviated[month]);
                 pattern = replaceToken(pattern, 'L{1,2}', month);
 
                 pattern = replaceToken(pattern, 'd{1,2}', struct.day.toString());
@@ -4447,7 +4465,7 @@
                 day = cldrDayKey(struct);
                 temp = days.format[arrayLast(formatTypes)];
                 if (isUndefined(temp)) {
-                    temp = makeNamesMin(days.format.abbreviated, lang)[day];
+                    temp = makeNamesMin(days.format.abbreviated)[day];
                 }
 
                 pattern = replaceToken(pattern, 'EEEEEE', temp);
@@ -4463,15 +4481,15 @@
                 pattern = replaceToken(pattern, 'eeee', temp);
                 //pattern = replaceToken(pattern, 'e{1,2}', local starting day of the week);
 
-                temp = days['stand-alone'][arrayLast(formatTypes)];
+                temp = days[arrayLast(nameTypes)][arrayLast(formatTypes)];
                 if (isUndefined(temp)) {
-                    temp = makeNamesMin(days['stand-alone'].abbreviated, lang)[day];
+                    temp = makeNamesMin(days[arrayLast(nameTypes)].abbreviated)[day];
                 }
 
                 pattern = replaceToken(pattern, 'cccccc', temp);
-                pattern = replaceToken(pattern, 'ccccc', days['stand-alone'].narrow[day]);
-                pattern = replaceToken(pattern, 'cccc', days['stand-alone'].wide[day]);
-                pattern = replaceToken(pattern, 'ccc', days['stand-alone'].abbreviated[day]);
+                pattern = replaceToken(pattern, 'ccccc', days[arrayLast(nameTypes)].narrow[day]);
+                pattern = replaceToken(pattern, 'cccc', days[arrayLast(nameTypes)].wide[day]);
+                pattern = replaceToken(pattern, 'ccc', days[arrayLast(nameTypes)].abbreviated[day]);
                 //pattern = replaceToken(pattern, 'c', weekDayNumber(struct).toString()); // same as 'e': local starting day of the week
 
                 return pattern;
@@ -5537,34 +5555,19 @@
                     value: function () {
                         return new AstroDate().unix();
                     }
-                }
-                /*
-                ,
-
-                months: {
-                    value: function () {
-                        return makeNamesArray(monthNames, arguments);
-                    }
                 },
 
-                monthsMin: {
-                    value: function (lang) {
-                        return makeNamesMin(monthNames, lang);
+                months: {
+                    value: function (type, size, lang) {
+                        return makeNamesArray('months', type, size, lang, monthKeys);
                     }
                 },
 
                 weekDays: {
-                    value: function () {
-                        return makeNamesArray(dayNames, arguments);
-                    }
-                },
-
-                weekDaysMin: {
-                    value: function (lang) {
-                        return makeNamesMin(dayNames, lang);
+                    value: function (type, size, lang) {
+                        return makeNamesArray('days', type, size, lang, dayKeys);
                     }
                 }
-                */
             });
 
             defaultProperties = [
@@ -5628,8 +5631,10 @@
 
             deepFreeze(fullKeys);
 
-            dayNames = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
-            deepFreeze(dayNames);
+            monthKeys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+            deepFreeze(monthKeys);
+            dayKeys = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
+            deepFreeze(dayKeys);
 
             arrayForEach([BigNumber, BigNumber.prototype], function (element) {
                 arrayForEach(objectKeys(element), function (key) {
