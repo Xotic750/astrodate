@@ -2192,7 +2192,7 @@
                 var maxSecond = 60,
                     leapSecond;
 
-                if (struct.hour.equals(23) && struct.minute.equals(59)) {
+                if (struct.year.gte(1961) && struct.hour.equals(23) && struct.minute.equals(59)) {
                     if (!isPlainObject(leapSeconds)) {
                         throw new Error('No leap second table!');
                     }
