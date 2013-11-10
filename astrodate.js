@@ -1726,7 +1726,7 @@
             }
 
             objectDefineProperties(BigNumber.prototype, {
-                truncate: {
+                trunc: {
                     value: function () {
                         return this.round(0, 1);
                     }
@@ -1738,12 +1738,12 @@
                     }
                 },
 
-                fractionalPart: {
+                modf: {
                     value: function () {
                         var bn = this;
 
                         if (bn.isFinite()) {
-                            bn = bn.minus(this.truncate());
+                            bn = bn.mod(bn.trunc());
                         } else {
                             bn = new BigNumber(NaN);
                         }
@@ -1777,7 +1777,7 @@
                                 i,
                                 val;
 
-                            if (this.lt(0) || !this.isFinite() || !this.fractionalPart().isZero()) {
+                            if (this.lt(0) || !this.isFinite() || !this.modf().isZero()) {
                                 val = new BigNumber(NaN);
                             } else {
                                 if (!isNumber(exponentialAt) && !isString(exponentialAt) && (BigNumber.isBigNumber(exponentialAt) && (exponentialAt.lt(0) || !exponentialAt.isFinite()))) {
@@ -1838,15 +1838,15 @@
                     }
                 },
 
-                truncate: {
+                trunc: {
                     value: function (number) {
-                        return new BigNumber(number).truncate();
+                        return new BigNumber(number).trunc();
                     }
                 },
 
-                fractionalPart: {
+                modf: {
                     value: function (number) {
-                        return new BigNumber(number).fractionalPart();
+                        return new BigNumber(number).modf();
                     }
                 },
 
@@ -2318,7 +2318,7 @@
 
             /*
             function gregorianToJdn(struct) {
-                return gregorianToJd(struct).truncate();
+                return gregorianToJd(struct).trunc();
             }
             */
 
@@ -2579,7 +2579,7 @@
                     r.plus(y.minus(1955).pow(2).times(-0.000012932));
                 }
 
-                return r.times(1000).truncate();
+                return r.times(1000).trunc();
             }
 
             function arrayToStruct(arr, julian) {
@@ -2894,7 +2894,7 @@
 
             /*
             function julianToJdn(struct) {
-                return julianToJd(struct).truncate();
+                return julianToJd(struct).trunc();
             }
             */
 
@@ -2917,7 +2917,7 @@
                     struct.month = struct.month.plus(2).minus(a.times(12));
                     struct.year = b.minus(49).times(100).plus(struct.year).plus(a).floor();
                     struct.offset = bnZero();
-                    extend(struct, fractionToTime(jd.fractionalPart().abs(), 'day'));
+                    extend(struct, fractionToTime(jd.modf().abs(), 'day'));
                 }
 
                 return struct;
@@ -2956,7 +2956,7 @@
                     }
 
                     struct.offset = bnZero();
-                    extend(struct, fractionToTime(jd.fractionalPart().abs(), 'day'));
+                    extend(struct, fractionToTime(jd.modf().abs(), 'day'));
                 }
 
                 return struct;
@@ -4265,15 +4265,13 @@
                 return pattern.replace(replaceTokenRX, tokenReplacer);
             }
 
-            function stripSingleQuotes(pattern) {
-                return pattern.replace(/\'/g, '');
+            function strip(string, pattern) {
+                return string.replace(new RegExp(escapeRegex(pattern), 'g'), '');
             }
 
-            /*
-            function getPattern(pattern) {
-                //code
+            function stripSingleQuotes(string) {
+                return strip(string, '\'');
             }
-            */
 
             formatTypes = ['full', 'long', 'medium', 'short'];
             deepFreeze(formatTypes);
@@ -5130,7 +5128,7 @@
                                 struct = this.getter();
                             }
 
-                            val = getTime(toUT(struct)).div(1000).truncate().toString();
+                            val = getTime(toUT(struct)).div(1000).trunc().toString();
                         }
 
                         return val;
