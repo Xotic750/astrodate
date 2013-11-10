@@ -98,14 +98,12 @@
                 objectInstanceOf,
                 objectGetPrototypeOf,
                 isPlainObject,
-                //getReferenceObject,
-                //create,
                 objectKeys,
                 stringTrim,
                 stringRepeat,
                 stringSplit,
-                //startsWith,
-                //endsWith,
+                //stringStartsWith,
+                //stringEndsWith,
                 stringContains,
                 toObjectFixIndexedAccess,
                 //arrayUnshift,
@@ -534,94 +532,6 @@
                 return val;
             }
 
-            /*
-            getReferenceObject = (function () {
-                var parent = document.body || document.documentElement,
-                    javascript = "javascript";
-
-                return function (name) {
-                    var iframe = document.createElement('iframe'),
-                        reference;
-
-                    iframe.style.display = "none";
-                    iframe.src = javascript + ":";
-                    parent.appendChild(iframe);
-                    reference = iframe.contentWindow[name];
-                    parent.removeChild(iframe);
-                    iframe = null;
-
-                    return reference;
-                };
-            }());
-
-            create = (function () {
-                var createFN = baseObject.func,
-                    Type,
-                    func,
-                    createEmpty;
-
-                if (isFunction(createFN)) {
-                    func = function (prototype) {
-                        return createFN(prototype);
-                    };
-                } else {
-                    Type = function Object() {
-                        return;
-                    };
-
-                    if (isNull(objectGetPrototypeOf(baseObject)[protoName]) || isUndefined(document)) {
-                        createEmpty = function () {
-                            var val = {};
-
-                            val[protoName] = null;
-
-                            return val;
-                        };
-                    } else {
-                        createEmpty = function () {
-                            var empty = objectGetPrototypeOf(getReferenceObject("Object")),
-                                Empty = function Object() {
-                                    return;
-                                };
-
-                            arrayForEach(defaultProperties, function (element) {
-                                delete empty[element];
-                            });
-
-                            empty[protoName] = null;
-                            Empty.prototype = empty;
-
-                            createEmpty = function () {
-                                return new Empty();
-                            };
-
-                            return new Empty();
-                        };
-                    }
-
-                    func = function (prototype) {
-                        var object;
-
-                        if (isNull(prototype)) {
-                            object = createEmpty();
-                        } else {
-                            if (!isTypeObject(prototype) && !isFunction(prototype)) {
-                                throw new TypeError("Object prototype may only be an Object or null");
-                            }
-
-                            Type.prototype = prototype;
-                            object = new Type();
-                            object[protoName] = prototype;
-                        }
-
-                        return object;
-                    };
-                }
-
-                return func;
-            }());
-            */
-
             // named stringSplit instead of split because of SpiderMonkey and Blackberry bug
             stringSplit = (function () {
                 // Unused variable for JScript NFE bug
@@ -818,16 +728,19 @@
             }());
 
             /*
-            startsWith = (function () {
+            // named stringStartsWith instead of startsWith because of SpiderMonkey and Blackberry bug
+            stringStartsWith = (function () {
+                // Unused variable for JScript NFE bug
+                // http://kangax.github.io/nfe
                 var startsWithFN = baseString.constructor.startsWith,
-                    func;
+                    nfeStartsWith;
 
                 if (isFunction(startsWithFN)) {
-                    func = function (string, searchString, position) {
+                    tempSafariNFE = function nfeStartsWith(string, searchString, position) {
                         return startsWithFN.call(string, searchString, position);
                     };
                 } else {
-                    func = function (string, searchString, position) {
+                    tempSafariNFE = function nfeStartsWith(string, searchString, position) {
                         var thisStr = anyToString(checkObjectCoercible(string)),
                             searchStr = anyToString(searchString),
                             thisLen = thisStr.length,
@@ -837,21 +750,26 @@
                     };
                 }
 
-                return func;
+                nfeStartsWith = null;
+
+                return tempSafariNFE;
             }());
             */
 
             /*
-            endsWith = (function () {
+            // named stringEndsWith instead of endsWith because of SpiderMonkey and Blackberry bug
+            stringEndsWith = (function () {
+                // Unused variable for JScript NFE bug
+                // http://kangax.github.io/nfe
                 var endsWithFN = baseString.constructor.endsWith,
-                    func;
+                    nfeEndsWith;
 
                 if (isFunction(endsWithFN)) {
-                    func = function (string, searchString, position) {
+                    tempSafariNFE = function nfeEndsWith(string, searchString, position) {
                         return endsWithFN.call(string, searchString, position);
                     };
                 } else {
-                    func = function (string, searchString, position) {
+                    tempSafariNFE = function nfeEndsWith(string, searchString, position) {
                         var thisStr = anyToString(checkObjectCoercible(string)),
                             searchStr = anyToString(searchString),
                             thisLen = thisStr.length,
@@ -871,7 +789,9 @@
                     };
                 }
 
-                return func;
+                nfeEndsWith = null;
+
+                return tempSafariNFE;
             }());
             */
 
@@ -1808,17 +1728,7 @@
             objectDefineProperties(BigNumber.prototype, {
                 truncate: {
                     value: function () {
-                        var bn = this;
-
-                        if (bn.isFinite()) {
-                            if (bn.gte(0)) {
-                                bn = bn.floor();
-                            } else {
-                                bn = bn.ceil();
-                            }
-                        }
-
-                        return bn;
+                        return this.round(0, 1);
                     }
                 },
 
@@ -2102,18 +2012,6 @@
             function isDateValid(dateObject) {
                 return isDate(dateObject) && !numberIsNaN(dateObject.getTime());
             }
-
-            /*
-            function intToNumber(input) {
-                var number = input;
-
-                if (!number.isFinite(number) || !number.fractionalPart().isZero()) {
-                    number = new BigNumber(NaN);
-                }
-
-                return number;
-            }
-            */
 
             function isGregorianLeapYear(struct) {
                 return struct.year.mod(400).isZero() || (!struct.year.mod(100).isZero() && struct.year.mod(4).isZero());
@@ -2681,7 +2579,7 @@
                     r.plus(y.minus(1955).pow(2).times(-0.000012932));
                 }
 
-                return r.times(1000).round();
+                return r.times(1000).truncate();
             }
 
             function arrayToStruct(arr, julian) {
