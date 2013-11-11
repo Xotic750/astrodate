@@ -124,7 +124,6 @@
                 formatTypes,
                 nameTypes,
                 widthTypes,
-                widthTypeShort,
                 defaultLanguage,
                 calendarTypes,
                 leapSeconds;
@@ -2237,13 +2236,13 @@
             }
 
             function dayOfJulianYear(struct) {
-                var doy = struct.month.times(28).plus(struct.day);
+                var dayOfYear = struct.month.times(28).plus(struct.day);
 
                 if (struct.month.gte(2) && isJulianLeapYear(struct)) {
-                    doy = doy.plus(1);
+                    dayOfYear = dayOfYear.plus(1);
                 }
 
-                return doy;
+                return dayOfYear;
             }
 
             function normaliseUnits(unitString) {
@@ -2336,8 +2335,7 @@
 
             nameTypes = ['format', 'stand-alone'];
             deepFreeze(nameTypes);
-            widthTypes = ['wide', 'abbreviated', 'short', 'narrow'];
-            widthTypeShort = widthTypes[2];
+            widthTypes = ['wide', 'abbreviated', 'narrow'];
             deepFreeze(widthTypes);
 
             function dayOfWeekNumber(struct) {
@@ -4201,7 +4199,7 @@
                     year,
                     sign,
                     month,
-                    doy,
+                    dayOfYear,
                     day,
                     temp,
                     weekDate,
@@ -4316,12 +4314,12 @@
 
                 pattern = replaceToken(pattern, 'd{1,2}', struct.day.toString());
                 if (julian) {
-                    doy = dayOfJulianYear(gregorianToJulian(struct)).toString();
+                    dayOfYear = dayOfJulianYear(gregorianToJulian(struct)).toString();
                 } else {
-                    doy = dayOfGregorianYear(struct).toString();
+                    dayOfYear = dayOfGregorianYear(struct).toString();
                 }
 
-                pattern = replaceToken(pattern, 'D{1,3}', doy);
+                pattern = replaceToken(pattern, 'D{1,3}', dayOfYear);
 
                 //pattern = replaceToken(pattern, 'F', value);
                 if (julian) {
@@ -4334,10 +4332,6 @@
 
                 day = cldrDayKey(struct);
                 temp = days.format[arrayLast(formatTypes)];
-                if (isUndefined(temp)) {
-                    temp = days.format.abbreviated;
-                }
-
                 pattern = replaceToken(pattern, 'EEEEEE', temp);
                 pattern = replaceToken(pattern, 'eeeeee', temp);
                 temp = days.format.narrow[day];
@@ -4352,10 +4346,6 @@
                 //pattern = replaceToken(pattern, 'e{1,2}', local starting day of the week);
 
                 temp = days[arrayLast(nameTypes)][arrayLast(formatTypes)];
-                if (isUndefined(temp)) {
-                    temp = days[arrayLast(nameTypes)].abbreviated;
-                }
-
                 pattern = replaceToken(pattern, 'cccccc', temp);
                 pattern = replaceToken(pattern, 'ccccc', days[arrayLast(nameTypes)].narrow[day]);
                 pattern = replaceToken(pattern, 'cccc', days[arrayLast(nameTypes)].wide[day]);
@@ -4915,7 +4905,7 @@
 
                 toString: {
                     value: function (pattern) {
-                        if (!isString(pattern) || isEmptyString(pattern || !arrayContains(formatTypes, pattern))) {
+                        if (!isString(pattern) || isEmptyString(pattern) || !arrayContains(formatTypes, pattern)) {
                             pattern = arrayFirst(formatTypes);
                         }
 
@@ -4947,7 +4937,7 @@
                                 struct = this.getter();
                             }
 
-                            if (!isString(pattern) || isEmptyString(pattern || !arrayContains(formatTypes, pattern))) {
+                            if (!isString(pattern) || isEmptyString(pattern) || !arrayContains(formatTypes, pattern)) {
                                 pattern = arrayFirst(formatTypes);
                             }
 
@@ -4984,7 +4974,7 @@
                                 struct = this.getter();
                             }
 
-                            if (!isString(pattern) || isEmptyString(pattern || !arrayContains(formatTypes, pattern))) {
+                            if (!isString(pattern) || isEmptyString(pattern) || !arrayContains(formatTypes, pattern)) {
                                 pattern = arrayFirst(formatTypes);
                             }
 
