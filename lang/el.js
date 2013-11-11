@@ -3,6 +3,7 @@
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
  * localeDisplayNames: 24r9287
+ * units: 24r9287
  *
  * home: https://github.com/Xotic750/astrodate
  *
@@ -41,172 +42,632 @@
         /*global */
     }(function (AstroDate) {
         AstroDate.lang('el', {
-            'codePatterns': {
-                'language': '\u0393\u03BB\u03CE\u03C3\u03C3\u03B1: {0}',
-                'script': '\u03A3\u03CD\u03C3\u03C4\u03B7\u03BC\u03B1 \u03B3\u03C1\u03B1\u03C6\u03AE\u03C2: {0}',
-                'territory': '\u03A0\u03B5\u03C1\u03B9\u03BF\u03C7\u03AE: {0}'
+            'durationUnit-type-ms': {
+                'durationUnitPattern': 'm:ss'
             },
-            'types': {
-                'colHiraganaQuaternary': {
-                    'no': '\u039E\u03B5\u03C7\u03C9\u03C1\u03B9\u03C3\u03C4\u03AE \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u039A\u03AC\u03BD\u03B1',
-                    'yes': '\u0394\u03B9\u03B1\u03C6\u03BF\u03C1\u03B5\u03C4\u03B9\u03BA\u03AE \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u039A\u03AC\u03BD\u03B1'
+            'durationUnit-type-hms': {
+                'durationUnitPattern': 'h:mm:ss'
+            },
+            'durationUnit-type-hm': {
+                'durationUnitPattern': 'h:mm'
+            },
+            'narrow': {
+                'mass-ounce': {
+                    'unitPattern-count-one': '{0} oz',
+                    'unitPattern-count-other': '{0} oz'
                 },
-                'colCaseLevel': {
-                    'no': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03BC\u03B5 \u03B4\u03B9\u03AC\u03BA\u03C1\u03B9\u03C3\u03B7 \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD',
-                    'yes': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u03B4\u03B9\u03AC\u03BA\u03C1\u03B9\u03C3\u03B7\u03C2'
+                'mass-kilogram': {
+                    'unitPattern-count-one': '{0} kg',
+                    'unitPattern-count-other': '{0} kg'
                 },
-                'colCaseFirst': {
-                    'lower': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C0\u03B5\u03B6\u03CE\u03BD \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u03C0\u03C1\u03CE\u03C4\u03B1',
-                    'no': '\u039A\u03B1\u03BD\u03BF\u03BD\u03B9\u03BA\u03AE \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD',
-                    'upper': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03BA\u03B5\u03C6\u03B1\u03BB\u03B1\u03AF\u03C9\u03BD \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u03C0\u03C1\u03CE\u03C4\u03B1'
+                'mass-gram': {
+                    'unitPattern-count-one': '{0} g',
+                    'unitPattern-count-other': '{0} g'
                 },
-                'colStrength': {
-                    'identical': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03CC\u03BB\u03C9\u03BD',
-                    'primary': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03BC\u03CC\u03BD\u03BF \u03B2\u03B1\u03C3\u03B9\u03BA\u03CE\u03BD \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD',
-                    'quaternary': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C4\u03CC\u03BD\u03C9\u03BD/\u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u03B4\u03B9\u03AC\u03BA\u03C1\u03B9\u03C3\u03B7\u03C2/\u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u03BC\u03B5\u03B3\u03AC\u03BB\u03BF\u03C5 \u03BC\u03B5\u03B3\u03AD\u03B8\u03BF\u03C5\u03C2/\u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u039A\u03AC\u03BD\u03B1',
-                    'secondary': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C4\u03CC\u03BD\u03C9\u03BD',
-                    'tertiary': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C4\u03CC\u03BD\u03C9\u03BD/\u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u03B4\u03B9\u03AC\u03BA\u03C1\u03B9\u03C3\u03B7\u03C2/\u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u03BC\u03B5\u03B3\u03AC\u03BB\u03BF\u03C5 \u03BC\u03B5\u03B3\u03AD\u03B8\u03BF\u03C5\u03C2'
+                'length-yard': {
+                    'unitPattern-count-one': '{0} yd',
+                    'unitPattern-count-other': '{0} yd'
                 },
-                'colNumeric': {
-                    'no': '\u039C\u03B5\u03BC\u03BF\u03BD\u03C9\u03BC\u03AD\u03BD\u03B7 \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C8\u03B7\u03C6\u03AF\u03C9\u03BD',
-                    'yes': '\u0391\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AE \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C8\u03B7\u03C6\u03AF\u03C9\u03BD'
+                'length-picometer': {
+                    'unitPattern-count-one': '{0} pm',
+                    'unitPattern-count-other': '{0} pm'
                 },
-                'colNormalization': {
-                    'no': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C7\u03C9\u03C1\u03AF\u03C2 \u03BA\u03B1\u03BD\u03BF\u03BD\u03B9\u03BA\u03BF\u03C0\u03BF\u03AF\u03B7\u03C3\u03B7',
-                    'yes': '\u039A\u03B1\u03BD\u03BF\u03BD\u03B9\u03BA\u03BF\u03C0\u03BF\u03B9\u03B7\u03BC\u03AD\u03BD\u03B7 \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 Unicode'
+                'length-millimeter': {
+                    'unitPattern-count-one': '{0} \u03C7\u03BB\u03C3\u03C4.',
+                    'unitPattern-count-other': '{0} \u03C7\u03BB\u03C3\u03C4.'
                 },
-                'calendar': {
-                    'japanese': '\u0399\u03B1\u03C0\u03C9\u03BD\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
-                    'iso8601': 'iso8601',
-                    'coptic': '\u039A\u03BF\u03C0\u03C4\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
-                    'dangi': 'dangi',
-                    'ethiopic': '\u0391\u03B9\u03B8\u03B9\u03BF\u03C0\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
-                    'ethiopic-amete-alem': '\u0391\u03B9\u03B8\u03B9\u03BF\u03C0\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF \u0386\u03BC\u03B5\u03C4 \u0386\u03BB\u03B5\u03BC',
-                    'gregorian': '\u0393\u03C1\u03B7\u03B3\u03BF\u03C1\u03B9\u03B1\u03BD\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
-                    'hebrew': '\u0395\u03B2\u03C1\u03B1\u03CA\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
-                    'persian': '\u03A0\u03B5\u03C1\u03C3\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
-                    'roc': '\u0397\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF \u03C4\u03B7\u03C2 \u0394\u03B7\u03BC\u03BF\u03BA\u03C1\u03B1\u03C4\u03AF\u03B1\u03C2 \u03C4\u03B7\u03C2 \u039A\u03AF\u03BD\u03B1\u03C2',
-                    'chinese': '\u039A\u03B9\u03BD\u03B5\u03B6\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
-                    'buddhist': '\u0392\u03BF\u03C5\u03B4\u03B9\u03C3\u03C4\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
-                    'indian': '\u0399\u03BD\u03B4\u03B9\u03BA\u03CC \u03B5\u03B8\u03BD\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
-                    'islamic': '\u0399\u03C3\u03BB\u03B1\u03BC\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
-                    'islamic-civil': '\u0399\u03C3\u03BB\u03B1\u03BC\u03B9\u03BA\u03CC \u03B1\u03C3\u03C4\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
-                    'islamic-rgsa': '\u0399\u03C3\u03BB\u03B1\u03BC\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF (\u03A3\u03B1\u03BF\u03C5\u03B4\u03B9\u03BA\u03AE \u0391\u03C1\u03B1\u03B2\u03AF\u03B1, \u03B8\u03AD\u03B1\u03C3\u03B7)',
-                    'islamic-tbla': '\u0399\u03C3\u03BB\u03B1\u03BC\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF (\u03B4\u03BF\u03BC\u03B7\u03BC\u03AD\u03BD\u03BF, \u03B1\u03C3\u03C4\u03C1\u03BF\u03BD\u03BF\u03BC\u03B9\u03BA\u03AE \u03B5\u03C0\u03BF\u03C7\u03AE)',
-                    'islamic-umalqura': 'islamic-umalqura'
+                'length-mile': {
+                    'unitPattern-count-one': '{0} mi',
+                    'unitPattern-count-other': '{0} mi'
                 },
-                'collation': {
-                    'phonebook': '\u03A3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2 \u03C4\u03B7\u03BB\u03B5\u03C6\u03C9\u03BD\u03B9\u03BA\u03BF\u03CD \u03BA\u03B1\u03C4\u03B1\u03BB\u03CC\u03B3\u03BF\u03C5',
-                    'gb2312han': '\u03A3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2 \u0391\u03C0\u03BB\u03BF\u03C5\u03C3\u03C4\u03B5\u03C5\u03BC\u03AD\u03BD\u03C9\u03BD \u039A\u03B9\u03BD\u03B5\u03B6\u03B9\u03BA\u03CE\u03BD - GB2312',
-                    'eor': 'eor',
-                    'ducet': '\u03A0\u03C1\u03BF\u03B5\u03C0\u03B9\u03BB\u03B5\u03B3\u03BC\u03AD\u03BD\u03B7 \u03C3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2 Unicode',
-                    'dictionary': '\u03A3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2 \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03BF\u03B3\u03AF\u03BF\u03C5',
-                    'big5han': '\u03A3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2 \u03A0\u03B1\u03C1\u03B1\u03B4\u03BF\u03C3\u03B9\u03B1\u03BA\u03CE\u03BD \u039A\u03B9\u03BD\u03B5\u03B6\u03B9\u03BA\u03CE\u03BD - Big5',
-                    'traditional': '\u03A0\u03B1\u03C1\u03B1\u03B4\u03BF\u03C3\u03B9\u03B1\u03BA\u03AE \u03C3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2',
-                    'standard': '\u03A4\u03C5\u03C0\u03B9\u03BA\u03AE \u03C3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2',
-                    'zhuyin': 'zhuyin',
-                    'unihan': '\u03A3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2 \u03C1\u03B9\u03B6\u03B9\u03BA\u03AE\u03C2 \u03B1\u03C1\u03AF\u03B8\u03BC\u03B7\u03C3\u03B7\u03C2',
-                    'stroke': '\u03A3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2 \u03BA\u03B9\u03BD\u03AE\u03C3\u03B5\u03C9\u03BD',
-                    'searchjl': '\u0391\u03BD\u03B1\u03B6\u03AE\u03C4\u03B7\u03C3\u03B7 \u03BA\u03B1\u03C4\u03AC \u03B1\u03C1\u03C7\u03B9\u03BA\u03CC \u03C3\u03CD\u03BC\u03C6\u03C9\u03BD\u03BF \u03A7\u03B1\u03BD\u03B3\u03BA\u03BF\u03CD\u03BB',
-                    'search': '\u0391\u03BD\u03B1\u03B6\u03AE\u03C4\u03B7\u03C3\u03B7 \u03B3\u03B5\u03BD\u03B9\u03BA\u03BF\u03CD \u03C4\u03CD\u03C0\u03BF\u03C5',
-                    'reformed': '\u0391\u03BD\u03B1\u03C3\u03C7\u03B7\u03BC\u03B1\u03C4\u03B9\u03C3\u03BC\u03AD\u03BD\u03B7 \u03C3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2',
-                    'pinyin': '\u03A3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2 \u03A0\u03B9\u03BD\u03B3\u03AF\u03BD',
-                    'phonetic': '\u03A6\u03C9\u03BD\u03B7\u03C4\u03B9\u03BA\u03AE \u03C3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2'
+                'length-meter': {
+                    'unitPattern-count-one': '{0} \u03BC.',
+                    'unitPattern-count-other': '{0} \u03BC.'
                 },
-                'numbers': {
-                    'knda': '\u03A8\u03B7\u03C6\u03AF\u03B1 \u039A\u03B1\u03BD\u03AC\u03BD\u03C4\u03B1',
-                    'khmr': '\u03A8\u03B7\u03C6\u03AF\u03B1 \u03A7\u03BC\u03B5\u03C1',
-                    'kali': 'kali',
-                    'jpanfin': '\u0399\u03B1\u03C0\u03C9\u03BD\u03B9\u03BA\u03AC \u03BF\u03B9\u03BA\u03BF\u03BD\u03BF\u03BC\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
-                    'jpan': '\u0399\u03B1\u03C0\u03C9\u03BD\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
-                    'java': 'java',
-                    'hebr': '\u0395\u03B2\u03C1\u03B1\u03CA\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
-                    'hantfin': '\u03A0\u03B1\u03C1\u03B1\u03B4\u03BF\u03C3\u03B9\u03B1\u03BA\u03AC \u03BA\u03B9\u03BD\u03B5\u03B6\u03B9\u03BA\u03AC \u03BF\u03B9\u03BA\u03BF\u03BD\u03BF\u03BC\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
-                    'hant': '\u03A0\u03B1\u03C1\u03B1\u03B4\u03BF\u03C3\u03B9\u03B1\u03BA\u03AC \u03BA\u03B9\u03BD\u03B5\u03B6\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
-                    'hansfin': '\u0391\u03C0\u03BB\u03BF\u03C0\u03BF\u03B9\u03B7\u03BC\u03AD\u03BD\u03B1 \u03BA\u03B9\u03BD\u03B5\u03B6\u03B9\u03BA\u03AC \u03BF\u03B9\u03BA\u03BF\u03BD\u03BF\u03BC\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
-                    'hans': '\u0391\u03C0\u03BB\u03BF\u03C0\u03BF\u03B9\u03B7\u03BC\u03AD\u03BD\u03B1 \u03BA\u03B9\u03BD\u03B5\u03B6\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
-                    'hanidec': '\u039A\u03B9\u03BD\u03B5\u03B6\u03B9\u03BA\u03AC \u03B4\u03B5\u03BA\u03B1\u03B4\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
-                    'guru': '\u03A8\u03B7\u03C6\u03AF\u03B1 \u0393\u03BA\u03BF\u03C5\u03C1\u03BC\u03BF\u03CD\u03BA\u03B9',
-                    'gujr': '\u0393\u03BA\u03BF\u03C5\u03C4\u03B6\u03B1\u03C1\u03B1\u03C4\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
-                    'greklow': '\u0395\u03BB\u03BB\u03B7\u03BD\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC \u03BC\u03B5 \u03C0\u03B5\u03B6\u03AC \u03B3\u03C1\u03AC\u03BC\u03BC\u03B1\u03C4\u03B1',
-                    'grek': '\u0395\u03BB\u03BB\u03B7\u03BD\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
-                    'bali': 'bali',
-                    'armnlow': '\u03A0\u03B5\u03B6\u03AC \u03B1\u03C1\u03BC\u03B5\u03BD\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
-                    'armn': '\u0391\u03C1\u03BC\u03B5\u03BD\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
-                    'arabext': '\u0395\u03BA\u03C4\u03B5\u03C4\u03B1\u03BC\u03AD\u03BD\u03B1 \u03B1\u03C1\u03B1\u03B2\u03B9\u03BA\u03CC-\u03B9\u03BD\u03B4\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
-                    'arab': '\u0391\u03C1\u03B1\u03B2\u03B9\u03BA\u03CC-\u0399\u03BD\u03B4\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
-                    'finance': '\u039F\u03B9\u03BA\u03BF\u03BD\u03BF\u03BC\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
-                    'traditional': '\u03A0\u03B1\u03C1\u03B1\u03B4\u03BF\u03C3\u03B9\u03B1\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
-                    'native': '\u0395\u03B3\u03B3\u03B5\u03BD\u03AE \u03C8\u03B7\u03C6\u03AF\u03B1',
-                    'beng': '\u0392\u03B5\u03B3\u03B3\u03B1\u03BB\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
-                    'brah': 'brah',
-                    'cakm': 'cakm',
-                    'cham': 'cham',
-                    'deva': '\u03A8\u03B7\u03C6\u03AF\u03B1 \u039D\u03C4\u03B5\u03B2\u03B1\u03BD\u03B1\u03B3\u03BA\u03AC\u03C1\u03B9',
-                    'orya': '\u039F\u03C1\u03B9\u03B3\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
-                    'osma': 'osma',
-                    'roman': '\u039B\u03B1\u03C4\u03B9\u03BD\u03B9\u03BA\u03BF\u03AF \u03B1\u03C1\u03B9\u03B8\u03BC\u03BF\u03AF',
-                    'romanlow': '\u03A0\u03B5\u03B6\u03BF\u03AF \u03BB\u03B1\u03C4\u03B9\u03BD\u03B9\u03BA\u03BF\u03AF \u03B1\u03C1\u03B9\u03B8\u03BC\u03BF\u03AF',
-                    'saur': 'saur',
-                    'shrd': 'shrd',
-                    'sora': 'sora',
-                    'sund': 'sund',
-                    'vaii': '\u03A8\u03B7\u03C6\u03AF\u03B1 \u0392\u03AC\u03B9',
-                    'tibt': '\u0398\u03B9\u03B2\u03B5\u03C4\u03B1\u03BD\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
-                    'thai': '\u03A4\u03B1\u03CA\u03BB\u03B1\u03BD\u03B4\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
-                    'telu': '\u03A4\u03B5\u03BB\u03BF\u03C5\u03B3\u03BA\u03BF\u03C5\u03CA\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
-                    'tamldec': '\u03A4\u03B1\u03BC\u03B9\u03BB\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
-                    'taml': '\u03A4\u03B1\u03BC\u03B9\u03BB\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
-                    'talu': 'talu',
-                    'takr': 'takr',
-                    'olck': 'olck',
-                    'nkoo': 'nkoo',
-                    'mymrshan': 'mymrshan',
-                    'mymr': '\u03A8\u03B7\u03C6\u03AF\u03B1 \u039C\u03B9\u03B1\u03BD\u03BC\u03AC\u03C1',
-                    'mtei': 'mtei',
-                    'mong': '\u039C\u03BF\u03B3\u03B3\u03BF\u03BB\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
-                    'mlym': '\u039C\u03B1\u03BB\u03B1\u03B3\u03B9\u03B1\u03BB\u03B1\u03BC\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
-                    'limb': 'limb',
-                    'lepc': 'lepc',
-                    'latn': '\u03A8\u03B7\u03C6\u03AF\u03B1 \u03C4\u03B7\u03C2 \u0394\u03CD\u03C3\u03B7\u03C2',
-                    'laoo': '\u039B\u03B1\u03BF\u03CA\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
-                    'lanatham': 'lanatham',
-                    'lana': 'lana',
-                    'geor': '\u0393\u03B5\u03C9\u03C1\u03B3\u03B9\u03B1\u03BD\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
-                    'fullwide': '\u03A8\u03B7\u03C6\u03AF\u03B1 \u03C0\u03BB\u03AE\u03C1\u03BF\u03C5\u03C2 \u03C0\u03BB\u03AC\u03C4\u03BF\u03C5\u03C2',
-                    'ethi': '\u0391\u03B9\u03B8\u03B9\u03BF\u03C0\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC'
+                'length-light-year': {
+                    'unitPattern-count-one': '{0} ly',
+                    'unitPattern-count-other': '{0} ly'
                 },
-                'colAlternate': {
-                    'non-ignorable': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C3\u03C5\u03BC\u03B2\u03CC\u03BB\u03C9\u03BD',
-                    'shifted': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03BC\u03B5 \u03B1\u03B3\u03BD\u03CC\u03B7\u03C3\u03B7 \u03C3\u03C5\u03BC\u03B2\u03CC\u03BB\u03C9\u03BD'
+                'length-kilometer': {
+                    'unitPattern-count-one': '{0} \u03C7\u03BB\u03BC.',
+                    'unitPattern-count-other': '{0} \u03C7\u03BB\u03BC.'
                 },
-                'colBackwards': {
-                    'no': '\u039A\u03B1\u03BD\u03BF\u03BD\u03B9\u03BA\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C4\u03CC\u03BD\u03C9\u03BD',
-                    'yes': '\u0391\u03BD\u03C4\u03AF\u03C3\u03C4\u03C1\u03BF\u03C6\u03B7 \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C4\u03CC\u03BD\u03C9\u03BD'
+                'length-inch': {
+                    'unitPattern-count-one': '{0} in',
+                    'unitPattern-count-other': '{0} in'
+                },
+                'length-foot': {
+                    'unitPattern-count-one': '{0} ft',
+                    'unitPattern-count-other': '{0} ft'
+                },
+                'length-centimeter': {
+                    'unitPattern-count-one': '{0} \u03B5\u03BA.',
+                    'unitPattern-count-other': '{0} \u03B5\u03BA.'
+                },
+                'duration-year': {
+                    'unitPattern-count-one': '{0} \u03AD\u03C4.',
+                    'unitPattern-count-other': '{0} \u03AD\u03C4.'
+                },
+                'duration-week': {
+                    'unitPattern-count-one': '{0} \u03B5\u03B2\u03B4.',
+                    'unitPattern-count-other': '{0} \u03B5\u03B2\u03B4.'
+                },
+                'duration-month': {
+                    'unitPattern-count-one': '{0} \u03BC\u03AE\u03BD.',
+                    'unitPattern-count-other': '{0} \u03BC\u03AE\u03BD.'
+                },
+                'mass-pound': {
+                    'unitPattern-count-one': '{0} lb',
+                    'unitPattern-count-other': '{0} lb'
+                },
+                'power-horsepower': {
+                    'unitPattern-count-one': '{0} hp',
+                    'unitPattern-count-other': '{0} hp'
+                },
+                'power-kilowatt': {
+                    'unitPattern-count-one': '{0} kW',
+                    'unitPattern-count-other': '{0} kW'
+                },
+                'power-watt': {
+                    'unitPattern-count-one': '{0} W',
+                    'unitPattern-count-other': '{0} W'
+                },
+                'pressure-hectopascal': {
+                    'unitPattern-count-one': '{0} hPa',
+                    'unitPattern-count-other': '{0} hPa'
+                },
+                'pressure-inch-hg': {
+                    'unitPattern-count-one': '{0} inHg',
+                    'unitPattern-count-other': '{0} inHg'
+                },
+                'pressure-millibar': {
+                    'unitPattern-count-one': '{0} mbar',
+                    'unitPattern-count-other': '{0} mbar'
+                },
+                'volume-liter': {
+                    'unitPattern-count-one': '{0} l',
+                    'unitPattern-count-other': '{0} l'
+                },
+                'volume-cubic-mile': {
+                    'unitPattern-count-one': '{0} mi\u00B3',
+                    'unitPattern-count-other': '{0} mi\u00B3'
+                },
+                'volume-cubic-kilometer': {
+                    'unitPattern-count-one': '{0} km\u00B3',
+                    'unitPattern-count-other': '{0} km\u00B3'
+                },
+                'temperature-fahrenheit': {
+                    'unitPattern-count-one': '{0}\u00B0F',
+                    'unitPattern-count-other': '{0}\u00B0F'
+                },
+                'temperature-celsius': {
+                    'unitPattern-count-one': '{0}\u00B0',
+                    'unitPattern-count-other': '{0}\u00B0'
+                },
+                'speed-mile-per-hour': {
+                    'unitPattern-count-one': '{0} mi/h',
+                    'unitPattern-count-other': '{0} mi/h'
+                },
+                'speed-meter-per-second': {
+                    'unitPattern-count-one': '{0} m/s',
+                    'unitPattern-count-other': '{0} m/s'
+                },
+                'speed-kilometer-per-hour': {
+                    'unitPattern-count-one': '{0} \u03C7\u03BB\u03BC./\u03CE\u03C1\u03B1',
+                    'unitPattern-count-other': '{0} \u03C7\u03BB\u03BC./\u03CE\u03C1\u03B1'
+                },
+                'duration-minute': {
+                    'unitPattern-count-one': '{0} \u03BB\u03B5\u03C0.',
+                    'unitPattern-count-other': '{0} \u03BB\u03B5\u03C0.'
+                },
+                'duration-millisecond': {
+                    'unitPattern-count-one': '{0} ms',
+                    'unitPattern-count-other': '{0} ms'
+                },
+                'duration-hour': {
+                    'unitPattern-count-one': '{0} \u03CE\u03C1\u03B1',
+                    'unitPattern-count-other': '{0} \u03CE\u03C1\u03B5\u03C2'
+                },
+                'duration-day': {
+                    'unitPattern-count-one': '{0} \u03B7\u03BC.',
+                    'unitPattern-count-other': '{0} \u03B7\u03BC.'
+                },
+                'area-square-mile': {
+                    'unitPattern-count-one': '{0} mi\u00B2',
+                    'unitPattern-count-other': '{0} mi\u00B2'
+                },
+                'area-square-meter': {
+                    'unitPattern-count-one': '{0} m\u00B2',
+                    'unitPattern-count-other': '{0} m\u00B2'
+                },
+                'area-square-kilometer': {
+                    'unitPattern-count-one': '{0} km\u00B2',
+                    'unitPattern-count-other': '{0} km\u00B2'
+                },
+                'per': {
+                    'compoundUnitPattern': '{0}/{1}'
+                },
+                'acceleration-g-force': {
+                    'unitPattern-count-one': '{0} G',
+                    'unitPattern-count-other': '{0} G'
+                },
+                'angle-arc-minute': {
+                    'unitPattern-count-one': '{0}\u2032',
+                    'unitPattern-count-other': '{0}\u2032'
+                },
+                'angle-arc-second': {
+                    'unitPattern-count-one': '{0}\u2033',
+                    'unitPattern-count-other': '{0}\u2033'
+                },
+                'angle-degree': {
+                    'unitPattern-count-one': '{0}\u00B0',
+                    'unitPattern-count-other': '{0}\u00B0'
+                },
+                'area-acre': {
+                    'unitPattern-count-one': '{0} ac',
+                    'unitPattern-count-other': '{0} ac'
+                },
+                'area-hectare': {
+                    'unitPattern-count-one': '{0} ha',
+                    'unitPattern-count-other': '{0} ha'
+                },
+                'area-square-foot': {
+                    'unitPattern-count-one': '{0} ft\u00B2',
+                    'unitPattern-count-other': '{0} ft\u00B2'
+                },
+                'duration-second': {
+                    'unitPattern-count-one': '{0} \u03B4\u03B5\u03C5\u03C4.',
+                    'unitPattern-count-other': '{0} \u03B4\u03B5\u03C5\u03C4.'
                 }
             },
-            'keys': {
-                'colNormalization': '\u039A\u03B1\u03BD\u03BF\u03BD\u03B9\u03BA\u03BF\u03C0\u03BF\u03B9\u03B7\u03BC\u03AD\u03BD\u03B7 \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7',
-                'collation': '\u03A3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2',
-                'colHiraganaQuaternary': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u039A\u03AC\u03BD\u03B1',
-                'colCaseLevel': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03BC\u03B5 \u03B4\u03B9\u03AC\u03BA\u03C1\u03B9\u03C3\u03B7 \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD',
-                'colCaseFirst': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03BC\u03B5 \u03BA\u03B5\u03C6\u03B1\u03BB\u03B1\u03AF\u03BF\u03C5\u03C2/\u03C0\u03B5\u03B6\u03BF\u03CD\u03C2 \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03B5\u03C2',
-                'colBackwards': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03BC\u03B5 \u03B1\u03BD\u03C4\u03B5\u03C3\u03C4\u03C1\u03B1\u03BC\u03BC\u03AD\u03BD\u03BF \u03C4\u03BF\u03BD\u03B9\u03C3\u03BC\u03CC',
-                'colAlternate': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03BC\u03B5 \u03B1\u03B3\u03BD\u03CC\u03B7\u03C3\u03B7 \u03C3\u03C5\u03BC\u03B2\u03CC\u03BB\u03C9\u03BD',
-                'calendar': '\u0397\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
-                'x': '\u03A0\u03C1\u03BF\u03C3\u03C9\u03C0\u03B9\u03BA\u03AE \u03C7\u03C1\u03AE\u03C3\u03B7',
-                'variableTop': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C9\u03C2 \u03C3\u03CD\u03BC\u03B2\u03BF\u03BB\u03B1',
-                'va': '\u03A0\u03B1\u03C1\u03B1\u03BB\u03BB\u03B1\u03B3\u03AE \u03C4\u03BF\u03C0\u03B9\u03BA\u03CE\u03BD \u03C1\u03C5\u03B8\u03BC\u03AF\u03C3\u03B5\u03C9\u03BD',
-                'timezone': '\u0396\u03CE\u03BD\u03B7 \u03CE\u03C1\u03B1\u03C2',
-                'numbers': '\u0391\u03C1\u03B9\u03B8\u03BC\u03BF\u03AF',
-                'currency': '\u039D\u03CC\u03BC\u03B9\u03C3\u03BC\u03B1',
-                'colStrength': '\u0399\u03C3\u03C7\u03CD\u03C2 \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2',
-                'colNumeric': '\u0391\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AE \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7'
-            },
-            'localeDisplayPattern': {
-                'localePattern': '{0} ({1})',
-                'localeSeparator': '{0}, {1}',
-                'localeKeyTypePattern': '{0}: {1}'
+            'calendars': {
+                'gregorian': {
+                    'months': {
+                        'format': {
+                            'abbreviated': {
+                                '8': '\u0391\u03C5\u03B3',
+                                '7': '\u0399\u03BF\u03C5\u03BB',
+                                '6': '\u0399\u03BF\u03C5\u03BD',
+                                '5': '\u039C\u03B1\u0390',
+                                '12': '\u0394\u03B5\u03BA',
+                                '11': '\u039D\u03BF\u03B5',
+                                '10': '\u039F\u03BA\u03C4',
+                                '9': '\u03A3\u03B5\u03C0',
+                                '1': '\u0399\u03B1\u03BD',
+                                '2': '\u03A6\u03B5\u03B2',
+                                '3': '\u039C\u03B1\u03C1',
+                                '4': '\u0391\u03C0\u03C1'
+                            },
+                            'narrow': {
+                                '8': '\u0391',
+                                '7': '\u0399',
+                                '6': '\u0399',
+                                '5': '\u039C',
+                                '12': '\u0394',
+                                '11': '\u039D',
+                                '10': '\u039F',
+                                '9': '\u03A3',
+                                '1': '\u0399',
+                                '2': '\u03A6',
+                                '3': '\u039C',
+                                '4': '\u0391'
+                            },
+                            'wide': {
+                                '8': '\u0391\u03C5\u03B3\u03BF\u03CD\u03C3\u03C4\u03BF\u03C5',
+                                '7': '\u0399\u03BF\u03C5\u03BB\u03AF\u03BF\u03C5',
+                                '6': '\u0399\u03BF\u03C5\u03BD\u03AF\u03BF\u03C5',
+                                '5': '\u039C\u03B1\u0390\u03BF\u03C5',
+                                '12': '\u0394\u03B5\u03BA\u03B5\u03BC\u03B2\u03C1\u03AF\u03BF\u03C5',
+                                '11': '\u039D\u03BF\u03B5\u03BC\u03B2\u03C1\u03AF\u03BF\u03C5',
+                                '10': '\u039F\u03BA\u03C4\u03C9\u03B2\u03C1\u03AF\u03BF\u03C5',
+                                '9': '\u03A3\u03B5\u03C0\u03C4\u03B5\u03BC\u03B2\u03C1\u03AF\u03BF\u03C5',
+                                '1': '\u0399\u03B1\u03BD\u03BF\u03C5\u03B1\u03C1\u03AF\u03BF\u03C5',
+                                '2': '\u03A6\u03B5\u03B2\u03C1\u03BF\u03C5\u03B1\u03C1\u03AF\u03BF\u03C5',
+                                '3': '\u039C\u03B1\u03C1\u03C4\u03AF\u03BF\u03C5',
+                                '4': '\u0391\u03C0\u03C1\u03B9\u03BB\u03AF\u03BF\u03C5'
+                            }
+                        },
+                        'stand-alone': {
+                            'abbreviated': {
+                                '8': '\u0391\u03CD\u03B3',
+                                '7': '\u0399\u03BF\u03CD\u03BB',
+                                '6': '\u0399\u03BF\u03CD\u03BD',
+                                '5': '\u039C\u03AC\u03B9',
+                                '12': '\u0394\u03B5\u03BA',
+                                '11': '\u039D\u03BF\u03AD',
+                                '10': '\u039F\u03BA\u03C4',
+                                '9': '\u03A3\u03B5\u03C0',
+                                '1': '\u0399\u03B1\u03BD',
+                                '2': '\u03A6\u03B5\u03B2',
+                                '3': '\u039C\u03AC\u03C1',
+                                '4': '\u0391\u03C0\u03C1'
+                            },
+                            'narrow': {
+                                '8': '\u0391',
+                                '7': '\u0399',
+                                '6': '\u0399',
+                                '5': '\u039C',
+                                '12': '\u0394',
+                                '11': '\u039D',
+                                '10': '\u039F',
+                                '9': '\u03A3',
+                                '1': '\u0399',
+                                '2': '\u03A6',
+                                '3': '\u039C',
+                                '4': '\u0391'
+                            },
+                            'wide': {
+                                '8': '\u0391\u03CD\u03B3\u03BF\u03C5\u03C3\u03C4\u03BF\u03C2',
+                                '7': '\u0399\u03BF\u03CD\u03BB\u03B9\u03BF\u03C2',
+                                '6': '\u0399\u03BF\u03CD\u03BD\u03B9\u03BF\u03C2',
+                                '5': '\u039C\u03AC\u03B9\u03BF\u03C2',
+                                '12': '\u0394\u03B5\u03BA\u03AD\u03BC\u03B2\u03C1\u03B9\u03BF\u03C2',
+                                '11': '\u039D\u03BF\u03AD\u03BC\u03B2\u03C1\u03B9\u03BF\u03C2',
+                                '10': '\u039F\u03BA\u03C4\u03CE\u03B2\u03C1\u03B9\u03BF\u03C2',
+                                '9': '\u03A3\u03B5\u03C0\u03C4\u03AD\u03BC\u03B2\u03C1\u03B9\u03BF\u03C2',
+                                '1': '\u0399\u03B1\u03BD\u03BF\u03C5\u03AC\u03C1\u03B9\u03BF\u03C2',
+                                '2': '\u03A6\u03B5\u03B2\u03C1\u03BF\u03C5\u03AC\u03C1\u03B9\u03BF\u03C2',
+                                '3': '\u039C\u03AC\u03C1\u03C4\u03B9\u03BF\u03C2',
+                                '4': '\u0391\u03C0\u03C1\u03AF\u03BB\u03B9\u03BF\u03C2'
+                            }
+                        }
+                    },
+                    'days': {
+                        'format': {
+                            'abbreviated': {
+                                'sun': '\u039A\u03C5\u03C1',
+                                'mon': '\u0394\u03B5\u03C5',
+                                'tue': '\u03A4\u03C1\u03AF',
+                                'wed': '\u03A4\u03B5\u03C4',
+                                'thu': '\u03A0\u03AD\u03BC',
+                                'fri': '\u03A0\u03B1\u03C1',
+                                'sat': '\u03A3\u03AC\u03B2'
+                            },
+                            'narrow': {
+                                'sun': '\u039A',
+                                'mon': '\u0394',
+                                'tue': '\u03A4',
+                                'wed': '\u03A4',
+                                'thu': '\u03A0',
+                                'fri': '\u03A0',
+                                'sat': '\u03A3'
+                            },
+                            'short': {
+                                'sun': '\u039A\u03C5',
+                                'mon': '\u0394\u03B5',
+                                'tue': '\u03A4\u03C1',
+                                'wed': '\u03A4\u03B5',
+                                'thu': '\u03A0\u03AD',
+                                'fri': '\u03A0\u03B1',
+                                'sat': '\u03A3\u03AC'
+                            },
+                            'wide': {
+                                'sun': '\u039A\u03C5\u03C1\u03B9\u03B1\u03BA\u03AE',
+                                'mon': '\u0394\u03B5\u03C5\u03C4\u03AD\u03C1\u03B1',
+                                'tue': '\u03A4\u03C1\u03AF\u03C4\u03B7',
+                                'wed': '\u03A4\u03B5\u03C4\u03AC\u03C1\u03C4\u03B7',
+                                'thu': '\u03A0\u03AD\u03BC\u03C0\u03C4\u03B7',
+                                'fri': '\u03A0\u03B1\u03C1\u03B1\u03C3\u03BA\u03B5\u03C5\u03AE',
+                                'sat': '\u03A3\u03AC\u03B2\u03B2\u03B1\u03C4\u03BF'
+                            }
+                        },
+                        'stand-alone': {
+                            'abbreviated': {
+                                'sun': '\u039A\u03C5\u03C1',
+                                'mon': '\u0394\u03B5\u03C5',
+                                'tue': '\u03A4\u03C1\u03AF',
+                                'wed': '\u03A4\u03B5\u03C4',
+                                'thu': '\u03A0\u03AD\u03BC',
+                                'fri': '\u03A0\u03B1\u03C1',
+                                'sat': '\u03A3\u03AC\u03B2'
+                            },
+                            'narrow': {
+                                'sun': '\u039A',
+                                'mon': '\u0394',
+                                'tue': '\u03A4',
+                                'wed': '\u03A4',
+                                'thu': '\u03A0',
+                                'fri': '\u03A0',
+                                'sat': '\u03A3'
+                            },
+                            'short': {
+                                'sun': '\u039A\u03C5',
+                                'mon': '\u0394\u03B5',
+                                'tue': '\u03A4\u03C1',
+                                'wed': '\u03A4\u03B5',
+                                'thu': '\u03A0\u03AD',
+                                'fri': '\u03A0\u03B1',
+                                'sat': '\u03A3\u03AC'
+                            },
+                            'wide': {
+                                'sun': '\u039A\u03C5\u03C1\u03B9\u03B1\u03BA\u03AE',
+                                'mon': '\u0394\u03B5\u03C5\u03C4\u03AD\u03C1\u03B1',
+                                'tue': '\u03A4\u03C1\u03AF\u03C4\u03B7',
+                                'wed': '\u03A4\u03B5\u03C4\u03AC\u03C1\u03C4\u03B7',
+                                'thu': '\u03A0\u03AD\u03BC\u03C0\u03C4\u03B7',
+                                'fri': '\u03A0\u03B1\u03C1\u03B1\u03C3\u03BA\u03B5\u03C5\u03AE',
+                                'sat': '\u03A3\u03AC\u03B2\u03B2\u03B1\u03C4\u03BF'
+                            }
+                        }
+                    },
+                    'quarters': {
+                        'format': {
+                            'abbreviated': {
+                                '1': '\u03A41',
+                                '2': '\u03A42',
+                                '3': '\u03A43',
+                                '4': '\u03A44'
+                            },
+                            'narrow': {
+                                '1': '1',
+                                '2': '2',
+                                '3': '3',
+                                '4': '4'
+                            },
+                            'wide': {
+                                '1': '1\u03BF \u03C4\u03C1\u03AF\u03BC\u03B7\u03BD\u03BF',
+                                '2': '2\u03BF \u03C4\u03C1\u03AF\u03BC\u03B7\u03BD\u03BF',
+                                '3': '3\u03BF \u03C4\u03C1\u03AF\u03BC\u03B7\u03BD\u03BF',
+                                '4': '4\u03BF \u03C4\u03C1\u03AF\u03BC\u03B7\u03BD\u03BF'
+                            }
+                        },
+                        'stand-alone': {
+                            'abbreviated': {
+                                '1': '\u03A41',
+                                '2': '\u03A42',
+                                '3': '\u03A43',
+                                '4': '\u03A44'
+                            },
+                            'narrow': {
+                                '1': '1',
+                                '2': '2',
+                                '3': '3',
+                                '4': '4'
+                            },
+                            'wide': {
+                                '1': '1\u03BF \u03C4\u03C1\u03AF\u03BC\u03B7\u03BD\u03BF',
+                                '2': '2\u03BF \u03C4\u03C1\u03AF\u03BC\u03B7\u03BD\u03BF',
+                                '3': '3\u03BF \u03C4\u03C1\u03AF\u03BC\u03B7\u03BD\u03BF',
+                                '4': '4\u03BF \u03C4\u03C1\u03AF\u03BC\u03B7\u03BD\u03BF'
+                            }
+                        }
+                    },
+                    'dayPeriods': {
+                        'format': {
+                            'abbreviated': {
+                                'am': '\u03C0.\u03BC.',
+                                'pm': '\u03BC.\u03BC.'
+                            },
+                            'narrow': {
+                                'am': '\u03C0.\u03BC.',
+                                'pm': '\u03BC.\u03BC.'
+                            },
+                            'wide': {
+                                'am': '\u03C0.\u03BC.',
+                                'pm': '\u03BC.\u03BC.'
+                            }
+                        },
+                        'stand-alone': {
+                            'abbreviated': {
+                                'am': '\u03C0.\u03BC.',
+                                'pm': '\u03BC.\u03BC.'
+                            },
+                            'narrow': {
+                                'am': '\u03C0.\u03BC.',
+                                'pm': '\u03BC.\u03BC.'
+                            },
+                            'wide': {
+                                'am': '\u03C0.\u03BC.',
+                                'pm': '\u03BC.\u03BC.'
+                            }
+                        }
+                    },
+                    'eras': {
+                        'eraNames': {
+                            '0': '\u03C0.\u03A7.',
+                            '0-alt-variant': '\u03C0.\u039A.\u03A7.',
+                            '1': '\u03BC.\u03A7.',
+                            '1-alt-variant': '\u039A\u03A7'
+                        },
+                        'eraAbbr': {
+                            '0': '\u03C0.\u03A7.',
+                            '0-alt-variant': '\u03C0.\u039A.\u03A7.',
+                            '1': '\u03BC.\u03A7.',
+                            '1-alt-variant': '\u039A\u03A7'
+                        },
+                        'eraNarrow': {
+                            '0': '\u03C0.\u03A7.',
+                            '0-alt-variant': '\u03C0.\u039A.\u03A7.',
+                            '1': '\u03BC.\u03A7.',
+                            '1-alt-variant': '\u039A\u03A7'
+                        }
+                    },
+                    'dateFormats': {
+                        'full': 'EEEE, d MMMM y',
+                        'long': 'd MMMM y',
+                        'medium': 'd MMM y',
+                        'short': 'd/M/yy'
+                    },
+                    'timeFormats': {
+                        'full': 'h:mm:ss a zzzz',
+                        'long': 'h:mm:ss a z',
+                        'medium': 'h:mm:ss a',
+                        'short': 'h:mm a'
+                    },
+                    'dateTimeFormats': {
+                        'full': '{1} - {0}',
+                        'long': '{1} - {0}',
+                        'medium': '{1} - {0}',
+                        'short': '{1} - {0}',
+                        'availableFormats': {
+                            'yMMM': 'LLL y',
+                            'yMEd': 'E, d/M/y',
+                            'yMd': 'd/M/y',
+                            'yM': 'M/y',
+                            'y': 'y',
+                            'Ehm': 'E h:mm a',
+                            'Ed': 'E d',
+                            'd': 'd',
+                            'GyMMMd': 'd MMM y G',
+                            'GyMMMEd': 'E, d MMM y G',
+                            'h': 'h a',
+                            'H': 'HH',
+                            'HHmm': 'HH:mm',
+                            'yQQQQ': 'y QQQQ',
+                            'yQQQ': 'y QQQ',
+                            'yMMMM': 'LLLL y',
+                            'yMMMEd': 'E, d MMM y',
+                            'yMMMd': 'd MMM y',
+                            'Hm': 'HH:mm',
+                            'hm': 'h:mm a',
+                            'HHmmss': 'HH:mm:ss',
+                            'EHm': 'E HH:mm',
+                            'Ehms': 'E h:mm:ss a',
+                            'EHms': 'E HH:mm:ss',
+                            'Gy': 'y G',
+                            'GyMMM': 'LLL y G',
+                            'hms': 'h:mm:ss a',
+                            'Hms': 'HH:mm:ss',
+                            'M': 'L',
+                            'Md': 'd/M',
+                            'MEd': 'E, d/M',
+                            'MMM': 'LLL',
+                            'MMMd': 'd MMM',
+                            'MMMEd': 'E, d MMM',
+                            'MMMMd': 'd MMMM',
+                            'MMMMEd': 'E, d MMMM',
+                            'ms': 'mm:ss'
+                        },
+                        'appendItems': {
+                            'Second': '{0} ({2}: {1})',
+                            'Quarter': '{0} ({2}: {1})',
+                            'Month': '{0} ({2}: {1})',
+                            'Year': '{1} {0}',
+                            'Week': '{0} ({2}: {1})',
+                            'Timezone': '{0} {1}',
+                            'Day': '{0} ({2}: {1})',
+                            'Day-Of-Week': '{0} {1}',
+                            'Era': '{1} {0}',
+                            'Hour': '{0} ({2}: {1})',
+                            'Minute': '{0} ({2}: {1})'
+                        },
+                        'intervalFormats': {
+                            'MMMEd': {
+                                'd': 'E, dd - E, dd MMM',
+                                'M': 'E, dd MMM - E, dd MMM'
+                            },
+                            'MMMd': {
+                                'd': 'dd-dd MMM',
+                                'M': 'dd MMM - dd MMM'
+                            },
+                            'MMM': {
+                                'M': 'LLL-LLL'
+                            },
+                            'MEd': {
+                                'd': 'E, dd/MM - E, dd/MM',
+                                'M': 'E, dd/MM - E, dd/MM'
+                            },
+                            'Md': {
+                                'd': 'dd/MM - dd/MM',
+                                'M': 'dd/MM - dd/MM'
+                            },
+                            'M': {
+                                'M': 'M-M'
+                            },
+                            'Hv': {
+                                'H': 'HH\u2013HH v'
+                            },
+                            'hv': {
+                                'a': 'h a - h a v',
+                                'h': 'h-h a v'
+                            },
+                            'y': {
+                                'y': 'y-y'
+                            },
+                            'yM': {
+                                'M': 'MM/y - MM/y',
+                                'y': 'MM/y - MM/y'
+                            },
+                            'yMd': {
+                                'd': 'dd/MM/y - dd/MM/y',
+                                'M': 'dd/MM/y - dd/MM/y',
+                                'y': 'dd/MM/y - dd/MM/y'
+                            },
+                            'yMEd': {
+                                'd': 'E, dd/MM/y - E, dd/MM/y',
+                                'M': 'E, dd/MM/y - E, dd/MM/y',
+                                'y': 'E, dd/MM/y - E, dd/MM/y'
+                            },
+                            'yMMM': {
+                                'M': 'LLL-LLL y',
+                                'y': 'MMM y - MMM y'
+                            },
+                            'yMMMd': {
+                                'd': 'dd-dd MMM y',
+                                'M': 'dd MMM - dd MMM y',
+                                'y': 'dd MMM y - dd MMM y'
+                            },
+                            'yMMMEd': {
+                                'd': 'E, dd MMM - E, dd MMM y',
+                                'M': 'E, dd MMM - E, dd MMM y',
+                                'y': 'E, dd MMM y - E, dd MMM y'
+                            },
+                            'yMMMM': {
+                                'M': 'LLLL-LLLL y',
+                                'y': 'LLLL y - LLLL y'
+                            },
+                            'Hmv': {
+                                'H': 'HH:mm\u2013HH:mm v',
+                                'm': 'HH:mm\u2013HH:mm v'
+                            },
+                            'hmv': {
+                                'a': 'h:mm a - h:mm a v',
+                                'h': 'h:mm-h:mm a v',
+                                'm': 'h:mm-h:mm a v'
+                            },
+                            'Hm': {
+                                'H': 'HH:mm\u2013HH:mm',
+                                'm': 'HH:mm\u2013HH:mm'
+                            },
+                            'hm': {
+                                'a': 'h:mm a - h:mm a',
+                                'h': 'h:mm-h:mm a',
+                                'm': 'h:mm-h:mm a'
+                            },
+                            'H': {
+                                'H': 'HH\u2013HH'
+                            },
+                            'h': {
+                                'a': 'h a - h a',
+                                'h': 'h-h a'
+                            },
+                            'd': {
+                                'd': 'd-d'
+                            },
+                            'intervalFormatFallback': '{0} - {1}'
+                        }
+                    }
+                }
             },
             'timeZoneNames': {
                 'zone': {
@@ -2496,433 +2957,549 @@
                 'regionFormat-type-standard': '\u03A7\u03B5\u03B9\u03BC\u03B5\u03C1\u03B9\u03BD\u03AE \u03CE\u03C1\u03B1 ({0})',
                 'fallbackFormat': '[{1} ({0})]'
             },
-            'calendars': {
-                'gregorian': {
-                    'months': {
-                        'format': {
-                            'abbreviated': {
-                                '8': '\u0391\u03C5\u03B3',
-                                '7': '\u0399\u03BF\u03C5\u03BB',
-                                '6': '\u0399\u03BF\u03C5\u03BD',
-                                '5': '\u039C\u03B1\u0390',
-                                '12': '\u0394\u03B5\u03BA',
-                                '11': '\u039D\u03BF\u03B5',
-                                '10': '\u039F\u03BA\u03C4',
-                                '9': '\u03A3\u03B5\u03C0',
-                                '1': '\u0399\u03B1\u03BD',
-                                '2': '\u03A6\u03B5\u03B2',
-                                '3': '\u039C\u03B1\u03C1',
-                                '4': '\u0391\u03C0\u03C1'
-                            },
-                            'narrow': {
-                                '8': '\u0391',
-                                '7': '\u0399',
-                                '6': '\u0399',
-                                '5': '\u039C',
-                                '12': '\u0394',
-                                '11': '\u039D',
-                                '10': '\u039F',
-                                '9': '\u03A3',
-                                '1': '\u0399',
-                                '2': '\u03A6',
-                                '3': '\u039C',
-                                '4': '\u0391'
-                            },
-                            'wide': {
-                                '8': '\u0391\u03C5\u03B3\u03BF\u03CD\u03C3\u03C4\u03BF\u03C5',
-                                '7': '\u0399\u03BF\u03C5\u03BB\u03AF\u03BF\u03C5',
-                                '6': '\u0399\u03BF\u03C5\u03BD\u03AF\u03BF\u03C5',
-                                '5': '\u039C\u03B1\u0390\u03BF\u03C5',
-                                '12': '\u0394\u03B5\u03BA\u03B5\u03BC\u03B2\u03C1\u03AF\u03BF\u03C5',
-                                '11': '\u039D\u03BF\u03B5\u03BC\u03B2\u03C1\u03AF\u03BF\u03C5',
-                                '10': '\u039F\u03BA\u03C4\u03C9\u03B2\u03C1\u03AF\u03BF\u03C5',
-                                '9': '\u03A3\u03B5\u03C0\u03C4\u03B5\u03BC\u03B2\u03C1\u03AF\u03BF\u03C5',
-                                '1': '\u0399\u03B1\u03BD\u03BF\u03C5\u03B1\u03C1\u03AF\u03BF\u03C5',
-                                '2': '\u03A6\u03B5\u03B2\u03C1\u03BF\u03C5\u03B1\u03C1\u03AF\u03BF\u03C5',
-                                '3': '\u039C\u03B1\u03C1\u03C4\u03AF\u03BF\u03C5',
-                                '4': '\u0391\u03C0\u03C1\u03B9\u03BB\u03AF\u03BF\u03C5'
-                            }
-                        },
-                        'stand-alone': {
-                            'abbreviated': {
-                                '8': '\u0391\u03CD\u03B3',
-                                '7': '\u0399\u03BF\u03CD\u03BB',
-                                '6': '\u0399\u03BF\u03CD\u03BD',
-                                '5': '\u039C\u03AC\u03B9',
-                                '12': '\u0394\u03B5\u03BA',
-                                '11': '\u039D\u03BF\u03AD',
-                                '10': '\u039F\u03BA\u03C4',
-                                '9': '\u03A3\u03B5\u03C0',
-                                '1': '\u0399\u03B1\u03BD',
-                                '2': '\u03A6\u03B5\u03B2',
-                                '3': '\u039C\u03AC\u03C1',
-                                '4': '\u0391\u03C0\u03C1'
-                            },
-                            'narrow': {
-                                '8': '\u0391',
-                                '7': '\u0399',
-                                '6': '\u0399',
-                                '5': '\u039C',
-                                '12': '\u0394',
-                                '11': '\u039D',
-                                '10': '\u039F',
-                                '9': '\u03A3',
-                                '1': '\u0399',
-                                '2': '\u03A6',
-                                '3': '\u039C',
-                                '4': '\u0391'
-                            },
-                            'wide': {
-                                '8': '\u0391\u03CD\u03B3\u03BF\u03C5\u03C3\u03C4\u03BF\u03C2',
-                                '7': '\u0399\u03BF\u03CD\u03BB\u03B9\u03BF\u03C2',
-                                '6': '\u0399\u03BF\u03CD\u03BD\u03B9\u03BF\u03C2',
-                                '5': '\u039C\u03AC\u03B9\u03BF\u03C2',
-                                '12': '\u0394\u03B5\u03BA\u03AD\u03BC\u03B2\u03C1\u03B9\u03BF\u03C2',
-                                '11': '\u039D\u03BF\u03AD\u03BC\u03B2\u03C1\u03B9\u03BF\u03C2',
-                                '10': '\u039F\u03BA\u03C4\u03CE\u03B2\u03C1\u03B9\u03BF\u03C2',
-                                '9': '\u03A3\u03B5\u03C0\u03C4\u03AD\u03BC\u03B2\u03C1\u03B9\u03BF\u03C2',
-                                '1': '\u0399\u03B1\u03BD\u03BF\u03C5\u03AC\u03C1\u03B9\u03BF\u03C2',
-                                '2': '\u03A6\u03B5\u03B2\u03C1\u03BF\u03C5\u03AC\u03C1\u03B9\u03BF\u03C2',
-                                '3': '\u039C\u03AC\u03C1\u03C4\u03B9\u03BF\u03C2',
-                                '4': '\u0391\u03C0\u03C1\u03AF\u03BB\u03B9\u03BF\u03C2'
-                            }
-                        }
-                    },
-                    'days': {
-                        'format': {
-                            'abbreviated': {
-                                'sun': '\u039A\u03C5\u03C1',
-                                'mon': '\u0394\u03B5\u03C5',
-                                'tue': '\u03A4\u03C1\u03AF',
-                                'wed': '\u03A4\u03B5\u03C4',
-                                'thu': '\u03A0\u03AD\u03BC',
-                                'fri': '\u03A0\u03B1\u03C1',
-                                'sat': '\u03A3\u03AC\u03B2'
-                            },
-                            'narrow': {
-                                'sun': '\u039A',
-                                'mon': '\u0394',
-                                'tue': '\u03A4',
-                                'wed': '\u03A4',
-                                'thu': '\u03A0',
-                                'fri': '\u03A0',
-                                'sat': '\u03A3'
-                            },
-                            'short': {
-                                'sun': '\u039A\u03C5',
-                                'mon': '\u0394\u03B5',
-                                'tue': '\u03A4\u03C1',
-                                'wed': '\u03A4\u03B5',
-                                'thu': '\u03A0\u03AD',
-                                'fri': '\u03A0\u03B1',
-                                'sat': '\u03A3\u03AC'
-                            },
-                            'wide': {
-                                'sun': '\u039A\u03C5\u03C1\u03B9\u03B1\u03BA\u03AE',
-                                'mon': '\u0394\u03B5\u03C5\u03C4\u03AD\u03C1\u03B1',
-                                'tue': '\u03A4\u03C1\u03AF\u03C4\u03B7',
-                                'wed': '\u03A4\u03B5\u03C4\u03AC\u03C1\u03C4\u03B7',
-                                'thu': '\u03A0\u03AD\u03BC\u03C0\u03C4\u03B7',
-                                'fri': '\u03A0\u03B1\u03C1\u03B1\u03C3\u03BA\u03B5\u03C5\u03AE',
-                                'sat': '\u03A3\u03AC\u03B2\u03B2\u03B1\u03C4\u03BF'
-                            }
-                        },
-                        'stand-alone': {
-                            'abbreviated': {
-                                'sun': '\u039A\u03C5\u03C1',
-                                'mon': '\u0394\u03B5\u03C5',
-                                'tue': '\u03A4\u03C1\u03AF',
-                                'wed': '\u03A4\u03B5\u03C4',
-                                'thu': '\u03A0\u03AD\u03BC',
-                                'fri': '\u03A0\u03B1\u03C1',
-                                'sat': '\u03A3\u03AC\u03B2'
-                            },
-                            'narrow': {
-                                'sun': '\u039A',
-                                'mon': '\u0394',
-                                'tue': '\u03A4',
-                                'wed': '\u03A4',
-                                'thu': '\u03A0',
-                                'fri': '\u03A0',
-                                'sat': '\u03A3'
-                            },
-                            'short': {
-                                'sun': '\u039A\u03C5',
-                                'mon': '\u0394\u03B5',
-                                'tue': '\u03A4\u03C1',
-                                'wed': '\u03A4\u03B5',
-                                'thu': '\u03A0\u03AD',
-                                'fri': '\u03A0\u03B1',
-                                'sat': '\u03A3\u03AC'
-                            },
-                            'wide': {
-                                'sun': '\u039A\u03C5\u03C1\u03B9\u03B1\u03BA\u03AE',
-                                'mon': '\u0394\u03B5\u03C5\u03C4\u03AD\u03C1\u03B1',
-                                'tue': '\u03A4\u03C1\u03AF\u03C4\u03B7',
-                                'wed': '\u03A4\u03B5\u03C4\u03AC\u03C1\u03C4\u03B7',
-                                'thu': '\u03A0\u03AD\u03BC\u03C0\u03C4\u03B7',
-                                'fri': '\u03A0\u03B1\u03C1\u03B1\u03C3\u03BA\u03B5\u03C5\u03AE',
-                                'sat': '\u03A3\u03AC\u03B2\u03B2\u03B1\u03C4\u03BF'
-                            }
-                        }
-                    },
-                    'quarters': {
-                        'format': {
-                            'abbreviated': {
-                                '1': '\u03A41',
-                                '2': '\u03A42',
-                                '3': '\u03A43',
-                                '4': '\u03A44'
-                            },
-                            'narrow': {
-                                '1': '1',
-                                '2': '2',
-                                '3': '3',
-                                '4': '4'
-                            },
-                            'wide': {
-                                '1': '1\u03BF \u03C4\u03C1\u03AF\u03BC\u03B7\u03BD\u03BF',
-                                '2': '2\u03BF \u03C4\u03C1\u03AF\u03BC\u03B7\u03BD\u03BF',
-                                '3': '3\u03BF \u03C4\u03C1\u03AF\u03BC\u03B7\u03BD\u03BF',
-                                '4': '4\u03BF \u03C4\u03C1\u03AF\u03BC\u03B7\u03BD\u03BF'
-                            }
-                        },
-                        'stand-alone': {
-                            'abbreviated': {
-                                '1': '\u03A41',
-                                '2': '\u03A42',
-                                '3': '\u03A43',
-                                '4': '\u03A44'
-                            },
-                            'narrow': {
-                                '1': '1',
-                                '2': '2',
-                                '3': '3',
-                                '4': '4'
-                            },
-                            'wide': {
-                                '1': '1\u03BF \u03C4\u03C1\u03AF\u03BC\u03B7\u03BD\u03BF',
-                                '2': '2\u03BF \u03C4\u03C1\u03AF\u03BC\u03B7\u03BD\u03BF',
-                                '3': '3\u03BF \u03C4\u03C1\u03AF\u03BC\u03B7\u03BD\u03BF',
-                                '4': '4\u03BF \u03C4\u03C1\u03AF\u03BC\u03B7\u03BD\u03BF'
-                            }
-                        }
-                    },
-                    'dayPeriods': {
-                        'format': {
-                            'abbreviated': {
-                                'am': '\u03C0.\u03BC.',
-                                'pm': '\u03BC.\u03BC.'
-                            },
-                            'narrow': {
-                                'am': '\u03C0.\u03BC.',
-                                'pm': '\u03BC.\u03BC.'
-                            },
-                            'wide': {
-                                'am': '\u03C0.\u03BC.',
-                                'pm': '\u03BC.\u03BC.'
-                            }
-                        },
-                        'stand-alone': {
-                            'abbreviated': {
-                                'am': '\u03C0.\u03BC.',
-                                'pm': '\u03BC.\u03BC.'
-                            },
-                            'narrow': {
-                                'am': '\u03C0.\u03BC.',
-                                'pm': '\u03BC.\u03BC.'
-                            },
-                            'wide': {
-                                'am': '\u03C0.\u03BC.',
-                                'pm': '\u03BC.\u03BC.'
-                            }
-                        }
-                    },
-                    'eras': {
-                        'eraNames': {
-                            '0': '\u03C0.\u03A7.',
-                            '0-alt-variant': '\u03C0.\u039A.\u03A7.',
-                            '1': '\u03BC.\u03A7.',
-                            '1-alt-variant': '\u039A\u03A7'
-                        },
-                        'eraAbbr': {
-                            '0': '\u03C0.\u03A7.',
-                            '0-alt-variant': '\u03C0.\u039A.\u03A7.',
-                            '1': '\u03BC.\u03A7.',
-                            '1-alt-variant': '\u039A\u03A7'
-                        },
-                        'eraNarrow': {
-                            '0': '\u03C0.\u03A7.',
-                            '0-alt-variant': '\u03C0.\u039A.\u03A7.',
-                            '1': '\u03BC.\u03A7.',
-                            '1-alt-variant': '\u039A\u03A7'
-                        }
-                    },
-                    'dateFormats': {
-                        'full': 'EEEE, d MMMM y',
-                        'long': 'd MMMM y',
-                        'medium': 'd MMM y',
-                        'short': 'd/M/yy'
-                    },
-                    'timeFormats': {
-                        'full': 'h:mm:ss a zzzz',
-                        'long': 'h:mm:ss a z',
-                        'medium': 'h:mm:ss a',
-                        'short': 'h:mm a'
-                    },
-                    'dateTimeFormats': {
-                        'full': '{1} - {0}',
-                        'long': '{1} - {0}',
-                        'medium': '{1} - {0}',
-                        'short': '{1} - {0}',
-                        'availableFormats': {
-                            'yMMM': 'LLL y',
-                            'yMEd': 'E, d/M/y',
-                            'yMd': 'd/M/y',
-                            'yM': 'M/y',
-                            'y': 'y',
-                            'Ehm': 'E h:mm a',
-                            'Ed': 'E d',
-                            'd': 'd',
-                            'GyMMMd': 'd MMM y G',
-                            'GyMMMEd': 'E, d MMM y G',
-                            'h': 'h a',
-                            'H': 'HH',
-                            'HHmm': 'HH:mm',
-                            'yQQQQ': 'y QQQQ',
-                            'yQQQ': 'y QQQ',
-                            'yMMMM': 'LLLL y',
-                            'yMMMEd': 'E, d MMM y',
-                            'yMMMd': 'd MMM y',
-                            'Hm': 'HH:mm',
-                            'hm': 'h:mm a',
-                            'HHmmss': 'HH:mm:ss',
-                            'EHm': 'E HH:mm',
-                            'Ehms': 'E h:mm:ss a',
-                            'EHms': 'E HH:mm:ss',
-                            'Gy': 'y G',
-                            'GyMMM': 'LLL y G',
-                            'hms': 'h:mm:ss a',
-                            'Hms': 'HH:mm:ss',
-                            'M': 'L',
-                            'Md': 'd/M',
-                            'MEd': 'E, d/M',
-                            'MMM': 'LLL',
-                            'MMMd': 'd MMM',
-                            'MMMEd': 'E, d MMM',
-                            'MMMMd': 'd MMMM',
-                            'MMMMEd': 'E, d MMMM',
-                            'ms': 'mm:ss'
-                        },
-                        'appendItems': {
-                            'Second': '{0} ({2}: {1})',
-                            'Quarter': '{0} ({2}: {1})',
-                            'Month': '{0} ({2}: {1})',
-                            'Year': '{1} {0}',
-                            'Week': '{0} ({2}: {1})',
-                            'Timezone': '{0} {1}',
-                            'Day': '{0} ({2}: {1})',
-                            'Day-Of-Week': '{0} {1}',
-                            'Era': '{1} {0}',
-                            'Hour': '{0} ({2}: {1})',
-                            'Minute': '{0} ({2}: {1})'
-                        },
-                        'intervalFormats': {
-                            'MMMEd': {
-                                'd': 'E, dd - E, dd MMM',
-                                'M': 'E, dd MMM - E, dd MMM'
-                            },
-                            'MMMd': {
-                                'd': 'dd-dd MMM',
-                                'M': 'dd MMM - dd MMM'
-                            },
-                            'MMM': {
-                                'M': 'LLL-LLL'
-                            },
-                            'MEd': {
-                                'd': 'E, dd/MM - E, dd/MM',
-                                'M': 'E, dd/MM - E, dd/MM'
-                            },
-                            'Md': {
-                                'd': 'dd/MM - dd/MM',
-                                'M': 'dd/MM - dd/MM'
-                            },
-                            'M': {
-                                'M': 'M-M'
-                            },
-                            'Hv': {
-                                'H': 'HH\u2013HH v'
-                            },
-                            'hv': {
-                                'a': 'h a - h a v',
-                                'h': 'h-h a v'
-                            },
-                            'y': {
-                                'y': 'y-y'
-                            },
-                            'yM': {
-                                'M': 'MM/y - MM/y',
-                                'y': 'MM/y - MM/y'
-                            },
-                            'yMd': {
-                                'd': 'dd/MM/y - dd/MM/y',
-                                'M': 'dd/MM/y - dd/MM/y',
-                                'y': 'dd/MM/y - dd/MM/y'
-                            },
-                            'yMEd': {
-                                'd': 'E, dd/MM/y - E, dd/MM/y',
-                                'M': 'E, dd/MM/y - E, dd/MM/y',
-                                'y': 'E, dd/MM/y - E, dd/MM/y'
-                            },
-                            'yMMM': {
-                                'M': 'LLL-LLL y',
-                                'y': 'MMM y - MMM y'
-                            },
-                            'yMMMd': {
-                                'd': 'dd-dd MMM y',
-                                'M': 'dd MMM - dd MMM y',
-                                'y': 'dd MMM y - dd MMM y'
-                            },
-                            'yMMMEd': {
-                                'd': 'E, dd MMM - E, dd MMM y',
-                                'M': 'E, dd MMM - E, dd MMM y',
-                                'y': 'E, dd MMM y - E, dd MMM y'
-                            },
-                            'yMMMM': {
-                                'M': 'LLLL-LLLL y',
-                                'y': 'LLLL y - LLLL y'
-                            },
-                            'Hmv': {
-                                'H': 'HH:mm\u2013HH:mm v',
-                                'm': 'HH:mm\u2013HH:mm v'
-                            },
-                            'hmv': {
-                                'a': 'h:mm a - h:mm a v',
-                                'h': 'h:mm-h:mm a v',
-                                'm': 'h:mm-h:mm a v'
-                            },
-                            'Hm': {
-                                'H': 'HH:mm\u2013HH:mm',
-                                'm': 'HH:mm\u2013HH:mm'
-                            },
-                            'hm': {
-                                'a': 'h:mm a - h:mm a',
-                                'h': 'h:mm-h:mm a',
-                                'm': 'h:mm-h:mm a'
-                            },
-                            'H': {
-                                'H': 'HH\u2013HH'
-                            },
-                            'h': {
-                                'a': 'h a - h a',
-                                'h': 'h-h a'
-                            },
-                            'd': {
-                                'd': 'd-d'
-                            },
-                            'intervalFormatFallback': '{0} - {1}'
-                        }
-                    }
+            'localeDisplayPattern': {
+                'localePattern': '{0} ({1})',
+                'localeSeparator': '{0}, {1}',
+                'localeKeyTypePattern': '{0}: {1}'
+            },
+            'keys': {
+                'colNormalization': '\u039A\u03B1\u03BD\u03BF\u03BD\u03B9\u03BA\u03BF\u03C0\u03BF\u03B9\u03B7\u03BC\u03AD\u03BD\u03B7 \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7',
+                'collation': '\u03A3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2',
+                'colHiraganaQuaternary': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u039A\u03AC\u03BD\u03B1',
+                'colCaseLevel': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03BC\u03B5 \u03B4\u03B9\u03AC\u03BA\u03C1\u03B9\u03C3\u03B7 \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD',
+                'colCaseFirst': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03BC\u03B5 \u03BA\u03B5\u03C6\u03B1\u03BB\u03B1\u03AF\u03BF\u03C5\u03C2/\u03C0\u03B5\u03B6\u03BF\u03CD\u03C2 \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03B5\u03C2',
+                'colBackwards': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03BC\u03B5 \u03B1\u03BD\u03C4\u03B5\u03C3\u03C4\u03C1\u03B1\u03BC\u03BC\u03AD\u03BD\u03BF \u03C4\u03BF\u03BD\u03B9\u03C3\u03BC\u03CC',
+                'colAlternate': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03BC\u03B5 \u03B1\u03B3\u03BD\u03CC\u03B7\u03C3\u03B7 \u03C3\u03C5\u03BC\u03B2\u03CC\u03BB\u03C9\u03BD',
+                'calendar': '\u0397\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
+                'x': '\u03A0\u03C1\u03BF\u03C3\u03C9\u03C0\u03B9\u03BA\u03AE \u03C7\u03C1\u03AE\u03C3\u03B7',
+                'variableTop': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C9\u03C2 \u03C3\u03CD\u03BC\u03B2\u03BF\u03BB\u03B1',
+                'va': '\u03A0\u03B1\u03C1\u03B1\u03BB\u03BB\u03B1\u03B3\u03AE \u03C4\u03BF\u03C0\u03B9\u03BA\u03CE\u03BD \u03C1\u03C5\u03B8\u03BC\u03AF\u03C3\u03B5\u03C9\u03BD',
+                'timezone': '\u0396\u03CE\u03BD\u03B7 \u03CE\u03C1\u03B1\u03C2',
+                'numbers': '\u0391\u03C1\u03B9\u03B8\u03BC\u03BF\u03AF',
+                'currency': '\u039D\u03CC\u03BC\u03B9\u03C3\u03BC\u03B1',
+                'colStrength': '\u0399\u03C3\u03C7\u03CD\u03C2 \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2',
+                'colNumeric': '\u0391\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AE \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7'
+            },
+            'types': {
+                'colHiraganaQuaternary': {
+                    'no': '\u039E\u03B5\u03C7\u03C9\u03C1\u03B9\u03C3\u03C4\u03AE \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u039A\u03AC\u03BD\u03B1',
+                    'yes': '\u0394\u03B9\u03B1\u03C6\u03BF\u03C1\u03B5\u03C4\u03B9\u03BA\u03AE \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u039A\u03AC\u03BD\u03B1'
+                },
+                'colCaseLevel': {
+                    'no': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03BC\u03B5 \u03B4\u03B9\u03AC\u03BA\u03C1\u03B9\u03C3\u03B7 \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD',
+                    'yes': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u03B4\u03B9\u03AC\u03BA\u03C1\u03B9\u03C3\u03B7\u03C2'
+                },
+                'colCaseFirst': {
+                    'lower': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C0\u03B5\u03B6\u03CE\u03BD \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u03C0\u03C1\u03CE\u03C4\u03B1',
+                    'no': '\u039A\u03B1\u03BD\u03BF\u03BD\u03B9\u03BA\u03AE \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD',
+                    'upper': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03BA\u03B5\u03C6\u03B1\u03BB\u03B1\u03AF\u03C9\u03BD \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u03C0\u03C1\u03CE\u03C4\u03B1'
+                },
+                'colStrength': {
+                    'identical': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03CC\u03BB\u03C9\u03BD',
+                    'primary': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03BC\u03CC\u03BD\u03BF \u03B2\u03B1\u03C3\u03B9\u03BA\u03CE\u03BD \u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD',
+                    'quaternary': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C4\u03CC\u03BD\u03C9\u03BD/\u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u03B4\u03B9\u03AC\u03BA\u03C1\u03B9\u03C3\u03B7\u03C2/\u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u03BC\u03B5\u03B3\u03AC\u03BB\u03BF\u03C5 \u03BC\u03B5\u03B3\u03AD\u03B8\u03BF\u03C5\u03C2/\u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u039A\u03AC\u03BD\u03B1',
+                    'secondary': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C4\u03CC\u03BD\u03C9\u03BD',
+                    'tertiary': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C4\u03CC\u03BD\u03C9\u03BD/\u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u03B4\u03B9\u03AC\u03BA\u03C1\u03B9\u03C3\u03B7\u03C2/\u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03C9\u03BD \u03BC\u03B5\u03B3\u03AC\u03BB\u03BF\u03C5 \u03BC\u03B5\u03B3\u03AD\u03B8\u03BF\u03C5\u03C2'
+                },
+                'colNumeric': {
+                    'no': '\u039C\u03B5\u03BC\u03BF\u03BD\u03C9\u03BC\u03AD\u03BD\u03B7 \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C8\u03B7\u03C6\u03AF\u03C9\u03BD',
+                    'yes': '\u0391\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AE \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C8\u03B7\u03C6\u03AF\u03C9\u03BD'
+                },
+                'colNormalization': {
+                    'no': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C7\u03C9\u03C1\u03AF\u03C2 \u03BA\u03B1\u03BD\u03BF\u03BD\u03B9\u03BA\u03BF\u03C0\u03BF\u03AF\u03B7\u03C3\u03B7',
+                    'yes': '\u039A\u03B1\u03BD\u03BF\u03BD\u03B9\u03BA\u03BF\u03C0\u03BF\u03B9\u03B7\u03BC\u03AD\u03BD\u03B7 \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 Unicode'
+                },
+                'calendar': {
+                    'japanese': '\u0399\u03B1\u03C0\u03C9\u03BD\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
+                    'iso8601': 'iso8601',
+                    'coptic': '\u039A\u03BF\u03C0\u03C4\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
+                    'dangi': 'dangi',
+                    'ethiopic': '\u0391\u03B9\u03B8\u03B9\u03BF\u03C0\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
+                    'ethiopic-amete-alem': '\u0391\u03B9\u03B8\u03B9\u03BF\u03C0\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF \u0386\u03BC\u03B5\u03C4 \u0386\u03BB\u03B5\u03BC',
+                    'gregorian': '\u0393\u03C1\u03B7\u03B3\u03BF\u03C1\u03B9\u03B1\u03BD\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
+                    'hebrew': '\u0395\u03B2\u03C1\u03B1\u03CA\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
+                    'persian': '\u03A0\u03B5\u03C1\u03C3\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
+                    'roc': '\u0397\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF \u03C4\u03B7\u03C2 \u0394\u03B7\u03BC\u03BF\u03BA\u03C1\u03B1\u03C4\u03AF\u03B1\u03C2 \u03C4\u03B7\u03C2 \u039A\u03AF\u03BD\u03B1\u03C2',
+                    'chinese': '\u039A\u03B9\u03BD\u03B5\u03B6\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
+                    'buddhist': '\u0392\u03BF\u03C5\u03B4\u03B9\u03C3\u03C4\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
+                    'indian': '\u0399\u03BD\u03B4\u03B9\u03BA\u03CC \u03B5\u03B8\u03BD\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
+                    'islamic': '\u0399\u03C3\u03BB\u03B1\u03BC\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
+                    'islamic-civil': '\u0399\u03C3\u03BB\u03B1\u03BC\u03B9\u03BA\u03CC \u03B1\u03C3\u03C4\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF',
+                    'islamic-rgsa': '\u0399\u03C3\u03BB\u03B1\u03BC\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF (\u03A3\u03B1\u03BF\u03C5\u03B4\u03B9\u03BA\u03AE \u0391\u03C1\u03B1\u03B2\u03AF\u03B1, \u03B8\u03AD\u03B1\u03C3\u03B7)',
+                    'islamic-tbla': '\u0399\u03C3\u03BB\u03B1\u03BC\u03B9\u03BA\u03CC \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03CC\u03B3\u03B9\u03BF (\u03B4\u03BF\u03BC\u03B7\u03BC\u03AD\u03BD\u03BF, \u03B1\u03C3\u03C4\u03C1\u03BF\u03BD\u03BF\u03BC\u03B9\u03BA\u03AE \u03B5\u03C0\u03BF\u03C7\u03AE)',
+                    'islamic-umalqura': 'islamic-umalqura'
+                },
+                'collation': {
+                    'phonebook': '\u03A3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2 \u03C4\u03B7\u03BB\u03B5\u03C6\u03C9\u03BD\u03B9\u03BA\u03BF\u03CD \u03BA\u03B1\u03C4\u03B1\u03BB\u03CC\u03B3\u03BF\u03C5',
+                    'gb2312han': '\u03A3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2 \u0391\u03C0\u03BB\u03BF\u03C5\u03C3\u03C4\u03B5\u03C5\u03BC\u03AD\u03BD\u03C9\u03BD \u039A\u03B9\u03BD\u03B5\u03B6\u03B9\u03BA\u03CE\u03BD - GB2312',
+                    'eor': 'eor',
+                    'ducet': '\u03A0\u03C1\u03BF\u03B5\u03C0\u03B9\u03BB\u03B5\u03B3\u03BC\u03AD\u03BD\u03B7 \u03C3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2 Unicode',
+                    'dictionary': '\u03A3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2 \u03B7\u03BC\u03B5\u03C1\u03BF\u03BB\u03BF\u03B3\u03AF\u03BF\u03C5',
+                    'big5han': '\u03A3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2 \u03A0\u03B1\u03C1\u03B1\u03B4\u03BF\u03C3\u03B9\u03B1\u03BA\u03CE\u03BD \u039A\u03B9\u03BD\u03B5\u03B6\u03B9\u03BA\u03CE\u03BD - Big5',
+                    'traditional': '\u03A0\u03B1\u03C1\u03B1\u03B4\u03BF\u03C3\u03B9\u03B1\u03BA\u03AE \u03C3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2',
+                    'standard': '\u03A4\u03C5\u03C0\u03B9\u03BA\u03AE \u03C3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2',
+                    'zhuyin': 'zhuyin',
+                    'unihan': '\u03A3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2 \u03C1\u03B9\u03B6\u03B9\u03BA\u03AE\u03C2 \u03B1\u03C1\u03AF\u03B8\u03BC\u03B7\u03C3\u03B7\u03C2',
+                    'stroke': '\u03A3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2 \u03BA\u03B9\u03BD\u03AE\u03C3\u03B5\u03C9\u03BD',
+                    'searchjl': '\u0391\u03BD\u03B1\u03B6\u03AE\u03C4\u03B7\u03C3\u03B7 \u03BA\u03B1\u03C4\u03AC \u03B1\u03C1\u03C7\u03B9\u03BA\u03CC \u03C3\u03CD\u03BC\u03C6\u03C9\u03BD\u03BF \u03A7\u03B1\u03BD\u03B3\u03BA\u03BF\u03CD\u03BB',
+                    'search': '\u0391\u03BD\u03B1\u03B6\u03AE\u03C4\u03B7\u03C3\u03B7 \u03B3\u03B5\u03BD\u03B9\u03BA\u03BF\u03CD \u03C4\u03CD\u03C0\u03BF\u03C5',
+                    'reformed': '\u0391\u03BD\u03B1\u03C3\u03C7\u03B7\u03BC\u03B1\u03C4\u03B9\u03C3\u03BC\u03AD\u03BD\u03B7 \u03C3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2',
+                    'pinyin': '\u03A3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2 \u03A0\u03B9\u03BD\u03B3\u03AF\u03BD',
+                    'phonetic': '\u03A6\u03C9\u03BD\u03B7\u03C4\u03B9\u03BA\u03AE \u03C3\u03B5\u03B9\u03C1\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7\u03C2'
+                },
+                'numbers': {
+                    'knda': '\u03A8\u03B7\u03C6\u03AF\u03B1 \u039A\u03B1\u03BD\u03AC\u03BD\u03C4\u03B1',
+                    'khmr': '\u03A8\u03B7\u03C6\u03AF\u03B1 \u03A7\u03BC\u03B5\u03C1',
+                    'kali': 'kali',
+                    'jpanfin': '\u0399\u03B1\u03C0\u03C9\u03BD\u03B9\u03BA\u03AC \u03BF\u03B9\u03BA\u03BF\u03BD\u03BF\u03BC\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'jpan': '\u0399\u03B1\u03C0\u03C9\u03BD\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'java': 'java',
+                    'hebr': '\u0395\u03B2\u03C1\u03B1\u03CA\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'hantfin': '\u03A0\u03B1\u03C1\u03B1\u03B4\u03BF\u03C3\u03B9\u03B1\u03BA\u03AC \u03BA\u03B9\u03BD\u03B5\u03B6\u03B9\u03BA\u03AC \u03BF\u03B9\u03BA\u03BF\u03BD\u03BF\u03BC\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'hant': '\u03A0\u03B1\u03C1\u03B1\u03B4\u03BF\u03C3\u03B9\u03B1\u03BA\u03AC \u03BA\u03B9\u03BD\u03B5\u03B6\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'hansfin': '\u0391\u03C0\u03BB\u03BF\u03C0\u03BF\u03B9\u03B7\u03BC\u03AD\u03BD\u03B1 \u03BA\u03B9\u03BD\u03B5\u03B6\u03B9\u03BA\u03AC \u03BF\u03B9\u03BA\u03BF\u03BD\u03BF\u03BC\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'hans': '\u0391\u03C0\u03BB\u03BF\u03C0\u03BF\u03B9\u03B7\u03BC\u03AD\u03BD\u03B1 \u03BA\u03B9\u03BD\u03B5\u03B6\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'hanidec': '\u039A\u03B9\u03BD\u03B5\u03B6\u03B9\u03BA\u03AC \u03B4\u03B5\u03BA\u03B1\u03B4\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'guru': '\u03A8\u03B7\u03C6\u03AF\u03B1 \u0393\u03BA\u03BF\u03C5\u03C1\u03BC\u03BF\u03CD\u03BA\u03B9',
+                    'gujr': '\u0393\u03BA\u03BF\u03C5\u03C4\u03B6\u03B1\u03C1\u03B1\u03C4\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
+                    'greklow': '\u0395\u03BB\u03BB\u03B7\u03BD\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC \u03BC\u03B5 \u03C0\u03B5\u03B6\u03AC \u03B3\u03C1\u03AC\u03BC\u03BC\u03B1\u03C4\u03B1',
+                    'grek': '\u0395\u03BB\u03BB\u03B7\u03BD\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'bali': 'bali',
+                    'armnlow': '\u03A0\u03B5\u03B6\u03AC \u03B1\u03C1\u03BC\u03B5\u03BD\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'armn': '\u0391\u03C1\u03BC\u03B5\u03BD\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'arabext': '\u0395\u03BA\u03C4\u03B5\u03C4\u03B1\u03BC\u03AD\u03BD\u03B1 \u03B1\u03C1\u03B1\u03B2\u03B9\u03BA\u03CC-\u03B9\u03BD\u03B4\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
+                    'arab': '\u0391\u03C1\u03B1\u03B2\u03B9\u03BA\u03CC-\u0399\u03BD\u03B4\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
+                    'finance': '\u039F\u03B9\u03BA\u03BF\u03BD\u03BF\u03BC\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'traditional': '\u03A0\u03B1\u03C1\u03B1\u03B4\u03BF\u03C3\u03B9\u03B1\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'native': '\u0395\u03B3\u03B3\u03B5\u03BD\u03AE \u03C8\u03B7\u03C6\u03AF\u03B1',
+                    'beng': '\u0392\u03B5\u03B3\u03B3\u03B1\u03BB\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
+                    'brah': 'brah',
+                    'cakm': 'cakm',
+                    'cham': 'cham',
+                    'deva': '\u03A8\u03B7\u03C6\u03AF\u03B1 \u039D\u03C4\u03B5\u03B2\u03B1\u03BD\u03B1\u03B3\u03BA\u03AC\u03C1\u03B9',
+                    'orya': '\u039F\u03C1\u03B9\u03B3\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
+                    'osma': 'osma',
+                    'roman': '\u039B\u03B1\u03C4\u03B9\u03BD\u03B9\u03BA\u03BF\u03AF \u03B1\u03C1\u03B9\u03B8\u03BC\u03BF\u03AF',
+                    'romanlow': '\u03A0\u03B5\u03B6\u03BF\u03AF \u03BB\u03B1\u03C4\u03B9\u03BD\u03B9\u03BA\u03BF\u03AF \u03B1\u03C1\u03B9\u03B8\u03BC\u03BF\u03AF',
+                    'saur': 'saur',
+                    'shrd': 'shrd',
+                    'sora': 'sora',
+                    'sund': 'sund',
+                    'vaii': '\u03A8\u03B7\u03C6\u03AF\u03B1 \u0392\u03AC\u03B9',
+                    'tibt': '\u0398\u03B9\u03B2\u03B5\u03C4\u03B1\u03BD\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
+                    'thai': '\u03A4\u03B1\u03CA\u03BB\u03B1\u03BD\u03B4\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
+                    'telu': '\u03A4\u03B5\u03BB\u03BF\u03C5\u03B3\u03BA\u03BF\u03C5\u03CA\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
+                    'tamldec': '\u03A4\u03B1\u03BC\u03B9\u03BB\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
+                    'taml': '\u03A4\u03B1\u03BC\u03B9\u03BB\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'talu': 'talu',
+                    'takr': 'takr',
+                    'olck': 'olck',
+                    'nkoo': 'nkoo',
+                    'mymrshan': 'mymrshan',
+                    'mymr': '\u03A8\u03B7\u03C6\u03AF\u03B1 \u039C\u03B9\u03B1\u03BD\u03BC\u03AC\u03C1',
+                    'mtei': 'mtei',
+                    'mong': '\u039C\u03BF\u03B3\u03B3\u03BF\u03BB\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
+                    'mlym': '\u039C\u03B1\u03BB\u03B1\u03B3\u03B9\u03B1\u03BB\u03B1\u03BC\u03B9\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
+                    'limb': 'limb',
+                    'lepc': 'lepc',
+                    'latn': '\u03A8\u03B7\u03C6\u03AF\u03B1 \u03C4\u03B7\u03C2 \u0394\u03CD\u03C3\u03B7\u03C2',
+                    'laoo': '\u039B\u03B1\u03BF\u03CA\u03BA\u03AC \u03C8\u03B7\u03C6\u03AF\u03B1',
+                    'lanatham': 'lanatham',
+                    'lana': 'lana',
+                    'geor': '\u0393\u03B5\u03C9\u03C1\u03B3\u03B9\u03B1\u03BD\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC',
+                    'fullwide': '\u03A8\u03B7\u03C6\u03AF\u03B1 \u03C0\u03BB\u03AE\u03C1\u03BF\u03C5\u03C2 \u03C0\u03BB\u03AC\u03C4\u03BF\u03C5\u03C2',
+                    'ethi': '\u0391\u03B9\u03B8\u03B9\u03BF\u03C0\u03B9\u03BA\u03AC \u03B1\u03C1\u03B9\u03B8\u03BC\u03B7\u03C4\u03B9\u03BA\u03AC'
+                },
+                'colAlternate': {
+                    'non-ignorable': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C3\u03C5\u03BC\u03B2\u03CC\u03BB\u03C9\u03BD',
+                    'shifted': '\u03A4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03BC\u03B5 \u03B1\u03B3\u03BD\u03CC\u03B7\u03C3\u03B7 \u03C3\u03C5\u03BC\u03B2\u03CC\u03BB\u03C9\u03BD'
+                },
+                'colBackwards': {
+                    'no': '\u039A\u03B1\u03BD\u03BF\u03BD\u03B9\u03BA\u03AC \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C4\u03CC\u03BD\u03C9\u03BD',
+                    'yes': '\u0391\u03BD\u03C4\u03AF\u03C3\u03C4\u03C1\u03BF\u03C6\u03B7 \u03C4\u03B1\u03BE\u03B9\u03BD\u03CC\u03BC\u03B7\u03C3\u03B7 \u03C4\u03CC\u03BD\u03C9\u03BD'
+                }
+            },
+            'codePatterns': {
+                'language': '\u0393\u03BB\u03CE\u03C3\u03C3\u03B1: {0}',
+                'script': '\u03A3\u03CD\u03C3\u03C4\u03B7\u03BC\u03B1 \u03B3\u03C1\u03B1\u03C6\u03AE\u03C2: {0}',
+                'territory': '\u03A0\u03B5\u03C1\u03B9\u03BF\u03C7\u03AE: {0}'
+            },
+            'long': {
+                'mass-ounce': {
+                    'unitPattern-count-one': '{0} \u03BF\u03C5\u03B3\u03B3\u03B9\u03AC',
+                    'unitPattern-count-other': '{0} \u03BF\u03C5\u03B3\u03B3\u03B9\u03AD\u03C2'
+                },
+                'mass-kilogram': {
+                    'unitPattern-count-one': '{0} \u03C7\u03B9\u03BB\u03B9\u03CC\u03B3\u03C1\u03B1\u03BC\u03BC\u03BF',
+                    'unitPattern-count-other': '{0} \u03C7\u03B9\u03BB\u03B9\u03CC\u03B3\u03C1\u03B1\u03BC\u03BC\u03B1'
+                },
+                'mass-gram': {
+                    'unitPattern-count-one': '{0} \u03B3\u03C1\u03B1\u03BC\u03BC\u03AC\u03C1\u03B9\u03BF',
+                    'unitPattern-count-other': '{0} \u03B3\u03C1\u03B1\u03BC\u03BC\u03AC\u03C1\u03B9\u03B1'
+                },
+                'length-yard': {
+                    'unitPattern-count-one': '{0} \u03B3\u03B9\u03AC\u03C1\u03B4\u03B1',
+                    'unitPattern-count-other': '{0} \u03B3\u03B9\u03AC\u03C1\u03B4\u03B5\u03C2'
+                },
+                'length-picometer': {
+                    'unitPattern-count-one': '{0} \u03C0\u03B9\u03BA\u03CC\u03BC\u03B5\u03C4\u03C1\u03BF',
+                    'unitPattern-count-other': '{0} \u03C0\u03B9\u03BA\u03CC\u03BC\u03B5\u03C4\u03C1\u03B1'
+                },
+                'length-millimeter': {
+                    'unitPattern-count-one': '{0} \u03C7\u03B9\u03BB\u03B9\u03BF\u03C3\u03C4\u03CC\u03BC\u03B5\u03C4\u03C1\u03BF',
+                    'unitPattern-count-other': '{0} \u03C7\u03B9\u03BB\u03B9\u03BF\u03C3\u03C4\u03CC\u03BC\u03B5\u03C4\u03C1\u03B1'
+                },
+                'length-mile': {
+                    'unitPattern-count-one': '{0} \u03BC\u03AF\u03BB\u03B9',
+                    'unitPattern-count-other': '{0} \u03BC\u03AF\u03BB\u03B9\u03B1'
+                },
+                'length-meter': {
+                    'unitPattern-count-one': '{0} \u03BC\u03AD\u03C4\u03C1\u03BF',
+                    'unitPattern-count-other': '{0} \u03BC\u03AD\u03C4\u03C1\u03B1'
+                },
+                'length-light-year': {
+                    'unitPattern-count-one': '{0} \u03AD\u03C4\u03BF\u03C2 \u03C6\u03C9\u03C4\u03CC\u03C2',
+                    'unitPattern-count-other': '{0} \u03AD\u03C4\u03B7 \u03C6\u03C9\u03C4\u03CC\u03C2'
+                },
+                'length-kilometer': {
+                    'unitPattern-count-one': '{0} \u03C7\u03B9\u03BB\u03B9\u03CC\u03BC\u03B5\u03C4\u03C1\u03BF',
+                    'unitPattern-count-other': '{0} \u03C7\u03B9\u03BB\u03B9\u03CC\u03BC\u03B5\u03C4\u03C1\u03B1'
+                },
+                'length-inch': {
+                    'unitPattern-count-one': '{0} \u03AF\u03BD\u03C4\u03C3\u03B1',
+                    'unitPattern-count-other': '{0} \u03AF\u03BD\u03C4\u03C3\u03B5\u03C2'
+                },
+                'length-foot': {
+                    'unitPattern-count-one': '{0} \u03C0\u03CC\u03B4\u03B9',
+                    'unitPattern-count-other': '{0} \u03C0\u03CC\u03B4\u03B9\u03B1'
+                },
+                'length-centimeter': {
+                    'unitPattern-count-one': '{0} \u03B5\u03BA\u03B1\u03C4\u03BF\u03C3\u03C4\u03CC',
+                    'unitPattern-count-other': '{0} \u03B5\u03BA\u03B1\u03C4\u03BF\u03C3\u03C4\u03AC'
+                },
+                'duration-year': {
+                    'unitPattern-count-one': '{0} \u03AD\u03C4\u03BF\u03C2',
+                    'unitPattern-count-other': '{0} \u03AD\u03C4\u03B7'
+                },
+                'duration-week': {
+                    'unitPattern-count-one': '{0} \u03B5\u03B2\u03B4\u03BF\u03BC\u03AC\u03B4\u03B1',
+                    'unitPattern-count-other': '{0} \u03B5\u03B2\u03B4\u03BF\u03BC\u03AC\u03B4\u03B5\u03C2'
+                },
+                'duration-month': {
+                    'unitPattern-count-one': '{0} \u03BC\u03AE\u03BD\u03B1\u03C2',
+                    'unitPattern-count-other': '{0} \u03BC\u03AE\u03BD\u03B5\u03C2'
+                },
+                'mass-pound': {
+                    'unitPattern-count-one': '{0} \u03BB\u03AF\u03B2\u03C1\u03B1',
+                    'unitPattern-count-other': '{0} \u03BB\u03AF\u03B2\u03C1\u03B5\u03C2'
+                },
+                'power-horsepower': {
+                    'unitPattern-count-one': '{0} \u03AF\u03C0\u03C0\u03BF\u03C2',
+                    'unitPattern-count-other': '{0} \u03AF\u03C0\u03C0\u03BF\u03B9'
+                },
+                'power-kilowatt': {
+                    'unitPattern-count-one': '{0} \u03BA\u03B9\u03BB\u03BF\u03B2\u03AC\u03C4',
+                    'unitPattern-count-other': '{0} \u03BA\u03B9\u03BB\u03BF\u03B2\u03AC\u03C4'
+                },
+                'power-watt': {
+                    'unitPattern-count-one': '{0} watt',
+                    'unitPattern-count-other': '{0} watt'
+                },
+                'pressure-hectopascal': {
+                    'unitPattern-count-one': '{0} \u03B5\u03BA\u03C4\u03BF\u03C0\u03B1\u03C3\u03BA\u03AC\u03BB',
+                    'unitPattern-count-other': '{0} \u03B5\u03BA\u03C4\u03BF\u03C0\u03B1\u03C3\u03BA\u03AC\u03BB'
+                },
+                'pressure-inch-hg': {
+                    'unitPattern-count-one': '{0} \u03AF\u03BD\u03C4\u03C3\u03B1 \u03C3\u03C4\u03AE\u03BB\u03B7\u03C2 \u03C5\u03B4\u03C1\u03B1\u03C1\u03B3\u03CD\u03C1\u03BF\u03C5',
+                    'unitPattern-count-other': '{0} \u03AF\u03BD\u03C4\u03C3\u03B5\u03C2 \u03C3\u03C4\u03AE\u03BB\u03B7\u03C2 \u03C5\u03B4\u03C1\u03B1\u03C1\u03B3\u03CD\u03C1\u03BF\u03C5'
+                },
+                'pressure-millibar': {
+                    'unitPattern-count-one': '{0} \u03BC\u03B9\u03BB\u03B9\u03BC\u03C0\u03AC\u03C1',
+                    'unitPattern-count-other': '{0} \u03BC\u03B9\u03BB\u03B9\u03BC\u03C0\u03AC\u03C1'
+                },
+                'volume-liter': {
+                    'unitPattern-count-one': '{0} \u03BB\u03AF\u03C4\u03C1\u03BF',
+                    'unitPattern-count-other': '{0} \u03BB\u03AF\u03C4\u03C1\u03B1'
+                },
+                'volume-cubic-mile': {
+                    'unitPattern-count-one': '{0} \u03BA\u03C5\u03B2\u03B9\u03BA\u03CC \u03BC\u03AF\u03BB\u03B9',
+                    'unitPattern-count-other': '{0} \u03BA\u03C5\u03B2\u03B9\u03BA\u03AC \u03BC\u03AF\u03BB\u03B9\u03B1'
+                },
+                'volume-cubic-kilometer': {
+                    'unitPattern-count-one': '{0} \u03BA\u03C5\u03B2\u03B9\u03BA\u03CC \u03C7\u03B9\u03BB\u03B9\u03CC\u03BC\u03B5\u03C4\u03C1\u03BF',
+                    'unitPattern-count-other': '{0} \u03BA\u03C5\u03B2\u03B9\u03BA\u03AC \u03C7\u03B9\u03BB\u03B9\u03CC\u03BC\u03B5\u03C4\u03C1\u03B1'
+                },
+                'temperature-fahrenheit': {
+                    'unitPattern-count-one': '{0} \u03B2\u03B1\u03B8\u03BC\u03CC\u03C2 \u03A6\u03B1\u03C1\u03B5\u03BD\u03AC\u03B9\u03C4',
+                    'unitPattern-count-other': '{0} \u03B2\u03B1\u03B8\u03BC\u03BF\u03AF \u03A6\u03B1\u03C1\u03B5\u03BD\u03AC\u03B9\u03C4'
+                },
+                'temperature-celsius': {
+                    'unitPattern-count-one': '{0} \u03B2\u03B1\u03B8\u03BC\u03CC\u03C2 \u039A\u03B5\u03BB\u03C3\u03AF\u03BF\u03C5',
+                    'unitPattern-count-other': '{0} \u03B2\u03B1\u03B8\u03BC\u03BF\u03AF \u039A\u03B5\u03BB\u03C3\u03AF\u03BF\u03C5'
+                },
+                'speed-mile-per-hour': {
+                    'unitPattern-count-one': '{0} \u03BC\u03AF\u03BB\u03B9 \u03B1\u03BD\u03AC \u03CE\u03C1\u03B1',
+                    'unitPattern-count-other': '{0} \u03BC\u03AF\u03BB\u03B9\u03B1 \u03B1\u03BD\u03AC \u03CE\u03C1\u03B1'
+                },
+                'speed-meter-per-second': {
+                    'unitPattern-count-one': '{0} \u03BC\u03AD\u03C4\u03C1\u03BF \u03B1\u03BD\u03AC \u03B4\u03B5\u03C5\u03C4\u03B5\u03C1\u03CC\u03BB\u03B5\u03C0\u03C4\u03BF',
+                    'unitPattern-count-other': '{0} \u03BC\u03AD\u03C4\u03C1\u03B1 \u03B1\u03BD\u03AC \u03B4\u03B5\u03C5\u03C4\u03B5\u03C1\u03CC\u03BB\u03B5\u03C0\u03C4\u03BF'
+                },
+                'speed-kilometer-per-hour': {
+                    'unitPattern-count-one': '{0} \u03C7\u03B9\u03BB\u03B9\u03CC\u03BC\u03B5\u03C4\u03C1\u03BF \u03B1\u03BD\u03AC \u03CE\u03C1\u03B1',
+                    'unitPattern-count-other': '{0} \u03C7\u03B9\u03BB\u03B9\u03CC\u03BC\u03B5\u03C4\u03C1\u03B1 \u03B1\u03BD\u03AC \u03CE\u03C1\u03B1'
+                },
+                'duration-minute': {
+                    'unitPattern-count-one': '{0} \u03BB\u03B5\u03C0\u03C4\u03CC',
+                    'unitPattern-count-other': '{0} \u03BB\u03B5\u03C0\u03C4\u03AC'
+                },
+                'duration-millisecond': {
+                    'unitPattern-count-one': '{0} \u03C7\u03B9\u03BB\u03B9\u03BF\u03C3\u03C4\u03CC \u03C4\u03BF\u03C5 \u03B4\u03B5\u03C5\u03C4\u03B5\u03C1\u03BF\u03BB\u03AD\u03C0\u03C4\u03BF\u03C5',
+                    'unitPattern-count-other': '{0} \u03C7\u03B9\u03BB\u03B9\u03BF\u03C3\u03C4\u03AC \u03C4\u03BF\u03C5 \u03B4\u03B5\u03C5\u03C4\u03B5\u03C1\u03BF\u03BB\u03AD\u03C0\u03C4\u03BF\u03C5'
+                },
+                'duration-hour': {
+                    'unitPattern-count-one': '{0} \u03CE\u03C1\u03B1',
+                    'unitPattern-count-other': '{0} \u03CE\u03C1\u03B5\u03C2'
+                },
+                'duration-day': {
+                    'unitPattern-count-one': '{0} \u03B7\u03BC\u03AD\u03C1\u03B1',
+                    'unitPattern-count-other': '{0} \u03B7\u03BC\u03AD\u03C1\u03B5\u03C2'
+                },
+                'area-square-mile': {
+                    'unitPattern-count-one': '{0} \u03C4\u03B5\u03C4\u03C1\u03B1\u03B3\u03C9\u03BD\u03B9\u03BA\u03CC \u03BC\u03AF\u03BB\u03B9',
+                    'unitPattern-count-other': '{0} \u03C4\u03B5\u03C4\u03C1\u03B1\u03B3\u03C9\u03BD\u03B9\u03BA\u03AC \u03BC\u03AF\u03BB\u03B9\u03B1'
+                },
+                'area-square-meter': {
+                    'unitPattern-count-one': '{0} \u03C4\u03B5\u03C4\u03C1\u03B1\u03B3\u03C9\u03BD\u03B9\u03BA\u03CC \u03BC\u03AD\u03C4\u03C1\u03BF',
+                    'unitPattern-count-other': '{0} \u03C4\u03B5\u03C4\u03C1\u03B1\u03B3\u03C9\u03BD\u03B9\u03BA\u03AC \u03BC\u03AD\u03C4\u03C1\u03B1'
+                },
+                'area-square-kilometer': {
+                    'unitPattern-count-one': '{0} \u03C4\u03B5\u03C4\u03C1\u03B1\u03B3\u03C9\u03BD\u03B9\u03BA\u03CC \u03C7\u03B9\u03BB\u03B9\u03CC\u03BC\u03B5\u03C4\u03C1\u03BF',
+                    'unitPattern-count-other': '{0} \u03C4\u03B5\u03C4\u03C1\u03B1\u03B3\u03C9\u03BD\u03B9\u03BA\u03AC \u03C7\u03B9\u03BB\u03B9\u03CC\u03BC\u03B5\u03C4\u03C1\u03B1'
+                },
+                'per': {
+                    'compoundUnitPattern': '{0} \u03B1\u03BD\u03AC {1}'
+                },
+                'acceleration-g-force': {
+                    'unitPattern-count-one': '{0} G',
+                    'unitPattern-count-other': '{0} G'
+                },
+                'angle-arc-minute': {
+                    'unitPattern-count-one': '{0} \u03BB\u03B5\u03C0\u03C4\u03CC',
+                    'unitPattern-count-other': '{0} \u03BB\u03B5\u03C0\u03C4\u03AC'
+                },
+                'angle-arc-second': {
+                    'unitPattern-count-one': '{0} \u03B4\u03B5\u03C5\u03C4\u03B5\u03C1\u03CC\u03BB\u03B5\u03C0\u03C4\u03BF',
+                    'unitPattern-count-other': '{0} \u03B4\u03B5\u03C5\u03C4\u03B5\u03C1\u03CC\u03BB\u03B5\u03C0\u03C4\u03B1'
+                },
+                'angle-degree': {
+                    'unitPattern-count-one': '{0} \u03BC\u03BF\u03AF\u03C1\u03B1',
+                    'unitPattern-count-other': '{0} \u03BC\u03BF\u03AF\u03C1\u03B5\u03C2'
+                },
+                'area-acre': {
+                    'unitPattern-count-one': '{0} \u03B1\u03BA\u03C1',
+                    'unitPattern-count-other': '{0} \u03B1\u03BA\u03C1'
+                },
+                'area-hectare': {
+                    'unitPattern-count-one': '{0} \u03B5\u03BA\u03C4\u03AC\u03C1\u03B9\u03BF',
+                    'unitPattern-count-other': '{0} \u03B5\u03BA\u03C4\u03AC\u03C1\u03B9\u03B1'
+                },
+                'area-square-foot': {
+                    'unitPattern-count-one': '{0} \u03C4\u03B5\u03C4\u03C1\u03B1\u03B3\u03C9\u03BD\u03B9\u03BA\u03CC \u03C0\u03CC\u03B4\u03B9',
+                    'unitPattern-count-other': '{0} \u03C4\u03B5\u03C4\u03C1\u03B1\u03B3\u03C9\u03BD\u03B9\u03BA\u03AC \u03C0\u03CC\u03B4\u03B9\u03B1'
+                },
+                'duration-second': {
+                    'unitPattern-count-one': '{0} \u03B4\u03B5\u03C5\u03C4\u03B5\u03C1\u03CC\u03BB\u03B5\u03C0\u03C4\u03BF',
+                    'unitPattern-count-other': '{0} \u03B4\u03B5\u03C5\u03C4\u03B5\u03C1\u03CC\u03BB\u03B5\u03C0\u03C4\u03B1'
+                }
+            },
+            'short': {
+                'mass-ounce': {
+                    'unitPattern-count-one': '{0} oz',
+                    'unitPattern-count-other': '{0} oz'
+                },
+                'mass-kilogram': {
+                    'unitPattern-count-one': '{0} \u03C7\u03BB\u03B3\u03C1.',
+                    'unitPattern-count-other': '{0} \u03C7\u03BB\u03B3\u03C1.'
+                },
+                'mass-gram': {
+                    'unitPattern-count-one': '{0} \u03B3\u03C1.',
+                    'unitPattern-count-other': '{0} \u03B3\u03C1.'
+                },
+                'length-yard': {
+                    'unitPattern-count-one': '{0} yd',
+                    'unitPattern-count-other': '{0} yd'
+                },
+                'length-picometer': {
+                    'unitPattern-count-one': '{0} pm',
+                    'unitPattern-count-other': '{0} pm'
+                },
+                'length-millimeter': {
+                    'unitPattern-count-one': '{0} \u03C7\u03BB\u03C3\u03C4.',
+                    'unitPattern-count-other': '{0} \u03C7\u03BB\u03C3\u03C4.'
+                },
+                'length-mile': {
+                    'unitPattern-count-one': '{0} mi',
+                    'unitPattern-count-other': '{0} mi'
+                },
+                'length-meter': {
+                    'unitPattern-count-one': '{0} \u03BC.',
+                    'unitPattern-count-other': '{0} \u03BC.'
+                },
+                'length-light-year': {
+                    'unitPattern-count-one': '{0} ly',
+                    'unitPattern-count-other': '{0} ly'
+                },
+                'length-kilometer': {
+                    'unitPattern-count-one': '{0} \u03C7\u03BB\u03BC.',
+                    'unitPattern-count-other': '{0} \u03C7\u03BB\u03BC.'
+                },
+                'length-inch': {
+                    'unitPattern-count-one': '{0} in',
+                    'unitPattern-count-other': '{0} in'
+                },
+                'length-foot': {
+                    'unitPattern-count-one': '{0} ft',
+                    'unitPattern-count-other': '{0} ft'
+                },
+                'length-centimeter': {
+                    'unitPattern-count-one': '{0} \u03B5\u03BA.',
+                    'unitPattern-count-other': '{0} \u03B5\u03BA.'
+                },
+                'duration-year': {
+                    'unitPattern-count-one': '{0} \u03AD\u03C4\u03BF\u03C2',
+                    'unitPattern-count-other': '{0} \u03AD\u03C4\u03B7'
+                },
+                'duration-week': {
+                    'unitPattern-count-one': '{0} \u03B5\u03B2\u03B4.',
+                    'unitPattern-count-other': '{0} \u03B5\u03B2\u03B4.'
+                },
+                'duration-month': {
+                    'unitPattern-count-one': '{0} \u03BC\u03AE\u03BD.',
+                    'unitPattern-count-other': '{0} \u03BC\u03AE\u03BD.'
+                },
+                'mass-pound': {
+                    'unitPattern-count-one': '{0} lb',
+                    'unitPattern-count-other': '{0} lb'
+                },
+                'power-horsepower': {
+                    'unitPattern-count-one': '{0} hp',
+                    'unitPattern-count-other': '{0} hp'
+                },
+                'power-kilowatt': {
+                    'unitPattern-count-one': '{0} kW',
+                    'unitPattern-count-other': '{0} kW'
+                },
+                'power-watt': {
+                    'unitPattern-count-one': '{0} W',
+                    'unitPattern-count-other': '{0} W'
+                },
+                'pressure-hectopascal': {
+                    'unitPattern-count-one': '{0} hPa',
+                    'unitPattern-count-other': '{0} hPa'
+                },
+                'pressure-inch-hg': {
+                    'unitPattern-count-one': '{0} inHg',
+                    'unitPattern-count-other': '{0} inHg'
+                },
+                'pressure-millibar': {
+                    'unitPattern-count-one': '{0} mbar',
+                    'unitPattern-count-other': '{0} mbar'
+                },
+                'volume-liter': {
+                    'unitPattern-count-one': '{0} \u03BB\u03AF\u03C4.',
+                    'unitPattern-count-other': '{0} \u03BB\u03AF\u03C4.'
+                },
+                'volume-cubic-mile': {
+                    'unitPattern-count-one': '{0} mi\u00B3',
+                    'unitPattern-count-other': '{0} mi\u00B3'
+                },
+                'volume-cubic-kilometer': {
+                    'unitPattern-count-one': '{0} km\u00B3',
+                    'unitPattern-count-other': '{0} km\u00B3'
+                },
+                'temperature-fahrenheit': {
+                    'unitPattern-count-one': '{0}\u00B0F',
+                    'unitPattern-count-other': '{0}\u00B0F'
+                },
+                'temperature-celsius': {
+                    'unitPattern-count-one': '{0}\u00B0C',
+                    'unitPattern-count-other': '{0}\u00B0C'
+                },
+                'speed-mile-per-hour': {
+                    'unitPattern-count-one': '{0} \u03BC\u03AF\u03BB\u03B9/\u03CE\u03C1\u03B1',
+                    'unitPattern-count-other': '{0} \u03BC\u03AF\u03BB\u03B9\u03B1/\u03CE\u03C1\u03B1'
+                },
+                'speed-meter-per-second': {
+                    'unitPattern-count-one': '{0} \u03BC\u03AD\u03C4\u03C1\u03BF/\u03B4\u03B5\u03C5\u03C4.',
+                    'unitPattern-count-other': '{0} \u03BC\u03AD\u03C4\u03C1\u03B1/\u03B4\u03B5\u03C5\u03C4.'
+                },
+                'speed-kilometer-per-hour': {
+                    'unitPattern-count-one': '{0} \u03C7\u03BB\u03BC./\u03CE\u03C1\u03B1',
+                    'unitPattern-count-other': '{0} \u03C7\u03BB\u03BC./\u03CE\u03C1\u03B1'
+                },
+                'duration-minute': {
+                    'unitPattern-count-one': '{0} \u03BB\u03B5\u03C0.',
+                    'unitPattern-count-other': '{0} \u03BB\u03B5\u03C0.'
+                },
+                'duration-millisecond': {
+                    'unitPattern-count-one': '{0} ms',
+                    'unitPattern-count-other': '{0} ms'
+                },
+                'duration-hour': {
+                    'unitPattern-count-one': '{0} \u03CE\u03C1\u03B1',
+                    'unitPattern-count-other': '{0} \u03CE\u03C1\u03B5\u03C2'
+                },
+                'duration-day': {
+                    'unitPattern-count-one': '{0} \u03B7\u03BC\u03AD\u03C1\u03B1',
+                    'unitPattern-count-other': '{0} \u03B7\u03BC\u03AD\u03C1\u03B5\u03C2'
+                },
+                'area-square-mile': {
+                    'unitPattern-count-one': '{0} mi\u00B2',
+                    'unitPattern-count-other': '{0} mi\u00B2'
+                },
+                'area-square-meter': {
+                    'unitPattern-count-one': '{0} m\u00B2',
+                    'unitPattern-count-other': '{0} m\u00B2'
+                },
+                'area-square-kilometer': {
+                    'unitPattern-count-one': '{0} km\u00B2',
+                    'unitPattern-count-other': '{0} km\u00B2'
+                },
+                'per': {
+                    'compoundUnitPattern': '{0}/{1}'
+                },
+                'acceleration-g-force': {
+                    'unitPattern-count-one': '{0} G',
+                    'unitPattern-count-other': '{0} G'
+                },
+                'angle-arc-minute': {
+                    'unitPattern-count-one': '{0} \u03BB\u03B5\u03C0.',
+                    'unitPattern-count-other': '{0} \u03BB\u03B5\u03C0.'
+                },
+                'angle-arc-second': {
+                    'unitPattern-count-one': '{0} \u03B4\u03B5\u03C5\u03C4.',
+                    'unitPattern-count-other': '{0} \u03B4\u03B5\u03C5\u03C4.'
+                },
+                'angle-degree': {
+                    'unitPattern-count-one': '{0}\u00B0',
+                    'unitPattern-count-other': '{0}\u00B0'
+                },
+                'area-acre': {
+                    'unitPattern-count-one': '{0} ac',
+                    'unitPattern-count-other': '{0} ac'
+                },
+                'area-hectare': {
+                    'unitPattern-count-one': '{0} ha',
+                    'unitPattern-count-other': '{0} ha'
+                },
+                'area-square-foot': {
+                    'unitPattern-count-one': '{0} ft\u00B2',
+                    'unitPattern-count-other': '{0} ft\u00B2'
+                },
+                'duration-second': {
+                    'unitPattern-count-one': '{0} \u03B4\u03B5\u03C5\u03C4.',
+                    'unitPattern-count-other': '{0} \u03B4\u03B5\u03C5\u03C4.'
                 }
             }
         });

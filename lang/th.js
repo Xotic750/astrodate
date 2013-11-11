@@ -3,6 +3,7 @@
  * ca-gregorian: 24r9318
  * timeZoneNames: 24r9318
  * localeDisplayNames: 24r9318
+ * units: 24r9318
  *
  * home: https://github.com/Xotic750/astrodate
  *
@@ -41,172 +42,585 @@
         /*global */
     }(function (AstroDate) {
         AstroDate.lang('th', {
-            'codePatterns': {
-                'language': '\u0E20\u0E32\u0E29\u0E32: {0}',
-                'script': '\u0E2A\u0E04\u0E23\u0E34\u0E1B\u0E15\u0E4C: {0}',
-                'territory': '\u0E20\u0E39\u0E21\u0E34\u0E20\u0E32\u0E04: {0}'
+            'durationUnit-type-ms': {
+                'durationUnitPattern': 'm:ss'
             },
-            'types': {
-                'colHiraganaQuaternary': {
-                    'no': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E31\u0E27\u0E2D\u0E31\u0E01\u0E29\u0E23\u0E04\u0E30\u0E19\u0E30\u0E41\u0E22\u0E01\u0E15\u0E48\u0E32\u0E07\u0E2B\u0E32\u0E01',
-                    'yes': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E31\u0E27\u0E2D\u0E31\u0E01\u0E29\u0E23\u0E04\u0E30\u0E19\u0E30\u0E43\u0E19\u0E41\u0E1A\u0E1A\u0E2D\u0E37\u0E48\u0E19'
+            'durationUnit-type-hms': {
+                'durationUnitPattern': 'h:mm:ss'
+            },
+            'durationUnit-type-hm': {
+                'durationUnitPattern': 'h:mm'
+            },
+            'narrow': {
+                'mass-ounce': {
+                    'unitPattern-count-other': '{0}\u0E2D\u0E2D\u0E19\u0E0B\u0E4C'
                 },
-                'colCaseLevel': {
-                    'no': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E04\u0E27\u0E32\u0E21\u0E2A\u0E33\u0E04\u0E31\u0E0D\u0E02\u0E2D\u0E07\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C',
-                    'yes': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E04\u0E27\u0E32\u0E21\u0E2A\u0E33\u0E04\u0E31\u0E0D\u0E02\u0E2D\u0E07\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C'
+                'mass-kilogram': {
+                    'unitPattern-count-other': '{0}\u0E01\u0E01.'
                 },
-                'colCaseFirst': {
-                    'lower': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E40\u0E25\u0E47\u0E01\u0E01\u0E48\u0E2D\u0E19',
-                    'no': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E15\u0E32\u0E21\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E1B\u0E01\u0E15\u0E34',
-                    'upper': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E43\u0E2B\u0E0D\u0E48\u0E01\u0E48\u0E2D\u0E19'
+                'mass-gram': {
+                    'unitPattern-count-other': '{0}\u0E01.'
                 },
-                'colStrength': {
-                    'identical': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E17\u0E31\u0E49\u0E07\u0E2B\u0E21\u0E14',
-                    'primary': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E31\u0E27\u0E2D\u0E31\u0E01\u0E29\u0E23\u0E10\u0E32\u0E19\u0E40\u0E17\u0E48\u0E32\u0E19\u0E31\u0E49\u0E19',
-                    'quaternary': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E2B\u0E19\u0E31\u0E01\u0E40\u0E1A\u0E32/\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C/\u0E04\u0E27\u0E32\u0E21\u0E01\u0E27\u0E49\u0E32\u0E07/\u0E15\u0E31\u0E27\u0E2D\u0E31\u0E01\u0E29\u0E23\u0E04\u0E30\u0E19\u0E30',
-                    'secondary': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E2B\u0E19\u0E31\u0E01\u0E40\u0E1A\u0E32',
-                    'tertiary': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E2B\u0E19\u0E31\u0E01\u0E40\u0E1A\u0E32/\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C/\u0E04\u0E27\u0E32\u0E21\u0E01\u0E27\u0E49\u0E32\u0E07'
+                'length-yard': {
+                    'unitPattern-count-other': '{0}\u0E2B\u0E25\u0E32'
                 },
-                'colNumeric': {
-                    'no': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E41\u0E22\u0E01',
-                    'yes': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E31\u0E22\u0E07\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E15\u0E32\u0E21\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02'
+                'length-picometer': {
+                    'unitPattern-count-other': '{0}\u0E1E\u0E34\u0E42\u0E01\u0E40\u0E21\u0E15\u0E23'
                 },
-                'colNormalization': {
-                    'no': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E42\u0E14\u0E22\u0E44\u0E21\u0E48\u0E15\u0E49\u0E2D\u0E07\u0E17\u0E33\u0E43\u0E2B\u0E49\u0E40\u0E1B\u0E47\u0E19\u0E41\u0E1A\u0E1A\u0E1B\u0E01\u0E15\u0E34',
-                    'yes': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E22\u0E39\u0E19\u0E34\u0E42\u0E04\u0E49\u0E14\u0E41\u0E1A\u0E1A\u0E17\u0E35\u0E48\u0E40\u0E1B\u0E47\u0E19\u0E1B\u0E01\u0E15\u0E34'
+                'length-millimeter': {
+                    'unitPattern-count-other': '{0}\u0E21\u0E21.'
                 },
-                'calendar': {
-                    'japanese': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E0D\u0E35\u0E48\u0E1B\u0E38\u0E48\u0E19',
-                    'iso8601': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19 ISO-8601',
-                    'coptic': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E04\u0E2D\u0E1B\u0E15\u0E34\u0E01',
-                    'dangi': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E17\u0E31\u0E19\u0E01\u0E34',
-                    'ethiopic': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E40\u0E2D\u0E18\u0E34\u0E42\u0E2D\u0E40\u0E1B\u0E35\u0E22',
-                    'ethiopic-amete-alem': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E1B\u0E35\u0E42\u0E25\u0E01\u0E40\u0E2D\u0E18\u0E34\u0E42\u0E2D\u0E40\u0E1B\u0E35\u0E22',
-                    'gregorian': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E40\u0E01\u0E23\u0E01\u0E2D\u0E40\u0E23\u0E35\u0E22\u0E19',
-                    'hebrew': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E2E\u0E34\u0E1A\u0E23\u0E39',
-                    'persian': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E40\u0E1B\u0E2D\u0E23\u0E4C\u0E40\u0E0A\u0E35\u0E22',
-                    'roc': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E44\u0E15\u0E49\u0E2B\u0E27\u0E31\u0E19',
-                    'chinese': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E08\u0E35\u0E19',
-                    'buddhist': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E1E\u0E38\u0E17\u0E18',
-                    'indian': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E41\u0E2B\u0E48\u0E07\u0E0A\u0E32\u0E15\u0E34\u0E2D\u0E34\u0E19\u0E40\u0E14\u0E35\u0E22',
-                    'islamic': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E2D\u0E34\u0E2A\u0E25\u0E32\u0E21',
-                    'islamic-civil': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E2D\u0E34\u0E2A\u0E25\u0E32\u0E21\u0E0B\u0E35\u0E27\u0E34\u0E25',
-                    'islamic-rgsa': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E2D\u0E34\u0E2A\u0E25\u0E32\u0E21 (\u0E0B\u0E32\u0E2D\u0E38\u0E14\u0E35\u0E2D\u0E32\u0E23\u0E30\u0E40\u0E1A\u0E35\u0E22 \u0E41\u0E1A\u0E1A\u0E1E\u0E23\u0E30\u0E08\u0E31\u0E19\u0E17\u0E23\u0E4C\u0E40\u0E2A\u0E35\u0E49\u0E22\u0E27)',
-                    'islamic-tbla': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E2D\u0E34\u0E2A\u0E25\u0E32\u0E21 (\u0E41\u0E1A\u0E1A\u0E15\u0E32\u0E23\u0E32\u0E07 \u0E2A\u0E21\u0E31\u0E22\u0E14\u0E32\u0E23\u0E32\u0E28\u0E32\u0E2A\u0E15\u0E23\u0E4C)',
-                    'islamic-umalqura': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E2D\u0E34\u0E2A\u0E25\u0E32\u0E21 (\u0E2D\u0E38\u0E21\u0E21\u0E4C\u0E2D\u0E31\u0E25\u0E01\u0E38\u0E23\u0E32)'
+                'length-mile': {
+                    'unitPattern-count-other': '{0}\u0E44\u0E21\u0E25\u0E4C'
                 },
-                'collation': {
-                    'phonebook': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E2A\u0E21\u0E38\u0E14\u0E42\u0E17\u0E23\u0E28\u0E31\u0E1E\u0E17\u0E4C',
-                    'gb2312han': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E2D\u0E31\u0E01\u0E29\u0E23\u0E08\u0E35\u0E19\u0E1B\u0E23\u0E30\u0E22\u0E38\u0E01\u0E15\u0E4C',
-                    'eor': '\u0E01\u0E0E\u0E01\u0E32\u0E23\u0E40\u0E23\u0E35\u0E22\u0E07\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E15\u0E32\u0E21\u0E41\u0E1A\u0E1A\u0E22\u0E38\u0E42\u0E23\u0E1B',
-                    'ducet': '\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21 Unicode \u0E40\u0E23\u0E34\u0E48\u0E21\u0E15\u0E49\u0E19',
-                    'dictionary': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E1E\u0E08\u0E19\u0E32\u0E19\u0E38\u0E01\u0E23\u0E21',
-                    'big5han': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E2D\u0E31\u0E01\u0E29\u0E23\u0E08\u0E35\u0E19\u0E14\u0E31\u0E49\u0E07\u0E40\u0E14\u0E34\u0E21',
-                    'traditional': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E41\u0E1A\u0E1A\u0E14\u0E31\u0E49\u0E07\u0E40\u0E14\u0E34\u0E21',
-                    'standard': '\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E41\u0E1A\u0E1A\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19',
-                    'zhuyin': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E01\u0E32\u0E23\u0E2A\u0E30\u0E01\u0E14\u0E41\u0E1A\u0E1A\u0E08\u0E39\u0E49\u0E2D\u0E34\u0E19',
-                    'unihan': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E15\u0E32\u0E21\u0E08\u0E33\u0E19\u0E27\u0E19\u0E02\u0E35\u0E14',
-                    'stroke': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E01\u0E32\u0E23\u0E25\u0E32\u0E01\u0E40\u0E2A\u0E49\u0E19',
-                    'searchjl': '\u0E04\u0E49\u0E19\u0E2B\u0E32\u0E15\u0E32\u0E21\u0E1E\u0E22\u0E31\u0E0D\u0E0A\u0E19\u0E30\u0E02\u0E36\u0E49\u0E19\u0E15\u0E49\u0E19\u0E17\u0E35\u0E48\u0E40\u0E1B\u0E47\u0E19\u0E2E\u0E31\u0E19\u0E01\u0E36\u0E25',
-                    'search': '\u0E01\u0E32\u0E23\u0E04\u0E49\u0E19\u0E2B\u0E32\u0E17\u0E31\u0E48\u0E27\u0E44\u0E1B',
-                    'reformed': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E25\u0E48\u0E32\u0E2A\u0E38\u0E14',
-                    'pinyin': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E01\u0E32\u0E23\u0E16\u0E2D\u0E14\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E20\u0E32\u0E29\u0E32\u0E08\u0E35\u0E19',
-                    'phonetic': '\u0E25\u0E33\u0E14\u0E31\u0E01\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E04\u0E33\u0E2D\u0E48\u0E32\u0E19'
+                'length-meter': {
+                    'unitPattern-count-other': '{0}\u0E21.'
                 },
-                'numbers': {
-                    'knda': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E01\u0E31\u0E19\u0E19\u0E32\u0E14\u0E32',
-                    'khmr': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E40\u0E02\u0E21\u0E23',
-                    'kali': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E04\u0E22\u0E32\u0E2B\u0E4C',
-                    'jpanfin': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E32\u0E07\u0E01\u0E32\u0E23\u0E40\u0E07\u0E34\u0E19\u0E02\u0E2D\u0E07\u0E0D\u0E35\u0E48\u0E1B\u0E38\u0E48\u0E19',
-                    'jpan': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E0D\u0E35\u0E48\u0E1B\u0E38\u0E48\u0E19',
-                    'java': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E0A\u0E27\u0E32',
-                    'hebr': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E2E\u0E34\u0E1A\u0E23\u0E39',
-                    'hantfin': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E32\u0E07\u0E01\u0E32\u0E23\u0E40\u0E07\u0E34\u0E19\u0E41\u0E1A\u0E1A\u0E15\u0E31\u0E27\u0E40\u0E15\u0E47\u0E21\u0E02\u0E2D\u0E07\u0E08\u0E35\u0E19',
-                    'hant': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E08\u0E35\u0E19\u0E15\u0E31\u0E27\u0E40\u0E15\u0E47\u0E21',
-                    'hansfin': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E32\u0E07\u0E01\u0E32\u0E23\u0E40\u0E07\u0E34\u0E19\u0E41\u0E1A\u0E1A\u0E15\u0E31\u0E27\u0E22\u0E48\u0E2D\u0E02\u0E2D\u0E07\u0E08\u0E35\u0E19',
-                    'hans': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E08\u0E35\u0E19\u0E15\u0E31\u0E27\u0E22\u0E48\u0E2D',
-                    'hanidec': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E28\u0E19\u0E34\u0E22\u0E21\u0E08\u0E35\u0E19',
-                    'guru': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E01\u0E39\u0E23\u0E4C\u0E21\u0E39\u0E04\u0E35',
-                    'gujr': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E04\u0E38\u0E0A\u0E23\u0E32\u0E15',
-                    'greklow': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E01\u0E23\u0E35\u0E01\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E40\u0E25\u0E47\u0E01',
-                    'grek': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E01\u0E23\u0E35\u0E01',
-                    'bali': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E1A\u0E32\u0E2B\u0E25\u0E35',
-                    'armnlow': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E2D\u0E32\u0E23\u0E4C\u0E40\u0E21\u0E40\u0E19\u0E35\u0E22\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E40\u0E25\u0E47\u0E01',
-                    'armn': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E2D\u0E32\u0E23\u0E4C\u0E40\u0E21\u0E40\u0E19\u0E35\u0E22',
-                    'arabext': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E2D\u0E34\u0E19\u0E40\u0E14\u0E35\u0E22-\u0E2D\u0E32\u0E23\u0E1A\u0E34\u0E01\u0E15\u0E31\u0E27\u0E40\u0E15\u0E47\u0E21',
-                    'arab': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E2D\u0E34\u0E19\u0E40\u0E14\u0E35\u0E22-\u0E2D\u0E32\u0E23\u0E1A\u0E34\u0E01',
-                    'finance': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E32\u0E07\u0E01\u0E32\u0E23\u0E40\u0E07\u0E34\u0E19',
-                    'traditional': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E41\u0E1A\u0E1A\u0E14\u0E31\u0E49\u0E07\u0E40\u0E14\u0E34\u0E21',
-                    'native': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E1E\u0E37\u0E49\u0E19\u0E40\u0E21\u0E37\u0E2D\u0E07',
-                    'beng': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E1A\u0E31\u0E07\u0E01\u0E25\u0E32\u0E40\u0E17\u0E28',
-                    'brah': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E1E\u0E23\u0E32\u0E2B\u0E21\u0E35',
-                    'cakm': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E0A\u0E32\u0E01\u0E21\u0E32',
-                    'cham': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E0A\u0E32\u0E21',
-                    'deva': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E40\u0E17\u0E27\u0E19\u0E32\u0E04\u0E23\u0E35',
-                    'orya': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E42\u0E2D\u0E23\u0E34\u0E22\u0E32',
-                    'osma': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E2D\u0E2D\u0E2A\u0E21\u0E31\u0E19\u0E22\u0E32',
-                    'roman': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E42\u0E23\u0E21\u0E31\u0E19',
-                    'romanlow': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E42\u0E23\u0E21\u0E31\u0E19\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E40\u0E25\u0E47\u0E01',
-                    'saur': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E40\u0E28\u0E32\u0E23\u0E31\u0E0A\u0E18\u0E23\u0E32',
-                    'shrd': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E0A\u0E32\u0E23\u0E32\u0E14\u0E32',
-                    'sora': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E42\u0E2A\u0E23\u0E32\u0E2A\u0E21\u0E40\u0E1B\u0E47\u0E07',
-                    'sund': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E0B\u0E38\u0E19\u0E14\u0E32',
-                    'vaii': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E44\u0E27',
-                    'tibt': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E34\u0E40\u0E1A\u0E15',
-                    'thai': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E44\u0E17\u0E22',
-                    'telu': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E40\u0E15\u0E25\u0E39\u0E01\u0E39',
-                    'tamldec': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E21\u0E34\u0E2C',
-                    'taml': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E21\u0E34\u0E2C\u0E14\u0E31\u0E49\u0E07\u0E40\u0E14\u0E34\u0E21',
-                    'talu': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E44\u0E17\u0E25\u0E37\u0E49\u0E2D\u0E43\u0E2B\u0E21\u0E48',
-                    'takr': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E32\u0E04\u0E23\u0E35',
-                    'olck': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E42\u0E2D\u0E25\u0E08\u0E34\u0E01\u0E34',
-                    'nkoo': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E40\u0E2D\u0E47\u0E19\u0E42\u0E01',
-                    'mymrshan': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E0A\u0E32\u0E19\u0E1E\u0E21\u0E48\u0E32',
-                    'mymr': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E1E\u0E21\u0E48\u0E32',
-                    'mtei': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E40\u0E21\u0E44\u0E15\u0E21\u0E32\u0E40\u0E22\u0E01',
-                    'mong': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E21\u0E2D\u0E07\u0E42\u0E01\u0E40\u0E25\u0E35\u0E22',
-                    'mlym': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E21\u0E32\u0E25\u0E32\u0E22\u0E32\u0E25\u0E31\u0E21',
-                    'limb': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E25\u0E34\u0E21\u0E1A\u0E39',
-                    'lepc': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E40\u0E25\u0E1B\u0E0A\u0E32',
-                    'latn': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E2D\u0E32\u0E23\u0E1A\u0E34\u0E04',
-                    'laoo': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E25\u0E32\u0E27',
-                    'lanatham': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E44\u0E17\u0E17\u0E31\u0E21\u0E17\u0E31\u0E21',
-                    'lana': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E44\u0E17\u0E17\u0E31\u0E21\u0E42\u0E2E\u0E23\u0E32',
-                    'geor': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E08\u0E2D\u0E23\u0E4C\u0E40\u0E08\u0E35\u0E22',
-                    'fullwide': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E41\u0E1A\u0E1A\u0E40\u0E15\u0E47\u0E21\u0E02\u0E19\u0E32\u0E14',
-                    'ethi': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E40\u0E2D\u0E18\u0E34\u0E42\u0E2D\u0E40\u0E1B\u0E35\u0E22'
+                'length-light-year': {
+                    'unitPattern-count-other': '{0}\u0E1B\u0E35\u0E41\u0E2A\u0E07'
                 },
-                'colAlternate': {
-                    'non-ignorable': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E2A\u0E31\u0E0D\u0E25\u0E31\u0E01\u0E29\u0E13\u0E4C',
-                    'shifted': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E2A\u0E31\u0E0D\u0E25\u0E31\u0E01\u0E29\u0E13\u0E4C\u0E17\u0E35\u0E48\u0E25\u0E30\u0E44\u0E27\u0E49'
+                'length-kilometer': {
+                    'unitPattern-count-other': '{0}\u0E01\u0E21.'
                 },
-                'colBackwards': {
-                    'no': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E2B\u0E19\u0E31\u0E01\u0E40\u0E1A\u0E32\u0E15\u0E32\u0E21\u0E1B\u0E01\u0E15\u0E34',
-                    'yes': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E2B\u0E19\u0E31\u0E01\u0E40\u0E1A\u0E32\u0E43\u0E19\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E16\u0E2D\u0E22\u0E2B\u0E25\u0E31\u0E07'
+                'length-inch': {
+                    'unitPattern-count-other': '{0}\u2033'
+                },
+                'length-foot': {
+                    'unitPattern-count-other': '{0}\u2032'
+                },
+                'length-centimeter': {
+                    'unitPattern-count-other': '{0}\u0E0B\u0E21.'
+                },
+                'duration-year': {
+                    'unitPattern-count-other': '{0}\u0E1B\u0E35'
+                },
+                'duration-week': {
+                    'unitPattern-count-other': '{0}\u0E2A\u0E31\u0E1B\u0E14\u0E32\u0E2B\u0E4C'
+                },
+                'duration-month': {
+                    'unitPattern-count-other': '{0}\u0E40\u0E14\u0E37\u0E2D\u0E19'
+                },
+                'mass-pound': {
+                    'unitPattern-count-other': '{0}#'
+                },
+                'power-horsepower': {
+                    'unitPattern-count-other': '{0}\u0E41\u0E23\u0E07\u0E21\u0E49\u0E32'
+                },
+                'power-kilowatt': {
+                    'unitPattern-count-other': '{0}\u0E01\u0E34\u0E42\u0E25\u0E27\u0E31\u0E15\u0E15\u0E4C'
+                },
+                'power-watt': {
+                    'unitPattern-count-other': '{0}\u0E27\u0E31\u0E15\u0E15\u0E4C'
+                },
+                'pressure-hectopascal': {
+                    'unitPattern-count-other': '{0}hPa'
+                },
+                'pressure-inch-hg': {
+                    'unitPattern-count-other': '{0}" Hg'
+                },
+                'pressure-millibar': {
+                    'unitPattern-count-other': '{0}\u0E21\u0E34\u0E25\u0E25\u0E34\u0E1A\u0E32\u0E23\u0E4C'
+                },
+                'volume-liter': {
+                    'unitPattern-count-other': '{0}\u0E25\u0E34\u0E15\u0E23'
+                },
+                'volume-cubic-mile': {
+                    'unitPattern-count-other': '{0}\u0E25\u0E1A.\u0E44\u0E21\u0E25\u0E4C'
+                },
+                'volume-cubic-kilometer': {
+                    'unitPattern-count-other': '{0}\u0E25\u0E1A.\u0E01\u0E21.'
+                },
+                'temperature-fahrenheit': {
+                    'unitPattern-count-other': '{0}\u00B0F'
+                },
+                'temperature-celsius': {
+                    'unitPattern-count-other': '{0}\u00B0'
+                },
+                'speed-mile-per-hour': {
+                    'unitPattern-count-other': '{0}\u0E44\u0E21\u0E25\u0E4C/\u0E0A\u0E21.'
+                },
+                'speed-meter-per-second': {
+                    'unitPattern-count-other': '{0}\u0E21./\u0E27\u0E34'
+                },
+                'speed-kilometer-per-hour': {
+                    'unitPattern-count-other': '{0}\u0E01\u0E21./\u0E0A\u0E21.'
+                },
+                'duration-minute': {
+                    'unitPattern-count-other': '{0}\u0E19\u0E32\u0E17\u0E35'
+                },
+                'duration-millisecond': {
+                    'unitPattern-count-other': '{0} \u0E21\u0E34\u0E25\u0E25\u0E34\u0E27\u0E34'
+                },
+                'duration-hour': {
+                    'unitPattern-count-other': '{0}\u0E0A\u0E21.'
+                },
+                'duration-day': {
+                    'unitPattern-count-other': '{0}\u0E27\u0E31\u0E19'
+                },
+                'area-square-mile': {
+                    'unitPattern-count-other': '{0}\u0E15\u0E23.\u0E44\u0E21\u0E25\u0E4C'
+                },
+                'area-square-meter': {
+                    'unitPattern-count-other': '{0}\u0E15\u0E23.\u0E21.'
+                },
+                'area-square-kilometer': {
+                    'unitPattern-count-other': '{0}\u0E15\u0E23.\u0E01\u0E21.'
+                },
+                'per': {
+                    'compoundUnitPattern': '{0}/{1}'
+                },
+                'acceleration-g-force': {
+                    'unitPattern-count-other': '{0}G'
+                },
+                'angle-arc-minute': {
+                    'unitPattern-count-other': '{0}\u0E19\u0E32\u0E17\u0E35'
+                },
+                'angle-arc-second': {
+                    'unitPattern-count-other': '{0}\u0E27\u0E34'
+                },
+                'angle-degree': {
+                    'unitPattern-count-other': '{0}\u00B0'
+                },
+                'area-acre': {
+                    'unitPattern-count-other': '{0}\u0E40\u0E2D\u0E40\u0E04\u0E2D\u0E23\u0E4C'
+                },
+                'area-hectare': {
+                    'unitPattern-count-other': '{0}\u0E40\u0E2E\u0E01\u0E15\u0E32\u0E23\u0E4C'
+                },
+                'area-square-foot': {
+                    'unitPattern-count-other': '{0}\u0E15\u0E23.\u0E1F\u0E38\u0E15'
+                },
+                'duration-second': {
+                    'unitPattern-count-other': '{0}\u0E27\u0E34'
                 }
             },
-            'keys': {
-                'colNormalization': '\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E41\u0E1A\u0E1A\u0E17\u0E35\u0E48\u0E40\u0E1B\u0E47\u0E19\u0E1B\u0E01\u0E15\u0E34',
-                'collation': '\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07',
-                'colHiraganaQuaternary': '\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E31\u0E27\u0E2D\u0E31\u0E01\u0E29\u0E23\u0E04\u0E30\u0E19\u0E30',
-                'colCaseLevel': '\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E04\u0E27\u0E32\u0E21\u0E2A\u0E33\u0E04\u0E31\u0E0D\u0E02\u0E2D\u0E07\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E2D\u0E31\u0E01\u0E29\u0E23',
-                'colCaseFirst': '\u0E01\u0E32\u0E23\u0E40\u0E23\u0E35\u0E22\u0E07\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E43\u0E2B\u0E0D\u0E48/\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E40\u0E25\u0E47\u0E01',
-                'colBackwards': '\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E2B\u0E19\u0E31\u0E01\u0E40\u0E1A\u0E32\u0E43\u0E19\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E16\u0E2D\u0E22\u0E2B\u0E25\u0E31\u0E07',
-                'colAlternate': '\u0E25\u0E30\u0E40\u0E27\u0E49\u0E19\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E2A\u0E31\u0E0D\u0E25\u0E31\u0E01\u0E29\u0E13\u0E4C',
-                'calendar': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19',
-                'x': '\u0E43\u0E0A\u0E49\u0E07\u0E32\u0E19\u0E2A\u0E48\u0E27\u0E19\u0E1A\u0E38\u0E04\u0E04\u0E25',
-                'variableTop': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E40\u0E1B\u0E47\u0E19\u0E2A\u0E31\u0E0D\u0E25\u0E31\u0E01\u0E29\u0E13\u0E4C',
-                'va': '\u0E15\u0E31\u0E27\u0E41\u0E1B\u0E23\u0E20\u0E32\u0E29\u0E32\u0E16\u0E34\u0E48\u0E19',
-                'timezone': '\u0E40\u0E02\u0E15\u0E40\u0E27\u0E25\u0E32',
-                'numbers': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02',
-                'currency': '\u0E2A\u0E01\u0E38\u0E25\u0E40\u0E07\u0E34\u0E19',
-                'colStrength': '\u0E04\u0E27\u0E32\u0E21\u0E41\u0E21\u0E48\u0E19\u0E22\u0E33\u0E43\u0E19\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07',
-                'colNumeric': '\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02'
-            },
-            'localeDisplayPattern': {
-                'localePattern': '{0} ({1})',
-                'localeSeparator': '{0}, {1}',
-                'localeKeyTypePattern': '{0}: {1}'
+            'calendars': {
+                'gregorian': {
+                    'months': {
+                        'format': {
+                            'abbreviated': {
+                                '8': '\u0E2A.\u0E04.',
+                                '7': '\u0E01.\u0E04.',
+                                '6': '\u0E21\u0E34.\u0E22.',
+                                '5': '\u0E1E.\u0E04.',
+                                '12': '\u0E18.\u0E04.',
+                                '11': '\u0E1E.\u0E22.',
+                                '10': '\u0E15.\u0E04.',
+                                '9': '\u0E01.\u0E22.',
+                                '1': '\u0E21.\u0E04.',
+                                '2': '\u0E01.\u0E1E.',
+                                '3': '\u0E21\u0E35.\u0E04.',
+                                '4': '\u0E40\u0E21.\u0E22.'
+                            },
+                            'narrow': {
+                                '8': '\u0E2A.\u0E04.',
+                                '7': '\u0E01.\u0E04.',
+                                '6': '\u0E21\u0E34.\u0E22.',
+                                '5': '\u0E1E.\u0E04.',
+                                '12': '\u0E18.\u0E04.',
+                                '11': '\u0E1E.\u0E22.',
+                                '10': '\u0E15.\u0E04.',
+                                '9': '\u0E01.\u0E22.',
+                                '1': '\u0E21.\u0E04.',
+                                '2': '\u0E01.\u0E1E.',
+                                '3': '\u0E21\u0E35.\u0E04.',
+                                '4': '\u0E40\u0E21.\u0E22.'
+                            },
+                            'wide': {
+                                '8': '\u0E2A\u0E34\u0E07\u0E2B\u0E32\u0E04\u0E21',
+                                '7': '\u0E01\u0E23\u0E01\u0E0E\u0E32\u0E04\u0E21',
+                                '6': '\u0E21\u0E34\u0E16\u0E38\u0E19\u0E32\u0E22\u0E19',
+                                '5': '\u0E1E\u0E24\u0E29\u0E20\u0E32\u0E04\u0E21',
+                                '12': '\u0E18\u0E31\u0E19\u0E27\u0E32\u0E04\u0E21',
+                                '11': '\u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19',
+                                '10': '\u0E15\u0E38\u0E25\u0E32\u0E04\u0E21',
+                                '9': '\u0E01\u0E31\u0E19\u0E22\u0E32\u0E22\u0E19',
+                                '1': '\u0E21\u0E01\u0E23\u0E32\u0E04\u0E21',
+                                '2': '\u0E01\u0E38\u0E21\u0E20\u0E32\u0E1E\u0E31\u0E19\u0E18\u0E4C',
+                                '3': '\u0E21\u0E35\u0E19\u0E32\u0E04\u0E21',
+                                '4': '\u0E40\u0E21\u0E29\u0E32\u0E22\u0E19'
+                            }
+                        },
+                        'stand-alone': {
+                            'abbreviated': {
+                                '8': '\u0E2A.\u0E04.',
+                                '7': '\u0E01.\u0E04.',
+                                '6': '\u0E21\u0E34.\u0E22.',
+                                '5': '\u0E1E.\u0E04.',
+                                '12': '\u0E18.\u0E04.',
+                                '11': '\u0E1E.\u0E22.',
+                                '10': '\u0E15.\u0E04.',
+                                '9': '\u0E01.\u0E22.',
+                                '1': '\u0E21.\u0E04.',
+                                '2': '\u0E01.\u0E1E.',
+                                '3': '\u0E21\u0E35.\u0E04.',
+                                '4': '\u0E40\u0E21.\u0E22.'
+                            },
+                            'narrow': {
+                                '8': '\u0E2A.\u0E04.',
+                                '7': '\u0E01.\u0E04.',
+                                '6': '\u0E21\u0E34.\u0E22.',
+                                '5': '\u0E1E.\u0E04.',
+                                '12': '\u0E18.\u0E04.',
+                                '11': '\u0E1E.\u0E22.',
+                                '10': '\u0E15.\u0E04.',
+                                '9': '\u0E01.\u0E22.',
+                                '1': '\u0E21.\u0E04.',
+                                '2': '\u0E01.\u0E1E.',
+                                '3': '\u0E21\u0E35.\u0E04.',
+                                '4': '\u0E40\u0E21.\u0E22.'
+                            },
+                            'wide': {
+                                '8': '\u0E2A\u0E34\u0E07\u0E2B\u0E32\u0E04\u0E21',
+                                '7': '\u0E01\u0E23\u0E01\u0E0E\u0E32\u0E04\u0E21',
+                                '6': '\u0E21\u0E34\u0E16\u0E38\u0E19\u0E32\u0E22\u0E19',
+                                '5': '\u0E1E\u0E24\u0E29\u0E20\u0E32\u0E04\u0E21',
+                                '12': '\u0E18\u0E31\u0E19\u0E27\u0E32\u0E04\u0E21',
+                                '11': '\u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19',
+                                '10': '\u0E15\u0E38\u0E25\u0E32\u0E04\u0E21',
+                                '9': '\u0E01\u0E31\u0E19\u0E22\u0E32\u0E22\u0E19',
+                                '1': '\u0E21\u0E01\u0E23\u0E32\u0E04\u0E21',
+                                '2': '\u0E01\u0E38\u0E21\u0E20\u0E32\u0E1E\u0E31\u0E19\u0E18\u0E4C',
+                                '3': '\u0E21\u0E35\u0E19\u0E32\u0E04\u0E21',
+                                '4': '\u0E40\u0E21\u0E29\u0E32\u0E22\u0E19'
+                            }
+                        }
+                    },
+                    'days': {
+                        'format': {
+                            'abbreviated': {
+                                'sun': '\u0E2D\u0E32.',
+                                'mon': '\u0E08.',
+                                'tue': '\u0E2D.',
+                                'wed': '\u0E1E.',
+                                'thu': '\u0E1E\u0E24.',
+                                'fri': '\u0E28.',
+                                'sat': '\u0E2A.'
+                            },
+                            'narrow': {
+                                'sun': '\u0E2D\u0E32',
+                                'mon': '\u0E08',
+                                'tue': '\u0E2D',
+                                'wed': '\u0E1E',
+                                'thu': '\u0E1E\u0E24',
+                                'fri': '\u0E28',
+                                'sat': '\u0E2A'
+                            },
+                            'short': {
+                                'sun': '\u0E2D\u0E32.',
+                                'mon': '\u0E08.',
+                                'tue': '\u0E2D.',
+                                'wed': '\u0E1E.',
+                                'thu': '\u0E1E\u0E24.',
+                                'fri': '\u0E28.',
+                                'sat': '\u0E2A.'
+                            },
+                            'wide': {
+                                'sun': '\u0E27\u0E31\u0E19\u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C',
+                                'mon': '\u0E27\u0E31\u0E19\u0E08\u0E31\u0E19\u0E17\u0E23\u0E4C',
+                                'tue': '\u0E27\u0E31\u0E19\u0E2D\u0E31\u0E07\u0E04\u0E32\u0E23',
+                                'wed': '\u0E27\u0E31\u0E19\u0E1E\u0E38\u0E18',
+                                'thu': '\u0E27\u0E31\u0E19\u0E1E\u0E24\u0E2B\u0E31\u0E2A\u0E1A\u0E14\u0E35',
+                                'fri': '\u0E27\u0E31\u0E19\u0E28\u0E38\u0E01\u0E23\u0E4C',
+                                'sat': '\u0E27\u0E31\u0E19\u0E40\u0E2A\u0E32\u0E23\u0E4C'
+                            }
+                        },
+                        'stand-alone': {
+                            'abbreviated': {
+                                'sun': '\u0E2D\u0E32.',
+                                'mon': '\u0E08.',
+                                'tue': '\u0E2D.',
+                                'wed': '\u0E1E.',
+                                'thu': '\u0E1E\u0E24.',
+                                'fri': '\u0E28.',
+                                'sat': '\u0E2A.'
+                            },
+                            'narrow': {
+                                'sun': '\u0E2D\u0E32',
+                                'mon': '\u0E08',
+                                'tue': '\u0E2D',
+                                'wed': '\u0E1E',
+                                'thu': '\u0E1E\u0E24',
+                                'fri': '\u0E28',
+                                'sat': '\u0E2A'
+                            },
+                            'short': {
+                                'sun': '\u0E2D\u0E32.',
+                                'mon': '\u0E08.',
+                                'tue': '\u0E2D.',
+                                'wed': '\u0E1E.',
+                                'thu': '\u0E1E\u0E24.',
+                                'fri': '\u0E28.',
+                                'sat': '\u0E2A.'
+                            },
+                            'wide': {
+                                'sun': '\u0E27\u0E31\u0E19\u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C',
+                                'mon': '\u0E27\u0E31\u0E19\u0E08\u0E31\u0E19\u0E17\u0E23\u0E4C',
+                                'tue': '\u0E27\u0E31\u0E19\u0E2D\u0E31\u0E07\u0E04\u0E32\u0E23',
+                                'wed': '\u0E27\u0E31\u0E19\u0E1E\u0E38\u0E18',
+                                'thu': '\u0E27\u0E31\u0E19\u0E1E\u0E24\u0E2B\u0E31\u0E2A\u0E1A\u0E14\u0E35',
+                                'fri': '\u0E27\u0E31\u0E19\u0E28\u0E38\u0E01\u0E23\u0E4C',
+                                'sat': '\u0E27\u0E31\u0E19\u0E40\u0E2A\u0E32\u0E23\u0E4C'
+                            }
+                        }
+                    },
+                    'quarters': {
+                        'format': {
+                            'abbreviated': {
+                                '1': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 1',
+                                '2': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 2',
+                                '3': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 3',
+                                '4': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 4'
+                            },
+                            'narrow': {
+                                '1': '1',
+                                '2': '2',
+                                '3': '3',
+                                '4': '4'
+                            },
+                            'wide': {
+                                '1': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 1',
+                                '2': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 2',
+                                '3': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 3',
+                                '4': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 4'
+                            }
+                        },
+                        'stand-alone': {
+                            'abbreviated': {
+                                '1': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 1',
+                                '2': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 2',
+                                '3': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 3',
+                                '4': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 4'
+                            },
+                            'narrow': {
+                                '1': '1',
+                                '2': '2',
+                                '3': '3',
+                                '4': '4'
+                            },
+                            'wide': {
+                                '1': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 1',
+                                '2': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 2',
+                                '3': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 3',
+                                '4': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 4'
+                            }
+                        }
+                    },
+                    'dayPeriods': {
+                        'format': {
+                            'abbreviated': {
+                                'am': '\u0E01\u0E48\u0E2D\u0E19\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07',
+                                'pm': '\u0E2B\u0E25\u0E31\u0E07\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07'
+                            },
+                            'narrow': {
+                                'am': '\u0E01\u0E48\u0E2D\u0E19\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07',
+                                'pm': '\u0E2B\u0E25\u0E31\u0E07\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07'
+                            },
+                            'wide': {
+                                'am': '\u0E01\u0E48\u0E2D\u0E19\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07',
+                                'pm': '\u0E2B\u0E25\u0E31\u0E07\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07'
+                            }
+                        },
+                        'stand-alone': {
+                            'abbreviated': {
+                                'am': '\u0E01\u0E48\u0E2D\u0E19\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07',
+                                'pm': '\u0E2B\u0E25\u0E31\u0E07\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07'
+                            },
+                            'narrow': {
+                                'am': '\u0E01\u0E48\u0E2D\u0E19\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07',
+                                'pm': '\u0E2B\u0E25\u0E31\u0E07\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07'
+                            },
+                            'wide': {
+                                'am': '\u0E01\u0E48\u0E2D\u0E19\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07',
+                                'pm': '\u0E2B\u0E25\u0E31\u0E07\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07'
+                            }
+                        }
+                    },
+                    'eras': {
+                        'eraNames': {
+                            '0': '\u0E1B\u0E35\u0E01\u0E48\u0E2D\u0E19\u0E04\u0E23\u0E34\u0E2A\u0E15\u0E4C\u0E28\u0E31\u0E01\u0E23\u0E32\u0E0A',
+                            '0-alt-variant': '\u0E01\u0E48\u0E2D\u0E19\u0E2A\u0E32\u0E21\u0E31\u0E0D\u0E28\u0E31\u0E01\u0E23\u0E32\u0E0A',
+                            '1': '\u0E04\u0E23\u0E34\u0E2A\u0E15\u0E4C\u0E28\u0E31\u0E01\u0E23\u0E32\u0E0A',
+                            '1-alt-variant': '\u0E2A\u0E32\u0E21\u0E31\u0E0D\u0E28\u0E31\u0E01\u0E23\u0E32\u0E0A'
+                        },
+                        'eraAbbr': {
+                            '0': '\u0E1B\u0E35\u0E01\u0E48\u0E2D\u0E19 \u0E04.\u0E28.',
+                            '0-alt-variant': '\u0E01.\u0E2A.\u0E28.',
+                            '1': '\u0E04.\u0E28.',
+                            '1-alt-variant': '\u0E2A.\u0E28.'
+                        },
+                        'eraNarrow': {
+                            '0': '\u0E01\u0E48\u0E2D\u0E19 \u0E04.\u0E28.',
+                            '0-alt-variant': '\u0E01.\u0E2A.\u0E28.',
+                            '1': '\u0E04.\u0E28.',
+                            '1-alt-variant': '\u0E2A.\u0E28.'
+                        }
+                    },
+                    'dateFormats': {
+                        'full': 'EEEE\u0E17\u0E35\u0E48 d MMMM G y',
+                        'long': 'd MMMM y',
+                        'medium': 'd MMM y',
+                        'short': 'd/M/yy'
+                    },
+                    'timeFormats': {
+                        'full': 'H \u0E19\u0E32\u0E2C\u0E34\u0E01\u0E32 mm \u0E19\u0E32\u0E17\u0E35 ss \u0E27\u0E34\u0E19\u0E32\u0E17\u0E35 zzzz',
+                        'long': 'H \u0E19\u0E32\u0E2C\u0E34\u0E01\u0E32 mm \u0E19\u0E32\u0E17\u0E35 ss \u0E27\u0E34\u0E19\u0E32\u0E17\u0E35 z',
+                        'medium': 'HH:mm:ss',
+                        'short': 'HH:mm'
+                    },
+                    'dateTimeFormats': {
+                        'full': '{1} {0}',
+                        'long': '{1} {0}',
+                        'medium': '{1} {0}',
+                        'short': '{1} {0}',
+                        'availableFormats': {
+                            'yMMMd': 'd MMM y',
+                            'yMMM': 'MMM y',
+                            'yMEd': 'E d/M/y',
+                            'yMd': 'd/M/y',
+                            'EHm': 'E HH:mm',
+                            'Ehm': 'E h:mm a',
+                            'Ed': 'E d',
+                            'd': 'd',
+                            'GyMMMd': 'd MMM G y',
+                            'GyMMMEd': 'E d MMM G y',
+                            'h': 'h a',
+                            'H': 'HH',
+                            'yQQQQ': 'QQQQ y',
+                            'yQQQ': 'QQQ y',
+                            'yMMMM': 'MMMM y',
+                            'yMMMEd': 'E d MMM y',
+                            'Hms': 'HH:mm:ss',
+                            'hms': 'h:mm:ss a',
+                            'Hm': 'HH:mm',
+                            'hm': 'h:mm a',
+                            'Ehms': 'E h:mm:ss a',
+                            'EHms': 'E HH:mm:ss',
+                            'Gy': 'G y',
+                            'GyMMM': 'MMM G y',
+                            'M': 'L',
+                            'Md': 'd/M',
+                            'MEd': 'E d/M',
+                            'MMM': 'LLL',
+                            'MMMd': 'd MMM',
+                            'MMMEd': 'E d MMM',
+                            'MMMMd': 'd MMMM',
+                            'MMMMEd': 'E d MMMM',
+                            'mmss': 'mm:ss',
+                            'ms': 'mm:ss',
+                            'y': 'y',
+                            'yM': 'M/y'
+                        },
+                        'appendItems': {
+                            'Second': '{0} ({2}: {1})',
+                            'Quarter': '{0} ({2}: {1})',
+                            'Month': '{0} ({2}: {1})',
+                            'Year': '{1} {0}',
+                            'Week': '{0} ({2}: {1})',
+                            'Timezone': '{0} {1}',
+                            'Day': '{0} ({2}: {1})',
+                            'Day-Of-Week': '{0} {1}',
+                            'Era': '{1} {0}',
+                            'Hour': '{0} ({2}: {1})',
+                            'Minute': '{0} ({2}: {1})'
+                        },
+                        'intervalFormats': {
+                            'MMMEd': {
+                                'd': 'E d - E d MMM',
+                                'M': 'E d MMM - E d MMM'
+                            },
+                            'MMMd': {
+                                'd': 'd - d MMM',
+                                'M': 'd MMM - d MMM'
+                            },
+                            'MMM': {
+                                'M': 'LLL-LLL'
+                            },
+                            'MEd': {
+                                'd': 'E d - E d/M',
+                                'M': 'E d - E d/M'
+                            },
+                            'Md': {
+                                'd': 'd/M - d/M',
+                                'M': 'd/M - d/M'
+                            },
+                            'M': {
+                                'M': 'M-M'
+                            },
+                            'Hv': {
+                                'H': 'HH\u2013HH v'
+                            },
+                            'hv': {
+                                'a': 'h a - h a v',
+                                'h': 'h-h a v'
+                            },
+                            'y': {
+                                'y': 'y-y'
+                            },
+                            'yM': {
+                                'M': 'M/y - M/y',
+                                'y': 'M/y - M/y'
+                            },
+                            'yMd': {
+                                'd': 'd-d/M/y',
+                                'M': 'd/M/y - d/M/y',
+                                'y': 'd/M/y - d/M/y'
+                            },
+                            'yMEd': {
+                                'd': 'E d - E d/M/y',
+                                'M': 'E d/M/y - E d/M/y',
+                                'y': 'E d/M/y - E d/M/y'
+                            },
+                            'yMMM': {
+                                'M': 'MMM\u2013MMM y',
+                                'y': 'MMM y - MMM y'
+                            },
+                            'yMMMd': {
+                                'd': 'd-d MMM y',
+                                'M': 'd MMM - d MMM y',
+                                'y': 'd MMM y - d MMM y'
+                            },
+                            'yMMMEd': {
+                                'd': 'E d - E d MMM y',
+                                'M': 'E d MMM - E d MMM y',
+                                'y': 'E d MMM y - E d MMM y'
+                            },
+                            'yMMMM': {
+                                'M': 'MMMM\u2013MMMM y',
+                                'y': 'MMMM y - MMMM y'
+                            },
+                            'Hmv': {
+                                'H': 'H:mm-H:mm v',
+                                'm': 'H:mm-H:mm v'
+                            },
+                            'hmv': {
+                                'a': 'h:mm a - h:mm a v',
+                                'h': 'h:mm-h:mm a v',
+                                'm': 'h:mm-h:mm a v'
+                            },
+                            'Hm': {
+                                'H': 'HH:mm-HH:mm',
+                                'm': 'HH:mm-HH:mm'
+                            },
+                            'hm': {
+                                'a': 'h:mm a - h:mm a',
+                                'h': 'h:mm-h:mm a',
+                                'm': 'h:mm-h:mm a'
+                            },
+                            'H': {
+                                'H': 'HH\u2013HH'
+                            },
+                            'h': {
+                                'a': 'h a - h a',
+                                'h': 'h-h a'
+                            },
+                            'd': {
+                                'd': 'd-d'
+                            },
+                            'intervalFormatFallback': '{0} \u2013 {1}'
+                        }
+                    }
+                }
             },
             'timeZoneNames': {
                 'zone': {
@@ -2526,432 +2940,457 @@
                 'regionFormat-type-standard': '\u0E40\u0E27\u0E25\u0E32\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19{0}',
                 'fallbackFormat': '{1} ({0})'
             },
-            'calendars': {
-                'gregorian': {
-                    'months': {
-                        'format': {
-                            'abbreviated': {
-                                '8': '\u0E2A.\u0E04.',
-                                '7': '\u0E01.\u0E04.',
-                                '6': '\u0E21\u0E34.\u0E22.',
-                                '5': '\u0E1E.\u0E04.',
-                                '12': '\u0E18.\u0E04.',
-                                '11': '\u0E1E.\u0E22.',
-                                '10': '\u0E15.\u0E04.',
-                                '9': '\u0E01.\u0E22.',
-                                '1': '\u0E21.\u0E04.',
-                                '2': '\u0E01.\u0E1E.',
-                                '3': '\u0E21\u0E35.\u0E04.',
-                                '4': '\u0E40\u0E21.\u0E22.'
-                            },
-                            'narrow': {
-                                '8': '\u0E2A.\u0E04.',
-                                '7': '\u0E01.\u0E04.',
-                                '6': '\u0E21\u0E34.\u0E22.',
-                                '5': '\u0E1E.\u0E04.',
-                                '12': '\u0E18.\u0E04.',
-                                '11': '\u0E1E.\u0E22.',
-                                '10': '\u0E15.\u0E04.',
-                                '9': '\u0E01.\u0E22.',
-                                '1': '\u0E21.\u0E04.',
-                                '2': '\u0E01.\u0E1E.',
-                                '3': '\u0E21\u0E35.\u0E04.',
-                                '4': '\u0E40\u0E21.\u0E22.'
-                            },
-                            'wide': {
-                                '8': '\u0E2A\u0E34\u0E07\u0E2B\u0E32\u0E04\u0E21',
-                                '7': '\u0E01\u0E23\u0E01\u0E0E\u0E32\u0E04\u0E21',
-                                '6': '\u0E21\u0E34\u0E16\u0E38\u0E19\u0E32\u0E22\u0E19',
-                                '5': '\u0E1E\u0E24\u0E29\u0E20\u0E32\u0E04\u0E21',
-                                '12': '\u0E18\u0E31\u0E19\u0E27\u0E32\u0E04\u0E21',
-                                '11': '\u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19',
-                                '10': '\u0E15\u0E38\u0E25\u0E32\u0E04\u0E21',
-                                '9': '\u0E01\u0E31\u0E19\u0E22\u0E32\u0E22\u0E19',
-                                '1': '\u0E21\u0E01\u0E23\u0E32\u0E04\u0E21',
-                                '2': '\u0E01\u0E38\u0E21\u0E20\u0E32\u0E1E\u0E31\u0E19\u0E18\u0E4C',
-                                '3': '\u0E21\u0E35\u0E19\u0E32\u0E04\u0E21',
-                                '4': '\u0E40\u0E21\u0E29\u0E32\u0E22\u0E19'
-                            }
-                        },
-                        'stand-alone': {
-                            'abbreviated': {
-                                '8': '\u0E2A.\u0E04.',
-                                '7': '\u0E01.\u0E04.',
-                                '6': '\u0E21\u0E34.\u0E22.',
-                                '5': '\u0E1E.\u0E04.',
-                                '12': '\u0E18.\u0E04.',
-                                '11': '\u0E1E.\u0E22.',
-                                '10': '\u0E15.\u0E04.',
-                                '9': '\u0E01.\u0E22.',
-                                '1': '\u0E21.\u0E04.',
-                                '2': '\u0E01.\u0E1E.',
-                                '3': '\u0E21\u0E35.\u0E04.',
-                                '4': '\u0E40\u0E21.\u0E22.'
-                            },
-                            'narrow': {
-                                '8': '\u0E2A.\u0E04.',
-                                '7': '\u0E01.\u0E04.',
-                                '6': '\u0E21\u0E34.\u0E22.',
-                                '5': '\u0E1E.\u0E04.',
-                                '12': '\u0E18.\u0E04.',
-                                '11': '\u0E1E.\u0E22.',
-                                '10': '\u0E15.\u0E04.',
-                                '9': '\u0E01.\u0E22.',
-                                '1': '\u0E21.\u0E04.',
-                                '2': '\u0E01.\u0E1E.',
-                                '3': '\u0E21\u0E35.\u0E04.',
-                                '4': '\u0E40\u0E21.\u0E22.'
-                            },
-                            'wide': {
-                                '8': '\u0E2A\u0E34\u0E07\u0E2B\u0E32\u0E04\u0E21',
-                                '7': '\u0E01\u0E23\u0E01\u0E0E\u0E32\u0E04\u0E21',
-                                '6': '\u0E21\u0E34\u0E16\u0E38\u0E19\u0E32\u0E22\u0E19',
-                                '5': '\u0E1E\u0E24\u0E29\u0E20\u0E32\u0E04\u0E21',
-                                '12': '\u0E18\u0E31\u0E19\u0E27\u0E32\u0E04\u0E21',
-                                '11': '\u0E1E\u0E24\u0E28\u0E08\u0E34\u0E01\u0E32\u0E22\u0E19',
-                                '10': '\u0E15\u0E38\u0E25\u0E32\u0E04\u0E21',
-                                '9': '\u0E01\u0E31\u0E19\u0E22\u0E32\u0E22\u0E19',
-                                '1': '\u0E21\u0E01\u0E23\u0E32\u0E04\u0E21',
-                                '2': '\u0E01\u0E38\u0E21\u0E20\u0E32\u0E1E\u0E31\u0E19\u0E18\u0E4C',
-                                '3': '\u0E21\u0E35\u0E19\u0E32\u0E04\u0E21',
-                                '4': '\u0E40\u0E21\u0E29\u0E32\u0E22\u0E19'
-                            }
-                        }
-                    },
-                    'days': {
-                        'format': {
-                            'abbreviated': {
-                                'sun': '\u0E2D\u0E32.',
-                                'mon': '\u0E08.',
-                                'tue': '\u0E2D.',
-                                'wed': '\u0E1E.',
-                                'thu': '\u0E1E\u0E24.',
-                                'fri': '\u0E28.',
-                                'sat': '\u0E2A.'
-                            },
-                            'narrow': {
-                                'sun': '\u0E2D\u0E32',
-                                'mon': '\u0E08',
-                                'tue': '\u0E2D',
-                                'wed': '\u0E1E',
-                                'thu': '\u0E1E\u0E24',
-                                'fri': '\u0E28',
-                                'sat': '\u0E2A'
-                            },
-                            'short': {
-                                'sun': '\u0E2D\u0E32.',
-                                'mon': '\u0E08.',
-                                'tue': '\u0E2D.',
-                                'wed': '\u0E1E.',
-                                'thu': '\u0E1E\u0E24.',
-                                'fri': '\u0E28.',
-                                'sat': '\u0E2A.'
-                            },
-                            'wide': {
-                                'sun': '\u0E27\u0E31\u0E19\u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C',
-                                'mon': '\u0E27\u0E31\u0E19\u0E08\u0E31\u0E19\u0E17\u0E23\u0E4C',
-                                'tue': '\u0E27\u0E31\u0E19\u0E2D\u0E31\u0E07\u0E04\u0E32\u0E23',
-                                'wed': '\u0E27\u0E31\u0E19\u0E1E\u0E38\u0E18',
-                                'thu': '\u0E27\u0E31\u0E19\u0E1E\u0E24\u0E2B\u0E31\u0E2A\u0E1A\u0E14\u0E35',
-                                'fri': '\u0E27\u0E31\u0E19\u0E28\u0E38\u0E01\u0E23\u0E4C',
-                                'sat': '\u0E27\u0E31\u0E19\u0E40\u0E2A\u0E32\u0E23\u0E4C'
-                            }
-                        },
-                        'stand-alone': {
-                            'abbreviated': {
-                                'sun': '\u0E2D\u0E32.',
-                                'mon': '\u0E08.',
-                                'tue': '\u0E2D.',
-                                'wed': '\u0E1E.',
-                                'thu': '\u0E1E\u0E24.',
-                                'fri': '\u0E28.',
-                                'sat': '\u0E2A.'
-                            },
-                            'narrow': {
-                                'sun': '\u0E2D\u0E32',
-                                'mon': '\u0E08',
-                                'tue': '\u0E2D',
-                                'wed': '\u0E1E',
-                                'thu': '\u0E1E\u0E24',
-                                'fri': '\u0E28',
-                                'sat': '\u0E2A'
-                            },
-                            'short': {
-                                'sun': '\u0E2D\u0E32.',
-                                'mon': '\u0E08.',
-                                'tue': '\u0E2D.',
-                                'wed': '\u0E1E.',
-                                'thu': '\u0E1E\u0E24.',
-                                'fri': '\u0E28.',
-                                'sat': '\u0E2A.'
-                            },
-                            'wide': {
-                                'sun': '\u0E27\u0E31\u0E19\u0E2D\u0E32\u0E17\u0E34\u0E15\u0E22\u0E4C',
-                                'mon': '\u0E27\u0E31\u0E19\u0E08\u0E31\u0E19\u0E17\u0E23\u0E4C',
-                                'tue': '\u0E27\u0E31\u0E19\u0E2D\u0E31\u0E07\u0E04\u0E32\u0E23',
-                                'wed': '\u0E27\u0E31\u0E19\u0E1E\u0E38\u0E18',
-                                'thu': '\u0E27\u0E31\u0E19\u0E1E\u0E24\u0E2B\u0E31\u0E2A\u0E1A\u0E14\u0E35',
-                                'fri': '\u0E27\u0E31\u0E19\u0E28\u0E38\u0E01\u0E23\u0E4C',
-                                'sat': '\u0E27\u0E31\u0E19\u0E40\u0E2A\u0E32\u0E23\u0E4C'
-                            }
-                        }
-                    },
-                    'quarters': {
-                        'format': {
-                            'abbreviated': {
-                                '1': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 1',
-                                '2': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 2',
-                                '3': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 3',
-                                '4': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 4'
-                            },
-                            'narrow': {
-                                '1': '1',
-                                '2': '2',
-                                '3': '3',
-                                '4': '4'
-                            },
-                            'wide': {
-                                '1': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 1',
-                                '2': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 2',
-                                '3': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 3',
-                                '4': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 4'
-                            }
-                        },
-                        'stand-alone': {
-                            'abbreviated': {
-                                '1': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 1',
-                                '2': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 2',
-                                '3': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 3',
-                                '4': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 4'
-                            },
-                            'narrow': {
-                                '1': '1',
-                                '2': '2',
-                                '3': '3',
-                                '4': '4'
-                            },
-                            'wide': {
-                                '1': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 1',
-                                '2': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 2',
-                                '3': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 3',
-                                '4': '\u0E44\u0E15\u0E23\u0E21\u0E32\u0E2A 4'
-                            }
-                        }
-                    },
-                    'dayPeriods': {
-                        'format': {
-                            'abbreviated': {
-                                'am': '\u0E01\u0E48\u0E2D\u0E19\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07',
-                                'pm': '\u0E2B\u0E25\u0E31\u0E07\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07'
-                            },
-                            'narrow': {
-                                'am': '\u0E01\u0E48\u0E2D\u0E19\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07',
-                                'pm': '\u0E2B\u0E25\u0E31\u0E07\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07'
-                            },
-                            'wide': {
-                                'am': '\u0E01\u0E48\u0E2D\u0E19\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07',
-                                'pm': '\u0E2B\u0E25\u0E31\u0E07\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07'
-                            }
-                        },
-                        'stand-alone': {
-                            'abbreviated': {
-                                'am': '\u0E01\u0E48\u0E2D\u0E19\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07',
-                                'pm': '\u0E2B\u0E25\u0E31\u0E07\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07'
-                            },
-                            'narrow': {
-                                'am': '\u0E01\u0E48\u0E2D\u0E19\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07',
-                                'pm': '\u0E2B\u0E25\u0E31\u0E07\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07'
-                            },
-                            'wide': {
-                                'am': '\u0E01\u0E48\u0E2D\u0E19\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07',
-                                'pm': '\u0E2B\u0E25\u0E31\u0E07\u0E40\u0E17\u0E35\u0E48\u0E22\u0E07'
-                            }
-                        }
-                    },
-                    'eras': {
-                        'eraNames': {
-                            '0': '\u0E1B\u0E35\u0E01\u0E48\u0E2D\u0E19\u0E04\u0E23\u0E34\u0E2A\u0E15\u0E4C\u0E28\u0E31\u0E01\u0E23\u0E32\u0E0A',
-                            '0-alt-variant': '\u0E01\u0E48\u0E2D\u0E19\u0E2A\u0E32\u0E21\u0E31\u0E0D\u0E28\u0E31\u0E01\u0E23\u0E32\u0E0A',
-                            '1': '\u0E04\u0E23\u0E34\u0E2A\u0E15\u0E4C\u0E28\u0E31\u0E01\u0E23\u0E32\u0E0A',
-                            '1-alt-variant': '\u0E2A\u0E32\u0E21\u0E31\u0E0D\u0E28\u0E31\u0E01\u0E23\u0E32\u0E0A'
-                        },
-                        'eraAbbr': {
-                            '0': '\u0E1B\u0E35\u0E01\u0E48\u0E2D\u0E19 \u0E04.\u0E28.',
-                            '0-alt-variant': '\u0E01.\u0E2A.\u0E28.',
-                            '1': '\u0E04.\u0E28.',
-                            '1-alt-variant': '\u0E2A.\u0E28.'
-                        },
-                        'eraNarrow': {
-                            '0': '\u0E01\u0E48\u0E2D\u0E19 \u0E04.\u0E28.',
-                            '0-alt-variant': '\u0E01.\u0E2A.\u0E28.',
-                            '1': '\u0E04.\u0E28.',
-                            '1-alt-variant': '\u0E2A.\u0E28.'
-                        }
-                    },
-                    'dateFormats': {
-                        'full': 'EEEE\u0E17\u0E35\u0E48 d MMMM G y',
-                        'long': 'd MMMM y',
-                        'medium': 'd MMM y',
-                        'short': 'd/M/yy'
-                    },
-                    'timeFormats': {
-                        'full': 'H \u0E19\u0E32\u0E2C\u0E34\u0E01\u0E32 mm \u0E19\u0E32\u0E17\u0E35 ss \u0E27\u0E34\u0E19\u0E32\u0E17\u0E35 zzzz',
-                        'long': 'H \u0E19\u0E32\u0E2C\u0E34\u0E01\u0E32 mm \u0E19\u0E32\u0E17\u0E35 ss \u0E27\u0E34\u0E19\u0E32\u0E17\u0E35 z',
-                        'medium': 'HH:mm:ss',
-                        'short': 'HH:mm'
-                    },
-                    'dateTimeFormats': {
-                        'full': '{1} {0}',
-                        'long': '{1} {0}',
-                        'medium': '{1} {0}',
-                        'short': '{1} {0}',
-                        'availableFormats': {
-                            'yMMMd': 'd MMM y',
-                            'yMMM': 'MMM y',
-                            'yMEd': 'E d/M/y',
-                            'yMd': 'd/M/y',
-                            'EHm': 'E HH:mm',
-                            'Ehm': 'E h:mm a',
-                            'Ed': 'E d',
-                            'd': 'd',
-                            'GyMMMd': 'd MMM G y',
-                            'GyMMMEd': 'E d MMM G y',
-                            'h': 'h a',
-                            'H': 'HH',
-                            'yQQQQ': 'QQQQ y',
-                            'yQQQ': 'QQQ y',
-                            'yMMMM': 'MMMM y',
-                            'yMMMEd': 'E d MMM y',
-                            'Hms': 'HH:mm:ss',
-                            'hms': 'h:mm:ss a',
-                            'Hm': 'HH:mm',
-                            'hm': 'h:mm a',
-                            'Ehms': 'E h:mm:ss a',
-                            'EHms': 'E HH:mm:ss',
-                            'Gy': 'G y',
-                            'GyMMM': 'MMM G y',
-                            'M': 'L',
-                            'Md': 'd/M',
-                            'MEd': 'E d/M',
-                            'MMM': 'LLL',
-                            'MMMd': 'd MMM',
-                            'MMMEd': 'E d MMM',
-                            'MMMMd': 'd MMMM',
-                            'MMMMEd': 'E d MMMM',
-                            'mmss': 'mm:ss',
-                            'ms': 'mm:ss',
-                            'y': 'y',
-                            'yM': 'M/y'
-                        },
-                        'appendItems': {
-                            'Second': '{0} ({2}: {1})',
-                            'Quarter': '{0} ({2}: {1})',
-                            'Month': '{0} ({2}: {1})',
-                            'Year': '{1} {0}',
-                            'Week': '{0} ({2}: {1})',
-                            'Timezone': '{0} {1}',
-                            'Day': '{0} ({2}: {1})',
-                            'Day-Of-Week': '{0} {1}',
-                            'Era': '{1} {0}',
-                            'Hour': '{0} ({2}: {1})',
-                            'Minute': '{0} ({2}: {1})'
-                        },
-                        'intervalFormats': {
-                            'MMMEd': {
-                                'd': 'E d - E d MMM',
-                                'M': 'E d MMM - E d MMM'
-                            },
-                            'MMMd': {
-                                'd': 'd - d MMM',
-                                'M': 'd MMM - d MMM'
-                            },
-                            'MMM': {
-                                'M': 'LLL-LLL'
-                            },
-                            'MEd': {
-                                'd': 'E d - E d/M',
-                                'M': 'E d - E d/M'
-                            },
-                            'Md': {
-                                'd': 'd/M - d/M',
-                                'M': 'd/M - d/M'
-                            },
-                            'M': {
-                                'M': 'M-M'
-                            },
-                            'Hv': {
-                                'H': 'HH\u2013HH v'
-                            },
-                            'hv': {
-                                'a': 'h a - h a v',
-                                'h': 'h-h a v'
-                            },
-                            'y': {
-                                'y': 'y-y'
-                            },
-                            'yM': {
-                                'M': 'M/y - M/y',
-                                'y': 'M/y - M/y'
-                            },
-                            'yMd': {
-                                'd': 'd-d/M/y',
-                                'M': 'd/M/y - d/M/y',
-                                'y': 'd/M/y - d/M/y'
-                            },
-                            'yMEd': {
-                                'd': 'E d - E d/M/y',
-                                'M': 'E d/M/y - E d/M/y',
-                                'y': 'E d/M/y - E d/M/y'
-                            },
-                            'yMMM': {
-                                'M': 'MMM\u2013MMM y',
-                                'y': 'MMM y - MMM y'
-                            },
-                            'yMMMd': {
-                                'd': 'd-d MMM y',
-                                'M': 'd MMM - d MMM y',
-                                'y': 'd MMM y - d MMM y'
-                            },
-                            'yMMMEd': {
-                                'd': 'E d - E d MMM y',
-                                'M': 'E d MMM - E d MMM y',
-                                'y': 'E d MMM y - E d MMM y'
-                            },
-                            'yMMMM': {
-                                'M': 'MMMM\u2013MMMM y',
-                                'y': 'MMMM y - MMMM y'
-                            },
-                            'Hmv': {
-                                'H': 'H:mm-H:mm v',
-                                'm': 'H:mm-H:mm v'
-                            },
-                            'hmv': {
-                                'a': 'h:mm a - h:mm a v',
-                                'h': 'h:mm-h:mm a v',
-                                'm': 'h:mm-h:mm a v'
-                            },
-                            'Hm': {
-                                'H': 'HH:mm-HH:mm',
-                                'm': 'HH:mm-HH:mm'
-                            },
-                            'hm': {
-                                'a': 'h:mm a - h:mm a',
-                                'h': 'h:mm-h:mm a',
-                                'm': 'h:mm-h:mm a'
-                            },
-                            'H': {
-                                'H': 'HH\u2013HH'
-                            },
-                            'h': {
-                                'a': 'h a - h a',
-                                'h': 'h-h a'
-                            },
-                            'd': {
-                                'd': 'd-d'
-                            },
-                            'intervalFormatFallback': '{0} \u2013 {1}'
-                        }
-                    }
+            'localeDisplayPattern': {
+                'localePattern': '{0} ({1})',
+                'localeSeparator': '{0}, {1}',
+                'localeKeyTypePattern': '{0}: {1}'
+            },
+            'keys': {
+                'colNormalization': '\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E41\u0E1A\u0E1A\u0E17\u0E35\u0E48\u0E40\u0E1B\u0E47\u0E19\u0E1B\u0E01\u0E15\u0E34',
+                'collation': '\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07',
+                'colHiraganaQuaternary': '\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E31\u0E27\u0E2D\u0E31\u0E01\u0E29\u0E23\u0E04\u0E30\u0E19\u0E30',
+                'colCaseLevel': '\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E04\u0E27\u0E32\u0E21\u0E2A\u0E33\u0E04\u0E31\u0E0D\u0E02\u0E2D\u0E07\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E2D\u0E31\u0E01\u0E29\u0E23',
+                'colCaseFirst': '\u0E01\u0E32\u0E23\u0E40\u0E23\u0E35\u0E22\u0E07\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E43\u0E2B\u0E0D\u0E48/\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E40\u0E25\u0E47\u0E01',
+                'colBackwards': '\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E2B\u0E19\u0E31\u0E01\u0E40\u0E1A\u0E32\u0E43\u0E19\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E16\u0E2D\u0E22\u0E2B\u0E25\u0E31\u0E07',
+                'colAlternate': '\u0E25\u0E30\u0E40\u0E27\u0E49\u0E19\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E2A\u0E31\u0E0D\u0E25\u0E31\u0E01\u0E29\u0E13\u0E4C',
+                'calendar': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19',
+                'x': '\u0E43\u0E0A\u0E49\u0E07\u0E32\u0E19\u0E2A\u0E48\u0E27\u0E19\u0E1A\u0E38\u0E04\u0E04\u0E25',
+                'variableTop': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E40\u0E1B\u0E47\u0E19\u0E2A\u0E31\u0E0D\u0E25\u0E31\u0E01\u0E29\u0E13\u0E4C',
+                'va': '\u0E15\u0E31\u0E27\u0E41\u0E1B\u0E23\u0E20\u0E32\u0E29\u0E32\u0E16\u0E34\u0E48\u0E19',
+                'timezone': '\u0E40\u0E02\u0E15\u0E40\u0E27\u0E25\u0E32',
+                'numbers': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02',
+                'currency': '\u0E2A\u0E01\u0E38\u0E25\u0E40\u0E07\u0E34\u0E19',
+                'colStrength': '\u0E04\u0E27\u0E32\u0E21\u0E41\u0E21\u0E48\u0E19\u0E22\u0E33\u0E43\u0E19\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07',
+                'colNumeric': '\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02'
+            },
+            'types': {
+                'colHiraganaQuaternary': {
+                    'no': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E31\u0E27\u0E2D\u0E31\u0E01\u0E29\u0E23\u0E04\u0E30\u0E19\u0E30\u0E41\u0E22\u0E01\u0E15\u0E48\u0E32\u0E07\u0E2B\u0E32\u0E01',
+                    'yes': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E31\u0E27\u0E2D\u0E31\u0E01\u0E29\u0E23\u0E04\u0E30\u0E19\u0E30\u0E43\u0E19\u0E41\u0E1A\u0E1A\u0E2D\u0E37\u0E48\u0E19'
+                },
+                'colCaseLevel': {
+                    'no': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E04\u0E27\u0E32\u0E21\u0E2A\u0E33\u0E04\u0E31\u0E0D\u0E02\u0E2D\u0E07\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C',
+                    'yes': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E04\u0E27\u0E32\u0E21\u0E2A\u0E33\u0E04\u0E31\u0E0D\u0E02\u0E2D\u0E07\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C'
+                },
+                'colCaseFirst': {
+                    'lower': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E40\u0E25\u0E47\u0E01\u0E01\u0E48\u0E2D\u0E19',
+                    'no': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E15\u0E32\u0E21\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E1B\u0E01\u0E15\u0E34',
+                    'upper': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E43\u0E2B\u0E0D\u0E48\u0E01\u0E48\u0E2D\u0E19'
+                },
+                'colStrength': {
+                    'identical': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E17\u0E31\u0E49\u0E07\u0E2B\u0E21\u0E14',
+                    'primary': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E31\u0E27\u0E2D\u0E31\u0E01\u0E29\u0E23\u0E10\u0E32\u0E19\u0E40\u0E17\u0E48\u0E32\u0E19\u0E31\u0E49\u0E19',
+                    'quaternary': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E2B\u0E19\u0E31\u0E01\u0E40\u0E1A\u0E32/\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C/\u0E04\u0E27\u0E32\u0E21\u0E01\u0E27\u0E49\u0E32\u0E07/\u0E15\u0E31\u0E27\u0E2D\u0E31\u0E01\u0E29\u0E23\u0E04\u0E30\u0E19\u0E30',
+                    'secondary': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E2B\u0E19\u0E31\u0E01\u0E40\u0E1A\u0E32',
+                    'tertiary': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E2B\u0E19\u0E31\u0E01\u0E40\u0E1A\u0E32/\u0E15\u0E31\u0E27\u0E1E\u0E34\u0E21\u0E1E\u0E4C/\u0E04\u0E27\u0E32\u0E21\u0E01\u0E27\u0E49\u0E32\u0E07'
+                },
+                'colNumeric': {
+                    'no': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E41\u0E22\u0E01',
+                    'yes': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E31\u0E22\u0E07\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E15\u0E32\u0E21\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02'
+                },
+                'colNormalization': {
+                    'no': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E42\u0E14\u0E22\u0E44\u0E21\u0E48\u0E15\u0E49\u0E2D\u0E07\u0E17\u0E33\u0E43\u0E2B\u0E49\u0E40\u0E1B\u0E47\u0E19\u0E41\u0E1A\u0E1A\u0E1B\u0E01\u0E15\u0E34',
+                    'yes': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E22\u0E39\u0E19\u0E34\u0E42\u0E04\u0E49\u0E14\u0E41\u0E1A\u0E1A\u0E17\u0E35\u0E48\u0E40\u0E1B\u0E47\u0E19\u0E1B\u0E01\u0E15\u0E34'
+                },
+                'calendar': {
+                    'japanese': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E0D\u0E35\u0E48\u0E1B\u0E38\u0E48\u0E19',
+                    'iso8601': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19 ISO-8601',
+                    'coptic': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E04\u0E2D\u0E1B\u0E15\u0E34\u0E01',
+                    'dangi': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E17\u0E31\u0E19\u0E01\u0E34',
+                    'ethiopic': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E40\u0E2D\u0E18\u0E34\u0E42\u0E2D\u0E40\u0E1B\u0E35\u0E22',
+                    'ethiopic-amete-alem': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E1B\u0E35\u0E42\u0E25\u0E01\u0E40\u0E2D\u0E18\u0E34\u0E42\u0E2D\u0E40\u0E1B\u0E35\u0E22',
+                    'gregorian': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E40\u0E01\u0E23\u0E01\u0E2D\u0E40\u0E23\u0E35\u0E22\u0E19',
+                    'hebrew': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E2E\u0E34\u0E1A\u0E23\u0E39',
+                    'persian': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E40\u0E1B\u0E2D\u0E23\u0E4C\u0E40\u0E0A\u0E35\u0E22',
+                    'roc': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E44\u0E15\u0E49\u0E2B\u0E27\u0E31\u0E19',
+                    'chinese': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E08\u0E35\u0E19',
+                    'buddhist': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E1E\u0E38\u0E17\u0E18',
+                    'indian': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E41\u0E2B\u0E48\u0E07\u0E0A\u0E32\u0E15\u0E34\u0E2D\u0E34\u0E19\u0E40\u0E14\u0E35\u0E22',
+                    'islamic': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E2D\u0E34\u0E2A\u0E25\u0E32\u0E21',
+                    'islamic-civil': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E2D\u0E34\u0E2A\u0E25\u0E32\u0E21\u0E0B\u0E35\u0E27\u0E34\u0E25',
+                    'islamic-rgsa': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E2D\u0E34\u0E2A\u0E25\u0E32\u0E21 (\u0E0B\u0E32\u0E2D\u0E38\u0E14\u0E35\u0E2D\u0E32\u0E23\u0E30\u0E40\u0E1A\u0E35\u0E22 \u0E41\u0E1A\u0E1A\u0E1E\u0E23\u0E30\u0E08\u0E31\u0E19\u0E17\u0E23\u0E4C\u0E40\u0E2A\u0E35\u0E49\u0E22\u0E27)',
+                    'islamic-tbla': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E2D\u0E34\u0E2A\u0E25\u0E32\u0E21 (\u0E41\u0E1A\u0E1A\u0E15\u0E32\u0E23\u0E32\u0E07 \u0E2A\u0E21\u0E31\u0E22\u0E14\u0E32\u0E23\u0E32\u0E28\u0E32\u0E2A\u0E15\u0E23\u0E4C)',
+                    'islamic-umalqura': '\u0E1B\u0E0F\u0E34\u0E17\u0E34\u0E19\u0E2D\u0E34\u0E2A\u0E25\u0E32\u0E21 (\u0E2D\u0E38\u0E21\u0E21\u0E4C\u0E2D\u0E31\u0E25\u0E01\u0E38\u0E23\u0E32)'
+                },
+                'collation': {
+                    'phonebook': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E2A\u0E21\u0E38\u0E14\u0E42\u0E17\u0E23\u0E28\u0E31\u0E1E\u0E17\u0E4C',
+                    'gb2312han': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E2D\u0E31\u0E01\u0E29\u0E23\u0E08\u0E35\u0E19\u0E1B\u0E23\u0E30\u0E22\u0E38\u0E01\u0E15\u0E4C',
+                    'eor': '\u0E01\u0E0E\u0E01\u0E32\u0E23\u0E40\u0E23\u0E35\u0E22\u0E07\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E15\u0E32\u0E21\u0E41\u0E1A\u0E1A\u0E22\u0E38\u0E42\u0E23\u0E1B',
+                    'ducet': '\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21 Unicode \u0E40\u0E23\u0E34\u0E48\u0E21\u0E15\u0E49\u0E19',
+                    'dictionary': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E1E\u0E08\u0E19\u0E32\u0E19\u0E38\u0E01\u0E23\u0E21',
+                    'big5han': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E2D\u0E31\u0E01\u0E29\u0E23\u0E08\u0E35\u0E19\u0E14\u0E31\u0E49\u0E07\u0E40\u0E14\u0E34\u0E21',
+                    'traditional': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E41\u0E1A\u0E1A\u0E14\u0E31\u0E49\u0E07\u0E40\u0E14\u0E34\u0E21',
+                    'standard': '\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E41\u0E1A\u0E1A\u0E21\u0E32\u0E15\u0E23\u0E10\u0E32\u0E19',
+                    'zhuyin': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E01\u0E32\u0E23\u0E2A\u0E30\u0E01\u0E14\u0E41\u0E1A\u0E1A\u0E08\u0E39\u0E49\u0E2D\u0E34\u0E19',
+                    'unihan': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E15\u0E32\u0E21\u0E08\u0E33\u0E19\u0E27\u0E19\u0E02\u0E35\u0E14',
+                    'stroke': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E01\u0E32\u0E23\u0E25\u0E32\u0E01\u0E40\u0E2A\u0E49\u0E19',
+                    'searchjl': '\u0E04\u0E49\u0E19\u0E2B\u0E32\u0E15\u0E32\u0E21\u0E1E\u0E22\u0E31\u0E0D\u0E0A\u0E19\u0E30\u0E02\u0E36\u0E49\u0E19\u0E15\u0E49\u0E19\u0E17\u0E35\u0E48\u0E40\u0E1B\u0E47\u0E19\u0E2E\u0E31\u0E19\u0E01\u0E36\u0E25',
+                    'search': '\u0E01\u0E32\u0E23\u0E04\u0E49\u0E19\u0E2B\u0E32\u0E17\u0E31\u0E48\u0E27\u0E44\u0E1B',
+                    'reformed': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E25\u0E48\u0E32\u0E2A\u0E38\u0E14',
+                    'pinyin': '\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E01\u0E32\u0E23\u0E16\u0E2D\u0E14\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E20\u0E32\u0E29\u0E32\u0E08\u0E35\u0E19',
+                    'phonetic': '\u0E25\u0E33\u0E14\u0E31\u0E01\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E15\u0E32\u0E21\u0E04\u0E33\u0E2D\u0E48\u0E32\u0E19'
+                },
+                'numbers': {
+                    'knda': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E01\u0E31\u0E19\u0E19\u0E32\u0E14\u0E32',
+                    'khmr': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E40\u0E02\u0E21\u0E23',
+                    'kali': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E04\u0E22\u0E32\u0E2B\u0E4C',
+                    'jpanfin': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E32\u0E07\u0E01\u0E32\u0E23\u0E40\u0E07\u0E34\u0E19\u0E02\u0E2D\u0E07\u0E0D\u0E35\u0E48\u0E1B\u0E38\u0E48\u0E19',
+                    'jpan': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E0D\u0E35\u0E48\u0E1B\u0E38\u0E48\u0E19',
+                    'java': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E0A\u0E27\u0E32',
+                    'hebr': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E2E\u0E34\u0E1A\u0E23\u0E39',
+                    'hantfin': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E32\u0E07\u0E01\u0E32\u0E23\u0E40\u0E07\u0E34\u0E19\u0E41\u0E1A\u0E1A\u0E15\u0E31\u0E27\u0E40\u0E15\u0E47\u0E21\u0E02\u0E2D\u0E07\u0E08\u0E35\u0E19',
+                    'hant': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E08\u0E35\u0E19\u0E15\u0E31\u0E27\u0E40\u0E15\u0E47\u0E21',
+                    'hansfin': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E32\u0E07\u0E01\u0E32\u0E23\u0E40\u0E07\u0E34\u0E19\u0E41\u0E1A\u0E1A\u0E15\u0E31\u0E27\u0E22\u0E48\u0E2D\u0E02\u0E2D\u0E07\u0E08\u0E35\u0E19',
+                    'hans': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E08\u0E35\u0E19\u0E15\u0E31\u0E27\u0E22\u0E48\u0E2D',
+                    'hanidec': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E28\u0E19\u0E34\u0E22\u0E21\u0E08\u0E35\u0E19',
+                    'guru': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E01\u0E39\u0E23\u0E4C\u0E21\u0E39\u0E04\u0E35',
+                    'gujr': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E04\u0E38\u0E0A\u0E23\u0E32\u0E15',
+                    'greklow': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E01\u0E23\u0E35\u0E01\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E40\u0E25\u0E47\u0E01',
+                    'grek': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E01\u0E23\u0E35\u0E01',
+                    'bali': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E1A\u0E32\u0E2B\u0E25\u0E35',
+                    'armnlow': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E2D\u0E32\u0E23\u0E4C\u0E40\u0E21\u0E40\u0E19\u0E35\u0E22\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E40\u0E25\u0E47\u0E01',
+                    'armn': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E2D\u0E32\u0E23\u0E4C\u0E40\u0E21\u0E40\u0E19\u0E35\u0E22',
+                    'arabext': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E2D\u0E34\u0E19\u0E40\u0E14\u0E35\u0E22-\u0E2D\u0E32\u0E23\u0E1A\u0E34\u0E01\u0E15\u0E31\u0E27\u0E40\u0E15\u0E47\u0E21',
+                    'arab': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E2D\u0E34\u0E19\u0E40\u0E14\u0E35\u0E22-\u0E2D\u0E32\u0E23\u0E1A\u0E34\u0E01',
+                    'finance': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E32\u0E07\u0E01\u0E32\u0E23\u0E40\u0E07\u0E34\u0E19',
+                    'traditional': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E41\u0E1A\u0E1A\u0E14\u0E31\u0E49\u0E07\u0E40\u0E14\u0E34\u0E21',
+                    'native': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E1E\u0E37\u0E49\u0E19\u0E40\u0E21\u0E37\u0E2D\u0E07',
+                    'beng': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E1A\u0E31\u0E07\u0E01\u0E25\u0E32\u0E40\u0E17\u0E28',
+                    'brah': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E1E\u0E23\u0E32\u0E2B\u0E21\u0E35',
+                    'cakm': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E0A\u0E32\u0E01\u0E21\u0E32',
+                    'cham': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E0A\u0E32\u0E21',
+                    'deva': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E40\u0E17\u0E27\u0E19\u0E32\u0E04\u0E23\u0E35',
+                    'orya': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E42\u0E2D\u0E23\u0E34\u0E22\u0E32',
+                    'osma': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E2D\u0E2D\u0E2A\u0E21\u0E31\u0E19\u0E22\u0E32',
+                    'roman': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E42\u0E23\u0E21\u0E31\u0E19',
+                    'romanlow': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E42\u0E23\u0E21\u0E31\u0E19\u0E1E\u0E34\u0E21\u0E1E\u0E4C\u0E40\u0E25\u0E47\u0E01',
+                    'saur': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E40\u0E28\u0E32\u0E23\u0E31\u0E0A\u0E18\u0E23\u0E32',
+                    'shrd': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E0A\u0E32\u0E23\u0E32\u0E14\u0E32',
+                    'sora': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E42\u0E2A\u0E23\u0E32\u0E2A\u0E21\u0E40\u0E1B\u0E47\u0E07',
+                    'sund': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E0B\u0E38\u0E19\u0E14\u0E32',
+                    'vaii': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E44\u0E27',
+                    'tibt': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E34\u0E40\u0E1A\u0E15',
+                    'thai': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E44\u0E17\u0E22',
+                    'telu': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E40\u0E15\u0E25\u0E39\u0E01\u0E39',
+                    'tamldec': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E21\u0E34\u0E2C',
+                    'taml': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E21\u0E34\u0E2C\u0E14\u0E31\u0E49\u0E07\u0E40\u0E14\u0E34\u0E21',
+                    'talu': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E44\u0E17\u0E25\u0E37\u0E49\u0E2D\u0E43\u0E2B\u0E21\u0E48',
+                    'takr': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E17\u0E32\u0E04\u0E23\u0E35',
+                    'olck': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E42\u0E2D\u0E25\u0E08\u0E34\u0E01\u0E34',
+                    'nkoo': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E40\u0E2D\u0E47\u0E19\u0E42\u0E01',
+                    'mymrshan': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E0A\u0E32\u0E19\u0E1E\u0E21\u0E48\u0E32',
+                    'mymr': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E1E\u0E21\u0E48\u0E32',
+                    'mtei': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E40\u0E21\u0E44\u0E15\u0E21\u0E32\u0E40\u0E22\u0E01',
+                    'mong': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E21\u0E2D\u0E07\u0E42\u0E01\u0E40\u0E25\u0E35\u0E22',
+                    'mlym': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E21\u0E32\u0E25\u0E32\u0E22\u0E32\u0E25\u0E31\u0E21',
+                    'limb': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E25\u0E34\u0E21\u0E1A\u0E39',
+                    'lepc': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E40\u0E25\u0E1B\u0E0A\u0E32',
+                    'latn': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E2D\u0E32\u0E23\u0E1A\u0E34\u0E04',
+                    'laoo': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E25\u0E32\u0E27',
+                    'lanatham': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E44\u0E17\u0E17\u0E31\u0E21\u0E17\u0E31\u0E21',
+                    'lana': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E44\u0E17\u0E17\u0E31\u0E21\u0E42\u0E2E\u0E23\u0E32',
+                    'geor': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E08\u0E2D\u0E23\u0E4C\u0E40\u0E08\u0E35\u0E22',
+                    'fullwide': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E41\u0E1A\u0E1A\u0E40\u0E15\u0E47\u0E21\u0E02\u0E19\u0E32\u0E14',
+                    'ethi': '\u0E15\u0E31\u0E27\u0E40\u0E25\u0E02\u0E40\u0E2D\u0E18\u0E34\u0E42\u0E2D\u0E40\u0E1B\u0E35\u0E22'
+                },
+                'colAlternate': {
+                    'non-ignorable': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E2A\u0E31\u0E0D\u0E25\u0E31\u0E01\u0E29\u0E13\u0E4C',
+                    'shifted': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E2A\u0E31\u0E0D\u0E25\u0E31\u0E01\u0E29\u0E13\u0E4C\u0E17\u0E35\u0E48\u0E25\u0E30\u0E44\u0E27\u0E49'
+                },
+                'colBackwards': {
+                    'no': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E2B\u0E19\u0E31\u0E01\u0E40\u0E1A\u0E32\u0E15\u0E32\u0E21\u0E1B\u0E01\u0E15\u0E34',
+                    'yes': '\u0E08\u0E31\u0E14\u0E40\u0E23\u0E35\u0E22\u0E07\u0E40\u0E2A\u0E35\u0E22\u0E07\u0E2B\u0E19\u0E31\u0E01\u0E40\u0E1A\u0E32\u0E43\u0E19\u0E25\u0E33\u0E14\u0E31\u0E1A\u0E16\u0E2D\u0E22\u0E2B\u0E25\u0E31\u0E07'
+                }
+            },
+            'codePatterns': {
+                'language': '\u0E20\u0E32\u0E29\u0E32: {0}',
+                'script': '\u0E2A\u0E04\u0E23\u0E34\u0E1B\u0E15\u0E4C: {0}',
+                'territory': '\u0E20\u0E39\u0E21\u0E34\u0E20\u0E32\u0E04: {0}'
+            },
+            'long': {
+                'mass-ounce': {
+                    'unitPattern-count-other': '{0} \u0E2D\u0E2D\u0E19\u0E0B\u0E4C'
+                },
+                'mass-kilogram': {
+                    'unitPattern-count-other': '{0} \u0E01\u0E34\u0E42\u0E25\u0E01\u0E23\u0E31\u0E21'
+                },
+                'mass-gram': {
+                    'unitPattern-count-other': '{0} \u0E01\u0E23\u0E31\u0E21'
+                },
+                'length-yard': {
+                    'unitPattern-count-other': '{0} \u0E2B\u0E25\u0E32'
+                },
+                'length-picometer': {
+                    'unitPattern-count-other': '{0} \u0E1E\u0E34\u0E42\u0E01\u0E40\u0E21\u0E15\u0E23'
+                },
+                'length-millimeter': {
+                    'unitPattern-count-other': '{0} \u0E21\u0E34\u0E25\u0E25\u0E34\u0E40\u0E21\u0E15\u0E23'
+                },
+                'length-mile': {
+                    'unitPattern-count-other': '{0} \u0E44\u0E21\u0E25\u0E4C'
+                },
+                'length-meter': {
+                    'unitPattern-count-other': '{0} \u0E40\u0E21\u0E15\u0E23'
+                },
+                'length-light-year': {
+                    'unitPattern-count-other': '{0} \u0E1B\u0E35\u0E41\u0E2A\u0E07'
+                },
+                'length-kilometer': {
+                    'unitPattern-count-other': '{0} \u0E01\u0E34\u0E42\u0E25\u0E40\u0E21\u0E15\u0E23'
+                },
+                'length-inch': {
+                    'unitPattern-count-other': '{0} \u0E19\u0E34\u0E49\u0E27'
+                },
+                'length-foot': {
+                    'unitPattern-count-other': '{0} \u0E1F\u0E38\u0E15'
+                },
+                'length-centimeter': {
+                    'unitPattern-count-other': '{0} \u0E40\u0E0B\u0E19\u0E15\u0E34\u0E40\u0E21\u0E15\u0E23'
+                },
+                'duration-year': {
+                    'unitPattern-count-other': '{0} \u0E1B\u0E35'
+                },
+                'duration-week': {
+                    'unitPattern-count-other': '{0} \u0E2A\u0E31\u0E1B\u0E14\u0E32\u0E2B\u0E4C'
+                },
+                'duration-month': {
+                    'unitPattern-count-other': '{0} \u0E40\u0E14\u0E37\u0E2D\u0E19'
+                },
+                'mass-pound': {
+                    'unitPattern-count-other': '{0} \u0E1B\u0E2D\u0E19\u0E14\u0E4C'
+                },
+                'power-horsepower': {
+                    'unitPattern-count-other': '{0} \u0E41\u0E23\u0E07\u0E21\u0E49\u0E32'
+                },
+                'power-kilowatt': {
+                    'unitPattern-count-other': '{0} \u0E01\u0E34\u0E42\u0E25\u0E27\u0E31\u0E15\u0E15\u0E4C'
+                },
+                'power-watt': {
+                    'unitPattern-count-other': '{0} \u0E27\u0E31\u0E15\u0E15\u0E4C'
+                },
+                'pressure-hectopascal': {
+                    'unitPattern-count-other': '{0} \u0E40\u0E2E\u0E01\u0E42\u0E15\u0E1B\u0E32\u0E2A\u0E01\u0E32\u0E25'
+                },
+                'pressure-inch-hg': {
+                    'unitPattern-count-other': '{0} \u0E19\u0E34\u0E49\u0E27\u0E1B\u0E23\u0E2D\u0E17'
+                },
+                'pressure-millibar': {
+                    'unitPattern-count-other': '{0} \u0E21\u0E34\u0E25\u0E25\u0E34\u0E1A\u0E32\u0E23\u0E4C'
+                },
+                'volume-liter': {
+                    'unitPattern-count-other': '{0} \u0E25\u0E34\u0E15\u0E23'
+                },
+                'volume-cubic-mile': {
+                    'unitPattern-count-other': '{0} \u0E25\u0E39\u0E01\u0E1A\u0E32\u0E28\u0E01\u0E4C\u0E44\u0E21\u0E25\u0E4C'
+                },
+                'volume-cubic-kilometer': {
+                    'unitPattern-count-other': '{0} \u0E25\u0E39\u0E01\u0E1A\u0E32\u0E28\u0E01\u0E4C\u0E01\u0E34\u0E42\u0E25\u0E40\u0E21\u0E15\u0E23'
+                },
+                'temperature-fahrenheit': {
+                    'unitPattern-count-other': '{0} \u0E2D\u0E07\u0E28\u0E32\u0E1F\u0E32\u0E40\u0E23\u0E19\u0E44\u0E2E\u0E15\u0E4C'
+                },
+                'temperature-celsius': {
+                    'unitPattern-count-other': '{0} \u0E2D\u0E07\u0E28\u0E32\u0E40\u0E0B\u0E25\u0E40\u0E0B\u0E35\u0E22\u0E2A'
+                },
+                'speed-mile-per-hour': {
+                    'unitPattern-count-other': '{0} \u0E44\u0E21\u0E25\u0E4C\u0E15\u0E48\u0E2D\u0E0A\u0E31\u0E48\u0E27\u0E42\u0E21\u0E07'
+                },
+                'speed-meter-per-second': {
+                    'unitPattern-count-other': '{0} \u0E40\u0E21\u0E15\u0E23\u0E15\u0E48\u0E2D\u0E27\u0E34\u0E19\u0E32\u0E17\u0E35'
+                },
+                'speed-kilometer-per-hour': {
+                    'unitPattern-count-other': '{0} \u0E01\u0E34\u0E42\u0E25\u0E40\u0E21\u0E15\u0E23\u0E15\u0E48\u0E2D\u0E0A\u0E31\u0E48\u0E27\u0E42\u0E21\u0E07'
+                },
+                'duration-minute': {
+                    'unitPattern-count-other': '{0} \u0E19\u0E32\u0E17\u0E35'
+                },
+                'duration-millisecond': {
+                    'unitPattern-count-other': '{0} \u0E21\u0E34\u0E25\u0E25\u0E34\u0E27\u0E34\u0E19\u0E32\u0E17\u0E35'
+                },
+                'duration-hour': {
+                    'unitPattern-count-other': '{0} \u0E0A\u0E31\u0E48\u0E27\u0E42\u0E21\u0E07'
+                },
+                'duration-day': {
+                    'unitPattern-count-other': '{0} \u0E27\u0E31\u0E19'
+                },
+                'area-square-mile': {
+                    'unitPattern-count-other': '{0} \u0E15\u0E32\u0E23\u0E32\u0E07\u0E44\u0E21\u0E25\u0E4C'
+                },
+                'area-square-meter': {
+                    'unitPattern-count-other': '{0} \u0E15\u0E32\u0E23\u0E32\u0E07\u0E40\u0E21\u0E15\u0E23'
+                },
+                'area-square-kilometer': {
+                    'unitPattern-count-other': '{0} \u0E15\u0E32\u0E23\u0E32\u0E07\u0E01\u0E34\u0E42\u0E25\u0E40\u0E21\u0E15\u0E23'
+                },
+                'per': {
+                    'compoundUnitPattern': '{0}\u0E15\u0E48\u0E2D{1}'
+                },
+                'acceleration-g-force': {
+                    'unitPattern-count-other': '{0} \u0E41\u0E23\u0E07 G'
+                },
+                'angle-arc-minute': {
+                    'unitPattern-count-other': '{0} \u0E19\u0E32\u0E17\u0E35'
+                },
+                'angle-arc-second': {
+                    'unitPattern-count-other': '{0} \u0E27\u0E34\u0E19\u0E32\u0E17\u0E35'
+                },
+                'angle-degree': {
+                    'unitPattern-count-other': '{0} \u0E2D\u0E07\u0E28\u0E32'
+                },
+                'area-acre': {
+                    'unitPattern-count-other': '{0} \u0E40\u0E2D\u0E40\u0E04\u0E2D\u0E23\u0E4C'
+                },
+                'area-hectare': {
+                    'unitPattern-count-other': '{0} \u0E40\u0E2E\u0E01\u0E15\u0E32\u0E23\u0E4C'
+                },
+                'area-square-foot': {
+                    'unitPattern-count-other': '{0} \u0E15\u0E32\u0E23\u0E32\u0E07\u0E1F\u0E38\u0E15'
+                },
+                'duration-second': {
+                    'unitPattern-count-other': '{0} \u0E27\u0E34\u0E19\u0E32\u0E17\u0E35'
+                }
+            },
+            'short': {
+                'mass-ounce': {
+                    'unitPattern-count-other': '{0} \u0E2D\u0E2D\u0E19\u0E0B\u0E4C'
+                },
+                'mass-kilogram': {
+                    'unitPattern-count-other': '{0} \u0E01\u0E01.'
+                },
+                'mass-gram': {
+                    'unitPattern-count-other': '{0} \u0E01.'
+                },
+                'length-yard': {
+                    'unitPattern-count-other': '{0} \u0E2B\u0E25\u0E32'
+                },
+                'length-picometer': {
+                    'unitPattern-count-other': '{0} \u0E1E\u0E34\u0E42\u0E01\u0E40\u0E21\u0E15\u0E23'
+                },
+                'length-millimeter': {
+                    'unitPattern-count-other': '{0} \u0E21\u0E21.'
+                },
+                'length-mile': {
+                    'unitPattern-count-other': '{0} \u0E44\u0E21\u0E25\u0E4C'
+                },
+                'length-meter': {
+                    'unitPattern-count-other': '{0} \u0E21.'
+                },
+                'length-light-year': {
+                    'unitPattern-count-other': '{0} \u0E1B\u0E35\u0E41\u0E2A\u0E07'
+                },
+                'length-kilometer': {
+                    'unitPattern-count-other': '{0} \u0E01\u0E21.'
+                },
+                'length-inch': {
+                    'unitPattern-count-other': '{0} \u0E19\u0E34\u0E49\u0E27'
+                },
+                'length-foot': {
+                    'unitPattern-count-other': '{0} \u0E1F\u0E38\u0E15'
+                },
+                'length-centimeter': {
+                    'unitPattern-count-other': '{0} \u0E0B\u0E21.'
+                },
+                'duration-year': {
+                    'unitPattern-count-other': '{0} \u0E1B\u0E35'
+                },
+                'duration-week': {
+                    'unitPattern-count-other': '{0} \u0E2A\u0E31\u0E1B\u0E14\u0E32\u0E2B\u0E4C'
+                },
+                'duration-month': {
+                    'unitPattern-count-other': '{0} \u0E40\u0E14\u0E37\u0E2D\u0E19'
+                },
+                'mass-pound': {
+                    'unitPattern-count-other': '{0} \u0E1B\u0E2D\u0E19\u0E14\u0E4C'
+                },
+                'power-horsepower': {
+                    'unitPattern-count-other': '{0} \u0E41\u0E23\u0E07\u0E21\u0E49\u0E32'
+                },
+                'power-kilowatt': {
+                    'unitPattern-count-other': '{0} \u0E01\u0E34\u0E42\u0E25\u0E27\u0E31\u0E15\u0E15\u0E4C'
+                },
+                'power-watt': {
+                    'unitPattern-count-other': '{0} \u0E27\u0E31\u0E15\u0E15\u0E4C'
+                },
+                'pressure-hectopascal': {
+                    'unitPattern-count-other': '{0} \u0E40\u0E2E\u0E01\u0E42\u0E15\u0E1B\u0E32\u0E2A\u0E01\u0E32\u0E25'
+                },
+                'pressure-inch-hg': {
+                    'unitPattern-count-other': '{0} \u0E19\u0E34\u0E49\u0E27\u0E1B\u0E23\u0E2D\u0E17'
+                },
+                'pressure-millibar': {
+                    'unitPattern-count-other': '{0} \u0E21\u0E34\u0E25\u0E25\u0E34\u0E1A\u0E32\u0E23\u0E4C'
+                },
+                'volume-liter': {
+                    'unitPattern-count-other': '{0} \u0E25\u0E34\u0E15\u0E23'
+                },
+                'volume-cubic-mile': {
+                    'unitPattern-count-other': '{0} \u0E25\u0E1A.\u0E44\u0E21\u0E25\u0E4C'
+                },
+                'volume-cubic-kilometer': {
+                    'unitPattern-count-other': '{0} \u0E25\u0E1A.\u0E01\u0E21.'
+                },
+                'temperature-fahrenheit': {
+                    'unitPattern-count-other': '{0}\u00B0F'
+                },
+                'temperature-celsius': {
+                    'unitPattern-count-other': '{0}\u00B0C'
+                },
+                'speed-mile-per-hour': {
+                    'unitPattern-count-other': '{0} \u0E44\u0E21\u0E25\u0E4C/\u0E0A\u0E21.'
+                },
+                'speed-meter-per-second': {
+                    'unitPattern-count-other': '{0} \u0E21./\u0E27\u0E34'
+                },
+                'speed-kilometer-per-hour': {
+                    'unitPattern-count-other': '{0} \u0E01\u0E21./\u0E0A\u0E21.'
+                },
+                'duration-minute': {
+                    'unitPattern-count-other': '{0} \u0E19\u0E32\u0E17\u0E35'
+                },
+                'duration-millisecond': {
+                    'unitPattern-count-other': '{0} \u0E21\u0E34\u0E25\u0E25\u0E34\u0E27\u0E34\u0E19\u0E32\u0E17\u0E35'
+                },
+                'duration-hour': {
+                    'unitPattern-count-other': '{0} \u0E0A\u0E21.'
+                },
+                'duration-day': {
+                    'unitPattern-count-other': '{0} \u0E27\u0E31\u0E19'
+                },
+                'area-square-mile': {
+                    'unitPattern-count-other': '{0} \u0E15\u0E23.\u0E44\u0E21\u0E25\u0E4C'
+                },
+                'area-square-meter': {
+                    'unitPattern-count-other': '{0} \u0E15\u0E23.\u0E21.'
+                },
+                'area-square-kilometer': {
+                    'unitPattern-count-other': '{0} \u0E15\u0E23.\u0E01\u0E21.'
+                },
+                'per': {
+                    'compoundUnitPattern': '{0}/{1}'
+                },
+                'acceleration-g-force': {
+                    'unitPattern-count-other': '{0} G'
+                },
+                'angle-arc-minute': {
+                    'unitPattern-count-other': '{0} \u0E19\u0E32\u0E17\u0E35'
+                },
+                'angle-arc-second': {
+                    'unitPattern-count-other': '{0} \u0E27\u0E34'
+                },
+                'angle-degree': {
+                    'unitPattern-count-other': '{0}\u00B0'
+                },
+                'area-acre': {
+                    'unitPattern-count-other': '{0} \u0E40\u0E2D\u0E40\u0E04\u0E2D\u0E23\u0E4C'
+                },
+                'area-hectare': {
+                    'unitPattern-count-other': '{0} \u0E40\u0E2E\u0E01\u0E15\u0E32\u0E23\u0E4C'
+                },
+                'area-square-foot': {
+                    'unitPattern-count-other': '{0} \u0E15\u0E23.\u0E1F\u0E38\u0E15'
+                },
+                'duration-second': {
+                    'unitPattern-count-other': '{0} \u0E27\u0E34'
                 }
             }
         });

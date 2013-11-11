@@ -3,6 +3,7 @@
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
  * localeDisplayNames: 24r9287
+ * units: 24r9287
  *
  * home: https://github.com/Xotic750/astrodate
  *
@@ -41,172 +42,705 @@
         /*global */
     }(function (AstroDate) {
         AstroDate.lang('hr', {
-            'codePatterns': {
-                'language': 'Jezik: {0}',
-                'script': 'Pismo: {0}',
-                'territory': 'Regija: {0}'
+            'durationUnit-type-ms': {
+                'durationUnitPattern': 'm:ss'
             },
-            'types': {
-                'colHiraganaQuaternary': {
-                    'no': 'Poredaj pismo kana zasebno',
-                    'yes': 'Poredaj pismo kana druga\u010Dije'
+            'durationUnit-type-hms': {
+                'durationUnitPattern': 'h:mm:ss'
+            },
+            'durationUnit-type-hm': {
+                'durationUnitPattern': 'h:mm'
+            },
+            'narrow': {
+                'mass-ounce': {
+                    'unitPattern-count-one': '{0} oz',
+                    'unitPattern-count-few': '{0} oz',
+                    'unitPattern-count-other': '{0} oz'
                 },
-                'colCaseLevel': {
-                    'no': 'Poredaj zanemaruju\u0107i veli\u010Dinu',
-                    'yes': 'Poredaj u skladu s veli\u010Dinom slova'
+                'mass-kilogram': {
+                    'unitPattern-count-one': '{0} kg',
+                    'unitPattern-count-few': '{0} kg',
+                    'unitPattern-count-other': '{0} kg'
                 },
-                'colCaseFirst': {
-                    'lower': 'Prvo poredaj mala slova',
-                    'no': 'Poredaj po normalnom poretku veli\u010Dine slova',
-                    'upper': 'Poredaj prvo velika slova'
+                'mass-gram': {
+                    'unitPattern-count-one': '{0} g',
+                    'unitPattern-count-few': '{0} g',
+                    'unitPattern-count-other': '{0} g'
                 },
-                'colStrength': {
-                    'identical': 'Poredaj sve',
-                    'primary': 'Poredaj samo po osnovnim slovima',
-                    'quaternary': 'Poredaj po naglascima/veli\u010Dini/\u0161irini/pismu kana',
-                    'secondary': 'Poredaj po naglasku',
-                    'tertiary': 'Poredaj po naglascima/veli\u010Dini/\u0161irini'
+                'length-yard': {
+                    'unitPattern-count-one': '{0} yd',
+                    'unitPattern-count-few': '{0} yd',
+                    'unitPattern-count-other': '{0} yd'
                 },
-                'colNumeric': {
-                    'no': 'Poredaj znamenke pojedina\u010Dno',
-                    'yes': 'Poredaj znamenke numeri\u010Dki'
+                'length-picometer': {
+                    'unitPattern-count-one': '{0} pm',
+                    'unitPattern-count-few': '{0} pm',
+                    'unitPattern-count-other': '{0} pm'
                 },
-                'colNormalization': {
-                    'no': 'Poredaj bez normalizacije',
-                    'yes': 'Poredaj unikod normalizirano'
+                'length-millimeter': {
+                    'unitPattern-count-one': '{0} mm',
+                    'unitPattern-count-few': '{0} mm',
+                    'unitPattern-count-other': '{0} mm'
                 },
-                'calendar': {
-                    'japanese': 'japanski kalendar',
-                    'iso8601': 'iso8601',
-                    'coptic': 'Koptski kalendar',
-                    'dangi': 'Dangi kalendar',
-                    'ethiopic': 'Etiopski kalendar',
-                    'ethiopic-amete-alem': 'Etiopski kalendar "Amete Alem"',
-                    'gregorian': 'gregorijanski kalendar',
-                    'hebrew': 'hebrejski kalendar',
-                    'persian': 'Perzijski kalendar',
-                    'roc': 'kalendar Republike Kine',
-                    'chinese': 'kineski kalendar',
-                    'buddhist': 'budisti\u010Dki kalendar',
-                    'indian': 'indijski nacionalni kalendar',
-                    'islamic': 'islamski kalendar',
-                    'islamic-civil': 'islamski civilni kalendar',
-                    'islamic-rgsa': 'islamic-rgsa',
-                    'islamic-tbla': 'islamic-tbla',
-                    'islamic-umalqura': 'islamic-umalqura'
+                'length-mile': {
+                    'unitPattern-count-one': '{0} mi',
+                    'unitPattern-count-few': '{0} mi',
+                    'unitPattern-count-other': '{0} mi'
                 },
-                'collation': {
-                    'phonebook': 'razvrstavanje po abecedi',
-                    'gb2312han': 'razvrstavanje prema pojednostavljenom kineskom - GB2312',
-                    'eor': 'eor',
-                    'ducet': 'Standardno Unicode razvrstavanje',
-                    'dictionary': 'rje\u010Dni\u010Dko razvrstavanje',
-                    'big5han': 'razvrstavanje prema tradicionalnom kineskom - Big5',
-                    'traditional': 'tradicionalno razvrstavanje',
-                    'standard': 'Standardno razvrstavanje',
-                    'zhuyin': 'zhuyin razvrstavanje',
-                    'unihan': 'razvrstavanje prema korijenu i potezu',
-                    'stroke': 'razvrstavanje po redoslijedu poteza za kineski',
-                    'searchjl': 'Pretra\u017Eivanje po po\u010Detnom suglasniku hangula',
-                    'search': 'Op\u0107enito pretra\u017Eivanje',
-                    'reformed': 'reformirano razvrstavanje',
-                    'pinyin': 'Pinyin razvrstavanje',
-                    'phonetic': 'Fonetski poredak'
+                'length-meter': {
+                    'unitPattern-count-one': '{0} m',
+                    'unitPattern-count-few': '{0} m',
+                    'unitPattern-count-other': '{0} m'
                 },
-                'numbers': {
-                    'knda': 'znamenke pisma kannada',
-                    'khmr': 'khmerske znamenke',
-                    'kali': 'kali',
-                    'jpanfin': 'japanski financijski brojevi',
-                    'jpan': 'japanski brojevi',
-                    'java': 'java',
-                    'hebr': 'hebrejski brojevi',
-                    'hantfin': 'tradicionalni kineski financijski brojevi',
-                    'hant': 'tradicionalni kineski brojevi',
-                    'hansfin': 'pojednostavljeni kineski financijski brojevi',
-                    'hans': 'pojednostavljeni kineski brojevi',
-                    'hanidec': 'kineski decimalni brojevi',
-                    'guru': 'znamenke pisma gurmukhi',
-                    'gujr': 'gud\u017Earatske znamenke',
-                    'greklow': 'mali gr\u010Dki brojevi',
-                    'grek': 'gr\u010Dki brojevi',
-                    'bali': 'bali',
-                    'armnlow': 'mali armenski brojevi',
-                    'armn': 'armenski brojevi',
-                    'arabext': 'pro\u0161irene arapsko-indijske znamenke',
-                    'arab': 'arapsko-indijske znamenke',
-                    'finance': 'Financijski brojevi',
-                    'traditional': 'Tradicionalni brojevi',
-                    'native': 'Izvorne znamenke',
-                    'beng': 'znamenke bengalskog pisma',
-                    'brah': 'brah',
-                    'cakm': 'cakm',
-                    'cham': 'cham',
-                    'deva': 'znamenke pisma devanagari',
-                    'orya': 'orijske znamenke',
-                    'osma': 'osma',
-                    'roman': 'rimski brojevi',
-                    'romanlow': 'mali rimski brojevi',
-                    'saur': 'saur',
-                    'shrd': 'shrd',
-                    'sora': 'sora',
-                    'sund': 'sund',
-                    'vaii': 'Vai znamenke',
-                    'tibt': 'tibetske znamenke',
-                    'thai': 'tajske znamenke',
-                    'telu': 'znamenke telu\u0161kog pisma',
-                    'tamldec': 'tamilske znamenke',
-                    'taml': 'tamilski brojevi',
-                    'talu': 'talu',
-                    'takr': 'takr',
-                    'olck': 'olck',
-                    'nkoo': 'nkoo',
-                    'mymrshan': 'mymrshan',
-                    'mymr': 'mijanmarske znamenke',
-                    'mtei': 'mtei',
-                    'mong': 'Mongolske znamenke',
-                    'mlym': 'malajalamske znamenke',
-                    'limb': 'limb',
-                    'lepc': 'lepc',
-                    'latn': 'arapski brojevi',
-                    'laoo': 'laoske znamenke',
-                    'lanatham': 'lanatham',
-                    'lana': 'lana',
-                    'geor': 'gruzijski brojevi',
-                    'fullwide': '\u0161iroke znamenke',
-                    'ethi': 'etiopski brojevi'
+                'length-light-year': {
+                    'unitPattern-count-one': '{0} ly',
+                    'unitPattern-count-few': '{0} ly',
+                    'unitPattern-count-other': '{0} ly'
                 },
-                'colAlternate': {
-                    'non-ignorable': 'Poredaj simbole',
-                    'shifted': 'Poredaj zanemaruju\u0107i simbole'
+                'length-kilometer': {
+                    'unitPattern-count-one': '{0} km',
+                    'unitPattern-count-few': '{0} km',
+                    'unitPattern-count-other': '{0} km'
                 },
-                'colBackwards': {
-                    'no': 'Poredaj naglaske normalno',
-                    'yes': 'Poredaj naglaske obrnuto'
+                'length-inch': {
+                    'unitPattern-count-one': '{0}\u2033',
+                    'unitPattern-count-few': '{0}\u2033',
+                    'unitPattern-count-other': '{0}\u2033'
+                },
+                'length-foot': {
+                    'unitPattern-count-one': '{0}\u2032',
+                    'unitPattern-count-few': '{0}\u2032',
+                    'unitPattern-count-other': '{0}\u2032'
+                },
+                'length-centimeter': {
+                    'unitPattern-count-one': '{0} cm',
+                    'unitPattern-count-few': '{0} cm',
+                    'unitPattern-count-other': '{0} cm'
+                },
+                'duration-year': {
+                    'unitPattern-count-one': '{0} g.',
+                    'unitPattern-count-few': '{0} g.',
+                    'unitPattern-count-other': '{0} g.'
+                },
+                'duration-week': {
+                    'unitPattern-count-one': '{0} tj.',
+                    'unitPattern-count-few': '{0} tj.',
+                    'unitPattern-count-other': '{0} tj.'
+                },
+                'duration-month': {
+                    'unitPattern-count-one': '{0} mj.',
+                    'unitPattern-count-few': '{0} mj.',
+                    'unitPattern-count-other': '{0} mj.'
+                },
+                'mass-pound': {
+                    'unitPattern-count-one': '{0} lb',
+                    'unitPattern-count-few': '{0} lb',
+                    'unitPattern-count-other': '{0} lb'
+                },
+                'power-horsepower': {
+                    'unitPattern-count-one': '{0} KS',
+                    'unitPattern-count-few': '{0} KS',
+                    'unitPattern-count-other': '{0} KS'
+                },
+                'power-kilowatt': {
+                    'unitPattern-count-one': '{0} kW',
+                    'unitPattern-count-few': '{0} kW',
+                    'unitPattern-count-other': '{0} kW'
+                },
+                'power-watt': {
+                    'unitPattern-count-one': '{0} W',
+                    'unitPattern-count-few': '{0} W',
+                    'unitPattern-count-other': '{0} W'
+                },
+                'pressure-hectopascal': {
+                    'unitPattern-count-one': '{0} hPa',
+                    'unitPattern-count-few': '{0} hPa',
+                    'unitPattern-count-other': '{0} hPa'
+                },
+                'pressure-inch-hg': {
+                    'unitPattern-count-one': '{0} inHg',
+                    'unitPattern-count-few': '{0} inHg',
+                    'unitPattern-count-other': '{0} inHg'
+                },
+                'pressure-millibar': {
+                    'unitPattern-count-one': '{0} mb',
+                    'unitPattern-count-few': '{0} mb',
+                    'unitPattern-count-other': '{0} mb'
+                },
+                'volume-liter': {
+                    'unitPattern-count-one': '{0} l',
+                    'unitPattern-count-few': '{0} l',
+                    'unitPattern-count-other': '{0} l'
+                },
+                'volume-cubic-mile': {
+                    'unitPattern-count-one': '{0} mi\u00B3',
+                    'unitPattern-count-few': '{0} mi\u00B3',
+                    'unitPattern-count-other': '{0} mi\u00B3'
+                },
+                'volume-cubic-kilometer': {
+                    'unitPattern-count-one': '{0} km\u00B3',
+                    'unitPattern-count-few': '{0} km\u00B3',
+                    'unitPattern-count-other': '{0} km\u00B3'
+                },
+                'temperature-fahrenheit': {
+                    'unitPattern-count-one': '{0}\u00B0F',
+                    'unitPattern-count-few': '{0}\u00B0F',
+                    'unitPattern-count-other': '{0}\u00B0F'
+                },
+                'temperature-celsius': {
+                    'unitPattern-count-one': '{0}\u00B0',
+                    'unitPattern-count-few': '{0}\u00B0',
+                    'unitPattern-count-other': '{0}\u00B0'
+                },
+                'speed-mile-per-hour': {
+                    'unitPattern-count-one': '{0} mi/h',
+                    'unitPattern-count-few': '{0} mi/h',
+                    'unitPattern-count-other': '{0} mi/h'
+                },
+                'speed-meter-per-second': {
+                    'unitPattern-count-one': '{0} m/s',
+                    'unitPattern-count-few': '{0} m/s',
+                    'unitPattern-count-other': '{0} m/s'
+                },
+                'speed-kilometer-per-hour': {
+                    'unitPattern-count-one': '{0} km/h',
+                    'unitPattern-count-few': '{0} km/h',
+                    'unitPattern-count-other': '{0} km/h'
+                },
+                'duration-minute': {
+                    'unitPattern-count-one': '{0} m',
+                    'unitPattern-count-few': '{0} m',
+                    'unitPattern-count-other': '{0} m'
+                },
+                'duration-millisecond': {
+                    'unitPattern-count-one': '{0} ms',
+                    'unitPattern-count-few': '{0} ms',
+                    'unitPattern-count-other': '{0} ms'
+                },
+                'duration-hour': {
+                    'unitPattern-count-one': '{0} h',
+                    'unitPattern-count-few': '{0} h',
+                    'unitPattern-count-other': '{0} h'
+                },
+                'duration-day': {
+                    'unitPattern-count-one': '{0} d.',
+                    'unitPattern-count-few': '{0} d.',
+                    'unitPattern-count-other': '{0} d.'
+                },
+                'area-square-mile': {
+                    'unitPattern-count-one': '{0} mi\u00B2',
+                    'unitPattern-count-few': '{0} mi\u00B2',
+                    'unitPattern-count-other': '{0} mi\u00B2'
+                },
+                'area-square-meter': {
+                    'unitPattern-count-one': '{0} m\u00B2',
+                    'unitPattern-count-few': '{0} m\u00B2',
+                    'unitPattern-count-other': '{0} m\u00B2'
+                },
+                'area-square-kilometer': {
+                    'unitPattern-count-one': '{0} km\u00B2',
+                    'unitPattern-count-few': '{0} km\u00B2',
+                    'unitPattern-count-other': '{0} km\u00B2'
+                },
+                'per': {
+                    'compoundUnitPattern': '{0}/{1}'
+                },
+                'acceleration-g-force': {
+                    'unitPattern-count-one': '{0} G',
+                    'unitPattern-count-few': '{0} G',
+                    'unitPattern-count-other': '{0} G'
+                },
+                'angle-arc-minute': {
+                    'unitPattern-count-one': '{0}\u2032',
+                    'unitPattern-count-few': '{0}\u2032',
+                    'unitPattern-count-other': '{0}\u2032'
+                },
+                'angle-arc-second': {
+                    'unitPattern-count-one': '{0}\u2033',
+                    'unitPattern-count-few': '{0}\u2033',
+                    'unitPattern-count-other': '{0}\u2033'
+                },
+                'angle-degree': {
+                    'unitPattern-count-one': '{0}\u00B0',
+                    'unitPattern-count-few': '{0}\u00B0',
+                    'unitPattern-count-other': '{0}\u00B0'
+                },
+                'area-acre': {
+                    'unitPattern-count-one': '{0} kj',
+                    'unitPattern-count-few': '{0} kj',
+                    'unitPattern-count-other': '{0} kj'
+                },
+                'area-hectare': {
+                    'unitPattern-count-one': '{0} ha',
+                    'unitPattern-count-few': '{0} ha',
+                    'unitPattern-count-other': '{0} ha'
+                },
+                'area-square-foot': {
+                    'unitPattern-count-one': '{0} ft\u00B2',
+                    'unitPattern-count-few': '{0} ft\u00B2',
+                    'unitPattern-count-other': '{0} ft\u00B2'
+                },
+                'duration-second': {
+                    'unitPattern-count-one': '{0} s',
+                    'unitPattern-count-few': '{0} s',
+                    'unitPattern-count-other': '{0} s'
                 }
             },
-            'keys': {
-                'colNormalization': 'Normalizirano poredavanje',
-                'collation': 'Redoslijed razvrstavanja',
-                'colHiraganaQuaternary': 'Poredavanje po pismu kana',
-                'colCaseLevel': 'Poredavanje u skladu s veli\u010Dinom slova',
-                'colCaseFirst': 'Poredavanje po velikim/malim slovima',
-                'colBackwards': 'Obrnuto poredavanje po naglasku',
-                'colAlternate': 'Zanemarivanje poredavanja simbola',
-                'calendar': 'kalendar',
-                'x': 'Privatna upotreba',
-                'variableTop': 'Poredaj kao simbole',
-                'va': 'Varijanta zemlje/jezika',
-                'timezone': 'Vremenska zona',
-                'numbers': 'brojevi',
-                'currency': 'valuta',
-                'colStrength': 'Ja\u010Dina poredavanja',
-                'colNumeric': 'Numeri\u010Dko poredavanje'
-            },
-            'localeDisplayPattern': {
-                'localePattern': '{0} ({1})',
-                'localeSeparator': '{0}, {1}',
-                'localeKeyTypePattern': '{0}: {1}'
+            'calendars': {
+                'gregorian': {
+                    'months': {
+                        'format': {
+                            'abbreviated': {
+                                '8': 'kol',
+                                '7': 'srp',
+                                '6': 'lip',
+                                '5': 'svi',
+                                '12': 'pro',
+                                '11': 'stu',
+                                '10': 'lis',
+                                '9': 'ruj',
+                                '1': 'sij',
+                                '2': 'velj',
+                                '3': 'o\u017Eu',
+                                '4': 'tra'
+                            },
+                            'narrow': {
+                                '8': '8.',
+                                '7': '7.',
+                                '6': '6.',
+                                '5': '5.',
+                                '12': '12.',
+                                '11': '11.',
+                                '10': '10.',
+                                '9': '9.',
+                                '1': '1.',
+                                '2': '2.',
+                                '3': '3.',
+                                '4': '4.'
+                            },
+                            'wide': {
+                                '8': 'kolovoza',
+                                '7': 'srpnja',
+                                '6': 'lipnja',
+                                '5': 'svibnja',
+                                '12': 'prosinca',
+                                '11': 'studenoga',
+                                '10': 'listopada',
+                                '9': 'rujna',
+                                '1': 'sije\u010Dnja',
+                                '2': 'velja\u010De',
+                                '3': 'o\u017Eujka',
+                                '4': 'travnja'
+                            }
+                        },
+                        'stand-alone': {
+                            'abbreviated': {
+                                '8': 'kol',
+                                '7': 'srp',
+                                '6': 'lip',
+                                '5': 'svi',
+                                '12': 'pro',
+                                '11': 'stu',
+                                '10': 'lis',
+                                '9': 'ruj',
+                                '1': 'sij',
+                                '2': 'velj',
+                                '3': 'o\u017Eu',
+                                '4': 'tra'
+                            },
+                            'narrow': {
+                                '8': '8.',
+                                '7': '7.',
+                                '6': '6.',
+                                '5': '5.',
+                                '12': '12.',
+                                '11': '11.',
+                                '10': '10.',
+                                '9': '9.',
+                                '1': '1.',
+                                '2': '2.',
+                                '3': '3.',
+                                '4': '4.'
+                            },
+                            'wide': {
+                                '8': 'kolovoz',
+                                '7': 'srpanj',
+                                '6': 'lipanj',
+                                '5': 'svibanj',
+                                '12': 'prosinac',
+                                '11': 'studeni',
+                                '10': 'listopad',
+                                '9': 'rujan',
+                                '1': 'sije\u010Danj',
+                                '2': 'velja\u010Da',
+                                '3': 'o\u017Eujak',
+                                '4': 'travanj'
+                            }
+                        }
+                    },
+                    'days': {
+                        'format': {
+                            'abbreviated': {
+                                'sun': 'ned',
+                                'mon': 'pon',
+                                'tue': 'uto',
+                                'wed': 'sri',
+                                'thu': '\u010Det',
+                                'fri': 'pet',
+                                'sat': 'sub'
+                            },
+                            'narrow': {
+                                'sun': 'N',
+                                'mon': 'P',
+                                'tue': 'U',
+                                'wed': 'S',
+                                'thu': '\u010C',
+                                'fri': 'P',
+                                'sat': 'S'
+                            },
+                            'short': {
+                                'sun': 'ned',
+                                'mon': 'pon',
+                                'tue': 'uto',
+                                'wed': 'sri',
+                                'thu': '\u010Det',
+                                'fri': 'pet',
+                                'sat': 'sub'
+                            },
+                            'wide': {
+                                'sun': 'nedjelja',
+                                'mon': 'ponedjeljak',
+                                'tue': 'utorak',
+                                'wed': 'srijeda',
+                                'thu': '\u010Detvrtak',
+                                'fri': 'petak',
+                                'sat': 'subota'
+                            }
+                        },
+                        'stand-alone': {
+                            'abbreviated': {
+                                'sun': 'ned',
+                                'mon': 'pon',
+                                'tue': 'uto',
+                                'wed': 'sri',
+                                'thu': '\u010Det',
+                                'fri': 'pet',
+                                'sat': 'sub'
+                            },
+                            'narrow': {
+                                'sun': 'n',
+                                'mon': 'p',
+                                'tue': 'u',
+                                'wed': 's',
+                                'thu': '\u010D',
+                                'fri': 'p',
+                                'sat': 's'
+                            },
+                            'short': {
+                                'sun': 'ned',
+                                'mon': 'pon',
+                                'tue': 'uto',
+                                'wed': 'sri',
+                                'thu': '\u010Det',
+                                'fri': 'pet',
+                                'sat': 'sub'
+                            },
+                            'wide': {
+                                'sun': 'nedjelja',
+                                'mon': 'ponedjeljak',
+                                'tue': 'utorak',
+                                'wed': 'srijeda',
+                                'thu': '\u010Detvrtak',
+                                'fri': 'petak',
+                                'sat': 'subota'
+                            }
+                        }
+                    },
+                    'quarters': {
+                        'format': {
+                            'abbreviated': {
+                                '1': '1kv',
+                                '2': '2kv',
+                                '3': '3kv',
+                                '4': '4kv'
+                            },
+                            'narrow': {
+                                '1': '1.',
+                                '2': '2.',
+                                '3': '3.',
+                                '4': '4.'
+                            },
+                            'wide': {
+                                '1': '1. kvartal',
+                                '2': '2. kvartal',
+                                '3': '3. kvartal',
+                                '4': '4. kvartal'
+                            }
+                        },
+                        'stand-alone': {
+                            'abbreviated': {
+                                '1': '1kv',
+                                '2': '2kv',
+                                '3': '3kv',
+                                '4': '4kv'
+                            },
+                            'narrow': {
+                                '1': '1.',
+                                '2': '2.',
+                                '3': '3.',
+                                '4': '4.'
+                            },
+                            'wide': {
+                                '1': '1. kvartal',
+                                '2': '2. kvartal',
+                                '3': '3. kvartal',
+                                '4': '4. kvartal'
+                            }
+                        }
+                    },
+                    'dayPeriods': {
+                        'format': {
+                            'abbreviated': {
+                                'afternoon': 'popodne',
+                                'am': 'AM',
+                                'earlyMorning': 'ujutro',
+                                'evening': 'nave\u010Der',
+                                'morning': 'prijepodne',
+                                'night': 'no\u0107u',
+                                'noon': 'podne',
+                                'pm': 'PM'
+                            },
+                            'narrow': {
+                                'afternoon': 'popodne',
+                                'am': 'AM',
+                                'earlyMorning': 'ujutro',
+                                'evening': 'nave\u010Der',
+                                'morning': 'prijepodne',
+                                'night': 'no\u0107u',
+                                'noon': 'n',
+                                'pm': 'PM'
+                            },
+                            'wide': {
+                                'am': 'AM',
+                                'noon': 'podne',
+                                'pm': 'PM'
+                            }
+                        },
+                        'stand-alone': {
+                            'abbreviated': {
+                                'afternoon': 'popodne',
+                                'am': 'AM',
+                                'earlyMorning': 'ujutro',
+                                'evening': 'nave\u010Der',
+                                'morning': 'prijepodne',
+                                'night': 'no\u0107u',
+                                'noon': 'podne',
+                                'pm': 'PM'
+                            },
+                            'narrow': {
+                                'afternoon': 'popodne',
+                                'am': 'AM',
+                                'earlyMorning': 'ujutro',
+                                'evening': 'nave\u010Der',
+                                'morning': 'prijepodne',
+                                'night': 'no\u0107u',
+                                'noon': 'n',
+                                'pm': 'PM'
+                            },
+                            'wide': {
+                                'am': 'AM',
+                                'noon': 'podne',
+                                'pm': 'PM'
+                            }
+                        }
+                    },
+                    'eras': {
+                        'eraNames': {
+                            '0': 'Prije Krista',
+                            '0-alt-variant': 'pr. n. e.',
+                            '1': 'Poslije Krista',
+                            '1-alt-variant': 'n.e.'
+                        },
+                        'eraAbbr': {
+                            '0': 'pr. Kr.',
+                            '0-alt-variant': 'pr. n. e.',
+                            '1': 'p. Kr.',
+                            '1-alt-variant': 'n.e.'
+                        },
+                        'eraNarrow': {
+                            '0': 'pr.n.e.',
+                            '0-alt-variant': 'pr. n. e.',
+                            '1': 'AD',
+                            '1-alt-variant': 'n.e.'
+                        }
+                    },
+                    'dateFormats': {
+                        'full': 'EEEE, d. MMMM y.',
+                        'long': 'd. MMMM y.',
+                        'medium': 'd. MMM y.',
+                        'short': 'd.M.yy.'
+                    },
+                    'timeFormats': {
+                        'full': 'HH:mm:ss zzzz',
+                        'long': 'HH:mm:ss z',
+                        'medium': 'HH:mm:ss',
+                        'short': 'HH:mm'
+                    },
+                    'dateTimeFormats': {
+                        'full': '{1} \'u\' {0}',
+                        'long': '{1} \'u\' {0}',
+                        'medium': '{1} {0}',
+                        'short': '{1} {0}',
+                        'availableFormats': {
+                            'yMM': 'MM. y.',
+                            'yMEd': 'E, d. M. y.',
+                            'yMd': 'd. M. y.',
+                            'yM': 'M. y.',
+                            'y': 'y.',
+                            'ms': 'mm:ss',
+                            'Ed': 'E, d.',
+                            'd': 'd.',
+                            'GyMMMd': 'd. MMM y. G',
+                            'GyMMMEd': 'E, d. MMM y. G',
+                            'h': 'h a',
+                            'H': 'HH',
+                            'hm': 'hh:mm a',
+                            'Hm': 'HH:mm',
+                            'yQQQQ': 'QQQQ y.',
+                            'yQQQ': 'QQQ y.',
+                            'yMMMM': 'LLLL y.',
+                            'yMMMEd': 'E, d. MMM y.',
+                            'yMMMd': 'd. MMM y.',
+                            'yMMM': 'LLL y.',
+                            'Hms': 'HH:mm:ss',
+                            'hms': 'hh:mm:ss a',
+                            'Ehm': 'E h:mm a',
+                            'EHm': 'E HH:mm',
+                            'Ehms': 'E h:mm:ss a',
+                            'EHms': 'E HH:mm:ss',
+                            'Gy': 'y. G',
+                            'GyMMM': 'LLL y. G',
+                            'M': 'L.',
+                            'Md': 'd. M.',
+                            'MEd': 'E, d. M.',
+                            'MMdd': 'dd. MM.',
+                            'MMM': 'LLL',
+                            'MMMd': 'd. MMM',
+                            'MMMEd': 'E, d. MMM',
+                            'MMMMd': 'd. MMMM',
+                            'MMMMdd': 'dd. MMMM',
+                            'MMMMEd': 'E, d. MMMM'
+                        },
+                        'appendItems': {
+                            'Second': '{0} ({2}: {1})',
+                            'Quarter': '{0} ({2}: {1})',
+                            'Month': '{0} ({2}: {1})',
+                            'Year': '{1} {0}',
+                            'Week': '{0} ({2}: {1})',
+                            'Timezone': '{0} {1}',
+                            'Day': '{0} ({2}: {1})',
+                            'Day-Of-Week': '{0} {1}',
+                            'Era': '{1} {0}',
+                            'Hour': '{0} ({2}: {1})',
+                            'Minute': '{0} ({2}: {1})'
+                        },
+                        'intervalFormats': {
+                            'MMMEd': {
+                                'd': 'E, dd. - E, dd. MMM',
+                                'M': 'E, dd. MMM - E, dd. MMM'
+                            },
+                            'MMMd': {
+                                'd': 'dd. - dd. MMM',
+                                'M': 'dd. MMM - dd. MMM'
+                            },
+                            'MMM': {
+                                'M': 'LLL-LLL'
+                            },
+                            'MEd': {
+                                'd': 'E, dd.MM. - E, dd.MM.',
+                                'M': 'E, dd.MM. - E, dd.MM.'
+                            },
+                            'Md': {
+                                'd': 'dd.MM. - dd.MM.',
+                                'M': 'dd.MM. - dd.MM.'
+                            },
+                            'M': {
+                                'M': 'MM. - MM.'
+                            },
+                            'Hv': {
+                                'H': 'HH - HH \'h\' v'
+                            },
+                            'hv': {
+                                'a': 'h a - h a v',
+                                'h': 'h - h \'h\' a v'
+                            },
+                            'y': {
+                                'y': 'y. - y.'
+                            },
+                            'yM': {
+                                'M': 'MM.y. - MM.y.',
+                                'y': 'MM.y. - MM.y.'
+                            },
+                            'yMd': {
+                                'd': 'dd.MM.y. - dd.MM.y.',
+                                'M': 'dd.MM.y. - dd.MM.y.',
+                                'y': 'dd.MM.y. - dd.MM.y.'
+                            },
+                            'yMEd': {
+                                'd': 'E, dd.MM.y. - E, dd.MM.y.',
+                                'M': 'E, dd.MM.y. - E, dd.MM.y.',
+                                'y': 'E, dd.MM.y. - E, dd.MM.y.'
+                            },
+                            'yMMM': {
+                                'M': 'LLL-LLL y.',
+                                'y': 'LLL y. - LLL y.'
+                            },
+                            'yMMMd': {
+                                'd': 'dd. - dd. MMM y.',
+                                'M': 'dd. MMM - dd. MMM y.',
+                                'y': 'dd. MMM y. - dd. MMM y.'
+                            },
+                            'yMMMEd': {
+                                'd': 'E, dd. - E, dd. MMM y.',
+                                'M': 'E, dd. MMM - E, dd. MMM y.',
+                                'y': 'E, dd. MMM y. - E, dd. MMM y.'
+                            },
+                            'yMMMM': {
+                                'M': 'LLLL \u2013 LLLL y.',
+                                'y': 'LLLL y. - LLLL y.'
+                            },
+                            'Hmv': {
+                                'H': 'HH:mm-HH:mm v',
+                                'm': 'HH:mm-HH:mm v'
+                            },
+                            'hmv': {
+                                'a': 'h:mm a - h:mm a v',
+                                'h': 'h:mm-h:mm a v',
+                                'm': 'h:mm-h:mm a v'
+                            },
+                            'Hm': {
+                                'H': 'HH:mm-HH:mm',
+                                'm': 'HH:mm-HH:mm'
+                            },
+                            'hm': {
+                                'a': 'h:mm a - h:mm a',
+                                'h': 'h:mm-h:mm a',
+                                'm': 'h:mm-h:mm a'
+                            },
+                            'H': {
+                                'H': 'HH-HH\'h\''
+                            },
+                            'h': {
+                                'a': 'h a - h a',
+                                'h': 'h - h\'h\' a'
+                            },
+                            'd': {
+                                'd': 'dd. - dd.'
+                            },
+                            'intervalFormatFallback': '{0} - {1}'
+                        }
+                    }
+                }
             },
             'timeZoneNames': {
                 'zone': {
@@ -2539,460 +3073,641 @@
                 'regionFormat-type-standard': '{0}, standardno vrijeme',
                 'fallbackFormat': '{1} ({0})'
             },
-            'calendars': {
-                'gregorian': {
-                    'months': {
-                        'format': {
-                            'abbreviated': {
-                                '8': 'kol',
-                                '7': 'srp',
-                                '6': 'lip',
-                                '5': 'svi',
-                                '12': 'pro',
-                                '11': 'stu',
-                                '10': 'lis',
-                                '9': 'ruj',
-                                '1': 'sij',
-                                '2': 'velj',
-                                '3': 'o\u017Eu',
-                                '4': 'tra'
-                            },
-                            'narrow': {
-                                '8': '8.',
-                                '7': '7.',
-                                '6': '6.',
-                                '5': '5.',
-                                '12': '12.',
-                                '11': '11.',
-                                '10': '10.',
-                                '9': '9.',
-                                '1': '1.',
-                                '2': '2.',
-                                '3': '3.',
-                                '4': '4.'
-                            },
-                            'wide': {
-                                '8': 'kolovoza',
-                                '7': 'srpnja',
-                                '6': 'lipnja',
-                                '5': 'svibnja',
-                                '12': 'prosinca',
-                                '11': 'studenoga',
-                                '10': 'listopada',
-                                '9': 'rujna',
-                                '1': 'sije\u010Dnja',
-                                '2': 'velja\u010De',
-                                '3': 'o\u017Eujka',
-                                '4': 'travnja'
-                            }
-                        },
-                        'stand-alone': {
-                            'abbreviated': {
-                                '8': 'kol',
-                                '7': 'srp',
-                                '6': 'lip',
-                                '5': 'svi',
-                                '12': 'pro',
-                                '11': 'stu',
-                                '10': 'lis',
-                                '9': 'ruj',
-                                '1': 'sij',
-                                '2': 'velj',
-                                '3': 'o\u017Eu',
-                                '4': 'tra'
-                            },
-                            'narrow': {
-                                '8': '8.',
-                                '7': '7.',
-                                '6': '6.',
-                                '5': '5.',
-                                '12': '12.',
-                                '11': '11.',
-                                '10': '10.',
-                                '9': '9.',
-                                '1': '1.',
-                                '2': '2.',
-                                '3': '3.',
-                                '4': '4.'
-                            },
-                            'wide': {
-                                '8': 'kolovoz',
-                                '7': 'srpanj',
-                                '6': 'lipanj',
-                                '5': 'svibanj',
-                                '12': 'prosinac',
-                                '11': 'studeni',
-                                '10': 'listopad',
-                                '9': 'rujan',
-                                '1': 'sije\u010Danj',
-                                '2': 'velja\u010Da',
-                                '3': 'o\u017Eujak',
-                                '4': 'travanj'
-                            }
-                        }
-                    },
-                    'days': {
-                        'format': {
-                            'abbreviated': {
-                                'sun': 'ned',
-                                'mon': 'pon',
-                                'tue': 'uto',
-                                'wed': 'sri',
-                                'thu': '\u010Det',
-                                'fri': 'pet',
-                                'sat': 'sub'
-                            },
-                            'narrow': {
-                                'sun': 'N',
-                                'mon': 'P',
-                                'tue': 'U',
-                                'wed': 'S',
-                                'thu': '\u010C',
-                                'fri': 'P',
-                                'sat': 'S'
-                            },
-                            'short': {
-                                'sun': 'ned',
-                                'mon': 'pon',
-                                'tue': 'uto',
-                                'wed': 'sri',
-                                'thu': '\u010Det',
-                                'fri': 'pet',
-                                'sat': 'sub'
-                            },
-                            'wide': {
-                                'sun': 'nedjelja',
-                                'mon': 'ponedjeljak',
-                                'tue': 'utorak',
-                                'wed': 'srijeda',
-                                'thu': '\u010Detvrtak',
-                                'fri': 'petak',
-                                'sat': 'subota'
-                            }
-                        },
-                        'stand-alone': {
-                            'abbreviated': {
-                                'sun': 'ned',
-                                'mon': 'pon',
-                                'tue': 'uto',
-                                'wed': 'sri',
-                                'thu': '\u010Det',
-                                'fri': 'pet',
-                                'sat': 'sub'
-                            },
-                            'narrow': {
-                                'sun': 'n',
-                                'mon': 'p',
-                                'tue': 'u',
-                                'wed': 's',
-                                'thu': '\u010D',
-                                'fri': 'p',
-                                'sat': 's'
-                            },
-                            'short': {
-                                'sun': 'ned',
-                                'mon': 'pon',
-                                'tue': 'uto',
-                                'wed': 'sri',
-                                'thu': '\u010Det',
-                                'fri': 'pet',
-                                'sat': 'sub'
-                            },
-                            'wide': {
-                                'sun': 'nedjelja',
-                                'mon': 'ponedjeljak',
-                                'tue': 'utorak',
-                                'wed': 'srijeda',
-                                'thu': '\u010Detvrtak',
-                                'fri': 'petak',
-                                'sat': 'subota'
-                            }
-                        }
-                    },
-                    'quarters': {
-                        'format': {
-                            'abbreviated': {
-                                '1': '1kv',
-                                '2': '2kv',
-                                '3': '3kv',
-                                '4': '4kv'
-                            },
-                            'narrow': {
-                                '1': '1.',
-                                '2': '2.',
-                                '3': '3.',
-                                '4': '4.'
-                            },
-                            'wide': {
-                                '1': '1. kvartal',
-                                '2': '2. kvartal',
-                                '3': '3. kvartal',
-                                '4': '4. kvartal'
-                            }
-                        },
-                        'stand-alone': {
-                            'abbreviated': {
-                                '1': '1kv',
-                                '2': '2kv',
-                                '3': '3kv',
-                                '4': '4kv'
-                            },
-                            'narrow': {
-                                '1': '1.',
-                                '2': '2.',
-                                '3': '3.',
-                                '4': '4.'
-                            },
-                            'wide': {
-                                '1': '1. kvartal',
-                                '2': '2. kvartal',
-                                '3': '3. kvartal',
-                                '4': '4. kvartal'
-                            }
-                        }
-                    },
-                    'dayPeriods': {
-                        'format': {
-                            'abbreviated': {
-                                'afternoon': 'popodne',
-                                'am': 'AM',
-                                'earlyMorning': 'ujutro',
-                                'evening': 'nave\u010Der',
-                                'morning': 'prijepodne',
-                                'night': 'no\u0107u',
-                                'noon': 'podne',
-                                'pm': 'PM'
-                            },
-                            'narrow': {
-                                'afternoon': 'popodne',
-                                'am': 'AM',
-                                'earlyMorning': 'ujutro',
-                                'evening': 'nave\u010Der',
-                                'morning': 'prijepodne',
-                                'night': 'no\u0107u',
-                                'noon': 'n',
-                                'pm': 'PM'
-                            },
-                            'wide': {
-                                'am': 'AM',
-                                'noon': 'podne',
-                                'pm': 'PM'
-                            }
-                        },
-                        'stand-alone': {
-                            'abbreviated': {
-                                'afternoon': 'popodne',
-                                'am': 'AM',
-                                'earlyMorning': 'ujutro',
-                                'evening': 'nave\u010Der',
-                                'morning': 'prijepodne',
-                                'night': 'no\u0107u',
-                                'noon': 'podne',
-                                'pm': 'PM'
-                            },
-                            'narrow': {
-                                'afternoon': 'popodne',
-                                'am': 'AM',
-                                'earlyMorning': 'ujutro',
-                                'evening': 'nave\u010Der',
-                                'morning': 'prijepodne',
-                                'night': 'no\u0107u',
-                                'noon': 'n',
-                                'pm': 'PM'
-                            },
-                            'wide': {
-                                'am': 'AM',
-                                'noon': 'podne',
-                                'pm': 'PM'
-                            }
-                        }
-                    },
-                    'eras': {
-                        'eraNames': {
-                            '0': 'Prije Krista',
-                            '0-alt-variant': 'pr. n. e.',
-                            '1': 'Poslije Krista',
-                            '1-alt-variant': 'n.e.'
-                        },
-                        'eraAbbr': {
-                            '0': 'pr. Kr.',
-                            '0-alt-variant': 'pr. n. e.',
-                            '1': 'p. Kr.',
-                            '1-alt-variant': 'n.e.'
-                        },
-                        'eraNarrow': {
-                            '0': 'pr.n.e.',
-                            '0-alt-variant': 'pr. n. e.',
-                            '1': 'AD',
-                            '1-alt-variant': 'n.e.'
-                        }
-                    },
-                    'dateFormats': {
-                        'full': 'EEEE, d. MMMM y.',
-                        'long': 'd. MMMM y.',
-                        'medium': 'd. MMM y.',
-                        'short': 'd.M.yy.'
-                    },
-                    'timeFormats': {
-                        'full': 'HH:mm:ss zzzz',
-                        'long': 'HH:mm:ss z',
-                        'medium': 'HH:mm:ss',
-                        'short': 'HH:mm'
-                    },
-                    'dateTimeFormats': {
-                        'full': '{1} \'u\' {0}',
-                        'long': '{1} \'u\' {0}',
-                        'medium': '{1} {0}',
-                        'short': '{1} {0}',
-                        'availableFormats': {
-                            'yMM': 'MM. y.',
-                            'yMEd': 'E, d. M. y.',
-                            'yMd': 'd. M. y.',
-                            'yM': 'M. y.',
-                            'y': 'y.',
-                            'ms': 'mm:ss',
-                            'Ed': 'E, d.',
-                            'd': 'd.',
-                            'GyMMMd': 'd. MMM y. G',
-                            'GyMMMEd': 'E, d. MMM y. G',
-                            'h': 'h a',
-                            'H': 'HH',
-                            'hm': 'hh:mm a',
-                            'Hm': 'HH:mm',
-                            'yQQQQ': 'QQQQ y.',
-                            'yQQQ': 'QQQ y.',
-                            'yMMMM': 'LLLL y.',
-                            'yMMMEd': 'E, d. MMM y.',
-                            'yMMMd': 'd. MMM y.',
-                            'yMMM': 'LLL y.',
-                            'Hms': 'HH:mm:ss',
-                            'hms': 'hh:mm:ss a',
-                            'Ehm': 'E h:mm a',
-                            'EHm': 'E HH:mm',
-                            'Ehms': 'E h:mm:ss a',
-                            'EHms': 'E HH:mm:ss',
-                            'Gy': 'y. G',
-                            'GyMMM': 'LLL y. G',
-                            'M': 'L.',
-                            'Md': 'd. M.',
-                            'MEd': 'E, d. M.',
-                            'MMdd': 'dd. MM.',
-                            'MMM': 'LLL',
-                            'MMMd': 'd. MMM',
-                            'MMMEd': 'E, d. MMM',
-                            'MMMMd': 'd. MMMM',
-                            'MMMMdd': 'dd. MMMM',
-                            'MMMMEd': 'E, d. MMMM'
-                        },
-                        'appendItems': {
-                            'Second': '{0} ({2}: {1})',
-                            'Quarter': '{0} ({2}: {1})',
-                            'Month': '{0} ({2}: {1})',
-                            'Year': '{1} {0}',
-                            'Week': '{0} ({2}: {1})',
-                            'Timezone': '{0} {1}',
-                            'Day': '{0} ({2}: {1})',
-                            'Day-Of-Week': '{0} {1}',
-                            'Era': '{1} {0}',
-                            'Hour': '{0} ({2}: {1})',
-                            'Minute': '{0} ({2}: {1})'
-                        },
-                        'intervalFormats': {
-                            'MMMEd': {
-                                'd': 'E, dd. - E, dd. MMM',
-                                'M': 'E, dd. MMM - E, dd. MMM'
-                            },
-                            'MMMd': {
-                                'd': 'dd. - dd. MMM',
-                                'M': 'dd. MMM - dd. MMM'
-                            },
-                            'MMM': {
-                                'M': 'LLL-LLL'
-                            },
-                            'MEd': {
-                                'd': 'E, dd.MM. - E, dd.MM.',
-                                'M': 'E, dd.MM. - E, dd.MM.'
-                            },
-                            'Md': {
-                                'd': 'dd.MM. - dd.MM.',
-                                'M': 'dd.MM. - dd.MM.'
-                            },
-                            'M': {
-                                'M': 'MM. - MM.'
-                            },
-                            'Hv': {
-                                'H': 'HH - HH \'h\' v'
-                            },
-                            'hv': {
-                                'a': 'h a - h a v',
-                                'h': 'h - h \'h\' a v'
-                            },
-                            'y': {
-                                'y': 'y. - y.'
-                            },
-                            'yM': {
-                                'M': 'MM.y. - MM.y.',
-                                'y': 'MM.y. - MM.y.'
-                            },
-                            'yMd': {
-                                'd': 'dd.MM.y. - dd.MM.y.',
-                                'M': 'dd.MM.y. - dd.MM.y.',
-                                'y': 'dd.MM.y. - dd.MM.y.'
-                            },
-                            'yMEd': {
-                                'd': 'E, dd.MM.y. - E, dd.MM.y.',
-                                'M': 'E, dd.MM.y. - E, dd.MM.y.',
-                                'y': 'E, dd.MM.y. - E, dd.MM.y.'
-                            },
-                            'yMMM': {
-                                'M': 'LLL-LLL y.',
-                                'y': 'LLL y. - LLL y.'
-                            },
-                            'yMMMd': {
-                                'd': 'dd. - dd. MMM y.',
-                                'M': 'dd. MMM - dd. MMM y.',
-                                'y': 'dd. MMM y. - dd. MMM y.'
-                            },
-                            'yMMMEd': {
-                                'd': 'E, dd. - E, dd. MMM y.',
-                                'M': 'E, dd. MMM - E, dd. MMM y.',
-                                'y': 'E, dd. MMM y. - E, dd. MMM y.'
-                            },
-                            'yMMMM': {
-                                'M': 'LLLL \u2013 LLLL y.',
-                                'y': 'LLLL y. - LLLL y.'
-                            },
-                            'Hmv': {
-                                'H': 'HH:mm-HH:mm v',
-                                'm': 'HH:mm-HH:mm v'
-                            },
-                            'hmv': {
-                                'a': 'h:mm a - h:mm a v',
-                                'h': 'h:mm-h:mm a v',
-                                'm': 'h:mm-h:mm a v'
-                            },
-                            'Hm': {
-                                'H': 'HH:mm-HH:mm',
-                                'm': 'HH:mm-HH:mm'
-                            },
-                            'hm': {
-                                'a': 'h:mm a - h:mm a',
-                                'h': 'h:mm-h:mm a',
-                                'm': 'h:mm-h:mm a'
-                            },
-                            'H': {
-                                'H': 'HH-HH\'h\''
-                            },
-                            'h': {
-                                'a': 'h a - h a',
-                                'h': 'h - h\'h\' a'
-                            },
-                            'd': {
-                                'd': 'dd. - dd.'
-                            },
-                            'intervalFormatFallback': '{0} - {1}'
-                        }
-                    }
+            'localeDisplayPattern': {
+                'localePattern': '{0} ({1})',
+                'localeSeparator': '{0}, {1}',
+                'localeKeyTypePattern': '{0}: {1}'
+            },
+            'keys': {
+                'colNormalization': 'Normalizirano poredavanje',
+                'collation': 'Redoslijed razvrstavanja',
+                'colHiraganaQuaternary': 'Poredavanje po pismu kana',
+                'colCaseLevel': 'Poredavanje u skladu s veli\u010Dinom slova',
+                'colCaseFirst': 'Poredavanje po velikim/malim slovima',
+                'colBackwards': 'Obrnuto poredavanje po naglasku',
+                'colAlternate': 'Zanemarivanje poredavanja simbola',
+                'calendar': 'kalendar',
+                'x': 'Privatna upotreba',
+                'variableTop': 'Poredaj kao simbole',
+                'va': 'Varijanta zemlje/jezika',
+                'timezone': 'Vremenska zona',
+                'numbers': 'brojevi',
+                'currency': 'valuta',
+                'colStrength': 'Ja\u010Dina poredavanja',
+                'colNumeric': 'Numeri\u010Dko poredavanje'
+            },
+            'types': {
+                'colHiraganaQuaternary': {
+                    'no': 'Poredaj pismo kana zasebno',
+                    'yes': 'Poredaj pismo kana druga\u010Dije'
+                },
+                'colCaseLevel': {
+                    'no': 'Poredaj zanemaruju\u0107i veli\u010Dinu',
+                    'yes': 'Poredaj u skladu s veli\u010Dinom slova'
+                },
+                'colCaseFirst': {
+                    'lower': 'Prvo poredaj mala slova',
+                    'no': 'Poredaj po normalnom poretku veli\u010Dine slova',
+                    'upper': 'Poredaj prvo velika slova'
+                },
+                'colStrength': {
+                    'identical': 'Poredaj sve',
+                    'primary': 'Poredaj samo po osnovnim slovima',
+                    'quaternary': 'Poredaj po naglascima/veli\u010Dini/\u0161irini/pismu kana',
+                    'secondary': 'Poredaj po naglasku',
+                    'tertiary': 'Poredaj po naglascima/veli\u010Dini/\u0161irini'
+                },
+                'colNumeric': {
+                    'no': 'Poredaj znamenke pojedina\u010Dno',
+                    'yes': 'Poredaj znamenke numeri\u010Dki'
+                },
+                'colNormalization': {
+                    'no': 'Poredaj bez normalizacije',
+                    'yes': 'Poredaj unikod normalizirano'
+                },
+                'calendar': {
+                    'japanese': 'japanski kalendar',
+                    'iso8601': 'iso8601',
+                    'coptic': 'Koptski kalendar',
+                    'dangi': 'Dangi kalendar',
+                    'ethiopic': 'Etiopski kalendar',
+                    'ethiopic-amete-alem': 'Etiopski kalendar "Amete Alem"',
+                    'gregorian': 'gregorijanski kalendar',
+                    'hebrew': 'hebrejski kalendar',
+                    'persian': 'Perzijski kalendar',
+                    'roc': 'kalendar Republike Kine',
+                    'chinese': 'kineski kalendar',
+                    'buddhist': 'budisti\u010Dki kalendar',
+                    'indian': 'indijski nacionalni kalendar',
+                    'islamic': 'islamski kalendar',
+                    'islamic-civil': 'islamski civilni kalendar',
+                    'islamic-rgsa': 'islamic-rgsa',
+                    'islamic-tbla': 'islamic-tbla',
+                    'islamic-umalqura': 'islamic-umalqura'
+                },
+                'collation': {
+                    'phonebook': 'razvrstavanje po abecedi',
+                    'gb2312han': 'razvrstavanje prema pojednostavljenom kineskom - GB2312',
+                    'eor': 'eor',
+                    'ducet': 'Standardno Unicode razvrstavanje',
+                    'dictionary': 'rje\u010Dni\u010Dko razvrstavanje',
+                    'big5han': 'razvrstavanje prema tradicionalnom kineskom - Big5',
+                    'traditional': 'tradicionalno razvrstavanje',
+                    'standard': 'Standardno razvrstavanje',
+                    'zhuyin': 'zhuyin razvrstavanje',
+                    'unihan': 'razvrstavanje prema korijenu i potezu',
+                    'stroke': 'razvrstavanje po redoslijedu poteza za kineski',
+                    'searchjl': 'Pretra\u017Eivanje po po\u010Detnom suglasniku hangula',
+                    'search': 'Op\u0107enito pretra\u017Eivanje',
+                    'reformed': 'reformirano razvrstavanje',
+                    'pinyin': 'Pinyin razvrstavanje',
+                    'phonetic': 'Fonetski poredak'
+                },
+                'numbers': {
+                    'knda': 'znamenke pisma kannada',
+                    'khmr': 'khmerske znamenke',
+                    'kali': 'kali',
+                    'jpanfin': 'japanski financijski brojevi',
+                    'jpan': 'japanski brojevi',
+                    'java': 'java',
+                    'hebr': 'hebrejski brojevi',
+                    'hantfin': 'tradicionalni kineski financijski brojevi',
+                    'hant': 'tradicionalni kineski brojevi',
+                    'hansfin': 'pojednostavljeni kineski financijski brojevi',
+                    'hans': 'pojednostavljeni kineski brojevi',
+                    'hanidec': 'kineski decimalni brojevi',
+                    'guru': 'znamenke pisma gurmukhi',
+                    'gujr': 'gud\u017Earatske znamenke',
+                    'greklow': 'mali gr\u010Dki brojevi',
+                    'grek': 'gr\u010Dki brojevi',
+                    'bali': 'bali',
+                    'armnlow': 'mali armenski brojevi',
+                    'armn': 'armenski brojevi',
+                    'arabext': 'pro\u0161irene arapsko-indijske znamenke',
+                    'arab': 'arapsko-indijske znamenke',
+                    'finance': 'Financijski brojevi',
+                    'traditional': 'Tradicionalni brojevi',
+                    'native': 'Izvorne znamenke',
+                    'beng': 'znamenke bengalskog pisma',
+                    'brah': 'brah',
+                    'cakm': 'cakm',
+                    'cham': 'cham',
+                    'deva': 'znamenke pisma devanagari',
+                    'orya': 'orijske znamenke',
+                    'osma': 'osma',
+                    'roman': 'rimski brojevi',
+                    'romanlow': 'mali rimski brojevi',
+                    'saur': 'saur',
+                    'shrd': 'shrd',
+                    'sora': 'sora',
+                    'sund': 'sund',
+                    'vaii': 'Vai znamenke',
+                    'tibt': 'tibetske znamenke',
+                    'thai': 'tajske znamenke',
+                    'telu': 'znamenke telu\u0161kog pisma',
+                    'tamldec': 'tamilske znamenke',
+                    'taml': 'tamilski brojevi',
+                    'talu': 'talu',
+                    'takr': 'takr',
+                    'olck': 'olck',
+                    'nkoo': 'nkoo',
+                    'mymrshan': 'mymrshan',
+                    'mymr': 'mijanmarske znamenke',
+                    'mtei': 'mtei',
+                    'mong': 'Mongolske znamenke',
+                    'mlym': 'malajalamske znamenke',
+                    'limb': 'limb',
+                    'lepc': 'lepc',
+                    'latn': 'arapski brojevi',
+                    'laoo': 'laoske znamenke',
+                    'lanatham': 'lanatham',
+                    'lana': 'lana',
+                    'geor': 'gruzijski brojevi',
+                    'fullwide': '\u0161iroke znamenke',
+                    'ethi': 'etiopski brojevi'
+                },
+                'colAlternate': {
+                    'non-ignorable': 'Poredaj simbole',
+                    'shifted': 'Poredaj zanemaruju\u0107i simbole'
+                },
+                'colBackwards': {
+                    'no': 'Poredaj naglaske normalno',
+                    'yes': 'Poredaj naglaske obrnuto'
+                }
+            },
+            'codePatterns': {
+                'language': 'Jezik: {0}',
+                'script': 'Pismo: {0}',
+                'territory': 'Regija: {0}'
+            },
+            'long': {
+                'mass-ounce': {
+                    'unitPattern-count-one': '{0} unca',
+                    'unitPattern-count-few': '{0} unce',
+                    'unitPattern-count-other': '{0} unci'
+                },
+                'mass-kilogram': {
+                    'unitPattern-count-one': '{0} kilogram',
+                    'unitPattern-count-few': '{0} kilograma',
+                    'unitPattern-count-other': '{0} kilograma'
+                },
+                'mass-gram': {
+                    'unitPattern-count-one': '{0} gram',
+                    'unitPattern-count-few': '{0} grama',
+                    'unitPattern-count-other': '{0} grama'
+                },
+                'length-yard': {
+                    'unitPattern-count-one': '{0} jard',
+                    'unitPattern-count-few': '{0} jarda',
+                    'unitPattern-count-other': '{0} jardi'
+                },
+                'length-picometer': {
+                    'unitPattern-count-one': '{0} pikometar',
+                    'unitPattern-count-few': '{0} pikometra',
+                    'unitPattern-count-other': '{0} pikometara'
+                },
+                'length-millimeter': {
+                    'unitPattern-count-one': '{0} milimetar',
+                    'unitPattern-count-few': '{0} milimetra',
+                    'unitPattern-count-other': '{0} milimetara'
+                },
+                'length-mile': {
+                    'unitPattern-count-one': '{0} milja',
+                    'unitPattern-count-few': '{0} milje',
+                    'unitPattern-count-other': '{0} milja'
+                },
+                'length-meter': {
+                    'unitPattern-count-one': '{0} metar',
+                    'unitPattern-count-few': '{0} metra',
+                    'unitPattern-count-other': '{0} metara'
+                },
+                'length-light-year': {
+                    'unitPattern-count-one': '{0} svjetlosna godina',
+                    'unitPattern-count-few': '{0} svjetlosne godine',
+                    'unitPattern-count-other': '{0} svjetlosnih godina'
+                },
+                'length-kilometer': {
+                    'unitPattern-count-one': '{0} kilometar',
+                    'unitPattern-count-few': '{0} kilometra',
+                    'unitPattern-count-other': '{0} kilometara'
+                },
+                'length-inch': {
+                    'unitPattern-count-one': '{0} in\u010D',
+                    'unitPattern-count-few': '{0} in\u010Da',
+                    'unitPattern-count-other': '{0} in\u010Da'
+                },
+                'length-foot': {
+                    'unitPattern-count-one': '{0} stopa',
+                    'unitPattern-count-few': '{0} stope',
+                    'unitPattern-count-other': '{0} stopa'
+                },
+                'length-centimeter': {
+                    'unitPattern-count-one': '{0} centimetar',
+                    'unitPattern-count-few': '{0} centimetra',
+                    'unitPattern-count-other': '{0} centimetara'
+                },
+                'duration-year': {
+                    'unitPattern-count-one': '{0} godina',
+                    'unitPattern-count-few': '{0} godine',
+                    'unitPattern-count-other': '{0} godina'
+                },
+                'duration-week': {
+                    'unitPattern-count-one': '{0} tjedan',
+                    'unitPattern-count-few': '{0} tjedna',
+                    'unitPattern-count-other': '{0} tjedana'
+                },
+                'duration-month': {
+                    'unitPattern-count-one': '{0} mjesec',
+                    'unitPattern-count-few': '{0} mjeseca',
+                    'unitPattern-count-other': '{0} mjeseci'
+                },
+                'mass-pound': {
+                    'unitPattern-count-one': '{0} funta',
+                    'unitPattern-count-few': '{0} funte',
+                    'unitPattern-count-other': '{0} funti'
+                },
+                'power-horsepower': {
+                    'unitPattern-count-one': '{0} konjska snaga',
+                    'unitPattern-count-few': '{0} konjske snage',
+                    'unitPattern-count-other': '{0} konjskih snaga'
+                },
+                'power-kilowatt': {
+                    'unitPattern-count-one': '{0} kilovat',
+                    'unitPattern-count-few': '{0} kilovata',
+                    'unitPattern-count-other': '{0} kilovata'
+                },
+                'power-watt': {
+                    'unitPattern-count-one': '{0} vat',
+                    'unitPattern-count-few': '{0} vata',
+                    'unitPattern-count-other': '{0} vati'
+                },
+                'pressure-hectopascal': {
+                    'unitPattern-count-one': '{0} hektopaskal',
+                    'unitPattern-count-few': '{0} hektopaskala',
+                    'unitPattern-count-other': '{0} hektopaskala'
+                },
+                'pressure-inch-hg': {
+                    'unitPattern-count-one': '{0} in\u010D \u017Eive',
+                    'unitPattern-count-few': '{0} in\u010Da \u017Eive',
+                    'unitPattern-count-other': '{0} in\u010Da \u017Eive'
+                },
+                'pressure-millibar': {
+                    'unitPattern-count-one': '{0} milibar',
+                    'unitPattern-count-few': '{0} milibara',
+                    'unitPattern-count-other': '{0} milibara'
+                },
+                'volume-liter': {
+                    'unitPattern-count-one': '{0} litra',
+                    'unitPattern-count-few': '{0} litre',
+                    'unitPattern-count-other': '{0} litara'
+                },
+                'volume-cubic-mile': {
+                    'unitPattern-count-one': '{0} kubna milja',
+                    'unitPattern-count-few': '{0} kubne milje',
+                    'unitPattern-count-other': '{0} kubnih milja'
+                },
+                'volume-cubic-kilometer': {
+                    'unitPattern-count-one': '{0} kubni kilometar',
+                    'unitPattern-count-few': '{0} kubna kilometra',
+                    'unitPattern-count-other': '{0} kubnih kilometara'
+                },
+                'temperature-fahrenheit': {
+                    'unitPattern-count-one': '{0} Fahrenheitov stupanj',
+                    'unitPattern-count-few': '{0} Fahrenheitova stupnja',
+                    'unitPattern-count-other': '{0} Fahrenheitovih stupnjeva'
+                },
+                'temperature-celsius': {
+                    'unitPattern-count-one': '{0} Celzijev stupanj',
+                    'unitPattern-count-few': '{0} Celzijeva stupnja',
+                    'unitPattern-count-other': '{0} Celzijevih stupnjeva'
+                },
+                'speed-mile-per-hour': {
+                    'unitPattern-count-one': '{0} milja na sat',
+                    'unitPattern-count-few': '{0} milje na sat',
+                    'unitPattern-count-other': '{0} milja na sat'
+                },
+                'speed-meter-per-second': {
+                    'unitPattern-count-one': '{0} metar u sekundi',
+                    'unitPattern-count-few': '{0} metra u sekundi',
+                    'unitPattern-count-other': '{0} metara u sekundi'
+                },
+                'speed-kilometer-per-hour': {
+                    'unitPattern-count-one': '{0} kilometar na sat',
+                    'unitPattern-count-few': '{0} kilometra na sat',
+                    'unitPattern-count-other': '{0} kilometara na sat'
+                },
+                'duration-minute': {
+                    'unitPattern-count-one': '{0} minuta',
+                    'unitPattern-count-few': '{0} minute',
+                    'unitPattern-count-other': '{0} minuta'
+                },
+                'duration-millisecond': {
+                    'unitPattern-count-one': '{0} milisekunda',
+                    'unitPattern-count-few': '{0} milisekunde',
+                    'unitPattern-count-other': '{0} milisekundi'
+                },
+                'duration-hour': {
+                    'unitPattern-count-one': '{0} sat',
+                    'unitPattern-count-few': '{0} sata',
+                    'unitPattern-count-other': '{0} sati'
+                },
+                'duration-day': {
+                    'unitPattern-count-one': '{0} dan',
+                    'unitPattern-count-few': '{0} dana',
+                    'unitPattern-count-other': '{0} dana'
+                },
+                'area-square-mile': {
+                    'unitPattern-count-one': '{0} kvadratna milja',
+                    'unitPattern-count-few': '{0} kvadratne milje',
+                    'unitPattern-count-other': '{0} kvadratnih milja'
+                },
+                'area-square-meter': {
+                    'unitPattern-count-one': '{0} kvadratni metar',
+                    'unitPattern-count-few': '{0} kvadratna metra',
+                    'unitPattern-count-other': '{0} kvadratnih metara'
+                },
+                'area-square-kilometer': {
+                    'unitPattern-count-one': '{0} kvadratni kilometar',
+                    'unitPattern-count-few': '{0} kvadratna kilometra',
+                    'unitPattern-count-other': '{0} kvadratnih kilometara'
+                },
+                'per': {
+                    'compoundUnitPattern': '{0}/{1}'
+                },
+                'acceleration-g-force': {
+                    'unitPattern-count-one': '{0} G',
+                    'unitPattern-count-few': '{0} G',
+                    'unitPattern-count-other': '{0} G'
+                },
+                'angle-arc-minute': {
+                    'unitPattern-count-one': '{0} minuta',
+                    'unitPattern-count-few': '{0} minute',
+                    'unitPattern-count-other': '{0} minuta'
+                },
+                'angle-arc-second': {
+                    'unitPattern-count-one': '{0} sekunda',
+                    'unitPattern-count-few': '{0} sekunde',
+                    'unitPattern-count-other': '{0} sekundi'
+                },
+                'angle-degree': {
+                    'unitPattern-count-one': '{0} stupanj',
+                    'unitPattern-count-few': '{0} stupnja',
+                    'unitPattern-count-other': '{0} stupnjeva'
+                },
+                'area-acre': {
+                    'unitPattern-count-one': '{0} katastarsko jutro',
+                    'unitPattern-count-few': '{0} katastarska jutra',
+                    'unitPattern-count-other': '{0} katastarskih jutara'
+                },
+                'area-hectare': {
+                    'unitPattern-count-one': '{0} hektar',
+                    'unitPattern-count-few': '{0} hektra',
+                    'unitPattern-count-other': '{0} hektara'
+                },
+                'area-square-foot': {
+                    'unitPattern-count-one': '{0} kvadratna stopa',
+                    'unitPattern-count-few': '{0} kvadratne stope',
+                    'unitPattern-count-other': '{0} kvadratnih stopa'
+                },
+                'duration-second': {
+                    'unitPattern-count-one': '{0} sekunda',
+                    'unitPattern-count-few': '{0} sekunde',
+                    'unitPattern-count-other': '{0} sekundi'
+                }
+            },
+            'short': {
+                'mass-ounce': {
+                    'unitPattern-count-one': '{0} oz',
+                    'unitPattern-count-few': '{0} oz',
+                    'unitPattern-count-other': '{0} oz'
+                },
+                'mass-kilogram': {
+                    'unitPattern-count-one': '{0} kg',
+                    'unitPattern-count-few': '{0} kg',
+                    'unitPattern-count-other': '{0} kg'
+                },
+                'mass-gram': {
+                    'unitPattern-count-one': '{0} g',
+                    'unitPattern-count-few': '{0} g',
+                    'unitPattern-count-other': '{0} g'
+                },
+                'length-yard': {
+                    'unitPattern-count-one': '{0} yd',
+                    'unitPattern-count-few': '{0} yd',
+                    'unitPattern-count-other': '{0} yd'
+                },
+                'length-picometer': {
+                    'unitPattern-count-one': '{0} pm',
+                    'unitPattern-count-few': '{0} pm',
+                    'unitPattern-count-other': '{0} pm'
+                },
+                'length-millimeter': {
+                    'unitPattern-count-one': '{0} mm',
+                    'unitPattern-count-few': '{0} mm',
+                    'unitPattern-count-other': '{0} mm'
+                },
+                'length-mile': {
+                    'unitPattern-count-one': '{0} mi',
+                    'unitPattern-count-few': '{0} mi',
+                    'unitPattern-count-other': '{0} mi'
+                },
+                'length-meter': {
+                    'unitPattern-count-one': '{0} m',
+                    'unitPattern-count-few': '{0} m',
+                    'unitPattern-count-other': '{0} m'
+                },
+                'length-light-year': {
+                    'unitPattern-count-one': '{0} ly',
+                    'unitPattern-count-few': '{0} ly',
+                    'unitPattern-count-other': '{0} ly'
+                },
+                'length-kilometer': {
+                    'unitPattern-count-one': '{0} km',
+                    'unitPattern-count-few': '{0} km',
+                    'unitPattern-count-other': '{0} km'
+                },
+                'length-inch': {
+                    'unitPattern-count-one': '{0} in',
+                    'unitPattern-count-few': '{0} in',
+                    'unitPattern-count-other': '{0} in'
+                },
+                'length-foot': {
+                    'unitPattern-count-one': '{0} ft',
+                    'unitPattern-count-few': '{0} ft',
+                    'unitPattern-count-other': '{0} ft'
+                },
+                'length-centimeter': {
+                    'unitPattern-count-one': '{0} cm',
+                    'unitPattern-count-few': '{0} cm',
+                    'unitPattern-count-other': '{0} cm'
+                },
+                'duration-year': {
+                    'unitPattern-count-one': '{0} g.',
+                    'unitPattern-count-few': '{0} g.',
+                    'unitPattern-count-other': '{0} g.'
+                },
+                'duration-week': {
+                    'unitPattern-count-one': '{0} tj.',
+                    'unitPattern-count-few': '{0} tj.',
+                    'unitPattern-count-other': '{0} tj.'
+                },
+                'duration-month': {
+                    'unitPattern-count-one': '{0} mj.',
+                    'unitPattern-count-few': '{0} mj.',
+                    'unitPattern-count-other': '{0} mj.'
+                },
+                'mass-pound': {
+                    'unitPattern-count-one': '{0} lb',
+                    'unitPattern-count-few': '{0} lb',
+                    'unitPattern-count-other': '{0} lb'
+                },
+                'power-horsepower': {
+                    'unitPattern-count-one': '{0} KS',
+                    'unitPattern-count-few': '{0} KS',
+                    'unitPattern-count-other': '{0} KS'
+                },
+                'power-kilowatt': {
+                    'unitPattern-count-one': '{0} kW',
+                    'unitPattern-count-few': '{0} kW',
+                    'unitPattern-count-other': '{0} kW'
+                },
+                'power-watt': {
+                    'unitPattern-count-one': '{0} W',
+                    'unitPattern-count-few': '{0} W',
+                    'unitPattern-count-other': '{0} W'
+                },
+                'pressure-hectopascal': {
+                    'unitPattern-count-one': '{0} hPa',
+                    'unitPattern-count-few': '{0} hPa',
+                    'unitPattern-count-other': '{0} hPa'
+                },
+                'pressure-inch-hg': {
+                    'unitPattern-count-one': '{0} inHg',
+                    'unitPattern-count-few': '{0} inHg',
+                    'unitPattern-count-other': '{0} inHg'
+                },
+                'pressure-millibar': {
+                    'unitPattern-count-one': '{0} mbar',
+                    'unitPattern-count-few': '{0} mbar',
+                    'unitPattern-count-other': '{0} mbar'
+                },
+                'volume-liter': {
+                    'unitPattern-count-one': '{0} l',
+                    'unitPattern-count-few': '{0} l',
+                    'unitPattern-count-other': '{0} l'
+                },
+                'volume-cubic-mile': {
+                    'unitPattern-count-one': '{0} mi\u00B3',
+                    'unitPattern-count-few': '{0} mi\u00B3',
+                    'unitPattern-count-other': '{0} mi\u00B3'
+                },
+                'volume-cubic-kilometer': {
+                    'unitPattern-count-one': '{0} km\u00B3',
+                    'unitPattern-count-few': '{0} km\u00B3',
+                    'unitPattern-count-other': '{0} km\u00B3'
+                },
+                'temperature-fahrenheit': {
+                    'unitPattern-count-one': '{0}\u00B0F',
+                    'unitPattern-count-few': '{0}\u00B0F',
+                    'unitPattern-count-other': '{0}\u00B0F'
+                },
+                'temperature-celsius': {
+                    'unitPattern-count-one': '{0}\u00B0C',
+                    'unitPattern-count-few': '{0}\u00B0C',
+                    'unitPattern-count-other': '{0}\u00B0C'
+                },
+                'speed-mile-per-hour': {
+                    'unitPattern-count-one': '{0} mi/h',
+                    'unitPattern-count-few': '{0} mi/h',
+                    'unitPattern-count-other': '{0} mi/h'
+                },
+                'speed-meter-per-second': {
+                    'unitPattern-count-one': '{0} m/s',
+                    'unitPattern-count-few': '{0} m/s',
+                    'unitPattern-count-other': '{0} m/s'
+                },
+                'speed-kilometer-per-hour': {
+                    'unitPattern-count-one': '{0} km/h',
+                    'unitPattern-count-few': '{0} km/h',
+                    'unitPattern-count-other': '{0} km/h'
+                },
+                'duration-minute': {
+                    'unitPattern-count-one': '{0} min',
+                    'unitPattern-count-few': '{0} min',
+                    'unitPattern-count-other': '{0} min'
+                },
+                'duration-millisecond': {
+                    'unitPattern-count-one': '{0} ms',
+                    'unitPattern-count-few': '{0} ms',
+                    'unitPattern-count-other': '{0} ms'
+                },
+                'duration-hour': {
+                    'unitPattern-count-one': '{0} h',
+                    'unitPattern-count-few': '{0} h',
+                    'unitPattern-count-other': '{0} h'
+                },
+                'duration-day': {
+                    'unitPattern-count-one': '{0} dan',
+                    'unitPattern-count-few': '{0} dana',
+                    'unitPattern-count-other': '{0} dana'
+                },
+                'area-square-mile': {
+                    'unitPattern-count-one': '{0} mi\u00B2',
+                    'unitPattern-count-few': '{0} mi\u00B2',
+                    'unitPattern-count-other': '{0} mi\u00B2'
+                },
+                'area-square-meter': {
+                    'unitPattern-count-one': '{0} m\u00B2',
+                    'unitPattern-count-few': '{0} m\u00B2',
+                    'unitPattern-count-other': '{0} m\u00B2'
+                },
+                'area-square-kilometer': {
+                    'unitPattern-count-one': '{0} km\u00B2',
+                    'unitPattern-count-few': '{0} km\u00B2',
+                    'unitPattern-count-other': '{0} km\u00B2'
+                },
+                'per': {
+                    'compoundUnitPattern': '{0}/{1}'
+                },
+                'acceleration-g-force': {
+                    'unitPattern-count-one': '{0} G',
+                    'unitPattern-count-few': '{0} G',
+                    'unitPattern-count-other': '{0} G'
+                },
+                'angle-arc-minute': {
+                    'unitPattern-count-one': '{0} min',
+                    'unitPattern-count-few': '{0} min',
+                    'unitPattern-count-other': '{0} min'
+                },
+                'angle-arc-second': {
+                    'unitPattern-count-one': '{0} s',
+                    'unitPattern-count-few': '{0} s',
+                    'unitPattern-count-other': '{0} s'
+                },
+                'angle-degree': {
+                    'unitPattern-count-one': '{0}\u00B0',
+                    'unitPattern-count-few': '{0}\u00B0',
+                    'unitPattern-count-other': '{0}\u00B0'
+                },
+                'area-acre': {
+                    'unitPattern-count-one': '{0} kj',
+                    'unitPattern-count-few': '{0} kj',
+                    'unitPattern-count-other': '{0} kj'
+                },
+                'area-hectare': {
+                    'unitPattern-count-one': '{0} ha',
+                    'unitPattern-count-few': '{0} ha',
+                    'unitPattern-count-other': '{0} ha'
+                },
+                'area-square-foot': {
+                    'unitPattern-count-one': '{0} ft\u00B2',
+                    'unitPattern-count-few': '{0} ft\u00B2',
+                    'unitPattern-count-other': '{0} ft\u00B2'
+                },
+                'duration-second': {
+                    'unitPattern-count-one': '{0} s',
+                    'unitPattern-count-few': '{0} s',
+                    'unitPattern-count-other': '{0} s'
                 }
             }
         });

@@ -1,9 +1,6 @@
 /* AstroDate
- * Language: <%= id %>
- * ca-gregorian: <%= version1 %>
- * timeZoneNames: <%= version2 %>
- * localeDisplayNames: <%= version3 %>
- * units: <%= version4 %>
+ *
+ * supplemental
  *
  * home: https://github.com/Xotic750/astrodate
  *
@@ -41,7 +38,7 @@
 
         /*global */
     }(function (AstroDate) {
-        AstroDate.lang("<%= id %>", <%= data %>);
+        AstroDate.supplemental(<%= data %>);
     }));
 }((function (thisContext) {
     "use strict";

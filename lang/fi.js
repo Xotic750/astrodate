@@ -3,6 +3,7 @@
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
  * localeDisplayNames: 24r9287
+ * units: 24r9287
  *
  * home: https://github.com/Xotic750/astrodate
  *
@@ -41,172 +42,633 @@
         /*global */
     }(function (AstroDate) {
         AstroDate.lang('fi', {
-            'codePatterns': {
-                'language': 'kieli: {0}',
-                'script': 'kirjoitusj\u00E4rjestelm\u00E4: {0}',
-                'territory': 'alue: {0}'
+            'durationUnit-type-ms': {
+                'durationUnitPattern': 'm.ss'
             },
-            'types': {
-                'colHiraganaQuaternary': {
-                    'no': 'Lajittele kana-merkit erikseen',
-                    'yes': 'Lajittele kana-merkit erikseen'
+            'durationUnit-type-hms': {
+                'durationUnitPattern': 'h.mm.ss'
+            },
+            'durationUnit-type-hm': {
+                'durationUnitPattern': 'h.mm'
+            },
+            'narrow': {
+                'mass-ounce': {
+                    'unitPattern-count-one': '{0}oz',
+                    'unitPattern-count-other': '{0}oz'
                 },
-                'colCaseLevel': {
-                    'no': 'Lajittele ilman isojen ja pienten kirjainten erottelua',
-                    'yes': 'Lajittele isojen ja pienten kirjainten mukaan'
+                'mass-kilogram': {
+                    'unitPattern-count-one': '{0}kg',
+                    'unitPattern-count-other': '{0}kg'
                 },
-                'colCaseFirst': {
-                    'lower': 'Lajittele pienet kirjaimet ensin',
-                    'no': 'Lajittele isot ja pienet kirjaimet normaalisti',
-                    'upper': 'Lajittele isot kirjaimet ensin'
+                'mass-gram': {
+                    'unitPattern-count-one': '{0}g',
+                    'unitPattern-count-other': '{0}g'
                 },
-                'colStrength': {
-                    'identical': 'Lajittele kaikki',
-                    'primary': 'Lajittele vain peruskirjaimet',
-                    'quaternary': 'Lajittele painomerkit/koko/leveys/kana-merkit',
-                    'secondary': 'Lajittele painomerkit',
-                    'tertiary': 'Lajittele painomerkit/koko/leveys'
+                'length-yard': {
+                    'unitPattern-count-one': '{0}yd',
+                    'unitPattern-count-other': '{0}yd'
                 },
-                'colNumeric': {
-                    'no': 'Lajittele numerot erikseen',
-                    'yes': 'Lajittele numerot numeerisesti'
+                'length-picometer': {
+                    'unitPattern-count-one': '{0}pm',
+                    'unitPattern-count-other': '{0}pm'
                 },
-                'colNormalization': {
-                    'no': 'Lajittele ilman normalisointia',
-                    'yes': 'Lajittele Unicode normalisoituna'
+                'length-millimeter': {
+                    'unitPattern-count-one': '{0}mm',
+                    'unitPattern-count-other': '{0}mm'
                 },
-                'calendar': {
-                    'japanese': 'japanilainen kalenteri',
-                    'iso8601': 'iso8601',
-                    'coptic': 'koptilainen kalenteri',
-                    'dangi': 'dangilainen kalenteri',
-                    'ethiopic': 'etiopialainen kalenteri',
-                    'ethiopic-amete-alem': 'etiopialainen amete alem -kalenteri',
-                    'gregorian': 'gregoriaaninen kalenteri',
-                    'hebrew': 'juutalainen kalenteri',
-                    'persian': 'persialainen kalenteri',
-                    'roc': 'Kiinan tasavallan kalenteri',
-                    'chinese': 'kiinalainen kalenteri',
-                    'buddhist': 'buddhalainen kalenteri',
-                    'indian': 'intialainen kalenteri',
-                    'islamic': 'islamilainen kalenteri',
-                    'islamic-civil': 'islamilainen siviilikalenteri',
-                    'islamic-rgsa': 'islamic-rgsa',
-                    'islamic-tbla': 'islamic-tbla',
-                    'islamic-umalqura': 'islamic-umalqura'
+                'length-mile': {
+                    'unitPattern-count-one': '{0}mi',
+                    'unitPattern-count-other': '{0}mi'
                 },
-                'collation': {
-                    'phonebook': 'puhelinluetteloj\u00E4rjestys',
-                    'gb2312han': 'yksinkertaistettu kiinalainen j\u00E4rjestys GB2312',
-                    'eor': 'yleiseurooppalainen lajitteluj\u00E4rjestys',
-                    'ducet': 'Unicoden oletusj\u00E4rjestys',
-                    'dictionary': 'sanakirjaj\u00E4rjestys',
-                    'big5han': 'perinteinen kiinalainen j\u00E4rjestys Big5',
-                    'traditional': 'perinteinen j\u00E4rjestys',
-                    'standard': 'normaalij\u00E4rjestys',
-                    'zhuyin': 'zhuyin-j\u00E4rjestys',
-                    'unihan': 'radikaali- ja piirtoj\u00E4rjestys',
-                    'stroke': 'piirtoj\u00E4rjestys',
-                    'searchjl': 'haku hangul-alkukonsonantin mukaan',
-                    'search': 'yleishakuj\u00E4rjestys',
-                    'reformed': 'uudistettu j\u00E4rjestys',
-                    'pinyin': 'pinyin-j\u00E4rjestys',
-                    'phonetic': '\u00E4\u00E4nteellinen j\u00E4rjestys'
+                'length-meter': {
+                    'unitPattern-count-one': '{0}m',
+                    'unitPattern-count-other': '{0}m'
                 },
-                'numbers': {
-                    'knda': 'kannadalaiset numerot',
-                    'khmr': 'khmeril\u00E4iset numerot',
-                    'kali': 'kayah li -numerot',
-                    'jpanfin': 'japanilaiset talousnumerot',
-                    'jpan': 'japanilaiset numerot',
-                    'java': 'jaavalaiset numerot',
-                    'hebr': 'heprealaiset numerot',
-                    'hantfin': 'perinteiset kiinalaiset talousnumerot',
-                    'hant': 'perinteiset kiinalaiset numerot',
-                    'hansfin': 'yksinkertaistetut kiinalaiset talousnumerot',
-                    'hans': 'yksinkertaistetut kiinalaiset numerot',
-                    'hanidec': 'kiinalaiset desimaalinumerot',
-                    'guru': 'gurmukhilaiset numerot',
-                    'gujr': 'gud\u017Earatilaiset numerot',
-                    'greklow': 'kreikkalaiset piennumerot',
-                    'grek': 'kreikkalaiset numerot',
-                    'bali': 'balilaiset numerot',
-                    'armnlow': 'armenialaiset piennumerot',
-                    'armn': 'armenialaiset numerot',
-                    'arabext': 'laajennetut arabialaiset numerot',
-                    'arab': 'arabialaiset numerot',
-                    'finance': 'talousnumerot',
-                    'traditional': 'perinteiset numerot',
-                    'native': 'Kielen omat numerot',
-                    'beng': 'bengalilaiset numerot',
-                    'brah': 'brahmilaiset numerot',
-                    'cakm': 'chakmalaiset numerot',
-                    'cham': 'cham-numerot',
-                    'deva': 'devanagarinumerot',
-                    'orya': 'orijalaiset numerot',
-                    'osma': 'osma',
-                    'roman': 'roomalaiset numerot',
-                    'romanlow': 'roomalaiset piennumerot',
-                    'saur': 'saurashtra-numerot',
-                    'shrd': 'shrd',
-                    'sora': 'sora sompeng -numerot',
-                    'sund': 'sundalaiset numerot',
-                    'vaii': 'vai-numerot',
-                    'tibt': 'tiibetil\u00E4iset numerot',
-                    'thai': 'thainumerot',
-                    'telu': 'telugulaiset numerot',
-                    'tamldec': 'tamilinumerot',
-                    'taml': 'perinteiset tamilinumerot',
-                    'talu': 'uudet tai lue -numerot',
-                    'takr': 'takr',
-                    'olck': 'ol chiki -numerot',
-                    'nkoo': 'n\'ko-numerot',
-                    'mymrshan': 'myanmarin shan-numerot',
-                    'mymr': 'burmalaiset numerot',
-                    'mtei': 'meetei mayek -numerot',
-                    'mong': 'mongolialaiset numerot',
-                    'mlym': 'malajalamilaiset numerot',
-                    'limb': 'limbunumerot',
-                    'lepc': 'lepchanumerot',
-                    'latn': 'l\u00E4nsimaiset numerot',
-                    'laoo': 'laolaiset numerot',
-                    'lanatham': 'taithamin tham-numerot',
-                    'lana': 'taithamin hora-numerot',
-                    'geor': 'georgialaiset numerot',
-                    'fullwide': 'ideografin levyiset numerot',
-                    'ethi': 'etiopialaiset numerot'
+                'length-light-year': {
+                    'unitPattern-count-one': '{0}vv',
+                    'unitPattern-count-other': '{0}vv'
                 },
-                'colAlternate': {
-                    'non-ignorable': 'Lajittele symbolit',
-                    'shifted': 'Lajittele symbolit ohittaen'
+                'length-kilometer': {
+                    'unitPattern-count-one': '{0}km',
+                    'unitPattern-count-other': '{0}km'
                 },
-                'colBackwards': {
-                    'no': 'Lajittele painomerkit normaalisti',
-                    'yes': 'Lajittele painomerkit k\u00E4\u00E4nteisesti'
+                'length-inch': {
+                    'unitPattern-count-one': '{0}\u2033',
+                    'unitPattern-count-other': '{0}\u2033'
+                },
+                'length-foot': {
+                    'unitPattern-count-one': '{0}\u2032',
+                    'unitPattern-count-other': '{0}\u2032'
+                },
+                'length-centimeter': {
+                    'unitPattern-count-one': '{0}cm',
+                    'unitPattern-count-other': '{0}cm'
+                },
+                'duration-year': {
+                    'unitPattern-count-one': '{0}v',
+                    'unitPattern-count-other': '{0}v'
+                },
+                'duration-week': {
+                    'unitPattern-count-one': '{0}vk',
+                    'unitPattern-count-other': '{0}vk'
+                },
+                'duration-month': {
+                    'unitPattern-count-one': '{0}kk',
+                    'unitPattern-count-other': '{0}kk'
+                },
+                'mass-pound': {
+                    'unitPattern-count-one': '{0}lb',
+                    'unitPattern-count-other': '{0}lb'
+                },
+                'power-horsepower': {
+                    'unitPattern-count-one': '{0}hv',
+                    'unitPattern-count-other': '{0}hv'
+                },
+                'power-kilowatt': {
+                    'unitPattern-count-one': '{0}kW',
+                    'unitPattern-count-other': '{0}kW'
+                },
+                'power-watt': {
+                    'unitPattern-count-one': '{0}W',
+                    'unitPattern-count-other': '{0}W'
+                },
+                'pressure-hectopascal': {
+                    'unitPattern-count-one': '{0}hPa',
+                    'unitPattern-count-other': '{0}hPa'
+                },
+                'pressure-inch-hg': {
+                    'unitPattern-count-one': '{0}\u2033 Hg',
+                    'unitPattern-count-other': '{0}\u2033 Hg'
+                },
+                'pressure-millibar': {
+                    'unitPattern-count-one': '{0}mbar',
+                    'unitPattern-count-other': '{0}mbar'
+                },
+                'volume-liter': {
+                    'unitPattern-count-one': '{0}l',
+                    'unitPattern-count-other': '{0}l'
+                },
+                'volume-cubic-mile': {
+                    'unitPattern-count-one': '{0}mi\u00B3',
+                    'unitPattern-count-other': '{0}mi\u00B3'
+                },
+                'volume-cubic-kilometer': {
+                    'unitPattern-count-one': '{0}km\u00B3',
+                    'unitPattern-count-other': '{0}km\u00B3'
+                },
+                'temperature-fahrenheit': {
+                    'unitPattern-count-one': '{0}\u00B0F',
+                    'unitPattern-count-other': '{0}\u00B0F'
+                },
+                'temperature-celsius': {
+                    'unitPattern-count-one': '{0}\u00B0',
+                    'unitPattern-count-other': '{0}\u00B0'
+                },
+                'speed-mile-per-hour': {
+                    'unitPattern-count-one': '{0}mi/h',
+                    'unitPattern-count-other': '{0}mi/h'
+                },
+                'speed-meter-per-second': {
+                    'unitPattern-count-one': '{0}m/s',
+                    'unitPattern-count-other': '{0}m/s'
+                },
+                'speed-kilometer-per-hour': {
+                    'unitPattern-count-one': '{0}km/h',
+                    'unitPattern-count-other': '{0}km/h'
+                },
+                'duration-minute': {
+                    'unitPattern-count-one': '{0}min',
+                    'unitPattern-count-other': '{0}min'
+                },
+                'duration-millisecond': {
+                    'unitPattern-count-one': '{0}ms',
+                    'unitPattern-count-other': '{0}ms'
+                },
+                'duration-hour': {
+                    'unitPattern-count-one': '{0}t',
+                    'unitPattern-count-other': '{0}t'
+                },
+                'duration-day': {
+                    'unitPattern-count-one': '{0}pv',
+                    'unitPattern-count-other': '{0}pv'
+                },
+                'area-square-mile': {
+                    'unitPattern-count-one': '{0}mi\u00B2',
+                    'unitPattern-count-other': '{0}mi\u00B2'
+                },
+                'area-square-meter': {
+                    'unitPattern-count-one': '{0}m\u00B2',
+                    'unitPattern-count-other': '{0}m\u00B2'
+                },
+                'area-square-kilometer': {
+                    'unitPattern-count-one': '{0}km\u00B2',
+                    'unitPattern-count-other': '{0}km\u00B2'
+                },
+                'per': {
+                    'compoundUnitPattern': '{0}/{1}'
+                },
+                'acceleration-g-force': {
+                    'unitPattern-count-one': '{0}G',
+                    'unitPattern-count-other': '{0}G'
+                },
+                'angle-arc-minute': {
+                    'unitPattern-count-one': '{0}\u2032',
+                    'unitPattern-count-other': '{0}\u2032'
+                },
+                'angle-arc-second': {
+                    'unitPattern-count-one': '{0}\u2033',
+                    'unitPattern-count-other': '{0}\u2033'
+                },
+                'angle-degree': {
+                    'unitPattern-count-one': '{0}\u00B0',
+                    'unitPattern-count-other': '{0}\u00B0'
+                },
+                'area-acre': {
+                    'unitPattern-count-one': '{0}ac',
+                    'unitPattern-count-other': '{0}ac'
+                },
+                'area-hectare': {
+                    'unitPattern-count-one': '{0}ha',
+                    'unitPattern-count-other': '{0}ha'
+                },
+                'area-square-foot': {
+                    'unitPattern-count-one': '{0}ft\u00B2',
+                    'unitPattern-count-other': '{0}ft\u00B2'
+                },
+                'duration-second': {
+                    'unitPattern-count-one': '{0}s',
+                    'unitPattern-count-other': '{0}s'
                 }
             },
-            'keys': {
-                'colNormalization': 'Normalisoitu lajittelu',
-                'collation': 'lajitteluj\u00E4rjestys',
-                'colHiraganaQuaternary': 'Kana-lajittelu',
-                'colCaseLevel': 'Isot ja pienet kirjaimet erotteleva lajittelu',
-                'colCaseFirst': 'J\u00E4rjestys isojen/pienten kirjainten mukaan',
-                'colBackwards': 'K\u00E4\u00E4nteinen painomerkki -lajittelu',
-                'colAlternate': 'Ohita symbolit -lajittelu',
-                'calendar': 'kalenteri',
-                'x': 'yksityisk\u00E4ytt\u00F6',
-                'variableTop': 'lajittele symboleina',
-                'va': 'maavalinnan muunnelma',
-                'timezone': 'aikavy\u00F6hyke',
-                'numbers': 'numerot',
-                'currency': 'valuutta',
-                'colStrength': 'Lajittelun vahvuus',
-                'colNumeric': 'Numeerinen lajittelu'
-            },
-            'localeDisplayPattern': {
-                'localePattern': '{0} ({1})',
-                'localeSeparator': '{0}, {1}',
-                'localeKeyTypePattern': '{0}: {1}'
+            'calendars': {
+                'gregorian': {
+                    'months': {
+                        'format': {
+                            'abbreviated': {
+                                '8': 'elokuuta',
+                                '7': 'hein\u00E4kuuta',
+                                '6': 'kes\u00E4kuuta',
+                                '5': 'toukokuuta',
+                                '12': 'joulukuuta',
+                                '11': 'marraskuuta',
+                                '10': 'lokakuuta',
+                                '9': 'syyskuuta',
+                                '1': 'tammikuuta',
+                                '2': 'helmikuuta',
+                                '3': 'maaliskuuta',
+                                '4': 'huhtikuuta'
+                            },
+                            'narrow': {
+                                '8': 'E',
+                                '7': 'H',
+                                '6': 'K',
+                                '5': 'T',
+                                '12': 'J',
+                                '11': 'M',
+                                '10': 'L',
+                                '9': 'S',
+                                '1': 'T',
+                                '2': 'H',
+                                '3': 'M',
+                                '4': 'H'
+                            },
+                            'wide': {
+                                '8': 'elokuuta',
+                                '7': 'hein\u00E4kuuta',
+                                '6': 'kes\u00E4kuuta',
+                                '5': 'toukokuuta',
+                                '12': 'joulukuuta',
+                                '11': 'marraskuuta',
+                                '10': 'lokakuuta',
+                                '9': 'syyskuuta',
+                                '1': 'tammikuuta',
+                                '2': 'helmikuuta',
+                                '3': 'maaliskuuta',
+                                '4': 'huhtikuuta'
+                            }
+                        },
+                        'stand-alone': {
+                            'abbreviated': {
+                                '8': 'elo',
+                                '7': 'hein\u00E4',
+                                '6': 'kes\u00E4',
+                                '5': 'touko',
+                                '12': 'joulu',
+                                '11': 'marras',
+                                '10': 'loka',
+                                '9': 'syys',
+                                '1': 'tammi',
+                                '2': 'helmi',
+                                '3': 'maalis',
+                                '4': 'huhti'
+                            },
+                            'narrow': {
+                                '8': 'E',
+                                '7': 'H',
+                                '6': 'K',
+                                '5': 'T',
+                                '12': 'J',
+                                '11': 'M',
+                                '10': 'L',
+                                '9': 'S',
+                                '1': 'T',
+                                '2': 'H',
+                                '3': 'M',
+                                '4': 'H'
+                            },
+                            'wide': {
+                                '8': 'elokuu',
+                                '7': 'hein\u00E4kuu',
+                                '6': 'kes\u00E4kuu',
+                                '5': 'toukokuu',
+                                '12': 'joulukuu',
+                                '11': 'marraskuu',
+                                '10': 'lokakuu',
+                                '9': 'syyskuu',
+                                '1': 'tammikuu',
+                                '2': 'helmikuu',
+                                '3': 'maaliskuu',
+                                '4': 'huhtikuu'
+                            }
+                        }
+                    },
+                    'days': {
+                        'format': {
+                            'abbreviated': {
+                                'sun': 'su',
+                                'mon': 'ma',
+                                'tue': 'ti',
+                                'wed': 'ke',
+                                'thu': 'to',
+                                'fri': 'pe',
+                                'sat': 'la'
+                            },
+                            'narrow': {
+                                'sun': 'S',
+                                'mon': 'M',
+                                'tue': 'T',
+                                'wed': 'K',
+                                'thu': 'T',
+                                'fri': 'P',
+                                'sat': 'L'
+                            },
+                            'short': {
+                                'sun': 'su',
+                                'mon': 'ma',
+                                'tue': 'ti',
+                                'wed': 'ke',
+                                'thu': 'to',
+                                'fri': 'pe',
+                                'sat': 'la'
+                            },
+                            'wide': {
+                                'sun': 'sunnuntaina',
+                                'mon': 'maanantaina',
+                                'tue': 'tiistaina',
+                                'wed': 'keskiviikkona',
+                                'thu': 'torstaina',
+                                'fri': 'perjantaina',
+                                'sat': 'lauantaina'
+                            }
+                        },
+                        'stand-alone': {
+                            'abbreviated': {
+                                'sun': 'su',
+                                'mon': 'ma',
+                                'tue': 'ti',
+                                'wed': 'ke',
+                                'thu': 'to',
+                                'fri': 'pe',
+                                'sat': 'la'
+                            },
+                            'narrow': {
+                                'sun': 'S',
+                                'mon': 'M',
+                                'tue': 'T',
+                                'wed': 'K',
+                                'thu': 'T',
+                                'fri': 'P',
+                                'sat': 'L'
+                            },
+                            'short': {
+                                'sun': 'su',
+                                'mon': 'ma',
+                                'tue': 'ti',
+                                'wed': 'ke',
+                                'thu': 'to',
+                                'fri': 'pe',
+                                'sat': 'la'
+                            },
+                            'wide': {
+                                'sun': 'sunnuntai',
+                                'mon': 'maanantai',
+                                'tue': 'tiistai',
+                                'wed': 'keskiviikko',
+                                'thu': 'torstai',
+                                'fri': 'perjantai',
+                                'sat': 'lauantai'
+                            }
+                        }
+                    },
+                    'quarters': {
+                        'format': {
+                            'abbreviated': {
+                                '1': '1. nelj.',
+                                '2': '2. nelj.',
+                                '3': '3. nelj.',
+                                '4': '4. nelj.'
+                            },
+                            'narrow': {
+                                '1': '1',
+                                '2': '2',
+                                '3': '3',
+                                '4': '4'
+                            },
+                            'wide': {
+                                '1': '1. nelj\u00E4nnes',
+                                '2': '2. nelj\u00E4nnes',
+                                '3': '3. nelj\u00E4nnes',
+                                '4': '4. nelj\u00E4nnes'
+                            }
+                        },
+                        'stand-alone': {
+                            'abbreviated': {
+                                '1': '1. nelj.',
+                                '2': '2. nelj.',
+                                '3': '3. nelj.',
+                                '4': '4. nelj.'
+                            },
+                            'narrow': {
+                                '1': '1',
+                                '2': '2',
+                                '3': '3',
+                                '4': '4'
+                            },
+                            'wide': {
+                                '1': '1. nelj\u00E4nnes',
+                                '2': '2. nelj\u00E4nnes',
+                                '3': '3. nelj\u00E4nnes',
+                                '4': '4. nelj\u00E4nnes'
+                            }
+                        }
+                    },
+                    'dayPeriods': {
+                        'format': {
+                            'abbreviated': {
+                                'am': 'ap.',
+                                'pm': 'ip.'
+                            },
+                            'narrow': {
+                                'am': 'ap.',
+                                'pm': 'ip.'
+                            },
+                            'wide': {
+                                'am': 'ap.',
+                                'pm': 'ip.'
+                            }
+                        },
+                        'stand-alone': {
+                            'abbreviated': {
+                                'am': 'ap.',
+                                'pm': 'ip.'
+                            },
+                            'narrow': {
+                                'am': 'ap.',
+                                'pm': 'ip.'
+                            },
+                            'wide': {
+                                'am': 'ap.',
+                                'pm': 'ip.'
+                            }
+                        }
+                    },
+                    'eras': {
+                        'eraNames': {
+                            '0': 'ennen Kristuksen syntym\u00E4\u00E4',
+                            '0-alt-variant': 'ennen ajanlaskun alkua',
+                            '1': 'j\u00E4lkeen Kristuksen syntym\u00E4n',
+                            '1-alt-variant': 'j\u00E4lkeen ajanlaskun alun'
+                        },
+                        'eraAbbr': {
+                            '0': 'eKr.',
+                            '0-alt-variant': 'eaa.',
+                            '1': 'jKr.',
+                            '1-alt-variant': 'jaa.'
+                        },
+                        'eraNarrow': {
+                            '0': 'eK',
+                            '0-alt-variant': 'eaa',
+                            '1': 'jK',
+                            '1-alt-variant': 'jaa'
+                        }
+                    },
+                    'dateFormats': {
+                        'full': 'cccc d. MMMM y',
+                        'long': 'd. MMMM y',
+                        'medium': 'd.M.y',
+                        'short': 'd.M.y'
+                    },
+                    'timeFormats': {
+                        'full': 'H.mm.ss zzzz',
+                        'long': 'H.mm.ss z',
+                        'medium': 'H.mm.ss',
+                        'short': 'H.mm'
+                    },
+                    'dateTimeFormats': {
+                        'full': '{1} {0}',
+                        'long': '{1} {0}',
+                        'medium': '{1} {0}',
+                        'short': '{1} {0}',
+                        'availableFormats': {
+                            'yMMMM': 'LLLL y',
+                            'yMMMEd': 'E d. MMM y',
+                            'yMMMd': 'd. MMM y',
+                            'Ehms': 'E h.mm.ss a',
+                            'EHm': 'E H.mm',
+                            'Ehm': 'E h.mm a',
+                            'Ed': 'E d.',
+                            'd': 'd',
+                            'GyMMMd': 'd. MMM y G',
+                            'GyMMMEd': 'E d. MMM y G',
+                            'h': 'h a',
+                            'yQQQQ': 'QQQQ y',
+                            'yQQQ': 'QQQ y',
+                            'yMMMMccccd': 'cccc d. MMMM y',
+                            'Hms': 'H.mm.ss',
+                            'hms': 'h.mm.ss a',
+                            'Hm': 'H.mm',
+                            'hm': 'h.mm a',
+                            'H': 'H',
+                            'EHms': 'E H.mm.ss',
+                            'Gy': 'y G',
+                            'GyMMM': 'LLL y G',
+                            'M': 'L',
+                            'Md': 'd.M.',
+                            'MEd': 'E d.M.',
+                            'MMM': 'LLL',
+                            'MMMd': 'd. MMM',
+                            'MMMEd': 'ccc d. MMM',
+                            'ms': 'm.ss',
+                            'y': 'y',
+                            'yM': 'L.y',
+                            'yMd': 'd.M.y',
+                            'yMEd': 'E d.M.y',
+                            'yMM': 'M.y',
+                            'yMMM': 'LLL y'
+                        },
+                        'appendItems': {
+                            'Second': '{0} ({2}: {1})',
+                            'Quarter': '{0} ({2}: {1})',
+                            'Month': '{0} ({2}: {1})',
+                            'Year': '{1} {0}',
+                            'Week': '{0} ({2}: {1})',
+                            'Timezone': '{0} {1}',
+                            'Day': '{0} ({2}: {1})',
+                            'Day-Of-Week': '{0} {1}',
+                            'Era': '{1} {0}',
+                            'Hour': '{0} ({2}: {1})',
+                            'Minute': '{0} ({2}: {1})'
+                        },
+                        'intervalFormats': {
+                            'MMMEd': {
+                                'd': 'E d. \u2013 E d. MMMM',
+                                'M': 'E d. MMMM \u2013 E d. MMMM'
+                            },
+                            'MMMd': {
+                                'd': 'd.\u2013d. MMMM',
+                                'M': 'd. MMMM \u2013 d. MMMM'
+                            },
+                            'MMM': {
+                                'M': 'LLL\u2013LLLL'
+                            },
+                            'MEd': {
+                                'd': 'E d. \u2013 E d.M.',
+                                'M': 'E d.M. \u2013 E d.M.'
+                            },
+                            'Md': {
+                                'd': 'd.\u2013d.M.',
+                                'M': 'd.M.\u2013d.M.'
+                            },
+                            'M': {
+                                'M': 'L.\u2013L.'
+                            },
+                            'Hv': {
+                                'H': 'H\u2013H v'
+                            },
+                            'hv': {
+                                'a': 'h a \u2013 h a v',
+                                'h': 'h\u2013h a v'
+                            },
+                            'intervalFormatFallback': '{0}\u2013{1}',
+                            'y': {
+                                'y': 'y\u2013y'
+                            },
+                            'yM': {
+                                'M': 'LLL\u2013LLLL y',
+                                'y': 'LLLL y \u2013 LLLL y'
+                            },
+                            'yMd': {
+                                'd': 'd.\u2013d.M.y',
+                                'M': 'd.M.\u2013d.M.y',
+                                'y': 'd.M.y\u2013d.M.y'
+                            },
+                            'yMEd': {
+                                'd': 'E d.M.y \u2013 E d.M.y',
+                                'M': 'E d.M.y \u2013 E d.M.y',
+                                'y': 'E d.M.y \u2013 E d.M.y'
+                            },
+                            'yMMM': {
+                                'M': 'LLL\u2013LLLL y',
+                                'y': 'LLLL y \u2013 LLLL y'
+                            },
+                            'yMMMd': {
+                                'd': 'd.\u2013d. MMMM y',
+                                'M': 'd. MMMM \u2013 d. MMMM y',
+                                'y': 'd. MMMM y \u2013 d. MMMM y'
+                            },
+                            'yMMMEd': {
+                                'd': 'E d. \u2013 E d. MMMM y',
+                                'M': 'E d. MMMM \u2013 E d. MMMM y',
+                                'y': 'E d. MMMM y \u2013 E d. MMMM y'
+                            },
+                            'yMMMM': {
+                                'M': 'LLL\u2013LLLL y',
+                                'y': 'LLLL y \u2013 LLLL y'
+                            },
+                            'MMMM': {
+                                'M': 'LLL\u2013LLLL'
+                            },
+                            'Hmv': {
+                                'H': 'H.mm\u2013H.mm v',
+                                'm': 'H.mm\u2013H.mm v'
+                            },
+                            'hmv': {
+                                'a': 'h.mm a \u2013 h.mm a v',
+                                'h': 'h.mm\u2013h.mm a v',
+                                'm': 'h.mm\u2013h.mm a v'
+                            },
+                            'Hm': {
+                                'H': 'H.mm\u2013H.mm',
+                                'm': 'H.mm\u2013H.mm'
+                            },
+                            'hm': {
+                                'a': 'h.mm a \u2013 h.mm a',
+                                'h': 'h.mm\u2013h.mm a',
+                                'm': 'h.mm\u2013h.mm a'
+                            },
+                            'H': {
+                                'H': 'H\u2013H'
+                            },
+                            'h': {
+                                'a': 'h a \u2013 h a',
+                                'h': 'h\u2013h a'
+                            },
+                            'd': {
+                                'd': 'd.\u2013d.'
+                            }
+                        }
+                    }
+                }
             },
             'timeZoneNames': {
                 'zone': {
@@ -2530,434 +2992,549 @@
                 'regionFormat-type-standard': '{0} (normaaliaika)',
                 'fallbackFormat': '{1} ({0})'
             },
-            'calendars': {
-                'gregorian': {
-                    'months': {
-                        'format': {
-                            'abbreviated': {
-                                '8': 'elokuuta',
-                                '7': 'hein\u00E4kuuta',
-                                '6': 'kes\u00E4kuuta',
-                                '5': 'toukokuuta',
-                                '12': 'joulukuuta',
-                                '11': 'marraskuuta',
-                                '10': 'lokakuuta',
-                                '9': 'syyskuuta',
-                                '1': 'tammikuuta',
-                                '2': 'helmikuuta',
-                                '3': 'maaliskuuta',
-                                '4': 'huhtikuuta'
-                            },
-                            'narrow': {
-                                '8': 'E',
-                                '7': 'H',
-                                '6': 'K',
-                                '5': 'T',
-                                '12': 'J',
-                                '11': 'M',
-                                '10': 'L',
-                                '9': 'S',
-                                '1': 'T',
-                                '2': 'H',
-                                '3': 'M',
-                                '4': 'H'
-                            },
-                            'wide': {
-                                '8': 'elokuuta',
-                                '7': 'hein\u00E4kuuta',
-                                '6': 'kes\u00E4kuuta',
-                                '5': 'toukokuuta',
-                                '12': 'joulukuuta',
-                                '11': 'marraskuuta',
-                                '10': 'lokakuuta',
-                                '9': 'syyskuuta',
-                                '1': 'tammikuuta',
-                                '2': 'helmikuuta',
-                                '3': 'maaliskuuta',
-                                '4': 'huhtikuuta'
-                            }
-                        },
-                        'stand-alone': {
-                            'abbreviated': {
-                                '8': 'elo',
-                                '7': 'hein\u00E4',
-                                '6': 'kes\u00E4',
-                                '5': 'touko',
-                                '12': 'joulu',
-                                '11': 'marras',
-                                '10': 'loka',
-                                '9': 'syys',
-                                '1': 'tammi',
-                                '2': 'helmi',
-                                '3': 'maalis',
-                                '4': 'huhti'
-                            },
-                            'narrow': {
-                                '8': 'E',
-                                '7': 'H',
-                                '6': 'K',
-                                '5': 'T',
-                                '12': 'J',
-                                '11': 'M',
-                                '10': 'L',
-                                '9': 'S',
-                                '1': 'T',
-                                '2': 'H',
-                                '3': 'M',
-                                '4': 'H'
-                            },
-                            'wide': {
-                                '8': 'elokuu',
-                                '7': 'hein\u00E4kuu',
-                                '6': 'kes\u00E4kuu',
-                                '5': 'toukokuu',
-                                '12': 'joulukuu',
-                                '11': 'marraskuu',
-                                '10': 'lokakuu',
-                                '9': 'syyskuu',
-                                '1': 'tammikuu',
-                                '2': 'helmikuu',
-                                '3': 'maaliskuu',
-                                '4': 'huhtikuu'
-                            }
-                        }
-                    },
-                    'days': {
-                        'format': {
-                            'abbreviated': {
-                                'sun': 'su',
-                                'mon': 'ma',
-                                'tue': 'ti',
-                                'wed': 'ke',
-                                'thu': 'to',
-                                'fri': 'pe',
-                                'sat': 'la'
-                            },
-                            'narrow': {
-                                'sun': 'S',
-                                'mon': 'M',
-                                'tue': 'T',
-                                'wed': 'K',
-                                'thu': 'T',
-                                'fri': 'P',
-                                'sat': 'L'
-                            },
-                            'short': {
-                                'sun': 'su',
-                                'mon': 'ma',
-                                'tue': 'ti',
-                                'wed': 'ke',
-                                'thu': 'to',
-                                'fri': 'pe',
-                                'sat': 'la'
-                            },
-                            'wide': {
-                                'sun': 'sunnuntaina',
-                                'mon': 'maanantaina',
-                                'tue': 'tiistaina',
-                                'wed': 'keskiviikkona',
-                                'thu': 'torstaina',
-                                'fri': 'perjantaina',
-                                'sat': 'lauantaina'
-                            }
-                        },
-                        'stand-alone': {
-                            'abbreviated': {
-                                'sun': 'su',
-                                'mon': 'ma',
-                                'tue': 'ti',
-                                'wed': 'ke',
-                                'thu': 'to',
-                                'fri': 'pe',
-                                'sat': 'la'
-                            },
-                            'narrow': {
-                                'sun': 'S',
-                                'mon': 'M',
-                                'tue': 'T',
-                                'wed': 'K',
-                                'thu': 'T',
-                                'fri': 'P',
-                                'sat': 'L'
-                            },
-                            'short': {
-                                'sun': 'su',
-                                'mon': 'ma',
-                                'tue': 'ti',
-                                'wed': 'ke',
-                                'thu': 'to',
-                                'fri': 'pe',
-                                'sat': 'la'
-                            },
-                            'wide': {
-                                'sun': 'sunnuntai',
-                                'mon': 'maanantai',
-                                'tue': 'tiistai',
-                                'wed': 'keskiviikko',
-                                'thu': 'torstai',
-                                'fri': 'perjantai',
-                                'sat': 'lauantai'
-                            }
-                        }
-                    },
-                    'quarters': {
-                        'format': {
-                            'abbreviated': {
-                                '1': '1. nelj.',
-                                '2': '2. nelj.',
-                                '3': '3. nelj.',
-                                '4': '4. nelj.'
-                            },
-                            'narrow': {
-                                '1': '1',
-                                '2': '2',
-                                '3': '3',
-                                '4': '4'
-                            },
-                            'wide': {
-                                '1': '1. nelj\u00E4nnes',
-                                '2': '2. nelj\u00E4nnes',
-                                '3': '3. nelj\u00E4nnes',
-                                '4': '4. nelj\u00E4nnes'
-                            }
-                        },
-                        'stand-alone': {
-                            'abbreviated': {
-                                '1': '1. nelj.',
-                                '2': '2. nelj.',
-                                '3': '3. nelj.',
-                                '4': '4. nelj.'
-                            },
-                            'narrow': {
-                                '1': '1',
-                                '2': '2',
-                                '3': '3',
-                                '4': '4'
-                            },
-                            'wide': {
-                                '1': '1. nelj\u00E4nnes',
-                                '2': '2. nelj\u00E4nnes',
-                                '3': '3. nelj\u00E4nnes',
-                                '4': '4. nelj\u00E4nnes'
-                            }
-                        }
-                    },
-                    'dayPeriods': {
-                        'format': {
-                            'abbreviated': {
-                                'am': 'ap.',
-                                'pm': 'ip.'
-                            },
-                            'narrow': {
-                                'am': 'ap.',
-                                'pm': 'ip.'
-                            },
-                            'wide': {
-                                'am': 'ap.',
-                                'pm': 'ip.'
-                            }
-                        },
-                        'stand-alone': {
-                            'abbreviated': {
-                                'am': 'ap.',
-                                'pm': 'ip.'
-                            },
-                            'narrow': {
-                                'am': 'ap.',
-                                'pm': 'ip.'
-                            },
-                            'wide': {
-                                'am': 'ap.',
-                                'pm': 'ip.'
-                            }
-                        }
-                    },
-                    'eras': {
-                        'eraNames': {
-                            '0': 'ennen Kristuksen syntym\u00E4\u00E4',
-                            '0-alt-variant': 'ennen ajanlaskun alkua',
-                            '1': 'j\u00E4lkeen Kristuksen syntym\u00E4n',
-                            '1-alt-variant': 'j\u00E4lkeen ajanlaskun alun'
-                        },
-                        'eraAbbr': {
-                            '0': 'eKr.',
-                            '0-alt-variant': 'eaa.',
-                            '1': 'jKr.',
-                            '1-alt-variant': 'jaa.'
-                        },
-                        'eraNarrow': {
-                            '0': 'eK',
-                            '0-alt-variant': 'eaa',
-                            '1': 'jK',
-                            '1-alt-variant': 'jaa'
-                        }
-                    },
-                    'dateFormats': {
-                        'full': 'cccc d. MMMM y',
-                        'long': 'd. MMMM y',
-                        'medium': 'd.M.y',
-                        'short': 'd.M.y'
-                    },
-                    'timeFormats': {
-                        'full': 'H.mm.ss zzzz',
-                        'long': 'H.mm.ss z',
-                        'medium': 'H.mm.ss',
-                        'short': 'H.mm'
-                    },
-                    'dateTimeFormats': {
-                        'full': '{1} {0}',
-                        'long': '{1} {0}',
-                        'medium': '{1} {0}',
-                        'short': '{1} {0}',
-                        'availableFormats': {
-                            'yMMMM': 'LLLL y',
-                            'yMMMEd': 'E d. MMM y',
-                            'yMMMd': 'd. MMM y',
-                            'Ehms': 'E h.mm.ss a',
-                            'EHm': 'E H.mm',
-                            'Ehm': 'E h.mm a',
-                            'Ed': 'E d.',
-                            'd': 'd',
-                            'GyMMMd': 'd. MMM y G',
-                            'GyMMMEd': 'E d. MMM y G',
-                            'h': 'h a',
-                            'yQQQQ': 'QQQQ y',
-                            'yQQQ': 'QQQ y',
-                            'yMMMMccccd': 'cccc d. MMMM y',
-                            'Hms': 'H.mm.ss',
-                            'hms': 'h.mm.ss a',
-                            'Hm': 'H.mm',
-                            'hm': 'h.mm a',
-                            'H': 'H',
-                            'EHms': 'E H.mm.ss',
-                            'Gy': 'y G',
-                            'GyMMM': 'LLL y G',
-                            'M': 'L',
-                            'Md': 'd.M.',
-                            'MEd': 'E d.M.',
-                            'MMM': 'LLL',
-                            'MMMd': 'd. MMM',
-                            'MMMEd': 'ccc d. MMM',
-                            'ms': 'm.ss',
-                            'y': 'y',
-                            'yM': 'L.y',
-                            'yMd': 'd.M.y',
-                            'yMEd': 'E d.M.y',
-                            'yMM': 'M.y',
-                            'yMMM': 'LLL y'
-                        },
-                        'appendItems': {
-                            'Second': '{0} ({2}: {1})',
-                            'Quarter': '{0} ({2}: {1})',
-                            'Month': '{0} ({2}: {1})',
-                            'Year': '{1} {0}',
-                            'Week': '{0} ({2}: {1})',
-                            'Timezone': '{0} {1}',
-                            'Day': '{0} ({2}: {1})',
-                            'Day-Of-Week': '{0} {1}',
-                            'Era': '{1} {0}',
-                            'Hour': '{0} ({2}: {1})',
-                            'Minute': '{0} ({2}: {1})'
-                        },
-                        'intervalFormats': {
-                            'MMMEd': {
-                                'd': 'E d. \u2013 E d. MMMM',
-                                'M': 'E d. MMMM \u2013 E d. MMMM'
-                            },
-                            'MMMd': {
-                                'd': 'd.\u2013d. MMMM',
-                                'M': 'd. MMMM \u2013 d. MMMM'
-                            },
-                            'MMM': {
-                                'M': 'LLL\u2013LLLL'
-                            },
-                            'MEd': {
-                                'd': 'E d. \u2013 E d.M.',
-                                'M': 'E d.M. \u2013 E d.M.'
-                            },
-                            'Md': {
-                                'd': 'd.\u2013d.M.',
-                                'M': 'd.M.\u2013d.M.'
-                            },
-                            'M': {
-                                'M': 'L.\u2013L.'
-                            },
-                            'Hv': {
-                                'H': 'H\u2013H v'
-                            },
-                            'hv': {
-                                'a': 'h a \u2013 h a v',
-                                'h': 'h\u2013h a v'
-                            },
-                            'intervalFormatFallback': '{0}\u2013{1}',
-                            'y': {
-                                'y': 'y\u2013y'
-                            },
-                            'yM': {
-                                'M': 'LLL\u2013LLLL y',
-                                'y': 'LLLL y \u2013 LLLL y'
-                            },
-                            'yMd': {
-                                'd': 'd.\u2013d.M.y',
-                                'M': 'd.M.\u2013d.M.y',
-                                'y': 'd.M.y\u2013d.M.y'
-                            },
-                            'yMEd': {
-                                'd': 'E d.M.y \u2013 E d.M.y',
-                                'M': 'E d.M.y \u2013 E d.M.y',
-                                'y': 'E d.M.y \u2013 E d.M.y'
-                            },
-                            'yMMM': {
-                                'M': 'LLL\u2013LLLL y',
-                                'y': 'LLLL y \u2013 LLLL y'
-                            },
-                            'yMMMd': {
-                                'd': 'd.\u2013d. MMMM y',
-                                'M': 'd. MMMM \u2013 d. MMMM y',
-                                'y': 'd. MMMM y \u2013 d. MMMM y'
-                            },
-                            'yMMMEd': {
-                                'd': 'E d. \u2013 E d. MMMM y',
-                                'M': 'E d. MMMM \u2013 E d. MMMM y',
-                                'y': 'E d. MMMM y \u2013 E d. MMMM y'
-                            },
-                            'yMMMM': {
-                                'M': 'LLL\u2013LLLL y',
-                                'y': 'LLLL y \u2013 LLLL y'
-                            },
-                            'MMMM': {
-                                'M': 'LLL\u2013LLLL'
-                            },
-                            'Hmv': {
-                                'H': 'H.mm\u2013H.mm v',
-                                'm': 'H.mm\u2013H.mm v'
-                            },
-                            'hmv': {
-                                'a': 'h.mm a \u2013 h.mm a v',
-                                'h': 'h.mm\u2013h.mm a v',
-                                'm': 'h.mm\u2013h.mm a v'
-                            },
-                            'Hm': {
-                                'H': 'H.mm\u2013H.mm',
-                                'm': 'H.mm\u2013H.mm'
-                            },
-                            'hm': {
-                                'a': 'h.mm a \u2013 h.mm a',
-                                'h': 'h.mm\u2013h.mm a',
-                                'm': 'h.mm\u2013h.mm a'
-                            },
-                            'H': {
-                                'H': 'H\u2013H'
-                            },
-                            'h': {
-                                'a': 'h a \u2013 h a',
-                                'h': 'h\u2013h a'
-                            },
-                            'd': {
-                                'd': 'd.\u2013d.'
-                            }
-                        }
-                    }
+            'localeDisplayPattern': {
+                'localePattern': '{0} ({1})',
+                'localeSeparator': '{0}, {1}',
+                'localeKeyTypePattern': '{0}: {1}'
+            },
+            'keys': {
+                'colNormalization': 'Normalisoitu lajittelu',
+                'collation': 'lajitteluj\u00E4rjestys',
+                'colHiraganaQuaternary': 'Kana-lajittelu',
+                'colCaseLevel': 'Isot ja pienet kirjaimet erotteleva lajittelu',
+                'colCaseFirst': 'J\u00E4rjestys isojen/pienten kirjainten mukaan',
+                'colBackwards': 'K\u00E4\u00E4nteinen painomerkki -lajittelu',
+                'colAlternate': 'Ohita symbolit -lajittelu',
+                'calendar': 'kalenteri',
+                'x': 'yksityisk\u00E4ytt\u00F6',
+                'variableTop': 'lajittele symboleina',
+                'va': 'maavalinnan muunnelma',
+                'timezone': 'aikavy\u00F6hyke',
+                'numbers': 'numerot',
+                'currency': 'valuutta',
+                'colStrength': 'Lajittelun vahvuus',
+                'colNumeric': 'Numeerinen lajittelu'
+            },
+            'types': {
+                'colHiraganaQuaternary': {
+                    'no': 'Lajittele kana-merkit erikseen',
+                    'yes': 'Lajittele kana-merkit erikseen'
+                },
+                'colCaseLevel': {
+                    'no': 'Lajittele ilman isojen ja pienten kirjainten erottelua',
+                    'yes': 'Lajittele isojen ja pienten kirjainten mukaan'
+                },
+                'colCaseFirst': {
+                    'lower': 'Lajittele pienet kirjaimet ensin',
+                    'no': 'Lajittele isot ja pienet kirjaimet normaalisti',
+                    'upper': 'Lajittele isot kirjaimet ensin'
+                },
+                'colStrength': {
+                    'identical': 'Lajittele kaikki',
+                    'primary': 'Lajittele vain peruskirjaimet',
+                    'quaternary': 'Lajittele painomerkit/koko/leveys/kana-merkit',
+                    'secondary': 'Lajittele painomerkit',
+                    'tertiary': 'Lajittele painomerkit/koko/leveys'
+                },
+                'colNumeric': {
+                    'no': 'Lajittele numerot erikseen',
+                    'yes': 'Lajittele numerot numeerisesti'
+                },
+                'colNormalization': {
+                    'no': 'Lajittele ilman normalisointia',
+                    'yes': 'Lajittele Unicode normalisoituna'
+                },
+                'calendar': {
+                    'japanese': 'japanilainen kalenteri',
+                    'iso8601': 'iso8601',
+                    'coptic': 'koptilainen kalenteri',
+                    'dangi': 'dangilainen kalenteri',
+                    'ethiopic': 'etiopialainen kalenteri',
+                    'ethiopic-amete-alem': 'etiopialainen amete alem -kalenteri',
+                    'gregorian': 'gregoriaaninen kalenteri',
+                    'hebrew': 'juutalainen kalenteri',
+                    'persian': 'persialainen kalenteri',
+                    'roc': 'Kiinan tasavallan kalenteri',
+                    'chinese': 'kiinalainen kalenteri',
+                    'buddhist': 'buddhalainen kalenteri',
+                    'indian': 'intialainen kalenteri',
+                    'islamic': 'islamilainen kalenteri',
+                    'islamic-civil': 'islamilainen siviilikalenteri',
+                    'islamic-rgsa': 'islamic-rgsa',
+                    'islamic-tbla': 'islamic-tbla',
+                    'islamic-umalqura': 'islamic-umalqura'
+                },
+                'collation': {
+                    'phonebook': 'puhelinluetteloj\u00E4rjestys',
+                    'gb2312han': 'yksinkertaistettu kiinalainen j\u00E4rjestys GB2312',
+                    'eor': 'yleiseurooppalainen lajitteluj\u00E4rjestys',
+                    'ducet': 'Unicoden oletusj\u00E4rjestys',
+                    'dictionary': 'sanakirjaj\u00E4rjestys',
+                    'big5han': 'perinteinen kiinalainen j\u00E4rjestys Big5',
+                    'traditional': 'perinteinen j\u00E4rjestys',
+                    'standard': 'normaalij\u00E4rjestys',
+                    'zhuyin': 'zhuyin-j\u00E4rjestys',
+                    'unihan': 'radikaali- ja piirtoj\u00E4rjestys',
+                    'stroke': 'piirtoj\u00E4rjestys',
+                    'searchjl': 'haku hangul-alkukonsonantin mukaan',
+                    'search': 'yleishakuj\u00E4rjestys',
+                    'reformed': 'uudistettu j\u00E4rjestys',
+                    'pinyin': 'pinyin-j\u00E4rjestys',
+                    'phonetic': '\u00E4\u00E4nteellinen j\u00E4rjestys'
+                },
+                'numbers': {
+                    'knda': 'kannadalaiset numerot',
+                    'khmr': 'khmeril\u00E4iset numerot',
+                    'kali': 'kayah li -numerot',
+                    'jpanfin': 'japanilaiset talousnumerot',
+                    'jpan': 'japanilaiset numerot',
+                    'java': 'jaavalaiset numerot',
+                    'hebr': 'heprealaiset numerot',
+                    'hantfin': 'perinteiset kiinalaiset talousnumerot',
+                    'hant': 'perinteiset kiinalaiset numerot',
+                    'hansfin': 'yksinkertaistetut kiinalaiset talousnumerot',
+                    'hans': 'yksinkertaistetut kiinalaiset numerot',
+                    'hanidec': 'kiinalaiset desimaalinumerot',
+                    'guru': 'gurmukhilaiset numerot',
+                    'gujr': 'gud\u017Earatilaiset numerot',
+                    'greklow': 'kreikkalaiset piennumerot',
+                    'grek': 'kreikkalaiset numerot',
+                    'bali': 'balilaiset numerot',
+                    'armnlow': 'armenialaiset piennumerot',
+                    'armn': 'armenialaiset numerot',
+                    'arabext': 'laajennetut arabialaiset numerot',
+                    'arab': 'arabialaiset numerot',
+                    'finance': 'talousnumerot',
+                    'traditional': 'perinteiset numerot',
+                    'native': 'Kielen omat numerot',
+                    'beng': 'bengalilaiset numerot',
+                    'brah': 'brahmilaiset numerot',
+                    'cakm': 'chakmalaiset numerot',
+                    'cham': 'cham-numerot',
+                    'deva': 'devanagarinumerot',
+                    'orya': 'orijalaiset numerot',
+                    'osma': 'osma',
+                    'roman': 'roomalaiset numerot',
+                    'romanlow': 'roomalaiset piennumerot',
+                    'saur': 'saurashtra-numerot',
+                    'shrd': 'shrd',
+                    'sora': 'sora sompeng -numerot',
+                    'sund': 'sundalaiset numerot',
+                    'vaii': 'vai-numerot',
+                    'tibt': 'tiibetil\u00E4iset numerot',
+                    'thai': 'thainumerot',
+                    'telu': 'telugulaiset numerot',
+                    'tamldec': 'tamilinumerot',
+                    'taml': 'perinteiset tamilinumerot',
+                    'talu': 'uudet tai lue -numerot',
+                    'takr': 'takr',
+                    'olck': 'ol chiki -numerot',
+                    'nkoo': 'n\'ko-numerot',
+                    'mymrshan': 'myanmarin shan-numerot',
+                    'mymr': 'burmalaiset numerot',
+                    'mtei': 'meetei mayek -numerot',
+                    'mong': 'mongolialaiset numerot',
+                    'mlym': 'malajalamilaiset numerot',
+                    'limb': 'limbunumerot',
+                    'lepc': 'lepchanumerot',
+                    'latn': 'l\u00E4nsimaiset numerot',
+                    'laoo': 'laolaiset numerot',
+                    'lanatham': 'taithamin tham-numerot',
+                    'lana': 'taithamin hora-numerot',
+                    'geor': 'georgialaiset numerot',
+                    'fullwide': 'ideografin levyiset numerot',
+                    'ethi': 'etiopialaiset numerot'
+                },
+                'colAlternate': {
+                    'non-ignorable': 'Lajittele symbolit',
+                    'shifted': 'Lajittele symbolit ohittaen'
+                },
+                'colBackwards': {
+                    'no': 'Lajittele painomerkit normaalisti',
+                    'yes': 'Lajittele painomerkit k\u00E4\u00E4nteisesti'
+                }
+            },
+            'codePatterns': {
+                'language': 'kieli: {0}',
+                'script': 'kirjoitusj\u00E4rjestelm\u00E4: {0}',
+                'territory': 'alue: {0}'
+            },
+            'long': {
+                'mass-ounce': {
+                    'unitPattern-count-one': '{0} unssi',
+                    'unitPattern-count-other': '{0} unssia'
+                },
+                'mass-kilogram': {
+                    'unitPattern-count-one': '{0} kilogramma',
+                    'unitPattern-count-other': '{0} kilogrammaa'
+                },
+                'mass-gram': {
+                    'unitPattern-count-one': '{0} gramma',
+                    'unitPattern-count-other': '{0} grammaa'
+                },
+                'length-yard': {
+                    'unitPattern-count-one': '{0} jaardi',
+                    'unitPattern-count-other': '{0} jaardia'
+                },
+                'length-picometer': {
+                    'unitPattern-count-one': '{0} pikometri',
+                    'unitPattern-count-other': '{0} pikometri\u00E4'
+                },
+                'length-millimeter': {
+                    'unitPattern-count-one': '{0} millimetri',
+                    'unitPattern-count-other': '{0} millimetri\u00E4'
+                },
+                'length-mile': {
+                    'unitPattern-count-one': '{0} maili',
+                    'unitPattern-count-other': '{0} mailia'
+                },
+                'length-meter': {
+                    'unitPattern-count-one': '{0} metri',
+                    'unitPattern-count-other': '{0} metri\u00E4'
+                },
+                'length-light-year': {
+                    'unitPattern-count-one': '{0} valovuosi',
+                    'unitPattern-count-other': '{0} valovuotta'
+                },
+                'length-kilometer': {
+                    'unitPattern-count-one': '{0} kilometri',
+                    'unitPattern-count-other': '{0} kilometri\u00E4'
+                },
+                'length-inch': {
+                    'unitPattern-count-one': '{0} tuuma',
+                    'unitPattern-count-other': '{0} tuumaa'
+                },
+                'length-foot': {
+                    'unitPattern-count-one': '{0} jalka',
+                    'unitPattern-count-other': '{0} jalkaa'
+                },
+                'length-centimeter': {
+                    'unitPattern-count-one': '{0} senttimetri',
+                    'unitPattern-count-other': '{0} senttimetri\u00E4'
+                },
+                'duration-year': {
+                    'unitPattern-count-one': '{0} vuosi',
+                    'unitPattern-count-other': '{0} vuotta'
+                },
+                'duration-week': {
+                    'unitPattern-count-one': '{0} viikko',
+                    'unitPattern-count-other': '{0} viikkoa'
+                },
+                'duration-month': {
+                    'unitPattern-count-one': '{0} kuukausi',
+                    'unitPattern-count-other': '{0} kuukautta'
+                },
+                'mass-pound': {
+                    'unitPattern-count-one': '{0} pauna',
+                    'unitPattern-count-other': '{0} paunaa'
+                },
+                'power-horsepower': {
+                    'unitPattern-count-one': '{0} hevosvoima',
+                    'unitPattern-count-other': '{0} hevosvoimaa'
+                },
+                'power-kilowatt': {
+                    'unitPattern-count-one': '{0} kilowatti',
+                    'unitPattern-count-other': '{0} kilowattia'
+                },
+                'power-watt': {
+                    'unitPattern-count-one': '{0} watti',
+                    'unitPattern-count-other': '{0} wattia'
+                },
+                'pressure-hectopascal': {
+                    'unitPattern-count-one': '{0} hehtopascal',
+                    'unitPattern-count-other': '{0} hehtopascalia'
+                },
+                'pressure-inch-hg': {
+                    'unitPattern-count-one': '{0} tuuma elohopeaa',
+                    'unitPattern-count-other': '{0} tuumaa elohopeaa'
+                },
+                'pressure-millibar': {
+                    'unitPattern-count-one': '{0} millibaari',
+                    'unitPattern-count-other': '{0} millibaaria'
+                },
+                'volume-liter': {
+                    'unitPattern-count-one': '{0} litra',
+                    'unitPattern-count-other': '{0} litraa'
+                },
+                'volume-cubic-mile': {
+                    'unitPattern-count-one': '{0} kuutiomaili',
+                    'unitPattern-count-other': '{0} kuutiomailia'
+                },
+                'volume-cubic-kilometer': {
+                    'unitPattern-count-one': '{0} kuutiokilometri',
+                    'unitPattern-count-other': '{0} kuutiokilometri\u00E4'
+                },
+                'temperature-fahrenheit': {
+                    'unitPattern-count-one': '{0} fahrenheitaste',
+                    'unitPattern-count-other': '{0} fahrenheitastetta'
+                },
+                'temperature-celsius': {
+                    'unitPattern-count-one': '{0} celsiusaste',
+                    'unitPattern-count-other': '{0} celsiusastetta'
+                },
+                'speed-mile-per-hour': {
+                    'unitPattern-count-one': '{0} maili tunnissa',
+                    'unitPattern-count-other': '{0} mailia tunnissa'
+                },
+                'speed-meter-per-second': {
+                    'unitPattern-count-one': '{0} metri sekunnissa',
+                    'unitPattern-count-other': '{0} metri\u00E4 sekunnissa'
+                },
+                'speed-kilometer-per-hour': {
+                    'unitPattern-count-one': '{0} kilometri tunnissa',
+                    'unitPattern-count-other': '{0} kilometri\u00E4 tunnissa'
+                },
+                'duration-minute': {
+                    'unitPattern-count-one': '{0} minuutti',
+                    'unitPattern-count-other': '{0} minuuttia'
+                },
+                'duration-millisecond': {
+                    'unitPattern-count-one': '{0} millisekunti',
+                    'unitPattern-count-other': '{0} millisekuntia'
+                },
+                'duration-hour': {
+                    'unitPattern-count-one': '{0} tunti',
+                    'unitPattern-count-other': '{0} tuntia'
+                },
+                'duration-day': {
+                    'unitPattern-count-one': '{0} p\u00E4iv\u00E4',
+                    'unitPattern-count-other': '{0} p\u00E4iv\u00E4\u00E4'
+                },
+                'area-square-mile': {
+                    'unitPattern-count-one': '{0} neli\u00F6maili',
+                    'unitPattern-count-other': '{0} neli\u00F6mailia'
+                },
+                'area-square-meter': {
+                    'unitPattern-count-one': '{0} neli\u00F6metri',
+                    'unitPattern-count-other': '{0} neli\u00F6metri\u00E4'
+                },
+                'area-square-kilometer': {
+                    'unitPattern-count-one': '{0} neli\u00F6kilometri',
+                    'unitPattern-count-other': '{0} neli\u00F6kilometri\u00E4'
+                },
+                'per': {
+                    'compoundUnitPattern': '{0}/{1}'
+                },
+                'acceleration-g-force': {
+                    'unitPattern-count-one': '{0} G',
+                    'unitPattern-count-other': '{0} G'
+                },
+                'angle-arc-minute': {
+                    'unitPattern-count-one': '{0} kulmaminuutti',
+                    'unitPattern-count-other': '{0} kulmaminuuttia'
+                },
+                'angle-arc-second': {
+                    'unitPattern-count-one': '{0} kulmasekunti',
+                    'unitPattern-count-other': '{0} kulmasekuntia'
+                },
+                'angle-degree': {
+                    'unitPattern-count-one': '{0} aste',
+                    'unitPattern-count-other': '{0} astetta'
+                },
+                'area-acre': {
+                    'unitPattern-count-one': '{0} eekkeri',
+                    'unitPattern-count-other': '{0} eekkeri\u00E4'
+                },
+                'area-hectare': {
+                    'unitPattern-count-one': '{0} hehtaari',
+                    'unitPattern-count-other': '{0} hehtaaria'
+                },
+                'area-square-foot': {
+                    'unitPattern-count-one': '{0} neli\u00F6jalka',
+                    'unitPattern-count-other': '{0} neli\u00F6jalkaa'
+                },
+                'duration-second': {
+                    'unitPattern-count-one': '{0} sekunti',
+                    'unitPattern-count-other': '{0} sekuntia'
+                }
+            },
+            'short': {
+                'mass-ounce': {
+                    'unitPattern-count-one': '{0} oz',
+                    'unitPattern-count-other': '{0} oz'
+                },
+                'mass-kilogram': {
+                    'unitPattern-count-one': '{0} kg',
+                    'unitPattern-count-other': '{0} kg'
+                },
+                'mass-gram': {
+                    'unitPattern-count-one': '{0} g',
+                    'unitPattern-count-other': '{0} g'
+                },
+                'length-yard': {
+                    'unitPattern-count-one': '{0} yd',
+                    'unitPattern-count-other': '{0} yd'
+                },
+                'length-picometer': {
+                    'unitPattern-count-one': '{0} pm',
+                    'unitPattern-count-other': '{0} pm'
+                },
+                'length-millimeter': {
+                    'unitPattern-count-one': '{0} mm',
+                    'unitPattern-count-other': '{0} mm'
+                },
+                'length-mile': {
+                    'unitPattern-count-one': '{0} mi',
+                    'unitPattern-count-other': '{0} mi'
+                },
+                'length-meter': {
+                    'unitPattern-count-one': '{0} m',
+                    'unitPattern-count-other': '{0} m'
+                },
+                'length-light-year': {
+                    'unitPattern-count-one': '{0} vv',
+                    'unitPattern-count-other': '{0} vv'
+                },
+                'length-kilometer': {
+                    'unitPattern-count-one': '{0} km',
+                    'unitPattern-count-other': '{0} km'
+                },
+                'length-inch': {
+                    'unitPattern-count-one': '{0} in',
+                    'unitPattern-count-other': '{0} in'
+                },
+                'length-foot': {
+                    'unitPattern-count-one': '{0} ft',
+                    'unitPattern-count-other': '{0} ft'
+                },
+                'length-centimeter': {
+                    'unitPattern-count-one': '{0} cm',
+                    'unitPattern-count-other': '{0} cm'
+                },
+                'duration-year': {
+                    'unitPattern-count-one': '{0} v',
+                    'unitPattern-count-other': '{0} v'
+                },
+                'duration-week': {
+                    'unitPattern-count-one': '{0} vk',
+                    'unitPattern-count-other': '{0} vk'
+                },
+                'duration-month': {
+                    'unitPattern-count-one': '{0} kk',
+                    'unitPattern-count-other': '{0} kk'
+                },
+                'mass-pound': {
+                    'unitPattern-count-one': '{0} lb',
+                    'unitPattern-count-other': '{0} lb'
+                },
+                'power-horsepower': {
+                    'unitPattern-count-one': '{0} hv',
+                    'unitPattern-count-other': '{0} hv'
+                },
+                'power-kilowatt': {
+                    'unitPattern-count-one': '{0} kW',
+                    'unitPattern-count-other': '{0} kW'
+                },
+                'power-watt': {
+                    'unitPattern-count-one': '{0} W',
+                    'unitPattern-count-other': '{0} W'
+                },
+                'pressure-hectopascal': {
+                    'unitPattern-count-one': '{0} hPa',
+                    'unitPattern-count-other': '{0} hPa'
+                },
+                'pressure-inch-hg': {
+                    'unitPattern-count-one': '{0} inHg',
+                    'unitPattern-count-other': '{0} inHg'
+                },
+                'pressure-millibar': {
+                    'unitPattern-count-one': '{0} mbar',
+                    'unitPattern-count-other': '{0} mbar'
+                },
+                'volume-liter': {
+                    'unitPattern-count-one': '{0} l',
+                    'unitPattern-count-other': '{0} l'
+                },
+                'volume-cubic-mile': {
+                    'unitPattern-count-one': '{0} mi\u00B3',
+                    'unitPattern-count-other': '{0} mi\u00B3'
+                },
+                'volume-cubic-kilometer': {
+                    'unitPattern-count-one': '{0} km\u00B3',
+                    'unitPattern-count-other': '{0} km\u00B3'
+                },
+                'temperature-fahrenheit': {
+                    'unitPattern-count-one': '{0} \u00B0F',
+                    'unitPattern-count-other': '{0} \u00B0F'
+                },
+                'temperature-celsius': {
+                    'unitPattern-count-one': '{0} \u00B0C',
+                    'unitPattern-count-other': '{0} \u00B0C'
+                },
+                'speed-mile-per-hour': {
+                    'unitPattern-count-one': '{0} mi/h',
+                    'unitPattern-count-other': '{0} mi/h'
+                },
+                'speed-meter-per-second': {
+                    'unitPattern-count-one': '{0} m/s',
+                    'unitPattern-count-other': '{0} m/s'
+                },
+                'speed-kilometer-per-hour': {
+                    'unitPattern-count-one': '{0} km/h',
+                    'unitPattern-count-other': '{0} km/h'
+                },
+                'duration-minute': {
+                    'unitPattern-count-one': '{0} min',
+                    'unitPattern-count-other': '{0} min'
+                },
+                'duration-millisecond': {
+                    'unitPattern-count-one': '{0} ms',
+                    'unitPattern-count-other': '{0} ms'
+                },
+                'duration-hour': {
+                    'unitPattern-count-one': '{0} t',
+                    'unitPattern-count-other': '{0} t'
+                },
+                'duration-day': {
+                    'unitPattern-count-one': '{0} pv',
+                    'unitPattern-count-other': '{0} pv'
+                },
+                'area-square-mile': {
+                    'unitPattern-count-one': '{0} mi\u00B2',
+                    'unitPattern-count-other': '{0} mi\u00B2'
+                },
+                'area-square-meter': {
+                    'unitPattern-count-one': '{0} m\u00B2',
+                    'unitPattern-count-other': '{0} m\u00B2'
+                },
+                'area-square-kilometer': {
+                    'unitPattern-count-one': '{0} km\u00B2',
+                    'unitPattern-count-other': '{0} km\u00B2'
+                },
+                'per': {
+                    'compoundUnitPattern': '{0}/{1}'
+                },
+                'acceleration-g-force': {
+                    'unitPattern-count-one': '{0} G',
+                    'unitPattern-count-other': '{0} G'
+                },
+                'angle-arc-minute': {
+                    'unitPattern-count-one': '{0}\u2032',
+                    'unitPattern-count-other': '{0}\u2032'
+                },
+                'angle-arc-second': {
+                    'unitPattern-count-one': '{0}\u2033',
+                    'unitPattern-count-other': '{0}\u2033'
+                },
+                'angle-degree': {
+                    'unitPattern-count-one': '{0}\u00B0',
+                    'unitPattern-count-other': '{0}\u00B0'
+                },
+                'area-acre': {
+                    'unitPattern-count-one': '{0} ac',
+                    'unitPattern-count-other': '{0} ac'
+                },
+                'area-hectare': {
+                    'unitPattern-count-one': '{0} ha',
+                    'unitPattern-count-other': '{0} ha'
+                },
+                'area-square-foot': {
+                    'unitPattern-count-one': '{0} ft\u00B2',
+                    'unitPattern-count-other': '{0} ft\u00B2'
+                },
+                'duration-second': {
+                    'unitPattern-count-one': '{0} s',
+                    'unitPattern-count-other': '{0} s'
                 }
             }
         });

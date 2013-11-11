@@ -3,6 +3,7 @@
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
  * localeDisplayNames: 24r9287
+ * units: 24r9287
  *
  * home: https://github.com/Xotic750/astrodate
  *
@@ -41,172 +42,655 @@
         /*global */
     }(function (AstroDate) {
         AstroDate.lang('pt', {
-            'codePatterns': {
-                'language': 'Idioma: {0}',
-                'script': 'Alfabeto: {0}',
-                'territory': 'Regi\u00E3o: {0}'
+            'durationUnit-type-ms': {
+                'durationUnitPattern': 'm:ss'
             },
-            'types': {
-                'colHiraganaQuaternary': {
-                    'no': 'Classificar kana separadamente',
-                    'yes': 'Classificar kana diferentemente'
+            'durationUnit-type-hms': {
+                'durationUnitPattern': 'h:mm:ss'
+            },
+            'durationUnit-type-hm': {
+                'durationUnitPattern': 'h:mm'
+            },
+            'narrow': {
+                'mass-ounce': {
+                    'unitPattern-count-one': '{0} oz',
+                    'unitPattern-count-other': '{0} oz'
                 },
-                'colCaseLevel': {
-                    'no': 'Classifica\u00E7\u00E3o sem diferencia\u00E7\u00E3o de mai\u00FAsculas e min\u00FAsculas',
-                    'yes': 'Classifica\u00E7\u00E3o com diferencia\u00E7\u00E3o de mai\u00FAsculas e min\u00FAsculas'
+                'mass-kilogram': {
+                    'unitPattern-count-one': '{0} kg',
+                    'unitPattern-count-other': '{0} kg'
                 },
-                'colCaseFirst': {
-                    'lower': 'Classificar por min\u00FAsculas',
-                    'no': 'Classifica\u00E7\u00E3o normal de mai\u00FAsculas e min\u00FAsculas',
-                    'upper': 'Classificar por mai\u00FAsculas'
+                'mass-gram': {
+                    'unitPattern-count-one': '{0} g',
+                    'unitPattern-count-other': '{0} g'
                 },
-                'colStrength': {
-                    'identical': 'Classificar tudo',
-                    'primary': 'Classificar somente letras b\u00E1sicas',
-                    'quaternary': 'Classificar acentos/mai\u00FAsculas e min\u00FAsculas/largura/kana',
-                    'secondary': 'Classificar acentos',
-                    'tertiary': 'Classificar acentos/mai\u00FAsculas e min\u00FAsculas/largura'
+                'length-yard': {
+                    'unitPattern-count-one': '{0} yd',
+                    'unitPattern-count-other': '{0} yd'
                 },
-                'colNumeric': {
-                    'no': 'Classificar d\u00EDgitos individualmente',
-                    'yes': 'Classificar d\u00EDgitos numericamente'
+                'length-picometer': {
+                    'unitPattern-count-one': '{0} pm',
+                    'unitPattern-count-other': '{0} pm'
                 },
-                'colNormalization': {
-                    'no': 'Classificar sem normaliza\u00E7\u00E3o',
-                    'yes': 'Classificar Unicode normalizado'
+                'length-millimeter': {
+                    'unitPattern-count-one': '{0} mm',
+                    'unitPattern-count-other': '{0} mm'
                 },
-                'calendar': {
-                    'japanese': 'Calend\u00E1rio Japon\u00EAs',
-                    'iso8601': 'iso8601',
-                    'coptic': 'Calend\u00E1rio Coptic',
-                    'dangi': 'dangi',
-                    'ethiopic': 'Calend\u00E1rio eti\u00F3pico',
-                    'ethiopic-amete-alem': 'Calend\u00E1rio Amete Alem da Eti\u00F3pia',
-                    'gregorian': 'Calend\u00E1rio Gregoriano',
-                    'hebrew': 'Calend\u00E1rio Hebraico',
-                    'persian': 'Calend\u00E1rio persa',
-                    'roc': 'Calend\u00E1rio da Rep\u00FAblica da China',
-                    'chinese': 'Calend\u00E1rio Chin\u00EAs',
-                    'buddhist': 'Calend\u00E1rio Budista',
-                    'indian': 'Calend\u00E1rio Nacional Indiano',
-                    'islamic': 'Calend\u00E1rio Isl\u00E2mico',
-                    'islamic-civil': 'Calend\u00E1rio Civil Isl\u00E2mico',
-                    'islamic-rgsa': 'islamic-rgsa',
-                    'islamic-tbla': 'islamic-tbla',
-                    'islamic-umalqura': 'islamic-umalqura'
+                'length-mile': {
+                    'unitPattern-count-one': '{0} milha',
+                    'unitPattern-count-other': '{0} milhas'
                 },
-                'collation': {
-                    'phonebook': 'Ordem de Lista Telef\u00F4nica',
-                    'gb2312han': 'Ordem do Chin\u00EAs Simplificado - GB2312',
-                    'eor': 'eor',
-                    'ducet': 'Ordem padr\u00E3o do Unicode',
-                    'dictionary': 'Ordem do dicion\u00E1rio',
-                    'big5han': 'Ordem do Chin\u00EAs Tradicional - Big5',
-                    'traditional': 'Ordem Tradicional',
-                    'standard': 'padr\u00E3o',
-                    'zhuyin': 'zhuyin',
-                    'unihan': 'Ordem por Radical-Tra\u00E7os',
-                    'stroke': 'Ordem dos Tra\u00E7os',
-                    'searchjl': 'Pesquisar por consonante inicial hangul',
-                    'search': 'Pesquisa de uso geral',
-                    'reformed': 'Ordem reformulada',
-                    'pinyin': 'Ordem Pin-yin',
-                    'phonetic': 'Ordem de classifica\u00E7\u00E3o fon\u00E9tica'
+                'length-meter': {
+                    'unitPattern-count-one': '{0} m',
+                    'unitPattern-count-other': '{0} m'
                 },
-                'numbers': {
-                    'knda': 'Algarismos Kannada',
-                    'khmr': 'Algarismos Khmer',
-                    'kali': 'kali',
-                    'jpanfin': 'Algarismos financeiros japoneses',
-                    'jpan': 'Algarismos japoneses',
-                    'java': 'java',
-                    'hebr': 'Algarismos hebraicos',
-                    'hantfin': 'Algarismos financeiros chineses tradicionais',
-                    'hant': 'Algarismos chineses tradicionais',
-                    'hansfin': 'Algarismos financeiros chineses simplificados',
-                    'hans': 'Algarismos chineses simplificados',
-                    'hanidec': 'Algarismos decimais chineses',
-                    'guru': 'Algarismos Gurmukhi',
-                    'gujr': 'Algarismos Gujarati',
-                    'greklow': 'Algarismos gregos min\u00FAsculos',
-                    'grek': 'Algarismos gregos',
-                    'bali': 'bali',
-                    'armnlow': 'Algarismos arm\u00EAnios min\u00FAsculos',
-                    'armn': 'Algarismos arm\u00EAnios',
-                    'arabext': 'Algarismos indo-ar\u00E1bicos por extenso',
-                    'arab': 'Algarismos indo-ar\u00E1bicos',
-                    'finance': 'Numerais financeiros',
-                    'traditional': 'Numerais tradicionais',
-                    'native': 'D\u00EDgitos nativos',
-                    'beng': 'Algarismos Bengali',
-                    'brah': 'brah',
-                    'cakm': 'cakm',
-                    'cham': 'cham',
-                    'deva': 'Algarismos Devanagari',
-                    'orya': 'Algarismos Oriya',
-                    'osma': 'osma',
-                    'roman': 'Algarismos romanos',
-                    'romanlow': 'Algarismos romanos min\u00FAsculos',
-                    'saur': 'saur',
-                    'shrd': 'shrd',
-                    'sora': 'sora',
-                    'sund': 'sund',
-                    'vaii': 'D\u00EDgitos vai',
-                    'tibt': 'Algarismos tibetanos',
-                    'thai': 'Algarismos tailandeses',
-                    'telu': 'Algarismos Telugu',
-                    'tamldec': 'Algarismos T\u00E2mil',
-                    'taml': 'Algarismos T\u00E2mil',
-                    'talu': 'talu',
-                    'takr': 'takr',
-                    'olck': 'olck',
-                    'nkoo': 'nkoo',
-                    'mymrshan': 'mymrshan',
-                    'mymr': 'Algarismos Myanmar',
-                    'mtei': 'mtei',
-                    'mong': 'Algarismos mong\u00F3is',
-                    'mlym': 'Algarismos Malayalam',
-                    'limb': 'limb',
-                    'lepc': 'lepc',
-                    'latn': 'Algarismos ocidentais',
-                    'laoo': 'Algarismos laosianos',
-                    'lanatham': 'lanatham',
-                    'lana': 'lana',
-                    'geor': 'Algarismos georgianos',
-                    'fullwide': 'Algarismos em extens\u00E3o total',
-                    'ethi': 'Algarismos eti\u00F3picos'
+                'length-light-year': {
+                    'unitPattern-count-one': '{0} ano-luz',
+                    'unitPattern-count-other': '{0} anos-luz'
                 },
-                'colAlternate': {
-                    'non-ignorable': 'Classificar s\u00EDmbolos',
-                    'shifted': 'Classificar ignorando s\u00EDmbolos'
+                'length-kilometer': {
+                    'unitPattern-count-one': '{0} km',
+                    'unitPattern-count-other': '{0} km'
                 },
-                'colBackwards': {
-                    'no': 'Classificar acentos normalmente',
-                    'yes': 'Classifica\u00E7\u00E3o reversa de acentos'
+                'length-inch': {
+                    'unitPattern-count-one': '{0}\u2033',
+                    'unitPattern-count-other': '{0}\u2033'
+                },
+                'length-foot': {
+                    'unitPattern-count-one': '{0} p\u00E9',
+                    'unitPattern-count-other': '{0} p\u00E9s'
+                },
+                'length-centimeter': {
+                    'unitPattern-count-one': '{0} cm',
+                    'unitPattern-count-other': '{0} cm'
+                },
+                'duration-year': {
+                    'unitPattern-count-one': '{0} ano',
+                    'unitPattern-count-other': '{0} anos'
+                },
+                'duration-week': {
+                    'unitPattern-count-one': '{0} sem.',
+                    'unitPattern-count-other': '{0} sem.'
+                },
+                'duration-month': {
+                    'unitPattern-count-one': '{0} m\u00EAs',
+                    'unitPattern-count-other': '{0} meses'
+                },
+                'mass-pound': {
+                    'unitPattern-count-one': '{0} lb',
+                    'unitPattern-count-other': '{0} lb'
+                },
+                'power-horsepower': {
+                    'unitPattern-count-one': '{0} cv',
+                    'unitPattern-count-other': '{0} cv'
+                },
+                'power-kilowatt': {
+                    'unitPattern-count-one': '{0} kW',
+                    'unitPattern-count-other': '{0} kW'
+                },
+                'power-watt': {
+                    'unitPattern-count-one': '{0} W',
+                    'unitPattern-count-other': '{0} W'
+                },
+                'pressure-hectopascal': {
+                    'unitPattern-count-one': '{0} hPa',
+                    'unitPattern-count-other': '{0} hPa'
+                },
+                'pressure-inch-hg': {
+                    'unitPattern-count-one': '{0}" Hg',
+                    'unitPattern-count-other': '{0}" Hg'
+                },
+                'pressure-millibar': {
+                    'unitPattern-count-one': '{0} mb',
+                    'unitPattern-count-other': '{0} mb'
+                },
+                'volume-liter': {
+                    'unitPattern-count-one': '{0} l',
+                    'unitPattern-count-other': '{0} l'
+                },
+                'volume-cubic-mile': {
+                    'unitPattern-count-one': '{0} mi\u00B3',
+                    'unitPattern-count-other': '{0} mi\u00B3'
+                },
+                'volume-cubic-kilometer': {
+                    'unitPattern-count-one': '{0} km\u00B3',
+                    'unitPattern-count-other': '{0} km\u00B3'
+                },
+                'temperature-fahrenheit': {
+                    'unitPattern-count-one': '{0} \u00B0F',
+                    'unitPattern-count-other': '{0} \u00B0F'
+                },
+                'temperature-celsius': {
+                    'unitPattern-count-one': '{0} \u00B0',
+                    'unitPattern-count-other': '{0} \u00B0'
+                },
+                'speed-mile-per-hour': {
+                    'unitPattern-count-one': '{0} mi/h',
+                    'unitPattern-count-other': '{0} mi/h'
+                },
+                'speed-meter-per-second': {
+                    'unitPattern-count-one': '{0} m/s',
+                    'unitPattern-count-other': '{0} m/s'
+                },
+                'speed-kilometer-per-hour': {
+                    'unitPattern-count-one': '{0} km/h',
+                    'unitPattern-count-other': '{0} km/h'
+                },
+                'duration-minute': {
+                    'unitPattern-count-one': '{0} min',
+                    'unitPattern-count-other': '{0} min'
+                },
+                'duration-millisecond': {
+                    'unitPattern-count-one': '{0} ms',
+                    'unitPattern-count-other': '{0} ms'
+                },
+                'duration-hour': {
+                    'unitPattern-count-one': '{0} h',
+                    'unitPattern-count-other': '{0} h'
+                },
+                'duration-day': {
+                    'unitPattern-count-one': '{0} dia',
+                    'unitPattern-count-other': '{0} dias'
+                },
+                'area-square-mile': {
+                    'unitPattern-count-one': '{0} mi\u00B2',
+                    'unitPattern-count-other': '{0} mi\u00B2'
+                },
+                'area-square-meter': {
+                    'unitPattern-count-one': '{0} m\u00B2',
+                    'unitPattern-count-other': '{0} m\u00B2'
+                },
+                'area-square-kilometer': {
+                    'unitPattern-count-one': '{0} km\u00B2',
+                    'unitPattern-count-other': '{0} km\u00B2'
+                },
+                'per': {
+                    'compoundUnitPattern': '{0}/{1}'
+                },
+                'acceleration-g-force': {
+                    'unitPattern-count-one': '{0} G',
+                    'unitPattern-count-other': '{0} G'
+                },
+                'angle-arc-minute': {
+                    'unitPattern-count-one': '{0}\'',
+                    'unitPattern-count-other': '{0}\''
+                },
+                'angle-arc-second': {
+                    'unitPattern-count-one': '{0}"',
+                    'unitPattern-count-other': '{0}"'
+                },
+                'angle-degree': {
+                    'unitPattern-count-one': '{0}\u00B0',
+                    'unitPattern-count-other': '{0}\u00B0'
+                },
+                'area-acre': {
+                    'unitPattern-count-one': '{0} acre',
+                    'unitPattern-count-other': '{0} acres'
+                },
+                'area-hectare': {
+                    'unitPattern-count-one': '{0} ha',
+                    'unitPattern-count-other': '{0} ha'
+                },
+                'area-square-foot': {
+                    'unitPattern-count-one': '{0} ft\u00B2',
+                    'unitPattern-count-other': '{0} ft\u00B2'
+                },
+                'duration-second': {
+                    'unitPattern-count-one': '{0} s',
+                    'unitPattern-count-other': '{0} s'
                 }
             },
-            'keys': {
-                'colNormalization': 'Classifica\u00E7\u00E3o normalizada',
-                'collation': 'Ordena\u00E7\u00E3o',
-                'colHiraganaQuaternary': 'Classifica\u00E7\u00E3o kana',
-                'colCaseLevel': 'Ordem com diferencia\u00E7\u00E3o de mai\u00FAsculas e min\u00FAsculas',
-                'colCaseFirst': 'Ordem de mai\u00FAsculas/min\u00FAsculas',
-                'colBackwards': 'Classifica\u00E7\u00E3o reversa de acentos',
-                'colAlternate': 'Ignorar classifica\u00E7\u00E3o de s\u00EDmbolos',
-                'calendar': 'Calend\u00E1rio',
-                'x': 'Uso privado',
-                'variableTop': 'Classificar como s\u00EDmbolos',
-                'va': 'Variante de localidade',
-                'timezone': 'Fuso hor\u00E1rio',
-                'numbers': 'N\u00FAmeros',
-                'currency': 'Moeda',
-                'colStrength': 'Intensidade da classifica\u00E7\u00E3o',
-                'colNumeric': 'Classifica\u00E7\u00E3o num\u00E9rica'
-            },
-            'localeDisplayPattern': {
-                'localePattern': '{0} ({1})',
-                'localeSeparator': '{0}, {1}',
-                'localeKeyTypePattern': '{0}: {1}'
+            'calendars': {
+                'gregorian': {
+                    'months': {
+                        'format': {
+                            'abbreviated': {
+                                '8': 'ago',
+                                '7': 'jul',
+                                '6': 'jun',
+                                '5': 'mai',
+                                '12': 'dez',
+                                '11': 'nov',
+                                '10': 'out',
+                                '9': 'set',
+                                '1': 'jan',
+                                '2': 'fev',
+                                '3': 'mar',
+                                '4': 'abr'
+                            },
+                            'narrow': {
+                                '8': 'A',
+                                '7': 'J',
+                                '6': 'J',
+                                '5': 'M',
+                                '12': 'D',
+                                '11': 'N',
+                                '10': 'O',
+                                '9': 'S',
+                                '1': 'J',
+                                '2': 'F',
+                                '3': 'M',
+                                '4': 'A'
+                            },
+                            'wide': {
+                                '8': 'agosto',
+                                '7': 'julho',
+                                '6': 'junho',
+                                '5': 'maio',
+                                '12': 'dezembro',
+                                '11': 'novembro',
+                                '10': 'outubro',
+                                '9': 'setembro',
+                                '1': 'janeiro',
+                                '2': 'fevereiro',
+                                '3': 'mar\u00E7o',
+                                '4': 'abril'
+                            }
+                        },
+                        'stand-alone': {
+                            'abbreviated': {
+                                '8': 'ago',
+                                '7': 'jul',
+                                '6': 'jun',
+                                '5': 'mai',
+                                '12': 'dez',
+                                '11': 'nov',
+                                '10': 'out',
+                                '9': 'set',
+                                '1': 'jan',
+                                '2': 'fev',
+                                '3': 'mar',
+                                '4': 'abr'
+                            },
+                            'narrow': {
+                                '8': 'A',
+                                '7': 'J',
+                                '6': 'J',
+                                '5': 'M',
+                                '12': 'D',
+                                '11': 'N',
+                                '10': 'O',
+                                '9': 'S',
+                                '1': 'J',
+                                '2': 'F',
+                                '3': 'M',
+                                '4': 'A'
+                            },
+                            'wide': {
+                                '8': 'agosto',
+                                '7': 'julho',
+                                '6': 'junho',
+                                '5': 'maio',
+                                '12': 'dezembro',
+                                '11': 'novembro',
+                                '10': 'outubro',
+                                '9': 'setembro',
+                                '1': 'janeiro',
+                                '2': 'fevereiro',
+                                '3': 'mar\u00E7o',
+                                '4': 'abril'
+                            }
+                        }
+                    },
+                    'days': {
+                        'format': {
+                            'abbreviated': {
+                                'sun': 'dom',
+                                'mon': 'seg',
+                                'tue': 'ter',
+                                'wed': 'qua',
+                                'thu': 'qui',
+                                'fri': 'sex',
+                                'sat': 's\u00E1b'
+                            },
+                            'narrow': {
+                                'sun': 'D',
+                                'mon': 'S',
+                                'tue': 'T',
+                                'wed': 'Q',
+                                'thu': 'Q',
+                                'fri': 'S',
+                                'sat': 'S'
+                            },
+                            'short': {
+                                'sun': 'dom',
+                                'mon': 'seg',
+                                'tue': 'ter',
+                                'wed': 'qua',
+                                'thu': 'qui',
+                                'fri': 'sex',
+                                'sat': 's\u00E1b'
+                            },
+                            'wide': {
+                                'sun': 'domingo',
+                                'mon': 'segunda-feira',
+                                'tue': 'ter\u00E7a-feira',
+                                'wed': 'quarta-feira',
+                                'thu': 'quinta-feira',
+                                'fri': 'sexta-feira',
+                                'sat': 's\u00E1bado'
+                            }
+                        },
+                        'stand-alone': {
+                            'abbreviated': {
+                                'sun': 'dom',
+                                'mon': 'seg',
+                                'tue': 'ter',
+                                'wed': 'qua',
+                                'thu': 'qui',
+                                'fri': 'sex',
+                                'sat': 's\u00E1b'
+                            },
+                            'narrow': {
+                                'sun': 'D',
+                                'mon': 'S',
+                                'tue': 'T',
+                                'wed': 'Q',
+                                'thu': 'Q',
+                                'fri': 'S',
+                                'sat': 'S'
+                            },
+                            'short': {
+                                'sun': 'dom',
+                                'mon': 'seg',
+                                'tue': 'ter',
+                                'wed': 'qua',
+                                'thu': 'qui',
+                                'fri': 'sex',
+                                'sat': 's\u00E1b'
+                            },
+                            'wide': {
+                                'sun': 'domingo',
+                                'mon': 'segunda-feira',
+                                'tue': 'ter\u00E7a-feira',
+                                'wed': 'quarta-feira',
+                                'thu': 'quinta-feira',
+                                'fri': 'sexta-feira',
+                                'sat': 's\u00E1bado'
+                            }
+                        }
+                    },
+                    'quarters': {
+                        'format': {
+                            'abbreviated': {
+                                '1': 'T1',
+                                '2': 'T2',
+                                '3': 'T3',
+                                '4': 'T4'
+                            },
+                            'narrow': {
+                                '1': '1',
+                                '2': '2',
+                                '3': '3',
+                                '4': '4'
+                            },
+                            'wide': {
+                                '1': '1\u00BA trimestre',
+                                '2': '2\u00BA trimestre',
+                                '3': '3\u00BA trimestre',
+                                '4': '4\u00BA trimestre'
+                            }
+                        },
+                        'stand-alone': {
+                            'abbreviated': {
+                                '1': 'T1',
+                                '2': 'T2',
+                                '3': 'T3',
+                                '4': 'T4'
+                            },
+                            'narrow': {
+                                '1': '1',
+                                '2': '2',
+                                '3': '3',
+                                '4': '4'
+                            },
+                            'wide': {
+                                '1': '1\u00BA trimestre',
+                                '2': '2\u00BA trimestre',
+                                '3': '3\u00BA trimestre',
+                                '4': '4\u00BA trimestre'
+                            }
+                        }
+                    },
+                    'dayPeriods': {
+                        'format': {
+                            'abbreviated': {
+                                'afternoon': 'tarde',
+                                'am': 'AM',
+                                'morning': 'manh\u00E3',
+                                'night': 'noite',
+                                'noon': 'meio-dia',
+                                'pm': 'PM'
+                            },
+                            'narrow': {
+                                'afternoon': 'tarde',
+                                'am': 'a',
+                                'morning': 'manh\u00E3',
+                                'night': 'noite',
+                                'noon': 'meio-dia',
+                                'pm': 'p'
+                            },
+                            'wide': {
+                                'afternoon': 'tarde',
+                                'am': 'AM',
+                                'morning': 'manh\u00E3',
+                                'night': 'noite',
+                                'noon': 'meio-dia',
+                                'pm': 'PM'
+                            }
+                        },
+                        'stand-alone': {
+                            'abbreviated': {
+                                'afternoon': 'tarde',
+                                'am': 'AM',
+                                'morning': 'manh\u00E3',
+                                'night': 'noite',
+                                'noon': 'meia-noite',
+                                'pm': 'PM'
+                            },
+                            'narrow': {
+                                'afternoon': 'tarde',
+                                'am': 'a',
+                                'morning': 'manh\u00E3',
+                                'night': 'noite',
+                                'noon': 'meio-dia',
+                                'pm': 'p'
+                            },
+                            'wide': {
+                                'afternoon': 'tarde',
+                                'am': 'AM',
+                                'morning': 'manh\u00E3',
+                                'night': 'noite',
+                                'noon': 'meio-dia',
+                                'pm': 'PM'
+                            }
+                        }
+                    },
+                    'eras': {
+                        'eraNames': {
+                            '0': 'Antes de Cristo',
+                            '0-alt-variant': 'BCE',
+                            '1': 'Ano do Senhor',
+                            '1-alt-variant': 'CE'
+                        },
+                        'eraAbbr': {
+                            '0': 'a.C.',
+                            '0-alt-variant': 'BCE',
+                            '1': 'd.C.',
+                            '1-alt-variant': 'CE'
+                        },
+                        'eraNarrow': {
+                            '0': 'a.C.',
+                            '0-alt-variant': 'BCE',
+                            '1': 'd.C.',
+                            '1-alt-variant': 'CE'
+                        }
+                    },
+                    'dateFormats': {
+                        'full': 'EEEE, d \'de\' MMMM \'de\' y',
+                        'long': 'd \'de\' MMMM \'de\' y',
+                        'medium': 'dd/MM/y',
+                        'short': 'dd/MM/yy'
+                    },
+                    'timeFormats': {
+                        'full': 'HH:mm:ss zzzz',
+                        'long': 'HH:mm:ss z',
+                        'medium': 'HH:mm:ss',
+                        'short': 'HH:mm'
+                    },
+                    'dateTimeFormats': {
+                        'full': '{1} {0}',
+                        'long': '{1} {0}',
+                        'medium': '{1} {0}',
+                        'short': '{1} {0}',
+                        'availableFormats': {
+                            'yMMM': 'MMM \'de\' y',
+                            'yMM': 'MM/y',
+                            'yMEd': 'E, dd/MM/y',
+                            'yMd': 'dd/MM/y',
+                            'EHm': 'E, HH:mm',
+                            'Ehm': 'E, h:mm a',
+                            'Ed': 'E, d',
+                            'd': 'd',
+                            'GyMMMd': 'd \'de\' MMM \'de\' y G',
+                            'GyMMMEd': 'E, d \'de\' MMM \'de\' y G',
+                            'h': 'h a',
+                            'H': 'HH',
+                            'yQQQQ': 'y QQQQ',
+                            'yQQQ': 'y QQQ',
+                            'yMMMEd': 'E, d \'de\' MMM \'de\' y',
+                            'yMMMd': 'd \'de\' MMM \'de\' y',
+                            'Hm': 'HH:mm',
+                            'hm': 'h:mm a',
+                            'HHmmss': 'HH:mm:ss',
+                            'HHmm': 'HH:mm',
+                            'Ehms': 'E, h:mm:ss a',
+                            'EHms': 'E, HH:mm:ss',
+                            'Gy': 'y G',
+                            'GyMMM': 'MMM \'de\' y G',
+                            'hms': 'h:mm:ss a',
+                            'Hms': 'HH:mm:ss',
+                            'M': 'L',
+                            'Md': 'd/M',
+                            'MEd': 'E, dd/MM',
+                            'MMdd': 'dd/MM',
+                            'MMM': 'LLL',
+                            'MMMd': 'd \'de\' MMM',
+                            'MMMEd': 'E, d \'de\' MMM',
+                            'ms': 'mm:ss',
+                            'y': 'y',
+                            'yM': 'MM/y'
+                        },
+                        'appendItems': {
+                            'Second': '{0} ({2}: {1})',
+                            'Quarter': '{0} ({2}: {1})',
+                            'Month': '{0} ({2}: {1})',
+                            'Year': '{1} {0}',
+                            'Week': '{0} ({2}: {1})',
+                            'Timezone': '{0} {1}',
+                            'Day': '{0} ({2}: {1})',
+                            'Day-Of-Week': '{0} {1}',
+                            'Era': '{1} {0}',
+                            'Hour': '{0} ({2}: {1})',
+                            'Minute': '{0} ({2}: {1})'
+                        },
+                        'intervalFormats': {
+                            'MMMEd': {
+                                'd': 'E, d - E, d \'de\' MMM',
+                                'M': 'E, d \'de\' MMM - E, d \'de\' MMM'
+                            },
+                            'MMMd': {
+                                'd': 'd-d \'de\' MMM',
+                                'M': 'd \'de\' MMM - d \'de\' MMM'
+                            },
+                            'MMM': {
+                                'M': 'MMM - MMM'
+                            },
+                            'MEd': {
+                                'd': 'E, dd/MM - E, dd/MM',
+                                'M': 'E, dd/MM - E, dd/MM'
+                            },
+                            'Md': {
+                                'd': 'dd/MM - dd/MM',
+                                'M': 'dd/MM - dd/MM'
+                            },
+                            'M': {
+                                'M': 'M-M'
+                            },
+                            'Hv': {
+                                'H': 'HH - HH v'
+                            },
+                            'hv': {
+                                'a': 'h a - h a v',
+                                'h': 'h - h a v'
+                            },
+                            'y': {
+                                'y': 'y - y'
+                            },
+                            'yM': {
+                                'M': 'MM/y - MM/y',
+                                'y': 'MM/y - MM/y'
+                            },
+                            'yMd': {
+                                'd': 'dd/MM/y - dd/MM/y',
+                                'M': 'dd/MM/y - dd/MM/y',
+                                'y': 'dd/MM/y - dd/MM/y'
+                            },
+                            'yMEd': {
+                                'd': 'E, dd/MM/y - E, dd/MM/y',
+                                'M': 'E, dd/MM/y - E, dd/MM/y',
+                                'y': 'E, dd/MM/y - E, dd/MM/y'
+                            },
+                            'yMMM': {
+                                'M': 'MMM-MMM \'de\' y',
+                                'y': 'MMM \'de\' y - MMM \'de\' y'
+                            },
+                            'yMMMd': {
+                                'd': 'd-d \'de\' MMM \'de\' y',
+                                'M': 'd \'de\' MMM - d \'de\' MMM \'de\' y',
+                                'y': 'd \'de\' MMM \'de\' y - d \'de\' MMM \'de\' y'
+                            },
+                            'yMMMEd': {
+                                'd': 'E, d - E, d \'de\' MMM \'de\' y',
+                                'M': 'E, d \'de\' MMM - E, d \'de\' MMM \'de\' y',
+                                'y': 'E, d \'de\' MMM \'de\' y - E, d \'de\' MMM \'de\' y'
+                            },
+                            'yMMMM': {
+                                'M': 'MMMM - MMMM \'de\' y',
+                                'y': 'MMMM \'de\' y - MMMM \'de\' y'
+                            },
+                            'Hmv': {
+                                'H': 'HH:mm\u2013HH:mm v',
+                                'm': 'HH:mm\u2013HH:mm v'
+                            },
+                            'hmv': {
+                                'a': 'h:mm a \u2013 h:mm a v',
+                                'h': 'h:mm\u2013h:mm a v',
+                                'm': 'h:mm\u2013h:mm a v'
+                            },
+                            'Hm': {
+                                'H': 'HH:mm\u2013HH:mm',
+                                'm': 'HH:mm\u2013HH:mm'
+                            },
+                            'hm': {
+                                'a': 'h:mm a \u2013 h:mm a',
+                                'h': 'h:mm\u2013h:mm a',
+                                'm': 'h:mm\u2013h:mm a'
+                            },
+                            'H': {
+                                'H': 'HH\'h\' - HH\'h\''
+                            },
+                            'h': {
+                                'a': 'h\'h\' a - h\'h\' a',
+                                'h': 'h\'h\' - h\'h\' a'
+                            },
+                            'd': {
+                                'd': 'd-d'
+                            },
+                            'intervalFormatFallback': '{0} - {1}'
+                        }
+                    }
+                }
             },
             'timeZoneNames': {
                 'zone': {
@@ -2536,456 +3020,549 @@
                 'regionFormat-type-standard': '{0} (+0)',
                 'fallbackFormat': '{1} ({0})'
             },
-            'calendars': {
-                'gregorian': {
-                    'months': {
-                        'format': {
-                            'abbreviated': {
-                                '8': 'ago',
-                                '7': 'jul',
-                                '6': 'jun',
-                                '5': 'mai',
-                                '12': 'dez',
-                                '11': 'nov',
-                                '10': 'out',
-                                '9': 'set',
-                                '1': 'jan',
-                                '2': 'fev',
-                                '3': 'mar',
-                                '4': 'abr'
-                            },
-                            'narrow': {
-                                '8': 'A',
-                                '7': 'J',
-                                '6': 'J',
-                                '5': 'M',
-                                '12': 'D',
-                                '11': 'N',
-                                '10': 'O',
-                                '9': 'S',
-                                '1': 'J',
-                                '2': 'F',
-                                '3': 'M',
-                                '4': 'A'
-                            },
-                            'wide': {
-                                '8': 'agosto',
-                                '7': 'julho',
-                                '6': 'junho',
-                                '5': 'maio',
-                                '12': 'dezembro',
-                                '11': 'novembro',
-                                '10': 'outubro',
-                                '9': 'setembro',
-                                '1': 'janeiro',
-                                '2': 'fevereiro',
-                                '3': 'mar\u00E7o',
-                                '4': 'abril'
-                            }
-                        },
-                        'stand-alone': {
-                            'abbreviated': {
-                                '8': 'ago',
-                                '7': 'jul',
-                                '6': 'jun',
-                                '5': 'mai',
-                                '12': 'dez',
-                                '11': 'nov',
-                                '10': 'out',
-                                '9': 'set',
-                                '1': 'jan',
-                                '2': 'fev',
-                                '3': 'mar',
-                                '4': 'abr'
-                            },
-                            'narrow': {
-                                '8': 'A',
-                                '7': 'J',
-                                '6': 'J',
-                                '5': 'M',
-                                '12': 'D',
-                                '11': 'N',
-                                '10': 'O',
-                                '9': 'S',
-                                '1': 'J',
-                                '2': 'F',
-                                '3': 'M',
-                                '4': 'A'
-                            },
-                            'wide': {
-                                '8': 'agosto',
-                                '7': 'julho',
-                                '6': 'junho',
-                                '5': 'maio',
-                                '12': 'dezembro',
-                                '11': 'novembro',
-                                '10': 'outubro',
-                                '9': 'setembro',
-                                '1': 'janeiro',
-                                '2': 'fevereiro',
-                                '3': 'mar\u00E7o',
-                                '4': 'abril'
-                            }
-                        }
-                    },
-                    'days': {
-                        'format': {
-                            'abbreviated': {
-                                'sun': 'dom',
-                                'mon': 'seg',
-                                'tue': 'ter',
-                                'wed': 'qua',
-                                'thu': 'qui',
-                                'fri': 'sex',
-                                'sat': 's\u00E1b'
-                            },
-                            'narrow': {
-                                'sun': 'D',
-                                'mon': 'S',
-                                'tue': 'T',
-                                'wed': 'Q',
-                                'thu': 'Q',
-                                'fri': 'S',
-                                'sat': 'S'
-                            },
-                            'short': {
-                                'sun': 'dom',
-                                'mon': 'seg',
-                                'tue': 'ter',
-                                'wed': 'qua',
-                                'thu': 'qui',
-                                'fri': 'sex',
-                                'sat': 's\u00E1b'
-                            },
-                            'wide': {
-                                'sun': 'domingo',
-                                'mon': 'segunda-feira',
-                                'tue': 'ter\u00E7a-feira',
-                                'wed': 'quarta-feira',
-                                'thu': 'quinta-feira',
-                                'fri': 'sexta-feira',
-                                'sat': 's\u00E1bado'
-                            }
-                        },
-                        'stand-alone': {
-                            'abbreviated': {
-                                'sun': 'dom',
-                                'mon': 'seg',
-                                'tue': 'ter',
-                                'wed': 'qua',
-                                'thu': 'qui',
-                                'fri': 'sex',
-                                'sat': 's\u00E1b'
-                            },
-                            'narrow': {
-                                'sun': 'D',
-                                'mon': 'S',
-                                'tue': 'T',
-                                'wed': 'Q',
-                                'thu': 'Q',
-                                'fri': 'S',
-                                'sat': 'S'
-                            },
-                            'short': {
-                                'sun': 'dom',
-                                'mon': 'seg',
-                                'tue': 'ter',
-                                'wed': 'qua',
-                                'thu': 'qui',
-                                'fri': 'sex',
-                                'sat': 's\u00E1b'
-                            },
-                            'wide': {
-                                'sun': 'domingo',
-                                'mon': 'segunda-feira',
-                                'tue': 'ter\u00E7a-feira',
-                                'wed': 'quarta-feira',
-                                'thu': 'quinta-feira',
-                                'fri': 'sexta-feira',
-                                'sat': 's\u00E1bado'
-                            }
-                        }
-                    },
-                    'quarters': {
-                        'format': {
-                            'abbreviated': {
-                                '1': 'T1',
-                                '2': 'T2',
-                                '3': 'T3',
-                                '4': 'T4'
-                            },
-                            'narrow': {
-                                '1': '1',
-                                '2': '2',
-                                '3': '3',
-                                '4': '4'
-                            },
-                            'wide': {
-                                '1': '1\u00BA trimestre',
-                                '2': '2\u00BA trimestre',
-                                '3': '3\u00BA trimestre',
-                                '4': '4\u00BA trimestre'
-                            }
-                        },
-                        'stand-alone': {
-                            'abbreviated': {
-                                '1': 'T1',
-                                '2': 'T2',
-                                '3': 'T3',
-                                '4': 'T4'
-                            },
-                            'narrow': {
-                                '1': '1',
-                                '2': '2',
-                                '3': '3',
-                                '4': '4'
-                            },
-                            'wide': {
-                                '1': '1\u00BA trimestre',
-                                '2': '2\u00BA trimestre',
-                                '3': '3\u00BA trimestre',
-                                '4': '4\u00BA trimestre'
-                            }
-                        }
-                    },
-                    'dayPeriods': {
-                        'format': {
-                            'abbreviated': {
-                                'afternoon': 'tarde',
-                                'am': 'AM',
-                                'morning': 'manh\u00E3',
-                                'night': 'noite',
-                                'noon': 'meio-dia',
-                                'pm': 'PM'
-                            },
-                            'narrow': {
-                                'afternoon': 'tarde',
-                                'am': 'a',
-                                'morning': 'manh\u00E3',
-                                'night': 'noite',
-                                'noon': 'meio-dia',
-                                'pm': 'p'
-                            },
-                            'wide': {
-                                'afternoon': 'tarde',
-                                'am': 'AM',
-                                'morning': 'manh\u00E3',
-                                'night': 'noite',
-                                'noon': 'meio-dia',
-                                'pm': 'PM'
-                            }
-                        },
-                        'stand-alone': {
-                            'abbreviated': {
-                                'afternoon': 'tarde',
-                                'am': 'AM',
-                                'morning': 'manh\u00E3',
-                                'night': 'noite',
-                                'noon': 'meia-noite',
-                                'pm': 'PM'
-                            },
-                            'narrow': {
-                                'afternoon': 'tarde',
-                                'am': 'a',
-                                'morning': 'manh\u00E3',
-                                'night': 'noite',
-                                'noon': 'meio-dia',
-                                'pm': 'p'
-                            },
-                            'wide': {
-                                'afternoon': 'tarde',
-                                'am': 'AM',
-                                'morning': 'manh\u00E3',
-                                'night': 'noite',
-                                'noon': 'meio-dia',
-                                'pm': 'PM'
-                            }
-                        }
-                    },
-                    'eras': {
-                        'eraNames': {
-                            '0': 'Antes de Cristo',
-                            '0-alt-variant': 'BCE',
-                            '1': 'Ano do Senhor',
-                            '1-alt-variant': 'CE'
-                        },
-                        'eraAbbr': {
-                            '0': 'a.C.',
-                            '0-alt-variant': 'BCE',
-                            '1': 'd.C.',
-                            '1-alt-variant': 'CE'
-                        },
-                        'eraNarrow': {
-                            '0': 'a.C.',
-                            '0-alt-variant': 'BCE',
-                            '1': 'd.C.',
-                            '1-alt-variant': 'CE'
-                        }
-                    },
-                    'dateFormats': {
-                        'full': 'EEEE, d \'de\' MMMM \'de\' y',
-                        'long': 'd \'de\' MMMM \'de\' y',
-                        'medium': 'dd/MM/y',
-                        'short': 'dd/MM/yy'
-                    },
-                    'timeFormats': {
-                        'full': 'HH:mm:ss zzzz',
-                        'long': 'HH:mm:ss z',
-                        'medium': 'HH:mm:ss',
-                        'short': 'HH:mm'
-                    },
-                    'dateTimeFormats': {
-                        'full': '{1} {0}',
-                        'long': '{1} {0}',
-                        'medium': '{1} {0}',
-                        'short': '{1} {0}',
-                        'availableFormats': {
-                            'yMMM': 'MMM \'de\' y',
-                            'yMM': 'MM/y',
-                            'yMEd': 'E, dd/MM/y',
-                            'yMd': 'dd/MM/y',
-                            'EHm': 'E, HH:mm',
-                            'Ehm': 'E, h:mm a',
-                            'Ed': 'E, d',
-                            'd': 'd',
-                            'GyMMMd': 'd \'de\' MMM \'de\' y G',
-                            'GyMMMEd': 'E, d \'de\' MMM \'de\' y G',
-                            'h': 'h a',
-                            'H': 'HH',
-                            'yQQQQ': 'y QQQQ',
-                            'yQQQ': 'y QQQ',
-                            'yMMMEd': 'E, d \'de\' MMM \'de\' y',
-                            'yMMMd': 'd \'de\' MMM \'de\' y',
-                            'Hm': 'HH:mm',
-                            'hm': 'h:mm a',
-                            'HHmmss': 'HH:mm:ss',
-                            'HHmm': 'HH:mm',
-                            'Ehms': 'E, h:mm:ss a',
-                            'EHms': 'E, HH:mm:ss',
-                            'Gy': 'y G',
-                            'GyMMM': 'MMM \'de\' y G',
-                            'hms': 'h:mm:ss a',
-                            'Hms': 'HH:mm:ss',
-                            'M': 'L',
-                            'Md': 'd/M',
-                            'MEd': 'E, dd/MM',
-                            'MMdd': 'dd/MM',
-                            'MMM': 'LLL',
-                            'MMMd': 'd \'de\' MMM',
-                            'MMMEd': 'E, d \'de\' MMM',
-                            'ms': 'mm:ss',
-                            'y': 'y',
-                            'yM': 'MM/y'
-                        },
-                        'appendItems': {
-                            'Second': '{0} ({2}: {1})',
-                            'Quarter': '{0} ({2}: {1})',
-                            'Month': '{0} ({2}: {1})',
-                            'Year': '{1} {0}',
-                            'Week': '{0} ({2}: {1})',
-                            'Timezone': '{0} {1}',
-                            'Day': '{0} ({2}: {1})',
-                            'Day-Of-Week': '{0} {1}',
-                            'Era': '{1} {0}',
-                            'Hour': '{0} ({2}: {1})',
-                            'Minute': '{0} ({2}: {1})'
-                        },
-                        'intervalFormats': {
-                            'MMMEd': {
-                                'd': 'E, d - E, d \'de\' MMM',
-                                'M': 'E, d \'de\' MMM - E, d \'de\' MMM'
-                            },
-                            'MMMd': {
-                                'd': 'd-d \'de\' MMM',
-                                'M': 'd \'de\' MMM - d \'de\' MMM'
-                            },
-                            'MMM': {
-                                'M': 'MMM - MMM'
-                            },
-                            'MEd': {
-                                'd': 'E, dd/MM - E, dd/MM',
-                                'M': 'E, dd/MM - E, dd/MM'
-                            },
-                            'Md': {
-                                'd': 'dd/MM - dd/MM',
-                                'M': 'dd/MM - dd/MM'
-                            },
-                            'M': {
-                                'M': 'M-M'
-                            },
-                            'Hv': {
-                                'H': 'HH - HH v'
-                            },
-                            'hv': {
-                                'a': 'h a - h a v',
-                                'h': 'h - h a v'
-                            },
-                            'y': {
-                                'y': 'y - y'
-                            },
-                            'yM': {
-                                'M': 'MM/y - MM/y',
-                                'y': 'MM/y - MM/y'
-                            },
-                            'yMd': {
-                                'd': 'dd/MM/y - dd/MM/y',
-                                'M': 'dd/MM/y - dd/MM/y',
-                                'y': 'dd/MM/y - dd/MM/y'
-                            },
-                            'yMEd': {
-                                'd': 'E, dd/MM/y - E, dd/MM/y',
-                                'M': 'E, dd/MM/y - E, dd/MM/y',
-                                'y': 'E, dd/MM/y - E, dd/MM/y'
-                            },
-                            'yMMM': {
-                                'M': 'MMM-MMM \'de\' y',
-                                'y': 'MMM \'de\' y - MMM \'de\' y'
-                            },
-                            'yMMMd': {
-                                'd': 'd-d \'de\' MMM \'de\' y',
-                                'M': 'd \'de\' MMM - d \'de\' MMM \'de\' y',
-                                'y': 'd \'de\' MMM \'de\' y - d \'de\' MMM \'de\' y'
-                            },
-                            'yMMMEd': {
-                                'd': 'E, d - E, d \'de\' MMM \'de\' y',
-                                'M': 'E, d \'de\' MMM - E, d \'de\' MMM \'de\' y',
-                                'y': 'E, d \'de\' MMM \'de\' y - E, d \'de\' MMM \'de\' y'
-                            },
-                            'yMMMM': {
-                                'M': 'MMMM - MMMM \'de\' y',
-                                'y': 'MMMM \'de\' y - MMMM \'de\' y'
-                            },
-                            'Hmv': {
-                                'H': 'HH:mm\u2013HH:mm v',
-                                'm': 'HH:mm\u2013HH:mm v'
-                            },
-                            'hmv': {
-                                'a': 'h:mm a \u2013 h:mm a v',
-                                'h': 'h:mm\u2013h:mm a v',
-                                'm': 'h:mm\u2013h:mm a v'
-                            },
-                            'Hm': {
-                                'H': 'HH:mm\u2013HH:mm',
-                                'm': 'HH:mm\u2013HH:mm'
-                            },
-                            'hm': {
-                                'a': 'h:mm a \u2013 h:mm a',
-                                'h': 'h:mm\u2013h:mm a',
-                                'm': 'h:mm\u2013h:mm a'
-                            },
-                            'H': {
-                                'H': 'HH\'h\' - HH\'h\''
-                            },
-                            'h': {
-                                'a': 'h\'h\' a - h\'h\' a',
-                                'h': 'h\'h\' - h\'h\' a'
-                            },
-                            'd': {
-                                'd': 'd-d'
-                            },
-                            'intervalFormatFallback': '{0} - {1}'
-                        }
-                    }
+            'localeDisplayPattern': {
+                'localePattern': '{0} ({1})',
+                'localeSeparator': '{0}, {1}',
+                'localeKeyTypePattern': '{0}: {1}'
+            },
+            'keys': {
+                'colNormalization': 'Classifica\u00E7\u00E3o normalizada',
+                'collation': 'Ordena\u00E7\u00E3o',
+                'colHiraganaQuaternary': 'Classifica\u00E7\u00E3o kana',
+                'colCaseLevel': 'Ordem com diferencia\u00E7\u00E3o de mai\u00FAsculas e min\u00FAsculas',
+                'colCaseFirst': 'Ordem de mai\u00FAsculas/min\u00FAsculas',
+                'colBackwards': 'Classifica\u00E7\u00E3o reversa de acentos',
+                'colAlternate': 'Ignorar classifica\u00E7\u00E3o de s\u00EDmbolos',
+                'calendar': 'Calend\u00E1rio',
+                'x': 'Uso privado',
+                'variableTop': 'Classificar como s\u00EDmbolos',
+                'va': 'Variante de localidade',
+                'timezone': 'Fuso hor\u00E1rio',
+                'numbers': 'N\u00FAmeros',
+                'currency': 'Moeda',
+                'colStrength': 'Intensidade da classifica\u00E7\u00E3o',
+                'colNumeric': 'Classifica\u00E7\u00E3o num\u00E9rica'
+            },
+            'types': {
+                'colHiraganaQuaternary': {
+                    'no': 'Classificar kana separadamente',
+                    'yes': 'Classificar kana diferentemente'
+                },
+                'colCaseLevel': {
+                    'no': 'Classifica\u00E7\u00E3o sem diferencia\u00E7\u00E3o de mai\u00FAsculas e min\u00FAsculas',
+                    'yes': 'Classifica\u00E7\u00E3o com diferencia\u00E7\u00E3o de mai\u00FAsculas e min\u00FAsculas'
+                },
+                'colCaseFirst': {
+                    'lower': 'Classificar por min\u00FAsculas',
+                    'no': 'Classifica\u00E7\u00E3o normal de mai\u00FAsculas e min\u00FAsculas',
+                    'upper': 'Classificar por mai\u00FAsculas'
+                },
+                'colStrength': {
+                    'identical': 'Classificar tudo',
+                    'primary': 'Classificar somente letras b\u00E1sicas',
+                    'quaternary': 'Classificar acentos/mai\u00FAsculas e min\u00FAsculas/largura/kana',
+                    'secondary': 'Classificar acentos',
+                    'tertiary': 'Classificar acentos/mai\u00FAsculas e min\u00FAsculas/largura'
+                },
+                'colNumeric': {
+                    'no': 'Classificar d\u00EDgitos individualmente',
+                    'yes': 'Classificar d\u00EDgitos numericamente'
+                },
+                'colNormalization': {
+                    'no': 'Classificar sem normaliza\u00E7\u00E3o',
+                    'yes': 'Classificar Unicode normalizado'
+                },
+                'calendar': {
+                    'japanese': 'Calend\u00E1rio Japon\u00EAs',
+                    'iso8601': 'iso8601',
+                    'coptic': 'Calend\u00E1rio Coptic',
+                    'dangi': 'dangi',
+                    'ethiopic': 'Calend\u00E1rio eti\u00F3pico',
+                    'ethiopic-amete-alem': 'Calend\u00E1rio Amete Alem da Eti\u00F3pia',
+                    'gregorian': 'Calend\u00E1rio Gregoriano',
+                    'hebrew': 'Calend\u00E1rio Hebraico',
+                    'persian': 'Calend\u00E1rio persa',
+                    'roc': 'Calend\u00E1rio da Rep\u00FAblica da China',
+                    'chinese': 'Calend\u00E1rio Chin\u00EAs',
+                    'buddhist': 'Calend\u00E1rio Budista',
+                    'indian': 'Calend\u00E1rio Nacional Indiano',
+                    'islamic': 'Calend\u00E1rio Isl\u00E2mico',
+                    'islamic-civil': 'Calend\u00E1rio Civil Isl\u00E2mico',
+                    'islamic-rgsa': 'islamic-rgsa',
+                    'islamic-tbla': 'islamic-tbla',
+                    'islamic-umalqura': 'islamic-umalqura'
+                },
+                'collation': {
+                    'phonebook': 'Ordem de Lista Telef\u00F4nica',
+                    'gb2312han': 'Ordem do Chin\u00EAs Simplificado - GB2312',
+                    'eor': 'eor',
+                    'ducet': 'Ordem padr\u00E3o do Unicode',
+                    'dictionary': 'Ordem do dicion\u00E1rio',
+                    'big5han': 'Ordem do Chin\u00EAs Tradicional - Big5',
+                    'traditional': 'Ordem Tradicional',
+                    'standard': 'padr\u00E3o',
+                    'zhuyin': 'zhuyin',
+                    'unihan': 'Ordem por Radical-Tra\u00E7os',
+                    'stroke': 'Ordem dos Tra\u00E7os',
+                    'searchjl': 'Pesquisar por consonante inicial hangul',
+                    'search': 'Pesquisa de uso geral',
+                    'reformed': 'Ordem reformulada',
+                    'pinyin': 'Ordem Pin-yin',
+                    'phonetic': 'Ordem de classifica\u00E7\u00E3o fon\u00E9tica'
+                },
+                'numbers': {
+                    'knda': 'Algarismos Kannada',
+                    'khmr': 'Algarismos Khmer',
+                    'kali': 'kali',
+                    'jpanfin': 'Algarismos financeiros japoneses',
+                    'jpan': 'Algarismos japoneses',
+                    'java': 'java',
+                    'hebr': 'Algarismos hebraicos',
+                    'hantfin': 'Algarismos financeiros chineses tradicionais',
+                    'hant': 'Algarismos chineses tradicionais',
+                    'hansfin': 'Algarismos financeiros chineses simplificados',
+                    'hans': 'Algarismos chineses simplificados',
+                    'hanidec': 'Algarismos decimais chineses',
+                    'guru': 'Algarismos Gurmukhi',
+                    'gujr': 'Algarismos Gujarati',
+                    'greklow': 'Algarismos gregos min\u00FAsculos',
+                    'grek': 'Algarismos gregos',
+                    'bali': 'bali',
+                    'armnlow': 'Algarismos arm\u00EAnios min\u00FAsculos',
+                    'armn': 'Algarismos arm\u00EAnios',
+                    'arabext': 'Algarismos indo-ar\u00E1bicos por extenso',
+                    'arab': 'Algarismos indo-ar\u00E1bicos',
+                    'finance': 'Numerais financeiros',
+                    'traditional': 'Numerais tradicionais',
+                    'native': 'D\u00EDgitos nativos',
+                    'beng': 'Algarismos Bengali',
+                    'brah': 'brah',
+                    'cakm': 'cakm',
+                    'cham': 'cham',
+                    'deva': 'Algarismos Devanagari',
+                    'orya': 'Algarismos Oriya',
+                    'osma': 'osma',
+                    'roman': 'Algarismos romanos',
+                    'romanlow': 'Algarismos romanos min\u00FAsculos',
+                    'saur': 'saur',
+                    'shrd': 'shrd',
+                    'sora': 'sora',
+                    'sund': 'sund',
+                    'vaii': 'D\u00EDgitos vai',
+                    'tibt': 'Algarismos tibetanos',
+                    'thai': 'Algarismos tailandeses',
+                    'telu': 'Algarismos Telugu',
+                    'tamldec': 'Algarismos T\u00E2mil',
+                    'taml': 'Algarismos T\u00E2mil',
+                    'talu': 'talu',
+                    'takr': 'takr',
+                    'olck': 'olck',
+                    'nkoo': 'nkoo',
+                    'mymrshan': 'mymrshan',
+                    'mymr': 'Algarismos Myanmar',
+                    'mtei': 'mtei',
+                    'mong': 'Algarismos mong\u00F3is',
+                    'mlym': 'Algarismos Malayalam',
+                    'limb': 'limb',
+                    'lepc': 'lepc',
+                    'latn': 'Algarismos ocidentais',
+                    'laoo': 'Algarismos laosianos',
+                    'lanatham': 'lanatham',
+                    'lana': 'lana',
+                    'geor': 'Algarismos georgianos',
+                    'fullwide': 'Algarismos em extens\u00E3o total',
+                    'ethi': 'Algarismos eti\u00F3picos'
+                },
+                'colAlternate': {
+                    'non-ignorable': 'Classificar s\u00EDmbolos',
+                    'shifted': 'Classificar ignorando s\u00EDmbolos'
+                },
+                'colBackwards': {
+                    'no': 'Classificar acentos normalmente',
+                    'yes': 'Classifica\u00E7\u00E3o reversa de acentos'
+                }
+            },
+            'codePatterns': {
+                'language': 'Idioma: {0}',
+                'script': 'Alfabeto: {0}',
+                'territory': 'Regi\u00E3o: {0}'
+            },
+            'long': {
+                'mass-ounce': {
+                    'unitPattern-count-one': '{0} on\u00E7a',
+                    'unitPattern-count-other': '{0} on\u00E7as'
+                },
+                'mass-kilogram': {
+                    'unitPattern-count-one': '{0} quilograma',
+                    'unitPattern-count-other': '{0} quilogramas'
+                },
+                'mass-gram': {
+                    'unitPattern-count-one': '{0} grama',
+                    'unitPattern-count-other': '{0} gramas'
+                },
+                'length-yard': {
+                    'unitPattern-count-one': '{0} jarda',
+                    'unitPattern-count-other': '{0} jardas'
+                },
+                'length-picometer': {
+                    'unitPattern-count-one': '{0} pic\u00F4metro',
+                    'unitPattern-count-other': '{0} pic\u00F4metros'
+                },
+                'length-millimeter': {
+                    'unitPattern-count-one': '{0} mil\u00EDmetro',
+                    'unitPattern-count-other': '{0} mil\u00EDmetros'
+                },
+                'length-mile': {
+                    'unitPattern-count-one': '{0} milha',
+                    'unitPattern-count-other': '{0} milhas'
+                },
+                'length-meter': {
+                    'unitPattern-count-one': '{0} metro',
+                    'unitPattern-count-other': '{0} metros'
+                },
+                'length-light-year': {
+                    'unitPattern-count-one': '{0} ano-luz',
+                    'unitPattern-count-other': '{0} anos-luz'
+                },
+                'length-kilometer': {
+                    'unitPattern-count-one': '{0} quil\u00F4metro',
+                    'unitPattern-count-other': '{0} quil\u00F4metros'
+                },
+                'length-inch': {
+                    'unitPattern-count-one': '{0} polegada',
+                    'unitPattern-count-other': '{0} polegadas'
+                },
+                'length-foot': {
+                    'unitPattern-count-one': '{0} p\u00E9',
+                    'unitPattern-count-other': '{0} p\u00E9s'
+                },
+                'length-centimeter': {
+                    'unitPattern-count-one': '{0} cent\u00EDmetro',
+                    'unitPattern-count-other': '{0} cent\u00EDmetros'
+                },
+                'duration-year': {
+                    'unitPattern-count-one': '{0} ano',
+                    'unitPattern-count-other': '{0} anos'
+                },
+                'duration-week': {
+                    'unitPattern-count-one': '{0} semana',
+                    'unitPattern-count-other': '{0} semanas'
+                },
+                'duration-month': {
+                    'unitPattern-count-one': '{0} m\u00EAs',
+                    'unitPattern-count-other': '{0} meses'
+                },
+                'mass-pound': {
+                    'unitPattern-count-one': '{0} libra',
+                    'unitPattern-count-other': '{0} libras'
+                },
+                'power-horsepower': {
+                    'unitPattern-count-one': '{0} cavalo-vapor',
+                    'unitPattern-count-other': '{0} cavalos-vapor'
+                },
+                'power-kilowatt': {
+                    'unitPattern-count-one': '{0} quilowatt',
+                    'unitPattern-count-other': '{0} quilowatts'
+                },
+                'power-watt': {
+                    'unitPattern-count-one': '{0} watt',
+                    'unitPattern-count-other': '{0} watts'
+                },
+                'pressure-hectopascal': {
+                    'unitPattern-count-one': '{0} hectopascal',
+                    'unitPattern-count-other': '{0} hectopascals'
+                },
+                'pressure-inch-hg': {
+                    'unitPattern-count-one': '{0} polegada de merc\u00FArio',
+                    'unitPattern-count-other': '{0} polegadas de merc\u00FArio'
+                },
+                'pressure-millibar': {
+                    'unitPattern-count-one': '{0} milibar',
+                    'unitPattern-count-other': '{0} milibares'
+                },
+                'volume-liter': {
+                    'unitPattern-count-one': '{0} litro',
+                    'unitPattern-count-other': '{0} litros'
+                },
+                'volume-cubic-mile': {
+                    'unitPattern-count-one': '{0} milha c\u00FAbica',
+                    'unitPattern-count-other': '{0} milhas c\u00FAbicas'
+                },
+                'volume-cubic-kilometer': {
+                    'unitPattern-count-one': '{0} quil\u00F4metro c\u00FAbico',
+                    'unitPattern-count-other': '{0} quil\u00F4metros c\u00FAbicos'
+                },
+                'temperature-fahrenheit': {
+                    'unitPattern-count-one': '{0} grau Fahrenheit',
+                    'unitPattern-count-other': '{0} graus Fahrenheit'
+                },
+                'temperature-celsius': {
+                    'unitPattern-count-one': '{0} grau Celsius',
+                    'unitPattern-count-other': '{0} graus Celsius'
+                },
+                'speed-mile-per-hour': {
+                    'unitPattern-count-one': '{0} milha por hora',
+                    'unitPattern-count-other': '{0} milhas por hora'
+                },
+                'speed-meter-per-second': {
+                    'unitPattern-count-one': '{0} metro por segundo',
+                    'unitPattern-count-other': '{0} metro por segundo'
+                },
+                'speed-kilometer-per-hour': {
+                    'unitPattern-count-one': '{0} quil\u00F4metro por hora',
+                    'unitPattern-count-other': '{0} quil\u00F4metros por hora'
+                },
+                'duration-minute': {
+                    'unitPattern-count-one': '{0} minuto',
+                    'unitPattern-count-other': '{0} minutos'
+                },
+                'duration-millisecond': {
+                    'unitPattern-count-one': '{0} milessegundo',
+                    'unitPattern-count-other': '{0} milessegundos'
+                },
+                'duration-hour': {
+                    'unitPattern-count-one': '{0} hora',
+                    'unitPattern-count-other': '{0} horas'
+                },
+                'duration-day': {
+                    'unitPattern-count-one': '{0} dia',
+                    'unitPattern-count-other': '{0} dias'
+                },
+                'area-square-mile': {
+                    'unitPattern-count-one': '{0} milha quadrada',
+                    'unitPattern-count-other': '{0} milhas quadradas'
+                },
+                'area-square-meter': {
+                    'unitPattern-count-one': '{0} metro quadrado',
+                    'unitPattern-count-other': '{0} metros quadrados'
+                },
+                'area-square-kilometer': {
+                    'unitPattern-count-one': '{0} quil\u00F4metro quadrado',
+                    'unitPattern-count-other': '{0} quil\u00F4metros quadrados'
+                },
+                'per': {
+                    'compoundUnitPattern': '{0} por {1}'
+                },
+                'acceleration-g-force': {
+                    'unitPattern-count-one': '{0} for\u00E7a G',
+                    'unitPattern-count-other': '{0} de for\u00E7a gravitacional'
+                },
+                'angle-arc-minute': {
+                    'unitPattern-count-one': '{0} minuto',
+                    'unitPattern-count-other': '{0} minutos'
+                },
+                'angle-arc-second': {
+                    'unitPattern-count-one': '{0} segundo',
+                    'unitPattern-count-other': '{0} segundos'
+                },
+                'angle-degree': {
+                    'unitPattern-count-one': '{0} grau',
+                    'unitPattern-count-other': '{0} graus'
+                },
+                'area-acre': {
+                    'unitPattern-count-one': '{0} acre',
+                    'unitPattern-count-other': '{0} acres'
+                },
+                'area-hectare': {
+                    'unitPattern-count-one': '{0} hectare',
+                    'unitPattern-count-other': '{0} hectares'
+                },
+                'area-square-foot': {
+                    'unitPattern-count-one': '{0} p\u00E9 quadrado',
+                    'unitPattern-count-other': '{0} p\u00E9s quadrados'
+                },
+                'duration-second': {
+                    'unitPattern-count-one': '{0} segundo',
+                    'unitPattern-count-other': '{0} segundos'
+                }
+            },
+            'short': {
+                'mass-ounce': {
+                    'unitPattern-count-one': '{0} oz',
+                    'unitPattern-count-other': '{0} oz'
+                },
+                'mass-kilogram': {
+                    'unitPattern-count-one': '{0} kg',
+                    'unitPattern-count-other': '{0} kg'
+                },
+                'mass-gram': {
+                    'unitPattern-count-one': '{0} g',
+                    'unitPattern-count-other': '{0} g'
+                },
+                'length-yard': {
+                    'unitPattern-count-one': '{0} yd',
+                    'unitPattern-count-other': '{0} yd'
+                },
+                'length-picometer': {
+                    'unitPattern-count-one': '{0} pm',
+                    'unitPattern-count-other': '{0} pm'
+                },
+                'length-millimeter': {
+                    'unitPattern-count-one': '{0} mm',
+                    'unitPattern-count-other': '{0} mm'
+                },
+                'length-mile': {
+                    'unitPattern-count-one': '{0} milha',
+                    'unitPattern-count-other': '{0} milhas'
+                },
+                'length-meter': {
+                    'unitPattern-count-one': '{0} m',
+                    'unitPattern-count-other': '{0} m'
+                },
+                'length-light-year': {
+                    'unitPattern-count-one': '{0} ano-luz',
+                    'unitPattern-count-other': '{0} anos-luz'
+                },
+                'length-kilometer': {
+                    'unitPattern-count-one': '{0} km',
+                    'unitPattern-count-other': '{0} km'
+                },
+                'length-inch': {
+                    'unitPattern-count-one': '{0} pol.',
+                    'unitPattern-count-other': '{0} pol.'
+                },
+                'length-foot': {
+                    'unitPattern-count-one': '{0} p\u00E9',
+                    'unitPattern-count-other': '{0} p\u00E9s'
+                },
+                'length-centimeter': {
+                    'unitPattern-count-one': '{0} cm',
+                    'unitPattern-count-other': '{0} cm'
+                },
+                'duration-year': {
+                    'unitPattern-count-one': '{0} ano',
+                    'unitPattern-count-other': '{0} anos'
+                },
+                'duration-week': {
+                    'unitPattern-count-one': '{0} sem.',
+                    'unitPattern-count-other': '{0} sem.'
+                },
+                'duration-month': {
+                    'unitPattern-count-one': '{0} m\u00EAs',
+                    'unitPattern-count-other': '{0} meses'
+                },
+                'mass-pound': {
+                    'unitPattern-count-one': '{0} lb',
+                    'unitPattern-count-other': '{0} lb'
+                },
+                'power-horsepower': {
+                    'unitPattern-count-one': '{0} cv',
+                    'unitPattern-count-other': '{0} cv'
+                },
+                'power-kilowatt': {
+                    'unitPattern-count-one': '{0} kW',
+                    'unitPattern-count-other': '{0} kW'
+                },
+                'power-watt': {
+                    'unitPattern-count-one': '{0} W',
+                    'unitPattern-count-other': '{0} W'
+                },
+                'pressure-hectopascal': {
+                    'unitPattern-count-one': '{0} hPa',
+                    'unitPattern-count-other': '{0} hPa'
+                },
+                'pressure-inch-hg': {
+                    'unitPattern-count-one': '{0} inHg',
+                    'unitPattern-count-other': '{0} inHg'
+                },
+                'pressure-millibar': {
+                    'unitPattern-count-one': '{0} mb',
+                    'unitPattern-count-other': '{0} mb'
+                },
+                'volume-liter': {
+                    'unitPattern-count-one': '{0} l',
+                    'unitPattern-count-other': '{0} l'
+                },
+                'volume-cubic-mile': {
+                    'unitPattern-count-one': '{0} mi\u00B3',
+                    'unitPattern-count-other': '{0} mi\u00B3'
+                },
+                'volume-cubic-kilometer': {
+                    'unitPattern-count-one': '{0} km\u00B3',
+                    'unitPattern-count-other': '{0} km\u00B3'
+                },
+                'temperature-fahrenheit': {
+                    'unitPattern-count-one': '{0}\u00B0F',
+                    'unitPattern-count-other': '{0}\u00B0F'
+                },
+                'temperature-celsius': {
+                    'unitPattern-count-one': '{0}\u00B0C',
+                    'unitPattern-count-other': '{0}\u00B0C'
+                },
+                'speed-mile-per-hour': {
+                    'unitPattern-count-one': '{0} mi/h',
+                    'unitPattern-count-other': '{0} mi/h'
+                },
+                'speed-meter-per-second': {
+                    'unitPattern-count-one': '{0} m/s',
+                    'unitPattern-count-other': '{0} m/s'
+                },
+                'speed-kilometer-per-hour': {
+                    'unitPattern-count-one': '{0} km/h',
+                    'unitPattern-count-other': '{0} km/h'
+                },
+                'duration-minute': {
+                    'unitPattern-count-one': '{0} min',
+                    'unitPattern-count-other': '{0} min'
+                },
+                'duration-millisecond': {
+                    'unitPattern-count-one': '{0} ms',
+                    'unitPattern-count-other': '{0} ms'
+                },
+                'duration-hour': {
+                    'unitPattern-count-one': '{0} h',
+                    'unitPattern-count-other': '{0} h'
+                },
+                'duration-day': {
+                    'unitPattern-count-one': '{0} dia',
+                    'unitPattern-count-other': '{0} dias'
+                },
+                'area-square-mile': {
+                    'unitPattern-count-one': '{0} mi\u00B2',
+                    'unitPattern-count-other': '{0} mi\u00B2'
+                },
+                'area-square-meter': {
+                    'unitPattern-count-one': '{0} m\u00B2',
+                    'unitPattern-count-other': '{0} m\u00B2'
+                },
+                'area-square-kilometer': {
+                    'unitPattern-count-one': '{0} km\u00B2',
+                    'unitPattern-count-other': '{0} km\u00B2'
+                },
+                'per': {
+                    'compoundUnitPattern': '{0}/{1}'
+                },
+                'acceleration-g-force': {
+                    'unitPattern-count-one': '{0} G',
+                    'unitPattern-count-other': '{0} G'
+                },
+                'angle-arc-minute': {
+                    'unitPattern-count-one': '{0} min',
+                    'unitPattern-count-other': '{0} min'
+                },
+                'angle-arc-second': {
+                    'unitPattern-count-one': '{0} s',
+                    'unitPattern-count-other': '{0} s'
+                },
+                'angle-degree': {
+                    'unitPattern-count-one': '{0}\u00B0',
+                    'unitPattern-count-other': '{0}\u00B0'
+                },
+                'area-acre': {
+                    'unitPattern-count-one': '{0} acre',
+                    'unitPattern-count-other': '{0} acres'
+                },
+                'area-hectare': {
+                    'unitPattern-count-one': '{0} ha',
+                    'unitPattern-count-other': '{0} ha'
+                },
+                'area-square-foot': {
+                    'unitPattern-count-one': '{0} ft\u00B2',
+                    'unitPattern-count-other': '{0} ft\u00B2'
+                },
+                'duration-second': {
+                    'unitPattern-count-one': '{0} seg',
+                    'unitPattern-count-other': '{0} seg'
                 }
             }
         });

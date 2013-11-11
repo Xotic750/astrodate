@@ -3,6 +3,7 @@
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
  * localeDisplayNames: 24r9287
+ * units: 24r9287
  *
  * home: https://github.com/Xotic750/astrodate
  *
@@ -41,172 +42,721 @@
         /*global */
     }(function (AstroDate) {
         AstroDate.lang('sl', {
-            'codePatterns': {
-                'language': 'Jezik: {0}',
-                'script': '{0}',
-                'territory': 'Regija: {0}'
+            'durationUnit-type-ms': {
+                'durationUnitPattern': 'm.ss'
             },
-            'types': {
-                'colHiraganaQuaternary': {
-                    'no': 'Razvr\u0161\u010Danje kana lo\u010Deno',
-                    'yes': 'Razvr\u0161\u010Danje kana razli\u010Dno'
+            'durationUnit-type-hms': {
+                'durationUnitPattern': 'h.mm.ss'
+            },
+            'durationUnit-type-hm': {
+                'durationUnitPattern': 'h.mm'
+            },
+            'narrow': {
+                'mass-ounce': {
+                    'unitPattern-count-one': '{0} oz',
+                    'unitPattern-count-two': '{0} oz',
+                    'unitPattern-count-few': '{0} oz',
+                    'unitPattern-count-other': '{0} oz'
                 },
-                'colCaseLevel': {
-                    'no': 'Razvr\u0161\u010Danje ne glede na velike/male \u010Drke',
-                    'yes': 'Razvr\u0161\u010Danje ob upo\u0161tevanju velikih/malih \u010Drk'
+                'mass-kilogram': {
+                    'unitPattern-count-one': '{0} kg',
+                    'unitPattern-count-two': '{0} kg',
+                    'unitPattern-count-few': '{0} kg',
+                    'unitPattern-count-other': '{0} kg'
                 },
-                'colCaseFirst': {
-                    'lower': 'Razvr\u0161\u010Danje malih \u010Drk najprej',
-                    'no': 'Razvr\u0161\u010Danje v obi\u010Dajnem zaporedju velikih/malih \u010Drk',
-                    'upper': 'Razvr\u0161\u010Danje velikih \u010Drk najprej'
+                'mass-gram': {
+                    'unitPattern-count-one': '{0} g',
+                    'unitPattern-count-two': '{0} g',
+                    'unitPattern-count-few': '{0} g',
+                    'unitPattern-count-other': '{0} g'
                 },
-                'colStrength': {
-                    'identical': 'Razvr\u0161\u010Danje vsega',
-                    'primary': 'Razvr\u0161\u010Danje samo osnovnih \u010Drk',
-                    'quaternary': 'Razvr\u0161\u010Danje po naglasih/velikih \u010Drkah/malih \u010Drkah/\u0161irini/kana',
-                    'secondary': 'Razvr\u0161\u010Danje naglasov',
-                    'tertiary': 'Razvr\u0161\u010Danje po naglasih/velikih \u010Drkah/malih \u010Drkah/\u0161irini'
+                'length-yard': {
+                    'unitPattern-count-one': '{0} yd',
+                    'unitPattern-count-two': '{0} yd',
+                    'unitPattern-count-few': '{0} yd',
+                    'unitPattern-count-other': '{0} yd'
                 },
-                'colNumeric': {
-                    'no': 'Lo\u010Deno razvr\u0161\u010Danje \u0161tevilk',
-                    'yes': '\u0160tevilsko razvr\u0161\u010Danje \u0161tevk'
+                'length-picometer': {
+                    'unitPattern-count-one': '{0} pm',
+                    'unitPattern-count-two': '{0} pm',
+                    'unitPattern-count-few': '{0} pm',
+                    'unitPattern-count-other': '{0} pm'
                 },
-                'colNormalization': {
-                    'no': 'Razvr\u0161\u010Danje brez normaliziranja',
-                    'yes': 'Normalizirano razvr\u0161\u010Danje Unicode'
+                'length-millimeter': {
+                    'unitPattern-count-one': '{0} mm',
+                    'unitPattern-count-two': '{0} mm',
+                    'unitPattern-count-few': '{0} mm',
+                    'unitPattern-count-other': '{0} mm'
                 },
-                'calendar': {
-                    'japanese': 'japonski koledar',
-                    'iso8601': 'iso8601',
-                    'coptic': 'Koptski koledar',
-                    'dangi': 'dangi',
-                    'ethiopic': 'Etiopski koledar',
-                    'ethiopic-amete-alem': 'Etiopsko ametsko alemski koledar',
-                    'gregorian': 'gregorijanski koledar',
-                    'hebrew': 'hebrejski koledar',
-                    'persian': 'Perzijski koledar',
-                    'roc': 'kitajski dr\u017Eavni koledar',
-                    'chinese': 'kitajski koledar',
-                    'buddhist': 'budisti\u010Dni koledar',
-                    'indian': 'indijanski koledar',
-                    'islamic': 'islamski koledar',
-                    'islamic-civil': 'islamski civilni koledar',
-                    'islamic-rgsa': 'islamic-rgsa',
-                    'islamic-tbla': 'islamic-tbla',
-                    'islamic-umalqura': 'islamic-umalqura'
+                'length-mile': {
+                    'unitPattern-count-one': '{0} mi',
+                    'unitPattern-count-two': '{0} mi',
+                    'unitPattern-count-few': '{0} mi',
+                    'unitPattern-count-other': '{0} mi'
                 },
-                'collation': {
-                    'phonebook': 'razvr\u0161\u010Danje po abecedi',
-                    'gb2312han': 'razvr\u0161\u010Danje po sistemu poenostavljene kitaj\u0161\u010Dine - GB2312',
-                    'eor': 'eor',
-                    'ducet': 'Privzeto razvr\u0161\u010Danje Unicode',
-                    'dictionary': 'Vrstni red razvr\u0161\u010Danja v slovarju',
-                    'big5han': 'razvr\u0161\u010Danje po sistemu tradicionalne kitaj\u0161\u010Dine - Big5',
-                    'traditional': 'razvr\u0161\u010Danje po tradicionalnem sistemu',
-                    'standard': 'Standardno razvr\u0161\u010Danje',
-                    'zhuyin': 'zhuyin',
-                    'unihan': 'Razvr\u0161\u010Danje koren-poteza',
-                    'stroke': 'razvr\u0161\u010Danje po zaporedju pisanja pismenk',
-                    'searchjl': 'Iskanje po za\u010Detnem soglasniku hangul',
-                    'search': 'Splo\u0161no iskanje',
-                    'reformed': 'Reformirano razvr\u0161\u010Danje',
-                    'pinyin': 'razvr\u0161\u010Danje po sistemu pinjin',
-                    'phonetic': 'Foneti\u010Dno razvr\u0161\u010Danje'
+                'length-meter': {
+                    'unitPattern-count-one': '{0} m',
+                    'unitPattern-count-two': '{0} m',
+                    'unitPattern-count-few': '{0} m',
+                    'unitPattern-count-other': '{0} m'
                 },
-                'numbers': {
-                    'knda': 'Kanaredske \u0161tevke',
-                    'khmr': 'Kmerske \u0161tevke',
-                    'kali': 'kali',
-                    'jpanfin': 'Japonske finan\u010Dne \u0161tevilke',
-                    'jpan': 'Japonske \u0161tevilke',
-                    'java': 'java',
-                    'hebr': 'Hebrejske \u0161tevilke',
-                    'hantfin': 'Tradicionalne kitajske finan\u010Dne \u0161tevilke',
-                    'hant': 'Tradicionalne kitajske \u0161tevilke',
-                    'hansfin': 'Poenostavljene kitajske finan\u010Dne \u0161tevilke',
-                    'hans': 'Poenostavljene kitajske \u0161tevilke',
-                    'hanidec': 'Kitajske decimalne \u0161tevilke',
-                    'guru': 'Gurmu\u0161ke \u0161tevke',
-                    'gujr': 'Gud\u017Earatske \u0161tevke',
-                    'greklow': 'Gr\u0161ke male \u0161tevilke',
-                    'grek': 'Gr\u0161ke \u0161tevilke',
-                    'bali': 'bali',
-                    'armnlow': 'Armenske majhne \u0161tevilke',
-                    'armn': 'Armenske \u0161tevilke',
-                    'arabext': 'Raz\u0161irjene arabskoindijske \u0161tevke',
-                    'arab': 'Arabskoindijske \u0161tevke',
-                    'finance': 'Finan\u010Dne \u0161tevilke',
-                    'traditional': 'Tradicionalne \u0161tevilke',
-                    'native': 'Doma\u010De \u0161tevke',
-                    'beng': 'Bengalske \u0161tevke',
-                    'brah': 'brah',
-                    'cakm': 'cakm',
-                    'cham': 'cham',
-                    'deva': 'Devangarske \u0161tevke',
-                    'orya': 'Orijske \u0161tevke',
-                    'osma': 'osma',
-                    'roman': 'Rimske \u0161tevilke',
-                    'romanlow': 'Rimske male \u0161tevilke',
-                    'saur': 'saur',
-                    'shrd': 'shrd',
-                    'sora': 'sora',
-                    'sund': 'sund',
-                    'vaii': '\u0160tevilke vai',
-                    'tibt': 'Tibetanske \u0161tevke',
-                    'thai': 'Tajske \u0161tevke',
-                    'telu': 'Telu\u0161ke \u0161tevke',
-                    'tamldec': 'Tamilske \u0161tevke',
-                    'taml': 'Tamilske \u0161tevilke',
-                    'talu': 'talu',
-                    'takr': 'takr',
-                    'olck': 'olck',
-                    'nkoo': 'nkoo',
-                    'mymrshan': 'mymrshan',
-                    'mymr': 'Mjanmarske \u0161tevke',
-                    'mtei': 'mtei',
-                    'mong': 'Mongolske \u0161tevke',
-                    'mlym': 'Malajalamske \u0161tevke',
-                    'limb': 'limb',
-                    'lepc': 'lepc',
-                    'latn': 'Zahodne \u0161tevke',
-                    'laoo': 'Lao\u0161ke \u0161tevke',
-                    'lanatham': 'lanatham',
-                    'lana': 'lana',
-                    'geor': 'Gruzijske \u0161tevilke',
-                    'fullwide': '\u0160tevke polne \u0161irine',
-                    'ethi': 'Etiopijske \u0161tevilke'
+                'length-light-year': {
+                    'unitPattern-count-one': '{0} ly',
+                    'unitPattern-count-two': '{0} sv. l.',
+                    'unitPattern-count-few': '{0} sv. l.',
+                    'unitPattern-count-other': '{0} sv. l.'
                 },
-                'colAlternate': {
-                    'non-ignorable': 'Razvr\u0161\u010Danje simbolov',
-                    'shifted': 'Razvr\u0161\u010Danje s prezrtjem simbolov'
+                'length-kilometer': {
+                    'unitPattern-count-one': '{0} km',
+                    'unitPattern-count-two': '{0} km',
+                    'unitPattern-count-few': '{0} km',
+                    'unitPattern-count-other': '{0} km'
                 },
-                'colBackwards': {
-                    'no': 'Navadno razvr\u0161\u010Danje naglasov',
-                    'yes': 'Obratno razvr\u0161\u010Danje naglasov'
+                'length-inch': {
+                    'unitPattern-count-one': '{0} in',
+                    'unitPattern-count-two': '{0} in',
+                    'unitPattern-count-few': '{0} in',
+                    'unitPattern-count-other': '{0} in'
+                },
+                'length-foot': {
+                    'unitPattern-count-one': '{0} ft',
+                    'unitPattern-count-two': '{0} ft',
+                    'unitPattern-count-few': '{0} ft',
+                    'unitPattern-count-other': '{0} ft'
+                },
+                'length-centimeter': {
+                    'unitPattern-count-one': '{0} cm',
+                    'unitPattern-count-two': '{0} cm',
+                    'unitPattern-count-few': '{0} cm',
+                    'unitPattern-count-other': '{0} cm'
+                },
+                'duration-year': {
+                    'unitPattern-count-one': '{0} l',
+                    'unitPattern-count-two': '{0} l',
+                    'unitPattern-count-few': '{0} l',
+                    'unitPattern-count-other': '{0} l'
+                },
+                'duration-week': {
+                    'unitPattern-count-one': '{0} t',
+                    'unitPattern-count-two': '{0} t',
+                    'unitPattern-count-few': '{0} t',
+                    'unitPattern-count-other': '{0} t'
+                },
+                'duration-month': {
+                    'unitPattern-count-one': '{0} m',
+                    'unitPattern-count-two': '{0} m',
+                    'unitPattern-count-few': '{0} m',
+                    'unitPattern-count-other': '{0} m'
+                },
+                'mass-pound': {
+                    'unitPattern-count-one': '{0} lb',
+                    'unitPattern-count-two': '{0} lb',
+                    'unitPattern-count-few': '{0} lb',
+                    'unitPattern-count-other': '{0} lb'
+                },
+                'power-horsepower': {
+                    'unitPattern-count-one': '{0} KM',
+                    'unitPattern-count-two': '{0} KM',
+                    'unitPattern-count-few': '{0} KM',
+                    'unitPattern-count-other': '{0} hp'
+                },
+                'power-kilowatt': {
+                    'unitPattern-count-one': '{0} kW',
+                    'unitPattern-count-two': '{0} kW',
+                    'unitPattern-count-few': '{0} kW',
+                    'unitPattern-count-other': '{0} kW'
+                },
+                'power-watt': {
+                    'unitPattern-count-one': '{0} W',
+                    'unitPattern-count-two': '{0} W',
+                    'unitPattern-count-few': '{0} W',
+                    'unitPattern-count-other': '{0} W'
+                },
+                'pressure-hectopascal': {
+                    'unitPattern-count-one': '{0} hPa',
+                    'unitPattern-count-two': '{0} hPa',
+                    'unitPattern-count-few': '{0} hPa',
+                    'unitPattern-count-other': '{0} hPa'
+                },
+                'pressure-inch-hg': {
+                    'unitPattern-count-one': '{0} inHg',
+                    'unitPattern-count-two': '{0} inHg',
+                    'unitPattern-count-few': '{0} inHg',
+                    'unitPattern-count-other': '{0} inHg'
+                },
+                'pressure-millibar': {
+                    'unitPattern-count-one': '{0} mbar',
+                    'unitPattern-count-two': '{0} mbar',
+                    'unitPattern-count-few': '{0} mbar',
+                    'unitPattern-count-other': '{0} mbar'
+                },
+                'volume-liter': {
+                    'unitPattern-count-one': '{0} l',
+                    'unitPattern-count-two': '{0} l',
+                    'unitPattern-count-few': '{0} l',
+                    'unitPattern-count-other': '{0} l'
+                },
+                'volume-cubic-mile': {
+                    'unitPattern-count-one': '{0} mi\u00B3',
+                    'unitPattern-count-two': '{0} mi\u00B3',
+                    'unitPattern-count-few': '{0} mi\u00B3',
+                    'unitPattern-count-other': '{0} mi\u00B3'
+                },
+                'volume-cubic-kilometer': {
+                    'unitPattern-count-one': '{0} km\u00B3',
+                    'unitPattern-count-two': '{0} km\u00B3',
+                    'unitPattern-count-few': '{0} km\u00B3',
+                    'unitPattern-count-other': '{0} km\u00B3'
+                },
+                'temperature-fahrenheit': {
+                    'unitPattern-count-one': '{0} \u00B0F',
+                    'unitPattern-count-two': '{0} \u00B0F',
+                    'unitPattern-count-few': '{0} \u00B0F',
+                    'unitPattern-count-other': '{0} \u00B0F'
+                },
+                'temperature-celsius': {
+                    'unitPattern-count-one': '{0} \u00B0',
+                    'unitPattern-count-two': '{0} \u00B0',
+                    'unitPattern-count-few': '{0} \u00B0',
+                    'unitPattern-count-other': '{0} \u00B0'
+                },
+                'speed-mile-per-hour': {
+                    'unitPattern-count-one': '{0} mi/h',
+                    'unitPattern-count-two': '{0} mi/h',
+                    'unitPattern-count-few': '{0} mi/h',
+                    'unitPattern-count-other': '{0} mi/h'
+                },
+                'speed-meter-per-second': {
+                    'unitPattern-count-one': '{0} m/s',
+                    'unitPattern-count-two': '{0} m/s',
+                    'unitPattern-count-few': '{0} m/s',
+                    'unitPattern-count-other': '{0} m/s'
+                },
+                'speed-kilometer-per-hour': {
+                    'unitPattern-count-one': '{0} km/h',
+                    'unitPattern-count-two': '{0} km/h',
+                    'unitPattern-count-few': '{0} km/h',
+                    'unitPattern-count-other': '{0} km/h'
+                },
+                'duration-minute': {
+                    'unitPattern-count-one': '{0} min',
+                    'unitPattern-count-two': '{0} min',
+                    'unitPattern-count-few': '{0} min',
+                    'unitPattern-count-other': '{0} min'
+                },
+                'duration-millisecond': {
+                    'unitPattern-count-one': '{0} ms',
+                    'unitPattern-count-two': '{0} ms',
+                    'unitPattern-count-few': '{0} ms',
+                    'unitPattern-count-other': '{0} ms'
+                },
+                'duration-hour': {
+                    'unitPattern-count-one': '{0} h',
+                    'unitPattern-count-two': '{0} h',
+                    'unitPattern-count-few': '{0} h',
+                    'unitPattern-count-other': '{0} h'
+                },
+                'duration-day': {
+                    'unitPattern-count-one': '{0} d',
+                    'unitPattern-count-two': '{0} d',
+                    'unitPattern-count-few': '{0} d',
+                    'unitPattern-count-other': '{0} d'
+                },
+                'area-square-mile': {
+                    'unitPattern-count-one': '{0} mi\u00B2',
+                    'unitPattern-count-two': '{0} mi\u00B2',
+                    'unitPattern-count-few': '{0} mi\u00B2',
+                    'unitPattern-count-other': '{0} mi\u00B2'
+                },
+                'area-square-meter': {
+                    'unitPattern-count-one': '{0} m\u00B2',
+                    'unitPattern-count-two': '{0} m\u00B2',
+                    'unitPattern-count-few': '{0} m\u00B2',
+                    'unitPattern-count-other': '{0} m\u00B2'
+                },
+                'area-square-kilometer': {
+                    'unitPattern-count-one': '{0} km\u00B2',
+                    'unitPattern-count-two': '{0} km\u00B2',
+                    'unitPattern-count-few': '{0} km\u00B2',
+                    'unitPattern-count-other': '{0} km\u00B2'
+                },
+                'per': {
+                    'compoundUnitPattern': '{0}/{1}'
+                },
+                'acceleration-g-force': {
+                    'unitPattern-count-one': '{0} G',
+                    'unitPattern-count-two': '{0} G',
+                    'unitPattern-count-few': '{0} G',
+                    'unitPattern-count-other': '{0} G'
+                },
+                'angle-arc-minute': {
+                    'unitPattern-count-one': '{0}\u2032',
+                    'unitPattern-count-two': '{0}\u2032',
+                    'unitPattern-count-few': '{0}\u2032',
+                    'unitPattern-count-other': '{0}\u2032'
+                },
+                'angle-arc-second': {
+                    'unitPattern-count-one': '{0}\u2033',
+                    'unitPattern-count-two': '{0}\u2033',
+                    'unitPattern-count-few': '{0}\u2033',
+                    'unitPattern-count-other': '{0}\u2033'
+                },
+                'angle-degree': {
+                    'unitPattern-count-one': '{0} \u00B0',
+                    'unitPattern-count-two': '{0} \u00B0',
+                    'unitPattern-count-few': '{0} \u00B0',
+                    'unitPattern-count-other': '{0} \u00B0'
+                },
+                'area-acre': {
+                    'unitPattern-count-one': '{0} jut.',
+                    'unitPattern-count-two': '{0} jut.',
+                    'unitPattern-count-few': '{0} jut.',
+                    'unitPattern-count-other': '{0} jut.'
+                },
+                'area-hectare': {
+                    'unitPattern-count-one': '{0} ha',
+                    'unitPattern-count-two': '{0} ha',
+                    'unitPattern-count-few': '{0} ha',
+                    'unitPattern-count-other': '{0} ha'
+                },
+                'area-square-foot': {
+                    'unitPattern-count-one': '{0} ft\u00B2',
+                    'unitPattern-count-two': '{0} ft\u00B2',
+                    'unitPattern-count-few': '{0} ft\u00B2',
+                    'unitPattern-count-other': '{0} ft\u00B2'
+                },
+                'duration-second': {
+                    'unitPattern-count-one': '{0} s',
+                    'unitPattern-count-two': '{0} s',
+                    'unitPattern-count-few': '{0} s',
+                    'unitPattern-count-other': '{0} s'
                 }
             },
-            'keys': {
-                'colNormalization': 'Normalizirano razvr\u0161\u010Danje',
-                'collation': 'razvr\u0161\u010Danje',
-                'colHiraganaQuaternary': 'Razvr\u0161\u010Danje kana',
-                'colCaseLevel': 'Razvr\u0161\u010Danje, ob\u010Dutljivo na velike/male \u010Drke',
-                'colCaseFirst': 'Razvr\u0161\u010Danje velike \u010Drke/male \u010Drke',
-                'colBackwards': 'Razvr\u0161\u010Danje z obratnimi naglasi',
-                'colAlternate': 'Razvr\u0161\u010Danje s prezrtimi znaki',
-                'calendar': 'koledar',
-                'x': 'Private-Use',
-                'variableTop': 'Razvr\u0161\u010Danje kot simboli',
-                'va': 'Razli\u010Dica obmo\u010Dnih nastavitev',
-                'timezone': '\u010Casovni pas',
-                'numbers': '\u0160tevilke',
-                'currency': 'valuta',
-                'colStrength': 'Mo\u010D razvr\u0161\u010Danja',
-                'colNumeric': '\u0160tevilsko razvr\u0161\u010Danje'
-            },
-            'localeDisplayPattern': {
-                'localePattern': '{0} ({1})',
-                'localeSeparator': '{0}, {1}',
-                'localeKeyTypePattern': '{0}: {1}'
+            'calendars': {
+                'gregorian': {
+                    'months': {
+                        'format': {
+                            'abbreviated': {
+                                '8': 'avg.',
+                                '7': 'jul.',
+                                '6': 'jun.',
+                                '5': 'maj',
+                                '12': 'dec.',
+                                '11': 'nov.',
+                                '10': 'okt.',
+                                '9': 'sep.',
+                                '1': 'jan.',
+                                '2': 'feb.',
+                                '3': 'mar.',
+                                '4': 'apr.'
+                            },
+                            'narrow': {
+                                '8': 'a',
+                                '7': 'j',
+                                '6': 'j',
+                                '5': 'm',
+                                '12': 'd',
+                                '11': 'n',
+                                '10': 'o',
+                                '9': 's',
+                                '1': 'j',
+                                '2': 'f',
+                                '3': 'm',
+                                '4': 'a'
+                            },
+                            'wide': {
+                                '8': 'avgust',
+                                '7': 'julij',
+                                '6': 'junij',
+                                '5': 'maj',
+                                '12': 'december',
+                                '11': 'november',
+                                '10': 'oktober',
+                                '9': 'september',
+                                '1': 'januar',
+                                '2': 'februar',
+                                '3': 'marec',
+                                '4': 'april'
+                            }
+                        },
+                        'stand-alone': {
+                            'abbreviated': {
+                                '8': 'avg',
+                                '7': 'jul',
+                                '6': 'jun',
+                                '5': 'maj',
+                                '12': 'dec',
+                                '11': 'nov',
+                                '10': 'okt',
+                                '9': 'sep',
+                                '1': 'jan',
+                                '2': 'feb',
+                                '3': 'mar',
+                                '4': 'apr'
+                            },
+                            'narrow': {
+                                '8': 'a',
+                                '7': 'j',
+                                '6': 'j',
+                                '5': 'm',
+                                '12': 'd',
+                                '11': 'n',
+                                '10': 'o',
+                                '9': 's',
+                                '1': 'j',
+                                '2': 'f',
+                                '3': 'm',
+                                '4': 'a'
+                            },
+                            'wide': {
+                                '8': 'avgust',
+                                '7': 'julij',
+                                '6': 'junij',
+                                '5': 'maj',
+                                '12': 'december',
+                                '11': 'november',
+                                '10': 'oktober',
+                                '9': 'september',
+                                '1': 'januar',
+                                '2': 'februar',
+                                '3': 'marec',
+                                '4': 'april'
+                            }
+                        }
+                    },
+                    'days': {
+                        'format': {
+                            'abbreviated': {
+                                'sun': 'ned.',
+                                'mon': 'pon.',
+                                'tue': 'tor.',
+                                'wed': 'sre.',
+                                'thu': '\u010Det.',
+                                'fri': 'pet.',
+                                'sat': 'sob.'
+                            },
+                            'narrow': {
+                                'sun': 'n',
+                                'mon': 'p',
+                                'tue': 't',
+                                'wed': 's',
+                                'thu': '\u010D',
+                                'fri': 'p',
+                                'sat': 's'
+                            },
+                            'short': {
+                                'sun': 'ned.',
+                                'mon': 'pon.',
+                                'tue': 'tor.',
+                                'wed': 'sre.',
+                                'thu': '\u010Det.',
+                                'fri': 'pet.',
+                                'sat': 'sob.'
+                            },
+                            'wide': {
+                                'sun': 'nedelja',
+                                'mon': 'ponedeljek',
+                                'tue': 'torek',
+                                'wed': 'sreda',
+                                'thu': '\u010Detrtek',
+                                'fri': 'petek',
+                                'sat': 'sobota'
+                            }
+                        },
+                        'stand-alone': {
+                            'abbreviated': {
+                                'sun': 'ned',
+                                'mon': 'pon',
+                                'tue': 'tor',
+                                'wed': 'sre',
+                                'thu': '\u010Det',
+                                'fri': 'pet',
+                                'sat': 'sob'
+                            },
+                            'narrow': {
+                                'sun': 'n',
+                                'mon': 'p',
+                                'tue': 't',
+                                'wed': 's',
+                                'thu': '\u010D',
+                                'fri': 'p',
+                                'sat': 's'
+                            },
+                            'short': {
+                                'sun': 'ned.',
+                                'mon': 'pon.',
+                                'tue': 'tor.',
+                                'wed': 'sre.',
+                                'thu': '\u010Det.',
+                                'fri': 'pet.',
+                                'sat': 'sob.'
+                            },
+                            'wide': {
+                                'sun': 'nedelja',
+                                'mon': 'ponedeljek',
+                                'tue': 'torek',
+                                'wed': 'sreda',
+                                'thu': '\u010Detrtek',
+                                'fri': 'petek',
+                                'sat': 'sobota'
+                            }
+                        }
+                    },
+                    'quarters': {
+                        'format': {
+                            'abbreviated': {
+                                '1': 'Q1',
+                                '2': 'Q2',
+                                '3': 'Q3',
+                                '4': 'Q4'
+                            },
+                            'narrow': {
+                                '1': '1',
+                                '2': '2',
+                                '3': '3',
+                                '4': '4'
+                            },
+                            'wide': {
+                                '1': '1. \u010Detrtletje',
+                                '2': '2. \u010Detrtletje',
+                                '3': '3. \u010Detrtletje',
+                                '4': '4. \u010Detrtletje'
+                            }
+                        },
+                        'stand-alone': {
+                            'abbreviated': {
+                                '1': 'Q1',
+                                '2': 'Q2',
+                                '3': 'Q3',
+                                '4': 'Q4'
+                            },
+                            'narrow': {
+                                '1': '1',
+                                '2': '2',
+                                '3': '3',
+                                '4': '4'
+                            },
+                            'wide': {
+                                '1': '1. \u010Detrtletje',
+                                '2': '2. \u010Detrtletje',
+                                '3': '3. \u010Detrtletje',
+                                '4': '4. \u010Detrtletje'
+                            }
+                        }
+                    },
+                    'dayPeriods': {
+                        'format': {
+                            'abbreviated': {
+                                'am': 'dop.',
+                                'pm': 'pop.'
+                            },
+                            'narrow': {
+                                'am': 'dop.',
+                                'pm': 'pop.'
+                            },
+                            'wide': {
+                                'am': 'dop.',
+                                'pm': 'pop.'
+                            }
+                        },
+                        'stand-alone': {
+                            'abbreviated': {
+                                'am': 'dop.',
+                                'pm': 'pop.'
+                            },
+                            'narrow': {
+                                'am': 'dop.',
+                                'pm': 'pop.'
+                            },
+                            'wide': {
+                                'am': 'dop.',
+                                'pm': 'pop.'
+                            }
+                        }
+                    },
+                    'eras': {
+                        'eraNames': {
+                            '0': 'pred na\u0161im \u0161tetjem',
+                            '0-alt-variant': 'BCE',
+                            '1': 'na\u0161e \u0161tetje',
+                            '1-alt-variant': 'po n. \u0161t.'
+                        },
+                        'eraAbbr': {
+                            '0': 'pr. n. \u0161t.',
+                            '0-alt-variant': 'BCE',
+                            '1': 'po Kr.',
+                            '1-alt-variant': 'po n. \u0161t.'
+                        },
+                        'eraNarrow': {
+                            '0': 'pr. n. \u0161t.',
+                            '0-alt-variant': 'BCE',
+                            '1': 'po Kr.',
+                            '1-alt-variant': 'po n. \u0161t.'
+                        }
+                    },
+                    'dateFormats': {
+                        'full': 'EEEE, dd. MMMM y',
+                        'long': 'dd. MMMM y',
+                        'medium': 'd. MMM y',
+                        'short': 'd. MM. yy'
+                    },
+                    'timeFormats': {
+                        'full': 'HH:mm:ss zzzz',
+                        'long': 'HH:mm:ss z',
+                        'medium': 'HH:mm:ss',
+                        'short': 'HH:mm'
+                    },
+                    'dateTimeFormats': {
+                        'full': '{1} {0}',
+                        'long': '{1} {0}',
+                        'medium': '{1} {0}',
+                        'short': '{1} {0}',
+                        'availableFormats': {
+                            'yMMMM': 'MMMM y',
+                            'yMMMEd': 'E, d. MMM y',
+                            'EHms': 'E HH.mm.ss',
+                            'Ehms': 'E h.mm.ss a',
+                            'EHm': 'E HH.mm',
+                            'Ehm': 'E h.mm a',
+                            'Ed': 'E, d.',
+                            'd': 'd',
+                            'GyMMM': 'MMM y G',
+                            'GyMMMd': 'd. MMM y G',
+                            'yQQQQ': 'QQQQ y',
+                            'yQQQ': 'QQQ y',
+                            'hms': 'h:mm:ss a',
+                            'Hm': 'HH:mm',
+                            'hm': 'h:mm a',
+                            'H': 'HH',
+                            'h': 'h a',
+                            'GyMMMEd': 'E, d. MMM y G',
+                            'Gy': 'y G',
+                            'GyM': 'M/y G',
+                            'Hms': 'HH:mm:ss',
+                            'M': 'L',
+                            'Md': 'd. M.',
+                            'MEd': 'E, d. MM.',
+                            'MMM': 'LLL',
+                            'MMMd': 'd. MMM',
+                            'MMMEd': 'E, d. MMM',
+                            'ms': 'mm:ss',
+                            'y': 'y',
+                            'yM': 'M/y',
+                            'yMd': 'd. M. y',
+                            'yMEd': 'E, d. M. y',
+                            'yMMM': 'MMM y',
+                            'yMMMd': 'd. MMM y'
+                        },
+                        'appendItems': {
+                            'Second': '{0} ({2}: {1})',
+                            'Quarter': '{0} ({2}: {1})',
+                            'Month': '{0} ({2}: {1})',
+                            'Year': '{1} {0}',
+                            'Week': '{0} ({2}: {1})',
+                            'Timezone': '{0} {1}',
+                            'Day': '{0} ({2}: {1})',
+                            'Day-Of-Week': '{0} {1}',
+                            'Era': '{1} {0}',
+                            'Hour': '{0} ({2}: {1})',
+                            'Minute': '{0} ({2}: {1})'
+                        },
+                        'intervalFormats': {
+                            'MMMEd': {
+                                'd': 'E, d. \u2013 E, d. MMM',
+                                'M': 'E, d. MMM \u2013 E, d. MMM'
+                            },
+                            'MMMd': {
+                                'd': 'd.\u2013d. MMM',
+                                'M': 'd. MMM \u2013 d. MMM'
+                            },
+                            'MMM': {
+                                'M': 'MMM\u2013MMM'
+                            },
+                            'MEd': {
+                                'd': 'E, d. \u2013 E, d. M.',
+                                'M': 'E, d. M. \u2013 E, d. M.'
+                            },
+                            'Md': {
+                                'd': 'd. \u2013 d. M.',
+                                'M': 'd. M. \u2013 d. M.'
+                            },
+                            'M': {
+                                'M': 'M.\u2013M.'
+                            },
+                            'Hv': {
+                                'H': 'HH\u2013HH v'
+                            },
+                            'hv': {
+                                'a': 'h a \u2013 h a v',
+                                'h': 'h\u2013h a v'
+                            },
+                            'y': {
+                                'y': 'y\u2013y'
+                            },
+                            'yM': {
+                                'M': 'M.\u2013M. y',
+                                'y': 'M. y \u2013 M. y'
+                            },
+                            'yMd': {
+                                'd': 'd. M. y \u2013 d. M. y',
+                                'M': 'd. M. \u2013 d. M. y',
+                                'y': 'd. M. y \u2013 d. M. y'
+                            },
+                            'yMEd': {
+                                'd': 'E, d. \u2013 E, d. M. y',
+                                'M': 'E, d. M. \u2013 E, d. M. y',
+                                'y': 'E, d. M. y \u2013 E, d. M. y'
+                            },
+                            'yMMM': {
+                                'M': 'MMM \u2013 MMM y',
+                                'y': 'MMM y \u2013 MMM y'
+                            },
+                            'yMMMd': {
+                                'd': 'd.\u2013d. MMM y',
+                                'M': 'd. MMM \u2013 d. MMM y',
+                                'y': 'd. MMM y \u2013 d. MMM y'
+                            },
+                            'yMMMEd': {
+                                'd': 'E, d. MMM \u2013 E, d. MMM y',
+                                'M': 'E, d. MMM \u2013 E, d. MMM y',
+                                'y': 'E, d. MMM y \u2013 E, d. MMM y'
+                            },
+                            'yMMMM': {
+                                'M': 'MMMM\u2013MMMM y',
+                                'y': 'MMMM y \u2013 MMMM y'
+                            },
+                            'Hmv': {
+                                'H': 'HH.mm\u2013HH.mm v',
+                                'm': 'HH.mm\u2013HH.mm v'
+                            },
+                            'hmv': {
+                                'a': 'h:mm a \u2013 h:mm a v',
+                                'h': 'h:mm\u2013h:mm a v',
+                                'm': 'h:mm\u2013h:mm a v'
+                            },
+                            'Hm': {
+                                'H': 'HH.mm\u2013HH.mm',
+                                'm': 'HH.mm\u2013HH.mm'
+                            },
+                            'hm': {
+                                'a': 'h:mm a \u2013 h:mm a',
+                                'h': 'h:mm\u2013h:mm a',
+                                'm': 'h:mm\u2013h:mm a'
+                            },
+                            'H': {
+                                'H': 'HH\u2013HH'
+                            },
+                            'h': {
+                                'a': 'h a \u2013 h a',
+                                'h': 'h\u2013h a'
+                            },
+                            'd': {
+                                'd': 'd.\u2013d.'
+                            },
+                            'intervalFormatFallback': '{0} \u2013 {1}'
+                        }
+                    }
+                }
             },
             'timeZoneNames': {
                 'zone': {
@@ -2464,430 +3014,733 @@
                 'regionFormat-type-standard': '{0} (+0)',
                 'fallbackFormat': '{1} ({0})'
             },
-            'calendars': {
-                'gregorian': {
-                    'months': {
-                        'format': {
-                            'abbreviated': {
-                                '8': 'avg.',
-                                '7': 'jul.',
-                                '6': 'jun.',
-                                '5': 'maj',
-                                '12': 'dec.',
-                                '11': 'nov.',
-                                '10': 'okt.',
-                                '9': 'sep.',
-                                '1': 'jan.',
-                                '2': 'feb.',
-                                '3': 'mar.',
-                                '4': 'apr.'
-                            },
-                            'narrow': {
-                                '8': 'a',
-                                '7': 'j',
-                                '6': 'j',
-                                '5': 'm',
-                                '12': 'd',
-                                '11': 'n',
-                                '10': 'o',
-                                '9': 's',
-                                '1': 'j',
-                                '2': 'f',
-                                '3': 'm',
-                                '4': 'a'
-                            },
-                            'wide': {
-                                '8': 'avgust',
-                                '7': 'julij',
-                                '6': 'junij',
-                                '5': 'maj',
-                                '12': 'december',
-                                '11': 'november',
-                                '10': 'oktober',
-                                '9': 'september',
-                                '1': 'januar',
-                                '2': 'februar',
-                                '3': 'marec',
-                                '4': 'april'
-                            }
-                        },
-                        'stand-alone': {
-                            'abbreviated': {
-                                '8': 'avg',
-                                '7': 'jul',
-                                '6': 'jun',
-                                '5': 'maj',
-                                '12': 'dec',
-                                '11': 'nov',
-                                '10': 'okt',
-                                '9': 'sep',
-                                '1': 'jan',
-                                '2': 'feb',
-                                '3': 'mar',
-                                '4': 'apr'
-                            },
-                            'narrow': {
-                                '8': 'a',
-                                '7': 'j',
-                                '6': 'j',
-                                '5': 'm',
-                                '12': 'd',
-                                '11': 'n',
-                                '10': 'o',
-                                '9': 's',
-                                '1': 'j',
-                                '2': 'f',
-                                '3': 'm',
-                                '4': 'a'
-                            },
-                            'wide': {
-                                '8': 'avgust',
-                                '7': 'julij',
-                                '6': 'junij',
-                                '5': 'maj',
-                                '12': 'december',
-                                '11': 'november',
-                                '10': 'oktober',
-                                '9': 'september',
-                                '1': 'januar',
-                                '2': 'februar',
-                                '3': 'marec',
-                                '4': 'april'
-                            }
-                        }
-                    },
-                    'days': {
-                        'format': {
-                            'abbreviated': {
-                                'sun': 'ned.',
-                                'mon': 'pon.',
-                                'tue': 'tor.',
-                                'wed': 'sre.',
-                                'thu': '\u010Det.',
-                                'fri': 'pet.',
-                                'sat': 'sob.'
-                            },
-                            'narrow': {
-                                'sun': 'n',
-                                'mon': 'p',
-                                'tue': 't',
-                                'wed': 's',
-                                'thu': '\u010D',
-                                'fri': 'p',
-                                'sat': 's'
-                            },
-                            'short': {
-                                'sun': 'ned.',
-                                'mon': 'pon.',
-                                'tue': 'tor.',
-                                'wed': 'sre.',
-                                'thu': '\u010Det.',
-                                'fri': 'pet.',
-                                'sat': 'sob.'
-                            },
-                            'wide': {
-                                'sun': 'nedelja',
-                                'mon': 'ponedeljek',
-                                'tue': 'torek',
-                                'wed': 'sreda',
-                                'thu': '\u010Detrtek',
-                                'fri': 'petek',
-                                'sat': 'sobota'
-                            }
-                        },
-                        'stand-alone': {
-                            'abbreviated': {
-                                'sun': 'ned',
-                                'mon': 'pon',
-                                'tue': 'tor',
-                                'wed': 'sre',
-                                'thu': '\u010Det',
-                                'fri': 'pet',
-                                'sat': 'sob'
-                            },
-                            'narrow': {
-                                'sun': 'n',
-                                'mon': 'p',
-                                'tue': 't',
-                                'wed': 's',
-                                'thu': '\u010D',
-                                'fri': 'p',
-                                'sat': 's'
-                            },
-                            'short': {
-                                'sun': 'ned.',
-                                'mon': 'pon.',
-                                'tue': 'tor.',
-                                'wed': 'sre.',
-                                'thu': '\u010Det.',
-                                'fri': 'pet.',
-                                'sat': 'sob.'
-                            },
-                            'wide': {
-                                'sun': 'nedelja',
-                                'mon': 'ponedeljek',
-                                'tue': 'torek',
-                                'wed': 'sreda',
-                                'thu': '\u010Detrtek',
-                                'fri': 'petek',
-                                'sat': 'sobota'
-                            }
-                        }
-                    },
-                    'quarters': {
-                        'format': {
-                            'abbreviated': {
-                                '1': 'Q1',
-                                '2': 'Q2',
-                                '3': 'Q3',
-                                '4': 'Q4'
-                            },
-                            'narrow': {
-                                '1': '1',
-                                '2': '2',
-                                '3': '3',
-                                '4': '4'
-                            },
-                            'wide': {
-                                '1': '1. \u010Detrtletje',
-                                '2': '2. \u010Detrtletje',
-                                '3': '3. \u010Detrtletje',
-                                '4': '4. \u010Detrtletje'
-                            }
-                        },
-                        'stand-alone': {
-                            'abbreviated': {
-                                '1': 'Q1',
-                                '2': 'Q2',
-                                '3': 'Q3',
-                                '4': 'Q4'
-                            },
-                            'narrow': {
-                                '1': '1',
-                                '2': '2',
-                                '3': '3',
-                                '4': '4'
-                            },
-                            'wide': {
-                                '1': '1. \u010Detrtletje',
-                                '2': '2. \u010Detrtletje',
-                                '3': '3. \u010Detrtletje',
-                                '4': '4. \u010Detrtletje'
-                            }
-                        }
-                    },
-                    'dayPeriods': {
-                        'format': {
-                            'abbreviated': {
-                                'am': 'dop.',
-                                'pm': 'pop.'
-                            },
-                            'narrow': {
-                                'am': 'dop.',
-                                'pm': 'pop.'
-                            },
-                            'wide': {
-                                'am': 'dop.',
-                                'pm': 'pop.'
-                            }
-                        },
-                        'stand-alone': {
-                            'abbreviated': {
-                                'am': 'dop.',
-                                'pm': 'pop.'
-                            },
-                            'narrow': {
-                                'am': 'dop.',
-                                'pm': 'pop.'
-                            },
-                            'wide': {
-                                'am': 'dop.',
-                                'pm': 'pop.'
-                            }
-                        }
-                    },
-                    'eras': {
-                        'eraNames': {
-                            '0': 'pred na\u0161im \u0161tetjem',
-                            '0-alt-variant': 'BCE',
-                            '1': 'na\u0161e \u0161tetje',
-                            '1-alt-variant': 'po n. \u0161t.'
-                        },
-                        'eraAbbr': {
-                            '0': 'pr. n. \u0161t.',
-                            '0-alt-variant': 'BCE',
-                            '1': 'po Kr.',
-                            '1-alt-variant': 'po n. \u0161t.'
-                        },
-                        'eraNarrow': {
-                            '0': 'pr. n. \u0161t.',
-                            '0-alt-variant': 'BCE',
-                            '1': 'po Kr.',
-                            '1-alt-variant': 'po n. \u0161t.'
-                        }
-                    },
-                    'dateFormats': {
-                        'full': 'EEEE, dd. MMMM y',
-                        'long': 'dd. MMMM y',
-                        'medium': 'd. MMM y',
-                        'short': 'd. MM. yy'
-                    },
-                    'timeFormats': {
-                        'full': 'HH:mm:ss zzzz',
-                        'long': 'HH:mm:ss z',
-                        'medium': 'HH:mm:ss',
-                        'short': 'HH:mm'
-                    },
-                    'dateTimeFormats': {
-                        'full': '{1} {0}',
-                        'long': '{1} {0}',
-                        'medium': '{1} {0}',
-                        'short': '{1} {0}',
-                        'availableFormats': {
-                            'yMMMM': 'MMMM y',
-                            'yMMMEd': 'E, d. MMM y',
-                            'EHms': 'E HH.mm.ss',
-                            'Ehms': 'E h.mm.ss a',
-                            'EHm': 'E HH.mm',
-                            'Ehm': 'E h.mm a',
-                            'Ed': 'E, d.',
-                            'd': 'd',
-                            'GyMMM': 'MMM y G',
-                            'GyMMMd': 'd. MMM y G',
-                            'yQQQQ': 'QQQQ y',
-                            'yQQQ': 'QQQ y',
-                            'hms': 'h:mm:ss a',
-                            'Hm': 'HH:mm',
-                            'hm': 'h:mm a',
-                            'H': 'HH',
-                            'h': 'h a',
-                            'GyMMMEd': 'E, d. MMM y G',
-                            'Gy': 'y G',
-                            'GyM': 'M/y G',
-                            'Hms': 'HH:mm:ss',
-                            'M': 'L',
-                            'Md': 'd. M.',
-                            'MEd': 'E, d. MM.',
-                            'MMM': 'LLL',
-                            'MMMd': 'd. MMM',
-                            'MMMEd': 'E, d. MMM',
-                            'ms': 'mm:ss',
-                            'y': 'y',
-                            'yM': 'M/y',
-                            'yMd': 'd. M. y',
-                            'yMEd': 'E, d. M. y',
-                            'yMMM': 'MMM y',
-                            'yMMMd': 'd. MMM y'
-                        },
-                        'appendItems': {
-                            'Second': '{0} ({2}: {1})',
-                            'Quarter': '{0} ({2}: {1})',
-                            'Month': '{0} ({2}: {1})',
-                            'Year': '{1} {0}',
-                            'Week': '{0} ({2}: {1})',
-                            'Timezone': '{0} {1}',
-                            'Day': '{0} ({2}: {1})',
-                            'Day-Of-Week': '{0} {1}',
-                            'Era': '{1} {0}',
-                            'Hour': '{0} ({2}: {1})',
-                            'Minute': '{0} ({2}: {1})'
-                        },
-                        'intervalFormats': {
-                            'MMMEd': {
-                                'd': 'E, d. \u2013 E, d. MMM',
-                                'M': 'E, d. MMM \u2013 E, d. MMM'
-                            },
-                            'MMMd': {
-                                'd': 'd.\u2013d. MMM',
-                                'M': 'd. MMM \u2013 d. MMM'
-                            },
-                            'MMM': {
-                                'M': 'MMM\u2013MMM'
-                            },
-                            'MEd': {
-                                'd': 'E, d. \u2013 E, d. M.',
-                                'M': 'E, d. M. \u2013 E, d. M.'
-                            },
-                            'Md': {
-                                'd': 'd. \u2013 d. M.',
-                                'M': 'd. M. \u2013 d. M.'
-                            },
-                            'M': {
-                                'M': 'M.\u2013M.'
-                            },
-                            'Hv': {
-                                'H': 'HH\u2013HH v'
-                            },
-                            'hv': {
-                                'a': 'h a \u2013 h a v',
-                                'h': 'h\u2013h a v'
-                            },
-                            'y': {
-                                'y': 'y\u2013y'
-                            },
-                            'yM': {
-                                'M': 'M.\u2013M. y',
-                                'y': 'M. y \u2013 M. y'
-                            },
-                            'yMd': {
-                                'd': 'd. M. y \u2013 d. M. y',
-                                'M': 'd. M. \u2013 d. M. y',
-                                'y': 'd. M. y \u2013 d. M. y'
-                            },
-                            'yMEd': {
-                                'd': 'E, d. \u2013 E, d. M. y',
-                                'M': 'E, d. M. \u2013 E, d. M. y',
-                                'y': 'E, d. M. y \u2013 E, d. M. y'
-                            },
-                            'yMMM': {
-                                'M': 'MMM \u2013 MMM y',
-                                'y': 'MMM y \u2013 MMM y'
-                            },
-                            'yMMMd': {
-                                'd': 'd.\u2013d. MMM y',
-                                'M': 'd. MMM \u2013 d. MMM y',
-                                'y': 'd. MMM y \u2013 d. MMM y'
-                            },
-                            'yMMMEd': {
-                                'd': 'E, d. MMM \u2013 E, d. MMM y',
-                                'M': 'E, d. MMM \u2013 E, d. MMM y',
-                                'y': 'E, d. MMM y \u2013 E, d. MMM y'
-                            },
-                            'yMMMM': {
-                                'M': 'MMMM\u2013MMMM y',
-                                'y': 'MMMM y \u2013 MMMM y'
-                            },
-                            'Hmv': {
-                                'H': 'HH.mm\u2013HH.mm v',
-                                'm': 'HH.mm\u2013HH.mm v'
-                            },
-                            'hmv': {
-                                'a': 'h:mm a \u2013 h:mm a v',
-                                'h': 'h:mm\u2013h:mm a v',
-                                'm': 'h:mm\u2013h:mm a v'
-                            },
-                            'Hm': {
-                                'H': 'HH.mm\u2013HH.mm',
-                                'm': 'HH.mm\u2013HH.mm'
-                            },
-                            'hm': {
-                                'a': 'h:mm a \u2013 h:mm a',
-                                'h': 'h:mm\u2013h:mm a',
-                                'm': 'h:mm\u2013h:mm a'
-                            },
-                            'H': {
-                                'H': 'HH\u2013HH'
-                            },
-                            'h': {
-                                'a': 'h a \u2013 h a',
-                                'h': 'h\u2013h a'
-                            },
-                            'd': {
-                                'd': 'd.\u2013d.'
-                            },
-                            'intervalFormatFallback': '{0} \u2013 {1}'
-                        }
-                    }
+            'localeDisplayPattern': {
+                'localePattern': '{0} ({1})',
+                'localeSeparator': '{0}, {1}',
+                'localeKeyTypePattern': '{0}: {1}'
+            },
+            'keys': {
+                'colNormalization': 'Normalizirano razvr\u0161\u010Danje',
+                'collation': 'razvr\u0161\u010Danje',
+                'colHiraganaQuaternary': 'Razvr\u0161\u010Danje kana',
+                'colCaseLevel': 'Razvr\u0161\u010Danje, ob\u010Dutljivo na velike/male \u010Drke',
+                'colCaseFirst': 'Razvr\u0161\u010Danje velike \u010Drke/male \u010Drke',
+                'colBackwards': 'Razvr\u0161\u010Danje z obratnimi naglasi',
+                'colAlternate': 'Razvr\u0161\u010Danje s prezrtimi znaki',
+                'calendar': 'koledar',
+                'x': 'Private-Use',
+                'variableTop': 'Razvr\u0161\u010Danje kot simboli',
+                'va': 'Razli\u010Dica obmo\u010Dnih nastavitev',
+                'timezone': '\u010Casovni pas',
+                'numbers': '\u0160tevilke',
+                'currency': 'valuta',
+                'colStrength': 'Mo\u010D razvr\u0161\u010Danja',
+                'colNumeric': '\u0160tevilsko razvr\u0161\u010Danje'
+            },
+            'types': {
+                'colHiraganaQuaternary': {
+                    'no': 'Razvr\u0161\u010Danje kana lo\u010Deno',
+                    'yes': 'Razvr\u0161\u010Danje kana razli\u010Dno'
+                },
+                'colCaseLevel': {
+                    'no': 'Razvr\u0161\u010Danje ne glede na velike/male \u010Drke',
+                    'yes': 'Razvr\u0161\u010Danje ob upo\u0161tevanju velikih/malih \u010Drk'
+                },
+                'colCaseFirst': {
+                    'lower': 'Razvr\u0161\u010Danje malih \u010Drk najprej',
+                    'no': 'Razvr\u0161\u010Danje v obi\u010Dajnem zaporedju velikih/malih \u010Drk',
+                    'upper': 'Razvr\u0161\u010Danje velikih \u010Drk najprej'
+                },
+                'colStrength': {
+                    'identical': 'Razvr\u0161\u010Danje vsega',
+                    'primary': 'Razvr\u0161\u010Danje samo osnovnih \u010Drk',
+                    'quaternary': 'Razvr\u0161\u010Danje po naglasih/velikih \u010Drkah/malih \u010Drkah/\u0161irini/kana',
+                    'secondary': 'Razvr\u0161\u010Danje naglasov',
+                    'tertiary': 'Razvr\u0161\u010Danje po naglasih/velikih \u010Drkah/malih \u010Drkah/\u0161irini'
+                },
+                'colNumeric': {
+                    'no': 'Lo\u010Deno razvr\u0161\u010Danje \u0161tevilk',
+                    'yes': '\u0160tevilsko razvr\u0161\u010Danje \u0161tevk'
+                },
+                'colNormalization': {
+                    'no': 'Razvr\u0161\u010Danje brez normaliziranja',
+                    'yes': 'Normalizirano razvr\u0161\u010Danje Unicode'
+                },
+                'calendar': {
+                    'japanese': 'japonski koledar',
+                    'iso8601': 'iso8601',
+                    'coptic': 'Koptski koledar',
+                    'dangi': 'dangi',
+                    'ethiopic': 'Etiopski koledar',
+                    'ethiopic-amete-alem': 'Etiopsko ametsko alemski koledar',
+                    'gregorian': 'gregorijanski koledar',
+                    'hebrew': 'hebrejski koledar',
+                    'persian': 'Perzijski koledar',
+                    'roc': 'kitajski dr\u017Eavni koledar',
+                    'chinese': 'kitajski koledar',
+                    'buddhist': 'budisti\u010Dni koledar',
+                    'indian': 'indijanski koledar',
+                    'islamic': 'islamski koledar',
+                    'islamic-civil': 'islamski civilni koledar',
+                    'islamic-rgsa': 'islamic-rgsa',
+                    'islamic-tbla': 'islamic-tbla',
+                    'islamic-umalqura': 'islamic-umalqura'
+                },
+                'collation': {
+                    'phonebook': 'razvr\u0161\u010Danje po abecedi',
+                    'gb2312han': 'razvr\u0161\u010Danje po sistemu poenostavljene kitaj\u0161\u010Dine - GB2312',
+                    'eor': 'eor',
+                    'ducet': 'Privzeto razvr\u0161\u010Danje Unicode',
+                    'dictionary': 'Vrstni red razvr\u0161\u010Danja v slovarju',
+                    'big5han': 'razvr\u0161\u010Danje po sistemu tradicionalne kitaj\u0161\u010Dine - Big5',
+                    'traditional': 'razvr\u0161\u010Danje po tradicionalnem sistemu',
+                    'standard': 'Standardno razvr\u0161\u010Danje',
+                    'zhuyin': 'zhuyin',
+                    'unihan': 'Razvr\u0161\u010Danje koren-poteza',
+                    'stroke': 'razvr\u0161\u010Danje po zaporedju pisanja pismenk',
+                    'searchjl': 'Iskanje po za\u010Detnem soglasniku hangul',
+                    'search': 'Splo\u0161no iskanje',
+                    'reformed': 'Reformirano razvr\u0161\u010Danje',
+                    'pinyin': 'razvr\u0161\u010Danje po sistemu pinjin',
+                    'phonetic': 'Foneti\u010Dno razvr\u0161\u010Danje'
+                },
+                'numbers': {
+                    'knda': 'Kanaredske \u0161tevke',
+                    'khmr': 'Kmerske \u0161tevke',
+                    'kali': 'kali',
+                    'jpanfin': 'Japonske finan\u010Dne \u0161tevilke',
+                    'jpan': 'Japonske \u0161tevilke',
+                    'java': 'java',
+                    'hebr': 'Hebrejske \u0161tevilke',
+                    'hantfin': 'Tradicionalne kitajske finan\u010Dne \u0161tevilke',
+                    'hant': 'Tradicionalne kitajske \u0161tevilke',
+                    'hansfin': 'Poenostavljene kitajske finan\u010Dne \u0161tevilke',
+                    'hans': 'Poenostavljene kitajske \u0161tevilke',
+                    'hanidec': 'Kitajske decimalne \u0161tevilke',
+                    'guru': 'Gurmu\u0161ke \u0161tevke',
+                    'gujr': 'Gud\u017Earatske \u0161tevke',
+                    'greklow': 'Gr\u0161ke male \u0161tevilke',
+                    'grek': 'Gr\u0161ke \u0161tevilke',
+                    'bali': 'bali',
+                    'armnlow': 'Armenske majhne \u0161tevilke',
+                    'armn': 'Armenske \u0161tevilke',
+                    'arabext': 'Raz\u0161irjene arabskoindijske \u0161tevke',
+                    'arab': 'Arabskoindijske \u0161tevke',
+                    'finance': 'Finan\u010Dne \u0161tevilke',
+                    'traditional': 'Tradicionalne \u0161tevilke',
+                    'native': 'Doma\u010De \u0161tevke',
+                    'beng': 'Bengalske \u0161tevke',
+                    'brah': 'brah',
+                    'cakm': 'cakm',
+                    'cham': 'cham',
+                    'deva': 'Devangarske \u0161tevke',
+                    'orya': 'Orijske \u0161tevke',
+                    'osma': 'osma',
+                    'roman': 'Rimske \u0161tevilke',
+                    'romanlow': 'Rimske male \u0161tevilke',
+                    'saur': 'saur',
+                    'shrd': 'shrd',
+                    'sora': 'sora',
+                    'sund': 'sund',
+                    'vaii': '\u0160tevilke vai',
+                    'tibt': 'Tibetanske \u0161tevke',
+                    'thai': 'Tajske \u0161tevke',
+                    'telu': 'Telu\u0161ke \u0161tevke',
+                    'tamldec': 'Tamilske \u0161tevke',
+                    'taml': 'Tamilske \u0161tevilke',
+                    'talu': 'talu',
+                    'takr': 'takr',
+                    'olck': 'olck',
+                    'nkoo': 'nkoo',
+                    'mymrshan': 'mymrshan',
+                    'mymr': 'Mjanmarske \u0161tevke',
+                    'mtei': 'mtei',
+                    'mong': 'Mongolske \u0161tevke',
+                    'mlym': 'Malajalamske \u0161tevke',
+                    'limb': 'limb',
+                    'lepc': 'lepc',
+                    'latn': 'Zahodne \u0161tevke',
+                    'laoo': 'Lao\u0161ke \u0161tevke',
+                    'lanatham': 'lanatham',
+                    'lana': 'lana',
+                    'geor': 'Gruzijske \u0161tevilke',
+                    'fullwide': '\u0160tevke polne \u0161irine',
+                    'ethi': 'Etiopijske \u0161tevilke'
+                },
+                'colAlternate': {
+                    'non-ignorable': 'Razvr\u0161\u010Danje simbolov',
+                    'shifted': 'Razvr\u0161\u010Danje s prezrtjem simbolov'
+                },
+                'colBackwards': {
+                    'no': 'Navadno razvr\u0161\u010Danje naglasov',
+                    'yes': 'Obratno razvr\u0161\u010Danje naglasov'
+                }
+            },
+            'codePatterns': {
+                'language': 'Jezik: {0}',
+                'script': '{0}',
+                'territory': 'Regija: {0}'
+            },
+            'long': {
+                'mass-ounce': {
+                    'unitPattern-count-one': '{0} oz',
+                    'unitPattern-count-two': '{0} oz',
+                    'unitPattern-count-few': '{0} oz',
+                    'unitPattern-count-other': '{0} oz'
+                },
+                'mass-kilogram': {
+                    'unitPattern-count-one': '{0} kg',
+                    'unitPattern-count-two': '{0} kg',
+                    'unitPattern-count-few': '{0} kg',
+                    'unitPattern-count-other': '{0} kg'
+                },
+                'mass-gram': {
+                    'unitPattern-count-one': '{0} g',
+                    'unitPattern-count-two': '{0} g',
+                    'unitPattern-count-few': '{0} g',
+                    'unitPattern-count-other': '{0} g'
+                },
+                'length-yard': {
+                    'unitPattern-count-one': '{0} yd',
+                    'unitPattern-count-two': '{0} yd',
+                    'unitPattern-count-few': '{0} yd',
+                    'unitPattern-count-other': '{0} yd'
+                },
+                'length-picometer': {
+                    'unitPattern-count-one': '{0} pm',
+                    'unitPattern-count-two': '{0} pm',
+                    'unitPattern-count-few': '{0} pm',
+                    'unitPattern-count-other': '{0} pm'
+                },
+                'length-millimeter': {
+                    'unitPattern-count-one': '{0} mm',
+                    'unitPattern-count-two': '{0} mm',
+                    'unitPattern-count-few': '{0} mm',
+                    'unitPattern-count-other': '{0} mm'
+                },
+                'length-mile': {
+                    'unitPattern-count-one': '{0} mi',
+                    'unitPattern-count-two': '{0} mi',
+                    'unitPattern-count-few': '{0} mi',
+                    'unitPattern-count-other': '{0} mi'
+                },
+                'length-meter': {
+                    'unitPattern-count-one': '{0} m',
+                    'unitPattern-count-two': '{0} m',
+                    'unitPattern-count-few': '{0} m',
+                    'unitPattern-count-other': '{0} m'
+                },
+                'length-light-year': {
+                    'unitPattern-count-one': '{0} svetlobno leto',
+                    'unitPattern-count-two': '{0} svetlobni leti',
+                    'unitPattern-count-few': '{0} svetlobna leta',
+                    'unitPattern-count-other': '{0} svetlobnih let'
+                },
+                'length-kilometer': {
+                    'unitPattern-count-one': '{0} km',
+                    'unitPattern-count-two': '{0} km',
+                    'unitPattern-count-few': '{0} km',
+                    'unitPattern-count-other': '{0} km'
+                },
+                'length-inch': {
+                    'unitPattern-count-one': '{0} in',
+                    'unitPattern-count-two': '{0} in',
+                    'unitPattern-count-few': '{0} in',
+                    'unitPattern-count-other': '{0} in'
+                },
+                'length-foot': {
+                    'unitPattern-count-one': '{0} ft',
+                    'unitPattern-count-two': '{0} ft',
+                    'unitPattern-count-few': '{0} ft',
+                    'unitPattern-count-other': '{0} ft'
+                },
+                'length-centimeter': {
+                    'unitPattern-count-one': '{0} cm',
+                    'unitPattern-count-two': '{0} cm',
+                    'unitPattern-count-few': '{0} cm',
+                    'unitPattern-count-other': '{0} cm'
+                },
+                'duration-year': {
+                    'unitPattern-count-one': '{0} leto',
+                    'unitPattern-count-two': '{0} leti',
+                    'unitPattern-count-few': '{0} leta',
+                    'unitPattern-count-other': '{0} let'
+                },
+                'duration-week': {
+                    'unitPattern-count-one': '{0} teden',
+                    'unitPattern-count-two': '{0} tedna',
+                    'unitPattern-count-few': '{0} tedni',
+                    'unitPattern-count-other': '{0} tednov'
+                },
+                'duration-month': {
+                    'unitPattern-count-one': '{0} mesec',
+                    'unitPattern-count-two': '{0} meseca',
+                    'unitPattern-count-few': '{0} meseci',
+                    'unitPattern-count-other': '{0} mesecev'
+                },
+                'mass-pound': {
+                    'unitPattern-count-one': '{0} lb',
+                    'unitPattern-count-two': '{0} lb',
+                    'unitPattern-count-few': '{0} lb',
+                    'unitPattern-count-other': '{0} lb'
+                },
+                'power-horsepower': {
+                    'unitPattern-count-one': '{0} KM',
+                    'unitPattern-count-two': '{0} KM',
+                    'unitPattern-count-few': '{0} KM',
+                    'unitPattern-count-other': '{0} KM'
+                },
+                'power-kilowatt': {
+                    'unitPattern-count-one': '{0} kW',
+                    'unitPattern-count-two': '{0} kW',
+                    'unitPattern-count-few': '{0} kW',
+                    'unitPattern-count-other': '{0} kW'
+                },
+                'power-watt': {
+                    'unitPattern-count-one': '{0} W',
+                    'unitPattern-count-two': '{0} W',
+                    'unitPattern-count-few': '{0} W',
+                    'unitPattern-count-other': '{0} W'
+                },
+                'pressure-hectopascal': {
+                    'unitPattern-count-one': '{0} hPa',
+                    'unitPattern-count-two': '{0} hPa',
+                    'unitPattern-count-few': '{0} hPa',
+                    'unitPattern-count-other': '{0} hPa'
+                },
+                'pressure-inch-hg': {
+                    'unitPattern-count-one': '{0} inHg',
+                    'unitPattern-count-two': '{0} inHg',
+                    'unitPattern-count-few': '{0} inHg',
+                    'unitPattern-count-other': '{0} inHg'
+                },
+                'pressure-millibar': {
+                    'unitPattern-count-one': '{0} mbar',
+                    'unitPattern-count-two': '{0} mbar',
+                    'unitPattern-count-few': '{0} mbar',
+                    'unitPattern-count-other': '{0} mbar'
+                },
+                'volume-liter': {
+                    'unitPattern-count-one': '{0} l',
+                    'unitPattern-count-two': '{0} l',
+                    'unitPattern-count-few': '{0} l',
+                    'unitPattern-count-other': '{0} l'
+                },
+                'volume-cubic-mile': {
+                    'unitPattern-count-one': '{0} mi\u00B3',
+                    'unitPattern-count-two': '{0} mi\u00B3',
+                    'unitPattern-count-few': '{0} mi\u00B3',
+                    'unitPattern-count-other': '{0} mi\u00B3'
+                },
+                'volume-cubic-kilometer': {
+                    'unitPattern-count-one': '{0} km\u00B3',
+                    'unitPattern-count-two': '{0} km\u00B3',
+                    'unitPattern-count-few': '{0} km\u00B3',
+                    'unitPattern-count-other': '{0} km\u00B3'
+                },
+                'temperature-fahrenheit': {
+                    'unitPattern-count-one': '{0} \u00B0F',
+                    'unitPattern-count-two': '{0} \u00B0F',
+                    'unitPattern-count-few': '{0} \u00B0F',
+                    'unitPattern-count-other': '{0} \u00B0F'
+                },
+                'temperature-celsius': {
+                    'unitPattern-count-one': '{0} \u00B0C',
+                    'unitPattern-count-two': '{0} \u00B0C',
+                    'unitPattern-count-few': '{0} \u00B0C',
+                    'unitPattern-count-other': '{0} \u00B0C'
+                },
+                'speed-mile-per-hour': {
+                    'unitPattern-count-one': '{0} mi/h',
+                    'unitPattern-count-two': '{0} mi/h',
+                    'unitPattern-count-few': '{0} mi/h',
+                    'unitPattern-count-other': '{0} mi/h'
+                },
+                'speed-meter-per-second': {
+                    'unitPattern-count-one': '{0} m/s',
+                    'unitPattern-count-two': '{0} m/s',
+                    'unitPattern-count-few': '{0} m/s',
+                    'unitPattern-count-other': '{0} m/s'
+                },
+                'speed-kilometer-per-hour': {
+                    'unitPattern-count-one': '{0} km/h',
+                    'unitPattern-count-two': '{0} km/h',
+                    'unitPattern-count-few': '{0} km/h',
+                    'unitPattern-count-other': '{0} km/h'
+                },
+                'duration-minute': {
+                    'unitPattern-count-one': '{0} minuta',
+                    'unitPattern-count-two': '{0} minuti',
+                    'unitPattern-count-few': '{0} minute',
+                    'unitPattern-count-other': '{0} minut'
+                },
+                'duration-millisecond': {
+                    'unitPattern-count-one': '{0} ms',
+                    'unitPattern-count-two': '{0} ms',
+                    'unitPattern-count-few': '{0} ms',
+                    'unitPattern-count-other': '{0} ms'
+                },
+                'duration-hour': {
+                    'unitPattern-count-one': '{0} ura',
+                    'unitPattern-count-two': '{0} uri',
+                    'unitPattern-count-few': '{0} ure',
+                    'unitPattern-count-other': '{0} ur'
+                },
+                'duration-day': {
+                    'unitPattern-count-one': '{0} dan',
+                    'unitPattern-count-two': '{0} dni',
+                    'unitPattern-count-few': '{0} dnevi',
+                    'unitPattern-count-other': '{0} dni'
+                },
+                'area-square-mile': {
+                    'unitPattern-count-one': '{0} mi\u00B2',
+                    'unitPattern-count-two': '{0} mi\u00B2',
+                    'unitPattern-count-few': '{0} mi\u00B2',
+                    'unitPattern-count-other': '{0} mi\u00B2'
+                },
+                'area-square-meter': {
+                    'unitPattern-count-one': '{0} m\u00B2',
+                    'unitPattern-count-two': '{0} m\u00B2',
+                    'unitPattern-count-few': '{0} m\u00B2',
+                    'unitPattern-count-other': '{0} m\u00B2'
+                },
+                'area-square-kilometer': {
+                    'unitPattern-count-one': '{0} km\u00B2',
+                    'unitPattern-count-two': '{0} km\u00B2',
+                    'unitPattern-count-few': '{0} km\u00B2',
+                    'unitPattern-count-other': '{0} km\u00B2'
+                },
+                'per': {
+                    'compoundUnitPattern': '{0}/{1}'
+                },
+                'acceleration-g-force': {
+                    'unitPattern-count-one': '{0} G',
+                    'unitPattern-count-two': '{0} G',
+                    'unitPattern-count-few': '{0} G',
+                    'unitPattern-count-other': '{0} G'
+                },
+                'angle-arc-minute': {
+                    'unitPattern-count-one': '{0}\u2032',
+                    'unitPattern-count-two': '{0}\u2032',
+                    'unitPattern-count-few': '{0}\u2032',
+                    'unitPattern-count-other': '{0}\u2032'
+                },
+                'angle-arc-second': {
+                    'unitPattern-count-one': '{0}\u2033',
+                    'unitPattern-count-two': '{0}\u2033',
+                    'unitPattern-count-few': '{0}\u2033',
+                    'unitPattern-count-other': '{0}\u2033'
+                },
+                'angle-degree': {
+                    'unitPattern-count-one': '{0} \u00B0',
+                    'unitPattern-count-two': '{0} \u00B0',
+                    'unitPattern-count-few': '{0} \u00B0',
+                    'unitPattern-count-other': '{0} \u00B0'
+                },
+                'area-acre': {
+                    'unitPattern-count-one': '{0} jutro',
+                    'unitPattern-count-two': '{0} jutri',
+                    'unitPattern-count-few': '{0} jutra',
+                    'unitPattern-count-other': '{0} juter'
+                },
+                'area-hectare': {
+                    'unitPattern-count-one': '{0} ha',
+                    'unitPattern-count-two': '{0} ha',
+                    'unitPattern-count-few': '{0} ha',
+                    'unitPattern-count-other': '{0} ha'
+                },
+                'area-square-foot': {
+                    'unitPattern-count-one': '{0} ft\u00B2',
+                    'unitPattern-count-two': '{0} ft\u00B2',
+                    'unitPattern-count-few': '{0} ft\u00B2',
+                    'unitPattern-count-other': '{0} ft\u00B2'
+                },
+                'duration-second': {
+                    'unitPattern-count-one': '{0} sekunda',
+                    'unitPattern-count-two': '{0} sekundi',
+                    'unitPattern-count-few': '{0} sekunde',
+                    'unitPattern-count-other': '{0} sekund'
+                }
+            },
+            'short': {
+                'mass-ounce': {
+                    'unitPattern-count-one': '{0} oz',
+                    'unitPattern-count-two': '{0} oz',
+                    'unitPattern-count-few': '{0} oz',
+                    'unitPattern-count-other': '{0} oz'
+                },
+                'mass-kilogram': {
+                    'unitPattern-count-one': '{0} kg',
+                    'unitPattern-count-two': '{0} kg',
+                    'unitPattern-count-few': '{0} kg',
+                    'unitPattern-count-other': '{0} kg'
+                },
+                'mass-gram': {
+                    'unitPattern-count-one': '{0} g',
+                    'unitPattern-count-two': '{0} g',
+                    'unitPattern-count-few': '{0} g',
+                    'unitPattern-count-other': '{0} g'
+                },
+                'length-yard': {
+                    'unitPattern-count-one': '{0} yd',
+                    'unitPattern-count-two': '{0} yd',
+                    'unitPattern-count-few': '{0} yd',
+                    'unitPattern-count-other': '{0} yd'
+                },
+                'length-picometer': {
+                    'unitPattern-count-one': '{0} pm',
+                    'unitPattern-count-two': '{0} pm',
+                    'unitPattern-count-few': '{0} pm',
+                    'unitPattern-count-other': '{0} pm'
+                },
+                'length-millimeter': {
+                    'unitPattern-count-one': '{0} mm',
+                    'unitPattern-count-two': '{0} mm',
+                    'unitPattern-count-few': '{0} mm',
+                    'unitPattern-count-other': '{0} mm'
+                },
+                'length-mile': {
+                    'unitPattern-count-one': '{0} mi',
+                    'unitPattern-count-two': '{0} mi',
+                    'unitPattern-count-few': '{0} mi',
+                    'unitPattern-count-other': '{0} mi'
+                },
+                'length-meter': {
+                    'unitPattern-count-one': '{0} m',
+                    'unitPattern-count-two': '{0} m',
+                    'unitPattern-count-few': '{0} m',
+                    'unitPattern-count-other': '{0} m'
+                },
+                'length-light-year': {
+                    'unitPattern-count-one': '{0} sv. let',
+                    'unitPattern-count-two': '{0} sv. leti',
+                    'unitPattern-count-few': '{0} sv. leta',
+                    'unitPattern-count-other': '{0} sv. let'
+                },
+                'length-kilometer': {
+                    'unitPattern-count-one': '{0} km',
+                    'unitPattern-count-two': '{0} km',
+                    'unitPattern-count-few': '{0} km',
+                    'unitPattern-count-other': '{0} km'
+                },
+                'length-inch': {
+                    'unitPattern-count-one': '{0} in',
+                    'unitPattern-count-two': '{0} in',
+                    'unitPattern-count-few': '{0} in',
+                    'unitPattern-count-other': '{0} in'
+                },
+                'length-foot': {
+                    'unitPattern-count-one': '{0} ft',
+                    'unitPattern-count-two': '{0} ft',
+                    'unitPattern-count-few': '{0} ft',
+                    'unitPattern-count-other': '{0} ft'
+                },
+                'length-centimeter': {
+                    'unitPattern-count-one': '{0} cm',
+                    'unitPattern-count-two': '{0} cm',
+                    'unitPattern-count-few': '{0} cm',
+                    'unitPattern-count-other': '{0} cm'
+                },
+                'duration-year': {
+                    'unitPattern-count-one': '{0} l',
+                    'unitPattern-count-two': '{0} l',
+                    'unitPattern-count-few': '{0} l',
+                    'unitPattern-count-other': '{0} l'
+                },
+                'duration-week': {
+                    'unitPattern-count-one': '{0} t',
+                    'unitPattern-count-two': '{0} t',
+                    'unitPattern-count-few': '{0} t',
+                    'unitPattern-count-other': '{0} t'
+                },
+                'duration-month': {
+                    'unitPattern-count-one': '{0} m',
+                    'unitPattern-count-two': '{0} m',
+                    'unitPattern-count-few': '{0} m',
+                    'unitPattern-count-other': '{0} m'
+                },
+                'mass-pound': {
+                    'unitPattern-count-one': '{0} lb',
+                    'unitPattern-count-two': '{0} lb',
+                    'unitPattern-count-few': '{0} lb',
+                    'unitPattern-count-other': '{0} lb'
+                },
+                'power-horsepower': {
+                    'unitPattern-count-one': '{0} KM',
+                    'unitPattern-count-two': '{0} KM',
+                    'unitPattern-count-few': '{0} KM',
+                    'unitPattern-count-other': '{0} KM'
+                },
+                'power-kilowatt': {
+                    'unitPattern-count-one': '{0} kW',
+                    'unitPattern-count-two': '{0} kW',
+                    'unitPattern-count-few': '{0} kW',
+                    'unitPattern-count-other': '{0} kW'
+                },
+                'power-watt': {
+                    'unitPattern-count-one': '{0} W',
+                    'unitPattern-count-two': '{0} W',
+                    'unitPattern-count-few': '{0} W',
+                    'unitPattern-count-other': '{0} W'
+                },
+                'pressure-hectopascal': {
+                    'unitPattern-count-one': '{0} hPa',
+                    'unitPattern-count-two': '{0} hPa',
+                    'unitPattern-count-few': '{0} hPa',
+                    'unitPattern-count-other': '{0} hPa'
+                },
+                'pressure-inch-hg': {
+                    'unitPattern-count-one': '{0} inHg',
+                    'unitPattern-count-two': '{0} inHg',
+                    'unitPattern-count-few': '{0} inHg',
+                    'unitPattern-count-other': '{0} inHg'
+                },
+                'pressure-millibar': {
+                    'unitPattern-count-one': '{0} mbar',
+                    'unitPattern-count-two': '{0} mbar',
+                    'unitPattern-count-few': '{0} mbar',
+                    'unitPattern-count-other': '{0} mbar'
+                },
+                'volume-liter': {
+                    'unitPattern-count-one': '{0} l',
+                    'unitPattern-count-two': '{0} l',
+                    'unitPattern-count-few': '{0} l',
+                    'unitPattern-count-other': '{0} l'
+                },
+                'volume-cubic-mile': {
+                    'unitPattern-count-one': '{0} mi\u00B3',
+                    'unitPattern-count-two': '{0} mi\u00B3',
+                    'unitPattern-count-few': '{0} mi\u00B3',
+                    'unitPattern-count-other': '{0} mi\u00B3'
+                },
+                'volume-cubic-kilometer': {
+                    'unitPattern-count-one': '{0} km\u00B3',
+                    'unitPattern-count-two': '{0} km\u00B3',
+                    'unitPattern-count-few': '{0} km\u00B3',
+                    'unitPattern-count-other': '{0} km\u00B3'
+                },
+                'temperature-fahrenheit': {
+                    'unitPattern-count-one': '{0} \u00B0F',
+                    'unitPattern-count-two': '{0} \u00B0F',
+                    'unitPattern-count-few': '{0} \u00B0F',
+                    'unitPattern-count-other': '{0} \u00B0F'
+                },
+                'temperature-celsius': {
+                    'unitPattern-count-one': '{0} \u00B0C',
+                    'unitPattern-count-two': '{0} \u00B0C',
+                    'unitPattern-count-few': '{0} \u00B0C',
+                    'unitPattern-count-other': '{0} \u00B0C'
+                },
+                'speed-mile-per-hour': {
+                    'unitPattern-count-one': '{0} mi/h',
+                    'unitPattern-count-two': '{0} mi/h',
+                    'unitPattern-count-few': '{0} mi/h',
+                    'unitPattern-count-other': '{0} mi/h'
+                },
+                'speed-meter-per-second': {
+                    'unitPattern-count-one': '{0} m/s',
+                    'unitPattern-count-two': '{0} m/s',
+                    'unitPattern-count-few': '{0} m/s',
+                    'unitPattern-count-other': '{0} m/s'
+                },
+                'speed-kilometer-per-hour': {
+                    'unitPattern-count-one': '{0} km/h',
+                    'unitPattern-count-two': '{0} km/h',
+                    'unitPattern-count-few': '{0} km/h',
+                    'unitPattern-count-other': '{0} km/h'
+                },
+                'duration-minute': {
+                    'unitPattern-count-one': '{0} min',
+                    'unitPattern-count-two': '{0} min',
+                    'unitPattern-count-few': '{0} min',
+                    'unitPattern-count-other': '{0} min'
+                },
+                'duration-millisecond': {
+                    'unitPattern-count-one': '{0} ms',
+                    'unitPattern-count-two': '{0} ms',
+                    'unitPattern-count-few': '{0} ms',
+                    'unitPattern-count-other': '{0} ms'
+                },
+                'duration-hour': {
+                    'unitPattern-count-one': '{0} h',
+                    'unitPattern-count-two': '{0} h',
+                    'unitPattern-count-few': '{0} h',
+                    'unitPattern-count-other': '{0} h'
+                },
+                'duration-day': {
+                    'unitPattern-count-one': '{0} d',
+                    'unitPattern-count-two': '{0} d',
+                    'unitPattern-count-few': '{0} d',
+                    'unitPattern-count-other': '{0} d'
+                },
+                'area-square-mile': {
+                    'unitPattern-count-one': '{0} mi\u00B2',
+                    'unitPattern-count-two': '{0} mi\u00B2',
+                    'unitPattern-count-few': '{0} mi\u00B2',
+                    'unitPattern-count-other': '{0} mi\u00B2'
+                },
+                'area-square-meter': {
+                    'unitPattern-count-one': '{0} m\u00B2',
+                    'unitPattern-count-two': '{0} m\u00B2',
+                    'unitPattern-count-few': '{0} m\u00B2',
+                    'unitPattern-count-other': '{0} m\u00B2'
+                },
+                'area-square-kilometer': {
+                    'unitPattern-count-one': '{0} km\u00B2',
+                    'unitPattern-count-two': '{0} km\u00B2',
+                    'unitPattern-count-few': '{0} km\u00B2',
+                    'unitPattern-count-other': '{0} km\u00B2'
+                },
+                'per': {
+                    'compoundUnitPattern': '{0}/{1}'
+                },
+                'acceleration-g-force': {
+                    'unitPattern-count-one': '{0} G',
+                    'unitPattern-count-two': '{0} G',
+                    'unitPattern-count-few': '{0} G',
+                    'unitPattern-count-other': '{0} G'
+                },
+                'angle-arc-minute': {
+                    'unitPattern-count-one': '{0}\u2032',
+                    'unitPattern-count-two': '{0}\u2032',
+                    'unitPattern-count-few': '{0}\u2032',
+                    'unitPattern-count-other': '{0}\u2032'
+                },
+                'angle-arc-second': {
+                    'unitPattern-count-one': '{0}\u2033',
+                    'unitPattern-count-two': '{0}\u2033',
+                    'unitPattern-count-few': '{0}\u2033',
+                    'unitPattern-count-other': '{0}\u2033'
+                },
+                'angle-degree': {
+                    'unitPattern-count-one': '{0} \u00B0',
+                    'unitPattern-count-two': '{0} \u00B0',
+                    'unitPattern-count-few': '{0} \u00B0',
+                    'unitPattern-count-other': '{0} \u00B0'
+                },
+                'area-acre': {
+                    'unitPattern-count-one': '{0} jut.',
+                    'unitPattern-count-two': '{0} jut.',
+                    'unitPattern-count-few': '{0} jut.',
+                    'unitPattern-count-other': '{0} jut.'
+                },
+                'area-hectare': {
+                    'unitPattern-count-one': '{0} ha',
+                    'unitPattern-count-two': '{0} ha',
+                    'unitPattern-count-few': '{0} ha',
+                    'unitPattern-count-other': '{0} ha'
+                },
+                'area-square-foot': {
+                    'unitPattern-count-one': '{0} ft\u00B2',
+                    'unitPattern-count-two': '{0} ft\u00B2',
+                    'unitPattern-count-few': '{0} ft\u00B2',
+                    'unitPattern-count-other': '{0} ft\u00B2'
+                },
+                'duration-second': {
+                    'unitPattern-count-one': '{0} s',
+                    'unitPattern-count-two': '{0} s',
+                    'unitPattern-count-few': '{0} s',
+                    'unitPattern-count-other': '{0} s'
                 }
             }
         });
