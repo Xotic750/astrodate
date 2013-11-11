@@ -46,11 +46,11 @@
             test.expect((4 * 12) + leapYearLength + normalYearsLength + (2 * 7));
             for (index = 0; index < 12; index += 1) {
                 astrodate = new AstroDate([2013, index + 1]);
-                test.equal(astrodate.monthOfYear(), monthNames[index], 'Month name match');
+                test.equal(astrodate.format('MMMM'), monthNames[index], 'Month name match');
                 test.equal(astrodate.daysInMonth(), monthDays[index], 'Days in month: normal year');
 
                 astrodate = new AstroDate([2012, index + 1]);
-                test.equal(astrodate.monthOfYear(), monthNames[index], 'Month name match');
+                test.equal(astrodate.format('MMMM'), monthNames[index], 'Month name match');
                 test.equal(astrodate.daysInMonth(), monthDaysLeap[index], 'Days in month: leap year');
             }
 
@@ -64,7 +64,7 @@
 
             for (index = 0; index < 7; index += 1) {
                 astrodate = new AstroDate([2013, 9, index + 1]);
-                test.equal(astrodate.dayOfWeek(), dayNames[index], 'Day names');
+                test.equal(astrodate.format('EEEE'), dayNames[index], 'Day names');
                 test.equal(astrodate.dayOfYear(), 244 + index, 'Day of year');
             }
 

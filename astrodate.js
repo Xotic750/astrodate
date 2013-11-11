@@ -2326,91 +2326,19 @@
             }
             */
 
-            function objectValues(inputArg, order) {
-                var val;
-
-                if (arrayIsArray(order)) {
-                    val = order;
-                } else {
-                    val = objectKeys(inputArg);
-                }
-
-                return arrayMap(val, function (key) {
+            /*
+            function objectValues(inputArg) {
+                return arrayMap(objectKeys(inputArg), function (key) {
                     return inputArg[key];
                 });
             }
-
-            function makeNamesMin(objectNames, order) {
-                var arrayNames = objectValues(objectNames, order),
-                    arrayMinNames = [],
-                    count = 0,
-                    maxLength = 0,
-                    arrayNamesLength = arrayNames.length;
-
-                function sliceCountCompare(element) {
-                    var characters = element.slice(0, count + 1),
-                        ret;
-
-                    if (arrayContains(arrayMinNames, characters)) {
-                        ret = true;
-                    } else {
-                        arrayMinNames.push(characters);
-                        ret = false;
-                    }
-
-                    return ret;
-                }
-
-                arrayForEach(arrayNames, function (element) {
-                    var length = element.length;
-
-                    if (gt(length, maxLength)) {
-                        maxLength = length;
-                    }
-                });
-
-                while (!strictEqual(arrayMinNames.length, arrayNamesLength) && lt(count, maxLength)) {
-                    arrayMinNames.length = 0;
-                    arraySome(arrayNames, sliceCountCompare);
-                    count += 1;
-                }
-
-                return arrayMinNames;
-            }
+            */
 
             nameTypes = ['format', 'stand-alone'];
             deepFreeze(nameTypes);
             widthTypes = ['wide', 'abbreviated', 'short', 'narrow'];
             widthTypeShort = widthTypes[2];
             deepFreeze(widthTypes);
-
-            function makeNamesArray(name, type, width, lang, order) {
-                var val;
-
-                if (!isString(type) || isEmptyString(type) || !arrayContains(nameTypes, type)) {
-                    type = arrayLast(nameTypes);
-                }
-
-                if (!isString(width) || isEmptyString(width) || !arrayContains(widthTypes, width)) {
-                    width = arrayFirst(widthTypes);
-                }
-
-                if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
-                    if (!isString(defaultLanguage) || isEmptyString(defaultLanguage) || !isPlainObject(languages[defaultLanguage])) {
-                        throw new Error('Language not loaded!');
-                    }
-
-                    lang = defaultLanguage;
-                }
-
-                if (strictEqual(width, widthTypeShort) && isUndefined(languages[lang].calendars.gregorian[name][type][width])) {
-                    val = makeNamesMin(languages[lang].calendars.gregorian[name][type].abbreviated, order);
-                } else {
-                    val = objectValues(languages[lang].calendars.gregorian[name][type][width], order);
-                }
-
-                return val;
-            }
 
             function dayOfWeekNumber(struct) {
                 var day = gregorianToJd(struct).plus(1.5).mod(7).floor();
@@ -2434,54 +2362,6 @@
 
             function cldrDayKey(struct) {
                 return dayKeys[toNumber(dayOfWeekNumber(struct))];
-            }
-
-            function dayOfWeek(struct, width, lang) {
-                var val;
-
-                if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
-                    if (!isString(defaultLanguage) || isEmptyString(defaultLanguage) || !isPlainObject(languages[defaultLanguage])) {
-                        throw new Error('Language not loaded!');
-                    }
-
-                    lang = defaultLanguage;
-                }
-
-                if (!isString(width) || isEmptyString(width) || !arrayContains(objectKeys(languages[lang].calendars.gregorian.days[arrayFirst(nameTypes)]), width)) {
-                    width = arrayFirst(widthTypes);
-                }
-
-                if (strictEqual(width, widthTypeShort) && isUndefined(languages[lang].calendars.gregorian.days[arrayFirst(nameTypes)][width])) {
-                    val = makeNamesMin(languages[lang].calendars.gregorian.days[arrayFirst(nameTypes)].abbreviated);
-                } else {
-                    val = languages[lang].calendars.gregorian.days[arrayFirst(nameTypes)][width];
-                }
-
-                return val[cldrDayKey(struct)];
-            }
-
-            function monthName(struct, width, lang) {
-                var val;
-
-                if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
-                    if (!isString(defaultLanguage) || isEmptyString(defaultLanguage) || !isPlainObject(languages[defaultLanguage])) {
-                        throw new Error('Language not loaded!');
-                    }
-
-                    lang = defaultLanguage;
-                }
-
-                if (!isString(width) || isEmptyString(width) || !arrayContains(objectKeys(languages[lang].calendars.gregorian.months.format), width)) {
-                    width = arrayFirst(widthTypes);
-                }
-
-                if (strictEqual(width, widthTypeShort) && isUndefined(languages[lang].calendars.gregorian.months[arrayFirst(nameTypes)][width])) {
-                    val = makeNamesMin(languages[lang].calendars.gregorian.months[arrayFirst(nameTypes)].abbreviated);
-                } else {
-                    val = languages[lang].calendars.gregorian.months[arrayFirst(nameTypes)][width];
-                }
-
-                return val[struct.month.toString()];
             }
 
             function fractionToTime(fraction, fractionIn, struct, julian) {
@@ -2988,9 +2868,11 @@
                 return julianToJd(struct).minus(2400000.5);
             }
 
+            /*
             function jdToMJD(jd) {
                 return jd.minus(2400000.5);
             }
+            */
 
             function gregorianToJulian(struct) {
                 var newStruct;
@@ -4310,18 +4192,6 @@
             deepFreeze(calendarTypes);
 
             function formatDate(struct, pattern, julian, lang) {
-                if (!isString(pattern) || isEmptyString(pattern)) {
-                    pattern = arrayFirst(formatTypes);
-                }
-
-                if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
-                    if (!isString(defaultLanguage) || isEmptyString(defaultLanguage) || !isPlainObject(languages[defaultLanguage])) {
-                        throw new Error('Language not loaded!');
-                    }
-
-                    lang = defaultLanguage;
-                }
-
                 var gregorian = languages[lang].calendars.gregorian,
                     dateFormats = gregorian.dateFormats,
                     eras = gregorian.eras,
@@ -4465,7 +4335,7 @@
                 day = cldrDayKey(struct);
                 temp = days.format[arrayLast(formatTypes)];
                 if (isUndefined(temp)) {
-                    temp = makeNamesMin(days.format.abbreviated)[day];
+                    temp = days.format.abbreviated;
                 }
 
                 pattern = replaceToken(pattern, 'EEEEEE', temp);
@@ -4478,12 +4348,12 @@
                 pattern = replaceToken(pattern, 'eeee', temp);
                 temp = days.format.abbreviated[day];
                 pattern = replaceToken(pattern, 'E{1,3}', temp);
-                pattern = replaceToken(pattern, 'eeee', temp);
+                pattern = replaceToken(pattern, 'eee', temp);
                 //pattern = replaceToken(pattern, 'e{1,2}', local starting day of the week);
 
                 temp = days[arrayLast(nameTypes)][arrayLast(formatTypes)];
                 if (isUndefined(temp)) {
-                    temp = makeNamesMin(days[arrayLast(nameTypes)].abbreviated)[day];
+                    temp = days[arrayLast(nameTypes)].abbreviated;
                 }
 
                 pattern = replaceToken(pattern, 'cccccc', temp);
@@ -4496,18 +4366,6 @@
             }
 
             function formatTime(struct, pattern, lang) {
-                if (!isString(pattern) || isEmptyString(pattern)) {
-                    pattern = arrayFirst(formatTypes);
-                }
-
-                if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
-                    if (!isString(defaultLanguage) || isEmptyString(defaultLanguage) || !isPlainObject(languages[defaultLanguage])) {
-                        throw new Error('Language not loaded!');
-                    }
-
-                    lang = defaultLanguage;
-                }
-
                 var gregorian = languages[lang].calendars.gregorian,
                     timeFormats = gregorian.timeFormats,
                     dayPeriods = gregorian.dayPeriods,
@@ -4601,35 +4459,6 @@
                 pattern = replaceToken(pattern, 'V', etc.Unknown.exemplarCity.slice(0, 3).toLowerCase());
 
                 return pattern;
-            }
-
-            function formatDateTime(struct, pattern, julian, lang) {
-                if (!isString(pattern) || isEmptyString(pattern)) {
-                    pattern = arrayFirst(formatTypes);
-                }
-
-                if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
-                    if (!isString(defaultLanguage) || isEmptyString(defaultLanguage) || !isPlainObject(languages[defaultLanguage])) {
-                        throw new Error('Language not loaded!');
-                    }
-
-                    lang = defaultLanguage;
-                }
-
-                var gregorian = languages[lang].calendars.gregorian,
-                    dateTimeFormats = gregorian.dateTimeFormats,
-                    dateTimeFormat;
-
-                if (arrayContains(objectKeys(dateTimeFormats), pattern)) {
-                    dateTimeFormat = dateTimeFormats[pattern];
-                    dateTimeFormat = replaceToken(dateTimeFormat, '{1}', formatDate(struct, pattern, julian, lang));
-                    dateTimeFormat = replaceToken(dateTimeFormat, '{0}', formatTime(struct, pattern, lang));
-                } else {
-                    dateTimeFormat = formatDate(struct, pattern, julian, lang);
-                    dateTimeFormat = formatTime(struct, dateTimeFormat, lang);
-                }
-
-                return dateTimeFormat;
             }
 
             AstroDate = function () {
@@ -5034,13 +4863,25 @@
                     }
                 },
 
-                toString: {
+                format: {
                     value: function (pattern) {
                         var struct,
                             string,
-                            isJulian;
+                            isJulian,
+                            lang,
+                            dateTimeFormats,
+                            dateTimeFormat;
 
                         if (this.isValid()) {
+                            lang = this.currentLang();
+                            if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
+                                if (!isString(defaultLanguage) || isEmptyString(defaultLanguage) || !isPlainObject(languages[defaultLanguage])) {
+                                    throw new Error('Language not loaded!');
+                                }
+
+                                lang = defaultLanguage;
+                            }
+
                             isJulian = this.isJulian();
                             if (isJulian) {
                                 struct = jdToJulian(this.julianDay());
@@ -5049,7 +4890,21 @@
                             }
 
                             struct = getCorrectStruct(this, struct);
-                            string = stripSingleQuotes(formatDateTime(struct, pattern, isJulian, this.currentLang()));
+                            dateTimeFormats = languages[lang].calendars.gregorian.dateTimeFormats;
+                            if (!isString(pattern) || isEmptyString(pattern)) {
+                                pattern = arrayFirst(formatTypes);
+                            }
+
+                            if (arrayContains(objectKeys(dateTimeFormats), pattern)) {
+                                dateTimeFormat = dateTimeFormats[pattern];
+                                dateTimeFormat = replaceToken(dateTimeFormat, '{1}', formatDate(struct, pattern, isJulian, lang));
+                                dateTimeFormat = replaceToken(dateTimeFormat, '{0}', formatTime(struct, pattern, lang));
+                            } else {
+                                dateTimeFormat = formatDate(struct, pattern, isJulian, lang);
+                                dateTimeFormat = formatTime(struct, dateTimeFormat, lang);
+                            }
+
+                            string = stripSingleQuotes(dateTimeFormat);
                         } else {
                             string = 'Invalid Date';
                         }
@@ -5058,13 +4913,33 @@
                     }
                 },
 
+                toString: {
+                    value: function (pattern) {
+                        if (!isString(pattern) || isEmptyString(pattern || !arrayContains(formatTypes, pattern))) {
+                            pattern = arrayFirst(formatTypes);
+                        }
+
+                        return this.format(pattern);
+                    }
+                },
+
                 toDateString: {
                     value: function (pattern) {
                         var struct,
                             string,
-                            isJulian;
+                            isJulian,
+                            lang;
 
                         if (this.isValid()) {
+                            lang = this.currentLang();
+                            if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
+                                if (!isString(defaultLanguage) || isEmptyString(defaultLanguage) || !isPlainObject(languages[defaultLanguage])) {
+                                    throw new Error('Language not loaded!');
+                                }
+
+                                lang = defaultLanguage;
+                            }
+
                             isJulian = this.isJulian();
                             if (isJulian) {
                                 struct = jdToJulian(this.julianDay());
@@ -5072,8 +4947,11 @@
                                 struct = this.getter();
                             }
 
-                            struct = getCorrectStruct(this, struct);
-                            string = stripSingleQuotes(formatDate(struct, pattern, isJulian, this.currentLang()));
+                            if (!isString(pattern) || isEmptyString(pattern || !arrayContains(formatTypes, pattern))) {
+                                pattern = arrayFirst(formatTypes);
+                            }
+
+                            string = stripSingleQuotes(formatDate(getCorrectStruct(this, struct), pattern, isJulian, lang));
                         } else {
                             string = 'Invalid Date';
                         }
@@ -5086,9 +4964,19 @@
                     value: function (pattern) {
                         var struct,
                             string,
-                            isJulian;
+                            isJulian,
+                            lang;
 
                         if (this.isValid()) {
+                            lang = this.currentLang();
+                            if (!isString(lang) || isEmptyString(lang) || !isPlainObject(languages[lang])) {
+                                if (!isString(defaultLanguage) || isEmptyString(defaultLanguage) || !isPlainObject(languages[defaultLanguage])) {
+                                    throw new Error('Language not loaded!');
+                                }
+
+                                lang = defaultLanguage;
+                            }
+
                             isJulian = this.isJulian();
                             if (isJulian) {
                                 struct = jdToJulian(this.julianDay());
@@ -5096,8 +4984,11 @@
                                 struct = this.getter();
                             }
 
-                            struct = getCorrectStruct(this, struct);
-                            string = stripSingleQuotes(formatTime(struct, pattern, this.currentLang()));
+                            if (!isString(pattern) || isEmptyString(pattern || !arrayContains(formatTypes, pattern))) {
+                                pattern = arrayFirst(formatTypes);
+                            }
+
+                            string = stripSingleQuotes(formatTime(getCorrectStruct(this, struct), pattern, lang));
                         } else {
                             string = 'Invalid Date';
                         }
@@ -5313,36 +5204,6 @@
                     }
                 },
 
-                monthOfYear: {
-                    value: function (type) {
-                        var val,
-                            struct;
-
-                        if (this.isValid()) {
-                            struct = getCorrectStruct(this, this.getter());
-                            if (this.isJulian()) {
-                                val = monthName(gregorianToJulian(struct), type, this.currentLang());
-                            } else {
-                                val = monthName(struct, type, this.currentLang());
-                            }
-                        }
-
-                        return val;
-                    }
-                },
-
-                dayOfWeek: {
-                    value: function (type) {
-                        var val;
-
-                        if (this.isValid()) {
-                            val = dayOfWeek(getCorrectStruct(this, this.getter()), type, this.currentLang());
-                        }
-
-                        return val;
-                    }
-                },
-
                 isLeapYear: {
                     value: function () {
                         var struct,
@@ -5390,24 +5251,6 @@
                                 val = daysInJulianMonth(gregorianToJulian(struct)).toString();
                             } else {
                                 val = daysInGregorianMonth(struct).toString();
-                            }
-                        }
-
-                        return val;
-                    }
-                },
-
-                dayOfYear: {
-                    value: function () {
-                        var struct,
-                            val;
-
-                        if (this.isValid()) {
-                            struct = getCorrectStruct(this, this.getter());
-                            if (this.isJulian()) {
-                                val = dayOfJulianYear(gregorianToJulian(struct)).toString();
-                            } else {
-                                val = dayOfGregorianYear(struct).toString();
                             }
                         }
 
@@ -5554,18 +5397,6 @@
                 unix: {
                     value: function () {
                         return new AstroDate().unix();
-                    }
-                },
-
-                months: {
-                    value: function (type, size, lang) {
-                        return makeNamesArray('months', type, size, lang, monthKeys);
-                    }
-                },
-
-                weekDays: {
-                    value: function (type, size, lang) {
-                        return makeNamesArray('days', type, size, lang, dayKeys);
                     }
                 }
             });
