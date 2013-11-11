@@ -65,7 +65,7 @@
             for (index = 0; index < 7; index += 1) {
                 astrodate = new AstroDate([2013, 9, index + 1]);
                 test.equal(astrodate.format('EEEE'), dayNames[index], 'Day names');
-                test.equal(astrodate.dayOfYear(), 244 + index, 'Day of year');
+                test.equal(astrodate.format('D'), (244 + index).toString(), 'Day of year');
             }
 
             test.done();
