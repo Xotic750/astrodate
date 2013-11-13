@@ -11,7 +11,7 @@ Besides the standard [Gregorian calendar](http://en.wikipedia.org/wiki/Gregorian
 A set of routines will be made available for changing between systems and methods for obtaining [Julian Day Numbers, Julian Dates](http://en.wikipedia.org/wiki/Julian_day), [Modified Julian Dates](http://en.wikipedia.org/wiki/Julian_day#Variants),
 [Delta Time](http://en.wikipedia.org/wiki/%CE%94T) and [Terestrial Time](http://en.wikipedia.org/wiki/Terrestrial_Time) etc.
 
-For dates beyond the normal ```Date``` range, it is necessary to do the Math using arbitrary-precision arithmetic,
+For dates beyond the normal ```Date``` range and Javascript's limited number arithmetic, it is necessary to do the Math using arbitrary-precision arithmetic,
 [BigNumber.js](https://github.com/MikeMcl/bignumber.js) is the library chosen for this.
 
 Both calendars can be extrapolated to dates prior to their first adoption and hence are a [Proleptic Gregorian calendar](http://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar) and [Proleptic Julian Calendar](http://en.wikipedia.org/wiki/Proleptic_Julian_calendar).
