@@ -23,7 +23,7 @@ Outputs may be formated to use either Astronomical year numbering or [Calendar E
 
 It is not intended for AstroDate to be a generic date parser and handle formats like ```13/10/12```.
 
-Times beginning 1961 will be assumed to be [UTC](http://en.wikipedia.org/wiki/Coordinated_Universal_Time) before this is assumed [Universal Time](http://en.wikipedia.org/wiki/Universal_Time), specifically [UT1](http://en.wikipedia.org/wiki/UT1#Versions).
+Times beginning 1961 will be assumed to be [UTC](http://en.wikipedia.org/wiki/Coordinated_Universal_Time) before this it is assumed to be [Universal Time](http://en.wikipedia.org/wiki/Universal_Time), specifically [UT1](http://en.wikipedia.org/wiki/UT1#Versions).
 
 You can see AstroDate in use [jsfiddle](http://jsfiddle.net/Xotic750/RBnMb/) to get an idea of how things are currently functioning until the API and documentation is standardised.
 
