@@ -177,7 +177,7 @@ astrodate
 
                 <td style="text-align: center">1..3</td>
 
-                <td>&#7532;&#5B50;</td>
+                <td>&#x7532;&#x5B50;</td>
 
                 <td rowspan="3">Cyclic year name. Calendars such as the Chinese lunar calendar (and related calendars) and the Hindu calendars use 60-year cycles of year names. Use one through three letters for the abbreviated name, four for the full name, or five for the narrow name (currently the data only provides abbreviated names, which will be used for all requested name widths). If the calendar does not provide cyclic year name data, or if the year value to be formatted is out of the range of years for which cyclic name data is provided, then numeric formatting is used (behaves like 'y').</td>
             </tr>
@@ -185,13 +185,13 @@ astrodate
             <tr>
                 <td style="text-align: center">4</td>
 
-                <td>(currently also &#7532;&#5B50;)</td>
+                <td>(currently also &#x7532;&#x5B50;)</td>
             </tr>
 
             <tr>
                 <td style="text-align: center">5</td>
 
-                <td>(currently also &#7532;&#5B50;)</td>
+                <td>(currently also &#x7532;&#x5B50;)</td>
             </tr>
 
             <tr>
