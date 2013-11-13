@@ -7,18 +7,25 @@ Still very much work in progress, so there are bugs and the API has not be fully
 
 The idea behind the project is to not rely on Javascripts rather flaky ```Date``` object, give better accuracy, flexibility and be cross-browser.
 
-For dates beyond the normal ```Date``` range, it is necessary to do the Math using arbitrary-precision arithmetic,
-[BigNumber.js](https://github.com/MikeMcl/bignumber.js) is the library chosen for this.
-
-Besides the standard Gregorian calendar, the Julian calendar is also available. This allows for AstroDate to be used in astrological calculations.
+Besides the standard [Gregorian calendar](http://en.wikipedia.org/wiki/Gregorian_calendar), the [Julian calendar](http://en.wikipedia.org/wiki/Julian_calendar) is also available. This allows for AstroDate to be used in astrological calculations.
 A set of routines will be made available for changing between systems and methods for obtaining Julian Day Numbers, Julian Dates, Modified Julian Dates,
 Delta Times and Terestrial Time etc.
 
-AstroDate includes an ISO 8601 parser as one means of setting the date and time, other methods will be available, ie. using an Array and Object of discrete values.
+For dates beyond the normal ```Date``` range, it is necessary to do the Math using arbitrary-precision arithmetic,
+[BigNumber.js](https://github.com/MikeMcl/bignumber.js) is the library chosen for this.
+
+Both calendars can be extrapolated to dates prior to its first adoption and hence are a [Proleptic Gregorian calendar](http://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar) and [Proleptic Julian Calendar](http://en.wikipedia.org/wiki/Proleptic_Julian_calendar).
+
+AstroDate includes an [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) parser as one means of setting the date and time, other methods will be available, ie. using an Array and Object of discrete values.
+
+As with ISO 8601 and the Proleptic calendars, [Astronomical year numbering](http://en.wikipedia.org/wiki/Astronomical_year_numbering) will be used for input and so have a [year zero](http://en.wikipedia.org/wiki/0_(year)).
+Outputs may be formated to use either Astronomical year numbering or [Calendar Era](http://en.wikipedia.org/wiki/Calendar_era) numbering, ie. BC/AD.
 
 It is not intended for AstroDate to be a generic date parser and handle formats like ```13/10/12```.
 
-You can follow the work in progress on [jsfiddle](http://jsfiddle.net/Xotic750/RBnMb/) to get an idea of how things are currently functioning until the API and documentation is standardised.
+Times beginning 1961 will be assumed to be [UTC](http://en.wikipedia.org/wiki/Coordinated_Universal_Time) before this is assumed [Universal Time](http://en.wikipedia.org/wiki/Universal_Time), specifically [UT1](http://en.wikipedia.org/wiki/UT1#Versions).
+
+You can see AstroDate in use [jsfiddle](http://jsfiddle.net/Xotic750/RBnMb/) to get an idea of how things are currently functioning until the API and documentation is standardised.
 
 Language modules available.
 --------------------------
@@ -77,6 +84,8 @@ toString methods
 ----------------
 
 By default ```.toString()```, ```.toDateString()``` and ```.toTimeString()``` use ```'full'``` locale format, options are ```'full'```, ```'long'```, ```'medium'``` and ```'short'```.
+
+```.toISOString()``` has no modifiers and will produce a standard ISO 8601 time-stamp string, ie. ```1972-07-01T00:00:00.000Z ```
 
 Pattern formatting
 ------------------
