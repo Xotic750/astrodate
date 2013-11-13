@@ -3,7 +3,66 @@ Master [![Build Status](https://travis-ci.org/Xotic750/astrodate.png?branch=mast
 astrodate
 =========
 
+Language modules available
+--------------------------
+
+These must be loaded using node ```require```, or as AMD modules, or by including them using ```<script>```
+
+* ar.js
+* ca.js
+* cs.js
+* da.js
+* de.js
+* el.js
+* en-AU.js
+* en-CA.js
+* en-GB.js
+* en-HK.js
+* en-IN.js
+* en.js
+* es.js
+* fi.js
+* fr.js
+* he.js
+* hi.js
+* hr.js
+* hu.js
+* it.js
+* ja.js
+* ko.js
+* nb.js
+* nl.js
+* pl.js
+* pt.js
+* pt-PT.js
+* ro.js
+* root.js - default neutral language, included in astrodate but can be replaced.
+* ru.js
+* sk.js
+* sl.js
+* sr.js
+* sv.js
+* th.js
+* tr.js
+* uk.js
+* vi.js
+* zh-Hant.js
+* zh.js
+
+Once loaded use ```AstroDate.lang('en');``` to set the default application language, or change a particular instance ```new AstroDate().lang('en-GB');```
+
+CLDR locales modifiers
+----------------------
+
+Loaded languages may be modified for locale, use ```AstroDate.locale('sr_ME');``` to set the default application locale, or change a particular instance ```new AstroDate().locale('sr_RO');```
+
+toString methods
+----------------
+
 By default ```.toString()```, ```.toDateString()``` and ```.toTimeString()``` use ```'full'``` locale format, options are ```'full'```, ```'long'```, ```'medium'``` and ```'short'```.
+
+Pattern formatting
+------------------
 
 ```.format("YYYY'-W'ww'-'E")``` // 2013-W46-3
 
