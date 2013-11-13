@@ -3,7 +3,24 @@ Master [![Build Status](https://travis-ci.org/Xotic750/astrodate.png?branch=mast
 astrodate
 =========
 
-Language modules available
+Still very much work in progress, so there are bugs and the API has not be fully defined (or documented) and is subject to major changes.
+
+The idea behind the project is to not rely on Javascripts rather flaky ```Date``` object, give better accuracy, flexibility and be cross-browser.
+
+For dates beyond the normal ```Date``` range, it is necessary to do the Math using arbitrary-precision arithmetic,
+[BigNumber.js](https://github.com/MikeMcl/bignumber.js) is the library chosen for this.
+
+Besides the standard Gregorian calendar, the Julian calendar is also available. This allows for AstroDate to be used in astrological calculations.
+A set of routines will be made available for changing between systems and methods for obtaining Julian Day Numbers, Julian Dates, Modified Julian Dates,
+Delta Times and Terestrial Time etc.
+
+AstroDate includes an ISO 8601 parser as one means of setting the date and time, other methods will be available, ie. using an Array and Object of discrete values.
+
+It is not intended for AstroDate to be a generic date parser and handle formats like ```13/10/12```.
+
+You can follow the work in progress on [jsfiddle](http://jsfiddle.net/Xotic750/RBnMb/) to get an idea of how things are currently functioning until the API and documentation is standardised.
+
+Language modules available.
 --------------------------
 
 These must be loaded using node ```require```, or as AMD modules, or by including them using ```<script>```
@@ -51,7 +68,7 @@ These must be loaded using node ```require```, or as AMD modules, or by includin
 
 Once loaded use ```AstroDate.lang('en');``` to set the default application language, or change a particular instance ```new AstroDate().lang('en-GB');```
 
-CLDR locales modifiers
+CLDR locale modifiers
 ----------------------
 
 Loaded languages may be modified for locale, use ```AstroDate.locale('sr_ME');``` to set the default application locale, or change a particular instance ```new AstroDate().locale('sr_RO');```
