@@ -412,7 +412,7 @@ astrodate
             <tr>
                 <td style="text-align: center">3</td>
 
-                <td>Tues</td>
+                <td>Tue</td>
             </tr>
 
             <tr>
@@ -446,7 +446,7 @@ astrodate
             <tr>
                 <td style="text-align: center">3</td>
 
-                <td>Tues</td>
+                <td>Tue</td>
             </tr>
 
             <tr>
