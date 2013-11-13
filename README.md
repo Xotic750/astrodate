@@ -368,11 +368,17 @@ astrodate
 
                 <td rowspan="4" style="text-align: center">E</td>
 
-                <td style="text-align: center">1..3</td>
+                <td style="text-align: center">1..2</td>
 
                 <td>Tues</td>
 
-                <td rowspan="4">Day of week - Use one through three letters for the short day, or four for the full name, five for the narrow name, or six for the short name.</td>
+                <td rowspan="4">Day of week - Use one through two for ISO number, or three for the short day, or four for the full name, five for the narrow name, or six for the short name.</td>
+            </tr>
+
+            <tr>
+                <td style="text-align: center">3</td>
+
+                <td>Tue</td>
             </tr>
 
             <tr>
@@ -430,11 +436,11 @@ astrodate
             <tr>
                 <td rowspan="5" style="text-align: center">c</td>
 
-                <td style="text-align: center">1</td>
+                <td style="text-align: center">1..2</td>
 
                 <td>2</td>
 
-                <td rowspan="5"><b>Stand-Alone</b> local day of week - Use one letter for the local numeric value (same as 'e'), three for the short day, four for the full name, five for the narrow name, or six for the short name.</td>
+                <td rowspan="5"><b>Stand-Alone</b> local day of week - Use one or two letters for the local numeric value (same as 'e'), three for the short day, four for the full name, five for the narrow name, or six for the short name.</td>
             </tr>
 
             <tr>

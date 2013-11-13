@@ -23,7 +23,7 @@ do
 done
 
 DIRNAME="cldr/supplemental/"
-FILES="parentLocales.json timeData.json weekData.json"
+FILES="likelySubtags.json timeData.json weekData.json"
 DATA=""
 for f in $FILES
 do

@@ -125,6 +125,7 @@
                 nameTypes,
                 widthTypes,
                 defaultLanguage,
+                defaultLocale,
                 calendarTypes,
                 leapSeconds,
                 supplemental;
@@ -3142,7 +3143,7 @@
                 } else {
                     if (struct.month.equals(1) && nearestThursday.lt(1)) {
                         year = struct.year.minus(1);
-                        month = 12;
+                        month = new BigNumber(12);
                         nearestThursday = nearestThursday.plus(31);
                     }
 
@@ -4190,7 +4191,135 @@
 
             deepFreeze(calendarTypes);
 
-            function formatDate(struct, pattern, julian, lang) {
+            function canonicalizeLocale(locale) {
+                var val = [],
+                    firstSplit,
+                    firstSplitLength,
+                    element,
+                    elementLength,
+                    script,
+                    region;
+
+                if (isString(locale) && (/^([a-z]{2,3}|[a-z]{2,3}[\-_][a-z]{2}|[a-z]{2,3}[\-_][a-z]{4}|[a-z]{2,3}[\-_][a-z]{4}[\-_][a-z]{2})$/i).test(locale)) {
+                    firstSplit = locale.replace(/\-/g, '_').split('_');
+                    firstSplitLength = firstSplit.length;
+                    val.push(firstSplit[0].toLowerCase());
+                    if (!strictEqual(firstSplitLength, 1)) {
+                        element = firstSplit[1];
+                        if (strictEqual(firstSplitLength, 2)) {
+                            elementLength = element.length;
+                            if (strictEqual(elementLength, 2)) {
+                                region = element.toUpperCase();
+                            } else {
+                                script = element.charAt(0).toUpperCase() + element.slice(1).toLowerCase();
+                            }
+                        } else {
+                            script = element.charAt(0).toUpperCase() + element.slice(1).toLowerCase();
+                            region = firstSplit[2].toUpperCase();
+                        }
+                    }
+
+                    if (!isUndefined(script) && !strictEqual(script, 'Zzzz')) {
+                        val.push(script);
+                    }
+
+                    if (!isUndefined(region) && !strictEqual(region, 'ZZ')) {
+                        val.push(region);
+                    }
+                }
+
+                return val.join('_');
+            }
+
+            function lookupLocale(locale) {
+                var canonicalizedLocale = canonicalizeLocale(locale),
+                    likelySubtags,
+                    lookup,
+                    firstSplit,
+                    lang,
+                    script,
+                    region,
+                    length,
+                    element,
+                    elementLength;
+
+                if (!isEmptyString(canonicalizedLocale)) {
+                    likelySubtags = supplemental.likelySubtags;
+                    lookup = likelySubtags[canonicalizedLocale];
+                    if (isUndefined(lookup)) {
+                        firstSplit = canonicalizedLocale.split('_');
+                        length = firstSplit.length;
+                        lang = arrayFirst(firstSplit);
+                        if (strictEqual(length, 3)) {
+                            region = arrayLast(firstSplit);
+                            script = firstSplit[1];
+                        } else if (strictEqual(length, 2)) {
+                            element = arrayLast(firstSplit);
+                            elementLength = element.length;
+                            if (strictEqual(elementLength, 2)) {
+                                region = element;
+                            } else {
+                                script = element;
+                            }
+                        }
+
+                        if (isUndefined(lookup) && !isUndefined(region)) {
+                            lookup = likelySubtags[lang + '_' + region];
+                        }
+
+                        if (isUndefined(lookup) && !isUndefined(script)) {
+                            lookup = likelySubtags[lang + '_' + script];
+                        }
+
+                        if (isUndefined(lookup)) {
+                            if (!isUndefined(languages[canonicalizedLocale])) {
+                                lookup = canonicalizedLocale;
+                            }
+                        }
+
+                        if (isUndefined(lookup)) {
+                            lookup = likelySubtags[lang];
+                        }
+
+                        if (isUndefined(lookup) && !isUndefined(script)) {
+                            lookup = likelySubtags['und_' + script];
+                        }
+                    }
+                }
+
+                if (isUndefined(lookup)) {
+                    lookup = '';
+                }
+
+                return lookup;
+            }
+
+            function languageLoaded(locale) {
+                var loaded,
+                    lang;
+
+                if (!isEmptyString(locale)) {
+                    lang = locale.replace(/\-/g, '_');
+                    if (!isUndefined(languages[lang])) {
+                        loaded = lang;
+                    } else {
+                        lang = arrayFirst(lookupLocale(locale).split('_'));
+                        if (!isUndefined(languages[lang])) {
+                            loaded = lang;
+                        }
+                    }
+                } else {
+                    loaded = '';
+                }
+
+                return loaded;
+            }
+
+            function getRegion(locale) {
+                return arrayLast(locale.split('_'));
+            }
+
+            function formatDate(struct, pattern, julian, lang, locale) {
                 var gregorian = languages[lang].calendars.gregorian,
                     dateFormats = gregorian.dateFormats,
                     eras = gregorian.eras,
@@ -4205,6 +4334,10 @@
                     temp,
                     weekDate,
                     week,
+                    firstDay,
+                    firstDayNumber,
+                    todayNumber,
+                    dayOfWeekLocaleNumber,
                     mjd;
 
                 if (arrayContains(formatTypes, pattern)) {
@@ -4277,7 +4410,6 @@
                 temp = sign + year;
                 pattern = replaceToken(pattern, 'u{1,}', temp);
 
-                /*
                 weekDate = calendarToWeekDate(struct);
                 year = weekDate.year.plus(eraNum - 1);
                 if (year.lt(0)) {
@@ -4285,13 +4417,12 @@
                 } else {
                     sign = '';
                 }
-                */
 
                 year = year.toString();
                 temp = sign + year;
                 pattern = replaceToken(pattern, 'Y{1,}', year);
-                //week = weekDate.week.toString();
-                //pattern = replaceToken(pattern, 'w{1,2}', week);
+                week = weekDate.week.toString();
+                pattern = replaceToken(pattern, 'w{1,2}', week);
                 //pattern = replaceToken(pattern, 'W', value);
 
                 /*
@@ -4332,7 +4463,7 @@
                 pattern = replaceToken(pattern, 'g{1,}', mjd.toString());
 
                 day = cldrDayKey(struct);
-                temp = days.format[arrayLast(formatTypes)];
+                temp = days.format[arrayLast(formatTypes)][day];
                 pattern = replaceToken(pattern, 'EEEEEE', temp);
                 pattern = replaceToken(pattern, 'eeeeee', temp);
                 temp = days.format.narrow[day];
@@ -4342,21 +4473,28 @@
                 pattern = replaceToken(pattern, 'EEEE', temp);
                 pattern = replaceToken(pattern, 'eeee', temp);
                 temp = days.format.abbreviated[day];
-                pattern = replaceToken(pattern, 'E{1,3}', temp);
+                pattern = replaceToken(pattern, 'EEE', temp);
                 pattern = replaceToken(pattern, 'eee', temp);
-                //pattern = replaceToken(pattern, 'e{1,2}', local starting day of the week);
 
-                temp = days[arrayLast(nameTypes)][arrayLast(formatTypes)];
+                pattern = replaceToken(pattern, 'E{1,2}', weekDate.weekDay.toString());
+
+                firstDay = supplemental.weekData.firstDay[getRegion(locale)];
+                firstDayNumber = arrayIndexOf(dayKeys, firstDay);
+                todayNumber = arrayIndexOf(dayKeys, day);
+                dayOfWeekLocaleNumber = (1 + (7 - firstDayNumber + todayNumber) % 7).toString();
+                pattern = replaceToken(pattern, 'e{1,2}', dayOfWeekLocaleNumber);
+
+                temp = days[arrayLast(nameTypes)][arrayLast(formatTypes)][day];
                 pattern = replaceToken(pattern, 'cccccc', temp);
                 pattern = replaceToken(pattern, 'ccccc', days[arrayLast(nameTypes)].narrow[day]);
                 pattern = replaceToken(pattern, 'cccc', days[arrayLast(nameTypes)].wide[day]);
                 pattern = replaceToken(pattern, 'ccc', days[arrayLast(nameTypes)].abbreviated[day]);
-                //pattern = replaceToken(pattern, 'c', weekDayNumber(struct).toString()); // same as 'e': local starting day of the week
+                pattern = replaceToken(pattern, 'c{1,2}', dayOfWeekLocaleNumber);
 
                 return pattern;
             }
 
-            function formatTime(struct, pattern, lang) {
+            function formatTime(struct, pattern, lang, locale) {
                 var gregorian = languages[lang].calendars.gregorian,
                     timeFormats = gregorian.timeFormats,
                     dayPeriods = gregorian.dayPeriods,
@@ -4462,6 +4600,7 @@
                     isLocal = false,
                     error = null,
                     currentLanguage = defaultLanguage,
+                    currentLocale = defaultLocale,
                     struct,
                     arg;
 
@@ -4500,6 +4639,9 @@
                                     break;
                                 case 'lang':
                                     got = currentLanguage;
+                                    break;
+                                case 'locale':
+                                    got = currentLocale;
                                     break;
                                 default:
                                     throw new SyntaxError(key);
@@ -4597,8 +4739,20 @@
                                     isLocal = Boolean(value);
                                     break;
                                 case 'lang':
-                                    if (isString(value) && !isEmptyString(value) && isPlainObject(languages[value])) {
+                                    if (isString(value) && !isEmptyString(value)) {
                                         currentLanguage = value;
+                                    } else {
+                                        currentLanguage = defaultLanguage;
+                                        currentLocale = defaultLocale;
+                                    }
+
+                                    break;
+                                case 'locale':
+                                    if (isString(value) && !isEmptyString(value)) {
+                                        currentLocale = lookupLocale(value);
+                                    } else {
+                                        currentLanguage = defaultLanguage;
+                                        currentLocale = defaultLocale;
                                     }
 
                                     break;
@@ -4888,11 +5042,11 @@
 
                             if (arrayContains(objectKeys(dateTimeFormats), pattern)) {
                                 dateTimeFormat = dateTimeFormats[pattern];
-                                dateTimeFormat = replaceToken(dateTimeFormat, '{1}', formatDate(struct, pattern, isJulian, lang));
-                                dateTimeFormat = replaceToken(dateTimeFormat, '{0}', formatTime(struct, pattern, lang));
+                                dateTimeFormat = replaceToken(dateTimeFormat, '{1}', formatDate(struct, pattern, isJulian, lang, this.locale()));
+                                dateTimeFormat = replaceToken(dateTimeFormat, '{0}', formatTime(struct, pattern, lang, this.locale()));
                             } else {
-                                dateTimeFormat = formatDate(struct, pattern, isJulian, lang);
-                                dateTimeFormat = formatTime(struct, dateTimeFormat, lang);
+                                dateTimeFormat = formatDate(struct, pattern, isJulian, lang, this.locale());
+                                dateTimeFormat = formatTime(struct, dateTimeFormat, lang, this.locale());
                             }
 
                             string = stripSingleQuotes(dateTimeFormat);
@@ -4942,7 +5096,7 @@
                                 pattern = arrayFirst(formatTypes);
                             }
 
-                            string = stripSingleQuotes(formatDate(getCorrectStruct(this, struct), pattern, isJulian, lang));
+                            string = stripSingleQuotes(formatDate(getCorrectStruct(this, struct), pattern, isJulian, lang, this.locale()));
                         } else {
                             string = 'Invalid Date';
                         }
@@ -4979,7 +5133,7 @@
                                 pattern = arrayFirst(formatTypes);
                             }
 
-                            string = stripSingleQuotes(formatTime(getCorrectStruct(this, struct), pattern, lang));
+                            string = stripSingleQuotes(formatTime(getCorrectStruct(this, struct), pattern, lang, this.locale()));
                         } else {
                             string = 'Invalid Date';
                         }
@@ -5308,11 +5462,43 @@
 
                 lang: {
                     value: function (id) {
-                        if (isString(id) && !isEmptyString(id) && isPlainObject(languages[id])) {
-                            this.setter('lang', id);
+                        var val,
+                            lang;
+
+                        if (isString(id) && !isEmptyString(id)) {
+                            lang = id.replace(/\-/g, '_');
+                            if (isPlainObject(languages[lang])) {
+                                this.setter('lang', lang);
+                                this.setter('locale', lookupLocale(lang));
+                            }
+
+                            val = this;
+                        } else {
+                            val = this.getter('lang');
                         }
 
-                        return this;
+                        return val;
+                    }
+                },
+
+                locale: {
+                    value: function (id) {
+                        var lang,
+                            val;
+
+                        if (isString(id) && !isEmptyString(id)) {
+                            lang = languageLoaded(id);
+                            if (!isEmptyString(lang)) {
+                                this.setter('lang', lang);
+                                this.setter('locale', lookupLocale(id));
+                            }
+
+                            val = this;
+                        } else {
+                            val = this.getter('locale');
+                        }
+
+                        return val;
                     }
                 }
             });
@@ -5324,23 +5510,46 @@
 
                 lang: {
                     value: function (id, object, freeze) {
-                        var val;
+                        var lang;
 
                         if (isString(id) && !isEmptyString(id)) {
+                            lang = id.replace(/\-/g, '_');
                             if (isPlainObject(object)) {
-                                languages[id] = object;
+                                languages[lang] = object;
                                 if (!strictEqual(freeze, false)) {
-                                    deepFreeze(languages[id]);
+                                    deepFreeze(languages[lang]);
                                 }
                             }
 
-                            if (isPlainObject(languages[id])) {
-                                val = languages[id];
-                                defaultLanguage = id;
+                            if (isPlainObject(languages[lang])) {
+                                defaultLanguage = lang;
+                                defaultLocale = lookupLocale(lang);
                             }
                         }
 
-                        return val;
+                        return defaultLanguage;
+                    }
+                },
+
+                langs: {
+                    value: function () {
+                        return objectKeys(languages);
+                    }
+                },
+
+                locale: {
+                    value: function (id) {
+                        var lang;
+
+                        if (isString(id) && !isEmptyString(id)) {
+                            lang = languageLoaded(id);
+                            if (!isEmptyString(lang)) {
+                                defaultLanguage = lang;
+                                defaultLocale = lookupLocale(id);
+                            }
+                        }
+
+                        return defaultLocale;
                     }
                 },
 
@@ -8230,132 +8439,840 @@
                         'LY': 'sat'
                     }
                 },
-                'parentLocales': {
-                    'parentLocale': {
-                        'en_GI': 'en_GB',
-                        'en_GM': 'en_001',
-                        'en_GY': 'en_001',
-                        'en_HK': 'en_GB',
-                        'en_IE': 'en_GB',
-                        'en_SD': 'en_001',
-                        'en_SG': 'en_GB',
-                        'en_SH': 'en_GB',
-                        'en_SL': 'en_001',
-                        'en_SS': 'en_001',
-                        'en_SX': 'en_001',
-                        'en_SZ': 'en_001',
-                        'en_TC': 'en_001',
-                        'en_TK': 'en_001',
-                        'en_TO': 'en_001',
-                        'en_TT': 'en_001',
-                        'en_TV': 'en_001',
-                        'en_TZ': 'en_001',
-                        'en_UG': 'en_001',
-                        'en_VC': 'en_001',
-                        'en_VG': 'en_GB',
-                        'en_VU': 'en_001',
-                        'en_WS': 'en_001',
-                        'en_ZA': 'en_001',
-                        'en_ZM': 'en_001',
-                        'en_ZW': 'en_001',
-                        'es_AR': 'es_419',
-                        'es_BO': 'es_419',
-                        'es_CL': 'es_419',
-                        'es_CO': 'es_419',
-                        'es_CR': 'es_419',
-                        'es_CU': 'es_419',
-                        'ms_Arab': 'root',
-                        'pa_Arab': 'root',
-                        'pt_AO': 'pt_PT',
-                        'pt_CV': 'pt_PT',
-                        'pt_GW': 'pt_PT',
-                        'pt_MO': 'pt_PT',
-                        'pt_MZ': 'pt_PT',
-                        'pt_ST': 'pt_PT',
-                        'zh_Hant_MO': 'zh_Hant_HK',
-                        'zh_Hant': 'root',
-                        'vai_Latn': 'root',
-                        'uz_Cyrl': 'root',
-                        'uz_Arab': 'root',
-                        'sr_Latn': 'root',
-                        'shi_Latn': 'root',
-                        'pt_TL': 'pt_PT',
-                        'mn_Mong': 'root',
-                        'ha_Arab': 'root',
-                        'es_VE': 'es_419',
-                        'es_UY': 'es_419',
-                        'es_US': 'es_419',
-                        'es_SV': 'es_419',
-                        'es_PY': 'es_419',
-                        'es_PR': 'es_419',
-                        'es_PE': 'es_419',
-                        'es_PA': 'es_419',
-                        'es_NI': 'es_419',
-                        'en_IM': 'en_GB',
-                        'en_IN': 'en_GB',
-                        'en_IO': 'en_GB',
-                        'en_JE': 'en_GB',
-                        'en_JM': 'en_001',
-                        'en_KE': 'en_001',
-                        'en_KI': 'en_001',
-                        'en_KN': 'en_001',
-                        'en_KY': 'en_001',
-                        'en_LC': 'en_001',
-                        'en_LR': 'en_001',
-                        'en_LS': 'en_001',
-                        'en_MG': 'en_001',
-                        'en_MO': 'en_GB',
-                        'en_MS': 'en_001',
-                        'en_MT': 'en_GB',
-                        'en_PG': 'en_001',
-                        'en_PH': 'en_001',
-                        'en_PK': 'en_GB',
-                        'en_PN': 'en_001',
-                        'en_PW': 'en_001',
-                        'en_RW': 'en_001',
-                        'en_SB': 'en_001',
-                        'en_SC': 'en_001',
-                        'en_NZ': 'en_GB',
-                        'en_NU': 'en_001',
-                        'en_NR': 'en_001',
-                        'en_NG': 'en_001',
-                        'en_NF': 'en_001',
-                        'en_NA': 'en_001',
-                        'en_MW': 'en_001',
-                        'en_MU': 'en_001',
-                        'en_CX': 'en_001',
-                        'en_CM': 'en_001',
-                        'en_CK': 'en_001',
-                        'en_CC': 'en_001',
-                        'en_BZ': 'en_001',
-                        'en_BW': 'en_001',
-                        'en_BS': 'en_001',
-                        'en_BM': 'en_001',
-                        'az_Cyrl': 'root',
-                        'bs_Cyrl': 'root',
-                        'en_150': 'en_GB',
-                        'en_AG': 'en_001',
-                        'en_AI': 'en_001',
-                        'en_AU': 'en_GB',
-                        'en_BB': 'en_001',
-                        'en_BE': 'en_GB',
-                        'en_DG': 'en_GB',
-                        'en_DM': 'en_001',
-                        'en_Dsrt': 'root',
-                        'en_ER': 'en_001',
-                        'en_FJ': 'en_001',
-                        'en_FK': 'en_GB',
-                        'en_FM': 'en_001',
-                        'en_GB': 'en_001',
-                        'en_GD': 'en_001',
-                        'en_GG': 'en_GB',
-                        'en_GH': 'en_001',
-                        'es_DO': 'es_419',
-                        'es_EC': 'es_419',
-                        'es_GT': 'es_419',
-                        'es_HN': 'es_419',
-                        'es_MX': 'es_419'
-                    }
+                'likelySubtags': {
+                    'bfq': 'bfq_Taml_IN',
+                    'bez': 'bez_Latn_TZ',
+                    'bem': 'bem_Latn_ZM',
+                    'be': 'be_Cyrl_BY',
+                    'bbc': 'bbc_Latn_ID',
+                    'bax': 'bax_Bamu_CM',
+                    'bas': 'bas_Latn_CM',
+                    'ban': 'ban_Latn_ID',
+                    'bal': 'bal_Arab_PK',
+                    'ba': 'ba_Cyrl_RU',
+                    'az_RU': 'az_Cyrl_RU',
+                    'az_IR': 'az_Arab_IR',
+                    'az_Arab': 'az_Arab_IR',
+                    'az': 'az_Latn_AZ',
+                    'ay': 'ay_Latn_BO',
+                    'alt': 'alt_Cyrl_RU',
+                    'ak': 'ak_Latn_GH',
+                    'agq': 'agq_Latn_CM',
+                    'af': 'af_Latn_ZA',
+                    'ady': 'ady_Cyrl_RU',
+                    'ace': 'ace_Latn_ID',
+                    'ab': 'ab_Cyrl_GE',
+                    'aa': 'aa_Latn_ET',
+                    'am': 'am_Ethi_ET',
+                    'amo': 'amo_Latn_NG',
+                    'ar': 'ar_Arab_EG',
+                    'as': 'as_Beng_IN',
+                    'asa': 'asa_Latn_TZ',
+                    'ast': 'ast_Latn_ES',
+                    'av': 'av_Cyrl_RU',
+                    'awa': 'awa_Deva_IN',
+                    'bfy': 'bfy_Deva_IN',
+                    'bg': 'bg_Cyrl_BG',
+                    'bhb': 'bhb_Deva_IN',
+                    'bho': 'bho_Deva_IN',
+                    'bi': 'bi_Latn_VU',
+                    'bik': 'bik_Latn_PH',
+                    'bin': 'bin_Latn_NG',
+                    'bjj': 'bjj_Deva_IN',
+                    'bku': 'bku_Latn_PH',
+                    'bm': 'bm_Latn_ML',
+                    'bn': 'bn_Beng_BD',
+                    'bo': 'bo_Tibt_CN',
+                    'bqv': 'bqv_Latn_CI',
+                    'br': 'br_Latn_FR',
+                    'bra': 'bra_Deva_IN',
+                    'brx': 'brx_Deva_IN',
+                    'bs': 'bs_Latn_BA',
+                    'bss': 'bss_Latn_CM',
+                    'btv': 'btv_Deva_PK',
+                    'bua': 'bua_Cyrl_RU',
+                    'buc': 'buc_Latn_YT',
+                    'bug': 'bug_Latn_ID',
+                    'bya': 'bya_Latn_ID',
+                    'byn': 'byn_Ethi_ER',
+                    'ca': 'ca_Latn_ES',
+                    'cch': 'cch_Latn_NG',
+                    'ccp': 'ccp_Beng_IN',
+                    'ce': 'ce_Cyrl_RU',
+                    'ceb': 'ceb_Latn_PH',
+                    'cgg': 'cgg_Latn_UG',
+                    'ch': 'ch_Latn_GU',
+                    'chk': 'chk_Latn_FM',
+                    'gv': 'gv_Latn_IM',
+                    'gwi': 'gwi_Latn_CA',
+                    'ha': 'ha_Latn_NG',
+                    'ha_CM': 'ha_Arab_CM',
+                    'ha_SD': 'ha_Arab_SD',
+                    'haw': 'haw_Latn_US',
+                    'he': 'he_Hebr_IL',
+                    'hi': 'hi_Deva_IN',
+                    'hil': 'hil_Latn_PH',
+                    'hne': 'hne_Deva_IN',
+                    'hnn': 'hnn_Latn_PH',
+                    'ho': 'ho_Latn_PG',
+                    'hoc': 'hoc_Deva_IN',
+                    'hoj': 'hoj_Deva_IN',
+                    'hr': 'hr_Latn_HR',
+                    'ht': 'ht_Latn_HT',
+                    'hu': 'hu_Latn_HU',
+                    'hy': 'hy_Armn_AM',
+                    'ia': 'ia_Latn_FR',
+                    'ibb': 'ibb_Latn_NG',
+                    'id': 'id_Latn_ID',
+                    'ig': 'ig_Latn_NG',
+                    'ii': 'ii_Yiii_CN',
+                    'ik': 'ik_Latn_US',
+                    'ilo': 'ilo_Latn_PH',
+                    'in': 'in_Latn_ID',
+                    'inh': 'inh_Cyrl_RU',
+                    'is': 'is_Latn_IS',
+                    'it': 'it_Latn_IT',
+                    'iu': 'iu_Cans_CA',
+                    'iw': 'iw_Hebr_IL',
+                    'ja': 'ja_Jpan_JP',
+                    'jgo': 'jgo_Latn_CM',
+                    'ji': 'ji_Hebr_UA',
+                    'jmc': 'jmc_Latn_TZ',
+                    'jv': 'jv_Latn_ID',
+                    'jw': 'jw_Latn_ID',
+                    'ka': 'ka_Geor_GE',
+                    'kaa': 'kaa_Cyrl_UZ',
+                    'kab': 'kab_Latn_DZ',
+                    'kaj': 'kaj_Latn_NG',
+                    'kam': 'kam_Latn_KE',
+                    'kbd': 'kbd_Cyrl_RU',
+                    'kcg': 'kcg_Latn_NG',
+                    'kde': 'kde_Latn_TZ',
+                    'kdt': 'kdt_Thai_TH',
+                    'kea': 'kea_Latn_CV',
+                    'ken': 'ken_Latn_CM',
+                    'kfo': 'kfo_Latn_CI',
+                    'kfr': 'kfr_Deva_IN',
+                    'kg': 'kg_Latn_CD',
+                    'kha': 'kha_Latn_IN',
+                    'khb': 'khb_Talu_CN',
+                    'khq': 'khq_Latn_ML',
+                    'kht': 'kht_Mymr_IN',
+                    'ki': 'ki_Latn_KE',
+                    'kj': 'kj_Latn_NA',
+                    'kk': 'kk_Cyrl_KZ',
+                    'kk_AF': 'kk_Arab_AF',
+                    'kk_Arab': 'kk_Arab_CN',
+                    'kk_CN': 'kk_Arab_CN',
+                    'kk_IR': 'kk_Arab_IR',
+                    'kk_MN': 'kk_Arab_MN',
+                    'kkj': 'kkj_Latn_CM',
+                    'kl': 'kl_Latn_GL',
+                    'kln': 'kln_Latn_KE',
+                    'km': 'km_Khmr_KH',
+                    'kmb': 'kmb_Latn_AO',
+                    'kn': 'kn_Knda_IN',
+                    'ko': 'ko_Kore_KR',
+                    'koi': 'koi_Cyrl_RU',
+                    'kok': 'kok_Deva_IN',
+                    'kos': 'kos_Latn_FM',
+                    'kpe': 'kpe_Latn_LR',
+                    'krc': 'krc_Cyrl_RU',
+                    'kri': 'kri_Latn_SL',
+                    'krl': 'krl_Latn_RU',
+                    'kru': 'kru_Deva_IN',
+                    'ks': 'ks_Arab_IN',
+                    'ksb': 'ksb_Latn_TZ',
+                    'ksf': 'ksf_Latn_CM',
+                    'ksh': 'ksh_Latn_DE',
+                    'ku': 'ku_Latn_TR',
+                    'ku_Arab': 'ku_Arab_IQ',
+                    'ku_LB': 'ku_Arab_LB',
+                    'kum': 'kum_Cyrl_RU',
+                    'kv': 'kv_Cyrl_RU',
+                    'kw': 'kw_Latn_GB',
+                    'ky': 'ky_Cyrl_KG',
+                    'ky_Arab': 'ky_Arab_CN',
+                    'ky_CN': 'ky_Arab_CN',
+                    'ky_Latn': 'ky_Latn_TR',
+                    'ky_TR': 'ky_Latn_TR',
+                    'la': 'la_Latn_VA',
+                    'lag': 'lag_Latn_TZ',
+                    'lah': 'lah_Arab_PK',
+                    'lb': 'lb_Latn_LU',
+                    'lbe': 'lbe_Cyrl_RU',
+                    'lcp': 'lcp_Thai_CN',
+                    'lep': 'lep_Lepc_IN',
+                    'lez': 'lez_Cyrl_RU',
+                    'lg': 'lg_Latn_UG',
+                    'li': 'li_Latn_NL',
+                    'lif': 'lif_Deva_NP',
+                    'lis': 'lis_Lisu_CN',
+                    'lki': 'lki_Arab_IR',
+                    'lkt': 'lkt_Latn_US',
+                    'lmn': 'lmn_Telu_IN',
+                    'ln': 'ln_Latn_CD',
+                    'lo': 'lo_Laoo_LA',
+                    'lol': 'lol_Latn_CD',
+                    'lt': 'lt_Latn_LT',
+                    'lu': 'lu_Latn_CD',
+                    'lua': 'lua_Latn_CD',
+                    'luo': 'luo_Latn_KE',
+                    'luy': 'luy_Latn_KE',
+                    'lv': 'lv_Latn_LV',
+                    'lwl': 'lwl_Thai_TH',
+                    'mad': 'mad_Latn_ID',
+                    'mag': 'mag_Deva_IN',
+                    'mai': 'mai_Deva_IN',
+                    'mak': 'mak_Latn_ID',
+                    'man': 'man_Latn_GM',
+                    'man_GN': 'man_Nkoo_GN',
+                    'man_Nkoo': 'man_Nkoo_GN',
+                    'mas': 'mas_Latn_KE',
+                    'mdf': 'mdf_Cyrl_RU',
+                    'mdh': 'mdh_Latn_PH',
+                    'und_Cyrl_MD': 'uk_Cyrl_MD',
+                    'und_Cyrl_PL': 'be_Cyrl_PL',
+                    'und_Cyrl_RO': 'bg_Cyrl_RO',
+                    'und_Cyrl_SK': 'uk_Cyrl_SK',
+                    'und_Cyrl_TR': 'kbd_Cyrl_TR',
+                    'und_Cyrl_XK': 'sr_Cyrl_XK',
+                    'und_CZ': 'cs_Latn_CZ',
+                    'und_DE': 'de_Latn_DE',
+                    'und_Deva': 'hi_Deva_IN',
+                    'und_Deva_BT': 'ne_Deva_BT',
+                    'und_Deva_MU': 'bho_Deva_MU',
+                    'und_Deva_PK': 'btv_Deva_PK',
+                    'und_DJ': 'aa_Latn_DJ',
+                    'und_DK': 'da_Latn_DK',
+                    'und_DO': 'es_Latn_DO',
+                    'und_DZ': 'ar_Arab_DZ',
+                    'und_EA': 'es_Latn_EA',
+                    'und_EC': 'es_Latn_EC',
+                    'und_EE': 'et_Latn_EE',
+                    'und_EG': 'ar_Arab_EG',
+                    'und_Egyp': 'egy_Egyp_EG',
+                    'und_EH': 'ar_Arab_EH',
+                    'und_ER': 'ti_Ethi_ER',
+                    'und_ES': 'es_Latn_ES',
+                    'und_ET': 'am_Ethi_ET',
+                    'und_Ethi': 'am_Ethi_ET',
+                    'und_FI': 'fi_Latn_FI',
+                    'und_FM': 'chk_Latn_FM',
+                    'und_FO': 'fo_Latn_FO',
+                    'und_FR': 'fr_Latn_FR',
+                    'und_GA': 'fr_Latn_GA',
+                    'und_GE': 'ka_Geor_GE',
+                    'und_Geor': 'ka_Geor_GE',
+                    'und_GF': 'fr_Latn_GF',
+                    'und_GH': 'ak_Latn_GH',
+                    'und_GL': 'kl_Latn_GL',
+                    'und_Glag': 'cu_Glag_BG',
+                    'und_GN': 'fr_Latn_GN',
+                    'und_Goth': 'got_Goth_UA',
+                    'und_GP': 'fr_Latn_GP',
+                    'und_GQ': 'es_Latn_GQ',
+                    'und_GR': 'el_Grek_GR',
+                    'und_Grek': 'el_Grek_GR',
+                    'und_GS': 'und_Latn_GS',
+                    'und_GT': 'es_Latn_GT',
+                    'und_Gujr': 'gu_Gujr_IN',
+                    'und_Guru': 'pa_Guru_IN',
+                    'und_GW': 'pt_Latn_GW',
+                    'und_Hang': 'ko_Hang_KR',
+                    'und_Hani': 'zh_Hani_CN',
+                    'und_Hano': 'hnn_Hano_PH',
+                    'und_Hans': 'zh_Hans_CN',
+                    'und_Hant': 'zh_Hant_TW',
+                    'und_Hebr': 'he_Hebr_IL',
+                    'und_Hebr_CA': 'yi_Hebr_CA',
+                    'und_Hebr_GB': 'yi_Hebr_GB',
+                    'und_Hebr_SE': 'yi_Hebr_SE',
+                    'und_Hebr_UA': 'yi_Hebr_UA',
+                    'und_Hebr_US': 'yi_Hebr_US',
+                    'und_Hira': 'ja_Hira_JP',
+                    'und_HK': 'zh_Hant_HK',
+                    'und_HM': 'und_Latn_HM',
+                    'und_HN': 'es_Latn_HN',
+                    'und_HR': 'hr_Latn_HR',
+                    'und_HT': 'ht_Latn_HT',
+                    'und_QA': 'ar_Arab_QA',
+                    'und_RE': 'fr_Latn_RE',
+                    'und_Rjng': 'rej_Rjng_ID',
+                    'und_RO': 'ro_Latn_RO',
+                    'und_RS': 'sr_Cyrl_RS',
+                    'und_RU': 'ru_Cyrl_RU',
+                    'und_Runr': 'non_Runr_SE',
+                    'und_RW': 'rw_Latn_RW',
+                    'und_SA': 'ar_Arab_SA',
+                    'und_Samr': 'smp_Samr_IL',
+                    'und_Sarb': 'xsa_Sarb_YE',
+                    'und_Saur': 'saz_Saur_IN',
+                    'und_SC': 'fr_Latn_SC',
+                    'und_SD': 'ar_Arab_SD',
+                    'und_SE': 'sv_Latn_SE',
+                    'und_Shaw': 'en_Shaw_GB',
+                    'und_Shrd': 'sa_Shrd_IN',
+                    'und_SI': 'sl_Latn_SI',
+                    'und_Sinh': 'si_Sinh_LK',
+                    'und_SJ': 'nb_Latn_SJ',
+                    'und_SK': 'sk_Latn_SK',
+                    'und_SM': 'it_Latn_SM',
+                    'und_SN': 'fr_Latn_SN',
+                    'und_SO': 'so_Latn_SO',
+                    'und_Sora': 'srb_Sora_IN',
+                    'und_SR': 'nl_Latn_SR',
+                    'und_ST': 'pt_Latn_ST',
+                    'und_Sund': 'su_Sund_ID',
+                    'und_SV': 'es_Latn_SV',
+                    'und_SY': 'ar_Arab_SY',
+                    'und_Sylo': 'syl_Sylo_BD',
+                    'und_Syrc': 'syr_Syrc_IQ',
+                    'und_Tagb': 'tbw_Tagb_PH',
+                    'und_Takr': 'doi_Takr_IN',
+                    'und_Tale': 'tdd_Tale_CN',
+                    'und_Talu': 'khb_Talu_CN',
+                    'und_Taml': 'ta_Taml_IN',
+                    'und_Tavt': 'blt_Tavt_VN',
+                    'und_TD': 'fr_Latn_TD',
+                    'und_Telu': 'te_Telu_IN',
+                    'und_TF': 'fr_Latn_TF',
+                    'und_Tfng': 'zgh_Tfng_MA',
+                    'und_TG': 'fr_Latn_TG',
+                    'und_Tglg': 'fil_Tglg_PH',
+                    'und_TH': 'th_Thai_TH',
+                    'und_Thaa': 'dv_Thaa_MV',
+                    'und_Thai': 'th_Thai_TH',
+                    'und_Thai_CN': 'lcp_Thai_CN',
+                    'und_Thai_KH': 'kdt_Thai_KH',
+                    'und_Thai_LA': 'kdt_Thai_LA',
+                    'und_Tibt': 'bo_Tibt_CN',
+                    'und_TJ': 'tg_Cyrl_TJ',
+                    'und_TK': 'tkl_Latn_TK',
+                    'und_TL': 'pt_Latn_TL',
+                    'und_TM': 'tk_Latn_TM',
+                    'und_TN': 'ar_Arab_TN',
+                    'und_TO': 'to_Latn_TO',
+                    'und_TR': 'tr_Latn_TR',
+                    'und_TV': 'tvl_Latn_TV',
+                    'und_TW': 'zh_Hant_TW',
+                    'und_TZ': 'sw_Latn_TZ',
+                    'und_UA': 'uk_Cyrl_UA',
+                    'und_UG': 'sw_Latn_UG',
+                    'und_Ugar': 'uga_Ugar_SY',
+                    'war': 'war_Latn_PH',
+                    'mdr': 'mdr_Latn_ID',
+                    'men': 'men_Latn_SL',
+                    'mer': 'mer_Latn_KE',
+                    'mfe': 'mfe_Latn_MU',
+                    'mg': 'mg_Latn_MG',
+                    'mgh': 'mgh_Latn_MZ',
+                    'mgo': 'mgo_Latn_CM',
+                    'mh': 'mh_Latn_MH',
+                    'mi': 'mi_Latn_NZ',
+                    'min': 'min_Latn_ID',
+                    'mk': 'mk_Cyrl_MK',
+                    'ml': 'ml_Mlym_IN',
+                    'mn': 'mn_Cyrl_MN',
+                    'mn_CN': 'mn_Mong_CN',
+                    'mn_Mong': 'mn_Mong_CN',
+                    'mni': 'mni_Beng_IN',
+                    'mnw': 'mnw_Mymr_MM',
+                    'mo': 'mo_Latn_RO',
+                    'mos': 'mos_Latn_BF',
+                    'mr': 'mr_Deva_IN',
+                    'ms': 'ms_Latn_MY',
+                    'ms_CC': 'ms_Arab_CC',
+                    'ms_ID': 'ms_Arab_ID',
+                    'mt': 'mt_Latn_MT',
+                    'mua': 'mua_Latn_CM',
+                    'mwr': 'mwr_Deva_IN',
+                    'my': 'my_Mymr_MM',
+                    'myv': 'myv_Cyrl_RU',
+                    'na': 'na_Latn_NR',
+                    'nap': 'nap_Latn_IT',
+                    'naq': 'naq_Latn_NA',
+                    'nb': 'nb_Latn_NO',
+                    'nd': 'nd_Latn_ZW',
+                    'nds': 'nds_Latn_DE',
+                    'ne': 'ne_Deva_NP',
+                    'new': 'new_Deva_NP',
+                    'ng': 'ng_Latn_NA',
+                    'niu': 'niu_Latn_NU',
+                    'nl': 'nl_Latn_NL',
+                    'nmg': 'nmg_Latn_CM',
+                    'nn': 'nn_Latn_NO',
+                    'nnh': 'nnh_Latn_CM',
+                    'no': 'no_Latn_NO',
+                    'nod': 'nod_Lana_TH',
+                    'nr': 'nr_Latn_ZA',
+                    'nso': 'nso_Latn_ZA',
+                    'nus': 'nus_Latn_SD',
+                    'nv': 'nv_Latn_US',
+                    'ny': 'ny_Latn_MW',
+                    'nym': 'nym_Latn_TZ',
+                    'nyn': 'nyn_Latn_UG',
+                    'oc': 'oc_Latn_FR',
+                    'om': 'om_Latn_ET',
+                    'or': 'or_Orya_IN',
+                    'os': 'os_Cyrl_GE',
+                    'pa': 'pa_Guru_IN',
+                    'pa_Arab': 'pa_Arab_PK',
+                    'pa_PK': 'pa_Arab_PK',
+                    'pag': 'pag_Latn_PH',
+                    'pam': 'pam_Latn_PH',
+                    'pap': 'pap_Latn_AW',
+                    'pau': 'pau_Latn_PW',
+                    'pl': 'pl_Latn_PL',
+                    'pon': 'pon_Latn_FM',
+                    'prd': 'prd_Arab_IR',
+                    'ps': 'ps_Arab_AF',
+                    'pt': 'pt_Latn_BR',
+                    'qu': 'qu_Latn_PE',
+                    'raj': 'raj_Latn_IN',
+                    'rcf': 'rcf_Latn_RE',
+                    'rej': 'rej_Latn_ID',
+                    'rjs': 'rjs_Deva_NP',
+                    'rkt': 'rkt_Beng_BD',
+                    'rm': 'rm_Latn_CH',
+                    'rn': 'rn_Latn_BI',
+                    'ro': 'ro_Latn_RO',
+                    'rof': 'rof_Latn_TZ',
+                    'ru': 'ru_Cyrl_RU',
+                    'rw': 'rw_Latn_RW',
+                    'rwk': 'rwk_Latn_TZ',
+                    'sa': 'sa_Deva_IN',
+                    'saf': 'saf_Latn_GH',
+                    'sah': 'sah_Cyrl_RU',
+                    'saq': 'saq_Latn_KE',
+                    'sas': 'sas_Latn_ID',
+                    'sat': 'sat_Latn_IN',
+                    'saz': 'saz_Saur_IN',
+                    'sbp': 'sbp_Latn_TZ',
+                    'scn': 'scn_Latn_IT',
+                    'sco': 'sco_Latn_GB',
+                    'sd': 'sd_Arab_PK',
+                    'sd_Deva': 'sd_Deva_IN',
+                    'sdh': 'sdh_Arab_IR',
+                    'se': 'se_Latn_NO',
+                    'seh': 'seh_Latn_MZ',
+                    'ses': 'ses_Latn_ML',
+                    'sg': 'sg_Latn_CF',
+                    'shi': 'shi_Tfng_MA',
+                    'shn': 'shn_Mymr_MM',
+                    'si': 'si_Sinh_LK',
+                    'sid': 'sid_Latn_ET',
+                    'sk': 'sk_Latn_SK',
+                    'sl': 'sl_Latn_SI',
+                    'sm': 'sm_Latn_WS',
+                    'sma': 'sma_Latn_SE',
+                    'smj': 'smj_Latn_SE',
+                    'smn': 'smn_Latn_FI',
+                    'sms': 'sms_Latn_FI',
+                    'sn': 'sn_Latn_ZW',
+                    'snk': 'snk_Latn_ML',
+                    'so': 'so_Latn_SO',
+                    'sq': 'sq_Latn_AL',
+                    'sr': 'sr_Cyrl_RS',
+                    'sr_ME': 'sr_Latn_ME',
+                    'sr_RO': 'sr_Latn_RO',
+                    'sr_RU': 'sr_Latn_RU',
+                    'sr_TR': 'sr_Latn_TR',
+                    'srn': 'srn_Latn_SR',
+                    'srr': 'srr_Latn_SN',
+                    'ss': 'ss_Latn_ZA',
+                    'ssy': 'ssy_Latn_ER',
+                    'st': 'st_Latn_ZA',
+                    'su': 'su_Latn_ID',
+                    'suk': 'suk_Latn_TZ',
+                    'sus': 'sus_Latn_GN',
+                    'sv': 'sv_Latn_SE',
+                    'sw': 'sw_Latn_TZ',
+                    'swb': 'swb_Arab_YT',
+                    'und_Arab_PK': 'ur_Arab_PK',
+                    'und_Arab_TJ': 'fa_Arab_TJ',
+                    'und_Arab_TR': 'zza_Arab_TR',
+                    'und_Arab_YT': 'swb_Arab_YT',
+                    'und_Armi': 'arc_Armi_IR',
+                    'und_Armn': 'hy_Armn_AM',
+                    'und_AS': 'sm_Latn_AS',
+                    'und_AT': 'de_Latn_AT',
+                    'und_Avst': 'ae_Avst_IR',
+                    'und_AW': 'nl_Latn_AW',
+                    'und_AX': 'sv_Latn_AX',
+                    'und_AZ': 'az_Latn_AZ',
+                    'und_BA': 'bs_Latn_BA',
+                    'und_Bali': 'ban_Bali_ID',
+                    'und_Bamu': 'bax_Bamu_CM',
+                    'und_Batk': 'bbc_Batk_ID',
+                    'und_BD': 'bn_Beng_BD',
+                    'und_BE': 'nl_Latn_BE',
+                    'und_Beng': 'bn_Beng_BD',
+                    'und_BF': 'fr_Latn_BF',
+                    'und_BG': 'bg_Cyrl_BG',
+                    'und_BH': 'ar_Arab_BH',
+                    'und_BI': 'rn_Latn_BI',
+                    'und_BJ': 'fr_Latn_BJ',
+                    'und_BL': 'fr_Latn_BL',
+                    'und_BN': 'ms_Latn_BN',
+                    'und_BO': 'es_Latn_BO',
+                    'und_Bopo': 'zh_Bopo_TW',
+                    'und_BQ': 'pap_Latn_BQ',
+                    'und_BR': 'pt_Latn_BR',
+                    'und_Brah': 'pra_Brah_IN',
+                    'und_Brai': 'und_Brai_FR',
+                    'und_CM': 'fr_Latn_CM',
+                    'und_CN': 'zh_Hans_CN',
+                    'und_CO': 'es_Latn_CO',
+                    'und_Copt': 'cop_Copt_EG',
+                    'und_CP': 'und_Latn_CP',
+                    'und_Cprt': 'grc_Cprt_CY',
+                    'und_CR': 'es_Latn_CR',
+                    'und_CU': 'es_Latn_CU',
+                    'und_Cyrl_GR': 'mk_Cyrl_GR',
+                    'und_Cyrl_GE': 'ab_Cyrl_GE',
+                    'und_Cyrl_BA': 'sr_Cyrl_BA',
+                    'und_Cyrl_AL': 'mk_Cyrl_AL',
+                    'und_Cyrl': 'ru_Cyrl_RU',
+                    'und_CY': 'el_Grek_CY',
+                    'und_CW': 'pap_Latn_CW',
+                    'und_CV': 'pt_Latn_CV',
+                    'und_CL': 'es_Latn_CL',
+                    'und_CI': 'fr_Latn_CI',
+                    'und_Cher': 'chr_Cher_US',
+                    'und_Cham': 'cjm_Cham_VN',
+                    'und_CH': 'de_Latn_CH',
+                    'und_CG': 'fr_Latn_CG',
+                    'und_CF': 'fr_Latn_CF',
+                    'und_CD': 'sw_Latn_CD',
+                    'und_Cari': 'xcr_Cari_TR',
+                    'und_Cans': 'cr_Cans_CA',
+                    'und_Cakm': 'ccp_Cakm_BD',
+                    'und_BY': 'be_Cyrl_BY',
+                    'und_BV': 'und_Latn_BV',
+                    'und_Buhd': 'bku_Buhd_PH',
+                    'und_Bugi': 'bug_Bugi_ID',
+                    'und_BT': 'dz_Tibt_BT',
+                    'und_Arab_NG': 'ha_Arab_NG',
+                    'und_Arab_MU': 'ur_Arab_MU',
+                    'und_Arab_MN': 'kk_Arab_MN',
+                    'und_Arab_KH': 'cja_Arab_KH',
+                    'und_Arab_IN': 'ur_Arab_IN',
+                    'und_Arab_ID': 'ms_Arab_ID',
+                    'und_Arab_GB': 'ks_Arab_GB',
+                    'und_Arab_CN': 'ug_Arab_CN',
+                    'und_Arab_CC': 'ms_Arab_CC',
+                    'und_Arab': 'ar_Arab_EG',
+                    'und_AR': 'es_Latn_AR',
+                    'und_AQ': 'und_Latn_AQ',
+                    'und_AO': 'pt_Latn_AO',
+                    'und_AM': 'hy_Armn_AM',
+                    'und_AL': 'sq_Latn_AL',
+                    'und_AF': 'fa_Arab_AF',
+                    'und_AE': 'ar_Arab_AE',
+                    'und_AD': 'ca_Latn_AD',
+                    'und': 'en_Latn_US',
+                    'umb': 'umb_Latn_AO',
+                    'uli': 'uli_Latn_FM',
+                    'uk': 'uk_Cyrl_UA',
+                    'ug_MN': 'ug_Cyrl_MN',
+                    'ug_KZ': 'ug_Cyrl_KZ',
+                    'ug_Cyrl': 'ug_Cyrl_KZ',
+                    'ug': 'ug_Arab_CN',
+                    'udm': 'udm_Cyrl_RU',
+                    'tzm': 'tzm_Latn_MA',
+                    'tyv': 'tyv_Cyrl_RU',
+                    'ty': 'ty_Latn_PF',
+                    'twq': 'twq_Latn_NE',
+                    'tvl': 'tvl_Latn_TV',
+                    'tum': 'tum_Latn_MW',
+                    'tts': 'tts_Thai_TH',
+                    'tt': 'tt_Cyrl_RU',
+                    'tsg': 'tsg_Latn_PH',
+                    'ts': 'ts_Latn_ZA',
+                    'trv': 'trv_Latn_TW',
+                    'tr': 'tr_Latn_TR',
+                    'tpi': 'tpi_Latn_PG',
+                    'to': 'to_Latn_TO',
+                    'tn': 'tn_Latn_ZA',
+                    'tmh': 'tmh_Latn_NE',
+                    'tl': 'tl_Latn_PH',
+                    'tkl': 'tkl_Latn_TK',
+                    'tk': 'tk_Latn_TM',
+                    'tiv': 'tiv_Latn_NG',
+                    'tig': 'tig_Ethi_ER',
+                    'ti': 'ti_Ethi_ET',
+                    'th': 'th_Thai_TH',
+                    'tg_PK': 'tg_Arab_PK',
+                    'tg_Arab': 'tg_Arab_PK',
+                    'tg': 'tg_Cyrl_TJ',
+                    'tet': 'tet_Latn_TL',
+                    'teo': 'teo_Latn_UG',
+                    'tem': 'tem_Latn_SL',
+                    'te': 'te_Telu_IN',
+                    'tdd': 'tdd_Tale_CN',
+                    'tcy': 'tcy_Knda_IN',
+                    'tbw': 'tbw_Latn_PH',
+                    'ta': 'ta_Taml_IN',
+                    'syr': 'syr_Syrc_IQ',
+                    'syl': 'syl_Beng_BD',
+                    'swc': 'swc_Latn_CD',
+                    'guz': 'guz_Latn_KE',
+                    'gu': 'gu_Gujr_IN',
+                    'gsw': 'gsw_Latn_CH',
+                    'grt': 'grt_Beng_IN',
+                    'gor': 'gor_Latn_ID',
+                    'gon': 'gon_Telu_IN',
+                    'gn': 'gn_Latn_PY',
+                    'gl': 'gl_Latn_ES',
+                    'gil': 'gil_Latn_KI',
+                    'gez': 'gez_Ethi_ET',
+                    'gd': 'gd_Latn_GB',
+                    'gcr': 'gcr_Latn_GF',
+                    'gbm': 'gbm_Deva_IN',
+                    'gag': 'gag_Latn_MD',
+                    'gaa': 'gaa_Latn_GH',
+                    'ga': 'ga_Latn_IE',
+                    'fy': 'fy_Latn_NL',
+                    'fur': 'fur_Latn_IT',
+                    'fr': 'fr_Latn_FR',
+                    'fon': 'fon_Latn_BJ',
+                    'fo': 'fo_Latn_FO',
+                    'fj': 'fj_Latn_FJ',
+                    'fil': 'fil_Latn_PH',
+                    'fi': 'fi_Latn_FI',
+                    'ff': 'ff_Latn_SN',
+                    'fan': 'fan_Latn_GQ',
+                    'fa': 'fa_Arab_IR',
+                    'ewo': 'ewo_Latn_CM',
+                    'eu': 'eu_Latn_ES',
+                    'et': 'et_Latn_EE',
+                    'es': 'es_Latn_ES',
+                    'eo': 'eo_Latn_001',
+                    'en': 'en_Latn_US',
+                    'el': 'el_Grek_GR',
+                    'efi': 'efi_Latn_NG',
+                    'ee': 'ee_Latn_GH',
+                    'ebu': 'ebu_Latn_KE',
+                    'dz': 'dz_Tibt_BT',
+                    'dyu': 'dyu_Latn_BF',
+                    'dyo': 'dyo_Latn_SN',
+                    'dv': 'dv_Thaa_MV',
+                    'dua': 'dua_Latn_CM',
+                    'dsb': 'dsb_Latn_DE',
+                    'doi': 'doi_Arab_IN',
+                    'dje': 'dje_Latn_NE',
+                    'dgr': 'dgr_Latn_CA',
+                    'den': 'den_Latn_CA',
+                    'de': 'de_Latn_DE',
+                    'dav': 'dav_Latn_KE',
+                    'dar': 'dar_Cyrl_RU',
+                    'da': 'da_Latn_DK',
+                    'cy': 'cy_Latn_GB',
+                    'cv': 'cv_Cyrl_RU',
+                    'csb': 'csb_Latn_PL',
+                    'cs': 'cs_Latn_CZ',
+                    'crk': 'crk_Cans_CA',
+                    'cr': 'cr_Cans_CA',
+                    'co': 'co_Latn_FR',
+                    'ckb': 'ckb_Arab_IQ',
+                    'cjm': 'cjm_Cham_VN',
+                    'cja': 'cja_Arab_KH',
+                    'chr': 'chr_Cher_US',
+                    'chp': 'chp_Latn_CA',
+                    'chm': 'chm_Cyrl_RU',
+                    'bft': 'bft_Arab_PK',
+                    'und_HU': 'hu_Latn_HU',
+                    'und_IC': 'es_Latn_IC',
+                    'und_ID': 'id_Latn_ID',
+                    'und_IL': 'he_Hebr_IL',
+                    'und_IN': 'hi_Deva_IN',
+                    'und_IQ': 'ar_Arab_IQ',
+                    'und_IR': 'fa_Arab_IR',
+                    'und_IS': 'is_Latn_IS',
+                    'und_IT': 'it_Latn_IT',
+                    'und_Ital': 'ett_Ital_IT',
+                    'und_Java': 'jv_Java_ID',
+                    'und_JO': 'ar_Arab_JO',
+                    'und_JP': 'ja_Jpan_JP',
+                    'und_Jpan': 'ja_Jpan_JP',
+                    'und_Kali': 'eky_Kali_MM',
+                    'und_Kana': 'ja_Kana_JP',
+                    'und_KG': 'ky_Cyrl_KG',
+                    'und_KH': 'km_Khmr_KH',
+                    'und_Khar': 'pra_Khar_PK',
+                    'und_Khmr': 'km_Khmr_KH',
+                    'und_KM': 'ar_Arab_KM',
+                    'und_Knda': 'kn_Knda_IN',
+                    'und_Kore': 'ko_Kore_KR',
+                    'und_KP': 'ko_Kore_KP',
+                    'und_KR': 'ko_Kore_KR',
+                    'und_Kthi': 'bh_Kthi_IN',
+                    'und_KW': 'ar_Arab_KW',
+                    'und_KZ': 'ru_Cyrl_KZ',
+                    'und_LA': 'lo_Laoo_LA',
+                    'und_Lana': 'nod_Lana_TH',
+                    'und_Laoo': 'lo_Laoo_LA',
+                    'und_Latn_AF': 'tk_Latn_AF',
+                    'und_Latn_AM': 'az_Latn_AM',
+                    'und_Latn_BG': 'tr_Latn_BG',
+                    'und_Latn_CN': 'za_Latn_CN',
+                    'und_Latn_CY': 'tr_Latn_CY',
+                    'und_Latn_DZ': 'fr_Latn_DZ',
+                    'und_Latn_ET': 'en_Latn_ET',
+                    'und_Latn_GE': 'ku_Latn_GE',
+                    'und_Latn_GR': 'tr_Latn_GR',
+                    'und_Latn_IL': 'ro_Latn_IL',
+                    'und_Latn_IR': 'tk_Latn_IR',
+                    'und_Latn_KM': 'fr_Latn_KM',
+                    'und_Latn_KZ': 'de_Latn_KZ',
+                    'und_Latn_LB': 'fr_Latn_LB',
+                    'und_Latn_MA': 'fr_Latn_MA',
+                    'und_Latn_MK': 'sq_Latn_MK',
+                    'und_Latn_MO': 'pt_Latn_MO',
+                    'und_Latn_MR': 'fr_Latn_MR',
+                    'und_Latn_RU': 'krl_Latn_RU',
+                    'und_Latn_SY': 'fr_Latn_SY',
+                    'und_Latn_TN': 'fr_Latn_TN',
+                    'und_Latn_TW': 'trv_Latn_TW',
+                    'und_Latn_UA': 'pl_Latn_UA',
+                    'und_LB': 'ar_Arab_LB',
+                    'und_Lepc': 'lep_Lepc_IN',
+                    'und_LI': 'de_Latn_LI',
+                    'und_Limb': 'lif_Limb_IN',
+                    'und_Linb': 'grc_Linb_GR',
+                    'und_Lisu': 'lis_Lisu_CN',
+                    'und_LK': 'si_Sinh_LK',
+                    'und_LS': 'st_Latn_LS',
+                    'und_LT': 'lt_Latn_LT',
+                    'und_LU': 'fr_Latn_LU',
+                    'und_LV': 'lv_Latn_LV',
+                    'und_LY': 'ar_Arab_LY',
+                    'und_Lyci': 'xlc_Lyci_TR',
+                    'und_Lydi': 'xld_Lydi_TR',
+                    'und_MA': 'ar_Arab_MA',
+                    'und_Mand': 'myz_Mand_IR',
+                    'und_MC': 'fr_Latn_MC',
+                    'und_MD': 'ro_Latn_MD',
+                    'und_ME': 'sr_Latn_ME',
+                    'und_Merc': 'xmr_Merc_SD',
+                    'und_Mero': 'xmr_Mero_SD',
+                    'und_MF': 'fr_Latn_MF',
+                    'und_MG': 'mg_Latn_MG',
+                    'und_MK': 'mk_Cyrl_MK',
+                    'und_ML': 'bm_Latn_ML',
+                    'und_Mlym': 'ml_Mlym_IN',
+                    'und_MM': 'my_Mymr_MM',
+                    'und_MN': 'mn_Cyrl_MN',
+                    'und_MO': 'zh_Hant_MO',
+                    'und_Mong': 'mn_Mong_CN',
+                    'und_MQ': 'fr_Latn_MQ',
+                    'und_MR': 'ar_Arab_MR',
+                    'und_MT': 'mt_Latn_MT',
+                    'und_Mtei': 'mni_Mtei_IN',
+                    'und_MU': 'mfe_Latn_MU',
+                    'und_MV': 'dv_Thaa_MV',
+                    'und_MX': 'es_Latn_MX',
+                    'und_MY': 'ms_Latn_MY',
+                    'und_Mymr': 'my_Mymr_MM',
+                    'und_Mymr_IN': 'kht_Mymr_IN',
+                    'und_Mymr_TH': 'mnw_Mymr_TH',
+                    'und_MZ': 'pt_Latn_MZ',
+                    'und_NA': 'af_Latn_NA',
+                    'und_NC': 'fr_Latn_NC',
+                    'und_NE': 'ha_Latn_NE',
+                    'und_NI': 'es_Latn_NI',
+                    'und_Nkoo': 'man_Nkoo_GN',
+                    'und_NL': 'nl_Latn_NL',
+                    'und_NO': 'nb_Latn_NO',
+                    'und_NP': 'ne_Deva_NP',
+                    'und_Ogam': 'sga_Ogam_IE',
+                    'und_Olck': 'sat_Olck_IN',
+                    'und_OM': 'ar_Arab_OM',
+                    'und_Orkh': 'otk_Orkh_MN',
+                    'und_Orya': 'or_Orya_IN',
+                    'und_Osma': 'so_Osma_SO',
+                    'und_PA': 'es_Latn_PA',
+                    'und_PE': 'es_Latn_PE',
+                    'und_PF': 'fr_Latn_PF',
+                    'und_PG': 'tpi_Latn_PG',
+                    'und_PH': 'fil_Latn_PH',
+                    'und_Phag': 'lzh_Phag_CN',
+                    'und_Phli': 'pal_Phli_IR',
+                    'und_Phnx': 'phn_Phnx_LB',
+                    'und_PK': 'ur_Arab_PK',
+                    'und_PL': 'pl_Latn_PL',
+                    'und_Plrd': 'hmd_Plrd_CN',
+                    'und_PM': 'fr_Latn_PM',
+                    'und_PR': 'es_Latn_PR',
+                    'und_Prti': 'xpr_Prti_IR',
+                    'und_PS': 'ar_Arab_PS',
+                    'und_PT': 'pt_Latn_PT',
+                    'und_PW': 'pau_Latn_PW',
+                    'und_PY': 'gn_Latn_PY',
+                    'und_UY': 'es_Latn_UY',
+                    'und_UZ': 'uz_Latn_UZ',
+                    'und_VA': 'la_Latn_VA',
+                    'und_Vaii': 'vai_Vaii_LR',
+                    'und_VE': 'es_Latn_VE',
+                    'und_VN': 'vi_Latn_VN',
+                    'und_VU': 'bi_Latn_VU',
+                    'und_WF': 'fr_Latn_WF',
+                    'und_WS': 'sm_Latn_WS',
+                    'und_XK': 'sq_Latn_XK',
+                    'und_Xpeo': 'peo_Xpeo_IR',
+                    'und_Xsux': 'akk_Xsux_IQ',
+                    'und_YE': 'ar_Arab_YE',
+                    'und_Yiii': 'ii_Yiii_CN',
+                    'und_YT': 'fr_Latn_YT',
+                    'unr': 'unr_Beng_IN',
+                    'unr_Deva': 'unr_Deva_NP',
+                    'unr_NP': 'unr_Deva_NP',
+                    'unx': 'unx_Beng_IN',
+                    'ur': 'ur_Arab_PK',
+                    'uz': 'uz_Latn_UZ',
+                    'uz_AF': 'uz_Arab_AF',
+                    'uz_Arab': 'uz_Arab_AF',
+                    'uz_CN': 'uz_Cyrl_CN',
+                    'vai': 'vai_Vaii_LR',
+                    've': 've_Latn_ZA',
+                    'vi': 'vi_Latn_VN',
+                    'vo': 'vo_Latn_001',
+                    'vun': 'vun_Latn_TZ',
+                    'wa': 'wa_Latn_BE',
+                    'wae': 'wae_Latn_CH',
+                    'wal': 'wal_Ethi_ET',
+                    'zh_GF': 'zh_Hant_GF',
+                    'zh_Hant': 'zh_Hant_TW',
+                    'zh_HK': 'zh_Hant_HK',
+                    'zh_ID': 'zh_Hant_ID',
+                    'zh_MO': 'zh_Hant_MO',
+                    'zh_MY': 'zh_Hant_MY',
+                    'zh_PA': 'zh_Hant_PA',
+                    'zh_PF': 'zh_Hant_PF',
+                    'zza': 'zza_Arab_TR',
+                    'zu': 'zu_Latn_ZA',
+                    'zh_VN': 'zh_Hant_VN',
+                    'zh_US': 'zh_Hant_US',
+                    'zh_TW': 'zh_Hant_TW',
+                    'zh_TH': 'zh_Hant_TH',
+                    'zh_SR': 'zh_Hant_SR',
+                    'zh_PH': 'zh_Hant_PH',
+                    'zh_GB': 'zh_Hant_GB',
+                    'zh_BN': 'zh_Hant_BN',
+                    'zh_AU': 'zh_Hant_AU',
+                    'zh': 'zh_Hans_CN',
+                    'zgh': 'zgh_Tfng_MA',
+                    'za': 'za_Latn_CN',
+                    'yo': 'yo_Latn_NG',
+                    'yi': 'yi_Hebr_UA',
+                    'yav': 'yav_Latn_CM',
+                    'yap': 'yap_Latn_FM',
+                    'yao': 'yao_Latn_MZ',
+                    'xsr': 'xsr_Deva_NP',
+                    'xog': 'xog_Latn_UG',
+                    'xh': 'xh_Latn_ZA',
+                    'wo': 'wo_Latn_SN'
                 },
                 'timeData': {
                     'PS': {
@@ -8955,7 +9872,7 @@
                         '_allowed': 'H'
                     }
                 }
-            }, false);
+            });
 
             return AstroDate;
         };
