@@ -3,6 +3,10 @@ Master [![Build Status](https://travis-ci.org/Xotic750/astrodate.png?branch=mast
 astrodate
 =========
 
+By default ```.toString()```, ```.toDateString()``` and ```.toTimeString()``` use ```'full'``` locale format, options are ```'full'```, ```'long'```, ```'medium'``` and ```'short'```.
+
+```.format("YYYY'-W'ww'-'E")``` // 2013-W46-3
+
 <p>Date and time formats are specified by <em>date and time pattern</em> strings. Within date and time pattern strings, all unquoted ASCII letters [A-Za-z] are reserved as pattern letters representing calendar fields. <code>astrodate</code> supports the date and time formatting algorithm and pattern letters defined by <a href="http://www.unicode.org/reports/tr35/">UTS#35 Unicode Locale Data Markup Language (LDML)</a>. The following pattern letters are currently available:</p>
 
 <blockquote>
