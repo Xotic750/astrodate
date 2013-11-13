@@ -14,7 +14,7 @@ A set of routines will be made available for changing between systems and method
 For dates beyond the normal ```Date``` range, it is necessary to do the Math using arbitrary-precision arithmetic,
 [BigNumber.js](https://github.com/MikeMcl/bignumber.js) is the library chosen for this.
 
-Both calendars can be extrapolated to dates prior to its first adoption and hence are a [Proleptic Gregorian calendar](http://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar) and [Proleptic Julian Calendar](http://en.wikipedia.org/wiki/Proleptic_Julian_calendar).
+Both calendars can be extrapolated to dates prior to their first adoption and hence are a [Proleptic Gregorian calendar](http://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar) and [Proleptic Julian Calendar](http://en.wikipedia.org/wiki/Proleptic_Julian_calendar).
 
 AstroDate includes an [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) parser as one means of setting the date and time, other methods will be available, ie. using an Array and Object of discrete values.
 
