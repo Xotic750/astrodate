@@ -370,7 +370,7 @@ astrodate
 
                 <td style="text-align: center">1..2</td>
 
-                <td>Tues</td>
+                <td>2</td>
 
                 <td rowspan="5">Day of week - Use one through two for ISO number, or three for the short day, or four for the full name, five for the narrow name, or six for the short name.</td>
             </tr>
