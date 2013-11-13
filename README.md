@@ -8,8 +8,8 @@ Still very much work in progress, so there are bugs and the API has not be fully
 The idea behind the project is to not rely on Javascripts rather flaky ```Date``` object, give better accuracy, flexibility and be cross-browser.
 
 Besides the standard [Gregorian calendar](http://en.wikipedia.org/wiki/Gregorian_calendar), the [Julian calendar](http://en.wikipedia.org/wiki/Julian_calendar) is also available. This allows for AstroDate to be used in astrological calculations.
-A set of routines will be made available for changing between systems and methods for obtaining Julian Day Numbers, Julian Dates, Modified Julian Dates,
-Delta Times and Terestrial Time etc.
+A set of routines will be made available for changing between systems and methods for obtaining [Julian Day Numbers, Julian Dates](http://en.wikipedia.org/wiki/Julian_day), [Modified Julian Dates](http://en.wikipedia.org/wiki/Julian_day#Variants),
+[Delta Time](http://en.wikipedia.org/wiki/%CE%94T) and [Terestrial Time](http://en.wikipedia.org/wiki/Terrestrial_Time) etc.
 
 For dates beyond the normal ```Date``` range, it is necessary to do the Math using arbitrary-precision arithmetic,
 [BigNumber.js](https://github.com/MikeMcl/bignumber.js) is the library chosen for this.
@@ -18,7 +18,7 @@ Both calendars can be extrapolated to dates prior to its first adoption and henc
 
 AstroDate includes an [ISO 8601](http://en.wikipedia.org/wiki/ISO_8601) parser as one means of setting the date and time, other methods will be available, ie. using an Array and Object of discrete values.
 
-As with ISO 8601 and the Proleptic calendars, [Astronomical year numbering](http://en.wikipedia.org/wiki/Astronomical_year_numbering) will be used for input and so have a [year zero](http://en.wikipedia.org/wiki/0_(year)).
+As with ISO 8601 and the Proleptic calendars, [Astronomical year numbering](http://en.wikipedia.org/wiki/Astronomical_year_numbering) will be used for input and so have a [year zero](http://en.wikipedia.org/wiki/0_(year).
 Outputs may be formated to use either Astronomical year numbering or [Calendar Era](http://en.wikipedia.org/wiki/Calendar_era) numbering, ie. BC/AD.
 
 It is not intended for AstroDate to be a generic date parser and handle formats like ```13/10/12```.
