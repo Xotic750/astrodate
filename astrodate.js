@@ -309,6 +309,10 @@
                 return strictEqual(toObjectString(inputArg), '[object Function]');
             }
 
+            function isArguments(inputArg) {
+                return strictEqual(toObjectString(inputArg), '[object Arguments]');
+            }
+
             function isTypeObject(inputArg) {
                 return (!isNull(inputArg) && strictEqual(typeof inputArg, 'object')) || isRegExp(inputArg);
             }
@@ -1066,14 +1070,14 @@
             }());
 
             /*
-            function returnElement(element) {
-                return element;
-            }
-            */
+            function argumentsSlice(args, start, end) {
+                var val;
 
-            /*
-            function argumentsToArray(args) {
-                return arrayMap(args, returnElement);
+                if (isArguments(args)) {
+                    val = baseArray.slice.call(args, start, end);
+                }
+
+                return val;
             }
             */
 
@@ -1087,11 +1091,11 @@
 
                 if (strictEqual(unshiftFN.call([], 0), 1)) {
                     tempSafariNFE = function nfeUnshift(array) {
-                        return unshiftFN.apply(array, argumentsToArray(arguments).slice(1));
+                        return unshiftFN.apply(array, argumentsSlice(arguments, 1));
                     };
                 } else {
                     tempSafariNFE = function nfeUnshift(array) {
-                        unshiftFN.apply(array, argumentsToArray(arguments).slice(1));
+                        unshiftFN.apply(array, argumentsSlice(arguments, 1));
 
                         return array.length;
                     };
@@ -1103,8 +1107,8 @@
             }());
             */
 
-            /*
             // named arrayFilter instead of filter because of SpiderMonkey and Blackberry bug
+            /*
             arrayFilter = (function () {
                 // Unused variable for JScript NFE bug
                 // http://kangax.github.io/nfe
@@ -1124,7 +1128,7 @@
                             element;
 
                         if (!isFunction(fn)) {
-                            throw new TypeError(fn + " is not a function");
+                            throw new TypeError(fn + ' is not a function');
                         }
 
                         for (index = 0, length = toUint32(object.length), arr = []; lt(index, length); index += 1) {
@@ -4143,7 +4147,7 @@
                     count,
                     copyMatch;
 
-                if ((/^([|]?\S{1}\{\d+,{1}\d*\})+$/).test(token)) {
+                if ((/^([|]?\S\{\d+,\d*\})+$/).test(token)) {
                     copyMatch = token;
                 } else if ((/^\{\d\}$/).test(token)) {
                     token = escapeRegex(token);
@@ -4209,6 +4213,10 @@
 
             deepFreeze(calendarTypes);
 
+            function splitUnderscore(string) {
+                return string.split('_');
+            }
+
             function canonicalizeLocale(locale) {
                 var val = [],
                     firstSplit,
@@ -4219,7 +4227,7 @@
                     region;
 
                 if (isString(locale) && (/^([a-z]{2,3}|[a-z]{2,3}[\-_][a-z]{2}|[a-z]{2,3}[\-_][a-z]{4}|[a-z]{2,3}[\-_][a-z]{4}[\-_][a-z]{2})$/i).test(locale)) {
-                    firstSplit = minusToUnderscore(locale).split('_');
+                    firstSplit = splitUnderscore(minusToUnderscore(locale));
                     firstSplitLength = firstSplit.length;
                     val.push(firstSplit[0].toLowerCase());
                     if (!strictEqual(firstSplitLength, 1)) {
@@ -4265,7 +4273,7 @@
                     likelySubtags = supplemental.likelySubtags;
                     lookup = likelySubtags[canonicalizedLocale];
                     if (isUndefined(lookup)) {
-                        firstSplit = canonicalizedLocale.split('_');
+                        firstSplit = splitUnderscore(canonicalizedLocale);
                         length = firstSplit.length;
                         lang = arrayFirst(firstSplit);
                         if (strictEqual(length, 3)) {
@@ -4282,11 +4290,11 @@
                         }
 
                         if (isUndefined(lookup) && !isUndefined(region)) {
-                            lookup = likelySubtags[lang + '_' + region];
+                            lookup = likelySubtags[[lang, region].join('_')];
                         }
 
                         if (isUndefined(lookup) && !isUndefined(script)) {
-                            lookup = likelySubtags[lang + '_' + script];
+                            lookup = likelySubtags[[lang, script].join('_')];
                         }
 
                         if (isUndefined(lookup)) {
@@ -4300,7 +4308,7 @@
                         }
 
                         if (isUndefined(lookup) && !isUndefined(script)) {
-                            lookup = likelySubtags['und_' + script];
+                            lookup = likelySubtags[['und', script].join('_')];
                         }
                     }
                 }
@@ -4321,7 +4329,7 @@
                     if (!isUndefined(languages[lang])) {
                         loaded = lang;
                     } else {
-                        lang = arrayFirst(lookupLocale(locale).split('_'));
+                        lang = arrayFirst(splitUnderscore(lookupLocale(locale)));
                         if (!isUndefined(languages[lang])) {
                             loaded = lang;
                         }
@@ -4334,7 +4342,7 @@
             }
 
             function getRegion(locale) {
-                return arrayLast(locale.split('_'));
+                return arrayLast(splitUnderscore(locale));
             }
 
             function formatDate(struct, pattern, julian, lang, locale) {
