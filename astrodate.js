@@ -3164,6 +3164,10 @@
                 return struct.day.plus(4).minus(weekDayNumber(struct)).plus(6).div(7).floor();
             }
 
+            function weekDayOfMonth(struct) {
+                return struct.day.minus(1).div(7).plus(1).floor();
+            }
+
             function isNotNegativeZero(bn, sign) {
                 return strictEqual(sign, '+') || !bn.isZero() || (bn.isZero() && !strictEqual(sign, '-'));
             }
@@ -4330,20 +4334,25 @@
                 var gregorian = languages[lang].calendars.gregorian,
                     dateFormats = gregorian.dateFormats,
                     eras = gregorian.eras,
+                    standAlone = arrayLast(nameTypes),
                     months = gregorian.months,
+                    monthsFormat = months.format,
+                    monthsStandAlone = months[standAlone],
                     days = gregorian.days,
+                    daysFormat = days.format,
+                    daysStandAlone = days[standAlone],
+                    shortStr = arrayLast(formatTypes),
+                    weekDate = calendarToWeekDate(struct),
+                    dayKey = cldrDayKey(struct),
                     eraNum,
+                    eraNumStr,
                     year,
-                    sign,
+                    yearSign,
+                    yearStr,
                     month,
                     dayOfYear,
-                    day,
-                    temp,
-                    weekDate,
+                    dayStr,
                     week,
-                    firstDay,
-                    firstDayNumber,
-                    todayNumber,
                     dayOfWeekLocaleNumber,
                     mjd;
 
@@ -4388,46 +4397,27 @@
                     eraNum = 1;
                 }
 
-                pattern = replaceToken(pattern, 'GGGGG', eras.eraNarrow[eraNum.toString()]);
-                pattern = replaceToken(pattern, 'GGGG', eras.eraNames[eraNum.toString()]);
-                pattern = replaceToken(pattern, 'G{1,3}', eras.eraNames[eraNum.toString()]);
+                eraNumStr = eraNum.toString();
+                pattern = replaceToken(pattern, 'GGGGG', eras.eraNarrow[eraNumStr]);
+                pattern = replaceToken(pattern, 'GGGG', eras.eraNames[eraNumStr]);
+                pattern = replaceToken(pattern, 'G{1,3}', eras.eraNames[eraNumStr]);
 
                 year = struct.year.plus(eraNum - 1);
                 if (year.lt(0)) {
-                    sign = '-';
+                    yearSign = '-';
                 } else {
-                    sign = '';
+                    yearSign = '';
                 }
 
-                year = year.abs().toString();
-                temp = sign + year;
-                pattern = replaceToken(pattern, 'y{3,}', temp);
-                pattern = replaceToken(pattern, 'yy', sign + year.slice(-2));
-                pattern = replaceToken(pattern, 'y', temp);
-                pattern = replaceToken(pattern, 'U{1,}', temp);
+                yearStr = year.toString();
+                pattern = replaceToken(pattern, 'y{3,}', yearStr);
+                pattern = replaceToken(pattern, 'yy', yearSign + yearStr.slice(-2));
+                pattern = replaceToken(pattern, 'y', yearStr);
+                pattern = replaceToken(pattern, 'U{1,}', yearStr);
 
-                year = struct.year;
-                if (year.lt(0)) {
-                    sign = '-';
-                } else {
-                    sign = '';
-                }
+                pattern = replaceToken(pattern, 'u{1,}', struct.year.toString());
 
-                year = year.toString();
-                temp = sign + year;
-                pattern = replaceToken(pattern, 'u{1,}', temp);
-
-                weekDate = calendarToWeekDate(struct);
-                year = weekDate.year.plus(eraNum - 1);
-                if (year.lt(0)) {
-                    sign = '-';
-                } else {
-                    sign = '';
-                }
-
-                year = year.toString();
-                temp = sign + year;
-                pattern = replaceToken(pattern, 'Y{1,}', year);
+                pattern = replaceToken(pattern, 'Y{1,}', weekDate.year.toString());
                 week = weekDate.week.toString();
                 pattern = replaceToken(pattern, 'w{1,2}', week);
                 pattern = replaceToken(pattern, 'W', calendarToWeekOfMonth(struct).toString());
@@ -4442,13 +4432,13 @@
                 */
 
                 month = struct.month.toString();
-                pattern = replaceToken(pattern, 'MMMMM', months.format.narrow[month]);
-                pattern = replaceToken(pattern, 'MMMM', months.format.wide[month]);
-                pattern = replaceToken(pattern, 'MMM', months.format.abbreviated[month]);
+                pattern = replaceToken(pattern, 'MMMMM', monthsFormat.narrow[month]);
+                pattern = replaceToken(pattern, 'MMMM', monthsFormat.wide[month]);
+                pattern = replaceToken(pattern, 'MMM', monthsFormat.abbreviated[month]);
                 pattern = replaceToken(pattern, 'M{1,2}', month);
-                pattern = replaceToken(pattern, 'LLLLL', months[arrayLast(nameTypes)].narrow[month]);
-                pattern = replaceToken(pattern, 'LLLL', months[arrayLast(nameTypes)].wide[month]);
-                pattern = replaceToken(pattern, 'LLL', months[arrayLast(nameTypes)].abbreviated[month]);
+                pattern = replaceToken(pattern, 'LLLLL', monthsStandAlone.narrow[month]);
+                pattern = replaceToken(pattern, 'LLLL', monthsStandAlone.wide[month]);
+                pattern = replaceToken(pattern, 'LLL', monthsStandAlone.abbreviated[month]);
                 pattern = replaceToken(pattern, 'L{1,2}', month);
 
                 pattern = replaceToken(pattern, 'd{1,2}', struct.day.toString());
@@ -4460,7 +4450,7 @@
 
                 pattern = replaceToken(pattern, 'D{1,3}', dayOfYear);
 
-                //pattern = replaceToken(pattern, 'F', value);
+                pattern = replaceToken(pattern, 'F', weekDayOfMonth(struct).toString());
                 if (julian) {
                     mjd = julianToMJD(toUT(struct));
                 } else {
@@ -4469,33 +4459,28 @@
 
                 pattern = replaceToken(pattern, 'g{1,}', mjd.toString());
 
-                day = cldrDayKey(struct);
-                temp = days.format[arrayLast(formatTypes)][day];
-                pattern = replaceToken(pattern, 'EEEEEE', temp);
-                pattern = replaceToken(pattern, 'eeeeee', temp);
-                temp = days.format.narrow[day];
-                pattern = replaceToken(pattern, 'EEEEE', temp);
-                pattern = replaceToken(pattern, 'eeeee', temp);
-                temp = days.format.wide[day];
-                pattern = replaceToken(pattern, 'EEEE', temp);
-                pattern = replaceToken(pattern, 'eeee', temp);
-                temp = days.format.abbreviated[day];
-                pattern = replaceToken(pattern, 'EEE', temp);
-                pattern = replaceToken(pattern, 'eee', temp);
+                dayStr = daysFormat[shortStr][dayKey];
+                pattern = replaceToken(pattern, 'EEEEEE', dayStr);
+                pattern = replaceToken(pattern, 'eeeeee', dayStr);
+                dayStr = daysFormat.narrow[dayKey];
+                pattern = replaceToken(pattern, 'EEEEE', dayStr);
+                pattern = replaceToken(pattern, 'eeeee', dayStr);
+                dayStr = daysFormat.wide[dayKey];
+                pattern = replaceToken(pattern, 'EEEE', dayStr);
+                pattern = replaceToken(pattern, 'eeee', dayStr);
+                dayStr = daysFormat.abbreviated[dayKey];
+                pattern = replaceToken(pattern, 'EEE', dayStr);
+                pattern = replaceToken(pattern, 'eee', dayStr);
 
                 pattern = replaceToken(pattern, 'E{1,2}', weekDate.weekDay.toString());
 
-                firstDay = supplemental.weekData.firstDay[getRegion(locale)];
-                firstDayNumber = arrayIndexOf(dayKeys, firstDay);
-                todayNumber = arrayIndexOf(dayKeys, day);
-                dayOfWeekLocaleNumber = (1 + (7 - firstDayNumber + todayNumber) % 7).toString();
+                dayOfWeekLocaleNumber = (1 + (7 - arrayIndexOf(dayKeys, supplemental.weekData.firstDay[getRegion(locale)]) + arrayIndexOf(dayKeys, dayKey)) % 7).toString();
                 pattern = replaceToken(pattern, 'e{1,2}', dayOfWeekLocaleNumber);
 
-                temp = days[arrayLast(nameTypes)][arrayLast(formatTypes)][day];
-                pattern = replaceToken(pattern, 'cccccc', temp);
-                pattern = replaceToken(pattern, 'ccccc', days[arrayLast(nameTypes)].narrow[day]);
-                pattern = replaceToken(pattern, 'cccc', days[arrayLast(nameTypes)].wide[day]);
-                pattern = replaceToken(pattern, 'ccc', days[arrayLast(nameTypes)].abbreviated[day]);
+                pattern = replaceToken(pattern, 'cccccc', daysStandAlone[shortStr][dayKey]);
+                pattern = replaceToken(pattern, 'ccccc', daysStandAlone.narrow[dayKey]);
+                pattern = replaceToken(pattern, 'cccc', daysStandAlone.wide[dayKey]);
+                pattern = replaceToken(pattern, 'ccc', daysStandAlone.abbreviated[dayKey]);
                 pattern = replaceToken(pattern, 'c{1,2}', dayOfWeekLocaleNumber);
 
                 return pattern;
