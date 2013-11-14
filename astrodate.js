@@ -4100,24 +4100,27 @@
                 return struct;
             }
 
-            function cldrPadLeadingZero(strNum, size) {
-                var firsrCharacter,
+            function isDigits(string) {
+                return isString(string) && (/^\d+$/).test(string);
+            }
+
+            function cldrPadLeadingZero(num, size) {
+                var strNum = anyToString(checkObjectCoercible(num)),
+                    firsrCharacter,
                     val;
 
-                if (isString(strNum) && !isEmptyString(strNum)) {
-                    if ((/^\d+$/).test(strNum) && new BigNumber(strNum).isFinite()) {
-                        firsrCharacter = firstChar(strNum);
-                        val = '';
-                        if (strictEqual(firsrCharacter, '-')) {
-                            strNum = strNum.slice(1);
-                            size -= 1;
-                            val = firsrCharacter;
-                        }
-
-                        val += padLeadingChar(strNum, '0', size);
-                    } else {
-                        val = strNum;
+                if (isDigits(strNum) && new BigNumber(strNum).isFinite()) {
+                    firsrCharacter = firstChar(strNum);
+                    val = '';
+                    if (strictEqual(firsrCharacter, '-')) {
+                        strNum = strNum.slice(1);
+                        size -= 1;
+                        val = firsrCharacter;
                     }
+
+                    val += padLeadingChar(strNum, '0', size);
+                } else {
+                    val = strNum;
                 }
 
                 return val;
@@ -4142,7 +4145,7 @@
 
                 if ((/^([|]?\S{1}\{\d+,{1}\d*\})+$/).test(token)) {
                     copyMatch = token;
-                } else if ((/^\{\d{1}\}$/).test(token)) {
+                } else if ((/^\{\d\}$/).test(token)) {
                     token = escapeRegex(token);
                     copyMatch = token;
                 } else {
@@ -4176,12 +4179,16 @@
                 return pattern.replace(replaceTokenRX, tokenReplacer);
             }
 
-            function strip(string, pattern) {
-                return string.replace(new RegExp(escapeRegex(pattern), 'g'), '');
+            function replaceAll(string, pattern, characters) {
+                return string.replace(new RegExp(escapeRegex(pattern), 'g'), characters);
             }
 
             function stripSingleQuotes(string) {
-                return strip(string, '\'');
+                return replaceAll(string, '\'', '');
+            }
+
+            function minusToUnderscore(string) {
+                return replaceAll(string, '-', '_');
             }
 
             formatTypes = ['full', 'long', 'medium', 'short'];
@@ -4212,7 +4219,7 @@
                     region;
 
                 if (isString(locale) && (/^([a-z]{2,3}|[a-z]{2,3}[\-_][a-z]{2}|[a-z]{2,3}[\-_][a-z]{4}|[a-z]{2,3}[\-_][a-z]{4}[\-_][a-z]{2})$/i).test(locale)) {
-                    firstSplit = locale.replace(/\-/g, '_').split('_');
+                    firstSplit = minusToUnderscore(locale).split('_');
                     firstSplitLength = firstSplit.length;
                     val.push(firstSplit[0].toLowerCase());
                     if (!strictEqual(firstSplitLength, 1)) {
@@ -4310,7 +4317,7 @@
                     lang;
 
                 if (!isEmptyString(locale)) {
-                    lang = locale.replace(/\-/g, '_');
+                    lang = minusToUnderscore(locale);
                     if (!isUndefined(languages[lang])) {
                         loaded = lang;
                     } else {
@@ -4348,7 +4355,6 @@
                     eraNumStr,
                     year,
                     yearSign,
-                    yearStr,
                     month,
                     dayOfYear,
                     dayStr,
@@ -4400,7 +4406,7 @@
                 eraNumStr = eraNum.toString();
                 pattern = replaceToken(pattern, 'GGGGG', eras.eraNarrow[eraNumStr]);
                 pattern = replaceToken(pattern, 'GGGG', eras.eraNames[eraNumStr]);
-                pattern = replaceToken(pattern, 'G{1,3}', eras.eraNames[eraNumStr]);
+                pattern = replaceToken(pattern, 'G{1,3}', eras.eraAbbr[eraNumStr]);
 
                 year = struct.year.plus(eraNum - 1);
                 if (year.lt(0)) {
@@ -4409,18 +4415,17 @@
                     yearSign = '';
                 }
 
-                yearStr = year.toString();
-                pattern = replaceToken(pattern, 'y{3,}', yearStr);
-                pattern = replaceToken(pattern, 'yy', yearSign + yearStr.slice(-2));
-                pattern = replaceToken(pattern, 'y', yearStr);
-                pattern = replaceToken(pattern, 'U{1,}', yearStr);
+                pattern = replaceToken(pattern, 'y{3,}', year);
+                pattern = replaceToken(pattern, 'yy', yearSign + year.toString().slice(-2));
+                pattern = replaceToken(pattern, 'y', year);
+                pattern = replaceToken(pattern, 'U{1,}', year);
 
-                pattern = replaceToken(pattern, 'u{1,}', struct.year.toString());
+                pattern = replaceToken(pattern, 'u{1,}', struct.year);
 
-                pattern = replaceToken(pattern, 'Y{1,}', weekDate.year.toString());
+                pattern = replaceToken(pattern, 'Y{1,}', weekDate.year);
                 week = weekDate.week.toString();
                 pattern = replaceToken(pattern, 'w{1,2}', week);
-                pattern = replaceToken(pattern, 'W', calendarToWeekOfMonth(struct).toString());
+                pattern = replaceToken(pattern, 'W', calendarToWeekOfMonth(struct));
 
                 /*
                 pattern = replaceToken(pattern, 'Q{1,2}', value);
@@ -4441,23 +4446,23 @@
                 pattern = replaceToken(pattern, 'LLL', monthsStandAlone.abbreviated[month]);
                 pattern = replaceToken(pattern, 'L{1,2}', month);
 
-                pattern = replaceToken(pattern, 'd{1,2}', struct.day.toString());
+                pattern = replaceToken(pattern, 'd{1,2}', struct.day);
                 if (julian) {
-                    dayOfYear = dayOfJulianYear(gregorianToJulian(struct)).toString();
+                    dayOfYear = dayOfJulianYear(gregorianToJulian(struct));
                 } else {
-                    dayOfYear = dayOfGregorianYear(struct).toString();
+                    dayOfYear = dayOfGregorianYear(struct);
                 }
 
                 pattern = replaceToken(pattern, 'D{1,3}', dayOfYear);
 
-                pattern = replaceToken(pattern, 'F', weekDayOfMonth(struct).toString());
+                pattern = replaceToken(pattern, 'F', weekDayOfMonth(struct));
                 if (julian) {
                     mjd = julianToMJD(toUT(struct));
                 } else {
                     mjd = gregorianToMJD(toUT(struct));
                 }
 
-                pattern = replaceToken(pattern, 'g{1,}', mjd.toString());
+                pattern = replaceToken(pattern, 'g{1,}', mjd);
 
                 dayStr = daysFormat[shortStr][dayKey];
                 pattern = replaceToken(pattern, 'EEEEEE', dayStr);
@@ -4472,9 +4477,9 @@
                 pattern = replaceToken(pattern, 'EEE', dayStr);
                 pattern = replaceToken(pattern, 'eee', dayStr);
 
-                pattern = replaceToken(pattern, 'E{1,2}', weekDate.weekDay.toString());
+                pattern = replaceToken(pattern, 'E{1,2}', weekDate.weekDay);
 
-                dayOfWeekLocaleNumber = (1 + (7 - arrayIndexOf(dayKeys, supplemental.weekData.firstDay[getRegion(locale)]) + arrayIndexOf(dayKeys, dayKey)) % 7).toString();
+                dayOfWeekLocaleNumber = mod(1 + (7 - arrayIndexOf(dayKeys, supplemental.weekData.firstDay[getRegion(locale)]) + arrayIndexOf(dayKeys, dayKey)), 7);
                 pattern = replaceToken(pattern, 'e{1,2}', dayOfWeekLocaleNumber);
 
                 pattern = replaceToken(pattern, 'cccccc', daysStandAlone[shortStr][dayKey]);
@@ -4513,18 +4518,18 @@
 
                 pattern = replaceToken(pattern, 'a', dayPeriods.format.abbreviated[dayPeriod]);
                 hour = struct.hour.plus(11).mod(12).plus(1);
-                pattern = replaceToken(pattern, 'h{1,2}', hour.toString());
+                pattern = replaceToken(pattern, 'h{1,2}', hour);
 
-                pattern = replaceToken(pattern, 'H{1,2}', struct.hour.toString());
-                pattern = replaceToken(pattern, 'K{1,2}', hour.minus(1).toString());
+                pattern = replaceToken(pattern, 'H{1,2}', struct.hour);
+                pattern = replaceToken(pattern, 'K{1,2}', hour.minus(1));
                 // if hour is 24, needs to be handled in date too
                 //temp = new AstroDate().julianDay(new AstroDate().julianDay());
-                //pattern = replaceToken(pattern, 'k{1,2}', struct.hour.plus(1).toString());
+                //pattern = replaceToken(pattern, 'k{1,2}', struct.hour.plus(1));
 
-                //pattern = replaceToken(pattern, 'j{1,2}', struct.hour.toString());
-                pattern = replaceToken(pattern, 'm{1,2}', struct.minute.toString());
-                pattern = replaceToken(pattern, 's{1,2}', struct.second.toString());
-                pattern = replaceToken(pattern, 'S{1,}', struct.millisecond.toString());
+                //pattern = replaceToken(pattern, 'j{1,2}', struct.hour);
+                pattern = replaceToken(pattern, 'm{1,2}', struct.minute);
+                pattern = replaceToken(pattern, 's{1,2}', struct.second);
+                pattern = replaceToken(pattern, 'S{1,}', struct.millisecond);
                 //pattern = replaceToken(pattern, 'A{1,}', value);
 
                 offsetFormat = hourFormat.split(';');
@@ -4535,8 +4540,8 @@
                 }
 
                 offset = fractionToTime(struct.offset.abs(), 'minute');
-                offsetFormat = replaceToken(offsetFormat, 'H{1,2}', offset.hour.toString());
-                offsetFormat = replaceToken(offsetFormat, 'm{1,2}', offset.minute.toString());
+                offsetFormat = replaceToken(offsetFormat, 'H{1,2}', offset.hour);
+                offsetFormat = replaceToken(offsetFormat, 'm{1,2}', offset.minute);
                 pattern = replaceToken(pattern, 'ZZZZZ', offsetFormat);
                 pattern = replaceToken(pattern, 'xxxxx', offsetFormat);
                 pattern = replaceToken(pattern, 'xxx', offsetFormat);
@@ -4563,8 +4568,8 @@
                     offsetFormat = '-HHMM';
                 }
 
-                offsetFormat = replaceToken(offsetFormat, 'H{1,2}', offset.hour.toString());
-                offsetFormat = replaceToken(offsetFormat, 'm{1,2}', offset.minute.toString());
+                offsetFormat = replaceToken(offsetFormat, 'H{1,2}', offset.hour);
+                offsetFormat = replaceToken(offsetFormat, 'm{1,2}', offset.minute);
 
                 pattern = replaceToken(pattern, 'Z{1,3}', offsetFormat);
                 pattern = replaceToken(pattern, 'XXXX', iso);
@@ -5458,7 +5463,7 @@
                             lang;
 
                         if (isString(id) && !isEmptyString(id)) {
-                            lang = id.replace(/\-/g, '_');
+                            lang = minusToUnderscore(id);
                             if (isPlainObject(languages[lang])) {
                                 this.setter('lang', lang);
                                 this.setter('locale', lookupLocale(lang));
@@ -5505,7 +5510,7 @@
                         var lang;
 
                         if (isString(id) && !isEmptyString(id)) {
-                            lang = id.replace(/\-/g, '_');
+                            lang = minusToUnderscore(id);
                             if (isPlainObject(object)) {
                                 languages[lang] = object;
                                 if (!strictEqual(freeze, false)) {
