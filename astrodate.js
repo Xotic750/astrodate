@@ -4322,16 +4322,23 @@
 
             function languageLoaded(locale) {
                 var loaded,
-                    lang;
+                    lang,
+                    firstSplit;
 
                 if (!isEmptyString(locale)) {
                     lang = minusToUnderscore(locale);
                     if (!isUndefined(languages[lang])) {
                         loaded = lang;
                     } else {
-                        lang = arrayFirst(splitUnderscore(lookupLocale(locale)));
+                        firstSplit = splitUnderscore(lookupLocale(locale));
+                        lang = [arrayFirst(firstSplit), arrayFirst(firstSplit)].join('_');
                         if (!isUndefined(languages[lang])) {
                             loaded = lang;
+                        } else {
+                            lang = arrayFirst(firstSplit);
+                            if (!isUndefined(languages[lang])) {
+                                loaded = lang;
+                            }
                         }
                     }
                 } else {
