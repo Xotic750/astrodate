@@ -3,7 +3,7 @@ Master [![Build Status](https://travis-ci.org/Xotic750/astrodate.png?branch=mast
 astrodate
 =========
 
-Still very much work in progress, so there are bugs and the API has not be fully defined (or documented) and is subject to major changes.
+Still very much work in progress, so there are bugs and the API has not been fully defined (or documented) and is subject to major changes.
 
 The idea behind the project is to not rely on Javascript's rather flaky [```Date```](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) object, give better accuracy, flexibility and be cross-browser.
 
