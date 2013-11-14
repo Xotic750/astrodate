@@ -7,7 +7,7 @@ Still very much work in progress, so there are bugs and the API has not been ful
 
 The idea behind the project is to not rely on Javascript's rather flaky [```Date```](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) object, give better accuracy, flexibility and be cross-browser.
 
-Besides the standard [Gregorian calendar](http://en.wikipedia.org/wiki/Gregorian_calendar), the [Julian calendar](http://en.wikipedia.org/wiki/Julian_calendar) is also available. This allows for AstroDate to be used in astrological calculations.
+Besides the standard [Gregorian calendar](http://en.wikipedia.org/wiki/Gregorian_calendar), the [Julian calendar](http://en.wikipedia.org/wiki/Julian_calendar) is also available. This allows for AstroDate to be used in astronomical calculations.
 A set of routines will be made available for changing between systems and methods for obtaining [Julian Day Numbers, Julian Dates](http://en.wikipedia.org/wiki/Julian_day), [Modified Julian Dates](http://en.wikipedia.org/wiki/Julian_day#Variants),
 [Delta Time](http://en.wikipedia.org/wiki/%CE%94T) and [Terestrial Time](http://en.wikipedia.org/wiki/Terrestrial_Time) etc.
 
