@@ -3157,6 +3157,13 @@
                 return val;
             }
 
+            // ISO says that the first week of a year is the first week containing
+            // a Thursday. Extending that says that the first week of the month is
+            // the first week containing a Thursday. ICU agrees.
+            function calendarToWeekOfMonth(struct) {
+                return struct.day.plus(4).minus(weekDayNumber(struct)).plus(6).div(7).floor();
+            }
+
             function isNotNegativeZero(bn, sign) {
                 return strictEqual(sign, '+') || !bn.isZero() || (bn.isZero() && !strictEqual(sign, '-'));
             }
@@ -4423,7 +4430,7 @@
                 pattern = replaceToken(pattern, 'Y{1,}', year);
                 week = weekDate.week.toString();
                 pattern = replaceToken(pattern, 'w{1,2}', week);
-                //pattern = replaceToken(pattern, 'W', value);
+                pattern = replaceToken(pattern, 'W', calendarToWeekOfMonth(struct).toString());
 
                 /*
                 pattern = replaceToken(pattern, 'Q{1,2}', value);

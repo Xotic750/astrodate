@@ -406,7 +406,7 @@ Pattern formatting
 
                 <td>3</td>
 
-                <td>Week of Month</td>
+                <td>Week of Month. From 0..5. The first week of the month is the first week that contains a Thursday. This is based on the ICU definition of week of month, and correlates to the ISO8601 week of year definition. A day in the week before the week with the first Thursday will be week 0.</td>
             </tr>
 
             <tr>
