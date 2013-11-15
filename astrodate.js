@@ -4145,12 +4145,14 @@
 
                 var firstCharacter,
                     count,
-                    copyMatch;
+                    copyMatch,
+                    noWrap;
 
-                if ((/^([|]?\S\{\d+,\d*\})+$/).test(token)) {
-                    copyMatch = token;
-                } else if ((/^\{\d\}$/).test(token)) {
+                if ((/^\{\d\}$/).test(token)) {
                     token = escapeRegex(token);
+                    copyMatch = token;
+                    noWrap = true;
+                } else if ((/^([|]?\S\{\d+,\d*\})+$/).test(token)) {
                     copyMatch = token;
                 } else {
                     firstCharacter = firstChar(token);
@@ -4163,7 +4165,13 @@
                 }
 
                 function replacer($0) {
-                    return $0.replace(new RegExp(token, 'g'), wrapInChar(cldrPadLeadingZero(value, $0.length), '\''));
+                    var val = cldrPadLeadingZero(value, $0.length);
+
+                    if (!strictEqual(noWrap, true)) {
+                        val = wrapInChar(val, '\'');
+                    }
+
+                    return $0.replace(new RegExp(token, 'g'), val);
                 }
 
                 function tokenReplacer($0, $1, $2) {
@@ -4181,6 +4189,26 @@
                 }
 
                 return pattern.replace(replaceTokenRX, tokenReplacer);
+            }
+
+            function remainingTokens(pattern) {
+                function tokenReplacer($0, $1, $2) {
+                    var val;
+
+                    if ($0 && $1 && !$2) {
+                        val = $1;
+                    } else {
+                        val = '';
+                    }
+
+                    return val;
+                }
+
+                return pattern.replace(replaceTokenRX, tokenReplacer).replace(/[^a-z]/gi, '');
+            }
+
+            function hasRemainingTokens(pattern) {
+                return !isEmptyString(remainingTokens(pattern));
             }
 
             function replaceAll(string, pattern, characters) {
@@ -4512,13 +4540,14 @@
                     dayPeriods = gregorian.dayPeriods,
                     timeZoneNames = languages[lang].timeZoneNames,
                     hourFormat = timeZoneNames.hourFormat,
-                    gmtFormat = timeZoneNames.gmtFormat,
+                    gmtZeroFormat = timeZoneNames.gmtZeroFormat,
+                    gmtFormat = timeZoneNames.gmtFormat.replace(gmtZeroFormat, wrapInChar(gmtZeroFormat, '\'')),
                     etc = timeZoneNames.zone.Etc,
                     dayPeriod,
                     hour,
                     offset,
                     offsetFormat,
-                    zulu = '\'Z\'',
+                    zulu = 'Z',
                     iso;
 
                 if (arrayContains(formatTypes, pattern)) {
@@ -4557,6 +4586,11 @@
                 offset = fractionToTime(struct.offset.abs(), 'minute');
                 offsetFormat = replaceToken(offsetFormat, 'H{1,2}', offset.hour);
                 offsetFormat = replaceToken(offsetFormat, 'm{1,2}', offset.minute);
+                if (hasRemainingTokens(offsetFormat)) {
+                    throw new Error('offsetFormat has remaining tokens! ' + remainingTokens(offsetFormat));
+                }
+
+                offsetFormat = stripSingleQuotes(offsetFormat);
                 pattern = replaceToken(pattern, 'ZZZZZ', offsetFormat);
                 pattern = replaceToken(pattern, 'xxxxx', offsetFormat);
                 pattern = replaceToken(pattern, 'xxx', offsetFormat);
@@ -4578,14 +4612,18 @@
                 pattern = replaceToken(pattern, 'VVVV', gmtFormat);
 
                 if (struct.offset.lte(0)) {
-                    offsetFormat = '+HHMM';
+                    offsetFormat = '+HHmm';
                 } else {
-                    offsetFormat = '-HHMM';
+                    offsetFormat = '-HHmm';
                 }
 
                 offsetFormat = replaceToken(offsetFormat, 'H{1,2}', offset.hour);
                 offsetFormat = replaceToken(offsetFormat, 'm{1,2}', offset.minute);
+                if (hasRemainingTokens(offsetFormat)) {
+                    throw new Error('offsetFormat has remaining tokens!: ' + remainingTokens(offsetFormat));
+                }
 
+                offsetFormat = stripSingleQuotes(offsetFormat);
                 pattern = replaceToken(pattern, 'Z{1,3}', offsetFormat);
                 pattern = replaceToken(pattern, 'XXXX', iso);
                 pattern = replaceToken(pattern, 'XX', iso);
@@ -5059,6 +5097,10 @@
                             } else {
                                 dateTimeFormat = formatDate(struct, pattern, isJulian, lang, this.locale());
                                 dateTimeFormat = formatTime(struct, dateTimeFormat, lang, this.locale());
+                            }
+
+                            if (hasRemainingTokens(dateTimeFormat)) {
+                                throw new Error('Pattern has remaining tokens!: ' + remainingTokens(dateTimeFormat));
                             }
 
                             string = stripSingleQuotes(dateTimeFormat);
