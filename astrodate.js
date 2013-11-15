@@ -84,6 +84,7 @@
                 protoName = '__proto__',
                 invalidISOCharsRx = new RegExp('[^\\d\\-+WT Z:,\\.]'),
                 replaceTokenRX = new RegExp('([^\\\']+)|(\\\'[^\\\']+\\\')', 'g'),
+                unmatchedTokenRx = new RegExp('[^a-z]', 'gi'),
                 toObject,
                 //j2000 = [2000, 1, 1, 11, 58, 55, 816],
                 extend,
@@ -4152,20 +4153,26 @@
                     token = escapeRegex(token);
                     copyMatch = token;
                     noWrap = true;
-                } else if ((/^([|]?\S\{\d+,\d*\})+$/).test(token)) {
-                    copyMatch = token;
                 } else {
                     firstCharacter = firstChar(token);
-                    count = token.length;
-                    if (!strictEqual(count, countCharacter(token, firstCharacter))) {
-                        throw new Error(token);
+                    if (!(/^\S\{\d+,\d*\}$/).test(token)) {
+                        count = token.length;
+                        if (!strictEqual(count, countCharacter(token, firstCharacter))) {
+                            throw new Error(token);
+                        }
                     }
 
-                    copyMatch = token + '(?!' + firstCharacter + ')';
+                    copyMatch = '(?:^|[^' + firstCharacter + '])(' + token + ')(?:[^' + firstCharacter + ']|$)';
                 }
 
-                function replacer($0) {
-                    var val = cldrPadLeadingZero(value, $0.length);
+                function replacer($0, $1) {
+                    var val;
+
+                    if ($1) {
+                        val = cldrPadLeadingZero(value, $1.length);
+                    } else {
+                        val = value;
+                    }
 
                     if (!strictEqual(noWrap, true)) {
                         val = wrapInChar(val, '\'');
@@ -4204,7 +4211,7 @@
                     return val;
                 }
 
-                return pattern.replace(replaceTokenRX, tokenReplacer).replace(/[^a-z]/gi, '');
+                return pattern.replace(replaceTokenRX, tokenReplacer).replace(unmatchedTokenRx, '');
             }
 
             function hasRemainingTokens(pattern) {
@@ -4534,24 +4541,107 @@
                 return pattern;
             }
 
-            function formatTime(struct, pattern, lang, locale) {
-                var gregorian = languages[lang].calendars.gregorian,
-                    timeFormats = gregorian.timeFormats,
-                    dayPeriods = gregorian.dayPeriods,
-                    timeZoneNames = languages[lang].timeZoneNames,
-                    hourFormat = timeZoneNames.hourFormat,
-                    gmtZeroFormat = timeZoneNames.gmtZeroFormat,
-                    gmtFormat = timeZoneNames.gmtFormat.replace(gmtZeroFormat, wrapInChar(gmtZeroFormat, '\'')),
-                    etc = timeZoneNames.zone.Etc,
-                    dayPeriod,
-                    hour,
-                    offset,
+            // ISO 8601 time zone formats.
+            function formatIsoTimeZone(struct, lang, withZ, format, width) {
+                var timeZoneNames = languages[lang].timeZoneNames,
+                    offsetFormats = timeZoneNames.hourFormat.split(';'),
                     offsetFormat,
-                    zulu = 'Z',
-                    iso;
+                    offset,
+                    pattern;
+
+                if (withZ && struct.offset.isZero()) {
+                    pattern = 'Z';
+                } else {
+                    if (struct.offset.lte(0)) {
+                        offsetFormat = arrayFirst(offsetFormats);
+                    } else {
+                        offsetFormat = arrayLast(offsetFormats);
+                    }
+
+                    offsetFormat = offsetFormat.replace(/([\-+])H:/, '$1HH:');
+                    offset = fractionToTime(struct.offset.abs(), 'minute');
+                    offsetFormat = replaceToken(offsetFormat, 'H{1,2}', offset.hour);
+
+
+                    if (strictEqual(format, 'basic')) {
+                        if (strictEqual(width, arrayLast(formatTypes)) && offset.minute.isZero()) {
+                            pattern = arrayFirst(offsetFormat.split(':'));
+                        } else {
+                            offsetFormat = offsetFormat.replace(':', '');
+                            pattern = replaceToken(offsetFormat, 'm{1,2}', offset.minute);
+                        }
+                    } else {
+                        pattern = replaceToken(offsetFormat, 'm{1,2}', offset.minute);
+                    }
+
+                    if (hasRemainingTokens(pattern)) {
+                        throw new Error('formatIsoTimeZone has remaining tokens! ' + remainingTokens(pattern));
+                    }
+                }
+
+                return stripSingleQuotes(pattern);
+            }
+
+            // The localized GMT format.
+            function formatLocalisedGMT(struct, lang, width) {
+                var timeZoneNames = languages[lang].timeZoneNames,
+                    offsetFormats = timeZoneNames.hourFormat.split(';'),
+                    offsetFormat,
+                    offset,
+                    requestedShort,
+                    pattern;
+
+                if (struct.offset.isZero()) {
+                    pattern = timeZoneNames.gmtZeroFormat;
+                } else {
+                    if (struct.offset.lte(0)) {
+                        offsetFormat = arrayFirst(offsetFormats);
+                    } else {
+                        offsetFormat = arrayLast(offsetFormats);
+                    }
+
+                    requestedShort = strictEqual(width, arrayLast(formatTypes));
+                    if (requestedShort) {
+                        offsetFormat = offsetFormat.replace('HH', 'H');
+                    } else {
+                        offsetFormat = offsetFormat.replace(/([\-+])H:/, '$1HH:');
+                    }
+
+                    offset = fractionToTime(struct.offset.abs(), 'minute');
+                    offsetFormat = replaceToken(offsetFormat, 'H{1,2}', offset.hour);
+                    if (requestedShort && offset.minute.isZero()) {
+                        pattern = arrayFirst(offsetFormat.split(':'));
+                    } else {
+                        pattern = replaceToken(offsetFormat, 'm{1,2}', offset.minute);
+                    }
+
+                    if (hasRemainingTokens(pattern)) {
+                        throw new Error('formatLocalisedGMT has remaining tokens! ' + remainingTokens(pattern));
+                    }
+
+                    pattern = replaceToken(timeZoneNames.gmtFormat, '{0}', pattern);
+                }
+
+                return stripSingleQuotes(pattern);
+            }
+
+            function formatTime(struct, pattern, lang) {
+                var language = languages[lang],
+                    gregorian = language.calendars.gregorian,
+                    exemplarCity = language.timeZoneNames.zone.Etc.Unknown.exemplarCity,
+                    shortLocalisedGMT,
+                    longLocalisedGMT,
+                    isoBasicShort,
+                    isoBasicShortNoZ,
+                    isoBasic,
+                    isoBasicNoZ,
+                    isoExtended,
+                    isoExtendedNoZ,
+                    dayPeriod,
+                    hour;
 
                 if (arrayContains(formatTypes, pattern)) {
-                    pattern = timeFormats[pattern];
+                    pattern = gregorian.timeFormats[pattern];
                 }
 
                 if (struct.hour.inRange(12, 23)) {
@@ -4560,82 +4650,63 @@
                     dayPeriod = 'am';
                 }
 
-                pattern = replaceToken(pattern, 'a', dayPeriods.format.abbreviated[dayPeriod]);
+                pattern = replaceToken(pattern, 'a', gregorian.dayPeriods.format.abbreviated[dayPeriod]);
                 hour = struct.hour.plus(11).mod(12).plus(1);
                 pattern = replaceToken(pattern, 'h{1,2}', hour);
-
                 pattern = replaceToken(pattern, 'H{1,2}', struct.hour);
                 pattern = replaceToken(pattern, 'K{1,2}', hour.minus(1));
+
                 // if hour is 24, needs to be handled in date too
                 //temp = new AstroDate().julianDay(new AstroDate().julianDay());
                 //pattern = replaceToken(pattern, 'k{1,2}', struct.hour.plus(1));
 
                 //pattern = replaceToken(pattern, 'j{1,2}', struct.hour);
+
                 pattern = replaceToken(pattern, 'm{1,2}', struct.minute);
                 pattern = replaceToken(pattern, 's{1,2}', struct.second);
                 pattern = replaceToken(pattern, 'S{1,}', struct.millisecond);
+
                 //pattern = replaceToken(pattern, 'A{1,}', value);
 
-                offsetFormat = hourFormat.split(';');
-                if (struct.offset.lte(0)) {
-                    offsetFormat = arrayFirst(offsetFormat);
-                } else {
-                    offsetFormat = arrayLast(offsetFormat);
-                }
-
-                offset = fractionToTime(struct.offset.abs(), 'minute');
-                offsetFormat = replaceToken(offsetFormat, 'H{1,2}', offset.hour);
-                offsetFormat = replaceToken(offsetFormat, 'm{1,2}', offset.minute);
-                if (hasRemainingTokens(offsetFormat)) {
-                    throw new Error('offsetFormat has remaining tokens! ' + remainingTokens(offsetFormat));
-                }
-
-                offsetFormat = stripSingleQuotes(offsetFormat);
-                pattern = replaceToken(pattern, 'ZZZZZ', offsetFormat);
-                pattern = replaceToken(pattern, 'xxxxx', offsetFormat);
-                pattern = replaceToken(pattern, 'xxx', offsetFormat);
-                if (struct.offset.isZero()) {
-                    iso = zulu;
-                } else {
-                    iso = offsetFormat;
-                }
-
-                pattern = replaceToken(pattern, 'XXXXX', iso);
-                pattern = replaceToken(pattern, 'XXX', iso);
-
-                gmtFormat = replaceToken(gmtFormat, '{0}', offsetFormat);
-                pattern = replaceToken(pattern, 'OOOO', gmtFormat);
-                pattern = replaceToken(pattern, 'zzzz', gmtFormat);
-                pattern = replaceToken(pattern, 'ZZZZ', gmtFormat);
-                pattern = replaceToken(pattern, 'vvvv', gmtFormat);
-                pattern = replaceToken(pattern, 'v', gmtFormat);
-                pattern = replaceToken(pattern, 'VVVV', gmtFormat);
-
-                if (struct.offset.lte(0)) {
-                    offsetFormat = '+HHmm';
-                } else {
-                    offsetFormat = '-HHmm';
-                }
-
-                offsetFormat = replaceToken(offsetFormat, 'H{1,2}', offset.hour);
-                offsetFormat = replaceToken(offsetFormat, 'm{1,2}', offset.minute);
-                if (hasRemainingTokens(offsetFormat)) {
-                    throw new Error('offsetFormat has remaining tokens!: ' + remainingTokens(offsetFormat));
-                }
-
-                offsetFormat = stripSingleQuotes(offsetFormat);
-                pattern = replaceToken(pattern, 'Z{1,3}', offsetFormat);
-                pattern = replaceToken(pattern, 'XXXX', iso);
-                pattern = replaceToken(pattern, 'XX', iso);
-                pattern = replaceToken(pattern, 'xxxx', offsetFormat);
-                pattern = replaceToken(pattern, 'xx', offsetFormat);
-
-                gmtFormat = replaceToken(gmtFormat, '{0}', offsetFormat);
-                pattern = replaceToken(pattern, 'O', gmtFormat);
-                pattern = replaceToken(pattern, 'z{1,3}', gmtFormat);
-
-                pattern = replaceToken(pattern, 'V{2,3}', etc.Unknown.exemplarCity);
-                pattern = replaceToken(pattern, 'V', etc.Unknown.exemplarCity.slice(0, 3).toLowerCase());
+                // The short localized GMT format.
+                shortLocalisedGMT = formatLocalisedGMT(struct, lang, arrayLast(formatTypes));
+                pattern = replaceToken(pattern, 'O', shortLocalisedGMT);
+                pattern = replaceToken(pattern, 'z{1,3}', shortLocalisedGMT);
+                // The long localized GMT format.
+                longLocalisedGMT = formatLocalisedGMT(struct, lang);
+                pattern = replaceToken(pattern, 'OOOO', longLocalisedGMT);
+                pattern = replaceToken(pattern, 'zzzz', longLocalisedGMT);
+                pattern = replaceToken(pattern, 'ZZZZ', longLocalisedGMT);
+                pattern = replaceToken(pattern, 'vvvv', longLocalisedGMT);
+                pattern = replaceToken(pattern, 'v', longLocalisedGMT);
+                pattern = replaceToken(pattern, 'VVVV', longLocalisedGMT);
+                // The ISO8601 basic format short
+                isoBasicShort = formatIsoTimeZone(struct, lang, true, 'basic', arrayLast(formatTypes));
+                pattern = replaceToken(pattern, 'X', isoBasicShort);
+                // The ISO8601 basic format short no Z
+                isoBasicShortNoZ = formatIsoTimeZone(struct, lang, false, 'basic', arrayLast(formatTypes));
+                pattern = replaceToken(pattern, 'x', isoBasicShortNoZ);
+                // The ISO8601 basic format
+                isoBasic = formatIsoTimeZone(struct, lang, true, 'basic');
+                pattern = replaceToken(pattern, 'Z{1,3}', isoBasic);
+                pattern = replaceToken(pattern, 'XXXX', isoBasic);
+                pattern = replaceToken(pattern, 'XX', isoBasic);
+                // The ISO8601 basic format no Z
+                isoBasicNoZ = formatIsoTimeZone(struct, lang, false, 'basic');
+                pattern = replaceToken(pattern, 'xxxx', isoBasicNoZ);
+                pattern = replaceToken(pattern, 'xx', isoBasicNoZ);
+                //The ISO8601 extended format
+                isoExtended = formatIsoTimeZone(struct, lang, true);
+                pattern = replaceToken(pattern, 'XXXXX', isoExtended);
+                pattern = replaceToken(pattern, 'XXX', isoExtended);
+                pattern = replaceToken(pattern, 'ZZZZZ', isoExtended);
+                //The ISO8601 extended format no Z
+                isoExtendedNoZ = formatIsoTimeZone(struct, lang, false);
+                pattern = replaceToken(pattern, 'xxxxx', isoExtendedNoZ);
+                pattern = replaceToken(pattern, 'xxx', isoExtendedNoZ);
+                // exemplar city
+                pattern = replaceToken(pattern, 'V{2,3}', exemplarCity);
+                pattern = replaceToken(pattern, 'V', exemplarCity.slice(0, 3).toLowerCase());
 
                 return pattern;
             }
@@ -5093,10 +5164,10 @@
                             if (arrayContains(objectKeys(dateTimeFormats), pattern)) {
                                 dateTimeFormat = dateTimeFormats[pattern];
                                 dateTimeFormat = replaceToken(dateTimeFormat, '{1}', formatDate(struct, pattern, isJulian, lang, this.locale()));
-                                dateTimeFormat = replaceToken(dateTimeFormat, '{0}', formatTime(struct, pattern, lang, this.locale()));
+                                dateTimeFormat = replaceToken(dateTimeFormat, '{0}', formatTime(struct, pattern, lang));
                             } else {
                                 dateTimeFormat = formatDate(struct, pattern, isJulian, lang, this.locale());
-                                dateTimeFormat = formatTime(struct, dateTimeFormat, lang, this.locale());
+                                dateTimeFormat = formatTime(struct, dateTimeFormat, lang);
                             }
 
                             if (hasRemainingTokens(dateTimeFormat)) {
@@ -5150,7 +5221,12 @@
                                 pattern = arrayFirst(formatTypes);
                             }
 
-                            string = stripSingleQuotes(formatDate(getCorrectStruct(this, struct), pattern, isJulian, lang, this.locale()));
+                            pattern = formatDate(getCorrectStruct(this, struct), pattern, isJulian, lang, this.locale());
+                            if (hasRemainingTokens(pattern)) {
+                                throw new Error('Pattern has remaining tokens!: ' + remainingTokens(pattern));
+                            }
+
+                            string = stripSingleQuotes(pattern);
                         } else {
                             string = 'Invalid Date';
                         }
@@ -5187,7 +5263,12 @@
                                 pattern = arrayFirst(formatTypes);
                             }
 
-                            string = stripSingleQuotes(formatTime(getCorrectStruct(this, struct), pattern, lang, this.locale()));
+                            pattern = formatTime(getCorrectStruct(this, struct), pattern, lang);
+                            if (hasRemainingTokens(pattern)) {
+                                throw new Error('Pattern has remaining tokens!: ' + remainingTokens(pattern));
+                            }
+
+                            string = stripSingleQuotes(pattern);
                         } else {
                             string = 'Invalid Date';
                         }
