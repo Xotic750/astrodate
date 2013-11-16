@@ -4366,7 +4366,7 @@
                         loaded = lang;
                     } else {
                         firstSplit = splitUnderscore(lookupLocale(locale));
-                        lang = [arrayFirst(firstSplit), arrayFirst(firstSplit)].join('_');
+                        lang = [arrayFirst(firstSplit), arrayLast(firstSplit)].join('_');
                         if (!isUndefined(languages[lang])) {
                             loaded = lang;
                         } else {
