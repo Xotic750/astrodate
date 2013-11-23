@@ -285,7 +285,7 @@
                     tz = (offset > 0 ? '-' : '+') + padLeadingZero(Math.abs(hourOffset), 2) + padLeadingZero(Math.abs(minOffset), 2);
                     tz1 = (offset > 0 ? '-' : '+') + padLeadingZero(Math.abs(hourOffset), 2) + ':' +  padLeadingZero(Math.abs(minOffset), 2);
                 } else {
-                    tz = 'Z';
+                    tz = tz1 = 'Z';
                 }
 
                 formats = [
