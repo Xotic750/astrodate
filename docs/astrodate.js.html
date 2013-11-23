@@ -1,7 +1,34 @@
-/*
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: astrodate.js</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Source: astrodate.js</h1>
+    
+    
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source"><code>/*
  * @file AstroDate. A more accurate date object that can be used as an alternative to Date.
  * @version 0.5.2
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
+ * @author Graham Fairweather a.k.a Xotic750 &lt;xotic750@gmail.com>
  * @copyright Graham Fairweather 2013
  * @link https://github.com/Xotic750/astrodate
  * @license GPL3
@@ -19,7 +46,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see @link <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see @link &lt;http://www.gnu.org/licenses/>.
  */
 
 (function (globalThis, privateUndefined) {
@@ -38,7 +65,7 @@
          * @private
          * @memberOf Closure1
          * @readonly
-         * @type {array.<string>}
+         * @type {array.&lt;string>}
          */
         defaultProperties = [
             'toString',
@@ -141,7 +168,7 @@
      * @returns {boolean}
      */
     function lt(number, limit) {
-        return number < limit;
+        return number &lt; limit;
     }
 
     /**
@@ -154,7 +181,7 @@
      * @returns {boolean}
      */
     function lte(number, limit) {
-        return number <= limit;
+        return number &lt;= limit;
     }
 
     /**
@@ -223,7 +250,7 @@
      * @returns {boolean}
      */
     function inRange(number, min, max) {
-        return gte(number, min) && lte(number, max);
+        return gte(number, min) &amp;&amp; lte(number, max);
     }
 
     /**
@@ -325,7 +352,7 @@
 
         if (isNumber(inputArg) || isString(inputArg)) {
             string = inputArg.toString().replace(/^[+\-]?/, "");
-            if (!isNaN(parseFloat(string)) && isFinite(string)) {
+            if (!isNaN(parseFloat(string)) &amp;&amp; isFinite(string)) {
                 val = true;
             }
         }
@@ -424,7 +451,7 @@
             nfeToObjectString;
 
         try {
-            if (strictEqual(toStringFN.call(), '[object Undefined]') && strictEqual(toStringFN.call(null), '[object Null]')) {
+            if (strictEqual(toStringFN.call(), '[object Undefined]') &amp;&amp; strictEqual(toStringFN.call(null), '[object Null]')) {
                 tempSafariNFE = function nfeToObjectString(object) {
                     return toStringFN.call(object);
                 };
@@ -526,7 +553,7 @@
      * @returns {boolean}
      */
     function isTypeObject(inputArg) {
-        return !isNull(inputArg) && isTypeOfObject(inputArg);
+        return !isNull(inputArg) &amp;&amp; isTypeOfObject(inputArg);
     }
 
     /**
@@ -571,7 +598,7 @@
     function isEmptyArray(inputArg) {
         var val;
 
-        if (arrayIsArray(inputArg) || (isTypeObject(inputArg) && !isFunction(inputArg) && hasProperty(inputArg, 'length'))) {
+        if (arrayIsArray(inputArg) || (isTypeObject(inputArg) &amp;&amp; !isFunction(inputArg) &amp;&amp; hasProperty(inputArg, 'length'))) {
             val = isZero(inputArg.length);
         } else {
             val = null;
@@ -657,7 +684,7 @@
                         val = true;
                     }
                 } else {
-                    val = !strictEqual(x, x) && !strictEqual(y, y);
+                    val = !strictEqual(x, x) &amp;&amp; !strictEqual(y, y);
                 }
 
                 return val;
@@ -716,7 +743,7 @@
             tempSafariNFE = isFiniteFN;
         } else {
             tempSafariNFE = function nfeIsFinite(number) {
-                return isNumber(number) && isFinite(number);
+                return isNumber(number) &amp;&amp; isFinite(number);
             };
         }
 
@@ -864,7 +891,7 @@
      * @param {string} str
      * @param {string} [separator]
      * @param {number} [limit]
-     * @returns {array.<string>}
+     * @returns {array.&lt;string>}
      */
     // named stringSplit instead of split because of SpiderMonkey and Blackberry bug
     stringSplit = (function () {
@@ -935,11 +962,11 @@
                     lastIndex = match.index + arrayFirst(match).length;
                     if (lastIndex > lastLastIndex) {
                         output.push(string.slice(lastLastIndex, match.index));
-                        if (!compliantExecNpcg && gt(match.length, 1)) {
+                        if (!compliantExecNpcg &amp;&amp; gt(match.length, 1)) {
                             replacer(separator2, match, arguments);
                         }
 
-                        if (gt(match.length, 1) && lt(match.index, string.length)) {
+                        if (gt(match.length, 1) &amp;&amp; lt(match.index, string.length)) {
                             output = output.concat(match.slice(1));
                         }
 
@@ -1213,7 +1240,7 @@
                 end = clamp(position, 0, thisLen);
                 start = end - searchStr.length;
 
-                return gte(start, 0) && strictEqual(thisStr.slice(start, end), searchStr);
+                return gte(start, 0) &amp;&amp; strictEqual(thisStr.slice(start, end), searchStr);
             };
         }
 
@@ -1373,13 +1400,13 @@
 
         // use nfeHasOwnProperty to save a var
         for (nfeHasOwnProperty in testObject) {
-            if (strictEqual(nfeHasOwnProperty, 'toString') && isNull(testObject[nfeHasOwnProperty])) {
+            if (strictEqual(nfeHasOwnProperty, 'toString') &amp;&amp; isNull(testObject[nfeHasOwnProperty])) {
                 hasDontEnumBug = false;
             }
         }
 
         function checkDontEnums(object, property) {
-            return hasDontEnumBug && arrayContains(defaultProperties, property) && hasProperty(object, property) && !strictEqual(object[property], objectGetPrototypeOf(object)[property]);
+            return hasDontEnumBug &amp;&amp; arrayContains(defaultProperties, property) &amp;&amp; hasProperty(object, property) &amp;&amp; !strictEqual(object[property], objectGetPrototypeOf(object)[property]);
         }
 
         if (isFunction(hasOwnPropertyFN)) {
@@ -1392,7 +1419,7 @@
             };
         } else {
             tempSafariNFE = function nfeHasOwnProperty(object, property) {
-                return hasProperty(object, property) && isUndefined(objectGetPrototypeOf(object)[property]);
+                return hasProperty(object, property) &amp;&amp; isUndefined(objectGetPrototypeOf(object)[property]);
             };
         }
 
@@ -1513,7 +1540,7 @@
                 }
 
                 for (index = 0, length = toUint32(object.length), val = false; lt(index, length); index += 1) {
-                    if (hasProperty(object, index) && fn.call(thisArg, object[index], index, object)) {
+                    if (hasProperty(object, index) &amp;&amp; fn.call(thisArg, object[index], index, object)) {
                         val = true;
                         break;
                     }
@@ -1698,7 +1725,7 @@
                     throw new TypeError(fn + ' is not a function');
                 }
 
-                if (isZero(length) && lt(arguments.length, 3)) {
+                if (isZero(length) &amp;&amp; lt(arguments.length, 3)) {
                     throw new TypeError(errString);
                 }
 
@@ -1706,7 +1733,7 @@
                 if (gt(arguments.length, 2)) {
                     accumulator = initialValue;
                 } else {
-                    for (k = 0, length = toUint32(object.length), kPresent = false; !kPresent && lt(k, length); k += 1) {
+                    for (k = 0, length = toUint32(object.length), kPresent = false; !kPresent &amp;&amp; lt(k, length); k += 1) {
                         kPresent = hasProperty(object, k);
                         if (kPresent) {
                             accumulator = object[k];
@@ -1788,7 +1815,7 @@
         };
 
         testString = arrayReduce(whiteSpacesList, tempSafariNFE, '');
-        if (isFunction(trimFN) && isZero(trimFN.call(testString).length)) {
+        if (isFunction(trimFN) &amp;&amp; isZero(trimFN.call(testString).length)) {
             tempSafariNFE = function nfeTrim(inputArg) {
                 return trimFN.call(inputArg);
             };
@@ -1830,7 +1857,7 @@
         var indexOfFN = baseArray.indexOf,
             nfeIndexOf;
 
-        if (isFunction(indexOfFN) && strictEqual(indexOfFN.call([0, 1], 1, 2), 1)) {
+        if (isFunction(indexOfFN) &amp;&amp; strictEqual(indexOfFN.call([0, 1], 1, 2), 1)) {
             tempSafariNFE = function nfeIndexOf(array, searchElement, fromIndex) {
                 return indexOfFN.call(array, searchElement, fromIndex);
             };
@@ -1865,7 +1892,7 @@
                         }
 
                         for (index = start, val = -1; lt(index, length); index += 1) {
-                            if (hasProperty(object, index) && strictEqual(searchElement, object[index])) {
+                            if (hasProperty(object, index) &amp;&amp; strictEqual(searchElement, object[index])) {
                                 val = index;
                                 break;
                             }
@@ -1902,7 +1929,7 @@
             tempSafariNFE = keysFN;
         } else {
             tempSafariNFE = function nfeKeys(object) {
-                if (!isTypeObject(object) && !isFunction(object)) {
+                if (!isTypeObject(object) &amp;&amp; !isFunction(object)) {
                     throw new TypeError('Object.keys called on a non-object');
                 }
 
@@ -1970,11 +1997,11 @@
             tempSafariNFE = function nfeDefineProperty(object, property, descriptor) {
                 var prototype;
 
-                if (!isTypeObject(object) && !isFunction(object)) {
+                if (!isTypeObject(object) &amp;&amp; !isFunction(object)) {
                     throw new TypeError('Object.defineProperty called on non-object');
                 }
 
-                if (!isTypeObject(descriptor) && !isFunction(descriptor)) {
+                if (!isTypeObject(descriptor) &amp;&amp; !isFunction(descriptor)) {
                     throw new TypeError('Property description must be an object');
                 }
 
@@ -1990,7 +2017,7 @@
                     }
                 } else {
                     if (!isFunction(defineGetterFN) || !isFunction(defineSetterFN)) {
-                        throw new TypeError('getters & setters can not be defined on this javascript engine');
+                        throw new TypeError('getters &amp; setters can not be defined on this javascript engine');
                     }
 
                     if (isFunction(descriptor.get)) {
@@ -2032,11 +2059,11 @@
             tempSafariNFE = definePropertiesFN;
         } else {
             tempSafariNFE = function nfeDefineProperties(object, props) {
-                if (!isTypeObject(object) && !isFunction(object)) {
+                if (!isTypeObject(object) &amp;&amp; !isFunction(object)) {
                     throw new TypeError('Object.defineProperties called on non-object');
                 }
 
-                if (!isTypeObject(props) && !isFunction(props)) {
+                if (!isTypeObject(props) &amp;&amp; !isFunction(props)) {
                     throw new TypeError('Property description must be an object');
                 }
 
@@ -2101,7 +2128,7 @@
                     getter,
                     setter;
 
-                if (!isTypeObject(object) && !isFunction(object)) {
+                if (!isTypeObject(object) &amp;&amp; !isFunction(object)) {
                     throw new TypeError('Object.getOwnPropertyDescriptor called on a non-object');
                 }
 
@@ -2111,7 +2138,7 @@
                         configurable: true
                     };
 
-                    if (isFunction(lookupGetterFN) && isFunction(lookupSetterFN)) {
+                    if (isFunction(lookupGetterFN) &amp;&amp; isFunction(lookupSetterFN)) {
                         prototype = object[protoName];
                         object[protoName] = objectGetPrototypeOf(baseObject);
                         getter = lookupGetterFN.call(object, property);
@@ -2163,7 +2190,7 @@
             tempSafariNFE = freezeFN;
         } else {
             tempSafariNFE = function nfeFreeze(object) {
-                if (!isTypeObject(object) && !isFunction(object)) {
+                if (!isTypeObject(object) &amp;&amp; !isFunction(object)) {
                     throw new TypeError('Object.freeze called on non-object');
                 }
 
@@ -2223,7 +2250,7 @@
             tempSafariNFE = isFrozenFN;
         } else {
             tempSafariNFE = function nfeIsFrozen(object) {
-                if (!isTypeObject(object) && !isFunction(object)) {
+                if (!isTypeObject(object) &amp;&amp; !isFunction(object)) {
                     throw new TypeError('Object.isFrozen called on non-object');
                 }
 
@@ -2248,7 +2275,7 @@
         arrayForEach(objectKeys(object), function (propKey) {
             var prop = object[propKey];
 
-            if ((isTypeObject(prop) || isFunction(prop)) && !objectIsFrozen(prop)) {
+            if ((isTypeObject(prop) || isFunction(prop)) &amp;&amp; !objectIsFrozen(prop)) {
                 deepFreeze(prop);
             }
         });
@@ -2319,7 +2346,7 @@
             nfeIsPlainObject;
 
         tempSafariNFE = function nfeIsPlainObject(object) {
-            return isObject(object) && strictEqual(objectGetPrototypeOf(object), baseObjectPrototype);
+            return isObject(object) &amp;&amp; strictEqual(objectGetPrototypeOf(object), baseObjectPrototype);
         };
 
         nfeIsPlainObject = null;
@@ -2342,7 +2369,7 @@
         var nfeExtend;
 
         tempSafariNFE = function nfeExtend(target, source) {
-            if (!isTypeObject(target) && !isFunction(target)) {
+            if (!isTypeObject(target) &amp;&amp; !isFunction(target)) {
                 throw new TypeError('extend called on a non-object');
             }
 
@@ -2367,7 +2394,7 @@
      * @returns {boolean}
      */
     function isDateValid(dateObject) {
-        return isDate(dateObject) && !numberIsNaN(dateObject.getTime());
+        return isDate(dateObject) &amp;&amp; !numberIsNaN(dateObject.getTime());
     }
 
     /**
@@ -2379,7 +2406,7 @@
      * @returns {boolean}
      */
     function isDigits(string) {
-        return isString(string) && (/^\d+$/).test(string);
+        return isString(string) &amp;&amp; (/^\d+$/).test(string);
     }
 
     /**
@@ -2392,7 +2419,7 @@
      * @returns {string}
      */
     function escapeRegex(string) {
-        return string.replace(/[\[\](){}?*+\^$\\.|]/g, '\\$&');
+        return string.replace(/[\[\](){}?*+\^$\\.|]/g, '\\$&amp;');
     }
 
     /**
@@ -2438,17 +2465,17 @@
             thisContext;
 
         // detect the global context of the environment
-        if (typeof global === 'object' && !isNull(global) && strictEqual(global.global, global)) {
+        if (typeof global === 'object' &amp;&amp; !isNull(global) &amp;&amp; strictEqual(global.global, global)) {
             /** @namespace global
              * @type {object}
              */
             thisContext = global;
-        } else if (typeof window === 'object' && !isNull(window) && strictEqual(window.window, window)) {
+        } else if (typeof window === 'object' &amp;&amp; !isNull(window) &amp;&amp; strictEqual(window.window, window)) {
             /** @namespace window
              * @type {object}
              */
             thisContext = window;
-        } else if (typeof self === 'object' && !isNull(self) && strictEqual(self.self, self)) {
+        } else if (typeof self === 'object' &amp;&amp; !isNull(self) &amp;&amp; strictEqual(self.self, self)) {
             /** @namespace self
              * @type {object}
              */
@@ -2464,10 +2491,10 @@
             throw new TypeError('Invalid global context: ' + typeof thisContext);
         }
 
-        if (typeof module === 'object' && !isNull(module) && isTypeObject(module.exports)) {
+        if (typeof module === 'object' &amp;&amp; !isNull(module) &amp;&amp; isTypeObject(module.exports)) {
             /** @module astrodate */
             module.exports = definition(require(bigNumberString + '.js'));
-        } else if (typeof define === 'function' && isTypeObject(define.amd)) {
+        } else if (typeof define === 'function' &amp;&amp; isTypeObject(define.amd)) {
             projectPaths = {};
             projectPaths[bigNumberString] = '//cdn.jsdelivr.net/bignumber.js/1.3.0/bignumber.min';
             require.config({
@@ -2528,7 +2555,7 @@
                  */
                 inRange: {
                     value: function (min, max) {
-                        return this.gte(min) && this.lte(max);
+                        return this.gte(min) &amp;&amp; this.lte(max);
                     }
                 },
 
@@ -2590,7 +2617,7 @@
                  */
                 isBigNumber: {
                     value: function (inputArg) {
-                        return isObject(inputArg) && objectInstanceOf(inputArg, BigNumber);
+                        return isObject(inputArg) &amp;&amp; objectInstanceOf(inputArg, BigNumber);
                     }
                 },
 
@@ -2666,7 +2693,7 @@
                  * @private
                  * @memberOf nfeDefinition
                  * @readonly
-                 * @type {array.<object>}
+                 * @type {array.&lt;object>}
                  */
                 fullKeys = [{
                     full: 'year',
@@ -2706,7 +2733,7 @@
                  * @private
                  * @memberOf nfeDefinition
                  * @readonly
-                 * @type {array.<string>}
+                 * @type {array.&lt;string>}
                  */
                 dayKeys = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'],
                 /**
@@ -2714,7 +2741,7 @@
                  * @private
                  * @memberOf nfeDefinition
                  * @readonly
-                 * @type {array.<string>}
+                 * @type {array.&lt;string>}
                  */
                 monthKeys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
                 /**
@@ -2722,7 +2749,7 @@
                  * @private
                  * @memberOf nfeDefinition
                  * @readonly
-                 * @type {array.<string>}
+                 * @type {array.&lt;string>}
                  */
                 nameTypes = ['format', 'stand-alone'],
                 /**
@@ -2730,7 +2757,7 @@
                  * @private
                  * @memberOf nfeDefinition
                  * @readonly
-                 * @type {array.<string>}
+                 * @type {array.&lt;string>}
                  */
                 widthTypes = ['wide', 'abbreviated', 'narrow'],
                 /**
@@ -2738,7 +2765,7 @@
                  * @private
                  * @memberOf nfeDefinition
                  * @readonly
-                 * @type {array.<string>}
+                 * @type {array.&lt;string>}
                  */
                 formatTypes = ['full', 'long', 'medium', 'short'],
                 invalidISOCharsRx = new RegExp('[^\\d\\-+WT Z:,\\.]'),
@@ -2757,7 +2784,7 @@
                  * @private
                  * @memberOf nfeDefinition
                  * @readonly
-                 * @type {array.<string>}
+                 * @type {array.&lt;string>}
                  */
                 datePatterns,
                 /**
@@ -2765,7 +2792,7 @@
                  * @private
                  * @memberOf nfeDefinition
                  * @readonly
-                 * @type {array.<string>}
+                 * @type {array.&lt;string>}
                  */
                 timePatterns,
                 AstroDate,
@@ -2823,7 +2850,7 @@
             */
 
             function isGregorianLeapYear(struct) {
-                return struct.year.mod(400).isZero() || (!struct.year.mod(100).isZero() && struct.year.mod(4).isZero());
+                return struct.year.mod(400).isZero() || (!struct.year.mod(100).isZero() &amp;&amp; struct.year.mod(4).isZero());
             }
 
             function isJulianLeapYear(struct) {
@@ -2848,7 +2875,7 @@
             function daysInJulianMonth(struct) {
                 var days = new BigNumber(28);
 
-                if (struct.month.eq(2) && isJulianLeapYear(struct)) {
+                if (struct.month.eq(2) &amp;&amp; isJulianLeapYear(struct)) {
                     days = days.plus(1);
                 }
 
@@ -2892,14 +2919,14 @@
             }
 
             function inMinuteRange(minute, hour) {
-                return (hour.equals(24) && minute.isZero()) || (!hour.equals(24) && minute.gte(0) && minute.lt(60));
+                return (hour.equals(24) &amp;&amp; minute.isZero()) || (!hour.equals(24) &amp;&amp; minute.gte(0) &amp;&amp; minute.lt(60));
             }
 
             function inSecondRange(second, struct) {
                 var maxSecond = 60,
                     leapSecond;
 
-                if (struct.year.gte(1961) && struct.hour.equals(23) && struct.minute.equals(59)) {
+                if (struct.year.gte(1961) &amp;&amp; struct.hour.equals(23) &amp;&amp; struct.minute.equals(59)) {
                     if (!isPlainObject(leapSeconds)) {
                         throw new Error('No leap second table!');
                     }
@@ -2916,11 +2943,11 @@
                     }
                 }
 
-                return (struct.hour.equals(24) && second.isZero()) || (!struct.hour.equals(24) && second.gte(0) && second.lt(maxSecond));
+                return (struct.hour.equals(24) &amp;&amp; second.isZero()) || (!struct.hour.equals(24) &amp;&amp; second.gte(0) &amp;&amp; second.lt(maxSecond));
             }
 
             function inMillisecondRange(millisecond, hour) {
-                return (hour.equals(24) && millisecond.isZero()) || (!hour.equals(24) && millisecond.gte(0) && millisecond.lt(1000));
+                return (hour.equals(24) &amp;&amp; millisecond.isZero()) || (!hour.equals(24) &amp;&amp; millisecond.gte(0) &amp;&amp; millisecond.lt(1000));
             }
 
             function inOffsetRange(offset) {
@@ -3044,7 +3071,7 @@
             function dayOfJulianYear(struct) {
                 var dayOfYear = struct.month.times(28).plus(struct.day);
 
-                if (struct.month.gte(2) && isJulianLeapYear(struct)) {
+                if (struct.month.gte(2) &amp;&amp; isJulianLeapYear(struct)) {
                     dayOfYear = dayOfYear.plus(1);
                 }
 
@@ -3056,7 +3083,7 @@
 
                 if (isString(unitString)) {
                     unitString = stringTrim(unitString).toLowerCase();
-                    if (gt(unitString.length, 2) && lastCharIs(unitString, 's')) {
+                    if (gt(unitString.length, 2) &amp;&amp; lastCharIs(unitString, 's')) {
                         unitString = unitString.slice(0, -1);
                     }
 
@@ -3270,7 +3297,7 @@
                     r = u.pow(2).times(32).plus(-20);
                 }
 
-                if (canonCorrection && !struct.year.inRange(1955, 2004)) {
+                if (canonCorrection &amp;&amp; !struct.year.inRange(1955, 2004)) {
                     r.plus(y.minus(1955).pow(2).times(-0.000012932));
                 }
 
@@ -3929,14 +3956,14 @@
                     val;
 
                 nearestThursday = struct.day.plus(4).minus(weekDay);
-                if (struct.month.equals(12) && nearestThursday.gt(31)) {
+                if (struct.month.equals(12) &amp;&amp; nearestThursday.gt(31)) {
                     val = {
                         year: year.plus(1),
                         week: BigNumber.one(),
                         weekDay: weekDay
                     };
                 } else {
-                    if (struct.month.equals(1) && nearestThursday.lt(1)) {
+                    if (struct.month.equals(1) &amp;&amp; nearestThursday.lt(1)) {
                         year = struct.year.minus(1);
                         month = new BigNumber(12);
                         nearestThursday = nearestThursday.plus(31);
@@ -3968,7 +3995,7 @@
             }
 
             function isNotNegativeZero(bn, sign) {
-                return strictEqual(sign, '+') || !bn.isZero() || (bn.isZero() && !strictEqual(sign, '-'));
+                return strictEqual(sign, '+') || !bn.isZero() || (bn.isZero() &amp;&amp; !strictEqual(sign, '-'));
             }
 
             function hourMinuteToMinutes(minute, second) {
@@ -4848,7 +4875,7 @@
                     nfeSearchPatterns,
                     searchString;
 
-                if (isString(isoString) && !isEmptyString(isoString) && !invalidISOCharsRx.test(isoString) && isoHasValidCharacterCounts(isoString)) {
+                if (isString(isoString) &amp;&amp; !isEmptyString(isoString) &amp;&amp; !invalidISOCharsRx.test(isoString) &amp;&amp; isoHasValidCharacterCounts(isoString)) {
                     tempSafariNFE = function nfeSearchPatterns(pattern) {
                         var rxResult = pattern.regex.exec(searchString),
                             val = false,
@@ -4904,7 +4931,7 @@
                     firsrCharacter,
                     val;
 
-                if (isDigits(strNum) && new BigNumber(strNum).isFinite()) {
+                if (isDigits(strNum) &amp;&amp; new BigNumber(strNum).isFinite()) {
                     firsrCharacter = firstChar(strNum);
                     val = '';
                     if (strictEqual(firsrCharacter, '-')) {
@@ -4984,7 +5011,7 @@
                 function tokenReplacer($0, $1, $2) {
                     var val;
 
-                    if ($0 && $1 && !$2) {
+                    if ($0 &amp;&amp; $1 &amp;&amp; !$2) {
                         val = $1;
                     } else {
                         val = '';
@@ -5038,7 +5065,7 @@
                     script,
                     region;
 
-                if (isString(locale) && (/^([a-z]{2,3}|[a-z]{2,3}[\-_][a-z]{2}|[a-z]{2,3}[\-_][a-z]{4}|[a-z]{2,3}[\-_][a-z]{4}[\-_][a-z]{2})$/i).test(locale)) {
+                if (isString(locale) &amp;&amp; (/^([a-z]{2,3}|[a-z]{2,3}[\-_][a-z]{2}|[a-z]{2,3}[\-_][a-z]{4}|[a-z]{2,3}[\-_][a-z]{4}[\-_][a-z]{2})$/i).test(locale)) {
                     firstSplit = splitUnderscore(minusToUnderscore(locale));
                     firstSplitLength = firstSplit.length;
                     val.push(firstSplit[0].toLowerCase());
@@ -5057,11 +5084,11 @@
                         }
                     }
 
-                    if (!isUndefined(script) && !strictEqual(script, 'Zzzz')) {
+                    if (!isUndefined(script) &amp;&amp; !strictEqual(script, 'Zzzz')) {
                         val.push(script);
                     }
 
-                    if (!isUndefined(region) && !strictEqual(region, 'ZZ')) {
+                    if (!isUndefined(region) &amp;&amp; !strictEqual(region, 'ZZ')) {
                         val.push(region);
                     }
                 }
@@ -5101,11 +5128,11 @@
                             }
                         }
 
-                        if (isUndefined(lookup) && !isUndefined(region)) {
+                        if (isUndefined(lookup) &amp;&amp; !isUndefined(region)) {
                             lookup = likelySubtags[[lang, region].join('_')];
                         }
 
-                        if (isUndefined(lookup) && !isUndefined(script)) {
+                        if (isUndefined(lookup) &amp;&amp; !isUndefined(script)) {
                             lookup = likelySubtags[[lang, script].join('_')];
                         }
 
@@ -5119,7 +5146,7 @@
                             lookup = likelySubtags[lang];
                         }
 
-                        if (isUndefined(lookup) && !isUndefined(script)) {
+                        if (isUndefined(lookup) &amp;&amp; !isUndefined(script)) {
                             lookup = likelySubtags[['und', script].join('_')];
                         }
                     }
@@ -5327,7 +5354,7 @@
                     offset,
                     pattern;
 
-                if (withZ && struct.offset.isZero()) {
+                if (withZ &amp;&amp; struct.offset.isZero()) {
                     pattern = 'Z';
                 } else {
                     if (struct.offset.lte(0)) {
@@ -5342,7 +5369,7 @@
 
 
                     if (strictEqual(format, 'basic')) {
-                        if (strictEqual(width, arrayLast(formatTypes)) && offset.minute.isZero()) {
+                        if (strictEqual(width, arrayLast(formatTypes)) &amp;&amp; offset.minute.isZero()) {
                             pattern = arrayFirst(offsetFormat.split(':'));
                         } else {
                             offsetFormat = offsetFormat.replace(':', '');
@@ -5387,7 +5414,7 @@
 
                     offset = fractionToTime(struct.offset.abs(), 'minute');
                     offsetFormat = replaceToken(offsetFormat, 'H{1,2}', offset.hour);
-                    if (requestedShort && offset.minute.isZero()) {
+                    if (requestedShort &amp;&amp; offset.minute.isZero()) {
                         pattern = arrayFirst(offsetFormat.split(':'));
                     } else {
                         pattern = replaceToken(offsetFormat, 'm{1,2}', offset.minute);
@@ -5678,7 +5705,7 @@
                                     isLocal = Boolean(value);
                                     break;
                                 case 'lang':
-                                    if (isString(value) && !isEmptyString(value)) {
+                                    if (isString(value) &amp;&amp; !isEmptyString(value)) {
                                         currentLanguage = value;
                                     } else {
                                         currentLanguage = defaultLanguage;
@@ -5687,7 +5714,7 @@
 
                                     break;
                                 case 'locale':
-                                    if (isString(value) && !isEmptyString(value)) {
+                                    if (isString(value) &amp;&amp; !isEmptyString(value)) {
                                         currentLocale = lookupLocale(value);
                                     } else {
                                         currentLanguage = defaultLanguage;
@@ -5951,7 +5978,7 @@
                  */
                 isRaw: {
                     value: function () {
-                        return !this.getter('isUT') && !this.getter('isTT') && this.getter('isLocal');
+                        return !this.getter('isUT') &amp;&amp; !this.getter('isTT') &amp;&amp; this.getter('isLocal');
                     }
                 },
 
@@ -6683,7 +6710,7 @@
                         var val,
                             lang;
 
-                        if (isString(id) && !isEmptyString(id)) {
+                        if (isString(id) &amp;&amp; !isEmptyString(id)) {
                             lang = minusToUnderscore(id);
                             if (isPlainObject(languages[lang])) {
                                 this.setter('lang', lang);
@@ -6710,7 +6737,7 @@
                         var lang,
                             val;
 
-                        if (isString(id) && !isEmptyString(id)) {
+                        if (isString(id) &amp;&amp; !isEmptyString(id)) {
                             lang = languageLoaded(id);
                             if (!isEmptyString(lang)) {
                                 this.setter('lang', lang);
@@ -6749,7 +6776,7 @@
                     value: function (id, object, freeze) {
                         var lang;
 
-                        if (isString(id) && !isEmptyString(id)) {
+                        if (isString(id) &amp;&amp; !isEmptyString(id)) {
                             lang = minusToUnderscore(id);
                             if (isPlainObject(object)) {
                                 languages[lang] = object;
@@ -6770,7 +6797,7 @@
 
                 /** @memberof AstroDate
                  * @function
-                 * @returns {array.<String>}
+                 * @returns {array.&lt;String>}
                  */
                 langs: {
                     value: function () {
@@ -6787,7 +6814,7 @@
                     value: function (id) {
                         var lang;
 
-                        if (isString(id) && !isEmptyString(id)) {
+                        if (isString(id) &amp;&amp; !isEmptyString(id)) {
                             lang = languageLoaded(id);
                             if (!isEmptyString(lang)) {
                                 defaultLanguage = lang;
@@ -6864,7 +6891,7 @@
                  */
                 isAstroDate: {
                     value: function (inputArg) {
-                        return isObject(inputArg) && objectInstanceOf(inputArg, AstroDate);
+                        return isObject(inputArg) &amp;&amp; objectInstanceOf(inputArg, AstroDate);
                     }
                 },
 
@@ -11136,3 +11163,26 @@
 
     tempSafariNFE = null;
 }(this));
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-astrodate.html">astrodate</a></li></ul><h3>Classes</h3><ul><li><a href="AstroDate.html">AstroDate</a></li><li><a href="BigNumber.html">BigNumber</a></li></ul><h3>Namespaces</h3><ul><li><a href="Closure1.html">Closure1</a></li><li><a href="global.html">global</a></li><li><a href="nfeDefinition.html">nfeDefinition</a></li><li><a href="self.html">self</a></li><li><a href="this.html">this</a></li><li><a href="window.html">window</a></li></ul><h3>Global</h3><ul><li><a href="global.html#thisContext[name]">thisContext[name]</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-dev</a> on Sat Nov 23 2013 22:32:59 GMT+0100 (CET)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -9,7 +9,7 @@
             uglify: {
                 target: {
                     files: {
-                        'min/<%= pkg.name %>.min.js': '<%= pkg.name %>.js'
+                        '<%= pkg.name %>.min.js': '<%= pkg.name %>.js'
                     }
                 },
                 options: {
@@ -20,7 +20,7 @@
                     output: {
                         'ascii_only': true
                     },
-                    report: 'min',
+                    report: 'gzip',
                     preserveComments: 'some'
                 }
             },
@@ -35,15 +35,14 @@
                     'curly': true,
                     'eqeqeq': true,
                     'forin': true,
+                    'freeze': true,
                     'funcscope': true,
                     'globalstrict': true,
                     'immed': true,
-                    'maxlen': 500,
                     'newcap': true,
                     'noarg': true,
                     'nomen': true,
                     'nonew': true,
-                    'nonstandard': true,
                     'notypeof': true,
                     'plusplus': true,
                     'regexp': true,
@@ -81,10 +80,6 @@
         grunt.loadNpmTasks('grunt-contrib-watch');
 
         // Default task.
-        grunt.registerTask('default', ['jshint', 'nodeunit']);
-        grunt.registerTask('test', ['nodeunit']);
-
-        // Task to be run when releasing a new version
-        grunt.registerTask('release', ['jshint', 'nodeunit', 'uglify']);
+        grunt.registerTask('default', ['jshint', 'uglify']);
     };
 }());
