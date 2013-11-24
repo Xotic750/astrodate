@@ -28,7 +28,7 @@
     /**
      * Utility functions used through the project that are general and not specific to calculating dates.
      * @namespace Closure1
-     * */
+     */
 
     var UWORD32 = Math.pow(2, 32),
         MAX_UINT32 = UWORD32 - 1,
@@ -2487,13 +2487,9 @@
         var nfeDefinition;
 
         tempSafariNFE = function nfeDefinition(BigNumber) {
-            /** @namespace definition */
-
-            /*
-             *
-             * Configure and extend BigNumber
-             *
-             *
+            /**
+             * Variables and utility functions used by the AstroDate class and requiring the BigNumber library.
+             * @namespace definition
              */
 
             /**
