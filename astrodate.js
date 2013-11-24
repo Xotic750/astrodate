@@ -1,10 +1,9 @@
-/*
+/**
  * @file AstroDate. A more accurate date object that can be used as an alternative to Date.
- * @version 0.5.2
+ * @version {@link https://github.com/Xotic750/astrodate 0.5.2}
  * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @link https://github.com/Xotic750/astrodate
- * @license GPL3
+ * @copyright 2013
+ * @license {@link <http://www.gnu.org/licenses/> GPL3}
  */
 
 /*
@@ -19,7 +18,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see @link <http://www.gnu.org/licenses/>.
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 (function (globalThis, privateUndefined) {
