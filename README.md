@@ -1,6 +1,6 @@
 Master [![Build Status](https://travis-ci.org/Xotic750/astrodate.png?branch=master)](https://travis-ci.org/Xotic750/astrodate)
 
-astrodate
+[AstroDate](https://github.com/Xotic750/astrodate)
 =========
 
 Still very much work in progress, so there are bugs and the API has not been fully defined (or documented) and is subject to major changes.
@@ -25,7 +25,7 @@ It is not intended for AstroDate to be a generic date parser and handle formats 
 
 Times beginning 1961 will be assumed to be [UTC](http://en.wikipedia.org/wiki/Coordinated_Universal_Time) before this it is assumed to be [Universal Time](http://en.wikipedia.org/wiki/Universal_Time), specifically [UT1](http://en.wikipedia.org/wiki/UT1#Versions).
 
-You can see AstroDate in use ([jsfiddle](http://jsfiddle.net/Xotic750/RBnMb/)) to get an idea of how things are currently functioning until the API and documentation are standardised.
+You can see AstroDate in use ([jsfiddle](http://jsfiddle.net/Xotic750/RBnMb/)) to get an idea of how things are currently functioning until the API and [documentation](http://xotic750.github.io/astrodate/) are standardised.
 
 Language modules available.
 --------------------------
