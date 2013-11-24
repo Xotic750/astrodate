@@ -2435,28 +2435,21 @@
         var bigNumberFunc = 'BigNumber',
             bigNumberString = bigNumberFunc.toLowerCase(),
             projectPaths,
+            /**
+             * Will be set to window. self. global or this depending on the environment detected.
+             * @private
+             * @type {object}
+             */
             thisContext;
 
         // detect the global context of the environment
         if (typeof global === 'object' && !isNull(global) && strictEqual(global.global, global)) {
-            /** @namespace global
-             * @type {object}
-             */
             thisContext = global;
         } else if (typeof window === 'object' && !isNull(window) && strictEqual(window.window, window)) {
-            /** @namespace window
-             * @type {object}
-             */
             thisContext = window;
         } else if (typeof self === 'object' && !isNull(self) && strictEqual(self.self, self)) {
-            /** @namespace self
-             * @type {object}
-             */
             thisContext = self;
         } else {
-            /** @namespace this
-             * @type {object}
-             */
             thisContext = globalThis;
         }
 
@@ -2465,7 +2458,6 @@
         }
 
         if (typeof module === 'object' && !isNull(module) && isTypeObject(module.exports)) {
-            /** @module astrodate */
             module.exports = definition(require(bigNumberString + '.js'));
         } else if (typeof define === 'function' && isTypeObject(define.amd)) {
             projectPaths = {};
@@ -2474,13 +2466,17 @@
                 paths: projectPaths
             });
 
-            /** @module astrodate */
             // "name" should be removed when finished with local testing
             define(name.toLowerCase(), [bigNumberString], definition);
         } else {
             // this is a problem if someone changes the config, need a private copy of BigNumber
             //thisContext[name] = definition(thisContext[bigNumberFunc].anew());
-            /** @global */
+            /**
+             * thisContext becomes one of window, self, global or this; where 'this' is the global context 'this'.
+             * It is only made global when not a node or AMD module.
+             * @name "thisContext['AstroDate']"
+             * @global
+             * */
             thisContext[name] = definition(thisContext[bigNumberFunc]);
         }
     }('AstroDate', (function () {
@@ -2491,7 +2487,7 @@
         var nfeDefinition;
 
         tempSafariNFE = function nfeDefinition(BigNumber) {
-            /** @namespace nfeDefinition */
+            /** @namespace definition */
 
             /*
              *
@@ -2500,7 +2496,12 @@
              *
              */
 
-            /** @class BigNumber */
+            /**
+             * The BigNumber library namespace.
+             * @external BigNumber
+             * @see {@link http://mikemcl.github.io/bignumber.js/}
+             */
+
             BigNumber.config({
                 DECIMAL_PLACES: 9,
                 ROUNDING_MODE: 0,
@@ -2510,7 +2511,8 @@
             });
 
             objectDefineProperties(BigNumber.prototype, {
-                /** @memberof BigNumber.prototype
+                /**
+                 * @memberOf external:BigNumber.prototype
                  * @function
                  * @this BigNumber
                  * @returns {BigNumber}
@@ -2521,7 +2523,8 @@
                     }
                 },
 
-                /** @memberof BigNumber.prototype
+                /**
+                 * @memberOf external:BigNumber.prototype
                  * @function
                  * @this BigNumber
                  * @returns {boolean}
@@ -2532,7 +2535,8 @@
                     }
                 },
 
-                /** @memberof BigNumber.prototype
+                /**
+                 * @memberOf external:BigNumber.prototype
                  * @function
                  * @this BigNumber
                  * @returns {BigNumber}
@@ -2551,7 +2555,8 @@
                     }
                 },
 
-                /** @memberof BigNumber.prototype
+                /**
+                 * @memberOf external:BigNumber.prototype
                  * @function
                  * @this BigNumber
                  * @returns {BigNumber}
@@ -2570,7 +2575,8 @@
                     }
                 },
 
-                /** @memberof BigNumber.prototype
+                /**
+                 * @memberOf external:BigNumber.prototype
                  * @function
                  * @this BigNumber
                  * @returns {string}
@@ -2583,7 +2589,8 @@
             });
 
             objectDefineProperties(BigNumber, {
-                /** @memberof BigNumber
+                /**
+                 * @memberOf external:BigNumber
                  * @function
                  * @param {*} inputArg
                  * @returns {boolean}
@@ -2594,7 +2601,8 @@
                     }
                 },
 
-                /** @memberof BigNumber
+                /**
+                 * @memberOf external:BigNumber
                  * @function
                  * @param {(number|string)} inputArg
                  * @returns {BigNumber}
@@ -2605,7 +2613,8 @@
                     }
                 },
 
-                /** @memberof BigNumber
+                /**
+                 * @memberOf external:BigNumber
                  * @function
                  * @param {(number|string)} inputArg
                  * @returns {BigNumber}
@@ -2616,7 +2625,8 @@
                     }
                 },
 
-                /** @memberof BigNumber
+                /**
+                 * @memberOf external:BigNumber
                  * @function
                  * @param {(number|string)} number1
                  * @param {(number|string)} number2
@@ -2629,7 +2639,8 @@
                     }
                 },
 
-                /** @memberof BigNumber
+                /**
+                 * @memberOf external:BigNumber
                  * @function
                  * @returns {BigNumber}
                  */
@@ -2639,7 +2650,8 @@
                     }
                 },
 
-                /** @memberof BigNumber
+                /**
+                 * @memberOf external:BigNumber
                  * @function
                  * @returns {BigNumber}
                  */
@@ -2664,7 +2676,7 @@
                 /**
                  * For normalising user input and looking up Date object methods.
                  * @private
-                 * @memberOf nfeDefinition
+                 * @memberOf definition
                  * @readonly
                  * @type {array.<object>}
                  */
@@ -2704,7 +2716,7 @@
                 /**
                  * For looking up CLDR day translations.
                  * @private
-                 * @memberOf nfeDefinition
+                 * @memberOf definition
                  * @readonly
                  * @type {array.<string>}
                  */
@@ -2712,7 +2724,7 @@
                 /**
                  * For looking up CLDR month translations.
                  * @private
-                 * @memberOf nfeDefinition
+                 * @memberOf definition
                  * @readonly
                  * @type {array.<string>}
                  */
@@ -2720,7 +2732,7 @@
                 /**
                  * For looking up CLDR format translations.
                  * @private
-                 * @memberOf nfeDefinition
+                 * @memberOf definition
                  * @readonly
                  * @type {array.<string>}
                  */
@@ -2728,7 +2740,7 @@
                 /**
                  * For looking up CLDR width translations.
                  * @private
-                 * @memberOf nfeDefinition
+                 * @memberOf definition
                  * @readonly
                  * @type {array.<string>}
                  */
@@ -2736,7 +2748,7 @@
                 /**
                  * For looking up CLDR date and time patterns.
                  * @private
-                 * @memberOf nfeDefinition
+                 * @memberOf definition
                  * @readonly
                  * @type {array.<string>}
                  */
@@ -2748,14 +2760,14 @@
                 /**
                  * For holding CLDR language specific data.
                  * @private
-                 * @memberOf nfeDefinition
+                 * @memberOf definition
                  * @type {object}
                  */
                 languages = {},
                 /**
                  * For parsing CLDR date patterns.
                  * @private
-                 * @memberOf nfeDefinition
+                 * @memberOf definition
                  * @readonly
                  * @type {array.<string>}
                  */
@@ -2763,7 +2775,7 @@
                 /**
                  * For parsing CLDR time patterns
                  * @private
-                 * @memberOf nfeDefinition
+                 * @memberOf definition
                  * @readonly
                  * @type {array.<string>}
                  */
@@ -2772,14 +2784,14 @@
                 /**
                  * The current default language of the AstroDate constructor.
                  * @private
-                 * @memberOf nfeDefinition
+                 * @memberOf definition
                  * @type {string}
                  */
                 defaultLanguage,
                 /**
                  * The current default locale of the AstroDate constructor.
                  * @private
-                 * @memberOf nfeDefinition
+                 * @memberOf definition
                  * @type {string}
                  */
                 defaultLocale,
@@ -2787,14 +2799,14 @@
                 /**
                  * For holding leap second data.
                  * @private
-                 * @memberOf nfeDefinition
+                 * @memberOf definition
                  * @type {object}
                  */
                 leapSeconds,
                 /**
                  * For holding CLDR supplemental data.
                  * @private
-                 * @memberOf nfeDefinition
+                 * @memberOf definition
                  * @type {object}
                  */
                 supplemental;
@@ -3987,10 +3999,26 @@
                 return fractionToTime('0.' + number, 'second');
             }
 
+            /**
+             * Changes a '-' or '+' character to a multipler value '-1' or '+1' string.
+             * @private
+             * @memberOf definition
+             * @function
+             * @param {string} sign
+             * @returns {string}
+             */
             function toSignMultipler(sign) {
                 return sign + '1';
             }
 
+            /**
+             * Splits the given string into its date and time string components.
+             * @private
+             * @memberOf definition
+             * @function
+             * @param {string} string
+             * @returns {object}
+             */
             function isoSplitDateTime(string) {
                 var dtObject = {
                     date: '',
@@ -4839,6 +4867,15 @@
 
             deepFreeze(timePatterns);
 
+            /**
+             * Takes a give string an parses it as a given ISO timestamp returning the date and time matches as an object.
+             * Uses datePatterns and timePatterns for precision matching.
+             * @private
+             * @memberOf definition
+             * @function
+             * @param {string} isoString
+             * @returns {object}
+             */
             function isoParse(isoString) {
                 // Unused variable for JScript NFE bug
                 // http://kangax.github.io/nfe
@@ -4885,6 +4922,15 @@
                 return dtObject;
             }
 
+            /**
+             * Converts the given Gregorian structure to an appropriate structure depending on the AstroDate instance settings.
+             * @private
+             * @memberOf definition
+             * @function
+             * @param {AstroDate} thisAstroDate
+             * @param {object} struct
+             * @returns {object}
+             */
             function getCorrectStruct(thisAstroDate, struct) {
                 if (thisAstroDate.isTT()) {
                     struct = toTT(struct);
@@ -4899,6 +4945,15 @@
                 return struct;
             }
 
+            /**
+             * Left pads a number with '0's so that it is of the require length as given by size.
+             * @private
+             * @memberOf definition
+             * @function
+             * @param {number|string} num
+             * @param {number} size
+             * @returns {string}
+             */
             function cldrPadLeadingZero(num, size) {
                 var strNum = anyToString(checkObjectCoercible(num)),
                     firsrCharacter,
@@ -4921,6 +4976,16 @@
                 return val;
             }
 
+            /**
+             * Replaces the given token pattern in the given pattern with the supplied string value.
+             * @private
+             * @memberOf definition
+             * @function
+             * @param {string} pattern
+             * @param {string} token
+             * @param {string} value
+             * @returns {string}
+             */
             function replaceToken(pattern, token, value) {
                 if (!isString(token) || isEmptyString(token)) {
                     throw new Error();
@@ -4980,6 +5045,14 @@
                 return pattern.replace(replaceTokenRX, tokenReplacer);
             }
 
+            /**
+             * Remove all non-token from a given pattern and returns a string with any tokens that remain.
+             * @private
+             * @memberOf definition
+             * @function
+             * @param {string} pattern
+             * @returns {string}
+             */
             function remainingTokens(pattern) {
                 function tokenReplacer($0, $1, $2) {
                     var val;
@@ -4996,14 +5069,38 @@
                 return pattern.replace(replaceTokenRX, tokenReplacer).replace(unmatchedTokenRx, '');
             }
 
+            /**
+             * Returns true if there are any remaining tokens in the given pattern.
+             * @private
+             * @memberOf definition
+             * @function
+             * @param {string} pattern
+             * @returns {boolean}
+             */
             function hasRemainingTokens(pattern) {
                 return !isEmptyString(remainingTokens(pattern));
             }
 
+            /**
+             * Remove all signle quote characters from a given dtring.
+             * @private
+             * @memberOf definition
+             * @function
+             * @param {string} string
+             * @returns {string}
+             */
             function stripSingleQuotes(string) {
                 return replaceAll(string, '\'', '');
             }
 
+            /**
+             * Replace all occurences of '-' with '_'.
+             * @private
+             * @memberOf definition
+             * @function
+             * @param {string} string
+             * @returns {string}
+             */
             function minusToUnderscore(string) {
                 return replaceAll(string, '-', '_');
             }
@@ -5025,10 +5122,26 @@
             deepFreeze(calendarTypes);
             */
 
+            /**
+             * Split a string at '_'s.
+             * @private
+             * @memberOf definition
+             * @function
+             * @param {string} string
+             * @returns {array.<string>}
+             */
             function splitUnderscore(string) {
                 return string.split('_');
             }
 
+            /**
+             * Canonalizes a locale string.
+             * @private
+             * @memberOf definition
+             * @function
+             * @param {string} locale
+             * @returns {string}
+             */
             function canonicalizeLocale(locale) {
                 var val = [],
                     firstSplit,
@@ -5069,6 +5182,14 @@
                 return val.join('_');
             }
 
+            /**
+             * Perform a locale lookup from the CLDR likeySubtags given a full or patial locale string.
+             * @private
+             * @memberOf definition
+             * @function
+             * @param {string} locale
+             * @returns {string}
+             */
             function lookupLocale(locale) {
                 var canonicalizedLocale = canonicalizeLocale(locale),
                     likelySubtags,
@@ -5132,6 +5253,14 @@
                 return lookup;
             }
 
+            /**
+             * Finds a loaded language from the given locale string.
+             * @private
+             * @memberOf definition
+             * @function
+             * @param {string} locale
+             * @returns {string}
+             */
             function languageLoaded(locale) {
                 var loaded,
                     lang,
@@ -5160,10 +5289,31 @@
                 return loaded;
             }
 
+            /**
+             * Gets the region part of a locale string.
+             * @private
+             * @memberOf definition
+             * @function
+             * @param {string} locale
+             * @returns {string}
+             */
             function getRegion(locale) {
                 return arrayLast(splitUnderscore(locale));
             }
 
+            /**
+             * Takes a date pattern of tokens and replaces those tokens with the appropriate CLDR translations.
+             * @private
+             * @see {@link http://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table}
+             * @memberOf definition
+             * @function
+             * @param {object} struct
+             * @param {string} pattern
+             * @param {boolean} julian
+             * @param {string} lang
+             * @param {string} locale
+             * @returns {string}
+             */
             // struct should not be UTC but UT
             function formatDate(struct, pattern, julian, lang, locale) {
                 var gregorian = languages[lang].calendars.gregorian,
@@ -5319,6 +5469,19 @@
                 return pattern;
             }
 
+            /**
+             * Formats ISO timezone tokens with the appropriate CLDR translations.
+             * @private
+             * @see {@link http://www.unicode.org/reports/tr35/tr35-dates.html#Using_Time_Zone_Names}
+             * @memberOf definition
+             * @function
+             * @param {object} struct
+             * @param {string} lang
+             * @param {boolean} withZ
+             * @param {string} format
+             * @param {string} width
+             * @returns {string}
+             */
             // ISO 8601 time zone formats.
             function formatIsoTimeZone(struct, lang, withZ, format, width) {
                 var timeZoneNames = languages[lang].timeZoneNames,
@@ -5360,6 +5523,17 @@
                 return stripSingleQuotes(pattern);
             }
 
+            /**
+             * Formats localized GMT timezone tokens with the appropriate CLDR translations.
+             * @private
+             * @see {@link http://www.unicode.org/reports/tr35/tr35-dates.html#Using_Time_Zone_Names}
+             * @memberOf definition
+             * @function
+             * @param {object} struct
+             * @param {string} lang
+             * @param {string} width
+             * @returns {string}
+             */
             // The localized GMT format.
             function formatLocalisedGMT(struct, lang, width) {
                 var timeZoneNames = languages[lang].timeZoneNames,
@@ -5403,6 +5577,17 @@
                 return stripSingleQuotes(pattern);
             }
 
+            /**
+             * Takes a time pattern of tokens and replaces those tokens with the appropriate CLDR translations.
+             * @private
+             * @see {@link http://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table}
+             * @memberOf definition
+             * @function
+             * @param {object} struct
+             * @param {string} pattern
+             * @param {string} lang
+             * @returns {string}
+             */
             // struct should not be UTC but UT
             function formatTime(struct, pattern, lang) {
                 var language = languages[lang],
@@ -5529,7 +5714,7 @@
                      * Gets the value of a specific internal property.
                      * @readonly
                      * @protected
-                     * @memberof AstroDate.prototype
+                     * @memberOf AstroDate.prototype
                      * @function
                      * @param {*} key
                      * @returns {*}
@@ -5586,7 +5771,7 @@
                     /**
                      * Sets the value of a specific internal property.
                      * @protected
-                     * @memberof AstroDate.prototype
+                     * @memberOf AstroDate.prototype
                      * @function
                      * @param {*} key
                      * @param {*} value
@@ -5791,7 +5976,7 @@
             };
 
             objectDefineProperties(AstroDate.prototype, {
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @returns {boolean}
                  * @this AstroDate
@@ -5802,7 +5987,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @returns {boolean}
                  * @this AstroDate
@@ -5813,7 +5998,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @returns {AstroDate}
                  * @this AstroDate
@@ -5827,7 +6012,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @returns {AstroDate}
                  * @this AstroDate
@@ -5841,7 +6026,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @returns {boolean}
                  * @this AstroDate
@@ -5852,7 +6037,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @returns {boolean}
                  * @this AstroDate
@@ -5863,7 +6048,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @returns {AstroDate}
                  * @this AstroDate
@@ -5878,7 +6063,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @returns {boolean}
                  * @this AstroDate
@@ -5889,7 +6074,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @returns {boolean}
                  * @this AstroDate
@@ -5900,7 +6085,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @returns {boolean}
                  * @this AstroDate
@@ -5911,7 +6096,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @returns {boolean}
                  * @this AstroDate
@@ -5922,7 +6107,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @returns {boolean}
                  * @this AstroDate
@@ -5933,7 +6118,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @returns {boolean}
                  * @this AstroDate
@@ -5944,7 +6129,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @returns {boolean}
                  * @this AstroDate
@@ -5955,7 +6140,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @returns {string}
                  * @this AstroDate
@@ -5966,7 +6151,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @this AstroDate
                  */
@@ -5982,7 +6167,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @this AstroDate
                  */
@@ -5998,7 +6183,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @this AstroDate
                  */
@@ -6014,7 +6199,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @returns {boolean}
                  * @this AstroDate
@@ -6025,7 +6210,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @param {string} isoString
                  * @this AstroDate
@@ -6044,7 +6229,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @param {string} pattern
                  * @this AstroDate
@@ -6103,7 +6288,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @param {string} [pattern]
                  * @returns {string}
@@ -6119,7 +6304,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @param {string} [pattern]
                  * @returns {string}
@@ -6167,7 +6352,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @param {string} [pattern]
                  * @returns {string}
@@ -6215,7 +6400,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @returns {string}
                  * @this AstroDate
@@ -6236,7 +6421,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @returns {string}
                  * @this AstroDate
@@ -6255,7 +6440,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @this AstroDate
                  */
@@ -6278,7 +6463,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @param {object} [dateObject]
                  * @this AstroDate
@@ -6307,7 +6492,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @returns {AstroDate}
                  * @this AstroDate
@@ -6318,7 +6503,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @param {array} [dateArray]
                  * @this AstroDate
@@ -6347,7 +6532,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @param {window.Date} [date]
                  * @this AstroDate
@@ -6372,7 +6557,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @this AstroDate
                  */
@@ -6395,7 +6580,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @this AstroDate
                  */
@@ -6411,7 +6596,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @param {string} unit
                  * @this AstroDate
@@ -6435,7 +6620,7 @@
                  * If argument is passed then this function acts as a setter; otherwise it is a getter.
                  * If AstroDate is invalid then undefined is returned.
                  * Throws an error if the argument is not of the correct type.
-                 * @memberof AstroDate.prototype
+                 * @memberOf AstroDate.prototype
                  * @function
                  * @param {(number|string)} [jd]
                  * @returns {string|undefined}
@@ -6466,7 +6651,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @this AstroDate
                  */
@@ -6489,7 +6674,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @this AstroDate
                  */
@@ -6512,7 +6697,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @this AstroDate
                  */
@@ -6534,7 +6719,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @this AstroDate
                  */
@@ -6556,7 +6741,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @this AstroDate
                  */
@@ -6578,7 +6763,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @this AstroDate
                  */
@@ -6600,7 +6785,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @param {string} [jsonString]
                  * @returns {string}
@@ -6645,7 +6830,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @returns {string}
                  * @this AstroDate
@@ -6656,7 +6841,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @this AstroDate
                  */
@@ -6672,7 +6857,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @param {string} [id]
                  * @returns {string}
@@ -6699,7 +6884,7 @@
                     }
                 },
 
-                /** @memberof AstroDate.prototype
+                /** @memberOf AstroDate.prototype
                  * @function
                  * @param {string} [id]
                  * @returns {string}
@@ -6728,7 +6913,7 @@
             });
 
             objectDefineProperties(AstroDate, {
-                /** @memberof AstroDate
+                /** @memberOf AstroDate
                  * @function
                  * @returns {string}
                  */
@@ -6738,7 +6923,7 @@
                     }
                 },
 
-                /** @memberof AstroDate
+                /** @memberOf AstroDate
                  * @function
                  * @param {string} [id]
                  * @param {object} [object]
@@ -6768,7 +6953,7 @@
                     }
                 },
 
-                /** @memberof AstroDate
+                /** @memberOf AstroDate
                  * @function
                  * @returns {array.<String>}
                  */
@@ -6778,7 +6963,7 @@
                     }
                 },
 
-                /** @memberof AstroDate
+                /** @memberOf AstroDate
                  * @function
                  * @param {string} [id] The string representing the required locale, e.g. 'en_GB'
                  * @returns {string} Returns the current locale, e.g. 'en_GB'
@@ -6799,7 +6984,7 @@
                     }
                 },
 
-                /** @memberof AstroDate
+                /** @memberOf AstroDate
                  * @function
                  * @param {object} object
                  * @param {boolean} freeze
@@ -6818,7 +7003,7 @@
                     }
                 },
 
-                /** @memberof AstroDate
+                /** @memberOf AstroDate
                  * @function
                  * @param {object} object
                  * @param {boolean} freeze
@@ -6837,7 +7022,7 @@
                     }
                 },
 
-                /** @memberof AstroDate
+                /** @memberOf AstroDate
                  * @function
                  * @returns {BigNumber}
                  */
@@ -6845,7 +7030,7 @@
                     value: BigNumber
                 },
 
-                /** @memberof AstroDate
+                /** @memberOf AstroDate
                  * @function
                  * @param {string} unitString
                  */
@@ -6857,7 +7042,7 @@
 
                 /**
                  * Tests if the provided input is an instance of AstroDate.
-                 * @memberof AstroDate
+                 * @memberOf AstroDate
                  * @function
                  * @param {object} inputArg
                  * @returns {boolean}
@@ -6871,7 +7056,7 @@
                 /**
                  * Time is measured in ECMAScript in milliseconds since 01 January, 1970 UTC. In time values leap seconds
                  * are ignored. It is assumed that there are exactly 86,400,000 milliseconds per day.
-                 * @memberof AstroDate
+                 * @memberOf AstroDate
                  * @function
                  * @returns {string}
                  */
@@ -6885,7 +7070,7 @@
                  * The Julian Date (JD) of any instant is the Julian day number for the preceding noon plus the fraction of the day since that instant.
                  * Julian Dates are expressed as a Julian day number with a decimal fraction added.
                  * For example, the Julian Date for 00:30:00.0 UT 1 January 2013 is 2456293.520833334
-                 * @memberof AstroDate
+                 * @memberOf AstroDate
                  * @function
                  * @returns {string}
                  */
@@ -6898,7 +7083,7 @@
                  * The Julian Day Number (JDN) is the integer assigned to a whole solar day in the Julian day count starting from noon Greenwich Mean Time,
                  * with Julian day number 0 assigned to the day starting at noon on 1 January 4713 BC proleptic Julian calendar (24 November 4714 BC, in the proleptic Gregorian calendar).
                  * For example, the Julian day number for 1 January 2000 was 2,451,545.0
-                 * @memberof AstroDate
+                 * @memberOf AstroDate
                  * @function
                  * @returns {string}
                  */
@@ -6913,7 +7098,7 @@
                  * Sputnik via an IBM 704 (36-bit machine) and using only 18 bits until August 7, 2576.
                  * MJD is the epoch of OpenVMS, using 63-bit date/time postponing the next Y2K campaign to July 31, 31086 02:48:05.47.
                  * MJD is defined relative to midnight, rather than noon.
-                 * @memberof AstroDate
+                 * @memberOf AstroDate
                  * @function
                  * @returns {string}
                  */
@@ -6931,7 +7116,7 @@
                  * It is used widely in Unix-like and many other operating systems and file formats.
                  * Due to its handling of leap seconds, it is neither a linear representation of time nor a true representation of UTC.
                  * Unix time may be checked on most Unix systems by typing date +%s on the command line.
-                 * @memberof AstroDate
+                 * @memberOf AstroDate
                  * @function
                  * @returns {string}
                  */
