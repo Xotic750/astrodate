@@ -4,7 +4,6 @@
  * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
  * @copyright Graham Fairweather 2013
  * @license {@link <http://www.gnu.org/licenses/> GPL3}
- * @requires module:bignumber.js
  * @module astrodate
  */
 
