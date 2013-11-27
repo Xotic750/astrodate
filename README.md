@@ -744,7 +744,7 @@ Pattern formatting
 
                 <td>uslax</td>
 
-                <td>The short time zone ID. Where that is unavailable, the special short time zone ID <i>unk</i> (Unknown Zone) is used.<br>
+                <td><b>NOT SUPPORTED!</b> The short time zone ID. Where that is unavailable, the special short time zone ID <i>unk</i> (Unknown Zone) is used.<br>
                 <i><b>Note</b>: This specifier was originally used for a variant of the short specific non-location format, but it was deprecated in the later version of the LDML specification. In CLDR 23/ICU 51, the definition of the specifier was changed to designate a short time zone ID.</i></td>
             </tr>
 
@@ -753,7 +753,7 @@ Pattern formatting
 
                 <td>America/Los_Angeles</td>
 
-                <td>The long time zone ID.</td>
+                <td><b>NOT SUPPORTED!</b> The long time zone ID.</td>
             </tr>
 
             <tr>
@@ -761,7 +761,7 @@ Pattern formatting
 
                 <td>Los Angeles</td>
 
-                <td>The exemplar city (location) for the time zone. Where that is unavailable, the localized exemplar city name for the special zone <i>Etc/Unknown</i> is used as the fallback (for example, "Unknown City").</td>
+                <td><b>NOT SUPPORTED!</b> The exemplar city (location) for the time zone. Where that is unavailable, the localized exemplar city name for the special zone <i>Etc/Unknown</i> is used as the fallback (for example, "Unknown City").</td>
             </tr>
 
             <tr>
