@@ -3158,7 +3158,7 @@ arrayFilter = (function () {
                         bn,
                         dim;
 
-                    if (isNumber(value) || isString(value) || BigNumber.isBigNumber(value)) {
+                    if (isNumber(value) || isString(value) || (value &amp;&amp; value instanceof BigNumber)) {
                         bn = new BigNumber(value);
                     } else {
                         bn = new BigNumber(NaN);
@@ -3299,7 +3299,7 @@ arrayFilter = (function () {
                         bn,
                         dim;
 
-                    if (isNumber(value) || isString(value) || BigNumber.isBigNumber(value)) {
+                    if (isNumber(value) || isString(value) || (value &amp;&amp; value instanceof BigNumber)) {
                         bn = new BigNumber(value);
                     } else {
                         bn = new BigNumber(NaN);
@@ -6851,7 +6851,7 @@ arrayFilter = (function () {
 
                             val = gregorianToJd(toUT(struct)).toFixed(BigNumber.config().DECIMAL_PLACES);
                         }
-                    } else if (isNumber(jd) || isString(jd) || BigNumber.isBigNumber(jd)) {
+                    } else if (isNumber(jd) || isString(jd) || (jd &amp;&amp; jd instanceof BigNumber)) {
                         val = this.setter('struct', jdToGregorian(jd));
                     } else {
                         throw new TypeError(jd);
@@ -7409,125 +7409,125 @@ arrayFilter = (function () {
                 function defineLeapSeconds(AstroDate) {
                     AstroDate.leapSeconds({
                         '1972': {
-                            'Jun': {
+                            '6': {
                                 '30': '1'
                             },
-                            'Dec': {
+                            '12': {
                                 '31': '1'
                             }
                         },
                         '1973': {
-                            'Dec': {
+                            '12': {
                                 '31': '1'
                             }
                         },
                         '1974': {
-                            'Dec': {
+                            '12': {
                                 '31': '1'
                             }
                         },
                         '1975': {
-                            'Dec': {
+                            '12': {
                                 '31': '1'
                             }
                         },
                         '1976': {
-                            'Dec': {
+                            '12': {
                                 '31': '1'
                             }
                         },
                         '1977': {
-                            'Dec': {
+                            '12': {
                                 '31': '1'
                             }
                         },
                         '1978': {
-                            'Dec': {
+                            '12': {
                                 '31': '1'
                             }
                         },
                         '1979': {
-                            'Dec': {
+                            '12': {
                                 '31': '1'
                             }
                         },
                         '1981': {
-                            'Jun': {
+                            '6': {
                                 '30': '1'
                             }
                         },
                         '1982': {
-                            'Jun': {
+                            '6': {
                                 '30': '1'
                             }
                         },
                         '1983': {
-                            'Jun': {
+                            '6': {
                                 '30': '1'
                             }
                         },
                         '1985': {
-                            'Jun': {
+                            '6': {
                                 '30': '1'
                             }
                         },
                         '1987': {
-                            'Dec': {
+                            '12': {
                                 '31': '1'
                             }
                         },
                         '1989': {
-                            'Dec': {
+                            '12': {
                                 '31': '1'
                             }
                         },
                         '1990': {
-                            'Dec': {
+                            '12': {
                                 '31': '1'
                             }
                         },
                         '1992': {
-                            'Jun': {
+                            '6': {
                                 '30': '1'
                             }
                         },
                         '1993': {
-                            'Jun': {
+                            '6': {
                                 '30': '1'
                             }
                         },
                         '1994': {
-                            'Jun': {
+                            '6': {
                                 '30': '1'
                             }
                         },
                         '1995': {
-                            'Dec': {
+                            '12': {
                                 '31': '1'
                             }
                         },
                         '1997': {
-                            'Jun': {
+                            '6': {
                                 '30': '1'
                             }
                         },
                         '1998': {
-                            'Dec': {
+                            '12': {
                                 '31': '1'
                             }
                         },
                         '2005': {
-                            'Dec': {
+                            '12': {
                                 '31': '1'
                             }
                         },
                         '2008': {
-                            'Dec': {
+                            '12': {
                                 '31': '1'
                             }
                         },
                         '2012': {
-                            'Jun': {
+                            '6': {
                                 '30': '1'
                             }
                         }
@@ -28704,7 +28704,7 @@ arrayFilter = (function () {
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-dev</a> on Fri Nov 29 2013 09:26:53 GMT+0100 (CET)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-dev</a> on Fri Nov 29 2013 20:28:42 GMT+0100 (CET)
 </footer>
 
 <script> prettyPrint(); </script>

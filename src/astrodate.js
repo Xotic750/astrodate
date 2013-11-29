@@ -3131,7 +3131,7 @@ arrayFilter = (function () {
                         bn,
                         dim;
 
-                    if (isNumber(value) || isString(value) || BigNumber.isBigNumber(value)) {
+                    if (isNumber(value) || isString(value) || (value && value instanceof BigNumber)) {
                         bn = new BigNumber(value);
                     } else {
                         bn = new BigNumber(NaN);
@@ -3272,7 +3272,7 @@ arrayFilter = (function () {
                         bn,
                         dim;
 
-                    if (isNumber(value) || isString(value) || BigNumber.isBigNumber(value)) {
+                    if (isNumber(value) || isString(value) || (value && value instanceof BigNumber)) {
                         bn = new BigNumber(value);
                     } else {
                         bn = new BigNumber(NaN);
@@ -6824,7 +6824,7 @@ arrayFilter = (function () {
 
                             val = gregorianToJd(toUT(struct)).toFixed(BigNumber.config().DECIMAL_PLACES);
                         }
-                    } else if (isNumber(jd) || isString(jd) || BigNumber.isBigNumber(jd)) {
+                    } else if (isNumber(jd) || isString(jd) || (jd && jd instanceof BigNumber)) {
                         val = this.setter('struct', jdToGregorian(jd));
                     } else {
                         throw new TypeError(jd);
