@@ -4,21 +4,74 @@
     'use strict';
 
     module.exports = function (grunt) {
-        function removeStrict(fileName) {
-            return grunt.file.read(fileName).replace(/\$/g, '$$$$').replace(/(^|\n)[ \t]*('use strict'|"use strict");?\s*/g, '$1');
-        }
-
         grunt.initConfig({
             pkg: grunt.file.readJSON('package.json'),
+
+            clean: {
+                all: ['README.md', 'docs', 'lib', 'src/cldr.zip', 'src/tzdata.tar.gz', 'src/includes', 'src/cldr', 'src/tz'],
+                after: ['src/cldr.zip', 'src/tzdata.tar.gz', 'src/cldr', 'src/tz']
+            },
+
+            curl: {
+                cldr: {
+                    src: '<%= pkg.sources.cldr %>',
+                    dest: 'src/cldr.zip'
+                },
+
+                tzdata: {
+                    src: '<%= pkg.sources.tzdata %>',
+                    dest: 'src/tzdata.tar.gz'
+                }
+            },
+
+            unzip: {
+                cldr: {
+                    src: 'src/cldr.zip',
+                    dest: 'src/cldr'
+                }
+            },
+
+            extactTargz: {
+                tzdata: {
+                    src: 'src/tzdata.tar.gz',
+                    dest: 'src/tz'
+                }
+            },
+
+            buildFromCLDR: {
+                language: {
+                    language: 'src/build/language.tpl',
+                    supplemental: 'src/build/supplemental.tpl',
+                    src: 'src/cldr',
+                    dest: 'src/includes'
+                }
+            },
+
+            buildFromTzdata: {
+                leapSeconds: {
+                    leapSeconds: 'src/build/leapSeconds.tpl',
+                    src: 'src/tz',
+                    dest: 'src/includes'
+                }
+            },
+
+            buildReadme: {
+                readme: {
+                    readme: 'templates/README.tpl',
+                    dest: 'README.md'
+                }
+            },
+
             jsbeautifier: {
                 dist1: {
-                    src: ['lib/<%= pkg.name %>.js', 'src/lang/languages.js'],
+                    src: ['lib/<%= pkg.name %>.js', 'src/includes/languages.js'],
                     options: {
                         js: {
                             jslintHappy: true
                         }
                     }
                 },
+
                 dist2: {
                     src: ['lib/<%= pkg.name %>.js'],
                     options: {
@@ -26,8 +79,18 @@
                             jslintHappy: true
                         }
                     }
+                },
+
+                includes: {
+                    src: ['src/includes/*.js'],
+                    options: {
+                        js: {
+                            jslintHappy: true
+                        }
+                    }
                 }
             },
+
             uglify: {
                 target: {
                     files: {
@@ -40,20 +103,30 @@
                     output: {
                         'ascii_only': true
                     },
-                    report: 'min',
+                    report: 'gzip',
                     preserveComments: 'some'
                 }
             },
+
             mochaTest: {
-                test: {
+                raw: {
                     options: {
                         reporter: 'spec'
                     },
-                    src: ['test/**/*.js']
+                    src: ['tests/raw/**/*.js']
+                },
+                min: {
+                    options: {
+                        reporter: 'spec'
+                    },
+                    src: ['tests/min/**/*.js']
                 }
             },
+
             jshint: {
-                all: ['Gruntfile.js', 'lib/<%= pkg.name %>.js', 'test/**/*.js'],
+                grunt: ['Gruntfile.js', 'tasks/**/*.js', 'tests/**/*.js'],
+                sources: ['src/*.js', 'src/includes/*.js'],
+                lib: ['lib/<%= pkg.name %>.js'],
                 options: {
                     'bitwise': true,
                     'camelcase': true,
@@ -79,46 +152,64 @@
                     'quotmark': 'single'
                 }
             },
+
             concat: {
                 options: {
                     separator: '\n'
                 },
-                dist: {
-                    src: ['src/<%= pkg.name %>.js'],
-                    dest: 'lib/<%= pkg.name %>.js'
-                },
+
                 languages: {
-                    src: ['src/lang/!(en|supplemental|languages).js', 'src/lang/en.js'],
-                    dest: 'src/lang/languages.js'
+                    src: ['src/includes/!(en|supplemental|languages|leapSeconds).js', 'src/includes/en.js'],
+                    dest: 'src/includes/languages.js'
                 }
             },
+
             replace: {
                 dist: {
                     options: {
                         patterns: [{
+                            match: 'VERSION',
+                            replacement: '<%= pkg.version %>'
+                        }, {
+                            match: 'MODULE',
+                            replacement: '<%= pkg.name %>'
+                        }, {
+                            match: 'DESCRIPTION',
+                            replacement: '<%= pkg.description %>'
+                        }, {
+                            match: 'AUTHOR',
+                            replacement: '<%= pkg.author %>'
+                        }, {
+                            match: 'HOMEPAGE',
+                            replacement: '<%= pkg.homepage %>'
+                        }, {
                             match: '/\\/\\*@@leapSeconds\\*\\//g',
-                            replacement: (removeStrict('src/tz/leapSeconds.js')),
+                            replacement: '<%= grunt.file.read("src/includes/leapSeconds.js") %>',
                             expression: true
                         }, {
                             match: '/\\/\\*@@supplemental\\*\\//g',
-                            replacement: (removeStrict('src/lang/supplemental.js')),
+                            replacement: '<%= grunt.file.read("src/includes/supplemental.js") %>',
                             expression: true
                         }, {
                             match: '/\\/\\*@@languages\\*\\//g',
-                            replacement: (removeStrict('src/lang/languages.js')),
+                            replacement: '<%= grunt.file.read("src/includes/languages.js") %>',
                             expression: true
                         }]
                     },
                     files: [{
-                        src: ['lib/<%= pkg.name %>.js'],
+                        src: ['src/<%= pkg.name %>.js'],
                         dest: 'lib/<%= pkg.name %>.js'
                     }]
                 },
+
                 bn: {
                     options: {
                         patterns: [{
+                            match: 'key',
+                            replacement: '$$\''
+                        }, {
                             match: '/\\/\\*@@BigNumber\\*\\//g',
-                            replacement: (removeStrict('node_modules/bignumber.js/bignumber.js')),
+                            replacement: (grunt.file.read('node_modules/bignumber.js/bignumber.js').replace(/\$/g, '$$$$')),
                             expression: true
                         }]
                     },
@@ -128,7 +219,7 @@
                     }]
                 }
             },
-            clean: ['docs', 'lib/<%= pkg.name %>.js', 'lib/<%= pkg.name %>.min.js', 'src/lang/languages.js'],
+
             jsdoc: {
                 dist: {
                     jsdoc: 'node_modules/.bin/jsdoc',
@@ -139,21 +230,28 @@
                     }
                 }
             },
+
             watch: {
                 test: {
                     files: [
                         'lib/<%= pkg.name %>.js',
-                        'test/**/*.js'
+                        'tests/**/*.js'
                     ],
                     tasks: ['mochaTest']
                 },
+
                 jshint: {
-                    files: '<%= jshint.all %>',
+                    files: [
+                        '<%= jshint.grunt %>',
+                        '<%= jshint.sources %>',
+                        '<%= jshint.lib %>'
+                    ],
                     tasks: ['jshint']
                 }
             }
         });
 
+        // Custom tasks.
         grunt.loadTasks('tasks');
 
         // These plugins provide necessary tasks.
@@ -167,8 +265,31 @@
         grunt.loadNpmTasks('grunt-replace');
         grunt.loadNpmTasks('grunt-contrib-clean');
         grunt.loadNpmTasks('grunt-curl');
+        grunt.loadNpmTasks('grunt-zip');
 
         // Default task.
-        grunt.registerTask('default', ['clean', 'concat', 'replace:dist', 'jsbeautifier:dist1', 'jshint', 'replace:bn', 'jsbeautifier:dist2', 'mochaTest', 'jsdoc', 'uglify']);
+        grunt.registerTask('default', [
+            'jshint:grunt',
+            'clean:all',
+            'curl',
+            'unzip',
+            'extactTargz',
+            'buildFromCLDR',
+            'buildFromTzdata',
+            'jsbeautifier:includes',
+            'jshint:sources',
+            'concat',
+            'replace:dist',
+            'jsbeautifier:dist1',
+            'jshint:lib',
+            'replace:bn',
+            'jsbeautifier:dist2',
+            'mochaTest:raw',
+            'uglify',
+            'mochaTest:min',
+            'buildReadme',
+            'jsdoc',
+            'clean:after'
+        ]);
     };
 }());

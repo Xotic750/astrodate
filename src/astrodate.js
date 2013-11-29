@@ -1,10 +1,10 @@
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate}. A more accurate date object that can be used as an alternative to Date.
- * @version 0.5.2
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
+ * @file {@link @@HOMEPAGE AstroDate}. @@DESCRIPTION.
+ * @version @@VERSION
+ * @author @@AUTHOR
  * @copyright Graham Fairweather 2013
  * @license {@link <http://www.gnu.org/licenses/> GPL3}
- * @module astrodate
+ * @module @@MODULE
  */
 
 /*
@@ -23,6 +23,7 @@
  */
 
 (function (globalThis, privateUndefined) {
+    /* jshint -W034 */
     'use strict';
 
     var UWORD32 = Math.pow(2, 32),
@@ -82,7 +83,6 @@
         numberIsNaN,
         numberIsFinite,
         mathSign,
-        projectPaths,
         // Safari 2.x NFE bug fix
         // http://kangax.github.io/nfe/
         tempSafariNFE;
@@ -2524,7 +2524,7 @@ arrayFilter = (function () {
             });
         });
 
-        var VERSION = '0.5.2',
+        var VERSION = '@@VERSION',
             /**
              * For normalising user input and looking up Date object methods.
              * @private
@@ -7375,32 +7375,23 @@ arrayFilter = (function () {
             throw new Error();
         }
 
-        /*jshint validthis:true */
+        /*jslint eqeq: true, plusplus: true, sub: true, white: true */
+        /*jshint eqnull: true, laxbreak: true, validthis:true,-W018 */
         /*@@BigNumber*/
 
-        return this;
+        return this.BigNumber;
     }
 
-    /*global module, require, define */
+    /*global module, define */
     if (typeof module === 'object' && !isNull(module) && isTypeObject(module.exports)) {
-        module.exports = defineAstroDate(addBigNumberModule.call({}).BigNumber);
+        module.exports = defineAstroDate(addBigNumberModule.call({}));
     } else if (typeof define === 'function' && isTypeObject(define.amd)) {
-        projectPaths = {};
-        projectPaths.bignumber = '//cdn.jsdelivr.net/bignumber.js/1.3.0/bignumber.min';
-        require.config({
-            paths: projectPaths
-        });
-
         // "name" should be removed when finished with local testing
         define('astrodate', function () {
-            return defineAstroDate(addBigNumberModule.call({}).BigNumber);
+            return defineAstroDate(addBigNumberModule.call({}));
         });
     } else {
-        if (!isFunction(globalThis.BigNumber)) {
-            throw new TypeError('bignumber.js is not loaded');
-        }
-
-        globalThis.AstroDate = defineAstroDate(addBigNumberModule.call({}).BigNumber);
+        globalThis.AstroDate = defineAstroDate(addBigNumberModule.call({}));
     }
 
     tempSafariNFE = null;

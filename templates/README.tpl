@@ -1,9 +1,9 @@
 Master [![Build Status](https://travis-ci.org/Xotic750/astrodate.png?branch=master)](https://travis-ci.org/Xotic750/astrodate  "Build Stats on Travis CI")
 
-#[AstroDate 0.6.1](https://github.com/Xotic750/astrodate)
-###### Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
+#[AstroDate @@VERSION](@@HOMEPAGE)
+###### @@AUTHOR
 
-Still very much work in progress, so there are [bugs](https://github.com/Xotic750/astrodate/issues "Issues") and the API has not been fully defined (or documented) and is subject to major changes.
+Still very much work in progress, so there are [bugs](@@HOMEPAGE/issues "Issues") and the API has not been fully defined (or documented) and is subject to major changes.
 
 The idea behind the project is to not rely on Javascript's rather flaky [```Date```](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date  "Date Object reference") object, give better accuracy, flexibility and be cross-browser.
 
@@ -29,46 +29,7 @@ You can see AstroDate in use ([jsFiddle](http://jsfiddle.net/Xotic750/RBnMb/ "js
 
 ## [CLDR](http://cldr.unicode.org/ "Unicode CLDR Project") Languages available.
 
-* ar
-* ca
-* cs
-* da
-* de
-* el
-* en
-* en-AU
-* en-CA
-* en-GB
-* en-HK
-* en-IN
-* es
-* fi
-* fr
-* he
-* hi
-* hr
-* hu
-* it
-* ja
-* ko
-* nb
-* nl
-* pl
-* pt
-* pt-PT
-* ro
-* root
-* ru
-* sk
-* sl
-* sr
-* sv
-* th
-* tr
-* uk
-* vi
-* zh
-* zh-Hant
+@@LANGLIST
 
 The defaut language is 'en'.
 
