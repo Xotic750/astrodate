@@ -41,70 +41,71 @@
 
 
     <section>
-        <article><p>Master <a href="https://travis-ci.org/Xotic750/astrodate"><img src="https://travis-ci.org/Xotic750/astrodate.png?branch=master" alt="Build Status"></a></p>
-<h1><a href="https://github.com/Xotic750/astrodate">AstroDate</a></h1>
-<p>Still very much work in progress, so there are bugs and the API has not been fully defined (or documented) and is subject to major changes.</p>
-<p>The idea behind the project is to not rely on Javascript's rather flaky <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date"><code>Date</code></a> object, give better accuracy, flexibility and be cross-browser.</p>
-<p>Besides the standard <a href="http://en.wikipedia.org/wiki/Gregorian_calendar">Gregorian calendar</a>, the <a href="http://en.wikipedia.org/wiki/Julian_calendar">Julian calendar</a> is also available. This allows for AstroDate to be used in astronomical calculations.
-A set of routines will be made available for changing between systems and methods for obtaining <a href="http://en.wikipedia.org/wiki/Julian_day">Julian Day Numbers, Julian Dates</a>, <a href="http://en.wikipedia.org/wiki/Julian_day#Variants">Modified Julian Dates</a>,
-<a href="http://en.wikipedia.org/wiki/%CE%94T">Delta Time</a> and <a href="http://en.wikipedia.org/wiki/Terrestrial_Time">Terestrial Time</a> etc.</p>
+        <article><p>Master <a href="https://travis-ci.org/Xotic750/astrodate" title="Build Stats on Travis CI"><img src="https://travis-ci.org/Xotic750/astrodate.png?branch=master" alt="Build Status"></a></p>
+<h1><a href="https://github.com/Xotic750/astrodate">AstroDate 0.6.1</a></h1>
+<h6>Graham Fairweather a.k.a Xotic750 <a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#x6f;&#x3a;&#120;&#x6f;&#116;&#x69;&#x63;&#x37;&#x35;&#48;&#64;&#103;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#111;&#109;">&#120;&#x6f;&#116;&#x69;&#x63;&#x37;&#x35;&#48;&#64;&#103;&#x6d;&#x61;&#105;&#108;&#46;&#99;&#111;&#109;</a></h6>
+<p>Still very much work in progress, so there are <a href="https://github.com/Xotic750/astrodate/issues" title="Issues">bugs</a> and the API has not been fully defined (or documented) and is subject to major changes.</p>
+<p>The idea behind the project is to not rely on Javascript's rather flaky <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" title="Date Object reference"><code>Date</code></a> object, give better accuracy, flexibility and be cross-browser.</p>
+<p>Besides the standard <a href="http://en.wikipedia.org/wiki/Gregorian_calendar" title="Wikipedia">Gregorian calendar</a>, the <a href="http://en.wikipedia.org/wiki/Julian_calendar" title="Wikipedia">Julian calendar</a> is also available. This allows for AstroDate to be used in astronomical calculations.
+A set of routines will be made available for changing between systems and methods for obtaining <a href="http://en.wikipedia.org/wiki/Julian_day" title="Wikipedia">Julian Day Numbers, Julian Dates</a>, <a href="http://en.wikipedia.org/wiki/Julian_day#Variants" title="Wikipedia">Modified Julian Dates</a>,
+<a href="http://en.wikipedia.org/wiki/%CE%94T" title="Wikipedia">Delta Time</a> and <a href="http://en.wikipedia.org/wiki/Terrestrial_Time" title="Wikipedia">Terestrial Time</a> etc.</p>
 <p>For dates beyond the normal <code>Date</code> range and Javascript's limited number arithmetic, it is necessary to do the Math using arbitrary-precision arithmetic,
-<a href="https://github.com/MikeMcl/bignumber.js">BigNumber.js</a> is the library chosen for this.</p>
-<p>Both calendars can be extrapolated to dates prior to their first adoption and hence are a <a href="http://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar">Proleptic Gregorian calendar</a> and <a href="http://en.wikipedia.org/wiki/Proleptic_Julian_calendar">Proleptic Julian Calendar</a>.</p>
-<p>AstroDate includes an <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> parser as one means of setting the date and time, other methods will be available, ie. using an Array and Object of discrete values.</p>
-<p>As with ISO 8601 and the Proleptic calendars, <a href="http://en.wikipedia.org/wiki/Astronomical_year_numbering">Astronomical year numbering</a> will be used for input and so have a <a href="http://en.wikipedia.org/wiki/0_(year">year zero</a>.
-Outputs may be formated to use either Astronomical year numbering or <a href="http://en.wikipedia.org/wiki/Calendar_era">Calendar Era</a> numbering, ie. BC/AD.</p>
-<p>It is not intended for AstroDate to be a generic date parser and handle formats like <code>13/10/12</code>.</p>
-<p>Times beginning 1961 will be assumed to be <a href="http://en.wikipedia.org/wiki/Coordinated_Universal_Time">UTC</a> before this it is assumed to be <a href="http://en.wikipedia.org/wiki/Universal_Time">Universal Time</a>, specifically <a href="http://en.wikipedia.org/wiki/UT1#Versions">UT1</a>.</p>
-<p>You can see AstroDate in use (<a href="http://jsfiddle.net/Xotic750/RBnMb/">jsfiddle</a>) to get an idea of how things are currently functioning until the API and <a href="http://xotic750.github.io/astrodate/">documentation</a> are standardised.</p>
-<h2>Language modules available.</h2>
-<p>These must be loaded using node <code>require</code>, or as AMD modules, or by including them using <code>&lt;script&gt;</code></p>
+<a href="https://github.com/MikeMcl/bignumber.js" title="BigNumber homepage. (A JavaScript library for arbitrary-precision decimal and non-decimal arithmetic.)">BigNumber.js</a> is the library chosen for this.</p>
+<p>Both calendars can be extrapolated to dates prior to their first adoption and hence are a <a href="http://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar" title="Wikipedia">Proleptic Gregorian calendar</a> and <a href="http://en.wikipedia.org/wiki/Proleptic_Julian_calendar" title="Wikipedia">Proleptic Julian Calendar</a>.</p>
+<p>AstroDate includes an <a href="http://en.wikipedia.org/wiki/ISO_8601" title="Wikipedia">ISO 8601</a> parser as one means of setting the date and time, other methods will be available, ie. using an Array and Object of discrete values.</p>
+<p>As with ISO 8601 and the Proleptic calendars, <a href="http://en.wikipedia.org/wiki/Astronomical_year_numbering" title="Wikipedia">Astronomical year numbering</a> will be used for input and so have a <a href="http://en.wikipedia.org/wiki/0_%28year%29" title="Wikipedia">year zero</a>.
+Outputs may be formated to use either Astronomical year numbering or <a href="http://en.wikipedia.org/wiki/Calendar_era" title="Wikipedia">Calendar Era</a> numbering, ie. BC/AD.</p>
+<p>It is not intended for AstroDate to be a generic date parser and handle formats like <code>13/10/12</code>. Though in future it will be possible to develop addons to do this.</p>
+<p>Times beginning 1961 will be assumed to be <a href="http://en.wikipedia.org/wiki/Coordinated_Universal_Time" title="Wikipedia">UTC</a> before this it is assumed to be <a href="http://en.wikipedia.org/wiki/Universal_Time" title="Wikipedia">Universal Time</a>, specifically <a href="http://en.wikipedia.org/wiki/UT1#Versions" title="Wikipedia">UT1</a>.</p>
+<p>You can see AstroDate in use (<a href="http://jsfiddle.net/Xotic750/RBnMb/" title="jsFiddle page with some workings as examples.">jsFiddle</a>) to get an idea of how things are currently functioning until the API and <a href="http://xotic750.github.io/astrodate/" title="AstroDate API documentation">documentation</a> are standardised.</p>
+<h2><a href="http://cldr.unicode.org/" title="Unicode CLDR Project">CLDR</a> Languages available.</h2>
 <ul>
-<li>ar.js</li>
-<li>ca.js</li>
-<li>cs.js</li>
-<li>da.js</li>
-<li>de.js</li>
-<li>el.js</li>
-<li>en-AU.js</li>
-<li>en-CA.js</li>
-<li>en-GB.js</li>
-<li>en-HK.js</li>
-<li>en-IN.js</li>
-<li>en.js</li>
-<li>es.js</li>
-<li>fi.js</li>
-<li>fr.js</li>
-<li>he.js</li>
-<li>hi.js</li>
-<li>hr.js</li>
-<li>hu.js</li>
-<li>it.js</li>
-<li>ja.js</li>
-<li>ko.js</li>
-<li>nb.js</li>
-<li>nl.js</li>
-<li>pl.js</li>
-<li>pt.js</li>
-<li>pt-PT.js</li>
-<li>ro.js</li>
-<li>root.js - default neutral language, included in astrodate but can be replaced.</li>
-<li>ru.js</li>
-<li>sk.js</li>
-<li>sl.js</li>
-<li>sr.js</li>
-<li>sv.js</li>
-<li>th.js</li>
-<li>tr.js</li>
-<li>uk.js</li>
-<li>vi.js</li>
-<li>zh-Hant.js</li>
-<li>zh.js</li>
+<li>ar</li>
+<li>ca</li>
+<li>cs</li>
+<li>da</li>
+<li>de</li>
+<li>el</li>
+<li>en</li>
+<li>en-AU</li>
+<li>en-CA</li>
+<li>en-GB</li>
+<li>en-HK</li>
+<li>en-IN</li>
+<li>es</li>
+<li>fi</li>
+<li>fr</li>
+<li>he</li>
+<li>hi</li>
+<li>hr</li>
+<li>hu</li>
+<li>it</li>
+<li>ja</li>
+<li>ko</li>
+<li>nb</li>
+<li>nl</li>
+<li>pl</li>
+<li>pt</li>
+<li>pt-PT</li>
+<li>ro</li>
+<li>root</li>
+<li>ru</li>
+<li>sk</li>
+<li>sl</li>
+<li>sr</li>
+<li>sv</li>
+<li>th</li>
+<li>tr</li>
+<li>uk</li>
+<li>vi</li>
+<li>zh</li>
+<li>zh-Hant</li>
 </ul>
+<p>The defaut language is 'en'.</p>
 <p>Once loaded use <code>AstroDate.lang('en');</code> to set the default application language, or change a particular instance <code>new AstroDate().lang('en-GB');</code></p>
-<h2>CLDR locale modifiers</h2>
+<h2>CLDR <a href="http://www.unicode.org/reports/tr35/#Locale" title="What is a locale?">locale</a> modifiers</h2>
 <p>Loaded languages may be modified for locale, use <code>AstroDate.locale('sr_ME');</code> to set the default application locale, or change a particular instance <code>new AstroDate().locale('sr_RO');</code></p>
-<h2>toString methods</h2>
+<h2><code>toString</code> methods</h2>
 <p>By default <code>.toString()</code>, <code>.toDateString()</code> and <code>.toTimeString()</code> use <code>'full'</code> locale format, options are <code>'full'</code>, <code>'long'</code>, <code>'medium'</code> and <code>'short'</code>.</p>
 <p><code>.toISOString()</code> has no modifiers and will produce a standard ISO 8601 time-stamp string, ie. <code>1972-07-01T00:00:00.000Z</code></p>
 <h2>Pattern formatting</h2>
@@ -761,7 +762,7 @@ Outputs may be formated to use either Astronomical year numbering or <a href="ht
 
                 <td>uslax</td>
 
-                <td>The short time zone ID. Where that is unavailable, the special short time zone ID <i>unk</i> (Unknown Zone) is used.<br>
+                <td><b>NOT SUPPORTED!</b> The short time zone ID. Where that is unavailable, the special short time zone ID <i>unk</i> (Unknown Zone) is used.<br>
                 <i><b>Note</b>: This specifier was originally used for a variant of the short specific non-location format, but it was deprecated in the later version of the LDML specification. In CLDR 23/ICU 51, the definition of the specifier was changed to designate a short time zone ID.</i></td>
             </tr>
 
@@ -770,7 +771,7 @@ Outputs may be formated to use either Astronomical year numbering or <a href="ht
 
                 <td>America/Los_Angeles</td>
 
-                <td>The long time zone ID.</td>
+                <td><b>NOT SUPPORTED!</b> The long time zone ID.</td>
             </tr>
 
             <tr>
@@ -778,7 +779,7 @@ Outputs may be formated to use either Astronomical year numbering or <a href="ht
 
                 <td>Los Angeles</td>
 
-                <td>The exemplar city (location) for the time zone. Where that is unavailable, the localized exemplar city name for the special zone <i>Etc/Unknown</i> is used as the fallback (for example, &quot;Unknown City&quot;).</td>
+                <td><b>NOT SUPPORTED!</b> The exemplar city (location) for the time zone. Where that is unavailable, the localized exemplar city name for the special zone <i>Etc/Unknown</i> is used as the fallback (for example, &quot;Unknown City&quot;).</td>
             </tr>
 
             <tr>
@@ -915,7 +916,7 @@ Outputs may be formated to use either Astronomical year numbering or <a href="ht
     
     
         
-            <div class="description">AstroDate. A more accurate date object that can be used as an alternative to Date.</div>
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language sk</a>.</div>
         
         
         
@@ -924,7 +925,7 @@ Outputs may be formated to use either Astronomical year numbering or <a href="ht
         
     
     <dt class="tag-version">Version:</dt>
-    <dd class="tag-version"><ul class="dummy"><li><a href="https://github.com/Xotic750/astrodate">0.5.2</a></li></ul></dd>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
     
     
     
@@ -944,12 +945,14 @@ Outputs may be formated to use either Astronomical year numbering or <a href="ht
     
     
     <dt class="tag-copyright">Copyright:</dt>
-    <dd class="tag-copyright"><ul class="dummy"><li>2013</li></ul></dd>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
     
     
     
     <dt class="tag-license">License:</dt>
-    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a></li></ul></dd>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9287
+timeZoneNames: 24r9287</li></ul></dd>
     
     
     
@@ -957,7 +960,3643 @@ Outputs may be formated to use either Astronomical year numbering or <a href="ht
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line1">line 1</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line21180">line 21180</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language el</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9287
+timeZoneNames: 24r9287</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line11745">line 11745</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language es</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9287
+timeZoneNames: 24r9287</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line12233">line 12233</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language fi</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9287
+timeZoneNames: 24r9287</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line12722">line 12722</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language fr</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9310
+timeZoneNames: 24r9310</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line13211">line 13211</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language he</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9287
+timeZoneNames: 24r9287</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line13719">line 13719</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language hi</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9296
+timeZoneNames: 24r9296</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line14207">line 14207</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language hr</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9287
+timeZoneNames: 24r9287</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line14697">line 14697</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language hu</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9317
+timeZoneNames: 24r9317</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line15212">line 15212</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language it</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9287
+timeZoneNames: 24r9287</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line15698">line 15698</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language ja</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9287
+timeZoneNames: 24r9287</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line16182">line 16182</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language ko</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9287
+timeZoneNames: 24r9287</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line16681">line 16681</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language nb</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9287
+timeZoneNames: 24r9287</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line17181">line 17181</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language nl</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9308
+timeZoneNames: 24r9308</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line17667">line 17667</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language pl</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9287
+timeZoneNames: 24r9287</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line18161">line 18161</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language pt-PT</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9287
+timeZoneNames: 24r9287</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line18690">line 18690</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language pt</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9287
+timeZoneNames: 24r9287</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line19207">line 19207</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language ro</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9287
+timeZoneNames: 24r9287</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line19718">line 19718</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language root</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9308
+timeZoneNames: 24r9308</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line20206">line 20206</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language ru</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9287
+timeZoneNames: 24r9287</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line20689">line 20689</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language ar</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9287
+timeZoneNames: 24r9287</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line9256">line 9256</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language sl</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9287
+timeZoneNames: 24r9287</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line21672">line 21672</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language sr</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9287
+timeZoneNames: 24r9287</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line22157">line 22157</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language sv</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9287
+timeZoneNames: 24r9287</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line22648">line 22648</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language th</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9318
+timeZoneNames: 24r9318</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line23136">line 23136</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language tr</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9287
+timeZoneNames: 24r9287</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line23623">line 23623</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language uk</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9287
+timeZoneNames: 24r9287</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line24111">line 24111</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language vi</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9287
+timeZoneNames: 24r9287</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line24623">line 24623</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language zh-Hant</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9308
+timeZoneNames: 24r9308</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line25112">line 25112</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language zh</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9308
+timeZoneNames: 24r9308</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line25644">line 25644</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language en</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9287
+timeZoneNames: 24r9287</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line26173">line 26173</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate.leapSeconds</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+leapSeconds: 46</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7351">line 7351</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language ca</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9287
+timeZoneNames: 24r9287</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line9747">line 9747</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language cs</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9298
+timeZoneNames: 24r9298</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line10234">line 10234</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language da</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9287
+timeZoneNames: 24r9287</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line10724">line 10724</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language de</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+ca-gregorian: 24r9287
+timeZoneNames: 24r9287</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line11216">line 11216</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+
+
+<section>
+    
+<header>
+    <h2>
+    astrodate.js
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><a href="https://github.com/Xotic750/astrodate">AstroDate Language Supplemental</a>.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    <dt class="tag-version">Version:</dt>
+    <dd class="tag-version"><ul class="dummy"><li>0.6.1</li></ul></dd>
+    
+    
+    
+
+    
+    
+    
+    
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li><a href="mailto:xotic750@gmail.com">Graham Fairweather a.k.a Xotic750</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+    <dt class="tag-copyright">Copyright:</dt>
+    <dd class="tag-copyright"><ul class="dummy"><li>Graham Fairweather 2013</li></ul></dd>
+    
+    
+    
+    <dt class="tag-license">License:</dt>
+    <dd class="tag-license"><ul class="dummy"><li><a href="http://www.gnu.org/licenses/">GPL3</a>
+likelySubtags: 24r9305
+timeData: 24r9270
+weekData: 24r9270</li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7520">line 7520</a>
     </li></ul></dd>
     
     
@@ -1000,13 +4639,13 @@ Outputs may be formated to use either Astronomical year numbering or <a href="ht
 </div>
 
 <nav>
-    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-astrodate.html">astrodate</a></li></ul><h3>Externals</h3><ul><li><a href="external-BigNumber.html">BigNumber</a></li></ul><h3>Classes</h3><ul><li><a href="AstroDate.html">AstroDate</a></li></ul><h3>Namespaces</h3><ul><li><a href="Closure1.html">Closure1</a></li><li><a href="definition.html">definition</a></li></ul><h3>Global</h3><ul><li><a href="global.html#"thisContext['AstroDate']"">"thisContext['AstroDate']"</a></li></ul>
+    <h2><a href="index.html">Index</a></h2><h3>Modules</h3><ul><li><a href="module-astrodate.html">astrodate</a></li></ul><h3>Classes</h3><ul><li><a href="AstroDate.html">AstroDate</a></li></ul>
 </nav>
 
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-dev</a> on Sun Nov 24 2013 03:28:00 GMT+0100 (CET)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-dev</a> on Fri Nov 29 2013 09:26:54 GMT+0100 (CET)
 </footer>
 
 <script> prettyPrint(); </script>
