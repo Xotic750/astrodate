@@ -111,13 +111,13 @@
             mochaTest: {
                 raw: {
                     options: {
-                        reporter: 'spec'
+                        reporter: 'tap'
                     },
                     src: ['tests/raw/**/*.js']
                 },
                 min: {
                     options: {
-                        reporter: 'spec'
+                        reporter: 'tap'
                     },
                     src: ['tests/min/**/*.js']
                 }
