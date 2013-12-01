@@ -60,6 +60,24 @@
         "grunt-curl": "latest",
         "grunt-zip": "latest"
     },
+    "optionalDependencies": {
+        "uglify-js": "latest",
+        "js-beautify": "latest",
+        "jsdoc": "latest",
+        "tar.gz": "latest",
+        "grunt-contrib-jshint": "latest",
+        "grunt-contrib-nodeunit": "latest",
+        "grunt-contrib-concat": "latest",
+        "grunt-contrib-uglify": "latest",
+        "grunt-contrib-watch": "latest",
+        "grunt-lib-legacyhelpers": "latest",
+        "grunt-contrib-clean": "latest",
+        "grunt-jsdoc": "latest",
+        "grunt-jsbeautifier": "latest",
+        "grunt-replace": "latest",
+        "grunt-curl": "latest",
+        "grunt-zip": "latest"
+    },
     "sources": {
         "cldr": "http://unicode.org/Public/cldr/24/json.zip",
         "tzdata": "http://www.iana.org/time-zones/repository/releases/tzdata2013h.tar.gz"
