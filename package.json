@@ -31,10 +31,16 @@
         "type": "GPL3",
         "url": "http://www.gnu.org/licenses/gpl-3.0.html"
     }],
-    "files": ["lib", "docs", "tests", "tasks", "templates"],
+    "files": [
+        "lib",
+        "docs",
+        "tests",
+        "tasks",
+        "templates"
+    ],
     "directories": {
-            "lib": "lib",
-            "doc": "docs"
+        "lib": "lib",
+        "doc": "docs"
     },
     "dependencies": {},
     "devDependencies": {
@@ -85,5 +91,22 @@
     "scripts": {
         "prepublish": "grunt",
         "test": "grunt mochaTest"
+    },
+    "testling": {
+        "harness": "mocha",
+        "files": "tests/raw/*.js",
+        "browsers": [
+            "ie/6..latest",
+            "firefox/15..latest",
+            "firefox/nightly",
+            "chrome/22..latest",
+            "chrome/canary",
+            "opera/12..latest",
+            "opera/next",
+            "safari/5.1..latest",
+            "ipad/6.0..latest",
+            "iphone/6.0..latest",
+            "android-browser/4.2..latest"
+        ]
     }
 }
