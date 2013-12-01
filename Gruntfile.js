@@ -177,11 +177,23 @@
                             match: 'DESCRIPTION',
                             replacement: '<%= pkg.description %>'
                         }, {
-                            match: 'AUTHOR',
-                            replacement: '<%= pkg.author %>'
+                            match: 'AUTHORNAME',
+                            replacement: '<%= pkg.author.name %>'
+                        }, {
+                            match: 'AUTHOREMAIL',
+                            replacement: '<%= pkg.author.email %>'
                         }, {
                             match: 'HOMEPAGE',
                             replacement: '<%= pkg.homepage %>'
+                        }, {
+                            match: 'COPYRIGHT',
+                            replacement: '<%= pkg.copyright %>'
+                        }, {
+                            match: 'LICENSE',
+                            replacement: '<%= pkg.licenses[0].type %>'
+                        }, {
+                            match: 'LICLINK',
+                            replacement: '<%= pkg.licenses[0].url %>'
                         }, {
                             match: '/\\/\\*@@leapSeconds\\*\\//g',
                             replacement: '<%= grunt.file.read("src/includes/leapSeconds.js") %>',
@@ -284,6 +296,7 @@
             'jshint:lib',
             'replace:bn',
             'jsbeautifier:dist2',
+            'jshint:lib',
             'mochaTest:raw',
             'uglify',
             'mochaTest:min',

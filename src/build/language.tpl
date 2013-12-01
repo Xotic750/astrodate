@@ -1,11 +1,15 @@
 /**
+ * @ignore
  * @file {@link @@HOMEPAGE AstroDate Language @@id}.
  * @version @@VERSION
- * @author @@AUTHOR
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author @@AUTHORNAME <@@AUTHOREMAIL>
+ * @copyright @@COPYRIGHT @@AUTHORNAME
+ * @license {@link <@@LICLINK> @@LICENSE}
+ * @desc
+ * <pre>
  * ca-gregorian: @@version1
  * timeZoneNames: @@version2
+ * </pre>
  */
 
 /*

@@ -1,11 +1,15 @@
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language hu}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language hu}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9317
  * timeZoneNames: 24r9317
+ * </pre>
  */
 
 /*

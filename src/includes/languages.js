@@ -1,11 +1,15 @@
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language ar}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language ar}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * </pre>
  */
 
 /*
@@ -490,13 +494,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language ca}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language ca}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * </pre>
  */
 
 /*
@@ -977,13 +985,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language cs}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language cs}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9298
  * timeZoneNames: 24r9298
+ * </pre>
  */
 
 /*
@@ -1467,13 +1479,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language da}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language da}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * </pre>
  */
 
 /*
@@ -1959,13 +1975,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language de}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language de}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * </pre>
  */
 
 /*
@@ -2488,13 +2508,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language el}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language el}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * </pre>
  */
 
 /*
@@ -2976,13 +3000,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language es}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language es}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * </pre>
  */
 
 /*
@@ -3465,13 +3493,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language fi}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language fi}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * </pre>
  */
 
 /*
@@ -3954,13 +3986,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language fr}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language fr}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9310
  * timeZoneNames: 24r9310
+ * </pre>
  */
 
 /*
@@ -4462,13 +4498,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language he}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language he}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * </pre>
  */
 
 /*
@@ -4950,13 +4990,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language hi}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language hi}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9296
  * timeZoneNames: 24r9296
+ * </pre>
  */
 
 /*
@@ -5440,13 +5484,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language hr}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language hr}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * </pre>
  */
 
 /*
@@ -5955,13 +6003,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language hu}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language hu}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9317
  * timeZoneNames: 24r9317
+ * </pre>
  */
 
 /*
@@ -6441,13 +6493,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language it}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language it}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * </pre>
  */
 
 /*
@@ -6925,13 +6981,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language ja}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language ja}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * </pre>
  */
 
 /*
@@ -7424,13 +7484,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language ko}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language ko}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * </pre>
  */
 
 /*
@@ -7924,13 +7988,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language nb}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language nb}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * </pre>
  */
 
 /*
@@ -8410,13 +8478,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language nl}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language nl}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9308
  * timeZoneNames: 24r9308
+ * </pre>
  */
 
 /*
@@ -8904,13 +8976,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language pl}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language pl}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * </pre>
  */
 
 /*
@@ -9433,13 +9509,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language pt-PT}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language pt-PT}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * </pre>
  */
 
 /*
@@ -9950,13 +10030,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language pt}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language pt}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * </pre>
  */
 
 /*
@@ -10461,13 +10545,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language ro}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language ro}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * </pre>
  */
 
 /*
@@ -10949,13 +11037,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language root}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language root}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9308
  * timeZoneNames: 24r9308
+ * </pre>
  */
 
 /*
@@ -11432,13 +11524,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language ru}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language ru}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * </pre>
  */
 
 /*
@@ -11923,13 +12019,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language sk}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language sk}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * </pre>
  */
 
 /*
@@ -12415,13 +12515,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language sl}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language sl}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * </pre>
  */
 
 /*
@@ -12900,13 +13004,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language sr}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language sr}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * </pre>
  */
 
 /*
@@ -13391,13 +13499,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language sv}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language sv}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * </pre>
  */
 
 /*
@@ -13879,13 +13991,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language th}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language th}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9318
  * timeZoneNames: 24r9318
+ * </pre>
  */
 
 /*
@@ -14366,13 +14482,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language tr}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language tr}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * </pre>
  */
 
 /*
@@ -14854,13 +14974,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language uk}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language uk}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * </pre>
  */
 
 /*
@@ -15366,13 +15490,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language vi}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language vi}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * </pre>
  */
 
 /*
@@ -15855,13 +15983,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language zh-Hant}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language zh-Hant}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9308
  * timeZoneNames: 24r9308
+ * </pre>
  */
 
 /*
@@ -16387,13 +16519,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language zh}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language zh}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9308
  * timeZoneNames: 24r9308
+ * </pre>
  */
 
 /*
@@ -16916,13 +17052,17 @@
 }(this));
 
 /**
- * @file {@link https://github.com/Xotic750/astrodate AstroDate Language en}.
+ * @ignore
+ * @file {@link http://xotic750.github.io/astrodate/ AstroDate Language en}.
  * @version 0.6.1
- * @author Graham Fairweather a.k.a Xotic750 <xotic750@gmail.com>
- * @copyright Graham Fairweather 2013
- * @license {@link <http://www.gnu.org/licenses/> GPL3}
+ * @author Graham Fairweather <xotic750@gmail.com>
+ * @copyright Copyright (c) 2013 Graham Fairweather
+ * @license {@link <http://www.gnu.org/licenses/gpl-3.0.html> GPL3}
+ * @desc
+ * <pre>
  * ca-gregorian: 24r9287
  * timeZoneNames: 24r9287
+ * </pre>
  */
 
 /*

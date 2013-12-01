@@ -23,8 +23,14 @@
 
             grunt.file.write(destination, template
                 .replace(/@@VERSION/g, grunt.config.get('pkg.version'))
-                .replace(/@@AUTHOR/g, grunt.config.get('pkg.author'))
+                .replace(/@@AUTHORNAME/g, grunt.config.get('pkg.author.name'))
+                .replace(/@@AUTHOREMAIL/g, grunt.config.get('pkg.author.email'))
                 .replace(/@@HOMEPAGE/g, grunt.config.get('pkg.homepage'))
+                .replace(/@@COPYRIGHT/g, grunt.config.get('pkg.copyright'))
+                .replace(/@@LICENSE/g, grunt.config.get('pkg.licenses')[0].type)
+                .replace(/@@LICLINK/g, grunt.config.get('pkg.licenses')[0].url)
+                .replace(/@@ISSUES/g, grunt.config.get('pkg.bugs.url'))
+                .replace(/@@MODULE/g, grunt.config.get('pkg.name'))
                 .replace(/@@LANGLIST/g, mappedList.join('\n')));
 
             grunt.log.writeln('File "' + destination + '" created.');

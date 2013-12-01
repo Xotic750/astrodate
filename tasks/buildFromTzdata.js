@@ -10,7 +10,6 @@
                 destination = this.data.dest,
                 listFile = source + '/leap-seconds.list',
                 leapSecondsFile = source + '/leapseconds',
-                version = grunt.config.get('pkg.version'),
                 listContent,
                 leapSecondsContent,
                 template,
@@ -64,8 +63,13 @@
 
             grunt.file.write(destination + '/leapSeconds.js', template
                 .replace(/@@VERSION/g, grunt.config.get('pkg.version'))
-                .replace(/@@AUTHOR/g, grunt.config.get('pkg.author'))
+                .replace(/@@AUTHORNAME/g, grunt.config.get('pkg.author.name'))
+                .replace(/@@AUTHOREMAIL/g, grunt.config.get('pkg.author.email'))
                 .replace(/@@HOMEPAGE/g, grunt.config.get('pkg.homepage'))
+                .replace(/@@COPYRIGHT/g, grunt.config.get('pkg.copyright'))
+                .replace(/@@LICENSE/g, grunt.config.get('pkg.licenses')[0].type)
+                .replace(/@@LICLINK/g, grunt.config.get('pkg.licenses')[0].url)
+                .replace(/@@MODULE/g, grunt.config.get('pkg.name'))
                 .replace(/@@version1/g, version1)
                 .replace(/@@data/g, JSON.stringify(leapSeconds).replace(/"/g, '\'')));
 
