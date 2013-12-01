@@ -65,7 +65,8 @@
         "grunt-jsbeautifier": "latest",
         "grunt-replace": "latest",
         "grunt-curl": "latest",
-        "grunt-zip": "latest"
+        "grunt-zip": "latest",
+        "browserify": "latest"
     },
     "optionalDependencies": {
         "uglify-js": "latest",
