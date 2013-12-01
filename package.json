@@ -95,7 +95,7 @@
     },
     "testling": {
         "harness": "mocha",
-        "files": "tests/browser/create.js",
+        "scripts": "tests/browser/create.js",
         "browsers": [
             "iexplore/6.0..latest",
             "firefox/17..latest",
