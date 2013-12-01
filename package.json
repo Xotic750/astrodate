@@ -95,14 +95,19 @@
     },
     "testling": {
         "harness": "mocha",
-        "files": "tests/browser/*.js",
-        "browsers": {
-            "iexplore": [
-                "6.0",
-                "7.0",
-                "8.0",
-                "9.0"
-            ]
-        }
+        "files": "tests/browser/create.js",
+        "browsers": [
+            "iexplore/6.0..latest",
+            "firefox/17..latest",
+            "firefox/nightly",
+            "chrome/22..latest",
+            "chrome/canary",
+            "opera/12..latest",
+            "opera/next",
+            "safari/5.1..latest",
+            "ipad/6.0..latest",
+            "iphone/6.0..latest",
+            "android-browser/4.2..latest"
+        ]
     }
 }
