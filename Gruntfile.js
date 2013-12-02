@@ -124,7 +124,7 @@
             },
 
             jshint: {
-                grunt: ['Gruntfile.js', 'tasks/**/*.js', 'tests/**/*.js'],
+                grunt: ['Gruntfile.js', 'tasks/**/*.js', 'tests/!(browser)**/*.js'],
                 sources: ['src/*.js', 'src/includes/*.js'],
                 lib: ['lib/<%= pkg.name %>.js'],
                 options: {

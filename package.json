@@ -89,9 +89,13 @@
         "cldr": "http://unicode.org/Public/cldr/24/json.zip",
         "tzdata": "http://www.iana.org/time-zones/repository/releases/tzdata2013h.tar.gz"
     },
+    "scripts": {
+        "prepublish": "grunt",
+        "test": "grunt mochaTest"
+    },
     "testling": {
         "harness": "mocha",
-        "files": "tests/browser/create.js",
+        "files": "tests/browser/*.js",
         "browsers": [
             "iexplore/6.0..latest",
             "firefox/17..latest",

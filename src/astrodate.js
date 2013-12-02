@@ -8102,8 +8102,7 @@ arrayFilter = (function () {
     if (typeof module === 'object' && !isNull(module) && isTypeObject(module.exports)) {
         module.exports = defineAstroDate(addBigNumberModule.call({}));
     } else if (typeof define === 'function' && isTypeObject(define.amd)) {
-        // "name" should be removed when finished with local testing
-        define('astrodate', function () {
+        define(function () {
             return defineAstroDate(addBigNumberModule.call({}));
         });
     } else {
