@@ -1,4 +1,6 @@
-Master [![Build Status](https://travis-ci.org/Xotic750/astrodate.png?branch=master)](https://travis-ci.org/Xotic750/astrodate  "Build Stats on Travis CI")
+Master
+[![Build Status](https://travis-ci.org/Xotic750/astrodate.png?branch=master)](https://travis-ci.org/Xotic750/astrodate  "Build Stats on Travis CI")
+[![Coverage Status](https://coveralls.io/repos/Xotic750/astrodate/badge.png?branch=master)](https://coveralls.io/r/Xotic750/astrodate?branch=master)
 
 #[AstroDate @@VERSION](@@HOMEPAGE)
 ###### @@AUTHORNAME <@@AUTHOREMAIL>

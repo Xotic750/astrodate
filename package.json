@@ -68,7 +68,11 @@
         "grunt-jsbeautifier": "latest",
         "grunt-replace": "latest",
         "grunt-curl": "latest",
-        "grunt-zip": "latest"
+        "grunt-zip": "latest",
+        "coveralls": "latest",
+        "mocha-lcov-reporter": "latest",
+        "jscoverage": "latest",
+        "grunt-shell": "latest"
     },
     "optionalDependencies": {
         "uglify-js": "latest",
@@ -98,7 +102,7 @@
     },
     "testling": {
         "harness": "mocha",
-        "files": "tests/browser/*.js",
+        "files": "tests/min/*.js",
         "browsers": [
             "iexplore/6.0..latest",
             "firefox/17..latest",

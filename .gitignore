@@ -1,5 +1,10 @@
 node_modules/
-src/lang/cldr/
-src/tz/tz/
+src/cldr/
+src/tz/
+src/cldr.zip
+src/tzdata.tar.gz
+src/includes/
 .DS_Store
 *.komodoproject
+.coveralls.yml
+lib-cov/

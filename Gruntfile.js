@@ -8,8 +8,8 @@
             pkg: grunt.file.readJSON('package.json'),
 
             clean: {
-                all: ['README.md', 'docs', 'lib', 'src/cldr.zip', 'src/tzdata.tar.gz', 'src/includes', 'src/cldr', 'src/tz'],
-                after: ['src/cldr.zip', 'src/tzdata.tar.gz', 'src/cldr', 'src/tz']
+                all: ['README.md', 'docs', 'lib', 'src/cldr.zip', 'src/tzdata.tar.gz', 'src/includes', 'src/cldr', 'src/tz', 'lib-cov'],
+                after: ['src/cldr.zip', 'src/tzdata.tar.gz', 'src/cldr', 'src/tz', 'lib-cov']
             },
 
             curl: {
@@ -243,6 +243,21 @@
                 }
             },
 
+            shell: {
+                coverage: {
+                    options: {
+                        stdout: true
+                    },
+                    command: 'node_modules/jscoverage/bin/jscoverage lib/astrodate.js lib-cov/astrodate.js'
+                },
+                coveralls: {
+                    options: {
+                        stdout: true
+                    },
+                    command: 'node_modules/mocha/bin/mocha -R mocha-lcov-reporter tests/raw/create.js | ./node_modules/coveralls/bin/coveralls.js'
+                }
+            },
+
             watch: {
                 test: {
                     files: [
@@ -278,6 +293,7 @@
         grunt.loadNpmTasks('grunt-contrib-clean');
         grunt.loadNpmTasks('grunt-curl');
         grunt.loadNpmTasks('grunt-zip');
+        grunt.loadNpmTasks('grunt-shell');
 
         // Default task.
         grunt.registerTask('default', [
@@ -298,6 +314,7 @@
             'jsbeautifier:dist2',
             'jshint:lib',
             'mochaTest:raw',
+            'shell',
             'uglify',
             'mochaTest:min',
             'buildReadme',
