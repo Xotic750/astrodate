@@ -16,6 +16,9 @@
         "parse",
         "atronomy"
     ],
+    "browser": {
+        "astrodate": false
+    },
     "main": "lib/astrodate.js",
     "engines": {
         "node": ">=0.8"

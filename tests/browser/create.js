@@ -18,9 +18,7 @@
         return numString;
     }
 
-    // when running tests with testling, requires __dirname to work. Thanks <pkrumins>
-    // proble seems something to do with having "main" in package.json and browserify
-    var AstroDate = require(__dirname + '../../lib/astrodate.min'),
+    var AstroDate = require('../../lib/astrodate.min'),
         assert = require('chai').assert;
 
     AstroDate.lang('en');
