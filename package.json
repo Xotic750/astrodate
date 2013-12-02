@@ -65,8 +65,7 @@
         "grunt-jsbeautifier": "latest",
         "grunt-replace": "latest",
         "grunt-curl": "latest",
-        "grunt-zip": "latest",
-        "browserify": "latest"
+        "grunt-zip": "latest"
     },
     "optionalDependencies": {
         "uglify-js": "latest",
@@ -96,7 +95,7 @@
     },
     "testling": {
         "harness": "mocha",
-        "scripts": "tests/browser/create.js",
+        "files": "tests/browser/create.js",
         "browsers": [
             "iexplore/6.0..latest",
             "firefox/17..latest",
