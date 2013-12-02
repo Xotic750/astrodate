@@ -1,6 +1,6 @@
 var assert = require('assert');
 
-var squareModule = require('../');
+var squareModule = require('../../');
 
 describe('integers', function () {
     it('should square the numbers', function (done) {
