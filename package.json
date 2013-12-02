@@ -51,7 +51,7 @@
         "js-beautify": "latest",
         "jsdoc": "latest",
         "tar.gz": "latest",
-        "mocha": "latest",
+        "mocha": "~1.7.4",
         "grunt-cli": "latest",
         "grunt-contrib-jshint": "latest",
         "grunt-contrib-nodeunit": "latest",
