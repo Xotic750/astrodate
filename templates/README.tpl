@@ -1,6 +1,12 @@
 Master
-[![Build Status](https://travis-ci.org/Xotic750/astrodate.png?branch=master)](https://travis-ci.org/Xotic750/astrodate  "Build Stats on Travis CI")
-[![Coverage Status](https://coveralls.io/repos/Xotic750/astrodate/badge.png?branch=master)](https://coveralls.io/r/Xotic750/astrodate?branch=master)
+
+[![Build Status](https://travis-ci.org/Xotic750/astrodate.png?branch=master)](https://travis-ci.org/Xotic750/astrodate  "Build Status on Travis CI")
+
+[![Dependency Status](https://gemnasium.com/Xotic750/astrodate.png)](https://gemnasium.com/Xotic750/astrodate "Dependency Status on Gemnasium")
+
+[![Coverage Status](https://coveralls.io/repos/Xotic750/astrodate/badge.png?branch=master)](https://coveralls.io/r/Xotic750/astrodate?branch=master "Coverage status on Coveralls")
+
+[![browser support](https://ci.testling.com/Xotic750/astrodate.png)](https://ci.testling.com/Xotic750/astrodate 'Browser support on Testling CI')
 
 #[AstroDate @@VERSION](@@HOMEPAGE)
 ###### @@AUTHORNAME <@@AUTHOREMAIL>

@@ -254,7 +254,7 @@
                     options: {
                         stdout: true
                     },
-                    command: 'node_modules/mocha/bin/mocha -R mocha-lcov-reporter tests/raw/create.js | ./node_modules/coveralls/bin/coveralls.js'
+                    command: 'node_modules/mocha/bin/mocha -R mocha-lcov-reporter tests/cov/create.js | ./node_modules/coveralls/bin/coveralls.js'
                 }
             },
 
@@ -314,12 +314,18 @@
             'jsbeautifier:dist2',
             'jshint:lib',
             'mochaTest:raw',
-            'shell',
+            'shell:coverage',
+            'shell:coveralls',
             'uglify',
             'mochaTest:min',
             'buildReadme',
             'jsdoc',
             'clean:after'
+        ]);
+
+        grunt.registerTask('test', [
+            'mochaTest:raw',
+            'mochaTest:min'
         ]);
     };
 }());

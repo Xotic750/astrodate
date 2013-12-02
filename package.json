@@ -57,14 +57,13 @@
         "mocha": "latest",
         "grunt-cli": "latest",
         "grunt-contrib-jshint": "latest",
-        "grunt-contrib-nodeunit": "latest",
         "grunt-contrib-concat": "latest",
         "grunt-contrib-uglify": "latest",
         "grunt-contrib-watch": "latest",
         "grunt-lib-legacyhelpers": "latest",
         "grunt-contrib-clean": "latest",
         "grunt-jsdoc": "latest",
-        "grunt-mocha-test": "latest",
+        "grunt-mocha-test": "0.8.0",
         "grunt-jsbeautifier": "latest",
         "grunt-replace": "latest",
         "grunt-curl": "latest",
@@ -76,29 +75,37 @@
     },
     "optionalDependencies": {
         "uglify-js": "latest",
+        "grunt": "latest",
+        "bignumber.js": "latest",
+        "chai": "latest",
         "js-beautify": "latest",
         "jsdoc": "latest",
         "tar.gz": "latest",
+        "mocha": "latest",
+        "grunt-cli": "latest",
         "grunt-contrib-jshint": "latest",
-        "grunt-contrib-nodeunit": "latest",
         "grunt-contrib-concat": "latest",
         "grunt-contrib-uglify": "latest",
         "grunt-contrib-watch": "latest",
         "grunt-lib-legacyhelpers": "latest",
         "grunt-contrib-clean": "latest",
         "grunt-jsdoc": "latest",
+        "grunt-mocha-test": "0.8.0",
         "grunt-jsbeautifier": "latest",
         "grunt-replace": "latest",
         "grunt-curl": "latest",
-        "grunt-zip": "latest"
+        "grunt-zip": "latest",
+        "coveralls": "latest",
+        "mocha-lcov-reporter": "latest",
+        "jscoverage": "latest",
+        "grunt-shell": "latest"
     },
     "sources": {
         "cldr": "http://unicode.org/Public/cldr/24/json.zip",
         "tzdata": "http://www.iana.org/time-zones/repository/releases/tzdata2013h.tar.gz"
     },
     "scripts": {
-        "prepublish": "grunt",
-        "test": "grunt mochaTest"
+        "test": "grunt test"
     },
     "testling": {
         "harness": "mocha",
