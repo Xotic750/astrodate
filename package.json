@@ -1,6 +1,6 @@
 {
     "name": "astrodate",
-    "version": "0.6.1",
+    "version": "0.6.2",
     "description": "Javascript Date object with Astronomy in mind.",
     "homepage": "http://xotic750.github.io/astrodate/",
     "author": {
@@ -56,7 +56,6 @@
         "tap": "latest",
         "grunt-cli": "latest",
         "grunt-contrib-jshint": "latest",
-        "grunt-contrib-concat": "latest",
         "grunt-contrib-uglify": "latest",
         "grunt-contrib-watch": "latest",
         "grunt-lib-legacyhelpers": "latest",
@@ -68,7 +67,8 @@
         "grunt-zip": "latest",
         "coveralls": "latest",
         "grunt-shell": "latest",
-        "istanbul": "latest"
+        "istanbul": "latest",
+        "grunt-jsonlint": "latest"
     },
     "optionalDependencies": {
         "uglify-js": "latest",
@@ -80,7 +80,6 @@
         "tap": "latest",
         "grunt-cli": "latest",
         "grunt-contrib-jshint": "latest",
-        "grunt-contrib-concat": "latest",
         "grunt-contrib-uglify": "latest",
         "grunt-contrib-watch": "latest",
         "grunt-lib-legacyhelpers": "latest",
@@ -92,7 +91,8 @@
         "grunt-zip": "latest",
         "coveralls": "latest",
         "grunt-shell": "latest",
-        "istanbul": "latest"
+        "istanbul": "latest",
+        "grunt-jsonlint": "latest"
     },
     "sources": {
         "cldr": "http://unicode.org/Public/cldr/24/json.zip",

@@ -8,7 +8,7 @@
             pkg: grunt.file.readJSON('package.json'),
 
             clean: {
-                all: ['README.md', 'docs', 'lib', 'src/cldr.zip', 'src/tzdata.tar.gz', 'src/includes', 'src/cldr', 'src/tz', 'coverage'],
+                all: ['README.md', 'docs', 'lib', 'src/cldr.zip', 'src/tzdata.tar.gz', 'src/*.json', 'src/cldr', 'src/tz', 'coverage'],
                 after: ['src/cldr.zip', 'src/tzdata.tar.gz', 'src/cldr', 'src/tz', 'coverage']
             },
 
@@ -38,20 +38,17 @@
                 }
             },
 
-            buildFromCLDR: {
-                language: {
-                    language: 'src/build/language.tpl',
-                    supplemental: 'src/build/supplemental.tpl',
+            buildLanguage: {
+                all: {
                     src: 'src/cldr',
-                    dest: 'src/includes'
+                    dest: 'src'
                 }
             },
 
-            buildFromTzdata: {
-                leapSeconds: {
-                    leapSeconds: 'src/build/leapSeconds.tpl',
+            buildLeapSeconds: {
+                all: {
                     src: 'src/tz',
-                    dest: 'src/includes'
+                    dest: 'src'
                 }
             },
 
@@ -63,26 +60,8 @@
             },
 
             jsbeautifier: {
-                dist1: {
-                    src: ['lib/<%= pkg.name %>.js', 'src/includes/languages.js'],
-                    options: {
-                        js: {
-                            jslintHappy: true
-                        }
-                    }
-                },
-
-                dist2: {
+                lib: {
                     src: ['lib/<%= pkg.name %>.js'],
-                    options: {
-                        js: {
-                            jslintHappy: true
-                        }
-                    }
-                },
-
-                includes: {
-                    src: ['src/includes/*.js'],
                     options: {
                         js: {
                             jslintHappy: true
@@ -92,7 +71,7 @@
             },
 
             uglify: {
-                target: {
+                lib: {
                     files: {
                         'lib/<%= pkg.name %>.min.js': 'lib/<%= pkg.name %>.js'
                     }
@@ -109,8 +88,7 @@
             },
 
             jshint: {
-                grunt: ['Gruntfile.js', 'tasks/**/*.js', 'tests/**/*.js'],
-                sources: ['src/*.js', 'src/includes/*.js'],
+                build: ['Gruntfile.js', 'index.js', 'src/*.js', 'tasks/**/*.js', 'tests/**/*.js'],
                 lib: ['lib/<%= pkg.name %>.js'],
                 options: {
                     'bitwise': true,
@@ -138,19 +116,14 @@
                 }
             },
 
-            concat: {
-                options: {
-                    separator: '\n'
-                },
-
-                languages: {
-                    src: ['src/includes/!(en|supplemental|languages|leapSeconds).js', 'src/includes/en.js'],
-                    dest: 'src/includes/languages.js'
+            jsonlint: {
+                all: {
+                    src: ['src/*.json']
                 }
             },
 
             replace: {
-                dist: {
+                lib: {
                     options: {
                         patterns: [{
                             match: 'VERSION',
@@ -181,29 +154,16 @@
                             replacement: '<%= pkg.licenses[0].url %>'
                         }, {
                             match: '/\\/\\*@@leapSeconds\\*\\//g',
-                            replacement: '<%= grunt.file.read("src/includes/leapSeconds.js") %>',
+                            replacement: '<%= grunt.file.read("src/leapSeconds.json") %>',
                             expression: true
                         }, {
                             match: '/\\/\\*@@supplemental\\*\\//g',
-                            replacement: '<%= grunt.file.read("src/includes/supplemental.js") %>',
+                            replacement: '<%= grunt.file.read("src/supplemental.json") %>',
                             expression: true
                         }, {
                             match: '/\\/\\*@@languages\\*\\//g',
-                            replacement: '<%= grunt.file.read("src/includes/languages.js") %>',
+                            replacement: '<%= grunt.file.read("src/language.json") %>',
                             expression: true
-                        }]
-                    },
-                    files: [{
-                        src: ['src/<%= pkg.name %>.js'],
-                        dest: 'lib/<%= pkg.name %>.js'
-                    }]
-                },
-
-                bn: {
-                    options: {
-                        patterns: [{
-                            match: 'key',
-                            replacement: '$$\''
                         }, {
                             match: '/\\/\\*@@BigNumber\\*\\//g',
                             replacement: (grunt.file.read('node_modules/bignumber.js/bignumber.js').replace(/\$/g, '$$$$')),
@@ -211,14 +171,14 @@
                         }]
                     },
                     files: [{
-                        src: ['lib/<%= pkg.name %>.js'],
+                        src: ['src/<%= pkg.name %>.js'],
                         dest: 'lib/<%= pkg.name %>.js'
                     }]
                 }
             },
 
             jsdoc: {
-                dist: {
+                lib: {
                     jsdoc: 'node_modules/.bin/jsdoc',
                     src: ['README.md', 'lib/<%= pkg.name %>.js'],
                     options: {
@@ -249,7 +209,7 @@
                             maxBuffer: 1048576
                         }
                     },
-                    command: 'ASTRODATE_COVERAGE= node_modules/istanbul/lib/cli.js cover tests/*.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage'
+                    command: 'ASTRODATE_COVERAGE=1 node_modules/istanbul/lib/cli.js cover tests/*.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage'
                 },
                 uglified: {
                     options: {
@@ -275,11 +235,17 @@
 
                 jshint: {
                     files: [
-                        '<%= jshint.grunt %>',
-                        '<%= jshint.sources %>',
+                        '<%= jshint.build %>',
                         '<%= jshint.lib %>'
                     ],
                     tasks: ['jshint']
+                },
+
+                jsonlint: {
+                    files: [
+                        '<%= jsonlint.all.src %>'
+                    ],
+                    tasks: ['jsonlint']
                 }
             }
         });
@@ -299,29 +265,25 @@
         grunt.loadNpmTasks('grunt-curl');
         grunt.loadNpmTasks('grunt-zip');
         grunt.loadNpmTasks('grunt-shell');
+        grunt.loadNpmTasks('grunt-jsonlint');
 
         // Default task.
         grunt.registerTask('default', [
-            'jshint:grunt',
             'clean:all',
+            'jshint:build',
             'curl',
             'unzip',
             'extactTargz',
-            'buildFromCLDR',
-            'buildFromTzdata',
-            'jsbeautifier:includes',
-            'jshint:sources',
-            'concat',
-            'replace:dist',
-            'jsbeautifier:dist1',
-            'jshint:lib',
-            'replace:bn',
-            'jsbeautifier:dist2',
+            'buildLanguage',
+            'buildLeapSeconds',
+            'jsonlint',
+            'replace:lib',
+            'jsbeautifier:lib',
             'jshint:lib',
             'shell:beautified',
-            'shell:coveralls',
             'uglify',
             'shell:uglified',
+            //'shell:coveralls',
             'buildReadme',
             'jsdoc',
             'clean:after'
@@ -329,7 +291,7 @@
 
         grunt.registerTask('test', [
             'shell:beautified',
-            'shell:coveralls',
+            //'shell:coveralls',
             'shell:uglified'
         ]);
     };

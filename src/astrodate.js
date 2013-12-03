@@ -83,6 +83,7 @@
         numberIsNaN,
         numberIsFinite,
         mathSign,
+        Definition,
         j2000 = {
             jdtt: '2451545.0',
             tt: '2000-01-01T12:00:00.000Z',
@@ -2172,6 +2173,7 @@ arrayFilter = (function () {
      * @private
      * @function
      * @param {object} object
+     * @return {object}
      */
     function deepFreeze(object) {
         objectFreeze(object);
@@ -2182,6 +2184,8 @@ arrayFilter = (function () {
                 deepFreeze(prop);
             }
         });
+
+        return object;
     }
 
     /**
@@ -8058,20 +8062,14 @@ arrayFilter = (function () {
             }
         });
 
-        function addAstroDateModules(module, define) {
-            if (!isUndefined(module) || !isUndefined(define)) {
-                throw new Error();
-            }
+        /* jshint quotmark: false, -W100 */
+        leapSeconds = deepFreeze(/*@@leapSeconds*/);
 
-            /*jshint validthis:true */
-            /*@@leapSeconds*/
-            /*@@supplemental*/
-            /*@@languages*/
-        }
+        supplemental = deepFreeze(/*@@supplemental*/);
 
-        addAstroDateModules.call({
-            AstroDate: AstroDate
-        });
+        languages = deepFreeze(/*@@languages*/);
+
+        AstroDate.locale('en_GB');
 
         return AstroDate;
     }
@@ -8098,15 +8096,16 @@ arrayFilter = (function () {
         return this.BigNumber;
     }
 
+    Definition = defineAstroDate(addBigNumberModule.call({}));
     /*global module, define */
     if (typeof module === 'object' && !isNull(module) && isTypeObject(module.exports)) {
-        module.exports = defineAstroDate(addBigNumberModule.call({}));
+        module.exports = Definition;
     } else if (typeof define === 'function' && isTypeObject(define.amd)) {
         define(function () {
-            return defineAstroDate(addBigNumberModule.call({}));
+            return Definition;
         });
     } else {
-        globalThis.AstroDate = defineAstroDate(addBigNumberModule.call({}));
+        globalThis.AstroDate = Definition;
     }
 
     tempSafariNFE = null;

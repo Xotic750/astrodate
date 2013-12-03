@@ -8,7 +8,7 @@ Master
 
 [![browser support](https://ci.testling.com/Xotic750/astrodate.png)](https://ci.testling.com/Xotic750/astrodate 'Browser support on Testling CI')
 
-#[AstroDate 0.6.1](http://xotic750.github.io/astrodate/)
+#[AstroDate 0.6.2](http://xotic750.github.io/astrodate/)
 ###### Graham Fairweather <xotic750@gmail.com>
 
 Still very much work in progress, so there are [bugs](https://github.com/Xotic750/astrodate/issues "Issues") and the API has not been fully defined (or documented) and is subject to major changes.
@@ -44,11 +44,11 @@ You can see AstroDate in use ([jsFiddle](http://jsfiddle.net/Xotic750/RBnMb/ "js
 * de
 * el
 * en
-* en-AU
-* en-CA
-* en-GB
-* en-HK
-* en-IN
+* en_AU
+* en_CA
+* en_GB
+* en_HK
+* en_IN
 * es
 * fi
 * fr
@@ -63,7 +63,7 @@ You can see AstroDate in use ([jsFiddle](http://jsfiddle.net/Xotic750/RBnMb/ "js
 * nl
 * pl
 * pt
-* pt-PT
+* pt_PT
 * ro
 * root
 * ru
@@ -76,7 +76,7 @@ You can see AstroDate in use ([jsFiddle](http://jsfiddle.net/Xotic750/RBnMb/ "js
 * uk
 * vi
 * zh
-* zh-Hant
+* zh_Hant
 
 The defaut language is 'en'.
 
