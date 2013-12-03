@@ -2,11 +2,9 @@
 (function () {
     'use strict';
 
-    switch (process.env.ASTRODATE_COVERAGE) {
-    case 1:
+    if (process.env.ASTRODATE_COVERAGE) {
         module.exports = require('../lib/astrodate');
-        break;
-    default:
+    } else {
         module.exports = require('../lib/astrodate.min');
     }
 }());

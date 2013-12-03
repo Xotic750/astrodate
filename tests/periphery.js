@@ -2,11 +2,10 @@
 (function () {
     'use strict';
 
-    var test = require('tape'),
+    var test = require('tap').test,
         AstroDate = require('../');
 
     test('periphery methods', function (t) {
-
         var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
             monthDays = ['31', '28', '31', '30', '31', '30', '31', '31', '30', '31', '30', '31'],
             monthDaysLeap = ['31', '29', '31', '30', '31', '30', '31', '31', '30', '31', '30', '31'],
