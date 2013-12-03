@@ -8,8 +8,8 @@
             pkg: grunt.file.readJSON('package.json'),
 
             clean: {
-                all: ['README.md', 'docs', 'lib', 'src/cldr.zip', 'src/tzdata.tar.gz', 'src/includes', 'src/cldr', 'src/tz', 'lib-cov'],
-                after: ['src/cldr.zip', 'src/tzdata.tar.gz', 'src/cldr', 'src/tz', 'lib-cov']
+                all: ['README.md', 'docs', 'lib', 'src/cldr.zip', 'src/tzdata.tar.gz', 'src/includes', 'src/cldr', 'src/tz', 'coverage'],
+                after: ['src/cldr.zip', 'src/tzdata.tar.gz', 'src/cldr', 'src/tz', 'coverage']
             },
 
             curl: {
@@ -108,23 +108,8 @@
                 }
             },
 
-            mochaTest: {
-                raw: {
-                    options: {
-                        reporter: 'tap'
-                    },
-                    src: ['tests/raw/**/*.js']
-                },
-                min: {
-                    options: {
-                        reporter: 'tap'
-                    },
-                    src: ['tests/min/**/*.js']
-                }
-            },
-
             jshint: {
-                grunt: ['Gruntfile.js', 'tasks/**/*.js', 'tests/!(browser)**/*.js'],
+                grunt: ['Gruntfile.js', 'tasks/**/*.js', 'tests/**/*.js'],
                 sources: ['src/*.js', 'src/includes/*.js'],
                 lib: ['lib/<%= pkg.name %>.js'],
                 options: {
@@ -244,17 +229,38 @@
             },
 
             shell: {
-                coverage: {
+                beautified: {
                     options: {
-                        stdout: true
+                        stdout: true,
+                        stderr: true,
+                        failOnError: true,
+                        execOptions: {
+                            maxBuffer: 1048576
+                        }
                     },
-                    command: 'node_modules/jscoverage/bin/jscoverage lib/astrodate.js lib-cov/astrodate.js'
+                    command: 'ASTRODATE_COVERAGE=1 node_modules/tap/bin/tap.js tests/*.js'
                 },
                 coveralls: {
                     options: {
-                        stdout: true
+                        stdout: false,
+                        stderr: true,
+                        failOnError: true,
+                        execOptions: {
+                            maxBuffer: 1048576
+                        }
                     },
-                    command: 'node_modules/mocha/bin/mocha -R mocha-lcov-reporter tests/cov/create.js | ./node_modules/coveralls/bin/coveralls.js'
+                    command: 'ASTRODATE_COVERAGE= node_modules/istanbul/lib/cli.js cover tests/*.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage'
+                },
+                uglified: {
+                    options: {
+                        stdout: true,
+                        stderr: true,
+                        failOnError: true,
+                        execOptions: {
+                            maxBuffer: 1048576
+                        }
+                    },
+                    command: 'node_modules/tap/bin/tap.js tests/*.js'
                 }
             },
 
@@ -262,9 +268,9 @@
                 test: {
                     files: [
                         'lib/<%= pkg.name %>.js',
-                        'tests/**/*.js'
+                        'tests/*.js'
                     ],
-                    tasks: ['mochaTest']
+                    tasks: ['shell:beautified', 'shell:coveralls', 'shell:uglified']
                 },
 
                 jshint: {
@@ -287,7 +293,6 @@
         grunt.loadNpmTasks('grunt-contrib-uglify');
         grunt.loadNpmTasks('grunt-contrib-watch');
         grunt.loadNpmTasks('grunt-jsdoc');
-        grunt.loadNpmTasks('grunt-mocha-test');
         grunt.loadNpmTasks('grunt-jsbeautifier');
         grunt.loadNpmTasks('grunt-replace');
         grunt.loadNpmTasks('grunt-contrib-clean');
@@ -313,19 +318,19 @@
             'replace:bn',
             'jsbeautifier:dist2',
             'jshint:lib',
-            'mochaTest:raw',
-            'shell:coverage',
+            'shell:beautified',
             'shell:coveralls',
             'uglify',
-            'mochaTest:min',
+            'shell:uglified',
             'buildReadme',
             'jsdoc',
             'clean:after'
         ]);
 
         grunt.registerTask('test', [
-            'mochaTest:raw',
-            'mochaTest:min'
+            'shell:beautified',
+            'shell:coveralls',
+            'shell:uglified'
         ]);
     };
 }());
