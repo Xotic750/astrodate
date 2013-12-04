@@ -283,7 +283,7 @@
             'shell:beautified',
             'uglify',
             'shell:uglified',
-            //'shell:coveralls',
+            'shell:coveralls',
             'buildReadme',
             'jsdoc',
             'clean:after'
@@ -291,7 +291,7 @@
 
         grunt.registerTask('test', [
             'shell:beautified',
-            //'shell:coveralls',
+            'shell:coveralls',
             'shell:uglified'
         ]);
     };
