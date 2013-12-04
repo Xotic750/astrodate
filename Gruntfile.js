@@ -88,7 +88,7 @@
             },
 
             jshint: {
-                build: ['Gruntfile.js', 'index.js', 'src/*.js', 'tasks/**/*.js', 'tests/**/*.js'],
+                build: ['Gruntfile.js', 'scripts/*.js', 'index.js', 'src/*.js', 'tasks/**/*.js', 'tests/**/*.js'],
                 lib: ['lib/<%= pkg.name %>.js'],
                 options: {
                     'bitwise': true,
@@ -198,7 +198,7 @@
                             maxBuffer: 1048576
                         }
                     },
-                    command: 'node_modules/tape-compact/bin/tape tests/*.js'
+                    command: 'ASTRODATE_TAPE=2 ASTRODATE_RAW=1 node_modules/tap/bin/tap.js tests/*.js'
                 },
                 coveralls: {
                     options: {
@@ -209,7 +209,7 @@
                             maxBuffer: 1048576
                         }
                     },
-                    command: 'node_modules/istanbul/lib/cli.js cover tests/*.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage'
+                    command: 'ASTRODATE_TAPE=1 ASTRODATE_RAW=1 node_modules/istanbul/lib/cli.js cover tests/*.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage'
                 },
                 uglified: {
                     options: {
@@ -220,7 +220,7 @@
                             maxBuffer: 1048576
                         }
                     },
-                    command: 'ASTRODATE_COVERAGE=1 node_modules/tape-compact/bin/tape tests/*.js'
+                    command: 'ASTRODATE_TAPE=2 node_modules/tap/bin/tap.js tests/*.js'
                 }
             },
 

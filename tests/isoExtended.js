@@ -2,10 +2,16 @@
 (function () {
     'use strict';
 
-    var test = require('tape-compact'),
-        AstroDate,
+    var test = require('../scripts/whichTape.js'),
+        AstroDate = require('../scripts/whichAstroDate'),
         Fire = require('../scripts/fire'),
-        fireSingle = new Fire();
+        delay = 100,
+        fireSingle = new Fire(),
+        args = ['parsing iso extended'];
+
+    if (!process.env.ASTRODATE_TAPE) {
+        args.push({compact: true, name: 'All tests'});
+    }
 
     function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
@@ -23,16 +29,7 @@
         return numString;
     }
 
-    if (!process.env.ASTRODATE_COVERAGE) {
-        AstroDate = require('../lib/astrodate');
-    } else {
-        AstroDate = require('../lib/astrodate.min');
-    }
-
-    test('parsing iso extended', {
-        compact: true,
-        name: 'All tests'
-    }, function (t) {
+    args.push(function (t) {
         var repeat = 50,
             offset = new Date().getTimezoneOffset();
 
@@ -117,10 +114,12 @@
                 t.equal(new AstroDate(withComma).toISOString(), formats[index][1], '(' + index + ')AstroDate should be able to parse ISO extended ' + withComma);
             }
 
-            loop.run(formats.length, testFormats, 100);
+            loop.run(formats.length, testFormats, delay);
         }
 
-        fireSingle.run(repeat, single, 100);
+        fireSingle.run(repeat, single, delay);
         t.end();
     });
+
+    test.apply(null, args);
 }());

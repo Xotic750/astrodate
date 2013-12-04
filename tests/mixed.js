@@ -6,44 +6,38 @@
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
-    var test = require('tape-compact'),
-        AstroDate,
+    var test = require('../scripts/whichTape.js'),
+        AstroDate = require('../scripts/whichAstroDate'),
         Fire = require('../scripts/fire'),
-        fireSingle = new Fire();
+        delay = 100,
+        fireSingle = new Fire(),
+        args = ['array/isAstroDate/isValid/from AstroDate'];
 
-    if (!process.env.ASTRODATE_COVERAGE) {
-        AstroDate = require('../lib/astrodate');
-    } else {
-        AstroDate = require('../lib/astrodate.min');
+    if (!process.env.ASTRODATE_TAPE) {
+        args.push({compact: true, name: 'All tests'});
     }
 
-    test('array/isAstroDate/isValid/from AstroDate', {
-        compact: true,
-        name: 'All tests'
-    }, function (t) {
+    args.push(function (t) {
         var repeat = 50,
-            zeroArray = [NaN, 1, 1, 0, 0, 0, 0, 0],
-            fullArray = [],
-            fullArrayString = [],
-            year,
-            month,
-            hour,
-            fullArrayLength,
-            astrodate,
-            index,
-            end,
-            slice,
-            tObject,
-            json,
-            date,
-            temp;
+            zeroArray = [NaN, 1, 1, 0, 0, 0, 0, 0];
 
         function single(count) {
-            fullArray.length = 0;
-            fullArrayString.length = 0;
-            year = getRandomInt(-9007199254740991, 9007199254740991).toString();
-            month = getRandomInt(1, 12);
-            hour = getRandomInt(0, 24);
+            var fullArray = [],
+                fullArrayString = [],
+                year = getRandomInt(-9007199254740991, 9007199254740991).toString(),
+                month = getRandomInt(1, 12),
+                hour = getRandomInt(0, 24),
+                loopNumArgs = new Fire(1),
+                fullArrayLength,
+                astrodate,
+                index,
+                end,
+                slice,
+                tObject,
+                json,
+                date,
+                temp;
+
             fullArray.push(year);
             fullArray.push(month);
             fullArray.push(getRandomInt(1, +new AstroDate([year, month]).daysInMonth()));
@@ -64,8 +58,8 @@
                 fullArrayString[index] = fullArray[index].toString();
             }
 
-            for (index = 1; index < fullArrayLength; index += 1) {
-                end = -index;
+            function testArgs(idx) {
+                end = -idx;
                 slice = fullArray.slice(0, end).concat(zeroArray.slice(end)).toString().split(',');
                 tObject = {
                     'year': slice[0],
@@ -80,86 +74,90 @@
 
                 json = JSON.stringify(tObject);
                 astrodate = new AstroDate(fullArray.slice(0, end));
-                t.ok(AstroDate.isAstroDate(astrodate), '(' + count + '/' + index + ')Number: isAstrodate');
-                t.ok(astrodate.isValid(), '(' + count + '/' + index + ')Number: isValid');
-                t.deepEqual(astrodate.array(), slice, '(' + count + '/' + index + ')Number: Arrays are the same');
+                t.ok(AstroDate.isAstroDate(astrodate), '(' + count + '/' + idx + ')Number: isAstrodate');
+                t.ok(astrodate.isValid(), '(' + count + '/' + idx + ')Number: isValid');
+                t.deepEqual(astrodate.array(), slice, '(' + count + '/' + idx + ')Number: Arrays are the same');
                 date = new Date(astrodate.toISOString()).getTime();
                 if (+slice[0] >= 0 && +slice[0] < 10000 && 24 !== +slice[3]) {
-                    t.equal(astrodate.getTime(), date, '(' + count + '/' + index + ')Number date: Dates are the same: ' + slice);
+                    t.equal(astrodate.getTime(), date, '(' + count + '/' + idx + ')Number date: Dates are the same: ' + slice);
                 } else {
                     t.ok(isNaN(date), 'outside of Date capability: ' + slice);
                 }
 
-                t.equal(astrodate.json(), json, '(' + count + '/' + index + ')Number: JSON are the same: ');
+                t.equal(astrodate.json(), json, '(' + count + '/' + idx + ')Number: JSON are the same: ');
 
                 astrodate = new AstroDate().array(fullArray.slice(0, end));
-                t.ok(AstroDate.isAstroDate(astrodate), '(' + count + '/' + index + ')Number array: isAstrodate');
-                t.ok(astrodate.isValid(), '(' + count + '/' + index + ')Number array: isValid');
-                t.deepEqual(astrodate.array(), slice, '(' + count + '/' + index + ')Number array: Arrays are the same');
+                t.ok(AstroDate.isAstroDate(astrodate), '(' + count + '/' + idx + ')Number array: isAstrodate');
+                t.ok(astrodate.isValid(), '(' + count + '/' + idx + ')Number array: isValid');
+                t.deepEqual(astrodate.array(), slice, '(' + count + '/' + idx + ')Number array: Arrays are the same');
                 if (+slice[0] >= 0 && +slice[0] < 10000 && 24 !== +slice[3]) {
-                    t.equal(astrodate.getTime(), date, '(' + count + '/' + index + ')Number array date: Dates are the same');
+                    t.equal(astrodate.getTime(), date, '(' + count + '/' + idx + ')Number array date: Dates are the same');
                 } else {
                     t.ok(isNaN(date), 'outside of Date capability: ' + slice);
                 }
 
-                t.equal(astrodate.json(), json, '(' + count + '/' + index + ')Number array: JSON are the same: ');
+                t.equal(astrodate.json(), json, '(' + count + '/' + idx + ')Number array: JSON are the same: ');
 
                 astrodate = new AstroDate(astrodate);
-                t.ok(AstroDate.isAstroDate(astrodate), '(' + count + '/' + index + ')Number astrodate: isAstrodate');
-                t.ok(astrodate.isValid(), '(' + count + '/' + index + ')Number astrodate: isValid');
-                t.deepEqual(astrodate.array(), slice, '(' + count + '/' + index + ')Number astrodate: Arrays are the same');
+                t.ok(AstroDate.isAstroDate(astrodate), '(' + count + '/' + idx + ')Number astrodate: isAstrodate');
+                t.ok(astrodate.isValid(), '(' + count + '/' + idx + ')Number astrodate: isValid');
+                t.deepEqual(astrodate.array(), slice, '(' + count + '/' + idx + ')Number astrodate: Arrays are the same');
                 if (+slice[0] >= 0 && +slice[0] < 10000 && 24 !== +slice[3]) {
-                    t.equal(astrodate.getTime(), date, '(' + count + '/' + index + ')Number astrodate date: dates are the same');
+                    t.equal(astrodate.getTime(), date, '(' + count + '/' + idx + ')Number astrodate date: dates are the same');
                 } else {
                     t.ok(isNaN(date), 'outside of Date capability: ' + slice);
                 }
 
-                t.equal(astrodate.json(), json, '(' + count + '/' + index + ')Number astrodate: JSON are the same: ');
+                t.equal(astrodate.json(), json, '(' + count + '/' + idx + ')Number astrodate: JSON are the same: ');
 
                 astrodate = new AstroDate(fullArrayString.slice(0, end));
-                t.ok(AstroDate.isAstroDate(astrodate), '(' + count + '/' + index + ')String: isAstrodate');
-                t.ok(astrodate.isValid(), '(' + count + '/' + index + ')String: isValid');
-                t.deepEqual(astrodate.array(), slice, '(' + count + '/' + index + ')String: Arrays are the same');
+                t.ok(AstroDate.isAstroDate(astrodate), '(' + count + '/' + idx + ')String: isAstrodate');
+                t.ok(astrodate.isValid(), '(' + count + '/' + idx + ')String: isValid');
+                t.deepEqual(astrodate.array(), slice, '(' + count + '/' + idx + ')String: Arrays are the same');
                 if (+slice[0] >= 0 && +slice[0] < 10000 && 24 !== +slice[3]) {
-                    t.equal(astrodate.getTime(), date, '(' + count + '/' + index + ')String date: dates are the same');
+                    t.equal(astrodate.getTime(), date, '(' + count + '/' + idx + ')String date: dates are the same');
                 } else {
                     t.ok(isNaN(date), 'outside of Date capability: ' + slice);
                 }
 
-                t.equal(astrodate.json(), json, '(' + count + '/' + index + ')String: JSON are the same: ');
+                t.equal(astrodate.json(), json, '(' + count + '/' + idx + ')String: JSON are the same: ');
 
                 astrodate = new AstroDate().array(fullArrayString.slice(0, end));
-                t.ok(AstroDate.isAstroDate(astrodate), '(' + count + '/' + index + ')String array: isAstrodate');
-                t.ok(astrodate.isValid(), '(' + count + '/' + index + ')String array: isValid');
-                t.deepEqual(astrodate.array(), slice, '(' + count + '/' + index + ')String array: Arrays are the same');
+                t.ok(AstroDate.isAstroDate(astrodate), '(' + count + '/' + idx + ')String array: isAstrodate');
+                t.ok(astrodate.isValid(), '(' + count + '/' + idx + ')String array: isValid');
+                t.deepEqual(astrodate.array(), slice, '(' + count + '/' + idx + ')String array: Arrays are the same');
                 if (+slice[0] >= 0 && +slice[0] < 10000 && 24 !== +slice[3]) {
-                    t.equal(astrodate.getTime(), date, '(' + count + '/' + index + ')String array date: dates are the same');
+                    t.equal(astrodate.getTime(), date, '(' + count + '/' + idx + ')String array date: dates are the same');
                 } else {
                     t.ok(isNaN(date), 'outside of Date capability: ' + slice);
                 }
 
-                t.equal(astrodate.json(), json, '(' + count + '/' + index + ')String array: JSON are the same: ');
+                t.equal(astrodate.json(), json, '(' + count + '/' + idx + ')String array: JSON are the same: ');
 
                 astrodate = astrodate.clone();
-                t.ok(astrodate !== astrodate.clone, '(' + count + '/' + index + ')String clone: is a clone');
-                t.ok(AstroDate.isAstroDate(astrodate), '(' + count + '/' + index + ')String clone: isAstrodate');
-                t.ok(astrodate.isValid(), '(' + count + '/' + index + ')String clone: isValid');
+                t.ok(astrodate !== astrodate.clone, '(' + count + '/' + idx + ')String clone: is a clone');
+                t.ok(AstroDate.isAstroDate(astrodate), '(' + count + '/' + idx + ')String clone: isAstrodate');
+                t.ok(astrodate.isValid(), '(' + count + '/' + idx + ')String clone: isValid');
                 temp = astrodate.array();
-                t.deepEqual(temp, slice, '(' + count + '/' + index + ')String clone: Arrays are the same');
+                t.deepEqual(temp, slice, '(' + count + '/' + idx + ')String clone: Arrays are the same');
                 if (+slice[0] >= 0 && +slice[0] < 10000 && 24 === +slice[3]) {
-                    t.equal(astrodate.getTime(), date, '(' + count + '/' + index + ')String clone: dates are the same');
+                    t.equal(astrodate.getTime(), date, '(' + count + '/' + idx + ')String clone: dates are the same');
                 } else {
                     t.ok(isNaN(date), 'outside of Date capability: ' + slice);
                 }
 
-                t.equal(astrodate.json(), json, '(' + count + '/' + index + ')String clone: JSON are the same: ');
+                t.equal(astrodate.json(), json, '(' + count + '/' + idx + ')String clone: JSON are the same: ');
 
                 astrodate = new AstroDate().json(json);
-                t.equal(astrodate.json(), json, '(' + count + '/' + index + ')JSON parse: JSON are the same: ');
+                t.equal(astrodate.json(), json, '(' + count + '/' + idx + ')JSON parse: JSON are the same: ');
             }
+
+            loopNumArgs.run(fullArrayLength, testArgs, delay);
         }
 
-        fireSingle.run(repeat, single, 100);
+        fireSingle.run(repeat, single, delay);
         t.end();
     });
+
+    test.apply(null, args);
 }());

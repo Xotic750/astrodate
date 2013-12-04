@@ -2,18 +2,18 @@
 (function () {
     'use strict';
 
-    var test = require('tape-compact'),
-        AstroDate,
+    var test = require('../scripts/whichTape.js'),
+        AstroDate = require('../scripts/whichAstroDate'),
         Fire = require('../scripts/fire'),
-        fireLoop = new Fire();
+        delay = 100,
+        fireLoop = new Fire(),
+        args = ['periphery methods'];
 
-    if (!process.env.ASTRODATE_COVERAGE) {
-        AstroDate = require('../lib/astrodate');
-    } else {
-        AstroDate = require('../lib/astrodate.min');
+    if (!process.env.ASTRODATE_TAPE) {
+        args.push({compact: true, name: 'All tests'});
     }
 
-    test('periphery methods', {compact: true, name: 'All tests'}, function (t) {
+    args.push(function (t) {
         var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
             monthDays = ['31', '28', '31', '30', '31', '30', '31', '31', '30', '31', '30', '31'],
             monthDaysLeap = ['31', '29', '31', '30', '31', '30', '31', '31', '30', '31', '30', '31'],
@@ -42,19 +42,19 @@
             t.equal(astrodate.daysInMonth(), monthDaysLeap[index], 'Days in month: leap year');
         }
 
-        fireLoop.run(12, mNd, 100);
+        fireLoop.run(12, mNd, delay);
 
         function lYears(index) {
             t.ok(new AstroDate([leapYears[index]]).isLeapYear(), 'Leap year');
         }
 
-        fireLoop.run(leapYearLength, lYears, 100);
+        fireLoop.run(leapYearLength, lYears, delay);
 
         function nYears(index) {
             t.ok(!new AstroDate([normalYears[index]]).isLeapYear(), 'Normal year');
         }
 
-        fireLoop.run(normalYearsLength, nYears, 100);
+        fireLoop.run(normalYearsLength, nYears, delay);
 
         function dNames(index) {
             astrodate = new AstroDate([2013, 9, index + 1]);
@@ -62,7 +62,9 @@
             t.equal(astrodate.format('D'), (244 + index).toString(), 'Day of year');
         }
 
-        fireLoop.run(7, dNames, 100);
+        fireLoop.run(7, dNames, delay);
         t.end();
     });
+
+    test.apply(null, args);
 }());
