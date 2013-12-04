@@ -3,7 +3,9 @@
     'use strict';
 
     var test = require('tape-compact'),
-        AstroDate;
+        AstroDate,
+        Fire = require('./fire'),
+        fireSingle = new Fire();
 
     function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
@@ -27,30 +29,28 @@
         AstroDate = require('../lib/astrodate.min');
     }
 
-    test('parsing iso basic', {compact: true, name: 'All tests'}, function (t) {
-        var repeat = 10,
-            count,
-            offset = new Date().getTimezoneOffset(),
-            hourOffset,
-            minOffset,
-            tz,
-            tz1,
-            formats,
-            index,
-            year,
-            month,
-            day,
-            hour,
-            minute,
-            second,
-            millisecond,
-            withComma;
+    test('parsing iso basic', {
+        compact: true,
+        name: 'All tests'
+    }, function (t) {
+        var repeat = 50,
+            offset = new Date().getTimezoneOffset();
 
-        for (count = 0; count < repeat; count += 1) {
-            year = padLeadingZero(getRandomInt(0, 9999), 4);
-            month = padLeadingZero(getRandomInt(1, 12), 2);
-            day = padLeadingZero(getRandomInt(1, +new AstroDate([year, month]).daysInMonth()), 2);
-            hour = padLeadingZero(getRandomInt(0, 24), 2);
+        function single() {
+            var year = padLeadingZero(getRandomInt(0, 9999), 4),
+                month = padLeadingZero(getRandomInt(1, 12), 2),
+                day = padLeadingZero(getRandomInt(1, +new AstroDate([year, month]).daysInMonth()), 2),
+                hour = padLeadingZero(getRandomInt(0, 24), 2),
+                loop = new Fire(),
+                minute,
+                second,
+                millisecond,
+                hourOffset,
+                minOffset,
+                tz,
+                tz1,
+                formats;
+
             if ('24' === hour) {
                 minute = '00';
                 second = '00';
@@ -103,14 +103,16 @@
                 [year + month + day + ' ' + hour + minute + second + '.' + millisecond + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.' + millisecond + 'Z']
             ];
 
-
-            for (index = 0; index < formats.length; index += 1) {
+            function testFormats(index) {
                 t.equal(new AstroDate(formats[index][0]).toISOString(), formats[index][1], '(' + index + ')AstroDate should be able to parse ISO basic ' + formats[index][0]);
-                withComma = formats[index][0].replace('.', ',');
+                var withComma = formats[index][0].replace('.', ',');
                 t.equal(new AstroDate(withComma).toISOString(), formats[index][1], '(' + index + ')AstroDate should be able to parse ISO basic ' + withComma);
             }
+
+            loop.run(formats.length, testFormats, 100);
         }
 
+        fireSingle.run(repeat, single, 100);
         t.end();
     });
 }());

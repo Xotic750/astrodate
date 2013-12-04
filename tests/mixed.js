@@ -7,7 +7,9 @@
     }
 
     var test = require('tape-compact'),
-        AstroDate;
+        AstroDate,
+        Fire = require('./fire'),
+        fireSingle = new Fire();
 
     if (!process.env.ASTRODATE_COVERAGE) {
         AstroDate = require('../lib/astrodate');
@@ -15,8 +17,11 @@
         AstroDate = require('../lib/astrodate.min');
     }
 
-    test('array/isAstroDate/isValid/from AstroDate', {compact: true, name: 'All tests'}, function (t) {
-        var repeat = 10,
+    test('array/isAstroDate/isValid/from AstroDate', {
+        compact: true,
+        name: 'All tests'
+    }, function (t) {
+        var repeat = 50,
             zeroArray = [NaN, 1, 1, 0, 0, 0, 0, 0],
             fullArray = [],
             fullArrayString = [],
@@ -26,7 +31,6 @@
             fullArrayLength,
             astrodate,
             index,
-            count,
             end,
             slice,
             tObject,
@@ -34,7 +38,7 @@
             date,
             temp;
 
-        for (count = 0; count < repeat; count += 1) {
+        function single(count) {
             fullArray.length = 0;
             fullArrayString.length = 0;
             year = getRandomInt(-9007199254740991, 9007199254740991).toString();
@@ -155,6 +159,7 @@
             }
         }
 
+        fireSingle.run(repeat, single, 100);
         t.end();
     });
 }());

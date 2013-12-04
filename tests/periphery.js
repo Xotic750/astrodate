@@ -3,7 +3,9 @@
     'use strict';
 
     var test = require('tape-compact'),
-        AstroDate;
+        AstroDate,
+        Fire = require('./fire'),
+        fireLoop = new Fire();
 
     if (!process.env.ASTRODATE_COVERAGE) {
         AstroDate = require('../lib/astrodate');
@@ -30,7 +32,7 @@
         }
 
         normalYearsLength = normalYears.length;
-        for (index = 0; index < 12; index += 1) {
+        function mNd(index) {
             astrodate = new AstroDate([2013, index + 1]);
             t.equal(astrodate.format('MMMM'), monthNames[index], 'Month name match');
             t.equal(astrodate.daysInMonth(), monthDays[index], 'Days in month: normal year');
@@ -40,20 +42,27 @@
             t.equal(astrodate.daysInMonth(), monthDaysLeap[index], 'Days in month: leap year');
         }
 
-        for (index = 0; index < leapYearLength; index += 1) {
+        fireLoop.run(12, mNd, 100);
+
+        function lYears(index) {
             t.ok(new AstroDate([leapYears[index]]).isLeapYear(), 'Leap year');
         }
 
-        for (index = 0; index < normalYearsLength; index += 1) {
-            t.ok(!new AstroDate([2013]).isLeapYear(), 'Normal year');
+        fireLoop.run(leapYearLength, lYears, 100);
+
+        function nYears(index) {
+            t.ok(!new AstroDate([normalYears[index]]).isLeapYear(), 'Normal year');
         }
 
-        for (index = 0; index < 7; index += 1) {
+        fireLoop.run(normalYearsLength, nYears, 100);
+
+        function dNames(index) {
             astrodate = new AstroDate([2013, 9, index + 1]);
             t.equal(astrodate.format('EEEE'), dayNames[index], 'Day names');
             t.equal(astrodate.format('D'), (244 + index).toString(), 'Day of year');
         }
 
+        fireLoop.run(7, dNames, 100);
         t.end();
     });
 }());
