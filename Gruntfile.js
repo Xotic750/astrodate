@@ -198,7 +198,7 @@
                             maxBuffer: 1048576
                         }
                     },
-                    command: 'node_modules/tape/bin/tape tests/*.js'
+                    command: 'node_modules/tape-compact/bin/tape tests/*.js'
                 },
                 coveralls: {
                     options: {
@@ -220,7 +220,7 @@
                             maxBuffer: 1048576
                         }
                     },
-                    command: 'ASTRODATE_COVERAGE=1 node_modules/tape/bin/tape tests/*.js'
+                    command: 'ASTRODATE_COVERAGE=1 node_modules/tape-compact/bin/tape tests/*.js'
                 }
             },
 
