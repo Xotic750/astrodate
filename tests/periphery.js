@@ -2,7 +2,7 @@
 (function () {
     'use strict';
 
-    var test = require('tape'),
+    var test = require('tape-compact'),
         AstroDate;
 
     if (!process.env.ASTRODATE_COVERAGE) {

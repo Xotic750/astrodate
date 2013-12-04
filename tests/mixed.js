@@ -6,7 +6,7 @@
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
-    var test = require('tape'),
+    var test = require('tape-compact'),
         AstroDate;
 
     if (!process.env.ASTRODATE_COVERAGE) {
