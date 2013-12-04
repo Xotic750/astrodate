@@ -4,7 +4,7 @@
 
     var test = require('tape-compact'),
         AstroDate,
-        Fire = require('./fire'),
+        Fire = require('../scripts/fire'),
         fireLoop = new Fire();
 
     if (!process.env.ASTRODATE_COVERAGE) {

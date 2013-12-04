@@ -290,7 +290,6 @@
 
         grunt.registerTask('test', [
             'shell:beautified',
-            'shell:coveralls',
             'shell:uglified'
         ]);
     };
