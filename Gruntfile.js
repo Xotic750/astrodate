@@ -82,7 +82,7 @@
                     output: {
                         'ascii_only': true
                     },
-                    report: 'gzip',
+                    report: 'min',
                     preserveComments: 'some'
                 }
             },
@@ -198,7 +198,7 @@
                             maxBuffer: 1048576
                         }
                     },
-                    command: 'ASTRODATE_COVERAGE=1 node_modules/tap/bin/tap.js tests/*.js'
+                    command: 'node_modules/tape/bin/tape tests/*.js'
                 },
                 coveralls: {
                     options: {
@@ -209,7 +209,7 @@
                             maxBuffer: 1048576
                         }
                     },
-                    command: 'ASTRODATE_COVERAGE=1 node_modules/istanbul/lib/cli.js cover tests/*.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage'
+                    command: 'node_modules/istanbul/lib/cli.js cover tests/*.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage'
                 },
                 uglified: {
                     options: {
@@ -220,7 +220,7 @@
                             maxBuffer: 1048576
                         }
                     },
-                    command: 'node_modules/tap/bin/tap.js tests/*.js'
+                    command: 'ASTRODATE_COVERAGE=1 node_modules/tape/bin/tape tests/*.js'
                 }
             },
 

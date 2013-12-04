@@ -16,9 +16,6 @@
         "parse",
         "atronomy"
     ],
-    "browser": {
-        "astrodate": false
-    },
     "main": "lib/astrodate.js",
     "engines": {
         "node": ">=0.8"
@@ -53,7 +50,7 @@
         "js-beautify": "latest",
         "jsdoc": "latest",
         "tar.gz": "latest",
-        "tap": "latest",
+        "tape": "git+https://github.com/Xotic750/tape.git",
         "grunt-cli": "latest",
         "grunt-contrib-jshint": "latest",
         "grunt-contrib-uglify": "latest",
@@ -68,7 +65,8 @@
         "coveralls": "latest",
         "grunt-shell": "latest",
         "istanbul": "latest",
-        "grunt-jsonlint": "latest"
+        "grunt-jsonlint": "latest",
+        "deep-equal": "latest"
     },
     "optionalDependencies": {
         "uglify-js": "latest",
@@ -77,7 +75,7 @@
         "js-beautify": "latest",
         "jsdoc": "latest",
         "tar.gz": "latest",
-        "tap": "latest",
+        "tape": "git+https://github.com/Xotic750/tape.git",
         "grunt-cli": "latest",
         "grunt-contrib-jshint": "latest",
         "grunt-contrib-uglify": "latest",
@@ -92,7 +90,8 @@
         "coveralls": "latest",
         "grunt-shell": "latest",
         "istanbul": "latest",
-        "grunt-jsonlint": "latest"
+        "grunt-jsonlint": "latest",
+        "deep-equal": "latest"
     },
     "sources": {
         "cldr": "http://unicode.org/Public/cldr/24/json.zip",

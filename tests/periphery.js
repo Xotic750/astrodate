@@ -1,11 +1,17 @@
-/*global require */
+/*global require, process */
 (function () {
     'use strict';
 
-    var test = require('tap').test,
-        AstroDate = require('../');
+    var test = require('tape'),
+        AstroDate;
 
-    test('periphery methods', function (t) {
+    if (!process.env.ASTRODATE_COVERAGE) {
+        AstroDate = require('../lib/astrodate');
+    } else {
+        AstroDate = require('../lib/astrodate.min');
+    }
+
+    test('periphery methods', {compact: true, name: 'All tests'}, function (t) {
         var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
             monthDays = ['31', '28', '31', '30', '31', '30', '31', '31', '30', '31', '30', '31'],
             monthDaysLeap = ['31', '29', '31', '30', '31', '30', '31', '31', '30', '31', '30', '31'],

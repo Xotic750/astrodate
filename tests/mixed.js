@@ -1,4 +1,4 @@
-/*global require */
+/*global require, process */
 (function () {
     'use strict';
 
@@ -6,10 +6,16 @@
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
-    var test = require('tap').test,
-        AstroDate = require('../');
+    var test = require('tape'),
+        AstroDate;
 
-    test('array/isAstroDate/isValid/from AstroDate', function (t) {
+    if (!process.env.ASTRODATE_COVERAGE) {
+        AstroDate = require('../lib/astrodate');
+    } else {
+        AstroDate = require('../lib/astrodate.min');
+    }
+
+    test('array/isAstroDate/isValid/from AstroDate', {compact: true, name: 'All tests'}, function (t) {
         var repeat = 50,
             zeroArray = [NaN, 1, 1, 0, 0, 0, 0, 0],
             fullArray = [],

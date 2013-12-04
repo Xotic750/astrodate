@@ -1,6 +1,9 @@
-/*global require */
+/*global require, process */
 (function () {
     'use strict';
+
+    var test = require('tape'),
+        AstroDate;
 
     function getRandomInt(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
@@ -18,10 +21,13 @@
         return numString;
     }
 
-    var test = require('tap').test,
-        AstroDate = require('../');
+    if (!process.env.ASTRODATE_COVERAGE) {
+        AstroDate = require('../lib/astrodate');
+    } else {
+        AstroDate = require('../lib/astrodate.min');
+    }
 
-    test('parsing iso extended', function (t) {
+    test('parsing iso extended', {compact: true, name: 'All tests'}, function (t) {
         var repeat = 50,
             count,
             offset = new Date().getTimezoneOffset(),
