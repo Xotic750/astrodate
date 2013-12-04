@@ -9,7 +9,7 @@
 
             clean: {
                 all: ['README.md', 'docs', 'lib', 'src/cldr.zip', 'src/tzdata.tar.gz', 'src/*.json', 'src/cldr', 'src/tz', 'coverage'],
-                after: ['src/cldr.zip', 'src/tzdata.tar.gz', 'src/cldr', 'src/tz', 'coverage']
+                after: ['src/cldr.zip', 'src/tzdata.tar.gz', 'src/*.json', 'src/cldr', 'src/tz', 'coverage']
             },
 
             curl: {
