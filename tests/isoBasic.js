@@ -9,8 +9,11 @@
         fireSingle = new Fire(),
         args = ['parsing iso basic'];
 
-    if (!process.env.ASTRODATE_TAPE) {
-        args.push({compact: true, name: 'All tests'});
+    if ('1' !== process.env.ASTRODATE_TAPE && '2' !== process.env.ASTRODATE_TAPE) {
+        args.push({
+            compact: true,
+            name: 'All tests'
+        });
     }
 
     function getRandomInt(min, max) {

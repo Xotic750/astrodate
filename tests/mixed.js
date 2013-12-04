@@ -13,8 +13,11 @@
         fireSingle = new Fire(),
         args = ['array/isAstroDate/isValid/from AstroDate'];
 
-    if (!process.env.ASTRODATE_TAPE) {
-        args.push({compact: true, name: 'All tests'});
+    if ('1' !== process.env.ASTRODATE_TAPE && '2' !== process.env.ASTRODATE_TAPE) {
+        args.push({
+            compact: true,
+            name: 'All tests'
+        });
     }
 
     args.push(function (t) {
