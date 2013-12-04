@@ -28,7 +28,7 @@
     }
 
     test('parsing iso basic', {compact: true, name: 'All tests'}, function (t) {
-        var repeat = 50,
+        var repeat = 10,
             count,
             offset = new Date().getTimezoneOffset(),
             hourOffset,

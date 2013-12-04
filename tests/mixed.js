@@ -16,7 +16,7 @@
     }
 
     test('array/isAstroDate/isValid/from AstroDate', {compact: true, name: 'All tests'}, function (t) {
-        var repeat = 50,
+        var repeat = 10,
             zeroArray = [NaN, 1, 1, 0, 0, 0, 0, 0],
             fullArray = [],
             fullArrayString = [],
