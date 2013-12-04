@@ -7,7 +7,7 @@
         grunt.registerMultiTask('buildReadme', 'Build the README.md file.', function () {
             var templateFile = this.data.readme,
                 destination = this.data.dest,
-                langList = grunt.config.get('buildFromCLDR.langList'),
+                langList = grunt.config.get('buildLanguages.langList'),
                 mappedList,
                 template;
 

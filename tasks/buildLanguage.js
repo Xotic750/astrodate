@@ -72,7 +72,7 @@
 
             grunt.file.write(destination + '/supplemental.json', JSON.stringify(merged, null, 4));
             grunt.log.writeln('File "' + destination + '/supplemental.json" created.');
-            grunt.config.set('buildFromCLDR.langList', langList);
+            grunt.config.set('buildLanguages.langList', langList);
             grunt.log.writeln(this.target + ': OK');
         });
     };
