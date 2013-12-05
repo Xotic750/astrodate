@@ -24,9 +24,13 @@
                 return;
             }
 
-            cb(self.cnt, times);
-            self.cnt += 1;
-            self.run(times, cb, ms);
+            if (typeof cb === 'function') {
+                cb(self.cnt, times);
+                self.cnt += 1;
+                self.run(times, cb, ms);
+            } else {
+                self.cnt = times;
+            }
         }, ms);
     };
 

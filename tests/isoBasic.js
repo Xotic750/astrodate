@@ -112,8 +112,12 @@
             loop.run(formats.length, testFormats, delay);
         }
 
-        fireSingle.run(repeat, single, delay);
-        t.end();
+        fireSingle.run(repeat, function (cnt, iters) {
+            single(arguments);
+            if (cnt + 1 >= iters) {
+                t.end();
+            }
+        }, delay);
     });
 
     test.apply(null, args);
