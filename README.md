@@ -2,7 +2,9 @@ Master
 
 [![Build Status](https://travis-ci.org/Xotic750/astrodate.png?branch=master)](https://travis-ci.org/Xotic750/astrodate  "Build Status on Travis CI")
 
-[![Dependency Status](https://gemnasium.com/Xotic750/astrodate.png)](https://gemnasium.com/Xotic750/astrodate "Dependency Status on Gemnasium")
+[![Dependency Status](https://david-dm.org/Xotic750/astrodate#badge-embed)](https://david-dm.org/Xotic750/astrodate#info=dependencies&view=table "Dependency Status on David")
+
+[![Dev Dependency Status](https://david-dm.org/Xotic750/astrodate#dev-badge-embed)](https://david-dm.org/Xotic750/astrodate#info=devDependencies&view=table "Dev Dependency Status on David")
 
 [![Coverage Status](https://coveralls.io/repos/Xotic750/astrodate/badge.png?branch=master)](https://coveralls.io/r/Xotic750/astrodate?branch=master "Coverage status on Coveralls")
 

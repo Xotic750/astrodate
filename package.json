@@ -67,8 +67,7 @@
         "coveralls": "latest",
         "grunt-shell": "latest",
         "istanbul": "latest",
-        "grunt-jsonlint": "latest",
-        "deep-equal": "latest"
+        "grunt-jsonlint": "latest"
     },
     "optionalDependencies": {
         "uglify-js": "latest",
@@ -94,8 +93,7 @@
         "coveralls": "latest",
         "grunt-shell": "latest",
         "istanbul": "latest",
-        "grunt-jsonlint": "latest",
-        "deep-equal": "latest"
+        "grunt-jsonlint": "latest"
     },
     "sources": {
         "cldr": "http://unicode.org/Public/cldr/24/json.zip",
@@ -103,6 +101,30 @@
     },
     "scripts": {
         "test": "grunt test"
+    },
+    "browser": {
+        "uglify-js": false,
+        "grunt": false,
+        "bignumber.js": false,
+        "js-beautify": false,
+        "jsdoc": false,
+        "tar.gz": false,
+        "tap": false,
+        "grunt-cli": false,
+        "grunt-contrib-jshint": false,
+        "grunt-contrib-uglify": false,
+        "grunt-contrib-watch": false,
+        "grunt-lib-legacyhelpers": false,
+        "grunt-contrib-clean": false,
+        "grunt-jsdoc": false,
+        "grunt-jsbeautifier": false,
+        "grunt-replace": false,
+        "grunt-curl": false,
+        "grunt-zip": false,
+        "coveralls": false,
+        "grunt-shell": false,
+        "istanbul": false,
+        "grunt-jsonlint": false
     },
     "testling": {
         "files": "tests/*.js",

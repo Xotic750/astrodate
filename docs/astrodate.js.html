@@ -28028,6 +28028,10 @@ arrayFilter = (function () {
         /*jslint eqeq: true, plusplus: true, sub: true, white: true, newcap: true, vars: true, ass: true, bitwise: true */
         /*jshint unused: false, expr: true, asi: true, eqnull: true, laxbreak: true, validthis: true, noempty: false, -W017, -W018, -W032, -W041, -W084, -W116, -W120 */
         /* bignumber.js v1.3.0 https://github.com/MikeMcl/bignumber.js/LICENCE */
+
+        /*jslint ass: true, bitwise: true, eqeq: true, plusplus: true, sub: true, white: true, maxerr: 500 */
+        /*global module, define */
+
         ;
         (function (global) {
             'use strict';
@@ -28143,7 +28147,7 @@ arrayFilter = (function () {
                         x['s'] = n['s'];
                         x['e'] = n['e'];
                         x['c'] = (n = n['c']) ? n.slice() : n;
-                        return
+                        return;
                     }
                 }
 
@@ -28151,7 +28155,7 @@ arrayFilter = (function () {
                 if (typeof n != 'string') {
                     n = (isNum = typeof n == 'number' ||
                         Object.prototype.toString.call(n) == '[object Number]') &amp;&amp;
-                        n === 0 &amp;&amp; 1 / n &lt; 0 ? '-0' : n + ''
+                        n === 0 &amp;&amp; 1 / n &lt; 0 ? '-0' : n + '';
                 }
 
                 orig = n;
@@ -28159,7 +28163,7 @@ arrayFilter = (function () {
                 if (b === e &amp;&amp; isValid.test(n)) {
 
                     // Determine sign.
-                    x['s'] = n.charAt(0) == '-' ? (n = n.slice(1), -1) : 1
+                    x['s'] = n.charAt(0) == '-' ? (n = n.slice(1), -1) : 1;
 
                     // Either n is not a valid BigNumber or a base has been specified.
                 } else {
@@ -28168,7 +28172,7 @@ arrayFilter = (function () {
                     // Ensure return value is rounded to DECIMAL_PLACES as with other bases.
                     if (b == 10) {
 
-                        return setMode(n, DECIMAL_PLACES, ROUNDING_MODE)
+                        return setMode(n, DECIMAL_PLACES, ROUNDING_MODE);
                     }
 
                     n = trim.call(n).replace(/^\+(?!-)/, '');
@@ -28194,19 +28198,19 @@ arrayFilter = (function () {
                                     if (n.replace(/^0\.0*|\./, '').length > 15) {
 
                                         // 'new BigNumber() number type has more than 15 significant digits: {n}'
-                                        ifExceptionsThrow(orig, 0)
+                                        ifExceptionsThrow(orig, 0);
                                     }
 
                                     // Prevent later check for length on converted number.
-                                    isNum = !isNum
+                                    isNum = !isNum;
                                 }
-                                n = convert(n, 10, b, x['s'])
+                                n = convert(n, 10, b, x['s']);
 
                             } else if (n != 'Infinity' &amp;&amp; n != 'NaN') {
 
                                 // 'new BigNumber() not a base {b} number: {n}'
                                 ifExceptionsThrow(orig, 1, b);
-                                n = 'NaN'
+                                n = 'NaN';
                             }
                         } else {
 
@@ -28215,10 +28219,10 @@ arrayFilter = (function () {
                             ifExceptionsThrow(b, 2);
 
                             // Ignore base.
-                            valid = isValid.test(n)
+                            valid = isValid.test(n);
                         }
                     } else {
-                        valid = isValid.test(n)
+                        valid = isValid.test(n);
                     }
 
                     if (!valid) {
@@ -28233,19 +28237,19 @@ arrayFilter = (function () {
                             if (n != 'NaN') {
 
                                 // 'new BigNumber() not a number: {n}'
-                                ifExceptionsThrow(orig, 3)
+                                ifExceptionsThrow(orig, 3);
                             }
-                            x['s'] = null
+                            x['s'] = null;
                         }
                         id = 0;
 
-                        return
+                        return;
                     }
                 }
 
                 // Decimal point?
                 if ((e = n.indexOf('.')) > -1) {
-                    n = n.replace('.', '')
+                    n = n.replace('.', '');
                 }
 
                 // Exponential form?
@@ -28253,15 +28257,15 @@ arrayFilter = (function () {
 
                     // Determine exponent.
                     if (e &lt; 0) {
-                        e = i
+                        e = i;
                     }
                     e += +n.slice(i + 1);
-                    n = n.substring(0, i)
+                    n = n.substring(0, i);
 
                 } else if (e &lt; 0) {
 
                     // Integer.
-                    e = n.length
+                    e = n.length;
                 }
 
                 // Determine leading zeros.
@@ -28273,7 +28277,7 @@ arrayFilter = (function () {
                 if (isNum &amp;&amp; b > 15 &amp;&amp; n.slice(i).length > 15) {
 
                     // 'new BigNumber() number type has more than 15 significant digits: {n}'
-                    ifExceptionsThrow(orig, 0)
+                    ifExceptionsThrow(orig, 0);
                 }
                 id = 0;
 
@@ -28281,13 +28285,13 @@ arrayFilter = (function () {
                 if ((e -= i + 1) > MAX_EXP) {
 
                     // Infinity.
-                    x['c'] = x['e'] = null
+                    x['c'] = x['e'] = null;
 
                     // Zero or underflow?
                 } else if (i == b || e &lt; MIN_EXP) {
 
                     // Zero.
-                    x['c'] = [x['e'] = 0]
+                    x['c'] = [x['e'] = 0];
                 } else {
 
                     // Determine trailing zeros.
@@ -28339,7 +28343,7 @@ arrayFilter = (function () {
                     c = 'config',
                     inRange = function (n, lo, hi) {
                         return !((outOfRange = n &lt; lo || n > hi) ||
-                            parse(n) != n &amp;&amp; n !== 0)
+                            parse(n) != n &amp;&amp; n !== 0);
                     },
                     has = o &amp;&amp; typeof o == 'object' ? function () {
                         if (o.hasOwnProperty(p)) return (v = o[p]) != null
@@ -28351,12 +28355,12 @@ arrayFilter = (function () {
                 if (has(p = 'DECIMAL_PLACES')) {
 
                     if (inRange(v, 0, MAX)) {
-                        DECIMAL_PLACES = v | 0
+                        DECIMAL_PLACES = v | 0;
                     } else {
 
                         // 'config() DECIMAL_PLACES not an integer: {v}'
                         // 'config() DECIMAL_PLACES out of range: {v}'
-                        ifExceptionsThrow(v, p, c)
+                        ifExceptionsThrow(v, p, c);
                     }
                 }
                 r[p] = DECIMAL_PLACES;
@@ -28365,12 +28369,12 @@ arrayFilter = (function () {
                 if (has(p = 'ROUNDING_MODE')) {
 
                     if (inRange(v, 0, 8)) {
-                        ROUNDING_MODE = v | 0
+                        ROUNDING_MODE = v | 0;
                     } else {
 
                         // 'config() ROUNDING_MODE not an integer: {v}'
                         // 'config() ROUNDING_MODE out of range: {v}'
-                        ifExceptionsThrow(v, p, c)
+                        ifExceptionsThrow(v, p, c);
                     }
                 }
                 r[p] = ROUNDING_MODE;
@@ -28382,15 +28386,16 @@ arrayFilter = (function () {
                 if (has(p = 'EXPONENTIAL_AT')) {
 
                     if (inRange(v, -MAX, MAX)) {
-                        TO_EXP_NEG = -(TO_EXP_POS = ~~ (v &lt; 0 ? -v : +v))
+                        TO_EXP_NEG = -(TO_EXP_POS = ~~ (v &lt; 0 ? -v : +v));
                     } else if (!outOfRange &amp;&amp; v &amp;&amp; inRange(v[0], -MAX, 0) &amp;&amp;
                         inRange(v[1], 0, MAX)) {
-                        TO_EXP_NEG = ~~v[0], TO_EXP_POS = ~~v[1]
+                        TO_EXP_NEG = ~~v[0];
+                        TO_EXP_POS = ~~v[1];
                     } else {
 
                         // 'config() EXPONENTIAL_AT not an integer or not [integer, integer]: {v}'
                         // 'config() EXPONENTIAL_AT out of range or not [negative, positive: {v}'
-                        ifExceptionsThrow(v, p, c, 1)
+                        ifExceptionsThrow(v, p, c, 1);
                     }
                 }
                 r[p] = [TO_EXP_NEG, TO_EXP_POS];
@@ -28402,15 +28407,15 @@ arrayFilter = (function () {
                 if (has(p = 'RANGE')) {
 
                     if (inRange(v, -MAX, MAX) &amp;&amp; ~~v) {
-                        MIN_EXP = -(MAX_EXP = ~~ (v &lt; 0 ? -v : +v))
+                        MIN_EXP = -(MAX_EXP = ~~ (v &lt; 0 ? -v : +v));
                     } else if (!outOfRange &amp;&amp; v &amp;&amp; inRange(v[0], -MAX, -1) &amp;&amp;
                         inRange(v[1], 1, MAX)) {
-                        MIN_EXP = ~~v[0], MAX_EXP = ~~v[1]
+                        MIN_EXP = ~~v[0], MAX_EXP = ~~v[1];
                     } else {
 
                         // 'config() RANGE not a non-zero integer or not [integer, integer]: {v}'
                         // 'config() RANGE out of range or not [negative, positive: {v}'
-                        ifExceptionsThrow(v, p, c, 1, 1)
+                        ifExceptionsThrow(v, p, c, 1, 1);
                     }
                 }
                 r[p] = [MIN_EXP, MAX_EXP];
@@ -28419,16 +28424,16 @@ arrayFilter = (function () {
                 if (has(p = 'ERRORS')) {
 
                     if (v === !! v || v === 1 || v === 0) {
-                        parse = (outOfRange = id = 0, ERRORS = !! v) ? parseInt : parseFloat
+                        parse = (outOfRange = id = 0, ERRORS = !! v) ? parseInt : parseFloat;
                     } else {
 
                         // 'config() ERRORS not a boolean or binary digit: {v}'
-                        ifExceptionsThrow(v, p, c, 0, 0, 1)
+                        ifExceptionsThrow(v, p, c, 0, 0, 1);
                     }
                 }
                 r[p] = ERRORS;
 
-                return r
+                return r;
             };
 
 
@@ -28458,7 +28463,7 @@ arrayFilter = (function () {
                     error = new Error(message);
                     error['name'] = 'BigNumber Error';
 
-                    throw error
+                    throw error;
                 }
             }
 
@@ -28488,15 +28493,15 @@ arrayFilter = (function () {
                             if (arr[j] > baseOut - 1) {
 
                                 if (arr[j + 1] == null) {
-                                    arr[j + 1] = 0
+                                    arr[j + 1] = 0;
                                 }
                                 arr[j + 1] += arr[j] / baseOut ^ 0;
-                                arr[j] %= baseOut
+                                arr[j] %= baseOut;
                             }
                         }
                     }
 
-                    return arr.reverse()
+                    return arr.reverse();
                 }
 
                 // Convert array to string.
@@ -28508,11 +28513,11 @@ arrayFilter = (function () {
 
                     for (; i &lt; arrL; str += DIGITS.charAt(arr[i++])) {}
 
-                    return str
+                    return str;
                 }
 
                 if (baseIn &lt; 37) {
-                    nStr = nStr.toLowerCase()
+                    nStr = nStr.toLowerCase();
                 }
 
                 /*
@@ -28554,7 +28559,7 @@ arrayFilter = (function () {
                         for (; ++e; fracArr.unshift(0)) {}
 
                         // Append the fraction part to the converted integer part.
-                        nStr = arrToStr(nArr) + '.' + arrToStr(fracArr)
+                        nStr = arrToStr(nArr) + '.' + arrToStr(fracArr);
 
                         // fracArr is [1].
                         // Fraction digits rounded up, so increment last digit of integer part.
@@ -28562,23 +28567,23 @@ arrayFilter = (function () {
 
                         if (nArr[e = nArr.length - 1] &lt; baseOut - 1) {
                             ++nArr[e];
-                            nStr = arrToStr(nArr)
+                            nStr = arrToStr(nArr);
                         } else {
                             nStr = new BigNumber(arrToStr(nArr),
-                                baseOut)['plus'](ONE)['toS'](baseOut)
+                                baseOut)['plus'](ONE)['toS'](baseOut);
                         }
 
                         // fracArr is [0]. No fraction digits.
                     } else {
-                        nStr = arrToStr(nArr)
+                        nStr = arrToStr(nArr);
                     }
                 } else {
 
                     // Simple integer. Convert base.
-                    nStr = arrToStr(strToArr(nStr))
+                    nStr = arrToStr(strToArr(nStr));
                 }
 
-                return nStr
+                return nStr;
             }
 
 
@@ -28611,13 +28616,13 @@ arrayFilter = (function () {
 
                         // Compare divisor and remainder.
                         if (dvsL != (remL = rem.length)) {
-                            cmp = dvsL > remL ? 1 : -1
+                            cmp = dvsL > remL ? 1 : -1;
                         } else {
                             for (remI = -1, cmp = 0; ++remI &lt; dvsL;) {
 
                                 if (dvs[remI] != rem[remI]) {
                                     cmp = dvs[remI] > rem[remI] ? 1 : -1;
-                                    break
+                                    break;
                                 }
                             }
                         }
@@ -28633,13 +28638,13 @@ arrayFilter = (function () {
 
                                     for (remI = remL; remI &amp;&amp; !rem[--remI]; rem[remI] = base - 1) {}
                                     --rem[remI];
-                                    rem[remL] += base
+                                    rem[remL] += base;
                                 }
-                                rem[remL] -= dvsT[remL]
+                                rem[remL] -= dvsT[remL];
                             }
                             for (; !rem[0]; rem.shift()) {}
                         } else {
-                            break
+                            break;
                         }
                     }
 
@@ -28647,7 +28652,7 @@ arrayFilter = (function () {
                     qc[qi++] = cmp ? next : ++next;
 
                     // Update the remainder.
-                    rem[0] &amp;&amp; cmp ? (rem[remL] = dvd[dvdI] || 0) : (rem = [dvd[dvdI]])
+                    rem[0] &amp;&amp; cmp ? (rem[remL] = dvd[dvdI] || 0) : (rem = [dvd[dvdI]]);
 
                 } while ((dvdI++ &lt; dvdL || rem[0] != null) &amp;&amp; s--);
 
@@ -28656,28 +28661,28 @@ arrayFilter = (function () {
 
                     // There can't be more than one zero.
                     --quo['e'];
-                    qc.shift()
+                    qc.shift();
                 }
 
                 // Round?
                 if (qi > dig) {
-                    rnd(quo, DECIMAL_PLACES, base, isOdd, rem[0] != null)
+                    rnd(quo, DECIMAL_PLACES, base, isOdd, rem[0] != null);
                 }
 
                 // Overflow?
                 if (quo['e'] > MAX_EXP) {
 
                     // Infinity.
-                    quo['c'] = quo['e'] = null
+                    quo['c'] = quo['e'] = null;
 
                     // Underflow?
                 } else if (quo['e'] &lt; MIN_EXP) {
 
                     // Zero.
-                    quo['c'] = [quo['e'] = 0]
+                    quo['c'] = [quo['e'] = 0];
                 }
 
-                return quo
+                return quo;
             }
 
 
@@ -28697,12 +28702,12 @@ arrayFilter = (function () {
 
                 // +-Infinity or NaN?
                 if (!c) {
-                    return n['toS']()
+                    return n['toS']();
                 }
 
                 // Round?
                 if (c.length > ++d) {
-                    rnd(n, i, 10)
+                    rnd(n, i, 10);
                 }
 
                 // Recalculate d if toFixed as n['e'] may have changed if value rounded up.
@@ -28723,7 +28728,7 @@ arrayFilter = (function () {
                 ? (n['s'] &lt; 0 &amp;&amp; c[0] ? '-' : '') + (c.length > 1 ? (c.splice(1, 0, '.'), c.join('')) : c[0]) + (i &lt; 0 ? 'e' : 'e+') + i
 
                 // Normal notation.
-                : n['toS']()
+                : n['toS']();
             }
 
 
@@ -28771,14 +28776,14 @@ arrayFilter = (function () {
 
                         // 1, 0.1, 0.01, 0.001, 0.0001 etc.
                         xc[0] = 1;
-                        x['e'] = -dp
+                        x['e'] = -dp;
                     } else {
 
                         // Zero.
-                        x['e'] = 0
+                        x['e'] = 0;
                     }
 
-                    return x
+                    return x;
                 }
 
                 // Remove any digits after the required decimal places.
@@ -28793,7 +28798,7 @@ arrayFilter = (function () {
 
                         if (!i--) {
                             ++x['e'];
-                            xc.unshift(1)
+                            xc.unshift(1);
                         }
                     }
                 }
@@ -28801,7 +28806,7 @@ arrayFilter = (function () {
                 // Remove trailing zeros.
                 for (i = xc.length; !xc[--i]; xc.pop()) {}
 
-                return x
+                return x;
             }
 
 
@@ -28815,7 +28820,7 @@ arrayFilter = (function () {
                 x['c'] &amp;&amp; rnd(x, dp, 10);
                 ROUNDING_MODE = r;
 
-                return x
+                return x;
             }
 
 
@@ -28829,10 +28834,10 @@ arrayFilter = (function () {
                 var x = new BigNumber(this);
 
                 if (x['s'] &lt; 0) {
-                    x['s'] = 1
+                    x['s'] = 1;
                 }
 
-                return x
+                return x;
             };
 
 
@@ -28841,7 +28846,7 @@ arrayFilter = (function () {
              * rounded to a whole number in the direction of Infinity.
              */
             P['ceil'] = function () {
-                return setMode(this, 0, 2)
+                return setMode(this, 0, 2);
             };
 
 
@@ -28864,29 +28869,29 @@ arrayFilter = (function () {
 
                 // Either NaN?
                 if (!i || !j) {
-                    return null
+                    return null;
                 }
 
                 a = xc &amp;&amp; !xc[0], b = yc &amp;&amp; !yc[0];
 
                 // Either zero?
                 if (a || b) {
-                    return a ? b ? 0 : -j : i
+                    return a ? b ? 0 : -j : i;
                 }
 
                 // Signs differ?
                 if (i != j) {
-                    return i
+                    return i;
                 }
 
                 // Either Infinity?
                 if (a = i &lt; 0, b = k == l, !xc || !yc) {
-                    return b ? 0 : !xc ^ a ? 1 : -1
+                    return b ? 0 : !xc ^ a ? 1 : -1;
                 }
 
                 // Compare exponents.
                 if (!b) {
-                    return k > l ^ a ? 1 : -1
+                    return k > l ^ a ? 1 : -1;
                 }
 
                 // Compare digit by digit.
@@ -28895,11 +28900,11 @@ arrayFilter = (function () {
                     ++i &lt; j;) {
 
                     if (xc[i] != yc[i]) {
-                        return xc[i] > yc[i] ^ a ? 1 : -1
+                        return xc[i] > yc[i] ^ a ? 1 : -1;
                     }
                 }
                 // Compare lengths.
-                return k == l ? 0 : k > l ^ a ? 1 : -1
+                return k == l ? 0 : k > l ^ a ? 1 : -1;
             };
 
 
@@ -28954,7 +28959,7 @@ arrayFilter = (function () {
                     // y is 0. Return +-Infinity.
                     : s / 0)
 
-                : divide(xc, yc, xe - ye, s, 10)
+                : divide(xc, yc, xe - ye, s, 10);
             };
 
 
@@ -28964,7 +28969,7 @@ arrayFilter = (function () {
              */
             P['equals'] = P['eq'] = function (n, b) {
                 id = 3;
-                return this['cmp'](n, b) === 0
+                return this['cmp'](n, b) === 0;
             };
 
 
@@ -28973,7 +28978,7 @@ arrayFilter = (function () {
              * rounded to a whole number in the direction of -Infinity.
              */
             P['floor'] = function () {
-                return setMode(this, 0, 3)
+                return setMode(this, 0, 3);
             };
 
 
@@ -28983,7 +28988,7 @@ arrayFilter = (function () {
              */
             P['greaterThan'] = P['gt'] = function (n, b) {
                 id = 4;
-                return this['cmp'](n, b) > 0
+                return this['cmp'](n, b) > 0;
             };
 
 
@@ -28993,7 +28998,7 @@ arrayFilter = (function () {
              */
             P['greaterThanOrEqualTo'] = P['gte'] = function (n, b) {
                 id = 5;
-                return (b = this['cmp'](n, b)) == 1 || b === 0
+                return (b = this['cmp'](n, b)) == 1 || b === 0;
             };
 
 
@@ -29002,7 +29007,7 @@ arrayFilter = (function () {
              * returns false.
              */
             P['isFinite'] = P['isF'] = function () {
-                return !!this['c']
+                return !!this['c'];
             };
 
 
@@ -29011,7 +29016,7 @@ arrayFilter = (function () {
              * false.
              */
             P['isNaN'] = function () {
-                return !this['s']
+                return !this['s'];
             };
 
 
@@ -29020,7 +29025,7 @@ arrayFilter = (function () {
              * returns false.
              */
             P['isNegative'] = P['isNeg'] = function () {
-                return this['s'] &lt; 0
+                return this['s'] &lt; 0;
             };
 
 
@@ -29029,7 +29034,7 @@ arrayFilter = (function () {
              * false.
              */
             P['isZero'] = P['isZ'] = function () {
-                return !!this['c'] &amp;&amp; this['c'][0] == 0
+                return !!this['c'] &amp;&amp; this['c'][0] == 0;
             };
 
 
@@ -29039,7 +29044,7 @@ arrayFilter = (function () {
              */
             P['lessThan'] = P['lt'] = function (n, b) {
                 id = 6;
-                return this['cmp'](n, b) &lt; 0
+                return this['cmp'](n, b) &lt; 0;
             };
 
 
@@ -29049,7 +29054,7 @@ arrayFilter = (function () {
              */
             P['lessThanOrEqualTo'] = P['lte'] = function (n, b) {
                 id = 7;
-                return (b = this['cmp'](n, b)) == -1 || b === 0
+                return (b = this['cmp'](n, b)) == -1 || b === 0;
             };
 
 
@@ -29082,12 +29087,12 @@ arrayFilter = (function () {
 
                 // Either NaN?
                 if (!a || !b) {
-                    return new BigNumber(NaN)
+                    return new BigNumber(NaN);
                 }
 
                 // Signs differ?
                 if (a != b) {
-                    return y['s'] = -b, x['plus'](y)
+                    return y['s'] = -b, x['plus'](y);
                 }
 
                 var xc = x['c'],
@@ -29099,7 +29104,7 @@ arrayFilter = (function () {
 
                     // Either Infinity?
                     if (!xc || !yc) {
-                        return xc ? (y['s'] = -b, y) : new BigNumber(yc ? x : NaN)
+                        return xc ? (y['s'] = -b, y) : new BigNumber(yc ? x : NaN);
                     }
 
                     // Either zero?
@@ -29113,7 +29118,7 @@ arrayFilter = (function () {
 
                             // Both are zero.
                             // IEEE 754 (2008) 6.3: n - n = -0 when rounding to -Infinity
-                            : ROUNDING_MODE == 3 ? -0 : 0)
+                            : ROUNDING_MODE == 3 ? -0 : 0);
                     }
                 }
 
@@ -29123,7 +29128,7 @@ arrayFilter = (function () {
                     d = (xLTy = a &lt; 0) ? (a = -a, xc) : (ye = xe, yc);
 
                     for (d.reverse(), b = a; b--; d.push(0)) {}
-                    d.reverse()
+                    d.reverse();
                 } else {
 
                     // Exponents equal. Check digit by digit.
@@ -29133,7 +29138,7 @@ arrayFilter = (function () {
 
                         if (xc[b] != yc[b]) {
                             xLTy = xc[b] &lt; yc[b];
-                            break
+                            break;
                         }
                     }
                 }
@@ -29141,7 +29146,7 @@ arrayFilter = (function () {
                 // x &lt; y? Point xc to the array of the bigger number.
                 if (xLTy) {
                     d = xc, xc = yc, yc = d;
-                    y['s'] = -y['s']
+                    y['s'] = -y['s'];
                 }
 
                 /*
@@ -29160,9 +29165,9 @@ arrayFilter = (function () {
 
                         for (i = b; i &amp;&amp; !xc[--i]; xc[i] = 9) {}
                         --xc[i];
-                        xc[b] += 10
+                        xc[b] += 10;
                     }
-                    xc[b] -= yc[b]
+                    xc[b] -= yc[b];
                 }
 
                 // Remove trailing zeros.
@@ -29184,14 +29189,14 @@ arrayFilter = (function () {
                      * n - n = +0  but  n - n = -0 when rounding towards -Infinity.
                      */
                     if (!xc[0]) {
-                        y['s'] = ROUNDING_MODE == 3 ? -1 : 1
+                        y['s'] = ROUNDING_MODE == 3 ? -1 : 1;
                     }
 
                     // Result is zero.
-                    xc = [ye = 0]
+                    xc = [ye = 0];
                 }
 
-                return y['c'] = xc, y['e'] = ye, y
+                return y['c'] = xc, y['e'] = ye, y;
             };
 
 
@@ -29220,7 +29225,7 @@ arrayFilter = (function () {
                 b = !i || !j || yc &amp;&amp; !yc[0];
 
                 if (b || xc &amp;&amp; !xc[0]) {
-                    return new BigNumber(b ? NaN : x)
+                    return new BigNumber(b ? NaN : x);
                 }
 
                 x['s'] = y['s'] = 1;
@@ -29231,7 +29236,7 @@ arrayFilter = (function () {
                     DECIMAL_PLACES = 0, ROUNDING_MODE = 1,
                     x = x['div'](y),
                     DECIMAL_PLACES = i, ROUNDING_MODE = j,
-                    this['minus'](x['times'](y)))
+                    this['minus'](x['times'](y)));
             };
 
 
@@ -29242,7 +29247,7 @@ arrayFilter = (function () {
             P['negated'] = P['neg'] = function () {
                 var x = new BigNumber(this);
 
-                return x['s'] = -x['s'] || null, x
+                return x['s'] = -x['s'] || null, x;
             };
 
 
@@ -29275,12 +29280,12 @@ arrayFilter = (function () {
 
                 // Either NaN?
                 if (!a || !b) {
-                    return new BigNumber(NaN)
+                    return new BigNumber(NaN);
                 }
 
                 // Signs differ?
                 if (a != b) {
-                    return y['s'] = -b, x['minus'](y)
+                    return y['s'] = -b, x['minus'](y);
                 }
 
                 var xe = x['e'],
@@ -29294,7 +29299,7 @@ arrayFilter = (function () {
                     if (!xc || !yc) {
 
                         // Return +-Infinity.
-                        return new BigNumber(a / 0)
+                        return new BigNumber(a / 0);
                     }
 
                     // Either zero?
@@ -29307,7 +29312,7 @@ arrayFilter = (function () {
                         : new BigNumber(xc[0] ? x
 
                             // Both are zero. Return zero.
-                            : a * 0)
+                            : a * 0);
                     }
                 }
 
@@ -29317,12 +29322,12 @@ arrayFilter = (function () {
                     d = a > 0 ? (ye = xe, yc) : (a = -a, xc);
 
                     for (d.reverse(); a--; d.push(0)) {}
-                    d.reverse()
+                    d.reverse();
                 }
 
                 // Point xc to the longer array.
                 if (xc.length - yc.length &lt; 0) {
-                    d = yc, yc = xc, xc = d
+                    d = yc, yc = xc, xc = d;
                 }
 
                 /*
@@ -29340,14 +29345,14 @@ arrayFilter = (function () {
                     if (++ye > MAX_EXP) {
 
                         // Infinity.
-                        xc = ye = null
+                        xc = ye = null;
                     }
                 }
 
                 // Remove trailing zeros.
                 for (a = xc.length; xc[--a] == 0; xc.pop()) {}
 
-                return y['c'] = xc, y['e'] = ye, y
+                return y['c'] = xc, y['e'] = ye, y;
             };
 
 
@@ -29386,23 +29391,23 @@ arrayFilter = (function () {
                     !i) {
 
                     // i is +-Infinity, NaN or 0.
-                    return new BigNumber(Math.pow(x['toS'](), i))
+                    return new BigNumber(Math.pow(x['toS'](), i));
                 }
 
                 for (i = i &lt; 0 ? -i : i;;) {
 
                     if (i &amp; 1) {
-                        y = y['times'](x)
+                        y = y['times'](x);
                     }
                     i >>= 1;
 
                     if (!i) {
-                        break
+                        break;
                     }
-                    x = x['times'](x)
+                    x = x['times'](x);
                 }
 
-                return e &lt; 0 ? ONE['div'](y) : y
+                return e &lt; 0 ? ONE['div'](y) : y;
             };
 
 
@@ -29432,7 +29437,7 @@ arrayFilter = (function () {
                     // 'round() mode out of range: {rm}'
                     !ifExceptionsThrow(rm, 'mode', 'round')) ? ROUNDING_MODE : rm | 0;
 
-                return setMode(this, dp, rm)
+                return setMode(this, dp, rm);
             };
 
 
@@ -29448,7 +29453,7 @@ arrayFilter = (function () {
              * this BigNumber, rounded according to DECIMAL_PLACES and ROUNDING_MODE.
              */
             P['squareRoot'] = P['sqrt'] = function () {
-                var i, n, r, re, t,
+                var n, r, re, t,
                     x = this,
                     c = x['c'],
                     s = x['s'],
@@ -29460,7 +29465,7 @@ arrayFilter = (function () {
                 // Negative/NaN/Infinity/zero?
                 if (s !== 1 || !c || !c[0]) {
 
-                    return new BigNumber(!s || s &lt; 0 &amp;&amp; (!c || c[0]) ? NaN : c ? x : 1 / 0)
+                    return new BigNumber(!s || s &lt; 0 &amp;&amp; (!c || c[0]) ? NaN : c ? x : 1 / 0);
                 }
 
                 // Initial estimate.
@@ -29475,23 +29480,23 @@ arrayFilter = (function () {
                     n = c.join('');
 
                     if (!(n.length + e &amp; 1)) {
-                        n += '0'
+                        n += '0';
                     }
                     r = new BigNumber(Math.sqrt(n) + '');
 
                     // r may still not be finite.
                     if (!r['c']) {
-                        r['c'] = [1]
+                        r['c'] = [1];
                     }
-                    r['e'] = (((e + 1) / 2) | 0) - (e &lt; 0 || e &amp; 1)
+                    r['e'] = (((e + 1) / 2) | 0) - (e &lt; 0 || e &amp; 1);
                 } else {
-                    r = new BigNumber(n = s.toString())
+                    r = new BigNumber(n = s.toString());
                 }
                 re = r['e'];
                 s = re + (DECIMAL_PLACES += 4);
 
                 if (s &lt; 3) {
-                    s = 0
+                    s = 0;
                 }
                 e = s;
 
@@ -29529,12 +29534,12 @@ arrayFilter = (function () {
                                     ROUNDING_MODE = rm;
                                     DECIMAL_PLACES = dp;
 
-                                    return t
+                                    return t;
                                 }
                             }
                             DECIMAL_PLACES += 4;
                             s += 4;
-                            n = ''
+                            n = '';
                         } else {
 
                             /*
@@ -29547,21 +29552,21 @@ arrayFilter = (function () {
 
                                 // Truncate to the first rounding digit.
                                 if (c.length > e - 2) {
-                                    c.length = e - 2
+                                    c.length = e - 2;
                                 }
 
                                 if (!r['times'](r)['eq'](x)) {
 
                                     while (c.length &lt; e - 3) {
-                                        c.push(0)
+                                        c.push(0);
                                     }
-                                    c[e - 3]++
+                                    c[e - 3]++;
                                 }
                             }
                             ROUNDING_MODE = rm;
                             rnd(r, DECIMAL_PLACES = dp, 10);
 
-                            return r
+                            return r;
                         }
                     }
                 }
@@ -29618,12 +29623,12 @@ arrayFilter = (function () {
                         ? y['s'] / 0
 
                         // x or y is 0. Return +-0.
-                        : y['s'] * 0)
+                        : y['s'] * 0);
                 }
                 y['e'] = i + j;
 
                 if ((a = xc.length) &lt; (b = yc.length)) {
-                    c = xc, xc = yc, yc = c, j = a, a = b, b = j
+                    c = xc, xc = yc, yc = c, j = a, a = b, b = j;
                 }
 
                 for (j = a + b, c = []; j--; c.push(0)) {}
@@ -29636,7 +29641,7 @@ arrayFilter = (function () {
                         b = b / 10 | 0) {}
 
                     if (b) {
-                        c[j] = (c[j] + b) % 10
+                        c[j] = (c[j] + b) % 10;
                     }
                 }
 
@@ -29665,7 +29670,7 @@ arrayFilter = (function () {
                 // Neither.
                 : c;
 
-                return y
+                return y;
             };
 
 
@@ -29688,7 +29693,7 @@ arrayFilter = (function () {
 
                     // 'toE() decimal places not an integer: {dp}'
                     // 'toE() decimal places out of range: {dp}'
-                    !ifExceptionsThrow(dp, 'decimal places', 'toE')) &amp;&amp; this['c'] ? this['c'].length - 1 : dp | 0, 1)
+                    !ifExceptionsThrow(dp, 'decimal places', 'toE')) &amp;&amp; this['c'] ? this['c'].length - 1 : dp | 0, 1);
             };
 
 
@@ -29712,7 +29717,7 @@ arrayFilter = (function () {
                     // 'toF() decimal places not an integer: {dp}'
                     // 'toF() decimal places out of range: {dp}'
                     !ifExceptionsThrow(dp, 'decimal places', 'toF'))) {
-                    d = x['e'] + (dp | 0)
+                    d = x['e'] + (dp | 0);
                 }
 
                 n = TO_EXP_NEG, dp = TO_EXP_POS;
@@ -29720,7 +29725,7 @@ arrayFilter = (function () {
 
                 // Note: str is initially undefined.
                 if (d == str) {
-                    str = x['toS']()
+                    str = x['toS']();
                 } else {
                     str = format(x, d);
 
@@ -29730,17 +29735,17 @@ arrayFilter = (function () {
 
                         // As e.g. -0 toFixed(3), will wrongly be returned as -0.000 from toString.
                         if (!x['c'][0]) {
-                            str = str.replace(/^-/, '')
+                            str = str.replace(/^-/, '');
 
                             // As e.g. -0.5 if rounded to -0 will cause toString to omit the minus sign.
                         } else if (str.indexOf('-') &lt; 0) {
-                            str = '-' + str
+                            str = '-' + str;
                         }
                     }
                 }
                 TO_EXP_NEG = n, TO_EXP_POS = dp;
 
-                return str
+                return str;
             };
 
 
@@ -29767,7 +29772,7 @@ arrayFilter = (function () {
 
                 // NaN, Infinity.
                 if (!xc) {
-                    return x['toS']()
+                    return x['toS']();
                 }
 
                 e = d['e'] = xc.length - x['e'] - 1;
@@ -29792,7 +29797,7 @@ arrayFilter = (function () {
                     (maxD = n)['cmp'](d) > 0) {
 
                     // d is e.g. 10, 100, 1000, 10000... , n1 is 1.
-                    maxD = e > 0 ? d : n1
+                    maxD = e > 0 ? d : n1;
                 }
 
                 MAX_EXP = 1 / 0;
@@ -29803,7 +29808,7 @@ arrayFilter = (function () {
                     d2 = d0['plus'](q['times'](d1));
 
                     if (d2['cmp'](maxD) == 1) {
-                        break
+                        break;
                     }
 
                     d0 = d1, d1 = d2;
@@ -29812,7 +29817,7 @@ arrayFilter = (function () {
                     n0 = d2;
 
                     d = n['minus'](q['times'](d2 = d));
-                    n = d2
+                    n = d2;
                 }
 
                 d2 = maxD['minus'](d0)['div'](d1);
@@ -29828,7 +29833,7 @@ arrayFilter = (function () {
                 frac = n1['div'](d1)['minus'](x)['abs']()['cmp'](
                     n0['div'](d0)['minus'](x)['abs']()) &lt; 1 ? [n1['toS'](), d1['toS']()] : [n0['toS'](), d0['toS']()];
 
-                return MAX_EXP = exp, DECIMAL_PLACES = dp, frac
+                return MAX_EXP = exp, DECIMAL_PLACES = dp, frac;
             };
 
 
@@ -29852,7 +29857,7 @@ arrayFilter = (function () {
 
                     // 'toP() precision not an integer: {sd}'
                     // 'toP() precision out of range: {sd}'
-                    !ifExceptionsThrow(sd, 'precision', 'toP')) ? this['toS']() : format(this, --sd | 0, 2)
+                    !ifExceptionsThrow(sd, 'precision', 'toP')) ? this['toS']() : format(this, --sd | 0, 2);
             };
 
 
@@ -29873,11 +29878,11 @@ arrayFilter = (function () {
 
                 // Infinity or NaN?
                 if (xe === null) {
-                    str = x['s'] ? 'Infinity' : 'NaN'
+                    str = x['s'] ? 'Infinity' : 'NaN';
 
                     // Exponential format?
                 } else if (b === u &amp;&amp; (xe &lt;= TO_EXP_NEG || xe >= TO_EXP_POS)) {
-                    return format(x, x['c'].length - 1, 1)
+                    return format(x, x['c'].length - 1, 1);
                 } else {
                     str = x['c'].join('');
 
@@ -29886,7 +29891,7 @@ arrayFilter = (function () {
 
                         // Prepend zeros.
                         for (; ++xe; str = '0' + str) {}
-                        str = '0.' + str
+                        str = '0.' + str;
 
                         // Positive exponent?
                     } else if (strL = str.length, xe > 0) {
@@ -29896,17 +29901,17 @@ arrayFilter = (function () {
                             // Append zeros.
                             for (xe -= strL; xe--; str += '0') {}
                         } else if (xe &lt; strL) {
-                            str = str.slice(0, xe) + '.' + str.slice(xe)
+                            str = str.slice(0, xe) + '.' + str.slice(xe);
                         }
 
                         // Exponent zero.
                     } else {
                         if (u = str.charAt(0), strL > 1) {
-                            str = u + '.' + str.slice(1)
+                            str = u + '.' + str.slice(1);
 
                             // Avoid '-0'
                         } else if (u == '0') {
-                            return u
+                            return u;
                         }
                     }
 
@@ -29918,19 +29923,19 @@ arrayFilter = (function () {
 
                             // Avoid '-0'
                             if (str == '0') {
-                                return str
+                                return str;
                             }
                         } else {
 
                             // 'toS() base not an integer: {b}'
                             // 'toS() base out of range: {b}'
-                            ifExceptionsThrow(b, 'base', 'toS')
+                            ifExceptionsThrow(b, 'base', 'toS');
                         }
                     }
 
                 }
 
-                return x['s'] &lt; 0 ? '-' + str : str
+                return x['s'] &lt; 0 ? '-' + str : str;
             };
 
 
@@ -29938,7 +29943,7 @@ arrayFilter = (function () {
              * Return as toString, but do not accept a base argument.
              */
             P['valueOf'] = function () {
-                return this['toS']()
+                return this['toS']();
             };
 
 
@@ -29957,21 +29962,20 @@ arrayFilter = (function () {
 
             // Node and other CommonJS-like environments that support module.exports.
             if (typeof module !== 'undefined' &amp;&amp; module.exports) {
-                module.exports = BigNumber
+                module.exports = BigNumber;
 
                 //AMD.
             } else if (typeof define == 'function' &amp;&amp; define.amd) {
                 define(function () {
-                    return BigNumber
-                })
+                    return BigNumber;
+                });
 
                 //Browser.
             } else {
-                global['BigNumber'] = BigNumber
+                global['BigNumber'] = BigNumber;
             }
 
         })(this);
-
 
 
         return this.BigNumber;
@@ -30007,7 +30011,7 @@ arrayFilter = (function () {
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha2</a> on Wed Dec 04 2013 17:42:50 GMT+0100 (CET)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha2</a> on Thu Dec 05 2013 03:44:02 GMT+0100 (CET)
 </footer>
 
 <script> prettyPrint(); </script>

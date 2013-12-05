@@ -198,7 +198,7 @@
                             maxBuffer: 1048576
                         }
                     },
-                    command: 'ASTRODATE_TAPE=2 ASTRODATE_RAW=1 node_modules/tap/bin/tap.js tests/*.js'
+                    command: 'ASTRODATE_TAPE=1 ASTRODATE_RAW=1 node_modules/tap/bin/tap.js tests/*.js'
                 },
                 coveralls: {
                     options: {
@@ -220,7 +220,7 @@
                             maxBuffer: 1048576
                         }
                     },
-                    command: 'ASTRODATE_TAPE=2 node_modules/tap/bin/tap.js tests/*.js'
+                    command: 'ASTRODATE_TAPE=1 node_modules/tap/bin/tap.js tests/*.js'
                 }
             },
 
