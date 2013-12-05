@@ -351,11 +351,13 @@ function isNumeric(inputArg) {
      * @private
      * @function
      * @param {*} inputArg
+     * @param {string} [msg]
      * @return {boolean}
      */
-    function checkObjectCoercible(inputArg) {
+    function checkObjectCoercible(inputArg, msg) {
         if (isUndefined(inputArg) || isNull(inputArg)) {
-            throw new TypeError('Cannot convert "' + inputArg + '" to object');
+            msg = msg || '';
+            throw new TypeError(msg + ': Cannot convert "' + inputArg + '" to object');
         }
 
         return inputArg;
@@ -377,7 +379,7 @@ function isNumeric(inputArg) {
             nfeToObject;
 
         tempSafariNFE = function nfeToObject(inputArg) {
-            var object = checkObjectCoercible(inputArg);
+            var object = checkObjectCoercible(inputArg, 'toObject');
 
             if (isBoolean(object)) {
                 object = new CtrBoolean(object);
@@ -876,7 +878,7 @@ function toInt32(inputArg) {
         }
 
         tempSafariNFE = function nfeSplit(str, separator, limit) {
-            var string = anyToString(checkObjectCoercible(str)),
+            var string = anyToString(checkObjectCoercible(str, 'stringSplit')),
                 output,
                 flags,
                 lastLastIndex,
@@ -980,7 +982,7 @@ function toInt32(inputArg) {
      * @return {string}
      */
     function firstChar(inputArg) {
-        return anyToString(checkObjectCoercible(inputArg)).charAt(0);
+        return anyToString(checkObjectCoercible(inputArg, 'firstChar')).charAt(0);
     }
 
     /**
@@ -1006,7 +1008,7 @@ function toInt32(inputArg) {
      * @return {string}
      */
     function lastChar(inputArg) {
-        var thisStr = anyToString(checkObjectCoercible(inputArg));
+        var thisStr = anyToString(checkObjectCoercible(inputArg, 'lastChar'));
 
         return thisStr.charAt(thisStr.length - 1);
     }
@@ -1034,7 +1036,7 @@ function toInt32(inputArg) {
      * @return {number}
      */
     function countCharacter(inputArg, character) {
-        return clamp(stringSplit(anyToString(checkObjectCoercible(inputArg)), firstChar(character)).length - 1, 0, Number.POSITIVE_INFINITY);
+        return clamp(stringSplit(anyToString(checkObjectCoercible(inputArg, 'countCharacter')), firstChar(character)).length - 1, 0, Number.POSITIVE_INFINITY);
     }
 
     /**
@@ -1049,7 +1051,7 @@ function toInt32(inputArg) {
      * @return {string}
      */
     function padLeadingChar(inputArg, character, size) {
-        var string = anyToString(checkObjectCoercible(inputArg)),
+        var string = anyToString(checkObjectCoercible(inputArg, 'padLeadingChar')),
             singleChar = firstChar(character),
             count = numberToInteger(size) - string.length;
 
@@ -1097,7 +1099,7 @@ function toInt32(inputArg) {
             };
         } else {
             tempSafariNFE = function nfeRepeat(string, count) {
-                var thisString = anyToString(checkObjectCoercible(string)),
+                var thisString = anyToString(checkObjectCoercible(string, 'stringRepeat')),
                     times = numberToInteger(count);
 
                 if (lt(times, 0) || strictEqual(times, Infinity)) {
@@ -1137,7 +1139,7 @@ stringStartsWith = (function () {
         };
     } else {
         tempSafariNFE = function nfeStartsWith(string, searchString, position) {
-            var thisStr = anyToString(checkObjectCoercible(string)),
+            var thisStr = anyToString(checkObjectCoercible(string, 'stringStartsWith')),
                 searchStr = anyToString(searchString),
                 thisLen = thisStr.length,
                 start = clamp(toInteger(position), 0, thisLen);
@@ -1176,7 +1178,7 @@ stringEndsWith = (function () {
         };
     } else {
         tempSafariNFE = function nfeEndsWith(string, searchString, position) {
-            var thisStr = anyToString(checkObjectCoercible(string)),
+            var thisStr = anyToString(checkObjectCoercible(string, 'stringEndsWith')),
                 searchStr = anyToString(searchString),
                 thisLen = thisStr.length,
                 end,
@@ -1223,7 +1225,7 @@ stringEndsWith = (function () {
             };
         } else {
             tempSafariNFE = function nfeContains(string, searchString, position) {
-                var thisStr = anyToString(checkObjectCoercible(string)),
+                var thisStr = anyToString(checkObjectCoercible(string, 'stringContains')),
                     searchStr = anyToString(searchString),
                     thisLen = thisStr.length;
 
@@ -1766,7 +1768,7 @@ arrayFilter = (function () {
             whiteSpacesString = arrayReduce(whiteSpacesList, tempSafariNFE, '');
             wsTrimRX = new RegExp('^[' + whiteSpacesString + ']+|[' + whiteSpacesString + ']+$', 'g');
             tempSafariNFE = function nfeTrim(inputArg) {
-                return anyToString(checkObjectCoercible(inputArg)).replace(wsTrimRX, '');
+                return anyToString(checkObjectCoercible(inputArg, 'stringTrim')).replace(wsTrimRX, '');
             };
         }
 
@@ -5206,7 +5208,7 @@ arrayFilter = (function () {
          * @return {string}
          */
         function cldrPadLeadingZero(num, size) {
-            var strNum = anyToString(checkObjectCoercible(num)),
+            var strNum = anyToString(checkObjectCoercible(num, 'cldrPadLeadingZero')),
                 firsrCharacter,
                 val;
 
@@ -30011,7 +30013,7 @@ arrayFilter = (function () {
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha2</a> on Thu Dec 05 2013 05:01:27 GMT+0100 (CET)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha2</a> on Thu Dec 05 2013 05:37:19 GMT+0100 (CET)
 </footer>
 
 <script> prettyPrint(); </script>

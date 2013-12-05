@@ -103,6 +103,7 @@
         "test": "grunt test"
     },
     "browser": {
+        "astrodate.js": false,
         "uglify-js": false,
         "grunt": false,
         "bignumber.js": false,
