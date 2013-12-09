@@ -7475,7 +7475,7 @@ arrayFilter = (function () {
                         val;
 
                     if (isUndefined(jsonString)) {
-                        if (isFunction(JSON.stringify)) {
+                        if (isObject(JSON) && isFunction(JSON.stringify)) {
                             val = JSON.stringify(this.object());
                         } else {
                             struct = this.object();
@@ -7486,12 +7486,12 @@ arrayFilter = (function () {
                             val = '{' + propArray.join(',') + '}';
                         }
                     } else if (isString(jsonString)) {
-                        if (isFunction(JSON.parse)) {
+                        if (isObject(JSON) && isFunction(JSON.parse)) {
                             struct = objectToStruct(JSON.parse(jsonString), this.isJulian());
                         } else {
                             /*jslint evil: true */
                             struct = objectToStruct(new Function('return' + jsonString)(), this.isJulian());
-                            /*jslint evil:   false */
+                            /*jslint evil: false */
                         }
 
                         if (!isValid(struct)) {

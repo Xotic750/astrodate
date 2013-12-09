@@ -6,6 +6,41 @@
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
+    function jsonStringify(arg) {
+        var jsonA = [],
+            prop,
+            string;
+
+        if (typeof JSON === 'object' && typeof JSON.stringify === 'function') {
+            string = JSON.stringify(arg);
+        } else {
+            jsonA = [];
+            for (prop in arg) {
+                if (arg.hasOwnProperty(prop)) {
+                    jsonA.push('"' + prop + '":"' + arg[prop] + '"');
+                }
+            }
+
+            string = '{' + jsonA.join(',') + '}';
+        }
+
+        return string;
+    }
+
+    function jsonParse(jsonString) {
+        var object;
+
+        if (typeof JSON === 'object' && typeof JSON.parse === 'function') {
+            object = JSON.parse(jsonString);
+        } else {
+            /*jslint evil: true */
+            object = new Function('return' + jsonString)();
+            /*jslint evil: false */
+        }
+
+        return object;
+    }
+
     var test = require('../scripts/whichTape'),
         AstroDate = require('../scripts/whichAstroDate'),
         Fire = require('../scripts/fire'),
@@ -40,8 +75,6 @@
                 slice,
                 tObject,
                 json,
-                jsonA,
-                prop,
                 date;
 
             fullArray.push(year);
@@ -78,18 +111,7 @@
                     'offset': slice[7]
                 };
 
-                if (typeof JSON.stringify === 'function') {
-                    json = JSON.stringify(tObject);
-                } else {
-                    jsonA = [];
-                    for (prop in tObject) {
-                        if (tObject.hasOwnProperty(prop)) {
-                            jsonA.push('"' + prop + '":"' + tObject[prop] + '"');
-                        }
-                    }
-
-                    json = '{' + jsonA.join(',') + '}';
-                }
+                json = jsonStringify(tObject);
 
                 switch (index) {
                 case 7:
@@ -128,7 +150,7 @@
                     t.ok(isNaN(date), 'outside of Date capability: ' + slice);
                 }
 
-                t.equal(astrodate.json(), json, '(' + count + '/' + index + ')Number: JSON are the same: ');
+                t.deepEqual(jsonParse(astrodate.json()), tObject, '(' + count + '/' + index + ')Number: JSON are the same: ');
 
                 astrodate = new AstroDate().array(fullArray.slice(0, end));
                 t.ok(AstroDate.isAstroDate(astrodate), '(' + count + '/' + index + ')Number array: isAstrodate');
@@ -140,7 +162,7 @@
                     t.ok(isNaN(date), 'outside of Date capability: ' + slice);
                 }
 
-                t.equal(astrodate.json(), json, '(' + count + '/' + index + ')Number array: JSON are the same: ');
+                t.deepEqual(jsonParse(astrodate.json()), tObject, '(' + count + '/' + index + ')Number array: JSON are the same: ');
 
                 astrodate = new AstroDate(astrodate);
                 t.ok(AstroDate.isAstroDate(astrodate), '(' + count + '/' + index + ')Number astrodate: isAstrodate');
@@ -152,7 +174,7 @@
                     t.ok(isNaN(date), 'outside of Date capability: ' + slice);
                 }
 
-                t.equal(astrodate.json(), json, '(' + count + '/' + index + ')Number astrodate: JSON are the same: ');
+                t.deepEqual(jsonParse(astrodate.json()), tObject, '(' + count + '/' + index + ')Number astrodate: JSON are the same: ');
 
                 switch (index) {
                 case 7:
@@ -190,7 +212,7 @@
                     t.ok(isNaN(date), 'outside of Date capability: ' + slice);
                 }
 
-                t.equal(astrodate.json(), json, '(' + count + '/' + index + ')String: JSON are the same: ');
+                t.deepEqual(jsonParse(astrodate.json()), tObject, '(' + count + '/' + index + ')String: JSON are the same: ');
 
                 astrodate = new AstroDate().array(fullArrayString.slice(0, end));
                 t.ok(AstroDate.isAstroDate(astrodate), '(' + count + '/' + index + ')String array: isAstrodate');
@@ -202,7 +224,7 @@
                     t.ok(isNaN(date), 'outside of Date capability: ' + slice);
                 }
 
-                t.equal(astrodate.json(), json, '(' + count + '/' + index + ')String array: JSON are the same: ');
+                t.deepEqual(jsonParse(astrodate.json()), tObject, '(' + count + '/' + index + ')String array: JSON are the same: ');
 
                 astrodate = astrodate.clone();
                 t.ok(astrodate !== astrodate.clone, '(' + count + '/' + index + ')String clone: is a clone');
@@ -215,10 +237,10 @@
                     t.ok(isNaN(date), 'outside of Date capability: ' + slice);
                 }
 
-                t.equal(astrodate.json(), json, '(' + count + '/' + index + ')String clone: JSON are the same: ');
+                t.deepEqual(jsonParse(astrodate.json()), tObject, '(' + count + '/' + index + ')String clone: JSON are the same: ');
 
                 astrodate = new AstroDate().json(json);
-                t.equal(astrodate.json(), json, '(' + count + '/' + index + ')JSON parse: JSON are the same: ');
+                t.deepEqual(jsonParse(astrodate.json()), tObject, '(' + count + '/' + index + ')JSON parse: JSON are the same: ');
             }
         }
 
