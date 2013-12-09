@@ -50,7 +50,9 @@
         baseNumber = 0,
         baseBoolean = true,
         protoName = '__proto__',
-        toObject,
+        CtrBoolean = baseBoolean.constructor,
+        CtrNumber = baseNumber.constructor,
+        CtrString = baseString.constructor,
         extend,
         arrayIndexOf,
         objectDefineProperty,
@@ -320,7 +322,7 @@ function isNumeric(inputArg) {
 
     /**
      * The abstract operation throws an error if its argument is a value that cannot be
-     * converted to an Object using toObject, otherwise returns the argument.
+     * converted to an Object using argToObject, otherwise returns the argument.
      * @private
      * @function
      * @param {*} inputArg
@@ -343,32 +345,19 @@ function isNumeric(inputArg) {
      * @param {*} inputArg
      * @return {object}
      */
-    toObject = (function () {
-        // Unused variable for JScript NFE bug
-        // http://kangax.github.io/nfe/
-        var CtrBoolean = baseBoolean.constructor,
-            CtrNumber = baseNumber.constructor,
-            CtrString = baseString.constructor,
-            nfeToObject;
+    function argToObject(inputArg, caller) {
+        var object = checkObjectCoercible(inputArg, 'argToObject:' + caller);
 
-        tempSafariNFE = function nfeToObject(inputArg, caller) {
-            var object = checkObjectCoercible(inputArg, 'toObject:' + caller);
+        if (isBoolean(object)) {
+            object = new CtrBoolean(object);
+        } else if (isNumber(object)) {
+            object = new CtrNumber(object);
+        } else if (isString(object)) {
+            object = new CtrString(object);
+        }
 
-            if (isBoolean(object)) {
-                object = new CtrBoolean(object);
-            } else if (isNumber(object)) {
-                object = new CtrNumber(object);
-            } else if (isString(object)) {
-                object = new CtrString(object);
-            }
-
-            return object;
-        };
-
-        nfeToObject = null;
-
-        return tempSafariNFE;
-    }());
+        return object;
+    }
 
     /**
      * The abstract operation converts its argument to a value of type String
@@ -1368,7 +1357,7 @@ stringEndsWith = (function () {
             if (splitString && isString(inputArg)) {
                 object = stringSplit(inputArg, '');
             } else {
-                object = toObject.apply(null, arguments);
+                object = argToObject.apply(null, arguments);
             }
 
             return object;
