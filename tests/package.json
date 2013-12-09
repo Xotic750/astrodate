@@ -1,0 +1,5 @@
+{
+    "browser": {
+        "tap": "tape-compact",
+    }
+}
