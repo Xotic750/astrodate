@@ -130,7 +130,7 @@
     "testling": {
         "files": "tests/*.js",
         "browsers": [
-            "chrome/11..12"
+            "chrome/11"
         ]
     }
 }
