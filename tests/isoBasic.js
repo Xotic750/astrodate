@@ -2,18 +2,22 @@
 (function () {
     'use strict';
 
-    var test = require('../scripts/whichTape.js'),
+    var test = require('../scripts/whichTape'),
         AstroDate = require('../scripts/whichAstroDate'),
         Fire = require('../scripts/fire'),
         delay = 100,
         fireSingle = new Fire(),
-        args = ['parsing iso basic'];
+        args = ['parsing iso basic'],
+        repeat;
 
-    if ('1' !== process.env.ASTRODATE_TAPE && '2' !== process.env.ASTRODATE_TAPE) {
+    if (!process.env.ASTRODATE_TAPE) {
+        repeat = 5;
         args.push({
             compact: true,
             name: 'All tests'
         });
+    } else {
+        repeat = 50;
     }
 
     function getRandomInt(min, max) {
@@ -33,15 +37,15 @@
     }
 
     args.push(function (t) {
-        var repeat = 50,
-            offset = new Date().getTimezoneOffset();
+        var offset = new Date().getTimezoneOffset();
 
         function single() {
             var year = padLeadingZero(getRandomInt(0, 9999), 4),
                 month = padLeadingZero(getRandomInt(1, 12), 2),
-                day = padLeadingZero(getRandomInt(1, +new AstroDate([year, month]).daysInMonth()), 2),
+                day = padLeadingZero(getRandomInt(1, +new AstroDate(year, month).daysInMonth()), 2),
                 hour = padLeadingZero(getRandomInt(0, 24), 2),
-                loop = new Fire(),
+                index,
+                withComma,
                 minute,
                 second,
                 millisecond,
@@ -103,17 +107,15 @@
                 [year + month + day + ' ' + hour + minute + second + '.' + millisecond + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.' + millisecond + 'Z']
             ];
 
-            function testFormats(index) {
+            for (index = 0; index < formats.length; index += 1) {
                 t.equal(new AstroDate(formats[index][0]).toISOString(), formats[index][1], '(' + index + ')AstroDate should be able to parse ISO basic ' + formats[index][0]);
-                var withComma = formats[index][0].replace('.', ',');
+                withComma = formats[index][0].replace('.', ',');
                 t.equal(new AstroDate(withComma).toISOString(), formats[index][1], '(' + index + ')AstroDate should be able to parse ISO basic ' + withComma);
             }
-
-            loop.run(formats.length, testFormats, delay);
         }
 
         fireSingle.run(repeat, function (cnt, iters) {
-            single(arguments);
+            single.apply(null, arguments);
             if (cnt + 1 >= iters) {
                 t.end();
             }

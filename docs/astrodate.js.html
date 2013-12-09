@@ -504,11 +504,10 @@ function isNumeric(inputArg) {
      * @param {*} inputArg
      * @return {boolean}
      */
-    /*
-function isArguments(inputArg) {
-    return strictEqual(toObjectString(inputArg), '[object Arguments]');
-}
-*/
+
+    function isArguments(inputArg) {
+        return strictEqual(toObjectString(inputArg), '[object Arguments]');
+    }
 
     /**
      * Returns true if the operand inputArg is of type Object.
@@ -1544,17 +1543,15 @@ stringEndsWith = (function () {
         return tempSafariNFE;
     }());
 
-    /*
-function argumentsSlice(args, start, end) {
-    var val;
+    function argumentsSlice(args, start, end) {
+        var val;
 
-    if (isArguments(args)) {
-        val = baseArray.slice.call(args, start, end);
+        if (isArguments(args)) {
+            val = baseArray.slice.call(args, start, end);
+        }
+
+        return val;
     }
-
-    return val;
-}
-*/
 
     // named arrayUnshift instead of unshift because of SpiderMonkey and Blackberry bug
     /*
@@ -2565,6 +2562,19 @@ arrayFilter = (function () {
 
         var VERSION = '0.6.5',
             /**
+             * For normalising options.
+             * @private
+             * @readonly
+             * @type {array.&lt;object>}
+             */
+            fullOptions = [{
+                full: 'julian',
+                alias: 'j'
+            }, {
+                full: 'offset',
+                alias: 'o'
+            }],
+            /**
              * For normalising user input and looking up Date object methods.
              * @private
              * @readonly
@@ -2683,6 +2693,7 @@ arrayFilter = (function () {
              */
             supplemental;
 
+        deepFreeze(fullOptions);
         deepFreeze(fullKeys);
         deepFreeze(monthKeys);
         deepFreeze(dayKeys);
@@ -2808,7 +2819,7 @@ arrayFilter = (function () {
         }
 
         function inOffsetRange(offset) {
-            return offset.inRange(-1440, 1440);
+            return offset.inRange(-43200, 50400);
         }
 
         /*
@@ -2959,6 +2970,23 @@ arrayFilter = (function () {
             }
 
             return unit;
+        }
+
+        function normaliseOptions(options) {
+            var normalised = {};
+
+            if (isPlainObject(options)) {
+                arrayForEach(objectKeys(options), function (element) {
+                    element = element.toLowerCase();
+                    arrayForEach(fullOptions, function (opt) {
+                        if (strictEqual(element, opt.alias) || strictEqual(element, opt.full)) {
+                            normalised[element] = opt.full;
+                        }
+                    });
+                });
+            }
+
+            return normalised;
         }
 
         function timeTo(struct, unit) {
@@ -3161,6 +3189,71 @@ arrayFilter = (function () {
             return r.times(1000).trunc();
         }
 
+        function bnGetTimezoneOffset() {
+            return new BigNumber(new Date().getTimezoneOffset() * 60);
+        }
+
+        /**
+         * Changes a '-' or '+' character to a multipler value '-1' or '+1' string.
+         * @private
+         * @function
+         * @param {string} sign
+         * @return {string}
+         */
+        function toSignMultipler(sign) {
+            return sign + '1';
+        }
+
+        /**
+         * Converts offset hours, minutes and seconds to seconds.
+         * @private
+         * @function
+         * @param {number|string} hour
+         * @param {number|string} [minute]
+         * @param {number|string} [second]
+         * @return {BigNumber}
+         */
+        function offsetToSeconds(hour, minute, second) {
+            return timeTo({
+                hour: new BigNumber(hour),
+                minute: new BigNumber(minute || 0),
+                second: new BigNumber(second || 0),
+                millisecond: BigNumber.zero()
+            }, 'second');
+        }
+
+        function bnOffset(value) {
+            var val,
+                bn,
+                rx,
+                off;
+
+            if (isNumber(value) || isString(value)) {
+                val = toNumber(value);
+                if (!numberIsFinite(val)) {
+                    val = value.toString().toUpperCase();
+                }
+            } else {
+                val = '';
+            }
+
+            if (isNumber(val)) {
+                bn = new BigNumber(val);
+            } else if (strictEqual(val, 'Z') || strictEqual(val, 'UTC') || strictEqual(val, 'GMT')) {
+                bn = BigNumber.zero();
+            } else {
+                rx = /^([\-+])?(\d{1,2}):(\d{2})(?::(\d{2}))?$/;
+                if (rx.test(val)) {
+                    off = val.match(rx);
+                    bn = offsetToSeconds(off[2], off[3], off[4]).times(toSignMultipler(off[1] || '+')).neg();
+                } else {
+                    bn = bnGetTimezoneOffset();
+                }
+            }
+
+            return bn;
+        }
+
         function arrayToStruct(arr, julian) {
             var struct = {};
 
@@ -3168,7 +3261,10 @@ arrayFilter = (function () {
                 arraySome(fullKeys, function (element, index) {
                     var value = arr[index],
                         bn,
-                        dim;
+                        dim,
+                        val,
+                        off,
+                        rx;
 
                     if (isNumber(value) || isString(value) || (value &amp;&amp; value instanceof BigNumber)) {
                         bn = new BigNumber(value);
@@ -3257,10 +3353,7 @@ arrayFilter = (function () {
 
                         break;
                     case 'offset':
-                        if (isUndefined(value)) {
-                            bn = BigNumber.zero();
-                        }
-
+                        bn = bnOffset(value);
                         if (!inOffsetRange(bn)) {
                             struct = {};
                             return true;
@@ -3309,7 +3402,10 @@ arrayFilter = (function () {
                 arraySome(fullKeys, function (element) {
                     var value = object[element.alias] || object[element.full] || object[element.full + 's'],
                         bn,
-                        dim;
+                        dim,
+                        val,
+                        rx,
+                        off;
 
                     if (isNumber(value) || isString(value) || (value &amp;&amp; value instanceof BigNumber)) {
                         bn = new BigNumber(value);
@@ -3398,10 +3494,7 @@ arrayFilter = (function () {
 
                         break;
                     case 'offset':
-                        if (isUndefined(value)) {
-                            bn = BigNumber.zero();
-                        }
-
+                        bn = bnOffset(value);
                         if (!inOffsetRange(bn)) {
                             struct = {};
                             return true;
@@ -3578,7 +3671,7 @@ arrayFilter = (function () {
         }
 
         function toUT(struct) {
-            return jdToGregorian(gregorianToJd(struct).times(86400000).plus(struct.offset.times(60000)).div(86400000));
+            return jdToGregorian(gregorianToJd(struct).times(86400000).plus(struct.offset.times(1000)).div(86400000));
         }
 
         function toTT(struct) {
@@ -3608,13 +3701,9 @@ arrayFilter = (function () {
             return structTT;
         }
 
-        function bnGetTimezoneOffset() {
-            return new BigNumber(new Date().getTimezoneOffset());
-        }
-
         function toLocal(struct) {
             var timezoneOffset = bnGetTimezoneOffset(),
-                structLocal = jdToGregorian(gregorianToJd(struct).times(86400000).plus(struct.offset.times(60000)).minus(bnGetTimezoneOffset().times(60000)).div(86400000));
+                structLocal = jdToGregorian(gregorianToJd(struct).times(86400000).plus(struct.offset.times(1000)).minus(timezoneOffset.times(1000)).div(86400000));
 
             structLocal.offset = timezoneOffset;
 
@@ -3716,7 +3805,7 @@ arrayFilter = (function () {
                     string += '-';
                 }
 
-                value = fractionToTime(value.abs(), 'minute');
+                value = fractionToTime(value.abs(), 'second');
                 string += value.hour.padLeadingZero(2);
                 string += ':';
                 string += value.minute.padLeadingZero(2);
@@ -3906,26 +3995,21 @@ arrayFilter = (function () {
         }
 
         /**
-         * Covert offset hours and minutes to minutes.
-         * @private
-         * @function
-         * @param {(number|string|BigNumber)} hour
-         * @param {(number|string|BigNumber)} minute
-         * @return {BigNumber}
-         */
-        function hourMinuteToMinutes(hour, minute) {
-            return new BigNumber(hour).times(60).plus(minute);
-        }
-
-        /**
          * Covert the fractional part of hours to a time object.
          * @private
          * @function
          * @param {(number|string)} number
+         * @param {(number|string|BigNumber)} offset
+         * @param {(number|string)} hour
          * @return {object.BigNumber}
          */
-        function hourFractionToTime(number) {
-            return fractionToTime('0.' + number, 'hour');
+        function hourFractionToTime(number, offset, hour) {
+            var frac = fractionToTime('0.' + number, 'hour');
+
+            frac.hour = new BigNumber(hour);
+            frac.offset = new BigNumber(offset);
+
+            return frac;
         }
 
         /**
@@ -3933,10 +4017,28 @@ arrayFilter = (function () {
          * @private
          * @function
          * @param {(number|string)} number
+         * @param {(number|string|BigNumber)} offset
+         * @param {(number|string)} hour
+         * @param {(number|string)} [minute]
+         * @param {(number|string)} [second]
          * @return {object.BigNumber}
          */
-        function minuteFractionToTime(number) {
-            return fractionToTime('0.' + number, 'minute');
+        function minuteFractionToTime(number, offset, hour, minute, second) {
+            var frac = fractionToTime('0.' + number, 'minute');
+
+            frac.hour = new BigNumber(hour);
+
+            if (!isUndefined(minute)) {
+                frac.minute = new BigNumber(minute);
+            }
+
+            if (!isUndefined(second)) {
+                frac.second = new BigNumber(second);
+            }
+
+            frac.offset = new BigNumber(offset);
+
+            return frac;
         }
 
         /**
@@ -3944,21 +4046,21 @@ arrayFilter = (function () {
          * @private
          * @function
          * @param {(number|string)} number
+         * @param {(number|string|BigNumber)} offset
+         * @param {(number|string)} hour
+         * @param {(number|string)} minute
+         * @param {(number|string)} second
          * @return {object.BigNumber}
          */
-        function secondFractionToTime(number) {
-            return fractionToTime('0.' + number, 'second');
-        }
+        function secondFractionToTime(number, offset, hour, minute, second) {
+            var frac = fractionToTime('0.' + number, 'second');
 
-        /**
-         * Changes a '-' or '+' character to a multipler value '-1' or '+1' string.
-         * @private
-         * @function
-         * @param {string} sign
-         * @return {string}
-         */
-        function toSignMultipler(sign) {
-            return sign + '1';
+            frac.hour = new BigNumber(hour);
+            frac.minute = new BigNumber(minute);
+            frac.second = new BigNumber(second);
+            frac.offset = new BigNumber(offset);
+
+            return frac;
         }
 
         /**
@@ -4010,6 +4112,14 @@ arrayFilter = (function () {
             return dtObject;
         }
 
+        function dateToObject(year, month, day) {
+            return {
+                year: new BigNumber(year),
+                month: new BigNumber(month),
+                day: new BigNumber(day)
+            };
+        }
+
         /**
          * Holds the a list of RegExps and functions for testing basic and extended ISO 8601 date patterns.
          * @private
@@ -4031,11 +4141,7 @@ arrayFilter = (function () {
                  */
                 regex: /^(\d{2})$/,
                 func: function (rxResult) {
-                    return {
-                        year: new BigNumber(rxResult[1] + '00'),
-                        month: BigNumber.one(),
-                        day: BigNumber.one()
-                    };
+                    return dateToObject(rxResult[1] + '00', 1, 1);
                 }
             }, {
                 /**
@@ -4044,11 +4150,7 @@ arrayFilter = (function () {
                  */
                 regex: /^(\d{4})$/,
                 func: function (rxResult) {
-                    return {
-                        year: new BigNumber(rxResult[1]),
-                        month: BigNumber.one(),
-                        day: BigNumber.one()
-                    };
+                    return dateToObject(rxResult[1], 1, 1);
                 }
             }, {
                 /**
@@ -4057,11 +4159,7 @@ arrayFilter = (function () {
                  */
                 regex: /^(\d{4})(\d{2})(\d{2})$/,
                 func: function (rxResult) {
-                    return {
-                        year: new BigNumber(rxResult[1]),
-                        month: new BigNumber(rxResult[2]),
-                        day: new BigNumber(rxResult[3])
-                    };
+                    return dateToObject(rxResult[1], rxResult[2], rxResult[3]);
                 }
             }, {
                 /**
@@ -4103,13 +4201,9 @@ arrayFilter = (function () {
                  * -+[..y]yyyyy-MM
                  * @private
                  */
-                regex: /^([\-+]{1})(\d{5,})-(\d{2})$/,
+                regex: /^([\-+])(\d{5,})-(\d{2})$/,
                 func: function (rxResult) {
-                    return {
-                        year: new BigNumber(rxResult[2]).times(toSignMultipler(rxResult[1])),
-                        month: new BigNumber(rxResult[3]),
-                        day: BigNumber.one()
-                    };
+                    return dateToObject(new BigNumber(rxResult[2]).times(toSignMultipler(rxResult[1])), rxResult[3], 1);
                 }
             }, {
                 /**
@@ -4118,11 +4212,7 @@ arrayFilter = (function () {
                  */
                 regex: /^(\d{4})-(\d{2})$/,
                 func: function (rxResult) {
-                    return {
-                        year: new BigNumber(rxResult[1]),
-                        month: new BigNumber(rxResult[2]),
-                        day: BigNumber.one()
-                    };
+                    return dateToObject(rxResult[1], rxResult[2], 1);
                 }
             }, {
                 /**
@@ -4131,24 +4221,16 @@ arrayFilter = (function () {
                  */
                 regex: /^(\d{4})-(\d{2})-(\d{2})$/,
                 func: function (rxResult) {
-                    return {
-                        year: new BigNumber(rxResult[1]),
-                        month: new BigNumber(rxResult[2]),
-                        day: new BigNumber(rxResult[3])
-                    };
+                    return dateToObject(rxResult[1], rxResult[2], rxResult[3]);
                 }
             }, {
                 /**
                  * -+[..y]yyyyy-MM-dd
                  * @private
                  */
-                regex: /^([\-+]{1})(\d{5,})-(\d{2})-(\d{2})$/,
+                regex: /^([\-+])(\d{5,})-(\d{2})-(\d{2})$/,
                 func: function (rxResult) {
-                    return {
-                        year: new BigNumber(rxResult[2]).times(toSignMultipler(rxResult[1])),
-                        month: new BigNumber(rxResult[3]),
-                        day: new BigNumber(rxResult[4])
-                    };
+                    return dateToObject(new BigNumber(rxResult[2]).times(toSignMultipler(rxResult[1])), rxResult[3], rxResult[4]);
                 }
             }, {
                 /**
@@ -4182,7 +4264,7 @@ arrayFilter = (function () {
                  * -+[..y]yyyy-DDD
                  * @private
                  */
-                regex: /^([\-+]{1})(\d{5,})-(\d{3})$/,
+                regex: /^([\-+])(\d{5,})-(\d{3})$/,
                 func: function (rxResult) {
                     return ordinalToCalendar(new BigNumber(rxResult[2]).times(toSignMultipler(rxResult[1])), rxResult[3]);
                 }
@@ -4191,7 +4273,7 @@ arrayFilter = (function () {
                  * -+[..y]yyyyy-Www
                  * @private
                  */
-                regex: /^([\-+]{1})(\d{5,})-W(\d{2})$/,
+                regex: /^([\-+])(\d{5,})-W(\d{2})$/,
                 func: function (rxResult) {
                     return weekDateToCalendar(new BigNumber(rxResult[2]).times(toSignMultipler(rxResult[1])), rxResult[3], 1);
                 }
@@ -4200,7 +4282,7 @@ arrayFilter = (function () {
                  * -+[..y]yyyyy-Www-D
                  * @private
                  */
-                regex: /^([\-+]{1})(\d{5,})-W(\d{2})-([1-7]{1})$/,
+                regex: /^([\-+])(\d{5,})-W(\d{2})-([1-7]{1})$/,
                 func: function (rxResult) {
                     return weekDateToCalendar(new BigNumber(rxResult[2]).times(toSignMultipler(rxResult[1])), rxResult[3], rxResult[4]);
                 }
@@ -4209,6 +4291,16 @@ arrayFilter = (function () {
 
         /** Make datePatterns readonly */
         deepFreeze(datePatterns);
+
+        function createTimeObject(hour, minute, second, offset, sign) {
+            return {
+                hour: new BigNumber(hour),
+                minute: new BigNumber(minute),
+                second: new BigNumber(second),
+                millisecond: BigNumber.zero(),
+                offset: new BigNumber(offset).times(toSignMultipler(sign || '-')).neg()
+            };
+        }
 
         /**
          * Holds the a list of RegExps and functions for testing basic and extended ISO 8601 time patterns.
@@ -4231,13 +4323,7 @@ arrayFilter = (function () {
                  */
                 regex: /^(\d{2})$/,
                 func: function (rxResult) {
-                    return {
-                        hour: new BigNumber(rxResult[1]),
-                        minute: BigNumber.zero(),
-                        second: BigNumber.zero(),
-                        millisecond: BigNumber.zero(),
-                        offset: bnGetTimezoneOffset()
-                    };
+                    return createTimeObject(rxResult[1], 0, 0, bnGetTimezoneOffset());
                 }
             }, {
                 /**
@@ -4246,13 +4332,7 @@ arrayFilter = (function () {
                  */
                 regex: /^(\d{2})(\d{2})$/,
                 func: function (rxResult) {
-                    return {
-                        hour: new BigNumber(rxResult[1]),
-                        minute: new BigNumber(rxResult[2]),
-                        second: BigNumber.zero(),
-                        millisecond: BigNumber.zero(),
-                        offset: bnGetTimezoneOffset()
-                    };
+                    return createTimeObject(rxResult[1], rxResult[2], 0, bnGetTimezoneOffset());
                 }
             }, {
                 /**
@@ -4261,13 +4341,7 @@ arrayFilter = (function () {
                  */
                 regex: /^(\d{2})(\d{2})(\d{2})$/,
                 func: function (rxResult) {
-                    return {
-                        hour: new BigNumber(rxResult[1]),
-                        minute: new BigNumber(rxResult[2]),
-                        second: new BigNumber(rxResult[3]),
-                        millisecond: BigNumber.zero(),
-                        offset: bnGetTimezoneOffset()
-                    };
+                    return createTimeObject(rxResult[1], rxResult[2], rxResult[3], bnGetTimezoneOffset());
                 }
             }, {
                 /**
@@ -4276,13 +4350,7 @@ arrayFilter = (function () {
                  */
                 regex: /^(\d{2})Z$/,
                 func: function (rxResult) {
-                    return {
-                        hour: new BigNumber(rxResult[1]),
-                        minute: BigNumber.zero(),
-                        second: BigNumber.zero(),
-                        millisecond: BigNumber.zero(),
-                        offset: BigNumber.zero()
-                    };
+                    return createTimeObject(rxResult[1], 0, 0, 0);
                 }
             }, {
                 /**
@@ -4291,13 +4359,7 @@ arrayFilter = (function () {
                  */
                 regex: /^(\d{2})(\d{2})Z$/,
                 func: function (rxResult) {
-                    return {
-                        hour: new BigNumber(rxResult[1]),
-                        minute: new BigNumber(rxResult[2]),
-                        second: BigNumber.zero(),
-                        millisecond: BigNumber.zero(),
-                        offset: BigNumber.zero()
-                    };
+                    return createTimeObject(rxResult[1], rxResult[2], 0, 0);
                 }
             }, {
                 /**
@@ -4306,33 +4368,21 @@ arrayFilter = (function () {
                  */
                 regex: /^(\d{2})(\d{2})(\d{2})Z$/,
                 func: function (rxResult) {
-                    return {
-                        hour: new BigNumber(rxResult[1]),
-                        minute: new BigNumber(rxResult[2]),
-                        second: new BigNumber(rxResult[3]),
-                        millisecond: BigNumber.zero(),
-                        offset: BigNumber.zero()
-                    };
+                    return createTimeObject(rxResult[1], rxResult[2], rxResult[3], 0);
                 }
             }, {
                 /**
                  * HH-+ZZ
                  * @private
                  */
-                regex: /^(\d{2})([\-+]{1})(\d{2})$/,
+                regex: /^(\d{2})([\-+])(\d{2})$/,
                 func: function (rxResult) {
                     var sign = rxResult[2],
-                        offset = hourMinuteToMinutes(rxResult[3], 0),
+                        offset = offsetToSeconds(rxResult[3]),
                         val;
 
                     if (isNotNegativeZero(offset, sign)) {
-                        val = {
-                            hour: new BigNumber(rxResult[1]),
-                            minute: BigNumber.zero(),
-                            second: BigNumber.zero(),
-                            millisecond: BigNumber.zero(),
-                            offset: offset.times(toSignMultipler(sign)).neg()
-                        };
+                        val = createTimeObject(rxResult[1], 0, 0, offset, sign);
                     }
 
                     return val;
@@ -4342,20 +4392,14 @@ arrayFilter = (function () {
                  * HHMM-+ZZ
                  * @private
                  */
-                regex: /^(\d{2})(\d{2})([\-+]{1})(\d{2})$/,
+                regex: /^(\d{2})(\d{2})([\-+])(\d{2})$/,
                 func: function (rxResult) {
                     var sign = rxResult[3],
-                        offset = hourMinuteToMinutes(rxResult[4], 0),
+                        offset = offsetToSeconds(rxResult[4]),
                         val;
 
                     if (isNotNegativeZero(offset, sign)) {
-                        val = {
-                            hour: new BigNumber(rxResult[1]),
-                            minute: new BigNumber(rxResult[2]),
-                            second: BigNumber.zero(),
-                            millisecond: BigNumber.zero(),
-                            offset: offset.times(toSignMultipler(sign)).neg()
-                        };
+                        val = createTimeObject(rxResult[1], rxResult[2], 0, offset, sign);
                     }
 
                     return val;
@@ -4365,20 +4409,14 @@ arrayFilter = (function () {
                  * HHMMSS-+ZZ
                  * @private
                  */
-                regex: /^(\d{2})(\d{2})(\d{2})([\-+]{1})(\d{2})$/,
+                regex: /^(\d{2})(\d{2})(\d{2})([\-+])(\d{2})$/,
                 func: function (rxResult) {
                     var sign = rxResult[4],
-                        offset = hourMinuteToMinutes(rxResult[5], 0),
+                        offset = offsetToSeconds(rxResult[5]),
                         val;
 
                     if (isNotNegativeZero(offset, sign)) {
-                        val = {
-                            hour: new BigNumber(rxResult[1]),
-                            minute: new BigNumber(rxResult[2]),
-                            second: new BigNumber(rxResult[3]),
-                            millisecond: BigNumber.zero(),
-                            offset: offset.times(toSignMultipler(sign)).neg()
-                        };
+                        val = createTimeObject(rxResult[1], rxResult[2], rxResult[3], offset, sign);
                     }
 
                     return val;
@@ -4388,20 +4426,14 @@ arrayFilter = (function () {
                  * HH-+ZZZZ
                  * @private
                  */
-                regex: /^(\d{2})([\-+]{1})(\d{2})(\d{2})$/,
+                regex: /^(\d{2})([\-+])(\d{2})(\d{2})$/,
                 func: function (rxResult) {
                     var sign = rxResult[2],
-                        offset = hourMinuteToMinutes(rxResult[3], rxResult[4]),
+                        offset = offsetToSeconds(rxResult[3], rxResult[4]),
                         val;
 
                     if (isNotNegativeZero(offset, sign)) {
-                        val = {
-                            hour: new BigNumber(rxResult[1]),
-                            minute: BigNumber.zero(),
-                            second: BigNumber.zero(),
-                            millisecond: BigNumber.zero(),
-                            offset: offset.times(toSignMultipler(sign)).neg()
-                        };
+                        val = createTimeObject(rxResult[1], 0, 0, offset, sign);
                     }
 
                     return val;
@@ -4411,20 +4443,14 @@ arrayFilter = (function () {
                  * HHMM-+ZZZZ
                  * @private
                  */
-                regex: /^(\d{2})(\d{2})([\-+]{1})(\d{2})(\d{2})$/,
+                regex: /^(\d{2})(\d{2})([\-+])(\d{2})(\d{2})$/,
                 func: function (rxResult) {
                     var sign = rxResult[3],
-                        offset = hourMinuteToMinutes(rxResult[4], rxResult[5]),
+                        offset = offsetToSeconds(rxResult[4], rxResult[5]),
                         val;
 
                     if (isNotNegativeZero(offset, sign)) {
-                        val = {
-                            hour: new BigNumber(rxResult[1]),
-                            minute: new BigNumber(rxResult[2]),
-                            second: BigNumber.zero(),
-                            millisecond: BigNumber.zero(),
-                            offset: offset.times(toSignMultipler(sign)).neg()
-                        };
+                        val = createTimeObject(rxResult[1], rxResult[2], 0, offset, sign);
                     }
 
                     return val;
@@ -4434,20 +4460,14 @@ arrayFilter = (function () {
                  * HHMMSS-+ZZZZ
                  * @private
                  */
-                regex: /^(\d{2})(\d{2})(\d{2})([\-+]{1})(\d{2})(\d{2})$/,
+                regex: /^(\d{2})(\d{2})(\d{2})([\-+])(\d{2})(\d{2})$/,
                 func: function (rxResult) {
                     var sign = rxResult[4],
-                        offset = hourMinuteToMinutes(rxResult[5], rxResult[6]),
+                        offset = offsetToSeconds(rxResult[5], rxResult[6]),
                         val;
 
                     if (isNotNegativeZero(offset, sign)) {
-                        val = {
-                            hour: new BigNumber(rxResult[1]),
-                            minute: new BigNumber(rxResult[2]),
-                            second: new BigNumber(rxResult[3]),
-                            millisecond: BigNumber.zero(),
-                            offset: offset.times(toSignMultipler(sign)).neg()
-                        };
+                        val = createTimeObject(rxResult[1], rxResult[2], rxResult[3], offset, sign);
                     }
 
                     return val;
@@ -4457,106 +4477,68 @@ arrayFilter = (function () {
                  * HH.,[..f]f
                  * @private
                  */
-                regex: /^(\d{2})[\.,]{1}(\d{1,})$/,
+                regex: /^(\d{2})[\.,](\d+)$/,
                 func: function (rxResult) {
-                    var val = hourFractionToTime(rxResult[2]);
-
-                    val.hour = new BigNumber(rxResult[1]);
-                    val.offset = bnGetTimezoneOffset();
-
-                    return val;
+                    return hourFractionToTime(rxResult[2], bnGetTimezoneOffset(), rxResult[1]);
                 }
             }, {
                 /**
                  * HHMM.,[..f]f
                  * @private
                  */
-                regex: /^(\d{2})(\d{2})[\.,]{1}(\d{1,})$/,
+                regex: /^(\d{2})(\d{2})[\.,](\d+)$/,
                 func: function (rxResult) {
-                    var val = minuteFractionToTime(rxResult[3]);
-
-                    val.hour = new BigNumber(rxResult[1]);
-                    val.minute = new BigNumber(rxResult[2]);
-                    val.offset = bnGetTimezoneOffset();
-
-                    return val;
+                    return minuteFractionToTime(rxResult[3], bnGetTimezoneOffset(), rxResult[1], rxResult[2]);
                 }
             }, {
                 /**
                  * HHMMSS.,[..f]f
                  * @private
                  */
-                regex: /^(\d{2})(\d{2})(\d{2})[\.,]{1}(\d{1,})$/,
+                regex: /^(\d{2})(\d{2})(\d{2})[\.,](\d+)$/,
                 func: function (rxResult) {
-                    var val = secondFractionToTime(rxResult[4]);
-
-                    val.hour = new BigNumber(rxResult[1]);
-                    val.minute = new BigNumber(rxResult[2]);
-                    val.second = new BigNumber(rxResult[3]);
-                    val.offset = bnGetTimezoneOffset();
-
-                    return val;
+                    return secondFractionToTime(rxResult[4], bnGetTimezoneOffset(), rxResult[1], rxResult[2], rxResult[3]);
                 }
             }, {
                 /**
                  * HH.,[..f]fZ
                  * @private
                  */
-                regex: /^(\d{2})[\.,]{1}(\d{1,})Z$/,
+                regex: /^(\d{2})[\.,](\d+)Z$/,
                 func: function (rxResult) {
-                    var val = hourFractionToTime(rxResult[2]);
-
-                    val.hour = new BigNumber(rxResult[1]);
-                    val.offset = BigNumber.zero();
-
-                    return val;
+                    return hourFractionToTime(rxResult[2], 0, rxResult[1]);
                 }
             }, {
                 /**
                  * HHMM.,[..f]fZ
                  * @private
                  */
-                regex: /^(\d{2})(\d{2})[\.,]{1}(\d{1,})Z$/,
+                regex: /^(\d{2})(\d{2})[\.,](\d+)Z$/,
                 func: function (rxResult) {
-                    var val = minuteFractionToTime(rxResult[3]);
-
-                    val.hour = new BigNumber(rxResult[1]);
-                    val.minute = new BigNumber(rxResult[1]);
-                    val.offset = BigNumber.zero();
-
-                    return val;
+                    return minuteFractionToTime(rxResult[3], 0, rxResult[1], rxResult[2]);
                 }
             }, {
                 /**
                  * HHMMSS.,[..f]fZ
                  * @private
                  */
-                regex: /^(\d{2})(\d{2})(\d{2})[\.,]{1}(\d{1,})Z$/,
+                regex: /^(\d{2})(\d{2})(\d{2})[\.,](\d+)Z$/,
                 func: function (rxResult) {
-                    var val = secondFractionToTime(rxResult[4]);
-
-                    val.hour = new BigNumber(rxResult[1]);
-                    val.minute = new BigNumber(rxResult[2]);
-                    val.second = new BigNumber(rxResult[3]);
-                    val.offset = BigNumber.zero();
-
-                    return val;
+                    return secondFractionToTime(rxResult[4], 0, rxResult[1], rxResult[2], rxResult[3]);
                 }
             }, {
                 /**
                  * HH.,[..f]f-+ZZ
                  * @private
                  */
-                regex: /^(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})$/,
+                regex: /^(\d{2})[\.,](\d+)([\-+])(\d{2})$/,
                 func: function (rxResult) {
                     var sign = rxResult[3],
-                        offset = hourMinuteToMinutes(rxResult[4], 0),
+                        offset = offsetToSeconds(rxResult[4]),
                         val;
 
                     if (isNotNegativeZero(offset, sign)) {
-                        val = hourFractionToTime(rxResult[2]);
-                        val.hour = new BigNumber(rxResult[1]);
-                        val.offset = offset.times(toSignMultipler(sign)).neg();
+                        val = hourFractionToTime(rxResult[2], offset.times(toSignMultipler(sign)).neg(), rxResult[1]);
                     }
 
                     return val;
@@ -4566,17 +4548,14 @@ arrayFilter = (function () {
                  * HHMM.,[..f]f-+ZZ
                  * @private
                  */
-                regex: /^(\d{2})(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})$/,
+                regex: /^(\d{2})(\d{2})[\.,](\d+)([\-+])(\d{2})$/,
                 func: function (rxResult) {
                     var sign = rxResult[4],
-                        offset = hourMinuteToMinutes(rxResult[5], 0),
+                        offset = offsetToSeconds(rxResult[5]),
                         val;
 
                     if (isNotNegativeZero(offset, sign)) {
-                        val = minuteFractionToTime(rxResult[3]);
-                        val.hour = new BigNumber(rxResult[1]);
-                        val.minute = new BigNumber(rxResult[2]);
-                        val.offset = offset.times(toSignMultipler(sign)).neg();
+                        val = minuteFractionToTime(rxResult[3], offset.times(toSignMultipler(sign)).neg(), rxResult[1], rxResult[2]);
                     }
 
                     return val;
@@ -4586,18 +4565,14 @@ arrayFilter = (function () {
                  * HHMMSS.,[..f]f-+ZZ
                  * @private
                  */
-                regex: /^(\d{2})(\d{2})(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})$/,
+                regex: /^(\d{2})(\d{2})(\d{2})[\.,](\d+)([\-+])(\d{2})$/,
                 func: function (rxResult) {
                     var sign = rxResult[5],
-                        offset = hourMinuteToMinutes(rxResult[6], 0),
+                        offset = offsetToSeconds(rxResult[6]),
                         val;
 
                     if (isNotNegativeZero(offset, sign)) {
-                        val = secondFractionToTime(rxResult[4]);
-                        val.hour = new BigNumber(rxResult[1]);
-                        val.minute = new BigNumber(rxResult[2]);
-                        val.minute = new BigNumber(rxResult[3]);
-                        val.offset = offset.times(toSignMultipler(sign)).neg();
+                        val = secondFractionToTime(rxResult[4], offset.times(toSignMultipler(sign)).neg(), rxResult[1], rxResult[2], rxResult[3]);
                     }
 
                     return val;
@@ -4607,16 +4582,14 @@ arrayFilter = (function () {
                  * HH.,[..f]f-+ZZZZ
                  * @private
                  */
-                regex: /^(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})(\d{2})$/,
+                regex: /^(\d{2})[\.,](\d+)([\-+])(\d{2})(\d{2})$/,
                 func: function (rxResult) {
                     var sign = rxResult[3],
-                        offset = hourMinuteToMinutes(rxResult[4], rxResult[5]),
+                        offset = offsetToSeconds(rxResult[4], rxResult[5]),
                         val;
 
                     if (isNotNegativeZero(offset, sign)) {
-                        val = hourFractionToTime(rxResult[2]);
-                        val.hour = new BigNumber(rxResult[1]);
-                        val.offset = offset.times(toSignMultipler(sign)).neg();
+                        val = hourFractionToTime(rxResult[2], offset.times(toSignMultipler(sign)).neg(), rxResult[1]);
                     }
 
                     return val;
@@ -4626,17 +4599,14 @@ arrayFilter = (function () {
                  * HHMM.,[..f]f-+ZZZZ
                  * @private
                  */
-                regex: /^(\d{2})(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})(\d{2})$/,
+                regex: /^(\d{2})(\d{2})[\.,](\d+)([\-+])(\d{2})(\d{2})$/,
                 func: function (rxResult) {
                     var sign = rxResult[4],
-                        offset = hourMinuteToMinutes(rxResult[5], rxResult[6]),
+                        offset = offsetToSeconds(rxResult[5], rxResult[6]),
                         val;
 
                     if (isNotNegativeZero(offset, sign)) {
-                        val = minuteFractionToTime(rxResult[3]);
-                        val.hour = new BigNumber(rxResult[1]);
-                        val.minute = new BigNumber(rxResult[2]);
-                        val.offset = offset.times(toSignMultipler(sign)).neg();
+                        val = minuteFractionToTime(rxResult[3], offset.times(toSignMultipler(sign)).neg(), rxResult[1], rxResult[2]);
                     }
 
                     return val;
@@ -4646,18 +4616,14 @@ arrayFilter = (function () {
                  * HHMMSS.,[..f]f-+ZZZZ
                  * @private
                  */
-                regex: /^(\d{2})(\d{2})(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})(\d{2})$/,
+                regex: /^(\d{2})(\d{2})(\d{2})[\.,](\d+)([\-+])(\d{2})(\d{2})$/,
                 func: function (rxResult) {
                     var sign = rxResult[5],
-                        offset = hourMinuteToMinutes(rxResult[6], rxResult[7]),
+                        offset = offsetToSeconds(rxResult[6], rxResult[7]),
                         val;
 
                     if (isNotNegativeZero(offset, sign)) {
-                        val = secondFractionToTime(rxResult[4]);
-                        val.hour = new BigNumber(rxResult[1]);
-                        val.minute = new BigNumber(rxResult[2]);
-                        val.minute = new BigNumber(rxResult[3]);
-                        val.offset = offset.times(toSignMultipler(sign)).neg();
+                        val = secondFractionToTime(rxResult[4], offset.times(toSignMultipler(sign)).neg(), rxResult[1], rxResult[2], rxResult[3]);
                     }
 
                     return val;
@@ -4676,13 +4642,7 @@ arrayFilter = (function () {
                  */
                 regex: /^(\d{2})$/,
                 func: function (rxResult) {
-                    return {
-                        hour: new BigNumber(rxResult[1]),
-                        minute: BigNumber.zero(),
-                        second: BigNumber.zero(),
-                        millisecond: BigNumber.zero(),
-                        offset: bnGetTimezoneOffset()
-                    };
+                    return createTimeObject(rxResult[1], 0, 0, bnGetTimezoneOffset());
                 }
             }, {
                 /**
@@ -4691,13 +4651,7 @@ arrayFilter = (function () {
                  */
                 regex: /^(\d{2}):(\d{2})$/,
                 func: function (rxResult) {
-                    return {
-                        hour: new BigNumber(rxResult[1]),
-                        minute: new BigNumber(rxResult[2]),
-                        second: BigNumber.zero(),
-                        millisecond: BigNumber.zero(),
-                        offset: bnGetTimezoneOffset()
-                    };
+                    return createTimeObject(rxResult[1], rxResult[2], 0, bnGetTimezoneOffset());
                 }
             }, {
                 /**
@@ -4706,13 +4660,7 @@ arrayFilter = (function () {
                  */
                 regex: /^(\d{2}):(\d{2}):(\d{2})$/,
                 func: function (rxResult) {
-                    return {
-                        hour: new BigNumber(rxResult[1]),
-                        minute: new BigNumber(rxResult[2]),
-                        second: new BigNumber(rxResult[3]),
-                        millisecond: BigNumber.zero(),
-                        offset: bnGetTimezoneOffset()
-                    };
+                    return createTimeObject(rxResult[1], rxResult[2], rxResult[3], bnGetTimezoneOffset());
                 }
             }, {
                 /**
@@ -4721,13 +4669,7 @@ arrayFilter = (function () {
                  */
                 regex: /^(\d{2})Z$/,
                 func: function (rxResult) {
-                    return {
-                        hour: new BigNumber(rxResult[1]),
-                        minute: BigNumber.zero(),
-                        second: BigNumber.zero(),
-                        millisecond: BigNumber.zero(),
-                        offset: BigNumber.zero()
-                    };
+                    return createTimeObject(rxResult[1], 0, 0, 0);
                 }
             }, {
                 /**
@@ -4736,13 +4678,7 @@ arrayFilter = (function () {
                  */
                 regex: /^(\d{2}):(\d{2})Z$/,
                 func: function (rxResult) {
-                    return {
-                        hour: new BigNumber(rxResult[1]),
-                        minute: new BigNumber(rxResult[2]),
-                        second: BigNumber.zero(),
-                        millisecond: BigNumber.zero(),
-                        offset: BigNumber.zero()
-                    };
+                    return createTimeObject(rxResult[1], rxResult[2], 0, 0);
                 }
             }, {
                 /**
@@ -4751,33 +4687,21 @@ arrayFilter = (function () {
                  */
                 regex: /^(\d{2}):(\d{2}):(\d{2})Z$/,
                 func: function (rxResult) {
-                    return {
-                        hour: new BigNumber(rxResult[1]),
-                        minute: new BigNumber(rxResult[2]),
-                        second: new BigNumber(rxResult[3]),
-                        millisecond: BigNumber.zero(),
-                        offset: BigNumber.zero()
-                    };
+                    return createTimeObject(rxResult[1], rxResult[2], rxResult[3], 0);
                 }
             }, {
                 /**
                  * HH-+ZZ
                  * @private
                  */
-                regex: /^(\d{2})([\-+]{1})(\d{2})$/,
+                regex: /^(\d{2})([\-+])(\d{2})$/,
                 func: function (rxResult) {
                     var sign = rxResult[2],
-                        offset = hourMinuteToMinutes(rxResult[3], 0),
+                        offset = offsetToSeconds(rxResult[3]),
                         val;
 
                     if (isNotNegativeZero(offset, sign)) {
-                        val = {
-                            hour: new BigNumber(rxResult[1]),
-                            minute: BigNumber.zero(),
-                            second: BigNumber.zero(),
-                            millisecond: BigNumber.zero(),
-                            offset: offset.times(toSignMultipler(sign)).neg()
-                        };
+                        val = createTimeObject(rxResult[1], 0, 0, offset, sign);
                     }
 
                     return val;
@@ -4787,20 +4711,14 @@ arrayFilter = (function () {
                  * HH:MM-+ZZ
                  * @private
                  */
-                regex: /^(\d{2}):(\d{2})([\-+]{1})(\d{2})$/,
+                regex: /^(\d{2}):(\d{2})([\-+])(\d{2})$/,
                 func: function (rxResult) {
                     var sign = rxResult[3],
-                        offset = hourMinuteToMinutes(rxResult[4], 0),
+                        offset = offsetToSeconds(rxResult[4]),
                         val;
 
                     if (isNotNegativeZero(offset, sign)) {
-                        val = {
-                            hour: new BigNumber(rxResult[1]),
-                            minute: new BigNumber(rxResult[2]),
-                            second: BigNumber.zero(),
-                            millisecond: BigNumber.zero(),
-                            offset: offset.times(toSignMultipler(sign)).neg()
-                        };
+                        val = createTimeObject(rxResult[1], rxResult[2], 0, offset, sign);
                     }
 
                     return val;
@@ -4810,20 +4728,14 @@ arrayFilter = (function () {
                  * HH:MM:SS-+ZZ
                  * @private
                  */
-                regex: /^(\d{2}):(\d{2}):(\d{2})([\-+]{1})(\d{2})$/,
+                regex: /^(\d{2}):(\d{2}):(\d{2})([\-+])(\d{2})$/,
                 func: function (rxResult) {
                     var sign = rxResult[4],
-                        offset = hourMinuteToMinutes(rxResult[5], 0),
+                        offset = offsetToSeconds(rxResult[5]),
                         val;
 
                     if (isNotNegativeZero(offset, sign)) {
-                        val = {
-                            hour: new BigNumber(rxResult[1]),
-                            minute: new BigNumber(rxResult[2]),
-                            second: new BigNumber(rxResult[3]),
-                            millisecond: BigNumber.zero(),
-                            offset: offset.times(toSignMultipler(sign)).neg()
-                        };
+                        val = createTimeObject(rxResult[1], rxResult[2], rxResult[3], offset, sign);
                     }
 
                     return val;
@@ -4833,20 +4745,14 @@ arrayFilter = (function () {
                  * HH-+ZZ:ZZ
                  * @private
                  */
-                regex: /^(\d{2})([\-+]{1})(\d{2}):(\d{2})$/,
+                regex: /^(\d{2})([\-+])(\d{2}):(\d{2})$/,
                 func: function (rxResult) {
                     var sign = rxResult[2],
-                        offset = hourMinuteToMinutes(rxResult[3], rxResult[4]),
+                        offset = offsetToSeconds(rxResult[3], rxResult[4]),
                         val;
 
                     if (isNotNegativeZero(offset, sign)) {
-                        val = {
-                            hour: new BigNumber(rxResult[1]),
-                            minute: BigNumber.zero(),
-                            second: BigNumber.zero(),
-                            millisecond: BigNumber.zero(),
-                            offset: offset.times(toSignMultipler(sign)).neg()
-                        };
+                        val = createTimeObject(rxResult[1], 0, 0, offset, sign);
                     }
 
                     return val;
@@ -4856,20 +4762,14 @@ arrayFilter = (function () {
                  * HH:MM-+ZZ:ZZ
                  * @private
                  */
-                regex: /^(\d{2}):(\d{2})([\-+]{1})(\d{2}):(\d{2})$/,
+                regex: /^(\d{2}):(\d{2})([\-+])(\d{2}):(\d{2})$/,
                 func: function (rxResult) {
                     var sign = rxResult[3],
-                        offset = hourMinuteToMinutes(rxResult[4], rxResult[5]),
+                        offset = offsetToSeconds(rxResult[4], rxResult[5]),
                         val;
 
                     if (isNotNegativeZero(offset, sign)) {
-                        val = {
-                            hour: new BigNumber(rxResult[1]),
-                            minute: new BigNumber(rxResult[2]),
-                            second: BigNumber.zero(),
-                            millisecond: BigNumber.zero(),
-                            offset: offset.times(toSignMultipler(sign)).neg()
-                        };
+                        val = createTimeObject(rxResult[1], rxResult[2], 0, offset, sign);
                     }
 
                     return val;
@@ -4879,20 +4779,14 @@ arrayFilter = (function () {
                  * HH:MM:SS-+ZZ:ZZ
                  * @private
                  */
-                regex: /^(\d{2}):(\d{2}):(\d{2})([\-+]{1})(\d{2}):(\d{2})$/,
+                regex: /^(\d{2}):(\d{2}):(\d{2})([\-+])(\d{2}):(\d{2})$/,
                 func: function (rxResult) {
                     var sign = rxResult[4],
-                        offset = hourMinuteToMinutes(rxResult[5], rxResult[6]),
+                        offset = offsetToSeconds(rxResult[5], rxResult[6]),
                         val;
 
                     if (isNotNegativeZero(offset, sign)) {
-                        val = {
-                            hour: new BigNumber(rxResult[1]),
-                            minute: new BigNumber(rxResult[2]),
-                            second: new BigNumber(rxResult[3]),
-                            millisecond: BigNumber.zero(),
-                            offset: offset.times(toSignMultipler(sign)).neg()
-                        };
+                        val = createTimeObject(rxResult[1], rxResult[2], rxResult[3], offset, sign);
                     }
 
                     return val;
@@ -4902,106 +4796,68 @@ arrayFilter = (function () {
                  * HH.,[..f]f
                  * @private
                  */
-                regex: /^(\d{2})[\.,]{1}(\d{1,})$/,
+                regex: /^(\d{2})[\.,](\d+)$/,
                 func: function (rxResult) {
-                    var val = hourFractionToTime(rxResult[2]);
-
-                    val.hour = new BigNumber(rxResult[1]);
-                    val.offset = bnGetTimezoneOffset();
-
-                    return val;
+                    return hourFractionToTime(rxResult[2], bnGetTimezoneOffset(), rxResult[1]);
                 }
             }, {
                 /**
                  * HH:MM.,[..f]f
                  * @private
                  */
-                regex: /^(\d{2}):(\d{2})[\.,]{1}(\d{1,})$/,
+                regex: /^(\d{2}):(\d{2})[\.,](\d+)$/,
                 func: function (rxResult) {
-                    var val = minuteFractionToTime(rxResult[3]);
-
-                    val.hour = new BigNumber(rxResult[1]);
-                    val.minute = new BigNumber(rxResult[2]);
-                    val.offset = bnGetTimezoneOffset();
-
-                    return val;
+                    return minuteFractionToTime(rxResult[3], bnGetTimezoneOffset(), rxResult[1], rxResult[2]);
                 }
             }, {
                 /**
                  * HH:MM:SS.,[..f]f
                  * @private
                  */
-                regex: /^(\d{2}):(\d{2}):(\d{2})[\.,]{1}(\d{1,})$/,
+                regex: /^(\d{2}):(\d{2}):(\d{2})[\.,](\d+)$/,
                 func: function (rxResult) {
-                    var val = secondFractionToTime(rxResult[4]);
-
-                    val.hour = new BigNumber(rxResult[1]);
-                    val.minute = new BigNumber(rxResult[2]);
-                    val.second = new BigNumber(rxResult[3]);
-                    val.offset = bnGetTimezoneOffset();
-
-                    return val;
+                    return secondFractionToTime(rxResult[4], bnGetTimezoneOffset(), rxResult[1], rxResult[2], rxResult[3]);
                 }
             }, {
                 /**
                  * HH.,[..f]fZ
                  * @private
                  */
-                regex: /^(\d{2})[\.,]{1}(\d{1,})Z$/,
+                regex: /^(\d{2})[\.,](\d+)Z$/,
                 func: function (rxResult) {
-                    var val = hourFractionToTime(rxResult[2]);
-
-                    val.hour = new BigNumber(rxResult[1]);
-                    val.offset = BigNumber.zero();
-
-                    return val;
+                    return hourFractionToTime(rxResult[2], 0, rxResult[1]);
                 }
             }, {
                 /**
                  * HH:MM.,[..f]fZ
                  * @private
                  */
-                regex: /^(\d{2}):(\d{2})[\.,]{1}(\d{1,})Z$/,
+                regex: /^(\d{2}):(\d{2})[\.,](\d+)Z$/,
                 func: function (rxResult) {
-                    var val = minuteFractionToTime(rxResult[3]);
-
-                    val.hour = new BigNumber(rxResult[1]);
-                    val.minute = new BigNumber(rxResult[1]);
-                    val.offset = BigNumber.zero();
-
-                    return val;
+                    return minuteFractionToTime(rxResult[3], 0, rxResult[1], rxResult[1]);
                 }
             }, {
                 /**
                  * HH:MM:SS.,[..f]fZ
                  * @private
                  */
-                regex: /^(\d{2}):(\d{2}):(\d{2})[\.,]{1}(\d{1,})Z$/,
+                regex: /^(\d{2}):(\d{2}):(\d{2})[\.,](\d+)Z$/,
                 func: function (rxResult) {
-                    var val = secondFractionToTime(rxResult[4]);
-
-                    val.hour = new BigNumber(rxResult[1]);
-                    val.minute = new BigNumber(rxResult[2]);
-                    val.second = new BigNumber(rxResult[3]);
-                    val.offset = BigNumber.zero();
-
-                    return val;
+                    return secondFractionToTime(rxResult[4], 0, rxResult[1], rxResult[2], rxResult[3]);
                 }
             }, {
                 /**
                  * HH.,[..f]f-+ZZ
                  * @private
                  */
-                regex: /^(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})$/,
+                regex: /^(\d{2})[\.,](\d+)([\-+])(\d{2})$/,
                 func: function (rxResult) {
                     var sign = rxResult[3],
-                        offset = hourMinuteToMinutes(rxResult[4], 0),
+                        offset = offsetToSeconds(rxResult[4]),
                         val;
 
                     if (isNotNegativeZero(offset, sign)) {
-                        val = hourFractionToTime(rxResult[2]);
-                        val.hour = new BigNumber(rxResult[1]);
-                        val.offset = offset.times(toSignMultipler(sign)).neg();
+                        val = hourFractionToTime(rxResult[2], offset.times(toSignMultipler(sign)).neg(), rxResult[1]);
                     }
 
                     return val;
@@ -5011,17 +4867,14 @@ arrayFilter = (function () {
                  * HH:MM.,[..f]f-+ZZ
                  * @private
                  */
-                regex: /^(\d{2}):(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})$/,
+                regex: /^(\d{2}):(\d{2})[\.,](\d+)([\-+])(\d{2})$/,
                 func: function (rxResult) {
                     var sign = rxResult[4],
-                        offset = hourMinuteToMinutes(rxResult[5], 0),
+                        offset = offsetToSeconds(rxResult[5]),
                         val;
 
                     if (isNotNegativeZero(offset, sign)) {
-                        val = minuteFractionToTime(rxResult[3]);
-                        val.hour = new BigNumber(rxResult[1]);
-                        val.minute = new BigNumber(rxResult[2]);
-                        val.offset = offset.times(toSignMultipler(sign)).neg();
+                        val = minuteFractionToTime(rxResult[3], offset.times(toSignMultipler(sign)).neg(), rxResult[1], rxResult[2]);
                     }
 
                     return val;
@@ -5031,18 +4884,14 @@ arrayFilter = (function () {
                  * HH:MM:SS.,[..f]f-+ZZ
                  * @private
                  */
-                regex: /^(\d{2}):(\d{2}):(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2})$/,
+                regex: /^(\d{2}):(\d{2}):(\d{2})[\.,](\d+)([\-+])(\d{2})$/,
                 func: function (rxResult) {
                     var sign = rxResult[5],
-                        offset = hourMinuteToMinutes(rxResult[6], 0),
+                        offset = offsetToSeconds(rxResult[6]),
                         val;
 
                     if (isNotNegativeZero(offset, sign)) {
-                        val = secondFractionToTime(rxResult[4]);
-                        val.hour = new BigNumber(rxResult[1]);
-                        val.minute = new BigNumber(rxResult[2]);
-                        val.second = new BigNumber(rxResult[3]);
-                        val.offset = offset.times(toSignMultipler(sign)).neg();
+                        val = secondFractionToTime(rxResult[4], offset.times(toSignMultipler(sign)).neg(), rxResult[1], rxResult[2], rxResult[3]);
                     }
 
                     return val;
@@ -5052,16 +4901,14 @@ arrayFilter = (function () {
                  * HH.,[..f]f-+ZZ:ZZ
                  * @private
                  */
-                regex: /^(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2}):(\d{2})$/,
+                regex: /^(\d{2})[\.,](\d+)([\-+])(\d{2}):(\d{2})$/,
                 func: function (rxResult) {
                     var sign = rxResult[3],
-                        offset = hourMinuteToMinutes(rxResult[4], rxResult[5]),
+                        offset = offsetToSeconds(rxResult[4], rxResult[5]),
                         val;
 
                     if (isNotNegativeZero(offset, sign)) {
-                        val = hourFractionToTime(rxResult[2]);
-                        val.hour = new BigNumber(rxResult[1]);
-                        val.offset = offset.times(toSignMultipler(sign)).neg();
+                        val = hourFractionToTime(rxResult[2], offset.times(toSignMultipler(sign)).neg(), rxResult[1]);
                     }
 
                     return val;
@@ -5071,17 +4918,14 @@ arrayFilter = (function () {
                  * HH:MM.,[..f]f-+ZZ:ZZ
                  * @private
                  */
-                regex: /^(\d{2}):(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2}):(\d{2})$/,
+                regex: /^(\d{2}):(\d{2})[\.,](\d+)([\-+])(\d{2}):(\d{2})$/,
                 func: function (rxResult) {
                     var sign = rxResult[4],
-                        offset = hourMinuteToMinutes(rxResult[5], rxResult[6]),
+                        offset = offsetToSeconds(rxResult[5], rxResult[6]),
                         val;
 
                     if (isNotNegativeZero(offset, sign)) {
-                        val = minuteFractionToTime(rxResult[3]);
-                        val.hour = new BigNumber(rxResult[1]);
-                        val.minute = new BigNumber(rxResult[2]);
-                        val.offset = offset.times(toSignMultipler(sign)).neg();
+                        val = minuteFractionToTime(rxResult[3], offset.times(toSignMultipler(sign)).neg(), rxResult[1], rxResult[2]);
                     }
 
                     return val;
@@ -5091,18 +4935,14 @@ arrayFilter = (function () {
                  * HH:MM:SS.,[..f]f-+ZZ:ZZ
                  * @private
                  */
-                regex: /^(\d{2}):(\d{2}):(\d{2})[\.,]{1}(\d{1,})([\-+]{1})(\d{2}):(\d{2})$/,
+                regex: /^(\d{2}):(\d{2}):(\d{2})[\.,](\d+)([\-+])(\d{2}):(\d{2})$/,
                 func: function (rxResult) {
                     var sign = rxResult[5],
-                        offset = hourMinuteToMinutes(rxResult[6], rxResult[7]),
+                        offset = offsetToSeconds(rxResult[6], rxResult[7]),
                         val;
 
                     if (isNotNegativeZero(offset, sign)) {
-                        val = secondFractionToTime(rxResult[4]);
-                        val.hour = new BigNumber(rxResult[1]);
-                        val.minute = new BigNumber(rxResult[2]);
-                        val.second = new BigNumber(rxResult[3]);
-                        val.offset = offset.times(toSignMultipler(sign)).neg();
+                        val = secondFractionToTime(rxResult[4], offset.times(toSignMultipler(sign)).neg(), rxResult[1], rxResult[2], rxResult[3]);
                     }
 
                     return val;
@@ -5758,7 +5598,7 @@ arrayFilter = (function () {
                 }
 
                 offsetFormat = offsetFormat.replace(/([\-+])H:/, '$1HH:');
-                offset = fractionToTime(struct.offset.abs(), 'minute');
+                offset = fractionToTime(struct.offset.abs(), 'second');
                 offsetFormat = replaceToken(offsetFormat, 'H{1,2}', offset.hour);
 
 
@@ -5816,7 +5656,7 @@ arrayFilter = (function () {
                     offsetFormat = offsetFormat.replace(/([\-+])H:/, '$1HH:');
                 }
 
-                offset = fractionToTime(struct.offset.abs(), 'minute');
+                offset = fractionToTime(struct.offset.abs(), 'second');
                 offsetFormat = replaceToken(offsetFormat, 'H{1,2}', offset.hour);
                 if (requestedShort &amp;&amp; offset.minute.isZero()) {
                     pattern = arrayFirst(offsetFormat.split(':'));
@@ -5941,7 +5781,7 @@ arrayFilter = (function () {
          * new AstroDate(dateString);
          * new AstroDate(dateObject);
          * new AstroDate(astroDateObject);
-         * new AstroDate(year, month [, day, hour, minute, second, millisecond]);
+         * new AstroDate(year[, month, day, hour, minute, second, millisecond, offset][, options]);
          * &lt;/code>&lt;/pre>
          * &lt;ul>
          * &lt;li>&lt;b>value&lt;/b>&lt;br>
@@ -5966,6 +5806,10 @@ arrayFilter = (function () {
          * Integer or string value representing the second segment of a time.&lt;/li>
          * &lt;li>&lt;b>millisecond&lt;/b>&lt;br>
          * Integer or string value representing the millisecond segment of a time.&lt;/li>
+         * &lt;li>&lt;b>offset&lt;/b>&lt;br>
+         * Integer or string value representing the offset from UT in seconds.&lt;/li>
+         * &lt;li>&lt;b>options&lt;/b>&lt;br>
+         * null or object Must be used when only year is specified. Allows date to be specified in Julian Calender (more/changes coming). &lt;/li>
          * &lt;/ul>
          *
          * @example &lt;caption>Example usage of constructor.&lt;/caption>
@@ -5986,11 +5830,16 @@ arrayFilter = (function () {
          * new AstroDate(new Date(1995, 12, 17, 3, 24, 0, 0));
          *
          * // An AstroDate object.
-         * new AstroDate(new AstroDate(1995, 12, 17, 3, 24, 0, 0));
+         * new AstroDate(new AstroDate(1995, 12, 17, 3, 24, 0, 0, 3600)); // offset is same as '-01:00:00'
          *
          * // Using an arguments list.
-         * new AstroDate(1995, 12, 17, 3, 24, 0, 0);
-         * new AstroDate('1995', '12', '17', '3', '24', '0', '0');
+         * new AstroDate(1995, null);
+         * new AstroDate(1995, {offset: -3600}); // offset is same as '+01:00:00'
+         * new AstroDate(55, {julian: true, offset: -3600}); // year 55 of the Julian Calendar, offset is same as '+01:00:00'
+         * new AstroDate(1995, 12, 17, 3, 24, 0, 0, -3600); // offset is same as '+01:00:00'
+         * new AstroDate('1995', '12', '17', '3', '24', '0', '0', '-5400'); // offset is same as '+01:30:00'
+         * new AstroDate('1995', '12', '17', '3', '24', '0', '0', '+01:30:00'); // offset is same as -5400
+         * new AstroDate('-10', '5', '7', {julian: true}); // year -10 of the Julian Calendar
          */
         function AstroDate() {
             var args = arguments,
@@ -6015,7 +5864,9 @@ arrayFilter = (function () {
                  */
                 currentLocale = defaultLocale,
                 struct,
-                arg;
+                arg,
+                length,
+                opts;
 
             objectDefineProperties(this, {
                 /**
@@ -6208,82 +6059,39 @@ arrayFilter = (function () {
                 }
             });
 
-            switch (argsLength.toString()) {
-            case '0':
+            length = argsLength;
+            if (strictEqual(length, 0)) {
                 struct = dateToStruct(new Date());
-                break;
-            case '1':
+            } else if (strictEqual(length, 1)) {
                 arg = arrayFirst(args);
                 if (AstroDate.isAstroDate(arg)) {
                     isJulian = arg.getter('isJulian');
                     struct = extend({}, arg.getter());
-                } else if (arrayIsArray(arg)) {
-                    struct = arrayToStruct(arg, false);
                 } else if (isDate(arg)) {
                     struct = dateToStruct(arg);
                 } else if (isNumber(arg)) {
                     struct = dateToStruct(new Date(arg));
                 } else if (isString(arg)) {
                     struct = isoParse(arg);
-                } else if (isPlainObject(arg)) {
-                    struct = objectToStruct(arg);
-                    if (!isValid(struct)) {
-                        struct = {};
-                    }
                 } else {
                     throw new TypeError(arg);
                 }
-
-                break;
-            case '2':
-                arg = arrayFirst(args);
-                if (isString(arg)) {
-                    arg = stringTrim(arg).toLowerCase();
-                    switch (arg) {
-                    case 'j':
-                        arg = args[1];
-                        if (arrayIsArray(arg)) {
-                            struct = julianToGregorian(arrayToStruct(arg, true));
-                        } else if (isPlainObject(arg)) {
-                            struct = objectToStruct(arg, true);
-                            if (isValid(struct, true)) {
-                                struct = julianToGregorian(struct);
-                            } else {
-                                struct = {};
-                            }
-                        } else {
-                            throw new TypeError(arg);
-                        }
-
-                        break;
-                    case 'g':
-                        arg = args[1];
-                        if (arrayIsArray(arg)) {
-                            struct = arrayToStruct(arg, false);
-                        } else if (isPlainObject(arg)) {
-                            struct = objectToStruct(arg);
-                            if (!isValid(struct)) {
-                                struct = {};
-                            }
-                        } else {
-                            throw new TypeError(arg);
-                        }
-
-                        break;
-                    case 'jd':
-                        arg = args[1];
-                        this.jd(arg);
-                        break;
-                    default:
-                        throw new SyntaxError(arg);
+            } else {
+                arg = arrayLast(args);
+                opts = normaliseOptions(arg);
+                if (isNull(arg) || isPlainObject(arg)) {
+                    if (opts.Julian) {
+                        isJulian = true;
                     }
+
+                    struct = arrayToStruct(argumentsSlice(args, 0, -1), isJulian);
                 } else {
-                    throw new TypeError(arg);
+                    struct = arrayToStruct(argumentsSlice(args), isJulian);
                 }
 
-                break;
-            default:
-                throw new SyntaxError(argsLength);
+                if (isUndefined(args[8]) &amp;&amp; !isUndefined(opts.offset)) {
+                    struct.offset = bnOffset(opts.offset);
+                }
             }
 
             if (!isValid(struct)) {
@@ -30013,7 +29821,7 @@ arrayFilter = (function () {
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha2</a> on Thu Dec 05 2013 05:37:19 GMT+0100 (CET)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha2</a> on Mon Dec 09 2013 11:22:07 GMT+0100 (CET)
 </footer>
 
 <script> prettyPrint(); </script>

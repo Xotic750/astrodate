@@ -56,7 +56,7 @@ new AstroDate(value);
 new AstroDate(dateString);
 new AstroDate(dateObject);
 new AstroDate(astroDateObject);
-new AstroDate(year, month [, day, hour, minute, second, millisecond]);
+new AstroDate(year[, month, day, hour, minute, second, millisecond, offset][, options]);
 </code></pre>
 <ul>
 <li><b>value</b><br>
@@ -81,6 +81,10 @@ Integer or string value representing the minute segment of a time.</li>
 Integer or string value representing the second segment of a time.</li>
 <li><b>millisecond</b><br>
 Integer or string value representing the millisecond segment of a time.</li>
+<li><b>offset</b><br>
+Integer or string value representing the offset from UT in seconds.</li>
+<li><b>options</b><br>
+null or object Must be used when only year is specified. Allows date to be specified in Julian Calender (more/changes coming). </li>
 </ul>
     </div>
     
@@ -179,7 +183,7 @@ Integer or string value representing the millisecond segment of a time.</li>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line5903">line 5903</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line5743">line 5743</a>
     </li></ul></dd>
     
     
@@ -240,11 +244,16 @@ new AstroDate('1995-12-17T03:24:00.000Z');
 new AstroDate(new Date(1995, 12, 17, 3, 24, 0, 0));
 
 // An AstroDate object.
-new AstroDate(new AstroDate(1995, 12, 17, 3, 24, 0, 0));
+new AstroDate(new AstroDate(1995, 12, 17, 3, 24, 0, 0, 3600)); // offset is same as '-01:00:00'
 
 // Using an arguments list.
-new AstroDate(1995, 12, 17, 3, 24, 0, 0);
-new AstroDate('1995', '12', '17', '3', '24', '0', '0');</code></pre>
+new AstroDate(1995, null);
+new AstroDate(1995, {offset: -3600}); // offset is same as '+01:00:00'
+new AstroDate(55, {julian: true, offset: -3600}); // year 55 of the Julian Calendar, offset is same as '+01:00:00'
+new AstroDate(1995, 12, 17, 3, 24, 0, 0, -3600); // offset is same as '+01:00:00'
+new AstroDate('1995', '12', '17', '3', '24', '0', '0', '-5400'); // offset is same as '+01:30:00'
+new AstroDate('1995', '12', '17', '3', '24', '0', '0', '+01:30:00'); // offset is same as -5400
+new AstroDate('-10', '5', '7', {julian: true}); // year -10 of the Julian Calendar</code></pre>
 
     
 </dd>
@@ -307,7 +316,7 @@ new AstroDate('1995', '12', '17', '3', '24', '0', '0');</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7966">line 7966</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7774">line 7774</a>
     </li></ul></dd>
     
     
@@ -442,7 +451,7 @@ new AstroDate('1995', '12', '17', '3', '24', '0', '0');</code></pre>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7987">line 7987</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7795">line 7795</a>
     </li></ul></dd>
     
     
@@ -531,7 +540,7 @@ For example, the Julian Date for 00:30:00.0 UT 1 January 2013 is 2456293.5208333
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line8014">line 8014</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7822">line 7822</a>
     </li></ul></dd>
     
     
@@ -620,7 +629,7 @@ For example, the Julian day number for 1 January 2000 was 2,451,545.0
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line8027">line 8027</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7835">line 7835</a>
     </li></ul></dd>
     
     
@@ -829,7 +838,7 @@ For example, the Julian day number for 1 January 2000 was 2,451,545.0
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7870">line 7870</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7678">line 7678</a>
     </li></ul></dd>
     
     
@@ -912,7 +921,7 @@ For example, the Julian day number for 1 January 2000 was 2,451,545.0
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7897">line 7897</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7705">line 7705</a>
     </li></ul></dd>
     
     
@@ -1066,7 +1075,7 @@ For example, the Julian day number for 1 January 2000 was 2,451,545.0
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7930">line 7930</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7738">line 7738</a>
     </li></ul></dd>
     
     
@@ -1209,7 +1218,7 @@ For example, the Julian day number for 1 January 2000 was 2,451,545.0
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7908">line 7908</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7716">line 7716</a>
     </li></ul></dd>
     
     
@@ -1303,7 +1312,7 @@ MJD is defined relative to midnight, rather than noon.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line8042">line 8042</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7850">line 7850</a>
     </li></ul></dd>
     
     
@@ -1434,7 +1443,7 @@ MJD is defined relative to midnight, rather than noon.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7974">line 7974</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7782">line 7782</a>
     </li></ul></dd>
     
     
@@ -1504,7 +1513,7 @@ are ignored. It is assumed that there are exactly 86,400,000 milliseconds per da
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line8000">line 8000</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7808">line 7808</a>
     </li></ul></dd>
     
     
@@ -1658,7 +1667,7 @@ are ignored. It is assumed that there are exactly 86,400,000 milliseconds per da
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7949">line 7949</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7757">line 7757</a>
     </li></ul></dd>
     
     
@@ -1751,7 +1760,7 @@ Unix time may be checked on most Unix systems by typing date +%s on the command 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line8060">line 8060</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7868">line 7868</a>
     </li></ul></dd>
     
     
@@ -1834,7 +1843,7 @@ Unix time may be checked on most Unix systems by typing date +%s on the command 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7857">line 7857</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7665">line 7665</a>
     </li></ul></dd>
     
     
@@ -1980,7 +1989,7 @@ Unix time may be checked on most Unix systems by typing date +%s on the command 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7416">line 7416</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7224">line 7224</a>
     </li></ul></dd>
     
     
@@ -2048,7 +2057,7 @@ Unix time may be checked on most Unix systems by typing date +%s on the command 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7785">line 7785</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7593">line 7593</a>
     </li></ul></dd>
     
     
@@ -2116,7 +2125,7 @@ Unix time may be checked on most Unix systems by typing date +%s on the command 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6356">line 6356</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6164">line 6164</a>
     </li></ul></dd>
     
     
@@ -2202,7 +2211,7 @@ Unix time may be checked on most Unix systems by typing date +%s on the command 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7405">line 7405</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7213">line 7213</a>
     </li></ul></dd>
     
     
@@ -2288,7 +2297,7 @@ Unix time may be checked on most Unix systems by typing date +%s on the command 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6493">line 6493</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6301">line 6301</a>
     </li></ul></dd>
     
     
@@ -2434,7 +2443,7 @@ Unix time may be checked on most Unix systems by typing date +%s on the command 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7445">line 7445</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7253">line 7253</a>
     </li></ul></dd>
     
     
@@ -2502,7 +2511,7 @@ Unix time may be checked on most Unix systems by typing date +%s on the command 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7707">line 7707</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7515">line 7515</a>
     </li></ul></dd>
     
     
@@ -2570,7 +2579,7 @@ Unix time may be checked on most Unix systems by typing date +%s on the command 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7685">line 7685</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7493">line 7493</a>
     </li></ul></dd>
     
     
@@ -2638,7 +2647,7 @@ Unix time may be checked on most Unix systems by typing date +%s on the command 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7492">line 7492</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7300">line 7300</a>
     </li></ul></dd>
     
     
@@ -2706,7 +2715,7 @@ Unix time may be checked on most Unix systems by typing date +%s on the command 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7609">line 7609</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7417">line 7417</a>
     </li></ul></dd>
     
     
@@ -3382,7 +3391,7 @@ will appear in the resulting time text even they are not embraced within single 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7142">line 7142</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6950">line 6950</a>
     </li></ul></dd>
     
     
@@ -3499,7 +3508,7 @@ will appear in the resulting time text even they are not embraced within single 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6004">line 6004</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line5855">line 5855</a>
     </li></ul></dd>
     
     
@@ -3585,7 +3594,7 @@ will appear in the resulting time text even they are not embraced within single 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7469">line 7469</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7277">line 7277</a>
     </li></ul></dd>
     
     
@@ -3653,7 +3662,7 @@ will appear in the resulting time text even they are not embraced within single 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6284">line 6284</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6092">line 6092</a>
     </li></ul></dd>
     
     
@@ -3739,7 +3748,7 @@ will appear in the resulting time text even they are not embraced within single 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6460">line 6460</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6268">line 6268</a>
     </li></ul></dd>
     
     
@@ -3825,7 +3834,7 @@ will appear in the resulting time text even they are not embraced within single 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6449">line 6449</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6257">line 6257</a>
     </li></ul></dd>
     
     
@@ -3911,7 +3920,7 @@ will appear in the resulting time text even they are not embraced within single 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6394">line 6394</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6202">line 6202</a>
     </li></ul></dd>
     
     
@@ -3997,7 +4006,7 @@ will appear in the resulting time text even they are not embraced within single 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6383">line 6383</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6191">line 6191</a>
     </li></ul></dd>
     
     
@@ -4083,7 +4092,7 @@ will appear in the resulting time text even they are not embraced within single 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7663">line 7663</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7471">line 7471</a>
     </li></ul></dd>
     
     
@@ -4151,7 +4160,7 @@ will appear in the resulting time text even they are not embraced within single 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6471">line 6471</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6279">line 6279</a>
     </li></ul></dd>
     
     
@@ -4237,7 +4246,7 @@ will appear in the resulting time text even they are not embraced within single 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6482">line 6482</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6290">line 6290</a>
     </li></ul></dd>
     
     
@@ -4323,7 +4332,7 @@ will appear in the resulting time text even they are not embraced within single 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6416">line 6416</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6224">line 6224</a>
     </li></ul></dd>
     
     
@@ -4409,7 +4418,7 @@ will appear in the resulting time text even they are not embraced within single 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6438">line 6438</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6246">line 6246</a>
     </li></ul></dd>
     
     
@@ -4495,7 +4504,7 @@ will appear in the resulting time text even they are not embraced within single 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6405">line 6405</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6213">line 6213</a>
     </li></ul></dd>
     
     
@@ -4581,7 +4590,7 @@ will appear in the resulting time text even they are not embraced within single 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6427">line 6427</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6235">line 6235</a>
     </li></ul></dd>
     
     
@@ -4667,7 +4676,7 @@ will appear in the resulting time text even they are not embraced within single 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6552">line 6552</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6360">line 6360</a>
     </li></ul></dd>
     
     
@@ -4753,7 +4762,7 @@ will appear in the resulting time text even they are not embraced within single 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6503">line 6503</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6311">line 6311</a>
     </li></ul></dd>
     
     
@@ -4821,7 +4830,7 @@ will appear in the resulting time text even they are not embraced within single 
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6519">line 6519</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6327">line 6327</a>
     </li></ul></dd>
     
     
@@ -4961,7 +4970,7 @@ Throws an error if the argument is not of the correct type.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7534">line 7534</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7342">line 7342</a>
     </li></ul></dd>
     
     
@@ -5050,7 +5059,7 @@ Throws an error if the argument is not of the correct type.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7563">line 7563</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7371">line 7371</a>
     </li></ul></dd>
     
     
@@ -5178,7 +5187,7 @@ Throws an error if the argument is not of the correct type.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7731">line 7731</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7539">line 7539</a>
     </li></ul></dd>
     
     
@@ -5264,7 +5273,7 @@ Throws an error if the argument is not of the correct type.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6273">line 6273</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6081">line 6081</a>
     </li></ul></dd>
     
     
@@ -5410,7 +5419,7 @@ Throws an error if the argument is not of the correct type.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7803">line 7803</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7611">line 7611</a>
     </li></ul></dd>
     
     
@@ -5496,7 +5505,7 @@ Throws an error if the argument is not of the correct type.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6295">line 6295</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6103">line 6103</a>
     </li></ul></dd>
     
     
@@ -5642,7 +5651,7 @@ Throws an error if the argument is not of the correct type.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7830">line 7830</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7638">line 7638</a>
     </li></ul></dd>
     
     
@@ -5728,7 +5737,7 @@ Throws an error if the argument is not of the correct type.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7586">line 7586</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7394">line 7394</a>
     </li></ul></dd>
     
     
@@ -5856,7 +5865,7 @@ Throws an error if the argument is not of the correct type.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7376">line 7376</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7184">line 7184</a>
     </li></ul></dd>
     
     
@@ -5972,7 +5981,7 @@ Throws an error if the argument is not of the correct type.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6563">line 6563</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6371">line 6371</a>
     </li></ul></dd>
     
     
@@ -6040,7 +6049,7 @@ Throws an error if the argument is not of the correct type.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6367">line 6367</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6175">line 6175</a>
     </li></ul></dd>
     
     
@@ -6201,7 +6210,7 @@ Throws an error if the argument is not of the correct type.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6067">line 6067</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line5918">line 5918</a>
     </li></ul></dd>
     
     
@@ -6335,7 +6344,7 @@ Throws an error if the argument is not of the correct type.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7509">line 7509</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7317">line 7317</a>
     </li></ul></dd>
     
     
@@ -6463,7 +6472,7 @@ Throws an error if the argument is not of the correct type.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7218">line 7218</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7026">line 7026</a>
     </li></ul></dd>
     
     
@@ -6549,7 +6558,7 @@ Throws an error if the argument is not of the correct type.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7313">line 7313</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7121">line 7121</a>
     </li></ul></dd>
     
     
@@ -6635,7 +6644,7 @@ Throws an error if the argument is not of the correct type.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7775">line 7775</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7583">line 7583</a>
     </li></ul></dd>
     
     
@@ -6781,7 +6790,7 @@ Throws an error if the argument is not of the correct type.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7202">line 7202</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7010">line 7010</a>
     </li></ul></dd>
     
     
@@ -6927,7 +6936,7 @@ Throws an error if the argument is not of the correct type.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7266">line 7266</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7074">line 7074</a>
     </li></ul></dd>
     
     
@@ -7013,7 +7022,7 @@ Throws an error if the argument is not of the correct type.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6323">line 6323</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6131">line 6131</a>
     </li></ul></dd>
     
     
@@ -7099,7 +7108,7 @@ Throws an error if the argument is not of the correct type.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6345">line 6345</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6153">line 6153</a>
     </li></ul></dd>
     
     
@@ -7185,7 +7194,7 @@ Throws an error if the argument is not of the correct type.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7352">line 7352</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7160">line 7160</a>
     </li></ul></dd>
     
     
@@ -7253,7 +7262,7 @@ Throws an error if the argument is not of the correct type.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6309">line 6309</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6117">line 6117</a>
     </li></ul></dd>
     
     
@@ -7339,7 +7348,7 @@ Throws an error if the argument is not of the correct type.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6334">line 6334</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6142">line 6142</a>
     </li></ul></dd>
     
     
@@ -7425,7 +7434,7 @@ Throws an error if the argument is not of the correct type.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7334">line 7334</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line7142">line 7142</a>
     </li></ul></dd>
     
     
@@ -7511,7 +7520,7 @@ Throws an error if the argument is not of the correct type.
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6535">line 6535</a>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line6343">line 6343</a>
     </li></ul></dd>
     
     
@@ -7558,7 +7567,7 @@ Throws an error if the argument is not of the correct type.
 <br clear="both">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha2</a> on Thu Dec 05 2013 05:37:19 GMT+0100 (CET)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha2</a> on Mon Dec 09 2013 11:22:07 GMT+0100 (CET)
 </footer>
 
 <script> prettyPrint(); </script>
