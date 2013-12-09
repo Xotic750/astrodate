@@ -15,7 +15,7 @@
         repeat;
 
     if (!process.env.ASTRODATE_TAPE) {
-        repeat = 5;
+        repeat = 1;
         args.push({
             compact: true,
             name: 'All tests'

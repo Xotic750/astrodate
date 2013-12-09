@@ -22,6 +22,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*global console */
 (function (globalThis, privateUndefined) {
     /* jshint -W034 */
     'use strict';
@@ -1363,18 +1364,22 @@ stringEndsWith = (function () {
             nfeToObjectFixIndexedAccess;
 
         if (splitString) {
-            tempSafariNFE = function nfeToObjectFixIndexedAccess(inputArg) {
+            tempSafariNFE = function nfeToObjectFixIndexedAccess(inputArg, caller) {
                 var object;
 
+                console.log('toObjectFixIndexedAccess: ' + caller, inputArg);
                 if (isString(inputArg)) {
+                    console.log('here..');
                     object = stringSplit(inputArg, '');
                 } else {
+                    console.log('here...');
                     object = toObject(inputArg);
                 }
 
                 return object;
             };
         } else {
+            console.log('here....');
             tempSafariNFE = toObject;
         }
 
@@ -1404,7 +1409,7 @@ stringEndsWith = (function () {
             };
         } else {
             tempSafariNFE = function nfeForEach(array, fn, thisArg) {
-                var object = toObjectFixIndexedAccess(array),
+                var object = toObjectFixIndexedAccess(array, 'nfeForEach'),
                     length,
                     index;
 
@@ -1447,7 +1452,7 @@ stringEndsWith = (function () {
             };
         } else {
             tempSafariNFE = function nfeSome(array, fn, thisArg) {
-                var object = toObjectFixIndexedAccess(array),
+                var object = toObjectFixIndexedAccess(array, 'nfeSome'),
                     length,
                     index,
                     val;
@@ -1494,7 +1499,7 @@ stringEndsWith = (function () {
             };
         } else {
             tempSafariNFE = function nfeMap(array, fn, thisArg) {
-                var object = toObjectFixIndexedAccess(array),
+                var object = toObjectFixIndexedAccess(array, 'nfeMap'),
                     length,
                     index,
                     arr;
@@ -1576,7 +1581,7 @@ arrayFilter = (function () {
         };
     } else {
         tempSafariNFE = function nfeFilter(array, fn, thisArg) {
-            var object = toObjectFixIndexedAccess(array),
+            var object = toObjectFixIndexedAccess(array, 'nfeFilter'),
                 length,
                 arr,
                 index,
@@ -1626,7 +1631,7 @@ arrayFilter = (function () {
             };
         } else {
             tempSafariNFE = function nfeReduce(array, fn, initialValue) {
-                var object = toObjectFixIndexedAccess(array),
+                var object = toObjectFixIndexedAccess(array, 'nfeReduce'),
                     length,
                     k,
                     index,
@@ -1773,7 +1778,7 @@ arrayFilter = (function () {
             };
         } else {
             tempSafariNFE = function nfeIndexOf(array, searchElement, fromIndex) {
-                var object = toObjectFixIndexedAccess(array),
+                var object = toObjectFixIndexedAccess(array, 'nfeIndexOf'),
                     length = toUint32(object.length),
                     index,
                     start,
