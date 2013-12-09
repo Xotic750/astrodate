@@ -1362,23 +1362,17 @@ stringEndsWith = (function () {
             splitString = !strictEqual(boxedString[0], 'a') || !hasProperty(boxedString, 0),
             nfeToObjectFixIndexedAccess;
 
-        if (splitString) {
-            tempSafariNFE = function nfeToObjectFixIndexedAccess(inputArg, caller) {
-                var object;
+        tempSafariNFE = function nfeToObjectFixIndexedAccess(inputArg) {
+            var object;
 
-                if (isString(inputArg)) {
-                    object = stringSplit(inputArg, '');
-                } else {
-                    object = toObject(inputArg, caller);
-                }
+            if (splitString && isString(inputArg)) {
+                object = stringSplit(inputArg, '');
+            } else {
+                object = toObject.apply(null, arguments);
+            }
 
-                return object;
-            };
-        } else {
-            tempSafariNFE = function nfeToObjectFixIndexedAccess(inputArg, caller) {
-                return toObject(inputArg, caller);
-            };
-        }
+            return object;
+        };
 
         nfeToObjectFixIndexedAccess = null;
 

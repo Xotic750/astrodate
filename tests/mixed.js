@@ -21,7 +21,7 @@
             name: 'All tests'
         });
     } else {
-        repeat = 50;
+        repeat = 25;
     }
 
     args.push(function (t) {
