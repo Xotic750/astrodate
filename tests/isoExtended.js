@@ -45,7 +45,7 @@
             }
 
             month = util.padLeadingZero(util.getRandomInt(1, 12), 2);
-            day = util.padLeadingZero(util.getRandomInt(1, +new AstroDate(year, month).daysInMonth()), 2);
+            day = util.padLeadingZero(util.getRandomInt(1, util.daysInGregorianMonth(+year, +month)), 2);
             hour = util.padLeadingZero(util.getRandomInt(0, 24), 2);
             if ('24' === hour) {
                 minute = '00';
