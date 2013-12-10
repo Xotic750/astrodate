@@ -683,7 +683,7 @@ function isNumeric(inputArg) {
             tempSafariNFE = isFiniteFN;
         } else {
             tempSafariNFE = function nfeIsFinite(number) {
-                return isNumber(number) && isFinite(number);
+                return isNumber(number) && globalThis.isFinite(number);
             };
         }
 
