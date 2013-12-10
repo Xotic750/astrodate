@@ -4,10 +4,11 @@
 
     var test = require('../scripts/whichTape'),
         AstroDate = require('../scripts/whichAstroDate'),
-        Fire = require('../scripts/fire'),
+        util = require('../scripts/util'),
         delay = 100,
-        fireSingle = new Fire(),
+        fireSingle = new util.Fire(),
         args = ['parsing iso extended'],
+        offset = new Date().getTimezoneOffset(),
         repeat;
 
     if (!process.env.ASTRODATE_TAPE) {
@@ -19,30 +20,13 @@
     } else {
         repeat = 50;
     }
-    function getRandomInt(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
-    }
-
-    function padLeadingZero(number, size) {
-        var numString = number.toString(),
-            length = size - numString.length,
-            i;
-
-        for (i = 0; i < length; i += 1) {
-            numString = '0' + numString;
-        }
-
-        return numString;
-    }
 
     args.push(function (t) {
-        var offset = new Date().getTimezoneOffset();
-
         function single() {
-            var year = padLeadingZero(getRandomInt(0, 9999), 4),
-                month = padLeadingZero(getRandomInt(1, 12), 2),
-                day = padLeadingZero(getRandomInt(1, +new AstroDate(year, month).daysInMonth()), 2),
-                hour = padLeadingZero(getRandomInt(0, 24), 2),
+            var year = util.padLeadingZero(util.getRandomInt(0, 9999), 4),
+                month = util.padLeadingZero(util.getRandomInt(1, 12), 2),
+                day = util.padLeadingZero(util.getRandomInt(1, util.daysInGregorianMonth(+year, +month)), 2),
+                hour = util.padLeadingZero(util.getRandomInt(0, 24), 2),
                 index,
                 withComma,
                 minute,
@@ -53,30 +37,30 @@
                 tz,
                 formats;
 
-            year = padLeadingZero(getRandomInt(0, 9007199254740991), 6);
-            if (getRandomInt(0, 1)) {
+            year = util.padLeadingZero(util.getRandomInt(0, 9007199254740991), 6);
+            if (util.getRandomInt(0, 1)) {
                 year = '+' + year;
             } else {
                 year = '-' + year;
             }
 
-            month = padLeadingZero(getRandomInt(1, 12), 2);
-            day = padLeadingZero(getRandomInt(1, +new AstroDate(year, month).daysInMonth()), 2);
-            hour = padLeadingZero(getRandomInt(0, 24), 2);
+            month = util.padLeadingZero(util.getRandomInt(1, 12), 2);
+            day = util.padLeadingZero(util.getRandomInt(1, +new AstroDate(year, month).daysInMonth()), 2);
+            hour = util.padLeadingZero(util.getRandomInt(0, 24), 2);
             if ('24' === hour) {
                 minute = '00';
                 second = '00';
                 millisecond = '000';
             } else {
-                minute = padLeadingZero(getRandomInt(0, 59), 2);
-                second = padLeadingZero(getRandomInt(0, 59), 2);
-                millisecond = padLeadingZero(getRandomInt(0, 999), 3);
+                minute = util.padLeadingZero(util.getRandomInt(0, 59), 2);
+                second = util.padLeadingZero(util.getRandomInt(0, 59), 2);
+                millisecond = util.padLeadingZero(util.getRandomInt(0, 999), 3);
             }
 
             if (0 !== offset) {
                 hourOffset = (offset > 0) ? Math.floor(offset / 60) : Math.ceil(offset / 60);
                 minOffset = offset - (hourOffset * 60);
-                tz = (offset > 0 ? '-' : '+') + padLeadingZero(Math.abs(hourOffset), 2) + ':' + padLeadingZero(Math.abs(minOffset), 2);
+                tz = (offset > 0 ? '-' : '+') + util.padLeadingZero(Math.abs(hourOffset), 2) + ':' + util.padLeadingZero(Math.abs(minOffset), 2);
             } else {
                 tz = 'Z';
             }

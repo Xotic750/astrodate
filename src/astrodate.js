@@ -2000,8 +2000,7 @@ arrayFilter = (function () {
                     throw new TypeError('Object.getOwnPropertyDescriptor called on a non-object');
                 }
 
-                //if (objectHasOwnProperty(object, property)) {
-                if (object.hasOwnProperty(property)) {
+                if (objectHasOwnProperty(object, property)) {
                     descriptor = {
                         enumerable: true,
                         configurable: true
@@ -7424,6 +7423,7 @@ arrayFilter = (function () {
             /** @memberOf AstroDate.prototype
              * @function
              * @this AstroDate
+             * @return {number}
              */
             daysInYear: {
                 value: function () {
@@ -7433,9 +7433,9 @@ arrayFilter = (function () {
                     if (this.isValid()) {
                         struct = getCorrectStruct(this, this.getter());
                         if (this.isJulian()) {
-                            val = daysInJulianYear(gregorianToJulian(struct)).toString();
+                            val = toNumber(daysInJulianYear(gregorianToJulian(struct)).toString());
                         } else {
-                            val = daysInGregorianYear(struct).toString();
+                            val = toNumber(daysInGregorianYear(struct).toString());
                         }
                     }
 
@@ -7446,6 +7446,7 @@ arrayFilter = (function () {
             /** @memberOf AstroDate.prototype
              * @function
              * @this AstroDate
+             * @return {number}
              */
             daysInMonth: {
                 value: function () {
@@ -7455,9 +7456,9 @@ arrayFilter = (function () {
                     if (this.isValid()) {
                         struct = getCorrectStruct(this, this.getter());
                         if (this.isJulian()) {
-                            val = daysInJulianMonth(gregorianToJulian(struct)).toString();
+                            val = toNumber(daysInJulianMonth(gregorianToJulian(struct)).toString());
                         } else {
-                            val = daysInGregorianMonth(struct).toString();
+                            val = toNumber(daysInGregorianMonth(struct).toString());
                         }
                     }
 
