@@ -7511,7 +7511,7 @@ arrayFilter = (function () {
                         val;
 
                     if (isUndefined(jsonString)) {
-                        if (isObject(JSON) && isFunction(JSON.stringify)) {
+                        if (typeof JSON === 'object' && isFunction(JSON.stringify)) {
                             val = JSON.stringify(this.object());
                         } else {
                             struct = this.object();
@@ -7522,7 +7522,7 @@ arrayFilter = (function () {
                             val = '{' + propArray.join(',') + '}';
                         }
                     } else if (isString(jsonString)) {
-                        if (isObject(JSON) && isFunction(JSON.parse)) {
+                        if (typeof JSON === 'object' && isFunction(JSON.parse)) {
                             struct = objectToStruct(JSON.parse(jsonString), this.isJulian());
                         } else {
                             /*jslint evil: true */
