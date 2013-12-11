@@ -3480,8 +3480,8 @@ arrayFilter = (function () {
             var newObject = {};
 
             if (isPlainObject(struct)) {
-                arrayForEach(objectKeys(struct), function (key) {
-                    newObject[key] = struct[key].toString();
+                arrayForEach(fullKeys, function (key) {
+                    newObject[key.full] = struct[key.full].toString();
                 });
             }
 
