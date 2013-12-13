@@ -297,9 +297,5 @@
             'shell:coveralls',
             'clean:coverage'
         ]);
-
-        grunt.registerTask('coveralls', [
-            'clean:all'
-        ]);
     };
 }());

@@ -102,11 +102,7 @@
         "tzdata": "http://www.iana.org/time-zones/repository/releases/tzdata2013h.tar.gz"
     },
     "scripts": {
-        "build": "grunt default",
-        "test": "grunt test",
-        "coveralls": "grunt coveralls",
-        "clean": "grunt clean"
-
+        "test": "grunt test"
     },
     "browser": {
         "../lib/astrodate": false,
