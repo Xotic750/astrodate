@@ -1,6 +1,6 @@
 {
     "name": "astrodate",
-    "version": "0.6.5",
+    "version": "0.6.6",
     "description": "Javascript Date object with Astronomy in mind.",
     "homepage": "http://xotic750.github.io/astrodate/",
     "author": {
@@ -50,9 +50,6 @@
         "js-beautify": "latest",
         "jsdoc": "latest",
         "tar.gz": "latest",
-        "tap": "latest",
-        "tape": "latest",
-        "tape-compact": "latest",
         "grunt-cli": "latest",
         "grunt-contrib-jshint": "latest",
         "grunt-contrib-uglify": "latest",
@@ -68,7 +65,10 @@
         "grunt-shell": "latest",
         "istanbul": "latest",
         "grunt-jsonlint": "latest",
-        "browserify": "~2.36.1"
+        "browserify": "~2.36.1",
+        "mocha": "latest",
+        "mocha-lcov-reporter": "latest",
+        "chai": "latest"
     },
     "optionalDependencies": {
         "uglify-js": "latest",
@@ -77,9 +77,6 @@
         "js-beautify": "latest",
         "jsdoc": "latest",
         "tar.gz": "latest",
-        "tap": "latest",
-        "tape": "latest",
-        "tape-compact": "latest",
         "grunt-cli": "latest",
         "grunt-contrib-jshint": "latest",
         "grunt-contrib-uglify": "latest",
@@ -95,14 +92,21 @@
         "grunt-shell": "latest",
         "istanbul": "latest",
         "grunt-jsonlint": "latest",
-        "browserify": "~2.36.1"
+        "browserify": "~2.36.1",
+        "mocha": "latest",
+        "mocha-lcov-reporter": "latest",
+        "chai": "latest"
     },
     "sources": {
         "cldr": "http://unicode.org/Public/cldr/24/json.zip",
         "tzdata": "http://www.iana.org/time-zones/repository/releases/tzdata2013h.tar.gz"
     },
     "scripts": {
-        "test": "grunt test"
+        "build": "grunt default",
+        "test": "grunt test",
+        "coveralls": "grunt coveralls",
+        "clean": "grunt clean"
+
     },
     "browser": {
         "../lib/astrodate": false,
@@ -127,9 +131,11 @@
         "coveralls": false,
         "grunt-shell": false,
         "istanbul": false,
-        "grunt-jsonlint": false
+        "grunt-jsonlint": false,
+        "mocha-lcov-reporter": false
     },
     "testling": {
+        "harness" : "mocha",
         "files": "tests/*.js",
         "browsers": [
             "iexplore/6.0..latest",

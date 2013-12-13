@@ -1,31 +1,15 @@
-/*global require, process */
+/*global require, process , describe, it */
 (function () {
     'use strict';
 
-    var test = require('../scripts/whichTape'),
-        AstroDate = require('../scripts/whichAstroDate'),
+    var AstroDate = require('../scripts/whichAstroDate'),
         util = require('../scripts/util'),
-        delay = 100,
-        fireSingle = new util.Fire(),
-        args = ['periphery methods'],
-        monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-        dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        assert = require('chai').assert,
         leapYears = [],
         leapYearLength,
         normalYears = [],
         normalYearsLength,
-        idx,
-        repeat;
-
-    if (!process.env.ASTRODATE_TAPE) {
-        repeat = 1;
-        args.push({
-            compact: true,
-            name: 'All tests'
-        });
-    } else {
-        repeat = 5;
-    }
+        idx;
 
     for (idx = 1800; idx < 2200; idx += 1) {
         if (util.isGregorianLeapYear(idx)) {
@@ -37,45 +21,51 @@
 
     normalYearsLength = normalYears.length;
     leapYearLength = leapYears.length;
-    args.push(function (t) {
-        function single() {
-            var astrodate,
-                index,
-                month;
 
-            for (index = 0; index < 12; index += 1) {
-                month = index + 1;
-                astrodate = new AstroDate(2013, month);
-                t.equal(astrodate.format('MMMM'), monthNames[index], 'Month name match');
-                t.equal(astrodate.daysInMonth(), util.daysInGregorianMonth(2013, month), 'Days in month: normal year');
+    function single() {
+        var astrodate,
+            index,
+            month;
 
-                astrodate = new AstroDate(2012, month);
-                t.equal(astrodate.format('MMMM'), monthNames[index], 'Month name match');
-                t.equal(astrodate.daysInMonth(), util.daysInGregorianMonth(2012, month), 'Days in month: leap year');
-            }
+        for (index = 0; index < 12; index += 1) {
+            month = index + 1;
+            astrodate = new AstroDate(2013, month);
+            assert.equal(astrodate.format('MMMM'), util.monthNames[index], 'Month name match');
+            assert.equal(astrodate.daysInMonth(), util.daysInGregorianMonth(2013, month), 'Days in month: normal year');
 
-            for (index = 0; index < leapYearLength; index += 1) {
-                t.ok(new AstroDate(leapYears[index], null).isLeapYear(), 'Leap year');
-            }
-
-            for (index = 0; index < normalYearsLength; index += 1) {
-                t.ok(!new AstroDate(normalYears[index], null).isLeapYear(), 'Normal year');
-            }
-
-            for (index = 0; index < 7; index += 1) {
-                astrodate = new AstroDate(2013, 9, index + 1);
-                t.equal(astrodate.format('EEEE'), dayNames[index], 'Day names');
-                t.equal(astrodate.format('D'), (244 + index).toString(), 'Day of year');
-            }
+            astrodate = new AstroDate(2012, month);
+            assert.equal(astrodate.format('MMMM'), util.monthNames[index], 'Month name match');
+            assert.equal(astrodate.daysInMonth(), util.daysInGregorianMonth(2012, month), 'Days in month: leap year');
         }
 
-        fireSingle.run(repeat, function (cnt, iters) {
-            single.apply(null, arguments);
-            if (cnt + 1 >= iters) {
-                t.end();
-            }
-        }, delay);
-    });
+        for (index = 0; index < leapYearLength; index += 1) {
+            assert.ok(new AstroDate(leapYears[index], null).isLeapYear(), 'Leap year');
+        }
 
-    test.apply(null, args);
+        for (index = 0; index < normalYearsLength; index += 1) {
+            assert.ok(!new AstroDate(normalYears[index], null).isLeapYear(), 'Normal year');
+        }
+
+        for (index = 0; index < 7; index += 1) {
+            astrodate = new AstroDate(2013, 9, index + 1);
+            assert.equal(astrodate.format('EEEE'), util.dayNames[index], 'Day names');
+            assert.equal(astrodate.format('D'), (244 + index).toString(), 'Day of year');
+        }
+    }
+
+    describe('Periphery methods.', function () {
+        var repeat;
+
+        if (!process.env.ASTRODATE_REPEAT) {
+            repeat = 1;
+        } else {
+            repeat = 5;
+        }
+
+        it('', function (done) {
+            var delay = 100;
+
+            new util.Fire().run(repeat, single, delay, done);
+        });
+    });
 }());

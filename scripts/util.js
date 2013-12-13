@@ -4,6 +4,10 @@
 
     var util = {};
 
+    util.monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    util.dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
     function setValid(x) {
         return typeof x === 'number' && isFinite(x) && x >= 0 ? x : 0;
     }

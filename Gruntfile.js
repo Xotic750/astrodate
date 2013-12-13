@@ -9,7 +9,8 @@
 
             clean: {
                 all: ['README.md', 'docs', 'lib', 'src/cldr.zip', 'src/tzdata.tar.gz', 'src/*.json', 'src/cldr', 'src/tz', 'coverage'],
-                after: ['src/cldr.zip', 'src/tzdata.tar.gz', 'src/*.json', 'src/cldr', 'src/tz', 'coverage']
+                after: ['src/cldr.zip', 'src/tzdata.tar.gz', 'src/*.json', 'src/cldr', 'src/tz', 'coverage'],
+                coverage: ['coverage']
             },
 
             curl: {
@@ -198,7 +199,7 @@
                             maxBuffer: 1048576
                         }
                     },
-                    command: 'ASTRODATE_TAPE=1 ASTRODATE_RAW=1 node_modules/tap/bin/tap.js tests/*.js'
+                    command: 'ASTRODATE_WHICH=1 ASTRODATE_REPEAT=1 ./node_modules/mocha/bin/mocha --ui bdd --bail --check-leaks --timeout 60000 --reporter tap tests/*.js'
                 },
                 coveralls: {
                     options: {
@@ -209,7 +210,7 @@
                             maxBuffer: 1048576
                         }
                     },
-                    command: 'ASTRODATE_TAPE=1 ASTRODATE_RAW=1 node_modules/istanbul/lib/cli.js cover tests/*.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage'
+                    command: 'ASTRODATE_WHICH=1 ASTRODATE_REPEAT=1 ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- --ui bdd --bail --check-leaks --timeout 60000 --reporter mocha-lcov-reporter tests/*.js && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js'
                 },
                 uglified: {
                     options: {
@@ -220,7 +221,7 @@
                             maxBuffer: 1048576
                         }
                     },
-                    command: 'ASTRODATE_TAPE=1 node_modules/tap/bin/tap.js tests/*.js'
+                    command: 'ASTRODATE_REPEAT=1 ./node_modules/mocha/bin/mocha --ui bdd --bail --check-leaks --timeout 60000 --reporter tap tests/*.js'
                 }
             },
 
@@ -282,7 +283,6 @@
             'shell:beautified',
             'uglify',
             'shell:uglified',
-            'shell:coveralls',
             'buildReadme',
             'jsdoc',
             'clean:after'
@@ -291,6 +291,15 @@
         grunt.registerTask('test', [
             'shell:beautified',
             'shell:uglified'
+        ]);
+
+        grunt.registerTask('coveralls', [
+            'shell:coveralls',
+            'clean:coverage'
+        ]);
+
+        grunt.registerTask('coveralls', [
+            'clean:all'
         ]);
     };
 }());
