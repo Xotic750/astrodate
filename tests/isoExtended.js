@@ -106,6 +106,8 @@
         }
 
         it('', function (done) {
+            this.timeout(60000);
+
             var delay = 100;
 
             new util.Fire().run(repeat, single, delay, done);
