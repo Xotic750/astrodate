@@ -67,8 +67,7 @@
         "grunt-jsonlint": "latest",
         "browserify": "~2.36.1",
         "mocha": "latest",
-        "mocha-lcov-reporter": "latest",
-        "chai": "latest"
+        "mocha-lcov-reporter": "latest"
     },
     "optionalDependencies": {
         "uglify-js": "latest",
@@ -94,8 +93,7 @@
         "grunt-jsonlint": "latest",
         "browserify": "~2.36.1",
         "mocha": "latest",
-        "mocha-lcov-reporter": "latest",
-        "chai": "latest"
+        "mocha-lcov-reporter": "latest"
     },
     "sources": {
         "cldr": "http://unicode.org/Public/cldr/24/json.zip",
