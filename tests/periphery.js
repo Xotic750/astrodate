@@ -4,7 +4,7 @@
 
     var AstroDate = require('../scripts/whichAstroDate'),
         util = require('../scripts/util'),
-        assert = require('chai').assert,
+        assert = require('assert'),
         leapYears = [],
         leapYearLength,
         normalYears = [],

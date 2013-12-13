@@ -4,8 +4,7 @@
 
     var AstroDate = require('../scripts/whichAstroDate'),
         util = require('../scripts/util'),
-        assert = require('chai').assert,
-        zeroArray = [NaN, 1, 1, 0, 0, 0, 0, new Date().getTimezoneOffset() * 60];
+        assert = require('assert');
 
     function single(count) {
         var fullArray = [],
@@ -13,6 +12,7 @@
             year = util.getRandomInt(-9007199254740991, 9007199254740991).toString(),
             month = util.getRandomInt(1, 12),
             hour = util.getRandomInt(0, 24),
+            zeroArray = [NaN, 1, 1, 0, 0, 0, 0, new Date().getTimezoneOffset() * 60],
             fullArrayLength,
             astrodate,
             index,
