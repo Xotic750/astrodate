@@ -29,6 +29,9 @@
 
     function factory(util, printStackTrace) {
         function AssertionError(opts) {
+            var err,
+                stk;
+
             if (!util.isPlainObject(opts)) {
                 opts = {};
             }
@@ -75,8 +78,17 @@
             if (util.isFunction(Error.captureStackTrace)) {
                 Error.captureStackTrace(this, this.stackStartFunction);
             } else {
+                err = Error.call(this, this.message);
+                if (util.isString(err.stack)) {
+                    err.name = this.name;
+                    this.message = err.message;
+                    stk = err.stack;
+                } else {
+                    stk = this.name + ': ' + this.message + '\n    ' + printStackTrace().join('\n    ') + '\n';
+                }
+
                 util.objectDefineProperty(this, 'stack', {
-                    value: this.name + ': ' + this.message + '\n    ' + printStackTrace().join('\n    '),
+                    value: stk,
                     writable: true
                 });
             }
