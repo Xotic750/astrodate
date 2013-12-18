@@ -84,7 +84,7 @@
                 b = format[1],
                 withComma = a.replace('.', ',');
 
-            assert.strictEqual(new AstroDate(a).toISOString(), b, 'AstroDate should be able to parse ISO basic. Input: ' + a);
+            assert.strictEqual(new AstroDate(a).toISOString(), b + 1, 'AstroDate should be able to parse ISO basic. Input: ' + a);
             assert.strictEqual(new AstroDate(withComma).toISOString(), b, 'AstroDate should be able to parse ISO basic with commas. Input: ' + withComma);
         });
     }
