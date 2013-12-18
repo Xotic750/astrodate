@@ -1,7 +1,9 @@
-/*global module */
+/*global module, require */
 
 (function () {
     'use strict';
+
+    var json = typeof JSON === 'object' && null !== JSON ? JSON : require('jsonify');
 
     module.exports = function (grunt) {
         grunt.registerMultiTask('buildLanguage', 'Build the language.json file from the CLDR data.', function () {
@@ -44,7 +46,7 @@
                 langList.push(lang);
             });
 
-            grunt.file.write(destination + '/language.json', JSON.stringify(merged, null, 4));
+            grunt.file.write(destination + '/language.json', json.stringify(merged, null, 4));
             grunt.log.writeln('File "' + destination + '/language.json" created.');
 
             supplementalPath = source + '/supplemental';
@@ -70,7 +72,7 @@
                 throw new Error('Missing: ' + file);
             }
 
-            grunt.file.write(destination + '/supplemental.json', JSON.stringify(merged, null, 4));
+            grunt.file.write(destination + '/supplemental.json', json.stringify(merged, null, 4));
             grunt.log.writeln('File "' + destination + '/supplemental.json" created.');
             grunt.config.set('buildLanguages.langList', langList);
             grunt.log.writeln(this.target + ': OK');

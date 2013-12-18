@@ -1,7 +1,9 @@
-/*global module */
+/*global module, require */
 
 (function () {
     'use strict';
+
+    var json = typeof JSON === 'object' && null !== JSON ? JSON : require('jsonify');
 
     module.exports = function (grunt) {
         grunt.registerMultiTask('buildLeapSeconds', 'Build the leapSeconds.json files from the tzdata.', function () {
@@ -41,7 +43,7 @@
                 leapSeconds[subMatch[0]][monthNumber][subMatch[2]] = subMatch[3] === '+' ? '1' : '-1';
             });
 
-            grunt.file.write(destination + '/leapSeconds.json', JSON.stringify(leapSeconds, null, 4));
+            grunt.file.write(destination + '/leapSeconds.json', json.stringify(leapSeconds, null, 4));
             grunt.log.writeln('File "' + destination + '/leapSeconds.json" created.');
             grunt.log.writeln(this.target + ': OK');
         });

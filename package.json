@@ -50,6 +50,8 @@
         "js-beautify": "latest",
         "jsdoc": "latest",
         "tar.gz": "latest",
+        "tape-compact": "latest",
+        "jsonify": "latest",
         "grunt-cli": "latest",
         "grunt-contrib-jshint": "latest",
         "grunt-contrib-uglify": "latest",
@@ -65,9 +67,7 @@
         "grunt-shell": "latest",
         "istanbul": "latest",
         "grunt-jsonlint": "latest",
-        "browserify": "~2.36.1",
-        "mocha": "latest",
-        "mocha-lcov-reporter": "latest"
+        "browserify": "latest"
     },
     "optionalDependencies": {
         "uglify-js": "latest",
@@ -76,6 +76,8 @@
         "js-beautify": "latest",
         "jsdoc": "latest",
         "tar.gz": "latest",
+        "tape-compact": "latest",
+        "jsonify": "latest",
         "grunt-cli": "latest",
         "grunt-contrib-jshint": "latest",
         "grunt-contrib-uglify": "latest",
@@ -91,16 +93,14 @@
         "grunt-shell": "latest",
         "istanbul": "latest",
         "grunt-jsonlint": "latest",
-        "browserify": "~2.36.1",
-        "mocha": "latest",
-        "mocha-lcov-reporter": "latest"
+        "browserify": "latest"
     },
     "sources": {
         "cldr": "http://unicode.org/Public/cldr/24/json.zip",
         "tzdata": "http://www.iana.org/time-zones/repository/releases/tzdata2013h.tar.gz"
     },
     "scripts": {
-        "test": "grunt test"
+        "test": "ASTRODATE_REPEAT=1 ./node_modules/tape-compact/bin/tape tests/*.js && ASTRODATE_REPEAT=1 ASTRODATE_WHICH=1 ./node_modules/tape-compact/bin/tape tests/*.js"
     },
     "browser": {
         "../lib/astrodate": false,
@@ -110,7 +110,6 @@
         "js-beautify": false,
         "jsdoc": false,
         "tar.gz": false,
-        "tap": false,
         "grunt-cli": false,
         "grunt-contrib-jshint": false,
         "grunt-contrib-uglify": false,
@@ -125,11 +124,9 @@
         "coveralls": false,
         "grunt-shell": false,
         "istanbul": false,
-        "grunt-jsonlint": false,
-        "mocha-lcov-reporter": false
+        "grunt-jsonlint": false
     },
     "testling": {
-        "harness" : "mocha",
         "files": "tests/*.js",
         "browsers": [
             "iexplore/6.0..latest",

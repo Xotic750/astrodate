@@ -63,6 +63,7 @@
         objectIsFrozen,
         objectHasOwnProperty,
         objectGetOwnPropertyDescriptor,
+        //objectCreate,
         arrayIsArray,
         objectInstanceOf,
         objectGetPrototypeOf,
@@ -309,20 +310,20 @@
      * @return {boolean}
      */
     /*
-function isNumeric(inputArg) {
-    var val = false,
-        string;
+    function isNumeric(inputArg) {
+        var val = false,
+            string;
 
-    if (isNumber(inputArg) || isString(inputArg)) {
-        string = inputArg.toString().replace(/^[+\-]?/, "");
-        if (!isNaN(parseFloat(string)) && isFinite(string)) {
-            val = true;
+        if (isNumber(inputArg) || isString(inputArg)) {
+            string = inputArg.toString().replace(/^[+\-]?/, "");
+            if (!isNaN(parseFloat(string)) && isFinite(string)) {
+                val = true;
+            }
         }
-    }
 
-    return val;
-}
-*/
+        return val;
+    }
+    */
 
     /**
      * The abstract operation throws an error if its argument is a value that cannot be
@@ -832,25 +833,25 @@ function isNumeric(inputArg) {
      * @return {number}
      */
     /*
-function toInt32(inputArg) {
-    var number = toNumber(inputArg),
-        int32bit,
-        val;
+    function toInt32(inputArg) {
+        var number = toNumber(inputArg),
+            int32bit,
+            val;
 
-    if (isZero(number) || !numberIsFinite(number)) {
-        val = +0;
-    } else {
-        int32bit = mod(mathSign(number) * Math.floor(Math.abs(number)), UWORD32);
-        if (gt(int32bit, UWORD32)) {
-            val = int32bit - UWORD32;
+        if (isZero(number) || !numberIsFinite(number)) {
+            val = +0;
         } else {
-            val = int32bit;
+            int32bit = mod(mathSign(number) * Math.floor(Math.abs(number)), UWORD32);
+            if (gt(int32bit, UWORD32)) {
+                val = int32bit - UWORD32;
+            } else {
+                val = int32bit;
+            }
         }
-    }
 
-    return val;
-}
-*/
+        return val;
+    }
+    */
 
     /**
      * The abstract operation converts its argument to one of 2^32 integer values in the range 0 through 2^32-1,inclusive.
@@ -1149,32 +1150,32 @@ function toInt32(inputArg) {
      */
     /*
 // named stringStartsWith instead of startsWith because of SpiderMonkey and Blackberry bug
-stringStartsWith = (function () {
-    // Unused variable for JScript NFE bug
-    // http://kangax.github.io/nfe
-    var startsWithFN = baseString.constructor.startsWith,
-        nfeStartsWith;
+    stringStartsWith = (function () {
+        // Unused variable for JScript NFE bug
+        // http://kangax.github.io/nfe
+        var startsWithFN = baseString.constructor.startsWith,
+            nfeStartsWith;
 
-    if (isFunction(startsWithFN)) {
-        tempSafariNFE = function nfeStartsWith(string, searchString, position) {
-            return startsWithFN.call(string, searchString, position);
-        };
-    } else {
-        tempSafariNFE = function nfeStartsWith(string, searchString, position) {
-            var thisStr = anyToString(checkObjectCoercible(string)),
-                searchStr = anyToString(searchString),
-                thisLen = thisStr.length,
-                start = clamp(toInteger(position), 0, thisLen);
+        if (isFunction(startsWithFN)) {
+            tempSafariNFE = function nfeStartsWith(string, searchString, position) {
+                return startsWithFN.call(string, searchString, position);
+            };
+        } else {
+            tempSafariNFE = function nfeStartsWith(string, searchString, position) {
+                var thisStr = anyToString(checkObjectCoercible(string)),
+                    searchStr = anyToString(searchString),
+                    thisLen = thisStr.length,
+                    start = clamp(toInteger(position), 0, thisLen);
 
-            return strictEqual(thisStr.slice(start, start + thisLen), searchStr);
-        };
-    }
+                return strictEqual(thisStr.slice(start, start + thisLen), searchStr);
+            };
+        }
 
-    nfeStartsWith = null;
+        nfeStartsWith = null;
 
-    return tempSafariNFE;
-}());
-*/
+        return tempSafariNFE;
+    }());
+    */
 
     /**
      * Determines whether a string ends with the characters of another string, returning true or false as appropriate.
@@ -1187,43 +1188,43 @@ stringStartsWith = (function () {
      * @return {boolean}
      */
     /*
-// named stringEndsWith instead of endsWith because of SpiderMonkey and Blackberry bug
-stringEndsWith = (function () {
-    // Unused variable for JScript NFE bug
-    // http://kangax.github.io/nfe
-    var endsWithFN = baseString.constructor.endsWith,
-        nfeEndsWith;
+    // named stringEndsWith instead of endsWith because of SpiderMonkey and Blackberry bug
+    stringEndsWith = (function () {
+        // Unused variable for JScript NFE bug
+        // http://kangax.github.io/nfe
+        var endsWithFN = baseString.constructor.endsWith,
+            nfeEndsWith;
 
-    if (isFunction(endsWithFN)) {
-        tempSafariNFE = function nfeEndsWith(string, searchString, position) {
-            return endsWithFN.call(string, searchString, position);
-        };
-    } else {
-        tempSafariNFE = function nfeEndsWith(string, searchString, position) {
-            var thisStr = anyToString(checkObjectCoercible(string)),
-                searchStr = anyToString(searchString),
-                thisLen = thisStr.length,
-                end,
-                start;
+        if (isFunction(endsWithFN)) {
+            tempSafariNFE = function nfeEndsWith(string, searchString, position) {
+                return endsWithFN.call(string, searchString, position);
+            };
+        } else {
+            tempSafariNFE = function nfeEndsWith(string, searchString, position) {
+                var thisStr = anyToString(checkObjectCoercible(string)),
+                    searchStr = anyToString(searchString),
+                    thisLen = thisStr.length,
+                    end,
+                    start;
 
-            if (isUndefined(position)) {
-                position = thisLen;
-            } else {
-                position = toInteger(position);
-            }
+                if (isUndefined(position)) {
+                    position = thisLen;
+                } else {
+                    position = toInteger(position);
+                }
 
-            end = clamp(position, 0, thisLen);
-            start = end - searchStr.length;
+                end = clamp(position, 0, thisLen);
+                start = end - searchStr.length;
 
-            return gte(start, 0) && strictEqual(thisStr.slice(start, end), searchStr);
-        };
-    }
+                return gte(start, 0) && strictEqual(thisStr.slice(start, end), searchStr);
+            };
+        }
 
-    nfeEndsWith = null;
+        nfeEndsWith = null;
 
-    return tempSafariNFE;
-}());
-*/
+        return tempSafariNFE;
+    }());
+    */
 
     /**
      * Determines whether a string contains the characters of another string, returning true or false as appropriate.
@@ -1552,29 +1553,29 @@ stringEndsWith = (function () {
 
     // named arrayUnshift instead of unshift because of SpiderMonkey and Blackberry bug
     /*
-arrayUnshift = (function () {
-    // Unused variable for JScript NFE bug
-    // http://kangax.github.io/nfe
-    var unshiftFN = baseArray.unshift,
-        nfeUnshift;
+    arrayUnshift = (function () {
+        // Unused variable for JScript NFE bug
+        // http://kangax.github.io/nfe
+        var unshiftFN = baseArray.unshift,
+            nfeUnshift;
 
-    if (strictEqual(unshiftFN.call([], 0), 1)) {
-        tempSafariNFE = function nfeUnshift(array) {
-            return unshiftFN.apply(array, argumentsSlice(arguments, 1, arguments.length));
-        };
-    } else {
-        tempSafariNFE = function nfeUnshift(array) {
-            unshiftFN.apply(array, argumentsSlice(arguments, 1, arguments.length));
+        if (strictEqual(unshiftFN.call([], 0), 1)) {
+            tempSafariNFE = function nfeUnshift(array) {
+                return unshiftFN.apply(array, argumentsSlice(arguments, 1, arguments.length));
+            };
+        } else {
+            tempSafariNFE = function nfeUnshift(array) {
+                unshiftFN.apply(array, argumentsSlice(arguments, 1, arguments.length));
 
-            return array.length;
-        };
-    }
+                return array.length;
+            };
+        }
 
-    nfeUnshift = null;
+        nfeUnshift = null;
 
-    return tempSafariNFE;
-}());
-*/
+        return tempSafariNFE;
+    }());
+    */
 
     /**
      * Creates a new array with all elements that pass the test implemented by the provided function.
@@ -1588,44 +1589,44 @@ arrayUnshift = (function () {
      */
     // named arrayFilter instead of filter because of SpiderMonkey and Blackberry bug
     /*
-arrayFilter = (function () {
-    // Unused variable for JScript NFE bug
-    // http://kangax.github.io/nfe
-    var filterFN = baseArray.filter,
-        nfeFilter;
+    arrayFilter = (function () {
+        // Unused variable for JScript NFE bug
+        // http://kangax.github.io/nfe
+        var filterFN = baseArray.filter,
+            nfeFilter;
 
-    if (isFunction(filterFN)) {
-        tempSafariNFE = function nfeFilter(array, fn, thisArg) {
-            return filterFN.call(array, fn, thisArg);
-        };
-    } else {
-        tempSafariNFE = function nfeFilter(array, fn, thisArg) {
-            var object = toObjectFixIndexedAccess(array),
-                length,
-                arr,
-                index,
-                element;
+        if (isFunction(filterFN)) {
+            tempSafariNFE = function nfeFilter(array, fn, thisArg) {
+                return filterFN.call(array, fn, thisArg);
+            };
+        } else {
+            tempSafariNFE = function nfeFilter(array, fn, thisArg) {
+                var object = toObjectFixIndexedAccess(array),
+                    length,
+                    arr,
+                    index,
+                    element;
 
-            if (!isFunction(fn)) {
-                throw new TypeError(fn + ' is not a function');
-            }
-
-            for (index = 0, length = toUint32(object.length), arr = []; lt(index, length); index += 1) {
-                element = object[index];
-                if (fn.call(thisArg, element, index, object)) {
-                    arr[index] = element;
+                if (!isFunction(fn)) {
+                    throw new TypeError(fn + ' is not a function');
                 }
-            }
 
-            return arr;
-        };
-    }
+                for (index = 0, length = toUint32(object.length), arr = []; lt(index, length); index += 1) {
+                    element = object[index];
+                    if (fn.call(thisArg, element, index, object)) {
+                        arr[index] = element;
+                    }
+                }
 
-    nfeFilter = null;
+                return arr;
+            };
+        }
 
-    return tempSafariNFE;
-}());
-*/
+        nfeFilter = null;
+
+        return tempSafariNFE;
+    }());
+    */
 
     /**
      * Apply a function against an accumulator and each value of the array (from left-to-right) as to reduce it to a single value.
@@ -2259,6 +2260,46 @@ arrayFilter = (function () {
 
         return tempSafariNFE;
     }());
+
+    /**
+     * The objectCreate method creates a new object with the specified prototype object and properties.
+     * @private
+     * @function
+     * @param {object} prototype
+     * @return {object}
+     */
+    // named objectCreate instead of create because of SpiderMonkey and Blackberry bug
+    /*
+    objectCreate = (function () {
+        // Unused variable for JScript NFE bug
+        // http://kangax.github.io/nfe
+        var objectCreateFN = baseObject.constructor.create,
+            nfeObjectCreate,
+            Func;
+
+        if (isFunction(objectCreateFN)) {
+            tempSafariNFE = objectCreateFN;
+        } else if (isFunction(objectGetPrototypeOf)) {
+            Func = function () {
+                return;
+            };
+
+            tempSafariNFE = function nfeObjectCreate(prototype) {
+                if (!strictEqual(arguments.length, 1)) {
+                    throw new Error('Object.create implementation only accepts one parameter.');
+                }
+
+                Func.prototype = prototype;
+
+                return new Func();
+            };
+        }
+
+        nfeObjectCreate = null;
+
+        return tempSafariNFE;
+    }());
+    */
 
     baseObjectPrototype = objectGetPrototypeOf(baseObject);
 
@@ -4930,7 +4971,9 @@ arrayFilter = (function () {
         function isoParse(isoString) {
             // Unused variable for JScript NFE bug
             // http://kangax.github.io/nfe
-            var dtObject = {input: isoString},
+            var dtObject = {
+                input: isoString
+            },
                 searchString;
 
             function searchPatterns(pattern) {
@@ -7941,9 +7984,9 @@ arrayFilter = (function () {
 
     Definition = defineAstroDate(addBigNumberModule.call({}));
     /*global module, define */
-    if (typeof module === 'object' && !isNull(module) && isTypeObject(module.exports)) {
+    if (typeof module === 'object' && null !== module && typeof module.exports === 'object' && null !== module.exports) {
         module.exports = Definition;
-    } else if (typeof define === 'function' && isTypeObject(define.amd)) {
+    } else if (typeof define === 'function' && typeof define.amd === 'object' && null !== define.amd) {
         define(function () {
             return Definition;
         });

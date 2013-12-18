@@ -1,73 +1,91 @@
-/*global require, process , describe, it */
+/*global require, process, setTimeout */
+
 (function () {
     'use strict';
 
-    var AstroDate = require('../scripts/whichAstroDate'),
-        util = require('../scripts/util'),
-        assert = require('assert'),
+    var required = require('../scripts/'),
+        AstroDate = required.AstroDate,
+        util = required.util,
+        testsUtil = required.testsUtil,
+        assert = required.assert,
+        test = required.test,
         leapYears = [],
-        leapYearLength,
         normalYears = [],
-        normalYearsLength,
         idx;
 
-    for (idx = 1800; idx < 2200; idx += 1) {
-        if (util.isGregorianLeapYear(idx)) {
+    for (idx = 1800; util.lt(idx, 2200); idx += 1) {
+        if (testsUtil.isGregorianLeapYear(idx)) {
             leapYears.push(idx);
         } else {
             normalYears.push(idx);
         }
     }
 
-    normalYearsLength = normalYears.length;
-    leapYearLength = leapYears.length;
-
     function single() {
         var astrodate,
             index,
             month;
 
-        for (index = 0; index < 12; index += 1) {
+        for (index = 0; util.lt(index, 12); index += 1) {
             month = index + 1;
             astrodate = new AstroDate(2013, month);
-            assert.equal(astrodate.format('MMMM'), util.monthNames[index], 'Month name match');
-            assert.equal(astrodate.daysInMonth(), util.daysInGregorianMonth(2013, month), 'Days in month: normal year');
+            assert.strictEqual(astrodate.format('MMMM'), testsUtil.monthNames[index], 'Month name match');
+            assert.strictEqual(astrodate.daysInMonth(), testsUtil.daysInGregorianMonth(2013, month), 'Days in month: normal year');
 
             astrodate = new AstroDate(2012, month);
-            assert.equal(astrodate.format('MMMM'), util.monthNames[index], 'Month name match');
-            assert.equal(astrodate.daysInMonth(), util.daysInGregorianMonth(2012, month), 'Days in month: leap year');
+            assert.strictEqual(astrodate.format('MMMM'), testsUtil.monthNames[index], 'Month name match');
+            assert.strictEqual(astrodate.daysInMonth(), testsUtil.daysInGregorianMonth(2012, month), 'Days in month: leap year');
         }
 
-        for (index = 0; index < leapYearLength; index += 1) {
-            assert.ok(new AstroDate(leapYears[index], null).isLeapYear(), 'Leap year');
-        }
+        util.arrayForEach(leapYears, function (leapYear) {
+            assert.ok(new AstroDate(leapYear, null).isLeapYear(), 'Leap year');
+        });
 
-        for (index = 0; index < normalYearsLength; index += 1) {
-            assert.ok(!new AstroDate(normalYears[index], null).isLeapYear(), 'Normal year');
-        }
+        util.arrayForEach(normalYears, function (normalYear) {
+            assert.ok(!new AstroDate(normalYear, null).isLeapYear(), 'Normal year');
+        });
 
         for (index = 0; index < 7; index += 1) {
             astrodate = new AstroDate(2013, 9, index + 1);
-            assert.equal(astrodate.format('EEEE'), util.dayNames[index], 'Day names');
-            assert.equal(astrodate.format('D'), (244 + index).toString(), 'Day of year');
+            assert.strictEqual(astrodate.format('EEEE'), testsUtil.dayNames[index], 'Day names');
+            assert.strictEqual(astrodate.format('D'), (244 + index).toString(), 'Day of year');
         }
     }
 
-    describe('Periphery methods.', function () {
-        var repeat;
+    test('Periphery methods.', function (t) {
+        var delay = 100,
+            cnt = 0,
+            repeat;
 
         if (!process.env.ASTRODATE_REPEAT) {
             repeat = 1;
         } else {
-            repeat = 5;
+            repeat = 50;
         }
 
-        it('', function (done) {
-            this.timeout(60000);
+        t.plan(1);
 
-            var delay = 100;
+        function run() {
+            if (util.lt(cnt, repeat)) {
+                cnt += 1;
+                setTimeout(function () {
+                    try {
+                        single();
+                        run();
+                    } catch (e) {
+                        t.error(e, e.message, {
+                            operator : e.name,
+                            actual : e.actual,
+                            expected : e.expected,
+                            error: e
+                        });
+                    }
+                }, delay);
+            } else {
+                t.pass(t.name);
+            }
+        }
 
-            new util.Fire().run(repeat, single, delay, done);
-        });
+        run();
     });
 }());

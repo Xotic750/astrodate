@@ -199,7 +199,7 @@
                             maxBuffer: 1048576
                         }
                     },
-                    command: 'ASTRODATE_WHICH=1 ASTRODATE_REPEAT=1 ./node_modules/mocha/bin/mocha --ui bdd --bail --check-leaks --timeout 60000 --reporter tap tests/*.js'
+                    command: 'ASTRODATE_WHICH=1 ASTRODATE_REPEAT=1 ./node_modules/tape-compact/bin/tape tests/*.js'
                 },
                 coveralls: {
                     options: {
@@ -210,7 +210,7 @@
                             maxBuffer: 1048576
                         }
                     },
-                    command: 'ASTRODATE_WHICH=1 ASTRODATE_REPEAT=1 ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha -- --ui bdd --bail --check-leaks --timeout 60000 --reporter mocha-lcov-reporter tests/*.js && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js'
+                    command: 'ASTRODATE_WHICH=1 ASTRODATE_REPEAT=1 node_modules/istanbul/lib/cli.js cover tests/*.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js'
                 },
                 uglified: {
                     options: {
@@ -221,7 +221,7 @@
                             maxBuffer: 1048576
                         }
                     },
-                    command: 'ASTRODATE_REPEAT=1 ./node_modules/mocha/bin/mocha --ui bdd --bail --check-leaks --timeout 60000 --reporter tap tests/*.js'
+                    command: 'ASTRODATE_REPEAT=1 ./node_modules/tape-compact/bin/tape tests/*.js'
                 }
             },
 
