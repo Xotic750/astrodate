@@ -40,7 +40,9 @@
     ],
     "directories": {
         "lib": "lib",
-        "doc": "docs"
+        "doc": "docs",
+        "test" : "test",
+        "bin" : "bin"
     },
     "dependencies": {},
     "devDependencies": {
@@ -100,7 +102,7 @@
         "tzdata": "http://www.iana.org/time-zones/repository/releases/tzdata2013h.tar.gz"
     },
     "scripts": {
-        "test": "ASTRODATE_REPEAT=1 ./node_modules/tape-compact/bin/tape tests/*.js && ASTRODATE_REPEAT=1 ASTRODATE_WHICH=1 ./node_modules/tape-compact/bin/tape tests/*.js"
+        "test": "ASTRODATE_REPEAT=1 ./node_modules/tape-compact/bin/tape-compact tests/*.js && ASTRODATE_REPEAT=1 ASTRODATE_WHICH=1 ./node_modules/tape-compact/bin/tape-compact tests/*.js"
     },
     "browser": {
         "../lib/astrodate": false,

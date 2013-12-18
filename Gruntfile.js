@@ -199,7 +199,7 @@
                             maxBuffer: 1048576
                         }
                     },
-                    command: 'ASTRODATE_WHICH=1 ASTRODATE_REPEAT=1 ./node_modules/tape-compact/bin/tape tests/*.js'
+                    command: 'ASTRODATE_WHICH=1 ASTRODATE_REPEAT=1 ./node_modules/tape-compact/bin/tape-compact tests/*.js'
                 },
                 coveralls: {
                     options: {
@@ -221,7 +221,7 @@
                             maxBuffer: 1048576
                         }
                     },
-                    command: 'ASTRODATE_REPEAT=1 ./node_modules/tape-compact/bin/tape tests/*.js'
+                    command: 'ASTRODATE_REPEAT=1 ./node_modules/tape-compact/bin/tape-compact tests/*.js'
                 }
             },
 
