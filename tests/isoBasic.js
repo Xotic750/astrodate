@@ -111,7 +111,6 @@
                         run();
                     } catch (e) {
                         t.error(e, e.message, {
-                            operator : e.name,
                             actual : e.actual,
                             expected : e.expected,
                             error: e
