@@ -27,7 +27,7 @@
 (function (globalThis) {
     'use strict';
 
-    function factory(util, printStackTrace) {
+    function factory(util) {
         function AssertionError(opts) {
             var err,
                 stk;
@@ -79,12 +79,14 @@
                 Error.captureStackTrace(this, this.stackStartFunction);
             } else {
                 err = Error.call(this, this.message);
+                err.name = this.name;
+                this.message = err.message;
                 if (util.isString(err.stack)) {
-                    err.name = this.name;
-                    this.message = err.message;
                     stk = err.stack;
+                } else if (util.isString(err.stacktrace)) {
+                    stk = err.stacktrace;
                 } else {
-                    stk = this.name + ': ' + this.message + '\n    ' + printStackTrace().join('\n    ') + '\n';
+                    stk = '(unavailable)';
                 }
 
                 util.objectDefineProperty(this, 'stack', {
@@ -252,14 +254,14 @@
 
     /*global module, define */
     if (typeof module === 'object' && null !== module && typeof module.exports === 'object' && null !== module.exports) {
-        publicAssert = factory(require('./util'), require('./stacktrace'));
+        publicAssert = factory(require('./util'));
         publicAssert.factory = function (deep) {
             var pa;
 
             if (true === deep) {
-                pa = factory(require('./util').factory(), require('./stacktrace'));
+                pa = factory(require('./util').factory());
             } else {
-                pa = factory(require('./util'), require('./stacktrace'));
+                pa = factory(require('./util'));
             }
 
             pa.factory = publicAssert.factory;
@@ -269,15 +271,15 @@
 
         module.exports = publicAssert;
     } else if (typeof define === 'function' && typeof define.amd === 'object' && null !== define.amd) {
-        define(['./util', './stacktrace'], function (util, printStackTrace) {
-            publicAssert = factory(util, printStackTrace);
+        define(['./util'], function (util) {
+            publicAssert = factory(util);
             publicAssert.factory = function (deep) {
                 var pa;
 
                 if (true === deep) {
-                    pa = factory(util.factory(), printStackTrace);
+                    pa = factory(util.factory());
                 } else {
-                    pa = factory(util, printStackTrace);
+                    pa = factory(util);
                 }
 
                 pa.factory = publicAssert.factory;
@@ -293,9 +295,9 @@
             var pa;
 
             if (true === deep) {
-                pa = factory(globalThis.util.factory(), globalThis.printStackTrace);
+                pa = factory(globalThis.util.factory());
             } else {
-                pa = factory(globalThis.util, globalThis.printStackTrace);
+                pa = factory(globalThis.util);
             }
 
             pa.factory = publicAssert.factory;
