@@ -8,7 +8,7 @@
 
         testsUtil: require('./testsUtil'),
 
-        assert: require('./assert'),
+        assert: require('assert'),
 
         test: require('tape-compact'),
 
