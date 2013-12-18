@@ -67,7 +67,7 @@
         "grunt-shell": "latest",
         "istanbul": "latest",
         "grunt-jsonlint": "latest",
-        "browserify": "latest"
+        "browserify": "~2.36.1"
     },
     "optionalDependencies": {
         "uglify-js": "latest",
@@ -93,7 +93,7 @@
         "grunt-shell": "latest",
         "istanbul": "latest",
         "grunt-jsonlint": "latest",
-        "browserify": "latest"
+        "browserify": "~2.36.1"
     },
     "sources": {
         "cldr": "http://unicode.org/Public/cldr/24/json.zip",
