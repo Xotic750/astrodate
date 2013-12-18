@@ -8,15 +8,15 @@
         util = required.util,
         testsUtil = required.testsUtil,
         assert = required.assert,
-        test = required.test;
+        test = required.test,
+        offset = new Date().getTimezoneOffset(),
+        isOffsetPos = util.gt(offset, 0),
+        offsetsign = isOffsetPos ? '-' : '+';
 
     function single() {
-        var offset = new Date().getTimezoneOffset(),
-            isOffsetPos = util.gt(offset, 0),
-            offsetsign = isOffsetPos ? '-' : '+',
-            year = util.padLeadingChar(util.getRandomInt(0, 9999), '0', 4),
+        var year = util.padLeadingChar(util.getRandomInt(0, 9007199254740991), '0', 6),
             month = util.padLeadingChar(util.getRandomInt(1, 12), '0', 2),
-            day = util.padLeadingChar(util.getRandomInt(1, testsUtil.daysInGregorianMonth(+year, +month)), '0', 2),
+            day,
             hour = util.padLeadingChar(util.getRandomInt(0, 24), '0', 2),
             minute,
             second,
@@ -26,16 +26,13 @@
             tz,
             formats;
 
-        year = util.padLeadingChar(util.getRandomInt(0, 9007199254740991), '0', 6);
         if (util.getRandomInt(0, 1)) {
             year = '+' + year;
         } else {
             year = '-' + year;
         }
 
-        month = util.padLeadingChar(util.getRandomInt(1, 12), '0', 2);
         day = util.padLeadingChar(util.getRandomInt(1, testsUtil.daysInGregorianMonth(+year, +month)), '0', 2);
-        hour = util.padLeadingChar(util.getRandomInt(0, 24), '0', 2);
         if (util.strictEqual(hour, '24')) {
             minute = '00';
             second = '00';
@@ -115,7 +112,7 @@
                 cnt += 1;
                 setTimeout(function () {
                     try {
-                        single();
+                        single(cnt);
                         run();
                     } catch (e) {
                         t.error(e, e.message, {

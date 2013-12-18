@@ -70,7 +70,7 @@
                 cnt += 1;
                 setTimeout(function () {
                     try {
-                        single();
+                        single(cnt);
                         run();
                     } catch (e) {
                         t.error(e, e.message, {
