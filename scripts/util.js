@@ -2407,23 +2407,29 @@
 
         // Custom sort comparitor to give a repeatable sort order
         function customComparison(left, right) {
+            // Fixes IE bug: Number expected
+            // closure compiler or uglify could break this if it tries to augment the arguments
+            // http://www.zachleat.com/web/array-sort/
+            var l,
+                r;
+
             if (util.arrayIsArray(left)) {
-                left = '[object Array]' + deepSort(left).toString();
+                l = '[object Array]' + deepSort(left).toString();
             } else {
-                left = getString(left);
+                l = getString(left);
             }
 
             if (util.arrayIsArray(right)) {
-                right = '[object Array]' + deepSort(right).toString();
+                r = '[object Array]' + deepSort(right).toString();
             } else {
-                right = getString(right);
+                r = getString(right);
             }
 
-            if (util.strictEqual(left, right)) {
+            if (util.strictEqual(l, r)) {
                 return 0;
             }
 
-            if (util.lt(left, right)) {
+            if (util.lt(l, r)) {
                 return -1;
             }
 
