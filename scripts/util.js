@@ -56,8 +56,6 @@
                 'constructor'
             ],
 
-            deepSort,
-
             // Safari 2.x NFE bug fix
             // http://kangax.github.io/nfe/
             tempSafariNFE;
@@ -248,6 +246,39 @@
         };
 
         /**
+         * Returns true if the operand inputArg is undefined or null.
+         * @private
+         * @function
+         * @param {*} inputArg
+         * @return {boolean}
+         */
+        util.isUndefinedOrNull = function (value) {
+            return util.isUndefined(value) || util.isNull(value);
+        };
+
+        /**
+         * Returns true if the operand inputArg is a true.
+         * @private
+         * @function
+         * @param {*} inputArg
+         * @return {boolean}
+         */
+        util.isTrue = function (inputArg) {
+            return util.strictEqual(inputArg, true);
+        };
+
+        /**
+         * Returns true if the operand inputArg is a false.
+         * @private
+         * @function
+         * @param {*} inputArg
+         * @return {boolean}
+         */
+        util.isFalse = function (inputArg) {
+            return util.strictEqual(inputArg, false);
+        };
+
+        /**
          * Returns true if the operand inputArg is a boolean.
          * @private
          * @function
@@ -255,7 +286,7 @@
          * @return {boolean}
          */
         util.isBoolean = function (inputArg) {
-            return util.strictEqual(inputArg, true) || util.strictEqual(inputArg, false);
+            return util.isTrue(inputArg) || util.isFalse(inputArg);
         };
 
         /**
@@ -289,6 +320,17 @@
          */
         util.isString = function (inputArg) {
             return util.strictEqual(typeof inputArg, 'string');
+        };
+
+        /**
+         * Returns true if the operand inputArg is a primitive object.
+         * @private
+         * @function
+         * @param {*} inputArg
+         * @return {boolean}
+         */
+        util.isPrimitive = function (object) {
+            return util.isUndefinedOrNull(object) || util.isString(object) || util.isNumber(object) || util.isBoolean(object);
         };
 
         /**
@@ -334,7 +376,7 @@
          * @return {boolean}
          */
         util.checkObjectCoercible = function (inputArg) {
-            if (util.isUndefined(inputArg) || util.isNull(inputArg)) {
+            if (util.isUndefinedOrNull(inputArg)) {
                 throw new TypeError('Cannot convert "' + inputArg + '" to object');
             }
 
@@ -519,7 +561,7 @@
                 isRxObject = util.strictEqual(typeof testRx, objectString),
                 nfeIsTypeOfObject;
 
-            if (isRxObject) {
+            if (util.isTrue(isRxObject)) {
                 tempSafariNFE = function nfeIsTypeOfObject(inputArg) {
                     return util.strictEqual(typeof inputArg, objectString);
                 };
@@ -679,7 +721,7 @@
                             val = true;
                         }
                     } else {
-                        val = !util.strictEqual(x, x) && !util.strictEqual(y, y);
+                        val = util.notStrictEqual(x, x) && util.notStrictEqual(y, y);
                     }
 
                     return val;
@@ -934,7 +976,7 @@
                     }
 
                     separator = new RegExp(separator.source, flags);
-                    if (!compliantExecNpcg) {
+                    if (util.isFalse(compliantExecNpcg)) {
                         separator2 = new RegExp('^' + separator.source + '$(?!\\s)', flags);
                     }
 
@@ -950,9 +992,9 @@
                     match = separator.exec(string);
                     while (match) {
                         lastIndex = match.index + util.arrayFirst(match).length;
-                        if (lastIndex > lastLastIndex) {
+                        if (util.gt(lastIndex, lastLastIndex)) {
                             output.push(string.slice(lastLastIndex, match.index));
-                            if (!compliantExecNpcg && util.gt(match.length, 1)) {
+                            if (util.isFalse(compliantExecNpcg) && util.gt(match.length, 1)) {
                                 stringSplitReplacer(separator2, match, arguments);
                             }
 
@@ -1253,7 +1295,7 @@
                         position = util.numberToInteger(position);
                     }
 
-                    return !util.strictEqual(baseString.indexOf.call(thisStr, searchStr, util.clamp(position, 0, thisLen)), -1);
+                    return util.notStrictEqual(baseString.indexOf.call(thisStr, searchStr, util.clamp(position, 0, thisLen)), -1);
                 };
             }
 
@@ -1315,7 +1357,7 @@
          * @return {boolean}
          */
         util.arrayContains = function (array, searchElement) {
-            return !util.strictEqual(util.arrayIndexOf(array, searchElement), -1);
+            return util.notStrictEqual(util.arrayIndexOf(array, searchElement), -1);
         };
 
         /**
@@ -1350,7 +1392,7 @@
             }
 
             function checkDontEnums(object, property) {
-                return hasDontEnumBug && util.arrayContains(defaultProperties, property) && util.hasProperty(object, property) && !util.strictEqual(object[property], util.objectGetPrototypeOf(object)[property]);
+                return hasDontEnumBug && util.arrayContains(defaultProperties, property) && util.hasProperty(object, property) && util.notStrictEqual(object[property], util.objectGetPrototypeOf(object)[property]);
             }
 
             if (util.isFunction(hasOwnPropertyFN)) {
@@ -1383,7 +1425,7 @@
             // Unused variable for JScript NFE bug
             // http://kangax.github.io/nfe
             var boxedString = baseObject.constructor('a'),
-                splitString = !util.strictEqual(boxedString[0], 'a') || !util.hasProperty(boxedString, 0),
+                splitString = util.notStrictEqual(boxedString[0], 'a') || !util.hasProperty(boxedString, 0),
                 nfeToObjectFixIndexedAccess;
 
             tempSafariNFE = function nfeToObjectFixIndexedAccess(inputArg) {
@@ -1661,14 +1703,14 @@
                     if (util.gt(arguments.length, 2)) {
                         accumulator = initialValue;
                     } else {
-                        for (k = 0, length = util.toUint32(object.length), kPresent = false; !kPresent && util.lt(k, length); k += 1) {
+                        for (k = 0, length = util.toUint32(object.length), kPresent = false; util.isFalse(kPresent) && util.lt(k, length); k += 1) {
                             kPresent = util.hasProperty(object, k);
-                            if (kPresent) {
+                            if (util.isTrue(kPresent)) {
                                 accumulator = object[k];
                             }
                         }
 
-                        if (!kPresent) {
+                        if (util.isFalse(kPresent)) {
                             throw new TypeError(errString);
                         }
                     }
@@ -2275,7 +2317,7 @@
                 };
 
                 tempSafariNFE = function nfeObjectCreate(prototype) {
-                    if (!util.strictEqual(arguments.length, 1)) {
+                    if (util.notStrictEqual(arguments.length, 1)) {
                         throw new Error('Object.create implementation only accepts one parameter.');
                     }
 
@@ -2384,138 +2426,77 @@
             return string.replace(new RegExp(util.escapeRegex(pattern), 'g'), characters);
         };
 
-        // Get a string representation of the object for use with the sort comparison
-        function getString(object) {
-            if (util.isUndefined(object)) {
-                return '[object Undefined]undefined';
-            }
-
-            if (util.isNull(object)) {
-                return '[object Null]null';
-            }
-
-            var string = object.toString();
-
-            if (/^\[object \S+\]$/.test(string)) {
-                return util.arrayReduce(util.objectKeys(object), function (previous, key) {
-                    return previous + key + object[key];
-                }, string);
-            }
-
-            return util.toObjectString(object) + string;
-        }
-
-        // Custom sort comparitor to give a repeatable sort order
-        function customComparison(left, right) {
-            // Fixes IE bug: Number expected
-            // closure compiler or uglify could break this if it tries to augment the arguments
-            // http://www.zachleat.com/web/array-sort/
-            var l,
-                r;
-
-            if (util.arrayIsArray(left)) {
-                l = '[object Array]' + deepSort(left).toString();
-            } else {
-                l = getString(left);
-            }
-
-            if (util.arrayIsArray(right)) {
-                r = '[object Array]' + deepSort(right).toString();
-            } else {
-                r = getString(right);
-            }
-
-            if (util.strictEqual(l, r)) {
-                return 0;
-            }
-
-            if (util.lt(l, r)) {
-                return -1;
-            }
-
-            return 1;
-        }
-
-        // Recursive sort function to give a repeatable sort order
-        deepSort = function (array) {
-            var sorted = array.slice().sort(customComparison);
-
-            util.arrayForEach(sorted, function (element, index) {
-                if (util.arrayIsArray(element)) {
-                    sorted[index] = deepSort(element);
-                }
-            });
-
-            return sorted;
-        };
-
-        // Set "performSort" to "true" if you want to compare arrays of any order, much slower. Default: false
-        util.deepEqual = function (object1, object2, performSort) {
-            if (util.objectIs(object1, object2)) {
+        util.deepEqual = function (actual, expected) {
+            if (util.objectIs(actual, expected)) {
                 return true;
             }
 
-            if (!util.strictEqual(util.toObjectString(object1), util.toObjectString(object2))) {
+            if (util.isDate(actual) && util.isDate(expected)) {
+                return util.objectIs(actual.getTime(), expected.getTime());
+            }
+
+            if (util.isRegExp(actual) && util.isRegExp(expected)) {
+                return util.objectIs(actual.source, expected.source) &&
+                       util.objectIs(actual.global, expected.global) &&
+                       util.objectIs(actual.multiline, expected.multiline) &&
+                       util.objectIs(actual.lastIndex, expected.lastIndex) &&
+                       util.objectIs(actual.ignoreCase, expected.ignoreCase) &&
+                       util.objectIs(actual.sticky, expected.sticky);
+            }
+
+            if (!util.isTypeObject(actual) && !util.isTypeObject(expected)) {
+                return util.objectIs(actual, expected);
+            }
+
+            if (!util.objectIs(util.objectGetPrototypeOf(actual), util.objectGetPrototypeOf(expected))) {
                 return false;
             }
 
-            if (!util.isUndefined(object1) && !util.isNull(object1)) {
-                object1 = object1.valueOf();
-                object2 = object2.valueOf();
-            }
-
-            if (util.objectIs(object1, object2)) {
-                return true;
-            }
-
-            if (!util.objectInstanceOf(object1, Object) || !util.objectInstanceOf(object2, Object) || !util.strictEqual(util.objectGetPrototypeOf(object1), util.objectGetPrototypeOf(object2))) {
-                return false;
-            }
-
-            if (util.arrayIsArray(object1) && util.arrayIsArray(object2)) {
-                if (!util.strictEqual(object1.length, object2.length)) {
+            if (util.isArguments(actual)) {
+                if (!util.isArguments(expected)) {
                     return false;
                 }
 
-                if (performSort) {
-                    object1 = deepSort(object1);
-                    object2 = deepSort(object2);
-                }
+                actual = util.argumentsSlice(actual);
+                expected = util.argumentsSlice(expected);
+
+                return util.deepEqual(actual, expected);
             }
 
-            var areEqual = util.arraySome(util.objectKeys(object1), function (key) {
-                if (!util.objectHasOwnProperty(object2, key)) {
-                    return false;
-                }
+            var ka,
+                kb,
+                status;
 
-                var element1 = object1[key],
-                    element2 = object2[key];
-
-                if (!util.objectIs(element1, element2)) {
-                    if (!util.strictEqual(util.toObjectString(element1), util.toObjectString(element2))) {
-                        return false;
-                    }
-
-                    if (!util.isUndefined(element1) && !util.isNull(element1)) {
-                        element1 = element1.valueOf();
-                        element2 = element2.valueOf();
-                    }
-
-                    if (!util.objectIs(element1, element2) && !util.deepEqual(element1, element2, performSort)) {
-                        return false;
-                    }
-                }
-
-                return true;
-            });
-
-            if (!areEqual) {
+            try {
+                ka = util.objectKeys(actual);
+                kb = util.objectKeys(expected);
+            } catch (e) {
                 return false;
             }
 
-            return util.arraySome(util.objectKeys(object2), function (key) {
-                return util.objectHasOwnProperty(object1, key);
+            if (util.notStrictEqual(ka.length, kb.length)) {
+                return false;
+            }
+
+            ka.sort();
+            kb.sort();
+            status = util.arraySome(ka, function (aKey, index) {
+                return !util.objectIs(aKey, kb[index]);
             });
+
+            if (util.isTrue(status)) {
+                return false;
+            }
+
+            status = util.arraySome(ka, function (aKey) {
+                return !util.deepEqual(actual[aKey], expected[aKey]);
+            });
+
+            if (util.isTrue(status)) {
+                return false;
+            }
+
+            return true;
         };
 
         util.getRandomInt = function (min, max) {

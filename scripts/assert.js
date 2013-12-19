@@ -37,11 +37,11 @@
             }
 
             if (!util.isString(opts.message)) {
-                opts.message = util.privateUndefined;
+                opts.message = '';
             }
 
             if (!util.isString(opts.operator)) {
-                opts.operator = '<-->';
+                opts.operator = '';
             }
 
             if (!util.isFunction(opts.stackStartFunction)) {
@@ -111,20 +111,26 @@
 
             toString: {
                 value: function () {
-                    var theString = this.name + ': ';
+                    var theString = this.name + ': ' + this.message + '\n';
 
-                    if (util.isString(this.message)) {
-                        theString += this.message;
-                    } else {
-                        theString += '"' + this.actual + '" ' + this.operator + ' "' + this.expected + '"';
-                    }
+                    theString += '  Operator: ' + this.operator + '\n';
+                    theString += '  Expected: ' + this.expected + '\n';
+                    theString += '  Actual: ' + this.actual + '\n';
 
                     return theString;
                 }
             }
         });
 
-        function assert(message, actual, expected, operator, stackStartFunction) {
+        function assert(actual, expected, message, operator, stackStartFunction) {
+            if (!util.isString(message)) {
+                message = '(unnamed assert)';
+            }
+
+            if (!util.isString(operator)) {
+                operator = '(unnamed operator)';
+            }
+
             if (!util.isFunction(stackStartFunction)) {
                 stackStartFunction = assert;
             }
@@ -147,8 +153,8 @@
                 value: function (value, message) {
                     var pass = Boolean(value);
 
-                    if (util.notStrictEqual(pass, true)) {
-                        assert(message, pass, true, 'ok', assert.ok);
+                    if (!pass) {
+                        assert(pass, true, message, 'ok', assert.ok);
                     }
                 }
             },
@@ -156,7 +162,7 @@
             equal: {
                 value: function (actual, expected, message) {
                     if (util.notEqual(actual, expected)) {
-                        assert(message, actual, expected, '==', assert.equal);
+                        assert(actual, expected, message, '==', assert.equal);
                     }
                 }
             },
@@ -164,7 +170,7 @@
             notEqual: {
                 value: function (actual, expected, message) {
                     if (util.equal(actual, expected)) {
-                        assert(message, actual, expected, '!=', assert.notEqual);
+                        assert(actual, expected, message, '!=', assert.notEqual);
                     }
                 }
             },
@@ -172,7 +178,7 @@
             deepEqual: {
                 value: function (actual, expected, message) {
                     if (!util.deepEqual(actual, expected, true)) {
-                        assert(message, actual, expected, 'deepEqual', assert.deepEqual);
+                        assert(actual, expected, message, 'deepEqual', assert.deepEqual);
                     }
                 }
             },
@@ -180,7 +186,7 @@
             notDeepEqual: {
                 value: function (actual, expected, message) {
                     if (util.deepEqual(actual, expected, true)) {
-                        assert(message, actual, expected, '!deepEqual', assert.notDeepEqual);
+                        assert(actual, expected, message, '!deepEqual', assert.notDeepEqual);
                     }
                 }
             },
@@ -188,7 +194,7 @@
             strictEqual: {
                 value: function (actual, expected, message) {
                     if (util.notStrictEqual(actual, expected)) {
-                        assert(message, actual, expected, '===', assert.strictEqual);
+                        assert(actual, expected, message, '===', assert.strictEqual);
                     }
                 }
             },
@@ -196,7 +202,7 @@
             notStrictEqual: {
                 value: function (actual, expected, message) {
                     if (util.strictEqual(actual, expected)) {
-                        assert(message, actual, expected, '!==', assert.notStrictEqual);
+                        assert(actual, expected, message, '!==', assert.notStrictEqual);
                     }
                 }
             },
@@ -208,14 +214,14 @@
                         exc;
 
                     if (!util.isFunction(func)) {
-                        assert('"func" not a function!', funcString, typeof func, 'throws', assert.throws);
+                        assert(funcString, typeof func, '"func" not a function!', 'throws', assert.throws);
                     }
 
                     if (util.isString(Constructor)) {
                         message = Constructor;
                         Constructor = Error;
                     } else if (!util.isFunction(Constructor)) {
-                        assert('"Constructor" not a function!', funcString, typeof Constructor, 'throws', assert.throws);
+                        Constructor = Error;
                     }
 
                     if (!util.isString(message)) {
@@ -231,7 +237,7 @@
                     }
 
                     if (util.notStrictEqual(pass, true)) {
-                        assert(message, Constructor, exc, 'throws', assert.throws);
+                        assert(Constructor, exc, message, 'throws', assert.throws);
                     }
                 }
             }
