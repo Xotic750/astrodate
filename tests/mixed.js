@@ -5,44 +5,43 @@
 
     var required = require('../scripts/'),
         AstroDate = required.AstroDate,
-        util = required.util,
+        utilx = required.utilx,
         testsUtil = required.testsUtil,
-        assert = required.assert,
+        assertx = required.assertx,
         test = required.test,
-        JSON = required.json,
         zeroArray = [NaN, 1, 1, 0, 0, 0, 0, new Date().getTimezoneOffset() * 60];
 
     function single(count) {
         var fullArray = [],
             fullArrayString,
-            year = util.getRandomInt(-9007199254740991, 9007199254740991).toString(),
-            month = util.getRandomInt(1, 12),
-            hour = util.getRandomInt(0, 24),
+            year = utilx.getRandomInt(-9007199254740991, 9007199254740991).toString(),
+            month = utilx.getRandomInt(1, 12),
+            hour = utilx.getRandomInt(0, 24),
             fullArrayLength,
             astrodate,
             date;
 
         fullArray.push(year);
         fullArray.push(month);
-        fullArray.push(util.getRandomInt(1, testsUtil.daysInGregorianMonth(year, month)));
+        fullArray.push(utilx.getRandomInt(1, testsUtil.daysInGregorianMonth(year, month)));
         fullArray.push(hour);
         if (24 === hour) {
             fullArray.push(0);
             fullArray.push(0);
             fullArray.push(0);
         } else {
-            fullArray.push(util.getRandomInt(0, 59));
-            fullArray.push(util.getRandomInt(0, 59));
-            fullArray.push(util.getRandomInt(0, 999));
+            fullArray.push(utilx.getRandomInt(0, 59));
+            fullArray.push(utilx.getRandomInt(0, 59));
+            fullArray.push(utilx.getRandomInt(0, 999));
         }
 
-        fullArray.push(util.getRandomInt(-43200, 50400));
+        fullArray.push(utilx.getRandomInt(-43200, 50400));
         fullArrayLength = fullArray.length;
-        fullArrayString = util.arrayMap(fullArray, function (element) {
+        fullArrayString = utilx.arrayMap(fullArray, function (element) {
             return element.toString();
         });
 
-        util.arrayForEach(fullArray, function (element, index) {
+        utilx.arrayForEach(fullArray, function (element, index) {
             /*jslint unparam: true */
             /* jshint unused: true */
             var end = index === 0 ? fullArrayLength : -index,
@@ -89,41 +88,41 @@
                 break;
             }
 
-            assert.ok(AstroDate.isAstroDate(astrodate), slice, iterString + 'Number: isAstrodate');
-            assert.ok(astrodate.isValid(), slice, iterString + 'Number: isValid');
-            assert.deepEqual(astrodate.array(), slice, iterString + 'Number: Arrays are the same');
+            assertx.ok(AstroDate.isAstroDate(astrodate), slice, iterString + 'Number: isAstrodate');
+            assertx.ok(astrodate.isValid(), slice, iterString + 'Number: isValid');
+            assertx.deepEqual(astrodate.array(), slice, iterString + 'Number: Arrays are the same');
             date = new Date(astrodate.toISOString()).getTime();
             if (isInLimits) {
-                assert.strictEqual(astrodate.getTime(), date.toString(), slice, iterString + 'Number date: Dates are the same: ' + slice);
+                assertx.strictEqual(astrodate.getTime(), date.toString(), slice, iterString + 'Number date: Dates are the same: ' + slice);
             } else {
-                assert.ok(isNaN(date), 'outside of Date capability: ' + slice);
+                assertx.ok(isNaN(date), 'outside of Date capability: ' + slice);
             }
 
-            assert.deepEqual(JSON.parse(astrodate.json()), tObject, slice, iterString + 'Number: JSON are the same: ');
+            assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject, slice, iterString + 'Number: JSON are the same: ');
 
             astrodate = new AstroDate().array(fullArray.slice(0, end));
-            assert.ok(AstroDate.isAstroDate(astrodate), slice, iterString + 'Number array: isAstrodate');
-            assert.ok(astrodate.isValid(), slice, iterString + 'Number array: isValid');
-            assert.deepEqual(astrodate.array(), slice, slice, iterString + 'Number array: Arrays are the same');
+            assertx.ok(AstroDate.isAstroDate(astrodate), slice, iterString + 'Number array: isAstrodate');
+            assertx.ok(astrodate.isValid(), slice, iterString + 'Number array: isValid');
+            assertx.deepEqual(astrodate.array(), slice, slice, iterString + 'Number array: Arrays are the same');
             if (isInLimits) {
-                assert.strictEqual(astrodate.getTime(), date.toString(), slice, iterString + 'Number array date: Dates are the same');
+                assertx.strictEqual(astrodate.getTime(), date.toString(), slice, iterString + 'Number array date: Dates are the same');
             } else {
-                assert.ok(isNaN(date), 'outside of Date capability: ' + slice);
+                assertx.ok(isNaN(date), 'outside of Date capability: ' + slice);
             }
 
-            assert.deepEqual(JSON.parse(astrodate.json()), tObject, slice, iterString + 'Number array: JSON are the same: ');
+            assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject, slice, iterString + 'Number array: JSON are the same: ');
 
             astrodate = new AstroDate(astrodate);
-            assert.ok(AstroDate.isAstroDate(astrodate), slice, iterString + 'Number astrodate: isAstrodate');
-            assert.ok(astrodate.isValid(), slice, iterString + 'Number astrodate: isValid');
-            assert.deepEqual(astrodate.array(), slice, slice, iterString + 'Number astrodate: Arrays are the same');
+            assertx.ok(AstroDate.isAstroDate(astrodate), slice, iterString + 'Number astrodate: isAstrodate');
+            assertx.ok(astrodate.isValid(), slice, iterString + 'Number astrodate: isValid');
+            assertx.deepEqual(astrodate.array(), slice, slice, iterString + 'Number astrodate: Arrays are the same');
             if (isInLimits) {
-                assert.strictEqual(astrodate.getTime(), date.toString(), slice, iterString + 'Number astrodate date: dates are the same');
+                assertx.strictEqual(astrodate.getTime(), date.toString(), slice, iterString + 'Number astrodate date: dates are the same');
             } else {
-                assert.ok(isNaN(date), 'outside of Date capability: ' + slice);
+                assertx.ok(isNaN(date), 'outside of Date capability: ' + slice);
             }
 
-            assert.deepEqual(JSON.parse(astrodate.json()), tObject, slice, iterString + 'Number astrodate: JSON are the same: ');
+            assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject, slice, iterString + 'Number astrodate: JSON are the same: ');
 
             switch (index) {
             case 7:
@@ -152,44 +151,44 @@
                 break;
             }
 
-            assert.ok(AstroDate.isAstroDate(astrodate), slice, iterString + 'String: isAstrodate');
-            assert.ok(astrodate.isValid(), slice, iterString + 'String: isValid');
-            assert.deepEqual(astrodate.array(), slice, slice, iterString + 'String: Arrays are the same');
+            assertx.ok(AstroDate.isAstroDate(astrodate), slice, iterString + 'String: isAstrodate');
+            assertx.ok(astrodate.isValid(), slice, iterString + 'String: isValid');
+            assertx.deepEqual(astrodate.array(), slice, slice, iterString + 'String: Arrays are the same');
             if (isInLimits) {
-                assert.strictEqual(astrodate.getTime(), date.toString(), slice, iterString + 'String date: dates are the same');
+                assertx.strictEqual(astrodate.getTime(), date.toString(), slice, iterString + 'String date: dates are the same');
             } else {
-                assert.ok(isNaN(date), 'outside of Date capability: ' + slice);
+                assertx.ok(isNaN(date), 'outside of Date capability: ' + slice);
             }
 
-            assert.deepEqual(JSON.parse(astrodate.json()), tObject, slice, iterString + 'String: JSON are the same: ');
+            assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject, slice, iterString + 'String: JSON are the same: ');
 
             astrodate = new AstroDate().array(fullArrayString.slice(0, end));
-            assert.ok(AstroDate.isAstroDate(astrodate), slice, iterString + 'String array: isAstrodate');
-            assert.ok(astrodate.isValid(), slice, iterString + 'String array: isValid');
-            assert.deepEqual(astrodate.array(), slice, slice, iterString + 'String array: Arrays are the same');
+            assertx.ok(AstroDate.isAstroDate(astrodate), slice, iterString + 'String array: isAstrodate');
+            assertx.ok(astrodate.isValid(), slice, iterString + 'String array: isValid');
+            assertx.deepEqual(astrodate.array(), slice, slice, iterString + 'String array: Arrays are the same');
             if (isInLimits) {
-                assert.strictEqual(astrodate.getTime(), date.toString(), slice, iterString + 'String array date: dates are the same');
+                assertx.strictEqual(astrodate.getTime(), date.toString(), slice, iterString + 'String array date: dates are the same');
             } else {
-                assert.ok(isNaN(date), 'outside of Date capability: ' + slice);
+                assertx.ok(isNaN(date), 'outside of Date capability: ' + slice);
             }
 
-            assert.deepEqual(JSON.parse(astrodate.json()), tObject, slice, iterString + 'String array: JSON are the same: ');
+            assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject, slice, iterString + 'String array: JSON are the same: ');
 
             astrodate = astrodate.clone();
-            assert.ok(astrodate !== astrodate.clone, slice, iterString + 'String clone: is a clone');
-            assert.ok(AstroDate.isAstroDate(astrodate), slice, iterString + 'String clone: isAstrodate');
-            assert.ok(astrodate.isValid(), slice, iterString + 'String clone: isValid');
-            assert.deepEqual(astrodate.array(), slice, slice, iterString + 'String clone: Arrays are the same');
+            assertx.ok(astrodate !== astrodate.clone, slice, iterString + 'String clone: is a clone');
+            assertx.ok(AstroDate.isAstroDate(astrodate), slice, iterString + 'String clone: isAstrodate');
+            assertx.ok(astrodate.isValid(), slice, iterString + 'String clone: isValid');
+            assertx.deepEqual(astrodate.array(), slice, slice, iterString + 'String clone: Arrays are the same');
             if (isInLimits) {
-                assert.strictEqual(astrodate.getTime(), date.toString(), slice, iterString + 'String clone: dates are the same');
+                assertx.strictEqual(astrodate.getTime(), date.toString(), slice, iterString + 'String clone: dates are the same');
             } else {
-                assert.ok(isNaN(date), 'outside of Date capability: ' + slice);
+                assertx.ok(isNaN(date), 'outside of Date capability: ' + slice);
             }
 
-            assert.deepEqual(JSON.parse(astrodate.json()), tObject, slice, iterString + 'String clone: JSON are the same: ');
+            assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject, slice, iterString + 'String clone: JSON are the same: ');
 
             astrodate = new AstroDate().json(json);
-            assert.deepEqual(JSON.parse(astrodate.json()), tObject, slice, iterString + 'JSON parse: JSON are the same: ');
+            assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject, slice, iterString + 'JSON parse: JSON are the same: ');
         });
     }
 
@@ -207,7 +206,7 @@
         t.plan(1);
 
         function run() {
-            if (util.lt(cnt, repeat)) {
+            if (utilx.lt(cnt, repeat)) {
                 cnt += 1;
                 setTimeout(function () {
                     try {

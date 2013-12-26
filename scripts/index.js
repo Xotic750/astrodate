@@ -4,18 +4,16 @@
     'use strict';
 
     var required = {
-        util: require('util-x'),
+        utilx: require('util-x'),
 
         testsUtil: require('./testsUtil'),
 
-        assert: require('assert-x'),
+        assertx: require('assert-x'),
 
-        test: require('tape-compact'),
-
-        json: typeof JSON === 'object' && null !== JSON ? JSON : require('jsonify')
+        test: require('tape-compact')
     };
 
-    if (required.util.strictEqual(process.env.ASTRODATE_WHICH, '1')) {
+    if (required.utilx.strictEqual(process.env.ASTRODATE_WHICH, '1')) {
         required.AstroDate = require('../lib/astrodate');
     } else {
         required.AstroDate = require('../lib/astrodate.min');

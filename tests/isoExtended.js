@@ -5,19 +5,19 @@
 
     var required = require('../scripts/'),
         AstroDate = required.AstroDate,
-        util = required.util,
+        utilx = required.utilx,
         testsUtil = required.testsUtil,
-        assert = required.assert,
+        assertx = required.assertx,
         test = required.test,
         offset = new Date().getTimezoneOffset(),
-        isOffsetPos = util.gt(offset, 0),
+        isOffsetPos = utilx.gt(offset, 0),
         offsetsign = isOffsetPos ? '-' : '+';
 
     function single() {
-        var year = util.padLeadingChar(util.getRandomInt(0, 9007199254740991), '0', 6),
-            month = util.padLeadingChar(util.getRandomInt(1, 12), '0', 2),
+        var year = utilx.padLeadingChar(utilx.getRandomInt(0, 9007199254740991), '0', 6),
+            month = utilx.padLeadingChar(utilx.getRandomInt(1, 12), '0', 2),
             day,
-            hour = util.padLeadingChar(util.getRandomInt(0, 24), '0', 2),
+            hour = utilx.padLeadingChar(utilx.getRandomInt(0, 24), '0', 2),
             minute,
             second,
             millisecond,
@@ -26,27 +26,27 @@
             tz,
             formats;
 
-        if (util.getRandomInt(0, 1)) {
+        if (utilx.getRandomInt(0, 1)) {
             year = '+' + year;
         } else {
             year = '-' + year;
         }
 
-        day = util.padLeadingChar(util.getRandomInt(1, testsUtil.daysInGregorianMonth(+year, +month)), '0', 2);
-        if (util.strictEqual(hour, '24')) {
+        day = utilx.padLeadingChar(utilx.getRandomInt(1, testsUtil.daysInGregorianMonth(+year, +month)), '0', 2);
+        if (utilx.strictEqual(hour, '24')) {
             minute = '00';
             second = '00';
             millisecond = '000';
         } else {
-            minute = util.padLeadingChar(util.getRandomInt(0, 59), '0', 2);
-            second = util.padLeadingChar(util.getRandomInt(0, 59), '0', 2);
-            millisecond = util.padLeadingChar(util.getRandomInt(0, 999), '0', 3);
+            minute = utilx.padLeadingChar(utilx.getRandomInt(0, 59), '0', 2);
+            second = utilx.padLeadingChar(utilx.getRandomInt(0, 59), '0', 2);
+            millisecond = utilx.padLeadingChar(utilx.getRandomInt(0, 999), '0', 3);
         }
 
-        if (util.notStrictEqual(offset, 0)) {
+        if (utilx.notStrictEqual(offset, 0)) {
             hourOffset = isOffsetPos ? Math.floor(offset / 60) : Math.ceil(offset / 60);
             minOffset = offset - (hourOffset * 60);
-            tz = offsetsign + util.padLeadingChar(Math.abs(hourOffset), '0', 2) + ':' + util.padLeadingChar(Math.abs(minOffset), '0', 2);
+            tz = offsetsign + utilx.padLeadingChar(Math.abs(hourOffset), '0', 2) + ':' + utilx.padLeadingChar(Math.abs(minOffset), '0', 2);
         } else {
             tz = 'Z';
         }
@@ -84,13 +84,13 @@
             [year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second + '.' + millisecond + 'Z', year + '-' + month + '-' + day + 'T' + hour + ':' + minute + ':' + second + '.' + millisecond + 'Z']
         ];
 
-        util.arrayForEach(formats, function (format) {
+        utilx.arrayForEach(formats, function (format) {
             var a = format[0],
                 b = format[1],
                 withComma = a.replace('.', ',');
 
-            assert.strictEqual(new AstroDate(a).toISOString(), b, 'AstroDate should be able to parse ISO extended. Input: ' + a);
-            assert.strictEqual(new AstroDate(withComma).toISOString(), b, 'AstroDate should be able to parse ISO extende with commas. Input: ' + withComma);
+            assertx.strictEqual(new AstroDate(a).toISOString(), b, 'AstroDate should be able to parse ISO extended. Input: ' + a);
+            assertx.strictEqual(new AstroDate(withComma).toISOString(), b, 'AstroDate should be able to parse ISO extende with commas. Input: ' + withComma);
         });
     }
 
@@ -108,7 +108,7 @@
         t.plan(1);
 
         function run() {
-            if (util.lt(cnt, repeat)) {
+            if (utilx.lt(cnt, repeat)) {
                 cnt += 1;
                 setTimeout(function () {
                     try {
