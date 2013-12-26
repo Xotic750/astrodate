@@ -56,7 +56,7 @@
                     'millisecond': slice[6],
                     'offset': slice[7]
                 },
-                json = JSON.stringify(tObject),
+                json = utilx.jsonStringify(tObject),
                 numYear = +slice[0],
                 isInLimits = numYear >= 0 && numYear < 10000 && 24 !== +slice[3],
                 iterString = '(' + count + '->' + index + ')';
