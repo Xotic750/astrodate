@@ -210,7 +210,7 @@
                             maxBuffer: 1048576
                         }
                     },
-                    command: 'ASTRODATE_WHICH=1 ASTRODATE_REPEAT=1 node_modules/istanbul/lib/cli.js cover tests/*.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js'
+                    command: 'ASTRODATE_WHICH=1 ASTRODATE_REPEAT=1 node_modules/istanbul/lib/cli.js cover ./node_modules/tape-compact/bin/tape-compact tests/*.js --report lcovonly && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js'
                 },
                 uglified: {
                     options: {

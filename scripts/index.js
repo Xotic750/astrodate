@@ -4,11 +4,11 @@
     'use strict';
 
     var required = {
-        util: require('./util'),
+        util: require('util-x'),
 
         testsUtil: require('./testsUtil'),
 
-        assert: require('./assert'),
+        assert: require('assert-x'),
 
         test: require('tape-compact'),
 

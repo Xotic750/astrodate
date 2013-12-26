@@ -1,6 +1,6 @@
 {
     "name": "astrodate",
-    "version": "0.6.6",
+    "version": "0.6.7",
     "description": "Javascript Date object with Astronomy in mind.",
     "homepage": "http://xotic750.github.io/astrodate/",
     "author": {
@@ -45,7 +45,8 @@
         "lib": "lib",
         "doc": "docs",
         "test" : "tests",
-        "bin" : "bin"
+        "bin" : "bin",
+        "src": "src"
     },
     "dependencies": {},
     "devDependencies": {
@@ -55,10 +56,12 @@
         "js-beautify": "latest",
         "jsdoc": "latest",
         "tar.gz": "latest",
+        "util-x": "latest",
+        "assert-x": "latest",
         "tape-compact": "latest",
         "jsonify": "latest",
         "grunt-cli": "latest",
-        "grunt-contrib-jshint": "latest",
+        "grunt-contrib-jshint": "~0.7.0",
         "grunt-contrib-uglify": "latest",
         "grunt-contrib-watch": "latest",
         "grunt-lib-legacyhelpers": "latest",
@@ -72,7 +75,7 @@
         "grunt-shell": "latest",
         "istanbul": "latest",
         "grunt-jsonlint": "latest",
-        "browserify": "latest"
+        "browserify": "~2.36.1"
     },
     "optionalDependencies": {
         "uglify-js": "latest",
@@ -81,10 +84,12 @@
         "js-beautify": "latest",
         "jsdoc": "latest",
         "tar.gz": "latest",
+        "util-x": "latest",
+        "assert-x": "latest",
         "tape-compact": "latest",
         "jsonify": "latest",
         "grunt-cli": "latest",
-        "grunt-contrib-jshint": "latest",
+        "grunt-contrib-jshint": "~0.7.0",
         "grunt-contrib-uglify": "latest",
         "grunt-contrib-watch": "latest",
         "grunt-lib-legacyhelpers": "latest",
@@ -98,7 +103,7 @@
         "grunt-shell": "latest",
         "istanbul": "latest",
         "grunt-jsonlint": "latest",
-        "browserify": "latest"
+        "browserify": "~2.36.1"
     },
     "sources": {
         "cldr": "http://unicode.org/Public/cldr/24/json.zip",

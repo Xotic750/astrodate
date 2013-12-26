@@ -33,5 +33,5 @@
     }
 
 
-    module.exports = factory(require('./util'));
+    module.exports = factory(require('util-x'));
 }());
