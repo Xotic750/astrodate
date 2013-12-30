@@ -1,6 +1,6 @@
 {
     "name": "astrodate",
-    "version": "0.6.9",
+    "version": "0.7.0",
     "description": "Javascript Date object with Astronomy in mind.",
     "homepage": "http://xotic750.github.io/astrodate/",
     "author": {
@@ -58,12 +58,11 @@
         "tar.gz": "latest",
         "util-x": "latest",
         "assert-x": "latest",
-        "tape-compact": "latest",
-        "jsonify": "latest",
+        "mocha": "latest",
+        "mocha-lcov-reporter": "latest",
         "grunt-cli": "latest",
-        "grunt-contrib-jshint": "~0.7.0",
+        "grunt-contrib-jshint": "~0.7.2",
         "grunt-contrib-uglify": "latest",
-        "grunt-contrib-watch": "latest",
         "grunt-lib-legacyhelpers": "latest",
         "grunt-contrib-clean": "latest",
         "grunt-jsdoc": "latest",
@@ -75,7 +74,7 @@
         "grunt-shell": "latest",
         "istanbul": "latest",
         "grunt-jsonlint": "latest",
-        "browserify": "~2.36.1"
+        "browserify": "latest"
     },
     "optionalDependencies": {
         "uglify-js": "latest",
@@ -86,12 +85,11 @@
         "tar.gz": "latest",
         "util-x": "latest",
         "assert-x": "latest",
-        "tape-compact": "latest",
-        "jsonify": "latest",
+        "mocha": "latest",
+        "mocha-lcov-reporter": "latest",
         "grunt-cli": "latest",
-        "grunt-contrib-jshint": "~0.7.0",
+        "grunt-contrib-jshint": "~0.7.2",
         "grunt-contrib-uglify": "latest",
-        "grunt-contrib-watch": "latest",
         "grunt-lib-legacyhelpers": "latest",
         "grunt-contrib-clean": "latest",
         "grunt-jsdoc": "latest",
@@ -103,17 +101,17 @@
         "grunt-shell": "latest",
         "istanbul": "latest",
         "grunt-jsonlint": "latest",
-        "browserify": "~2.36.1"
+        "browserify": "latest"
     },
     "sources": {
         "cldr": "http://unicode.org/Public/cldr/24/json.zip",
         "tzdata": "http://www.iana.org/time-zones/repository/releases/tzdata2013h.tar.gz"
     },
     "scripts": {
-        "test": "ASTRODATE_REPEAT=1 ./node_modules/tape-compact/bin/tape-compact tests/*.js && ASTRODATE_REPEAT=1 ASTRODATE_WHICH=1 ./node_modules/tape-compact/bin/tape-compact tests/*.js"
+        "test": "./node_modules/mocha/bin/mocha --check-leaks -u bdd -t 600000 -b -R tap tests/*.js"
     },
     "browser": {
-        "../lib/astrodate": false,
+        "../lib/astrodate.min": false,
         "uglify-js": false,
         "grunt": false,
         "bignumber.js": false,
@@ -123,7 +121,6 @@
         "grunt-cli": false,
         "grunt-contrib-jshint": false,
         "grunt-contrib-uglify": false,
-        "grunt-contrib-watch": false,
         "grunt-lib-legacyhelpers": false,
         "grunt-contrib-clean": false,
         "grunt-jsdoc": false,
@@ -137,6 +134,7 @@
         "grunt-jsonlint": false
     },
     "testling": {
+        "harness": "mocha",
         "files": "tests/*.js",
         "browsers": [
             "iexplore/6.0..latest",

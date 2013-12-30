@@ -1,4 +1,4 @@
-/*global require, process, setTimeout */
+/*global require, process, describe, it, setTimeout */
 
 (function () {
     'use strict';
@@ -8,7 +8,6 @@
         utilx = required.utilx,
         testsUtil = required.testsUtil,
         assertx = required.assertx,
-        test = required.test,
         zeroArray = [NaN, 1, 1, 0, 0, 0, 0, new Date().getTimezoneOffset() * 60];
 
     function single(count) {
@@ -192,7 +191,7 @@
         });
     }
 
-    test('Mixed methods.', function (t) {
+    describe('Mixed methods.', function () {
         var delay = 100,
             cnt = 0,
             repeat;
@@ -203,28 +202,24 @@
             repeat = 50;
         }
 
-        t.plan(1);
-
-        function run() {
-            if (utilx.lt(cnt, repeat)) {
-                cnt += 1;
-                setTimeout(function () {
-                    try {
-                        single(cnt);
-                        run();
-                    } catch (e) {
-                        t.error(e, e.message, {
-                            actual : e.actual,
-                            expected : e.expected,
-                            error: e
-                        });
-                    }
-                }, delay);
-            } else {
-                t.pass(t.name);
+        it('should not throw an error in each case', function (done) {
+            function run() {
+                if (utilx.lt(cnt, repeat)) {
+                    cnt += 1;
+                    setTimeout(function () {
+                        try {
+                            single(cnt);
+                            run();
+                        } catch (e) {
+                            throw e;
+                        }
+                    }, delay);
+                } else {
+                    done();
+                }
             }
-        }
 
-        run();
+            run();
+        });
     });
 }());

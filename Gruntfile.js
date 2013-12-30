@@ -8,7 +8,8 @@
             pkg: grunt.file.readJSON('package.json'),
 
             clean: {
-                all: ['README.md', 'docs', 'lib', 'src/cldr.zip', 'src/tzdata.tar.gz', 'src/*.json', 'src/cldr', 'src/tz', 'coverage'],
+                all: ['README.md', 'docs', 'lib', 'src/cldr.zip', 'src/tzdata.tar.gz',
+                      'src/*.json', 'src/cldr', 'src/tz', 'coverage'],
                 after: ['src/cldr.zip', 'src/tzdata.tar.gz', 'src/*.json', 'src/cldr', 'src/tz', 'coverage'],
                 coverage: ['coverage']
             },
@@ -167,7 +168,8 @@
                             expression: true
                         }, {
                             match: '/\\/\\*@@BigNumber\\*\\//g',
-                            replacement: (grunt.file.read('node_modules/bignumber.js/bignumber.js').replace(/\$/g, '$$$$')),
+                            replacement: (grunt.file.read('node_modules/bignumber.js/bignumber.js')
+                                          .replace(/\$/g, '$$$$')),
                             expression: true
                         }]
                     },
@@ -199,7 +201,7 @@
                             maxBuffer: 1048576
                         }
                     },
-                    command: 'ASTRODATE_WHICH=1 ASTRODATE_REPEAT=1 ./node_modules/tape-compact/bin/tape-compact tests/*.js'
+                    command: 'ASTRODATE_REPEAT=1 <%= pkg.scripts.test %>'
                 },
                 coveralls: {
                     options: {
@@ -210,7 +212,13 @@
                             maxBuffer: 1048576
                         }
                     },
-                    command: 'ASTRODATE_WHICH=1 ASTRODATE_REPEAT=1 node_modules/istanbul/lib/cli.js cover ./node_modules/tape-compact/bin/tape-compact tests/*.js --report lcovonly && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js'
+                    command: ['./node_modules/istanbul/lib/cli.js cover --report lcovonly',
+                              './node_modules/mocha/bin/_mocha --',
+                              '--check-leaks -u bdd -t 600000 -b -R tap tests/*.js',
+                              '&&',
+                              'cat ./coverage/lcov.info',
+                              '|',
+                              './node_modules/coveralls/bin/coveralls.js'].join(' ')
                 },
                 uglified: {
                     options: {
@@ -221,32 +229,7 @@
                             maxBuffer: 1048576
                         }
                     },
-                    command: 'ASTRODATE_REPEAT=1 ./node_modules/tape-compact/bin/tape-compact tests/*.js'
-                }
-            },
-
-            watch: {
-                test: {
-                    files: [
-                        'lib/<%= pkg.name %>.js',
-                        'tests/*.js'
-                    ],
-                    tasks: ['shell:beautified', 'shell:coveralls', 'shell:uglified']
-                },
-
-                jshint: {
-                    files: [
-                        '<%= jshint.build %>',
-                        '<%= jshint.lib %>'
-                    ],
-                    tasks: ['jshint']
-                },
-
-                jsonlint: {
-                    files: [
-                        '<%= jsonlint.all.src %>'
-                    ],
-                    tasks: ['jsonlint']
+                    command: 'ASTRODATE_WHICH=1 ASTRODATE_REPEAT=1 <%= pkg.scripts.test %>'
                 }
             }
         });
@@ -257,7 +240,6 @@
         // These plugins provide necessary tasks.
         grunt.loadNpmTasks('grunt-contrib-jshint');
         grunt.loadNpmTasks('grunt-contrib-uglify');
-        grunt.loadNpmTasks('grunt-contrib-watch');
         grunt.loadNpmTasks('grunt-jsdoc');
         grunt.loadNpmTasks('grunt-jsbeautifier');
         grunt.loadNpmTasks('grunt-replace');
@@ -294,6 +276,7 @@
         ]);
 
         grunt.registerTask('coveralls', [
+            'clean:coverage',
             'shell:coveralls',
             'clean:coverage'
         ]);
