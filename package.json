@@ -48,7 +48,9 @@
         "bin" : "bin",
         "src": "src"
     },
-    "dependencies": {},
+    "dependencies": {
+        "util-x": "latest"
+    },
     "devDependencies": {
         "uglify-js": "latest",
         "grunt": "latest",
