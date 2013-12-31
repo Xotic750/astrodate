@@ -214,7 +214,7 @@
                     },
                     command: ['./node_modules/istanbul/lib/cli.js cover --report lcovonly',
                               './node_modules/mocha/bin/_mocha --',
-                              '--check-leaks -u bdd -t 600000 -b -R tap tests/*.js',
+                              '--check-leaks -u bdd -t 10000 -b -R tap tests/*.js',
                               '&&',
                               'cat ./coverage/lcov.info',
                               '|',
@@ -229,7 +229,7 @@
                             maxBuffer: 1048576
                         }
                     },
-                    command: 'ASTRODATE_WHICH=1 ASTRODATE_REPEAT=1 <%= pkg.scripts.test %>'
+                    command: 'ASTRODATE_WHICH=1 <%= pkg.scripts.test %>'
                 }
             }
         });
