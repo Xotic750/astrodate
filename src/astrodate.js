@@ -27,6 +27,7 @@
     'use strict';
 
     var publicAstroDate,
+        canonicalizeLocaleRx,
         j2000 = {
             jdtt: '2451545.0',
             tt: '2000-01-01T12:00:00.000Z',
@@ -2937,6 +2938,9 @@
             return string.split('_');
         }
 
+        canonicalizeLocaleRx = new RegExp('^([a-z]{2,3}|[a-z]{2,3}[\\-_][a-z]{2}|' +
+                                          '[a-z]{2,3}[\\-_][a-z]{4}|[a-z]{2,3}[\\-_][a-z]{4}[\\-_][a-z]{2})$', 'i');
+
         /**
          * Canonalizes a locale string.
          * @private
@@ -2953,7 +2957,7 @@
                 script,
                 region;
 
-            if (utilx.isString(locale) && (/^([a-z]{2,3}|[a-z]{2,3}[\-_][a-z]{2}|[a-z]{2,3}[\-_][a-z]{4}|[a-z]{2,3}[\-_][a-z]{4}[\-_][a-z]{2})$/i).test(locale)) {
+            if (utilx.isString(locale) && canonicalizeLocaleRx.test(locale)) {
                 firstSplit = splitUnderscore(minusToUnderscore(locale));
                 firstSplitLength = firstSplit.length;
                 val.push(firstSplit[0].toLowerCase());
@@ -5350,27 +5354,15 @@
             json: {
                 value: function (jsonString) {
                     var struct,
-                        propArray,
                         val;
 
                     if (utilx.isUndefined(jsonString)) {
                         if (typeof JSON === 'object' && utilx.isFunction(JSON.stringify)) {
-                            val = JSON.stringify(this.object());
-                        } else {
-                            struct = this.object();
-                            propArray = utilx.arrayMap(utilx.objectKeys(struct), function (key) {
-                                return '"' + key + '":"' + struct[key] + '"';
-                            });
-
-                            val = '{' + propArray.join(',') + '}';
+                            val = utilx.jsonStringify(this.object());
                         }
                     } else if (utilx.isString(jsonString)) {
                         if (typeof JSON === 'object' && utilx.isFunction(JSON.parse)) {
-                            struct = objectToStruct(JSON.parse(jsonString), this.isJulian());
-                        } else {
-                            /*jslint evil: true */
-                            struct = objectToStruct(new Function('return' + jsonString)(), this.isJulian());
-                            /*jslint evil: false */
+                            struct = objectToStruct(utilx.jsonParse(jsonString), this.isJulian());
                         }
 
                         if (!isValid(struct)) {

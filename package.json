@@ -1,6 +1,6 @@
 {
     "name": "astrodate",
-    "version": "0.7.1",
+    "version": "0.7.2",
     "description": "Javascript Date object with Astronomy in mind.",
     "homepage": "http://xotic750.github.io/astrodate/",
     "author": {
@@ -17,6 +17,7 @@
         "atronomy"
     ],
     "main": "lib/astrodate.js",
+    "bin": "./bin/astrodate",
     "engines": {
         "node": ">=0.8"
     },
@@ -31,22 +32,10 @@
         "type": "GPL3",
         "url": "http://www.gnu.org/licenses/gpl-3.0.html"
     }],
-    "files": [
-        "lib",
-        "bin",
-        "scripts",
-        "src",
-        "docs",
-        "tests",
-        "tasks",
-        "templates"
-    ],
     "directories": {
         "lib": "lib",
         "doc": "docs",
-        "test" : "tests",
-        "bin" : "bin",
-        "src": "src"
+        "bin" : "bin"
     },
     "dependencies": {
         "util-x": "latest"
@@ -76,7 +65,7 @@
         "grunt-shell": "latest",
         "istanbul": "latest",
         "grunt-jsonlint": "latest",
-        "browserify": "~2.36.1"
+        "browserify": "latest"
     },
     "optionalDependencies": {
         "uglify-js": "latest",
@@ -103,7 +92,7 @@
         "grunt-shell": "latest",
         "istanbul": "latest",
         "grunt-jsonlint": "latest",
-        "browserify": "~2.36.1"
+        "browserify": "latest"
     },
     "sources": {
         "cldr": "http://unicode.org/Public/cldr/24/json.zip",

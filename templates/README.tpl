@@ -8,6 +8,8 @@ Master
 
 [![Coverage Status](https://coveralls.io/repos/Xotic750/astrodate/badge.png?branch=master)](https://coveralls.io/r/Xotic750/astrodate?branch=master "Coverage status on Coveralls")
 
+[![NPM version](https://badge.fury.io/js/astrodate.png)](http://badge.fury.io/js/astrodate "Current NPM release")
+
 [![browser support](https://ci.testling.com/Xotic750/astrodate.png)](https://ci.testling.com/Xotic750/astrodate 'Browser support on Testling CI')
 
 #[AstroDate @@VERSION](@@HOMEPAGE)

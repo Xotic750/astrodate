@@ -8,9 +8,11 @@ Master
 
 [![Coverage Status](https://coveralls.io/repos/Xotic750/astrodate/badge.png?branch=master)](https://coveralls.io/r/Xotic750/astrodate?branch=master "Coverage status on Coveralls")
 
+[![NPM version](https://badge.fury.io/js/astrodate.png)](http://badge.fury.io/js/astrodate "Current NPM release")
+
 [![browser support](https://ci.testling.com/Xotic750/astrodate.png)](https://ci.testling.com/Xotic750/astrodate 'Browser support on Testling CI')
 
-#[AstroDate 0.7.1](http://xotic750.github.io/astrodate/)
+#[AstroDate 0.7.2](http://xotic750.github.io/astrodate/)
 ###### Graham Fairweather <xotic750@gmail.com>
 
 Still very much work in progress, so there are [bugs](https://github.com/Xotic750/astrodate/issues "Issues") and the API has not been fully defined (or documented) and is subject to major changes.
