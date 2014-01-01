@@ -29,28 +29,26 @@
             for (index = 0; utilx.lt(index, 12); index += 1) {
                 month = index + 1;
                 astrodate = new AstroDate(2013, month);
-                assertx.strictEqual(astrodate.format('MMMM'), testsUtil.monthNames[index], 'Month name match');
-                assertx.strictEqual(astrodate.daysInMonth(), testsUtil.daysInGregorianMonth(2013, month),
-                                    'Days in month: normal year');
+                assertx.strictEqual(astrodate.format('MMMM'), testsUtil.monthNames[index]);
+                assertx.strictEqual(astrodate.daysInMonth(), testsUtil.daysInGregorianMonth(2013, month));
 
                 astrodate = new AstroDate(2012, month);
-                assertx.strictEqual(astrodate.format('MMMM'), testsUtil.monthNames[index], 'Month name match');
-                assertx.strictEqual(astrodate.daysInMonth(), testsUtil.daysInGregorianMonth(2012, month),
-                                    'Days in month: leap year');
+                assertx.strictEqual(astrodate.format('MMMM'), testsUtil.monthNames[index]);
+                assertx.strictEqual(astrodate.daysInMonth(), testsUtil.daysInGregorianMonth(2012, month));
             }
 
             utilx.arrayForEach(leapYears, function (leapYear) {
-                assertx.ok(new AstroDate(leapYear, null).isLeapYear(), 'Leap year');
+                assertx.ok(new AstroDate(leapYear, null).isLeapYear());
             });
 
             utilx.arrayForEach(normalYears, function (normalYear) {
-                assertx.ok(!new AstroDate(normalYear, null).isLeapYear(), 'Normal year');
+                assertx.ok(!new AstroDate(normalYear, null).isLeapYear());
             });
 
             for (index = 0; index < 7; index += 1) {
                 astrodate = new AstroDate(2013, 9, index + 1);
-                assertx.strictEqual(astrodate.format('EEEE'), testsUtil.dayNames[index], 'Day names');
-                assertx.strictEqual(astrodate.format('D'), (244 + index).toString(), 'Day of year');
+                assertx.strictEqual(astrodate.format('EEEE'), testsUtil.dayNames[index]);
+                assertx.strictEqual(astrodate.format('D'), (244 + index).toString());
             }
         });
     });

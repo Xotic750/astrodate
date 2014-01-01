@@ -34,7 +34,8 @@
                 year = '-' + year;
             }
 
-            day = utilx.padLeadingChar(utilx.getRandomInt(1, testsUtil.daysInGregorianMonth(+year, +month)), '0', 2);
+            day = utilx.padLeadingChar(utilx.getRandomInt(1,
+                    testsUtil.daysInGregorianMonth(utilx.toNumber(year), utilx.toNumber(month))), '0', 2);
             if (utilx.strictEqual(hour, '24')) {
                 minute = '00';
                 second = '00';
@@ -120,11 +121,8 @@
                     b = format[1],
                     withComma = a.replace('.', ',');
 
-                assertx.strictEqual(new AstroDate(a).toISOString(), b,
-                                    'AstroDate should be able to parse ISO extended. Input: ' + a);
-
-                assertx.strictEqual(new AstroDate(withComma).toISOString(), b,
-                                    'AstroDate should be able to parse ISO extende with commas. Input: ' + withComma);
+                assertx.strictEqual(new AstroDate(a).toISOString(), b);
+                assertx.strictEqual(new AstroDate(withComma).toISOString(), b);
             });
         });
     });

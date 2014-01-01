@@ -17,7 +17,7 @@
                 year = utilx.padLeadingChar(utilx.getRandomInt(0, 9999), '0', 4),
                 month = utilx.padLeadingChar(utilx.getRandomInt(1, 12), '0', 2),
                 day = utilx.padLeadingChar(utilx.getRandomInt(1,
-                                            testsUtil.daysInGregorianMonth(+year, +month)), '0', 2),
+                        testsUtil.daysInGregorianMonth(utilx.toNumber(year), utilx.toNumber(month))), '0', 2),
 
                 hour = utilx.padLeadingChar(utilx.getRandomInt(0, 24), '0', 2),
                 minute,
@@ -121,11 +121,8 @@
                     b = format[1],
                     withComma = a.replace('.', ',');
 
-                assertx.strictEqual(new AstroDate(a).toISOString(), b,
-                                    'AstroDate should be able to parse ISO basic. Input: ' + a);
-
-                assertx.strictEqual(new AstroDate(withComma).toISOString(), b,
-                                    'AstroDate should be able to parse ISO basic with commas. Input: ' + withComma);
+                assertx.strictEqual(new AstroDate(a).toISOString(), b);
+                assertx.strictEqual(new AstroDate(withComma).toISOString(), b);
             });
         });
     });

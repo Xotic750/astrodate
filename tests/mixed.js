@@ -25,7 +25,7 @@
             fullArray.push(month);
             fullArray.push(utilx.getRandomInt(1, testsUtil.daysInGregorianMonth(year, month)));
             fullArray.push(hour);
-            if (24 === hour) {
+            if (utilx.strictEqual(hour, 24)) {
                 fullArray.push(0);
                 fullArray.push(0);
                 fullArray.push(0);
@@ -44,8 +44,8 @@
             utilx.arrayForEach(fullArray, function (element, index) {
                 /*jslint unparam: true */
                 /* jshint unused: true */
-                var end = index === 0 ? fullArrayLength : -index,
-                    slice = fullArray.slice(0, end).concat(zeroArray.slice(end)).toString().split(','),
+                var end = utilx.isZero(index) ? fullArrayLength : -index,
+                    slice = utilx.stringSplit(fullArray.slice(0, end).concat(zeroArray.slice(end)).toString(), ','),
                     tObject = {
                         'year': slice[0],
                         'month': slice[1],
@@ -58,8 +58,7 @@
                     },
                     json = utilx.jsonStringify(tObject),
                     numYear = +slice[0],
-                    isInLimits = numYear >= 0 && numYear < 10000 && 24 !== +slice[3],
-                    iterString = '(' + index + ')';
+                    isInLimits = utilx.inRange(numYear, 0, 9999) && utilx.notStrictEqual(24, utilx.toNumber(slice[3]));
 
                 switch (index) {
                 case 7:
@@ -92,48 +91,41 @@
                     break;
                 }
 
-                assertx.ok(AstroDate.isAstroDate(astrodate), slice, iterString + 'Number: isAstrodate');
-                assertx.ok(astrodate.isValid(), slice, iterString + 'Number: isValid');
-                assertx.deepEqual(astrodate.array(), slice, iterString + 'Number: Arrays are the same');
+                assertx.ok(AstroDate.isAstroDate(astrodate));
+                assertx.ok(astrodate.isValid());
+                assertx.deepEqual(astrodate.array(), slice);
                 date = new Date(astrodate.toISOString()).getTime();
                 if (isInLimits) {
-                    assertx.strictEqual(astrodate.getTime(), date.toString(), slice,
-                                        iterString + 'Number date: Dates are the same: ' + slice);
+                    assertx.strictEqual(astrodate.getTime(), date.toString());
                 } else {
-                    assertx.ok(isNaN(date), 'outside of Date capability: ' + slice);
+                    assertx.ok(isNaN(date));
                 }
 
-                assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject, slice,
-                                  iterString + 'Number: JSON are the same: ');
+                assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject);
 
                 astrodate = new AstroDate().array(fullArray.slice(0, end));
-                assertx.ok(AstroDate.isAstroDate(astrodate), slice, iterString + 'Number array: isAstrodate');
-                assertx.ok(astrodate.isValid(), slice, iterString + 'Number array: isValid');
-                assertx.deepEqual(astrodate.array(), slice, slice, iterString + 'Number array: Arrays are the same');
+                assertx.ok(AstroDate.isAstroDate(astrodate));
+                assertx.ok(astrodate.isValid());
+                assertx.deepEqual(astrodate.array(), slice);
                 if (isInLimits) {
-                    assertx.strictEqual(astrodate.getTime(), date.toString(), slice,
-                                        iterString + 'Number array date: Dates are the same');
+                    assertx.strictEqual(astrodate.getTime(), date.toString());
                 } else {
-                    assertx.ok(isNaN(date), 'outside of Date capability: ' + slice);
+                    assertx.ok(isNaN(date));
                 }
 
-                assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject, slice,
-                                  iterString + 'Number array: JSON are the same: ');
+                assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject);
 
                 astrodate = new AstroDate(astrodate);
-                assertx.ok(AstroDate.isAstroDate(astrodate), slice, iterString + 'Number astrodate: isAstrodate');
-                assertx.ok(astrodate.isValid(), slice, iterString + 'Number astrodate: isValid');
-                assertx.deepEqual(astrodate.array(), slice, slice,
-                                  iterString + 'Number astrodate: Arrays are the same');
+                assertx.ok(AstroDate.isAstroDate(astrodate));
+                assertx.ok(astrodate.isValid());
+                assertx.deepEqual(astrodate.array(), slice);
                 if (isInLimits) {
-                    assertx.strictEqual(astrodate.getTime(), date.toString(), slice,
-                                        iterString + 'Number astrodate date: dates are the same');
+                    assertx.strictEqual(astrodate.getTime(), date.toString());
                 } else {
-                    assertx.ok(isNaN(date), 'outside of Date capability: ' + slice);
+                    assertx.ok(isNaN(date));
                 }
 
-                assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject, slice,
-                                  iterString + 'Number astrodate: JSON are the same: ');
+                assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject);
 
                 switch (index) {
                 case 7:
@@ -169,51 +161,44 @@
                     break;
                 }
 
-                assertx.ok(AstroDate.isAstroDate(astrodate), slice, iterString + 'String: isAstrodate');
-                assertx.ok(astrodate.isValid(), slice, iterString + 'String: isValid');
-                assertx.deepEqual(astrodate.array(), slice, slice, iterString + 'String: Arrays are the same');
+                assertx.ok(AstroDate.isAstroDate(astrodate));
+                assertx.ok(astrodate.isValid());
+                assertx.deepEqual(astrodate.array(), slice);
                 if (isInLimits) {
-                    assertx.strictEqual(astrodate.getTime(), date.toString(), slice,
-                                        iterString + 'String date: dates are the same');
+                    assertx.strictEqual(astrodate.getTime(), date.toString());
                 } else {
-                    assertx.ok(isNaN(date), 'outside of Date capability: ' + slice);
+                    assertx.ok(isNaN(date));
                 }
 
-                assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject, slice,
-                                  iterString + 'String: JSON are the same: ');
+                assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject);
 
                 astrodate = new AstroDate().array(fullArrayString.slice(0, end));
-                assertx.ok(AstroDate.isAstroDate(astrodate), slice, iterString + 'String array: isAstrodate');
-                assertx.ok(astrodate.isValid(), slice, iterString + 'String array: isValid');
-                assertx.deepEqual(astrodate.array(), slice, slice, iterString + 'String array: Arrays are the same');
+                assertx.ok(AstroDate.isAstroDate(astrodate));
+                assertx.ok(astrodate.isValid());
+                assertx.deepEqual(astrodate.array(), slice);
                 if (isInLimits) {
-                    assertx.strictEqual(astrodate.getTime(), date.toString(), slice,
-                                        iterString + 'String array date: dates are the same');
+                    assertx.strictEqual(astrodate.getTime(), date.toString());
                 } else {
-                    assertx.ok(isNaN(date), 'outside of Date capability: ' + slice);
+                    assertx.ok(isNaN(date));
                 }
 
-                assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject, slice,
-                                  iterString + 'String array: JSON are the same: ');
+                assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject);
 
                 astrodate = astrodate.clone();
-                assertx.ok(astrodate !== astrodate.clone, slice, iterString + 'String clone: is a clone');
-                assertx.ok(AstroDate.isAstroDate(astrodate), slice, iterString + 'String clone: isAstrodate');
-                assertx.ok(astrodate.isValid(), slice, iterString + 'String clone: isValid');
-                assertx.deepEqual(astrodate.array(), slice, slice, iterString + 'String clone: Arrays are the same');
+                assertx.notStrictEqual(astrodate, astrodate.clone());
+                assertx.ok(AstroDate.isAstroDate(astrodate));
+                assertx.ok(astrodate.isValid());
+                assertx.deepEqual(astrodate.array(), slice);
                 if (isInLimits) {
-                    assertx.strictEqual(astrodate.getTime(), date.toString(), slice,
-                                        iterString + 'String clone: dates are the same');
+                    assertx.strictEqual(astrodate.getTime(), date.toString());
                 } else {
-                    assertx.ok(isNaN(date), 'outside of Date capability: ' + slice);
+                    assertx.ok(isNaN(date));
                 }
 
-                assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject, slice,
-                                  iterString + 'String clone: JSON are the same: ');
+                assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject);
 
                 astrodate = new AstroDate().json(json);
-                assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject, slice,
-                                  iterString + 'JSON parse: JSON are the same: ');
+                assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject);
             });
         });
     });
