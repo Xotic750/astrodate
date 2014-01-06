@@ -301,6 +301,7 @@
             invalidISOCharsRx = new RegExp('[^\\d\\-+WT Z:,\\.]'),
             replaceTokenRX = new RegExp('([^\\\']+)|(\\\'[^\\\']+\\\')', 'g'),
             unmatchedTokenRx = new RegExp('[^a-z]', 'gi'),
+            bnOffsetRx = new RegExp('^([\\-+])?(\\d{1,2}):(\\d{2})(?::(\\d{2}))?$'),
             //j2000 = [2000, 1, 1, 11, 58, 55, 816],
             /**
              * For holding CLDR language specific data.
@@ -350,22 +351,6 @@
         utilx.deepFreeze(nameTypes);
         utilx.deepFreeze(widthTypes);
         utilx.deepFreeze(formatTypes);
-
-        /*
-        function InvalidError(message) {
-            //this.name = "InvalidError";
-            this.message = message || "";
-        }
-
-        InvalidError.prototype = new Error();
-
-        function NotImplimentedError(message) {
-            //this.name = "NotImplementedError";
-            this.message = message || "";
-        }
-
-        NotImplimentedError.prototype = new Error();
-        */
 
         function isGregorianLeapYear(struct) {
             return struct.year.mod(400).isZero() || (!struct.year.mod(100).isZero() && struct.year.mod(4).isZero());
@@ -903,7 +888,6 @@
         function bnOffset(value) {
             var val,
                 bn,
-                rx,
                 off;
 
             if (utilx.isNumber(value) || utilx.isString(value)) {
@@ -920,9 +904,8 @@
             } else if (utilx.strictEqual(val, 'Z') || utilx.strictEqual(val, 'UTC') || utilx.strictEqual(val, 'GMT')) {
                 bn = BigNumber.zero();
             } else {
-                rx = /^([\-+])?(\d{1,2}):(\d{2})(?::(\d{2}))?$/;
-                if (rx.test(val)) {
-                    off = val.match(rx);
+                if (bnOffsetRx.test(val)) {
+                    off = val.match(bnOffsetRx);
                     bn = offsetToSeconds(off[2], off[3], off[4]).times(toSignMultipler(off[1] || '+')).neg();
                 } else {
                     bn = bnGetTimezoneOffset();
@@ -941,7 +924,8 @@
                         bn,
                         dim;
 
-                    if (utilx.isNumber(value) || utilx.isString(value) || (value && value instanceof BigNumber)) {
+                    if (utilx.isNumber(value) || utilx.isString(value) ||
+                            (utilx.isTypeObject(value) && utilx.objectInstanceOf(value, BigNumber))) {
                         bn = new BigNumber(value);
                     } else {
                         bn = new BigNumber(NaN);
@@ -1079,7 +1063,8 @@
                         bn,
                         dim;
 
-                    if (utilx.isNumber(value) || utilx.isString(value) || (value && value instanceof BigNumber)) {
+                    if (utilx.isNumber(value) || utilx.isString(value) ||
+                            (utilx.isTypeObject(value) && utilx.objectInstanceOf(value, BigNumber))) {
                         bn = new BigNumber(value);
                     } else {
                         bn = new BigNumber(NaN);
@@ -1536,14 +1521,14 @@
          */
         function ordinalToCalendar(year, dayOfYear) {
             var struct = {
-                year: new BigNumber(year),
-                month: BigNumber.one(),
-                day: BigNumber.one(),
-                hour: BigNumber.zero(),
-                minute: BigNumber.zero(),
-                second: BigNumber.zero(),
-                millisecond: BigNumber.zero()
-            },
+                    year: new BigNumber(year),
+                    month: BigNumber.one(),
+                    day: BigNumber.one(),
+                    hour: BigNumber.zero(),
+                    minute: BigNumber.zero(),
+                    second: BigNumber.zero(),
+                    millisecond: BigNumber.zero()
+                },
                 daysInYear = daysInGregorianYear(struct),
                 result;
 
@@ -2665,8 +2650,8 @@
             // Unused variable for JScript NFE bug
             // http://kangax.github.io/nfe
             var dtObject = {
-                input: isoString
-            },
+                    input: isoString
+                },
                 searchString;
 
             function searchPatterns(pattern) {
@@ -2935,7 +2920,7 @@
          * @return {array.<string>}
          */
         function splitUnderscore(string) {
-            return string.split('_');
+            return utilx.stringSplit(string, '_');
         }
 
         canonicalizeLocaleRx = new RegExp('^([a-z]{2,3}|[a-z]{2,3}[\\-_][a-z]{2}|' +
@@ -2985,7 +2970,7 @@
                 }
             }
 
-            return val.join('_');
+            return utilx.arrayJoin(val, '_');
         }
 
         /**
@@ -3028,11 +3013,11 @@
                     }
 
                     if (utilx.isUndefined(lookup) && !utilx.isUndefined(region)) {
-                        lookup = likelySubtags[[lang, region].join('_')];
+                        lookup = likelySubtags[utilx.arrayJoin([lang, region], '_')];
                     }
 
                     if (utilx.isUndefined(lookup) && !utilx.isUndefined(script)) {
-                        lookup = likelySubtags[[lang, script].join('_')];
+                        lookup = likelySubtags[utilx.arrayJoin([lang, script], '_')];
                     }
 
                     if (utilx.isUndefined(lookup)) {
@@ -3046,7 +3031,7 @@
                     }
 
                     if (utilx.isUndefined(lookup) && !utilx.isUndefined(script)) {
-                        lookup = likelySubtags[['und', script].join('_')];
+                        lookup = likelySubtags[utilx.arrayJoin(['und', script], '_')];
                     }
                 }
             }
@@ -3076,7 +3061,7 @@
                     loaded = lang;
                 } else {
                     firstSplit = splitUnderscore(lookupLocale(locale));
-                    lang = [utilx.arrayFirst(firstSplit), utilx.arrayLast(firstSplit)].join('_');
+                    lang = utilx.arrayJoin([utilx.arrayFirst(firstSplit), utilx.arrayLast(firstSplit)], '_');
                     if (!utilx.isUndefined(languages[lang])) {
                         loaded = lang;
                     } else {
@@ -3289,7 +3274,7 @@
         // ISO 8601 time zone formats.
         function formatIsoTimeZone(struct, lang, withZ, format, optional) {
             var timeZoneNames = languages[lang].dates.timeZoneNames,
-                offsetFormats = timeZoneNames.hourFormat.split(';'),
+                offsetFormats = utilx.stringSplit(timeZoneNames.hourFormat, ';'),
                 offsetFormat,
                 offset,
                 pattern;
@@ -3307,7 +3292,7 @@
                 offsetFormat = offsetFormat.replace(/([\-+])H:/i, '$1HH:');
                 if (utilx.strictEqual(format, 'basic')) {
                     if (utilx.strictEqual(optional, true) && offset.minute.isZero()) {
-                        offsetFormat = utilx.arrayFirst(offsetFormat.split(':'));
+                        offsetFormat = utilx.arrayFirst(utilx.stringSplit(offsetFormat, ':'));
                     } else {
                         offsetFormat = offsetFormat.replace(':', '');
                     }
@@ -3338,7 +3323,7 @@
         // ISO 8601 time zone formats.
         function formatIsoTimeZoneSeconds(struct, lang, withZ, format, optional) {
             var timeZoneNames = languages[lang].dates.timeZoneNames,
-                offsetFormats = timeZoneNames.hourFormat.split(';'),
+                offsetFormats = utilx.stringSplit(timeZoneNames.hourFormat, ';'),
                 offsetFormat,
                 offset,
                 pattern;
@@ -3356,9 +3341,9 @@
                 offsetFormat = offsetFormat.replace(/([\-+])H:/i, '$1HH:') + ':ss';
                 if (utilx.strictEqual(format, 'basic')) {
                     if (utilx.strictEqual(optional, true) && offset.second.isZero()) {
-                        offsetFormat = offsetFormat.split(':');
+                        offsetFormat = utilx.stringSplit(offsetFormat, ':');
                         offsetFormat.pop();
-                        offsetFormat = offsetFormat.join('');
+                        offsetFormat = utilx.arrayJoin(offsetFormat, '');
                     } else {
                         offsetFormat = offsetFormat.replace(':', '');
                     }
@@ -3388,7 +3373,7 @@
         // The localized GMT format.
         function formatLocalisedGMT(struct, lang, requestedShort) {
             var timeZoneNames = languages[lang].dates.timeZoneNames,
-                offsetFormats = timeZoneNames.hourFormat.split(';'),
+                offsetFormats = utilx.stringSplit(timeZoneNames.hourFormat, ';'),
                 offsetFormat,
                 offset,
                 pattern;
@@ -3410,7 +3395,7 @@
                 }
 
                 if (requestedShort && offset.minute.isZero()) {
-                    offsetFormat = utilx.arrayFirst(offsetFormat.split(':'));
+                    offsetFormat = utilx.arrayFirst(utilx.stringSplit(offsetFormat, ':'));
                 }
 
                 pattern = replaceToken(offsetFormat, 'H{1,2}', offset.hour);
@@ -3592,7 +3577,7 @@
          * new AstroDate('-10', '5', '7', {julian: true}); // year -10 of the Julian Calendar
          */
         function AstroDate() {
-            var args = arguments,
+            var args = utilx.arraySlice(arguments),
                 input = arguments,
                 argsLength = args.length,
                 isJulian = false,
@@ -3834,12 +3819,12 @@
                         isJulian = true;
                     }
 
-                    struct = arrayToStruct(utilx.argumentsSlice(args, 0, -1), isJulian);
+                    struct = arrayToStruct(utilx.arraySlice(args, 0, -1), isJulian);
                     if (isJulian) {
                         struct = julianToGregorian(struct);
                     }
                 } else {
-                    struct = arrayToStruct(utilx.argumentsSlice(args, 0, args.length), isJulian);
+                    struct = arrayToStruct(utilx.arraySlice(args, 0, args.length), isJulian);
                 }
 
                 if (utilx.isUndefined(args[8]) && !utilx.isUndefined(opts.offset)) {
@@ -5068,7 +5053,7 @@
 
                     if (utilx.isUndefined(date)) {
                         if (this.isValid()) {
-                            val = new Date(parseInt(this.getTime(), 10));
+                            val = new Date(utilx.toNumber(this.getTime()));
                         } else {
                             val = new Date(NaN);
                         }
@@ -5167,7 +5152,7 @@
 
                             val = gregorianToJd(toUT(struct)).toFixed(BigNumber.config().DECIMAL_PLACES);
                         }
-                    } else if (utilx.isNumber(jd) || utilx.isString(jd) || (jd && jd instanceof BigNumber)) {
+                    } else if (utilx.isNumber(jd) || (utilx.isString(jd) && !utilx.isEmptyString(jd))) {
                         val = this.setter('struct', jdToGregorian(jd));
                     } else {
                         throw new TypeError(jd);
@@ -5356,22 +5341,15 @@
                     var struct,
                         val;
 
-                    if (utilx.isUndefined(jsonString)) {
-                        if (typeof JSON === 'object' && utilx.isFunction(JSON.stringify)) {
-                            val = utilx.jsonStringify(this.object());
-                        }
-                    } else if (utilx.isString(jsonString)) {
-                        if (typeof JSON === 'object' && utilx.isFunction(JSON.parse)) {
-                            struct = objectToStruct(utilx.jsonParse(jsonString), this.isJulian());
-                        }
-
+                    if (utilx.isString(jsonString) && !utilx.isEmptyString(jsonString)) {
+                        struct = objectToStruct(utilx.jsonParse(jsonString), this.isJulian());
                         if (!isValid(struct)) {
                             throw new SyntaxError(struct);
                         }
 
                         val = this.setter('struct', struct);
                     } else {
-                        throw new TypeError(jsonString);
+                        val = utilx.jsonStringify(this.object());
                     }
 
                     return val;
