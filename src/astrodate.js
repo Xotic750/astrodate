@@ -5793,7 +5793,7 @@
 
                     // set the properties of AstroDate.BigNumber.prototype to not enumerable
                     utilx.arrayForEach(utilx.objectKeys(obj.prototype), function (key) {
-                        utilx.objectDefineProperty(obj, key, {
+                        utilx.objectDefineProperty(obj.prototype, key, {
                             enumerable: false,
                             writable: true,
                             configurable: true
