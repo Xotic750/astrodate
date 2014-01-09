@@ -5779,7 +5779,9 @@
              * @type {object}
              */
             BigNumber: {
-                value: addBigNumberModule.call({}),
+                value: (function () {
+                    return addBigNumberModule.call({});
+                }()),
                 enumerable: false,
                 writable: true,
                 configurable: true
@@ -5791,7 +5793,9 @@
              * @type {object}
              */
             utilx: {
-                value: utilx.factory(),
+                value: (function () {
+                    return utilx.factory();
+                }()),
                 enumerable: false,
                 writable: true,
                 configurable: true
