@@ -5934,24 +5934,6 @@
         languages = utilx.deepFreeze( /*@@languages*/ );
         /*jslint white: false */
 
-        // set the properties of AstroDate.BigNumber to not enumerable
-        utilx.arrayForEach(utilx.objectKeys(AstroDate.BigNumber), function (key) {
-            utilx.objectDefineProperty(AstroDate.BigNumber, key, {
-                enumerable: false,
-                writable: true,
-                configurable: true
-            });
-        });
-
-        // set the properties of AstroDate.BigNumber.prototype to not enumerable
-        utilx.arrayForEach(utilx.objectKeys(AstroDate.BigNumber.prototype), function (key) {
-            utilx.objectDefineProperty(AstroDate.BigNumber, key, {
-                enumerable: false,
-                writable: true,
-                configurable: true
-            });
-        });
-
         AstroDate.locale('en_GB');
 
         return AstroDate;
