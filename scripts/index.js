@@ -4,14 +4,13 @@
     'use strict';
 
     var required = {
-        utilx: require('util-x'),
-
         testsUtil: require('./testsUtil'),
 
         assertx: require('assert-x')
     };
 
-    if (required.utilx.strictEqual(process.env.ASTRODATE_WHICH, '1')) {
+    required.utilx = required.assertx.utilx;
+    if ('1' === process.env.ASTRODATE_WHICH) {
         required.AstroDate = require('../lib/astrodate.min');
     } else {
         required.AstroDate = require('../lib/astrodate');

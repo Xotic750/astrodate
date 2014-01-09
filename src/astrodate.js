@@ -35,6 +35,21 @@
             utc: '2000-01-01T11:58:55.816Z'
         };
 
+    function addBigNumberModule(module, define) {
+        if (privateUndefined !== module || privateUndefined !== define) {
+            throw new Error();
+        }
+
+        /*jslint eqeq: true, plusplus: true, sub: true, white: true,
+            newcap: true, vars: true, ass: true, bitwise: true */
+        /*jshint unused: false, expr: true, asi: true, eqnull: true,
+            laxbreak: true, validthis: true, noempty: false,
+            -W017, -W018, -W032, -W041, -W084, -W116, -W120 */
+        /*@@BigNumber*/
+
+        return this.BigNumber;
+    }
+
     /**
      * Variables and utility functions used by the AstroDate class and requiring the BigNumber library.
      * @private
@@ -68,7 +83,10 @@
             trunc: {
                 value: function () {
                     return this.round(0, 1);
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /**
@@ -80,7 +98,10 @@
             inRange: {
                 value: function (min, max) {
                     return this.gte(min) && this.lte(max);
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /**
@@ -100,7 +121,10 @@
                     }
 
                     return bn;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /**
@@ -120,7 +144,10 @@
                     }
 
                     return diff;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /**
@@ -132,7 +159,10 @@
             padLeadingZero: {
                 value: function (size) {
                     return utilx.padLeadingChar(this.toString(), '0', size);
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             }
         });
 
@@ -146,7 +176,10 @@
             isBigNumber: {
                 value: function (inputArg) {
                     return utilx.isObject(inputArg) && utilx.objectInstanceOf(inputArg, BigNumber);
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /**
@@ -158,7 +191,10 @@
             trunc: {
                 value: function (number) {
                     return new BigNumber(number).trunc();
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /**
@@ -170,7 +206,10 @@
             modf: {
                 value: function (number) {
                     return new BigNumber(number).modf();
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /**
@@ -184,7 +223,10 @@
             difference: {
                 value: function (number1, number2) {
                     return new BigNumber(number1).difference(number2);
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /**
@@ -195,7 +237,10 @@
             zero: {
                 value: function () {
                     return new BigNumber(0);
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /**
@@ -206,7 +251,10 @@
             one: {
                 value: function () {
                     return new BigNumber(1);
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             }
         });
 
@@ -3663,7 +3711,10 @@
                         }
 
                         return got;
-                    }
+                    },
+                    enumerable: false,
+                    writable: true,
+                    configurable: true
                 },
 
                 /**
@@ -3790,7 +3841,10 @@
                         }
 
                         return this;
-                    }
+                    },
+                    enumerable: false,
+                    writable: true,
+                    configurable: true
                 }
             });
 
@@ -3846,7 +3900,10 @@
             julian: {
                 value: function () {
                     return this.setter('isJulian', true);
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -3857,7 +3914,10 @@
             gregorian: {
                 value: function () {
                     return this.setter('isJulian', false);
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -3871,7 +3931,10 @@
                     this.setter('isUT', false);
 
                     return this;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -3885,7 +3948,10 @@
                     this.setter('isUT', true);
 
                     return this;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -3896,7 +3962,10 @@
             TT: {
                 value: function () {
                     return this.setter('isTT', true);
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -3907,7 +3976,10 @@
             UT2TT: {
                 value: function () {
                     return this.setter('DT', -1);
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -3918,7 +3990,10 @@
             TT2UT: {
                 value: function () {
                     return this.setter('DT', 1);
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -3929,7 +4004,10 @@
             civil: {
                 value: function () {
                     return this.setter('isTT', false);
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -3945,7 +4023,10 @@
                     this.setter('DT', 0);
 
                     return this;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -3956,7 +4037,10 @@
             isJulian: {
                 value: function () {
                     return this.getter('isJulian');
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -3967,7 +4051,10 @@
             isGregorian: {
                 value: function () {
                     return !this.getter('isJulian');
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -3978,7 +4065,10 @@
             isUT: {
                 value: function () {
                     return this.getter('isUT');
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -3989,7 +4079,10 @@
             isTT: {
                 value: function () {
                     return this.getter('isTT');
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -4000,7 +4093,10 @@
             isUT2TT: {
                 value: function () {
                     return utilx.strictEqual(this.getter('DT'), -1);
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -4011,7 +4107,10 @@
             isTT2UT: {
                 value: function () {
                     return utilx.strictEqual(this.getter('DT'), 1);
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -4022,7 +4121,10 @@
             isDT: {
                 value: function () {
                     return !utilx.strictEqual(this.getter('DT'), 0);
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -4033,7 +4135,10 @@
             isCivil: {
                 value: function () {
                     return !this.getter('isTT');
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -4044,7 +4149,10 @@
             isLocal: {
                 value: function () {
                     return this.getter('isLocal');
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -4055,7 +4163,10 @@
             isRaw: {
                 value: function () {
                     return !this.getter('isUT') && !this.getter('isTT') && this.getter('isLocal');
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -4066,7 +4177,10 @@
             currentLang: {
                 value: function () {
                     return this.getter('lang');
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -4082,7 +4196,10 @@
                     }
 
                     return val;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -4098,7 +4215,10 @@
                     }
 
                     return val;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -4114,7 +4234,10 @@
                     }
 
                     return val;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -4125,7 +4248,10 @@
             isValid: {
                 value: function () {
                     return isValid(this.getter());
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -4144,7 +4270,10 @@
                     }
 
                     return val;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /**
@@ -4781,7 +4910,10 @@
                     }
 
                     return string;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -4799,7 +4931,10 @@
                     }
 
                     return this.format(pattern);
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -4853,7 +4988,10 @@
                     }
 
                     return string;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -4907,7 +5045,10 @@
                     }
 
                     return string;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -4928,7 +5069,10 @@
                     }
 
                     return val;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -4947,7 +5091,10 @@
                     }
 
                     return val;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -4970,7 +5117,10 @@
                     }
 
                     return val;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -4999,7 +5149,10 @@
                     }
 
                     return val;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -5010,7 +5163,10 @@
             clone: {
                 value: function () {
                     return new AstroDate(this);
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -5039,7 +5195,10 @@
                     }
 
                     return val;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -5064,7 +5223,10 @@
                     }
 
                     return val;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -5087,7 +5249,10 @@
                     }
 
                     return val;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -5103,7 +5268,10 @@
                     }
 
                     return val;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -5120,7 +5288,10 @@
                     }
 
                     return val;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /**
@@ -5159,7 +5330,10 @@
                     }
 
                     return val;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -5182,7 +5356,10 @@
                     }
 
                     return val;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -5205,7 +5382,10 @@
                     }
 
                     return val;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -5259,7 +5439,10 @@
                     }
 
                     return val;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -5281,7 +5464,10 @@
                     }
 
                     return val;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -5304,7 +5490,10 @@
                     }
 
                     return val;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -5327,7 +5516,10 @@
                     }
 
                     return val;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -5353,7 +5545,10 @@
                     }
 
                     return val;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -5364,7 +5559,10 @@
             toJSON: {
                 value: function (padding, type) {
                     return this.toISOString(padding, type);
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -5380,7 +5578,10 @@
                     }
 
                     return val;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -5407,7 +5608,10 @@
                     }
 
                     return val;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate.prototype
@@ -5434,7 +5638,10 @@
                     }
 
                     return val;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             }
         });
 
@@ -5446,7 +5653,10 @@
             version: {
                 value: function () {
                     return VERSION;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate
@@ -5476,7 +5686,10 @@
                     }
 
                     return defaultLanguage;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate
@@ -5486,7 +5699,10 @@
             langs: {
                 value: function () {
                     return utilx.objectKeys(languages);
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate
@@ -5507,7 +5723,10 @@
                     }
 
                     return defaultLocale;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate
@@ -5526,7 +5745,10 @@
                     }
 
                     return leapSeconds;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate
@@ -5545,15 +5767,34 @@
                     }
 
                     return supplemental;
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
-            /** @memberOf AstroDate
-             * @function
-             * @return {BigNumber}
+            /**
+             * A JavaScript library for arbitrary-precision decimal and non-decimal arithmetic
+             * @memberOf AstroDate
+             * @type {object}
              */
             BigNumber: {
-                value: BigNumber
+                value: addBigNumberModule.call({}),
+                enumerable: false,
+                writable: true,
+                configurable: true
+            },
+
+            /**
+             * The Javascript library that AstroDate is built on for cross environment compatability.
+             * @memberOf AstroDate
+             * @type {object}
+             */
+            utilx: {
+                value: utilx.factory(),
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /** @memberOf AstroDate
@@ -5563,7 +5804,10 @@
             normaliseUnits: {
                 value: function (unitString) {
                     return normaliseUnits(unitString);
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /**
@@ -5576,7 +5820,10 @@
             isAstroDate: {
                 value: function (inputArg) {
                     return utilx.isObject(inputArg) && utilx.objectInstanceOf(inputArg, AstroDate);
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /**
@@ -5589,7 +5836,10 @@
             now: {
                 value: function () {
                     return new AstroDate().getTime();
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /**
@@ -5604,7 +5854,10 @@
             jd: {
                 value: function () {
                     return new AstroDate().jd();
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
             /**
              * The Julian Day Number (JDN) is the integer assigned to a whole solar day in the Julian day count
@@ -5619,7 +5872,10 @@
             jdn: {
                 value: function () {
                     return new AstroDate().jdn();
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /**
@@ -5636,7 +5892,10 @@
             mjd: {
                 value: function () {
                     return new AstroDate().mjd();
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             },
 
             /**
@@ -5655,7 +5914,10 @@
             unix: {
                 value: function () {
                     return new AstroDate().unix();
-                }
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
             }
         });
 
@@ -5667,6 +5929,24 @@
 
         languages = utilx.deepFreeze( /*@@languages*/ );
         /*jslint white: false */
+
+        // set the properties of AstroDate.BigNumber to not enumerable
+        utilx.arrayForEach(utilx.objectKeys(AstroDate.BigNumber), function (key) {
+            utilx.objectDefineProperty(AstroDate.BigNumber, key, {
+                enumerable: false,
+                writable: true,
+                configurable: true
+            });
+        });
+
+        // set the properties of AstroDate.BigNumber.prototype to not enumerable
+        utilx.arrayForEach(utilx.objectKeys(AstroDate.BigNumber.prototype), function (key) {
+            utilx.objectDefineProperty(AstroDate.BigNumber, key, {
+                enumerable: false,
+                writable: true,
+                configurable: true
+            });
+        });
 
         AstroDate.locale('en_GB');
 
@@ -5683,76 +5963,107 @@
         throw new TypeError('Invalid global context');
     }
 
-    function addBigNumberModule(module, define) {
-        if (privateUndefined !== module || privateUndefined !== define) {
-            throw new Error();
-        }
-
-        /*jslint eqeq: true, plusplus: true, sub: true, white: true,
-            newcap: true, vars: true, ass: true, bitwise: true */
-        /*jshint unused: false, expr: true, asi: true, eqnull: true,
-            laxbreak: true, validthis: true, noempty: false,
-            -W017, -W018, -W032, -W041, -W084, -W116, -W120 */
-        /*@@BigNumber*/
-
-        return this.BigNumber;
-    }
-
     /*global require, module, define */
     if (typeof module === 'object' && null !== module &&
             typeof module.exports === 'object' && null !== module.exports) {
 
         publicAstroDate = defineAstroDate(require('util-x'), addBigNumberModule.call({}));
-        publicAstroDate.factory = function (deep) {
-            var pa;
-
-            if (true === deep) {
-                pa = defineAstroDate(require('util-x').factory(), addBigNumberModule.call({}));
-            } else {
-                pa = defineAstroDate(require('util-x'), addBigNumberModule.call({}));
-            }
-
-            pa.factory = publicAstroDate.factory;
-
-            return pa;
-        };
-
-        module.exports = publicAstroDate;
-    } else if (typeof define === 'function' && typeof define.amd === 'object' && null !== define.amd) {
-        define(['util-x'], function (utilx) {
-            publicAstroDate = defineAstroDate(utilx, addBigNumberModule.call({}));
-            publicAstroDate.factory = function (deep) {
+        publicAstroDate.utilx.objectDefineProperty(publicAstroDate, 'factory', {
+            value: function (deep) {
                 var pa;
 
-                if (true === deep) {
-                    pa = defineAstroDate(utilx.factory(), addBigNumberModule.call({}));
+                if (publicAstroDate.utilx.isTrue(deep)) {
+                    pa = defineAstroDate(require('util-x').factory(), addBigNumberModule.call({}));
                 } else {
-                    pa = defineAstroDate(utilx, addBigNumberModule.call({}));
+                    pa = defineAstroDate(require('util-x'), addBigNumberModule.call({}));
                 }
 
-                pa.factory = publicAstroDate.factory;
+                publicAstroDate.utilx.objectDefineProperty(pa, 'factory', {
+                    value: publicAstroDate.factory,
+                    enumerable: false,
+                    writable: true,
+                    configurable: true
+                });
 
                 return pa;
-            };
+            },
+            enumerable: false,
+            writable: true,
+            configurable: true
+        });
+
+        publicAstroDate.utilx.objectDefineProperty(module, 'exports', {
+            value: publicAstroDate,
+            enumerable: false,
+            writable: true,
+            configurable: true
+        });
+    } else if (typeof define === 'function' && typeof define.amd === 'object' && null !== define.amd) {
+        require.config({
+            paths: {
+                'util-x': '//raw.github.com/Xotic750/util-x/master/lib/util-x'
+            }
+        });
+
+        define(['util-x'], function (utilx) {
+            publicAstroDate = defineAstroDate(utilx, addBigNumberModule.call({}));
+            publicAstroDate.utilx.objectDefineProperty(publicAstroDate, 'factory', {
+                value: function (deep) {
+                    var pa;
+
+                    if (publicAstroDate.utilx.isTrue(deep)) {
+                        pa = defineAstroDate(utilx.factory(), addBigNumberModule.call({}));
+                    } else {
+                        pa = defineAstroDate(utilx, addBigNumberModule.call({}));
+                    }
+
+                    publicAstroDate.utilx.objectDefineProperty(pa, 'factory', {
+                        value: publicAstroDate.factory,
+                        enumerable: false,
+                        writable: true,
+                        configurable: true
+                    });
+
+                    return pa;
+                },
+                enumerable: false,
+                writable: true,
+                configurable: true
+            });
 
             return publicAstroDate;
         });
     } else {
         publicAstroDate = defineAstroDate(globalThis.utilx, addBigNumberModule.call({}));
-        publicAstroDate.factory = function (deep) {
-            var pa;
+        publicAstroDate.utilx.objectDefineProperty(publicAstroDate, 'factory', {
+            value: function (deep) {
+                var pa;
 
-            if (true === deep) {
-                pa = defineAstroDate(globalThis.utilx.factory(), addBigNumberModule.call({}));
-            } else {
-                pa = defineAstroDate(globalThis.utilx, addBigNumberModule.call({}));
-            }
+                if (publicAstroDate.utilx.isTrue(deep)) {
+                    pa = defineAstroDate(globalThis.utilx.factory(), addBigNumberModule.call({}));
+                } else {
+                    pa = defineAstroDate(globalThis.utilx, addBigNumberModule.call({}));
+                }
 
-            pa.factory = publicAstroDate.factory;
+                publicAstroDate.utilx.objectDefineProperty(pa, 'factory', {
+                    value: publicAstroDate.factory,
+                    enumerable: false,
+                    writable: true,
+                    configurable: true
+                });
 
-            return pa;
-        };
+                return pa;
+            },
+            enumerable: false,
+            writable: true,
+            configurable: true
+        });
 
-        globalThis.assertx = publicAstroDate;
+        publicAstroDate.utilx.objectDefineProperty(globalThis, 'AstroDate', {
+            value: publicAstroDate,
+            enumerable: false,
+            writable: true,
+            configurable: true
+        });
     }
 }(this));
