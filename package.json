@@ -99,7 +99,7 @@
         "tzdata": "http://www.iana.org/time-zones/repository/releases/tzdata2013h.tar.gz"
     },
     "scripts": {
-        "test": "./node_modules/mocha/bin/mocha --check-leaks -u bdd -t 10000 -b -R tap tests/*.js"
+        "test": "./node_modules/mocha/bin/mocha --check-leaks -u bdd -t 20000 -b -R tap tests/*.js"
     },
     "browser": {
         "../lib/astrodate.min": false,

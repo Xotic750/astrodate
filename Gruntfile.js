@@ -214,7 +214,7 @@
                     },
                     command: ['./node_modules/istanbul/lib/cli.js cover --report lcovonly',
                               './node_modules/mocha/bin/_mocha --',
-                              '--check-leaks -u bdd -t 10000 -b -R tap tests/*.js',
+                              '--check-leaks -u bdd -t 20000 -b -R tap tests/*.js',
                               '&&',
                               'cat ./coverage/lcov.info',
                               '|',
