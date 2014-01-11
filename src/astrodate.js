@@ -22,12 +22,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-(function (globalThis, privateUndefined) {
+(function (globalThis) {
     /* jshint -W034 */
     'use strict';
 
     var publicAstroDate,
         canonicalizeLocaleRx,
+        addBigNumberModule,
         j2000 = {
             jdtt: '2451545.0',
             tt: '2000-01-01T12:00:00.000Z',
@@ -35,20 +36,20 @@
             utc: '2000-01-01T11:58:55.816Z'
         };
 
-    function addBigNumberModule(module, define) {
-        if (privateUndefined !== module || privateUndefined !== define) {
-            throw new Error();
-        }
+    addBigNumberModule = (function (module, define) {
+        /*jslint vars: true */
+        /*jshint unused: false */
+        return function addBigNumberModule() {
+            /*jslint eqeq: true, plusplus: true, sub: true, white: true,
+                newcap: true, ass: true, bitwise: true */
+            /*jshint expr: true, asi: true, eqnull: true,
+                laxbreak: true, validthis: true, noempty: false,
+                -W017, -W018, -W032, -W041, -W084, -W116, -W120 */
+            /*@@BigNumber*/
 
-        /*jslint eqeq: true, plusplus: true, sub: true, white: true,
-            newcap: true, vars: true, ass: true, bitwise: true */
-        /*jshint unused: false, expr: true, asi: true, eqnull: true,
-            laxbreak: true, validthis: true, noempty: false,
-            -W017, -W018, -W032, -W041, -W084, -W116, -W120 */
-        /*@@BigNumber*/
-
-        return this.BigNumber;
-    }
+            return this.BigNumber;
+        };
+    }());
 
     /**
      * Variables and utility functions used by the AstroDate class and requiring the BigNumber library.
@@ -58,7 +59,7 @@
      * @param {class} BigNumber
      * @return {class} AsroDate
      */
-    function defineAstroDate(utilx, BigNumber) {
+    function factory(utilx, BigNumber) {
         BigNumber.config({
             DECIMAL_PLACES: 9,
             ROUNDING_MODE: 0,
@@ -324,7 +325,7 @@
              * @readonly
              * @type {array.<string>}
              */
-            monthKeys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+            //monthKeys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
             /**
              * For looking up CLDR format translations.
              * @private
@@ -338,7 +339,7 @@
              * @readonly
              * @type {array.<string>}
              */
-            widthTypes = ['wide', 'abbreviated', 'narrow'],
+            //widthTypes = ['wide', 'abbreviated', 'narrow'],
             /**
              * For looking up CLDR date and time patterns.
              * @private
@@ -350,7 +351,6 @@
             replaceTokenRX = new RegExp('([^\\\']+)|(\\\'[^\\\']+\\\')', 'g'),
             unmatchedTokenRx = new RegExp('[^a-z]', 'gi'),
             bnOffsetRx = new RegExp('^([\\-+])?(\\d{1,2}):(\\d{2})(?::(\\d{2}))?$'),
-            //j2000 = [2000, 1, 1, 11, 58, 55, 816],
             /**
              * For holding CLDR language specific data.
              * @private
@@ -392,14 +392,6 @@
              */
             supplemental;
 
-        utilx.deepFreeze(fullOptions);
-        utilx.deepFreeze(fullKeys);
-        utilx.deepFreeze(monthKeys);
-        utilx.deepFreeze(dayKeys);
-        utilx.deepFreeze(nameTypes);
-        utilx.deepFreeze(widthTypes);
-        utilx.deepFreeze(formatTypes);
-
         function isGregorianLeapYear(struct) {
             return struct.year.mod(400).isZero() || (!struct.year.mod(100).isZero() && struct.year.mod(4).isZero());
         }
@@ -412,10 +404,12 @@
             var days;
 
             if (struct.month.eq(2)) {
-                days = new BigNumber(28);
+                days = 28;
                 if (isGregorianLeapYear(struct)) {
-                    days = days.plus(1);
+                    days += 1;
                 }
+
+                days = new BigNumber(days);
             } else {
                 days = struct.month.minus(1).mod(7).mod(2).neg().plus(31);
             }
@@ -424,33 +418,33 @@
         }
 
         function daysInJulianMonth(struct) {
-            var days = new BigNumber(28);
+            var days = 28;
 
             if (struct.month.eq(2) && isJulianLeapYear(struct)) {
-                days = days.plus(1);
+                days += 1;
             }
 
-            return days;
+            return new BigNumber(days);
         }
 
         function daysInGregorianYear(struct) {
-            var days = new BigNumber(365);
+            var days = 365;
 
             if (isGregorianLeapYear(struct)) {
-                days = days.plus(1);
+                days += 1;
             }
 
-            return days;
+            return new BigNumber(days);
         }
 
         function daysInJulianYear(struct) {
-            var days = new BigNumber(365);
+            var days = 365;
 
             if (isJulianLeapYear(struct)) {
-                days = days.plus(1);
+                days += 1;
             }
 
-            return days;
+            return new BigNumber(days);
         }
 
         function inYearRange(year) {
@@ -733,14 +727,6 @@
             return gregorianToJd(struct).round(1, 1);
         }
 
-        /*
-        function objectValues(inputArg) {
-            return utilx.arrayMap(utilx.objectKeys(inputArg), function (key) {
-                return inputArg[key];
-            });
-        }
-        */
-
         function dayOfWeekNumber(struct) {
             var day = gregorianToJd(struct).plus(1.5).mod(7).floor();
 
@@ -755,7 +741,7 @@
             var bnWeekDay = dayOfWeekNumber(struct);
 
             if (bnWeekDay.isZero()) {
-                bnWeekDay = new BigNumber(7);
+                bnWeekDay = bnWeekDay.plus(7);
             }
 
             return bnWeekDay;
@@ -773,7 +759,7 @@
             fraction = new BigNumber(fraction);
             switch (fractionIn) {
             case 'year':
-                if (utilx.strictEqual(julian, true)) {
+                if (utilx.isTrue(julian)) {
                     days = daysInJulianYear(struct);
                 } else {
                     days = daysInGregorianYear(struct);
@@ -782,7 +768,7 @@
                 totalMs = fraction.times(days.times(86400000));
                 break;
             case 'month':
-                if (utilx.strictEqual(julian, true)) {
+                if (utilx.isTrue(julian)) {
                     days = daysInJulianMonth(struct);
                 } else {
                     days = daysInGregorianMonth(struct);
@@ -972,9 +958,10 @@
                         bn,
                         dim;
 
-                    if (utilx.isNumber(value) || utilx.isString(value) ||
-                            (utilx.isTypeObject(value) && utilx.objectInstanceOf(value, BigNumber))) {
+                    if (utilx.isNumber(value) || (utilx.isString(value) && !utilx.isEmptyString(value))) {
                         bn = new BigNumber(value);
+                    } else if (BigNumber.isBigNumber(value)) {
+                        bn = value;
                     } else {
                         bn = new BigNumber(NaN);
                     }
@@ -999,7 +986,7 @@
 
                         break;
                     case 'day':
-                        if (utilx.strictEqual(julian, true)) {
+                        if (utilx.isTrue(julian)) {
                             dim = daysInJulianMonth(struct);
                         } else {
                             dim = daysInGregorianMonth(struct);
@@ -1111,9 +1098,10 @@
                         bn,
                         dim;
 
-                    if (utilx.isNumber(value) || utilx.isString(value) ||
-                            (utilx.isTypeObject(value) && utilx.objectInstanceOf(value, BigNumber))) {
+                    if (utilx.isNumber(value) || (utilx.isString(value) && !utilx.isEmptyString(value))) {
                         bn = new BigNumber(value);
+                    } else if (BigNumber.isBigNumber(value)) {
+                        bn = value;
                     } else {
                         bn = new BigNumber(NaN);
                     }
@@ -1138,7 +1126,7 @@
 
                         break;
                     case 'day':
-                        if (utilx.strictEqual(julian, true)) {
+                        if (utilx.isTrue(julian)) {
                             dim = daysInJulianMonth(struct);
                         } else {
                             dim = daysInGregorianMonth(struct);
@@ -1291,11 +1279,17 @@
 
         function jdToGregorian(julianDate) {
             var struct = {},
-                jd = new BigNumber(julianDate),
+                jd,
                 a,
                 b;
 
-            if (jd.isFinite()) {
+            if (utilx.isNumber(julianDate) || (utilx.isString(julianDate) && !utilx.isEmptyString(julianDate))) {
+                jd = new BigNumber(julianDate);
+            } else if (BigNumber.isBigNumber(julianDate)) {
+                jd = julianDate;
+            }
+
+            if (jd && jd.isFinite()) {
                 jd = jd.plus(0.5);
                 a = jd.plus(68569).floor();
                 b = a.times(4).div(146097).floor();
@@ -1316,7 +1310,7 @@
 
         function jdToJulian(julianDate) {
             var struct = {},
-                jd = new BigNumber(julianDate),
+                jd,
                 a,
                 b,
                 c,
@@ -1324,7 +1318,13 @@
                 e,
                 g;
 
-            if (jd.isFinite()) {
+            if (utilx.isNumber(julianDate) || (utilx.isString(julianDate) && !utilx.isEmptyString(julianDate))) {
+                jd = new BigNumber(julianDate);
+            } else if (BigNumber.isBigNumber(julianDate)) {
+                jd = julianDate;
+            }
+
+            if (jd && jd.isFinite()) {
                 jd = jd.plus(0.5);
                 a = jd.floor();
                 b = a.plus(1524);
@@ -1589,11 +1589,10 @@
                     second: BigNumber.zero(),
                     millisecond: BigNumber.zero()
                 },
-                daysInYear = daysInGregorianYear(struct),
                 result;
 
             dayOfYear = new BigNumber(dayOfYear);
-            if (dayOfYear.inRange(1, daysInYear)) {
+            if (dayOfYear.inRange(1, daysInGregorianYear(struct))) {
                 struct = jdToGregorian(gregorianToJd(struct).plus(dayOfYear).minus(1));
                 result = {
                     sign: 1,
@@ -1617,18 +1616,16 @@
          */
         function weekDateToCalendar(year, week, weekDay) {
             var struct = {
-                year: new BigNumber(year),
-                month: BigNumber.one(),
-                day: new BigNumber(4),
-                hour: BigNumber.zero(),
-                minute: BigNumber.zero(),
-                second: BigNumber.zero(),
-                millisecond: BigNumber.zero()
-            },
-                weekDayJan4 = weekDayNumber(struct),
-                dayOfYear;
+                    year: new BigNumber(year),
+                    month: BigNumber.one(),
+                    day: new BigNumber(4),
+                    hour: BigNumber.zero(),
+                    minute: BigNumber.zero(),
+                    second: BigNumber.zero(),
+                    millisecond: BigNumber.zero()
+                },
+                dayOfYear = new BigNumber(7).times(week).plus(weekDay).minus(weekDayNumber(struct).plus(3));
 
-            dayOfYear = new BigNumber(7).times(week).plus(weekDay).minus(weekDayJan4.plus(3));
             if (dayOfYear.lt(1)) {
                 struct.year = struct.year.minus(1);
                 dayOfYear = daysInGregorianYear(struct).plus(dayOfYear);
@@ -1651,10 +1648,9 @@
             var weekDay = weekDayNumber(struct),
                 year = struct.year,
                 month = struct.month,
-                nearestThursday,
+                nearestThursday = struct.day.plus(4).minus(weekDay),
                 val;
 
-            nearestThursday = struct.day.plus(4).minus(weekDay);
             if (struct.month.equals(12) && nearestThursday.gt(31)) {
                 val = {
                     year: year.plus(1),
@@ -1715,7 +1711,7 @@
          * @return {boolean}
          */
         function isNotNegativeZero(bn, sign) {
-            return utilx.strictEqual(sign, '+') || !bn.isZero() || (bn.isZero() && !utilx.strictEqual(sign, '-'));
+            return utilx.strictEqual(sign, '+') || !bn.isZero() || (bn.isZero() && utilx.notStrictEqual(sign, '-'));
         }
 
         /**
@@ -1742,9 +1738,9 @@
          * @function
          * @param {(number|string)} number
          * @param {(number|string|BigNumber)} offset
-         * @param {(number|string)} hour
-         * @param {(number|string)} [minute]
-         * @param {(number|string)} [second]
+         * @param {(number|string|BigNumber)} hour
+         * @param {(number|string|BigNumber)} [minute]
+         * @param {(number|string|BigNumber)} [second]
          * @return {object.BigNumber}
          */
         function minuteFractionToTime(number, offset, hour, minute, second) {
@@ -1769,15 +1765,15 @@
          * Covert the fractional part of seconds to a time object.
          * @private
          * @function
-         * @param {(number|string)} number
+         * @param {(number|string|BigNumber)} number
          * @param {(number|string|BigNumber)} offset
-         * @param {(number|string)} hour
-         * @param {(number|string)} minute
-         * @param {(number|string)} second
+         * @param {(number|string|BigNumber)} hour
+         * @param {(number|string|BigNumber)} minute
+         * @param {(number|string|BigNumber)} second
          * @return {object.BigNumber}
          */
         function secondFractionToTime(number, offset, hour, minute, second) {
-            var frac = fractionToTime('0.' + number, 'second');
+            var frac = fractionToTime('0.' + number.toString(), 'second');
 
             frac.hour = new BigNumber(hour);
             frac.minute = new BigNumber(minute);
@@ -1796,9 +1792,9 @@
          */
         function isoSplitDateTime(string) {
             var dtObject = {
-                date: '',
-                time: ''
-            },
+                    date: '',
+                    time: ''
+                },
                 firstSplit = utilx.stringSplit(utilx.stringTrim(string), /[T ]/),
                 splitLength = firstSplit.length,
                 element;
@@ -1843,6 +1839,15 @@
             return dtObject;
         }
 
+        /**
+         * Covert arguents year, month and date to an object.
+         * @private
+         * @function
+         * @param {(number|string|BigNumber)} year
+         * @param {(number|string|BigNumber)} month
+         * @param {(number|string|BigNumber)} day
+         * @return {object.BigNumber}
+         */
         function dateToObject(year, month, day) {
             return {
                 year: new BigNumber(year),
@@ -1927,14 +1932,21 @@
              * @type {array.object}
              */
             extended: [{
-                // need to add tests for -0
                 /**
                  * -+[..y]yyyyy-MM
                  * @private
                  */
                 regex: /^([\-+])(\d{5,})-(\d{2})$/,
                 func: function (rxResult) {
-                    return dateToObject(new BigNumber(rxResult[2]).times(toSignMultipler(rxResult[1])), rxResult[3], 1);
+                    var sign = rxResult[1],
+                        year = new BigNumber(rxResult[2]),
+                        val;
+
+                    if (isNotNegativeZero(year, sign)) {
+                        val = dateToObject(year.times(toSignMultipler(sign)), rxResult[3], 1);
+                    }
+
+                    return val;
                 }
             }, {
                 /**
@@ -1961,8 +1973,15 @@
                  */
                 regex: /^([\-+])(\d{5,})-(\d{2})-(\d{2})$/,
                 func: function (rxResult) {
-                    return dateToObject(new BigNumber(rxResult[2]).times(toSignMultipler(rxResult[1])),
-                                        rxResult[3], rxResult[4]);
+                    var sign = rxResult[1],
+                        year = new BigNumber(rxResult[2]),
+                        val;
+
+                    if (isNotNegativeZero(year, sign)) {
+                        val = dateToObject(year.times(toSignMultipler(sign)), rxResult[3], rxResult[4]);
+                    }
+
+                    return val;
                 }
             }, {
                 /**
@@ -1998,8 +2017,15 @@
                  */
                 regex: /^([\-+])(\d{5,})-(\d{3})$/,
                 func: function (rxResult) {
-                    return ordinalToCalendar(new BigNumber(rxResult[2]).times(toSignMultipler(rxResult[1])),
-                                             rxResult[3]);
+                    var sign = rxResult[1],
+                        year = new BigNumber(rxResult[2]),
+                        val;
+
+                    if (isNotNegativeZero(year, sign)) {
+                        val = ordinalToCalendar(year.times(toSignMultipler(sign)), rxResult[3]);
+                    }
+
+                    return val;
                 }
             }, {
                 /**
@@ -2008,8 +2034,15 @@
                  */
                 regex: /^([\-+])(\d{5,})-W(\d{2})$/,
                 func: function (rxResult) {
-                    return weekDateToCalendar(new BigNumber(rxResult[2]).times(toSignMultipler(rxResult[1])),
-                                              rxResult[3], 1);
+                    var sign = rxResult[1],
+                        year = new BigNumber(rxResult[2]),
+                        val;
+
+                    if (isNotNegativeZero(year, sign)) {
+                        val = weekDateToCalendar(year.times(toSignMultipler(sign)), rxResult[3], 1);
+                    }
+
+                    return val;
                 }
             }, {
                 /**
@@ -2018,15 +2051,30 @@
                  */
                 regex: /^([\-+])(\d{5,})-W(\d{2})-([1-7]{1})$/,
                 func: function (rxResult) {
-                    return weekDateToCalendar(new BigNumber(rxResult[2]).times(toSignMultipler(rxResult[1])),
-                                              rxResult[3], rxResult[4]);
+                    var sign = rxResult[1],
+                        year = new BigNumber(rxResult[2]),
+                        val;
+
+                    if (isNotNegativeZero(year, sign)) {
+                        val = weekDateToCalendar(year.times(toSignMultipler(sign)), rxResult[3], rxResult[4]);
+                    }
+
+                    return val;
                 }
             }]
         };
 
-        /** Make datePatterns readonly */
-        utilx.deepFreeze(datePatterns);
-
+        /**
+         * Covert arguents hour, minute, second, offset, sign to an object.
+         * @private
+         * @function
+         * @param {(number|string|BigNumber)} hour
+         * @param {(number|string|BigNumber)} minute
+         * @param {(number|string|BigNumber)} second
+         * @param {(number|string|BigNumber)} offset
+         * @param {string} sign
+         * @return {object.BigNumber}
+         */
         function createTimeObject(hour, minute, second, offset, sign) {
             return {
                 hour: new BigNumber(hour),
@@ -2695,9 +2743,6 @@
             }]
         };
 
-        /** Make timePatterns readonly */
-        utilx.deepFreeze(timePatterns);
-
         /**
          * Takes a give string an parses it as a given ISO timestamp returning the date and time matches as an object.
          * Uses datePatterns and timePatterns for precision matching.
@@ -2793,16 +2838,15 @@
          */
         function cldrPadLeadingZero(num, size) {
             var strNum = utilx.anyToString(utilx.checkObjectCoercible(num)),
-                firsrCharacter,
                 val;
 
             if (utilx.isDigits(strNum) && new BigNumber(strNum).isFinite()) {
-                firsrCharacter = utilx.firstChar(strNum);
-                val = '';
-                if (utilx.strictEqual(firsrCharacter, '-')) {
+                if (utilx.firstCharIs(strNum, '-')) {
+                    val = '-';
                     strNum = strNum.slice(1);
                     size -= 1;
-                    val = firsrCharacter;
+                } else {
+                    val = '';
                 }
 
                 val += utilx.padLeadingChar(strNum, '0', size);
@@ -2840,7 +2884,7 @@
                 firstCharacter = utilx.firstChar(token);
                 if (!(/^\S\{\d+,\d*\}$/).test(token)) {
                     count = token.length;
-                    if (!utilx.strictEqual(count, utilx.countCharacter(token, firstCharacter))) {
+                    if (utilx.notStrictEqual(count, utilx.countCharacter(token, firstCharacter))) {
                         throw new Error(token);
                     }
                 }
@@ -2866,7 +2910,7 @@
                     val = value;
                 }
 
-                if (!utilx.strictEqual(noWrap, true)) {
+                if (utilx.notStrictEqual(noWrap, true)) {
                     val = utilx.wrapInChar(val, '\'');
                 }
 
@@ -2968,8 +3012,6 @@
                 narrow: 'N'
             }
         };
-
-        utilx.deepFreeze(calendarTypes);
         */
 
         /**
@@ -3006,7 +3048,7 @@
                 firstSplit = splitUnderscore(minusToUnderscore(locale));
                 firstSplitLength = firstSplit.length;
                 val.push(firstSplit[0].toLowerCase());
-                if (!utilx.strictEqual(firstSplitLength, 1)) {
+                if (utilx.notStrictEqual(firstSplitLength, 1)) {
                     element = firstSplit[1];
                     if (utilx.strictEqual(firstSplitLength, 2)) {
                         elementLength = element.length;
@@ -3021,11 +3063,11 @@
                     }
                 }
 
-                if (!utilx.isUndefined(script) && !utilx.strictEqual(script, 'Zzzz')) {
+                if (!utilx.isUndefined(script) && utilx.notStrictEqual(script, 'Zzzz')) {
                     val.push(script);
                 }
 
-                if (!utilx.isUndefined(region) && !utilx.strictEqual(region, 'ZZ')) {
+                if (!utilx.isUndefined(region) && utilx.notStrictEqual(region, 'ZZ')) {
                     val.push(region);
                 }
             }
@@ -4132,7 +4174,7 @@
              */
             isDT: {
                 value: function () {
-                    return !utilx.strictEqual(this.getter('DT'), 0);
+                    return utilx.notStrictEqual(this.getter('DT'), 0);
                 },
                 enumerable: false,
                 writable: true,
@@ -5686,7 +5728,7 @@
                         lang = minusToUnderscore(id);
                         if (utilx.isPlainObject(object)) {
                             languages[lang] = object;
-                            if (!utilx.strictEqual(freeze, false)) {
+                            if (utilx.isTrue(freeze)) {
                                 utilx.deepFreeze(languages[lang]);
                             }
                         }
@@ -5751,7 +5793,7 @@
                 value: function (object, freeze) {
                     if (utilx.isPlainObject(object)) {
                         leapSeconds = object;
-                        if (!utilx.strictEqual(freeze, false)) {
+                        if (utilx.isTrue(freeze)) {
                             utilx.deepFreeze(leapSeconds);
                         }
                     }
@@ -5773,7 +5815,7 @@
                 value: function (object, freeze) {
                     if (utilx.isPlainObject(object)) {
                         supplemental = object;
-                        if (!utilx.strictEqual(freeze, false)) {
+                        if (utilx.isTrue(freeze)) {
                             utilx.deepFreeze(supplemental);
                         }
                     }
@@ -5959,11 +6001,11 @@
 
         /*jslint white: true */
         /* jshint quotmark: false, -W100 */
-        leapSeconds = utilx.deepFreeze( /*@@leapSeconds*/ );
+        leapSeconds = AstroDate.leapSeconds( /*@@leapSeconds*/ );
 
-        supplemental = utilx.deepFreeze( /*@@supplemental*/ );
+        supplemental = AstroDate.supplemental( /*@@supplemental*/ );
 
-        languages = utilx.deepFreeze( /*@@languages*/ );
+        languages = utilx.arrayFirst(utilx.returnArgs( /*@@languages*/ ));
         /*jslint white: false */
 
         AstroDate.locale('en_GB');
@@ -5985,15 +6027,15 @@
     if (typeof module === 'object' && null !== module &&
             typeof module.exports === 'object' && null !== module.exports) {
 
-        publicAstroDate = defineAstroDate(require('util-x'), addBigNumberModule.call({}));
+        publicAstroDate = factory(require('util-x'), addBigNumberModule.call({}));
         publicAstroDate.utilx.objectDefineProperty(publicAstroDate, 'factory', {
             value: function (deep) {
                 var pa;
 
                 if (publicAstroDate.utilx.isTrue(deep)) {
-                    pa = defineAstroDate(require('util-x').factory(), addBigNumberModule.call({}));
+                    pa = factory(require('util-x').factory(), addBigNumberModule.call({}));
                 } else {
-                    pa = defineAstroDate(require('util-x'), addBigNumberModule.call({}));
+                    pa = factory(require('util-x'), addBigNumberModule.call({}));
                 }
 
                 publicAstroDate.utilx.objectDefineProperty(pa, 'factory', {
@@ -6024,15 +6066,15 @@
         });
 
         define(['util-x'], function (utilx) {
-            publicAstroDate = defineAstroDate(utilx, addBigNumberModule.call({}));
+            publicAstroDate = factory(utilx, addBigNumberModule.call({}));
             publicAstroDate.utilx.objectDefineProperty(publicAstroDate, 'factory', {
                 value: function (deep) {
                     var pa;
 
                     if (publicAstroDate.utilx.isTrue(deep)) {
-                        pa = defineAstroDate(utilx.factory(), addBigNumberModule.call({}));
+                        pa = factory(utilx.factory(), addBigNumberModule.call({}));
                     } else {
-                        pa = defineAstroDate(utilx, addBigNumberModule.call({}));
+                        pa = factory(utilx, addBigNumberModule.call({}));
                     }
 
                     publicAstroDate.utilx.objectDefineProperty(pa, 'factory', {
@@ -6052,15 +6094,15 @@
             return publicAstroDate;
         });
     } else {
-        publicAstroDate = defineAstroDate(globalThis.utilx, addBigNumberModule.call({}));
+        publicAstroDate = factory(globalThis.utilx, addBigNumberModule.call({}));
         publicAstroDate.utilx.objectDefineProperty(publicAstroDate, 'factory', {
             value: function (deep) {
                 var pa;
 
                 if (publicAstroDate.utilx.isTrue(deep)) {
-                    pa = defineAstroDate(globalThis.utilx.factory(), addBigNumberModule.call({}));
+                    pa = factory(globalThis.utilx.factory(), addBigNumberModule.call({}));
                 } else {
-                    pa = defineAstroDate(globalThis.utilx, addBigNumberModule.call({}));
+                    pa = factory(globalThis.utilx, addBigNumberModule.call({}));
                 }
 
                 publicAstroDate.utilx.objectDefineProperty(pa, 'factory', {
