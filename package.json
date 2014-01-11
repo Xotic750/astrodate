@@ -1,6 +1,6 @@
 {
     "name": "astrodate",
-    "version": "0.7.4",
+    "version": "0.7.5",
     "description": "Javascript Date object with Astronomy in mind.",
     "homepage": "http://xotic750.github.io/astrodate/",
     "author": {
@@ -129,7 +129,7 @@
         "files": "tests/*.js",
         "browsers": [
             "iexplore/6.0..latest",
-            "firefox/3..latest",
+            "firefox/3.0..latest",
             "firefox/nightly",
             "chrome/4..latest",
             "chrome/canary",
