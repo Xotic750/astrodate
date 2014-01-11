@@ -1231,6 +1231,18 @@
             return newObject;
         }
 
+        function weekToObject(struct) {
+            var newObject = {};
+
+            if (utilx.isPlainObject(struct)) {
+                utilx.arrayForEach(['year', 'week', 'weekDay'], function (key) {
+                    newObject[key] = struct[key].toString();
+                });
+            }
+
+            return newObject;
+        }
+
         function dateToStruct(date) {
             var struct = {};
 
@@ -5574,7 +5586,7 @@
                     var val;
 
                     if (this.isValid()) {
-                        val = structToObject(calendarToWeekDate(getCorrectStruct(this, this.getter())));
+                        val = weekToObject(calendarToWeekDate(getCorrectStruct(this, this.getter())));
                     }
 
                     return val;
