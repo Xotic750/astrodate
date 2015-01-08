@@ -18,7 +18,7 @@
                 normalYears = [],
                 idx;
 
-            for (idx = 1800; utilx.lt(idx, 2200); idx += 1) {
+            for (idx = 1800; utilx.Object.lt(idx, 2200); idx += 1) {
                 if (testsUtil.isGregorianLeapYear(idx)) {
                     leapYears.push(idx);
                 } else {
@@ -26,7 +26,7 @@
                 }
             }
 
-            for (index = 0; utilx.lt(index, 12); index += 1) {
+            for (index = 0; utilx.Object.lt(index, 12); index += 1) {
                 month = index + 1;
                 astrodate = new AstroDate(2013, month);
                 assertx.strictEqual(astrodate.format('MMMM'), testsUtil.monthNames[index]);
@@ -37,11 +37,11 @@
                 assertx.strictEqual(astrodate.daysInMonth(), testsUtil.daysInGregorianMonth(2012, month));
             }
 
-            utilx.arrayForEach(leapYears, function (leapYear) {
+            utilx.Array.forEach(leapYears, function (leapYear) {
                 assertx.ok(new AstroDate(leapYear, null).isLeapYear());
             });
 
-            utilx.arrayForEach(normalYears, function (normalYear) {
+            utilx.Array.forEach(normalYears, function (normalYear) {
                 assertx.ok(!new AstroDate(normalYear, null).isLeapYear());
             });
 

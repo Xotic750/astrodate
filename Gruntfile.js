@@ -128,50 +128,51 @@
                 lib: {
                     options: {
                         patterns: [{
-                            match: 'VERSION',
+                            match: '@@VERSION',
                             replacement: '<%= pkg.version %>'
                         }, {
-                            match: 'MODULE',
+                            match: '@@MODULE',
                             replacement: '<%= pkg.name %>'
                         }, {
-                            match: 'DESCRIPTION',
+                            match: '@@DESCRIPTION',
                             replacement: '<%= pkg.description %>'
                         }, {
-                            match: 'AUTHORNAME',
+                            match: '@@AUTHORNAME',
                             replacement: '<%= pkg.author.name %>'
                         }, {
-                            match: 'AUTHOREMAIL',
+                            match: '@@AUTHOREMAIL',
                             replacement: '<%= pkg.author.email %>'
                         }, {
-                            match: 'HOMEPAGE',
+                            match: '@@HOMEPAGE',
                             replacement: '<%= pkg.homepage %>'
                         }, {
-                            match: 'COPYRIGHT',
+                            match: '@@COPYRIGHT',
                             replacement: '<%= pkg.copyright %>'
                         }, {
-                            match: 'LICENSE',
+                            match: '@@LICENSE',
                             replacement: '<%= pkg.licenses[0].type %>'
                         }, {
-                            match: 'LICLINK',
+                            match: '@@LICLINK',
                             replacement: '<%= pkg.licenses[0].url %>'
                         }, {
-                            match: '/\\/\\*@@leapSeconds\\*\\//g',
+                            match: '/*@@leapSeconds*/',
                             replacement: '<%= grunt.file.read("src/leapSeconds.json") %>',
                             expression: true
                         }, {
-                            match: '/\\/\\*@@supplemental\\*\\//g',
+                            match: '/*@@supplemental*/',
                             replacement: '<%= grunt.file.read("src/supplemental.json") %>',
                             expression: true
                         }, {
-                            match: '/\\/\\*@@languages\\*\\//g',
+                            match: '/*@@languages*/',
                             replacement: '<%= grunt.file.read("src/language.json") %>',
                             expression: true
                         }, {
-                            match: '/\\/\\*@@BigNumber\\*\\//g',
+                            match: '/*@@BigNumber*/',
                             replacement: (grunt.file.read('node_modules/bignumber.js/bignumber.js')
                                           .replace(/\$/g, '$$$$')),
                             expression: true
-                        }]
+                        }],
+                        usePrefix: false
                     },
                     files: [{
                         src: ['src/<%= pkg.name %>.js'],
@@ -268,6 +269,10 @@
             'buildReadme',
             'jsdoc',
             'clean:after'
+        ]);
+
+        grunt.registerTask('lint', [
+            'jshint:lib'
         ]);
 
         grunt.registerTask('test', [

@@ -14,38 +14,38 @@
             var zeroArray = [NaN, 1, 1, 0, 0, 0, 0, new Date().getTimezoneOffset() * 60],
                 fullArray = [],
                 fullArrayString,
-                year = utilx.getRandomInt(-9007199254740991, 9007199254740991).toString(),
-                month = utilx.getRandomInt(1, 12),
-                hour = utilx.getRandomInt(0, 24),
+                year = utilx.Number.randomInt(-9007199254740991, 9007199254740991).toString(),
+                month = utilx.Number.randomInt(1, 12),
+                hour = utilx.Number.randomInt(0, 24),
                 fullArrayLength,
                 astrodate,
                 date;
 
             fullArray.push(year);
             fullArray.push(month);
-            fullArray.push(utilx.getRandomInt(1, testsUtil.daysInGregorianMonth(year, month)));
+            fullArray.push(utilx.Number.randomInt(1, testsUtil.daysInGregorianMonth(year, month)));
             fullArray.push(hour);
-            if (utilx.strictEqual(hour, 24)) {
+            if (utilx.Object.strictEqual(hour, 24)) {
                 fullArray.push(0);
                 fullArray.push(0);
                 fullArray.push(0);
             } else {
-                fullArray.push(utilx.getRandomInt(0, 59));
-                fullArray.push(utilx.getRandomInt(0, 59));
-                fullArray.push(utilx.getRandomInt(0, 999));
+                fullArray.push(utilx.Number.randomInt(0, 59));
+                fullArray.push(utilx.Number.randomInt(0, 59));
+                fullArray.push(utilx.Number.randomInt(0, 999));
             }
 
-            fullArray.push(utilx.getRandomInt(-43200, 50400));
+            fullArray.push(utilx.Number.randomInt(-43200, 50400));
             fullArrayLength = fullArray.length;
-            fullArrayString = utilx.arrayMap(fullArray, function (element) {
+            fullArrayString = utilx.Array.map(fullArray, function (element) {
                 return element.toString();
             });
 
-            utilx.arrayForEach(fullArray, function (element, index) {
+            utilx.Array.forEach(fullArray, function (element, index) {
                 /*jslint unparam: true */
                 /* jshint unused: true */
-                var end = utilx.isZero(index) ? fullArrayLength : -index,
-                    slice = utilx.stringSplit(fullArray.slice(0, end).concat(zeroArray.slice(end)).toString(), ','),
+                var end = utilx.Number.isZero(index) ? fullArrayLength : -index,
+                    slice = utilx.String.split(fullArray.slice(0, end).concat(zeroArray.slice(end)).toString(), ','),
                     tObject = {
                         'year': slice[0],
                         'month': slice[1],
@@ -56,9 +56,9 @@
                         'millisecond': slice[6],
                         'offset': slice[7]
                     },
-                    json = utilx.jsonStringify(tObject),
+                    json = utilx.JSON.stringify(tObject),
                     numYear = +slice[0],
-                    isInLimits = utilx.inRange(numYear, 0, 9999) && utilx.notStrictEqual(24, utilx.toNumber(slice[3]));
+                    isInLimits = utilx.Number.inRange(numYear, 0, 9999) && utilx.notStrictEqual(24, utilx.toNumber(slice[3]));
 
                 switch (index) {
                 case 7:
@@ -101,7 +101,7 @@
                     assertx.ok(isNaN(date));
                 }
 
-                assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject);
+                assertx.deepEqual(utilx.JSON.parse(astrodate.json()), tObject);
 
                 astrodate = new AstroDate().array(fullArray.slice(0, end));
                 assertx.ok(AstroDate.isAstroDate(astrodate));
@@ -113,7 +113,7 @@
                     assertx.ok(isNaN(date));
                 }
 
-                assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject);
+                assertx.deepEqual(utilx.JSON.parse(astrodate.json()), tObject);
 
                 astrodate = new AstroDate(astrodate);
                 assertx.ok(AstroDate.isAstroDate(astrodate));
@@ -125,7 +125,7 @@
                     assertx.ok(isNaN(date));
                 }
 
-                assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject);
+                assertx.deepEqual(utilx.JSON.parse(astrodate.json()), tObject);
 
                 switch (index) {
                 case 7:
@@ -170,7 +170,7 @@
                     assertx.ok(isNaN(date));
                 }
 
-                assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject);
+                assertx.deepEqual(utilx.JSON.parse(astrodate.json()), tObject);
 
                 astrodate = new AstroDate().array(fullArrayString.slice(0, end));
                 assertx.ok(AstroDate.isAstroDate(astrodate));
@@ -182,7 +182,7 @@
                     assertx.ok(isNaN(date));
                 }
 
-                assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject);
+                assertx.deepEqual(utilx.JSON.parse(astrodate.json()), tObject);
 
                 astrodate = astrodate.clone();
                 assertx.notStrictEqual(astrodate, astrodate.clone());
@@ -195,10 +195,10 @@
                     assertx.ok(isNaN(date));
                 }
 
-                assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject);
+                assertx.deepEqual(utilx.JSON.parse(astrodate.json()), tObject);
 
                 astrodate = new AstroDate().json(json);
-                assertx.deepEqual(utilx.jsonParse(astrodate.json()), tObject);
+                assertx.deepEqual(utilx.JSON.parse(astrodate.json()), tObject);
             });
         });
     });

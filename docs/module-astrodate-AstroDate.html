@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: AstroDate</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Class: AstroDate</h1>
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+            <span class="ancestors"><a href="module-astrodate.html">astrodate</a>~</span>
+        
+        AstroDate
+        </h2>
+        
+            <div class="class-description">This is what becomes exported or made global.</div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+    <h2>Constructor</h2>
+    
+
+    <h4 class="name" id="AstroDate"><span class="type-signature"></span>new AstroDate<span class="signature">(&hellip;arguments<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="AstroDate.html">AstroDate</a>}</span></h4>
+
+    
+
+
+
+<div class="description">
+    Used to create a new instance of a date.
+<pre><code>
+new AstroDate();
+new AstroDate(value);
+new AstroDate(dateString);
+new AstroDate(dateObject);
+new AstroDate(astroDateObject);
+new AstroDate(year[, month, day, hour, minute, second, millisecond, offset][, options]);
+</code></pre>
+<ul>
+<li><b>value</b><br>
+Integer value representing the number of milliseconds since 1 January 1970 00:00:00 UTC (Unix Epoch).</li>
+<li><b>dateString</b><br>
+String value representing a date. The string must be in the format of ISO8601.</li>
+<li><b>dateObject</b><br>
+A Javascript Date object.</li>
+<li><b>astroDateObject</b><br>
+An AstroDate object.</li>
+<li><b>year</b><br>
+Integer or string value representing the year. The year must always be provided in full
+(e.g. 98 is treated as 98, not 1998).</li>
+<li><b>month</b><br>
+Integer or string value representing the month, beginning with 0 for January to 11 for December.</li>
+<li><b>day</b><br>
+Integer or string value representing the day of the month.</li>
+<li><b>hour</b><br>
+Integer or string value representing the hour of the day.</li>
+<li><b>minute</b><br>
+Integer or string value representing the minute segment of a time.</li>
+<li><b>second</b><br>
+Integer or string value representing the second segment of a time.</li>
+<li><b>millisecond</b><br>
+Integer or string value representing the millisecond segment of a time.</li>
+<li><b>offset</b><br>
+Integer or string value representing the offset from UT in seconds.</li>
+<li><b>options</b><br>
+null or object Must be used when only year is specified. Allows date to be specified in
+Julian Calender (more/changes coming). </li>
+</ul>
+</div>
+
+
+
+
+
+
+
+    <h5>This:</h5>
+    <ul><li><a href="AstroDate.html">AstroDate</a></li></ul>
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>arguments</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">*</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                    &lt;repeatable><br>
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="astrodate.js.html">astrodate.js</a>, <a href="astrodate.js.html#line5918">line 5918</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="AstroDate.html">AstroDate</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+    <h5>Example</h5>
+    
+        <p class="code-caption">Example usage of constructor.</p>
+    
+    <pre class="prettyprint"><code>// If no arguments are provided, the constructor creates an AstroDate object for the
+// current date and time according to system settings.
+new AstroDate();
+
+// Integer value representing the number of milliseconds since 1 January 1970 00:00:00 UTC (Unix Epoch).
+// -9,007,199,254,740,992 to 9,007,199,254,740,992 or NaN
+new AstroDate(819170640000); //1995-12-17T03:24:00.000Z
+new AstroDate(NaN); //Invalid Date
+
+// String value representing a date. The string must be in the format of ISO8601.
+new AstroDate('1995-12-17T03:24:00.000Z');
+
+// A Javascript Date object.
+new AstroDate(new Date(1995, 12, 17, 3, 24, 0, 0));
+
+// An AstroDate object.
+new AstroDate(new AstroDate(1995, 12, 17, 3, 24, 0, 0, 3600)); // offset is same as '-01:00:00'
+
+// Using an arguments list.
+new AstroDate(1995, null);
+new AstroDate(1995, {offset: -3600}); // offset is same as '+01:00:00'
+new AstroDate(55, {julian: true, offset: -3600});
+// year 55 of the Julian Calendar, offset is same as '+01:00:00'
+new AstroDate(1995, 12, 17, 3, 24, 0, 0, -3600); // offset is same as '+01:00:00'
+new AstroDate('1995', '12', '17', '3', '24', '0', '0', '-5400'); // offset is same as '+01:30:00'
+new AstroDate('1995', '12', '17', '3', '24', '0', '0', '+01:30:00'); // offset is same as -5400
+new AstroDate('-10', '5', '7', {julian: true}); // year -10 of the Julian Calendar</code></pre>
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-astrodate.html">astrodate</a></li></ul><h3>Classes</h3><ul><li><a href="module-astrodate-AstroDate.html">AstroDate</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0-alpha13</a> on Thu Jan 08 2015 18:35:38 GMT+0100 (CET)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

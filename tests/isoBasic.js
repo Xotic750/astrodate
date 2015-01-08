@@ -12,14 +12,15 @@
     describe('Parsing ISO8601 basic patterns.', function () {
         it('should not throw an error in each case', function () {
             var offset = new Date().getTimezoneOffset(),
-                isOffsetPos = utilx.gt(offset, 0),
+                isOffsetPos = utilx.Object.gt(offset, 0),
                 offsetsign = isOffsetPos ? '-' : '+',
-                year = utilx.padLeadingChar(utilx.getRandomInt(0, 9999), '0', 4),
-                month = utilx.padLeadingChar(utilx.getRandomInt(1, 12), '0', 2),
-                day = utilx.padLeadingChar(utilx.getRandomInt(1,
-                        testsUtil.daysInGregorianMonth(utilx.toNumber(year), utilx.toNumber(month))), '0', 2),
+                year = utilx.String.padLeadingChar(utilx.Number.randomInt(0, 9999), '0', 4),
+                month = utilx.String.padLeadingChar(utilx.Number.randomInt(1, 12), '0', 2),
+                day = utilx.String.padLeadingChar(utilx.Number.randomInt(1,
+                        testsUtil.daysInGregorianMonth(utilx.Number.toNumber(year), utilx.Number.toNumber(month))),
+                            '0', 2),
 
-                hour = utilx.padLeadingChar(utilx.getRandomInt(0, 24), '0', 2),
+                hour = utilx.String.padLeadingChar(utilx.Number.randomInt(0, 24), '0', 2),
                 minute,
                 second,
                 millisecond,
@@ -31,25 +32,25 @@
                 isoYMD,
                 formats;
 
-            if (utilx.strictEqual(hour, '24')) {
+            if (utilx.Object.strictEqual(hour, '24')) {
                 minute = '00';
                 second = '00';
                 millisecond = '000';
             } else {
-                minute = utilx.padLeadingChar(utilx.getRandomInt(0, 59), '0', 2);
-                second = utilx.padLeadingChar(utilx.getRandomInt(0, 59), '0', 2);
-                millisecond = utilx.padLeadingChar(utilx.getRandomInt(0, 999), '0', 3);
+                minute = utilx.String.padLeadingChar(utilx.Number.randomInt(0, 59), '0', 2);
+                second = utilx.String.padLeadingChar(utilx.Number.randomInt(0, 59), '0', 2);
+                millisecond = utilx.String.padLeadingChar(utilx.Number.randomInt(0, 999), '0', 3);
             }
 
-            if (utilx.notStrictEqual(offset, 0)) {
+            if (utilx.Object.notStrictEqual(offset, 0)) {
                 hourOffset = isOffsetPos ? Math.floor(offset / 60) : Math.ceil(offset / 60);
                 minOffset = offset - (hourOffset * 60);
 
-                tz = offsetsign + utilx.padLeadingChar(Math.abs(hourOffset), '0', 2) +
-                        utilx.padLeadingChar(Math.abs(minOffset), '0', 2);
+                tz = offsetsign + utilx.String.padLeadingChar(Math.abs(hourOffset), '0', 2) +
+                        utilx.String.padLeadingChar(Math.abs(minOffset), '0', 2);
 
-                tz1 = offsetsign + utilx.padLeadingChar(Math.abs(hourOffset), '0', 2) + ':' +
-                        utilx.padLeadingChar(Math.abs(minOffset), '0', 2);
+                tz1 = offsetsign + utilx.String.padLeadingChar(Math.abs(hourOffset), '0', 2) + ':' +
+                        utilx.String.padLeadingChar(Math.abs(minOffset), '0', 2);
             } else {
                 tz = tz1 = 'Z';
             }
@@ -116,7 +117,7 @@
                     isoYMD + 'T' + hour + ':' + minute + ':' + second + '.' + millisecond + 'Z']
             ];
 
-            utilx.arrayForEach(formats, function (format) {
+            utilx.Array.forEach(formats, function (format) {
                 var a = format[0],
                     b = format[1],
                     withComma = a.replace('.', ',');
