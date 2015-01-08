@@ -3884,19 +3884,19 @@
 
                                 break;
                             case 'isJulian':
-                                isJulian = utilx.toBoolean(value);
+                                isJulian = !!value;
                                 break;
                             case 'isUT':
-                                isUT = utilx.toBoolean(value);
+                                isUT = !!value;
                                 break;
                             case 'isTT':
-                                isTT = utilx.toBoolean(value);
+                                isTT = !!value;
                                 break;
                             case 'DT':
-                                delta = utilx.mathSign(value) || 0;
+                                delta = utilx.Math.sign(value) || 0;
                                 break;
                             case 'isLocal':
-                                isLocal = utilx.toBoolean(value);
+                                isLocal = !!value;
                                 break;
                             case 'lang':
                                 if (utilx.String.isString(value) && !utilx.String.isEmpty(value)) {
