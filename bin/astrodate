@@ -1,14 +1,13 @@
 #!/usr/bin/env node
-
 (function () {
-    var AstroDate = require('../lib/astrodate'),
-        now = new AstroDate().toISOString();
+  'use strict';
 
-    try {
-        console.log(now);
-    } catch (e) {
-        process.stdout.write(now + '\n');
-    }
-
-    return now;
+  var AstroDate = require('../lib/astrodate');
+  var now = new AstroDate().toISOString();
+  try {
+    console.log(now);
+  } catch (e) {
+    process.stdout.write(now + '\n');
+  }
+  return now;
 }());
