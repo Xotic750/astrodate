@@ -2443,6 +2443,14 @@
     return getLanguageObj(langCan) ? langCan : new LanguageCan();
   }
 
+  function tokensToString(tokens) {
+    return tokens.reduce(function(a, p) {
+      if (p.type === 'symbols') {
+        return a + p.value.replace(/'/g, '');
+      }
+      return a + p.value;
+    }, '');
+  }
   /**
    * Takes a date pattern of tokens and replaces those tokens with the appropriate CLDR translations.
    * @private
@@ -2555,12 +2563,7 @@
     pattern = replaceTokens(pattern, 'cccc', daysStandAlone.wide[dayKey]);
     pattern = replaceTokens(pattern, 'ccc', daysStandAlone.abbreviated[dayKey]);
     pattern = replaceTokens(pattern, 'c{1,2}', dayOfWeekLocaleNumber);
-    return asString ? pattern.reduce(function(a, p) {
-      if (p.type === 'symbols') {
-        return a + p.value.slice (1, -1);
-      }
-      return a + p.value;
-    }, '') : pattern;
+    return asString ? tokensToString(pattern) : pattern;
   }
 
   /**
@@ -2601,12 +2604,7 @@
       pattern = replaceTokens(offsetFormat, 'H{1,2}', offset.hour);
       pattern = replaceTokens(pattern, 'm{1,2}', offset.minute);
     }
-    return pattern.reduce(function(a, p) {
-      if (p.type === 'symbols') {
-        return a + p.value.slice (1, -1);
-      }
-      return a + p.value;
-    }, '');
+    return tokensToString(pattern);
   }
 
   /**
@@ -2649,12 +2647,7 @@
       pattern = replaceTokens(pattern, 'm{1,2}', offset.minute);
       pattern = replaceTokens(pattern, 's{1,2}', offset.second);
     }
-    return pattern.reduce(function(a, p) {
-      if (p.type === 'symbols') {
-        return a + p.value.slice (1, -1);
-      }
-      return a + p.value;
-    }, '');
+    return tokensToString(pattern);
   }
 
   /**
@@ -2694,12 +2687,7 @@
       pattern = replaceTokens(pattern, 'm{1,2}', offset.minute);
       pattern = replaceTokens(timeZoneNames.gmtFormat, '{0}', pattern);
     }
-    return pattern.reduce(function(a, p) {
-      if (p.type === 'symbols') {
-        return a + p.value.slice (1, -1);
-      }
-      return a + p.value;
-    }, '');
+    return tokensToString(pattern);
   }
 
   /**
@@ -2769,12 +2757,7 @@
     pattern = replaceTokens(pattern, 'xxxxx', formatIsoTimeZoneSeconds(struct, langCan, false, 'extended', true));
     //The ISO8601 extended format optional seconds
     pattern = replaceTokens(pattern, 'ZZZZZ', formatIsoTimeZoneSeconds(struct, langCan, true, 'extended', true));
-    return asString ? pattern.reduce(function(a, p) {
-      if (p.type === 'symbols') {
-        return a + p.value.slice (1, -1);
-      }
-      return a + p.value;
-    }, '') : pattern;
+    return asString ? tokensToString(pattern) : pattern;
   }
 
   /**
