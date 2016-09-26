@@ -1,144 +1,82 @@
 {
-    "name": "astrodate",
-    "version": "0.7.10",
-    "description": "Javascript Date object with Astronomy in mind.",
-    "homepage": "http://xotic750.github.io/astrodate/",
-    "author": {
-        "name": "Graham Fairweather",
-        "email": "xotic750@gmail.com"
-    },
-    "copyright": "Copyright (c) 2013",
-    "contributors": [],
-    "keywords": [
-        "astrodate",
-        "date",
-        "time",
-        "parse",
-        "atronomy"
-    ],
-    "main": "lib/astrodate.js",
-    "bin": "./bin/astrodate",
-    "engines": {
-        "node": ">=0.8"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Xotic750/astrodate.git"
-    },
-    "bugs": {
-        "url": "https://github.com/Xotic750/astrodate/issues"
-    },
-    "licenses": [{
-        "type": "GPL3",
-        "url": "http://www.gnu.org/licenses/gpl-3.0.html"
-    }],
-    "directories": {
-        "lib": "lib",
-        "doc": "docs",
-        "bin" : "bin"
-    },
-    "dependencies": {
-        "util-x": "latest"
-    },
-    "devDependencies": {
-        "uglify-js": "latest",
-        "grunt": "latest",
-        "bignumber.js": "latest",
-        "js-beautify": "latest",
-        "jsdoc": "latest",
-        "tar.gz": "latest",
-        "util-x": "latest",
-        "assert-x": "latest",
-        "mocha": "latest",
-        "mocha-lcov-reporter": "latest",
-        "grunt-cli": "latest",
-        "grunt-contrib-jshint": "latest",
-        "grunt-contrib-uglify": "latest",
-        "grunt-lib-legacyhelpers": "latest",
-        "grunt-contrib-clean": "latest",
-        "grunt-jsdoc": "latest",
-        "grunt-jsbeautifier": "latest",
-        "grunt-replace": "latest",
-        "grunt-curl": "latest",
-        "grunt-zip": "latest",
-        "coveralls": "latest",
-        "grunt-shell": "latest",
-        "istanbul": "latest",
-        "grunt-jsonlint": "latest",
-        "browserify": "latest"
-    },
-    "optionalDependencies": {
-        "uglify-js": "latest",
-        "grunt": "latest",
-        "bignumber.js": "latest",
-        "js-beautify": "latest",
-        "jsdoc": "latest",
-        "tar.gz": "latest",
-        "util-x": "latest",
-        "assert-x": "latest",
-        "mocha": "latest",
-        "mocha-lcov-reporter": "latest",
-        "grunt-cli": "latest",
-        "grunt-contrib-jshint": "latest",
-        "grunt-contrib-uglify": "latest",
-        "grunt-lib-legacyhelpers": "latest",
-        "grunt-contrib-clean": "latest",
-        "grunt-jsdoc": "latest",
-        "grunt-jsbeautifier": "latest",
-        "grunt-replace": "latest",
-        "grunt-curl": "latest",
-        "grunt-zip": "latest",
-        "coveralls": "latest",
-        "grunt-shell": "latest",
-        "istanbul": "latest",
-        "grunt-jsonlint": "latest",
-        "browserify": "latest"
-    },
-    "sources": {
-        "cldr": "http://unicode.org/Public/cldr/24/json.zip",
-        "tzdata": "http://www.iana.org/time-zones/repository/releases/tzdata2013h.tar.gz"
-    },
-    "scripts": {
-        "test": "./node_modules/mocha/bin/mocha --check-leaks -u bdd -t 20000 -b -R tap tests/*.js"
-    },
-    "browser": {
-        "../lib/astrodate.min": false,
-        "uglify-js": false,
-        "grunt": false,
-        "bignumber.js": false,
-        "js-beautify": false,
-        "jsdoc": false,
-        "tar.gz": false,
-        "grunt-cli": false,
-        "grunt-contrib-jshint": false,
-        "grunt-contrib-uglify": false,
-        "grunt-lib-legacyhelpers": false,
-        "grunt-contrib-clean": false,
-        "grunt-jsdoc": false,
-        "grunt-jsbeautifier": false,
-        "grunt-replace": false,
-        "grunt-curl": false,
-        "grunt-zip": false,
-        "coveralls": false,
-        "grunt-shell": false,
-        "istanbul": false,
-        "grunt-jsonlint": false
-    },
-    "testling": {
-        "harness": "mocha",
-        "files": "tests/*.js",
-        "browsers": [
-            "iexplore/6.0..latest",
-            "firefox/3.0..latest",
-            "firefox/nightly",
-            "chrome/4..latest",
-            "chrome/canary",
-            "opera/10..latest",
-            "opera/next",
-            "safari/4..latest",
-            "ipad/6.0..latest",
-            "iphone/6.0..latest",
-            "android-browser/4.2..latest"
-        ]
-    }
+  "name": "astrodate",
+  "version": "0.8.0",
+  "description": "Javascript Date object with Astronomy in mind.",
+  "homepage": "http://xotic750.github.io/astrodate/",
+  "author": {
+    "name": "Graham Fairweather",
+    "email": "xotic750@gmail.com"
+  },
+  "copyright": "Copyright (c) 2016",
+  "contributors": [],
+  "keywords": [
+    "astrodate",
+    "date",
+    "time",
+    "parse",
+    "atronomy"
+  ],
+  "main": "lib/astrodate.js",
+  "bin": "./bin/astrodate",
+  "engines": {
+    "node": ">=0.8"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Xotic750/astrodate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Xotic750/astrodate/issues"
+  },
+  "license": "MIT",
+  "directories": {
+    "lib": "lib",
+    "doc": "docs",
+    "bin": "bin"
+  },
+  "dependencies": {
+    "validate.io-undefined": "^1.0.3",
+    "is-object-like-x": "^1.0.11",
+    "lodash.isplainobject": "^4.0.6",
+    "is-string": "^1.0.4",
+    "is-number-object": "^1.0.3",
+    "is-date-object": "^1.0.1",
+    "regexp-escape-x": "^1.0.5",
+    "bignumber.js": "^2.4.0"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "tar.gz": "^1.0.5",
+    "grunt-cli": "^1.2.0",
+    "grunt-lib-legacyhelpers": "^0.1.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-curl": "^2.2.0",
+    "grunt-jsonlint": "^1.1.0",
+    "es5-shim": "^4.5.9",
+    "es6-shim": "^0.35.1",
+    "es7-shim": "^6.0.0",
+    "json3": "^3.3.2",
+    "jscs": "^3.0.7",
+    "uglify-js": "^2.7.3",
+    "browserify": "^13.1.0",
+    "browserify-derequire": "^0.9.4",
+    "jasmine-node": "^1.14.5",
+    "jsdoc-to-markdown": "^1.3.7",
+    "nsp": "^2.6.1",
+    "cldr-core": "^29.0.0",
+    "cldr-numbers-full": "^29.0.0",
+    "cldr-dates-full": "^29.0.0"
+  },
+  "sources": {
+    "tzdata": "http://www.iana.org/time-zones/repository/tzdata-0.tar.gz"
+  },
+  "scripts": {
+    "test": "jasmine-node --matchall tests/spec/",
+    "security": "nsp check",
+    "style": "jscs index.js",
+    "docs": "jsdoc2md --name-format --example-lang js index.js > README.md",
+    "build": "browserify -p browserify-derequire -e index.js -o lib/astrodate.js -u 'crypto' -s returnExports",
+    "build-uglify": "uglifyjs lib/astrodate.js -o lib/astrodate.min.js --compress --keep-fnames --mangle --beautify ascii_only=true,beautify=false --source-map lib/astrodate.map",
+    "grunt": "grunt"
+  }
 }
