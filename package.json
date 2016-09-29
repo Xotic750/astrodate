@@ -37,11 +37,14 @@
   "dependencies": {
     "validate.io-undefined": "^1.0.3",
     "is-object-like-x": "^1.0.11",
+    "is-array-like-x": "^1.0.13",
     "lodash.isplainobject": "^4.0.6",
     "is-string": "^1.0.4",
     "is-number-object": "^1.0.3",
     "is-date-object": "^1.0.1",
     "regexp-escape-x": "^1.0.5",
+    "is-nil-x": "^1.0.10",
+    "lodash.isnull": "^3.0.0",
     "bignumber.js": "^2.4.0"
   },
   "devDependencies": {

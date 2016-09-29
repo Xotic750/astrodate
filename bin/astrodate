@@ -2,8 +2,8 @@
 (function () {
   'use strict';
 
-  var AstroDate = require('../lib/astrodate');
-  var now = new AstroDate().toISOString();
+  var AstroDate = require('../scripts/loadModule.js')('../lib/astrodate');
+  var now = new AstroDate().format('full');
   try {
     console.log(now);
   } catch (e) {

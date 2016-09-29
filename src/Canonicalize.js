@@ -1,3 +1,4 @@
+/*global require, module */
 (function() {
   'use strict';
 
@@ -23,6 +24,7 @@
    * and regions), plus any variants and extensions.
    */
 
+  var utils = require('./utils.js');
   var aliases = require('../node_modules/cldr-core/supplemental/aliases.json').supplemental.metadata.alias;
   var canonicalizeULangIRx = /^(root)$|^([a-z]{2,3}|[a-z]{5,8})(?:[\-_]([a-z]{4}))?(?:[\-_]([a-z]{2}|\d{3}))?((?:[\-_]([0-9a-z]{5,8}|\d[0-9a-z]{3}))*)$/i;
   var sepRx = /[\-_]/;
@@ -36,7 +38,7 @@
    */
   function getSubTags(languageId) {
     var subTags = [null, null, null, null];
-    var match = languageId.split(/[\-_][tu][\-_]/i)[0].match(canonicalizeULangIRx);
+    var match = utils.first(languageId.split(/[\-_][tu][\-_]/i)).match(canonicalizeULangIRx);
     if (!match) {
       return subTags;
     }

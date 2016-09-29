@@ -1,8 +1,9 @@
+/*global require, module */
 (function () {
   'use strict';
 
   var regexpEscape = require('regexp-escape-x');
-  var countCharacter = require('./countCharacter.js');
+  var utils = require('./utils.js');
   var tokenReplaceRx = /([^']+)|('[^']+')/g;
   var numberTestRx = /^-?\d+$/;
   var tokenTest1Rx = /^\{\d\}$/;
@@ -51,7 +52,7 @@
     } else {
       var firstCharacter = token.charAt(0);
       if (!tokenTest2Rx.test(token)) {
-        if (countCharacter(token, firstCharacter) !== token.length) {
+        if (utils.countCharacter(token, firstCharacter) !== token.length) {
           throw new Error('invalid token');
         }
       }
