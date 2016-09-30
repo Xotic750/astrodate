@@ -806,6 +806,10 @@
         type: 'symbols',
         value: 'y'
       }]);
+      expect(tokenizePattern('MMMM')).toEqual([{
+        type: 'symbols',
+        value: 'MMMM'
+      }]);
       expect(tokenizePattern('QQQ y')).toEqual([{
         type: 'symbols',
         value: 'QQQ'
