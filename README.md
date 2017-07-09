@@ -15,6 +15,8 @@ Master
 #[AstroDate 0.7.10](http://xotic750.github.io/astrodate/)
 ###### Graham Fairweather <xotic750@gmail.com>
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Xotic750/astrodate.svg)](https://greenkeeper.io/)
+
 Still very much work in progress, so there are [bugs](https://github.com/Xotic750/astrodate/issues "Issues") and the API has not been fully defined (or documented) and is subject to major changes.
 
 The idea behind the project is to not rely on Javascript's rather flaky [```Date```](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date  "Date Object reference") object, give better accuracy, flexibility and be cross-browser.
